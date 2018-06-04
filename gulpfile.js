@@ -49,9 +49,16 @@ gulp.task('cssPlaceModules', function() {
     gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css'])
         .pipe(gulp.dest('./css'));
 })
-
-gulp.task('watch', ['browserSync', 'less'], function () {
+gulp.task('html', function() {
+    gulp.src('*.html')
+    .pipe(gulp.dest('*.html'))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
+});
+gulp.task('watch', ['browserSync', 'less', 'html'], function () {
     gulp.watch('./less/**/*.less', ['less']);
+    gulp.watch('*.html', ['html']);
 });
 
 gulp.task('default', ['watch', 'jsPlaceModules', 'cssPlaceModules'], function () {
