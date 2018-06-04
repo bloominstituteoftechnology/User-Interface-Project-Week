@@ -137,6 +137,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
 }
@@ -153,16 +156,43 @@ body {
   margin: 0 auto;
 }
 .navigation {
-  position: sticky;
+  position: fixed;
   top: 0;
+  height: 5%;
   width: 100%;
   display: flex;
 }
 .navigation .hamburger {
-  justify-content: flex-end;
+  position: absolute;
+  right: 40px;
+  padding: 10px;
+  margin-right: 22px;
+  margin-top: 12px;
+}
+.navigation h2 {
+  margin-left: 47px;
+  margin-top: 12px;
+  font-size: 2.3rem;
+  color: #FFFFFF;
+  position: absolute;
+  width: 100px;
+  left: 30px;
+  padding: 10px;
 }
 .home {
-  background: salmon;
+  background: white;
+}
+.home .container {
+  width: 100%;
+  height: 0 auto;
+}
+.home .container .col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.home .container img {
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 .jumbo-home {
   width: 1024px;
@@ -170,15 +200,17 @@ body {
   margin: 0 auto;
   background: url("../img/home/home-jumbotron.png");
 }
-h1 {
+.jumbo-home .container {
+  height: 100%;
+  position: relative;
+}
+.jumbo-home h1 {
   font-weight: 700;
   font-size: 6.4rem;
   line-height: 7.5rem;
   color: #FFFFFF;
-}
-h2 {
-  font-size: 3rem;
-  color: #FFFFFF;
+  position: absolute;
+  bottom: 49px;
 }
 .services {
   background: green;
