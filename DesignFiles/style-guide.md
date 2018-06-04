@@ -49,6 +49,9 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Line Height: 26px
 - Color: #FFFFFF
 
+### Footer BG:
+- Color: #828282
+
 ### Navigation Text (Expanded)
 - Font Weight: Bold
 - Font Size: 48px
