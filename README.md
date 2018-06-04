@@ -1,4 +1,4 @@
-# User Interface Project Week
+# User Interface Project Week 
 You are to treat this week as if you are working as a front end developer at a web development agency. The instructor is the owner of the agency and is under pressure from the client to deliver the MVP on time. The project managers are acting as your supervisors.  You will use Trello to report your progress on the MVP and any extra features you accomplish to your project managers every day during standup. This project is meant to be worked on by yourself.  Do not pair program this week as this challenge is meant to show you where you can improve and what you have learned on your own.
 
 This week you will be building a website with for an architectural firm named Smith and Jones Architects.  Smith and Jones have requested a minimum viable product to deliver to their board of directors by the end of the week.  The requirements are listed below under "MVP" Features.  Smith and Jones also have a wish list of features they would love to showcase to the board if you can get them done.  You will demo your work to the agency owner Thursday afternoon.  
