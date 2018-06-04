@@ -21,7 +21,7 @@ Do not work on any extra features until you have checked off your MVP completion
 
 ## Assets Provided:
 * Style guide: This file will help you identify font sizes, colors, and font families across the site.
-* [Images for both desktop and mobile](.../img).  Mobile images have been provided to match the design files.
+* [Images for both desktop and mobile](/img).  Mobile images have been provided to match the design files.
 * Content has been provided on each page inside of comment tags
 
 ## MVP Features:
