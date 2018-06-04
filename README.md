@@ -20,7 +20,7 @@ Do not work on any extra features until you have checked off your MVP completion
 * [ ] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance.
 
 ## Assets Provided:
-* Style guide: This file will help you identify font sizes, colors, and font families across the site.
+* [Style guide:](/DesignFiles/style-guide.md) This file will help you identify font sizes, colors, and font families across the site.
 * [Images for both desktop and mobile](/img).  Mobile images have been provided to match the design files.
 * Content has been provided on each page inside of comment tags
 
