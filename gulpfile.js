@@ -51,7 +51,6 @@ gulp.task('cssPlaceModules', function() {
 })
 gulp.task('html', function() {
     gulp.src('*.html')
-    .pipe(gulp.dest('*.html'))
     .pipe(browserSync.reload({
         stream: true
     }));
