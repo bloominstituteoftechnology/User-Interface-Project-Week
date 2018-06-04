@@ -1,14 +1,18 @@
 
-.jumbotron(@image-url) {
+.jumbotron(@image-url, @image-url-mobile) {
         background-image: ~'url(@{image-url})';
         background-repeat: no-repeat;
         background-size: cover;
         height: 62.5%;
-        overflow: auto;
 
         @media @mobile {
+            background-image: ~'url(@{image-url-mobile})';
             width: 100%;
-            height: 250px;
+            background-size: cover;
+            background-position: bottom;
+            min-height: 260px;
+            height: auto;
+
         }
 }
 
