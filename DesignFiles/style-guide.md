@@ -1,10 +1,25 @@
+# Style Guide
+Use this guide to help you navigate the design files.  In a professional work place you would be given this information in many different deliverables like a sketch file, photoshop file, or invision link.  But for this week I am providing the necessary information to get you started.  
+
 ### GENERAL STYLES
 - Background: #FFFFFF
 - Color: #222222
 - Font Family: Roboto, Arial, sans-serif
-- Home Page - Recent Projects: #D8D8D8
 
-### General Text **
+## Page Specific
+
+### Home Page
+- Recent Projects Gray Square: #D8D8D8
+- Button borders: #222222
+
+### Services Page
+- Tab selected background: #5E9FB9
+- Tab Hover background: #222222
+- Tab Hover color: #FFF;
+
+## Font Site Wide
+
+### General Text
 - Font Weight: Regular
 - Font Size: 16px
 - Line Height: 24px
