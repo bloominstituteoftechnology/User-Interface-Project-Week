@@ -1,1 +1,1 @@
-// JS goes here
+let placeholder = "placeholder"
