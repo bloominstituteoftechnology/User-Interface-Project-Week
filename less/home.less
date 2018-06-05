@@ -2,6 +2,13 @@
     height: 100vh;
     width: 100%;
     display: inline-block;
+    background-image: url(../img/home/home-jumbotron.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 400px) {
+        background-image: url(../img/home/home-mobile-jumbotron.png);
+        height: 30rem;
+    }
     &__text{
         position: relative;
         bottom: -35rem;
@@ -11,6 +18,12 @@
         font-weight: bold;
         color: #FFFFFF;
         line-height: 7.5rem;
+        @media (max-width: 400px) {
+            line-height: 4.5rem;
+            font-size: 3.4rem;            
+            bottom: -13rem;
+            left: 3rem;
+        }
 
     }
     &__menu{
@@ -22,6 +35,13 @@
         position: absolute;
         width: 100%;
         z-index: 20;
+        box-sizing: border-box;
+
+        @media (max-width: 400px){
+            margin-top: 1rem;
+            justify-content: space-between;
+            padding: 0 4rem;
+        }
         p{
             font-size: 2rem;
         }
@@ -47,7 +67,10 @@
     &__flex{
         &__half{
             padding: 4rem 0;
-            
+            @media (max-width: 400px){
+                margin: 0 !important;
+                order: 1;
+            }
             h2{
                 font-size: 2.8rem;
                 font-weight: bold;
@@ -58,8 +81,13 @@
                 font-size: 1.8rem;
                 margin-bottom: 2rem;                
             }
+            button{
+                display: block;
+                width: 100%;
+            }
 
         }
+      
     }
     &__fluid{
         img{
@@ -71,24 +99,40 @@
     &__heading{
         background-color: #D8D8D8;
         padding: 2.5rem 4rem;
-        display: inline;
+        display: inline-block;
         font-weight: 300;
         border: 1px solid white;
+        @media (max-width: 400px){
+            padding: 2.5rem 4rem;
+            display: block;
+            // width: 80%;
+        }
     }
 
     &__right{
         position: absolute;
         right: 0;
         top: 23rem;
+        @media (max-width: 400px){
+            top: 10rem;
+            right: 5rem;
+        }
     }
     &__left{
         position: absolute;
         left: 0;
         top: 23rem;
+        @media (max-width: 400px){
+            top: 10rem;
+            left: 5rem;
+        }
     }
     &__text{
         margin: 3rem auto;
         width: 40rem;
+        @media (max-width: 400px){
+            width: 30rem;
+        }
     }
 
 }

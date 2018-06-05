@@ -160,11 +160,11 @@ h2 {
   margin-bottom: 3rem;
 }
 .btn {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   padding: 1.8rem 2.7rem;
   border-radius: 0.31rem;
 }
-.btn--white {
+.btn__white {
   background-color: white;
   border: 2px soild #222;
 }
@@ -196,15 +196,38 @@ h2 {
   padding: 6rem 0;
   display: flex;
 }
+@media (max-width: 400px) {
+  .section__flex {
+    flex-direction: column;
+    padding: 4rem 0;
+  }
+}
+.section__flex--spaceBetween {
+  justify-content: space-between;
+}
 .section__fluid {
   margin: auto;
   position: relative;
   padding: 4rem 0;
 }
+@media (max-width: 400px) {
+  .section__fluid {
+    padding: 3.3rem 0;
+  }
+}
 .header {
   height: 100vh;
   width: 100%;
   display: inline-block;
+  background-image: url(../img/home/home-jumbotron.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 400px) {
+  .header {
+    background-image: url(../img/home/home-mobile-jumbotron.png);
+    height: 30rem;
+  }
 }
 .header__text {
   position: relative;
@@ -216,6 +239,14 @@ h2 {
   color: #FFFFFF;
   line-height: 7.5rem;
 }
+@media (max-width: 400px) {
+  .header__text {
+    line-height: 4.5rem;
+    font-size: 3.4rem;
+    bottom: -13rem;
+    left: 3rem;
+  }
+}
 .header__menu {
   display: flex;
   justify-content: space-around;
@@ -225,6 +256,14 @@ h2 {
   position: absolute;
   width: 100%;
   z-index: 20;
+  box-sizing: border-box;
+}
+@media (max-width: 400px) {
+  .header__menu {
+    margin-top: 1rem;
+    justify-content: space-between;
+    padding: 0 4rem;
+  }
 }
 .header__menu p {
   font-size: 2rem;
@@ -247,6 +286,12 @@ h2 {
 .section__flex__half {
   padding: 4rem 0;
 }
+@media (max-width: 400px) {
+  .section__flex__half {
+    margin: 0 !important;
+    order: 1;
+  }
+}
 .section__flex__half h2 {
   font-size: 2.8rem;
   font-weight: bold;
@@ -257,29 +302,95 @@ h2 {
   font-size: 1.8rem;
   margin-bottom: 2rem;
 }
+.section__flex__half button {
+  display: block;
+  width: 100%;
+}
 .section__fluid img {
   width: 100%;
 }
 .project__heading {
   background-color: #D8D8D8;
   padding: 2.5rem 4rem;
-  display: inline;
+  display: inline-block;
   font-weight: 300;
   border: 1px solid white;
+}
+@media (max-width: 400px) {
+  .project__heading {
+    padding: 2.5rem 4rem;
+    display: block;
+  }
 }
 .project__right {
   position: absolute;
   right: 0;
   top: 23rem;
 }
+@media (max-width: 400px) {
+  .project__right {
+    top: 10rem;
+    right: 5rem;
+  }
+}
 .project__left {
   position: absolute;
   left: 0;
   top: 23rem;
 }
+@media (max-width: 400px) {
+  .project__left {
+    top: 10rem;
+    left: 5rem;
+  }
+}
 .project__text {
   margin: 3rem auto;
   width: 40rem;
+}
+@media (max-width: 400px) {
+  .project__text {
+    width: 30rem;
+  }
+}
+.services {
+  width: 100%;
+}
+.services__header {
+  background-image: url(../img/services/services-jumbotron.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30rem;
+  position: relative;
+  background-color: #5E9FB9;
+  z-index: 0;
+}
+.services__header--text {
+  position: absolute;
+  font-size: 4rem;
+  left: 5rem;
+  bottom: 3rem;
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #FFFFFF;
+}
+.services button {
+  font-weight: bold;
+}
+.services__photo {
+  width: 100%;
+  display: inline-block;
+  background-image: url(../img/services/services-tab-pre-construction-img.png);
+  background-repeat: no-repeat;
+}
+.services__text--header {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.section__flex * {
+  flex: 1;
 }
 .footer {
   width: 100%;
@@ -293,9 +404,20 @@ h2 {
   max-width: 900px;
   margin: auto;
 }
+@media (max-width: 400px) {
+  .footer__flex {
+    flex-direction: column;
+    padding: 3rem;
+  }
+}
 .footer__flex * {
   flex: 1;
   text-align: start;
+}
+@media (max-width: 400px) {
+  .footer__flex * {
+    margin: 1rem 0;
+  }
 }
 .footer__flex *:not(:last-child) {
   margin-right: 1rem;
@@ -344,6 +466,11 @@ h2 {
 .container {
   max-width: 810px;
   margin: auto;
+}
+@media (max-width: 400px) {
+  .container {
+    padding: 0 2.5rem;
+  }
 }
 .center {
   position: absolute;
