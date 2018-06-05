@@ -1,14 +1,11 @@
 class Tabs {
     constructor(tabs) {
         this.element = tabs;
-        this.links = Array.from(this.element.querySelectorAll('.tab-link'));
+        this.tabs = Array.from(document.querySelectorAll('.tab'));
+        this.links = Array.from(document.querySelectorAll('.tab-link'));
         this.links = this.links.map((link) => {
             return new TabLink(link, this)});
         this.activeLink = this.links[0];
-        this.tabs = Array.from(this.element.querySelectorAll('.tab'));
-        this.tabs = this.tabs.map((tab) => {
-            return new Tab (tab);
-        });
         this.init();
     }
 
@@ -31,22 +28,22 @@ class TabLink {
     constructor (link, parent) {
         this.element = link;
         this.parent = parent;
-        this.data = this.element.datalist.tab;
+        this.data = this.element.dataset.tab;
         this.tabArr = this.getLinkedTabs();
     }
     getLinkedTabs() {
         return this.parent.tabs.filter((tab) => {
-            tab.element.datalist.tab === this.data;
+            return tab.dataset.tab === this.data;
         });
     }
     activateTab() {
         this.tabArr.forEach((tab) => {
-            tab.classList.add(hidden);
+            tab.classList.remove("hidden");
         });
     }
     deactivateTab() {
         this.tabArr.forEach((tab) => {
-            tab.classList.remove(hidden);
+            tab.classList.add("hidden");
         });
     }
     updateTabsOnClick() {
@@ -55,7 +52,11 @@ class TabLink {
 }
 
 let tabsArr = document.querySelectorAll(".tabs");
-tabsArr = Array.from(tabs);
+tabsArr = Array.from(tabsArr);
 tabsArr = tabsArr.map((tabs) => {
     return new Tabs(tabs);
-} );
+});
+
+tabsArr.forEach((tabs) => {
+    tabs.init();
+});
