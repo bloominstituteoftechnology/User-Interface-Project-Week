@@ -8,18 +8,6 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Tab Hover background: #222222
 - Tab Hover color: #FFF;
 
-### Footer Headings
-- Font Weight: Regular
-- Font Size: 20px
-- Line Height: 24px
-- Color: #FFFFFF
-
-### Footer Text
-- Font Weight: Regular
-- Font Size: 14px
-- Line Height: 26px
-- Color: #FFFFFF
-
 ### Navigation Text (Expanded)
 - Font Weight: Bold
 - Font Size: 48px
