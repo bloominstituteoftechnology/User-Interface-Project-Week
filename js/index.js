@@ -13,10 +13,12 @@ document.addEventListener('scroll', () => {
 
 hamburger.addEventListener('click', () => {
   if (document.documentElement.scrollTop < 1 && navMenu.classList.contains('menu--open')) {
-    nav.removeAttribute('style', 'background');
     navMenu.classList.toggle('menu--open');
-  } else if(document.documentElement.scrollTop > 1){
+  } else if(document.documentElement.scrollTop > 1 && !navMenu.classList.contains('menu--open')) {
     nav.setAttribute('style', 'background: null; opacity: 0.95; margin-top: 0;');  
+    navMenu.classList.toggle('menu--open');
+  } else if(!document.documentElement.scrollTop < 1){
+    nav.setAttribute('style', 'background: #9DA7B1; opacity: 0.95; margin-top: 0;'); 
     navMenu.classList.toggle('menu--open');
   } else {
     navMenu.classList.toggle('menu--open');
