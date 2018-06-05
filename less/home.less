@@ -1,0 +1,208 @@
+@import 'partials/_all-partials';
+
+//SECTIONS FROM TOP TO BOTTOM
+
+
+//NAVBAR SECTION 
+
+
+
+//JUMBO SECTION
+.jumbo-home {
+    width: 100%;
+    .desk-img {
+        display: block;
+        margin: 0 auto;
+   }
+
+   .container {
+       position: relative;
+   }
+   .jumbo-text {
+       position: absolute;
+       bottom: 0;
+       color: @general-white;
+       font-weight: bold;
+       font-size: 6.4rem;
+       line-height: 7.5rem;
+       margin-bottom: 45px;
+       
+   }
+   @media @phone {
+       .desk-img {
+           display: none;
+       }
+       .jumbo-text {
+           font-size: 3.4rem;
+            line-height: 4.5rem;
+            margin-bottom: 25px;
+       }
+
+   }
+} // jumbo-home
+
+//LEARN MORE SECTION
+
+.learn-more {
+    margin-top: 52px;
+
+    .info-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .pic-side {
+        width: 100%;
+    }
+    .btn-learn-more {
+        align-self: flex-start;
+        .white-btn;
+        padding: 12px (40% / @desktop-container-width) * 100;
+    }
+    .row:nth-child(2) {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    @media @phone {
+        .pic-side {
+            margin-bottom: 24px;
+        }
+        .info-side {
+            height: 300px;
+        }
+        .row {
+        flex-direction: column-reverse;
+        }
+        .row:nth-child(2) {
+            flex-direction: column-reverse;
+        }
+
+        .btn-learn-more {
+            width: 100%;
+        }
+    }
+} //learn-more
+
+//PROJECTS SECTION
+.projects {
+
+    .img-wrapper {
+        position: relative;
+
+        .project-title {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translateY(25%);
+            padding: 30px (60% / @desktop-container-width) * 100;
+            letter-spacing: 8px;
+            font-size: 2.4rem;
+            background: lightgrey;
+            text-transform: uppercase;
+        }
+    }
+    .sub-heading {
+        margin-bottom: 48px;
+    }
+    .all-info {
+        margin-top: 72px;
+    }
+    .info {
+        margin: 0 auto 24px;
+        text-align: start;
+        width: 50%;
+    }
+    .row:nth-child(2) {
+        .project-title {
+            left: 0;
+            right: auto;
+        }
+    }
+
+    @media @phone {
+        .info {
+            width: 100%;
+        }
+        .row, .row:nth-child(2) {
+            .img-wrapper {
+                display: flex;
+                justify-content: center;
+            .project-title {
+                left: auto;
+                right: auto;
+                transform: translateY(90%);
+            }
+        }
+        }
+        .all-info {
+            margin-top: 100px;
+        }
+    }
+    
+} //projects
+
+// FOOTER
+footer {
+    
+    margin: 0 auto;
+    padding: 48px 0 0; 
+    width: (1024% / 1351) * 100;
+    background: #818181;
+    .cta-text {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        color: @general-white;
+        margin-bottom: 6px;
+    }
+    .cta-email {
+        display: block;
+        width: 85%;
+        height: 48px;
+        border-radius: 5px;
+    }
+    .cta-disclosure {
+        color: @general-white;
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+    }
+    .places {
+        display: flex;
+        justify-content: space-around;
+    }
+    .city-name {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        color: @general-white;
+    }
+    .address, .phone-number {
+        color: @general-white;
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 24px;
+        color: @general-white;
+        font-size: 1.2rem;
+    }
+    .row {
+        margin-bottom: 0;
+    }
+
+    @media @phone {
+        width: 100%;
+        padding-bottom: 24px;
+        .places {
+            flex-direction: column;
+        }
+        .city-name {
+            margin-top: 24px;
+        }
+        .copyright {
+            text-align: start;
+        }
+    }
+}
