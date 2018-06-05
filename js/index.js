@@ -23,8 +23,11 @@ class Tabs {
   constructor(element) {
     this.element = element;
     this.links = this.element.querySelectorAll('.tabs-link'); //will create a reference to '.tabs-links' nested inside of .tabs
-    this.links = Array.from(this.links).map(link => new TabsLink(link, this)); //create an array of link constructors out of hte .tabs-link elements
+    this.links = Array.from(this.links).map(link => {
+      return new TabsLink(link, this)
+    }); //create an array of link constructors out of hte .tabs-link elements
     this.activeLink = this.links[0]; //sets the first link in the array as the active link
+    //console.log(this.activeLink);
     this.init(); //invokes the init method which will invoke the select() method on the chosen link to make it active. Note select() is defined on the TabsLink constructor not the Tabs constructor
   }
 
@@ -48,13 +51,38 @@ class TabsLink {
     this.tabs = parent; //creates a reference to the parent element .tabs
     this.tabsItem = parent.getTab(this.element.dataset.tab); //passes in a reference to the tab links custom data attribute
     this.tabsItem = new TabsItem(this.tabsItem);
-    this.element.addEventListener('click', function() {
-      this.updateActive(this);
+    //console.log(this.tabs);
+    this.element.addEventListener('click', () => {
+      this.tabs.updateActive(this);
       this.select();
-    })
+    });
+  }
+
+  select() {
+    this.element.classList.add('tabs-link-active'); //selects the tabs link
+    this.tabsItem.select(); //invokes the TabsItem method which selects the actual item that corresponds to the tabs link
+  }
+
+  deselect() {
+    this.element.classList.remove('tabs-link-active');
+    this.tabsItem.deselect();
+  }
+}
+
+class TabsItem {
+  constructor(element) {
+    this.element = element;
+  }
+
+  select() {
+    this.element.classList.add('tabs-item-selected'); //selects the tabs item corresponding to the tabs link
+  }
+
+  deselect() {
+    this.element.classList.remove('tabs-item-selected');
   }
 }
 
 let tabs = document.querySelectorAll('.tabs');
-console.log(tabs);
+//console.log(tabs);
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
