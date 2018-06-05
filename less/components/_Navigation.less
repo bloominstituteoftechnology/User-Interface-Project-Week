@@ -1,11 +1,30 @@
 nav {
   .grid();
   position: fixed;
-  background-color: @brand-color-dark-gray;
+  top: 0;
+  height: 60px;
+  color: @brand-color-white;
+  font-weight: @font-bold;
+  font-size: 2.4rem;
+  line-height: 4.25rem;
+  background-color: rgba(157,167,177,0); // #9DA7B1
+  transition: all .3s linear;
   z-index: 1;
 
+  &.is-scrolled {
+    top: -10px;
+    background-color: rgba(157,167,177,.95);
+  }
+
   .nav__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     .grid-center-column();
-    background-color: orange;
+    padding: 10px 0 0 0;
   }  
+
+  .nav__logo {
+    width: 32px;
+  }
 }
