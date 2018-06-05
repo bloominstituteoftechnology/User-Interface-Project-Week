@@ -1,18 +1,17 @@
-const menuIcon = document.querySelector('#navhamburger');
+const openIcon = document.querySelector('#navhamburger');
+const closeIcon = document.querySelector('#navhamburgerclose');
 const openMenu = document.querySelector('.nav-fullscreen');
 
-menuIcon.addEventListener('click', () => {
+openIcon.addEventListener('click', () => {
     toggleMenu()
 });
 
+closeIcon.addEventListener('click', () => {
+    toggleMenu()
+});
 const toggleMenu = function () {
- openMenu.classList.toggle('open')
- if (menuIcon.getAttribute.src === '/img/nav-hamburger.png') {
-menuIcon.setAttribute.src = '/img/nav-hamburger-close.png';
- } else {
-     menuIcon.setAttribute.src = '/img/nav-hamburger.png';
- }
- menuIcon.classList.toggle('index-top')
+ openMenu.classList.toggle('open');
+
 
 }
 
