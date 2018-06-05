@@ -163,10 +163,25 @@ body {
   color: #222222;
   text-transform: capitalize;
 }
+.mobile-img {
+  display: none;
+}
+@media (max-width: 480px) {
+  .img-wrapper {
+    width: 100%;
+  }
+  .desk-img {
+    display: none;
+  }
+  .mobile-img {
+    display: block;
+    width: 100%;
+  }
+}
 .jumbo-home {
   width: 100%;
 }
-.jumbo-home .jumbo-img {
+.jumbo-home .desk-img {
   display: block;
   margin: 0 auto;
 }
@@ -181,6 +196,16 @@ body {
   font-size: 6.4rem;
   line-height: 7.5rem;
   margin-bottom: 45px;
+}
+@media (max-width: 480px) {
+  .jumbo-home .desk-img {
+    display: none;
+  }
+  .jumbo-home .jumbo-text {
+    font-size: 3.4rem;
+    line-height: 4.5rem;
+    margin-bottom: 25px;
+  }
 }
 .learn-more {
   margin-top: 52px;
@@ -203,6 +228,23 @@ body {
 .learn-more .row:nth-child(2) {
   display: flex;
   flex-direction: row-reverse;
+}
+@media (max-width: 480px) {
+  .learn-more .pic-side {
+    margin-bottom: 24px;
+  }
+  .learn-more .info-side {
+    height: 300px;
+  }
+  .learn-more .row {
+    flex-direction: column-reverse;
+  }
+  .learn-more .row:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+  .learn-more .btn-learn-more {
+    width: 100%;
+  }
 }
 .projects .img-wrapper {
   position: relative;
@@ -232,6 +274,25 @@ body {
 .projects .row:nth-child(2) .project-title {
   left: 0;
   right: auto;
+}
+@media (max-width: 480px) {
+  .projects .info {
+    width: 100%;
+  }
+  .projects .row .img-wrapper,
+  .projects .row:nth-child(2) .img-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .projects .row .img-wrapper .project-title,
+  .projects .row:nth-child(2) .img-wrapper .project-title {
+    left: auto;
+    right: auto;
+    transform: translateY(90%);
+  }
+  .projects .all-info {
+    margin-top: 100px;
+  }
 }
 footer {
   margin: 0 auto;
@@ -281,4 +342,19 @@ footer .copyright {
 }
 footer .row {
   margin-bottom: 0;
+}
+@media (max-width: 480px) {
+  footer {
+    width: 100%;
+    padding-bottom: 24px;
+  }
+  footer .places {
+    flex-direction: column;
+  }
+  footer .city-name {
+    margin-top: 24px;
+  }
+  footer .copyright {
+    text-align: start;
+  }
 }
