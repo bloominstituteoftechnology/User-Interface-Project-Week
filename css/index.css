@@ -1,4 +1,132 @@
 /* Your Code Goes Here */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 .subhead {
   font-weight: bold;
   font-size: 2.8rem;
@@ -35,7 +163,7 @@
   font-weight: lighter;
   background: #D8D8D8;
   z-index: 3;
-  height: 70px;
+  height: 60px;
   width: 35%;
   padding: 15px;
   position: relative;
@@ -62,16 +190,22 @@ html {
 }
 .container-fluid {
   margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+.container-fluid h4 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+.container-fluid p {
+  font-size: 1.6rem;
+  font-weight: regular;
+  line-height: 24px;
 }
 .container {
   width: 855px;
   margin: 0;
   padding: 0;
-}
-.container h4 {
-  font-weight: bold;
-  font-size: 2.8rem;
-  color: #222222;
 }
 /*
 ### Jumbotron Headers
@@ -89,6 +223,17 @@ html {
 /*
  *- Recent Projects Gray Square: #D8D8D8
 - Button borders: #222222*/
+.jumbotron {
+  background-image: url("../img/home/home-jumbotron.png");
+  background-size: cover;
+  padding: 0;
+  margin: 0 0 20px 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: left;
+}
 .main-content {
   box-sizing: border-box;
 }
@@ -96,12 +241,12 @@ html {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap
-        margin: 10px;
+        margin: 20px;
   padding: 15px;
 }
 .main-content .architects .text-content {
-  width: 200px
-            padding: 20px;
+  width: 300px;
+  padding: 15px 0;
 }
 .main-content .architects .text-content button {
   border: #222222 1px solid;
@@ -144,23 +289,18 @@ html {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
   margin-top: 30px;
+  width: 100%;
 }
 .main-content .projects p {
   width: 30%;
-}
-.main-content .projects .villas {
-  margin: 20px 0;
-}
-.main-content .projects .villas .label {
-  align-content: flex-end;
 }
 .main-content .projects .label {
   font-weight: lighter;
   background: #D8D8D8;
   z-index: 3;
-  height: 70px;
+  height: 60px;
   width: 35%;
   padding: 15px;
   position: relative;
@@ -168,7 +308,32 @@ html {
   text-align: center;
   letter-spacing: 4px;
 }
-.main-content .projects img {
+.main-content .projects .villas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0;
+  /*   .blocks {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 20px 0;
+            border: red 1px solid;
+            .label {
+                align-self: flex-end;
+            }
+        }*/
+}
+.main-content .projects .villas .label {
+  align-self: flex-end;
+}
+.main-content .projects .villas .outskirts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0;
+}
+.main-content .projects .villas img {
   width: 100%;
   height: auto;
 }
@@ -188,7 +353,7 @@ html {
 */
 .footer {
   height: 200px;
-  padding: 30px;
+  padding: 20px;
   background: #989898;
 }
 .footer p {
@@ -202,6 +367,20 @@ html {
   font-size: 2.0rem;
   line-height: 2.4px;
   color: #FFFFFF;
+}
+.footer .email {
+  border: 1px red solid;
+  height: auto;
+}
+.footer .offices {
+  display: flex;
+  justify-content: space-around;
+}
+.footer .office {
+  width: 100px;
+  height: 100px;
+  border: red 1px solid;
+  margin: 0;
 }
 .footer .copyright {
   margin: auto;
@@ -217,37 +396,126 @@ html {
   color: #222222;
 }
 .jumbotron {
-  padding: 0;
-  margin: 0 0 20px 0;
-  top: 0;
-  width: 100%;
-  height: 460px;
-}
-.jumbotron .container {
-  position: relative;
-  text-align: left;
-}
-.jumbotron .container .menu {
-  position: relative;
-  top: 0;
-  left: 20px;
-  padding: 10px 5%;
-}
-.jumbotron .container .logo {
-  color: #FFFFFF;
-}
-.jumbotron .container .image {
-  position: absolute;
-}
-.jumbotron .container h2 {
   font-weight: bold;
   font-size: 6.4rem;
   line-height: 75px;
   color: #FFFFFF;
+  padding: 0;
+  margin: 0 0 20px 0;
+  top: 0;
+  width: 100%;
   position: relative;
-  top: 100px;
-  left: 7.0rem;
+  text-align: left;
+}
+.jumbotron .menu {
+  position: relative;
+  top: 5px;
+  left: 0;
+  padding: 15px 8%;
+}
+.jumbotron .menu .hamburger {
+  height: 20px;
+}
+.jumbotron .logo {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+}
+.jumbotron .image {
+  position: absolute;
 }
 .hidden {
   display: none;
+}
+.j-services {
+  background-image: url("../img/services/services-jumbotron.png");
+  background-size: cover;
+  padding: 0;
+  margin: 0 0 20px 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: left;
+}
+.tabs {
+  width: 100%;
+  /* .tabs-item-selected {
+    animation: load  1s forwards;
+    display: block;
+  }
+
+  @keyframes load{
+    100%{
+      opacity: 1;
+    }
+    0%{
+      opacity: 0;
+    }
+    
+    - Tab selected background: #5E9FB9
+- Tab Hover background: #222222
+- Tab Hover color: #FFF;
+    
+  }*/
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+.tabs .tabs-item {
+  display: none;
+  opacity: 0;
+  width: 75%;
+}
+.tabs .tabs-item .tabs-item-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs .tabs-links {
+  display: flex;
+  background-color: #FFFFFF;
+}
+.tabs .tabs-link {
+  padding: 20px 25px;
+  font-size: 24px;
+  border: 1px solid #222222;
+  width: 175px;
+  height: 50px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.tabs .tabs-link:hover {
+  background-color: #222222;
+  color: #FFFFFF;
+}
+.tabs .tabs-link-selected {
+  background-color: #5E9FB9;
+}
+.tabs .tabs-link-selected:hover {
+  background-color: #FFFFFF;
+}
+.j-contact {
+  background-image: url("../img/contact/contact-jumbotron.png");
+  background-size: cover;
+  padding: 0;
+  margin: 0 0 20px 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: left;
+}
+.main {
+  display: flex;
+  justify-content: space-around;
+}
+.main .locations p {
+  font-weight: regular;
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: #222222;
 }
