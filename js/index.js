@@ -6,7 +6,7 @@ let navMenu = document.querySelector('.menu');
 document.addEventListener('scroll', () => {
   if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
     nav.setAttribute('style', 'background: #9DA7B1; opacity: 0.95');
-  } else if(!navMenu.classList.contains('menu--open')){
+  } else if (!navMenu.classList.contains('menu--open')) {
     nav.removeAttribute('style', 'background');
   }
 });
@@ -17,7 +17,14 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('menu--open');
   } else {
     navMenu.classList.toggle('menu--open');
+
     nav.setAttribute('style', 'background: #9DA7B1; opacity: 0.95');
+  }
+
+  if (navMenu.classList.contains('menu--open')) {
+    hamburger.src = 'img/nav-hamburger-close.png';
+  } else {
+    hamburger.src = 'img/nav-hamburger.png';
   }
 
 });
