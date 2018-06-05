@@ -2,6 +2,7 @@
 function menuToggle() {
   document.querySelector('.cta').classList.toggle('nav-expanded');
   document.querySelector('.menu').classList.toggle('menu-toggle');
+  document.querySelector('.custom-nav').classList.toggle('nav-scroll')
 }
 
 document.querySelector('.hamburger').addEventListener('click', (e) => {
