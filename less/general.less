@@ -82,20 +82,38 @@ footer {
     padding-top: 66px;
     display: flex;
     flex-wrap: wrap;
-    color: @white;
+    color: lighten(@dark-gray, 40%);
     background-color: @dark-gray;
+
+    @media @mobile {
+        padding-left: 4.7%;
+        padding-top: 30px;
+    }
+
     .email {
         padding-left: 8.3%; 
         width: 33.33%;
+
+        @media @mobile {
+            padding-left: 0;
+            padding-right: 8%;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
         input {
             font-size: 1.8rem;
             height: 42px;
             width: 100%;
             min-width: 150px;
             .rounded-border;
-            color: lighten( @dark-gray, 10%);
+            color: lighten( @dark-gray, 15%);
+            @media @mobile {
+                margin: 12px 0px 8px 0px;
+                font-size: 1.6rem;
+            }
+            }
         }
-    }
 
     .fine-print {
         font-size: 1.2rem;
@@ -106,7 +124,18 @@ footer {
         justify-content: space-between;
         padding-right: 8.3%;
         padding-left: 5.3%;
+
+        @media @mobile {
+            width: 100%;
+            flex-direction: column;
+            padding-left: 0;
+
+            .location {
+                padding-bottom: 25px;
+            }
+        }
     }
+
     h3 {
         font-size: 1.8rem;
         font-weight: 700;
@@ -122,6 +151,12 @@ footer {
         width: 100%;
         display: flex;
         justify-content: center;
+
+        @media @mobile {
+            padding-top: 0px;
+            padding-bottom: 25px;
+            justify-content: left;
+        }
 
         input {
             padding-left: 0.8%;
