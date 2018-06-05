@@ -14,10 +14,15 @@ document.querySelector('.hamburger').addEventListener('click', (e) => {
 }
 }) //Toggles menu
 
-// document.body.addEventListener('wheel', function() {
-//   console.log('Is listening');
-//   document.querySelector('.custom-nav').classList.add('nav-scroll');
-// });
+document.addEventListener('scroll', function() {
+  document.querySelector('.custom-nav').classList.add('nav-scroll');
+  if (window.scrollY === 0) {
+    document.querySelector('.custom-nav').classList.remove('nav-scroll');
+  }
+});
+
+
+
 
 class Tabs {
   constructor(element) {
