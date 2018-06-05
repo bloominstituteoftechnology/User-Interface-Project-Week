@@ -19,7 +19,8 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Tab Hover background: #222222
 - Tab Hover color: #FFF;
 
-## Font Site Wide
+## Footer 
+Background: #828282
 
 ### General Text
 - Font Weight: Regular
