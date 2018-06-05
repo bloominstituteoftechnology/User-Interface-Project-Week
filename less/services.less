@@ -1,3 +1,4 @@
+
 .services {
     .jumbotron {
         background-image: url(../img/services/services-jumbotron.png);
@@ -54,23 +55,26 @@
             align-items: space-between;
             justify-content: center;
 
+            @media @services-mobile {
+                flex-flow: column nowrap;
+            }
+
             .header-text {
                 width: 100%;
-                @media (max-width: 700px) {
+                @media @services-mobile {
                     display: flex;
                     justify-content: center;
                 }
             }
             h2 {
                 display: inline-block;
-                @media (max-width: 700px) {
-                    text-align: center;
+                @media @services-mobile {
                     padding-bottom: 10px;
                 }
             }
             p {
                 width: 50%;
-                min-width: 400px;
+                min-width: 290px;
                 white-space: pre-line;
                 margin: auto;
                 padding-bottom: 20px;
@@ -82,8 +86,11 @@
                 justify-content: center;
                 margin: auto;
 
-                @media (max-width: 700px) {
+                @media @services-mobile {
                     padding: 0px;
+                }
+                img {
+                    width: 100%;
                 }
             }
 
