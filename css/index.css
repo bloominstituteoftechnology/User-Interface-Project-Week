@@ -150,7 +150,7 @@ body {
   line-height: 2.4rem;
 }
 p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 2.4rem;
 }
 h2 {
@@ -158,6 +158,14 @@ h2 {
   font-size: 2.8rem;
   color: #222;
   margin-bottom: 3rem;
+}
+h1 {
+  font-size: 4.8rem;
+}
+h3 {
+  color: #222;
+  font-weight: bold;
+  font-size: 2rem;
 }
 .btn {
   font-size: 1.7rem;
@@ -167,6 +175,47 @@ h2 {
 .btn__white {
   background-color: white;
   border: 2px soild #222;
+}
+@media (max-width: 400px) {
+  .btn {
+    width: 100%;
+  }
+}
+.input__label {
+  font-size: 1.4rem;
+  display: inline-block;
+}
+.input__email {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #D8D8D8;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+}
+.input__radio {
+  display: inline;
+}
+.input__number {
+  display: block;
+  width: 100%;
+  padding: 0.51rem;
+  border-radius: 0.2rem;
+  border: 1px solid #D8D8D8;
+}
+.input__text {
+  display: block;
+  width: 100%;
+  border-radius: 0.2rem;
+  border: 1px solid #D8D8D8;
+}
+.input__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.input__info {
+  color: #8b8b8b;
+  font-size: 1.2rem;
 }
 .menu {
   display: none;
@@ -216,12 +265,13 @@ h2 {
   }
 }
 .header {
-  height: 100vh;
+  height: 60vh;
   width: 100%;
   display: inline-block;
   background-image: url(../img/home/home-jumbotron.png);
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 @media (max-width: 400px) {
   .header {
@@ -230,8 +280,8 @@ h2 {
   }
 }
 .header__text {
-  position: relative;
-  bottom: -35rem;
+  position: absolute;
+  bottom: 10rem;
   left: 10rem;
   width: 3rem;
   font-size: 6.4rem;
@@ -353,17 +403,68 @@ h2 {
     width: 30rem;
   }
 }
+.contact {
+  width: 100%;
+}
+.contact__header {
+  background-image: url(../img/contact/contact-jumbotron.png);
+  background-repeat: no-repeat;
+  height: 25rem;
+  position: relative;
+  background-color: #5E9FB9;
+  z-index: 0;
+}
+@media (max-width: 400px) {
+  .contact__header {
+    background-position: center;
+  }
+}
+.contact__header--text {
+  position: absolute;
+  font-size: 4rem;
+  left: 5rem;
+  bottom: 3rem;
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #FFFFFF;
+}
+.contact__header h1 {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  font-size: 4.8rem;
+  display: inline-block;
+}
+.contact__address:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.contact__input {
+  max-width: 30rem;
+}
+.contact__justify {
+  justify-content: space-around;
+}
+@media (max-width: 400px) {
+  .contact__flex1 {
+    margin-top: 3rem;
+  }
+}
 .services {
   width: 100%;
 }
 .services__header {
   background-image: url(../img/services/services-jumbotron.png);
-  background-size: cover;
   background-repeat: no-repeat;
-  height: 30rem;
+  height: 25rem;
   position: relative;
   background-color: #5E9FB9;
   z-index: 0;
+}
+@media (max-width: 400px) {
+  .services__header {
+    background-position: center;
+  }
 }
 .services__header--text {
   position: absolute;
@@ -378,19 +479,27 @@ h2 {
 .services button {
   font-weight: bold;
 }
+@media (max-width: 400px) {
+  .services button {
+    margin: 1rem 0;
+  }
+}
 .services__photo {
   width: 100%;
+  height: 28rem;
   display: inline-block;
   background-image: url(../img/services/services-tab-pre-construction-img.png);
   background-repeat: no-repeat;
+}
+@media (max-width: 400px) {
+  .services__photo {
+    order: 1;
+  }
 }
 .services__text--header {
   font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 2rem;
-}
-.section__flex * {
-  flex: 1;
 }
 .footer {
   width: 100%;
@@ -410,28 +519,31 @@ h2 {
     padding: 3rem;
   }
 }
-.footer__flex * {
+.footer__flex div {
   flex: 1;
   text-align: start;
 }
 @media (max-width: 400px) {
-  .footer__flex * {
+  .footer__flex div {
     margin: 1rem 0;
   }
 }
 .footer__flex *:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 .footer__flex *:first-child {
-  flex: 3;
+  flex: 1.5;
 }
 .footer__heading {
   font-size: 2rem;
   line-height: 2.4rem;
+  color: white;
+  font-weight: 500;
 }
 .footer__text {
   font-size: 1.4rem;
   line-height: 2.6rem;
+  font-weight: lighter;
 }
 .margin-r-sm {
   margin-right: 1rem;
@@ -477,4 +589,7 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.flex1 {
+  flex: 1;
 }
