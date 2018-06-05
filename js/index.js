@@ -3,7 +3,7 @@ let nav = document.querySelector('.navigation');
 
 document.addEventListener('scroll', () => {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-        nav.setAttribute('style', 'background: gray; opacity: 0.95');
+        nav.setAttribute('style', 'background: #9DA7B1; opacity: 0.95');
     } else {
         nav.removeAttribute('style', 'background');
     }
