@@ -50,6 +50,11 @@ Background: #828282
 - Line Height: 26px
 - Color: #FFFFFF
 
+### Navigation Logo
+- Font Weight: Bold
+- Font Size: 24px
+- Color: #FFFFFF
+
 ### Navigation Text (Expanded)
 - Font Weight: Bold
 - Font Size: 48px
