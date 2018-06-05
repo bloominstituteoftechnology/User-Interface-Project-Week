@@ -2,10 +2,12 @@
 class Tabs {
   constructor(element) {
     this.element = element;
+    console.log(element);
     this.links = this.element.querySelectorAll(".tabs-link");
     this.links = Array.from(this.links).map( link => {
       return new TabsLink(link, this);
     });
+    console.log(this.links);
     this.activeLink = this.links[0];
     this.init();
   }
@@ -28,7 +30,7 @@ class TabsLink {
   constructor(element, parent) {
     this.element = element;
     this.tabs = parent;
-    this.tabsItem = this.parent.getTab(this.element.dataset.tab);  
+    this.tabsItem = parent.getTab(this.element.dataset.tab);  
     this.tabsItem = new TabsItem(this.tabsItem);
     this.element.addEventListener('click', () => {
       this.tabs.updateActive(this);
@@ -37,13 +39,13 @@ class TabsLink {
   }
 
   select() {
-    this.element.classList.add("tabs-link-selected");// Add a class named "tabs-link-selected" to the element
-    this.tabsItem.select();// Notice that we are using the select method on tabsItem   
+    this.element.classList.add("tabs-link-selected");
+    this.tabsItem.select();  
   }
 
   deselect() {
-    this.element.classList.remove("tabs-link-selected"); // Remove a class named "tabs-link-selected" from the element
-    this.tabsItem.deselect();// Notice that we are using the deselect method on tabsItem    
+    this.element.classList.remove("tabs-link-selected"); 
+    this.tabsItem.deselect(); 
   }
 }
 
@@ -53,17 +55,15 @@ class TabsItem {
   }
 
   select() {
-    this.element.classList.add("tabs-item-selected");// Add a class named "tabs-item-selected" to the element 
+    this.element.classList.add("tabs-item-selected");
     
   }
 
   deselect() {
-    this.element.classList.remove("tabs-item-selected");// Remove a class named "tabs-item-selected" from the element 
-    // Congrats, you finished all the instruction, check out your tab navigator!
+    this.element.classList.remove("tabs-item-selected");
   }
 }
 
-
-
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map( element => new Tabs(element));
+
