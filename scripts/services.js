@@ -37,11 +37,13 @@ class TabLink {
         });
     }
     activateTab() {
+        this.element.classList.add("selected");
         this.tabArr.forEach((tab) => {
             tab.classList.remove("hidden");
         });
     }
     deactivateTab() {
+        this.element.classList.remove("selected");
         this.tabArr.forEach((tab) => {
             tab.classList.add("hidden");
         });
