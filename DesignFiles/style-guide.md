@@ -3,55 +3,55 @@ Use this guide to help you navigate the design files.  In a professional work pl
 
 Font family can be found here: https://fonts.google.com/specimen/Roboto
 
-### GENERAL STYLES
-- Background: #FFFFFF
-- Color: #222222
-- Font Family: Roboto, Arial, sans-serif
+///### GENERAL STYLES
+ Background: #FFFFFF
+ Color: #222222
+ Font Family: Roboto, Arial, sans-serif
 
-## Page Specific
+//## Page Specific
 
-### Home Page
-- Recent Projects Gray Square: #D8D8D8
-- Button borders: #222222
+//### Home Page
+ Recent Projects Gray Square: #D8D8D8
+ Button borders: #222222
 
-### Services Page
-- Tab selected background: #5E9FB9
-- Tab Hover background: #222222
-- Tab Hover color: #FFF;
+//### Services Page
+ Tab selected background: #5E9FB9
+ Tab Hover background: #222222
+ Tab Hover color: #FFF;
 
-## Font Site Wide
+//## Font Site Wide
 
-### General Text
-- Font Weight: Regular
-- Font Size: 16px
-- Line Height: 24px
+//### General Text
+ Font Weight: Regular
+ Font Size: 16px
+ Line Height: 24px
 
-### Jumbotron Headers
-- Font Weight: Bold
-- Font Size: 64px
-- Line Height: 75px
-- Color: #FFFFFF
+//### Jumbotron Headers
+ Font Weight: Bold
+ Font Size: 64px
+ Line Height: 75px
+ Color: #FFFFFF
 
-### Sub Headers
-- Font Weight: Bold
-- Font Size: 28px
-- Color: #222222
+//### Sub Headers
+ Font Weight: Bold
+ Font Size: 28px
+ Color: #222222
    
-### Footer Headings
-- Font Weight: Regular
-- Font Size: 20px
-- Line Height: 24px
-- Color: #FFFFFF
+//### Footer Headings
+ Font Weight: Regular
+ Font Size: 20px
+ Line Height: 24px
+ Color: #FFFFFF
 
-### Footer Text
-- Font Weight: Regular
-- Font Size: 14px
-- Line Height: 26px
-- Color: #FFFFFF
+//### Footer Text
+ Font Weight: Regular
+ Font Size: 14px
+ Line Height: 26px
+ Color: #FFFFFF
 
-### Navigation Text (Expanded)
-- Font Weight: Bold
-- Font Size: 48px
-- Line Height: 85px
-- Color: #FFFFFF
-- Hover Color: #222222
+//### Navigation Text (Expanded)
+ Font Weight: Bold
+ Font Size: 48px
+ Line Height: 85px
+ Color: #FFFFFF
+ Hover Color: #222222
