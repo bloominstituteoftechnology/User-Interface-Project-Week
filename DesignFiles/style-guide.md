@@ -55,3 +55,6 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Line Height: 85px
 - Color: #FFFFFF
 - Hover Color: #222222
+
+
+#828282
