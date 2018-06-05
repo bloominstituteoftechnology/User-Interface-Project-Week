@@ -27,6 +27,21 @@ body {
     color: @general-black;
     text-transform: capitalize;
 }
+.mobile-img {
+    display: none;
+}
+@media @phone {
+    .img-wrapper {
+        width: 100%;
+    }
+    .desk-img {
+        display: none;
+    }
+    .mobile-img {
+        display: block;
+        width: 100%;
+    }
+}
 //SECTIONS FROM TOP TO BOTTOM
 
 
@@ -37,10 +52,11 @@ body {
 //JUMBO SECTION
 .jumbo-home {
     width: 100%;
-    .jumbo-img {
+    .desk-img {
         display: block;
         margin: 0 auto;
    }
+
    .container {
        position: relative;
    }
@@ -53,6 +69,17 @@ body {
        line-height: 7.5rem;
        margin-bottom: 45px;
        
+   }
+   @media @phone {
+       .desk-img {
+           display: none;
+       }
+       .jumbo-text {
+           font-size: 3.4rem;
+            line-height: 4.5rem;
+            margin-bottom: 25px;
+       }
+
    }
 } // jumbo-home
 
@@ -77,6 +104,24 @@ body {
     .row:nth-child(2) {
         display: flex;
         flex-direction: row-reverse;
+    }
+    @media @phone {
+        .pic-side {
+            margin-bottom: 24px;
+        }
+        .info-side {
+            height: 300px;
+        }
+        .row {
+        flex-direction: column-reverse;
+        }
+        .row:nth-child(2) {
+            flex-direction: column-reverse;
+        }
+
+        .btn-learn-more {
+            width: 100%;
+        }
     }
 } //learn-more
 
@@ -113,6 +158,26 @@ body {
         .project-title {
             left: 0;
             right: auto;
+        }
+    }
+
+    @media @phone {
+        .info {
+            width: 100%;
+        }
+        .row, .row:nth-child(2) {
+            .img-wrapper {
+                display: flex;
+                justify-content: center;
+            .project-title {
+                left: auto;
+                right: auto;
+                transform: translateY(90%);
+            }
+        }
+        }
+        .all-info {
+            margin-top: 100px;
         }
     }
     
@@ -167,5 +232,19 @@ footer {
     }
     .row {
         margin-bottom: 0;
+    }
+
+    @media @phone {
+        width: 100%;
+        padding-bottom: 24px;
+        .places {
+            flex-direction: column;
+        }
+        .city-name {
+            margin-top: 24px;
+        }
+        .copyright {
+            text-align: start;
+        }
     }
 }
