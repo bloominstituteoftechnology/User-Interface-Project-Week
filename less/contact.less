@@ -2,7 +2,6 @@
     .jumbotron {
         .jumbotron('../img/contact/contact-jumbotron.png', '../img/contact/contact-mobile-jumbotron.png');
         height: 245px;
-
         .banner {
             padding-bottom: 20px;
         }
@@ -27,12 +26,12 @@
             padding: 50px 2% 50px;
             margin-left: 8.3%;
             @media @mobile {
+                margin-left: auto;
+                margin-right: auto;
                 padding: 38px 4.1% 0px;
                 width: 100%;
             }
-
             &.left-panel {
-
                 form {
                     display: flex-box;
                     flex-flow: column nowrap;
@@ -46,11 +45,13 @@
                         display: block;
                         width: 100%;
                     }
-            
                     small {
                         color: @medium-gray;
+
+                        @media @mobile {
+                            font-size: 1.2rem;
+                        }
                     }
-            
                     input,
                     select,
                     textarea {
@@ -63,10 +64,15 @@
                     textarea {
                         height: 135px;
                     }
-            
                     .form-group {
                         padding-bottom: 35px;
                         min-width: 410px;
+
+                        @media @mobile {
+                            max-width: 290px;
+                            min-width: 290px;
+                            padding-bottom: 15px;
+                        }
                     }
                     .form-check {
                         input,
@@ -77,15 +83,16 @@
                     }
                     button {
                         margin-top: 28px;
-                        width: 135px;
+                        width: 100%;
+                        
+                        @media @mobile {
+                            padding: 15px 0px 15px;
+                        }
                     }
                 }
             }
-            
             &.right-panel {
-            
                 margin-left: 11.7%;
-            
                 .locations {
                     h3 {
                         font-size: 2rem;
@@ -98,16 +105,23 @@
                 .location {
                     padding-bottom: 35px;
                 }
+
+                @media @mobile {
+                    margin-left: auto;
+                    justify-content: left;
+                }
             }
         }
         h2,
         p,
         button {
-            padding: 15px 0px 15px
+            padding: 15px 0px 15px;
+            
+            @media @mobile {
+                padding-top: 0px;
+            }
         }
     }
-
-
 }
 
 //Form CSS from Bootstrap
