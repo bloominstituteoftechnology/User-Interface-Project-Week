@@ -1,6 +1,11 @@
 /* Your Code Goes Here */
 @import "reset";
 
+@nav-height: 50px;
+//@computed-offset: 520px;
+
+//NOTE need to come back to section out the LESS
+
 body {
   max-width: 1024px;
   font-family: Roboto, sans-serif;
@@ -8,17 +13,52 @@ body {
 }
 
 .custom-nav {
-  height: 50px;
-  margin-bottom: -50px;
-  padding-top: 35px;
+  height: @nav-height;
   padding-left: 50px;
+  padding-right: 50px;
   font-size: 1.2rem;
-  nav {
-    display: flex;
-    justify-content: space-between;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  .hamburger {
+    //border: 2px solid blue;
   }
 }
+
+.nav-scroll {
+  background: #9DA7B1;
+  opacity: 0.8;
+}
+
+.menu {
+  display: none;
+  background: #9DA7B1;
+  opacity: 0.8;
+  font-size: 2.5rem;
+  padding-top: 60px;
+  padding-bottom: 150px;
+
+  a {
+    display: block;
+    margin: 35px auto;
+    width: 160px;
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover {
+    color: brown;
+  }
+}
+
+.menu-toggle {
+  display: block;
+}
+
+.cta {
+  margin-top: -@nav-height;
 
 .cta-text {
   color: white;
@@ -31,6 +71,12 @@ body {
 
 .jumbo {
   width: 100%;
+}
+
+}
+
+.cta.nav-expanded {
+  margin-top: -@nav-height - 470px;
 }
 
 .container {
