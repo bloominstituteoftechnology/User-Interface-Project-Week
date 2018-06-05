@@ -1,66 +1,116 @@
 .contact {
     .jumbotron {
         .jumbotron('../img/contact/contact-jumbotron.png', '../img/contact/contact-mobile-jumbotron.png');
-    }
+        height: 245px;
 
+        .banner {
+            padding-bottom: 20px;
+        }
+    }
     .mid-content {
-        h2, h3 {
+        h2,
+        h3 {
             color: @dark;
         }
-            display: flex;
-            @media @mobile {
-                flex-direction: column;
-
-            }
-            .panel {
-                width: 50%;
-                padding: 50px 2% 50px;
-                @media @mobile {
-                    padding: 38px 4.1% 0px;
-                    width: 100%;
+        display: flex;
+        @media @mobile {
+            flex-direction: column;
+        }
+        .panel {
+            .header-text {
+                h2 {
+                    color: lighten(@dark, 10%);
+                    font-size: 2.2rem;
                 }
             }
-            h2,
-            p,
-            button {
-                padding: 15px 0px 15px
+            width: 50%;
+            padding: 50px 2% 50px;
+            margin-left: 8.3%;
+            @media @mobile {
+                padding: 38px 4.1% 0px;
+                width: 100%;
             }
+
+            &.left-panel {
+
+                form {
+                    display: flex-box;
+                    flex-flow: column nowrap;
+                    justify-content: space-between;
+                    font-size: 1.5rem;
+                    input,
+                    label,
+                    small,
+                    select,
+                    textarea {
+                        display: block;
+                        width: 100%;
+                    }
+            
+                    small {
+                        color: @medium-gray;
+                    }
+            
+                    input,
+                    select,
+                    textarea {
+                        font-size: 1.6rem;
+                        padding: 8px;
+                        .rounded-border;
+                        margin: 2px 0px;
+                        border: .75px solid @medium-gray;
+                    }
+                    textarea {
+                        height: 135px;
+                    }
+            
+                    .form-group {
+                        padding-bottom: 35px;
+                        min-width: 410px;
+                    }
+                    .form-check {
+                        input,
+                        label {
+                            display: inline-block;
+                            width: auto;
+                        }
+                    }
+                    button {
+                        margin-top: 28px;
+                        width: 135px;
+                    }
+                }
+            }
+            
+            &.right-panel {
+            
+                margin-left: 11.7%;
+            
+                .locations {
+                    h3 {
+                        font-size: 2rem;
+                    }
+                    p {
+                        padding-top: 4px;
+                        padding-bottom: 4px;
+                    }
+                }
+                .location {
+                    padding-bottom: 35px;
+                }
+            }
+        }
+        h2,
+        p,
+        button {
+            padding: 15px 0px 15px
         }
     }
 
-    .right-panel {
 
-        .header-text {
-            h2 {
-                color: lighten(@dark, 10%);
-                font-size: 2.2rem;
-            }
-        }
-
-
-        .locations {
-
-            h3 {
-                font-size: 2rem;
-            }
-
-            p {
-                padding-top: 4px;
-                padding-bottom: 4px;
-            }
-        }
-
-        .location {
-            padding-bottom: 35px;
-        }
-    }
-
-
-
-
+}
 
 //Form CSS from Bootstrap
-
 // .form-control {
 //     display: block;
 //     width: 100%;
@@ -73,7 +123,6 @@
 //     border: 1px solid #ced4da;
 //     border-radius: 0.25rem;
 //     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
 //     &:focus {
 //         color: #495057;
 //         background-color: #fff;
@@ -81,24 +130,19 @@
 //         outline: 0;
 //         box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 //     }
-
 //     &::placeholder {
 //         color: #6c757d;
 //         opacity: 1;
 //     }
 //   }
-
 //   .form-group {
 //     margin-bottom: 1rem;
 //   }
-
 //   .form-text {
 //     display: block;
 //     margin-top: 0.25rem;
 //   }
-
 //   //Button CSS from Bootstrap
-
 //   .btn {
 //     display: inline-block;
 //     font-weight: 400;
@@ -116,67 +160,51 @@
 //     border-radius: 0.25rem;
 //     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 // }
-
 // .btn:hover, .btn:focus {
 //     text-decoration: none;
 //   }
-  
 //   .btn:focus, .btn.focus {
 //     outline: 0;
 //     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 //   }
-
-  
 // .btn.disabled, .btn:disabled {
 //     opacity: 0.65;
 //   }
-  
 //   .btn:not(:disabled):not(.disabled) {
 //     cursor: pointer;
 //   }
-  
 //   .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
 //     background-image: none;
 //   }
-  
 //   a.btn.disabled,
 //   fieldset:disabled a.btn {
 //     pointer-events: none;
 //   }
-  
 //   .btn-primary {
 //     color: #fff;
 //     background-color: #007bff;
 //     border-color: #007bff;
 //   }
-  
 //   .btn-primary:hover {
 //     color: #fff;
 //     background-color: #0069d9;
 //     border-color: #0062cc;
 //   }
-  
 //   .btn-primary:focus, .btn-primary.focus {
 //     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 //   }
-  
 //   .btn-primary.disabled, .btn-primary:disabled {
 //     color: #fff;
 //     background-color: #007bff;
 //     border-color: #007bff;
 //   }
-  
 //   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 //   .show > .btn-primary.dropdown-toggle {
 //     color: #fff;
 //     background-color: #0062cc;
 //     border-color: #005cbf;
 //   }
-  
 //   .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
 //   .show > .btn-primary.dropdown-toggle:focus {
 //     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 //   }
-
-
-
