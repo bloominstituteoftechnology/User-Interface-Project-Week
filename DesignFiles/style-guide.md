@@ -50,7 +50,7 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Color: #FFFFFF
 
 ### Footer Background
-color: #777777
+color: #818181;
 
 ### Navigation Text (Expanded)
 - Font Weight: Bold
