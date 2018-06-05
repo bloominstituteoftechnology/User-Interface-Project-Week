@@ -19,7 +19,7 @@ class Tabs {
         return new TabsLink(link, this);
       });
       // Set the active link to the first item in the array
-      this.activeLink = this.links[1];
+      this.activeLink = this.links[0];
       // Nothing to update here, just notice we are invoking the init() method
       this.init();
     }
