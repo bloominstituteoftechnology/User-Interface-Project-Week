@@ -55,9 +55,16 @@ gulp.task('html', function() {
         stream: true
     }));
 });
+gulp.task('js', function() {
+    gulp.src('*.js')
+    .pipe(browserSync.reload({
+        stream: true
+    }));
+});
 gulp.task('watch', ['browserSync', 'less', 'html'], function () {
     gulp.watch('./less/**/*.less', ['less']);
     gulp.watch('*.html', ['html']);
+    gulp.watch('js/*.js', ['js']);
 });
 
 gulp.task('default', ['watch', 'jsPlaceModules', 'cssPlaceModules'], function () {
