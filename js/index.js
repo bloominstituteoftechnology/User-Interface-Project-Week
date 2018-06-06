@@ -1,5 +1,5 @@
 // JS goes here
-let nav = document.querySelector('.navigation');
+let nav = document.querySelector('.header');
 let hamburger = nav.querySelector('img');
 let navMenu = document.querySelector('.menu');
 
