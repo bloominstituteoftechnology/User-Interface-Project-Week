@@ -70,6 +70,7 @@ serviceButtonsRow  = Array.from(serviceButtonsRow).map( item => new ServiceButto
 let hamburgerBtn = document.querySelector('.hamburger-btn');
 let navigationExpanded = document.querySelector('.navigation-expanded');
 let closeBtn =  document.querySelector('.close-btn');
+let navigationBar = document.querySelector('.navigation');
 
 hamburgerBtn.addEventListener("click", function(){
 	navigationExpanded.style.display = "block";
@@ -78,4 +79,9 @@ hamburgerBtn.addEventListener("click", function(){
 
 closeBtn.addEventListener("click", function(){
         navigationExpanded.style.display = "none";
+});
+
+document.addEventListener("scroll", (e) => {
+		navigationBar.style.background = "#9DA7B1";
+		navigationBar.style.opacity = "0.95";
 });
