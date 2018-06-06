@@ -4,7 +4,6 @@ let nav = document.querySelector('nav');
 
 
 hamburger.addEventListener("click", () => {
-    // pageContents.classList.toggle("hidden");
     nav.classList.toggle("collapsed");
 });
 
