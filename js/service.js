@@ -77,7 +77,7 @@ class TabsLink{
 class Cards{
   constructor(el){
     this.element = el;
-    console.log(this.element)
+    // console.log(this.element)
 
   }
 
