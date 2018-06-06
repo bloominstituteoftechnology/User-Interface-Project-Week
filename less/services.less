@@ -3,3 +3,119 @@
 .services {
     background: blue;
 }
+
+.jumbo-services {
+    width: 100%;
+    max-width: 1024px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    background: url("../img/services/services-jumbotron.png");
+    margin: 0 auto;
+    background-repeat: no-repeat;
+}
+
+.slogan-services {
+    position: relative;
+    top: 112px;
+}
+
+.services-m-p {
+    margin-top: 52px;
+    padding-left: 3px;
+    p {
+        line-height: 2.5rem;
+    }
+}
+
+//TABS
+
+.tabs {
+    width: 100%;
+    .tabs-items {
+      width: 100%;
+      height: 397px;
+      display: flex;
+      justify-content: center;
+      padding-top: 51px;
+    }
+
+    .tabs-image {
+        padding-top: 35px;
+    }
+
+    .tabs-item {
+      display: none; 
+  
+      width: 100%;
+      .tabs-item-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        padding-bottom: 15px;
+      }
+
+      .tabs-item-description {
+          line-height: 2.6rem;
+      }
+    }
+    .tabs-item-selected {
+      display: block;
+      animation: 1.44s ease normal 1 forwards fadein;
+    }
+  
+    @keyframes fadein {
+      from {opacity: 0}
+      to {opacity: 1}
+    }
+  
+    .tabs-links {
+      display: flex;
+      background-color: @white;
+      justify-content: space-between;
+    }
+  
+    .tabs-link {
+      font-size: 2.0rem;
+      font-weight: 700;
+      margin-top: 13px;
+      height: 50px;
+      width: 185px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: @white;
+      border: 1px solid @text-color;
+      color: @text-color;
+      cursor: pointer;
+      &:hover {
+        animation: .69s ease normal 1 forwards highlightUnselected;
+      }
+  
+      @keyframes highlightUnselected {
+        from {background-color: @white}
+        to {background-color: @tab-hover-bg}
+
+        from {color: @text-color}
+        to {color: @tab-hover-color}
+      }
+    }
+    .tabs-link-selected {
+      z-index: 2;
+      border: 1px solid #B5C0C6;
+      background-color: @tab-selected-bg;
+      color: black;
+      &:hover {
+        animation: .69s ease normal 1 forwards highlightSelected;
+      }
+  
+      @keyframes highlightSelected {
+        from {background-color: @tab-selected-bg}
+        to {background-color: @tab-hover-bg}
+
+        from {color: @text-color}
+        to {color: @tab-hover-color}
+      }
+    }
+  }
+
