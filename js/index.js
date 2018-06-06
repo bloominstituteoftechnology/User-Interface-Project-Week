@@ -49,12 +49,14 @@ class TabsLink {
 
     select() {
         this.element.classList.add("tabs-link-selected");
+        this.element.classList.toggle("border");
 
         this.tabsItem.select();
     }
 
     deselect() {
         this.element.classList.remove("tabs-link-selected");
+        this.element.classList.toggle("border");
 
         this.tabsItem.deselect();
     }
