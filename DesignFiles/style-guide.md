@@ -3,11 +3,6 @@ Use this guide to help you navigate the design files.  In a professional work pl
 
 Font family can be found here: https://fonts.google.com/specimen/Roboto
 
-### Services Page
-- Tab selected background: #5E9FB9
-- Tab Hover background: #222222
-- Tab Hover color: #FFF;
-
 ### Navigation Text (Expanded)
 - Font Weight: Bold
 - Font Size: 48px
