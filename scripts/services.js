@@ -39,12 +39,14 @@ class TabLink {
     activateTab() {
         this.element.classList.add("selected");
         this.tabArr.forEach((tab) => {
-            tab.classList.remove("hidden");
+            // tab.classList.remove("hidden");
+            TweenLite.to(tab, 2, {className: "+=hidden"});
         });
     }
     deactivateTab() {
         this.element.classList.remove("selected");
         this.tabArr.forEach((tab) => {
+            TweenLite.to(tab, 2, {className: "-=hidden"});
             tab.classList.add("hidden");
         });
     }
