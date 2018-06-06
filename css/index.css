@@ -203,16 +203,9 @@ h3 {
 .jumbotron h4 {
   color: #FFFFFF;
 }
-.jumbotron nav {
-  display: none;
-}
 header,
 .banner {
   padding: 22px 8.4% 48px;
-}
-header {
-  display: flex;
-  justify-content: space-between;
 }
 footer {
   padding-top: 66px;
@@ -299,16 +292,43 @@ footer .copyright {
 footer .copyright input {
   padding-left: 0.8%;
 }
-.hidden {
-  display: none;
+.nav-spaceholder {
+  width: inherit;
+  height: 98px;
+  background-color: #98A4AF;
 }
-.nav-screen {
+nav {
+  width: inherit;
+  max-width: inherit;
+  z-index: 2;
+  background-color: #98A4AF;
+  opacity: .9;
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 1;
-  background-color: #98A4AF;
-  opacity: .9;
+  bottom: 0px;
+}
+nav h1,
+nav h2,
+nav h3,
+nav h4 {
+  color: #FFFFFF;
+}
+nav header {
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  width: inherit;
+}
+nav.collapsed {
+  height: 98px;
+  bottom: none;
+}
+nav.collapsed .nav-links {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
 }
 .home .jumbotron {
   background-image: url(../img/home/home-jumbotron.png);
