@@ -1,7 +1,12 @@
 .jumbo-home{
     width: 1024px;
     height: 598px;
-    background: red url("../img/home/home-jumbotron.png");  
+    background: red url("../img/home/home-jumbotron.png");
+    @media @phone{
+        width: 320px;
+        height: 260px;
+        background: url("../img/home/home-mobile-jumbotron.png")
+    }  
     .container{
         height:100%;
         position: relative;
@@ -10,6 +15,10 @@
         .jumbo-header;
         position: absolute;
         bottom: 49px;
+        @media @phone{
+            bottom: 20px;
+            left: 5%;
+        }
     }
     }
 }
@@ -18,12 +27,27 @@
     max-width: 855px;
     justify-content: center;
     margin: auto;
+    @media @phone{
+        max-width:320px;
+    }
     .top-content-one{
         display: flex;
         margin-top: 50px;
+
+        @media @phone {
+            flex-direction: column-reverse;
+            margin-top: 37px;
+            align-content: center;
+        }
+
         .text-content{
             align-self: center;
             margin-right: 3%;
+
+            @media @phone{
+                margin: 21px 5%;
+            }
+
             h4{
                 .sub-headers();
             }
@@ -39,10 +63,33 @@
                 width: 30%;
                 height: 45px;
                 cursor: pointer;
+                
+                @media @phone{
+                    width: 100%;
+                    margin-top: 26px;
+                }
 
                 &:hover {
                     background: black;
                     color: white;
+                }
+            }
+        }
+
+        .content-img{
+            @media @phone{
+                height:275px;
+                width:290px;
+                margin: auto;
+            }
+            img{
+                @media @phone{
+                    z-index:10;
+                    height: 275px;
+                    width:290px;
+                    box-sizing:border-box;
+                    padding-left: 290px;
+                    background: url("../img/home/home-mobile-img-1.png")
                 }
             }
         }
@@ -52,12 +99,24 @@
         display: flex;
         margin-top: 90px;
         justify-content: center;
+
+        @media @phone {
+            flex-direction: column;
+            margin-top: 37px;
+            align-content: center;
+        }
         .text-content{
             align-self: center;
-            margin-left: 4%;            
+            margin-left: 4%; 
+
+            @media @phone{
+                margin: 21px 5%;
+            }           
+
             h4{
                 .sub-headers();
             }
+
             p{
                 margin-top: 20px;
             }
@@ -71,25 +130,62 @@
                 height: 45px;
                 cursor: pointer;
 
+                @media @phone{
+                    width: 100%;
+                    margin-top: 26px;
+                }
+
                 &:hover {
                     background: black;
                     color: white;
                 }
             }
         }
+
+        .content-img{
+            @media @phone{
+                height:275px;
+                width:290px;
+                margin: auto;
+            }
+            img{
+                @media @phone{
+                    z-index:10;
+                    height: 275px;
+                    width:290px;
+                    box-sizing:border-box;
+                    padding-left: 290px;
+                    background: url("../img/home/home-mobile-img-2.png")
+                }
+            }
+        }
     }
 
     .bottom-content{
+        margin-bottom: 124px;
+        @media @phone{
+            align-content: center;
+            margin-bottom: 45px;
+        }
         .projects-header{
             .sub-headers();
             margin-top: 95px;
             margin-bottom: 47px;
+
+            @media @phone{
+                margin: 36px 0% 24px 4%;
+                }
         }
-        margin-bottom: 124px;
+    
 
         .bottom-content-image{
                 position: relative;
                 margin-bottom: 84px;
+                @media @phone{
+                    width:320px;
+                    height: 200px;
+                    margin-bottom: 107px;
+                }
             h4 {
                 .projects-square();
                 .sub-headers();
@@ -97,20 +193,78 @@
                 bottom: -35px;
                 right: -8px;
                 padding: 37px 62px;
+                @media @phone{
+                    bottom: -85px;
+                    left: 11px;
+                    width: 61%;
+                    padding: 37px 48px;
+                }
             }
         }
         p {
             margin:0 224px 0 212px;
             color: @off-black;
+            @media @phone{
+                width: 80%;
+                margin-left: 5%;
+            }
         }
-
+        .bottom-content-image.one{
+            img{
+                @media @phone{
+                    z-index:10;
+                    height: 200px;
+                    width:320px;
+                    box-sizing:border-box;
+                    padding-left: 320px;
+                    background: url("../img/home/home-mobile-villas-img.png")
+                }
+            }
+        }
         .bottom-content-image.two{
+            img{
+                @media @phone{
+                    z-index:10;
+                    height: 200px;
+                    width:320px;
+                    box-sizing:border-box;
+                    padding-left: 320px;
+                    background: url("../img/home/home-mobile-outskirts-img.png")
+                }
+            }
             h4{
                 bottom: -34px;
                 left: 9px;
                 padding: 35px 71px;
                 right: unset;
+                @media @phone{
+                    bottom: -85px;
+                    left: 11px;
+                    width: 61%;
+                    padding: 37px 48px;
+                }
             }
         }
+
+        .bottom-content-image.three{
+            img{
+                @media @phone{
+                    z-index:10;
+                    height: 200px;
+                    width:320px;
+                    box-sizing:border-box;
+                    padding-left: 320px;
+                    background: url("../img/home/home-mobile-the-blocks-img.png")
+                }
+            }
+
+            h4{
+                @media @phone{
+                    width: 63%;
+                    padding: 37px 45px;
+                }
+            }
         }
-} 
+    }
+}
+
