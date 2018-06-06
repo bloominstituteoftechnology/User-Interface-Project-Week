@@ -9,7 +9,7 @@ hamburger.addEventListener("click", () => {
 });
 
 
-function scrollLogic () {
+(function scrollLogic () {
     var last_known_scroll_position = 0;
     var ticking = false;
 
@@ -28,7 +28,7 @@ window.addEventListener('scroll', function handleScroll (e) {
 
   if (!ticking) {
 
-    window.requestAnimationFrame(function() {
+    window.requestAnimationFrame(function handleAnimation() {
       updateNavColor(last_known_scroll_position);
       ticking = false;
     });
@@ -38,6 +38,4 @@ window.addEventListener('scroll', function handleScroll (e) {
   }
   
 });
-}
-
-scrollLogic();
+})();
