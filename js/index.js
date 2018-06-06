@@ -102,9 +102,9 @@ tabNavs = Array.from(tabNavs).map(tabNav => new TabNavigator(tabNav));
 
 
 $(document).ready(function () {
-    var scroll_start = 0;
-    var startchange = $('.navbar-container');
-    var offset = startchange.offset();
+    let scroll_start = 0;
+    const startchange = $('.navbar-container');
+    const offset = startchange.offset();
     if (startchange.length) {
         $(document).scroll(function () {
             scroll_start = $(this).scrollTop();
