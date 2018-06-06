@@ -1,11 +1,11 @@
 nav {
   .grid();
   position: fixed;
+  z-index: 1;
   top: 0;
   height: 60px;
   overflow: hidden;
-  transition: all .3s linear;
-  z-index: 1;
+  transition: height .3s linear;
 
   @media @phone {
     height: 54px;
@@ -15,35 +15,35 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(157,167,177,0); // #9DA7B1
-    transition: all .3s linear;
-    z-index: 0;
+    transition: background-color .3s linear;
   }
 
   .nav__header-container {
-    position: relative;
     .grid-center-column();
-    pointer-events: none;
+    position: relative;
     z-index: 2;
+    pointer-events: none; 
   }
 
   .nav__header {
-    position: absolute;
-    top: 5px;
-    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0 0 0;
+    position: absolute;
+    top: 5px;
+    left: 0;
     width: 100%;
+    padding: 10px 0 0 0;
     color: @brand-color-white;
-    font-weight: @font-bold;
+    .font-bold();
     font-size: 2.4rem;
     line-height: 4.25rem;
-    transition: all .3s linear;
     pointer-events: none;
+    transition: all .3s linear;
 
     @media @phone {
       padding: 0 @gutter-width-phone;
@@ -52,19 +52,19 @@ nav {
 
     .nav__button {
       display: flex;
+      align-self: center;  
       width: 32px;
-      height: 25px;
+      height: 25px;  
+      padding: 0;
       border: 0;
       outline: 0;
-      align-self: center;
-      padding: 0;
-      cursor: pointer;
       background: none;
+      cursor: pointer;
       pointer-events: auto;
 
       .nav__button-closed {
-        width: 32px;
         margin: 2px 0;
+        width: 32px;
         transition: all .3s linear;
       }
 
@@ -79,22 +79,22 @@ nav {
   }  
 
   .nav__link-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
     pointer-events: auto;
 
     a {
-      font-size: 4.8rem;
-      line-height: 8.5rem;
-      font-weight: @font-bold;
       color: @brand-color-white;
+      .font-bold();
+      font-size: 4.8rem;
+      line-height: 8.5rem; 
       transition: all .3s linear;
 
       &:hover {
@@ -128,7 +128,6 @@ nav {
   }
 
   &.is-open {
-
     height: 100vh;
 
     .nav__background {
@@ -150,6 +149,7 @@ nav {
   }
 }
 
+// For preventing scroll on the body when the nav is open
 .body--nav-is-open {
   overflow: hidden;
 }

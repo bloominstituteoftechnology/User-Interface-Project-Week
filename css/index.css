@@ -144,36 +144,36 @@ html {
   font-size: 62.5%;
 }
 body {
+  color: #222;
+  background-color: #fff;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.4rem;
-  color: #222;
-  background-color: #fff;
 }
 h1 {
+  color: #fff;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 6.4rem;
   line-height: 7.5rem;
-  color: #fff;
 }
 h2 {
+  margin: 0 0 2.1rem 0;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 2.4rem;
-  margin: 0 0 2.1rem 0;
 }
 button {
-  border: 1px #222 solid;
-  outline: 0;
   align-self: flex-start;
   padding: 14px 25px;
-  font-size: 1.6rem;
   color: #222;
+  font-size: 1.6rem;
+  border: 1px #222 solid;
+  outline: 0;
+  word-break: break-all;
   cursor: pointer;
   transition: all .3s linear;
-  word-break: break-all;
 }
 @media only screen and (max-width: 420px) {
   button {
@@ -195,7 +195,7 @@ header {
 }
 @media only screen and (max-width: 420px) {
   header {
-    grid-template-columns: 1fr 15px minmax(290px, auto) 15px 1fr;
+    grid-template-columns: 1fr 15px minmax(290px, 100%) 15px 1fr;
   }
 }
 @media only screen and (max-width: 420px) {
@@ -211,6 +211,7 @@ header .header__content {
   grid-column: 3;
   padding: 0 0 50px 0;
   color: #fff;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 6.4rem;
   line-height: 7.5rem;
@@ -274,7 +275,7 @@ main {
 }
 @media only screen and (max-width: 420px) {
   main {
-    grid-template-columns: 1fr 15px minmax(290px, auto) 15px 1fr;
+    grid-template-columns: 1fr 15px minmax(290px, 100%) 15px 1fr;
   }
 }
 main .main__content {
@@ -290,44 +291,21 @@ main .main__content {
     margin: 0 0 35px 0;
   }
 }
-main .main__content.main__content--contact {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px 0;
-}
-@media only screen and (max-width: 420px) {
-  main .main__content.main__content--contact {
-    flex-direction: column;
-    margin: 0 0 27px 0;
-    padding: 32px 16px 0;
-  }
-}
-main .main__content.main__content--services {
-  display: flex;
-  flex-direction: column;
-  padding: 52px 0 66px;
-}
-@media only screen and (max-width: 420px) {
-  main .main__content.main__content--services {
-    padding: 32px 16px 27px;
-    line-height: 2.6rem;
-  }
-}
 footer {
+  background-color: #828282;
   display: grid;
   grid-template-columns: 1fr 85px minmax(auto, 854px) 85px 1fr;
   width: 100%;
-  background-color: #828282;
 }
 @media only screen and (max-width: 420px) {
   footer {
-    grid-template-columns: 1fr 15px minmax(290px, auto) 15px 1fr;
+    grid-template-columns: 1fr 15px minmax(290px, 100%) 15px 1fr;
   }
 }
 footer .footer__content {
-  grid-column: 3;
   display: flex;
   flex-direction: column;
+  grid-column: 3;
   padding: 60px 0 10px 0;
   color: #fff;
   font-size: 1.4rem;
@@ -432,15 +410,15 @@ nav {
   grid-template-columns: 1fr 85px minmax(auto, 854px) 85px 1fr;
   width: 100%;
   position: fixed;
+  z-index: 1;
   top: 0;
   height: 60px;
   overflow: hidden;
-  transition: all .3s linear;
-  z-index: 1;
+  transition: height .3s linear;
 }
 @media only screen and (max-width: 420px) {
   nav {
-    grid-template-columns: 1fr 15px minmax(290px, auto) 15px 1fr;
+    grid-template-columns: 1fr 15px minmax(290px, 100%) 15px 1fr;
   }
 }
 @media only screen and (max-width: 420px) {
@@ -452,17 +430,17 @@ nav .nav__background {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(157, 167, 177, 0);
-  transition: all .3s linear;
-  z-index: 0;
+  transition: background-color 0.3s linear;
 }
 nav .nav__header-container {
-  position: relative;
   grid-column: 3;
-  pointer-events: none;
+  position: relative;
   z-index: 2;
+  pointer-events: none;
 }
 @media only screen and (max-width: 420px) {
   nav .nav__header-container {
@@ -470,20 +448,21 @@ nav .nav__header-container {
   }
 }
 nav .nav__header {
-  position: absolute;
-  top: 5px;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0 0 0;
+  position: absolute;
+  top: 5px;
+  left: 0;
   width: 100%;
+  padding: 10px 0 0 0;
   color: #fff;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 4.25rem;
-  transition: all .3s linear;
   pointer-events: none;
+  transition: all .3s linear;
 }
 @media only screen and (max-width: 420px) {
   nav .nav__header {
@@ -493,19 +472,19 @@ nav .nav__header {
 }
 nav .nav__header .nav__button {
   display: flex;
+  align-self: center;
   width: 32px;
   height: 25px;
+  padding: 0;
   border: 0;
   outline: 0;
-  align-self: center;
-  padding: 0;
-  cursor: pointer;
   background: none;
+  cursor: pointer;
   pointer-events: auto;
 }
 nav .nav__header .nav__button .nav__button-closed {
-  width: 32px;
   margin: 2px 0;
+  width: 32px;
   transition: all .3s linear;
 }
 nav .nav__header .nav__button .nav__button-open {
@@ -516,22 +495,23 @@ nav .nav__header .nav__button .nav__button-open {
   transition: all .3s linear;
 }
 nav .nav__link-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
   pointer-events: auto;
 }
 nav .nav__link-layer a {
+  color: #fff;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 700;
   font-size: 4.8rem;
   line-height: 8.5rem;
-  font-weight: 700;
-  color: #fff;
   transition: all .3s linear;
 }
 nav .nav__link-layer a:hover {
@@ -599,9 +579,9 @@ nav.is-open .nav__header .nav__button .nav__button-open {
   }
 }
 .tab-navigator .tab-navigator__link-container .tab-navigator__link.tab-navigator__link--is-active {
+  border: 1px #d8d8d8 solid;
   color: #fff;
   background-color: #5e9fb9;
-  border: 1px #d8d8d8 solid;
 }
 .tab-navigator .tab-navigator__item-container {
   display: flex;
@@ -613,7 +593,7 @@ nav.is-open .nav__header .nav__button .nav__button-open {
   display: flex;
   justify-content: space-between;
   animation-delay: .1s;
-  animation: slideLeft 0.4s forwards;
+  animation: slideTabLeft 0.4s forwards;
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 @media only screen and (max-width: 420px) {
@@ -647,7 +627,7 @@ nav.is-open .nav__header .nav__button .nav__button-open {
     margin: 0;
   }
 }
-@keyframes slideLeft {
+@keyframes slideTabLeft {
   0% {
     opacity: 0;
     transform: translateX(20px);
@@ -657,7 +637,7 @@ nav.is-open .nav__header .nav__button .nav__button-open {
     transform: translateX(0px);
   }
 }
-.feature {
+.main--home .feature {
   display: flex;
   justify-content: space-between;
   margin: 0 0 50px 0;
@@ -665,13 +645,13 @@ nav.is-open .nav__header .nav__button .nav__button-open {
   color: #222;
 }
 @media only screen and (max-width: 420px) {
-  .feature {
+  .main--home .feature {
     flex-direction: column-reverse;
     margin: 0 0 10px 0;
     padding: 35px 0 0 0;
   }
 }
-.feature .feature__content {
+.main--home .feature .feature__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -679,135 +659,159 @@ nav.is-open .nav__header .nav__button .nav__button-open {
   padding: 0 27px 0 0;
 }
 @media only screen and (max-width: 420px) {
-  .feature .feature__content {
+  .main--home .feature .feature__content {
     width: 100%;
     padding: 0 15px;
   }
 }
-.feature .feature__content p {
+.main--home .feature .feature__content p {
   margin: 0 0 2.6rem 0;
 }
-.feature.feature--alt {
+.main--home .feature.feature--alt {
   flex-direction: row-reverse;
 }
 @media only screen and (max-width: 420px) {
-  .feature.feature--alt {
+  .main--home .feature.feature--alt {
     flex-direction: column-reverse;
   }
 }
-.feature.feature--alt .feature__content {
+.main--home .feature.feature--alt .feature__content {
   padding: 0 0 0 27px;
 }
 @media only screen and (max-width: 420px) {
-  .feature.feature--alt .feature__content {
+  .main--home .feature.feature--alt .feature__content {
     width: 100%;
     padding: 0 15px;
   }
 }
-.feature .feature__img {
+.main--home .feature .feature__img {
   max-width: 410px;
   width: 100%;
 }
 @media only screen and (max-width: 420px) {
-  .feature .feature__img {
+  .main--home .feature .feature__img {
     margin: 0 0 20px 0;
     padding: 0 15px;
   }
 }
-.h2--project-title {
+.main--home .h2--project-title {
   margin: 100px 0 45px 0;
 }
 @media only screen and (max-width: 420px) {
-  .h2--project-title {
+  .main--home .h2--project-title {
     margin: 52px 0 24px;
     padding: 0 15px;
   }
 }
-.project {
+.main--home .project {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 0 77px 0;
 }
 @media only screen and (max-width: 420px) {
-  .project {
+  .main--home .project {
     margin: 0 0 20px 0;
   }
 }
-.project .project__title {
+.main--home .project .project__title {
   align-self: flex-end;
+  margin: -5.5rem 0 4.9rem 0;
   padding: 35px 50px;
-  background-color: #d8d8d8;
   border: 1px solid #fff;
+  background-color: #d8d8d8;
   font-size: 2.4rem;
   letter-spacing: .8rem;
   text-transform: uppercase;
-  margin: -5.5rem 0 4.9rem 0;
 }
 @media only screen and (max-width: 420px) {
-  .project .project__title {
+  .main--home .project .project__title {
     display: flex;
     justify-content: center;
-    width: 90%;
     align-self: center;
+    width: 90%;
     margin: -2rem 15px 2.5rem;
     padding: 35px 0;
   }
 }
-.project .project__title.project__title--alt {
+.main--home .project .project__title.project__title--alt {
   align-self: flex-start;
 }
-.project .project__img {
+.main--home .project picture,
+.main--home .project .project__img {
   width: 100%;
 }
-.project p {
+.main--home .project p {
   max-width: 450px;
   margin: 0 0 2.4rem 0;
   font-size: 1.8rem;
 }
 @media only screen and (max-width: 420px) {
-  .project p {
+  .main--home .project p {
     padding: 0 15px;
   }
 }
-.services-intro {
+.main--services .main__content--services {
+  display: flex;
+  flex-direction: column;
+  padding: 52px 0 66px;
+}
+@media only screen and (max-width: 420px) {
+  .main--services .main__content--services {
+    padding: 32px 16px 27px;
+    line-height: 2.6rem;
+  }
+}
+.main--services .services-intro {
   margin: 0 0 45px 0;
 }
 @media only screen and (max-width: 420px) {
-  .services-intro {
+  .main--services .services-intro {
     margin: 0 0 35px 0;
   }
 }
-.contact-form {
+main.main--contact .main__content--contact {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+@media only screen and (max-width: 420px) {
+  main.main--contact .main__content--contact {
+    flex-direction: column;
+    margin: 0 0 27px 0;
+    padding: 32px 16px 0;
+  }
+}
+main.main--contact .contact-form {
   width: 48%;
   margin: 0 15px 0 0;
 }
 @media only screen and (max-width: 420px) {
-  .contact-form {
+  main.main--contact .contact-form {
     width: 100%;
   }
 }
-.contact-form h2 {
+main.main--contact .contact-form h2 {
   margin: 0 0 4rem 0;
 }
 @media only screen and (max-width: 420px) {
-  .contact-form h2 {
+  main.main--contact .contact-form h2 {
     margin: 0 0 5.2rem 0;
   }
 }
-.contact-form h4 {
+main.main--contact .contact-form h4 {
   margin: 0 0 .5rem 0;
 }
-.contact-form input[type='email'],
-.contact-form select,
-.contact-form textarea {
+main.main--contact .contact-form input[type='email'],
+main.main--contact .contact-form select,
+main.main--contact .contact-form textarea {
   width: 100%;
   outline: 0;
 }
-.contact-form input[type='radio'] {
+main.main--contact .contact-form input[type='radio'] {
   margin: 0 10px 0 0;
 }
-.contact-form input {
+main.main--contact .contact-form input {
   margin: 0 0 2px 0;
   padding: 9px;
   border-radius: 3px;
@@ -816,86 +820,89 @@ nav.is-open .nav__header .nav__button .nav__button-open {
   color: #828282;
   font-size: 1.5rem;
 }
-.contact-form p {
+main.main--contact .contact-form p {
   font-size: 1.3rem;
 }
-.contact-form label {
+main.main--contact .contact-form label {
   display: block;
   margin: 0 0 3rem 0;
 }
 @media only screen and (max-width: 420px) {
-  .contact-form label {
+  main.main--contact .contact-form label {
     margin: 0 0 2.5rem 0;
   }
 }
 @media only screen and (max-width: 420px) {
-  .contact-form label.contact-form__select {
+  main.main--contact .contact-form label.contact-form__select {
     margin: 0 0 1.5rem 0;
   }
 }
-.contact-form .label--radio {
+main.main--contact .contact-form .label--radio {
   margin: 0;
 }
-.contact-form select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+main.main--contact .contact-form select {
   padding: 7px 15px;
   border-radius: 3px;
   border: 1px solid #d8d8d8;
   outline: 0;
   color: #222;
   font-size: 1.7rem;
-}
-.contact-form select option {
   background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
-.contact-form .contact-form__select {
+main.main--contact .contact-form textarea {
+  padding: 9px;
+  font-size: 1.6rem;
+}
+main.main--contact .contact-form .contact-form__select {
   margin: 0 0 4rem 0;
 }
-.contact-form .contact-form__textarea {
+main.main--contact .contact-form .contact-form__textarea {
   display: block;
   margin: 0 0 1.5rem 0;
 }
-.contact-form .contact-form__radio-buttons {
+main.main--contact .contact-form .contact-form__radio-buttons {
   display: flex;
   flex-direction: column;
   margin: 20px 0 25px;
 }
-.contact-form button {
+main.main--contact .contact-form button {
   padding: 14px 41px;
 }
-.contact__addresses {
+main.main--contact .contact__addresses {
   width: 33%;
   padding: 10px 0 0 0;
 }
 @media only screen and (max-width: 420px) {
-  .contact__addresses {
+  main.main--contact .contact__addresses {
     width: 100%;
     padding: 50px 0 0 0;
   }
 }
-.contact__addresses h2 {
+main.main--contact .contact__addresses h2 {
   margin: 0 0 3.5rem 0;
 }
-.contact__addresses .contact__address {
+main.main--contact .contact__addresses .contact__address {
   margin: 0 0 37px 0;
   font-size: 1.8rem;
   line-height: 2.8rem;
 }
 @media only screen and (max-width: 420px) {
-  .contact__addresses .contact__address {
+  main.main--contact .contact__addresses .contact__address {
     margin: 0 0 38px 0;
   }
 }
 @media only screen and (max-width: 420px) {
-  .contact__addresses .contact__address:last-child {
+  main.main--contact .contact__addresses .contact__address:last-child {
     margin: 0;
   }
 }
-.contact__addresses .contact__address h4 {
+main.main--contact .contact__addresses .contact__address h4 {
+  margin: 0 0 .3rem 0;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 2.0rem;
   line-height: 2.4rem;
-  margin: 0 0 .3rem 0;
 }

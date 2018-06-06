@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// For grid specific mixins, see layout/grid
+// -----------------------------------------------------------------------------
+
 .font-regular() {
   font-family: @font-family;
   font-weight: @font-regular;
@@ -6,22 +10,4 @@
 .font-bold() {
   font-family: @font-family;
   font-weight: @font-bold;
-}
-
-.grid() {
-  display: grid;
-  grid-template-columns: 1fr @gutter-width-desktop minmax(auto, @max-width-desktop) @gutter-width-desktop 1fr;
-  width: 100%;
-
-  @media @phone {
-    grid-template-columns: 1fr @gutter-width-phone minmax(@min-width-phone, auto) @gutter-width-phone 1fr;
-  }
-}
-
-.grid-center-column() {
-  grid-column: 3;
-
-  @media @phone {
-    grid-column: 2 / span 3;
-  }
 }
