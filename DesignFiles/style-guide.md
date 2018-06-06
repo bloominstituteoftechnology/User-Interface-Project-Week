@@ -6,7 +6,7 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 ### GENERAL STYLES
 - Background: #FFFFFF
 - Color: #222222
-- Font Family: Roboto, Arial, sans-serif
+- Font Family: Roboto, Arial, sans-serif //NOTE come back to see if this can be converted to a variable
 
 ## Page Specific
 
@@ -21,7 +21,7 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 
 ## Font Site Wide
 
-### General Text
+### General Text 
 - Font Weight: Regular
 - Font Size: 16px
 - Line Height: 24px
@@ -36,7 +36,7 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Font Weight: Bold
 - Font Size: 28px
 - Color: #222222
-   
+
 ### Footer Headings
 - Font Weight: Regular
 - Font Size: 20px
