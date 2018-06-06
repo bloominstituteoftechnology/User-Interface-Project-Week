@@ -1,5 +1,8 @@
 // JS goes here 
 
+
+//**************NAV SYSTEM PART 1*******************//
+
 // When the user scrolls the page, execute myFunction 
 window.onscroll = function () {
     customFunc()
@@ -20,3 +23,7 @@ function customFunc() {
     navbar.classList.remove("sticky");
   }
 }
+
+//**************NAV SYSTEM PART 2*******************//
+
+let burgerIcon = document.getElementsByClassName("nav-hamburger2");
