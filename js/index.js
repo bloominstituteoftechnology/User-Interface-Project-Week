@@ -1,6 +1,8 @@
 class Hamburger {
     constructor(element) {
         this.element = element;
+        this.menuList = document.querySelector('.nav-menu');
+        this.menuList = new MenuList(this.menuList);
         this.btnState = {
             default: 'img/nav-hamburger.png',
             active: 'img/nav-hamburger-close.png'
@@ -8,9 +10,11 @@ class Hamburger {
         this.element.addEventListener('click', function () {
             if (this.element.getAttribute('src') === this.btnState.default) {
                 this.element.src = this.btnState.active;
+                this.menuList.show();
             }
             else {
                 this.element.src = this.btnState.default;
+                this.menuList.hide();
             }
         }.bind(this));
     }
@@ -18,13 +22,13 @@ class Hamburger {
 
 class MenuList {
     constructor(element) {
-
+        this.element = element;
     }
     show() {
-
+        this.element.style.display = 'flex';
     }
     hide() {
-        
+        this.element.style.display = 'none';
     }
 }
 let hamburgerBtn = document.querySelector('.btn-hamburger');
