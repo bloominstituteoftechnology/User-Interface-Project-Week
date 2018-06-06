@@ -96,3 +96,23 @@ class Slide {
 let tabNavs = document.querySelectorAll('.tab-navigator');
 console.log(tabNavs);
 tabNavs = Array.from(tabNavs).map(tabNav => new TabNavigator(tabNav));
+
+
+
+
+
+$(document).ready(function () {
+    var scroll_start = 0;
+    var startchange = $('.jumbo-home');
+    var offset = startchange.offset();
+    if (startchange.length) {
+        $(document).scroll(function () {
+            scroll_start = $(this).scrollTop();
+            if (scroll_start > offset.top) {
+                $(".navbar-container").css('background-color', '#9DA7B1');
+            } else {
+                $('.navbar-container').css('background-color', 'transparent');
+            }
+        });
+    }
+});
