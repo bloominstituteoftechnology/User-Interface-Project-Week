@@ -92,3 +92,39 @@ class Tabs {
   // map through each tabs element and create a new Tabs object.  Be sure to pass in a reference to the tab when creating the Tabs object.
   tabs = Array.from(tabs).map( tab => new Tabs(tab));
   
+
+
+// DROPDOWN / NAVIGATION
+
+class Dropdown {
+  constructor(element) {
+    // assign this.element to the dropdown element
+    this.element = element;
+    // assign the ".dropdown-button" class found in the dropdown element (look at the HTML for context)
+    this.button = this.element.querySelector(".dropdown-button");
+    // assign the reference to the ".dropdown-content" class found in the dropdown element
+    this.content = this.element.querySelector(".dropdown-content");
+    // Add a click handler to the button reference and call the toggleContent method.
+    this.buttonClick = this.button.addEventListener("click", () => {
+      this.toggleContent();
+    });
+  }
+
+  toggleContent() {
+    // Toggle the ".dropdown-hidden" class off and on
+    let dropdownContent = this.content;
+    if (Array.from(dropdownContent.classList).includes("dropdown-hidden")) {
+      TweenMax.set(dropdownContent, {height: "100vh", overflow: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"});
+      TweenMax.from(dropdownContent, .6, {height: 0, overflow: "hidden", display: "none"});
+      dropdownContent.classList.remove("dropdown-hidden");
+    }
+    else if (!Array.from(dropdownContent.classList).includes("dropdown-hidden")) {
+      dropdownContent.classList.add("dropdown-hidden");
+      TweenMax.to(dropdownContent, .266, {height: 0, overflow: "hidden", display: "none"});
+      TweenMax.from(dropdownContent, {height: "100vh", overflow: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"});
+    }
+  }
+}
+// Nothing to do here, just study what the code is doing and move on to the Dropdown class
+let dropdowns = document.querySelectorAll('.dropdown');
+dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
