@@ -1,9 +1,12 @@
 class Navigation {
-  constructor(element, window) {
+  constructor(element, window, document) {
     this.element = element;
     this.window = window;
+    this.document =document;
     this.ticking = false;
     this.triggerY = 50;
+    this.button = element.querySelector('button');
+    this.button = this.button.addEventListener('click', () => this.onClick());
   }
 
   init() {
@@ -15,6 +18,11 @@ class Navigation {
       this.window.requestAnimationFrame(() => this.changeBackground()); // to save computations
       this.ticking = true;
     }
+  }
+
+  onClick() {
+    this.element.classList.toggle('is-open');
+    this.document.body.classList.toggle('body--nav-is-open');
   }
 
   changeBackground() {
@@ -29,4 +37,5 @@ class Navigation {
     }
     this.ticking = false;    
   }
+  
 }

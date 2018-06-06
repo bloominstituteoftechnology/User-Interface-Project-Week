@@ -10,7 +10,7 @@
 
   function init() {
     const navElement = document.querySelector('nav');
-    const nav = new Navigation(navElement, window);
+    const nav = new Navigation(navElement, window, document);
     nav.init();
 
     const tabNavigatorElement = document.querySelector('.tab-navigator');

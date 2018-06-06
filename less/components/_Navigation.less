@@ -3,7 +3,7 @@ nav {
   position: fixed;
   top: 0;
   height: 60px;
-  background-color: rgba(157,167,177,0); // #9DA7B1
+  overflow: hidden;
   transition: all .3s linear;
   z-index: 1;
 
@@ -11,33 +11,145 @@ nav {
     height: 54px;
   }
 
-  &.is-scrolled {
-    top: -10px;
-    background-color: rgba(157,167,177,.95);
-
-    @media @phone {
-      top: 0;
-    }
+  .nav__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(157,167,177,0); // #9DA7B1
+    transition: all .3s linear;
+    z-index: 0;
   }
 
-  .nav__content {
+  .nav__header-container {
+    position: relative;
     .grid-center-column();
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .nav__header {
+    position: absolute;
+    top: 5px;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 0 0 0;
+    width: 100%;
     color: @brand-color-white;
     font-weight: @font-bold;
     font-size: 2.4rem;
     line-height: 4.25rem;
+    transition: all .3s linear;
+    pointer-events: none;
 
     @media @phone {
       padding: 0 @gutter-width-phone;
       font-size: 2.4rem;
     }
+
+    .nav__button {
+      display: flex;
+      width: 32px;
+      height: 25px;
+      border: 0;
+      outline: 0;
+      align-self: center;
+      padding: 0;
+      cursor: pointer;
+      background: none;
+      pointer-events: auto;
+
+      .nav__button-closed {
+        width: 32px;
+        margin: 2px 0;
+        transition: all .3s linear;
+      }
+
+      .nav__button-open {
+        position: absolute;
+        width: 24px;
+        margin: 0 4px;
+        opacity: 0;
+        transition: all .3s linear;
+      }
+    }
   }  
 
-  .nav__logo {
-    width: 32px;
+  .nav__link-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: auto;
+
+    a {
+      font-size: 4.8rem;
+      line-height: 8.5rem;
+      font-weight: @font-bold;
+      color: @brand-color-white;
+      transition: all .3s linear;
+
+      &:hover {
+        color: @brand-color-dark-gray;
+      }
+
+      &.is-active {
+        color: @brand-color-dark-gray;
+      }
+    }
   }
+
+  .nav__link-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &.is-scrolled {
+
+    .nav__header {
+      top: -1px;
+
+      @media @phone {
+        top: 5px;
+      }
+    }
+
+    .nav__background {
+      background-color: rgba(157,167,177,.95);
+    }
+  }
+
+  &.is-open {
+
+    height: 100vh;
+
+    .nav__background {
+      background-color: rgba(157,167,177,.95);
+    }
+
+    .nav__header {
+
+      .nav__button {
+        .nav__button-closed {
+          opacity: 0;
+        }
+        
+        .nav__button-open {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.body--nav-is-open {
+  overflow: hidden;
 }
