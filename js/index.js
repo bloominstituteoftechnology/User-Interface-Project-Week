@@ -1,12 +1,19 @@
 // JS goes here
 
 //Site-wide//
-class Expand {
+const overlay = document.querySelector(".overlay");
+const btn = document.querySelector(".hamburger");
+console.log(btn);
+btn.addEventListener("click", function() {
+  overlay.classList.toggle("hidden");
+});
+
+/*class Expand {
   constructor(element) {
     this.element = element;
     this.button = this.element.querySelectorAll(".hamburger");
     this.content = this.element.querySelectorAll(".expand-content");
-    this.button.addEventListener("click", () => {
+    this.button.addEventListener("click", function() {
       this.toggleContent();
     });
   }
@@ -16,13 +23,15 @@ class Expand {
   }
 }
 let expand = document.querySelectorAll('.menu');
-expand = Array.from(expand).map( element => new Expand(element));
+expand = Array.from(expand).map( element => new Expand(element));*/
 
 
 let navbar = document.querySelector(".navbar");
 window.addEventListener("scroll", () => {
   navbar.classList.add("navbar-scroll");
 });
+
+
 
 //Services page//
 class Tabs {
