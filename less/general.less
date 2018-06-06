@@ -152,8 +152,7 @@ footer {
 
 .nav-spaceholder {
     width: inherit;
-    height: 98px;
-    background-color: @navbar-gray;
+    height: @nav-height;
 }
 
 nav {
@@ -166,6 +165,7 @@ nav {
     top: 0px;
     left: 0px;
     bottom: 0px;
+
     h1,
     h2,
     h3,
@@ -180,20 +180,40 @@ nav {
         z-index: 2;
         width: inherit;
     }
-    &.collapsed {
-        // background: linear-gradient(@dark, @navbar-gray);
-        height: 98px;
-        bottom: none;
-        .nav-links {
-            display: flex;
-            flex-direction: column;
-            height: 0;
-            overflow: hidden;
 
-            a {
-                
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 100%;
+        max-width: inherit;
+        padding-bottom: @nav-height;
+        // position: fixed;
+        // top: 0px;
+
+        a {
+            color: @white;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 85px;
+            text-decoration: none;
+            &:hover {
+                color: @dark;
             }
         }
+
+    }
+    &.collapsed {
+        // background: linear-gradient(@dark, @navbar-gray);
+        height: @nav-height;
         bottom: none;
+        background-color: none;
+        .nav-links {
+            padding: 0;
+            height: 0;
+        }
     }
 }
