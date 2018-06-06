@@ -87,7 +87,7 @@ class TabsLink {
     this.buttonTabsItem = parent.getTab(this.element.dataset.btn);
     
     //// Create a new TabsItem object that passes in a buttonTabsItem value that you just created above
-    // this.buttonTabsItem = new TabsItem(this.buttonTabsItem);
+    this.buttonTabsItem = new TabsItem(this.buttonTabsItem);
     this.element.addEventListener('click', () => {
       this.buttonTabs.updateActive(this);
       // invoke the select() method on this
@@ -99,14 +99,14 @@ class TabsLink {
     //// Add a class named "button-tabs-link-selected" to the element
     this.element.classList.add("button-tabs-link-selected");
     //// Notice that we are using the select method on buttonTabsItem
-    // this.buttonTabsItem.select();
+    this.buttonTabsItem.select();
   }
 
   deselect() {
     ////Remove a class named "button-tabs-link-selected" from the element
-    this.element.classList.remove("buton-tabs-link-selected"); 
+    this.element.classList.remove("button-tabs-link-selected"); 
     // //// Notice that we are using the deselect method on buttonTabsItem
-    // this.buttonTabsItem.deselect();
+    this.buttonTabsItem.deselect();
   }
 }
 
