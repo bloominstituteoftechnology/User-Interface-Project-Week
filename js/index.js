@@ -33,10 +33,17 @@ tabs = Array.from(tabs).map( tab => new Tabs(tab));
 // Nav bar
 let hamburgerButton = document.querySelector(".hamburger img");
 let overlay = document.querySelector('.overlay');
+let closeButton = document.querySelector('.close-btn');
 
 hamburgerButton.addEventListener("click", function() {
-    overlay.style.display = "block";
+    overlay.style.display = "block"
 })
+
+closeButton.addEventListener("click", function() {
+    overlay.style.display = "none";
+})
+
+
 
 
 
