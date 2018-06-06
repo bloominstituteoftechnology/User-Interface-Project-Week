@@ -160,16 +160,21 @@ table {
   color: #FFFFFF;
 }
 .project-label {
-  font-weight: lighter;
+  font-weight: normal;
   background: #D8D8D8;
   z-index: 3;
-  height: 60px;
+  height: 80px;
   width: 35%;
-  padding: 15px;
+  padding: 23px;
   position: relative;
   top: -30px;
   text-align: center;
   letter-spacing: 4px;
+}
+@media (max-width: 400px) {
+  .project-label {
+    width: 90%;
+  }
 }
 /*
 ### Footer Text
@@ -190,6 +195,7 @@ html {
 }
 .container-fluid {
   margin: 0;
+  padding: 0!important;
   font-family: Roboto, Arial, sans-serif;
 }
 .container-fluid h4 {
@@ -260,13 +266,16 @@ h4 {
   line-height: 24px;
   color: #FFFFFF;
 }
+.footer .footer-content {
+  padding: 20px;
+}
 .footer .email {
   position: relative;
   height: auto;
 }
 .footer .office {
   width: 150px;
-  height: 100px;
+  height: auto;
   margin: 0;
 }
 .footer .office p {
@@ -275,52 +284,104 @@ h4 {
   line-height: 26px;
   color: #FFFFFF;
 }
+@media (max-width: 400px) {
+  .footer .office {
+    width: 300px;
+  }
+}
 .footer .copyright {
   margin: auto;
   font-size: 1.0rem;
 }
-.nav {
+.nav-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  top: 5px;
+  left: 0;
+}
+.nav-container .navbar .menu {
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 85px;
   color: #FFFFFF;
-  position: absolute;
   left: 0;
 }
-.nav:hover {
+.nav-container .navbar .menu:hover {
   color: #222222;
 }
-.jumbotron {
-  font-weight: bold;
-  font-size: 6.4rem;
-  line-height: 75px;
-  color: #FFFFFF;
-  padding: 0;
-  margin: 0 0 20px 0;
-  top: 0;
-  width: 100%;
-  position: relative;
-  text-align: left;
-}
-.jumbotron .menu {
-  position: relative;
-  top: 5px;
-  left: 0;
-}
-.jumbotron .menu .hamburger {
+.nav-container .navbar .hamburger {
+  width: auto;
   height: 20px;
-  left: 0;
+  right: 0;
+  cursor: pointer;
 }
-.jumbotron .logo {
+.nav-container .logo {
   color: #FFFFFF;
   font-size: 1.8rem;
 }
-.jumbotron .jumbo-text {
+/*.jumbotron {
+    .jumbo;
+    padding: 0;
+    margin: 0 0 20px 0;
+    top: 0;
+    width: 100%;
+   // height: 480px;
+    position: relative;
+    text-align: left;
+        */
+.jumbo-text {
   font-weight: bold;
   font-size: 6.4rem;
   line-height: 75px;
   color: #FFFFFF;
   padding: 0;
+  position: relative;
+  z-index: 5;
+  top: -160px;
+}
+.navbar-scroll {
+  background: #9DA7B1;
+  opacity: 95%;
+}
+.desktop {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 320px) {
+  .desktop {
+    display: none;
+  }
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 320px) {
+  .mobile {
+    display: flex;
+  }
+}
+.expand-content {
+  width: 100%;
+  position: absolute;
+  background-color: #D8D8D8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+.expand-link {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 18px;
+  text-decoration: none;
+  color: #222222;
+}
+.expand-link:hover {
+  color: #FFFFFF;
+  background-color: #222222;
 }
 .hidden {
   display: none;
@@ -328,17 +389,13 @@ h4 {
 /*
  *- Recent Projects Gray Square: #D8D8D8
 - Button borders: #222222*/
-.jumbotron {
-  background-image: url("../img/home/home-jumbotron.png");
-  background-size: cover;
-  padding: 0;
-  margin: 0 0 20px 0;
-  top: 0;
-  width: 100%;
-  height: 480px;
-  position: relative;
-  text-align: left;
-}
+/*.j-home {
+    .jumbo-bg(url("../img/home/home-mobile-jumbotron.png"), 0);
+     @media(min-width: 400px) {
+        .jumbo-bg(url("../img/home/home-jumbotron.png"), 480px);
+        
+    }
+}*/
 .main-content {
   box-sizing: border-box;
 }
@@ -350,6 +407,13 @@ h4 {
   justify-content: space-between;
   flex-wrap: wrap
         margin: 30px 0;
+}
+@media (max-width: 400px) {
+  .main-content .top-content .architects {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+  }
 }
 .main-content .top-content .architects .text-content {
   width: 320px;
@@ -364,15 +428,37 @@ h4 {
 .main-content .top-content .architects .text-content button:hover {
   background: #D8D8D8;
 }
-.main-content .top-content .architects img {
+.main-content .top-content .architects .desktop {
   width: 320px;
   height: 100%;
+}
+@media (max-width: 400px) {
+  .main-content .top-content .architects .desktop {
+    display: none;
+  }
+}
+.main-content .top-content .architects .mobile {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+@media (max-width: 400px) {
+  .main-content .top-content .architects .mobile {
+    display: flex;
+  }
 }
 .main-content .designs {
   display: flex;
   justify-content: space-between;
   margin: 30px 0;
   padding: 0;
+}
+@media (max-width: 400px) {
+  .main-content .designs {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
 }
 .main-content .designs .text-content {
   width: 320px;
@@ -387,9 +473,24 @@ h4 {
 .main-content .designs .text-content button:hover {
   background: #D8D8D8;
 }
-.main-content .designs img {
+.main-content .designs .desktop {
   width: 320px;
   height: 100%;
+}
+@media (max-width: 400px) {
+  .main-content .designs .desktop {
+    display: none;
+  }
+}
+.main-content .designs .mobile {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+@media (max-width: 400px) {
+  .main-content .designs .mobile {
+    display: flex;
+  }
 }
 .main-content .projects {
   display: flex;
@@ -403,19 +504,24 @@ h4 {
   color: #222222;
 }
 .main-content .projects p {
-  width: 50%;
+  width: 100%;
 }
 .main-content .projects .label {
-  font-weight: lighter;
+  font-weight: normal;
   background: #D8D8D8;
   z-index: 3;
-  height: 60px;
+  height: 80px;
   width: 35%;
-  padding: 15px;
+  padding: 23px;
   position: relative;
   top: -30px;
   text-align: center;
   letter-spacing: 4px;
+}
+@media (max-width: 400px) {
+  .main-content .projects .label {
+    width: 90%;
+  }
 }
 .main-content .projects .villas {
   display: flex;
@@ -426,14 +532,21 @@ h4 {
 .main-content .projects .villas .label {
   align-self: flex-end;
 }
+@media (max-width: 400px) {
+  .main-content .projects .villas .label {
+    align-self: center;
+  }
+}
 .main-content .projects .outskirts {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px 0;
 }
-.main-content .projects .outskirts .label {
-  align-self: flex-start;
+@media (max-width: 400px) {
+  .main-content .projects .outskirts .label {
+    align-self: center;
+  }
 }
 .main-content .projects .blocks {
   display: flex;
@@ -444,8 +557,10 @@ h4 {
 .main-content .projects .blocks img {
   position: relative;
 }
-.main-content .projects .blocks .label {
-  align-self: flex-end;
+@media (max-width: 400px) {
+  .main-content .projects .blocks .label {
+    align-self: center;
+  }
 }
 .main-content .projects img {
   width: 100%;
@@ -458,7 +573,8 @@ h4 {
   margin: 0 0 20px 0;
   top: 0;
   width: 100%;
-  height: 250px;
+  height: auto;
+  min-height: 250px;
   position: relative;
   text-align: left;
 }
@@ -467,7 +583,7 @@ h4 {
 }
 .tabs .tabs-items {
   width: 100%;
-  height: 400px;
+  height: 500px;
   display: flex;
   justify-content: space-around;
   padding-top: 60px;
@@ -478,7 +594,7 @@ h4 {
   width: 100%;
   margin-bottom: 80px;
 }
-.tabs .tabs-item .h4 {
+.tabs .tabs-item h4 {
   font-size: 2.4rem;
   font-weight: bold;
   padding-bottom: 10px;
@@ -489,11 +605,13 @@ h4 {
   justify-content: space-between;
 }
 .tabs .tabs-item-selected img {
-  width: 300px;
+  width: 280px;
+  height: auto;
 }
 .tabs .tabs-item-selected .tabs-item-description {
   width: 320px;
   padding: 15px 0;
+  letter-spacing: -1px;
 }
 @keyframes load {
   100% {
@@ -507,15 +625,12 @@ h4 {
   width: 100%;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #FFFFFF;
-  position: absolute;
-  left: 0;
 }
 .tabs .tabs-link {
   text-align: center;
   border: 1px solid #222222;
-  margin: 10px;
   padding: 5px 0.5%;
   width: 155px;
   height: 40px;
@@ -615,7 +730,8 @@ h4 {
   margin: 0 0 20px 0;
   top: 0;
   width: 100%;
-  height: 250px;
+  height: auto;
+  min-height: 250px;
   position: relative;
   text-align: left;
 }

@@ -1,4 +1,30 @@
-// JS goes hereclass Tabs
+// JS goes here
+
+//Site-wide//
+class Expand {
+  constructor(element) {
+    this.element = element;
+    this.button = this.element.querySelectorAll(".hamburger");
+    this.content = this.element.querySelectorAll(".expand-content");
+    this.button.addEventListener("click", () => {
+      this.toggleContent();
+    });
+  }
+
+  toggleContent() {
+    this.content.classList.toggle("hidden");
+  }
+}
+let expand = document.querySelectorAll('.menu');
+expand = Array.from(expand).map( element => new Expand(element));
+
+
+let navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", () => {
+  navbar.classList.add("navbar-scroll");
+});
+
+//Services page//
 class Tabs {
   constructor(element) {
     this.element = element;
