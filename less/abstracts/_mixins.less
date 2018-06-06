@@ -10,8 +10,12 @@
 
 .grid() {
   display: grid;
-  grid-template-columns: 1fr @gutter-width minmax(auto, @max-width) @gutter-width 1fr;
+  grid-template-columns: 1fr @gutter-width-desktop minmax(auto, @max-width-desktop) @gutter-width-desktop 1fr;
   width: 100%;
+
+  @media @phone {
+    grid-template-columns: 1fr @gutter-width-phone minmax(@min-width-phone, auto) @gutter-width-phone 1fr;
+  }
 }
 
 .grid-center-column() {

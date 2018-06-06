@@ -1,4 +1,3 @@
-// JS goes here
 class Navigation {
   constructor(element, window) {
     this.element = element;
@@ -8,10 +7,10 @@ class Navigation {
   }
 
   init() {
-    this.window.addEventListener('scroll', this.checkBackground.bind(this));
+    this.window.addEventListener('scroll', () => this.onScroll());
   }
 
-  checkBackground() {
+  onScroll() {
     if (!this.ticking) {
       this.window.requestAnimationFrame(() => this.changeBackground()); // to save computations
       this.ticking = true;
