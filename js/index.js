@@ -1,6 +1,5 @@
 // JS goes here
 
-
 //NAVBAR SCROLLTOP
 $(function () {
   $(document).scroll(function () {
@@ -11,14 +10,18 @@ $(function () {
 
 
 //NAVBAR TOGGLE HAMBURGER
-const toggleMenu = () => {
-  menu.classList.toggle('menu--open')
-}
 
-const menu = document.querySelector('.menu');
-const menuButton = document.querySelector('.menu-button');
-menuButton.addEventListener('click', toggleMenu);
+let overlay = document.querySelector(".overlay");
+let menuBtn = document.querySelector(".nav-btn");
+let closeBtn = document.querySelector(".close-btn");
 
+menuBtn.addEventListener('click', function() {
+  overlay.style.display = "block";
+});
+
+closeBtn.addEventListener('click', function() {
+  overlay.style.display = "none";
+});
 
 
 //SERVICES PAGE - TAB NAVIGATION
