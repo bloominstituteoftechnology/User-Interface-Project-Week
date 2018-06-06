@@ -12,6 +12,9 @@
     const navElement = document.querySelector('nav');
     const nav = new Navigation(navElement, window);
     nav.init();
+
+    const tabNavigatorElement = document.querySelector('.tab-navigator');
+    const tabNavigator = new TabNavigator(tabNavigatorElement);
   }
 
 }));
