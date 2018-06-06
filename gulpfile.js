@@ -21,7 +21,7 @@ function errorHandler(err) {
     this.emit('end');
 }
 gulp.task('less', function () {
-    return gulp.src('./less/*.less')
+    return gulp.src('./less/index.less')
         .pipe(customPlumber('Error Running Less'))
         .pipe(less())
         .pipe(gulp.dest('./css'))
