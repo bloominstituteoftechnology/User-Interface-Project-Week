@@ -1,6 +1,6 @@
 
 
-class Buttons {
+class Btnns {
     constructor(element) {
       this.element = element;
       this.links = this.element.querySelectorAll('.btns-link');
