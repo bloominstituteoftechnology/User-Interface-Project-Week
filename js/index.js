@@ -104,6 +104,11 @@ class Dropdown {
     this.button = this.element.querySelector(".dropdown-button");
     // assign the reference to the ".dropdown-content" class found in the dropdown element
     this.content = this.element.querySelector(".dropdown-content");
+
+    this.hamburger = this.element.querySelector(".hamburger");
+    this.hamburgerOpen = this.element.querySelector(".hamburger-open");
+    this.hamburgerClosed = this.element.querySelector(".hamburger-closed");
+
     // Add a click handler to the button reference and call the toggleContent method.
     this.buttonClick = this.button.addEventListener("click", () => {
       this.toggleContent();
@@ -113,14 +118,29 @@ class Dropdown {
   toggleContent() {
     // Toggle the ".dropdown-hidden" class off and on
     let dropdownContent = this.content;
+    let hamburgerOpen = this.hamburgerOpen;
+    let hamburgerClosed = this.hamburgerClosed;
+
     if (Array.from(dropdownContent.classList).includes("dropdown-hidden")) {
       TweenMax.set(dropdownContent, {height: "100vh", overflow: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"});
       TweenMax.from(dropdownContent, .6, {height: 0, overflow: "hidden", display: "none"});
+      
+      TweenMax.set(hamburgerOpen, {opacity:0});
+      TweenMax.from(hamburgerOpen, 0.25, {opacity: 1});
+      
+      TweenMax.set(hamburgerClosed, {opacity: 1});
+      TweenMax.from(hamburgerClosed, 0.25, {opacity: 0});
       dropdownContent.classList.remove("dropdown-hidden");
     }
     else if (!Array.from(dropdownContent.classList).includes("dropdown-hidden")) {
+      TweenMax.set(hamburgerOpen, {opacity: 1});
+      TweenMax.from(hamburgerOpen, 0.25, {opacity:0});
+
+      TweenMax.set(hamburgerClosed, {opacity: 0});
+      TweenMax.from(hamburgerClosed, 0.25, {opacity: 1});
+
       dropdownContent.classList.add("dropdown-hidden");
-      TweenMax.to(dropdownContent, .266, {height: 0, overflow: "hidden", display: "none"});
+      TweenMax.to(dropdownContent, .366, {height: 0, overflow: "hidden", display: "none"});
       TweenMax.from(dropdownContent, {height: "100vh", overflow: "auto", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"});
     }
   }
@@ -128,3 +148,24 @@ class Dropdown {
 // Nothing to do here, just study what the code is doing and move on to the Dropdown class
 let dropdowns = document.querySelectorAll('.dropdown');
 dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
+
+let hamburger = document.querySelector('.hamburger');
+hamburger = Array.from(hamburger).map( hamburger => new Hamburger(hamburger));
+
+
+
+// NAV BACKGROUND TRANSITIONS FROM TRANSPARENT TO GRAY ON SCROLL:
+
+window.onscroll = function() {myFunction()};
+
+let myNav = document.getElementById("myNavTransition");
+let sticky = myNav.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    myNav.classList.add("custom-sticky");
+
+  } else {
+    myNav.classList.remove("custom-sticky");
+  }
+}
