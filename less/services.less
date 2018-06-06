@@ -5,21 +5,43 @@
     height: 25rem;
     background: url("../img/services/services-jumbotron.png");
 
+    @media @phone {
+        background: url("../img/services/services-mobile-jumbotron.png");
+        height: 260px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;     
+    }
+
     .container {
         height: 100%;
         position: relative;
+
+  
 
         h1 {
             .jumbo-text;
             position: absolute;
             bottom: -2.7rem;
             margin-left: -17px;
+
+            @media @phone {
+                font-size: 3.3rem;
+            }
         }   
     }
 }
 
 .services {
     padding: 0;
+
+    @media @phone {
+        padding: 1.5rem;
+
+        .service-text {
+            margin-top: -3rem;
+            margin-bottom: -2rem;
+        }
+    }
     
     .include {
         margin-top: 5rem;
@@ -34,11 +56,20 @@
             display: flex;
             justify-content: space-between;
 
+            @media @phone {
+                flex-flow: wrap;
+            }
+
             .tabs-link {
                 padding: 1.3rem 1rem;
                 width: 19rem;              
                 .component-button;
                 cursor: pointer;
+
+                @media @phone {
+                    margin-top: 2rem;
+                    width: 100%;
+                }
 
                 &:hover {
                     color: @white;
@@ -54,6 +85,13 @@
 
         .tabs-items {
             margin-top: 5rem;
+
+            @media @phone {
+                .pre-construct-img {
+                    content: url("../img/services/services-tab-mobile-pre-construction-img.png");
+                }
+            }
+
             p {
                 margin-top: 1rem;
                 margin-bottom: 2rem;
@@ -67,8 +105,12 @@
             img {
                 position: absolute;
                 bottom: 0;
-            }
 
+                @media @phone {
+                    position: static;
+                    margin-bottom: -5rem;
+                }
+            }
             .tabs-item {
                 display: none;
             }
