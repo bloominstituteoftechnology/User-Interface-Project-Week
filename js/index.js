@@ -1,6 +1,6 @@
 // JS goes here
 
-let overlay = document.querySelector(".overlay");
+/* let overlay = document.querySelector(".overlay");
 let hamburger = document.querySelector(".hamburger");
 let closeBtn = document.querySelector(".close-btn");
 console.log(hamburger);
