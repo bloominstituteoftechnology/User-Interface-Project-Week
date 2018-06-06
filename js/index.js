@@ -1,3 +1,37 @@
+class Hamburger {
+    constructor(element) {
+        this.element = element;
+        this.btnState = {
+            default: 'img/nav-hamburger.png',
+            active: 'img/nav-hamburger-close.png'
+        };
+        this.element.addEventListener('click', function () {
+            if (this.element.getAttribute('src') === this.btnState.default) {
+                this.element.src = this.btnState.active;
+            }
+            else {
+                this.element.src = this.btnState.default;
+            }
+        }.bind(this));
+    }
+}
+
+class MenuList {
+    constructor(element) {
+
+    }
+    show() {
+
+    }
+    hide() {
+        
+    }
+}
+let hamburgerBtn = document.querySelector('.btn-hamburger');
+hamburgerBtn = new Hamburger(hamburgerBtn);
+
+
+
 
 class TabNavigator {
     constructor(element) {
@@ -25,14 +59,14 @@ class TabLink {
         this.element = element;
         this.parent = parent;
 
-        this.slides = this.parent.getSlide(this.element.dataset.topic);        
+        this.slides = this.parent.getSlide(this.element.dataset.topic);
         this.slides = Array.from(this.slides).map(slide => new Slide(slide));
         this.element.addEventListener('click', function () {
             this.select();
         }.bind(this));
 
     }
-   
+
     select() {
         this.parent.updateActive(this);
         this.element.classList.add('tab-active');
