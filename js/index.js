@@ -1,10 +1,12 @@
-// JS goes here
+//Function declaration for menu toggle capabilities
 function menuToggle() {
-  document.querySelector('.cta').classList.toggle('nav-expanded');
   document.querySelector('.menu').classList.toggle('menu-toggle');
-  document.querySelector('.custom-nav').classList.toggle('nav-scroll')
+  if (window.scrollY === 0) {
+    document.querySelector('.custom-nav').classList.toggle('nav-scroll');
+  }
 }
 
+//Toggles menu
 document.querySelector('.hamburger').addEventListener('click', (e) => {
   if (e.target.attributes.src.nodeValue === './img/nav-hamburger-close.png') {
     e.target.setAttribute('src', './img/nav-hamburger.png');
@@ -13,8 +15,9 @@ document.querySelector('.hamburger').addEventListener('click', (e) => {
   e.target.setAttribute('src', './img/nav-hamburger-close.png');
   menuToggle();
 }
-}) //Toggles menu
+})
 
+//Causes menu to disappear on scroll
 document.addEventListener('scroll', function() {
   document.querySelector('.custom-nav').classList.add('nav-scroll');
   if (window.scrollY === 0) {
@@ -22,8 +25,6 @@ document.addEventListener('scroll', function() {
   }
 });
 
-console.log(window.outerWidth);
-console.log(document.title);
 if (window.outerWidth <= 400 && document.title === 'Home') {
   document.querySelector('.jumbo').attributes.src.nodeValue = './img/home/home-mobile-jumbotron.png';
   document.querySelector('.home-img-1').attributes.src.nodeValue = './img/home/home-mobile-img-1.png';
@@ -32,7 +33,7 @@ if (window.outerWidth <= 400 && document.title === 'Home') {
   document.querySelector('.home-outskirts-img').attributes.src.nodeValue = './img/home/home-mobile-outskirts-img.png';
   document.querySelector('.home-the-blocks-img').attributes.src.nodeValue = './img/home/home-mobile-the-blocks-img.png';
 
-} 
+}
 
 if (window.outerWidth <= 400 && document.title === 'Services') {
   document.querySelector('.services-tab-pre-construction-img').attributes.src.nodeValue = './img/services/services-tab-mobile-pre-construction-img.png';
@@ -44,8 +45,6 @@ if (window.outerWidth <= 400 && document.title === 'Services') {
 if (window.outerWidth <= 400 && document.title === 'Contact Us') {
   document.querySelector('.contact-jumbotron').attributes.src.nodeValue = './img/contact/contact-mobile-jumbotron.png';
 }
-
-
 
 
 class Tabs {
@@ -80,7 +79,6 @@ class TabsLink {
     this.tabs = parent; //creates a reference to the parent element .tabs
     this.tabsItem = parent.getTab(this.element.dataset.tab); //passes in a reference to the tab links custom data attribute
     this.tabsItem = new TabsItem(this.tabsItem);
-    //console.log(this.tabs);
     this.element.addEventListener('click', () => {
       this.tabs.updateActive(this);
       this.select();
@@ -113,5 +111,4 @@ class TabsItem {
 }
 
 let tabs = document.querySelectorAll('.tabs');
-//console.log(tabs);
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
