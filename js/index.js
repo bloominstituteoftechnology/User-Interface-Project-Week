@@ -5,9 +5,12 @@ document.addEventListener("scroll", () => {
 
 let menu = document.querySelector(".menu")
 let navbtn = document.querySelector(".header img")
+let menubtn = document.querySelector(".menu img")
 navbtn.addEventListener("click", () => {
   header.classList.toggle("hidden")
+    menu.classList.toggle("hidden")
 })
-navbtn.addEventListener("click", () => {
-  menu.classList.toggle("hidden")
+menubtn.addEventListener("click", () => {
+  header.classList.toggle("hidden")
+    menu.classList.toggle("hidden")
 })
