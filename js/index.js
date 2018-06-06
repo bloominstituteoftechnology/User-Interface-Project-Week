@@ -22,6 +22,17 @@ document.addEventListener('scroll', function() {
   }
 });
 
+console.log(window.outerWidth);
+console.log();
+if (window.outerWidth <= 400) {
+  document.querySelector('.jumbo').attributes.src.nodeValue = './img/home/home-mobile-jumbotron.png';
+  document.querySelector('.home-img-1').attributes.src.nodeValue = './img/home/home-mobile-img-1.png';
+  document.querySelector('.home-img-2').attributes.src.nodeValue = './img/home/home-mobile-img-2.png';
+  document.querySelector('.home-villas-img').attributes.src.nodeValue = './img/home/home-mobile-villas-img.png';
+  document.querySelector('.home-outskirts-img').attributes.src.nodeValue = './img/home/home-mobile-outskirts-img.png';
+  document.querySelector('.home-the-blocks-img').attributes.src.nodeValue = './img/home/home-mobile-the-blocks-img.png';
+}
+
 
 
 
