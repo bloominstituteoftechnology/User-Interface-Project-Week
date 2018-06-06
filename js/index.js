@@ -29,4 +29,3 @@ const toggleMenu = function () {
  openMenu.classList.toggle('open');
 
 }
-
