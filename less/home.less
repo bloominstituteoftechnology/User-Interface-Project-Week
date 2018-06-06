@@ -1,6 +1,7 @@
 // Home Styles
 .container .home {
         width: 100%;
+        max-width: 855px;
 
         .col-sm-6 {
             display: flex;
@@ -8,11 +9,38 @@
             flex-direction: column;
             max-width: 50%;
             padding: 10px;
+
+            @media @phone {
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 100%;
+                padding: 0px;
+            }
+
+            p {
+
+                @media @phone {
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            h2 {
+                @media @phone {
+                    margin-left: 0px;
+                    margin-bottom: 10px;
+                }
+            }
         }
 
         .col-sm-4 {
             margin-top: 40px;
             margin-bottom: 30px;
+
+            @media @phone {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
 
         .col-sm-4 p {
@@ -26,16 +54,32 @@
             height: 120px;
             margin-top: 30px;
             margin-bottom: 20px;
-          
+
+            @media @phone {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            max-width: 100%;
+            margin-left: 0px; 
+            padding: 0px;
+            height: 100%;
+            margin-top: 0px;
+            margin-bottom:0px;
+            }
         }
         
         h2 {
             font-size: 2.4rem;
             font-weight: 700;
+
+            @media @phone {
+                margin-bottom: 20px;
+            }
         }
 
         img {
-            margin: 20px 0px 20px 0px;
+            margin: 0px 0px 20px 0px;
         }
 
         button {
@@ -43,6 +87,11 @@
             height: 50px;
             font-size: 1.6rem;
             background: @white;
+
+            @media @phone {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
     }
@@ -53,6 +102,12 @@
     margin: 0 auto;
     background: url("../img/home/home-jumbotron.png");
 
+    @media @phone {
+        background: url(../img/home/home-mobile-jumbotron.png);
+        width: 100%;
+        height: 260px;
+    }
+
     .container {
         height: 100%;
         position: relative;
@@ -62,23 +117,57 @@
         .jumbo-text;
         position: absolute;
         bottom: 49px;
+
+        @media @phone {
+            font-weight: 700;
+            font-size: 4rem;
+            line-height: 5.5rem;
+            color: #FFFFFF;
+            position: absolute;
+            bottom: 29px;
+            margin-left: 25px;
+        }
     }
 }
 
 // Other styles
+
+.row-home {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 10px;
+
+    @media @phone {
+        flex-direction: column-reverse;
+    }
+}
 
 .row {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
     padding: 10px;
-}  
 
-.full-width {
-    max-width: 1024px;
-    z-index: 0;
-    position: relative;
-    height: 220px;
+    @media @phone {
+        flex-direction: column;
+    }
+}
+
+.container .home .desktop {
+    display: block;
+        
+    @media @phone {
+        display: none;
+        }
+}
+
+.container .home .phone {
+    display: none;
+
+    @media @phone {
+        display: block;
+    }
 }
 
 .container .home .large-button1 {
@@ -91,6 +180,11 @@
     z-index: 10;
     background: rgb(221, 220, 220);
     border: 1px #222222;
+
+    @media @phone {
+        right: 50px;
+        margin-top: 230px;
+    }
 }
 
 .container .home .large-button2 {
@@ -102,6 +196,10 @@
     z-index: 10;
     background: rgb(221, 220, 220);
     border: 1px #222222;
+
+    @media @phone {
+        margin-left: 15px;
+    }
 }
 
 .container .home .large-button3 {
@@ -114,19 +212,22 @@
     z-index: 10;
     background: rgb(221, 220, 220);
     border: 1px #222222;
+
+    @media @phone {
+        right: 50px;
+    }
 }
 
 .footer {
     background: #828282;
     margin-top: 40px;
-    padding: 10px;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 2.6rem;
     color: @white;
 
     h3 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         font-weight: 700;
     }
 
@@ -136,6 +237,11 @@
         flex-direction: column;
         padding: 20px;
         height: 200px;
+
+        @media @phone {
+        padding: 10px;
+        height: auto;
+        }
     }
 
     .row {
@@ -145,5 +251,14 @@
     .copyright {
         vertical-align: center;
         margin-left: 180px;
+
+        @media @phone {
+            margin-left: 10px;
+        }
     }
+}
+
+input {
+    width: 100%;
+    height: 40px;
 }
