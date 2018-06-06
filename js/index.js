@@ -103,7 +103,7 @@ tabNavs = Array.from(tabNavs).map(tabNav => new TabNavigator(tabNav));
 
 $(document).ready(function () {
     var scroll_start = 0;
-    var startchange = $('.jumbo-home');
+    var startchange = $('.navbar-container');
     var offset = startchange.offset();
     if (startchange.length) {
         $(document).scroll(function () {
