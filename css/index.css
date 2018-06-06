@@ -134,6 +134,16 @@ table {
   border-spacing: 0;
 }
 /* Your Code Goes Here */
+h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  padding-bottom: 2rem;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 1.3rem;
+}
 * {
   box-sizing: border-box;
 }
@@ -143,7 +153,7 @@ html {
 body {
   background: #FFFFFF;
   color: #222222;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif !important;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -156,11 +166,11 @@ body {
 .navigation {
   position: fixed;
   display: flex;
+  z-index: 1;
   padding: 15px 0 0 4.5%;
   justify-content: space-between;
 }
 .navigation h1 {
-  display: flex;
   font-weight: 700;
   color: #FFFFFF;
   font-size: 2.5rem;
@@ -259,6 +269,48 @@ body {
   font-weight: 700;
   padding-bottom: 2rem;
 }
+.overlay {
+  background: #9da7b1;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  opacity: 0.95;
+  overflow: hidden;
+  z-index: 2;
+  display: none;
+}
+.overlay .overlay-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.overlay .overlay-content .nav {
+  display: flex;
+  flex-direction: column;
+}
+.overlay .overlay-content .nav a {
+  margin-bottom: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.overlay .overlay-content .nav a:hover {
+  color: #424141;
+}
+.overlay .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+.overlay .logo {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  color: white;
+}
 .jumboService {
   max-width: 1024px;
   height: 250px;
@@ -298,6 +350,26 @@ body {
 .serviceMainPar {
   padding-top: 5rem;
 }
-.contact {
-  background: orange;
+.contactMainArea {
+  display: flex;
+  justify-content: flex-start;
+}
+.contactMainArea #email,
+.contactMainArea .optionField,
+.contactMainArea #subject {
+  width: 97%;
+  padding: 1rem 0;
+}
+.contactMainArea .contactForm {
+  width: 50%;
+}
+.contactMainArea .contactForm placeholder {
+  padding-left: 20px;
+}
+.contactMainArea .radioField {
+  display: flex;
+  flex-direction: column;
+}
+.contactMainArea #submitForm {
+  padding: 1.5rem 4rem;
 }
