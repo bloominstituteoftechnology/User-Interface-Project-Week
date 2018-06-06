@@ -1,12 +1,12 @@
 // JS goes here
- var menuItems = document.querySelectorAll(".services-content-menu li");
- console.log(menuItems)
+var menuItems = document.querySelectorAll(".services-content-menu li");
 var innerContent = document.querySelectorAll(".services-inner-content");
-console.log(innerContent);
-
+var navBar = document.querySelector(".mynav");
+window.addEventListener("scroll", function(){
+  navBar.style.backgroundColor = "#9DA7B1";
+  navBar.style.opacity = ".95";
+});
 menuItems.forEach(function (button,index){
-
-
   button.addEventListener("click", function(){
     if(button.dataset.content == "false"){
       // add hidden attr to all content
