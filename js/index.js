@@ -1,5 +1,5 @@
 // JS goes here
-/* When the user clicks on the button, 
+/* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
@@ -18,3 +18,9 @@ window.onclick = function(event) {
     }
   }
 };
+
+// $(".menu-toggle").on("click", function() {
+//   $(this).toggleClass("on");
+//   $(".menu-section").toggleClass("on");
+//   $("nav ul").toggleClass("hidden");
+// });
