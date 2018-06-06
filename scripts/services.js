@@ -39,14 +39,25 @@ class TabLink {
     activateTab() {
         this.element.classList.add("selected");
         this.tabArr.forEach((tab) => {
-            // tab.classList.remove("hidden");
-            TweenLite.to(tab, 2, {className: "+=hidden"});
+
+            tab.classList.remove("hidden"); //just removes display: none
+            let oldHeight = tab.clientHeight;
+            oldHeight = "" + oldHeight + "px";
+            TweenMax.set(tab, {height: 0, opacity: 0});
+            TweenMax.to(tab, 2, {height: oldHeight , opacity: 1});
+
+            //other method that did not work
+            // TweenMax.set(tab, {height: "auto", opacity: 1});
+            // TweenMax.from(tab, 2, {height: 0, opacity: 0});
+
+
+
         });
     }
     deactivateTab() {
         this.element.classList.remove("selected");
         this.tabArr.forEach((tab) => {
-            TweenLite.to(tab, 2, {className: "-=hidden"});
+            TweenMax.to(tab, 2, {opacity: 0});
             tab.classList.add("hidden");
         });
     }
