@@ -12,11 +12,3 @@ headrMenu.addEventListener('click', (e) =>{
     }
     isOpen = !isOpen;
 });
-
-let sections = document.querySelectorAll('.section__flex');
-sections.forEach(section => {
-    
-         console.log(section);
-        // TweenMax.from(section, time, {display: 'none', opacity: 0});
-});
-console.log(sections);

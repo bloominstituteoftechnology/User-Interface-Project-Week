@@ -44,14 +44,17 @@ class Button{
 class Img{
     constructor(img){
         this.img = img;
+
     }
     select(){
-        this.img.style.display = 'block';
+        TweenMax.to(this.img, 0.5, {opacity: 1, display: 'block', delay: 0.2});
+
     }
     deselect(){
-        this.img.style.display = 'none';
+        TweenMax.to(this.img, 0.2, {opacity: 0, display: 'none'});
     }
 }
 
 let services = document.querySelectorAll('.services');
 services = Array.from(services).map(service => (new Service(service)));
+

@@ -136,11 +136,18 @@ table {
 }
 /* Your Code Goes Here */
 body {
-  position: absolute;
+  position: relative;
   background-color: #FFF;
   color: #222;
   line-height: 2.4rem;
   width: 100%;
+  min-height: 100%;
+}
+.width-100 {
+  width: 100%;
+}
+.border-bottom-grey {
+  border-bottom: 1px solid lightgrey;
 }
 html,
 body {
@@ -524,6 +531,12 @@ h3 {
   color: #FFF;
   text-align: center;
   padding: 4rem 0;
+  height: 24rem;
+}
+@media (max-width: 400px) {
+  .footer {
+    height: auto;
+  }
 }
 .footer__flex {
   display: flex;
@@ -561,6 +574,82 @@ h3 {
   font-size: 1.4rem;
   line-height: 2.6rem;
   font-weight: lighter;
+}
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(150deg, teal, white);
+}
+@media (min-width: 1200px) {
+  .carousel {
+    width: 1200px;
+  }
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  background-color: teal;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: teal;
+  background-color: white;
+  border: 2px solid teal;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  width: 100%;
+  display: none;
+}
+.carousel .img-show {
+  display: block;
+}
+.pause {
+  position: relative;
+  top: -35%;
+  left: 91px;
+  color: white;
+  cursor: pointer;
+  background: black;
+  border-radius: 58%;
+  padding: 9px 6px;
+  font-size: 9px;
+}
+.play {
+  position: relative;
+  top: -35%;
+  left: 191px;
+  color: white;
+  cursor: pointer;
+  background: black;
+  border-radius: 58%;
+  padding: 9px 6px;
+  font-size: 9px;
 }
 .margin-r-sm {
   margin-right: 1rem;
