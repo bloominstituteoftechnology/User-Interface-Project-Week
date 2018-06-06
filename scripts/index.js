@@ -7,13 +7,11 @@ hamburger.addEventListener("click", () => {
     nav.classList.toggle("collapsed");
 });
 
-
 (function scrollLogic () {
     var last_known_scroll_position = 0;
     var ticking = false;
 
 function updateNavColor(scroll_pos) {
-  console.log(scroll_pos);
   if (scroll_pos === 0) {
       nav.classList.remove('scrolled');
   } else {

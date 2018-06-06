@@ -47,7 +47,6 @@
                     }
                     small {
                         color: @medium-gray;
-
                         @media @mobile {
                             font-size: 1.2rem;
                         }
@@ -67,7 +66,6 @@
                     .form-group {
                         padding-bottom: 35px;
                         min-width: 410px;
-
                         @media @mobile {
                             max-width: 290px;
                             min-width: 290px;
@@ -80,44 +78,38 @@
                             display: inline-block;
                             width: auto;
                         }
+                    } //Experimental Custom Radio CSS
+                    // [type="radio"]:checked {
+                    //     /* styles here */
+                    //  }
+                    [type="radio"] {
+                        border: 0;
+                        clip: rect(0 0 0 0);
+                        height: 1px;
+                        margin: -1px;
+                        overflow: hidden;
+                        padding: 0;
+                        position: absolute;
+                        width: 1px;
                     }
-                //Experimental Custom Radio CSS
-
-                // [type="radio"]:checked {
-                //     /* styles here */
-                //  }
-
-                [type="radio"] {
-                    border: 0; 
-                    clip: rect(0 0 0 0); 
-                    height: 1px; margin: -1px; 
-                    overflow: hidden; 
-                    padding: 0; 
-                    position: absolute; 
-                    width: 1px;
-                  }
-
-                  [type="radio"] + span::before {
-                      content: '';
-                      display: inline-block;
-                      width: 1rem;
-                      height: 1rem;
-                      vertical-align: -0.025rem;
-                      border-radius: 1rem;
-                      border: .5px solid;
-                      box-shadow: 0 0 0 0.15rem @dark;
-                      margin-right: 0.75rem;
-                      transition: 0.5s ease all;
-                  }
-
-                  [type="radio"]:checked + span::before {
-                    background: @dark;
-                  }
-
+                    [type="radio"]+span::before {
+                        content: '';
+                        display: inline-block;
+                        width: 1rem;
+                        height: 1rem;
+                        vertical-align: -0.025rem;
+                        border-radius: 1rem;
+                        border: .5px solid @medium-gray;
+                        margin-right: 0.75rem;
+                        transition: 0.5s ease all;
+                    }
+                    [type="radio"]:checked+span::before {
+                        border-color: @dark-gray;
+                        background: @dark;
+                    }
                     button {
                         margin-top: 28px;
                         width: 100%;
-                        
                         @media @mobile {
                             padding: 15px 0px 15px;
                         }
@@ -138,7 +130,6 @@
                 .location {
                     padding-bottom: 35px;
                 }
-
                 @media @mobile {
                     margin-left: auto;
                     justify-content: left;
@@ -149,7 +140,6 @@
         p,
         button {
             padding: 15px 0px 15px;
-            
             @media @mobile {
                 padding-top: 0px;
             }
