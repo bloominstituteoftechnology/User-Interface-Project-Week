@@ -3,8 +3,12 @@ let hamburger = document.querySelector('.hamburger');
 let hamburgerImage = document.querySelector('.navbar img')
 
 window.addEventListener('scroll', ()=>{
-	navbar.style.background = '#777';
-	navbar.style.opacity = '.95';
+    if (window.scrollY < 2){
+       navbar.style.background = null;
+    } else {
+        navbar.style.background = '#777';
+        navbar.style.opacity = '.95';
+    }
 })
 
 hamburger.addEventListener('click', ()=> {
