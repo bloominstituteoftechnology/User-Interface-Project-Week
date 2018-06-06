@@ -14,11 +14,28 @@ menuButton.addEventListener("click", () => {
 class Tabs {
   constructor(element){
     this.element = element;
-    
+    this.buttons = document.querySelectorAll(".tab-button");
+    this.buttons = Array.from(this.buttons).map(button => new ButtonLink(button,this));
+    this.CurrentButton = this.buttons[0];
+    this.init();
   }
+
+  init(){
+
+  }
+
+  updateActive(newActive) {
+    this.activeButton.deselect();
+    this.activeButton = newActive;
+  }
+
+  getTab(data) {
+    return this.element.querySelector(`.tab-item[data-tab="${data}"]`)
+  }
+
 }
 
-class TabLink {
+class ButtonLink {
 
 }
 
@@ -27,5 +44,5 @@ class TabItem{
 }
 
 
-let tabs = document.querySelectorAll(".tab-button");
+let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
