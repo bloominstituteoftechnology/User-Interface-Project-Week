@@ -1,5 +1,4 @@
 // JS goes here
-
 class ServiceButtonRow {
   constructor(element) {
     this.element = element;
@@ -67,3 +66,16 @@ class ButtonContent {
 
 let serviceButtonsRow= document.querySelectorAll('.service-btn-row');
 serviceButtonsRow  = Array.from(serviceButtonsRow).map( item => new ServiceButtonRow(item));
+
+let hamburgerBtn = document.querySelector('.hamburger-btn');
+let navigationExpanded = document.querySelector('.navigation-expanded');
+let closeBtn =  document.querySelector('.close-btn');
+
+hamburgerBtn.addEventListener("click", function(){
+	navigationExpanded.style.display = "block";
+});
+
+
+closeBtn.addEventListener("click", function(){
+        navigationExpanded.style.display = "none";
+});
