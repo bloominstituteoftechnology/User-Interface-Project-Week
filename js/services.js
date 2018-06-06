@@ -49,10 +49,11 @@ class ServicesText {
     this.element = element;
   }
   selectService() {
-    this.element.style = 'display: null';
+    this.element.style.display = null;
+    this.element.classList.remove('hide');
   }
   deselectService() {
-    this.element.style = 'display: none';
+    this.element.style.display = 'none';
   }
 }
 
