@@ -44,7 +44,7 @@ class TabLink {
             let oldHeight = tab.clientHeight;
             oldHeight = "" + oldHeight + "px";
             TweenMax.set(tab, {height: 0, opacity: 0});
-            TweenMax.to(tab, 2, {height: oldHeight , opacity: 1});
+            TweenMax.to(tab, 5, {height: oldHeight , opacity: 1});
 
             //other method that did not work
             // TweenMax.set(tab, {height: "auto", opacity: 1});
@@ -57,7 +57,7 @@ class TabLink {
     deactivateTab() {
         this.element.classList.remove("selected");
         this.tabArr.forEach((tab) => {
-            TweenMax.to(tab, 2, {opacity: 0});
+            TweenMax.to(tab, 5, {opacity: 0, height: 0});
             tab.classList.add("hidden");
         });
     }
