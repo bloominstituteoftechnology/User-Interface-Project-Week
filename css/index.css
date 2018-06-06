@@ -166,12 +166,14 @@ h2 {
 }
 button {
   border: 1px #222 solid;
+  outline: 0;
   align-self: flex-start;
   padding: 14px 25px;
   font-size: 1.6rem;
   color: #222;
   cursor: pointer;
   transition: all .3s linear;
+  word-break: break-all;
 }
 @media only screen and (max-width: 420px) {
   button {
@@ -245,6 +247,26 @@ header.header--contact .header__content {
     padding: 0 0 23px 15px;
   }
 }
+header.header--services {
+  height: 250px;
+  background: url(../img/services/services-jumbotron.png) no-repeat center center;
+  background-size: cover;
+}
+@media only screen and (max-width: 420px) {
+  header.header--services {
+    height: 260px;
+    background: url(../img/services/services-mobile-jumbotron.png) no-repeat;
+    background-size: cover;
+  }
+}
+header.header--services .header__content {
+  padding: 0 0 15px 0;
+}
+@media only screen and (max-width: 420px) {
+  header.header--services .header__content {
+    padding: 0 0 23px 15px;
+  }
+}
 main {
   display: grid;
   grid-template-columns: 1fr 85px minmax(auto, 854px) 85px 1fr;
@@ -278,6 +300,17 @@ main .main__content.main__content--contact {
     flex-direction: column;
     margin: 0 0 27px 0;
     padding: 32px 16px 0;
+  }
+}
+main .main__content.main__content--services {
+  display: flex;
+  flex-direction: column;
+  padding: 52px 0 66px;
+}
+@media only screen and (max-width: 420px) {
+  main .main__content.main__content--services {
+    padding: 32px 16px 27px;
+    line-height: 2.6rem;
   }
 }
 footer {
@@ -449,6 +482,80 @@ nav .nav__content {
 nav .nav__logo {
   width: 32px;
 }
+.tab-navigator {
+  display: flex;
+  flex-direction: column;
+}
+.tab-navigator .tab-navigator__link-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 50px 0;
+}
+@media only screen and (max-width: 420px) {
+  .tab-navigator .tab-navigator__link-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 0 27px 0;
+  }
+}
+.tab-navigator .tab-navigator__link-container .tab-navigator__link {
+  width: 21.5%;
+  padding: 14px 5px;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+@media only screen and (max-width: 420px) {
+  .tab-navigator .tab-navigator__link-container .tab-navigator__link {
+    width: 100%;
+    margin: 0 0 18px 0;
+  }
+}
+.tab-navigator .tab-navigator__link-container .tab-navigator__link.tab-navigator__link--is-active {
+  color: #fff;
+  background-color: #5e9fb9;
+  border: 1px #d8d8d8 solid;
+}
+.tab-navigator .tab-navigator__content-container {
+  display: flex;
+}
+.tab-navigator .tab-navigator__content-container .tab-navigator__content {
+  display: none;
+}
+.tab-navigator .tab-navigator__content-container .tab-navigator__content.tab-navigator__content--is-active {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 420px) {
+  .tab-navigator .tab-navigator__content-container .tab-navigator__content.tab-navigator__content--is-active {
+    flex-direction: column;
+  }
+}
+.tab-navigator .tab-navigator__content-container .tab-navigator__content-text {
+  width: 50%;
+  padding: 0 15px 0 0;
+}
+@media only screen and (max-width: 420px) {
+  .tab-navigator .tab-navigator__content-container .tab-navigator__content-text {
+    width: 100%;
+    padding: 0;
+  }
+}
+.tab-navigator .tab-navigator__content-container .tab-navigator__content-text h2 {
+  margin: 0 0 1.6rem 0;
+}
+.tab-navigator .tab-navigator__content-container .tab-navigator__content-text p {
+  margin: 0 0 2.5rem 0;
+  line-height: 2.6rem;
+}
+.tab-navigator .tab-navigator__content-container .tab-navigator__content-img {
+  width: 100%;
+  margin: 3.8rem 0 0 0;
+}
+@media only screen and (max-width: 420px) {
+  .tab-navigator .tab-navigator__content-container .tab-navigator__content-img {
+    margin: 0;
+  }
+}
 .feature {
   display: flex;
   justify-content: space-between;
@@ -560,6 +667,14 @@ nav .nav__logo {
 @media only screen and (max-width: 420px) {
   .project p {
     padding: 0 15px;
+  }
+}
+.services-intro {
+  margin: 0 0 45px 0;
+}
+@media only screen and (max-width: 420px) {
+  .services-intro {
+    margin: 0 0 35px 0;
   }
 }
 .contact-form {

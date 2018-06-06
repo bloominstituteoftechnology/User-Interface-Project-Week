@@ -1,0 +1,80 @@
+.tab-navigator {
+  display: flex;
+  flex-direction: column;
+
+  .tab-navigator__link-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 50px 0;
+
+    @media @phone {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 0 0 27px 0;
+    }
+
+    .tab-navigator__link {
+      width: 21.5%;
+      padding: 14px 5px;
+      font-size: 1.9rem;
+      font-weight: @font-bold;
+
+      @media @phone {
+        width: 100%;
+        margin: 0 0 18px 0;
+      }
+
+      &.tab-navigator__link--is-active {
+        color: @brand-color-white;
+        background-color: @brand-color-blue;
+        border: 1px @brand-color-light-gray solid;
+      }
+    }
+  }
+
+
+  .tab-navigator__content-container {
+    display: flex;
+
+    .tab-navigator__content {
+      display: none;
+
+      &.tab-navigator__content--is-active {
+        display: flex;
+        justify-content: space-between;
+
+        @media @phone {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .tab-navigator__content-text {
+      width: 50%;
+      padding: 0 15px 0 0;
+
+      @media @phone {
+        width: 100%;
+        padding: 0;
+      }
+
+      h2 {
+        margin: 0 0 1.6rem 0;
+      }
+
+      p {
+        margin: 0 0 2.5rem 0;
+        line-height: 2.6rem;
+      }
+    }
+
+    .tab-navigator__content-img {
+      width: 100%;
+      margin: 3.8rem 0 0 0;
+
+      @media @phone {
+        margin: 0;
+      }
+    }
+  }
+}
