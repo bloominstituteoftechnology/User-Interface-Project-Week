@@ -23,14 +23,26 @@ document.addEventListener('scroll', function() {
 });
 
 console.log(window.outerWidth);
-console.log();
-if (window.outerWidth <= 400) {
+console.log(document.title);
+if (window.outerWidth <= 400 && document.title === 'Home') {
   document.querySelector('.jumbo').attributes.src.nodeValue = './img/home/home-mobile-jumbotron.png';
   document.querySelector('.home-img-1').attributes.src.nodeValue = './img/home/home-mobile-img-1.png';
   document.querySelector('.home-img-2').attributes.src.nodeValue = './img/home/home-mobile-img-2.png';
   document.querySelector('.home-villas-img').attributes.src.nodeValue = './img/home/home-mobile-villas-img.png';
   document.querySelector('.home-outskirts-img').attributes.src.nodeValue = './img/home/home-mobile-outskirts-img.png';
   document.querySelector('.home-the-blocks-img').attributes.src.nodeValue = './img/home/home-mobile-the-blocks-img.png';
+
+}
+
+if (window.outerWidth <= 400 && document.title === 'Services') {
+  document.querySelector('.services-tab-pre-construction-img').attributes.src.nodeValue = './img/services/services-tab-mobile-pre-construction-img.png';
+  document.querySelector('.services-tab-construction-img').attributes.src.nodeValue = './img/services/services-tab-mobile-construction-img.png';
+  document.querySelector('.services-tab-design-build-img').attributes.src.nodeValue = './img/services/services-tab-mobile-design-build-img.png';
+  document.querySelector('.services-tab-sustainability-img').attributes.src.nodeValue = './img/services/services-tab-mobile-sustainability-img.png';
+}
+
+if (window.outerWidth <= 400 && document.title === 'Contact Us') {
+  document.querySelector('.contact-jumbotron').attributes.src.nodeValue = './img/contact/contact-mobile-jumbotron.png';
 }
 
 
