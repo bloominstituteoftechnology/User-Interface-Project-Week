@@ -32,7 +32,7 @@ if (window.outerWidth <= 400 && document.title === 'Home') {
   document.querySelector('.home-outskirts-img').attributes.src.nodeValue = './img/home/home-mobile-outskirts-img.png';
   document.querySelector('.home-the-blocks-img').attributes.src.nodeValue = './img/home/home-mobile-the-blocks-img.png';
 
-}
+} 
 
 if (window.outerWidth <= 400 && document.title === 'Services') {
   document.querySelector('.services-tab-pre-construction-img').attributes.src.nodeValue = './img/services/services-tab-mobile-pre-construction-img.png';
