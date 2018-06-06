@@ -1,16 +1,25 @@
 .jumbo-services{
     width: 1024px;
     height: 250px;
-    background: red url("../img/services/services-jumbotron.png");  
+    background: red url("../img/services/services-jumbotron.png"); 
+    @media @phone{
+        width: 320px;
+        height: 260px;
+        background: url("../img/services/services-mobile-jumbotron.png")
+    }   
     .container{
         height:100%;
         position: relative;
 
-    h1{
-        .jumbo-header;
-        position: absolute;
-        bottom: 18px;
-    }
+        h1{
+            .jumbo-header;
+            position: absolute;
+            bottom: 18px;
+            @media @phone{
+                bottom: 20px;
+                left: 5%;
+            }
+        }
     }
 }
 
@@ -18,9 +27,15 @@
     max-width: 855px;
     justify-content: center;
     margin: auto;
-
+    @media @phone{
+        max-width:320px;
+    }
     .top-text-content{
         margin: 54px 0 44px 0;
+        @media @phone{
+            margin: 31px 0% 35px 5%;
+            line-height: 2.6rem;
+        }
     }
 
     .tabs{
@@ -28,7 +43,9 @@
         .topics{
             display: flex;
             justify-content: space-between;
-
+            @media @phone{
+                flex-direction: column;
+            }
             .tab{
                 border: 1px double black;
                 font-size: 2.0rem;
@@ -39,6 +56,11 @@
                 font-weight: bold;
                 cursor: pointer;
                 text-align: center;
+
+                @media @phone{
+                    width:90%;
+                    margin: 0 0 20px 5%;
+                }
 
                 &:hover {
                     background: @off-black;
@@ -57,6 +79,11 @@
     .tabs-items{
         margin-top: 52px;
         margin-bottom: 90px;
+        @media @phone {
+            margin-top: 29px;
+            margin-left: 5%;
+            margin-bottom: 15px;
+        }
         .tabs-item{
             display:none;
             .tabs-item-title{
@@ -72,8 +99,29 @@
 
         .tabs-item[data-tab="pre-construction"]{
             display:block;
+            
            .tabs-content{
                display:flex;
+
+               @media @phone{
+                flex-direction: column;
+
+                .tabs-item-image{
+                    @media @phone{
+                        margin-top: 59px;
+                    }
+                    img{
+                        @media @phone{
+                            z-index:10;
+                            height: 290px;
+                            width:290px;
+                            box-sizing:border-box;
+                            padding-left: 290px;
+                            background: url("../img/services/services-tab-mobile-pre-construction-img.png")
+                        }
+                    }
+                }
+            }
            }
         }
     }
