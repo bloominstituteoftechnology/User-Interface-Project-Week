@@ -58,7 +58,6 @@ class Text{
         this.text.style.left = 0;
     }
     select(){
-        console.log(this.text)
         TweenMax.to(this.text, 0.5, {opacity: 1, display: 'block'});
 
     }
