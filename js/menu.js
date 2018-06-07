@@ -9,8 +9,8 @@ headrMenu.addEventListener('click', (e) =>{
     if(isOpen){
         TweenMax.to(menu, time, {display: 'none', opacity: 0, height: '0vh', width: '1vw', borderRadius: '50%', x: e.clientX, y: (e.clientY - 10)});
     }else if(!isOpen){
-        TweenMax.set(menu, {display: 'block', opacity: 1, height: '100vh', width: '110vw', borderRadius: '5%', x: '0%', y: 0});
-        TweenMax.from(menu, time, { opacity: 0, height: 0, width: 0, x: e.clientX, y: (e.clientY + 20)});
+        TweenMax.set(menu, {display: 'block', opacity: 1, height: '100vh', width: '110vw', borderRadius: '0%', x: '0%', y: 0});
+        TweenMax.from(menu, time, { opacity: 0, height: 0, width: 0, borderRadius: '50%', x: e.clientX, y: (e.clientY + 20)});
     }
     isOpen = !isOpen;
 });
