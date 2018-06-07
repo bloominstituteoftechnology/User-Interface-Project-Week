@@ -6,7 +6,6 @@ class TabNavigator {
       return new TabNavigatorLink(link, this);
     });
     this.activeLink = this.links[0];
-    this.init();
   }
 
   init() {

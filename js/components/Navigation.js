@@ -7,6 +7,10 @@ class Navigation {
     this.triggerY = 50;
     this.button = element.querySelector('button');
     this.button = this.button.addEventListener('click', () => this.onClick());
+    this.animationTiming = 250;
+
+    this.links = this.element.querySelectorAll('.nav__link-container a');
+    console.log(this.links);
   }
 
   init() {
@@ -23,6 +27,20 @@ class Navigation {
   onClick() {
     this.element.classList.toggle('is-open');
     this.document.body.classList.toggle('body--nav-is-open');
+
+    // animate links in
+    if (this.element.classList.contains('is-open')) {
+      let incrementTime = this.animationTiming;
+      for (let i = 0; i < this.links.length; i++) {
+        setTimeout(() => { this.links[i].classList.add('is-showing'); }, incrementTime);
+        incrementTime += this.animationTiming;
+      }
+      console.log('opening nav');
+    } else {
+      for (let i = 0; i < this.links.length; i++) {
+        this.links[i].classList.remove('is-showing');
+      }      
+    }
   }
 
   changeBackground() {

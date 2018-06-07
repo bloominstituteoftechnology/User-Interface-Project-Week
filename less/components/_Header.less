@@ -1,5 +1,6 @@
 header {
   .grid();
+
   width: 100vw;
   height: 100vh;
   background: url(../img/home/home-jumbotron.png) center center no-repeat fixed;
@@ -13,7 +14,9 @@ header {
 
   .header__content {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
     .grid-center-column();
     padding: 0 0 50px 0;
     color: @brand-color-white;
@@ -31,6 +34,17 @@ header {
       padding: 0 @gutter-width-phone 23px;
       font-size: 3.6rem;
       line-height: 4.2rem;
+    }
+
+    p {
+      transform: translateX(10px);
+      opacity: 0;
+      transition: all .5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      &.is-showing {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
   }

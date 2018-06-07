@@ -12,6 +12,10 @@
     const navElement = document.querySelector('nav');
     const nav = new Navigation(navElement, window, document);
     nav.init();
+
+    const headerElement = document.querySelector('header');
+    const header = new Header(headerElement, window);
+    header.init();
   }
 
 }));
