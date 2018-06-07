@@ -1,6 +1,6 @@
 
 
-class Btnns {
+class Btns {
     constructor(element) {
       this.element = element;
       this.links = this.element.querySelectorAll('.btns-link');
@@ -31,7 +31,7 @@ class Btnns {
       this.element = element;
       this.btns = parent;
       this.btnsItem = parent.getBtn(this.element.dataset.btn);
-      this.btnsItem = new BtnsItem(this.tabsItem);
+      this.btnsItem = new BtnsItem(this.btnsItem);
       this.element.addEventListener('click', () => {
         this.btns.updateActive(this);
         this.select()
