@@ -16,7 +16,7 @@ let navbarOpaque = document.getElementById("opaque");
 
 // // Get the offset position of the navbar
 // let sticky = navbarOpaque.offsetTop;
-let sticky = navbarOpaque.offsetHeight/2;
+let sticky = navbarOpaque.offsetHeight/10;
 
 // Get the bottom position of the original transparent navbar
 // let sticky = navbarOpaque.offsetHeight*2;
