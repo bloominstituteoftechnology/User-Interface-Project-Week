@@ -42,12 +42,17 @@ class CarouselImage {
     constructor(image, parent) {
         this.element = image;
         this.parent = parent;
+        this.who = image.dataset.who;
+        let searchString= `.about-me[data-who='${this.who}']`;
+        this.textElement = document.querySelector(searchString);
     }
     activate() {
         this.element.classList.add("active");
+        this.textElement.classList.add("active");
     }
     deactivate() {
         this.element.classList.remove("active");
+        this.textElement.classList.remove("active");
     }
 }
 
