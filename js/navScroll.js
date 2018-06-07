@@ -1,4 +1,4 @@
 let stickyNav = document.querySelector(".nav-static");
 window.addEventListener("scroll", function() {
-    stickyNav.classList.toggle("navbar-scroll");
+    stickyNav.classList.add("navbar-scroll");
 });
