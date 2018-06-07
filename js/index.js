@@ -1,11 +1,6 @@
-// JS goes here
-
-
-//Services page//
 class Tabs {
   constructor(element) {
     this.element = element;
-    console.log(element);
     this.links = this.element.querySelectorAll(".tabs-link");
     this.links = Array.from(this.links).map( link => {
       return new TabsLink(link, this);
@@ -69,21 +64,7 @@ class TabsItem {
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map( element => new Tabs(element));
 
-
-//Site-wide//
-/*const overlay = document.querySelector(".overlay");
-const btn = document.querySelector(".hamburger");
-
-btn.addEventListener("click", function() {
-  overlay.classList.toggle("hidden");
-});
+//Navigation//
 
 
 
-
-let navbar = document.querySelector(".navbar");
-window.addEventListener("scroll", () => {
-  navbar.classList.add("navbar-scroll");
-});
-
-*/
