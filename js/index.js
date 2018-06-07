@@ -34,8 +34,7 @@ class Hamburger {
             hamburger: 'img/nav-hamburger.png',
             closeX: 'img/nav-hamburger-close.png'
         };
-
-        console.log(this.body);
+        
         this.element.addEventListener('click', function () {
             if (this.element.getAttribute('src') === this.btnState.hamburger) {
                 this.element.src = this.btnState.closeX;
