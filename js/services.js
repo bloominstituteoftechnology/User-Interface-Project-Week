@@ -59,3 +59,16 @@ class ServicesText {
 
 let tabs = document.querySelectorAll('.tabs');
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+// activate hamburger menu
+let overlay = document.querySelector('.overlay');
+let closeBtn = document.querySelector('.close-btn');
+let menuBtn = document.querySelector('.hambutton');
+
+closeBtn.addEventListener('click', () => {
+  overlay.style.display = 'none';
+});
+
+menuBtn.addEventListener('click', () => {
+  overlay.style.display = 'block';
+});
