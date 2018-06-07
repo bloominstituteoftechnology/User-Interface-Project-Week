@@ -1,5 +1,30 @@
 // JS goes here
 
+class menu {
+	constructor(element){
+	this.element=element;
+	}
+}
+
+let hamburger = document.querySelector(".menu_button");
+let menus = document.querySelectorAll(".menus");
+menus = Array.from(menus).map( value => new menu(value))
+console.log(menus.classList);
+
+
+hamburger.addEventListener('click', () => {
+	console.log('working');
+	if(hamburger.innerHTML==="x"){
+		hamburger.innerHTML = "☰";
+	}
+	else{
+	hamburger.innerHTML = "x";
+	}
+menus.classList.toggle("inactive");
+	});
+
+
+//copy-pasted
 class Tabs {
   constructor(element){
     this.element = element;
