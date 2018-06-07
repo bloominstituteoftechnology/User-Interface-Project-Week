@@ -121,6 +121,6 @@ class TabsItem {
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
-TweenLite.to([".jumbo-home", ".jumbo-services", ".jumbo-contact"], 1, {opacity:1});
-TweenLite.from(".jumbo-container", 2, {right:"500px", delay: 1});
-TweenLite.to([".image-1", ".image-2"], 2, {opacity:1, delay: 2.5});
+TweenLite.to([".jumbo-home", ".jumbo-services", ".jumbo-contact"], 2, {opacity:1});
+TweenLite.from(".jumbo-container", 2, {right:"500px", delay: 1.5});
+TweenLite.to([".image-1", ".image-2"], 2, {opacity:1, delay: 3});
