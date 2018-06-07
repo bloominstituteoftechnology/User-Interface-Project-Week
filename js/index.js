@@ -8,22 +8,40 @@ window.onscroll = function () {
     customFunc()
 }; 
 
-// Get the navbar
-let navbar = document.getElementById("navbar");
+// Get the transparent navbar
+let navbarClear = document.getElementById("clear")
 
+// Get the opaque navbar
+let navbarOpaque = document.getElementById("opaque");
 
-// Get the offset position of the navbar
-let sticky = navbar.offsetTop;
+// // Get the offset position of the navbar
+// let sticky = navbarOpaque.offsetTop;
+let sticky = navbarOpaque.offsetHeight/2;
+
+// Get the bottom position of the original transparent navbar
+// let sticky = navbarOpaque.offsetHeight*2;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function customFunc() {
   if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+    navbarOpaque.classList.add("sticky");
+    // navbarOpaque.style.display = "flex";
+    
   } else {
-    navbar.classList.remove("sticky");
+    navbarOpaque.classList.remove("sticky");
+    // navbarOpaque.style.display = "none";
+
   }
 }
 
 //**************NAV SYSTEM PART 2*******************//
 
 let burgerIcon = document.getElementsByClassName("nav-hamburger2");
+
+// for (let i = 0; i < burgerIcon.length; i++) {
+//     burgerIcon.addEventListener
+// }
+
+// burgerIcon.addEventListener("click", () => {
+
+// })
