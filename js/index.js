@@ -8,8 +8,8 @@ window.onscroll = function () {
     customFunc()
 }; 
 
-// Get the transparent navbar
-let navbarClear = document.getElementById("clear")
+// // Get the transparent navbar
+// let navbarClear = document.getElementById("clear")
 
 // Get the opaque navbar
 let navbarOpaque = document.getElementById("opaque");
@@ -34,14 +34,38 @@ function customFunc() {
   }
 }
 
-//**************NAV SYSTEM PART 2*******************//
 
-let burgerIcon = document.getElementsByClassName("nav-hamburger2");
 
-// for (let i = 0; i < burgerIcon.length; i++) {
-//     burgerIcon.addEventListener
-// }
 
-// burgerIcon.addEventListener("click", () => {
+// **************NAV SYSTEM PART 2 - Attempt 1*******************//
+// first attempt didn't work because i didn't have the hamburger index large enough.
 
+
+//Open when hamburger clicked
+function openNavMenu() {
+    document.getElementById("navMenu").style.display= "block";
+}
+
+//Close
+function closeNavMenu() {
+    document.getElementById("navMenu").style.display= "none";
+}
+
+
+// //**************NAV SYSTEM PART 2 - Attempt 2*******************//
+
+// // let hamburger = document.querySelector("#hamburger");
+// let hamburger2 = document.querySelector("#hamburger2");
+
+// // hamburger.addEventListener("click", () => {
+// //     document.getElementById("navMenu").style.display= "block";
+// // })
+
+// hamburger2.addEventListener("click", () => {
+//     document.getElementById("navMenu").style.display= "block";
 // })
+
+// //Close
+// function closeNavMenu() {
+//     document.getElementById("navMenu").style.display= "none";
+// }
