@@ -1,5 +1,8 @@
 //Main JS file
 
+let localDev = true;
+
+
 // Grab Navigation Parent
 let nav = document.querySelector('.nav');
 
@@ -30,7 +33,9 @@ window.onload = function(){
 overlayHome.addEventListener('click', function(e) {
   e.stopPropagation;
   TweenMax.to(overlay,.25,{display: "none", scale:0, opacity:0, ease:Bounce.easOut, onComplete: function(){
-    window.location.href = './index.html'
+    window.location.href = getHref('index');
+    // window.location.href = './index.html'
+    // window.location.href = 'https://htmlpreview.github.io/?https://github.com/snowcoding/User-Interface-Project-Week/blob/master/index.html'
   }})
 })
 
@@ -38,7 +43,9 @@ overlayHome.addEventListener('click', function(e) {
 overlayServ.addEventListener('click', function(e) {
   e.stopPropagation;
   TweenMax.to(overlay,.25,{display: "none", scale:0, opacity:0, ease:Bounce.easOut, onComplete: function(){
-    window.location.href = './services.html'
+    window.location.href = getHref('services');
+    // window.location.href = './services.html'
+    // window.location.href = 'https://htmlpreview.github.io/?https://github.com/snowcoding/User-Interface-Project-Week/blob/master/services.html'
   }})
 })
 
@@ -46,7 +53,9 @@ overlayServ.addEventListener('click', function(e) {
 overlayCont.addEventListener('click', function(e) {
   e.stopPropagation;
   TweenMax.to(overlay,.25,{display: "none", scale:0, opacity:0, ease:Bounce.easOut, onComplete: function(){
-    window.location.href = './contact.html'
+    window.location.href = getHref('contact');
+    // window.location.href = './contact.html'
+    // window.location.href = 'https://htmlpreview.github.io/?https://github.com/snowcoding/User-Interface-Project-Week/blob/master/contact.html'
   }})
 })
 
@@ -67,3 +76,7 @@ menuBtn.addEventListener('click', function() {
   }
 
 });
+
+function getHref(page){
+  return (localDev) ? `http://127.0.0.1:5500/${page}.html` : `https://htmlpreview.github.io/?https://github.com/snowcoding/User-Interface-Project-Week/blob/master/${page}.html`;
+}
