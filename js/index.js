@@ -1,6 +1,6 @@
 const $ = document.querySelector.bind(document)
 
-const header = $('.header-container')
+const header = $('.header-container-fluid')
 
 window.addEventListener('scroll', (e) => {
   if(window.scrollY === 0 
