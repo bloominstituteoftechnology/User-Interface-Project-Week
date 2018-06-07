@@ -15,31 +15,62 @@ class Tabs {
   constructor(element){
     this.element = element;
     this.buttons = document.querySelectorAll(".tab-button");
-    this.buttons = Array.from(this.buttons).map(button => new ButtonLink(button,this));
-    this.CurrentButton = this.buttons[0];
+    this.tabItems = document.querySelectorAll(".tab-item");
+    // loop through buttons and join corresponding tabItem with that button
+    this.buttons = Array.from(this.buttons).map( (button,index) => new ButtonLink(button,this.tabItems[index], this));
+    this.currentButton = this.buttons[0];
     this.init();
   }
 
   init(){
-
+    this.currentButton.select();
   }
 
   updateActive(newActive) {
-    this.activeButton.deselect();
-    this.activeButton = newActive;
-  }
-
-  getTab(data) {
-    return this.element.querySelector(`.tab-item[data-tab="${data}"]`)
+    console.log(this.element);
+    this.currentButton.deselect();
+    this.currentButton = newActive;
   }
 
 }
 
 class ButtonLink {
+  constructor(buttonIn, tabItemIn, parent) {
+    this.element = buttonIn;
+    this.buttons = parent;
+    this.tabItem = new TabItem(tabItemIn);
+    this.element.addEventListener("click", () => {
+      this.buttons.updateActive(this);
+      this.select();
+    });
+  }
+
+  select(){
+    this.element.classList.add("selectedButton");
+    this.tabItem.select();
+  }
+
+  deselect(){
+    this.element.classList.remove("selectedButton");
+    this.tabItem.deselect();
+  }
 
 }
 
 class TabItem{
+  constructor(element){
+    this.element = element;
+    console.log(this.element.classLis);
+    this.deselect();
+  }
+
+  select(){
+    this.element.classList.remove("display_none");
+  }
+
+  deselect(){
+    this.element.classList.add("display_none");
+  }
 
 }
 
