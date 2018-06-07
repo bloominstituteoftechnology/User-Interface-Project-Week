@@ -1,8 +1,14 @@
 // $(document).ready(function() {
+
+//   //    $('.carousel').carousel({
+//   // interval: 2000
+//   // });
+
 // });
-//      $('.carousel').carousel({
-//   interval: 2000
-//   })
+
+
+
+
 
 
 //NAVBAR SCROLLTOP
@@ -94,3 +100,4 @@ class TabCard {
 
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map( tab => new Tabs(tab));
+
