@@ -1,6 +1,33 @@
+class Navbar {
+    constructor(element, locY, delay) {
+        window.onscroll = () => {
+
+            this.element = element;
+            this.locY = locY;
+            this.delay = delay;
+
+            let timer;
+            if(timer) {
+                window.clearTimeout(timer);
+            }
+        
+            timer = window.setTimeout(function() {
+                if (window.scrollY <= this.locY) {
+                    this.element.classList.remove('change-navbar');
+                }
+                else {
+                    this.element.classList.add('change-navbar');
+                }
+            }.bind(this), this.delay);
+        };
+    }
+}
 class Hamburger {
     constructor(element) {
         this.element = element;
+        this.navbar = document.querySelector('.navbar-container');
+        this.navbar = new Navbar(this.navbar, 150, 1000);
+        console.log(this.navbar);
         this.menuList = document.querySelector('.nav-menu');
         this.menuList = new MenuList(this.menuList);
         this.btnState = {
@@ -31,6 +58,7 @@ class MenuList {
         this.element.style.display = 'none';
     }
 }
+
 let hamburgerBtn = document.querySelector('.btn-hamburger');
 hamburgerBtn = new Hamburger(hamburgerBtn);
 
@@ -97,22 +125,3 @@ let tabNavs = document.querySelectorAll('.tab-navigator');
 console.log(tabNavs);
 tabNavs = Array.from(tabNavs).map(tabNav => new TabNavigator(tabNav));
 
-
-
-
-
-$(document).ready(function () {
-    let scroll_start = 0;
-    const startchange = $('.navbar-container');
-    const offset = startchange.offset();
-    if (startchange.length) {
-        $(document).scroll(function () {
-            scroll_start = $(this).scrollTop();
-            if (scroll_start > offset.top) {
-                $(".navbar-container").css('background-color', '#9DA7B1');
-            } else {
-                $('.navbar-container').css('background-color', 'transparent');
-            }
-        });
-    }
-});
