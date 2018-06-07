@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	    crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/index.css">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous" async></script> -->
+	<!-- <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDuGt0E5IEGkcE6ZfrKfUtE9Ko_de66pA" async></script> -->
+
+
+</head>
+
+<body>
+
+
+	<div class="success-bg d-flex flex-column justify-content-center align-items-center pt-5">
+		<span id="success" class="text-center text-light pt-3">Success!</span>
+		<br>
+		<span class="display-4 text-center text-dark">We will be in contact shortly.</span>
+		<span class="display-4 text-center text-dark pb-5">-The S&J Team</span>
+
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/plugins/CSSPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/easing/EasePack.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+	<script>
+		const success = document.querySelector('#success');
+
+		window.addEventListener('load', () => {
+			let timeline = new TimelineLite();
+			timeline.to(success, 2, {
+					ease: Expo.easeOut,
+					y: 500,
+
+				}, 0)
+				.to(success, 1, {
+					ease: Expo.easeOut,
+
+					fontSize: 300,
+					opacity: 0,
+
+				})
+				.to(success, 1, {
+					ease: Expo.easeOut,
+					fontSize: 10,
+					opacity: 0,
+				});
+
+			const successbg = document.querySelector('.success-bg');
+			TweenMax.to(successbg, 4, {
+				delay: 5,
+				autoAlpha: 0,
+				ease: Expo.easeOut,
+			}, 5);
+			setTimeout(function () {
+				window.location.replace("http://sandjarchitects.netlify.com");
+
+			}, 5700);
+
+
+		});
+	</script>
+</body>
+
+</html>
