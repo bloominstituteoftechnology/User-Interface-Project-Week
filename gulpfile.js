@@ -14,12 +14,6 @@ function customPlumber(errTitle) {
     });
 }
 
-
-function errorHandler(err) {
-    console.log(err.toString());
-
-    this.emit('end');
-}
 gulp.task('less', function () {
     return gulp.src('./less/index.less')
         .pipe(customPlumber('Error Running Less'))
@@ -36,7 +30,7 @@ gulp.task('browserSync', function () {
             baseDir: '.'
         },
     })
-})
+});
 
 gulp.task('jsPlaceModules', function () {
     gulp.src(['node_modules/jquery/dist/jquery.min.js', 
@@ -49,22 +43,11 @@ gulp.task('cssPlaceModules', function() {
     gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css'])
         .pipe(gulp.dest('./css'));
 })
-gulp.task('html', function() {
-    gulp.src('*.html')
-    .pipe(browserSync.reload({
-        stream: true
-    }));
-});
-gulp.task('js', function() {
-    gulp.src('*.js')
-    .pipe(browserSync.reload({
-        stream: true
-    }));
-});
-gulp.task('watch', ['browserSync', 'less', 'html'], function () {
+
+gulp.task('watch', ['browserSync', 'less'], function () {
     gulp.watch('./less/**/*.less', ['less']);
-    gulp.watch('*.html', ['html']);
-    gulp.watch('js/*.js', ['js']);
+    gulp.watch('*.html').on('change', browserSync.reload);
+    gulp.watch('js/*.js').on('change', browserSync.reload);
 });
 
 gulp.task('default', ['watch', 'jsPlaceModules', 'cssPlaceModules'], function () {
