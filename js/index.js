@@ -1,5 +1,6 @@
+const $ = document.querySelector.bind(document)
 
-const header = document.querySelector('.header-container')
+const header = $('.header-container')
 
 window.addEventListener('scroll', (e) => {
   if(window.scrollY === 0 
@@ -11,6 +12,20 @@ window.addEventListener('scroll', (e) => {
   }
 })
 
+const menuBtn = $('.menu-button')
+const menuOverlay = $('.menu-overlay')
+
+menuBtn.addEventListener('click', (e) => {
+  console.log(e.target.src)
+  if(e.target.src.includes('img/nav-hamburger.png')) {
+    e.target.src = 'img/nav-hamburger-close.png'
+  } else if (e.target.src.includes('img/nav-hamburger-close.png')) {
+    e.target.src = 'img/nav-hamburger.png'
+  }
+  
+  menuOverlay.classList.toggle('menu-overlay-open')
+
+})
 
 class TabsContainer {
 
