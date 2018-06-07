@@ -16,8 +16,15 @@ let navbar = document.querySelector('.navigation-container');
 window.addEventListener('scroll', changeNavColor);
 
 function changeNavColor() {
-  navbar.style = 'background-color: #9DA7B1';
-  navbar.style.opacity = '0.95';
+  let scrollTop = window.pageYOffset || document.navbar.scrollTop;
+  if (scrollTop) {
+    navbar.style = 'background-color: #9DA7B1';
+    navbar.style.opacity = '0.95';
+  }
+  if (scrollTop < 20) {
+    navbar.style = 'background-color: null';
+    navbar.style.opacity = '1';
+  }
 }
 
 /*
