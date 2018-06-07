@@ -28,5 +28,6 @@ hamburgerBtn.addEventListener('click', function(){
     }
 });
 
+let tabsItems = document.querySelectorAll('.tabs-item');
 
  
