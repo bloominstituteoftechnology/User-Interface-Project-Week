@@ -10,7 +10,6 @@ class Tabs {
     this.links = Array.from(this.links).map( link => {
       return new TabsLink(link, this);
     });
-    console.log(this.links);
     this.activeLink = this.links[0];
     this.init();
   }
@@ -72,29 +71,14 @@ tabs = Array.from(tabs).map( element => new Tabs(element));
 
 
 //Site-wide//
-const overlay = document.querySelector(".overlay");
+/*const overlay = document.querySelector(".overlay");
 const btn = document.querySelector(".hamburger");
-console.log(btn);
+
 btn.addEventListener("click", function() {
   overlay.classList.toggle("hidden");
 });
 
-/*class Expand {
-  constructor(element) {
-    this.element = element;
-    this.button = this.element.querySelectorAll(".hamburger");
-    this.content = this.element.querySelectorAll(".expand-content");
-    this.button.addEventListener("click", function() {
-      this.toggleContent();
-    });
-  }
 
-  toggleContent() {
-    this.content.classList.toggle("hidden");
-  }
-}
-let expand = document.querySelectorAll('.menu');
-expand = Array.from(expand).map( element => new Expand(element));*/
 
 
 let navbar = document.querySelector(".navbar");
@@ -102,3 +86,4 @@ window.addEventListener("scroll", () => {
   navbar.classList.add("navbar-scroll");
 });
 
+*/
