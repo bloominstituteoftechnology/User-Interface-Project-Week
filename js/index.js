@@ -118,5 +118,11 @@ buttonFour.addEventListener("click", function() {
     buttonOne.style.color = "black";
 })
 
+window.onload = function() {
+    preCon.style.display = "block";
+    preCon.style.padding = "50px 0px";
+    buttonOne.style.background = "#5E9FB9";
+    buttonOne.style.color = "white";
 
+}
 
