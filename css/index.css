@@ -218,13 +218,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1024px;
+  max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
 }
 .dropdown .navigation h1 {
   color: #FFFFFF;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   margin-left: 9.1%;
+  margin-bottom: 1%;
 }
 .dropdown .navigation .hamburger {
   margin-right: 8.5%;
@@ -236,6 +238,15 @@ body {
   background-color: #9DA7B1;
   opacity: 0.95;
   z-index: 9;
+}
+@media (max-width: 960px) {
+  .dropdown {
+    max-width: 960px;
+  }
+  .dropdown .navigation {
+    max-width: 960px;
+    width: 100%;
+  }
 }
 @media (max-width: 400px) {
   .dropdown {
@@ -309,8 +320,28 @@ body {
   color: #FFFFFF;
   margin-bottom: 10px;
 }
+@media (max-width: 650px) {
+  .footer {
+    max-width: 650px;
+    width: 100%;
+    height: 700px;
+  }
+  .footer .footer-top {
+    flex-direction: column;
+    margin-top: 0px;
+    height: 700px;
+  }
+  .footer .footer-top .form-group {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .footer .footer-top .location {
+    margin-left: 20%;
+  }
+}
 @media (max-width: 400px) {
   .footer {
+    max-width: 400px;
     height: 700px;
     width: 100%;
   }
@@ -418,27 +449,56 @@ body {
   width: 53%;
 }
 .bottom-content .bottom-content-block:nth-child(3) h1 {
-  margin-left: 3%;
+  margin-left: 8%;
+}
+@media (max-width: 1000px) {
+  .home {
+    max-width: 900px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .home .jumbo-home {
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+  }
+  .home .jumbo-home .container h1 {
+    top: 150px;
+    left: 5%;
+  }
+  .home .top-content {
+    margin-top: 0px;
+  }
+  .home .top-content-block {
+    max-width: 900px;
+    width: 100%;
+  }
+  .home .bottom-content {
+    max-width: 900px;
+    width: 100%;
+  }
 }
 @media (max-width: 400px) {
   .home {
     max-width: 400px;
+    width: 100%;
+    overflow-x: hidden;
   }
-  .jumbo-home {
+  .home .jumbo-home {
     background: url('../img/home/home-mobile-jumbotron.png');
     background-repeat: no-repeat;
     background-size: 100%;
     height: 270px;
   }
-  .jumbo-home .container {
+  .home .jumbo-home .container {
     position: relative;
     left: 5%;
     bottom: 120px;
   }
-  .jumbo-home .container h1 {
+  .home .jumbo-home .container h1 {
     font-size: 3rem;
     line-height: 40px;
     letter-spacing: .3rem;
+    top: 240px;
   }
   .top-content {
     max-width: 400px;
@@ -512,9 +572,15 @@ body {
     background: url('../img/home/home-mobile-outskirts-img.png');
     background-repeat: no-repeat;
   }
+  .bottom-content .bottom-content-block:nth-child(3) h1 {
+    margin-left: 4%;
+  }
   .bottom-content .bottom-content-block:nth-child(4) {
     background: url('../img/home/home-mobile-the-blocks-img.png');
     background-repeat: no-repeat;
+  }
+  .bottom-content .bottom-content-block:nth-child(4) h1 {
+    margin-right: 0 auto;
   }
 }
 .services {
@@ -627,6 +693,7 @@ body {
 @media (max-width: 400px) {
   .services {
     max-width: 400px;
+    overflow-x: hidden;
   }
   .services .jumbo-services {
     background: url('../img/services/services-mobile-jumbotron.png');
@@ -739,7 +806,7 @@ body {
   box-sizing: border-box;
 }
 .contact .main-content .form #exampleFormControlSelect1 {
-  width: 400px;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   height: 40px;
@@ -785,9 +852,26 @@ body {
 .contact .main-content p {
   line-height: 30px;
 }
-@media (max-width: 400px) {
+@media (max-width: 960px) {
   .contact {
-    max-width: 400px;
+    max-width: 960px;
+    width: 100%;
+  }
+  .contact .main-content {
+    max-width: 900;
+    width: 80%;
+  }
+  .contact .main-content .form {
+    max-width: 300px;
+    width: 70%;
+    margin-right: 10%;
+  }
+}
+@media (max-width: 550px) {
+  .contact {
+    max-width: 550px;
+    width: 100%;
+    overflow-x: hidden;
   }
   .contact .jumbo-contact {
     background: url('../img/contact/contact-mobile-jumbotron.png');
@@ -808,8 +892,11 @@ body {
   .contact .main-content {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    width: 80%;
+    max-width: 550px;
+    width: 100%;
+  }
+  .contact .main-content form {
+    width: 120%;
   }
   .contact .main-content form button {
     height: 100%;
