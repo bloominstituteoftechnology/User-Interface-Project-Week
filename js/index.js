@@ -16,16 +16,19 @@ const menuBtn = $('.menu-button')
 const menuOverlay = $('.menu-overlay')
 
 menuBtn.addEventListener('click', (e) => {
-  console.log(e.target.src)
   if(e.target.src.includes('img/nav-hamburger.png')) {
     e.target.src = 'img/nav-hamburger-close.png'
   } else if (e.target.src.includes('img/nav-hamburger-close.png')) {
     e.target.src = 'img/nav-hamburger.png'
   }
-  
   menuOverlay.classList.toggle('menu-overlay-open')
+  if(menuOverlay.style.opacity !== '0.9'){
+    menuOverlay.style.opacity = '0.9'
+  }
+  TweenMax.from(menuOverlay, 1, {opacity: 0})
 
 })
+
 
 class TabsContainer {
 
