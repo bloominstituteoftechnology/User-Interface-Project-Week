@@ -9,7 +9,7 @@ Do not work on any extra features until you have checked off your MVP completion
 - Use past solutions from the previous weeks to accomplish harder tasks
 - Commit every time you accomplish any new functionality or layout. Get in the habit of frequent commits so you have a record of your work.  Make a pull request every day to showcase your progress to your PM.
 - After 20 minutes of being stuck on something, reach out to your PM!
-- Don't overplan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction.
+- Don't over-plan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction.
 
 ## Trello Set Up:
 * [ ] Create a [Trello account](https://trello.com/)
@@ -28,7 +28,7 @@ Do not work on any extra features until you have checked off your MVP completion
 ## MVP Features:
 * [ ] Build the Home, Services and Contact Us pages to [match provided design files](/DesignFiles) for desktop and mobile views.  You can use bootstrap and/or custom CSS (LESS) for layout.  You have been provided all the content and necessary images for each view.  Notice the home page is called `index.html`.  Don't worry about a tablet view for MVP.
 * [ ] [Services page](/DesignFiles/Services): You must build the tab navigator using your own custom JavaScript components, no libraries allowed on this feature. You are encouraged to use code from previous weeks to accomplish this feature.
-* [ ] [Navigation System Part 1](/DesignFiles/Navigation/onScroll): When the user starts to scroll, the navigation bar should go from a transparent background to a 95% opacity background using `#9DA7B1` as your background color.  You can accomplish this anyway you want.  Use the design file named "Navigation-Scrolled" for an exmpale.
+* [ ] [Navigation System Part 1](/DesignFiles/Navigation/onScroll): When the user starts to scroll, the navigation bar should go from a transparent background to a 95% opacity background using `#9DA7B1` as your background color.  You can accomplish this anyway you want.  Use the design file named "Navigation-Scrolled" for an example.
 * [ ] [Navigation System Part 2](/DesignFiles/Navigation/expanded): When a user clicks on the navigation icon a full page overlay will pop over all the content on the page. The navigation icon will be replaced by a close icon.  The user must click the close icon to return back to browsing the website.  The home, services, and contact pages need to be linked together using `<a></a>` tags.  All design files have been provided for you. You must use your own custom JavaScript for the opening and closing functionality, no bootstrap allowed for functionality on this feature.
 * [ ] LESS preprocessing must be used for all styling, use LESS imports to create a single index.less file that combines smaller .less files together.
 
