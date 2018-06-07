@@ -9,7 +9,7 @@ menuBtn.addEventListener('click', () => {
     overlay.style.display = 'block';
 });
 
-closeBtn.addEventListener('click', function() {
+closeBtn.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
 
