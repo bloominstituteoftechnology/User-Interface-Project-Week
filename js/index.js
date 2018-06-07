@@ -92,7 +92,7 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 $(document).ready(function () {
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        if (scroll > 300) {
+        if (scroll > 100) {
             $(".navigation").css("backgroundColor", "#9DA7B1");
             $(".navigation").css("opacity", "0.95");
         }

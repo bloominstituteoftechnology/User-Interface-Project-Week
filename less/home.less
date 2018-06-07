@@ -3,6 +3,13 @@
     height: 589px;
     margin: 0 auto;
     background: url('../img/home/home-jumbotron.png');
+    @media @phone {
+        height: 260px;
+        margin: 0 auto;
+        background: url('../img/home/home-mobile-jumbotron.png');
+        background-repeat: no-repeat;
+       
+    }
     .container {
         position: relative;
         height: 100%;
@@ -11,30 +18,52 @@
         .jumbo-text;
         position: absolute;
         bottom: 49px;
+             
+        @media @phone {
+            .jumbo-textMobile;
+        }
     }
+}
+.mobileImg1 {
+    display: none;
 }
 .row {
     display: flex; 
+     @media @phone {
+         img{
+             width: 320px;
+             display: block;
+                width: 320px;
+                margin: 0 auto;
+                padding-bottom: 20px;
+         }
+            flex-direction: column-reverse;
+            .homeImg1{
+                display: none;
+            }
+            .h1WithPar {
+                text-align: center;
+            }
+            button {
+                width: 100%;
+            }
+            .firstImg {
+                order: 1;
+            }
+        }
+        
+    .centerPar {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+         @media @phone {
+             width: 90%;
+         }
+    }
 }
 .homeFulImg {
     position: relative;
-}
-.pageSign {
-    position: absolute;
-    bottom: -22px;
-    right: 0;
-    padding: 30px 20px;
-    background-color: #D8D8D8;
-    width: 33%;
-    font-size: 2.5rem;
-    text-align: center;
-}
-.centerPar {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-}
-.pageSignL{
+    .pageSignL{
     position: absolute;
     bottom: -22px;
     left: 0;
@@ -43,7 +72,40 @@
     width: 33%;
     font-size: 2.5rem;
     text-align: center;
+    @media @phone {
+        position: absolute;
+        bottom: -22px;
+        left: 20px;
+        padding: 30px 20px;
+        background-color: @gray;
+        width: 90%;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    }
+    .pageSign {
+    position: absolute;
+    bottom: -22px;
+    right: 0;
+    padding: 30px 20px;
+    background-color: #D8D8D8;
+    width: 33%;
+    font-size: 2.5rem;
+    text-align: center;
+     @media @phone {
+        position: absolute;
+        bottom: -22px;
+        left: 20px;
+        padding: 30px 20px;
+        background-color: @gray;
+        width: 90%;
+        font-size: 2.5rem;
+        text-align: center;
+    }
 }
+}
+
+
 .h1WithPar{
     align-self: center;
     padding: 0 3%;
@@ -150,3 +212,4 @@
 }
 
 
+   
