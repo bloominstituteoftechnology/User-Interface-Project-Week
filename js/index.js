@@ -100,9 +100,7 @@ if (viewPortWidth >= 1024){
 TweenLite.to(picture, 4, {width:"750px", height:"750px"});
 }
 
-else{
-TweenLite.to(picture, 1, {width:"300px", height:"300px"});	
-
-}
-
+//else{
+//TweenLite.to(picture, 1, {width:"300px", height:"300px"});	
+//}
 
