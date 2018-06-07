@@ -1,6 +1,6 @@
 //Main JS file
 
-let localDev = true;
+let localDev = false;
 
 
 // Grab Navigation Parent
