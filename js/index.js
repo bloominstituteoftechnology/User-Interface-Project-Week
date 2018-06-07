@@ -122,5 +122,4 @@ class Tabs {
   let tabs = document.querySelectorAll(".tabs");
   // map through each tabs element and create a new Tabs object.  Be sure to pass in a reference to the tab when creating the Tabs object.
   tabs = Array.from(tabs).map(tab => new Tabs(tab));
-
 // End of Services Tabs
