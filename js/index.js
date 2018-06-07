@@ -65,11 +65,33 @@ tabs = Array.from(tabs).map(tab => {
   return new Tabs(tab);
 });
 
+let overlay = document.querySelector(".overlay");
+let menuBtn = document.querySelector(".nav-btn");
+let closeBtn = document.querySelector(".close-btn");
+let nav = document.querySelector('.nav-container');
+
 document.addEventListener("scroll", () => {
-  let nav = document.querySelector('.nav-container');
-  if (document.documentElement.scrollTop > 1) {
-    nav.setAttribute("style", "background: #9DA7B1; opacity: 0.95; z-index: 100;");
+  if (document.documentElement.scrollTop > 1 && overlay.style.display !== "block") {
+    nav.style.background = "#9DA7B1";
+    nav.style.opacity = "0.95";
+    nav.style.zIndex = "100";
   } else {
-    nav.setAttribute("style", "background: none; opacity: 1;");
+    nav.style.background = "none";
+    nav.style.opacity = "1";
+  }
+});
+
+menuBtn.addEventListener("click", function() {
+  overlay.style.display = "block";
+  nav.setAttribute("style", "display: none;");
+});
+
+closeBtn.addEventListener("click", function() {
+  overlay.style.display = "none";
+  nav.removeAttribute("style", "display");
+  if (document.documentElement.scrollTop > 1) {
+    nav.style.background = "#9DA7B1";
+    nav.style.opacity = "0.95";
+    nav.style.zIndex = "100";
   }
 });
