@@ -1,6 +1,6 @@
 class Tabs {
-    constructor(tabs, parent) {
-        this.parent = parent;
+    constructor(tabs, parentElem) {
+        this.parentElem = parentElem;
         this.element = tabs;
         this.tabs = Array.from(document.querySelectorAll('.tab'));
         this.links = Array.from(document.querySelectorAll('.tab-link'));
@@ -41,25 +41,19 @@ class TabLink {
         this.element.classList.add("selected");
         this.tabArr.forEach((tab) => {
             tab.classList.remove("hidden");
-            let container = this.parent.parent;
+            let container = this.parent.parentElem;
             let containerHeight = container.clientHeight;
             containerHeight = "" + containerHeight + "px";
             container.style.height = containerHeight;
-            let oldHeight = tab.scrollHeight;
-            oldHeight = "" + oldHeight + "px";
-            // oldHeight = "360px"
-            TweenMax.set(tab, {"height": 0, "opacity": 0});
-            TweenMax.to(tab, .5, {"height": oldHeight , "opacity": 1, onComplete: () => {
+            let oldTabHeight = tab.scrollHeight;
+            oldTabHeight = "" + oldTabHeight + "px";
+            TweenLite.set(tab, {/* y: 50 ,*/ "height": 0, "opacity": 0});
+            TweenLite.to(tab, .15, {y: -60, "opacity": 1});
+            TweenLite.to(tab, .25, {y: 0, "height": oldTabHeight, delay: .1, ease: Power4.easeOut, onComplete: () => {
                 container.style.height = "auto";
                 tab.style.height = null;
             }});
-            // TweenMax.set(container, {height: "auto"}, .5);
-
-
-            //other method that did not work
-            // TweenMax.set(tab, {height: "auto", opacity: 1});
-            // TweenMax.from(tab, 2, {height: 0, opacity: 0});
-
+            // TweenLite.set(tab, {y: 50});
         });
     }
     deactivateTab() {
