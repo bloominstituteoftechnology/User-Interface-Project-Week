@@ -34,18 +34,20 @@ class Hamburger {
             hamburger: 'img/nav-hamburger.png',
             closeX: 'img/nav-hamburger-close.png'
         };
-        
+        this.body = document.querySelector('body');
+
         this.element.addEventListener('click', function () {
             if (this.element.getAttribute('src') === this.btnState.hamburger) {
                 this.element.src = this.btnState.closeX;
                 this.menuList.show();
-                $("body").css("overflow", "hidden");
+                
+                this.body.style.overflowY = 'hidden';
 
             }
             else {
                 this.element.src = this.btnState.hamburger;
                 this.menuList.hide();
-                $("body").css("overflow", "auto");
+                this.body.style.overflowY = 'auto';
                           
             }
         }.bind(this));
