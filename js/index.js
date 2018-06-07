@@ -10,7 +10,7 @@ menuButton.addEventListener("click", () => {
   expandedMenu.classList.toggle("display_none");
 });
 
-
+// Services tabs
 class Tabs {
   constructor(element){
     this.element = element;
@@ -77,3 +77,21 @@ class TabItem{
 
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+
+// Header Background change on scroll
+// Largely taken from https://stackoverflow.com/questions/23706003/changing-nav-bar-color-after-scrolling/39575616
+// Yahya Essam's answer
+let headerNav = document.querySelector(".container-fluid.sticky-top");
+
+window.addEventListener("scroll", () => {
+  console.log(window.pageYOffset);
+});
+window.addEventListener("scroll", () => {
+  if(window.pageYOffset >= 598){
+    headerNav.classList.add("nav-colored");
+  }
+  else {
+    headerNav.classList.remove("nav-colored");
+  }
+});
