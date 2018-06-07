@@ -1,3 +1,17 @@
+
+const header = document.querySelector('.header-container')
+
+window.addEventListener('scroll', (e) => {
+  if(window.scrollY === 0 
+     && header.classList.contains('header-scrolled')) header.classList.remove('header-scrolled')
+  
+  if(window.scrollY > 0
+     && !header.classList.contains('header-scrolled')){
+    header.classList.add('header-scrolled') 
+  }
+})
+
+
 class TabsContainer {
 
   constructor(el) {
