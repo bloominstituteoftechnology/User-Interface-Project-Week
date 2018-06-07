@@ -82,6 +82,10 @@ closeBtn.addEventListener("click", function(){
 });
 
 document.addEventListener("scroll", (e) => {
+	if (window.scrollY > 0) {
 		navigationBar.style.background = "#9DA7B1";
 		navigationBar.style.opacity = "0.95";
+	} else {
+		navigationBar.style.background = "transparent";
+	}
 });
