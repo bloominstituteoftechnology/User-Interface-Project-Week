@@ -1,1 +1,508 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0b1 | 201101
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
+@keyframes fadeIn {
+  to {
+    background-color: #98A4AE;
+    opacity: 0.95;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html body {
+  font-size: 1.6rem;
+}
+.container {
+  max-width: 855px;
+  margin: 0;
+  z-index: 1;
+  position: static;
+}
+.button {
+  border: 1px solid #222222;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 137px;
+  height: 47px;
+}
+.button:hover {
+  background: black;
+  color: #FFFFFF;
+}
+.container .container-fluid.sticky-top {
+  position: fixed;
+  width: 100%;
+  height: 8%;
+  left: 0;
+  margin-right: 12%;
+}
+.header {
+  font-size: 2.2rem;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  width: 100%;
+  left: 0px;
+  color: white;
+  margin-top: 2%;
+}
+.header .logo {
+  position: absolute;
+  left: 8%;
+  z-index: 2;
+}
+.header .menu-button {
+  position: absolute;
+  right: 8%;
+  top: 29%;
+  z-index: 2;
+}
+.header .menu-button .hamburger {
+  height: 21px;
+  width: 32px;
+  background-image: url("../img/nav-hamburger.png");
+}
+.header .menu-button .hamburger.hamburger-close {
+  height: 25px;
+  width: 24px;
+  background-image: url("../img/nav-hamburger-close.png");
+}
+.header .menu-button :hover {
+  cursor: pointer;
+}
+.header .expanded-menu {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  overflow: hidden;
+  background-color: #98A4AE;
+  opacity: 0.95;
+  flex-flow: column;
+  z-index: 1;
+}
+.header .expanded-menu .links {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.header .expanded-menu .links a {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  color: #FFFFFF;
+}
+.header .expanded-menu .links a:hover {
+  color: #222222;
+  text-decoration: none;
+}
+.display_none {
+  display: none;
+}
+.nav-colored {
+  animation: fadeIn 0.5s;
+  background-color: #98A4AE;
+  opacity: 0.95;
+}
+.nav-not-colored {
+  animation: fadeOut 0.5s;
+  background-color: transparent;
+}
+.footer {
+  margin-top: 8%;
+  background-color: #828282;
+  color: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer .ftr-row {
+  width: 100%;
+}
+.footer .ftr-form {
+  padding: 6% 4% 1% 18%;
+  right: 8%;
+}
+.footer .ftr-form .form-control {
+  line-height: 3rem;
+}
+.footer .ftr-col {
+  padding: 1%;
+  margin-top: 5.2%;
+  left: -7%;
+}
+.footer .copyright {
+  width: 100%;
+}
+.footer .copyright .copyright-col {
+  display: flex;
+  justify-content: center;
+}
+.footer h2 {
+  font-weight: normal;
+  line-height: 24px;
+  font-size: 2rem;
+}
+.footer p {
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  font-weight: lighter;
+}
+.jumbotron {
+  display: flex;
+  align-items: flex-end;
+  background-image: url("../img/home/home-jumbotron.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 598px;
+  height: auto;
+  z-index: 1;
+}
+@media (max-width: 400px) {
+  .jumbotron {
+    background-image: url("../img/home/home-mobile-jumbotron.png");
+    min-height: 260px;
+  }
+}
+.jumbotron .display-3.text {
+  margin-left: 2.8rem;
+  line-height: 7.5rem;
+  font-size: 6.4rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 400px) {
+  .jumbotron .display-3.text {
+    line-height: 3.5rem;
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 400px) {
+  .container.home {
+    max-width: 320px;
+  }
+}
+.container.home .top_content {
+  margin-top: 5.5%;
+}
+@media (max-width: 400px) {
+  .container.home .top_content .row1 {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+  }
+  .container.home .top_content .row1 .top-text {
+    order: 2;
+  }
+  .container.home .top_content .row1 .home-img-1 {
+    order: 1;
+  }
+}
+.container.home .top_content h3 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+.container.home .top_content .top-text {
+  padding: 4%;
+}
+@media (max-width: 400px) {
+  .container.home .top_content .top-text {
+    max-width: 100%;
+  }
+}
+.container.home .top_content .row.row2 {
+  margin-top: 9%;
+  padding: 3%;
+}
+.container.home .top_content .row.row2 .top-text {
+  padding-left: 1.5%;
+}
+.container.home .container.recent-projects {
+  margin-top: 6.5%;
+  margin-left: 2%;
+}
+.container.home .container.recent-projects .image {
+  margin-top: 4%;
+  position: relative;
+}
+.container.home .container.recent-projects .block {
+  font-size: 2.5rem;
+  border: 1px solid white;
+  background-color: #D8D8D8;
+  color: black;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.5rem;
+  width: 34%;
+  padding: 3% 0;
+  right: 60px;
+  bottom: -15%;
+}
+.container.home .container.recent-projects .block2 {
+  font-size: 2.5rem;
+  border: 1px solid white;
+  background-color: #D8D8D8;
+  color: black;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.5rem;
+  width: 34%;
+  padding: 3% 0;
+  right: null;
+  bottom: -15%;
+}
+.container.home .container.recent-projects .sub-text {
+  font-size: 18px;
+  padding: 10% 28% 0% 24%;
+}
+.container.home .container.recent-projects .sub-text .p2 {
+  margin-top: 6%;
+}
+.services .jumbotron {
+  background-image: url("../img/services/services-jumbotron.png");
+  min-height: 250px;
+}
+.button-tabs {
+  width: 100%;
+}
+.button-tabs .button-col {
+  padding-right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.services .button {
+  height: 100%;
+  width: 23%;
+  padding: 0 1%;
+}
+.tab-item {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.tab-item .tab-header {
+  width: 100%;
+  margin-left: 1.5%;
+}
+.tab-contents {
+  margin-top: 5%;
+}
+.selectedButton {
+  background-color: #5E9FB9;
+  color: #FFFFFF;
+}
+.display_none {
+  display: none;
+}
+.contact .jumbotron {
+  background-image: url("../img/contact/contact-jumbotron.png");
+  min-height: 250px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+}
+.contact .jumbotron .display-3.text {
+  width: 158%;
+  position: relative;
+  bottom: -36%;
+  left: 3%;
+}
+.contact-main-content {
+  margin-top: 4.5%;
+}
+.contact-main-content .contact-left-col {
+  margin-left: 4%;
+  padding-right: 6%;
+}
+.contact-main-content .contact-left-col .form-group {
+  margin-top: 12%;
+}
+.contact-main-content .contact-left-col .contact-radio-buttons {
+  margin-top: 8%;
+}
+.contact-main-content .contact-left-col .contact-radio-buttons .form-check-label {
+  margin-left: 2%;
+}
+.contact-main-content .contact-left-col .contact-email-form {
+  line-height: 3rem;
+}
+.contact-right-col {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5%;
+  margin-left: -6%;
+}
+.contact-right-col .california {
+  margin-left: 4%;
+}
+.contact .contact-submit-btn {
+  margin-left: 4%;
+  margin-top: 1.5%;
+}
