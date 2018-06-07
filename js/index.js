@@ -13,10 +13,10 @@ function menuToggle() {
 }
   if (window.scrollY === 0) {
     console.log(customNavDisplayProp);
-    if (customNavDisplayProp === 0.95) {
+    if (customNavDisplayProp == 0.95) {
       console.log(customNavDisplayProp);
-      TweenMax.to('.custom-nav', 1.5, {opacity: 0})
-      console.log('this is happening');
+      TweenMax.to('.custom-nav', 1.5, {background: ''})
+      console.log(window.getComputedStyle(customNav).background);
       console.log(customNavDisplayProp);
     } else {
     TweenMax.to('.custom-nav', 0, {background: '#9DA7B1', opacity: 0.95})
