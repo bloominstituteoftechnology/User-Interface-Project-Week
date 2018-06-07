@@ -76,13 +76,12 @@ menuButton.addEventListener("click", () => {
   expandedMenu.classList.toggle("display_none");
 });
 
-var myNav = document.getElementById("nav");
+let myNav = document.getElementById("navscroll");
 
-window.onscroll = function() {
-  "use strict";
-  if (document.body.scrollTop >= 280 || document.documentElement.scrollTop >= 280) {
-    myNav.classList.add("scroll");
-  } else {
-    myNav.classList.remove("scroll");
-  }
-};
+// window.onscroll = function() {
+//   if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+//     myNav.classList.add("scroll");
+//   } else {
+//     myNav.classList.remove("scroll");
+//   }
+// };
