@@ -1,25 +1,23 @@
 class Navbar {
     constructor(element, locY, delay) {
-        window.onscroll = () => {
 
-            this.element = element;
-            this.locY = locY;
-            this.delay = delay;
+        this.element = element;
+        this.locY = locY;
+        this.delay = delay;
+        this.timer;
 
-            this.timer;
-            if(this.timer) {
-                window.clearTimeout(this.timer);
-            }
-        
-            this.timer = window.setTimeout(function() {
+
+        this.timer = window.setTimeout(function () {
+            window.onscroll = () => {
+               
                 if (window.scrollY <= this.locY) {
                     this.element.classList.remove('change-navbar');
                 }
                 else {
                     this.element.classList.add('change-navbar');
                 }
-            }.bind(this), this.delay);
-        };
+            }
+        }.bind(this), this.delay);
     }
 }
 class Hamburger {
@@ -27,8 +25,8 @@ class Hamburger {
         this.element = element;
 
         this.navbar = document.querySelector('.navbar-container');
-        this.navbar = new Navbar(this.navbar, 25, 100);
-        
+        this.navbar = new Navbar(this.navbar, 25, 1000);
+
         this.menuList = document.querySelector('.nav-menu');
         this.menuList = new MenuList(this.menuList);
 
@@ -36,14 +34,20 @@ class Hamburger {
             hamburger: 'img/nav-hamburger.png',
             closeX: 'img/nav-hamburger-close.png'
         };
+
+        console.log(this.body);
         this.element.addEventListener('click', function () {
             if (this.element.getAttribute('src') === this.btnState.hamburger) {
                 this.element.src = this.btnState.closeX;
                 this.menuList.show();
+                $("body").css("overflow", "hidden");
+
             }
             else {
                 this.element.src = this.btnState.hamburger;
                 this.menuList.hide();
+                $("body").css("overflow", "auto");
+                          
             }
         }.bind(this));
     }
