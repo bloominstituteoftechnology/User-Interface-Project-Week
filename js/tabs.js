@@ -64,7 +64,5 @@ class TabsItem {
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map( element => new Tabs(element));
 
-//Navigation//
-
 
 
