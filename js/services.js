@@ -27,7 +27,7 @@ class Row {
       this.tabsItem = parent.getTab(this.element.dataset.tab);
       this.tabsItem = new TabsItem(this.tabsItem);
       this.element.addEventListener('click', () => {
-        this.row.updateActive();
+        this.row.updateActive(this);
         this.select();
       });
     };
