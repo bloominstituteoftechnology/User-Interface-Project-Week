@@ -1,8 +1,27 @@
 //Function declaration for menu toggle capabilities
 function menuToggle() {
-  document.querySelector('.menu').classList.toggle('menu-toggle');
+  let menu = document.querySelector('.menu');
+  let menuDisplayProp = window.getComputedStyle(menu).display;
+  let customNav = document.querySelector('.custom-nav');
+  let customNavDisplayProp = window.getComputedStyle(customNav).opacity;
+  if (menuDisplayProp === 'none') {
+  TweenMax.to('.menu', 0, {display: 'block'});
+  TweenMax.to('.menu', 1, {height: '100vh'});
+} else if (menuDisplayProp === 'block') {
+  TweenMax.to('.menu', 1, {height: 0});
+  TweenMax.to('.menu', 0.5, {display: 'none'});
+}
   if (window.scrollY === 0) {
-    document.querySelector('.custom-nav').classList.toggle('nav-scroll');
+    console.log(customNavDisplayProp);
+    if (customNavDisplayProp === 0.95) {
+      console.log(customNavDisplayProp);
+      TweenMax.to('.custom-nav', 1.5, {opacity: 0})
+      console.log('this is happening');
+      console.log(customNavDisplayProp);
+    } else {
+    TweenMax.to('.custom-nav', 0, {background: '#9DA7B1', opacity: 0.95})
+    //document.querySelector('.custom-nav').classList.toggle('nav-scroll');
+  }
   }
 }
 
