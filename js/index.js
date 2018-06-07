@@ -75,3 +75,21 @@ menuBtn.addEventListener('click', function() {
   }
 
 });
+
+
+$(document).ready(function(){
+  var controller1 = new ScrollMagic.Controller();
+  var row1 = new ScrollMagic.Scene({
+    triggerElement:'#row1',
+  })
+  .setClassToggle('#row1', 'fade-in')
+  .addTo(controller1);
+
+  var controller2 = new ScrollMagic.Controller();
+  var row2 = new ScrollMagic.Scene({
+    triggerElement:'#row2',
+  })
+  .setClassToggle('#row2', 'fade-in')
+  .addTo(controller2);
+
+})
