@@ -1,6 +1,6 @@
 // JS goes here
 
-
+//-----------------------------Tabs on Services---------------//
 
 class Tabs {
     constructor(element) {
@@ -67,5 +67,24 @@ class TabsItem {
 
 
 let tabs = document.querySelectorAll('.tabs');
-console.log(tabs);
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+
+
+
+
+//--------------------- Scroll Bar Gray ---------------//
+
+// window.onscroll = function() {scrollNav()}
+
+// let navi = document.getElementsByClassName("navigation");
+// let down = navi.offsetTop;
+
+// function scrollNav () {
+//     if (window.pageYOffset >= down) {
+//         navi.classList.add("grayNav");
+//     }
+//     else {
+//         navi.classList.remove("grayNav")
+//     }
+// }
