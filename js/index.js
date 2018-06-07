@@ -58,3 +58,11 @@ class TabItem{
 
 let tabs = document.querySelectorAll('.tabs');
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+//Navigation Scroll
+let nav = document.querySelector('.navigation');
+
+document.addEventListener('scroll', () =>{
+    nav.classList.add('scrolled');
+    
+})
