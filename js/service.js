@@ -75,7 +75,7 @@ class Img{
     }
     select(){
         this.img.style.zIndex = 3;
-        TweenMax.to(this.img, 0.3, {opacity: 1, display: 'block', ease: SlowMo.ease.config(0.7, 0.7, false)});
+        TweenMax.to(this.img, 0.3, {opacity: 1, display: 'block', ease:Cubic.easeIn});
 
     }
     deselect(){
