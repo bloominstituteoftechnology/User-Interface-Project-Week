@@ -164,6 +164,13 @@ body {
   color: white;
   margin-top: 2%;
 }
+.header a {
+  color: white;
+}
+.header a :hover {
+  cursor: pointer;
+  color: white;
+}
 .header .logo {
   position: absolute;
   left: 10%;
@@ -237,8 +244,10 @@ body {
   justify-content: center;
   margin: 50px auto 0 auto;
 }
-.home-margin {
-  margin-top: 400px;
+.locations {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
 }
 .footer {
   display: flex;
@@ -271,9 +280,18 @@ body {
   color: #ffffff;
   font-size: 12px;
 }
-@media (max-width: 768px) {
+@media (max-width: 825px) {
   .footer {
     justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .footer .locations {
+    width: 100%;
+  }
+  .footer .form-class {
+    order: -1;
+    display: block;
+    margin: 3% auto 1.5%;
   }
   .centre {
     margin: 0 auto;
@@ -286,10 +304,22 @@ body {
   }
   .footer {
     width: 100%;
-    padding-left: 10%;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    text-align: center;
   }
   .gray-wrapper {
     background-color: gray;
+  }
+  .locations {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    text-align: center;
   }
 }
 .jumbo-home {
@@ -332,6 +362,7 @@ body {
 .project-btn:hover {
   background-color: #222222;
   color: white;
+  cursor: pointer;
 }
 .recent-projects {
   margin: 50px 0;
@@ -379,6 +410,17 @@ body {
     display: none;
   }
 }
+@media (max-width: 576px) {
+  .desktop-img {
+    display: none;
+  }
+  .mobile-img {
+    display: inline;
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+  }
+}
 @media (max-width: 400px) {
   .projects .gray-box {
     width: 260px;
@@ -405,14 +447,6 @@ body {
     color: #ffffff;
     position: absolute;
     bottom: 20px;
-  }
-  .desktop-img {
-    display: none;
-  }
-  .mobile-img {
-    display: inline;
-    width: 100%;
-    height: auto;
   }
   .project-btn {
     width: 100%;
@@ -454,6 +488,7 @@ body {
 }
 .tabs .tabs-items {
   width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 }
@@ -470,7 +505,7 @@ body {
 }
 .tabs .tabs-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .tabs .tabs-link {
   padding: 10px 15px;
@@ -497,7 +532,7 @@ body {
 }
 .section {
   max-width: 855px;
-  width: 83%;
+  width: 100%;
   margin: 45px auto;
   display: flex;
   overflow: hidden;
@@ -509,6 +544,15 @@ body {
   font-size: 24px;
   padding-bottom: 10px;
   font-weight: bold;
+}
+@media (max-width: 1000px) {
+  .tabs {
+    width: 100%;
+  }
+  .tabs .tabs-items {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 768px) {
   .tabs {

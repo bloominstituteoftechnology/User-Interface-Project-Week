@@ -76,16 +76,6 @@ menuButton.addEventListener("click", () => {
   expandedMenu.classList.toggle("display_none");
 });
 
-// let myNav = document.getElementById("navscroll");
-
-// window.onscroll = function() {
-//   if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
-//     myNav.classList.add("scroll");
-//   } else {
-//     myNav.classList.remove("scroll");
-//   }
-// };
-
 let navbar = document.querySelector('.navscroll');
 
 window.addEventListener('scroll', ()=>{
