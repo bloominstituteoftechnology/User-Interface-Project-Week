@@ -61,7 +61,6 @@ overlayCont.addEventListener('click', function(e) {
 menuBtn.addEventListener('click', function() {
 
   if (menuBtn.classList.contains('open')){
-    Tween.to
     TweenMax.to(overlay,.25,{display: "none", scale:0, opacity:0, ease:Bounce.easOut})
     menuBtn.src= "./img/nav-hamburger.png"
     menuBtn.classList.remove('open')  
