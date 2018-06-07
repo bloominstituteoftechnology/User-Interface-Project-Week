@@ -1,9 +1,20 @@
+// Menu Toggle -- Nav Scroll
+
 class MenuItems {
     constructor(item) {
         this.item = item;
+        this.menu = document.querySelector(".hamburger");
         this.button = document.querySelector(".ham-button");
         this.content = document.querySelector(".toggle");
         this.button.addEventListener("click", () => {this.expand()});
+        document.addEventListener("scroll", () => {
+            this.content.classList.add("hide");
+            this.button.classList.remove("close");
+            this.menu.classList.add("scroll");
+            if (window.scrollY === 0) {
+                this.menu.classList.remove("scroll");
+            }
+        });
     }
 
     expand() {
@@ -14,6 +25,10 @@ class MenuItems {
 
 let menu = document.querySelectorAll(".popup ul li a");
 menu= Array.from(menu).map(item => new MenuItems(item));
+
+
+
+// Tab Navigator
 
 class Tabs {
     constructor(element) {
