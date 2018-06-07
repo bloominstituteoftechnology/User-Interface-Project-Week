@@ -27,7 +27,7 @@ class Hamburger {
         this.element = element;
 
         this.navbar = document.querySelector('.navbar-container');
-        this.navbar = new Navbar(this.navbar, 25, 200);
+        this.navbar = new Navbar(this.navbar, 25, 100);
         
         this.menuList = document.querySelector('.nav-menu');
         this.menuList = new MenuList(this.menuList);
