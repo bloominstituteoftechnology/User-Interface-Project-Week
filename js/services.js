@@ -72,3 +72,12 @@ closeBtn.addEventListener('click', () => {
 menuBtn.addEventListener('click', () => {
   overlay.style.display = 'block';
 });
+
+// activate onscroll nav bar color change
+let navbar = document.querySelector('.navigation-container');
+window.addEventListener('scroll', changeNavColor);
+
+function changeNavColor() {
+  navbar.style = 'background-color: #9DA7B1';
+  navbar.style.opacity = '0.95';
+}
