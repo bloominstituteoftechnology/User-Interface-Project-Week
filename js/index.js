@@ -34,13 +34,21 @@ dropdowns = Array.from(dropdowns).map(dropdown => new Dropdown(dropdown));
 
 //scroll function
 const dropdownScroll = () => {
-  nav.style.position = "fixed";
-  nav.style.top = 0;
-  nav.style.backgroundColor = "#9DA7B1";
-  nav.style.opacity = 0.95;
+
+  if (window.scrollY !== navTop) {
+    nav.style.position = "fixed";
+    nav.style.paddingTop = nav.height + "px";
+    nav.classList.add("sticky-top");
+
+} else {
+  nav.classList.remove("sticky-top");
+  nav.style.paddingTop = 0;
+
+}
 };
 
 const nav = document.querySelector(".dropdown");
+const navTop = nav.offsetTop;
 window.addEventListener("scroll", dropdownScroll);
 
 
@@ -113,5 +121,6 @@ class TabsItem {
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
-
-TweenLite.from(".jumbo-container", 1.5, {right:"300px"});
+TweenLite.to([".jumbo-home", ".jumbo-services", ".jumbo-contact"], 1, {opacity:1});
+TweenLite.from(".jumbo-container", 2, {right:"500px", delay: 1});
+TweenLite.to([".image-1", ".image-2"], 2, {opacity:1, delay: 2.5});
