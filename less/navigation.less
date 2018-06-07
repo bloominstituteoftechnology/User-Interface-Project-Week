@@ -1,0 +1,80 @@
+//Navigation
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    z-index: 25;
+    h2 {
+        margin-left: 15px;
+        .subHeader-font-style;
+        @media (min-width: 768px) {
+            margin-left: 75px;
+            margin-top: 15px;
+        }
+    }
+    .hamburger {
+        margin-right: 15px;
+        @media (min-width: 768px) {
+            margin-right: 75px;
+            margin-top: 15px;
+        }
+    }
+    @media (min-width: 768px) {
+        max-width: 1024px;
+    }
+}
+
+//Dropdown Overlay
+.overlay {
+    background: #9da7b1;
+     // vh === viewport height
+    // vw === viewport width
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0.95;
+    overflow: hidden;
+    display: none;
+    z-index: 30;
+    
+    .overlay-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      nav {
+        display: flex;
+        flex-direction: column;
+        a {
+          margin-bottom: 100px;
+          .nav-text;
+        }
+        a:hover {
+            color: @off-black;
+            text-decoration: none;
+        }
+      }
+    }
+    .close-btn {
+      width: 45px;
+      height: 45px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .dropdown-logo {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+}
