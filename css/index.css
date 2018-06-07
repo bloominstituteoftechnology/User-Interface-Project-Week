@@ -8587,24 +8587,26 @@ nav a:hover {
     margin-top: 1rem;
   }
   .custom-footer-inner .addresses {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .custom-footer-inner .addresses .last {
+    display: block;
     padding-left: 0;
-    padding-bottom: 0;
   }
-  .custom-footer-inner .mobile-copyright {
+  .custom-footer-inner .mobile-copyright-outer-display {
+    display: block;
+    padding-right: 9.3rem;
+  }
+  .custom-footer-inner .mobile-copyright-outer-display .mobile-copyright {
+    display: block !important;
     justify-content: flex-start !important;
     align-items: flex-start;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid #979797;
     position: relative;
-    top: 45.4rem;
+    top: 0.6rem;
     max-height: 50px;
-    padding-left: 4rem;
+  }
+  .custom-footer-inner .mobile-copyright-outer-display .mobile-copyright .inner-display {
+    display: flex !important;
+    justify-content: center !important;
   }
   .custom-footer-inner h3 {
     min-width: 200px;
@@ -8619,7 +8621,6 @@ nav a:hover {
   padding: 8px 56px 0 16px;
 }
 .footer-address {
-  max-width: 22.417%;
   padding: 0 79px 12px 0;
 }
 .footer-address h3 {
@@ -8632,8 +8633,23 @@ nav a:hover {
 .last {
   padding: 0 0 12px 9px;
 }
+@media (max-width: 400px) {
+  .last {
+    position: relative;
+    left: -4rem;
+    padding-left: 0;
+  }
+}
 .copyright {
   font-size: 1.2rem;
+}
+@media (min-width: 401px) {
+  .copyright-otherwise {
+    position: relative;
+    padding-right: 0;
+    top: 0;
+    right: -38%;
+  }
 }
 .jumbo-home {
   width: 100%;
@@ -8937,9 +8953,22 @@ h6 {
   margin: 0 auto;
   background-repeat: no-repeat;
 }
+@media (max-width: 400px) {
+  .jumbo-services {
+    max-width: 320px;
+    height: 260px;
+    background: url("../img/services/services-mobile-jumbotron.png");
+  }
+}
 .slogan-services {
   position: relative;
   top: 155px;
+}
+@media (max-width: 400px) {
+  .slogan-services {
+    top: 196px;
+    padding-left: 5.203125%;
+  }
 }
 .services-m-p {
   margin-top: 52px;
@@ -8947,6 +8976,47 @@ h6 {
 }
 .services-m-p p {
   line-height: 2.5rem;
+}
+@media (max-width: 400px) {
+  .services-m-p {
+    margin-top: 34px;
+  }
+}
+@media (max-width: 400px) {
+  .services-mobile-content-padding {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+@media (max-width: 400px) {
+  .services-mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .services-mobile-buttons .services-mobile-button {
+    min-width: 290px;
+    margin-bottom: .7rem;
+  }
+  .services-mobile-content-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .services-mobile-content-adjust-container {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .services-mobile-content-adjust-container .services-mobile-content-adjust-content {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+  .services-mobile-content-adjust-container .services-mobile-content-adjust-image {
+    min-height: 300px;
+    padding-left: 0;
+    padding-right: 8.203125%;
+    width: 100%;
+    height: auto;
+  }
 }
 .tabs {
   width: 100%;
@@ -8957,6 +9027,11 @@ h6 {
   display: flex;
   justify-content: center;
   padding-top: 51px;
+}
+@media (max-width: 400px) {
+  .tabs .tabs-items {
+    height: auto;
+  }
 }
 .tabs .tabs-image {
   padding-top: 35px;
@@ -9054,9 +9129,22 @@ h6 {
   margin: 0 auto;
   background-repeat: no-repeat;
 }
+@media (max-width: 400px) {
+  .jumbo-contact {
+    max-width: 320px;
+    height: 260px;
+    background: url("../img/contact/contact-mobile-jumbotron.png");
+  }
+}
 .slogan-contact {
   position: relative;
   top: 155px;
+}
+@media (max-width: 400px) {
+  .slogan-contact {
+    top: 186px;
+    padding-left: 5.203125%;
+  }
 }
 .my-form-text-contact-body {
   margin-top: 4px;
@@ -9077,14 +9165,35 @@ h6 {
 .p-left-1 {
   padding-left: 1;
 }
+@media (max-width: 400px) {
+  .my-mt-adjust-contact-mobile {
+    margin-top: 3.4rem;
+  }
+}
 .my-mt-adjust-email {
   margin-top: 4.4rem;
+}
+@media (max-width: 400px) {
+  .my-mt-adjust-email {
+    margin-top: 5.2rem;
+  }
 }
 .my-mt-adjust-2nd {
   margin-top: 2.6rem;
 }
+@media (max-width: 400px) {
+  .my-mt-adjust-2nd {
+    margin-top: 2.4rem;
+  }
+}
 .my-mt-adjust-3rd {
   margin-top: 3.8rem;
+}
+@media (max-width: 400px) {
+  .my-mt-adjust-3rd {
+    margin-top: 1.8rem;
+    margin-bottom: 0.2rem;
+  }
 }
 .submit-button {
   margin-top: 2.7rem;
@@ -9104,6 +9213,19 @@ h6 {
 .submit-button:active {
   background: #5E9FB9;
 }
+@media (max-width: 400px) {
+  .submit-button {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .contact-where-we-work-mobile {
+    display: flex;
+    justify-content: center;
+    left: -55px;
+    margin-top: 4rem;
+  }
+}
 .where-we-work-h3 {
   color: #222222;
   margin-top: 1rem;
@@ -9118,5 +9240,13 @@ h6 {
   letter-spacing: 0.1rem;
 }
 .footer-mt-adjust {
-  margin-top: 48px;
+  margin-top: 4.8rem;
+}
+@media (max-width: 400px) {
+}
+@media (max-width: 400px) {
+  .contact-mobile-content-adjust-content {
+    padding-left: 8.5%;
+    padding-right: 8.5%;
+  }
 }

@@ -63,28 +63,32 @@
         }
 
         .addresses {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            
-            .last {
-                padding-left: 0;
-                padding-bottom: 0;
-            }
+            display: block;
+            padding-left: 0;
         }
 
-        .mobile-copyright {
-            justify-content: flex-start !important;
-            align-items: flex-start;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #979797;
-            position: relative;
-            top: 45.4rem;
-            max-height: 50px;
-            padding-left: 4rem;
+
+        .mobile-copyright-outer-display{
+            display: block;
+            padding-right: 9.3rem;
+            .mobile-copyright {
+                display: block !important;
+                justify-content: flex-start !important;
+                align-items: flex-start;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                // border-bottom: 1px solid #979797;
+                position: relative;
+                top: 0.6rem;
+                max-height: 50px;
+                
+                .inner-display {
+                    display: flex !important;
+                    justify-content: center !important;
+                }
+            }
         }
-        h3 {
+            h3 {
             min-width: 200px;
         }
         p {
@@ -100,7 +104,6 @@
 }
 
 .footer-address {
-    max-width: 22.417%;
     padding: 0 79px 12px 0;
     
     h3 {
@@ -115,14 +118,28 @@
 
 .last {
     padding: 0 0 12px 9px;
+    @media (max-width:400px) {
+        position: relative;
+        left: -4rem;
+        padding-left: 0;
+    }
 }
 
 .copyright {
     font-size: 1.2rem;    
 }
 
-.footer-no-padding-l-r {
-    @media (max-width:400px) {
-        
+.copyright-otherwise {
+    @media (min-width:401px) {
+        position: relative;
+        padding-right: 0;
+        top: 0;
+        right: -38%;
     }
 }
+
+// .footer-no-padding-l-r {
+//     @media (max-width:400px) {
+        
+//     }
+// }
