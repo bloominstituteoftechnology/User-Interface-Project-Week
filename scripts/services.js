@@ -50,10 +50,8 @@ class TabLink {
             TweenLite.set(tab, {/* y: 50 ,*/ "height": 0, "opacity": 0});
             TweenLite.to(tab, .15, {y: -60, "opacity": 1});
             TweenLite.to(tab, .25, {y: 0, "height": oldTabHeight, delay: .1, ease: Power4.easeOut, onComplete: () => {
-                container.style.height = "auto";
-                tab.style.height = null;
+                TweenLite.to(tab, .5, {"height": "auto"});
             }});
-            // TweenLite.set(tab, {y: 50});
         });
     }
     deactivateTab() {
