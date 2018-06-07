@@ -53,28 +53,35 @@ class Button{
 class Text{
     constructor(text){
         this.text = text;
+        this.text.style.position = 'absolute';
+        this.text.style.top = 0;
+        this.text.style.left = 0;
     }
     select(){
         console.log(this.text)
-        TweenMax.to(this.text, 0.5, {opacity: 1, display: 'block', delay: 0.2});
+        TweenMax.to(this.text, 0.5, {opacity: 1, display: 'block'});
 
     }
     deselect(){
-        TweenMax.to(this.text, 0.2, {opacity: 0, display: 'none'});
+        TweenMax.to(this.text, 0.5, {opacity: 0, display: 'none'});
     }
 }
 
 class Img{
     constructor(img){
         this.img = img;
-
+        this.img.style.position = 'absolute';
+        this.img.style.top = 0;
+        this.img.style.left = 0;
     }
     select(){
-        TweenMax.to(this.img, 0.5, {opacity: 1, display: 'block', delay: 0.2});
+        this.img.style.zIndex = 3;
+        TweenMax.to(this.img, 0.3, {opacity: 1, display: 'block', ease: SlowMo.ease.config(0.7, 0.7, false)});
 
     }
     deselect(){
-        TweenMax.to(this.img, 0.2, {opacity: 0, display: 'none'});
+        this.img.style.zIndex = 0;        
+        TweenMax.to(this.img, 0.6, {opacity: 0, display: 'none', delay: 0.2});
     }
 }
 
