@@ -2,7 +2,7 @@ header {
   .grid();
   width: 100vw;
   height: 100vh;
-  background: url(../img/home/home-jumbotron.png) no-repeat center center fixed;
+  background: url(../img/home/home-jumbotron.png) center center no-repeat fixed;
   background-size: cover;
 
   @media @phone {
@@ -21,52 +21,50 @@ header {
     font-size: 6.4rem;
     line-height: 7.5rem;
 
+    @media @tablet {
+      font-size: 5rem;
+      line-height: 5.85rem;
+      padding: 0 0 23px;
+    }
+
     @media @phone {
       padding: 0 @gutter-width-phone 23px;
       font-size: 3.6rem;
       line-height: 4.2rem;
     }
+
   }
 
-  // contact
+  // styles for contact and services
+  &.header--contact, &.header--services {
+    height: 250px;
+
+    @media @phone {
+      height: 260px;
+    }
+
+    .header__content {
+      padding: 0 0 @gutter-width-phone 0;
+
+      @media @phone {
+        padding: 0 0 23px @gutter-width-phone;
+      }
+    }
+  }
+
   &.header--contact {
-    height: 250px;
-    background: url(../img/contact/contact-jumbotron.png) no-repeat center center;
-    background-size: cover;
+    background: url(../img/contact/contact-jumbotron.png) center center / cover no-repeat;
 
     @media @phone {
-      height: 260px;
-      background: url(../img/contact/contact-mobile-jumbotron.png) no-repeat;
-      background-size: cover;
-    }
-
-    .header__content {
-      padding: 0 0 15px 0;
-
-      @media @phone {
-        padding: 0 0 23px 15px;
-      }
+      background: url(../img/contact/contact-mobile-jumbotron.png) center center / cover no-repeat;
     }
   }
 
-  // services
   &.header--services {
-    height: 250px;
-    background: url(../img/services/services-jumbotron.png) no-repeat center center;
-    background-size: cover;
+    background: url(../img/services/services-jumbotron.png) center center / cover no-repeat;
 
     @media @phone {
-      height: 260px;
-      background: url(../img/services/services-mobile-jumbotron.png) no-repeat;
-      background-size: cover;
-    }
-
-    .header__content {
-      padding: 0 0 15px 0;
-
-      @media @phone {
-        padding: 0 0 23px 15px;
-      }
+      background: url(../img/services/services-mobile-jumbotron.png) center center / cover no-repeat;
     }
   }
 
