@@ -1,10 +1,15 @@
 // Services Styles
 
 .jumbo-services {
-    width: 1024px;
+    width: 100%;
+    max-width: 1024px;
     height: 250px;
     background: url("../img/services/services-jumbotron.png");
     margin: auto;
+
+    @media @phone {
+        max-width: 100%;
+    }
 }
  .para {
      margin: 50px 30px;
@@ -45,6 +50,12 @@
 .tabs .tabs-links {
     display: flex;
     justify-content: space-around;
+
+    @media @phone {
+        flex-direction: column;
+        align-items: center;
+
+    }
 }
 
 .tabs .tabs-link {
@@ -59,6 +70,11 @@
     &:hover {
         background-color: @off-black;
         color: @white;
+    }
+
+    @media @phone {
+        width: 25rem;
+        margin-bottom: 25px;
     }
 }
 
@@ -78,10 +94,18 @@
 .tabs-items {
     margin: 30px 50px;
 
+    @media @phone {
+        margin: 30px 50px 20px 50px;
+    }
+
     .tabs-item {
         display: flex;
         margin-top: 50px;
-        display: none;
+        // display: none;
+
+        @media @phone {
+            flex-direction: column;
+        }
     }
     .tabs-item-selected {
         display: block;
