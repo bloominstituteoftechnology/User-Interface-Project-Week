@@ -43,8 +43,10 @@ class TabLink {
             tab.classList.remove("hidden");
             let container = this.parent.parentElem;
             let containerHeight = container.clientHeight;
+            containerHeight = "" + containerHeight + "px";
             container.style.height = containerHeight;
             let oldTabHeight = tab.scrollHeight;
+            oldTabHeight = "" + oldTabHeight + "px";
             TweenLite.set(tab, {/* y: 50 ,*/ "height": 0, "opacity": 0});
             TweenLite.to(tab, .15, {y: -60, "opacity": 1});
             TweenLite.to(tab, .25, {y: 0, "height": oldTabHeight, delay: .1, ease: Power4.easeOut, onComplete: () => {
