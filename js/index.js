@@ -98,10 +98,15 @@ if($('.navbar').length > 0){
 }
 
 // Nav overlay
-let overlay = document.querySelector(".overlay");
 let menuBtn = document.querySelector(".navbar img");
 let closeBtn = document.querySelector(".overlay img");
 
 menuBtn.addEventListener("click", function() {
-    overlay.classList.toggle("display");
+    $(".overlay").removeClass("hidden");
+    $(".overlay").addClass("active");
+});
+
+closeBtn.addEventListener("click", function() {
+    $(".overlay").removeClass("active");
+    $(".overlay").addClass("hidden");
 });
