@@ -61,3 +61,9 @@ Background: #828282
 - Line Height: 85px
 - Color: #FFFFFF
 - Hover Color: #222222
+
+### Footer 
+-Background: #777777
+
+### Navigation Logo
+- Font Weight: Bold  
