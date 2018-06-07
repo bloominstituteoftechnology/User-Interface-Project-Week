@@ -10,7 +10,6 @@ class Navigation {
     this.animationTiming = 250;
 
     this.links = this.element.querySelectorAll('.nav__link-container a');
-    console.log(this.links);
   }
 
   init() {
