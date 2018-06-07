@@ -6,12 +6,12 @@ class Navbar {
             this.locY = locY;
             this.delay = delay;
 
-            let timer;
-            if(timer) {
-                window.clearTimeout(timer);
+            this.timer;
+            if(this.timer) {
+                window.clearTimeout(this.timer);
             }
         
-            timer = window.setTimeout(function() {
+            this.timer = window.setTimeout(function() {
                 if (window.scrollY <= this.locY) {
                     this.element.classList.remove('change-navbar');
                 }
@@ -25,22 +25,24 @@ class Navbar {
 class Hamburger {
     constructor(element) {
         this.element = element;
+
         this.navbar = document.querySelector('.navbar-container');
-        this.navbar = new Navbar(this.navbar, 150, 1000);
-        console.log(this.navbar);
+        this.navbar = new Navbar(this.navbar, 25, 200);
+        
         this.menuList = document.querySelector('.nav-menu');
         this.menuList = new MenuList(this.menuList);
+
         this.btnState = {
-            default: 'img/nav-hamburger.png',
-            active: 'img/nav-hamburger-close.png'
+            hamburger: 'img/nav-hamburger.png',
+            closeX: 'img/nav-hamburger-close.png'
         };
         this.element.addEventListener('click', function () {
-            if (this.element.getAttribute('src') === this.btnState.default) {
-                this.element.src = this.btnState.active;
+            if (this.element.getAttribute('src') === this.btnState.hamburger) {
+                this.element.src = this.btnState.closeX;
                 this.menuList.show();
             }
             else {
-                this.element.src = this.btnState.default;
+                this.element.src = this.btnState.hamburger;
                 this.menuList.hide();
             }
         }.bind(this));
