@@ -30,7 +30,7 @@ window.onload = function(){
 overlayHome.addEventListener('click', function(e) {
   e.stopPropagation;
   TweenMax.to(overlay,.25,{display: "none", scale:0, opacity:0, ease:Bounce.easOut, onComplete: function(){
-    window.location.href = 'http://127.0.0.1:5500/index.html'
+    window.location.href = './index.html'
   }})
 })
 
@@ -38,7 +38,7 @@ overlayHome.addEventListener('click', function(e) {
 overlayServ.addEventListener('click', function(e) {
   e.stopPropagation;
   TweenMax.to(overlay,.25,{display: "none", scale:0, opacity:0, ease:Bounce.easOut, onComplete: function(){
-    window.location.href = 'http://127.0.0.1:5500/services.html'
+    window.location.href = './services.html'
   }})
 })
 
@@ -46,7 +46,7 @@ overlayServ.addEventListener('click', function(e) {
 overlayCont.addEventListener('click', function(e) {
   e.stopPropagation;
   TweenMax.to(overlay,.25,{display: "none", scale:0, opacity:0, ease:Bounce.easOut, onComplete: function(){
-    window.location.href = 'http://127.0.0.1:5500/contact.html'
+    window.location.href = './contact.html'
   }})
 })
 
@@ -55,6 +55,7 @@ overlayCont.addEventListener('click', function(e) {
 menuBtn.addEventListener('click', function() {
 
   if (menuBtn.classList.contains('open')){
+    Tween.to
     TweenMax.to(overlay,.25,{display: "none", scale:0, opacity:0, ease:Bounce.easOut})
     menuBtn.src= "./img/nav-hamburger.png"
     menuBtn.classList.remove('open')  
