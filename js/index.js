@@ -11,7 +11,6 @@ class Tabs {
         });
 
         this.activeLink = this.links[0];
-        console.log(this.activeLink);
 
         this.init();
     }
@@ -78,8 +77,17 @@ class TabsItem {
 }
 
 let tabs = document.querySelectorAll(".tabs");
-console.log(tabs);
 
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
 // Nav scroll
+
+
+// Nav overlay
+let overlay = document.querySelector(".overlay");
+let menuBtn = document.querySelector(".navbar img");
+let closeBtn = document.querySelector(".overlay img");
+
+menuBtn.addEventListener("click", function() {
+    overlay.classList.toggle("display");
+});
