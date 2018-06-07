@@ -1,13 +1,9 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
-     $('.carousel').carousel({
-      interval: 2000
-  });
-});
-
-
-
-
+//      $('.carousel').carousel({
+//       interval: 2000
+//   });
+// });
 
 
 //NAVBAR SCROLLTOP
@@ -17,7 +13,6 @@ $(document).ready(function() {
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
       });
   });
-
 
 
 //NAVBAR TOGGLE HAMBURGER
