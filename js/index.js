@@ -1,4 +1,5 @@
 // JS goes here
+// Services tab nav
 class Tabs {
     constructor(element) {
         this.element = element;
@@ -80,3 +81,5 @@ let tabs = document.querySelectorAll(".tabs");
 console.log(tabs);
 
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+// Nav scroll
