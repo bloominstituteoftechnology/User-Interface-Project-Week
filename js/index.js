@@ -67,19 +67,22 @@ class Tabs {
   let tabs = document.querySelectorAll('.tabs');
   tabs = Array.from(tabs).map( tab => new Tabs(tab));
 
-let overlay = document.querySelector(".overlay");
-let menuBtn = document.querySelector(".nav-btn");
-let closeBtn = document.querySelector(".close-btn");
+let menuButton = document.querySelector(".menu-button");
+let expandedMenu = document.querySelector(".expanded-menu");
+let hamburger = document.querySelector(".hamburger")
 
-console.log(menuBtn)
-
-menuBtn.addEventListener('click', function() {
-  // I want overlay to display block now
-  overlay.style.display = "block";
-  console.log()
+menuButton.addEventListener("click", () => {
+  hamburger.classList.toggle("hamburger-close");
+  expandedMenu.classList.toggle("display_none");
 });
 
-closeBtn.addEventListener('click', function() {
-  // I want overlay to display none now
-  overlay.style.display = "none";
-});
+var myNav = document.getElementById("nav");
+
+window.onscroll = function() {
+  "use strict";
+  if (document.body.scrollTop >= 280 || document.documentElement.scrollTop >= 280) {
+    myNav.classList.add("scroll");
+  } else {
+    myNav.classList.remove("scroll");
+  }
+};
