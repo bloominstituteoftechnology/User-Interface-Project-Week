@@ -211,16 +211,38 @@ body {
     width: 72%;
   }
 }
-.navigation {
+.desktop-img {
+  display: block;
+}
+@media (max-width: 400px) {
+  .desktop-img {
+    display: none;
+  }
+}
+.mobile-img {
+  display: none;
+}
+@media (max-width: 400px) {
+  .mobile-img {
+    display: block;
+  }
+}
+.nav-container {
   position: fixed;
+  width: 100%;
+  margin: 0 auto;
+}
+.navigation {
   color: #FFFFFF;
   font-size: 2.4rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
-  width: 83%;
+  height: 50px;
+  margin: 0 auto;
+  max-width: 855px;
+  width: 100%;
 }
 @media (max-width: 400px) {
   .navigation {
@@ -326,7 +348,7 @@ footer .copyright {
   .jumbo-home {
     background: url("../img/home/home-mobile-jumbotron.png") no-repeat;
     margin: 0 auto;
-    width: 320px;
+    width: 80%;
     height: 260px;
   }
 }
@@ -336,7 +358,7 @@ footer .copyright {
 @media (max-width: 400px) {
   .jumbo-home .container {
     height: 260px;
-    width: 320px;
+    width: 80%;
   }
 }
 .jumbo-home .container h1 {
@@ -352,7 +374,7 @@ footer .copyright {
     line-height: 4rem;
     font-size: 3.5rem;
     top: 120px;
-    left: 55px;
+    left: 13%;
   }
 }
 .top-content {
@@ -374,47 +396,9 @@ footer .copyright {
     margin-bottom: 45px;
   }
 }
-.top-content .text-and-image-content .home-img-1 {
-  display: block;
-}
-.top-content .text-and-image-content .home-img-2 {
-  display: block;
-}
-.top-content .text-and-image-content .home-villas-img {
-  display: block;
-}
-.top-content .text-and-image-content .home-mobile-img-1 {
-  display: none;
-}
-.top-content .text-and-image-content .home-mobile-img-2 {
-  display: none;
-}
-.top-content .text-and-image-content .home-mobile-villas-img {
-  display: none;
-}
 @media (max-width: 400px) {
   .top-content .text-and-image-content {
     flex-direction: column-reverse;
-  }
-  .top-content .text-and-image-content .home-img-1 {
-    display: none;
-  }
-  .top-content .text-and-image-content .home-img-2 {
-    display: none;
-  }
-  .top-content .text-and-image-content .home-villas-img {
-    display: none;
-  }
-  .top-content .text-and-image-content .home-mobile-img-1 {
-    display: block;
-    margin-bottom: -20px;
-  }
-  .top-content .text-and-image-content .home-mobile-img-2 {
-    display: block;
-    margin-bottom: -20px;
-  }
-  .top-content .text-and-image-content .home-mobile-villas-img {
-    display: block;
   }
 }
 .top-content .text-and-image-content .text-content {
@@ -483,34 +467,10 @@ footer .copyright {
 .bottom-content .gray-square-and-img-container {
   position: relative;
 }
-.bottom-content .gray-square-and-img-container .home-villas-img {
-  display: block;
-}
-.bottom-content .gray-square-and-img-container .home-mobile-villas-img {
-  display: none;
-}
-.bottom-content .gray-square-and-img-container .home-the-blocks-img {
-  display: block;
-}
-.bottom-content .gray-square-and-img-container .home-mobile-the-blocks-img {
-  display: none;
-}
 @media (max-width: 400px) {
   .bottom-content .gray-square-and-img-container {
-    left: -15px;
-    top: -15px;
-  }
-  .bottom-content .gray-square-and-img-container .home-villas-img {
-    display: none;
-  }
-  .bottom-content .gray-square-and-img-container .home-mobile-villas-img {
-    display: block;
-  }
-  .bottom-content .gray-square-and-img-container .home-the-blocks-img {
-    display: none;
-  }
-  .bottom-content .gray-square-and-img-container .home-mobile-the-blocks-img {
-    display: block;
+    right: 15px;
+    bottom: 15px;
   }
 }
 .bottom-content .gray-square-and-img-container h3 {
@@ -569,20 +529,6 @@ footer .copyright {
     width: 290px;
   }
 }
-.bottom-content .left-square .home-outskirts-img {
-  display: block;
-}
-.bottom-content .left-square .home-mobile-outskirts-img {
-  display: none;
-}
-@media (max-width: 400px) {
-  .bottom-content .left-square .home-outskirts-img {
-    display: none;
-  }
-  .bottom-content .left-square .home-mobile-outskirts-img {
-    display: block;
-  }
-}
 .jumbo-services {
   margin: 0 auto;
   width: 1024px;
@@ -638,7 +584,49 @@ footer .copyright {
     margin: 45px 0 20px 0;
   }
 }
-.services-menu .tab-container .tab {
+.tabs-item {
+  display: none;
+  margin: 50px 0 90px 0;
+}
+@media (max-width: 400px) {
+  .tabs-item {
+    margin: 20px 0 60px 0;
+  }
+}
+.tabs-item h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #222222;
+  margin: 25px 0;
+}
+.tabs-item .text-and-image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 400px) {
+  .tabs-item .text-and-image-container {
+    flex-direction: column;
+  }
+}
+.tabs-item .text-and-image-container .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 35px;
+}
+@media (max-width: 400px) {
+  .tabs-item .text-and-image-container .text-container {
+    margin-right: 0;
+  }
+  .tabs-item .text-and-image-container .text-container p {
+    margin-bottom: 30px;
+  }
+}
+.tabs-item-selected {
+  display: block;
+}
+.tabs-link {
   height: 50px;
   width: 185px;
   font-weight: 700;
@@ -648,80 +636,19 @@ footer .copyright {
   justify-content: center;
   align-items: center;
 }
-.services-menu .tab-container .tab:hover {
+.tabs-link:hover {
   background: #222222;
   color: #FFFFFF;
 }
 @media (max-width: 400px) {
-  .services-menu .tab-container .tab {
+  .tabs-link {
     width: 100%;
     margin-bottom: 20px;
   }
 }
-.content {
-  margin: 50px 0 90px 0;
-}
-@media (max-width: 400px) {
-  .content {
-    margin: 20px 0 60px 0;
-  }
-}
-.content h2 {
-  font-weight: 700;
-  font-size: 2.4rem;
-  color: #222222;
-  margin: 25px 0;
-}
-.content .text-and-image-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-@media (max-width: 400px) {
-  .content .text-and-image-container {
-    flex-direction: column;
-  }
-}
-.content .text-and-image-container .text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: 35px;
-}
-@media (max-width: 400px) {
-  .content .text-and-image-container .text-container {
-    margin-right: 0;
-  }
-  .content .text-and-image-container .text-container p {
-    margin-bottom: 30px;
-  }
-}
-.content .text-and-image-container .services-tab-pre-construction-img {
-  display: block;
-}
-.content .text-and-image-container .services-tab-mobile-pre-construction-img {
-  display: none;
-}
-@media (max-width: 400px) {
-  .content .text-and-image-container .services-tab-pre-construction-img {
-    display: none;
-  }
-  .content .text-and-image-container .services-tab-mobile-pre-construction-img {
-    display: block;
-  }
-}
-.tab-selected {
+.tabs-link-selected {
   color: #FFFFFF;
   background: #5E9FB9;
-}
-.content-2 {
-  display: none;
-}
-.content-3 {
-  display: none;
-}
-.content-4 {
-  display: none;
 }
 .jumbo-contact {
   margin: 0 auto;
