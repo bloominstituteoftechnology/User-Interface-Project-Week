@@ -76,7 +76,7 @@ menuButton.addEventListener("click", () => {
   expandedMenu.classList.toggle("display_none");
 });
 
-let myNav = document.getElementById("navscroll");
+// let myNav = document.getElementById("navscroll");
 
 // window.onscroll = function() {
 //   if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
@@ -85,3 +85,12 @@ let myNav = document.getElementById("navscroll");
 //     myNav.classList.remove("scroll");
 //   }
 // };
+
+let navbar = document.querySelector('.navscroll');
+
+window.addEventListener('scroll', ()=>{
+    if (window.scrollY < 100) {
+       navbar.style.background = null; }
+      else {
+        navbar.style.background = "#088edf";
+      }});
