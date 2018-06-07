@@ -45,12 +45,15 @@ class TabLink {
             let containerHeight = container.clientHeight;
             containerHeight = "" + containerHeight + "px";
             container.style.height = containerHeight;
-            let oldHeight = tab.clientHeight;
+            let oldHeight = tab.scrollHeight;
             oldHeight = "" + oldHeight + "px";
-            oldHeight = "360px"
+            // oldHeight = "360px"
             TweenMax.set(tab, {"height": 0, "opacity": 0});
-            TweenMax.to(tab, .5, {"height": oldHeight , "opacity": 1});
-            // TweenMax.set(this.parent, {height: "auto"});
+            TweenMax.to(tab, .5, {"height": oldHeight , "opacity": 1, onComplete: () => {
+                container.style.height = "auto";
+                tab.style.height = null;
+            }});
+            // TweenMax.set(container, {height: "auto"}, .5);
 
 
             //other method that did not work
