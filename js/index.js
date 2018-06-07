@@ -1,16 +1,18 @@
-// JS goes here
+// $(document).ready(function() {
+// });
+//      $('.carousel').carousel({
+//   interval: 2000
+//   })
+
 
 //NAVBAR SCROLLTOP
-$(function () {
-  $(document).scroll(function () {
-    var $nav = $(".navbar-fixed-top");
-    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    $(function () {
+      $(document).scroll(function () {
+        var $nav = $(".navbar-fixed-top");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+      });
   });
 
-// $('.carousel').carousel({
-//   interval: 2000
-// })
-});
 
 
 //NAVBAR TOGGLE HAMBURGER
