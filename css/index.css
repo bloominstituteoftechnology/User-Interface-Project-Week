@@ -680,6 +680,14 @@ header.header--services {
 .tab-navigator {
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: .9s;
+}
+.tab-navigator.is-showing {
+  transform: translateX(0);
+  opacity: 1;
 }
 .tab-navigator .tab-navigator__link-container {
   display: flex;
@@ -794,6 +802,10 @@ header.header--services {
   margin: 0 0 50px 0;
   padding: 50px 0 0 0;
   color: #222;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: .1s;
 }
 @media only screen and (max-width: 768px) {
   .main--home .feature {
@@ -801,6 +813,10 @@ header.header--services {
     margin: 0 0 10px 0;
     padding: 35px 0 0 0;
   }
+}
+.main--home .feature.is-showing {
+  transform: translateY(0);
+  opacity: 1;
 }
 .main--home .feature .feature__content {
   display: flex;
@@ -879,6 +895,10 @@ header.header--services {
   flex-direction: column;
   align-items: center;
   margin: 0 0 77px 0;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: .1s;
 }
 @media only screen and (max-width: 768px) {
   .main--home .project {
@@ -910,8 +930,15 @@ header.header--services {
     margin: -2rem 15px 2.5rem;
   }
 }
-.main--home .project .project__title.project__title--alt {
+.main--home .project.project--alt {
+  transform: translateX(-60px);
+}
+.main--home .project.project--alt .project__title {
   align-self: flex-start;
+}
+.main--home .project.is-showing {
+  transform: translateX(0);
+  opacity: 1;
 }
 .main--home .project picture,
 .main--home .project .project__img {
@@ -950,11 +977,25 @@ header.header--services {
 }
 .main--services .services-intro {
   margin: 0 0 45px 0;
+  opacity: 0;
+  transition: all .3s linear;
+  transition-delay: .7s;
+}
+.main--services .services-intro.is-showing {
+  opacity: 1;
 }
 @media only screen and (max-width: 768px) {
   .main--services .services-intro {
     margin: 0 0 35px 0;
   }
+}
+main.main--contact {
+  opacity: 0;
+  transition: all .3s linear;
+  transition-delay: .7s;
+}
+main.main--contact.is-showing {
+  opacity: 1;
 }
 main.main--contact .main__content--contact {
   display: flex;

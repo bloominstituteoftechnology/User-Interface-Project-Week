@@ -20,6 +20,11 @@
     const tabNavigatorElement = document.querySelector('.tab-navigator');
     const tabNavigator = new TabNavigator(tabNavigatorElement);
     tabNavigator.init();
+
+    const intro = document.querySelector('.services-intro');
+
+    tabNavigatorElement.classList.add('is-showing');
+    intro.classList.add('is-showing');
   }
 
 }));

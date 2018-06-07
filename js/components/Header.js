@@ -4,7 +4,7 @@ class Header {
     this.window = window;
     this.textLines = this.element.querySelectorAll('p');
     this.animationTiming = 350;
-    this.animationDelay = 500;
+    this.animationDelay = 350;
   }
 
   init() {

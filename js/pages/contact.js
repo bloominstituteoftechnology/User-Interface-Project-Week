@@ -16,6 +16,9 @@
     const headerElement = document.querySelector('header');
     const header = new Header(headerElement, window);
     header.init();
+
+    const content = document.querySelector('.main--contact');
+    content.classList.add('is-showing');
   }
 
 }));
