@@ -1,5 +1,6 @@
 class Tabs {
-    constructor(tabs) {
+    constructor(tabs, parent) {
+        this.parent = parent;
         this.element = tabs;
         this.tabs = Array.from(document.querySelectorAll('.tab'));
         this.links = Array.from(document.querySelectorAll('.tab-link'));
@@ -39,25 +40,28 @@ class TabLink {
     activateTab() {
         this.element.classList.add("selected");
         this.tabArr.forEach((tab) => {
-
-            tab.classList.remove("hidden"); //just removes display: none
+            tab.classList.remove("hidden");
+            let container = this.parent.parent;
+            let containerHeight = container.clientHeight;
+            containerHeight = "" + containerHeight + "px";
+            container.style.height = containerHeight;
             let oldHeight = tab.clientHeight;
             oldHeight = "" + oldHeight + "px";
-            TweenMax.set(tab, {height: 0, opacity: 0});
-            TweenMax.to(tab, 5, {height: oldHeight , opacity: 1});
+            oldHeight = "360px"
+            TweenMax.set(tab, {"height": 0, "opacity": 0});
+            TweenMax.to(tab, .5, {"height": oldHeight , "opacity": 1});
+            // TweenMax.set(this.parent, {height: "auto"});
+
 
             //other method that did not work
             // TweenMax.set(tab, {height: "auto", opacity: 1});
             // TweenMax.from(tab, 2, {height: 0, opacity: 0});
-
-
 
         });
     }
     deactivateTab() {
         this.element.classList.remove("selected");
         this.tabArr.forEach((tab) => {
-            TweenMax.to(tab, 5, {opacity: 0, height: 0});
             tab.classList.add("hidden");
         });
     }
@@ -66,10 +70,11 @@ class TabLink {
     }
 }
 
+
 let tabsArr = document.querySelectorAll(".tabs");
 tabsArr = Array.from(tabsArr);
 tabsArr = tabsArr.map((tabs) => {
-    return new Tabs(tabs);
+    return new Tabs(tabs, document.querySelector(".content"));
 });
 
 tabsArr.forEach((tabs) => {
