@@ -7,42 +7,31 @@ const navOpa = () => {
 const nav = document.querySelector(".navigation")
 window.addEventListener("scroll", navOpa);
 
-
 const togglenavPage = () => {
     console.log("i was clicked")
-    navpage.classList.toggle("navpage--open");  
-    closeBtn.classList.toggle("closebtn--open");
-    // navButton.classList.toggle("hamburger--close");
-}
-
-const toggleClose = () => {   
-    // navButton.classList.toggle("hamburger--close");
     navpage.classList.toggle("navpage--open");
+    navButton.classList.toggle("hamburger--close");
+    closeBtn.classList.toggle("closebtn--open");
 }
-
+const toggleClose = () => {  
+    closeBtn.classList.toggle("closebtn--open");
+    navpage.classList.toggle("navpage--open");
+    navButton.classList.toggle("hamburger--close"); 
+}
 
 const navpage = document.querySelector(".navpage");
-
+console.log(navpage)
 const navButton = document.querySelector(".hamburger");
-
+console.log(navButton)
 const closeBtn = document.querySelector(".closebtn");
-
 navButton.addEventListener("click", togglenavPage);
-
 closeBtn.addEventListener("click", toggleClose);
 
-console.log("hello")
 
-
-
-
-
-class Buttons {
+class Linker {
     constructor(element) {
         this.element = element;
-        console.log(element);
         this.buttons = this.element.querySelectorAll(".button-link");
-        console.log(this.buttons);
         this.buttons = Array.from(this.buttons).map(buttonlink => new ButtonLink(buttonlink, this));
         this.activeButton = this.buttons[0];
         this.init();
@@ -51,8 +40,8 @@ class Buttons {
         this.activeButton.select();
     }
     updateActive(newActive) {
-        this.activeLink.deselect();
-        this.activeLink = newActive;
+        this.activeButton.deselect();
+        this.activeButton = newActive;
     }
     getButton(data){
         return this.element.querySelector(`.info[data-button="${data}"]`);
@@ -62,16 +51,14 @@ class Buttons {
 class ButtonLink {
     constructor (element, parent) {
         this.element = element;
-        console.log(this.element);
-        this.button = parent;
+        this.linker = parent;
         this.link = parent.getButton(this.element.dataset.button)
         this.buttonItem = new ButtonItem(this.link);
         this.element.addEventListener('click', ()=>{
-            this.button.updateActive(this);
+            this.linker.updateActive(this);
             this.select();
         });
     };
-
     select() {
         this.element.classList.add("button-link-selected");
         this.buttonItem.select();
@@ -94,8 +81,5 @@ class ButtonItem {
     }
 }
 
-
-
-let buttons = document.querySelectorAll(".buttonslinks");
-console.log(buttons)
-buttons = Array.from(buttons).map(buttonRef => new Buttons(buttonRef));
+let linker = document.querySelectorAll(".linker");
+linker = Array.from(linker).map(linkerRef => new Linker(linkerRef));
