@@ -159,6 +159,7 @@ body {
   width: 100%;
   max-width: 1024px;
   height: 65px;
+  z-index: 5;
 }
 .navigation h1 {
   font-weight: bold;
@@ -172,15 +173,62 @@ body {
 }
 @media (max-width: 350px) {
   .navigation {
-    width: 290px;
+    width: 100%;
     max-width: 320px;
-    margin: -8px 0% 0 5%;
+    margin: -8px 0% 0 0;
   }
 }
 .navigation.scrolled {
   opacity: 0.95;
   background: #9DA7B1;
-  z-index: 10;
+}
+.nav-overlay {
+  background: #9da7b1;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  opacity: 0.95;
+  overflow: hidden;
+  display: none;
+  z-index: 5;
+}
+.nav-overlay h1 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #222222;
+  margin-left: 8%;
+  color: #FFFFFF;
+  top: 21px;
+  position: absolute;
+}
+.nav-overlay .overlay-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.nav-overlay .overlay-content nav {
+  display: flex;
+  flex-direction: column;
+}
+.nav-overlay .overlay-content nav a {
+  text-decoration: none;
+  font-weight: Bold;
+  font-size: 48px;
+  line-height: 85px;
+  color: #FFFFFF;
+}
+.nav-overlay .overlay-content nav a:hover {
+  color: #222222;
+}
+.nav-overlay .close-button {
+  position: absolute;
+  top: 13px;
+  right: 9.5%;
+  z-index: 5;
+  border: unset;
+  background-color: unset;
 }
 .footer {
   background: dimgray;
@@ -278,6 +326,7 @@ body {
   width: 1024px;
   height: 598px;
   background: red url("../img/home/home-jumbotron.png");
+  margin: auto;
 }
 @media (max-width: 350px) {
   .jumbo-home {
@@ -565,6 +614,7 @@ body {
   width: 1024px;
   height: 250px;
   background: red url("../img/contact/contact-jumbotron.png");
+  margin: auto;
 }
 @media (max-width: 350px) {
   .jumbo-contact {
@@ -687,6 +737,7 @@ body {
   width: 1024px;
   height: 250px;
   background: red url("../img/services/services-jumbotron.png");
+  margin: auto;
 }
 @media (max-width: 350px) {
   .jumbo-services {

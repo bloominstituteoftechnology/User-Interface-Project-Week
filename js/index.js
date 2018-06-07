@@ -66,3 +66,19 @@ document.addEventListener('scroll', () =>{
     nav.classList.add('scrolled');
     
 })
+
+//Navigation Overlay
+
+let overlay = document.querySelector(".nav-overlay");
+let menuBtn = document.querySelector(".hamburger");
+let closeBtn = document.querySelector(".close-button");
+
+menuBtn.addEventListener('click', function() {
+  // I want overlay to display block now
+  overlay.style.display = "block";
+});
+
+closeBtn.addEventListener('click', function() {
+  // I want overlay to display none now
+  overlay.style.display = "none";
+});
