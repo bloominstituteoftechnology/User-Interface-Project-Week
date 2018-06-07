@@ -12,6 +12,9 @@ class Service{
     getImage(data){
         return this.element.querySelectorAll(`img[data-tab=${data}]`);
     }
+    getText(data){
+        return this.element.querySelectorAll(`div[data-tab=${data}]`);
+    }
     update(element){
         this.active.deselect();
         this.active = element;
@@ -26,6 +29,9 @@ class Button{
         this.imgs = this.parent.getImage(this.btn.dataset.tab)
         this.imgs = Array.from(this.imgs).map(img => (new Img(img)));
 
+        this.texts = this.parent.getText(this.btn.dataset.tab);
+        this.texts = Array.from(this.texts).map(text => (new Text(text)));
+
         this.btn.addEventListener('click', ()=>{
             this.parent.update(this);
         })
@@ -34,10 +40,27 @@ class Button{
     select(){
         this.btn.classList.add('btn__active');
         this.imgs.map(img => (img.select()));
+        this.texts.map(text => (text.select()));
     }
     deselect(){
         this.btn.classList.remove('btn__active');
         this.imgs.map(img => (img.deselect()));
+        this.texts.map(text => (text.deselect()));
+        
+    }
+}
+
+class Text{
+    constructor(text){
+        this.text = text;
+    }
+    select(){
+        console.log(this.text)
+        TweenMax.to(this.text, 0.5, {opacity: 1, display: 'block', delay: 0.2});
+
+    }
+    deselect(){
+        TweenMax.to(this.text, 0.2, {opacity: 0, display: 'none'});
     }
 }
 
