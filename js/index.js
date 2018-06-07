@@ -39,6 +39,7 @@ const dropdownScroll = () => {
   nav.style.backgroundColor = "#9DA7B1";
   nav.style.opacity = 0.95;
 };
+
 const nav = document.querySelector(".dropdown");
 window.addEventListener("scroll", dropdownScroll);
 
@@ -111,3 +112,6 @@ class TabsItem {
 
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+
+TweenLite.from(".jumbo-container", 1.5, {right:"300px"});
