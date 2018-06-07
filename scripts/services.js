@@ -39,22 +39,32 @@ class TabLink {
     }
     activateTab() {
         this.element.classList.add("selected");
-        this.tabArr.forEach((tab) => {
-            tab.classList.remove("hidden");
-            let container = this.parent.parentElem;
-            let containerHeight = container.clientHeight;
-            containerHeight = "" + containerHeight + "px";
-            container.style.height = containerHeight;
-            let oldTabHeight = tab.scrollHeight;
-            oldTabHeight = "" + oldTabHeight + "px";
-            TweenLite.set(tab, {/* y: 50 ,*/ "height": 0, "opacity": 0});
-            TweenLite.to(tab, .15, {y: -60, "opacity": 1});
-            TweenLite.to(tab, .25, {y: 0, "height": oldTabHeight, delay: .1, ease: Power4.easeOut, onComplete: () => {
-                TweenLite.to(container, .5, {"height": "auto"});
-                TweenLite.to(tab, .5, {"height": "auto"});
-            }});
-        });
+        console.log (window.innerWidth);
+        if (window.innerWidth > 600) {
+            this.tabArr.forEach((tab) => {
+                tab.classList.remove("hidden");
+                let container = this.parent.parentElem;
+                let containerHeight = container.clientHeight;
+                containerHeight = "" + containerHeight + "px";
+                container.style.height = containerHeight;
+                let oldTabHeight = tab.scrollHeight;
+                oldTabHeight = "" + oldTabHeight + "px";
+                TweenLite.set(tab, {/* y: 50 ,*/ "height": 0, "opacity": 0});
+                TweenLite.to(tab, .15, {y: -60, "opacity": 1});
+                TweenLite.to(tab, .25, {y: 0, "height": oldTabHeight, delay: .1, ease: Power4.easeOut, onComplete: () => {
+                    TweenLite.to(container, .5, {"height": "auto"});
+                    TweenLite.to(tab, .5, {"height": "auto"});
+                }});
+            });
+        } else {
+            this.tabArr.forEach((tab) => {
+                tab.classList.remove("hidden");
+                TweenLite.set(tab, {"opacity": 0});
+                TweenLite.to(tab, .25, {"opacity": 1});
+            });
+        }
     }
+
     deactivateTab() {
         this.element.classList.remove("selected");
         this.tabArr.forEach((tab) => {
