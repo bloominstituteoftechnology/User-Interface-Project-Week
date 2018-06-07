@@ -1,1 +1,768 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes tabfadein {
+  from {
+    background: white;
+  }
+  to {
+    background: #5E9FB9;
+  }
+}
+html {
+  font-family: 'Roboto', Arial, san-serif;
+}
+.container {
+  max-width: 855px;
+}
+@media (max-width: 400px) {
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+}
+.hide {
+  display: none;
+}
+.close {
+  content: url("../img/nav-hamburger-close.png");
+}
+.popup {
+  position: fixed;
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(153, 165, 175, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  line-height: 67px;
+  animation-name: fadein;
+  animation-duration: 1s;
+}
+@media (max-width: 400px) {
+  .popup {
+    width: 100vw;
+  }
+}
+.popup ul li a {
+  color: black;
+}
+.popup ul li .selected {
+  color: white;
+}
+.hamburger {
+  position: absolute;
+  width: 706px;
+  height: 20px;
+  margin: 15px 69px;
+  font-size: 1.25rem;
+  color: #FFF;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  z-index: 30;
+}
+@media (max-width: 400px) {
+  .hamburger {
+    margin: 15px 30px;
+    width: 336px;
+  }
+}
+.scroll {
+  position: fixed;
+  background: rgba(162, 172, 181, 0.95);
+  z-index: 100;
+  margin: 0;
+  width: 825px;
+  padding: 7px 4.5%;
+  height: 35px;
+  padding-right: 51px;
+}
+@media (max-width: 400px) {
+  .scroll {
+    width: 400px;
+    padding-right: 35px;
+  }
+}
+.jumbo img {
+  width: 825px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+@media (max-width: 400px) {
+  .jumbo img {
+    content: url("../img/home/home-mobile-jumbotron.png");
+    width: 400px;
+  }
+}
+.jumbo .jumbo-header {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 58px;
+  color: #FFF;
+  margin-top: 128px;
+  margin-left: 68px;
+}
+@media (max-width: 400px) {
+  .jumbo .jumbo-header {
+    margin-left: 3%;
+    margin-top: 64%;
+    font-size: 2.5rem;
+  }
+}
+.footer {
+  background-color: #828282;
+  color: #FFF;
+  height: 204px;
+  padding-left: 8%;
+  padding-top: 54px;
+}
+@media (max-width: 400px) {
+  .footer {
+    height: 100%;
+    padding: 4%;
+  }
+}
+.footer .main-content {
+  display: flex;
+}
+@media (max-width: 400px) {
+  .footer .main-content {
+    flex-direction: column;
+  }
+}
+.footer .main-content form {
+  margin-top: 18px;
+}
+.footer .main-content form input {
+  padding: 7px 10px;
+  padding-right: 87px;
+  font-size: 0.75rem;
+  border: 0px;
+  border-radius: 5px;
+}
+@media (max-width: 400px) {
+  .footer .main-content form input {
+    width: 100%;
+  }
+}
+.footer .main-content form small {
+  font-size: 0.65rem;
+}
+.footer .main-content .location {
+  margin-left: 7%;
+}
+@media (max-width: 400px) {
+  .footer .main-content .location {
+    margin: 4% 0;
+  }
+  .footer .main-content .location h3 {
+    font-size: 1.25rem;
+    margin-bottom: 2%;
+  }
+}
+.footer .main-content .location ul {
+  font-size: 0.75rem;
+  line-height: 23px;
+}
+.footer .copyright {
+  display: block;
+  text-align: center;
+  font-size: 0.558rem;
+  margin-top: 24px;
+  margin-left: -9%;
+}
+.button {
+  border: 1px solid black;
+  font-size: 0.75rem;
+  margin-left: 16%;
+  margin-top: 5%;
+  margin-right: 56%;
+  padding: 3% 6%;
+}
+.jumbo-home {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 58px;
+  color: #FFF;
+  z-index: 10;
+  margin-top: 264px;
+  margin-left: 8.24%;
+}
+@media (max-width: 400px) {
+  .jumbo-home {
+    margin: 0 3%;
+    margin-top: 35%;
+    font-size: 2.5rem;
+  }
+}
+.top-content {
+  margin-top: 92px;
+}
+@media (max-width: 400px) {
+  .top-content {
+    margin-top: 75px;
+  }
+}
+.top-content .architects {
+  display: flex;
+}
+@media (max-width: 400px) {
+  .top-content .architects {
+    flex-direction: column;
+  }
+}
+.top-content .architects h2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222222;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-left: 68px;
+}
+.top-content .architects .content {
+  margin-left: 16%;
+  margin-right: 1%;
+  font-size: 0.8rem;
+  line-height: 19px;
+}
+.top-content .architects img {
+  height: 224px;
+  width: 328px;
+  margin-top: -1%;
+  margin-right: 9%;
+}
+@media (max-width: 400px) {
+  .top-content .architects img {
+    content: url("../img/home/home-mobile-img-1.png");
+    order: -1;
+    margin: 2.5%;
+    height: 100%;
+    width: 95%;
+  }
+}
+.top-content .designs {
+  display: flex;
+  margin-top: 10%;
+  margin-left: 8.5%;
+}
+@media (max-width: 400px) {
+  .top-content .designs {
+    flex-direction: column;
+    margin: 0;
+  }
+}
+.top-content .designs h2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222222;
+  margin-bottom: 20px;
+  margin-top: 27px;
+  margin-left: 68px;
+}
+.top-content .designs .content {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 0.8rem;
+  line-height: 19px;
+}
+.top-content .designs img {
+  height: 224px;
+  width: 328px;
+  margin-top: -1%;
+  margin-right: -6%;
+}
+@media (max-width: 400px) {
+  .top-content .designs img {
+    content: url("../img/home/home-mobile-img-2.png");
+    margin: 2.5%;
+    height: 100%;
+    width: 95%;
+  }
+}
+.top-content .designs .button {
+  margin-left: 14%;
+  margin-right: 62%;
+  padding: 2% 4%;
+}
+.top-content .column {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 400px) {
+  .top-content .column h2 {
+    margin: 0;
+    width: 100%;
+    height: 28px;
+    text-align: center;
+    margin-top: 4%;
+  }
+  .top-content .column .content {
+    margin: 5% 3%;
+    font-size: 1rem;
+  }
+  .top-content .column .button {
+    margin: 0;
+    margin-left: 3%;
+    margin-bottom: 10%;
+    width: 95%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+.bottom-content {
+  margin-top: 9%;
+}
+.bottom-content h2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222222;
+  margin-bottom: 4.5%;
+  margin-left: 8.5%;
+}
+.bottom-content .rec-proj {
+  max-width: 83%;
+  margin-left: 8%;
+}
+.bottom-content .rec-proj img {
+  max-width: 100%;
+  position: relative;
+  z-index: -10;
+}
+@media (max-width: 400px) {
+  .bottom-content .villas {
+    content: url("../img/home/home-mobile-villas-img.png");
+  }
+  .bottom-content .outskirts {
+    content: url("../img/home/home-mobile-outskirts-img.png");
+  }
+  .bottom-content .blocks {
+    content: url("../img/home/home-mobile-the-blocks-img.png");
+  }
+}
+.bottom-content .text-box {
+  background-color: #DDDDDD;
+  padding: 4% 2%;
+  margin-top: -7%;
+  margin-left: 64%;
+  z-index: -20;
+}
+.bottom-content .text-box h3 {
+  margin-left: 13%;
+  letter-spacing: 6px;
+  font-size: 1.25rem;
+}
+@media (max-width: 400px) {
+  .bottom-content .text-box h3 {
+    margin: 0;
+  }
+}
+@media (max-width: 400px) {
+  .bottom-content .text-box {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-right: 15%;
+    height: 45px;
+    margin-left: 10%;
+    align-items: center;
+  }
+}
+.bottom-content .text-box-out {
+  background-color: #DDDDDD;
+  padding: 4% 2%;
+  margin-top: -7%;
+  margin-left: 64%;
+  z-index: -10;
+  margin-left: 0%;
+  margin-right: 62.5%;
+}
+.bottom-content .text-box-out h3 {
+  margin-left: 13%;
+  letter-spacing: 6px;
+  font-size: 1.25rem;
+}
+@media (max-width: 400px) {
+  .bottom-content .text-box-out h3 {
+    margin: 0;
+  }
+}
+@media (max-width: 400px) {
+  .bottom-content .text-box-out {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-right: 15%;
+    height: 45px;
+    margin-left: 10%;
+    align-items: center;
+  }
+}
+.bottom-content .content {
+  margin-top: 7%;
+  margin-left: 24%;
+  margin-bottom: 12%;
+  max-width: 51%;
+  line-height: 19px;
+  font-size: 0.9rem;
+}
+.bottom-content .content p {
+  margin-bottom: 6%;
+}
+@media (max-width: 400px) {
+  .bottom-content .content {
+    margin: 5% 0;
+    max-width: 100%;
+    line-height: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .bottom-content h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .jumbo .services {
+    content: url("../img/services/services-mobile-jumbotron.png");
+  }
+}
+.highlight {
+  background: #5E9FB9;
+  animation-name: tabfadein;
+  animation-duration: 1s;
+}
+.services .pretext {
+  margin: 59px 71px;
+  font-size: 0.8rem;
+  line-height: 22px;
+  margin-bottom: 4%;
+}
+@media (max-width: 400px) {
+  .services .pretext {
+    margin: 12% 5%;
+    margin-top: 14%;
+    font-size: 1.25rem;
+  }
+}
+.services .tabs-nav {
+  margin-bottom: 6%;
+}
+.services .tabs-nav .tab-links {
+  cursor: pointer;
+}
+.services .tabs-nav .tab-links ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 29px 56px;
+}
+@media (max-width: 400px) {
+  .services .tabs-nav .tab-links ul {
+    flex-direction: column;
+    margin: 0;
+    margin-left: 5%;
+  }
+}
+.services .tabs-nav .tab-links ul li {
+  border: 1px solid black;
+  width: 21%;
+  font-weight: 700;
+  padding: 1.5% 1%;
+  text-align: center;
+}
+@media (max-width: 400px) {
+  .services .tabs-nav .tab-links ul li {
+    width: 95%;
+    margin: 3% 0;
+  }
+}
+@media (max-width: 400px) {
+  .services .tabs-nav .tab-contents {
+    margin-top: 7%;
+  }
+}
+.services .tabs-nav .tab-contents .content {
+  display: none;
+}
+.services .tabs-nav .tab-contents .active {
+  display: flex;
+  animation-name: fadein;
+  animation-duration: 1s;
+}
+@media (max-width: 400px) {
+  .services .tabs-nav .tab-contents .active {
+    flex-direction: column;
+  }
+}
+.services .tabs-nav .tab-contents .active .text-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5%;
+  margin-left: 9%;
+  line-height: 19px;
+}
+.services .tabs-nav .tab-contents .active .text-content h2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222222;
+}
+.services .tabs-nav .tab-contents .active .text-content p {
+  font-size: 0.8rem;
+  line-height: 20px;
+  margin-top: 2%;
+  margin-bottom: 6%;
+  margin-right: 8%;
+}
+.services .tabs-nav .tab-contents .active img {
+  width: 316px;
+  margin-top: 5%;
+  margin-right: 9%;
+  height: 218px;
+}
+@media (max-width: 400px) {
+  .services .tabs-nav .tab-contents .active img {
+    margin: 0 auto;
+    width: 70%;
+  }
+}
+@media (max-width: 400px) {
+  .services .tabs-nav .tab-contents .active .pre {
+    content: url("../img/services/services-tab-mobile-pre-construction-img.png");
+  }
+  .services .tabs-nav .tab-contents .active .con {
+    content: url("../img/services/services-tab-mobile-construction-img.png");
+  }
+  .services .tabs-nav .tab-contents .active .des {
+    content: url("../img/services/services-tab-mobile-design-build-img.png");
+  }
+  .services .tabs-nav .tab-contents .active .sus {
+    content: url("../img/services/services-tab-mobile-sustainability-img.png");
+  }
+}
+@media (max-width: 400px) {
+  .jumbo .contact {
+    content: url("../img/contact/contact-mobile-jumbotron.png");
+  }
+}
+.middle-content {
+  margin-top: 56px;
+}
+.middle-content .contact-form {
+  margin-left: 8%;
+}
+@media (max-width: 400px) {
+  .middle-content .contact-form {
+    margin: 0 5%;
+  }
+}
+.middle-content .contact-form .contact {
+  margin-top: 11%;
+}
+.middle-content .contact-form .contact .form-group {
+  margin-bottom: 9%;
+}
+.middle-content .contact-form .contact .form-group label {
+  font-size: 0.75rem;
+}
+.middle-content .contact-form .contact .form-group small {
+  font-size: 0.65rem;
+}
+.middle-content .contact-form .contact .form-group textarea {
+  width: 100%;
+}
+.middle-content .contact-form .contact .form-check {
+  line-height: 16px;
+}
+.middle-content .contact-form .contact .form-check label {
+  font-size: 0.75rem;
+}
+.middle-content .contact-form p {
+  border: 1px solid black;
+  width: 37%;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  padding: 13px 37px;
+  font-size: 0.75rem;
+}
+@media (max-width: 400px) {
+  .middle-content .contact-form p {
+    margin: 10% 0;
+    padding: 4% 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+.middle-content h3 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222222;
+}
+.middle-content .where {
+  margin-left: 7%;
+}
+.middle-content .where h3 {
+  margin-bottom: 10%;
+  margin-top: 3%;
+}
+.middle-content .where .location-contact {
+  margin-bottom: 9%;
+  line-height: 23px;
+}
+.middle-content .where .location-contact h4 {
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
