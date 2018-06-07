@@ -4,16 +4,16 @@ class Tabs {
     constructor(element) {
         this.element = element;
         console.log(this.element)
-    }
-    select() {
-        let selected = document.querySelectorAll(".one");
-        console.log(selected);
-        selected.addEventListener("mouseover", () => {
-            console.log(this.selected);
-        });
+        // console.log(element);
+        element.addEventListener('click', () => {
+            console.log(element);
+           
+           });
     }
 
 }
 
-let tabs = document.querySelectorAll('.view');
+
+
+let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map( tab => new Tabs(tab));
