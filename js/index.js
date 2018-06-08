@@ -88,3 +88,15 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 //         navi.classList.remove("grayNav")
 //     }
 // }
+// let nav = document.querySelector('.navigation');
+
+// window.addEventListener('scroll', navScroll);
+
+// function navScroll() {
+//     if(window.scrollY === 0) {
+//         nav.classList.remove('.gray');
+//     } else {
+//         nav.classList.add('.gray');
+//     }
+// }
+
