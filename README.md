@@ -31,7 +31,7 @@ These MVP features represent the fundamental knowledge you should have obtained 
 * [ ] Build layout **HTML/LESS**: [Home page mobile design](/DesignFiles/Home/home-mobile.png)
 * [ ] Build layout **HTML/LESS**: [Services page **desktop design only**](/DesignFiles/Services/services-desktop.png)
 * [ ] Build layout **HTML/LESS/JavaScript**: Navigation system
-	* Non-expanded View: When the navigation is not active, it should be fixed to the top of the page, see the [design file](DesignFiles/Navigation/non-expanded.png)
+	* [Non-expanded View](DesignFiles/Navigation/non-expanded/non-expanded.png): When the navigation is not active, it should be fixed to the top of the page at all times
 	* [Expanded View](DesignFiles/Navigation/expanded): When a user clicks on the navigation icon a full page overlay will pop over all the content on the page. The navigation icon will be replaced by a close icon. The user must click the close icon to return back to browsing the website. The home and services pages need to be linked together using `<a></a>` tags. [All design files have been provided for you](DesignFiles/Navigation/non-expanded). You must use your own custom JavaScript for the opening and closing functionality, no bootstrap allowed for functionality on this feature
 * [ ] Custom Component **HTML/LESS/JavaScript**: Services page tab navigator
 	* [Review the provided design files](/DesignFiles/Services/tabs) to see how the tab navigator should function. 
