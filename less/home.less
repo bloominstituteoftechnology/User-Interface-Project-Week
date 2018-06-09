@@ -3,6 +3,20 @@
     position: relative;
     height:100%;
 
+    .jumbo-mobile{
+        display:none;
+    }
+
+    @media @phone{
+
+        .jumbo-mobile{
+            display:block;
+        }
+        .img-fluid{
+            display:none;
+        }
+    }
+
     p{
         position: absolute;
         .jumbo-text;
@@ -23,25 +37,36 @@
         right:185px;
         }
     .overlay{
-        border:1px solid red;
         background: #9da7b1;
         opacity: 0.95;
         overflow: hidden;
-        //position:fixed;
-        height: 600px;
-        width: 75vw;
-        position: absolute;
+        position:fixed;
+        height: 100vh;
+        width: 100vw;
         top:0px;
         display:none;
+        z-index: 2;
+
+        .top{
+            display: flex;
+            flex-direction: row;
+            margin-top:20px;
+
+            h2{
+                margin-left: 60px;
+            }
+
+            .x-home{
+            margin-left:880px;
+            
+            }
+            
+        }
 
         h2{
             color: @white;
         }
 
-        .x-home{
-            margin-left:920px;
-            margin-top: 20px;
-        }
 
         .overlay-content{
             display:flex;
@@ -49,24 +74,21 @@
             width: 75vw;
             height: 70vh;
             align-items:center;
-            border:1px solid black;
             
 
             nav{
                 display:flex;
                 flex-direction: column;
-                align-items: center;
-                border:1px solid black;
 
                 a {
                     margin-bottom: 30px;
                     font-size: 3.2rem;
-                    border:1px solid black;
                     color:@white;
+                    font-weight: bold;
                 }
                 a:hover{
-                    color:black;
                     text-decoration: none;
+                    color:black;
                 }
             }
         }
@@ -82,17 +104,49 @@
         font-size: 1.4rem;
 
         .mc-1{
+
+            .ruler{
+                @media @phone{
+                    display:none;
+                }
+            }
+
+            .ruler-mobile{
+                display:none;
+                @media @phone{
+                    display:block;
+                }
+            }
             @media @phone{
                 display:flex;
                 flex-direction: column-reverse;
 
             }
         }
+
+        .mc-2{
+            .reflect-mobile{
+               display:none;
+               @media @phone{
+                   display:block;
+               }
+            }
+            .reflect{
+                @media @phone{
+                    display:none;
+                }
+            }
+        }
         .mc-3{
+
+            p{
+                margin-top: 30px;
+            }
+
             @media @phone{
                 margin-left:0px;
                 margin-right:0px;
-                border:1px solid blue;
+            
             }
             .recent{
                 @media @phone{
@@ -102,8 +156,41 @@
             img{
                 @media @phone{
                     padding-left:0px;
-                    border:1px solid red;
                     
+                }
+            }
+        }
+        .mc-4{
+
+            .skirts-mobile{
+                display:none;
+            }
+            @media @phone{
+                .img-fluid{
+                    display:none;
+                }
+                .skirts-mobile{
+                    display: block;
+                }
+            }
+            p{
+                margin-top: 30px;
+            }
+        }
+
+        .mc-5{
+            p{
+                margin-top: 30px;
+            }
+            .block-mobile{
+                display:none;
+            }
+            @media @phone{
+                .block-mobile{
+                    display: block;
+                }
+                .block-desk{
+                    display:none;
                 }
             }
         }
@@ -120,9 +207,21 @@
 
         .rela{
             position: relative;
+
+            .img-fluid{
+                @media @phone{
+                    display:none;
+                }
+            }
             @media @phone{
                 padding-left:0px;
                 padding-right:0px;
+            }
+            .villa-phone{
+                display:none;
+                @media @phone{
+                    display:block;
+                }
             }
            
         }
@@ -138,17 +237,57 @@
             padding-left:55px;
             padding-top: 25px;
             letter-spacing: 8px;
-            margin-left:616px;
+            margin-left:617px;
             z-index: 1;
             position: absolute;
-            bottom:-45px;
+            bottom:-55px;
+            
+            @media @phone{
+                margin-left:20px;
+                width:290px;
+                height:100px;
+                font-size: 2.0rem;
+                bottom:-85px;
+                padding-top: 30px;
+                padding-left:50px;
+
+            }
             
             
+        }
+        .box-out{
+            border:1px solid white;
+            height: 115px;
+            width:350px;
+            background-color: lightgrey;
+            justify-content: center;
+            align-items: center;
+            font-size: 3.0rem;
+            padding-left:55px;
+            padding-top: 25px;
+            letter-spacing: 8px;
+            margin-left:15px;
+            z-index: 1;
+            position: absolute;
+            bottom:-55px;
+            
+            @media @phone{
+                margin-left:20px;
+                width:290px;
+                height:100px;
+                font-size: 2.0rem;
+                bottom:-85px;
+            }
+
         }
         .btn{
             width:130px;
             height:50px;
             font-weight: bold;
+            
+            @media @phone{
+                width:100%;
+            }
         }
     }
 }
