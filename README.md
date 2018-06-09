@@ -25,18 +25,25 @@ Do not work on any extra features until you have checked off your MVP completion
 * Content has been provided on each page inside of comment tags
 * [Design Files](/DesignFiles) have been provided as guides for what the pages should look like on desktop and mobile.  Ignore tablet until you get MVP done.
 
-## MVP Features:
-* [ ] Build the Home, Services and Contact Us pages to [match provided design files](/DesignFiles) for desktop and mobile views.  You can use bootstrap and/or custom CSS (LESS) for layout.  You have been provided all the content and necessary images for each view.  Notice the home page is called `index.html`.  Don't worry about a tablet view for MVP.
-* [ ] [Services page](/DesignFiles/Services): You must build the tab navigator using your own custom JavaScript components, no libraries allowed on this feature. You are encouraged to use code from previous weeks to accomplish this feature.
-* [ ] [Navigation System Part 1](/DesignFiles/Navigation/onScroll): When the user starts to scroll, the navigation bar should go from a transparent background to a 95% opacity background using `#9DA7B1` as your background color.  You can accomplish this anyway you want.  Use the design file named "Navigation-Scrolled" for an exmpale.
-* [ ] [Navigation System Part 2](/DesignFiles/Navigation/expanded): When a user clicks on the navigation icon a full page overlay will pop over all the content on the page. The navigation icon will be replaced by a close icon.  The user must click the close icon to return back to browsing the website.  The home, services, and contact pages need to be linked together using `<a></a>` tags.  All design files have been provided for you. You must use your own custom JavaScript for the opening and closing functionality, no bootstrap allowed for functionality on this feature.
-* [ ] LESS preprocessing must be used for all styling, use LESS imports to create a single index.less file that combines smaller .less files together.
+These MVP features represent the fundamental knowledge you should have obtained throughout the last 4 weeks.  If you cannot accomplish all of the MVP tasks listed here, you may be a candidate for the mastery based program.
+* [ ] Build layout **HTML/LESS**: [Home page desktop design](/DesignFiles/Home/home-desktop.png)
+* [ ] Build layout **HTML/LESS**: [Home page mobile design](/DesignFiles/Home/home-mobile.png)
+* [ ] Build layout **HTML/LESS**: [Services page **desktop design only**](/DesignFiles/Services/services-desktop.png)
+* [ ] Build layout **HTML/LESS/JavaScript**: Navigation system
+	* Non-expanded View: When the navigation is not active, it should be fixed to the top of the page, see the [design file](DesignFiles/Navigation/non-expanded.png).
+	* [Expanded View](DesignFiles/Navigation/expanded): When a user clicks on the navigation icon a full page overlay will pop over all the content on the page. The navigation icon will be replaced by a close icon. The user must click the close icon to return back to browsing the website. The home and services pages need to be linked together using `<a></a>` tags. [All design files have been provided for you](DesignFiles/Navigation/non-expanded). You must use your own custom JavaScript for the opening and closing functionality, no bootstrap allowed for functionality on this feature.
+* [ ] Custom Component **HTML/LESS/JavaScript**: Services page tab navigator
+	* [Review the provided design files](/DesignFiles/Services/tabs) to see how the tab navigator should function. 
+	* [Using the assets provided](/img/services), you must build the tab navigator using your own custom JavaScript component, no libraries allowed on this feature. You are encouraged to use code from previous weeks to accomplish this feature.
 
 Once you have accomplished the required MVP features, reach out to your project manager for approval to work on extra features of your choice.  This project does not end at MVP.  Try to get as many extra features in as you can before the demo.
 
-Extra features are not in order of importance, it's just a list of features the client wishes they could have by the demo.  Pick in any order you wish.
 
 ## Extra Features:
+Extra features are not in order of importance, it's just a list of features the client wishes they could have by the demo.  Pick in any order you wish.
+* Build layout **HTML/LESS**: [Services page mobile design](/DesignFiles/Services/services-mobile.png)
+* Build layout **HTML/LESS**: [Contact page desktop design](/DesignFiles/Contact/contact-desktop.png)
+* Build layout **HTML/LESS**: [Contact page mobile design](/DesignFiles/Contact/contact-mobile.png)
 * Make tablet look good if you haven't already
 * Create 2 more pages named "About Us" and "Projects".  Be creative on what kind of content you would put in there but match the heading layout of the services/contact us pages.  Be sure to add the new pages to the menu system as well.  Ideas for creativity: create a carousel showcasing all of the projects.  Use [pexel.com](https://www.pexels.com/) to get free images to create custom content around an architecture/building theme.  For the about us page, you could make a list of employees that work there and showcase credentials.  Make heavy use of lorem ipsum, don't waste time on content creativity at this point.
 * Use [Greensock](https://greensock.com/gsap) to add animation to the menu system when it opens and closes
