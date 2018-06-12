@@ -1,3 +1,7 @@
+/*
+  Our Tabs class is a container for a complete Tabs environment, with Tab Links and lower content to be displayed
+*/
+
 class Tabs {
   constructor(element){
     this.element = element;
@@ -64,11 +68,13 @@ class Article {
   }
   selectArticle(){
     // Update the style of this.element to display = null
-    this.element.style.display = null;
+    //this.element.style.display = null;
+    this.element.classList.add("article-selected");
   }
   deselectArticle(){
     // Update the style of this.element to display = "none"
-    this.element.style.display = "none";
+    //this.element.style.display = "none";
+    this.element.classList.remove("article-selected");
     //console.log(this.element.style);
   }
 }
