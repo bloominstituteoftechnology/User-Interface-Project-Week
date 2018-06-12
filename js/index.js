@@ -13,9 +13,10 @@ window.addEventListener('scroll', greyScrollbar);
 let overlay = document.querySelector('.navigation-overlay');
 let navBtn = document.querySelector('.header-icon');
 let navCloseBtn = document.querySelector('.header-close-icon');
+let headerLogo = document.querySelector('.logo');
 
 navBtn.addEventListener('click', () => {
-    overlay.setAttribute('style', 'display: flex;');
-    navCloseBtn.setAttribute('style', 'display: block');
+    overlay.setAttribute('style', 'display: block');
+    navCloseBtn.setAttribute('style', 'display: block, z-index: 1');
     navBtn.setAttribute('style', 'display: none');
 })
