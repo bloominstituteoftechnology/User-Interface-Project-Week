@@ -17,6 +17,12 @@ let headerLogo = document.querySelector('.logo');
 
 navBtn.addEventListener('click', () => {
     overlay.setAttribute('style', 'display: block');
-    navCloseBtn.setAttribute('style', 'display: block, z-index: 1');
+    navCloseBtn.setAttribute('style', 'display: block');
     navBtn.setAttribute('style', 'display: none');
 })
+
+navCloseBtn.addEventListener('click', () => {
+    overlay.setAttribute('style', 'display: none');
+    navCloseBtn.setAttribute('style', 'display: none');
+    navBtn.setAttribute('style', 'display: block');
+});
