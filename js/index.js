@@ -8,7 +8,7 @@ greyScrollbar = function() {
 let header = document.querySelector('.header');
 window.addEventListener('scroll', greyScrollbar);
 
-// NAVIGATION OVERLAYS SCREEN WHEN CLICKED
+// NAVIGATION OVERLAYS SCREEN WHEN CLICKED ON AND OFF
 
 let overlay = document.querySelector('.navigation-overlay');
 let navBtn = document.querySelector('.header-icon');
