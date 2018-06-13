@@ -73,7 +73,7 @@ class TabsBtn {
     }
 
     deselect() {
-        this.element.classList.add('tab-btn-selected')
+        this.element.classList.remove('tab-btn-selected')
         this.tabsContent.deselect();
     }
 }
@@ -84,11 +84,11 @@ class TabsContent {
     }
 
     select() {
-        this.element.classList.add('tab-btn-selected');
+        this.element.classList.add('tab-content-selected');
     }
 
     deselect() {
-        this.element.classList.remove('tab-btn-selected');
+        this.element.classList.remove('tab-content-selected');
     }
 }
 
