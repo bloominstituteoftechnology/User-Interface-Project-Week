@@ -92,6 +92,8 @@ class TabsContent {
     }
 }
 
+console.log(TabsContent)
 
 let tabs = document.querySelectorAll('.tabs')
-tabs = Array.from(tabs).map(tab = new tabs(tab));
+tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
