@@ -1,11 +1,16 @@
 // HEADER TURNS GREY WHEN SCROLLED
 
 greyScrollbar = function() {
-    header.style.background = '#9DA7B1';
-    header.style.opacity = '.95';
+     if (window.scrollY !== headerY) {   
+        header.style.background = '#9DA7B1';
+        header.style.opacity = '.95';
+    } else {
+        header.style.background = null;
+    }
 }
 
 let header = document.querySelector('.header');
+let headerY = header.offsetTop;
 window.addEventListener('scroll', greyScrollbar);
 
 // NAVIGATION OVERLAYS SCREEN WHEN CLICKED ON AND OFF
