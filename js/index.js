@@ -24,6 +24,7 @@ navBtn.addEventListener('click', () => {
     overlay.setAttribute('style', 'display: block');
     navCloseBtn.setAttribute('style', 'display: block');
     navBtn.setAttribute('style', 'display: none');
+    TweenMax.from('.navigation-overlay', 1.5, {opacity: 0, rotation: 360});
 })
 
 navCloseBtn.addEventListener('click', () => {
