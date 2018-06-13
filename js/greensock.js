@@ -1,1 +1,1 @@
-TweenMax.to(".jumbotron", 2, {opacity: 1});
+TweenMax.to(".jumbotron", 1, {opacity: 1});
