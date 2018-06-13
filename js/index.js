@@ -24,13 +24,14 @@ navBtn.addEventListener('click', () => {
     overlay.setAttribute('style', 'display: block');
     navCloseBtn.setAttribute('style', 'display: block');
     navBtn.setAttribute('style', 'display: none');
-    TweenMax.from('.navigation-overlay', 1.5, {opacity: 0, rotation: 360});
+    TweenMax.from('.navigation-overlay', .5, {opacity: 0, rotation: 360});
 })
 
 navCloseBtn.addEventListener('click', () => {
-    overlay.setAttribute('style', 'display: none');
-    navCloseBtn.setAttribute('style', 'display: none');
-    navBtn.setAttribute('style', 'display: block');
+    TweenMax.to('.navigation-overlay', 2, {top:-1000})
+    // overlay.setAttribute('style', 'display: none');
+    // navCloseBtn.setAttribute('style', 'display: none');
+    // navBtn.setAttribute('style', 'display: block');
 });
 
 
