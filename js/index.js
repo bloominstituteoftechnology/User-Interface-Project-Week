@@ -1,11 +1,22 @@
 
-let header = document.querySelector('.header')
+const header = document.querySelector('.header');
 window.addEventListener('scroll', function() {
   if (window.scrollY) {
     header.style.backgroundColor = '#9DA7B1';
   } else {
     header.style.backgroundColor = 'transparent'
   }
+});
+
+
+const expanded = document.querySelector('.navi-expanded');
+const navOpen = document.querySelector('.hamburger');
+const navClose = document.querySelector('.x')
+navOpen.addEventListener('click', function() {
+  expanded.classList.toggle('hidden');
+});
+navClose.addEventListener('click', function() {
+  expanded.classList.toggle('hidden');
 });
 
 class Tabs {
