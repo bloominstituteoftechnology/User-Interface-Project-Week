@@ -28,8 +28,7 @@ closeHamburger.addEventListener("click", () => {
 })
 
 
-// tabs 
-
+// Tabs 
 
 
 
@@ -99,3 +98,6 @@ class Tabs {
   
   let tabs = document.querySelectorAll('.tabs');
   tabs = Array.from(tabs).map( tab => new Tabs(tab));
+ 
+
+
