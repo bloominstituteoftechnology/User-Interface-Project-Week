@@ -1,4 +1,13 @@
-// JS goes here
+
+let header = document.querySelector('.header')
+window.addEventListener('scroll', function() {
+  if (window.scrollY) {
+    header.style.backgroundColor = '#9DA7B1';
+  } else {
+    header.style.backgroundColor = 'transparent'
+  }
+});
+
 class Tabs {
     constructor(element) {
       this.element = element;
