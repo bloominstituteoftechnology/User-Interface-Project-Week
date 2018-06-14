@@ -1,3 +1,8 @@
+// HOME PAGE OPENING ANIMATION
+
+TweenMax.staggerFrom('.jumbo-home .jumbo-text h1', 1.5, {opacity: 0, delay: .5}, 0.2);
+TweenMax.from('.jumbo-services .jumbo-text', 1.5, {opacity: 0, delay: .5});
+
 // HEADER TURNS GREY WHEN SCROLLED
 
 greyScrollbar = function() {
@@ -28,10 +33,10 @@ navBtn.addEventListener('click', () => {
 })
 
 navCloseBtn.addEventListener('click', () => {
-    TweenMax.to('.navigation-overlay', 2, {top:-1000})
-    // overlay.setAttribute('style', 'display: none');
-    // navCloseBtn.setAttribute('style', 'display: none');
-    // navBtn.setAttribute('style', 'display: block');
+    // TweenMax.to('.navigation-overlay', 2, {opacity: 0})
+    overlay.setAttribute('style', 'display: none');
+    navCloseBtn.setAttribute('style', 'display: none');
+    navBtn.setAttribute('style', 'display: block');
 });
 
 
@@ -98,8 +103,6 @@ class TabsContent {
         this.element.classList.remove('tab-content-selected');
     }
 }
-
-console.log(TabsContent)
 
 let tabs = document.querySelectorAll('.tabs')
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
