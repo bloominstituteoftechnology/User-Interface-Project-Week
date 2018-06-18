@@ -53,3 +53,4 @@ Extra features are not in order of importance, it's just a list of features the 
 * Host your site on a domain you own
 
 Remember: This is a self driven challenge, try to accomplish MVP as soon as you can and stretch as much as you can on extra features.  Have fun with this and remember to reach out to your project managers after the 20 minute rule.  Good luck!
+
