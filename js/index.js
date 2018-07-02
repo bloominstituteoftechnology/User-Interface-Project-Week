@@ -60,7 +60,6 @@ class ButtonLink {
 class TabItem{
   constructor(element){
     this.element = element;
-    console.log(this.element.classLis);
     this.deselect();
   }
 
@@ -85,7 +84,8 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 let headerNav = document.querySelector(".container-fluid.sticky-top");
 
 window.addEventListener("scroll", () => {
-  if(window.pageYOffset >= 598){
+  console.log(window.pageYOffset);
+  if(window.pageYOffset >= 100){
     headerNav.classList.add("nav-colored");
   }
   else {
