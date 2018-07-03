@@ -14,7 +14,9 @@
 
   @media @phone {
     background-image: url("../img/home/home-mobile-jumbotron.png");
-    min-height: 338px;
+    background-size: contain;
+    min-height: 320px;
+    
 
     img {
       width: 100%;
@@ -30,8 +32,9 @@
     font-family: 'Roboto', sans-serif;
 
     @media @phone {
-      line-height: 3.5rem;
-      font-size: 2.4rem;
+      line-height: 5.5rem;
+      font-size: 4.4rem;
+      margin-left: 1%;
     }
 
   }
@@ -40,19 +43,31 @@
 .container.home {
   max-width: 1040px;
   
-  @media @phone {
-    max-width: 400px;  
-    margin: 0;
-    padding-left: 0;
-    padding-right: 0;  
+  @media @phone {x
+    max-width: 345px;  
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; 
+    // overflow-x: hidden;
+    padding: 0;
 
     img {
-      width: 90%;
+      width: 100%;
     }
   }
 
   .top_content {
     margin-top: 5.5%;
+
+    @media @phone{
+      padding: 0;
+
+      .row .top-text {
+        padding-left: 4%;
+      }
+
+    }
 
     .row.row1 {
       display: flex;
@@ -63,10 +78,14 @@
       }
     }
     @media @phone {
-      .row1 {
+      .row.row1 {
         display: flex;
-        flex-flow: column-reverse wrap;
-        width: 100%;
+        flex-flow: column-reverse;
+        
+        .home-img-1 {
+          content: url("../img/home/home-mobile-img-1.png");
+          width: 100%;
+        }
 
       }
     }
@@ -78,7 +97,11 @@
       padding: 6%;
 
       @media @phone {
-        max-width: 100%;
+
+        .button {
+          width: 100%;
+
+        }
       }
     }
 
@@ -86,10 +109,14 @@
       display: flex;
       flex-flow: row;
       margin-top: 3%;
-      padding: 3%;
 
-      .top-text {
-        padding-left: 6%;
+      @media @phone {
+        flex-flow: column;
+
+        .home-img-2 {
+          content: url("../img/home/home-mobile-img-2.png");
+          width: 100%;
+        }
       }
     }
   }
@@ -97,9 +124,21 @@
   .container.recent-projects {
     margin-top: 6.5%;
     margin-left: 8%;
+
+    @media @phone {
+      width: 400px;
+      margin: 0;
+      padding: 0;
+    }
     .image {
       margin-top: 4%;
       position: relative;
+
+      @media @phone {
+        &.projects-img-1{
+          content: url("../img/home/home-mobile-villas-img.png");
+        }
+      }
 
     }
     .block{
