@@ -84,7 +84,6 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 let headerNav = document.querySelector(".container-fluid.sticky-top");
 
 window.addEventListener("scroll", () => {
-  console.log(window.pageYOffset);
   if(window.pageYOffset >= 100){
     headerNav.classList.add("nav-colored");
   }
