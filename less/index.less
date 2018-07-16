@@ -63,19 +63,26 @@ table{
 
 .flexrow() {
   display: flex;
-
 }
-
 .flexcolumn() {
   display: flex;
   flex-direction: column;
-
 }
-
 .buttonmaker(@width, @height){
   width: @width;
   height: @height;
-  border: 1px solid black;
+  border: 1px solid #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textsquare() {
+  position: absolute;
+  width: 300px;
+  height: 75px;
+  background: #D8D8D8;
+  border: solid white 1px;
+  bottom: 20em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,16 +90,25 @@ table{
 
 
 //============== General Styles ==============
+
 * {
   box-sizing: border-box;
 }
 h1, h2, h3, h4, h5 { 
   font-family: 'Roboto', sans-serif; 
+}
+h1 {
+  font-size: 1.5em;
   font-weight: bold;
 }
+h2 {
+  font-size: 1em;
+
+}
 body {
-  max-width: 1000px;
   font-family: 'Roboto', sans-serif;  
+  margin: auto;
+  max-width: 1000px;
 }
 
 //============== Specific Styles ==============
@@ -114,18 +130,15 @@ body {
 }
 
 .main-top {
+  margin: 6%;
   .button {
     .buttonmaker(130px, 50px);
   }
-  margin: 6%;
   .content {
     padding: 3%;
     line-height: 130%;
     .flexcolumn;
     justify-content: center;
-  }
-  h2 {
-    font-size: 1.5em;
   }
   .smith{
     .flexrow;
@@ -145,5 +158,29 @@ body {
   img {
     height: 100%;
   }
-  .flexcolumn;
+  h1 {
+    margin-left: 9%;
+  }
+  .recent {
+    margin: 6% 6% 0;
+    position: relative;
+    h2 {
+      .textsquare;
+    }
+    .villas {
+      h2 {
+        right: 0;
+      }
+    }
+    .outskirts {
+      h2 {
+        left: 0;
+      }
+    }
+    p {
+      margin-top: 6%;
+      padding: 0 28%;
+      line-height: 150%;
+    }
+  }
 }
