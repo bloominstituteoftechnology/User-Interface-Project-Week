@@ -57,4 +57,255 @@ table{
   border-spacing:0;
 }
 
-/* Your Code Goes Here */
+/* LESS variables */
+
+/* General Text */
+@general-font-weight: regular; 
+@general-font-size: 1.6rem;
+@general-line-height: 2.4rem;
+
+/* Jumbotron Headers */
+@jumbotron-font-weight: bold;
+@jumbotron-font-size: 6.4rem;
+@jumbotron-line-height: 7.5rem;
+@jumbotron-color: #FFFFFF; 
+
+/* Sub Headers */
+@subheaders-font-weight: bold;
+@subheaders-font-size: 2.8rem;
+@subheaders-color: #222222;
+
+/* Footer Headings */ 
+@footerheadings-font-weight: bold;
+@footerheadings-font-size: 2.0rem;
+@footerheadings-line-height: 2.4rem;
+@footerheadings-color: #FFFFFF;
+
+/* Footer Text */ 
+@footertext-font-weight: regular;
+@footertext-font-size: 1.4rem;
+@footertext-line-height: 2.6rem;
+@footertext-color: #FFFFFF;
+
+/* Navigation Logo */
+@navlogo-font-weight: bold;
+@navlogo-font-size: 2.4rem;
+@navlogo-color: #FFFFFF;
+
+/* Expanded Navigation Text */
+@navexpanded-font-weight: bold;
+@navexpanded-font-size: 4.8rem;
+@navexpanded-line-height: 8.5rem;
+@navexpanded-color: #FFFFFF;
+@navexpanded-hover-color: #222222;
+
+/* Mixins */
+.general-text() {
+  font-weight: @general-font-weight;
+  font-size: @general-font-size;
+  line-height: @general-line-height;
+}
+
+.sub-header() {
+  font-weight: @subheaders-font-weight;
+  font-size: @subheaders-font-size;
+  color: @subheaders-color;
+}
+/* General style */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 1028px;
+  margin: 0 auto;
+
+  height: 100%;
+  font-size: 62.5%;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  background: #FFFFFF;
+  color: #222222;
+}
+
+/* Menu Content */
+div.menu-content {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: darken(#D8D8D8, 30%);
+
+  h2 {
+    margin-left: 6rem;
+    font-weight: @navlogo-font-weight;
+    font-size: @navlogo-font-size;
+    color: @navlogo-color;
+  }
+
+  .navigation {
+    margin-right: 6rem;
+  }
+}
+
+/* Jumbotron */
+div.jumbotron {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  width: 100%;
+  height: 598px;
+
+  background-size: 100%;
+  background-image: url('../img/home/home-jumbotron.png');
+  background-repeat: no-repeat;
+
+  h1.jumbotron-slogan {
+    margin: 7rem;
+    font-weight: @jumbotron-font-weight;
+    font-size: @jumbotron-font-size;
+    line-height: @jumbotron-line-height;
+    color: @jumbotron-color;
+  }
+}
+
+/* Content */
+div.top-content,
+div.middle-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 8rem 0;
+  padding: 0 3rem;
+
+  div.content-text {
+    .general-text;
+    max-width: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+
+    h2 { .sub-header; }
+
+    p { margin: 2rem 0; }
+
+    button {
+      background: #FFFFFF;
+      border: 1px solid black;
+      padding: 1rem 2rem;
+      width: 12rem;
+    }
+  }
+
+  img {
+    display:block;
+    max-width: 410px;
+  }
+}
+
+div.middle-content img{
+  order: -1;
+}
+
+div.bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 8rem 0;
+
+  .general-text;
+
+  h2 {
+    .sub-header;
+    letter-spacing: 0.5rem;
+  }
+
+  div.bottom-content-heading{
+    margin-left: 8rem;
+  }
+
+  div.project {
+    
+    div.project-banner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      margin: 10rem 0;
+      
+      div.project-tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        height: 10rem;
+        width: 30rem;
+        background: #D8D8D8;
+        border: 1px solid #FFFFFF;
+
+        position: absolute;
+        top: 18rem;
+        right: 8.5rem;
+  
+        h2 { font-weight: 400; }
+      }
+    }
+
+    p {
+      max-width: 50%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.price-tag-left {
+  top: 18rem;
+  left: 8.5rem;
+}
+
+/* Footer */
+footer {
+  background: darken(#D8D8D8, 40%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    border: 1px solid darken(#D8D8D8, 20%);
+    border-radius: 5px;
+    width: 100%;
+    height: 4rem;
+
+    &::placeholder {
+      padding-left: 1rem;
+    }
+  }
+
+  h3 {
+    font-weight: @footerheadings-font-weight;
+    font-size: @footerheadings-font-size;
+    line-height: @footerheadings-line-height;
+    color: @footerheadings-color;
+
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-weight: @footertext-font-weight;
+    font-size: @footertext-font-size;
+    line-height: @footertext-line-height;
+    color: @footertext-color;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  margin: 6rem 0;
+}
+
+.copyright {
+  margin: 1rem auto;
+}
