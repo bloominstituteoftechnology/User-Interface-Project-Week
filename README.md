@@ -12,12 +12,12 @@ You will use Trello to report your progress on the MVP and any extra features yo
 - Don't overplan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction
 
 ## Trello Set Up:
-* [ ] Create a [Trello account](https://trello.com/)
-* [ ] Create a new public board called "S&J Architects - By Your Name"
-* [ ] Create lists titled ```backlog```,```To Do```, ```In Progress```, and ```Done```
-* [ ] Fill in the ```To Do``` list with the MVP features listed below
-* [ ] Fill in the ```backlog``` list with all the extra features listed below
-* [ ] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance
+* [x] Create a [Trello account](https://trello.com/)
+* [x] Create a new public board called "S&J Architects - By Your Name"
+* [x] Create lists titled ```backlog```,```To Do```, ```In Progress```, and ```Done```
+* [x] Fill in the ```To Do``` list with the MVP features listed below
+* [x] Fill in the ```backlog``` list with all the extra features listed below
+* [x] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance
 
 ## Assets Provided:
 * [Style guide:](/DesignFiles/style-guide.md) This file will help you identify font sizes, colors, and font families across the site.
@@ -52,4 +52,4 @@ Extra features are not in order of importance, it's just a list of features the 
 * Incorporate animations on scroll events so that when users scroll through the site, content animates in or out of view
 * Host your site on a domain you own
 
-Remember: This is a self driven challenge, try to accomplish MVP as soon as you can and stretch as much as you can on extra features.  Have fun with this and remember to reach out to your project managers after the 20 minute rule.  Good luck! 
+Remember: This is a self driven challenge, try to accomplish MVP as soon as you can and stretch as much as you can on extra features.  Have fun with this and remember to reach out to your project managers after the 20 minute rule.  Good luck!
