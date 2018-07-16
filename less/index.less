@@ -1,17 +1,23 @@
-@import: './reset.less';
-@import: './mixins';
-@import: './variables';
-@import: './services';
-@import: './contact';
-@import: './reset';
+// @import 'reset.less';
+@import 'mixins.less';
+@import 'variables.less';
+
+@import 'services.less';
+@import 'contact.less';
+
 
 .containter {
 max-width: 1024px;
+border: 1px solid red;
 margin: 0 auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 .top-bar {
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   justify-content: space-between;
   Background: #828282;
@@ -19,13 +25,13 @@ margin: 0 auto;
   position: fixed;
   z-index: 10;
   .title {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     display: flex;
     align-items: center;
     padding: 10px;
   }
   .nav-icon {
-    border: 1px solid green;
+    // border: 1px solid green;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -36,12 +42,13 @@ margin: 0 auto;
 }
 
 .banner{
-  border: 1px solid red;
+  // border: 1px solid red;
   max-height: 598px;
+  margin: 0 auto;
+  // margin-left: 100px;
   img{
     width: 100%;
     max-width: 1024px;
-
   }
   h1{
     position: absolute;
@@ -52,36 +59,63 @@ margin: 0 auto;
 }
 
 .after-banner{
-  border: 3px solid orange;
+  // border: 3px solid orange;
   background: #FFFFFF;
   max-width: 855px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-
+  align-items: center;
   .top-content {
-    border: 1px solid green;
+    // border: 1px solid green;
     width: 100%;
     margin-bottom: 20px;
     .content {
+      // border: 1px solid purple;
       margin-top: 40px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      .left{
-        border: 1px solid red;
+      .img-phone {
+        display: none;
       }
-      .right {
-        border: 1px solid blue
+      .half {
+        padding: 10px;
       }
+
+      @media @phone {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .img-phone {
+          display: flex;
+          width: 100%;
+        }
+        .img-desktop {
+          display: none;
+        }
+        .button {
+          max-width: 100%;
+        }
+      }
+
+
     }
     .button {
       border: 1px solid black;
       display: flex;
+      max-width: 150px;
       justify-content: center;
+      align-items: center;
       padding: 10px;
       a {
         color: black;
+        text-align: center;
+
         & :hover{
           text-decoration: underline;
         }
