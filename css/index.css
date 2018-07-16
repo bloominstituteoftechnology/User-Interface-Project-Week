@@ -141,6 +141,8 @@ table {
 /* Footer Text */
 /* Navigation Logo */
 /* Expanded Navigation Text */
+/* Media query variables*/
+/* @tablets: ~"only screen and (min-width: 768px) and (max-width: 959px)"; */
 /* Mixins */
 /* General style */
 * {
@@ -171,8 +173,18 @@ div.menu-content h2 {
   font-size: 2.4rem;
   color: #FFFFFF;
 }
+@media only screen and (max-width: 479px) {
+  div.menu-content h2 {
+    margin-left: 2rem;
+  }
+}
 div.menu-content .navigation {
   margin-right: 6rem;
+}
+@media only screen and (max-width: 479px) {
+  div.menu-content .navigation {
+    margin-right: 2rem;
+  }
 }
 /* Jumbotron */
 div.jumbotron {
@@ -185,12 +197,25 @@ div.jumbotron {
   background-image: url('../img/home/home-jumbotron.png');
   background-repeat: no-repeat;
 }
+@media only screen and (max-width: 479px) {
+  div.jumbotron {
+    height: 250px;
+  }
+}
 div.jumbotron h1.jumbotron-slogan {
   margin: 7rem;
   font-weight: bold;
   font-size: 6.4rem;
   line-height: 7.5rem;
   color: #FFFFFF;
+}
+@media only screen and (max-width: 479px) {
+  div.jumbotron h1.jumbotron-slogan {
+    margin-bottom: 5rem;
+    margin-left: 3rem;
+    font-size: 3.84rem;
+    line-height: 4.5rem;
+  }
 }
 /* Content */
 div.top-content,
@@ -199,6 +224,13 @@ div.middle-content {
   justify-content: space-evenly;
   margin: 8rem 0;
   padding: 0 3rem;
+}
+@media only screen and (max-width: 479px) {
+  div.top-content,
+  div.middle-content {
+    margin: 2rem 0;
+    flex-direction: column;
+  }
 }
 div.top-content div.content-text,
 div.middle-content div.content-text {
@@ -227,13 +259,31 @@ div.middle-content div.content-text button {
   padding: 1rem 2rem;
   width: 12rem;
 }
+@media only screen and (max-width: 479px) {
+  div.top-content div.content-text button,
+  div.middle-content div.content-text button {
+    width: 100%;
+  }
+}
 div.top-content img,
 div.middle-content img {
   display: block;
   max-width: 410px;
 }
+@media only screen and (max-width: 479px) {
+  div.top-content img {
+    order: -1;
+    margin-bottom: 3rem;
+  }
+}
 div.middle-content img {
   order: -1;
+}
+@media only screen and (max-width: 479px) {
+  div.middle-content img {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
 }
 div.bottom-content {
   display: flex;
@@ -244,6 +294,12 @@ div.bottom-content {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
+@media only screen and (max-width: 479px) {
+  div.bottom-content {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+  }
+}
 div.bottom-content h2 {
   font-weight: bold;
   font-size: 2.8rem;
@@ -253,12 +309,27 @@ div.bottom-content h2 {
 div.bottom-content div.bottom-content-heading {
   margin-left: 8rem;
 }
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.bottom-content-heading {
+    margin-left: 3rem;
+  }
+}
 div.bottom-content div.project div.project-banner {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
   margin: 10rem 0;
+}
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.project div.project-banner {
+    margin: 5rem 0;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.project div.project-banner img {
+    width: 100%;
+  }
 }
 div.bottom-content div.project div.project-banner div.project-tag {
   display: flex;
@@ -272,6 +343,12 @@ div.bottom-content div.project div.project-banner div.project-tag {
   top: 18rem;
   right: 8.5rem;
 }
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.project div.project-banner div.project-tag {
+    width: 35rem;
+    right: 2.5rem;
+  }
+}
 div.bottom-content div.project div.project-banner div.project-tag h2 {
   font-weight: 400;
 }
@@ -279,9 +356,21 @@ div.bottom-content div.project p {
   max-width: 50%;
   margin: 0 auto;
 }
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.project p {
+    max-width: 100%;
+    width: 35rem;
+    padding: 2rem 0;
+  }
+}
 .price-tag-left {
   top: 18rem;
   left: 8.5rem;
+}
+@media only screen and (max-width: 479px) {
+  .price-tag-left {
+    left: 2.5rem;
+  }
 }
 /* Footer */
 footer {
@@ -289,6 +378,37 @@ footer {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+}
+@media only screen and (max-width: 479px) {
+  footer {
+    margin: 5rem 0 auto;
+    align-items: center;
+  }
+}
+footer .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 6rem 0;
+}
+@media only screen and (max-width: 479px) {
+  footer .footer {
+    flex-direction: column;
+    margin: 3rem 0;
+  }
+}
+@media only screen and (max-width: 479px) {
+  footer .location {
+    margin: 2rem 0;
+  }
+}
+footer .copyright {
+  margin: 1rem auto;
+}
+@media only screen and (max-width: 479px) {
+  footer .copyright {
+    margin-left: 6rem;
+  }
 }
 footer input {
   border: 1px solid #a5a5a5;
@@ -311,13 +431,4 @@ footer p {
   font-size: 1.4rem;
   line-height: 2.6rem;
   color: #FFFFFF;
-}
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 6rem 0;
-}
-.copyright {
-  margin: 1rem auto;
 }

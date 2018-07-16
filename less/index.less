@@ -99,6 +99,10 @@ table{
 @navexpanded-color: #FFFFFF;
 @navexpanded-hover-color: #222222;
 
+/* Media query variables*/
+@smartphones: ~"only screen and (max-width: 479px)";
+/* @tablets: ~"only screen and (min-width: 768px) and (max-width: 959px)"; */
+
 /* Mixins */
 .general-text() {
   font-weight: @general-font-weight;
@@ -111,6 +115,7 @@ table{
   font-size: @subheaders-font-size;
   color: @subheaders-color;
 }
+
 /* General style */
 * {
   box-sizing: border-box;
@@ -141,10 +146,18 @@ div.menu-content {
     font-weight: @navlogo-font-weight;
     font-size: @navlogo-font-size;
     color: @navlogo-color;
+
+    @media @smartphones {
+      margin-left: 2rem;
+    }
   }
 
   .navigation {
     margin-right: 6rem;
+
+    @media @smartphones {
+      margin-right: 2rem;
+    }
   }
 }
 
@@ -161,12 +174,23 @@ div.jumbotron {
   background-image: url('../img/home/home-jumbotron.png');
   background-repeat: no-repeat;
 
+  @media @smartphones {
+    height: 250px;
+  }
+
   h1.jumbotron-slogan {
     margin: 7rem;
     font-weight: @jumbotron-font-weight;
     font-size: @jumbotron-font-size;
     line-height: @jumbotron-line-height;
     color: @jumbotron-color;
+
+    @media @smartphones {
+      margin-bottom: 5rem;
+      margin-left: 3rem;
+      font-size: @jumbotron-font-size * 0.6;
+      line-height: @jumbotron-line-height * 0.6;
+    }
   }
 }
 
@@ -177,6 +201,11 @@ div.middle-content {
   justify-content: space-evenly;
   margin: 8rem 0;
   padding: 0 3rem;
+
+  @media @smartphones {
+    margin: 2rem 0;
+    flex-direction: column;
+  }
 
   div.content-text {
     .general-text;
@@ -194,6 +223,10 @@ div.middle-content {
       border: 1px solid black;
       padding: 1rem 2rem;
       width: 12rem;
+
+      @media @smartphones {
+        width: 100%;
+      }
     }
   }
 
@@ -203,8 +236,20 @@ div.middle-content {
   }
 }
 
-div.middle-content img{
+div.top-content img {
+  @media @smartphones {
+    order: -1;
+    margin-bottom: 3rem;
+  }
+}
+
+div.middle-content img {
   order: -1;
+
+  @media @smartphones {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
 }
 
 div.bottom-content {
@@ -212,6 +257,11 @@ div.bottom-content {
   flex-direction: column;
   align-items: flex-start;
   margin: 8rem 0;
+
+  @media @smartphones {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+  }
 
   .general-text;
 
@@ -222,6 +272,10 @@ div.bottom-content {
 
   div.bottom-content-heading{
     margin-left: 8rem;
+
+    @media @smartphones {
+      margin-left: 3rem;
+    }
   }
 
   div.project {
@@ -232,6 +286,16 @@ div.bottom-content {
       justify-content: center;
       position: relative;
       margin: 10rem 0;
+
+      @media @smartphones {
+        margin: 5rem 0;
+      }
+
+      img {
+        @media @smartphones {
+         width: 100%;
+        }
+      }
       
       div.project-tag {
         display: flex;
@@ -246,6 +310,11 @@ div.bottom-content {
         position: absolute;
         top: 18rem;
         right: 8.5rem;
+
+        @media @smartphones {
+          width: 35rem;
+          right: 2.5rem;
+        }
   
         h2 { font-weight: 400; }
       }
@@ -254,6 +323,12 @@ div.bottom-content {
     p {
       max-width: 50%;
       margin: 0 auto;
+      
+      @media @smartphones {
+        max-width: 100%;
+        width: 35rem;
+        padding: 2rem 0;
+      }
     }
   }
 }
@@ -261,6 +336,10 @@ div.bottom-content {
 .price-tag-left {
   top: 18rem;
   left: 8.5rem;
+
+  @media @smartphones {
+    left: 2.5rem;
+  }
 }
 
 /* Footer */
@@ -269,6 +348,38 @@ footer {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+
+  @media @smartphones {
+    margin: 5rem 0 auto;
+    align-items: center;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  
+    margin: 6rem 0;
+
+    @media @smartphones {
+      flex-direction: column;
+      margin: 3rem 0;
+    }
+  }
+  
+  .location {
+    @media @smartphones {
+      margin: 2rem 0;
+    }
+  }
+
+  .copyright {
+    margin: 1rem auto;
+
+    @media @smartphones {
+      margin-left: 6rem;
+    }
+  }
 
   input {
     border: 1px solid darken(#D8D8D8, 20%);
@@ -296,16 +407,4 @@ footer {
     line-height: @footertext-line-height;
     color: @footertext-color;
   }
-}
-
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-  margin: 6rem 0;
-}
-
-.copyright {
-  margin: 1rem auto;
 }
