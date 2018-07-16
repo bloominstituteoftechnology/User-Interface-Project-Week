@@ -59,21 +59,45 @@ table{
 
 /* Your Code Goes Here */
 
-//Mixins
+//============== Mixins ==============
 
-.main-mid-content() {
+.flexrow() {
   display: flex;
 
 }
 
+.flexcolumn() {
+  display: flex;
+  flex-direction: column;
 
-// General Styles
+}
+
+.buttonmaker(@width, @height){
+  width: @width;
+  height: @height;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+//============== General Styles ==============
+* {
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5 { 
+  font-family: 'Roboto', sans-serif; 
+  font-weight: bold;
+}
 body {
   max-width: 1000px;
   font-family: 'Roboto', sans-serif;  
 }
 
-.head {
+//============== Specific Styles ==============
+
+.jumbo {
   position: relative;
   img {
     width: 100%;
@@ -90,16 +114,36 @@ body {
 }
 
 .main-top {
-  
-  .main-mid-content;
+  .button {
+    .buttonmaker(130px, 50px);
+  }
+  margin: 6%;
+  .content {
+    padding: 3%;
+    line-height: 130%;
+    .flexcolumn;
+    justify-content: center;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .smith{
+    .flexrow;
+    flex-direction: row-reverse;
+  }
+  .future{
+    margin-left:2%;
+    .flexrow;
+    margin-top: 10%;
+    .content {
+      margin-left: 2%;
+    }
+  }
 }
 
 .main-mid {
-
-  .villas {
-    .main-mid-content;
-    img {
-      width: 100%;
-    }
+  img {
+    height: 100%;
   }
+  .flexcolumn;
 }
