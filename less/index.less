@@ -7,13 +7,13 @@
 
 
 .containter {
-max-width: 1024px;
-border: 1px solid red;
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  // border: 1px solid red;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-bar {
@@ -21,7 +21,7 @@ align-items: center;
   display: flex;
   justify-content: space-between;
   Background: #828282;
-  opacity: 0.85; //need to fix for title to be black
+  opacity: 0.95; //need to fix for title to be black
   position: fixed;
   z-index: 10;
   .title {
@@ -98,12 +98,7 @@ align-items: center;
         .img-desktop {
           display: none;
         }
-        .button {
-          max-width: 100%;
-        }
       }
-
-
     }
     .button {
       border: 1px solid black;
@@ -120,30 +115,61 @@ align-items: center;
           text-decoration: underline;
         }
       }
+      @media @phone {
+        max-width: 100%;
+      }
     }
   }
 
   .recent-projects {
     .project{
       img {
+        // border: 1px solid red;
         margin-top: 30px;
-        border: 1px solid red;
         width: 100%;
       }
+      .img-phone {
+        display: none;
+        @media @phone {
+          display: flex;
+        }
+      }
       .project-title {
-        border: 1px solid blue;
+        // border: 1px solid blue;
         background: lightgray;
-        top: -30px;
+        width: 200px;
         float: right;
-        // margin-bottom: 20px;
         padding: 10px;
         display: flex;
         justify-content: center;
+        @media @phone {
+            background-color: orange;
+            top: -15px;
+            // width: 500px;
+            float: left;
+            margin-bottom: 0;
+            width: 375px;
+        }
       }
-    .project-paragraphs{
-      margin-left: 26%;
-      margin-right: 26%;
-      margin-top: 8%;
+      .project-paragraphs{
+        margin-left: 26%;
+        margin-right: 26%;
+        margin-top: 8%;
+        @media @phone {
+          margin-left: 4%;
+          margin-right: 4%;
+          margin-top: 4%;
+        }
+      }
+      @media @phone {
+        .img-desktop {
+          display: none;
+        }
+      }
+    @media @phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     }
   }
