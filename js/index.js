@@ -16,6 +16,8 @@ function Navi(){
     Navi();
 menu();
 
+ let textd=document.querySelector(".inImg");
+ textd.classList.toggle("outimg");
 
 
   if (image_tracker=='open') {
