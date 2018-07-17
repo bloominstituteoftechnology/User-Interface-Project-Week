@@ -5,8 +5,8 @@ const showNavPanel = function(){
 //------------------Another great example of forEach--------------//
   // navBTNOpen.classList.toggle('hide-icon');
   // navBTNClose.classList.toggle('hide-icon');
-  navBTN.forEach( target => {
-    classList.toggle('hide-icon');
+  navBTN.forEach( (target) => {
+    target.classList.toggle('hide-icon');
   });
 }
 
