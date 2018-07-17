@@ -1,4 +1,5 @@
 // JS goes here
+// Tabs component
 class Tabs {
     constructor(element) {
         this.element = element;
