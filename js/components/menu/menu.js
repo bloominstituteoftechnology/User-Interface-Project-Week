@@ -18,10 +18,10 @@ console.log(menus)
 
 
 
-let tests = document.querySelectorAll('p');
-console.log(tests)
-tests.forEach(function(item) {
-    item.addEventListener("click", function() {
-        item.style.color = 'green'
-    });
-});
+// let tests = document.querySelectorAll('p');
+// console.log(tests)
+// tests.forEach(function(item) {
+//     item.addEventListener("click", function() {
+//         item.style.color = 'green'
+//     });
+// });
