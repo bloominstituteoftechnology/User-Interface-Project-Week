@@ -1,0 +1,198 @@
+//variables for mobile layouts
+@mobile: 320px;
+@tablet: 768px;
+@desktop: 1024px;
+
+@navSelectionColor: #222222;
+body {
+    background: #FFFFFF;
+    color: #222222;
+    font-family: Roboto, Arial, sans-serif;
+} //for adding borders on the side
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.flex(){
+    display: flex;
+    align-items: center;
+}
+.flexBetween(){
+    .flex();
+    justify-content: space-between;
+}
+.flexCenter(){
+    .flex();
+    justify-content: center;
+
+}
+.tabletFullWidth(){
+    @media (max-width: @tablet) {
+        width:100%;
+    }
+};
+.nav(){
+    background: #828282;
+    opacity: 0.9;
+    max-width: 1024px;
+    width: 100%;
+    z-index: 3;
+    position: fixed;
+    box-sizing: border-box;
+    
+}
+.navTextFormat(){
+    font-Family: Roboto, Arial, sans-serif;
+    font-weight: bold;
+    Color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+
+.navBar {
+    .nav();
+    .navTextFormat();
+    .flexBetween();
+    align-items: center;
+    padding: .8rem 7vw;
+    margin: auto;
+    top: 0;
+    .navLogo {
+       
+        Font-Size: 24px;
+        
+    }
+}
+.navExpanded {
+    .nav();
+    height: 97vh;
+    top: 3.2em;
+    .navItems {
+        margin: 10% 40%;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: @tablet) {
+            margin:10% 20%;
+        }
+        .navText {
+         
+            .navTextFormat();
+            font-size: 48px;
+            line-height: 85px;            
+            &:hover {
+                color: @navSelectionColor;
+            }
+        }
+        .pageSelected {
+            color: @navSelectionColor;
+        }
+    }
+}
+
+.imageOverText{
+    position: relative;
+    img{
+        width: 100% !important; 
+        height: auto;
+        z-index: 1;
+    }
+    .bannerText {
+        Font-Weight: Bold;
+        Font-Size: 64px;
+        Line-Height: 75px;
+        Color: #FFFFFF;
+        z-index: 2;
+        position: absolute;
+        left: 5rem;
+        width: 33%;
+        @media (max-width: @tablet) {
+          font-size: 34px;
+          Line-Height: 40px;
+          left: 1rem;
+          bottom: 1.5rem;
+    
+        }
+      }
+}
+
+.bodyText{
+    margin: 2vh 0;
+    Font-Size: 16px;
+    Line-Height: 24px;
+    @media (max-width: @tablet) {
+      Font-Size: 14px;
+    }
+  }
+
+  .footer{
+    background-color: #828282;
+    font-weight: regular;
+    display: flex;
+    padding: 60px 60px 12px 60px;
+    flex-wrap: wrap;
+    justify-content:center;
+    color: #FFFFFF;
+    @media (max-width: @tablet) {
+      flex-direction: column;
+      padding: 20px 15px 30px;
+  
+    }
+    .footerContent{ 
+      width:20%;
+      @media (max-width: @tablet) {
+        width:100%;
+        margin: 10px 0;
+      }
+      &:first-child{
+        width: 35%;
+        padding: 0 5% 0 0 ;
+  
+        @media (max-width: @tablet) {
+            width:100%;
+            padding: 0  ;
+        }
+      }
+      
+    }
+    .footerTitle{
+      font-size:20px;
+      line-height: 24px;
+      font-weight: bold;
+      @media (max-width: @tablet) {
+        font-size:19px;
+      }
+  
+    }
+    input{
+      width: 85%;
+      margin: 10px 10px 10px 0;
+      border-radius: 6px;
+      height: 2em;
+      font-size:18px;
+      padding-left: 10px;
+      @media (max-width: @tablet) {
+        padding-left: 6px;
+        width: 95%;
+      }
+    }
+    .footerText{
+      font-size: 14px;
+      line-height: 26px;
+    }
+    .copyRightText{
+      font-size:12px;
+      @media (max-width: @tablet) {
+        margin-top: 5px;
+  
+      }
+    }
+    .copyRightSpace{
+      margin-top: 30px;
+      @media (max-width: @tablet) {
+        margin-top: 0;
+      }
+    }
+  }
