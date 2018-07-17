@@ -5,7 +5,7 @@ const toggleMenu = () => {
         menuButton.src='img/nav-hamburger-close.png';
         imgTracker = 'closed';
     } else {
-        menuButton.src='img/nav-hamburger'
+        menuButton.src='img/nav-hamburger.png'
         imgTracker = 'open';
     }
 }
@@ -13,5 +13,5 @@ const toggleMenu = () => {
 
 const menu = document.querySelector('.menu-overlay');
 const menuButton = document.querySelector('.menu-button');
-const imgTracker = 'open';
+let imgTracker = 'open';
 menuButton.addEventListener('click', toggleMenu);
