@@ -38,19 +38,6 @@
         width: 100%;
     }
 
-    .mobile-jumbo-img {
-        @media @desktop {
-            display: none;
-        }
-    }
-
-    .desktop-jumbo-img {
-        display: none;
-        @media @desktop {
-            display: block;
-        }
-    }
-
     h1 {
         font-weight: bold;
         font-size: 3.6rem;
@@ -69,19 +56,30 @@
 }
 
 .top-content-container {
+    @media @desktop {
+        margin: 0 4%;
+    }
     .top-content { 
+        .content-text {
+            @media @desktop {
+                margin: 75px 0;
+            }
+        }
         .content-img {     
-            border: 1px solid red;  
+           
             img {
                 width: 100%;
                 margin: 20px 0;
             } 
+        }
     }
 }
 
 
 .content-text {
-    border: 1px solid blue;
+    @media @desktop {
+        margin: 15px 0;
+    }
     h2 {
         font-size: 2.4rem;
         font-weight: bold;
@@ -96,6 +94,9 @@
     }
     
     .project-title {
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.4rem;
         margin: 0 0 25px;
     }
                         
@@ -104,25 +105,37 @@
         text-align: center;
         margin: 15px 15px 25px;
         padding: 15px 0;
+        @media @desktop {
+            width: 35%;
+            margin: 0;
+        }
     }
-}
 }
 
 .middle-content-container {
     .middle-content {
-        margin: 25px 0;
+        margin: 25px 0 0;
         font-size: 1.6rem;
-        .middle-content-img {
-            padding: 0;
-            position: relative;
-            img {
-                width: 100%;
+        .content-text {
+            @media @desktop {
+                margin: 25px 0 0;
+            }
+        }
+        .middle-content-text {
+            margin: 30px 0 10px;
+            font-size: 1.6rem;
+            @media @desktop {
+                width: 50%;
+                margin: 0 auto;
             }
         }
         .middle-content-img {
+            padding: 0;
             position: relative;
             margin-bottom: 75px;
-            border: 1px solid blue;
+            img {
+                width: 100%;
+            }
             .img-title-container {
                 background-color: #d8d8d8;
                 position: absolute;
@@ -138,29 +151,48 @@
                     letter-spacing: 8px;                    
                 }
             }
+            .title-right {
+                @media @desktop {
+                    bottom: -35%;
+                    left: 85%;
+                }
+            }
+
+            .title-left {
+                @media @desktop {
+                    bottom: -35%;
+                    left: 15%;
+                }
+            }
         }
 
         p {
             font-size: 1.8rem;
             line-height: 1.4;
         }
-    }
 
-    .outskirts {
-        margin: 0;
+        .bottom-text {
+            margin: 30px 0 80px;
+            @media @desktop {
+                margin: 0 auto 80px;
+            }
+        }
     }
 }
 
 .footer-container {
     background-color: #828282;
-    padding: 25px 15px 10px;
+    padding: 30px 15px 10px;
     .row {
         margin: 0;
+        @media @desktop {
+            margin: 50px 50px 15px;
+        }
         .footer-title();    
         form {
             .form-group{
                 margin: 0;
-                padding: 15px 0;
+                padding: 10px 0;
                 input {
                     border-radius: 5px;
                     padding: 15px 7.5px;
@@ -184,7 +216,22 @@
                 font-size: 1.4rem;
                 line-height: 2.6rem;
                 color: #FFFFFF;
+                @media @desktop {
+                    line-height: 3.6rem;
+                }
             }
+        }
+    }
+    .copyright {
+        h2 {
+            font-weight: regular;
+            font-size: 1.4rem;
+            line-height: 2.6rem;
+            color: #FFFFFF;
+            margin-top: 15px;
+            @media @desktop {
+                text-align: center;
+            }            
         }
     }
 }
@@ -214,4 +261,3 @@
     -webkit-transform: rotate(45deg) translate(-6px, -8px);
     transform: rotate(45deg) translate(-6px, -8px);
 }
-
