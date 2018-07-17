@@ -55,7 +55,7 @@ select(){
     // add a class named "tabs-link-selected" to the link
     this.link.classList.add("tabs-link-selected");
     //use the select() method on tabsItem
-    this.tabsItem.deselect();
+    this.tabsItem.select();
 }
 
 deselect(){
@@ -78,7 +78,7 @@ select(){
 
 deselect(){
     //remove a class named "tabs-item-selected" to the element
-    this.element.classList.remove("tabs-item-selecte");
+    this.element.classList.remove("tabs-item-selected");
     //end of classes
 }
 }
