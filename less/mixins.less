@@ -1,27 +1,54 @@
 .flexrow() {
-    display: flex;
+  display: flex;
+}
+
+.flexcolumn() {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileview(){
+  @media (max-width: 400px) {
+    .flexcolumn;
+    .desktop {
+      display: none;
+    }   
+    .mobile {
+      display: block;
+    }
+    .content {
+      padding: 5% 0 0;
+      margin: 1%;
+    }
+
   }
-  .flexcolumn() {
-    display: flex;
-    flex-direction: column;
+}
+.desktopview(){
+  @media (min-width: 401px), (max-width: 1000px) {
+    .mobile {
+      display: none;
+    }
   }
-  .buttonmaker(@width, @height){
-    width: @width;
-    height: @height;
-    border: 1px solid #222222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.buttonmaker(@width, @height){
+  width: @width;
+  height: @height;
+  border: 1px solid #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
-  .textsquare() {
-    position: absolute;
-    width: 300px;
-    height: 75px;
-    background: #D8D8D8;
-    border: solid white 1px;
-    bottom: 14em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 6px;
-  }
+
+.textsquare() {
+  position: absolute;
+  width: 300px;
+  height: 75px;
+  background: #D8D8D8;
+  border: solid white 1px;
+  bottom: 14em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 6px;
+}
