@@ -1,12 +1,11 @@
-// JS goes here
-
+//menu.js
 const showNavPanel = function(){
   navPage[0].classList.toggle('showNav');
 //------------------Another great example of forEach--------------//
   // navBTNOpen.classList.toggle('hide-icon');
   // navBTNClose.classList.toggle('hide-icon');
   navBTN.forEach( target => {
-    classList.toggle('hide-icon');
+    target.classList.toggle('hide-icon');
   });
 }
 
@@ -21,6 +20,7 @@ const navOpacity = function(){
 let navBTN = document.querySelectorAll('.nav-icon');
 let navPage = document.querySelectorAll(".nav-page");
 let topBar = document.querySelector('.top-bar');
+let
 
 navPage = Array.from(navPage);
 navBTN = Array.from(navBTN);
@@ -32,3 +32,10 @@ navBTN.forEach( (target) => {
   target.addEventListener("click", showNavPanel)
 });
 document.addEventListener('wheel', navOpacity);
+
+
+//services.js
+let componentTabs = document.querySelectorAll('.tab');
+componentTabs = Array.from(componentTabs);
+
+console.log(componentTabs);
