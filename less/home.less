@@ -3,65 +3,120 @@
     width: 100%;
     margin: auto;
     font-size: 1.6rem;
-    line-height: 2.4 rem;
+    line-height: 1.6;
 }
 .jumbotron-container{
     .jumbotron {
         z-index: 0;
         padding: 0;
+        @media @phone{
+            display: none;
+        }
+    }
+    .jumbotron-mobile{
+        display: none;
+        width: 100%;
+        z-index: 0;
+        padding: 0;
+        @media @phone{
+            display: block;
+        }
     }
     .home{
         color: #FFFFFF;
-        line-height: 7.5rem;
+        line-height: 1.2;
         font-size: 6.4rem;
         font-weight: bold;
         position: absolute;
         top: 325px;
         left: 100px;
         width: 100%;
+        @media @phone{
+            font-size: 3.5rem;
+            top: 150px;
+            left: 50px;
+          }
     }
+}
+
+.img-square{
+    width: 100%;
+    @media @phone{
+        display:none;
+    }
+}
+.img-square-mobile{
+    display:none;
+    width: 100%;
+    @media @phone{
+        display: block;
+    }
+
 }
 .custom-button{
     border: 1px solid #222222;
     width: 150px;
     padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 20px;
+    .center;
+    @media @phone{
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      &:hover {
+        background-color: #222222;
+        color: #FFFFFF;
+        cursor: pointer;
+      }
 }
 .container{
     max-width: 855px;
     width: 100%;
     margin: auto;
     h2 {
-        margin: 30px 0 10px;
+        margin-top: 10px;
         color: #222222;
         font-size: 2.8rem;
         font-weight: bold;
     }
+    .first{
+        @media @phone{
+            display: flex;
+            flex-direction: column-reverse;
+            margin-top: 20px;
+        }
+    }
     .row{
         margin-top: 50px;
         margin-bottom: 50px;
+        @media @phone{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
         p{
             margin-top: 30px;
         }
     }
-    .custom-button{
-        margin-top: 20px;
-        &:hover {
-            background-color: #222222;
-            color: #FFFFFF;
-            cursor: pointer;
-          }
-    }
     .img-rectangle{
         width: 100%;
         z-index: 0;
+        @media @phone{
+            display:none;
+        }
+    }
+    .img-rectangle-mobile{
+        display:none;
+        width: 100%;
+        z-index: 0;
+        @media @phone{
+            display: block;
+        }
     }
     .gray-box p{
-        font-size: 2rem;
         position: absolute;
-        right: 1.5%;
+        right: 1.7%;
+        font-size: 2rem;
         background-color: #D8D8D8;
         color: #222222;
         letter-spacing: 7px;
@@ -69,6 +124,12 @@
         padding: 30px;
         margin-top: -55px;
         .center;
+        @media @phone{
+            position: relative;
+            right: 0%;
+            margin-left: auto;
+            margin-right: auto;
+          }
     }
     .gray-box-mid p{
         font-size: 2rem;
@@ -80,6 +141,11 @@
         padding: 30px;
         margin-top: -55px;
         .center;
+        @media @phone{
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+          }
     }
     
 }
