@@ -10,11 +10,23 @@ section {
         justify-content: space-around;
         align-items: center;
         padding: 2rem 0;
-
+        @media @phone {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+  
+        .flip-order-mobile {
+            @media @phone {
+                order: 1;
+            }
+        }
         
 
         .text-content-about {
             width:50%;
+            @media @phone {
+                width: auto;
+            }
             p {
                 padding-top: 1rem;
               }
@@ -22,6 +34,10 @@ section {
                 .button-maker(144px, 48px, @white, 1px solid #222);
                 color: #222;
                 font-size: 1.6rem;
+                @media @phone {
+                    .button-maker(100%, 48px, @white, 1px solid #222);
+                    color: #222;
+                }
             }
         }
 
