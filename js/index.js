@@ -34,10 +34,10 @@ class Tabs {
       this.activeLink = newActive;
     }
   
-    getTabHead(data) {
+    getHeading(data) {
       return this.tabs.querySelector(`.tab-heading[data-tab="${data}"]`);
     }
-    getTabImg(data) {
+    getImg(data) {
         return this.tabs.querySelector(`.tab-img[data-tab="${data}"]`);
     }
   }
@@ -46,9 +46,9 @@ class Tabs {
     constructor(link, parent) {
       this.link = link;
       this.tabs = parent;  
-      this.tabHeading = parent.getTabHead(this.link.dataset.tab);
+      this.tabHeading = parent.getHeading(this.link.dataset.tab);
       this.tabHeading = new TabsHeading(this.tabHeading);
-      this.tabImg = parent.getTabImg(this.link.dataset.tab);
+      this.tabImg = parent.getImg(this.link.dataset.tab);
       this.tabImg = new TabsImg(this.tabImg);
       this.link.addEventListener('click', () => {
         this.tabs.updateActive(this);
