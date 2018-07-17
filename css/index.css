@@ -146,34 +146,35 @@ body {
 .navBar {
   background: #828282;
   opacity: 0.9;
+  max-width: 1024px;
+  width: 100%;
+  z-index: 3;
+  position: fixed;
+  box-sizing: border-box;
+  font-Family: Roboto, Arial, sans-serif;
+  font-weight: bold;
+  Color: #FFFFFF;
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: .8rem 7vw;
   margin: auto;
   top: 0;
-  z-index: 3;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: 1024px;
-  position: fixed;
 }
 .navBar .navLogo {
-  font-Family: Roboto, Arial, sans-serif;
-  font-weight: bold;
   Font-Size: 24px;
-  Color: #FFFFFF;
 }
 .navExpanded {
-  height: 97vh;
-  top: 3.2em;
-  z-index: 3;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: 1024px;
-  position: fixed;
   background: #828282;
   opacity: 0.9;
+  max-width: 1024px;
+  width: 100%;
+  z-index: 3;
+  position: fixed;
+  box-sizing: border-box;
+  height: 97vh;
+  top: 3.2em;
 }
 .navExpanded .navItems {
   margin: 10% 40%;
@@ -186,17 +187,54 @@ body {
   }
 }
 .navExpanded .navItems .navText {
-  font-weight: Bold;
+  font-Family: Roboto, Arial, sans-serif;
+  font-weight: bold;
+  Color: #FFFFFF;
+  text-decoration: none;
   font-size: 48px;
   line-height: 85px;
-  color: #FFFFFF;
-  text-decoration: none;
 }
 .navExpanded .navItems .navText:hover {
   color: #222222;
 }
 .navExpanded .navItems .pageSelected {
   color: #222222;
+}
+.imageOverText {
+  position: relative;
+}
+.imageOverText img {
+  width: 100% !important;
+  height: auto;
+  z-index: 1;
+}
+.imageOverText .bannerText {
+  Font-Weight: Bold;
+  Font-Size: 64px;
+  Line-Height: 75px;
+  Color: #FFFFFF;
+  z-index: 2;
+  position: absolute;
+  left: 5rem;
+  width: 33%;
+}
+@media (max-width: 768px) {
+  .imageOverText .bannerText {
+    font-size: 34px;
+    Line-Height: 40px;
+    left: 1rem;
+    bottom: 1.5rem;
+  }
+}
+.bodyText {
+  margin: 2vh 0;
+  Font-Size: 16px;
+  Line-Height: 24px;
+}
+@media (max-width: 768px) {
+  .bodyText {
+    Font-Size: 14px;
+  }
 }
 .topBanner {
   position: relative;
@@ -227,18 +265,87 @@ body {
 .topBanner .bannerHome {
   bottom: 3.1rem;
 }
-.topBanner .bannerServices {
-  bottom: 1rem;
-}
-.bodyText {
-  margin: 2vh 0;
-  Font-Size: 16px;
-  Line-Height: 24px;
+.mainBody {
+  display: flex;
+  padding: 5% 0;
 }
 @media (max-width: 768px) {
-  .bodyText {
-    Font-Size: 14px;
+  .mainBody {
+    flex-wrap: wrap;
   }
+}
+.mainBody .mainContentText {
+  width: 47%;
+}
+@media (max-width: 768px) {
+  .mainBody .mainContentText {
+    width: 100%;
+  }
+}
+.mainBody .mainContentText .mainContentButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 1.5px;
+  width: 33%;
+  height: 40px;
+}
+@media (max-width: 768px) {
+  .mainBody .mainContentText .mainContentButton {
+    width: 100%;
+  }
+}
+.mainBody img {
+  width: 47%;
+}
+@media (max-width: 768px) {
+  .mainBody img {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .mainBody img {
+    padding-top: 20px;
+    order: -1;
+  }
+}
+.homeContent {
+  padding: 0 7%;
+}
+@media (max-width: 768px) {
+  .homeContent {
+    padding: 0 4%;
+  }
+}
+.topBanner {
+  position: relative;
+}
+.topBanner img {
+  width: 100% !important;
+  height: auto;
+  z-index: 1;
+}
+.topBanner .bannerText {
+  Font-Weight: Bold;
+  Font-Size: 64px;
+  Line-Height: 75px;
+  Color: #FFFFFF;
+  z-index: 2;
+  position: absolute;
+  left: 5rem;
+  width: 33%;
+}
+@media (max-width: 768px) {
+  .topBanner .bannerText {
+    font-size: 34px;
+    Line-Height: 40px;
+    left: 1rem;
+    bottom: 1.5rem;
+  }
+}
+.topBanner .bannerServices {
+  bottom: 1rem;
 }
 .mainBody {
   display: flex;
