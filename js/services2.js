@@ -30,10 +30,8 @@ class TabBtn {
     constructor(btn, parent){
         this.btn = btn;
         this.parent = parent;
-        console.log("this btn", this.btn.dataset.content);
         
         this.btnContents = parent.getContent(this.btn.dataset.content);
-        console.log("content", this.btnContents);
         
         this.btnContents = new BtnContent(this.btnContents);
 
