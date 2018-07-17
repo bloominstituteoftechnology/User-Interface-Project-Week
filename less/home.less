@@ -58,7 +58,7 @@ table{
 }
 
 /* Your Code Goes Here */
-
+@media (min-width:380px){
   .header{
     background-image: url('../img/home/home-mobile-jumbotron.png');
     background-repeat: no-repeat;
@@ -98,7 +98,6 @@ table{
   }//img desktop
   .mobile{
     display: block;
-    order: -2;
   }//img mobile
 
   .body-content{
@@ -112,8 +111,6 @@ table{
     .content{
       line-height: 2rem;
       padding: 1rem;
-      .mobile-text;
-      order: 13;
       span{
         padding: 1rem;
         .center;
@@ -149,10 +146,9 @@ table{
           height: 30vh;
           z-index:-1;
         }
-        .gray-box-mobile{
-          .gray-box;
+        .gray-box{
+          .gray-box-mobile;
         }
-  
       }//image container
     p{
       position: relative;
@@ -181,12 +177,17 @@ table{
       Color: #FFFFFF;
       padding-bottom: 0.5rem;
     }//footer-header
-    .copy{
-      .flex;
-      .center;
-    }
   }//footer
-
+  .copy{
+    background: #828282;
+    Color: #FFFFFF;
+    Font-Weight: Regular;
+    Font-Size: 1rem;
+    Line-Height: 2rem;
+    .flex;
+    .center;
+  }
+}//media mobile
 
   @media (min-width: 768px){
     .header{
@@ -199,12 +200,6 @@ table{
         Font-Weight: Bold;
         Font-Size: 2rem;
         background:#828282;
-        .menu-icon{
-          cursor: pointer;
-        }
-        ul{
-          display:none;
-        }
       }//navbar
       .motto{
         padding-top: 20rem;
@@ -216,18 +211,40 @@ table{
         padding-left: 5rem;
       }//motto
     }//header
+
+    .desktop{
+      display: block;
+    }//img desktop
+    .mobile{
+      display: none;
+    }//img mobile
     
     .body-content{
-      padding: 1rem 3rem;
-      .body-image-1{
-        display:block;
+      padding: 2rem 5rem;
+      .body{
+        flex-direction: row-reverse;
+        padding: 2rem 0;
       }
-      .body-image-1-mobile{
-        display: none;
+      div{
+        .flex;
+        .content{
+          width: 50%;
+          .flex-col;
+          padding: 0 2rem;
+          span{
+            width: 40%;
+            align-self: flex-start;
+          }
+        }
+      }//div
+      .body-image{
+        width:50%;
       }
-      .body-image-2{
-        right: 0;
+      img{
+        padding: 0;
+        width:100%;
       }
+    
     }
     .subheader{
       Font-Weight: Bold;
@@ -236,18 +253,26 @@ table{
     }//subheader
   
     .projects{
-      padding: 1rem 3rem;
-    
+      padding: 1rem 5rem;
     .project-container{
       position: relative;
       height: 70vh;
         .image-container{
           position: relative;
-          height: 40vh;
+          .right{
+            .gray-box;
+            position: absolute;
+            right:0;
+          }
+          .left{
+            .gray-box;
+            position: absolute;
+            left:0;
+          }
           .project-img{
             display:block;
             width: 100%;
-            height: 30vh;
+  
             z-index:-1;
           }//project img
           .project-img-1{
@@ -258,24 +283,17 @@ table{
       p{
         position: relative;
         line-height: 1.2rem;
-        width: 45vw;
+        width: 50%;
         position: center;
         margin: 0 auto;
       }
     }//project-container
   }//projects
     .footer{
-      background: #828282;
-      Color: #FFFFFF;
-      Font-Weight: Regular;
-      Font-Size: 14px;
-      Line-Height: 26px;
-      header{
-        Font-Weight: Regular;
-        Font-Size: 20px;
-        Line-Height: 24px;
-        Color: #FFFFFF;
-        padding-bottom: 0.5rem;
-      }//footer-header
+      padding: 2rem 4rem;
+     .flex;
+     .location, .form-group{
+       padding: 2rem 2rem;
+     }
     }//footer
   }//media@desktop&tablet
