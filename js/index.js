@@ -1,18 +1,21 @@
 // JS goes here
 
 // Toggle menu button
-const toggleMenu = () => {
-    menu.classList.toggle("menu--open");
-  }
-  
-  const menu = document.querySelector(".menu");
-  const menuButton = document.querySelector(".menu-button");
-  menuButton.addEventListener("click", (toggleMenu));
+const menu = document.querySelector('.menu');
+const menuButton = document.querySelector('.menu-button');
+const menuClose = document.querySelector('.menu-close');
+ 
+menuButton.addEventListener('click', () => {
+  menu.classList.toggle('menu--open');
+  menuButton.style.display = 'none';
+  menuClose.style.display = 'block';
+});
 
-
-
-
-
+menuClose.addEventListener('click', () => {
+  menu.classList.toggle('menu--open');
+  menuButton.style.display = 'block';
+  menuClose.style.display = 'none';
+});  
 
   //Services Tabs Component
   class Tabs {
