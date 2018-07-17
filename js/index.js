@@ -62,7 +62,44 @@ class TabsItem {
     }
 }
 
-
-
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+
+
+let open = false;
+class ExpandedNav {
+    constructor(element) {
+        this.element = element;
+        this.openButton = document.querySelector(".hamburger-button");
+        this.closeButton = document.querySelector(".close-button");
+        this.content = document.querySelector(".nav-content");
+        this.links = document.querySelectorAll(".nav-content a");
+        this.links = Array.from(this.links);
+        this.openButton.addEventListener('click', () => {
+            console.log("Open button pressed.")
+            this.expandContent()});
+        this.closeButton.addEventListener('click', () => {this.contractContent()});
+    }
+
+    expandContent() {
+        this.content.classList.toggle("nav-expanded");
+        this.closeButton.classList.toggle("show-close");
+        this.closeButton.style.display = "block";
+        this.openButton.style.display = "none";
+    }
+
+    contractContent() {
+        // this.element.style.display = "none";
+        this.closeButton.style.display = "none";
+        this.openButton.style.display = "block";
+        this.content.classList.toggle("nav-expanded");
+        this.closeButton.classList.toggle("show-close");
+    }
+}
+
+
+let expandedNav = document.querySelectorAll(".nav");
+console.log(expandedNav);
+expandedNav = Array.from(expandedNav).map(expanded => new ExpandedNav(expanded));
+console.log(expandedNav);
