@@ -1,9 +1,7 @@
 const navbarCollapsed = (state = true, action) => {
   switch (action.type) {
-    case 'NAVBAR_COLLAPSE':
-      return true;
-    case 'NAVBAR_SHOW':
-      return false;
+    case 'NAVBAR_COLLAPSE_TOGGLE':
+      return !state;
     default:
       return state;
   }
