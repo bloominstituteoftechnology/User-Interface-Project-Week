@@ -5,16 +5,32 @@ const hamButton = document.querySelector('.ham-button');
 const hamButtonClose = document.querySelector('.ham-button-close');
 const mainNav = document.querySelector('.main-nav');
 
-hamButton.addEventListener('click', () => {
-	mainNav.classList.add('main-nav-show');
-	hamButton.style.display = 'none';
-	hamButtonClose.style.display = 'block';
+const openNav = function() {
+  mainNav.classList.add('main-nav-show');
+  hamButton.style.display = 'none';
+  hamButtonClose.style.display = 'block';
+}
+
+const closeNav = function () {
+  mainNav.classList.remove('main-nav-show');
+  hamButton.style.display = 'block';
+  hamButtonClose.style.display = 'none';
+}
+
+hamButton.addEventListener('click', ()=> {
+  TweenLite.to(mainNav, 1, {
+    opacity: 1,
+    ease: Power1.easeInOut,
+    onComplete: openNav()
+  })
 });
 
 hamButtonClose.addEventListener('click', ()=> {
-	mainNav.classList.remove('main-nav-show');
-	hamButton.style.display = 'block';
-	hamButtonClose.style.display = 'none';
+  TweenLite.to(mainNav, 1, {
+    opacity: 0,
+    ease: Power1.easeInOut,
+    onComplete: closeNav
+  })
 });
 
 // Tab
