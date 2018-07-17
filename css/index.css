@@ -1,21 +1,4 @@
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
-}
+/* Your Code Goes Here */
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -151,7 +134,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Your Code Goes Here */
 * {
   box-sizing: border-box;
 }
@@ -194,6 +176,30 @@ body h3 {
   position: fixed;
   top: 0;
   width: 100%;
+}
+.d-image {
+  display: block;
+}
+@media (max-width: 480px) {
+  .d-image {
+    display: none;
+  }
+}
+.m-image {
+  display: none;
+}
+@media (max-width: 480px) {
+  .m-image {
+    display: block;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 nav {
   background-color: #828282;
@@ -442,6 +448,91 @@ footer .copyright {
     margin-top: 70px;
   }
 }
+.p-jumbotron {
+  background: url("../img/projects/project-jumbotron.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 40vh;
+}
+.p-jumbotron .container {
+  position: relative;
+}
+.p-jumbotron .jumbotron-text {
+  position: absolute;
+  font-size: 45px;
+  bottom: -300px;
+  color: white;
+  left: 9%;
+}
+.projects {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.projects .content {
+  width: 82%;
+}
+.projects .content h3 {
+  font-weight: normal;
+}
+.projects .pictures {
+  width: 82%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.projects .pictures .picture {
+  width: 100%;
+  display: none;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+.projects .pictures .picture img {
+  width: 100%;
+  height: 500px;
+}
+.projects .pictures .active-picture {
+  display: block;
+}
+.projects .pictures .left-pointer,
+.projects .pictures .right-pointer {
+  cursor: pointer;
+  position: absolute;
+  margin-top: -22px;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.projects .pictures .left-pointer {
+  left: 0;
+}
+.projects .pictures .right-pointer {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.projects .pictures .left-pointer:hover,
+.projects .pictures .right-pointer:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.projects .descriptions {
+  width: 82%;
+  margin-top: 40px;
+}
+.projects .descriptions .description {
+  display: none;
+}
+.projects .descriptions .active-description {
+  display: block;
+}
 .services .jumbotron {
   font-size: 64px;
   font-weight: bold;
@@ -654,113 +745,4 @@ footer .copyright {
 }
 .contact .main-content .addresses .address {
   margin-top: 40px;
-}
-.p-jumbotron {
-  background: url("../img/projects/project-jumbotron.jpeg") no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 40vh;
-}
-.p-jumbotron .container {
-  position: relative;
-}
-.p-jumbotron .jumbotron-text {
-  position: absolute;
-  font-size: 45px;
-  bottom: -300px;
-  color: white;
-  left: 9%;
-}
-.projects {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-.projects .content {
-  width: 82%;
-}
-.projects .content h3 {
-  font-weight: normal;
-}
-.projects .pictures {
-  width: 82%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: relative;
-}
-.projects .pictures .picture {
-  width: 100%;
-  display: none;
-  animation-name: fade;
-  animation-duration: 1s;
-}
-.projects .pictures .picture img {
-  width: 100%;
-  height: 500px;
-}
-.projects .pictures .active-picture {
-  display: block;
-}
-.projects .pictures .left-pointer,
-.projects .pictures .right-pointer {
-  cursor: pointer;
-  position: absolute;
-  margin-top: -22px;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-.projects .pictures .left-pointer {
-  left: 0;
-}
-.projects .pictures .right-pointer {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-.projects .pictures .left-pointer:hover,
-.projects .pictures .right-pointer:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.projects .descriptions {
-  width: 82%;
-  margin-top: 40px;
-}
-.projects .descriptions .description {
-  display: none;
-}
-.projects .descriptions .active-description {
-  display: block;
-}
-.d-image {
-  display: block;
-}
-@media (max-width: 480px) {
-  .d-image {
-    display: none;
-  }
-}
-.m-image {
-  display: none;
-}
-@media (max-width: 480px) {
-  .m-image {
-    display: block;
-  }
-}
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
 }
