@@ -1,3 +1,38 @@
+let displayContent = function(datasetFromTab, number) {
+  console.log(number);
+  console.log(datasetFromTab);
+  console.log(componentContent[number].dataset.tab);
+    if (datasetFromTab === componentContent[number].dataset.tab) {
+      console.log(`sucess`);
+      componentContent[number].classList.toggle('show');
+    }
+  }
+
+let componentTabs = document.querySelectorAll(".tab");
+let componentContent = document.querySelectorAll(".component-content");
+ // console.log(componentTabs);
+
+componentTabs = Array.from(componentTabs)
+// .map( x => new TabCard (x));
+componentContent= Array.from(componentContent)
+// .map( y => new TabContent (y));
+
+componentTabs.forEach( (target) => {
+  // console.log(target.dataset)
+  // console.log(` inside forEAch ${target.dataset}`);
+  target.addEventListener("click", () => {
+    displayContent(target.dataset.tab, componentTabs.indexOf(target));
+  })
+});
+
+
+// componentTabs.forEach((element)=>{
+//   addEventListener('click', function(element){
+//     console.log(`${componentTabs} 3`);
+// })
+// });
+
+////________________from last week _________________________//
 // // class tabs ===> allTabs
 // // class topics ===> topics
 // // class tab ===> tab
@@ -105,46 +140,3 @@
 //     console.log(`${this.data} + inside function`);
 //   }
 // }
-
-let displayContent = function(datasetFromTab, number) {
-  // x.classList.toggle('.hide');
-  console.log(number);
-  console.log(datasetFromTab);
-  console.log(componentContent[number].dataset.tab);
-  // console.log(`inside displayContent ${componentContent[0].dataset}`);
-    if (datasetFromTab === componentContent[number].dataset.tab) {
-      console.log(`sucess`);
-      componentContent[number].classList.toggle('show');
-    }
-
-  }
-  // target.classList.toggle('show');
-
-
- //services.js
-let componentTabs = document.querySelectorAll(".tab");
-let componentContent = document.querySelectorAll(".component-content");
- // console.log(componentTabs);
-
-componentTabs = Array.from(componentTabs)
-// .map( x => new TabCard (x));
-componentContent= Array.from(componentContent)
-// .map( y => new TabContent (y));
-
-componentTabs.forEach( (target) => {
-  // console.log(target.dataset)
-  // console.log(` inside forEAch ${target.dataset}`);
-  target.addEventListener("click", () => {
-    displayContent(target.dataset.tab, componentTabs.indexOf(target));
-  })
-});
-
-// console.log(componentContent);
-
- // console.log(`${componentTabs[0]} 2`);
-
-// componentTabs.forEach((element)=>{
-//   addEventListener('click', function(element){
-//     console.log(`${componentTabs} 3`);
-// })
-// });
