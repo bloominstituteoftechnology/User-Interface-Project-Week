@@ -3,7 +3,8 @@
 const showNavPanel = function(){
   console.log(`was clicked`);
   console.log(navPage[0]);
-  navPage[0].classList.toggle('.show');
+  navPage[0].classList.toggle('showNav');
+  navPage[0].style.background = "red";
   console.log(`was run`);
 }
 
