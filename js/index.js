@@ -144,11 +144,21 @@ class Picture {
   }
 }
 
-class Description {
-
-}
-
-
 let pics = document.querySelectorAll('.pictures');
 
 pics = Array.from(pics).map(picture => new Pictures(picture));
+
+// Animations
+let animatedPictures = document.querySelectorAll('.home .main-content img');
+animatedPictures.forEach(picture => {
+  picture.addEventListener('mouseover', () => TweenLite.to(picture, 1, {scale:1.1, ease: 'Linear'}));
+  picture.addEventListener('mouseout', () => TweenLite.to(picture, 1, {scale: 1, ease:'Linear'}));
+});
+
+let animatedButtons = document.querySelectorAll('.home .main-content .content-box button');
+animatedButtons.forEach(button => {
+  button.addEventListener('mouseover', () => TweenLite.to(button, 0.5, {backgroundColor:"#222222", color:"white"}));
+  button.addEventListener('mouseout', () => TweenLite.to(button, 0.5, {backgroundColor:"white", color:"black"}));
+});
+
+//
