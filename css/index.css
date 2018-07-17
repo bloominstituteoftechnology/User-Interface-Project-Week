@@ -137,7 +137,41 @@ table {
 html body {
   margin: 0 auto;
   font-family: Roboto, Arial, sans-serif;
-  width: 100vw;
+  max-width: 100%;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+.mobile-text {
+  text-align: left;
+  align-self: center;
+  align-content: center;
+}
+.gray-box {
+  background: #D8D8D8;
+  position: relative;
+  margin: 0 auto;
+  Font-Size: 2rem;
+  Color: #222222;
+  letter-spacing: 0.5rem;
+  width: 90%;
+  height: 10vh;
+  bottom: 1rem;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
 }
 .home-page {
   /*------------------------------------*\
@@ -277,6 +311,147 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   border-collapse: collapse;
   border-spacing: 0;
 }
+.home-page .header {
+  background-image: url('../img/home/home-mobile-jumbotron.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100vw 100%;
+}
+.home-page .header .fixed-top {
+  color: white;
+  Font-Weight: Bold;
+  Font-Size: 2rem;
+  background: #828282;
+  width: 100%;
+}
+.home-page .header .fixed-top .navbar-brand {
+  padding: 1rem 1rem;
+}
+.home-page .header .fixed-top .menu-icon {
+  cursor: pointer;
+  height: 10%;
+  padding: 1rem 1rem;
+}
+.home-page .header .fixed-top ul {
+  display: none;
+}
+.home-page .header .motto {
+  padding-top: 20rem;
+  padding-bottom: 2rem;
+  Font-Weight: Bold;
+  Font-Size: 4rem;
+  Line-Height: 5rem;
+  color: #FFFFFF;
+  padding-left: 1.5rem;
+}
+.home-page .desktop {
+  display: none;
+}
+.home-page .mobile {
+  display: block;
+  order: -2;
+}
+.home-page .body-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.home-page .body-content img {
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
+.home-page .body-content .content {
+  line-height: 2rem;
+  padding: 1rem;
+  text-align: left;
+  align-self: center;
+  align-content: center;
+  order: 13;
+}
+.home-page .body-content .content span {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+.home-page .subheader {
+  Font-Weight: Bold;
+  Font-Size: 2rem;
+  Color: #222222;
+}
+.home-page .projects {
+  padding: 1rem 1rem;
+}
+.home-page .projects .project-container {
+  position: relative;
+  padding: 1rem 0;
+}
+.home-page .projects .project-container .image-container {
+  position: relative;
+  height: 40vh;
+}
+.home-page .projects .project-container .image-container .project-img {
+  display: none;
+  width: 100%;
+  height: 30vh;
+  z-index: -1;
+}
+.home-page .projects .project-container .image-container .project-img-1 {
+  display: block;
+  width: 100%;
+  height: 30vh;
+  z-index: -1;
+}
+.home-page .projects .project-container .image-container .gray-box-mobile {
+  background: #D8D8D8;
+  position: relative;
+  margin: 0 auto;
+  Font-Size: 2rem;
+  Color: #222222;
+  letter-spacing: 0.5rem;
+  width: 90%;
+  height: 10vh;
+  bottom: 1rem;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+.home-page .projects .project-container p {
+  position: relative;
+  line-height: 1.2rem;
+  width: 100%;
+  position: center;
+  margin: 0 auto;
+}
+.home-page .footer {
+  display: flex;
+  flex-direction: column;
+  background: #828282;
+  Color: #FFFFFF;
+  Font-Weight: Regular;
+  Font-Size: 1rem;
+  Line-Height: 2rem;
+  padding: 1rem;
+}
+.home-page .footer .location {
+  padding: 1rem 0;
+}
+.home-page .footer header {
+  Font-Weight: Regular;
+  Font-Size: 1.5rem;
+  Line-Height: 2rem;
+  Color: #FFFFFF;
+  padding-bottom: 0.5rem;
+}
+.home-page .footer .copy {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
 @media (min-width: 768px) {
   .home-page .header {
     background-image: url('../img/home/home-jumbotron.png');
@@ -287,8 +462,11 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   .home-page .header .navbar {
     color: white;
     Font-Weight: Bold;
-    Font-Size: 24px;
+    Font-Size: 2rem;
     background: #828282;
+  }
+  .home-page .header .navbar .menu-icon {
+    cursor: pointer;
   }
   .home-page .header .navbar ul {
     display: none;
@@ -302,54 +480,45 @@ USE WITH CAUTION AND TEST WITH ABANDON */
     color: #FFFFFF;
     padding-left: 5rem;
   }
-  .home-page .content {
-    line-height: 2rem;
+  .home-page .body-content {
+    padding: 1rem 3rem;
+  }
+  .home-page .body-content .body-image-1 {
+    display: block;
+  }
+  .home-page .body-content .body-image-1-mobile {
+    display: none;
+  }
+  .home-page .body-content .body-image-2 {
+    right: 0;
   }
   .home-page .subheader {
     Font-Weight: Bold;
     Font-Size: 28px;
     Color: #222222;
   }
-  .home-page .project-container {
+  .home-page .projects {
+    padding: 1rem 3rem;
+  }
+  .home-page .projects .project-container {
     position: relative;
     height: 70vh;
   }
-  .home-page .project-container .image-container {
+  .home-page .projects .project-container .image-container {
     position: relative;
     height: 40vh;
   }
-  .home-page .project-container .image-container .project-img {
+  .home-page .projects .project-container .image-container .project-img {
+    display: block;
     width: 100%;
     height: 30vh;
     z-index: -1;
   }
-  .home-page .project-container .image-container .gray-box-right {
-    background: #D8D8D8;
-    Font-Size: 26px;
-    Color: #222222;
-    letter-spacing: 0.5rem;
-    width: 25vw;
-    height: 10vh;
-    position: absolute;
-    right: 0;
-    bottom: 2.5rem;
-    z-index: 1;
-    text-align: center;
+  .home-page .projects .project-container .image-container .project-img-1 {
+    display: none;
   }
-  .home-page .project-container .image-container .gray-box-left {
-    background: #D8D8D8;
-    Font-Size: 26px;
-    Color: #222222;
-    letter-spacing: 0.5rem;
-    width: 25vw;
-    height: 10vh;
-    position: absolute;
-    left: 0;
-    bottom: 2.5rem;
-    z-index: 1;
-    text-align: center;
-  }
-  .home-page .project-container p {
+  .home-page .projects .project-container p {
+    position: relative;
     line-height: 1.2rem;
     width: 45vw;
     position: center;
