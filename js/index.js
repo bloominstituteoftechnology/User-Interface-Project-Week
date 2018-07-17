@@ -25,8 +25,11 @@ offHumburger.addEventListener('click', function(e) {
 class Tabs {
   constructor(tabElement) {
     this.element = tabElement;
-    this.tabContent = topContent.map(content => new Content(content));
-    this.activeTab = this.tabContent[1];
+
+    this.tabContent = Array.from(document.querySelectorAll('.top-content'));
+    this.tabContent = this.tabContent.map( content => new Content(content) );
+    // this.activeTab = this.element;
+    this.activeTabContent = this.tabContent[1];
 
     this.element.addEventListener('click', this.select.bind(this));
     this.init();
@@ -34,7 +37,7 @@ class Tabs {
 
   init() {
     this.tabContent.forEach(content => {
-      if (content.dataTab === this.activeTab.dataTab) {
+      if (content.dataTab === this.activeTabContent.dataTab) {
         content.element.style.display = 'flex';
       } else {
         content.element.style.display = 'none';
@@ -43,25 +46,38 @@ class Tabs {
   };
 
   select(e) {
+    // change tab content
     this.tabContent.forEach(content => {
       if (content.dataTab === e.target.dataset.tab) {
+        // change content
         content.element.style.display = 'flex';
-        this.activeTab = content;
-        console.log(this.activeTab);
+        // update content
+        this.activeTabContent = content;
       } else {
         content.element.style.display = 'none';
       }
     })
+
+    // change tab color
+    this.activeTabContent.parentTab.style.background = '#5E9FB9';
+    this.activeTabContent.emptyTab.forEach(tab => tab.style.background = 'white');
   }
 }
 
+// Pure component
+// Just showing the content
 class Content {
   constructor(contentElement) {
     this.element = contentElement;
     this.dataTab = this.element.dataset.tab;
+    this.parentTab = serviceTabs.filter(tab => {
+      return tab.dataset.tab === this.dataTab;
+    })[0];
+    this.emptyTab = serviceTabs.filter(tab => {
+      return tab.dataset.tab !== this.dataTab;
+    });
   }
 }
 
-let topContent = Array.from(document.querySelectorAll('.top-content'));
 let serviceTabs = Array.from(document.querySelectorAll('.service-tab'));
 serviceTabs = serviceTabs.map(tab => new Tabs(tab));
