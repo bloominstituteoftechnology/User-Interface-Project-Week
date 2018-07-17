@@ -14,6 +14,15 @@ function tabbedBrowsing(components) {
       });
     });
 
+    window.addEventListener('keydown', function(e) {
+      if (/^\d$/.test(e.key)) {
+        var code = Number(e.key);
+        if (code >= 1 && code <= 4) {
+          store.dispatch({ type: 'UPDATE_ACTIVE', activeTabNumber: code });
+        }
+      }
+    });
+
     // subscribe to the store
     store.subscribe(state => {
       const { activeTab } = state;
