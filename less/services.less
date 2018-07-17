@@ -1,144 +1,10 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
-
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
-}
-body{
-  line-height:1;
-}
-ol,ul{
-  list-style:none;
-}
-blockquote,q{
-  quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
-}
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
-}
-
-table{
-  border-collapse:collapse;
-  border-spacing:0;
-}
-
-/* Your Code Goes Here */
-// Variables 
-@width: 100vw;
-@radius: 5px;
-@font: Roboto, Arial, sans-serif;
-
-
-// Mixins
-
-.border-radius(@radius: 5px) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  border-radius: @radius;
-}
-
-// Main 
+// Services
 .container {
   width: 1020px;
 
   .header {
     width: 100vw;
-    // border: 1px solid red;
-    .bar {
-      width: @width;
-      height: 10vh;
-      display: flex;
-      justify-content: space-between;
-      background-color: #828282;
-      opacity: .75;
-      position: fixed;
-      z-index: 2;
-      h1 {
-        align-self: flex-start;
-        margin: 20px;
-        margin-left: 5%;
-        color: white; 
-        font-family: @font;
-        font-weight: bold;
-        font-size: 1.6rem;
-      }
-      .menu {
-        align-self: flex-end;
-        margin: 20px; 
-        margin-right: 8%;
-        z-index: 3;
-        .dropdown {
-          .dropdown-button {
-            &:hover {
-              cursor: pointer;
-            }
-          }
-          .dropdown-content {
-            display:none;
-          }
-          .dropdown--open {
-            background-color: #828282;
-            display:block;
-            height: 90vh;
-            width: 100vw;
-            padding: 0 130px;
-            position: fixed;
-            top: 10vh;
-            right:0;
-            left: 0;
-            bottom:0;
-            opacity: .95;
-            z-index: 1;
-            .dropdown-link {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 55%;
-              margin: 15vh 130px 15vh;
-              color: #FFF;
-              font-family: @font;
-              font-size: 4rem;
-              text-decoration: none;
-            }
-          }
-        }
-      }
-    }
+    @import 'navbar.less';
     .jumbotron {
       width: @width;
       background-image: url(../img/services/services-jumbotron.png);
@@ -199,6 +65,7 @@ table{
       display: flex;
       justify-content: space-evenly;
       margin: 8% 0;
+      height: 70vh;
       width: 100%;
       .active{
         h2 {
@@ -226,56 +93,6 @@ table{
       }
     }
   }
-
-
-
-
-
-  // end of main-content
-  .bottom-content {
-    background-color: #828282;
-    color: white;
-    height: 25%;
-    width: @width;
-    .contact-container {
-      display: inline-flex;
-      justify-content: space-evenly;
-      margin: 3% 0;
-      padding: 3% 0 0;
-      width: 100%;
-      .contact {
-        display: block;
-        align-self: center;
-        height: 25vh;
-        line-height: 1.5;
-        h2 {
-          font-weight: bold;
-          font-family: @font;
-          font-size: 1.6rem;
-        }
-        p {
-          font-family: @font;
-          font-size: 1rem;
-          line-height: 2;
-          margin: 3% 0;
-        }
-      }
-      .form {
-        line-height: 2;
-        input {
-          height: 50px;
-          width: 100%;
-        }
-      }
-    }
-    .footer {
-      width: 40%;
-      margin: 3% 30% 0;
-      p {
-        margin: 0 20%;
-        font-family: @font;
-        font-size: 1rem;
-      }
-    }
-  }
+// end of main-content
+@import 'footer.less';
 }
