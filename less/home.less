@@ -1,4 +1,5 @@
 
+
 .home {
     font-family: @general-font;
     
@@ -47,17 +48,29 @@
         flex-direction: column;
         justify-content: flex-end;
 
+        @media @phone {
+            background-image: url("../img/home/home-mobile-jumbotron.png");
+            height: 50vh;
+            width: 100%;
+        }
+
         h1 {
             font-size: 6.4rem;
             color: #FFFFFF;
-            line-height: 75px;
+            line-height: 7.5rem;
             margin-left: 6%; 
             margin-bottom: 30px;
             font-weight: bold; 
+
+            @media @phone {
+                font-size: 4.4rem;
+                line-height: 5rem;
+            }
         }
     }
 
     main {
+
 
         .section {
             display: flex; 
@@ -67,8 +80,17 @@
             margin-top: 50px;
             width: 85%;
 
+            @media @phone {
+                display:block;
+                width: 100%;
+            }
+
             .section-text{
                 margin-right: 5%;
+
+                @media @phone {
+                    margin-right: 0;
+                }
 
                 h2 {
                     font-weight: bold; 
@@ -80,6 +102,7 @@
                     font-size: 1.6rem;
                     line-height: 24px;
                 }
+            
 
                 .button {
                     width: 150px; 
@@ -90,11 +113,38 @@
                     cursor: pointer; 
                     padding: 13px; 
 
+                    @media @phone {
+                        width: 100%;
+                    }
+
                     &:hover {
                         background-color: @general-color;
                         color: @general-background-color;
                     }
                 }
+            }
+            .section-img .mobile {
+                display: none;
+
+                @media @phone {
+                    display: flex;
+                    width: 100%;
+                }
+            }
+            .section-img .desktop {
+                @media @phone {
+                    display: none;  
+                    width: 100%
+                }
+                
+            }
+        }
+
+        .section-1 {
+            flex-direction: row-reverse;
+
+            @media @phone {
+                display: block;
             }
         }
         .section-2 .section-text{
@@ -104,13 +154,16 @@
             width: 85%; 
             margin: 0 auto;
 
+            @media @phone {
+                width: 100%;
+            }
+
             h2 {
                 font-weight: bold; 
                 font-size: 2.8rem;
                 margin-top: 120px;
             }
             .img-text-block {
-
                 .img-villas {
                     background-image: url("../img/home/home-villas-img.png");
                     background-size: cover;
@@ -119,6 +172,12 @@
                     justify-content: flex-end; 
                     align-items: flex-end;
                     margin: 30px 0 80px 0; 
+
+                    @media @phone {
+                        background-image: url("../img/home/home-mobile-villas-img.png");
+                        height: 200px;
+                        justify-content:center;
+                    }
                 }
                 .img-outskirts {
                     background-image: url("../img/home/home-outskirts-img.png");
@@ -127,6 +186,12 @@
                     display: flex;
                     align-items: flex-end;
                     margin: 80px 0; 
+
+                    @media @phone {
+                        background-image: url("../img/home/home-mobile-outskirts-img.png");
+                        height: 220px; 
+                        justify-content: center;
+                    }
                 }
                 .img-blocks {
                     background-image: url("../img/home/home-the-blocks-img.png");
@@ -136,6 +201,12 @@
                     justify-content: flex-end; 
                     align-items: flex-end;
                     margin: 80px 0; 
+
+                    @media @phone {
+                        background-image: url("../img/home/home-mobile-the-blocks-img.png"); 
+                        height: 220px;
+                        justify-content: center;
+                    }
                 }
                 h3 {
                     background-color: #D8D8D8; 
@@ -143,6 +214,7 @@
                     font-size: 2.2rem;
                     padding: 25px;
                     letter-spacing: 7px;
+                    position: absolute;
                 }
                 p {
                     width: 50%; 
@@ -150,6 +222,10 @@
                     font-size: @general-text;
                     line-height: 24px;
                     margin-bottom: 30px; 
+
+                    @media @phone {
+                        width: 100%; 
+                    }
                 }
 
             }
@@ -170,6 +246,11 @@
             width: 85%;
             margin: 0 auto;
         
+            @media @phone {
+                flex-direction: column;
+                width: 100%;
+            }
+
             h4{
                 font-size: 2rem; 
                 line-height: 24px;
