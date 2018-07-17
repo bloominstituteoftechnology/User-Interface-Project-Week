@@ -11,7 +11,8 @@ class Tabs {
     this.init();
   }
 
-  init(){
+
+  init() {
     // Invoke the selectTab() method on activeTab so we can see the tab when the page loads.
     this.activeTab.selectTab();
   }
@@ -25,7 +26,7 @@ class Tabs {
 
   getCards(data){
     // Update the logic in the if statment to check if 'all' is equal to the passed in data.
-    if(data === 'all'){
+    if(data === 'Pre-Construction'){
       // Return a reference to all the ".card" classes
 
       return  document.querySelectorAll('.card');
@@ -65,6 +66,7 @@ class TabLink {
     this.element.classList.remove(".active-tab");
     // Notice we are looping through the this.cards array and invoking deselectCard() from the TabCard class, nothing to update here
     this.cards.forEach( card => card.deselectCard());
+   
   }
 }
 
@@ -87,3 +89,4 @@ class TabCard {   //selects/update style and deselects/update style the card
 let tabs = document.querySelectorAll(".tabs");
 // Map over the array and convert each tab reference into a new Tabs object.  Pass in the tab object to the Tabs class.
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+console.log(tabs)

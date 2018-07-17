@@ -19,6 +19,141 @@
 }
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 .width-100 {
   width: 100%;
 }
@@ -27,18 +162,137 @@
   justify-content: center;
   align-items: center;
 }
+.tabs {
+  width: 100%;
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  padding-top: 60px;
+}
+.tabs .tabs-item {
+  display: none;
+  width: 75%;
+  justify-content: space-between;
+}
+.tabs .tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs .tabs-item-selected {
+  display: block;
+  margin-left: 10px;
+}
+.tabs .tabs-links {
+  display: flex;
+}
+.tabs .tabs-link {
+  padding: 20px 25px;
+  font-size: 24px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.tabs .tabs-link-selected {
+  z-index: 2;
+  border-right: 1px solid black;
+  color: black;
+}
+.header-container {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-container .header {
+  height: 50px;
+}
+.section {
+  width: 70%;
+  margin: 45px auto;
+  display: flex;
+  overflow: hidden;
+}
+.section .box {
+  padding: 40px;
+}
+.section .box .box-title {
+  font-size: 24px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
 * {
   box-sizing: border-box;
 }
-.design {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  background-color: #fffef7;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  border: 1px solid blue;
+}
+.main-content {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.main-content .img-jumbotron {
+  display: block;
+  max-width: 100%;
+  z-index: -1;
+}
+.main-content .top-content {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
+}
+.main-content .btn-features {
+  display: block;
+}
+.main-content .top-left {
+  display: flex;
+  border: 1px solid black;
+}
+.main-content .design {
+  display: flex;
+}
+.main-content .btn-features {
+  margin-top: 20px;
+  width: 100px;
+  height: 50px;
+  background-color: #577ae4;
+  border: 1px solid black;
+  color: white;
+  cursor: pointer;
+}
+.main-content .bottom-content {
+  display: flex;
+  justify-content: space-around;
+}
+.villas > p {
+  text-align: center;
+  border: 1px solid red;
+}
+.home-villas-img .home-outskirts-img {
+  max-width: 100%;
 }
 .section-c {
   display: flex;
+  padding: 20px;
 }
 ul {
   list-style-type: none;
+}
+li {
+  font-weight: bold;
+}
+li + li {
+  font-weight: normal;
 }
 .big-title {
   width: 100px;
@@ -76,46 +330,50 @@ h5 {
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
-.container {
-  max-width: 800px;
-  margin: auto;
-  border: 1px solid blue;
-  font-family: Arial, sans-serif;
-}
-.main-content {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-}
-.main-content .img-jumbotron {
-  display: block;
-  width: 800px;
-  z-index: -1;
-}
-.main-content .top-content {
-  display: flex;
-  justify-content: space-around;
-}
-.main-content .top-left {
-  border: 1px solid black;
-}
-.main-content .btn-features {
-  margin-top: 20px;
-  width: 100px;
-  height: 50px;
-  background-color: #577ae4;
-  border: 1px solid black;
+.tabs {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  cursor: pointer;
+  flex-direction: row;
+  width: 100%;
+  height: 47px;
+  background-color: white;
 }
-.main-content .bottom-content {
+@media (min-width: 1280px) {
+  .tabs {
+    width: 1280px;
+  }
+}
+.tabs .topics {
   display: flex;
-  justify-content: space-around;
+  justify-content: none;
+  align-items: center;
+  flex-direction: row;
 }
-.main-content .bottom-content p {
-  width: 200px;
+.tabs .topics .title {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.tabs .topics .tab {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  background-color: lightgray;
+  margin: 0 5px;
+  padding: 2px 10px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.tabs .topics .tab:hover {
+  text-decoration: underline;
+}
+.tabs .topics .active-tab {
+  background-color: lightgray;
 }
 .header {
   width: 800px;
@@ -155,120 +413,6 @@ h5 {
 }
 .menu--open {
   display: block;
-}
-.tabs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  height: 47px;
-  background-color: white;
-}
-@media (min-width: 1280px) {
-  .tabs {
-    width: 1280px;
-  }
-}
-.tabs .topics {
-  display: flex;
-  justify-content: none;
-  align-items: center;
-  flex-direction: row;
-}
-.tabs .topics .title {
-  font-size: 12px;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-.tabs .topics .tab {
-  display: flex;
-  justify-content: none;
-  align-items: center;
-  flex-direction: row;
-  color: white;
-  margin: 0 5px;
-  padding: 2px 10px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  cursor: pointer;
-  font-weight: bold;
-}
-.tabs .topics .tab:hover {
-  text-decoration: underline;
-}
-.tabs .topics .active-tab {
-  background-color: white;
-  color: brown;
-  border: 2px solid brown;
-}
-.top-bar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: none;
-  flex-direction: row;
-  position: fixed;
-  height: 44px;
-  background-color: brown;
-}
-.top-bar .container {
-  width: 100%;
-  display: flex;
-  justify-content: none;
-  align-items: none;
-  flex-direction: row;
-  color: white;
-  letter-spacing: 1px;
-  padding: 0 10px;
-}
-@media (min-width: 1280px) {
-  .top-bar .container {
-    width: 1280px;
-  }
-}
-.top-bar .container .container-left {
-  display: flex;
-  justify-content: none;
-  align-items: center;
-  flex-direction: row;
-  flex: 1;
-  font-size: 11px;
-}
-.top-bar .container .container-left span {
-  cursor: pointer;
-  margin-right: 25%;
-  font-weight: bold;
-}
-.top-bar .container .container-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex: 3;
-  font-size: 9px;
-}
-.top-bar .container .container-center span {
-  cursor: pointer;
-  margin-right: 5%;
-}
-.top-bar .container .container-center span:last-child {
-  margin-right: 0;
-}
-.top-bar .container .container-center span:hover {
-  text-decoration: underline;
-}
-.top-bar .container .container-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: row;
-  flex: 1;
-  font-size: 11px;
-  font-weight: bold;
-}
-.top-bar .container .container-right span {
-  cursor: pointer;
 }
 .articles {
   margin-top: 95px;
@@ -310,11 +454,4 @@ h5 {
 }
 .article-open {
   height: 400px;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
-  background-color: #fffef7;
 }
