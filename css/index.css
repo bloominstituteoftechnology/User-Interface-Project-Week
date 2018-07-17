@@ -98,14 +98,14 @@ footer {
   line-height: 7.5rem;
   font-weight: 700;
   color: #fff;
-  letter-spacing: 0.2rem; }
+  letter-spacing: 0.2rem;
+  text-shadow: 0.5rem 1rem 2rem rgba(34, 34, 34, 0.4); }
   @media screen and (max-width: 576px) {
     .heading-primary {
       font-size: 3.6rem;
       line-height: 4.8rem; } }
   .heading-primary--services {
-    font-size: 6rem;
-    text-shadow: 0.5rem 1rem 2rem rgba(34, 34, 34, 0.4); }
+    font-size: 6rem; }
 
 .text-content__heading {
   font-weight: 700;
@@ -165,10 +165,19 @@ footer {
     left: 0;
     padding-left: 8%;
     padding-bottom: 4.9rem; }
+    .hero .heading-primary, .hero .heading-primary--1, .hero .heading-primary--2, .hero .heading-primary--3 {
+      animation-name: moveInTop;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: backwards; }
     @media screen and (max-width: 576px) {
       .hero .heading-primary {
         padding-left: 6%;
         padding-bottom: 2.4rem; } }
+    .hero .heading-primary--2 {
+      animation-delay: 1s; }
+    .hero .heading-primary--3 {
+      animation-delay: 2s; }
     .hero .heading-primary--services {
       padding-bottom: 1.8rem;
       padding-left: 8.5%; }
@@ -262,6 +271,22 @@ footer {
   padding-top: 5rem;
   padding-bottom: 5rem; }
 
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 .navbar {
   background-color: rgba(142, 154, 175, 0.96);
   position: fixed;
@@ -274,6 +299,8 @@ footer {
     justify-content: space-between;
     padding: 1.4rem 6% 1rem;
     flex-wrap: wrap; }
+  .navbar .collapse__button {
+    cursor: pointer; }
   .navbar .collapse__content {
     height: calc(100vh - 40px);
     flex-basis: 100%;
@@ -281,7 +308,9 @@ footer {
     justify-content: center;
     align-items: center; }
     .navbar .collapse__content.show {
-      display: flex; }
+      display: flex;
+      animation: zoomIn 0.3s;
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
     .navbar .collapse__content li {
       list-style: none; }
   .navbar .collapse__links {
