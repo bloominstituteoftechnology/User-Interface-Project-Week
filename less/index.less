@@ -5,6 +5,7 @@ RESET
 v2.0b1 | 201101 
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
+@import "./variables.less";
 
 html,body,div,span,applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,
@@ -33,6 +34,9 @@ footer,header,hgroup,menu,nav,section{
 }
 body{
   line-height:1;
+  @media @phone{
+    max-width: 400px;
+  }
 }
 ol,ul{
   list-style:none;
@@ -99,6 +103,17 @@ header{
   width: 100%;
   padding: 0;
   margin: 0;
+  img {
+    width: 100%;
+    background-image: url("../img/home/home-jumbotron.png")
+  }
+  @media @phone {
+    .img {
+      height: fit-content;
+      width: 100%;
+      background-image: url("../img/home/home-mobile-jumbotron.png");
+    }
+  }
   .bottom-left{
     position: absolute;
     bottom: 8px;
@@ -109,6 +124,14 @@ header{
     font-size: 64px;
     line-height: 75px;
     color: #FFFFFF;
+
+    @media @phone {
+      bottom: 4px;
+      left: 8px;
+      margin: 25px;
+      font-size: 32px;
+      line-height: 36px;
+    }
   }
 }
 
@@ -120,6 +143,9 @@ header{
   width: 100%;
   display: flex;
   flex-flow: row;
+  @media @phone{
+    flex-flow: column-reverse;
+  }
   justify-content: space-around;
   margin-bottom: 30px;
   .content{
