@@ -2,9 +2,12 @@
 
 const showNavPanel = function(){
   navPage[0].classList.toggle('showNav');
-  navBTNOpen.classList.toggle('hide-icon');
-  navBTNClose.classList.toggle('hide-icon');
-  console.log(navBTN)
+//------------------Another great example of forEach--------------//
+  // navBTNOpen.classList.toggle('hide-icon');
+  // navBTNClose.classList.toggle('hide-icon');
+  navBTN.forEach( target => {
+    classList.toggle('hide-icon');
+  });
 }
 
 const navOpacity = function(){
@@ -19,8 +22,6 @@ let topBar = document.querySelector('.top-bar');
 
 navPage = Array.from(navPage);
 navBTN = Array.from(navBTN);
-console.log(navBTN[0]);
-console.log(navPage[0]);
 
 //-----------------Best example of forEach----------------------//
 // navBTN[0].addEventListener("click", showNavPanel);
