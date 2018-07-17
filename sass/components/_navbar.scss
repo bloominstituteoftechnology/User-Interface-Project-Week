@@ -1,5 +1,5 @@
 .navbar {
-  background-color: $color-blue-gray;
+  background-color: rgba($color-blue-gray, 0.96);
   position: fixed;
   top: 0;
   left: 0;
@@ -10,5 +10,28 @@
     display: flex;
     justify-content: space-between;
     padding: 1.4rem 6% 1rem;
+    flex-wrap: wrap;
+  }
+
+  .collapse {
+    &__content {
+      height: calc(100vh - 40px);
+      flex-basis: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+
+      &.show {
+        display: flex;
+      }
+
+      li {
+        list-style: none;
+      }
+    }
+
+    &__links {
+      flex-direction: column;
+    }
   }
 }
