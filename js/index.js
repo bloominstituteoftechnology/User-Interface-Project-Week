@@ -1,4 +1,5 @@
 // JS goes here
+// Navbar
 
 const hamButton = document.querySelector('.ham-button');
 const hamButtonClose = document.querySelector('.ham-button-close');
@@ -15,6 +16,8 @@ hamButtonClose.addEventListener('click', ()=> {
 	hamButton.style.display = 'block';
 	hamButtonClose.style.display = 'none';
 });
+
+// Tab
 
 class Tabs {
   constructor(element) {
@@ -82,6 +85,8 @@ class TabsItem {
 let tabs = document.querySelectorAll('.services-tabs');
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
+//Carousel
+
 class Pictures {
   constructor(element){
     this.element = element;
@@ -126,14 +131,21 @@ class Pictures {
 class Picture {
   constructor(picture){
     this.picture = picture;
+    this.description = document.querySelector(`.description[data-tab="${this.picture.dataset.tab}"]`);
   }
 
   makeVisible(){
     this.picture.classList.add('active-picture');
+    this.description.classList.add('active-description');
   }
   makeHidden(){
     this.picture.classList.remove('active-picture');
+    this.description.classList.remove('active-description');
   }
+}
+
+class Description {
+
 }
 
 
