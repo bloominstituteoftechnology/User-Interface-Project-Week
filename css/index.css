@@ -304,6 +304,14 @@ footer {
   100% {
     transform: scaleX(1.5) skewX(-10deg); } }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: rotateY(180deg); }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg); } }
+
 .navbar {
   background-color: rgba(142, 154, 175, 0.96);
   position: fixed;
@@ -348,13 +356,17 @@ footer {
 .button {
   display: inline-block;
   padding: 1.1rem 2.5rem;
-  text-align: center; }
+  text-align: center;
+  transition: all 0.2s; }
   .button:link {
     text-decoration: none; }
   .button--outline {
     background-color: transparent;
     border: 1px solid #222;
     color: #222; }
+    .button--outline:hover {
+      background-color: #222;
+      color: #fff; }
   @media screen and (max-width: 576px) {
     .button--block-sm {
       width: 100%; } }
@@ -368,21 +380,20 @@ footer {
   padding-right: 0;
   padding-left: 0;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all 0.3s; }
   .tabs__link--active-tab {
     background-color: #5e9fb9;
     color: #fff; }
-  .tabs__link:hover {
-    background-color: #222;
-    color: #fff; }
 
-.tabs .tabs__content {
+.tabs__content {
   display: none; }
-  .tabs .tabs__content--active-tab {
-    display: block; }
-  .tabs .tabs__content .text-content__heading {
+  .tabs__content--active-tab {
+    display: block;
+    animation: fadeIn 0.5s; }
+  .tabs__content .text-content__heading {
     margin-bottom: 2rem; }
-  .tabs .tabs__content p {
+  .tabs__content p {
     margin-bottom: 2.6rem;
     line-height: 2.5rem; }
 
