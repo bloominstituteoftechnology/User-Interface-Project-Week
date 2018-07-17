@@ -11,9 +11,9 @@ class Menu {
 }
 
 let menus = document.querySelectorAll('.menu');
-console.log(menus)
+
 menus = Array.from(menus).map( menu => new Menu(menu));
-console.log(menus)
+
 
 
 
