@@ -149,6 +149,9 @@ let pics = document.querySelectorAll('.pictures');
 pics = Array.from(pics).map(picture => new Pictures(picture));
 
 // Animations
+window.addEventListener('load', () => TweenLite.to('.jumbotron .jumbotron-text', 1, {opacity: 1, left: "9%"}));
+window.addEventListener('load', () => TweenLite.to('.p-jumbotron .jumbotron-text', 1, {opacity: 1, left: "9%"}));
+
 let animatedPictures = document.querySelectorAll('.home .main-content img');
 animatedPictures.forEach(picture => {
   picture.addEventListener('mouseover', () => TweenLite.to(picture, 1, {scale:1.1, ease: 'Linear'}));
@@ -157,8 +160,10 @@ animatedPictures.forEach(picture => {
 
 let animatedButtons = document.querySelectorAll('.home .main-content .content-box button');
 animatedButtons.forEach(button => {
-  button.addEventListener('mouseover', () => TweenLite.to(button, 0.5, {backgroundColor:"#222222", color:"white"}));
-  button.addEventListener('mouseout', () => TweenLite.to(button, 0.5, {backgroundColor:"white", color:"black"}));
+  button.addEventListener('mouseover', () => TweenLite.to(button, 0.5, {backgroundColor:"#222222", color:"white", boxShadow:"0px 0px 20px 2px #636e72"}));
+  button.addEventListener('mouseout', () => TweenLite.to(button, 0.5, {backgroundColor:"white", color:"black", boxShadow:"0px 0px 0px 0px"}));
 });
+
+
 
 //
