@@ -1,8 +1,18 @@
+// Mixins
+.mb(@mb: 0) {
+    margin-bottom: @mb;
+}
+.mt(@mt: 0) {
+    margin-top: @mt;
+}
+
+// Setup for larger views
 .mobile-img {
     display: none;
 }
 
-@media (max-width: 500px) {
+// Mobile view
+@media (max-width: 400px) {
     .home-bg {
         background-image: url('../img/home/home-mobile-jumbotron.png');
         height: 260px;
@@ -56,6 +66,15 @@
                 }
             }
         }
+        #learn-row {
+            .mb(6px);
+        }
+        #design-row {
+            .mb();
+            .col-md-6 {
+                margin-top: 3px;
+            }
+        }
     }
     
     #recent {
@@ -93,7 +112,7 @@
         .footer-content {
             margin: 0;
             h5 {
-                margin-top: 20px;
+                .mt();
                 font-weight: bold;
             }
             input {
