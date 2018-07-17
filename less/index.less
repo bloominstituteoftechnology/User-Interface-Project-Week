@@ -63,16 +63,24 @@ table{
   height: 275px;
   background-size: 100% 100%;
 }
+.mediaCompanyImg(){
+  height:275px;
+  width: 100%;
+}
 .deskTopProjectsImg() {
   height: 230px;
   width: 100%;
-  background-size: 100% 100%;
+}
+.mediaProjectsImg() {
+  height: 200px;
+  background-size: cover;
 }
 .deskTopRecentProjects() {
   margin-top: 30px;
   position: relative;
   height: 270px;
 }
+@phone:~"(max-width:400px)";
 .deskTopProjectsp() {
   z-index: 1;
   position: absolute;
@@ -109,7 +117,11 @@ table{
     height: 598px;
     position: relative;
     background-size: 100% 100%;
-      
+    @media @phone {
+      background-image: url("/Users/wkwon/Downloads/User-Interface-Project-Week/img/home/home-mobile-jumbotron.png");
+      height: 260px;
+      width: 100%;
+    }
     h1{
       font-weight: bold;
       font-size: 64px;
@@ -119,23 +131,50 @@ table{
       margin-left: 120px;
       margin-bottom: 60px;
       position: absolute;
+      @media @phone {
+        margin-bottom:20px;
+        margin-left: 20px;
+        font-size: 42px;
+        line-height: 49px;
+      }
     }
   }
   
   .company-info {
     margin-top: 40px;
     letter-spacing: 1px;
+    .architects{
+      @media @phone{
+        display: flex;
+        flex-direction:column-reverse;
+      }
+    }
       .architect-image {
+        display: flex;
         background-image: url("/Users/wkwon/LambdaSchool/User-Interface-Project-Week/img/home/home-img-1.png");
         .deskTopCompanyImg();
+        @media @phone{
+          background-image: url("/Users/wkwon/Downloads/User-Interface-Project-Week/img/home/home-mobile-img-1.png");
+          .mediaCompanyImg();
+        }
+        
       }
     }
   
   .designs {
     margin-top: 80px;
+    @media @phone {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+    }
     .design-image {
       background-image: url("/Users/wkwon/LambdaSchool/User-Interface-Project-Week/img/home/home-img-2.png");
       .deskTopCompanyImg();
+      @media @phone {
+        background-image: url("/Users/wkwon/Downloads/User-Interface-Project-Week/img/home/home-mobile-img-2.png");
+        .mediaCompanyImg();
+      }
     }
     
   }
@@ -145,6 +184,11 @@ table{
     height: 40px;
     text-align: center;
     width: 130px;
+    margin-top: 10px;
+    @media @phone{
+      width: 100%;
+      height: 50px;
+    }
   }
   h2 {
     padding-top: 30px;
@@ -152,58 +196,102 @@ table{
   p {
     margin-top: 15px;
   }
-  button {
-    margin-top: 10px;
-  }
+  
 }
 .recent-projects {
   text-align: left;
   margin-top: 80px;
+  @media @phone {
+    margin-top: 20px;
+  }
   .text{
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-direction: wrap;
     letter-spacing: 1px;
+    @media @phone{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
   .villas-project {
     .deskTopRecentProjects();
     margin-bottom: 40px;
     margin-top: 40px;
+    @media @phone {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
     .villas-image {
       width: 855px;
       background: url("/Users/wkwon/LambdaSchool/User-Interface-Project-Week/img/home/home-villas-img.png");
       .deskTopProjectsImg();
+      @media @phone {
+        width: 100%;
+        background: url("/Users/wkwon/Downloads/User-Interface-Project-Week/img/home/home-mobile-villas-img.png");
+        .mediaProjectsImg();
+      }
     }
-    p {
+    p {  
       .deskTopProjectsp();
+      @media @phone {
+        width: 90%;
+        margin-right: 5px;
+        letter-spacing: 8px;
+        height: 80px;
+      }
     }
   }
   .outskirts-project {
     .deskTopRecentProjects();
     margin-bottom: 40px;
-   
+   @media @phone {
+     margin-bottom: 10px;
+   }
     .outskirts-image {
       width: 855px;
       background: url("/Users/wkwon/LambdaSchool/User-Interface-Project-Week/img/home/home-outskirts-img.png");
       .deskTopProjectsImg();
+      @media @phone {
+        background: url("/Users/wkwon/Downloads/User-Interface-Project-Week/img/home/home-mobile-outskirts-img.png");
+        .mediaProjectsImg();
+      }
     }
     p {
       .deskTopProjectsp();
       left: 15px;
-      
+      @media @phone {
+        width: 90%;
+        height: 80px;
+        margin-left: 5px;
+        letter-spacing: 8px;
+      }
     }
   }
   .blocks-project {
     .deskTopRecentProjects();
     margin-bottom: 40px;
+    @media @phone{
+      margin-bottom: 20px;
+    }
     .blocks-image {
       width: 855px;
       background: url("/Users/wkwon/LambdaSchool/User-Interface-Project-Week/img/home/home-the-blocks-img.png");
       .deskTopProjectsImg();
+      @media @phone {
+        background: url("/Users/wkwon/Downloads/User-Interface-Project-Week/img/home/home-mobile-the-blocks-img.png");
+        .mediaProjectsImg();
+      }
     }
     p{
       .deskTopProjectsp();
+      @media @phone {
+        width: 90%;
+        height: 80px;
+        margin-right: 5px;
+        letter-spacing: 8px;
+      }
     }
   }
   .col-md-5 p{
@@ -217,15 +305,28 @@ table{
   background-color:#828282;
   flex-wrap: wrap;
   margin-top: 60px;
-  
+  @media @phone {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
   .section {
     margin-left: 65px;
     margin-right: 65px;
     margin-bottom: 20px;
     margin-top: 40px;
+    @media @phone {
+      margin: 0;
+    }
     input {
       margin-top: 10px;
       margin-bottom: 10px;
+      width: 280px;
+      height: 40px;
+      @media @phone {
+        width: 100%;
+        height: 50px;
+        margin:0;
+      }
     }
     .subheading{
       Font-weight: regular;
@@ -239,15 +340,23 @@ table{
     Font-Size: 14px;
     Line-Height: 26px;
     Color: #FFFFFF;
+    @media @phone {
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
   .copyright {
     margin-right: 40px;
+    @media @phone {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 }
 
 .menu-content {
   background-color:#99a5b2;
-  width: 100%;
+ 
   #text{
   Font-Weight: Regular;
   Font-Size: 24px;  
@@ -255,8 +364,14 @@ table{
   Color: #FFF;
   Font-Family: 'Roboto', Arial, sans-serif;
   padding-left: 120px;
+  @media @phone {
+  padding-left: 0px;
+  }
   }
   .image {
     padding-right: 120px;
+    @media @phone {
+      padding-right:0px;
+      }
   }
 }
