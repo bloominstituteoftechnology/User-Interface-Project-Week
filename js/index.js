@@ -1,14 +1,17 @@
 // JS goes here
 
-const showNavPanel = (e) => {
-  console.log(`${e} was clicked`);
-  // navPage.classlist.toggle('.show');
+const showNavPanel = function(){
+  console.log(`was clicked`);
+  console.log(navPage[0]);
+  navPage[0].classList.toggle('.show');
+  console.log(`was run`);
 }
 
-const navBTN = document.querySelector('#nav-icon');
-const navPage = document.querySelector("#nav-page");
+const navBTN = document.querySelector('.nav-icon');
+let navPage = document.querySelectorAll(".nav-page");
 
+navPage = Array.from(navPage);
 console.log(navBTN);
-console.log(navPage);
+console.log(navPage[0]);
 
 navBTN.addEventListener("click", showNavPanel);
