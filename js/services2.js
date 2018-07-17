@@ -4,7 +4,7 @@ class Tab {
         this.elem = elem;
         this.btnLinks = document.querySelectorAll('.tab');
         this.btnLinks = Array.from(this.btnLinks).map((btnLink) => {
-            console.log(btnLink);
+            // console.log(btnLink);
             
             return new TabBtn(btnLink, this);
         });
@@ -14,77 +14,6 @@ class Tab {
 
     init(){
         this.activeBtn.select();
-
-class Tabs {
-  constructor(element) {
-    this.element = element;
-    this.links = this.element.querySelectorAll('.tabs-link');
-    this.links = Array.from(this.links).map(link => {
-      return new TabsLink(link, this);
-    });
-    this.activeLink = this.links[0];
-    this.init();
-  }
-
-  init() {
-    this.activeLink.select()
-  }
-
-  updateActive(newActive) {
-    this.activeLink.deselect();
-    this.activeLink = newActive;
-  }
-
-  getTab(data) {
-    return this.element.querySelector(`.tabs-item[data-tab="${data}"]`)
-  }
-
-}
-
-class TabsLink {
-  constructor(link, parent) {
-    this.link = link;
-    this.tabs = parent;
-    this.tabsItem = parent.getTab(this.link.dataset.tab);
-    this.tabsItem = new TabsItem(this.tabsItem);
-    this.link.addEventListener('click', () => {
-      this.tabs.updateActive(this);
-      this.select()
-    });
-  };
-
-  select() {
-    this.link.classList.add('tabs-link-selected')
-    this.tabsItem.select();
-  }
-
-  deselect() {
-    this.link.classList.remove('tabs-link-selected');
-    this.tabsItem.deselect();
-  }
-}
-
-class TabsItem {
-  constructor(element) {
-    this.element = element;
-  }
-
-  select() {
-    this.element.classList.add('tabs-item-selected');
-  }
-
-  deselect() {
-    this.element.classList.remove('tabs-item-selected');
-  }
-}
-
-
-let tabs = document.querySelectorAll('.tabs');
-tabs = Array.from(tabs).map( tab => new Tabs(tab));
-    }
-
-    getContent(data){
-        return this.elem.querySelectorAll(`.tab-content[data-content=${data}]`);
     }
 
     updateActive(nuActive){
@@ -92,35 +21,37 @@ tabs = Array.from(tabs).map( tab => new Tabs(tab));
         this.activeBtn = nuActive;
     }
 
-
+    getContent(data){
+        return document.querySelector(`.tab-content[data-content="${data}"]`);
+    }
 }
 
 class TabBtn {
     constructor(btn, parent){
         this.btn = btn;
         this.parent = parent;
-        // console.log("this btn", this.btn);
+        console.log("this btn", this.btn.dataset.content);
         
-        this.btnContents = this.parent.getContent(this.btn.dataset.content);
-        // console.log("contents from data ", this.btnContents);
+        this.btnContents = parent.getContent(this.btn.dataset.content);
+        console.log("content", this.btnContents);
         
-        this.btnContents = Array.from(this.btnContents).map((btnContent)=>{
-            return new BtnContent(btnContent);
-        });
+        this.btnContents = new BtnContent(this.btnContents);
+
         this.btn.addEventListener('click', () => {
             this.select();
-            this.parent.updateActive(this);
+            
         });
     }
 
     select(){
+        this.parent.updateActive(this);
         this.btn.classList.add('active-tab');
-        this.btnContents.forEach((content) => {content.selectContent()});
+        this.btnContents.selectContent();
     }
 
     deselect(){
         this.btn.classList.remove('active-tab');
-        this.btnContents.forEach((content)=>{content.deselectContent()});
+        this.btnContents.deselectContent();
     }
 }
 
