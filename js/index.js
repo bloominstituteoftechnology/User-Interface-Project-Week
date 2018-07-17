@@ -1,18 +1,31 @@
 // JS goes here
 
 const showNavPanel = function(){
-  console.log(`was clicked`);
-  console.log(navPage[0]);
   navPage[0].classList.toggle('showNav');
-  navPage[0].style.background = "red";
-  console.log(`was run`);
+  navBTNOpen.classList.toggle('hide-icon');
+  navBTNClose.classList.toggle('hide-icon');
+  console.log(navBTN)
 }
 
-const navBTN = document.querySelector('.nav-icon');
+const navOpacity = function(){
+  topBar.style.background = '#828282';
+}
+
+let navBTN = document.querySelectorAll('.nav-icon');
+const navBTNOpen = document.querySelector('#open-icon');
+const navBTNClose = document.querySelector('#close-icon');
 let navPage = document.querySelectorAll(".nav-page");
+let topBar = document.querySelector('.top-bar');
 
 navPage = Array.from(navPage);
-console.log(navBTN);
+navBTN = Array.from(navBTN);
+console.log(navBTN[0]);
 console.log(navPage[0]);
 
-navBTN.addEventListener("click", showNavPanel);
+//-----------------Best example of forEach----------------------//
+// navBTN[0].addEventListener("click", showNavPanel);
+// navBTN[1].addEventListener("click", showNavPanel);
+navBTN.forEach( (target) => {
+  target.addEventListener("click", showNavPanel)
+});
+document.addEventListener('wheel', navOpacity);
