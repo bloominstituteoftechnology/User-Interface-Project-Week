@@ -76,34 +76,70 @@
 
 
 
-//services.js
-class TabCard {
-  constructor(element){
-    this.element = element;
-    this.name = element.innerHTML;
-    console.log(this.name);
-    this.data = this.element.dataset.tab;
-    console.log(this.data);
-    this.onClick(this.element);
-  }
-  onClick(x){
-   x.addEventListener("click", function(element){
-     console.log(this.name)
-    x.style.color = "blue";
-    console.log(x.dataset)
+// //services.js
+// class TabCard {
+//   constructor(element){
+//     this.element = element;
+//     this.data = this.element.dataset.tab;
+//     console.log(`${this.element} hithere`)
+//     this.onClick(this.element);
+//   }
+//   onClick(x){
+//    x.addEventListener("click", function(element){
+//      // console.log(this.name)
+//     displayContent(this.element);
+//     x.style.color = "blue";
+//     // console.log(x.dataset)
+//     // let datatype = x.dataset;
+//     // if (x.dataset.tab === 'construction'){
+//     //   console.log('yay construction')
+//     // }
+//    });
+//   }
+// }
+//
+// class TabContent {
+//   constructor(element){
+//     this.element = element;
+//     this.data = this.element.dataset.tab;
+//     console.log(`${this.data} + inside function`);
+//   }
+// }
 
-   });
+let displayContent = function(datasetFromTab, number) {
+  // x.classList.toggle('.hide');
+  console.log(number);
+  console.log(datasetFromTab);
+  console.log(componentContent[number].dataset.tab);
+  // console.log(`inside displayContent ${componentContent[0].dataset}`);
+    if (datasetFromTab === componentContent[number].dataset.tab) {
+      console.log(`sucess`);
+      componentContent[number].classList.toggle('show');
+    }
+
   }
-}
+  // target.classList.toggle('show');
+
 
  //services.js
 let componentTabs = document.querySelectorAll(".tab");
+let componentContent = document.querySelectorAll(".component-content");
  // console.log(componentTabs);
 
-componentTabs = Array.from(componentTabs);
-// console.log(`${componentTabs[0]} 1`);
+componentTabs = Array.from(componentTabs)
+// .map( x => new TabCard (x));
+componentContent= Array.from(componentContent)
+// .map( y => new TabContent (y));
 
-componentTabs = componentTabs.map( x => new TabCard (x))
+componentTabs.forEach( (target) => {
+  // console.log(target.dataset)
+  // console.log(` inside forEAch ${target.dataset}`);
+  target.addEventListener("click", () => {
+    displayContent(target.dataset.tab, componentTabs.indexOf(target));
+  })
+});
+
+// console.log(componentContent);
 
  // console.log(`${componentTabs[0]} 2`);
 
