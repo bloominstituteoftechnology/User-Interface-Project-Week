@@ -7,6 +7,7 @@
     padding-right: 50px;
 
     .tabs{
+      display: flex;
       justify-content: space-between;
       margin-top: 40px;
       margin-bottom: 70px;
@@ -14,7 +15,7 @@
 
       .tab{
         border: 1px solid black;
-        width: 250px;
+        width: 200px;
         height: 47px;
         font-weight: bold;
         padding: auto;
@@ -29,6 +30,10 @@
           cursor: pointer;
         }
 
+        &:not(:last-child){
+          margin-right: 20px;
+        }
+
         &.active-tab{
           background: @tab-select-background;
         }
@@ -36,8 +41,18 @@
     }
 
     .tab-content{
+      width: 100%;
       display: none;
       justify-content: space-between;
+
+      .content-txt{
+        width: 50%;
+      }
+
+      .content-img {
+        width: 50%;
+        padding-left: 10%;
+      }
     }
 
     .active-content{
