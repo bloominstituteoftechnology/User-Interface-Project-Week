@@ -1,159 +1,30 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: ’’;
-  content: none;
-}
-ins {
-  text-decoration: none;
-}
-del {
-  text-decoration: line-through;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
 /* Your Code Goes Here */
 
-html,
-body {
-  background: #ffffff;
-  color: #222222;
-  font-family: "Roboto", Arial, sans-serif;
-}
-
+@import "./reset.less";
 @import "./mixins.less";
 @import "../components/Dropdown/Dropdown.less";
 @import "../components/Jumbotron/Jumbotron.less";
 @import "./footer.less";
 @import "./header.less";
+ * {
+   box-sizing: border-box
+ }
 
+html,
+body {
+  background: @white;
+  color: @accent;
+  font-family: "Roboto", Arial, sans-serif;
+
+  p {
+    // font-size: 16px;
+    line-height: 24px;
+  }
+}
 
 .container {
-  max-width: 882px;
+  max-width: 883px;
 
   .subheader {
     font-weight: bold;
@@ -161,40 +32,87 @@ body {
     color: @accent;
     margin-bottom: 20px;
   }
+  @media @phone {
+    
+
+    .subheader {
+      font-size: 32px;
+    }
+
+    p {
+      padding-top: 5px;
+      font-size: 21px;
+      line-height: 32px;
+    }
+  }
 }
 
 .box {
   padding-top: 50px;
   padding-bottom: 48px;
+
+  @media @phone {
+    padding-bottom: 10px;
+  }
   p {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 40px;
+    padding-bottom: 20px;
+    
+    @media @phone {
+      margin-bottom: 35px;
+    }
   }
   .info-button {
-    padding: 12px 27px;
+    margin-top: 5px;
+    height: 46px;
+    width: 136px;
     border: 1px solid black;
+    @media @phone {
+      height: 58px;
+      width: 100%;
+    }
+  }
+
+  .box-text {
+    @media @phone {
+      padding-top: 35px;
+    }
+    
+  }
+
+  .box-img {
+    @media @phone {
+      height: 355px;
+    }
   }
 }
 
 .big {
   margin-top: 50px;
+
+  @media @phone {
+    margin-top: 57px;
+  }
   .large-info {
     margin-top: 46px;
     margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    @media @phone {
+      margin-top: 35px;
+    }
+    .flex(none, center, column);
     .large-img {
-      text-align: center;
       position: relative;
       h4 {
+        .flex(center, center);
+        padding-left: 7px;
         border: 1px solid white;
         position: absolute;
         bottom: -38px; 
         background-color: #d8d8d8;
-        font-size: 28px;
-        padding: 32px 82px;
+        font-size: 23px;
+        letter-spacing: 8.5px;
+        height: 94px;
+        width: 316px;
       }
 
       .right-box {
@@ -204,17 +122,37 @@ body {
       .left-box {
         left: 0px;
       }
+
+      @media @phone {
+        img {
+         width: 100vw; 
+        }
+        h4 {
+          border: none;
+          bottom: -100px;
+          text-align: center;
+          width: 100%;
+          height: 100px;
+        }
+
+        .left-box {
+          left: 0;
+        }
+      }
     }
   }
 
   .full-text {
-    width: 400px;
     padding-top: 90px;
     padding-bottom: 20px;
 
+    @media @phone {
+      width: 100%;
+    }
+
     p {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 18px;
+      padding: 0 20px;
     }
   }
 }
