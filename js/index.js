@@ -45,6 +45,7 @@ class Tabs {
       // return a reference to the element's data attribute
     //   console.log(`.tabs-item[data-tab="${data}"]`)
     // console.log(data,"data");
+        console.log(this.element);
       console.log(this.element.querySelector(`.tabs-item[data-tab="${data}"]`));
       return this.element.querySelector(`.tabs-item[data-tab="${data}"]`); // this bridges the gap. 
     }
