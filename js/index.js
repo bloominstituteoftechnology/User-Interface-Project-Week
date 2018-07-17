@@ -85,7 +85,6 @@ class Tabs {
   class TabsItem {
     constructor(element) {
       this.element = element;
-      console.log(this.element);
     }
   
     select() {
