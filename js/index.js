@@ -24,7 +24,7 @@ class Tabs {
     constructor(element) {
         this.element = element;
         console.log(this.element);
-        this.links = this.element.querySelectorAll('.tabs-services')
+        this.links = this.element.querySelectorAll('.service-tab')
         this.links = Array.from(this.links).map( link => {
             return new TabsLink(link, this); 
         });
