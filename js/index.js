@@ -18,7 +18,7 @@ const closeNav = function () {
 }
 
 hamButton.addEventListener('click', ()=> {
-  TweenLite.to(mainNav, 1, {
+  TweenLite.to(mainNav, 0.5, {
     opacity: 1,
     ease: Power1.easeInOut,
     onComplete: openNav()
@@ -26,7 +26,7 @@ hamButton.addEventListener('click', ()=> {
 });
 
 hamButtonClose.addEventListener('click', ()=> {
-  TweenLite.to(mainNav, 1, {
+  TweenLite.to(mainNav, 0.5, {
     opacity: 0,
     ease: Power1.easeInOut,
     onComplete: closeNav
