@@ -3,8 +3,25 @@
 let onHumburger = document.querySelector('.on-humburger');
 let offHumburger = document.querySelector('.off-humburger');
 let hiddenNavigation = document.querySelector('.hidden-navigation');
+let fadingTextArray = document.querySelectorAll('.fade-in');
+
+function fadeIn(elementArray) {
+  elementArray.forEach(element => {
+    TweenLite.from(element, 0.5, {autoAlpha:0, y: 100}); 
+  })
+}
 
 onHumburger.addEventListener('click', function(e) {
+  let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  
+  TweenMax.from(offHumburger, 0.2, { height: 0 })
+  TweenMax.to(offHumburger, 0.3, { height: 20 });
+
+  TweenMax.from(hiddenNavigation, 0.2, { height: 0 })
+  TweenMax.to(hiddenNavigation, 0.3, { height: h });
+  
+  fadeIn(fadingTextArray);
+
   onHumburger.classList.add('hidden');
   offHumburger.classList.remove('hidden');
 
