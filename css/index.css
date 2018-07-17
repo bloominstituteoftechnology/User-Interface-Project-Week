@@ -141,6 +141,7 @@ table {
 .nav nav {
   width: 100%;
   display: flex;
+  justify-content: center;
   justify-content: space-between;
   padding: 0 50px;
 }
@@ -164,6 +165,7 @@ table {
   background-image: url("../img/home/home-jumbotron.png");
   height: 600px;
   display: flex;
+  justify-content: center;
   align-items: flex-end;
   padding: 30px 65px;
 }
@@ -174,25 +176,40 @@ table {
   color: #FFFFFF;
 }
 .main-content {
-  margin: 0 auto;
+  margin: 0 20px;
+}
+.main-content .row1 {
+  flex-direction: column-reverse;
+}
+@media (min-width: 576px) {
+  .main-content .row1 {
+    flex-direction: row;
+  }
 }
 .main-content .row1,
 .main-content .row2 {
   margin-top: 40px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .main-content .row1 img,
 .main-content .row2 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  margin-bottom: 30px;
 }
 .main-content .row1 button,
 .main-content .row2 button {
   border: 1px solid #222222;
-  width: 30%;
-  padding: 5px;
+  padding: 10px;
   background: white;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .main-content .row1 button,
+  .main-content .row2 button {
+    width: 40%;
+  }
 }
 .main-content .row3 {
   margin: 50px 0;
@@ -208,32 +225,52 @@ table {
   line-height: 24px;
 }
 .main-content .bottom-img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 .main-content .float {
   display: flex;
+  justify-content: center;
+}
+@media (min-width: 576px) {
+  .main-content .float {
+    justify-content: flex-start;
+  }
 }
 .main-content .float .floating-boxR {
   display: flex;
   background-color: #D8D8D8;
   z-index: 1;
-  width: 15%;
+  width: 80%;
   height: 80px;
   align-items: center;
   justify-content: center;
   margin-top: -40px;
-  margin-right: 10px;
+}
+@media (min-width: 576px) {
+  .main-content .float .floating-boxR {
+    width: 30%;
+  }
+}
+@media (min-width: 576px) {
+  .main-content .float .floating-boxR {
+    margin-left: auto;
+  }
 }
 .main-content .float .floating-boxL {
   display: flex;
   background-color: #D8D8D8;
   z-index: 1;
-  width: 15%;
+  width: 80%;
   height: 80px;
   align-items: center;
   justify-content: center;
   margin-top: -40px;
+}
+@media (min-width: 576px) {
+  .main-content .float .floating-boxL {
+    width: 30%;
+  }
 }
 .main-content .text {
   justify-content: center;
@@ -263,19 +300,25 @@ table {
 }
 .flexit {
   display: flex;
+  justify-content: center;
 }
 .floatBox {
   display: flex;
   background-color: #D8D8D8;
   z-index: 1;
-  width: 15%;
+  width: 80%;
   height: 80px;
   align-items: center;
   justify-content: center;
   margin-top: -40px;
 }
+@media (min-width: 576px) {
+  .floatBox {
+    width: 30%;
+  }
+}
 .flexImg {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 body {

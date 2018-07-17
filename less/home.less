@@ -48,24 +48,38 @@
 }
 
 .main-content {
-  margin: 0 auto;
+  margin: 0 20px;
   // display: flex;
   // justify-content: center;
 
+  .row1 {
+    flex-direction: column-reverse;
+
+    @media @small {
+      flex-direction: row;
+    }
+  }
+
   .row1, .row2 {
     margin-top: 40px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+
 
     img {
       .flexImg;
+      margin-bottom: 30px;
     }
 
     button {
       border: 1px solid #222222;
-      width: 30%;
-      padding: 5px;
+      padding: 10px;
       background: white;
+      width: 100%;
+
+      @media @small {
+      width: 40%;
+      }
     }
   }
 
@@ -96,9 +110,16 @@
   .float {
     .flexit;
 
+    @media @small {
+      justify-content: flex-start;
+    }
+
     .floating-boxR {
       .floatBox;
-      margin-right: 10px;
+
+      @media @small {
+        margin-left: auto;
+      }
     }
 
     .floating-boxL {
