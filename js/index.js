@@ -89,3 +89,25 @@ deselect(){
 let tabs = document.querySelectorAll(".tabs");
 //map through each tabs element and create a new Tabs object.
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
+
+// ----------- script for menu toggle -------------
+
+const toggleMenu = () => {
+    //toggle the "menu--open" class on the menu reference
+    menu.classList.toggle("menu--open");
+};
+
+
+//start here:  create a reference to the ".menu" class
+const menu = document.querySelector(".nav");
+
+
+//create a reference to the ".menu-button" class
+const menuButton = document.querySelector(".menu-button");
+menuButton.addEventListener('click', ()=> {
+    console.log("item was clicked")
+});
+
+//using the menu button reference, add a click handler that calls toggleMenu
+menuButton.addEventListener('click', toggleMenu)
