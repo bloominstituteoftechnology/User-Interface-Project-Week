@@ -3,7 +3,6 @@ class TabComponentMaker {
 	constructor(element) {
 		this.element = element;
 		this.buttons = this.element.querySelectorAll(".services-buttons");
-        console.log(this.buttons);
         this.buttons = Array.from(this.buttons).map ( element => {
             return new TabClick(element, this);
         });
@@ -20,7 +19,7 @@ class TabComponentMaker {
     }
 
     getTab(data) {
-        return this.element.querySelector(`.services-tab[data-tab="${data}"]`)
+        return this.element.querySelector(`.services-tab[data-button="${data}"]`)
     }
 
 }
@@ -30,8 +29,8 @@ class TabClick {
     constructor(element, parent) {
         this.element = element;
         this.parent = parent;
-        this.thingToClick = parent.getTab(this.element.dataset.tab);
-        this.actualContent = new Content(this.thingToClick);
+        this.thingToClick = parent.getTab(this.element.dataset.button);
+        this.thingToClick = new Content(this.thingToClick);
         this.element.addEventListener('click', () => {
             this.parent.updateActive(this);
             this.select();
@@ -68,4 +67,3 @@ class Content {
 let wrapper = document.querySelectorAll(".component-wrapper");
 wrapper = Array.from(wrapper).map(item => new TabComponentMaker(item));
 
-console.log(wrapper);
