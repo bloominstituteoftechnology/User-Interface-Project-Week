@@ -2,7 +2,7 @@ class Buttons {
     constructor(element){
 this.element = element; 
 this.buttons = this.element.querySelectorAll(".servicesbuttons");
-this.buttons = Array.from(this.buttons).map(button => {return new ButtonLink(button, this);});
+this.buttons = Array.from(this.buttons).map(button =>  new ButtonLink(button, this));
 
 this.activeButton = this.buttons[0];
 this.init();
@@ -10,6 +10,7 @@ this.init();
 
 init(){
     this.activeButton.selectButton();
+    
 }
 
 updateActive(buttonElement){
@@ -18,22 +19,26 @@ updateActive(buttonElement){
 }
 
 getContent(data){
-    return document.querySelectorAll(`.servicescontent[data-content="${data}"]`);
-}
+    if(data === 'all') {
+        return document.querySelectorAll(".servicescontent")
+    } else{
+ return document.querySelectorAll(`.servicescontent[data-content="${data}"]`)
+    }
+ }
 
 }
 
 class ButtonLink{
     constructor(element, parent){
         this.element = element;
-        this.parent = parent;
-        this.content = this.parent.getContent(this.element.dataset.button);
+        this.buttonparent = parent;
+        this.content = this.buttonparent.getContent(this.element.dataset.button);
         this.content = Array.from(this.content).map(contents => new ContentDisplay(contents));
-        this.element.addEventListener('click', () => {this.selectButton();});
+        this.element.addEventListener("click", () => {this.selectButton()});
     }
 
     selectButton(){
-        this.parent.updateActive(this);
+        this.buttonparent.updateActive(this);
         this.element.classList.add("active-button");
         this.content.forEach(contents => contents.selectContent());
     }
@@ -56,7 +61,6 @@ class ContentDisplay{
     deselectContent(){
         this.element.style.display = "none";
     }
-
 }
 
 
