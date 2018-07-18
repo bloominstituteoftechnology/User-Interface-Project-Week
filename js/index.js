@@ -2,23 +2,23 @@
 // Burger Fun
 const hamburgerButton = document.querySelector('.hamburger-button');
 const hamburgerButtonClose = document.querySelector('.hamburger-button-close');
-const mainNav = document.querySelector('.main-nav');
-
-const openNav = function() {
-    mainNav.classList.add('main-nav-show');
-    hamburgerButton.style.display = 'none';
-    hamburgerButtonClose.style.display = 'block';
-}
-
-const closeNav = function() {
-    mainNav.classList.remove('main-nav-show');
-    hamburgerButton.style.display = 'block';
-    hamburgerButtonClose.style.display = 'none';
-}
-
-hamburgerButton.addEventListener('click', () => {
-
+hamburgerButton.addEventListener("click", () =>{
+    document.querySelector(".main-nav").style.display = "flex";
+    hamburgerButton.style.display = "none";
+    hamburgerButtonClose.style.display = "block";
 })
+
+hamburgerButtonClose.addEventListener("click", () =>{
+  document.querySelector(".main-nav").style.display = "none";
+  hamburgerButton.style.display = "block";
+  hamburgerButtonClose.style.display = "none";
+})
+
+
+
+
+
+
 
 // Tabs
 
