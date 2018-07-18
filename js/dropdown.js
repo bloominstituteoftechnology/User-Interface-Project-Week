@@ -1,48 +1,74 @@
 
 class DropDown {
-    constructor ([...elems]){
-        this.itemArray = [...elems];
-        this.dropdown = document.querySelector('.beat-drop');
-        // this.listItemContainer = `<div class="menu-items"></div>`;  
-        // this.dropdown.append(this.listItemContainer);      
-        this.items = this.createItems(this.itemArray);
-        console.log(this.items);
+    constructor (args){
+        this.itemArray = args.titles;
+        this.dropdown = args.beatDrop;
+        this.dropdownButton = args.dropdownButton;
+        this.items = this.createItems(this.itemArray);  
         this.appendList(this.dropdown, this.items);
+        console.log(this.dropdownButton);
+        this.dropdownButton.addEventListener('click', ()=> {
+            this.toggleDropDown(this.dropdown);
+        });
     }
 
-    createItems(items){
+    createItems(items, parent){
         let temp = items.map((elem) => {
-            return new DropDownItem(elem);
+            return new DropDownItem(elem, parent);
         });
         temp = temp.map((elem)=>{
-            console.log(elem);
-            
             return elem.createItem();
         });
         return temp;
     }
 
     appendList(duper, list){
+        console.log("duper", duper);
+        console.log( list[0]);
+        
         list.forEach((elem)=>{
+            console.log("elem", elem);
             duper.appendChild(elem);
         });
+    }
+
+    toggleDropDown(dropdown){
+        
+        dropdown.classList.toggle('beat-drop-hidden');
+        console.log(dropdown.classList);
     }
 
 
 }
 
 class DropDownItem {
-    constructor(elem){
+    constructor(elem, parent){
         this.title = elem.title;   
         this.url = elem.url;
+        this.class = "drop-down-item";
+        this.dataAttr = "title";
     }
     createItem(){
-        return `<a href="${this.url}" class="drop-down-item data-name="${this.title}">${this.title}</div>`;
+        let a = document.createElement('a');
+        a.setAttribute('href', this.url);
+        a.setAttribute(`data-${this.dataAttr}`, this.dataAttr);
+        a.setAttribute('class', this.class);
+        a.innerHTML = this.title;
+        this.a = a;
+        return a;
     }
-
 }
 
-const tags = [
+class BeatDropBtn {
+    constructor (args){
+        this.dropdownButton = args.dropdownButton;
+    }
+}
+
+const tags = {
+    beatDrop : document.querySelector('.beat-drop'),
+    dropdownButton: document.querySelector('.beat-drop-button'),
+    titles : [
     {
         title: "silly",
         url: "https://en.wikipedia.org/wiki/Cybernetic_Culture_Research_Unit"
@@ -59,9 +85,8 @@ const tags = [
         title: "rilly",
         url: "https://en.wikipedia.org/wiki/Cybernetic_Culture_Research_Unit"
     }
-];
-const names = ['silly', 'billy', 'fo', 'rilly'];
+]
+};
+
+
 const drop = new DropDown(tags);
-
-
-
