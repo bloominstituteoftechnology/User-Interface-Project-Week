@@ -11,9 +11,9 @@ let headerInner =
 
 //the toggle box which overlays the screen when hamburger is clicked
 let toggleInner =
-  `<a href="index.html" class="nav-link">Home</a>
-  <a href="services.html" class="nav-link">Services</a>
-  <a href="#" class="nav-link">Contact</a>`;
+   `<a href="index.html" class="nav-link">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="#" class="nav-link">Contact</a>`;
 
 let header = document.querySelector('header');
 header.classList.add('myHeader', 'myModal');//add classes here
