@@ -1,4 +1,18 @@
 
+.tabs {
+    margin-right: 80px;
+    margin-left: 80px;
+    .flex-box(@display:flex, @flex-direction:row, @flex-wrap:wrap, @justify-content:space-between);
+}
+
+.one, .two {
+    width: 50%; 
+}
+.services-paragraph {
+    padding-right: 80px;
+    margin-left: 40px;
+}
+
 .tabs-item {
     display: none; 
 
@@ -8,8 +22,15 @@
     padding-bottom: 10px;
     }
 }
+
+.tabs-item-title {
+    max-width: 100%;
+    width: 600px;
+    margin-top: 50px;
+}
 .tabs-item-selected {
     display: flex;
+
 }
 
 .tabs-links {
@@ -17,20 +38,23 @@
 }
 
 .tabs-link {
+    width: 200px;
     margin-top: 20px; 
-    padding: 20px 25px;
     font-size: 24px;
     background-color: @backgroundOffWhiteText;
-    border-right: 1px solid @generalAndBorders;
+    border: 1px solid @generalAndBorders;
     color: @generalAndBorders;
+    text-align: center;
+    height: 60px; 
+    font-weight: Bold;
+    .flex-box(@perfect-center:true);  
     cursor: pointer;
     &:hover {
     background-color: @tabHoverColor;
     }
 }
 .tabs-link-selected {
-    z-index: 2;
-    border-right: 1px solid @generalAndBorders;
+    border: 1px solid @generalAndBorders;
     background-color: @navBackground;
     color: @backgroundOffWhiteText;
     &:hover {
@@ -39,24 +63,55 @@
 }
 
 #nav-img, #nav-mobile-img {
-    // max-width: 100%;
+    max-width: 100%;
+    width: 497px;
     margin-bottom: 50px;
-    margin-top: 60px; 
+    margin-top: 110px; 
 }
 
 .tabs-item-description {
     padding-top: 25px;
+    padding-right: 50px;
+    
 }
-// .jumbo-mobile-2, .nav-mobile-img {
-//     display: none; 
-// }
 
-// @media(max-width: 450px){
-//     .jumbo-img-2, .nav-img {
-//         display:none;
-//     }
-//     .jumbo-mobile-2, .nav-mobile-img {
-//         display: inline-block; 
-//         // max-width: 100%;
-//     }
-// }
+
+@media(max-width: 450px){
+    .one, .two {
+        width: 300px;
+        max-width: 100%;
+        text-align: center;
+        
+    }
+    .tabs {
+        margin: 5px;
+        .flex-box(@perfect-center:true);
+        
+    }
+    .tabs-item-description {
+        width: 300px;
+        max-width: 100%;
+        padding: 10px;
+    }
+    .tabs-items {
+        .flex-box(@perfect-center:true);
+    }
+    
+    #nav-img, #nav-mobile-img {
+        width: 300px;
+        max-width: 100%;
+    }
+    .tabs-item-selected{
+        flex-wrap:wrap;
+    }
+
+    .services-paragraph {
+        margin-left: 0px;
+        padding: 0px;
+        p{
+            width: 300px;
+        }
+    }
+        
+
+}
