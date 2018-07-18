@@ -1,4 +1,4 @@
-console.log("Working")
+console.log("Working tabs")
 
 class Tabs {
   
