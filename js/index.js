@@ -11,7 +11,9 @@ const showNavPanel = function(){
 }
 
 const navOpacity = function(){
-  topBar.style.background = '#828282';
+  TweenMax.to(".top-bar", 1, {
+    backgroundColor:'#828282',
+  })
 }
 
 //---------needed for examples of forEach --------//
