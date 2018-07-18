@@ -1,0 +1,88 @@
+.container-sticky {
+    background-color: #828282;
+    position: fixed;
+    height: 50px;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+.nav-container {
+   .title {
+        h1 {
+            font-size: 2.4rem;
+            font-weight: bold;
+            color: white;
+            margin: 13px;
+            @media @desktop {
+                padding-left: 75px;
+            }
+        }
+    }
+    
+    .menu-button {
+        margin: 9px;
+        padding-right: 5px;
+        
+        @media @desktop {
+            padding-right: 75px;
+        }
+    }
+
+    .menu {
+        display: none;
+        position: fixed;
+        top: 50px;
+        left:0px;
+        opacity: .95;
+        justify-content: center;
+        padding-top: 115px;
+        height: 100vh;
+        width: 100vw;
+        background-color: #828282;
+        z-index: 3;
+
+        a {
+            text-decoration: none;
+            list-style: none;
+            font-weight: bold;
+            font-size: 4.8rem;
+            line-height: 8.2rem;
+            color: #FFFFFF;
+            &:hover {
+                color: #504545;
+            }
+        }
+    }
+
+    .menu--open {
+        display: flex;
+      }
+}
+
+
+
+//Nav Menu Icon Transition
+.menu-button {
+    display: inline-block;
+    cursor: pointer;
+    .bar1, .bar2, .bar3 {
+        width: 30px;
+        height: 4px;
+        background-color: #FFFFFF;
+        margin: 5px 0;
+        transition: 0.4s;
+        border-radius: 15px;
+    }
+}
+    
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
