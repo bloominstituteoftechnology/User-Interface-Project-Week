@@ -4,8 +4,16 @@ let nav = document.querySelector('nav');
 let navBtn = document.querySelector('.nav-btn');
 
 navBtn.addEventListener('click', e => {
-    nav.style.display = (nav.style.display == 'none' ? 'flex' : 'none');
-    navBtn.src = (nav.style.display == 'none' ? './img/nav-hamburger.png' : './img/nav-hamburger-close.png');
+    if (nav.style.display == 'none') {
+      TweenMax.fromTo(nav, .75, {y: -600}, {y: 0, ease: Power2.ease});
+      nav.style.display =  'flex';
+      navBtn.src = './img/nav-hamburger-close.png';
+    } else {
+      TweenMax.fromTo(nav, .5, {y: 0}, {y: -800, ease: Power2.ease, onComplete: () => {
+        nav.style.display = 'none';
+        navBtn.src = './img/nav-hamburger.png';
+      }});
+    }
 });
 
 
@@ -39,5 +47,5 @@ class Image {
 
 let images = document.querySelectorAll('.img-fluid');
 images = Array.from(images)
-  .filter(img => !(img.classList.contains('mobile-img')))
+  .filter(img => !(img.classList.contains('mobile-img'))) // take in only desktop images
   .map(img => new Image(img));
