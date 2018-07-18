@@ -25,13 +25,6 @@ componentTabs.forEach( (target) => {
   })
 });
 
-
-// componentTabs.forEach((element)=>{
-//   addEventListener('click', function(element){
-//     console.log(`${componentTabs} 3`);
-// })
-// });
-
 ////________________from last week _________________________//
 // // class tabs ===> allTabs
 // // class topics ===> topics
