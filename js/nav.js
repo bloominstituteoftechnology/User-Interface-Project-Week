@@ -6,7 +6,16 @@ function changeIcon(show) {
   } else {
     document.querySelector('.collapse__button img').src =
       'img/nav-hamburger.png';
-    document.querySelector('.collapse__content').classList.remove('show');
+    const content = document.querySelector('.collapse__content');
+    const tl = new TimelineLite();
+    tl.to(content, 0.2, { opacity: 0 }).to(content, 0.3, {
+      height: 0,
+      onComplete: () => {
+        content.style.height = null;
+        content.style.opacity = null;
+        content.classList.remove('show');
+      }
+    });
   }
 }
 
