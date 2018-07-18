@@ -58,6 +58,8 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
 let menu = document.querySelector('.menu')
 
+TweenMax.to('menu', 1, onClick);
+
 const toggleMenu = () => {
   if(menu.classList.contains('menu--close')){
     menu.classList.remove('menu--close');
