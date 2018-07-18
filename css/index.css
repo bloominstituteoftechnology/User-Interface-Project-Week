@@ -200,14 +200,18 @@ html body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
   padding: 1rem 2rem;
   background: #828282;
-  border: 2px black solid;
 }
 .fixed-menu .menu-icon,
 .fixed-menu .menu-icon-close {
   cursor: pointer;
   padding: 1rem;
+  right: 0;
   z-index: 10;
 }
 .fixed-menu .menu-items {
@@ -223,10 +227,6 @@ html body {
   z-index: 2;
   text-align: center;
   transition: 0.5s;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
 }
 .fixed-menu .menu-items a {
   font-weight: bold;
@@ -805,30 +805,140 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   border-collapse: collapse;
   border-spacing: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 380px) {
   .services .header {
-    background-image: url('../img/services/services-jumbotron.png');
+    background-image: url('../img/services/services-mobile-jumbotron.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100vw 100%;
   }
-  .services .header .navbar {
+  .services h1 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
     color: white;
     Font-Weight: Bold;
-    Font-Size: 24px;
-    background: #828282;
   }
-  .services .header .navbar ul {
-    display: none;
-  }
-  .services .header .motto {
+  .services .motto {
     padding-top: 20rem;
     padding-bottom: 3rem;
     Font-Weight: Bold;
     Font-Size: 64px;
     Line-Height: 75px;
     color: #FFFFFF;
-    padding-left: 5rem;
+    padding-left: 2rem;
+  }
+  .services .services-content {
+    text-align: justify;
+    padding: 0 1rem;
+  }
+  .services .services-content p {
+    padding: 2rem 0;
+    line-height: 1.5rem;
+  }
+  .services .services-content .section .tabs {
+    display: flex;
+    flex-direction: column;
+  }
+  .services .services-content .section .tabs .tabs-links {
+    padding: 1rem 0;
+  }
+  .services .services-content .section .tabs .tabs-links .tabs-link {
+    border: 1px solid black;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .services .services-content .section .tabs .tabs-links .tabs-link:hover {
+    background: #5E9FB9;
+    color: white;
+  }
+  .services .services-content .section .tabs .tabs-links .tabs-link .tabs-links {
+    padding: 1rem 5rem;
+  }
+  .services .services-content .section .tabs .tabs-items {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+  }
+  .services .services-content .section .tabs .tabs-items .title {
+    Font-Weight: Bold;
+    Font-Size: 28px;
+    Color: #222222;
+    padding-top: 2rem;
+  }
+  .services .services-content .section .tabs .tabs-items .description p {
+    line-height: 1.5rem;
+  }
+  .services .services-content .section .tabs .tabs-items .description img {
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  .services .services-content .desktop {
+    display: none;
+  }
+  .services .services-content .mobile {
+    display: block;
+  }
+  .services .tabs .tabs-items .tabs-item {
+    display: none;
+  }
+  .services .tabs .tabs-links .tabs-link-selected {
+    background: #5E9FB9;
+    color: white;
+  }
+  .services .tabs .tabs-links .tabs-link-selected:hover {
+    background: white;
+    color: black;
+  }
+  .services .tabs .tabs-items .tabs-item-selected {
+    display: block;
+  }
+  .services .footer {
+    display: flex;
+    flex-direction: column;
+    background: #828282;
+    Color: #FFFFFF;
+    Font-Weight: Regular;
+    Font-Size: 1rem;
+    Line-Height: 2rem;
+    padding: 2rem;
+  }
+  .services .footer .location {
+    padding: 1rem 0;
+  }
+  .services .footer header {
+    Font-Weight: Regular;
+    Font-Size: 1.5rem;
+    Line-Height: 2rem;
+    Color: #FFFFFF;
+    padding-bottom: 0.5rem;
+  }
+  .services .copy {
+    background: #828282;
+    Color: #FFFFFF;
+    Font-Weight: Regular;
+    Font-Size: 1rem;
+    Line-Height: 2rem;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  .services .header {
+    background-image: url('../img/services/services-jumbotron.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vw 100%;
   }
   .services h1 {
     font-size: 2rem;
@@ -843,13 +953,10 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   .services .services-content p {
     padding: 2rem 0;
   }
-  .services .services-content .section {
-    padding: 4rem 0;
-  }
   .services .services-content .section .tabs .tabs-link {
     border: 1px solid black;
-    padding: 1rem 2rem;
     font-weight: bold;
+    width: 100%;
     cursor: pointer;
   }
   .services .services-content .section .tabs .tabs-link:hover {
