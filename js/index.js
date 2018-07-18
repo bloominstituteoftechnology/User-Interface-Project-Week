@@ -14,6 +14,7 @@ $(document).ready(function() {
         if (this.src.length === 43){
       this.src="/img/nav-hamburger-close.png";
     //   navItems.style.display = "flex";
+      $(".menu").height("100%");
       $(".contact").fadeIn();
       $(".services").fadeIn(500);
       $(".home").fadeIn(1000);
@@ -22,6 +23,7 @@ $(document).ready(function() {
 
         else if (this.src.length === 49){
         this.src="/img/nav-hamburger.png";
+        $(".menu").height("50px");
         navHome.style.display = "none";
         navServices.style.display = "none";
         navContact.style.display = "none";
