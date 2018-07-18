@@ -1,26 +1,21 @@
 .ftr-cont {
   width: 100%;
-  font-weight: normal;
-  font-size: 1.4rem;
-  line-height: 26px;
-  color: @white;
-  background: #828282;
+  .footer-style();
+  background: @footer-background;
+  padding-top: 40px;
 
   .ftr-inner{
-    margin-top: 20px;
-    padding: 25px 75px;
-    display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
+    max-width: @width-constraint;
+    .flex-mix(@just: space-between;);
 
     @media @phone{
       flex-direction: column;
     }
 
     .ftr-contact {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
+      .flex-mix(@dir: column; @just: center;);
+      .footer-headings();
 
       @media @phone{
         margin-top: 20px;
@@ -28,30 +23,24 @@
 
       input {
         width: 100%;
+        height: 40px;
         border-radius: 5px;
       }
     }
 
     .ftr-loc {
       // padding: 100px 0;
+      .footer-headings();
 
       @media @phone{
         margin-top: 20px;
-      }
-
-      h3{
-        font-weight: regular;
-        font-size: 2rem;
-        line-height: 24px;
-        color: @white;
       }
     }
   }
 
   .ftr-copyright{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .center();
+    margin-top: 10px;
 
     @media @phone{
       justify-content: flex-start;
