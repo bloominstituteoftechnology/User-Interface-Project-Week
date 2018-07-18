@@ -1,12 +1,23 @@
 class Menu {
     constructor(element) {
         this.element = element;
-        this.button = this.element.querySelector('.menu-button');
+        this.buttonOpen = this.element.querySelector('.menu-button-open');
+        this.buttonClose = this.element.querySelector('.menu-button-close');
+        console.log(this.buttonClose);
         this.content = this.element.querySelector('.menu-content');
-        this.button.addEventListener('click', () => { this.toggleContent() });
+        this.buttonOpen.addEventListener('click', () => { this.toggleContent() });
+        this.buttonClose.addEventListener('click', () => { this.toggleClose() });
     }
     toggleContent() {
         this.content.classList.toggle('menu-hidden');
+        this.buttonOpen.classList.add('menu-button-hidden');
+        this.buttonClose.classList.remove('menu-button-hidden');
+    }
+
+    toggleClose() {
+        this.content.classList.toggle('menu-hidden');
+        this.buttonOpen.classList.remove('menu-button-hidden');
+        this.buttonClose.classList.add('menu-button-hidden');
     }
 }
 
@@ -15,6 +26,26 @@ let menus = document.querySelectorAll('.menu');
 menus = Array.from(menus).map( menu => new Menu(menu));
 
 
+
+
+
+
+
+// class Menu {
+//     constructor(element) {
+//         this.element = element;
+//         this.button = this.element.querySelector('.menu-button');
+//         this.content = this.element.querySelector('.menu-content');
+//         this.button.addEventListener('click', () => { this.toggleContent() });
+//     }
+//     toggleContent() {
+//         this.content.classList.toggle('menu-hidden');
+//     }
+// }
+
+// let menus = document.querySelectorAll('.menu');
+
+// menus = Array.from(menus).map( menu => new Menu(menu));
 
 
 
