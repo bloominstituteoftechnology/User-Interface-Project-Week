@@ -10,7 +10,7 @@
   font-size: 2rem;
   font-weight: lighter;
   letter-spacing: 6px;
-  background: @project-gray;
+  background: @prj-box-color;
   border-top: 2px solid white;
 
   @media @phone{
@@ -20,30 +20,46 @@
   }
 }
 
-.myJumbo(@imgPath){
+.myJumbo(@imgPath, @height){
   .jumbo{
     background-image: url(@imgPath);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    padding: 0;
     position: relative;
-
-    img {
-      width: 100%;
-    }
+    width: 100%;
+    height: @height;
 
     .cta-header{
       position: absolute;
       bottom: 5%;
       left: 10%;
-      line-height: 28px;
 
-      .cta-text {
-        color: @white;
+      h1 {
+        color: @sub-header-color;
         font-weight: bold;
         font-size: 6.4rem;
+        line-height: 7.5rem;
       }
     }
   }
+}
+
+.center(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.flex-mix(@just: flex-start; @align: stretch; @dir: row; @wrap: nowrap){
+  display: flex;
+  justify-content: @just;
+  align-items: @align;
+  flex-flow: @dir @wrap;
+}
+
+.fix-top(){
+  position: fixed;
+  top: 0;
+  left: 0;
 }

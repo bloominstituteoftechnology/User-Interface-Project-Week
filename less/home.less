@@ -1,11 +1,13 @@
 .homePg {
   padding: 50px 0;
-  .myJumbo('./../img/home/home-jumbotron.png');
-}
+  width: 100vw;
+  .myJumbo('./../img/home/home-jumbotron.png', 598px);
 
   .pg-content{
+    max-width: 1024px;
+    margin: 0 auto;
 
-    .content-row{
+    .content-box{
       margin-top: 100px;
 
       @media @phone{
@@ -21,11 +23,8 @@
         }
       }
 
-      .content-box{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
+      .content-text{
+        .flex-mix(@just: center; @align: flex-start; @dir: column);
 
         @media @phone{
           align-items: center;
@@ -56,8 +55,8 @@
           }
 
           &:hover{
-            color: @white;
-            background: @color;
+            color: @btn-hover-color;
+            background: @btn-hover-background;
           }
         }
       }
@@ -111,3 +110,4 @@
       }
     }
   }
+}

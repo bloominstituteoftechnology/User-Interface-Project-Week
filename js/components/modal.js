@@ -2,11 +2,9 @@ class Modal{
   constructor(element){
     this.element = element;
     this.target = this.element.dataset.target;
-    console.log(this.target);
     this.toggler = element.querySelector('.myToggler');
     this.togglerIcon = this.toggler.querySelector('img');
     this.modalContent = document.querySelector(`.toggle-content[data-target="${this.target}"]`);
-    console.log(this.modalContent);
 
     this.togglerIconSrc = "img/nav-hamburger.png";
 

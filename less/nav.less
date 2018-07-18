@@ -1,48 +1,48 @@
 .myHeader{
-  background: #828282;
-  opacity: 0.9;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 100px;
+  background: @nav-background;
+  .center;
   height: 50px;
+  width: 100vw;
+  z-index: 10;
+  .fix-top();
 
-  .navbar-brand{
-    color: @white;
-    text-decoration: 0;
-    font-weight: bold;
-    font-size: 2.4rem;
-  }
+  .container{
+    max-width: 1024px;
+    width: 100%;
+    .flex-mix(@just: space-between; @align: center);
 
-  .myToggler{
-    cursor: pointer;
+    .brand{
+      color: @nav-logo-color;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 2.4rem;
+    }
+
+    .myToggler{
+      cursor: pointer;
+    }
   }
 }
 
 .nav-modal{
-  padding-top: 75px;
+  padding-top: 50px;
   height: 100vh;
   width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background: #828282;
+  .fix-top();
+  .flex-mix(@dir: column; @align: center;);
+  background: @nav-modal-background;
   opacity: 0.9;
-  z-index: 15;
+  z-index: 5;
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 85px;
 
   a{
-    color: @white;
+    color: @nav-text-color;
+    text-decoration: none;
 
     &:hover{
-      color: #222222;
+      color: @nav-hover-color;
     }
   }
 }
