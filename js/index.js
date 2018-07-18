@@ -65,3 +65,36 @@ class TabsItem {
 
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map(element => new Tabs(element));
+
+const toggleMenu = () => {     
+    if (menu.classList.contains("menu--open")===true){
+        menu.classList.toggle("menu--close");     
+    }else{
+        menu.classList.toggle("menu--open"); 
+    }         
+}
+
+const toggleButton = () => {
+    menuOpen.classList.toggle("off");
+    menuClose.classList.toggle("off");
+}
+
+
+const menu = document.querySelector(".menu");
+const menuOpen = document.querySelector(".menu-open");
+const menuClose = document.querySelector(".menu-close");
+
+
+menuOpen.addEventListener("click", (event)=>{
+    console.log("clicked")
+    toggleMenu();
+    toggleButton();
+});
+
+menuClose.addEventListener("click", (event)=>{
+    console.log("clicked")
+    toggleMenu();
+    toggleButton();
+});
+
+ 
