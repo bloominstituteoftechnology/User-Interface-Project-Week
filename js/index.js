@@ -1,4 +1,4 @@
-// Nav
+// Nav expansion
 
 let nav = document.querySelector('nav');
 let navBtn = document.querySelector('.nav-btn');
@@ -9,94 +9,35 @@ navBtn.addEventListener('click', e => {
 });
 
 
-// Tabs
+// Image zoom
 
-class Tabs {
-    constructor(tabs) {
-      this.tabs = tabs;
-      // create a reference to the ".tabs-link" class nested in your tab object
-      this.links = this.tabs.querySelectorAll('.tab');
-      // map over the array creating new TabsLink class instances of each link
-      this.links = Array.from(this.links).map(link => {
-        return new TabsLink(link, this);
-      });
-      // Set the active link to the first item in the array
-      this.activeLink = this.links[0];
-      this.init();
-    }
-  
-    init() {
-      this.activeLink.select();
-    }
-  
-    updateActive(newActive) {
-      this.activeLink.deselect();
-      this.activeLink = newActive;
-    }
-  
-    getHeading(data) {
-      return this.tabs.querySelector(`.tab-heading[data-tab="${data}"]`);
-    }
-    getImg(data) {
-        return this.tabs.querySelector(`.tab-img[data-tab="${data}"]`);
-    }
-  }
-  
-  class TabsLink {
-    constructor(link, parent) {
-      this.link = link;
-      this.tabs = parent;  
-      this.tabHeading = parent.getHeading(this.link.dataset.tab);
-      this.tabHeading = new TabsHeading(this.tabHeading);
-      this.tabImg = parent.getImg(this.link.dataset.tab);
-      this.tabImg = new TabsImg(this.tabImg);
-      this.link.addEventListener('click', () => {
-        this.tabs.updateActive(this);
-        this.select();
-      });
-    };
-  
-    select() {
-      this.link.classList.add('tab-selected');
-      this.tabHeading.select();
-      this.tabImg.select();
-    }
-  
-    deselect() {
-      this.link.classList.remove('tab-selected');
-      this.tabHeading.deselect();
-      this.tabImg.deselect();
-    }
-  }
-  
-  class TabsHeading {
-    constructor(heading) {
-      this.heading = heading;
-    }
-  
-    select() {
-      this.heading.classList.add('tab-heading-selected');
-    }
-  
-    deselect() {
-      this.heading.classList.remove('tab-heading-selected');
-    }
+class Image {
+  constructor(img) {
+    this.img = img;
+    this.boxName = this.img.parentNode.querySelector('h3');
+    this.img.addEventListener('mouseenter', () => this.zoom());
+    this.img.addEventListener('mouseleave', () => this.unzoom());
   }
 
-  class TabsImg {
-      constructor(img) {
-        this.img = img;
-      }
-
-      select() {
-        this.img.classList.add('tab-img-selected');
-      }
-
-      deselect() {
-        this.img.classList.remove('tab-img-selected');
-      }
+  zoom() {
+    this.img.style.transition = '300ms';
+    this.img.style.transform = 'scale(1.1)';
+    if (this.img.parentNode.classList.contains('embed')) {
+      this.boxName.style.transition = '300ms';
+      this.boxName.style.transform = 'scale(1.28)';
+    }
   }
-  
-  let tabs = document.querySelectorAll('.tabs');
-  // map through each tabs element and create a new Tabs object.
-  tabs = Array.from(tabs).map(tab => new Tabs(tab));
+  unzoom() {
+    this.img.style.transition = '300ms';
+    this.img.style.transform = 'scale(1)';
+    if (this.img.parentNode.classList.contains('embed')) {
+      this.boxName.style.transition = '300ms';
+      this.boxName.style.transform = 'scale(1)';
+    }
+  }
+}
+
+let images = document.querySelectorAll('.img-fluid');
+images = Array.from(images)
+  .filter(img => !(img.classList.contains('mobile-img')))
+  .map(img => new Image(img));
