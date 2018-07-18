@@ -110,7 +110,7 @@ class Tabs {
 
   class Carousel{
     constructor(containerID){
-    this.container = document.getElementById(containerID) || document.body; 
+    this.container = document.getElementById(containerID); 
     this.slides = this.container.querySelectorAll('.carousel');
     this.total = this.slides.length - 1; 
     this.current = 0; 
@@ -162,3 +162,5 @@ class Tabs {
     }
 }
 const carouselImages = new Carousel("images"); 
+
+const carouselImages2 = new Carousel("images-2");
