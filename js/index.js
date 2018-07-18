@@ -4,18 +4,67 @@
 const menuButton = document.querySelector('.open-hamburger'); 
 const menuOpenContent = document.querySelector('.menu-content'); 
 const closeMenuButton = document.querySelector('.closed-hamburger'); 
+const menuItems = document.querySelectorAll('.menu-link'); 
+const mainHeader = document.querySelector('h1');
+
+$( document ).ready(function() {
+    $(".menu-content").hide();
+  });
 
 menuButton.addEventListener('click', function(){
-    menuOpenContent.classList.remove('menu-hidden'); 
+    $(".menu-content").fadeIn(1000);
+    // menuOpenContent.classList.remove('menu-hidden'); 
     menuButton.style.display = 'none'; 
     closeMenuButton.style.display = "flex"; 
-})
+});
 
 closeMenuButton.addEventListener('click', function(){
-    menuOpenContent.classList.add('menu-hidden'); 
+    $(".menu-content").hide();
+    // menuOpenContent.classList.add('menu-hidden'); 
     menuButton.style.display = "flex"; 
     closeMenuButton.style.display = "none";
+});
+
+//Animations 
+
+//Animations for each menu item to expand on mouseenter
+menuItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', function(event){
+        TweenMax.to(event.target, 1, {scale:1.2})
+    })
+});
+
+//Animations for each menu item to scale down on mouseleave
+menuItems.forEach((item, index ) => {
+    item.addEventListener('mouseleave', function(event){
+        TweenMax.to(event.target, 1, {scale: 1.0})
+    })
 })
+
+menuButton.addEventListener('mouseenter', function(){
+    TweenMax.to(menuButton, 1, {scale:1.2});
+})
+
+menuButton.addEventListener('mouseleave', function(){
+    TweenMax.to(menuButton, 1, {scale:1.0})
+
+});
+
+closeMenuButton.addEventListener('mouseenter', function(event){
+    TweenMax.to(event.target, 1, {rotation: 360})
+})
+
+closeMenuButton.addEventListener('mouseleave', function(){
+    TweenMax.to(closeMenuButton, 1, {rotation:0}); 
+})
+
+mainHeader.addEventListener("onload", function(){
+    TweenMax.to(mainHeader)
+})
+
+
+
+
 
 
 // ================ Tabs Navigation =================
