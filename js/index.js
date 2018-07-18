@@ -45,7 +45,7 @@ $(document).ready(function() {
 
   con.style.color = "white";
   con.style.backgroundColor = "#5E9FB9";
-  conContent.style.display = "none";
+  conContent.style.display = "flex";
   pre.style.color = "black";
   preContent.style.display = "none";
   des.style.color = "black";
