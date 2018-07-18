@@ -1,4 +1,4 @@
-//  ============ Menu Fullscreen/Hidden Navigation ===========
+//  ========= Menu Nav =======
 
 const menuButton = document.querySelector('.open-hamburger'); 
 const menuOpenContent = document.querySelector('.menu-content'); 
@@ -8,22 +8,22 @@ menuButton.addEventListener('click', function(){
     menuOpenContent.classList.remove('menu-hidden'); 
     menuButton.style.display = 'none'; 
     closeMenuButton.style.display = "flex"; 
-});
+})
 
 closeMenuButton.addEventListener('click', function(){
     menuOpenContent.classList.add('menu-hidden'); 
     menuButton.style.display = "flex"; 
     closeMenuButton.style.display = "none";
-});
+})
 
 
-// ================ Tabs Navigation =================
+// ======= Tabs Navigation =======
 
 class Tabs {
     constructor(element) {
         this.element = element;
         console.log(this.element);
-        this.links = this.element.querySelectorAll('.tabs-services')
+        this.links = this.element.querySelectorAll('.service-tab')
         this.links = Array.from(this.links).map( link => {
             return new TabsLink(link, this); 
         });
@@ -41,6 +41,7 @@ class Tabs {
         return this.element.querySelector(`.tab-content[data-tab="${data}"]`);
     }
 }
+
 class TabsLink {
     constructor(link, parent) {
         this.link = link;
@@ -51,7 +52,7 @@ class TabsLink {
         this.tabs.updateActive(this);
         this.select();
     });
-};
+    };
     select() {
         this.link.classList.add('tab-selected');
         this.tabsItem.select();
@@ -69,6 +70,7 @@ class TabsItem {
     select() {
         this.element.classList.add('display-tab');
     }
+
     deselect() {
         this.element.classList.remove('display-tab');
     }
