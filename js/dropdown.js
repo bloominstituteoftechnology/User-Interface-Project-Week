@@ -4,11 +4,15 @@ class DropDown {
         this.itemArray = args.titles;
         this.dropdown = args.beatDrop;
         this.dropdownButton = args.dropdownButton;
+        this.closeButton = args.closeButton;
         this.items = this.createItems(this.itemArray);  
         this.appendList(this.dropdown, this.items);
         console.log(this.dropdownButton);
         this.dropdownButton.addEventListener('click', ()=> {
             this.toggleDropDown(this.dropdown);
+        });
+        this.closeButton.addEventListener('click', ()=>{
+            this.toggleDropDown(this.dropdown)
         });
     }
 
@@ -53,6 +57,7 @@ class DropDownItem {
         a.setAttribute('href', this.url);
         a.setAttribute(`data-${this.dataAttr}`, this.dataAttr);
         a.setAttribute('class', this.class);
+        a.setAttribute('target', "_blank");
         a.innerHTML = this.title;
         this.a = a;
         return a;
@@ -68,6 +73,7 @@ class BeatDropBtn {
 const tags = {
     beatDrop : document.querySelector('.beat-drop'),
     dropdownButton: document.querySelector('.beat-drop-button'),
+    closeButton: document.querySelector('.close-button'),
     titles : [
     {
         title: "silly",
