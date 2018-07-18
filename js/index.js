@@ -98,3 +98,21 @@ class Content {
 
 let serviceTabs = Array.from(document.querySelectorAll('.service-tab'));
 serviceTabs = serviceTabs.map(tab => new Tabs(tab));
+
+
+// Hover text
+// About page
+function displayText(e) {
+  let text = e.target.querySelector('.person-detail');
+  text.style = 'display: flex';
+}
+
+function hideText(e) {
+  let text = e.target.querySelector('.person-detail');
+  console.log(text);
+  text.style = 'display: none';
+}
+
+let avator = Array.from(document.querySelectorAll('.person'));
+avator.forEach(icon => icon.addEventListener('mouseover', displayText));
+avator.forEach(icon => icon.addEventListener('mouseleave', hideText));
