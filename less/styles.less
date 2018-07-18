@@ -2,11 +2,10 @@ body {
   background: #FFFFFF;
   color: #222222;
   font-family: Roboto, Ariel, sans-serif;
-  font-size: 16px;
 
   .body-container {
     max-width: 1024px;
-    margin: auto;
+    margin: 0 auto;
 
     .container {
       max-width: 896px;
@@ -14,6 +13,7 @@ body {
   }
 
   nav {
+    width: 100%;
     background: #99A4AF;
     font-size: 24px;
     font-weight: bold;
@@ -30,7 +30,7 @@ body {
       }
     }
   }
-  
+
   footer {
     background: #828282;
     color: #FFFFFF;
@@ -45,17 +45,31 @@ body {
     small {
       font-size: 12px;
     }
+
     .cities {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
 
+      @media (max-width: 320px) {
+        justify-content: flex-start;
+      }
+
+      .city {
+        width: 100%;
+        margin-bottom: 25px;
+      }
       div {
         align-self: center;
       }
     }
 
     .copyright {
+      text-align: center;
       font-size: 12px;
+      @media (max-width: 320px) {
+        text-align: left;
+      }
     }
   }
 }
