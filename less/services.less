@@ -5,10 +5,15 @@
   .pg-content{
     padding-left: 50px;
     padding-right: 50px;
+    max-width: @width-constraint;
+    margin: 0 auto;
+
+    .top-text{
+      margin: 40px 0;
+    }
 
     .tabs{
-      display: flex;
-      justify-content: space-between;
+      .flex-mix(@just: space-between;);
       margin-top: 40px;
       margin-bottom: 70px;
 
@@ -19,9 +24,7 @@
         height: 47px;
         font-weight: bold;
         padding: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        .center();
         white-space: nowrap;
 
         &:hover{
@@ -44,14 +47,21 @@
       width: 100%;
       display: none;
       justify-content: space-between;
+      line-height: 3rem;
 
       .content-txt{
-        width: 50%;
+        width: 45%;
+
+        h1{
+          .sub-header();
+          margin-bottom: 15px;
+        }
       }
 
       .content-img {
-        width: 50%;
-        padding-left: 10%;
+        width: 45%;
+        .responsive-img-inside();
+        // padding-left: 10%;
       }
     }
 
