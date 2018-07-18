@@ -33,10 +33,10 @@ Background: #828282
 - Line Height: 75px
 - Color: #FFFFFF
 
-### Sub Headers
+<!-- ### Sub Headers
 - Font Weight: Bold
 - Font Size: 28px
-- Color: #222222
+- Color: #222222 -->
    
 ### Footer Headings
 - Font Weight: Regular
@@ -50,10 +50,10 @@ Background: #828282
 - Line Height: 26px
 - Color: #FFFFFF
 
-### Navigation Logo
+<!-- ### Navigation Logo
 - Font Weight: Bold
 - Font Size: 24px
-- Color: #FFFFFF
+- Color: #FFFFFF -->
 
 ### Navigation Text (Expanded)
 - Font Weight: Bold
