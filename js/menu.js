@@ -21,7 +21,4 @@ const menuClose = document.querySelector(".close-button");
 menuButton.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
 
-console.log(menu);
-console.log(menuButton);
-console.log(menuClose);
 
