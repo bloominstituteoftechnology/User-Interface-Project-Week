@@ -98,6 +98,12 @@ const toggleMenu = () => {
     menu.classList.toggle("menu--open");
 };
 
+//------------//
+
+//need to change this part so that clicking on the x removes the full screen navigation  
+
+//------------//
+
 
 //start here:  create a reference to the ".menu" class
 const menu = document.querySelector(".nav");
