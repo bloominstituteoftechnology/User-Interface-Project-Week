@@ -47,5 +47,5 @@ class Image {
 
 let images = document.querySelectorAll('.img-fluid');
 images = Array.from(images)
-  .filter(img => !(img.classList.contains('mobile-img'))) // take in only desktop images
+  .filter(img => !(img.classList.contains('mobile-img'))) // take in only non-mobile images
   .map(img => new Image(img));
