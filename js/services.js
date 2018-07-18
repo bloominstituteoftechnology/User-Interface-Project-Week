@@ -73,14 +73,20 @@ class TabCard {
     constructor(element){
         // Assign this.element to the passed in element.
         this.element = element;
+
+        //added 2 below
+        this.cardContentArray = this.element.querySelectorAll(".tabs-content");
+        this.cardContentArray = Array.from(this.cardContentArray);
     }
     selectCard(){
         // Update the style of this.element to display = null
-        this.element.style.display = null;
+        this.element.style.display = "flex";
     }
     deselectCard(){
         // Update the style of this.element to display = "none"
         this.element.style.display = "none";
+    //added below
+        this.cardContentArray.forEach( img => img.style.display = "none");
     }
 }
     
