@@ -1,4 +1,17 @@
 // Home Page
+// html {
+//     font-size: 62.5%;
+// }
+html, body {
+    height: 100%;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+// h1, h2, h3, h4, h5 {
+//     font-weight: bold;
+//     font-size: 2.8rem;
+//     color: #222222;
+// }
 .container-fluid {
     background: #828282;
     color: #FFFFFF;
@@ -7,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     opacity: .9;
+    
     .initials {
         // border: 1px solid red;
         margin: 1% 3%;
@@ -20,12 +34,23 @@
 .jumbo-container {
     position: relative;
     text-align: center;
-    color: white;
+    color: #FFFFFF;
     margin-bottom: 4%;
     
     .jumbo-img {
         width: 100vw;
         max-width: 100%;
+        @media @mobile {
+            display: none;
+        }
+    }
+    .mobile-jumbo {
+        display: none;
+        @media @mobile {
+            display: flex;
+            width: 100vw;
+            max-width: 100%;
+        }
     }
     .jumbo-header {
         text-align: left;
@@ -36,23 +61,62 @@
             font-weight: bold;
             font-size: 64px;
             line-height: 75px;
+            // font-size: 6.4rem;
+            // line-height: 7.5rem;
             color: #FFFFFF;
+            @media @mobile {
+                font-size: 38px;
+                line-height: 44px;
+                // font-size: 3.8rem;
+                // line-height: 4.4rem;
+            }
         }
     }
 }
 
 .home-page {
     max-width: 800px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: regular;
     
     .learn-more-container {
         display: flex;
         justify-content: space-between;
+        margin: 1rem 0;
+        padding: .5rem 0;
+        .learn-img-container-mobile {
+            display: none;
+            @media @mobile {
+                display: flex;
+                margin: 1rem 0;
+            }
+        }
+        .architects {
+            @media @mobile {
+                font-size: 24px;
+            }
+        }
         .learn-img-container {
             display: flex;
             justify-content: flex-end;
+            @media @mobile {
+                display: none;
+            }
         }
         .designs-img-container {
             display: flex;
+            @media @mobile {
+                display: none;
+            }
+        }
+        .designs-img-container-mobile {
+            display: none;
+            @media @mobile {
+                display: flex;
+                margin-bottom: 1rem;
+                // border: 1px solid red;
+            }
         }
     }
 
@@ -122,6 +186,8 @@
     max-width: 100%;
     font-size: 14px;
     line-height: 26px;
+    // font-size: 1.4rem;
+    // line-height: 2.6rem;
     
     .footer-top {
         padding: 4% 4%;
@@ -131,6 +197,8 @@
             font-weight: Regular;
             font-size: 20px;
             line-height: 24px;
+            // font-size: 2.0rem;
+            // line-height: 2.4rem;
         }
         input {
             width: 275px;

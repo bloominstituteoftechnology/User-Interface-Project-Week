@@ -134,6 +134,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto', Arial, sans-serif;
+}
 .container-fluid {
   background: #828282;
   color: #FFFFFF;
@@ -152,12 +157,27 @@ table {
 .jumbo-container {
   position: relative;
   text-align: center;
-  color: white;
+  color: #FFFFFF;
   margin-bottom: 4%;
 }
 .jumbo-container .jumbo-img {
   width: 100vw;
   max-width: 100%;
+}
+@media (max-width: 400px) {
+  .jumbo-container .jumbo-img {
+    display: none;
+  }
+}
+.jumbo-container .mobile-jumbo {
+  display: none;
+}
+@media (max-width: 400px) {
+  .jumbo-container .mobile-jumbo {
+    display: flex;
+    width: 100vw;
+    max-width: 100%;
+  }
 }
 .jumbo-container .jumbo-header {
   text-align: left;
@@ -171,19 +191,63 @@ table {
   line-height: 75px;
   color: #FFFFFF;
 }
+@media (max-width: 400px) {
+  .jumbo-container .jumbo-header h1 {
+    font-size: 38px;
+    line-height: 44px;
+  }
+}
 .home-page {
   max-width: 800px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: regular;
 }
 .home-page .learn-more-container {
   display: flex;
   justify-content: space-between;
+  margin: 1rem 0;
+  padding: .5rem 0;
+}
+.home-page .learn-more-container .learn-img-container-mobile {
+  display: none;
+}
+@media (max-width: 400px) {
+  .home-page .learn-more-container .learn-img-container-mobile {
+    display: flex;
+    margin: 1rem 0;
+  }
+}
+@media (max-width: 400px) {
+  .home-page .learn-more-container .architects {
+    font-size: 24px;
+  }
 }
 .home-page .learn-more-container .learn-img-container {
   display: flex;
   justify-content: flex-end;
 }
+@media (max-width: 400px) {
+  .home-page .learn-more-container .learn-img-container {
+    display: none;
+  }
+}
 .home-page .learn-more-container .designs-img-container {
   display: flex;
+}
+@media (max-width: 400px) {
+  .home-page .learn-more-container .designs-img-container {
+    display: none;
+  }
+}
+.home-page .learn-more-container .designs-img-container-mobile {
+  display: none;
+}
+@media (max-width: 400px) {
+  .home-page .learn-more-container .designs-img-container-mobile {
+    display: flex;
+    margin-bottom: 1rem;
+  }
 }
 .home-page .learn-button {
   width: 120px;
@@ -195,6 +259,13 @@ table {
   margin: 10px;
   cursor: pointer;
   padding: 5px;
+}
+@media (max-width: 400px) {
+  .home-page .learn-button {
+    width: 97%;
+    margin: 0px;
+    height: 45px;
+  }
 }
 .home-page .project-villas {
   position: relative;
