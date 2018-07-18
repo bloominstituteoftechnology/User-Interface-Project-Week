@@ -1,3 +1,9 @@
+@mobile: ~'(max-width: 320px)';
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   background-color: #FFFFFF;
   color: #222222;
@@ -9,13 +15,13 @@ body {
     position: sticky;
     z-index: 5;
     top: 0;
-    padding: 10px 100px;
+    padding: 10px 10%;
     display: flex;
     justify-content: space-between;
 
     logo {
       font-weight: bold;
-      font-size: 24px;
+      font-size: 2.4rem;
       color: #FFFFFF;
     }
 
@@ -38,20 +44,38 @@ body {
   .jumbotron {
     display: flex;
 
-    img {
+    .jumbo-img {
       width: 100%;
+      display: block;
+      @media @mobile {
+        display: none;
+      }
+    }
+
+    .jumbo-mobile-img {
+      width: 100%;
+      display: none;
+      @media @mobile {
+        display: block;
+      }
     }
 
     .jumbotron-header {
       font-weight: bold;
-      font-size: 64px;
+      font-size: 6.4rem;
       line-height: 75px;
       color: #FFFFFF;
       position: absolute;
       z-index: 1;
       align-self: flex-end;
-      padding-left: 83px;
-      padding-bottom: 90px;
+      padding-left: 8%;
+      padding-bottom: 9%;
+      @media @mobile {
+        font-size: 3.5rem;
+        line-height: 4rem;
+        padding-left: 5%;
+        padding-bottom: 8%;
+      }
     }
   }
 
@@ -84,6 +108,13 @@ body {
           background-color: white;
           border-color: #222222;
           cursor: pointer;
+          @media @mobile {
+            width: 100%;
+          }
+        }
+        @media @mobile {
+          max-width: 100%;
+          padding-top: 23px;
         }
       }
 
@@ -91,10 +122,26 @@ body {
         padding-left: 5px;
       }
 
-      .pic {
+      .pic-desktop {
         display: flex;
         justify-content: center;
         padding: 0;
+        @media @mobile {
+          display: none;
+        }
+      }
+
+      .pic-mobile {
+        justify-content: center;
+        @media @mobile {
+          display: block;
+        }
+      }
+      @media @mobile {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0;
+        margin-bottom: 22px;
       }
     }
 
@@ -103,6 +150,9 @@ body {
 
       h4 {
         padding-left: 38px;
+        @media @mobile {
+          padding: 0;
+        }
       }
 
       .project {
@@ -119,23 +169,60 @@ body {
           padding: 33px 83px;
           margin-top: 41px;
           font-size: 28px;
+          @media @mobile {
+            padding: 33px 23%;
+            margin-top: 83px;
+          }
         }
 
         .villas {
           display: flex;
           align-items: flex-end;
           justify-content: flex-end;
+          @media @mobile {
+            justify-content: center;
+
+            .villas-mobile-img {
+              display: block;
+            }
+
+            .villas-desktop-img {
+              display: none;
+            }
+          }
         }
 
         .outskirts {
           display: flex;
           align-items: flex-end;
+          @media @mobile {
+            justify-content: center;
+
+            .outskirts-mobile-img {
+              display: block;
+            }
+
+            .outskirts-desktop-img {
+              display: none;
+            }
+          }
         }
 
         .the-block {
           display: flex;
           align-items: flex-end;
           justify-content: flex-end;
+          @media @mobile {
+            justify-content: center;
+
+            .blocks-mobile-img {
+              display: block;
+            }
+
+            .blocks-desktop-img {
+              display: none;
+            }
+          }
         }
 
         .project-description {
@@ -145,15 +232,37 @@ body {
             padding: 0 40px;
             margin-bottom: 50px;
           }
+          @media @mobile {
+            margin: 113px 0 0;
+
+            p {
+              padding: 0;
+            }
+          }
+        }
+        @media @mobile {
+          padding: 0;
         }
       }
+      @media @mobile {
+        margin-top: 22px;
+      }
+    }
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+      padding: 0 30px;
     }
   }
 
   footer {
     background-color: #828282;
-    padding: 60px 85px 20px;
+    padding: 60px 6% 20px;
     margin-top: 32px;
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+    }
 
     p {
       color: #FFFFFF;
@@ -164,6 +273,9 @@ body {
     .info {
       display: flex;
       justify-content: space-between;
+      @media @mobile {
+        flex-direction: column;
+      }
 
       h6 {
         font-size: 20px;
@@ -180,7 +292,38 @@ body {
       .contact {
         input {
           margin: 15px 0 8px;
+          @media @mobile {
+            height: 50px;
+          }
         }
+        @media @mobile {
+          margin-bottom: 30px;
+        }
+      }
+
+      .ny {
+        @media @mobile {
+          margin-bottom: 30px;
+        }
+      }
+
+      .fla {
+        @media @mobile {
+          margin-bottom: 30px;
+        }
+      }
+
+      .ca {
+        @media @mobile {
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    .copyright {
+      text-align: center;
+      @media @mobile {
+        text-align: left;
       }
     }
   }

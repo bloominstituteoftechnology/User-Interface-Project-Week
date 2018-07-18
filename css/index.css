@@ -127,6 +127,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+html {
+  font-size: 62.5%;
+}
 body {
   background-color: #FFFFFF;
   color: #222222;
@@ -138,13 +141,13 @@ body nav {
   position: sticky;
   z-index: 5;
   top: 0;
-  padding: 10px 100px;
+  padding: 10px 10%;
   display: flex;
   justify-content: space-between;
 }
 body nav logo {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #FFFFFF;
 }
 body nav img {
@@ -162,19 +165,42 @@ body nav .hidden {
 body .jumbotron {
   display: flex;
 }
-body .jumbotron img {
+body .jumbotron .jumbo-img {
   width: 100%;
+  display: block;
+}
+@media (max-width: 320px) {
+  body .jumbotron .jumbo-img {
+    display: none;
+  }
+}
+body .jumbotron .jumbo-mobile-img {
+  width: 100%;
+  display: none;
+}
+@media (max-width: 320px) {
+  body .jumbotron .jumbo-mobile-img {
+    display: block;
+  }
 }
 body .jumbotron .jumbotron-header {
   font-weight: bold;
-  font-size: 64px;
+  font-size: 6.4rem;
   line-height: 75px;
   color: #FFFFFF;
   position: absolute;
   z-index: 1;
   align-self: flex-end;
-  padding-left: 83px;
-  padding-bottom: 90px;
+  padding-left: 8%;
+  padding-bottom: 9%;
+}
+@media (max-width: 320px) {
+  body .jumbotron .jumbotron-header {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    padding-left: 5%;
+    padding-bottom: 8%;
+  }
 }
 body .main-content h4 {
   font-weight: bold;
@@ -203,19 +229,56 @@ body .main-content .info-box .info button {
   border-color: #222222;
   cursor: pointer;
 }
+@media (max-width: 320px) {
+  body .main-content .info-box .info button {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  body .main-content .info-box .info {
+    max-width: 100%;
+    padding-top: 23px;
+  }
+}
 body .main-content .info-box .info2 {
   padding-left: 5px;
 }
-body .main-content .info-box .pic {
+body .main-content .info-box .pic-desktop {
   display: flex;
   justify-content: center;
   padding: 0;
+}
+@media (max-width: 320px) {
+  body .main-content .info-box .pic-desktop {
+    display: none;
+  }
+}
+body .main-content .info-box .pic-mobile {
+  justify-content: center;
+}
+@media (max-width: 320px) {
+  body .main-content .info-box .pic-mobile {
+    display: block;
+  }
+}
+@media (max-width: 320px) {
+  body .main-content .info-box {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    margin-bottom: 22px;
+  }
 }
 body .main-content .recent-projects {
   margin-top: 98px;
 }
 body .main-content .recent-projects h4 {
   padding-left: 38px;
+}
+@media (max-width: 320px) {
+  body .main-content .recent-projects h4 {
+    padding: 0;
+  }
 }
 body .main-content .recent-projects .project {
   display: flex;
@@ -232,19 +295,58 @@ body .main-content .recent-projects .project h1 {
   margin-top: 41px;
   font-size: 28px;
 }
+@media (max-width: 320px) {
+  body .main-content .recent-projects .project h1 {
+    padding: 33px 23%;
+    margin-top: 83px;
+  }
+}
 body .main-content .recent-projects .project .villas {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
 }
+@media (max-width: 320px) {
+  body .main-content .recent-projects .project .villas {
+    justify-content: center;
+  }
+  body .main-content .recent-projects .project .villas .villas-mobile-img {
+    display: block;
+  }
+  body .main-content .recent-projects .project .villas .villas-desktop-img {
+    display: none;
+  }
+}
 body .main-content .recent-projects .project .outskirts {
   display: flex;
   align-items: flex-end;
+}
+@media (max-width: 320px) {
+  body .main-content .recent-projects .project .outskirts {
+    justify-content: center;
+  }
+  body .main-content .recent-projects .project .outskirts .outskirts-mobile-img {
+    display: block;
+  }
+  body .main-content .recent-projects .project .outskirts .outskirts-desktop-img {
+    display: none;
+  }
 }
 body .main-content .recent-projects .project .the-block {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+}
+@media (max-width: 320px) {
+  body .main-content .recent-projects .project .the-block {
+    justify-content: center;
+  }
+  body .main-content .recent-projects .project .the-block .blocks-mobile-img {
+    display: block;
+  }
+  body .main-content .recent-projects .project .the-block .blocks-desktop-img {
+    display: none;
+  }
 }
 body .main-content .recent-projects .project .project-description {
   margin: 93px 200px 37px;
@@ -253,10 +355,41 @@ body .main-content .recent-projects .project .project-description p {
   padding: 0 40px;
   margin-bottom: 50px;
 }
+@media (max-width: 320px) {
+  body .main-content .recent-projects .project .project-description {
+    margin: 113px 0 0;
+  }
+  body .main-content .recent-projects .project .project-description p {
+    padding: 0;
+  }
+}
+@media (max-width: 320px) {
+  body .main-content .recent-projects .project {
+    padding: 0;
+  }
+}
+@media (max-width: 320px) {
+  body .main-content .recent-projects {
+    margin-top: 22px;
+  }
+}
+@media (max-width: 320px) {
+  body .main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+  }
+}
 body footer {
   background-color: #828282;
-  padding: 60px 85px 20px;
+  padding: 60px 6% 20px;
   margin-top: 32px;
+}
+@media (max-width: 320px) {
+  body footer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 body footer p {
   color: #FFFFFF;
@@ -266,6 +399,11 @@ body footer p {
 body footer .info {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 320px) {
+  body footer .info {
+    flex-direction: column;
+  }
 }
 body footer .info h6 {
   font-size: 20px;
@@ -279,4 +417,37 @@ body footer .info p {
 }
 body footer .info .contact input {
   margin: 15px 0 8px;
+}
+@media (max-width: 320px) {
+  body footer .info .contact input {
+    height: 50px;
+  }
+}
+@media (max-width: 320px) {
+  body footer .info .contact {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 320px) {
+  body footer .info .ny {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 320px) {
+  body footer .info .fla {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 320px) {
+  body footer .info .ca {
+    margin-bottom: 30px;
+  }
+}
+body footer .copyright {
+  text-align: center;
+}
+@media (max-width: 320px) {
+  body footer .copyright {
+    text-align: left;
+  }
 }
