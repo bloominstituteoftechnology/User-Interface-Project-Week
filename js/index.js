@@ -48,6 +48,7 @@ class Tabs {
     }
     selectCard(){
       this.element.style.display = null;
+      // TweenLite.from(this.element, 1, {css:{opacity:0}},{css:{opacity:100}} )
     }
     deselectCard(){
       this.element.style.display = 'none';
@@ -66,5 +67,12 @@ class Tabs {
   let menu = document.querySelector('.burger')
   menu.addEventListener('click', () => {
     page.classList.toggle('open')
-  })
+    TweenLite.from(page, .5, {css:{opacity:0}},{css:{opacity:100}} )
+  });
+
+
+ 
+
+
+  
   
