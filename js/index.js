@@ -125,12 +125,12 @@ class Carousel {
         this.prevImg = this.images[this.images.length - 1];
         this.nextImg = this.images[1];
 
-        this.prevButton.addEventListener('click', () => {
+        this.prevButton.addEventListener("click", () => {
             this.prevImg.style.display = "block";
             this.goToPrevious();
         });
 
-        this.nextButton.addEventListener('click', () => {
+        this.nextButton.addEventListener("click", () => {
             this.nextImg.style.display = "block";
             this.goToNext();
         });
@@ -141,15 +141,14 @@ class Carousel {
         toDisappear.style.position = "absolute";
 
         TweenMax.fromTo(this.prevImg, 2, {xPercent:-100}, {xPercent:0});
-        TweenMax.fromTo(this.activeImg, 2, {xPercent:0}, {xPercent:100, onComplete: () => {
-            toDisappear.style.display = "none";
-            toDisappear.style.position = "relative";
-        }});
+        TweenMax.fromTo(this.activeImg, 2, {xPercent:0}, {xPercent:100});
 
-        if((parseInt(this.activeImg.dataset.img)) === 0) {
+        console.log(this.activeImg);
+        if ((parseInt(this.activeImg.dataset.img)) === 0) {
             this.activeImg = this.images[this.images.length - 1];
         } else {
-            this.activeImg = this.images[parseInt(this.activeImg.dataset.img) - 1];
+            this.activeImg = this.images[(parseInt(this.activeImg.dataset.img)) - 1];
+            this.activeImg.style.position = "absolute";
         }
 
         this.setPrevNext();
@@ -161,29 +160,29 @@ class Carousel {
 
         TweenMax.fromTo(this.nextImg, 2, {xPercent:100}, {xPercent:0});
         TweenMax.fromTo(this.activeImg, 2, {xPercent:0}, {xPercent:-100, onComplete: () => {
-            toDisappear.style.display = "none";
-            toDisappear.style.position = "relative"; 
+            // toDisappear.style.display = "none";
+            // toDisappear.style.position = "relative"; 
         }});
 
-        if((parseInt(this.activeImg.dataset.img)) === (this.images.length - 1)) {
+        if ((parseInt(this.activeImg.dataset.img)) === (this.images.length - 1)) {
             this.activeImg = this.images[0];
         } else {
-            this.activeImg = this.images[parseInt(this.activeImg.dataset.img) + 1];
+            this.activeImg = this.images[(parseInt(this.activeImg.dataset.img)) + 1];
         }
 
         this.setPrevNext();
     }
 
     setPrevNext() {
-        if (parseInt(this.activeImg.dataset.img) === 0) {
+        if ((parseInt(this.activeImg.dataset.img)) === 0) {
             this.prevImg = this.images[this.images.length - 1];
         } else {
-            this.prevImg = this.images[parseInt(this.activeImg.dataset.img) - 1];
+            this.prevImg = this.images[(parseInt(this.activeImg.dataset.img)) - 1];
         }
         if ((parseInt(this.activeImg.dataset.img)) === (this.images.length - 1)) {
             this.nextImg = this.images[0];
         } else {
-            this.nextImg = this.images[parseInt(this.activeImg.dataset.img) + 1];
+            this.nextImg = this.images[(parseInt(this.activeImg.dataset.img)) + 1];
         }
     }
 }
