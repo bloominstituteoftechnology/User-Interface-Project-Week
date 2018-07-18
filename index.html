@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/index.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -32,11 +33,44 @@
 	
 
  <!-- Home Page Content: -->
-		<div class="jumbotron home-jumbotron">
+		<!-- <div class="jumbotron home-jumbotron">
 			<h1>Integrity,<br/>
 				Excellence,<br/>
 				Progress.</h1>
-		</div>		
+		</div> -->
+		
+		<!-- <pattern id="img1" patternUnits="userSpaceOnUse" width="1024" height="200">
+			<image xlink:href="img/home/home-jumbotron.png" x="0" y="0" width="1024" height="200"></image>
+		</pattern> -->
+
+		<script type="text/x-template" id="header-view-template">
+			<div class="draggable-header-view"
+				@mousedown="startDrag" @touchstart="startDrag"
+				@mousemove="onDrag" @touchmove="onDrag"
+				@mouseup="stopDrag" @touchend="stopDrag" @mouseleave="stopDrag">
+			<svg class="bg" width="1024" height="0">
+				<path :d="headerPath" fill="url(#img1)"></path>
+			</svg>
+			<div class="header">
+				<slot name="header"></slot>
+			</div>
+				<div class="content" :style="contentPosition">
+					<slot name="content"></slot>
+				</div>
+			</div>
+		</script>
+
+		<div id="app" @touchmove.prevent>
+			<draggable-header-view>
+				<template slot="content">
+						<div class="jumbotron home-jumbotron">
+								<h1>Integrity,<br/>
+									Excellence,<br/>
+									Progress.</h1>
+							</div>
+				</template>
+			</draggable-header-view>
+		</div>
  
  
 		<div class="top-content">
