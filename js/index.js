@@ -1,13 +1,16 @@
 // JS goes here
-
+const fadeNavPanel = function(){
+  TweenMax.fromTo('.nav-page', 1, {opacity:0}, {opacity: 1})
+}
 const showNavPanel = function(){
   navPage[0].classList.toggle('showNav');
-//------------------Another great example of forEach--------------//
+//----------Another great example of forEach-----------//
   // navBTNOpen.classList.toggle('hide-icon');
   // navBTNClose.classList.toggle('hide-icon');
   navBTN.forEach( (target) => {
     target.classList.toggle('hide-icon');
   });
+  fadeNavPanel();
 }
 
 const navOpacity = function(){
