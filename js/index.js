@@ -17,11 +17,9 @@ class Tabs {
     }
   
     getCards(data){
-      
-    return document.querySelectorAll(`.card[data-tab='${data}']`);
-      
-    }
+        return document.querySelectorAll(`.service-content[data-tab='${data}']`);
   }
+}
   
   
   
@@ -51,9 +49,6 @@ class Tabs {
   
   
   
-  
-  
-  
   class TabCard {
     constructor(element){
       this.element = element;
@@ -72,4 +67,9 @@ class Tabs {
   
   let tabsArray = document.querySelectorAll('.service-tabs');
   tabsArray = Array.from(tabsArray).map( item => new Tabs( item ));
+
+  let cont = document.querySelectorAll('.service-content');
+  for (let i = 1; i < cont.length; i++) {
+    cont[i].style.display = "none";
+  }
   
