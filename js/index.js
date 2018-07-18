@@ -267,3 +267,10 @@ Vue.component('draggable-header-view', {
 
 new Vue({el: '#app'});
 
+
+
+// Jumbotron H1 fade in
+
+let headingHome = document.querySelectorAll(".home-jumbotron h1");
+TweenMax.fromTo(headingHome, 3, {opacity:0, y:100}, {opacity:1, y:0});
+
