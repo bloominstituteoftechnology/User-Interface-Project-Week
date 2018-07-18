@@ -28,18 +28,18 @@ class Image {
   }
 
   zoom() {
-    this.img.style.transition = '300ms';
+    this.img.style.transition = '600ms';
     this.img.style.transform = 'scale(1.1)';
     if (this.img.parentNode.classList.contains('embed')) {
-      this.boxName.style.transition = '300ms';
+      this.boxName.style.transition = '600ms';
       this.boxName.style.transform = 'scale(1.28)';
     }
   }
   unzoom() {
-    this.img.style.transition = '300ms';
+    this.img.style.transition = '600ms';
     this.img.style.transform = 'scale(1)';
     if (this.img.parentNode.classList.contains('embed')) {
-      this.boxName.style.transition = '300ms';
+      this.boxName.style.transition = '600ms';
       this.boxName.style.transform = 'scale(1)';
     }
   }
