@@ -64,35 +64,93 @@ table{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100vw 100%;
-    .fixed-top{
-      color: white;
-      Font-Weight: Bold;
-      Font-Size: 2rem;
-      background:#828282;
-      width: 100%;
-      .navbar-brand{
-        padding: 1rem 1rem;
-      }
-      .menu-icon{
-        cursor: pointer;
-        height: 10%;
-        padding: 1rem 1rem;
-      }
-      ul{
-        display:none;
-      }
-    }//navbar
-    .motto{
-      padding-top: 20rem;
-      padding-bottom: 2rem;
-      Font-Weight: Bold;
-      Font-Size: 4rem;
-      Line-Height: 5rem;
-      color: #FFFFFF;
-      padding-left: 1.5rem;
-    }//motto
-  }//header
+    }//header
 
+  .fixed-menu{
+    .flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    color: white;
+    Font-Weight: Bold;
+    Font-Size: 2rem;
+    background:#828282;
+    border: 2px black solid;
+    width: 100%;
+    h1{
+      font-size: 2rem;
+      padding: 1rem 2rem;
+    }
+  }//fixed-menu
+
+
+  .menu-icon, .menu-icon-close{
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 1;
+  }//menu icons properties
+
+  .menu-items{
+    position: absolute;
+    opacity: 0.8;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+    background:black;
+    display: none;
+    z-index: 2;
+    text-align: center;
+    transition: 0.5s;
+    .center;
+    a{
+      font-weight: bold;
+      font-size: 4rem;
+      line-height: 7rem;
+      color: white;
+      display:block;
+      transition: 0.5s;
+      text-decoration: none;
+      &:hover{
+        color: #FFFFFF;
+        background: #222222;
+      }
+    }
+  }
+
+  .menu--close{
+    .menu-icon{
+      display:block;
+    }
+    .menu-icon-close{
+      display: none;
+    }
+    .menu-items{
+      display: none;
+    }
+  }//menu--close
+
+  .menu--open{
+    .menu-icon{
+      display: none;
+      opacity: 0;
+    }
+    .menu-icon-close{
+      display: block;
+    }
+    .menu-items{
+      display: block;
+    }
+  }//menu--open
+  
+  .motto{
+    padding-top: 20rem;
+    padding-bottom: 2rem;
+    Font-Weight: Bold;
+    Font-Size: 4rem;
+    Line-Height: 5rem;
+    color: #FFFFFF;
+    padding-left: 1.5rem;
+  }//motto
   .desktop{
     display: none;
   }//img desktop
@@ -244,7 +302,7 @@ table{
         padding: 0;
         width:100%;
       }
-    
+  
     }
     .subheader{
       Font-Weight: Bold;

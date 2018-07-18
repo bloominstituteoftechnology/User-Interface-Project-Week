@@ -341,25 +341,78 @@ USE WITH CAUTION AND TEST WITH ABANDON */
     background-position: center;
     background-size: 100vw 100%;
   }
-  .home-page .header .fixed-top {
+  .home-page .fixed-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
     color: white;
     Font-Weight: Bold;
     Font-Size: 2rem;
     background: #828282;
+    border: 2px black solid;
     width: 100%;
   }
-  .home-page .header .fixed-top .navbar-brand {
-    padding: 1rem 1rem;
+  .home-page .fixed-menu h1 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
   }
-  .home-page .header .fixed-top .menu-icon {
+  .home-page .menu-icon,
+  .home-page .menu-icon-close {
     cursor: pointer;
-    height: 10%;
-    padding: 1rem 1rem;
+    padding: 1rem;
+    z-index: 1;
   }
-  .home-page .header .fixed-top ul {
+  .home-page .menu-items {
+    position: absolute;
+    opacity: 0.8;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: black;
+    display: none;
+    z-index: 2;
+    text-align: center;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+  }
+  .home-page .menu-items a {
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 7rem;
+    color: white;
+    display: block;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  .home-page .menu-items a:hover {
+    color: #FFFFFF;
+    background: #222222;
+  }
+  .home-page .menu--close .menu-icon {
+    display: block;
+  }
+  .home-page .menu--close .menu-icon-close {
     display: none;
   }
-  .home-page .header .motto {
+  .home-page .menu--close .menu-items {
+    display: none;
+  }
+  .home-page .menu--open .menu-icon {
+    display: none;
+    opacity: 0;
+  }
+  .home-page .menu--open .menu-icon-close {
+    display: block;
+  }
+  .home-page .menu--open .menu-items {
+    display: block;
+  }
+  .home-page .motto {
     padding-top: 20rem;
     padding-bottom: 2rem;
     Font-Weight: Bold;
