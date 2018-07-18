@@ -185,10 +185,14 @@ Imports
   justify-content: center;
   align-items: center;
 }
-.main-header .main-logo__container p {
+.main-header .main-logo__container a {
+  text-decoration: none;
   font-weight: Bold;
   font-size: 2.4rem;
   Color: #FFFFFF;
+}
+.main-header .main-nav__icon--container {
+  height: 21px;
 }
 .main-header .main-nav__burger:hover {
   cursor: pointer;
@@ -202,12 +206,30 @@ Imports
   background: #97A2AD;
   opacity: .9;
 }
-.main-nav__items--container .main-nav__close {
-  position: absolute;
-  top: 1.8%;
-  right: 10%;
+.main-nav__items--container .close-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 80px;
+}
+@media (max-width: 600px) {
+  .main-nav__items--container .close-header__container {
+    padding: 14px 40px;
+  }
+}
+.main-nav__items--container .close-header__container .main-nav__close:hover {
+  cursor: pointer;
+}
+.main-nav__items--container .close-header__container .main-logo__close {
+  text-decoration: none;
+  font-weight: Bold;
+  font-size: 2.4rem;
+  Color: #FFFFFF;
 }
 .main-nav__items--container .main-nav__items {
+  position: relative;
+  top: 50%;
+  margin-top: -127.5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -227,18 +249,11 @@ Imports
   color: #222222;
 }
 .main-nav__items--active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 }
 .display-none {
   display: none;
 }
-/*
-.display {
-  display: block;
-}
-*/
 .jumbo {
   width: 100%;
   height: 596px;

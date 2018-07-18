@@ -6,19 +6,23 @@ class Nav {
     this.burger = this.props.querySelector('.main-nav__burger');
     this.burger.addEventListener('click', () => {this.open()});
     this.navItems = document.querySelector('.main-nav__items--container');
+    this.logo = this.props.querySelector('.main-logo');
     this.closeIcon = this.navItems.querySelector('.main-nav__close');
     this.closeIcon.addEventListener('click', () => {this.close()});
+    console.log(this.logo)
   }
 
-  open () {
+  open (e) {
     TweenMax.from(this.navItems, .3, {x:300, y:-300, opacity:0, scale:0.5});
     this.burger.classList.toggle('display-none');
     this.navItems.classList.toggle('main-nav__items--active');
+    this.logo.classList.toggle('display-none');
   }
 
-  close() {
+  close(e) {
     this.burger.classList.toggle('display-none');
     this.navItems.classList.toggle('main-nav__items--active');
+    this.logo.classList.toggle('display-none');
   }
 }
 
