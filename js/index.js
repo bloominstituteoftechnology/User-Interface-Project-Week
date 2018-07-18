@@ -32,10 +32,11 @@ class Tabs {
 class TabsButton {
     constructor(button, parent) {
         this.button = button;
+        this.tabs = parent;
         this.tabsItem = parent.getButton(this.button.dataset.tab);
         this.tabsItem = new TabsContent(this.tabsItem);
         this.button.addEventListener('click', () => {
-            this.button.updateActive(this);
+            this.tabs.updateActive(this);
             this.select();
         });
     }
