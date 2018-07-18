@@ -116,3 +116,80 @@ function hideText(e) {
 let avator = Array.from(document.querySelectorAll('.person'));
 avator.forEach(icon => icon.addEventListener('mouseover', displayText));
 avator.forEach(icon => icon.addEventListener('mouseleave', hideText));
+
+// Project page
+// Carousel
+
+class Project {
+  constructor(projectElement) {
+    this.element = projectElement;
+    this.description = Array.from( document.querySelectorAll('.project-description') );
+    this.description = this.description.map( description => new ProjectDescription(description) );
+    this.data = this.element.dataset.img;    
+    this.currentData = 1;
+    this.dataArray = [];
+
+    this.leftArrow = document.querySelector('.left-arrow');
+    this.rightArrow = document.querySelector('.right-arrow');
+
+    this.leftArrow.addEventListener('click', this.slide.bind(this));
+    this.rightArrow.addEventListener('click', this.slide.bind(this));
+
+    this.init();
+  }
+
+  init() {
+    for (let i = 1; i < carouselProject.length + 1; i++) {
+      this.dataArray.push(i);
+    }
+  }
+
+  slide(e) {
+    let direction = e.target.dataset.direction;
+    this.currentData = this.currentData + Number(direction);
+
+    if (this.currentData < 1) {
+      this.currentData = this.dataArray.length;
+    } 
+
+    if (this.currentData > this.dataArray.length) {
+      this.currentData = 1;
+    }
+
+    carouselProject.forEach(image => {
+      // update the carousel
+      if (this.currentData === Number(image.dataset.img)) {
+        image.classList.remove('hidden');
+        // update the text
+        this.description.forEach(text => {
+          if (this.currentData === Number(text.data)) {
+            text.display();
+          } else {
+            text.hide();
+          }
+        })
+      } else {
+        image.classList.add('hidden');
+      }
+    });
+  }
+}
+
+class ProjectDescription {
+  constructor(textElement, parent) {
+    this.element = textElement;
+    this.parent = parent;
+    this.data = this.element.dataset.img;
+  }
+
+  display() {
+    this.element.classList.remove('hidden');
+  }
+
+  hide() {
+    this.element.classList.add('hidden');
+  }
+}
+
+let carouselProject = Array.from( document.querySelectorAll('.carousel-project') );
+carouselProject.map( project => new Project(project) );
