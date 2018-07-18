@@ -13,7 +13,7 @@ const openCloseToggle = () =>{
         navButton.classList.remove('navButtonOpen');
         const navArea = document.createElement('div')
         navArea.classList.add('navExpanded')
-
+        navArea.dataset.aos="slide-down";
     let htmlConstructor = "";
     htmlConstructor +=`<div class='navItems'>`;
         pages.forEach(function(element) {

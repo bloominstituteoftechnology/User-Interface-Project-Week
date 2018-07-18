@@ -49,7 +49,6 @@ const updateActive = (passin) =>{
     document.querySelector(".tabImage").src=`${tabArray[passin].img}`;
     document.querySelector(".tabImage").srcset=`${tabArray[passin].srcset}`;
     document.querySelector(".tabImage").sizes=`${tabArray[passin].sizes}`;
-    console.log(document.querySelector(".tabImage"));
     changeSelected(passin);
 }
 updateActive(activeTab);
