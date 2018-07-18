@@ -25,14 +25,14 @@ body {
   &__img {
     @include img-repsonsive;
 
-    &--services-mobile {
+    &--mobile {
       display: none;
       @media screen and (max-width: $mobile-sm-width) {
         display: block;
       }
     }
 
-    &--services-desktop {
+    &--desktop {
       @media screen and (max-width: $mobile-sm-width) {
         display: none;
       }
@@ -108,10 +108,27 @@ body {
     margin-bottom: 1rem;
   }
 
+  label {
+    line-height: 2;
+  }
+
   &__input {
-    padding: 1.3rem 0.6rem;
+    display: inline-block;
+    padding: 1rem 0.8rem;
     width: 100%;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+  }
+
+  select.form__input {
+    height: calc(3.6rem + 2px);
+  }
+
+  &__check {
+    input[type='radio'] {
+      position: relative;
+      bottom: 1px;
+      margin-right: 4px;
+    }
   }
 }
