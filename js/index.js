@@ -16,7 +16,7 @@ const closeNav = function() {
     hamburgerButtonClose.style.display = 'none';
 }
 
-hamburgerButton.addEventListener('click', ()=> {
+hamburgerButton.addEventListener('click', () => {
 
 })
 
@@ -49,10 +49,10 @@ class Tabs {
 
 
 class TabsLink {
-    constructor(link,parent){
+    constructor(link, parent){
         this.link = link;
         this.tabs = parent;
-        this.tabsItem.parent.getTab(this.link.dataset.tab);
+        this.tabsItem = parent.getTab(this.link.dataset.tab);
         this.tabsItem = new TabsItem(this.tabsItem);
         this.link.addEventListener('click', () => {
         this.tabs.updateActive(this);
@@ -68,6 +68,19 @@ select() {
 deselect() {
     this.link.classList.remove('tab-active');
     this.tabsItem.deselect();
+    }
+}
+
+class TabsItem{
+constructor(element){
+this.element = element;
+    }
+select() {
+    this.element.classList.add('content-active');
+}
+
+deselect() {
+    this.element.classList.remove('content-active');
     }
 }
 
