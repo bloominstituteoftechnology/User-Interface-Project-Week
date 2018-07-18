@@ -135,7 +135,7 @@ table {
 }
 .jumbo-mixin {
   display: inline;
-  width: 1025px;
+  width: 1024px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -152,7 +152,7 @@ table {
 }
 .box-mixin {
   background-color: #D8D8D8;
-  height: 50px;
+  height: 80px;
   width: 35%;
   display: flex;
   justify-content: center;
@@ -179,31 +179,47 @@ body {
 html {
   font-size: 62.5%;
 }
-.navigation-pane {
-  background-color: rgba(130, 130, 130, 0.98);
+.container-custom {
+  max-width: 1024px;
+}
+.nav-pane-contents {
+  background-color: rgba(168, 168, 168, 0.911);
   height: 40px;
   display: flex;
   max-width: 1025px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  align-items: center;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 100px;
+  padding-left: 100px;
+  position: fixed;
+  z-index: 1;
 }
-.navigation-pane .nav-pane-contents .logo {
+.nav-pane-contents .logo {
   color: white;
   font-weight: bold;
   font-size: 2.4rem;
-  width: 300px;
-  margin-right: 700px;
-  margin-left: 50px;
-}
-.nav-div {
-  justify-content: flex-start;
 }
 .content {
-  max-width: 1025px;
-  margin: 0 auto;
-  justify-content: center;
+  max-width: 1024px;
+}
+.content .jumbotron-content {
+  width: 1024px;
+  max-width: 1024px;
+}
+.content .jumbotron-content .jumbo-img {
+  position: relative;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  padding-left: -15px;
+  padding-right: -15px;
+  border: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 .content .jumbotron-content h2 {
   font-size: 6.4rem;
@@ -216,20 +232,6 @@ html {
   left: 80px;
   height: 0px;
   margin-bottom: 30px;
-}
-.content .jumbotron-content img {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-top: -40px;
-  border: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  width: 100%;
-  max-height: 100%;
-  height: 100%;
 }
 h3,
 p,
@@ -244,6 +246,7 @@ h3 {
   font-weight: bold;
   font-size: 2.8rem;
   margin-bottom: 10px;
+  display: flex;
 }
 .button {
   border: 1px solid black;
@@ -258,13 +261,28 @@ h3 {
 .button p {
   margin-bottom: 0px;
 }
-.main-content {
+.top-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+}
+.top-content .main-content {
   margin-bottom: 50px;
   margin: 20 auto;
-  width: 100%;
+  width: 50%;
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
+}
+.top-content .img1 {
+  width: 50%;
+}
+.top-content .img1 img {
+  display: inline-flex;
+  width: 100%;
 }
 .recent-projects {
   font-size: 2.8rem;
@@ -272,6 +290,10 @@ h3 {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1025px;
 }
 .recent-projects .villas-text {
   margin: 70px auto;
@@ -287,7 +309,7 @@ h3 {
 }
 .villas-jumbo {
   display: inline;
-  width: 1025px;
+  width: 1024px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -304,7 +326,7 @@ h3 {
 }
 .villas-jumbo .villas-box {
   background-color: #D8D8D8;
-  height: 50px;
+  height: 80px;
   width: 35%;
   display: flex;
   justify-content: center;
@@ -325,7 +347,7 @@ h3 {
 }
 .outskirts-jumbo {
   display: inline;
-  width: 1025px;
+  width: 1024px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -342,7 +364,7 @@ h3 {
 }
 .outskirts-jumbo .outskirts-box {
   background-color: #D8D8D8;
-  height: 50px;
+  height: 80px;
   width: 35%;
   display: flex;
   justify-content: center;
@@ -363,7 +385,7 @@ h3 {
 }
 .blocks-jumbo {
   display: inline;
-  width: 1025px;
+  width: 1024px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -380,7 +402,7 @@ h3 {
 }
 .blocks-jumbo .blocks-box {
   background-color: #D8D8D8;
-  height: 50px;
+  height: 80px;
   width: 35%;
   display: flex;
   justify-content: center;
@@ -403,20 +425,29 @@ h3 {
   background-color: #828282;
   color: white;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 250px;
   max-width: 1025px;
 }
+.footer-box .email {
+  justify-content: flex-start;
+  width: 40%;
+}
 .footer-box .email label {
   color: white;
-  font-size: 2.4rem;
+  width: 20%;
   font-weight: Regular;
   font-size: 1.4rem;
   line-height: 26px;
   color: #FFFFFF;
   width: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  font-size: 2.4rem;
 }
 .footer-box .email label .footer-title {
   font-weight: Regular;
@@ -434,13 +465,18 @@ h3 {
 .footer-box .email small {
   border: 2px solid white;
   color: white;
+  font-size: .8rem;
 }
 .footer-box .footer-locations {
+  width: 20%;
   font-weight: Regular;
   font-size: 1.4rem;
   line-height: 26px;
   color: #FFFFFF;
   width: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
 }
 .footer-box .footer-locations .footer-title {
   font-weight: Regular;
@@ -456,8 +492,9 @@ h3 {
   color: darkgray;
 }
 .footer-box .copyright {
-  display: flex;
-  flex-direction: row;
+  display: inline;
+  flex-direction: column;
   align-self: flex-end;
   justify-content: center;
+  font-size: 0.8rem;
 }
