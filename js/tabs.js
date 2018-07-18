@@ -56,7 +56,7 @@ class Tabs {
     }
   
     select() {
-      this.element.classList.add("tabs-item-selected");
+      this.element.classList.add("tabs-item-selected"); console.log("hey")
     }
   
     deselect() {
