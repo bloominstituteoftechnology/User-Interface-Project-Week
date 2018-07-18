@@ -7,11 +7,11 @@ function myFunction(x) {
 class Tabs {
     constructor(element) {
         this.element = element;
-        this.buttons = this.element.querySelectorAll("tabs.button");
+        this.buttons = this.element.querySelectorAll(".tabs-button");
         this.buttons = Array.from(this.buttons).map( button => {
             return new TabsButton(button, this);
         });
-        this.activeButton = this.buttons[0];
+        this.activeButton = this.buttons[0];       
         this.init();
     }
 
@@ -25,15 +25,17 @@ class Tabs {
     }
 
     getButton(data) {
-        return this.element.querySelector(`.tabs-content[data-tab="${data}"]`);
+        return this.element.querySelector(`.tab-content[data-tab="${data}"]`);
     }
 }
 
 class TabsButton {
     constructor(button, parent) {
         this.button = button;
-        this.tabsItem = parent.getTab(this.button.dataset.tab);
+        this.tabsItem = parent.getButton(this.button.dataset.tab);
+        this.tabsItem = new TabsContent(this.tabsItem);
         this.button.addEventListener('click', () => {
+            this.button.updateActive(this);
             this.select();
         });
     }
