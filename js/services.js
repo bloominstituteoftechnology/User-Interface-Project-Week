@@ -17,7 +17,6 @@ let componentContent = document.querySelectorAll(".component-content");
 componentTabs = Array.from(componentTabs);
 componentContent= Array.from(componentContent);
 
-
 componentTabs.forEach( (target) => {
   target.addEventListener("click", () => {
     displayContent(target.dataset.tab, componentTabs.indexOf(target));
