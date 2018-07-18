@@ -6,24 +6,30 @@ const menuOpenContent = document.querySelector('.menu-content');
 const closeMenuButton = document.querySelector('.closed-hamburger'); 
 const menuItems = document.querySelectorAll('.menu-link'); 
 const mainHeader = document.querySelector('h1');
+const homeSection = document.querySelectorAll('section'); 
+const body = document.querySelector('body'); 
 
-$( document ).ready(function() {
-    $(".menu-content").hide();
+$(document).ready(function() {
+    $(body).hide(); 
+    $(body).fadeIn(500);
+    $(menuOpenContent).hide();
+    $(mainHeader).hide()
+    $(mainHeader).slideDown(1000);
   });
 
 menuButton.addEventListener('click', function(){
-    $(".menu-content").fadeIn(1000);
-    // menuOpenContent.classList.remove('menu-hidden'); 
-    menuButton.style.display = 'none'; 
-    closeMenuButton.style.display = "flex"; 
+    $(menuOpenContent).fadeIn(1500);
+    $(menuButton).hide(); 
+    $(closeMenuButton).show(); 
 });
 
 closeMenuButton.addEventListener('click', function(){
-    $(".menu-content").hide();
-    // menuOpenContent.classList.add('menu-hidden'); 
-    menuButton.style.display = "flex"; 
-    closeMenuButton.style.display = "none";
+    $(menuOpenContent).fadeOut(500);
+    $(closeMenuButton).hide();
+    $(menuButton).show();
+    
 });
+
 
 //Animations 
 
@@ -51,16 +57,14 @@ menuButton.addEventListener('mouseleave', function(){
 });
 
 closeMenuButton.addEventListener('mouseenter', function(event){
-    TweenMax.to(event.target, 1, {rotation: 360})
+    TweenMax.to(event.target, 1, {rotation: 0}); 
 })
 
 closeMenuButton.addEventListener('mouseleave', function(){
-    TweenMax.to(closeMenuButton, 1, {rotation:0}); 
+    TweenMax.to(closeMenuButton, 1, {rotation:180}); 
 })
 
-mainHeader.addEventListener("onload", function(){
-    TweenMax.to(mainHeader)
-})
+
 
 
 
