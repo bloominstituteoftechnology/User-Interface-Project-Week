@@ -266,3 +266,4 @@ Vue.component('draggable-header-view', {
 })
 
 new Vue({el: '#app'});
+
