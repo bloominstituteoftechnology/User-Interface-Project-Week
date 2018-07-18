@@ -1,4 +1,4 @@
-console.log("Working tabs")
+console.log("Working tabs"); 
 
 class Tabs {
   
@@ -13,17 +13,15 @@ class Tabs {
       this.init();
     }
   
-  
     init() { 
       this.activeLink.select();
     }
    
-  
     updateActive(newActive) {
       this.activeLink.deselect();
       this.activeLink = newActive;
     }
-  
+
     getTab(data) {
       return this.element.querySelector(`.tabs-item[data-tab="${data}"]`); 
     }
@@ -32,7 +30,7 @@ class Tabs {
     constructor(link, parent) {
       this.link = link;
       this.tabs = parent;
-      this.tabsItem = parent.getTab(this.link.dataset.tab);
+      this.tabsItem = this.tabs.getTab(this.link.dataset.tab);
      
       this.tabsItem = new TabsItem(this.tabsItem);
       this.link.addEventListener('click', () => {
@@ -40,19 +38,17 @@ class Tabs {
         this.select();
       });
     };
-  
+
     select() {
       this.link.classList.add("tabs-link-selected"); 
       this.tabsItem.select();
     }
-  
   
     deselect() {
       this.link.classList.remove("tabs-link-selected"); 
       this.tabsItem.deselect();
     }
   }
-  
   
   class TabsItem {
     constructor(element) {
@@ -68,8 +64,7 @@ class Tabs {
     }
   }
   
-  
-  let tabs = document.querySelectorAll('.tabs');
+  let tabs = document.querySelectorAll(".tabs");
   
   tabs = Array.from(tabs).map(tab => new Tabs(tab));
   console.log(Tabs);
