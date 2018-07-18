@@ -35,15 +35,24 @@ $(document).ready(function() {
  
 
   let pre = document.querySelector('.pre');
+  let preContent = document.querySelector('.preContent');
   let con = document.querySelector('.con');
+  let conContent = document.querySelector('.conContent');
   let des = document.querySelector('.des');
+  let desContent = document.querySelector('.desContent');
   let sus = document.querySelector('.sus');
+  let susContent = document.querySelector('.susContent');
 
-  pre.style.color = "black";
   con.style.color = "white";
+  con.style.backgroundColor = "#5E9FB9";
+  conContent.style.display = "none";
+  pre.style.color = "black";
+  preContent.style.display = "none";
   des.style.color = "black";
+  desContent.style.display = "none";
   sus.style.color = "black";
-  con.style.backgroundColor = "#5E9FB9"
+  susContent.style.display = "none";
+ 
 
   $(document).ready(function() {
     $(".pre").click(function() {
@@ -56,9 +65,18 @@ $(document).ready(function() {
       des.style.backgroundColor = "white"; 
       sus.style.color = "black";
       sus.style.backgroundColor = "white"; 
+      conContent.style.display = "none";
+      desContent.style.display = "none";
+      susContent.style.display = "none";
+      preContent.style.display = "flex";
      }
     });
   });
+
+
+
+
+
 
   $(document).ready(function() {
     $(".con").click(function() {
@@ -71,6 +89,10 @@ $(document).ready(function() {
       des.style.backgroundColor = "white"; 
       sus.style.color = "black";
       sus.style.backgroundColor = "white"; 
+      conContent.style.display = "flex";
+      desContent.style.display = "none";
+      susContent.style.display = "none";
+      preContent.style.display = "none";
      }
     });
   });
@@ -85,7 +107,11 @@ $(document).ready(function() {
       con.style.color = "black";
       con.style.backgroundColor = "white"; 
       sus.style.color = "black";
-      sus.style.backgroundColor = "white"; 
+      sus.style.backgroundColor = "white";
+      conContent.style.display = "none";
+      desContent.style.display = "flex";
+      susContent.style.display = "none";
+      preContent.style.display = "none"; 
      }
     });
   });
@@ -100,7 +126,11 @@ $(document).ready(function() {
       con.style.color = "black";
       con.style.backgroundColor = "white"; 
       des.style.color = "black";
-      des.style.backgroundColor = "white"; 
+      des.style.backgroundColor = "white";
+      conContent.style.display = "none";
+      desContent.style.display = "none";
+      susContent.style.display = "flex";
+      preContent.style.display = "none"; 
      }
     });
   });
