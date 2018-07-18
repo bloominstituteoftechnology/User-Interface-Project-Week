@@ -123,7 +123,7 @@ class Tabs {
       this.slide(this.current); 
   
       if(typeof interval === 'number' && (interval % 1) === 0){
-        let context = this; 
+        let context = this; //allows us to access current this inside of another function.
         this.run = setTimeout(function(){
           context.previous(interval);
         }, interval); 
@@ -131,7 +131,7 @@ class Tabs {
     }
     //previous 
     previous(interval){
-      (this.current === this.total) ? this.current = 0 : this.current += 1; 
+      (this.current !== 0) ? this.current -= 1 : this.current = this.slides.length -1;
   
       this.stop(); 
       this.slide(this.current); 
