@@ -4,12 +4,12 @@
   .myJumbo('./../img/home/home-jumbotron.png', 598px);
 
   .pg-content{
-    max-width: 1024px;
+    max-width: @width-constraint;
     margin: 0 auto;
 
     .content-box{
       margin-top: 100px;
-      .flex-mix(@just: space-around;);
+      .flex-mix(@just: space-between;);
 
       .big-img {
         width: 45%;
@@ -74,8 +74,8 @@
     }//content-box end
 
     .content-break{
-      font-weight: bold;
       margin-top: 100px;
+      .sub-header();
     }
 
     .prj-header {
@@ -83,9 +83,23 @@
       width: 100%;
       position: relative;
 
-      img{
+      .prj-img{
         width: 100%;
-        display: block;
+        height: auto;
+
+        @media @phone{
+          display: none;
+        }
+      }
+
+      .prj-img-small{
+        display: none;
+        width: 100%;
+        height: auto;
+
+        @media @phone{
+          display: block;
+        }
       }
 
       .prj-header-title-r {
