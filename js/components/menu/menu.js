@@ -5,10 +5,10 @@ class Menu {
         this.buttonClose = this.element.querySelector('.menu-button-close');
         console.log(this.buttonClose);
         this.content = this.element.querySelector('.menu-content');
-        this.buttonOpen.addEventListener('click', () => { this.toggleContent() });
+        this.buttonOpen.addEventListener('click', () => { this.toggleOpen() });
         this.buttonClose.addEventListener('click', () => { this.toggleClose() });
     }
-    toggleContent() {
+    toggleOpen() {
         this.content.classList.toggle('menu-hidden');
         this.buttonOpen.classList.add('menu-button-hidden');
         this.buttonClose.classList.remove('menu-button-hidden');
