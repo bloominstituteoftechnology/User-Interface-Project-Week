@@ -8,20 +8,32 @@
             flex-direction: column; 
             justify-content: flex-end; 
 
+            @media @phone {
+                background-image: url("../img/services/services-mobile-jumbotron.png");
+            }
+
             h1 {
                 font-size: 6.4rem; 
                 line-height: 7.5rem;
                 color: #FFFFFF;
                 font-weight: bold;
                 margin: 0 0 40px 6%;
+
+                @media @phone {
+                    line-height: 5rem; 
+                    font-size: 4.5rem;
+                }
             }
         }
         main {
             width: 85%;
             margin: 0 auto;
             
+            @media @phone {
+                width: 100%; 
+            }
             p {
-                font-size: @general-text;
+                font-size: @general-text-font-size;
                 line-height: 24px;
                 margin-top: 40px; 
                 margin-bottom: 20px;
@@ -30,7 +42,10 @@
             .tabs-services{
                 display: flex; 
                 justify-content: space-between;
+                flex-wrap: wrap;
                 margin: 30px 0;
+
+                
 
                 .service-tab{
                     width: 150px; 
@@ -41,6 +56,11 @@
                     font-weight: bold;
                     cursor: pointer;
 
+                    @media @phone {
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+
                     &:hover {
                         background-color: @general-color;
                         color: @general-background-color;
@@ -48,6 +68,7 @@
                 }
                 .tab-selected {
                     background-color: #5E9FB9;
+                    color: #FFF;
                 }
             }
 
@@ -65,10 +86,27 @@
                     }
                     .tab-content-img {
                         align-self: center; 
+
+                        .mobile {
+                            display: none;
+
+                            @media @phone {
+                                display: block;
+                            }
+                        }
+
+                        .desktop {
+                            @media @phone {
+                                display: none;
+                            }
+                        }
                     }
                 }
                 .display-tab {
                     display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    
                 }
             }
         }
