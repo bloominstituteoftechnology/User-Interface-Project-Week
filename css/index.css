@@ -1,1 +1,895 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* LESS variables */
+/* General Text */
+/* Jumbotron Headers */
+/* Sub Headers */
+/* Footer Headings */
+/* Footer Text */
+/* Navigation Logo */
+/* Expanded Navigation Text */
+/* Media query variables*/
+/* Mixins */
+/* General style */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  max-width: 1028px;
+  margin: 0 auto;
+  height: 100%;
+  font-size: 62.5%;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  background: #FFFFFF;
+  color: #222222;
+}
+/* Menu Content */
+/* Expanded Navigation */
+.hidden-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hidden-navigation div {
+  display: flex;
+  justify-content: flex-start;
+  width: 20rem;
+}
+.hidden-navigation div a {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.hidden-navigation div a:hover {
+  color: #222222;
+  text-decoration: underline;
+}
+.hidden {
+  display: none;
+}
+.expanded {
+  position: fixed;
+  z-index: 1;
+  opacity: 0.9;
+  background: #727272;
+  height: 100vh;
+  width: 81vw;
+}
+@media only screen and (max-width: 1200px) {
+  .expanded {
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .expanded {
+    width: 100vw;
+  }
+}
+/* Navigation */
+div.menu-content {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #8c8c8c;
+}
+div.menu-content h2 {
+  z-index: 2;
+  margin-left: 6rem;
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+}
+@media only screen and (max-width: 479px) {
+  div.menu-content h2 {
+    margin-left: 2rem;
+  }
+}
+div.menu-content .navigation {
+  cursor: pointer;
+  margin-right: 6rem;
+  z-index: 2;
+}
+@media only screen and (max-width: 479px) {
+  div.menu-content .navigation {
+    margin-right: 2rem;
+  }
+}
+/* Jumbotron */
+div.jumbotron {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  height: 598px;
+  background-size: 100%;
+  background-image: url('../img/home/home-jumbotron.png');
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1200px) {
+  div.jumbotron {
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.jumbotron {
+    height: 250px;
+  }
+}
+div.jumbotron h1.jumbotron-slogan {
+  margin: 7rem;
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  color: #FFFFFF;
+}
+@media only screen and (max-width: 1200px) {
+  div.jumbotron h1.jumbotron-slogan {
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.jumbotron h1.jumbotron-slogan {
+    margin-bottom: 5rem;
+    margin-left: 3rem;
+    font-size: 3.84rem;
+    line-height: 4.5rem;
+  }
+}
+/* Content */
+div.top-content,
+div.middle-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 8rem 0;
+  padding: 0 3rem;
+}
+@media only screen and (max-width: 1200px) {
+  div.top-content,
+  div.middle-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.top-content,
+  div.middle-content {
+    margin: 2rem 0;
+    flex-direction: column;
+  }
+}
+div.top-content div.content-text,
+div.middle-content div.content-text {
+  font-weight: regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media only screen and (max-width: 1200px) {
+  div.top-content div.content-text,
+  div.middle-content div.content-text {
+    align-items: center;
+  }
+}
+div.top-content div.content-text h2,
+div.middle-content div.content-text h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+div.top-content div.content-text p,
+div.middle-content div.content-text p {
+  margin: 2rem 0;
+}
+div.top-content div.content-text button,
+div.middle-content div.content-text button {
+  background: #FFFFFF;
+  border: 1px solid black;
+  padding: 1rem 2rem;
+  width: 12rem;
+}
+@media only screen and (max-width: 479px) {
+  div.top-content div.content-text button,
+  div.middle-content div.content-text button {
+    width: 100%;
+  }
+}
+div.top-content img,
+div.middle-content img {
+  display: block;
+  max-width: 410px;
+}
+@media only screen and (max-width: 1200px) {
+  div.top-content img {
+    order: -1;
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.top-content img {
+    order: -2;
+    margin-bottom: 3rem;
+  }
+}
+div.middle-content img {
+  order: -1;
+}
+@media only screen and (max-width: 1200px) {
+  div.middle-content img {
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.middle-content img {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+}
+div.bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 8rem 0;
+  font-weight: regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+@media only screen and (max-width: 1200px) {
+  div.bottom-content {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.bottom-content {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+  }
+}
+div.bottom-content h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+  letter-spacing: 0.5rem;
+}
+div.bottom-content div.bottom-content-heading {
+  margin-left: 8rem;
+}
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.bottom-content-heading {
+    margin-left: 3rem;
+  }
+}
+div.bottom-content div.project div.project-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  margin: 10rem 0;
+}
+@media only screen and (max-width: 1200px) {
+  div.bottom-content div.project div.project-banner {
+    margin: 5rem 0;
+    margin-bottom: 10rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.project div.project-banner {
+    margin: 5rem 0;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  div.bottom-content div.project div.project-banner img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.project div.project-banner img {
+    width: 100%;
+  }
+}
+div.bottom-content div.project div.project-banner div.project-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  width: 30rem;
+  background: #D8D8D8;
+  border: 1px solid #FFFFFF;
+  position: absolute;
+  top: 18rem;
+  right: 8.5rem;
+}
+@media only screen and (max-width: 1200px) {
+  div.bottom-content div.project div.project-banner div.project-tag {
+    width: 45rem;
+    right: 5rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.project div.project-banner div.project-tag {
+    width: 35rem;
+    right: 2.5rem;
+  }
+}
+div.bottom-content div.project div.project-banner div.project-tag h2 {
+  font-weight: 400;
+}
+div.bottom-content div.project p {
+  max-width: 50%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1200px) {
+  div.bottom-content div.project p {
+    margin-bottom: 5rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.bottom-content div.project p {
+    max-width: 100%;
+    width: 35rem;
+    padding: 2rem 0;
+  }
+}
+.price-tag-left {
+  top: 18rem;
+  left: 8.5rem;
+}
+@media only screen and (max-width: 1200px) {
+  .price-tag-left {
+    left: 5rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .price-tag-left {
+    left: 2.5rem;
+  }
+}
+/* Footer */
+footer {
+  background: #727272;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 479px) {
+  footer {
+    margin: 5rem 0 auto;
+    align-items: center;
+  }
+}
+footer .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 6rem 0;
+}
+@media only screen and (max-width: 479px) {
+  footer .footer {
+    flex-direction: column;
+    margin: 3rem 0;
+  }
+}
+@media only screen and (max-width: 479px) {
+  footer .location {
+    margin: 2rem 0;
+  }
+}
+footer .copyright {
+  margin: 1rem auto;
+}
+@media only screen and (max-width: 479px) {
+  footer .copyright {
+    margin-left: 6rem;
+  }
+}
+footer input {
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+  width: 100%;
+  height: 4rem;
+}
+footer input::placeholder {
+  padding-left: 1rem;
+}
+footer h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+footer p {
+  font-weight: regular;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #FFFFFF;
+}
+div.service-jumbotron {
+  background-image: url('../img/services/services-jumbotron.png');
+  height: 250px;
+}
+@media only screen and (max-width: 1200px) {
+  div.service-jumbotron {
+    height: 180px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.service-jumbotron {
+    background-image: url('../img/services/services-mobile-jumbotron.png');
+  }
+}
+div.service-jumbotron h1.service-jumbotron {
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 1200px) {
+  div.service-jumbotron h1.service-jumbotron {
+    margin-bottom: 4rem;
+  }
+}
+.service {
+  font-weight: regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  width: 85%;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+}
+.service .service-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+@media only screen and (max-width: 479px) {
+  .service .service-tabs {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+.service .service-tabs .service-tab {
+  border: 2px solid black;
+  padding: 1rem 2rem;
+  width: 18rem;
+  text-align: center;
+  font-weight: bold;
+}
+@media only screen and (max-width: 1200px) {
+  .service .service-tabs .service-tab {
+    margin: 0rem 0.5rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .service .service-tabs .service-tab {
+    margin: 1rem 0;
+    width: 100%;
+  }
+}
+.service .service-tabs .service-tab:hover {
+  background: #222222;
+  color: #ffffff;
+}
+.top-content {
+  display: flex;
+}
+@media only screen and (max-width: 1200px) {
+  .top-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .top-content .content-text {
+    order: -1;
+  }
+}
+div.contact-jumbotron {
+  background-image: url('../img/contact/contact-jumbotron.png');
+  height: 250px;
+}
+@media only screen and (max-width: 1200px) {
+  div.contact-jumbotron {
+    height: 180px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.contact-jumbotron {
+    background-image: url('../img/contact/contact-mobile-jumbotron.png');
+  }
+}
+div.contact-jumbotron h1.contact-jumbotron {
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 1200px) {
+  div.contact-jumbotron h1.contact-jumbotron {
+    margin-bottom: 4rem;
+  }
+}
+.contact {
+  font-weight: regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 10rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+@media only screen and (max-width: 1200px) {
+  .contact {
+    margin-right: 0rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0rem;
+  }
+}
+.contact .form {
+  margin-right: 10rem;
+}
+@media only screen and (max-width: 1200px) {
+  .contact .form {
+    margin-right: 2rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .contact .form {
+    margin-right: 0rem;
+  }
+}
+.contact .form h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+.contact .form h3 {
+  margin-top: 3rem;
+}
+.contact .form textarea {
+  margin-bottom: 3rem;
+}
+.contact .form p {
+  color: lightgrey;
+}
+.contact .form .box {
+  width: 40rem;
+  height: 3.5rem;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  color: grey;
+}
+@media only screen and (max-width: 1200px) {
+  .contact .form .box {
+    width: 23rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .contact .form .box {
+    width: 35rem;
+  }
+}
+.contact .form select {
+  background: #ffffff;
+}
+.contact .form .text-box {
+  height: 18rem;
+}
+.contact .form div.container {
+  margin-bottom: 1rem;
+}
+.contact .form div.container input {
+  margin-right: 1rem;
+}
+.contact .form button {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  background: #FFFFFF;
+  border: 1px solid black;
+  padding: 1rem 2rem;
+  width: 14rem;
+  height: 5rem;
+}
+@media only screen and (max-width: 479px) {
+  .contact .form button {
+    width: 100%;
+  }
+}
+.contact .office-location h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+.contact .office-location h3 {
+  font-weight: bold;
+}
+@media only screen and (max-width: 479px) {
+  .contact .office-location {
+    margin-top: 5rem;
+    margin-right: 15rem;
+  }
+}
+.contact .office-location .location {
+  margin: 4rem 0;
+}
+div.about-jumbotron {
+  background-image: url('../img/about/about-jumbotron.jpg');
+  height: 250px;
+}
+@media only screen and (max-width: 1200px) {
+  div.about-jumbotron {
+    height: 180px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.about-jumbotron {
+    background-image: url('../img/about/about-jumbotron.jpg');
+  }
+}
+div.about-jumbotron h1.about-jumbotron {
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 1200px) {
+  div.about-jumbotron h1.about-jumbotron {
+    margin-bottom: 4rem;
+  }
+}
+.about-philo {
+  font-weight: regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  width: 85%;
+  margin: 4rem auto;
+}
+.about-philo h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+  margin-bottom: 2rem;
+}
+.about-philo .team {
+  font-weight: regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-philo .team .person {
+  margin: 3rem;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  box-shadow: 0 11px 14px rgba(0, 0, 0, 0.1);
+}
+.about-philo .team .person .person-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+  text-align: center;
+}
+.about-philo .team .person .person-detail h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+.about-philo .team .person .person-detail p {
+  width: 50%;
+}
+.about-philo .team div.person-1 {
+  background-image: url('../img/about/p-josh.jpg');
+}
+.about-philo .team div.person-2 {
+  background-image: url('../img/about/p-josh.jpg');
+}
+.about-philo .team div.person-3 {
+  background-image: url('../img/about/p-josh.jpg');
+}
+.about-philo .team div.person-4 {
+  background-image: url('../img/about/p-josh.jpg');
+}
+.about-philo .team div.person-5 {
+  background-image: url('../img/about/p-josh.jpg');
+}
+div.project-jumbotron {
+  background-image: url('../img/projects/project.jpg');
+  height: 250px;
+}
+@media only screen and (max-width: 1200px) {
+  div.project-jumbotron {
+    height: 180px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  div.project-jumbotron {
+    background-image: url('../img/projects/project.jpg');
+  }
+}
+div.project-jumbotron h1.project-jumbotron {
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 1200px) {
+  div.project-jumbotron h1.project-jumbotron {
+    margin-bottom: 4rem;
+  }
+}
+.carousel {
+  font-weight: regular;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 3rem 0;
+}
+.carousel img {
+  height: auto;
+  max-width: 100%;
+}
+.carousel a {
+  position: absolute;
+  font-size: 10rem;
+  color: #FFFFFF;
+  z-index: 100;
+}
+.carousel .left-arrow {
+  left: 5rem;
+}
+.carousel .right-arrow {
+  right: 5rem;
+}
