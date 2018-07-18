@@ -1,7 +1,7 @@
 
-// Nav Bar
+// Nav Bar //refactor..
 let navItems = document.querySelector('.navItems');
-let test = document.querySelector('.queryTest');
+
 let navHome = document.querySelector('.home');
 let navServices = document.querySelector('.services');
 let navContact = document.querySelector('.contact');
@@ -9,7 +9,6 @@ navHome.style.display = "none";
 navServices.style.display = "none";
 navContact.style.display = "none";
 
-console.log(test);
 
 $(document).ready(function() {
     $(".hamburger").click(function() {
@@ -19,7 +18,6 @@ $(document).ready(function() {
       $(".contact").fadeIn();
       $(".services").fadeIn(1000);
       $(".home").fadeIn(2000);
-      $(".test").style.color = "copper";
     }
 
 
