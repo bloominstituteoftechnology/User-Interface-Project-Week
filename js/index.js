@@ -21,11 +21,6 @@ class Tabs {
   }
 }
   
-  
-  
-  
-  
-  
   class TabLink {
     constructor(element, parent){
       this.element = element;
@@ -47,8 +42,6 @@ class Tabs {
     }
   }
   
-  
-  
   class TabCard {
     constructor(element){
       this.element = element;
@@ -61,10 +54,6 @@ class Tabs {
     }
   }
   
-  
-  
-  
-  
   let tabsArray = document.querySelectorAll('.service-tabs');
   tabsArray = Array.from(tabsArray).map( item => new Tabs( item ));
 
@@ -72,4 +61,10 @@ class Tabs {
   for (let i = 1; i < cont.length; i++) {
     cont[i].style.display = "none";
   }
+
+  let page = document.querySelector('.overlay')
+  let menu = document.querySelector('.burger')
+  menu.addEventListener('click', () => {
+    page.classList.toggle('open')
+  })
   

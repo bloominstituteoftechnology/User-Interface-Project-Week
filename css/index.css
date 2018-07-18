@@ -155,7 +155,11 @@ body {
   max-width: 1000px;
 }
 .menu {
-  background: lightslategray;
+  position: fixed;
+  width: 100%;
+  max-width: 1000px;
+  z-index: 4;
+  background: rgba(119, 136, 153, 0.9);
   height: 2.5em;
   color: white;
   display: flex;
@@ -168,6 +172,9 @@ body {
 .menu img {
   margin-right: 8%;
 }
+.menu img:hover {
+  cursor: pointer;
+}
 @media (max-width: 400px) {
   .menu h1 {
     margin-left: 2%;
@@ -179,7 +186,7 @@ body {
 .jumbo {
   position: relative;
 }
-.jumbo img {
+.jumbo .metal {
   width: 100%;
 }
 .jumbo .text {
@@ -187,7 +194,7 @@ body {
   color: white;
   position: absolute;
   font-weight: 700;
-  bottom: 1em;
+  bottom: .5em;
   left: 1.25em;
   line-height: 1.25em;
 }
@@ -352,6 +359,7 @@ body {
 .main-mid .villas,
 .main-mid .outskirts {
   position: relative;
+  z-index: 0;
 }
 @media (min-width: 401px), (max-width: 1000px) {
   .main-mid .villas,
@@ -543,52 +551,6 @@ body {
   margin: 6% 0 2%;
   align-self: center;
 }
-.jumboservice {
-  position: relative;
-}
-.jumboservice .glasstop {
-  width: 100%;
-}
-.jumboservice .text {
-  font-size: 4em;
-  color: white;
-  position: absolute;
-  font-weight: 700;
-  bottom: .5em;
-  left: 1.25em;
-  line-height: 1.25em;
-}
-@media (max-width: 400px) {
-  .jumboservice .text {
-    font-size: 2.5em;
-    bottom: .75em;
-    left: .5em;
-  }
-}
-.servicemenu {
-  position: absolute;
-  width: 100%;
-  background: rgba(119, 136, 153, 0.9);
-  height: 2.5em;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.servicemenu h1 {
-  margin-left: 8%;
-}
-.servicemenu img {
-  margin-right: 8%;
-}
-@media (max-width: 400px) {
-  .servicemenu h1 {
-    margin-left: 2%;
-  }
-  .servicemenu img {
-    margin-right: 2%;
-  }
-}
 .intro {
   margin: 5% 7%;
   line-height: 180%;
@@ -606,6 +568,11 @@ body {
   align-items: center;
   font-weight: 700;
 }
+.service-tabs .tab:hover {
+  cursor: pointer;
+  background: #222222;
+  color: white;
+}
 .service-content h1 {
   margin: 7% 0 0 7%;
   font-weight: 700;
@@ -621,4 +588,32 @@ body {
 .active-tab {
   background: #5E9FB9;
   color: white;
+}
+.overlay {
+  display: none;
+}
+.open {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: rgba(119, 136, 153, 0.95);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.open .overlay-menu {
+  font-size: 3em;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  line-height: 180%;
+}
+.open .overlay-menu a {
+  color: white;
+}
+.open .overlay-menu .home,
+.open .overlay-menu .serv {
+  color: #645b5b;
 }
