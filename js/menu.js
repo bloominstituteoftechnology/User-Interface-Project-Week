@@ -10,3 +10,11 @@ const toggleMenu = () => {
     console.log("toggleMenu")
     menu.classList.toggle("menu--open");
   })
+
+
+  let x = document.querySelector(".x");
+  let menuClose = document.querySelector(".menu-button"); 
+  menuClose.addEventListener("click", (event)=>{
+    console.log("click")
+
+  })
