@@ -1,0 +1,359 @@
+
+.webpage {
+    font-family: @general-font;
+    
+    header{
+        background-color: #9EA8B1; 
+        padding: 12px 6%;
+        overflow: hidden;
+	    position: fixed;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+        opacity: 0.92; 
+
+        nav { 
+            font-weight: bold; 
+            font-size: 1.6rem;
+            margin-right: 10%;
+
+            .navigation{
+                display: flex;
+                justify-content: space-between;
+
+                .logo {
+                    font-size: 2.4rem;
+                    font-weight: bold;  
+                    color: #FFF;
+                    text-decoration: none;
+                    margin-left: 10%; 
+                }
+                .closed-hamburger {
+                    display: none;
+                    height: 25px;
+                    margin-top: 5px;
+                }
+                .open-hamburger {
+                    height: 25px;
+                    margin-top: 5px
+                }
+                
+            }
+
+            .menu-content {
+                background-color:  #9EA8B1;
+                height: 100vh;
+                display: flex; 
+                flex-direction: column;  
+                justify-content: center;
+                align-items: center;   
+                margin-left: 6%;
+
+                a {
+                    color: #FFF; 
+                    font-size:4.8rem; 
+                    line-height: 85px; 
+                    font-weight: bold; 
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #222222;
+                    }
+                }
+            }
+
+            // .menu-hidden {
+            //     display: none;
+            // }
+        }
+    }
+    main .main-page-jumbotron {
+        position: relative;
+        
+        .desktop-jumbo {
+            width: 100%; 
+            height: 100vh;
+
+            @media @phone {
+                display: none;
+            }
+        }
+
+        .mobile-jumbo {
+            display: none; 
+
+            @media @phone {
+                display: block; 
+                width: 100%;
+            }
+        }
+
+        h1 {
+            font-size: 6.4rem;
+            color: #FFFFFF;
+            line-height: 7.5rem;
+            margin-left: 6%; 
+            margin-bottom: 30px;
+            font-weight: bold; 
+            z-index: 1;
+            position: absolute;
+            bottom: 0;
+
+            @media @phone {
+                font-size: 4.4rem;
+                line-height: 5rem;
+            }
+        }
+    }
+
+    main {
+
+
+        .section {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 85%;
+
+            @media @tablet {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            @media @phone {
+                display:block;
+                width: 100%;
+            }
+
+            .section-text{
+                margin-right: 5%;
+                display:flex;
+                flex-direction:column;
+                justify-content: space-between;
+
+                @media @tablet {
+                    margin: 20px 0;
+                }
+
+                @media @phone {
+                    margin-right: 0;
+                }
+
+                h2 {
+                    font-weight: bold; 
+                    font-size: 2.8rem;
+                    margin-bottom: 15px;
+
+                    @media @tablet {
+                        text-align: center;
+                    }
+                }
+
+                p {
+                    font-size: 1.6rem;
+                    line-height: 24px;
+
+                    @media @tablet {
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }
+                }
+            
+
+                .button {
+                    width: 150px; 
+                    border: 1px solid @general-color;
+                    font-size: 1.6rem;
+                    text-align: center; 
+                    margin-top: 40px; 
+                    cursor: pointer; 
+                    padding: 13px; 
+                    
+
+                    @media @tablet {
+                        width: 50%;
+                        margin: 0 auto;
+                    }
+
+                    @media @phone {
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        background-color: @general-color;
+                        color: @general-background-color;
+                    }
+                }
+            }
+            .section-img .mobile {
+                display: none;
+
+                @media @phone {
+                    display: flex;
+                    width: 100%; 
+                    height: 200px;
+                }
+            }
+            .section-img .desktop {
+                @media @phone {
+                    display: none;  
+                    width: 100%
+                }
+                
+            }
+        }
+
+        .section-1 {
+            flex-direction: row-reverse;
+
+            @media @tablet {
+                flex-direction: column; 
+            }
+
+            @media @phone {
+                display: block;
+            }
+        }
+        .section-2 .section-text{
+            margin-left: 5%; 
+
+            @media @tablet {
+                margin-left:0;
+            }
+
+            @media @phone {
+                margin-left: 0;
+            }
+        }
+        .section-3 {
+            width: 85%; 
+            margin: 0 auto;
+
+            @media @phone {
+                width: 100%;
+            }
+
+            h2 {
+                font-weight: bold; 
+                font-size: 2.8rem;
+                margin-top: 120px;
+            }
+            .img-text-block {
+                .img-villas {
+                    background-image: url("../img/home/home-villas-img.png");
+                    background-size: cover;
+                    height: 220px; 
+                    display: flex;
+                    justify-content: flex-end; 
+                    align-items: flex-end;
+                    margin: 30px 0 80px 0; 
+
+                    @media @phone {
+                        background-image: url("../img/home/home-mobile-villas-img.png");
+                        height: 200px;
+                        justify-content:center;
+                    }
+                }
+                .img-outskirts {
+                    background-image: url("../img/home/home-outskirts-img.png");
+                    height: 220px; 
+                    background-size: cover; 
+                    display: flex;
+                    align-items: flex-end;
+                    margin: 80px 0; 
+
+                    @media @phone {
+                        background-image: url("../img/home/home-mobile-outskirts-img.png");
+                        height: 220px; 
+                        justify-content: center;
+                    }
+                }
+                .img-blocks {
+                    background-image: url("../img/home/home-the-blocks-img.png");
+                    height: 220px; 
+                    background-size: cover; 
+                    display: flex; 
+                    justify-content: flex-end; 
+                    align-items: flex-end;
+                    margin: 80px 0; 
+
+                    @media @phone {
+                        background-image: url("../img/home/home-mobile-the-blocks-img.png"); 
+                        height: 220px;
+                        justify-content: center;
+                    }
+                }
+                h3 {
+                    background-color: #D8D8D8; 
+                    width: 250px; 
+                    font-size: 2.2rem;
+                    padding: 25px;
+                    letter-spacing: 7px;
+                    position: absolute;
+                }
+                p {
+                    width: 50%; 
+                    margin: 0 auto; 
+                    font-size: @general-text-font-size;
+                    line-height: 24px;
+                    margin-bottom: 30px; 
+
+                    @media @tablet {
+                        width: 75%;
+                    }
+
+                    @media @phone {
+                        width: 100%; 
+                    }
+                }
+
+            }
+        }
+    }
+    footer {
+        margin-top: 100px; 
+        background-color: #828282;
+        padding: 6%;
+        padding-bottom: 30px;
+        
+        .footer-main-content {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.4rem; 
+            line-height: 26px; 
+            color: #FFFFFF; 
+            width: 85%;
+            margin: 0 auto;
+        
+            @media @phone {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .location{
+                margin: 0 4%;
+                
+                h4{
+                    font-size: 2rem; 
+                    line-height: 24px;
+                    margin-bottom: 10px;
+                }
+    
+                p{
+                    margin-top: 10px;
+                    font-size: 1.2rem;
+                }
+            }
+
+            
+        }
+    .copyright {
+        font-size: 1.2rem; 
+        color: #FFFFFF;
+        margin-top: 40px;
+        text-align: center;
+    }
+    }
+}

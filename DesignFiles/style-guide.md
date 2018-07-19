@@ -37,7 +37,7 @@ Background: #828282
 - Font Weight: Bold
 - Font Size: 28px
 - Color: #222222
-   
+
 ### Footer Headings
 - Font Weight: Regular
 - Font Size: 20px

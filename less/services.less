@@ -1,0 +1,134 @@
+.webpage {
+    .container {
+        .services-page-jumbotron {
+            background-image: url("../img/services/services-jumbotron.png"); 
+            height: 50vh; 
+            background-size: cover; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-end; 
+
+            @media @phone {
+                background-image: url("../img/services/services-mobile-jumbotron.png");
+            }
+
+            h1 {
+                font-size: 6.4rem; 
+                line-height: 7.5rem;
+                color: #FFFFFF;
+                font-weight: bold;
+                margin: 0 0 40px 6%;
+
+                @media @phone {
+                    line-height: 5rem; 
+                    font-size: 4.5rem;
+                }
+            }
+        }
+        main {
+            width: 85%;
+            margin: 0 auto;
+            
+            @media @phone {
+                width: 100%; 
+            }
+            p {
+                font-size: @general-text-font-size;
+                line-height: 24px;
+                margin-top: 40px; 
+                margin-bottom: 20px;
+            }
+
+            .tabs .tabs-services{
+                display: flex; 
+                justify-content: space-between;
+                flex-wrap: wrap; 
+                margin: 30px 0;
+            
+                .service-tab{
+                    width: 150px; 
+                    padding: 10px; 
+                    border: 1px solid @general-color;
+                    text-align: center; 
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    @media @tablet {
+                        width:45%;
+                        margin-bottom: 20px;
+                        margin-right: 10px;
+                        justify-content: center;
+                    }
+
+                    @media @phone {
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+
+                    
+
+                    &:hover {
+                        background-color: @general-color;
+                        color: @general-background-color;
+                    }
+                }
+                .tab-selected {
+                    background-color: #5E9FB9;
+                    color: #FFF;
+                }
+            }
+
+            .tabs-content {
+                .tab-content {
+                    display: none;
+
+                    .tab-content-text{
+                        margin-right: 20px;
+                        
+                        h3 {
+                            font-weight: bold; 
+                            font-size: 2.8rem;
+                        } 
+                    }
+                    .tab-content-img {
+                        align-self: center; 
+
+                        @media @tablet {
+                            margin-top: 20px;
+                        }
+
+                        .mobile {
+                            display: none;
+
+                            @media @phone {
+                                display: block;
+                            }
+                        }
+
+                        .desktop {
+                            @media @phone {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .display-tab {
+                    display: flex;
+
+                    @media @tablet {
+                        flex-direction: column;
+                    }
+
+                    @media @phone {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                    
+                    
+                }
+            }
+        }
+        
+    }
+}
