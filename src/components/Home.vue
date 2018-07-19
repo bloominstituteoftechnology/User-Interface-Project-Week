@@ -1,4 +1,10 @@
 <template>
+<div>
+<Jumbotron :background-img="imgURL" :addClass="false">
+   Integrity,
+			  <br> Excellence,
+			  <br> Progress.
+</Jumbotron>
   <div class="container">
     <div class="box">
 		<div class="row align-items-center">
@@ -94,11 +100,20 @@
 		</div>
 	</div>
   </div>
+  </div>
 </template>
 
 <script type = "text/javascript" >
-
+import Jumbotron from './Jumbotron.vue'
 export default {
+  data() {
+    return {
+      imgURL: require('../assets/home/home-jumbotron.png'),
+    }
+  },
+  components: {
+     Jumbotron
+  }
 };
 </script>
 

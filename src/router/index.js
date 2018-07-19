@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
-
-import Layout from '@/components/Layout';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
 import Services from '@/components/Services';
 
@@ -13,24 +13,27 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Layout',
-      component: Layout,
-      children: [
-        {
-          path: '',
-          component: Home,
-        },
-        {
-          path: '/contact',
-          name: 'Contact',
-          component: Contact,
-        },
-        {
-          path: '/services',
-          name: 'Services',
-          component: Services,
-        }
-      ]
+      components: {
+        header: Header,
+        page: Home,
+        footer: Footer,
+      },
     },
-  ],
+    {
+      path: '/contact',
+      components: {
+        header: Header,
+        page: Contact,
+        footer: Footer,
+      }
+    },
+    {
+      path: '/services',
+      components: {
+        header: Header,
+        page: Services,
+        footer: Footer,
+      }
+    }
+  ]
 });
