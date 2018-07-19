@@ -7,6 +7,7 @@ class Dropdown {
         this.button = this.element.querySelector(".dropdown-btn");
         this.content = this.element.querySelector(".dropdown-content");
         this.button.addEventListener("click", () => { this.toggleContent() });
+       
 
     }
     toggleContent() {
@@ -82,6 +83,7 @@ class TabsItem {
     }
 
 }
+
 
 
 let tabs = document.querySelectorAll(".tabs");
