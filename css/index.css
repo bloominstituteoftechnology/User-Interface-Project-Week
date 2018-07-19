@@ -157,8 +157,11 @@ nav .menu {
   padding: 15px 5% 10px 0;
   right: 0;
 }
-.imgContainer .jumbotron {
+.imgContainer {
+  border: 1px solid red;
   position: relative;
+}
+.imgContainer .jumbotron {
   z-index: -1;
   width: 100%;
   padding: 0;
@@ -168,25 +171,21 @@ nav .menu {
     display: none;
   }
 }
-.jumbotron .jumbotronMobile {
+.imgContainer .jumbotronMobile {
   width: 100%;
-  position: absolute;
   z-index: -1;
   padding: 0;
 }
-@media (min-width: 321px) {
-  .jumbotron .jumbotronMobile {
+@media (min-width: 320px) {
+  .imgContainer .jumbotronMobile {
     display: none;
   }
 }
 .textInImg {
+  position: absolute;
+  top: 270px;
+  left: 100px;
   font-family: Roboto;
-  padding: 270px 0 100px 109px;
-}
-@media (max-width: 320px) {
-  .textInImg {
-    padding: 0;
-  }
 }
 .textInImg p {
   font-weight: bold;
@@ -368,14 +367,12 @@ nav .menu {
   margin-bottom: 200px;
 }
 .footer {
-  padding: 75px 0 20px 60px;
+  padding: 40px 0 20px 60px;
   color: #FFFFFF;
 }
 @media (max-width: 320px) {
   .footer {
     flex-direction: column;
-    justify-content: ;
-    align-items: ;
     padding: 20px 0 0 0;
   }
 }
@@ -410,12 +407,14 @@ nav .menu {
   color: #FFFFFF;
 }
 .main-content {
-  margin-top: 40px;
-  padding-bottom: 20px;
   font-size: 1.1rem;
 }
 .servicesTextContainer {
   padding-bottom: 20px;
+}
+.servicesText {
+  margin-top: 35px;
+  font-size: 1.2rem;
 }
 .buttonServices {
   width: 150px;
@@ -425,7 +424,52 @@ nav .menu {
   background: #FFFFFF;
 }
 .buttonServices:hover {
-  background: #222222;
+  background: #5E9FB9;
   color: #FFF;
   cursor: pointer;
+}
+.tabs {
+  width: 100%;
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+  margin-bottom: 55px;
+}
+.tabs .tabs-item {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+.tabs .tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs .tabs-item-selected {
+  display: block;
+}
+.tabs-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.tabs-link-selected {
+  z-index: 2;
+  background-color: #5E9FB9;
+}
+.tabs .tabs-link-selected:hover {
+  background-color: #ffffff;
+}
+.tabs-item-description {
+  font-size: 1.2rem;
+  width: 50%;
+}
+.tabsImage {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: -1;
 }
