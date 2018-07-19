@@ -12,13 +12,13 @@
       url(../../img/about/about-jumbotron.jpg);
     background-position: center;
     background-size: cover;
+    position: relative;
   }
 
   &__profile {
     flex-basis: 60%;
     min-height: 100%;
     background-color: rgba($color-white, 0.75);
-    // transform: translateX(90%);
     box-shadow: 3rem 0 2rem rgba(#000, 1);
     clip-path: polygon(0 0, 100% 0, 83.33% 100%, 0 100%);
     padding: 6rem;
@@ -28,12 +28,51 @@
 
   &__testimonials {
     flex-basis: 40%;
-    padding: 5rem;
+    padding: 0 5rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+  }
+
+  &__testimonial {
+    color: $color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    i {
+      font-size: 8rem;
+      margin-right: 1rem;
+    }
   }
 
   &__profile-img {
     @include img-repsonsive;
     border-radius: 50%;
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+  }
+
+  &__scroll-down {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 5rem;
+    color: $color-white;
+
+    i {
+      cursor: pointer;
+    }
   }
 }
 
