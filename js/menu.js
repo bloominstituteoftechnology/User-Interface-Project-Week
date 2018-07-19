@@ -8,13 +8,12 @@ const toggleMenu = () => {
   
   menuButton.addEventListener("click", (event)=>{
     console.log("toggleMenu")
-    menu.classList.toggle("menu--open");
+    let isOpen = menu.classList.toggle("menu--open");
+    if (isOpen) {
+      menuButton.src = './img/nav-hamburger-close.png'; 
+    } else { 
+      menuButton.src = './img/nav-hamburger.png'; 
+    }
+  
   })
 
-
-  let x = document.querySelector(".x");
-  let menuClose = document.querySelector(".menu-button"); 
-  menuClose.addEventListener("click", (event)=>{
-    console.log("click")
-
-  })
