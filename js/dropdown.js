@@ -29,22 +29,26 @@
 // below uses no classes
 // actual buttons on the nav bars
 const button = document.querySelector(".dropdown-button");
-const mobButton = document.querySelector(".mob-dropdown-button")
+const navBurger = document.querySelector(".nav-burger");
+
+
 
 // gets divs containing hidden dropdown
 const navButton = document.querySelector(".nav-text-container");
-const mobNavButton = document.querySelector(".mob-nav-text-container");
 
-const navBurger = document.querySelector(".nav-burger");
-const mobNavBurger = document.querySelector(".mob-nav-burger");
+
+// src vars
+const navBurgerImgClosed = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png";
+const navBurgerImgOpen = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger.png";
+
 
 button.addEventListener("click", () => {
         navButton.classList.toggle("dropdown-hidden");
-        if (navBurger.src === "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png") {
-            navBurger.src = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger.png";
+        if (navBurger.src === navBurgerImgClosed) {
+            navBurger.src = navBurgerImgOpen;
         }
         else {
-            navBurger.src = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png";
+            navBurger.src = navBurgerImgClosed;
         }
 })
 
