@@ -98,21 +98,9 @@ const toggleMenu = () => {
     menu.classList.toggle("menu--open");
 };
 
-const closeMenu = () => {
-    //toggle the "menu--close" class
-    menu.classList.toggle("menu--open");
-};
-
-//------------//
-
-//need to change this part so that clicking on the x removes the full screen navigation  
-
-//------------//
-
-
-//start here:  create a reference to the ".menu" class
+//start here:  create a reference to the "nav" class
 const menu = document.querySelector(".nav");
-
+console.log(menu);
 
 //create a reference to the ".menu-button" class
 const menuButton = document.querySelector(".menu-button");
@@ -120,12 +108,6 @@ menuButton.addEventListener('click', ()=> {
     console.log("menu-button was clicked")
 });
 
-const closeButton = document.querySelector(".close-button");
-closeButton.addEventListener('click',() => {
-    console.log("close-button was clicked")
-});
 
 //using the menu button reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', toggleMenu)
-
-closeButton.addEventListener('click', closeMenu)
