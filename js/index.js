@@ -46,7 +46,22 @@ class TabItem{
     }
 }
 let tabs=document.querySelectorAll('.tabs');
-tabs=Array.from(tabs).map((tab)=>new Tabs(tab));
-
-
+tabs=Array.from(tabs).map(tab=>new Tabs(tab));
+class DropDown {
+    constructor(element) {
+        this.element=element;
+        this.button=this.element.querySelector('.dropdown-button');
+        this.content=this.element.querySelector('.dropdown-content');
+        this.button.addEventListener('click',()=>this.toggleDropDownMenu())
+    }
+    toggleDropDownMenu() {
+        if (this.content.classList.contains('dropdown-hidden')) {
+            TweenLite.to(this.content, 1, {css:{className:'-=dropdown-hidden'}, ease: Elastic.easeOut} );
+          } else {
+            TweenLite.to(this.content, 1, {css:{className:'+=dropdown-hidden'}, ease: Elastic.easeIn} );
+          }
+    }
+}
+let dropdowns=document.querySelectorAll('.dropdown');
+dropdowns=Array.from(dropdowns).map(dropdown=>new DropDown(dropdown));
 
