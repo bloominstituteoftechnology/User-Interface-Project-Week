@@ -56,10 +56,10 @@ class TabCard {
     }
 }
 
-
 let tabs = document.querySelectorAll('.tabs');
 tabs = Array.from(tabs).map( tab => new Tabs(tab));
 
+// navigation menu
 
 const toggleMenu = () => {
     menu.classList.toggle('menu--open');
@@ -67,6 +67,10 @@ const toggleMenu = () => {
 
 const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-button');
+const menuClose = document.querySelector('.menu-close');
 menuButton.addEventListener('click', (event) => {
+    toggleMenu();
+})
+menuClose.addEventListener('click', (event) => {
     toggleMenu();
 })
