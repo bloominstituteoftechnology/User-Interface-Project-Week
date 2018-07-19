@@ -37,7 +37,7 @@ const mobNavButton = document.querySelector(".mob-nav-text-container");
 
 const navBurger = document.querySelector(".nav-burger");
 const mobNavBurger = document.querySelector(".mob-nav-burger");
-console.log(navBurger.src)
+
 button.addEventListener("click", () => {
         navButton.classList.toggle("dropdown-hidden");
         if (navBurger.src === "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png") {
