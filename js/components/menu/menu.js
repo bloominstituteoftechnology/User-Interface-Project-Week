@@ -27,7 +27,15 @@ menus = Array.from(menus).map( menu => new Menu(menu));
 
 
 
+let boxes = document.querySelectorAll('.box');
+console.log(boxes)
 
+
+boxes.forEach((box) => {
+    box.addEventListener('click', () => {
+        box.classList.toggle('shake');
+    });
+});
 
 
 
