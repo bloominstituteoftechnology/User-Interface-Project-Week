@@ -48,7 +48,7 @@ class Tabs {
     }
     selectCard(){
       this.element.style.display = null;
-      // TweenLite.from(this.element, 1, {css:{opacity:0}},{css:{opacity:100}} )
+      // TweenLite.from(this.element, 1, {css:{opacity:0}},{css:{opacity:100}} );
     }
     deselectCard(){
       this.element.style.display = 'none';
