@@ -1,7 +1,9 @@
 
 
 // GENERAL
-
+// html {
+//   font-size: 62.5%;  
+// }
 body {
     font-family: 'Roboto', Arial, sans-serif;
     color:  #222222;
@@ -11,7 +13,6 @@ body {
     font-size: 1.6rem;
     line-height: 2.4rem;
 }
-
 .nav{
     display: flex;
     background-color:#9499a2e2;
@@ -27,11 +28,40 @@ body {
         font-size: 1.8rem;
         font-weight: 700;
     }
-    img {
+    .nav-hamburger {
         margin-right: 6rem;
         height: 1.5rem;
     }
 }
+
+.overlay {
+     height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background-color: #9499a2e2
+    // overlay-content {
+    // position: relative;
+    // top: 25%;
+    // width: 100%;
+    // text-align: center;
+    // margin-top: 1.875rem;
+    }
+    a {
+        padding: 8px;
+        font-weight: bold;
+        font-size: 3rem;
+        line-height: 5.3125rem;
+        color: white;
+        &:hover {
+
+        }
+    }
+// }
 // JUMBOTRON
 .jumbotron {
     width: 100%;
@@ -56,6 +86,7 @@ body {
     margin: 5rem 7rem;
     .top-content {
         display: flex;
+        flex-wrap: wrap;
        .img-1 {
             padding-left: 2rem;
         }
@@ -67,6 +98,10 @@ body {
             font-size: 1rem;
             line-height: 1.4rem;
             margin-top: 2.5rem;
+
+            @media @tablet {
+                width: 100%;
+            }
             p {
                 margin-top: 2rem;
             }
@@ -78,8 +113,13 @@ body {
                 padding: 1rem;
             }
         }
+        .img-content {
+            @media @tablet {
+                width: 100%;
+            }
+        }
     }
-
+ 
     h1 {
         font-size: 1.75rem;
         font-weight: @bold;
@@ -131,11 +171,53 @@ body {
 
 footer {
     background: #828282;
-    .foot (
-        // position: absolute;
+    height: 25%;
+    // display: flex;
+    .foot {
+    // border: 1px red solid;
+    top: 2rem;
+    padding: 3rem 4rem .5rem 4rem;
+    display: flex;
         .footer-content {
-           .desktop-margins();
-           font-color: white;
+           border: solid greenyellow 2px;
+           color: white;
+           width: 40%;
+           
+           h3 {
+               font-weight: 400px;
+               font-size: 1.25rem;
+               line-height: 1.625rem;
+           }
+           h5 {
+               font-size: 12px;
+           }
+           form {
+            //    display: flex;
+                input {
+                    border-radius: 5px;
+                    width: 300px;
+                    height:35px;
+                    color: rgba(128, 128, 128, 0.576);
+                    font-size: 14px;
+                }
+           }
         }
-    )
+        .cities {
+            // border: 2px purple solid;
+            width: 20%;
+            .footer-texts();
+            // text-align: center;
+            h3 {
+                .footer-headings();
+            }
+        }
+    }
+    
+    .bottom {
+        h5{
+            text-align: center;
+            font-size: 12px;
+            color: @white;
+        }
+    }
 }
