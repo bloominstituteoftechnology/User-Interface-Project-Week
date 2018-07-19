@@ -1,6 +1,7 @@
 /* Home Page LESS File */
 h2 {
     font-size: 24px;
+    font-weight: bold;
 }
 
 h4 {
@@ -9,16 +10,16 @@ h4 {
 
 .container {
     max-width: 1024px;
-    background-size: cover;
-    margin: 0 auto;
-    
 
     .Home-Page-Content {
         .jumbotron-div {
             position: relative;
             z-index: 20;
             width: 100%;
-            // border: solid RED;
+
+            .mobile-jumbotron {
+                display: none;
+            }
         }
 
         .inspiring-text {
@@ -51,6 +52,10 @@ h4 {
                 color: white;
             }
         }
+
+        .top-mobile-image {
+            display: none;
+        }
     }
 
     .main-content {
@@ -61,6 +66,10 @@ h4 {
         .overlap {
             position: relative;
             z-index: 20;
+
+            .middle-mobile-image {
+                display: none;
+            }
         }
 
         .project-title {
@@ -92,13 +101,26 @@ h4 {
     
 
 /*================= M O B I L E    V I E W ============ */
-@media (max-width: 400px) {
+@media (max-width: 405px) {
     .my-menu {
         padding: 5px 20px;
     }
 
     .container {  
         .Home-Page-Content {
+            .jumbotron-div {
+
+                .home-jumbotron {
+                    display: none;
+                }
+
+                .mobile-jumbotron {
+                    display: inline-flex;
+                    width: 100%;
+                }
+            }
+
+
             .inspiring-text {
                 margin: -180px 20px 0;
                 font-size: 44px;
@@ -111,10 +133,21 @@ h4 {
         max-width: 300px;
     
         .general-info {
-            padding: 20px 0;
+            height: 580px;
+            padding:  0;
+            display: flex;
+            align-items: flex-end;
 
             div {
-                margin: 10px 5px;
+                margin: 10px 5px 0;
+        
+                .top-image {
+                    display: none;
+                }
+
+                .top-mobile-image {
+                    display: block;
+                }
             }
     
             .my-button {
@@ -130,8 +163,18 @@ h4 {
 
         .main-content {
             .main-content-title {
-                margin: 0 15px;
+                margin: 30px 15px 20px;
+
             }
+
+            .middle-image {
+                display: none;
+            }
+
+            .overlap .middle-mobile-image {
+                display: block;
+            }
+                
 
             .project-title {
                 letter-spacing: 6px;
@@ -144,4 +187,3 @@ h4 {
         }
     }
 }
-
