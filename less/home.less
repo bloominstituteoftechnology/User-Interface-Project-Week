@@ -2,9 +2,47 @@
 
 
 .container{
-    justify-content: center;
     max-width: 1024px;
+    position: relative;
+
+    .display-flex {
+        display:flex;
+    }
+
+    .visibility{
+        visibility:visible;
+    }
+    .hidden{
+        visibility: hidden;
+    }
+
+    .menu-btn{
+        margin-left: 840px;
+        margin-right:55px;
+        cursor: pointer;
+
+        @media @mobile{
+            margin-left: 280px;
+            margin-right:55px;
+
+        }
   }
+  .close-btn{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    margin-top:20px;
+    margin-left: 845px;
+    margin-right:55px;
+    cursor: pointer;
+
+        @media @mobile{
+            margin-left: 280px;
+            margin-right:55px;
+
+        }
+    }
+}
   
   .container-fluid{
     background-color:gray;
@@ -25,21 +63,34 @@
       }
 
   }
-  
-  .nav {
-    justify-content: flex-end;
-    margin-right: 82px;
 
-    @media @mobile{
-        margin-right:15px;
-    }
-    a{
-      color:white;
-    }
-    #dropdownLink{
-        
-    }
+  .main-nav {
+    border: 1px solid red;
+
+    display: none;
+    height: 100%;
+    flex-direction:column;
+
+  @media @mobile{
+      margin-right:15px;
   }
+  a{
+      margin: 10px;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      text-decoration: none;
+    color:white;
+
+    &:hover{
+        background: black;
+        text-decoration: underline;
+
+    
+        }
+    }
+}
+
 #jumbo-home {
     @media @mobile {
         height: 30vh;
