@@ -4,18 +4,19 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.container.home-container {
+.home-container {
   width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-flow: column;
   padding-left: 0px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.container.home-container h4 {
+.home-container h4 {
   font-size: 1.5rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.container.home-container .menu {
+.home-container .menu {
   position: fixed;
   z-index: 1001;
   top: 0px;
@@ -28,20 +29,46 @@
   background-color: #9AA5B0;
   color: #fff;
 }
-.container.home-container .menu .menu-h4 {
+.home-container .menu .menu-h4 {
   margin-left: 100px;
 }
-.container.home-container .menu .hamburger {
+.home-container .menu .hamburger {
   width: 32px;
   height: 21px;
   background-image: url('../img/nav-hamburger.png');
   margin-right: 100px;
   border-radius: 2px;
 }
-.container.home-container .homepage-content .header-content img.banner-img {
-  width: 1000px;
+@media screen and (max-width: 405px) {
+  .home-container .menu {
+    width: 405px;
+  }
 }
-.container.home-container .homepage-content .header-content .slogan {
+.home-container .homepage-content {
+  margin: 0;
+}
+.home-container .homepage-content .header-content {
+  display: flex;
+  flex-flow: column;
+}
+.home-container .homepage-content .header-content .banner-img {
+  width: 1000px;
+  height: 598px;
+  background-image: url('../img/home/home-jumbotron.png');
+}
+@media screen and (max-width: 405px) {
+  .home-container .homepage-content .header-content .banner-img {
+    width: 100%;
+    height: 260px;
+    display: flex;
+    flex-flow: column;
+    background-image: url('../img/home/home-mobile-jumbotron.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+.home-container .homepage-content .header-content .slogan {
   position: absolute;
   font-size: 4rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -49,7 +76,13 @@
   top: 39%;
   left: 21%;
 }
-.container.home-container .homepage-content .content-block {
+@media screen and (max-width: 405px) {
+  .home-container .homepage-content .header-content {
+    display: flex;
+    flex-flow: column;
+  }
+}
+.home-container .homepage-content .content-block {
   max-width: 1000px;
   width: 100%;
   margin: 5% auto;
@@ -57,26 +90,26 @@
   flex-flow: row;
   justify-content: space-around;
 }
-.container.home-container .homepage-content .content-block .content-sub-block {
+.home-container .homepage-content .content-block .content-sub-block {
   width: 450px;
   padding: 5% 0;
 }
-.container.home-container .homepage-content .content-block .content-sub-block .content-h4 {
+.home-container .homepage-content .content-block .content-sub-block .content-h4 {
   margin: 20px;
   font-size: 1.5rem;
 }
-.container.home-container .homepage-content .content-block .content-sub-block .content-text {
+.home-container .homepage-content .content-block .content-sub-block .content-text {
   margin: 20px;
   line-height: 1.2;
 }
-.container.home-container .homepage-content .content-block .content-sub-block .content-btn {
+.home-container .homepage-content .content-block .content-sub-block .content-btn {
   width: 150px;
   padding: 3% 2%;
   margin-left: 20px;
   border: solid 1px black;
   text-align: center;
 }
-.container.home-container .homepage-content .content-block .img-block.smith-jones-img {
+.home-container .homepage-content .content-block .img-block.smith-jones-img {
   display: block;
   background-image: url('../img/home/home-img-1.png');
   background-repeat: no-repeat;
@@ -85,7 +118,7 @@
   max-height: 275px;
   width: 100%;
 }
-.container.home-container .homepage-content .content-block .img-block.futuristic-img {
+.home-container .homepage-content .content-block .img-block.futuristic-img {
   display: block;
   background-image: url('../img/home/home-img-2.png');
   background-repeat: no-repeat;
@@ -94,44 +127,68 @@
   max-height: 275px;
   width: 100%;
 }
-.container.home-container .homepage-content .recent-projects {
+@media screen and (max-width: 405px) {
+  .home-container .homepage-content .content-block {
+    display: flex;
+    flex-flow: column;
+    width: 405px;
+  }
+  .home-container .homepage-content .content-block .content-sub-block {
+    order: 3;
+    width: 405px;
+    display: flex;
+    flex-flow: column;
+  }
+  .home-container .homepage-content .content-block .img-block {
+    width: 405px;
+    height: 260px;
+    order: 0;
+  }
+  .home-container .homepage-content .content-block .img-block.smith-jones-img {
+    background-image: url('../img/home/home-mobile-img-1.png');
+  }
+  .home-container .homepage-content .content-block .img-block.futuristic-img {
+    background-image: url('../img/home/home-mobile-img-2.png');
+  }
+}
+.home-container .homepage-content .recent-projects {
   max-width: 1000px;
   width: 100%;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block {
+.home-container .homepage-content .recent-projects .recent-projects-block {
   max-width: 1000px;
   width: 100%;
   display: flex;
   flex-flow: column;
   margin: 5% 0;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block {
   display: flex;
   flex-flow: column;
   width: 1000px;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.villas-img {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.villas-img {
   width: 1000px;
   height: 230px;
   background-image: url('../img/home/home-villas-img.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.outskirts-img {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.outskirts-img {
   width: 1000px;
   height: 230px;
   background-image: url('../img/home/home-outskirts-img.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.the-blocks-img {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.the-blocks-img {
   width: 1000px;
   height: 230px;
   background-image: url('../img/home/home-the-blocks-img.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block {
   position: relative;
   width: 100%;
   height: 100px;
@@ -139,16 +196,16 @@
   display: flex;
   flex-flow: row;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block.villas {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block.villas {
   justify-content: flex-end;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block.outskirts {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block.outskirts {
   justify-content: flex-start;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block.blocks {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block.blocks {
   justify-content: flex-end;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block .recent-title-h4 {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block .recent-title-h4 {
   position: absolute;
   height: 100%;
   width: 33%;
@@ -157,8 +214,91 @@
   text-align: center;
   background-color: #D8D8D8;
 }
-.container.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-projects-content-text {
+.home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-projects-content-text {
   width: 50%;
   margin: 0 auto;
   line-height: 1.5;
+}
+@media screen and (max-width: 405px) {
+  .home-container .homepage-content .recent-projects {
+    display: flex;
+    flex-flow: column;
+    width: 405px;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block {
+    width: 405px;
+    display: flex;
+    flex-flow: column;
+    margin: 0px;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block {
+    width: 405px;
+    display: flex;
+    flex-flow: column;
+    margin: 0px;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img {
+    width: 405px;
+    height: 260px;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.villas-img {
+    width: 405px;
+    height: 260px;
+    background-image: url('../img/home/home-mobile-villas-img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.outskirts-img {
+    width: 405px;
+    height: 260px;
+    background-image: url('../img/home/home-mobile-outskirts-img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-img.the-blocks-img {
+    width: 405px;
+    height: 260px;
+    background-image: url('../img/home/home-mobile-the-blocks-img.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block {
+    width: 380px;
+    height: 100px;
+    display: block;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .gray-block h4.recent-title-h4 {
+    width: 380px;
+    height: 100px;
+    left: 10px;
+  }
+  .home-container .homepage-content .recent-projects .recent-projects-block .recent-content-sub-block .recent-projects-content-text {
+    width: 405px;
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    font-size: 1.2rem;
+    padding: 10%;
+  }
+}
+@media screen and (max-width: 405px) {
+  .home-container .homepage-content {
+    width: 405px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    padding-left: 0px;
+  }
+  .home-container .homepage-content .menu {
+    width: 405px;
+  }
+}
+@media screen and (max-width: 405px) {
+  .home-container {
+    width: 405px;
+    margin: 0;
+  }
 }
