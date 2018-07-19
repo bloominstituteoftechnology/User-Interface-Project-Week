@@ -11,3 +11,4 @@ function tabnav(evt, tab) {
     document.getElementById(tab).style.display = "block";
     evt.currentTarget.className += " active";
 }
+document.addEventListener("load",tabnav(event,'1'))
