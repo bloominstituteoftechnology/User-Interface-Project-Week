@@ -63,11 +63,11 @@ $(document).ready(function() {
   const sus = document.querySelector('.sus');
   const susContent = document.querySelector('.susContent');
 
-  con.style.color = "white";
-  con.style.backgroundColor = "#5E9FB9";
-  conContent.style.display = "flex";
-  pre.style.color = "black";
-  preContent.style.display = "none";
+  pre.style.color = "white";
+  pre.style.backgroundColor = "#5E9FB9";
+  preContent.style.display = "flex";
+  con.style.color = "black";
+  conContent.style.display = "none";
   des.style.color = "black";
   desContent.style.display = "none";
   sus.style.color = "black";
