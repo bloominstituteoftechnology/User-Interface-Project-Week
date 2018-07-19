@@ -14,3 +14,14 @@ closeBtn.addEventListener("click", (event) => {
     mainNav.classList.toggle("display-flex");
     closeBtn.classList.remove("visibility");
 })
+
+let links = document.querySelectorAll(".link");
+
+
+class Tab {
+    constructor(link) {
+        this.link = links;
+
+    }
+}
+links = Array.from(links).map(link => new Tab(link));
