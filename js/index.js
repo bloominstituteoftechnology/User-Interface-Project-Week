@@ -1,7 +1,19 @@
 // JS goes here
 const fadeNavPanel = function(){
+<<<<<<< HEAD
   TweenMax.fromTo('.nav-page', 1, {opacity:0}, {opacity: .9})
 }
+=======
+  //--------------greensock------------------------//
+  TweenMax.from('.nav-page', 1, {display: 'flex', backgroundColor:'red', opacity:.9, zIndex:19, })
+
+  //-----------tweenMax attempt for navBTN---------//
+  // TweenMax.to(target, 1, {opacity: 1});
+  // TweenMax.to(target, 1, {opacity:0});
+  // TweenMax.from(target, 1, {opacity: 1});
+}
+
+>>>>>>> gh-pages
 const showNavPanel = function(){
   navPage[0].classList.toggle('showNav');
 //----------Another great example of forEach-----------//
@@ -16,6 +28,9 @@ const showNavPanel = function(){
 const navOpacity = function(){
   TweenMax.to(".top-bar", 1, {
     backgroundColor:'#828282',
+  })
+  TweenMax.to(".banner", 1, {
+    marginTop: 50,
   })
 }
 
