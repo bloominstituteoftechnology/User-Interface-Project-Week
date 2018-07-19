@@ -40,7 +40,7 @@ class TabsLink {
     this.tabHeading = parent.getHeading(this.link.dataset.tab);
     this.tabHeading = new TabsHeading(this.tabHeading);
     this.tabImg = parent.getImg(this.link.dataset.tab);
-    this.tabImg = new TabsImg(this.tabImg);
+    this.tabImg = new TabsImage(this.tabImg);
     this.link.addEventListener('click', () => {
       this.tabs.updateActive(this);
       this.select();
@@ -74,7 +74,7 @@ class TabsHeading {
   }
 }
 
-class TabsImg {
+class TabsImage {
     constructor(img) {
       this.img = img;
     }
