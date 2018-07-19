@@ -105,7 +105,7 @@ footer {
     }
     .address {
       padding-left: 0;
-      line-height: 29px;
+      line-height: 16px;
       @media @phone {
         padding-top: 27px;
         p {

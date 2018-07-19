@@ -40,7 +40,6 @@
 import Jumbotron from './Jumbotron.vue'
 import Tabs from './Tabs.vue'
 
-// let nextTab = 1;
 
 export default {
   data() {

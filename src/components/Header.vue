@@ -7,10 +7,10 @@
         <div class="dropdown">
           <img :src="imageButton" v-on:click="showDropDown=!showDropDown" class="dropdown-button" />
           <div class="dropdown-content" v-if="showDropDown">
-            <router-link to="/" class="dropdown-link">
+            <router-link to="/" v-on:click.native="showDropDown=!showDropDown" class="dropdown-link">
             Home
             </router-link>
-            <router-link to="/services" class="dropdown-link">
+            <router-link to="/services" v-on:click.native="showDropDown=!showDropDown" class="dropdown-link">
             Services
             </router-link>
             <router-link to="/contact" class="dropdown-link">

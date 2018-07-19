@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       tabs: [],
-      current: null
+      current: ''
     }
   },
   methods: {
@@ -39,3 +39,4 @@ export default {
     }
   }
 }
+</script>
