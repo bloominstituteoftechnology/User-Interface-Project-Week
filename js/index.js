@@ -1,6 +1,7 @@
 // JS goes here
 // Dropdowns
 
+
 class Dropdown {
     constructor(element) {
         this.element = element;
@@ -88,3 +89,4 @@ class TabsItem {
 
 let tabs = document.querySelectorAll(".tabs");
 tabs = Array.from(tabs).map(tab => new Tabs(tab));
+
