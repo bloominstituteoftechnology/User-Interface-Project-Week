@@ -57,20 +57,28 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 //===============tabs=================
 
 let menu = document.querySelector('.menu')
+let menuItems = document.querySelector('.menu-items')
 
-TweenMax.to('menu', 1, onClick);
+// const toggleMenu = () => {
+//   if(menu.classList.contains('menu--close')){
+//     menu.classList.remove('menu--close');
+//     menu.classList.add('menu--open');
+//   }
+//   else if(menu.classList.contains('menu--open')){
+//     menu.classList.remove('menu--open');
+//     menu.classList.add('menu--close');
+//   }
+// }
 
-const toggleMenu = () => {
-  if(menu.classList.contains('menu--close')){
-    menu.classList.remove('menu--close');
-    menu.classList.add('menu--open');
-  }
-  else if(menu.classList.contains('menu--open')){
-    menu.classList.remove('menu--open');
-    menu.classList.add('menu--close');
-  }
-}
+let slide = TweenMax.to(menuItems, 0.25, {paused: true, y:62, display: 'block', ease:Power1.easeIn})
 
-menu.addEventListener('click', toggleMenu);
+menu.addEventListener('click', () =>{
+  slide.reversed()? slide.play():slide.reverse();
+});
+
+
+
+
+
 
 
