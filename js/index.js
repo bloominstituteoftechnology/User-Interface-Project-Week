@@ -1,34 +1,43 @@
 
 // Nav Bar //refactor..
 
-let navHome = document.querySelector('.home');
-let navServices = document.querySelector('.services');
-let navContact = document.querySelector('.contact');
-let infNav = document.querySelector('.infinityNav');
+const navHome = document.querySelector('.home');
+const navServices = document.querySelector('.services');
+const navContact = document.querySelector('.contact');
+const infNav = document.querySelector('.infinityNav');
+const infMenu = document.querySelector('.infinityMenu');
+infMenu.style.display = "none";
 navHome.style.display = "none";
 navServices.style.display = "none";
 navContact.style.display = "none";
+
+
+
+
+
 
 
 $(document).ready(function() {
     $(".hamburger").click(function() {
         if (this.src.length === 43){
       this.src="/img/nav-hamburger-close.png";
+      infMenu.style.display = "flex";
     //   navItems.style.display = "flex";
-      $(".menu").height("100%");
+      // infMenu.style.display = "block";
       navContact.style.display = "block";
       navServices.style.display = "block";
       navHome.style.display = "block";
-      infNav.style.opacity = "45";
+      
 
-      // $(".services").fadeIn(500);
-      // $(".home").fadeIn(1000);
+//       // $(".services").fadeIn(500);
+//       // $(".home").fadeIn(1000);
     }
 
 
         else if (this.src.length === 49){
         this.src="/img/nav-hamburger.png";
-        $(".menu").height("50px");
+        document.querySelector('.infinityMenu').style.display = "none";
+        // infMenu.style.display = "none";
         navHome.style.display = "none";
         navServices.style.display = "none";
         navContact.style.display = "none";
@@ -38,17 +47,21 @@ $(document).ready(function() {
   
 
 
+
+
+
+
   //Service Tab Nav
  
 
-  let pre = document.querySelector('.pre');
-  let preContent = document.querySelector('.preContent');
-  let con = document.querySelector('.con');
-  let conContent = document.querySelector('.conContent');
-  let des = document.querySelector('.des');
-  let desContent = document.querySelector('.desContent');
-  let sus = document.querySelector('.sus');
-  let susContent = document.querySelector('.susContent');
+  const pre = document.querySelector('.pre');
+  const preContent = document.querySelector('.preContent');
+  const con = document.querySelector('.con');
+  const conContent = document.querySelector('.conContent');
+  const des = document.querySelector('.des');
+  const desContent = document.querySelector('.desContent');
+  const sus = document.querySelector('.sus');
+  const susContent = document.querySelector('.susContent');
 
   con.style.color = "white";
   con.style.backgroundColor = "#5E9FB9";
@@ -142,7 +155,7 @@ $(document).ready(function() {
     });
   });
 
-
+  // infMenu.style.display = "none";
 
 
 

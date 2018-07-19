@@ -146,6 +146,10 @@ table {
   width: 135px;
   height: 46px;
 }
+.btn:hover {
+  background-color: black;
+  color: white;
+}
 @media (max-width: 500px) {
   .btn {
     width: 290px;
@@ -257,20 +261,23 @@ body {
   opacity: 0.9;
   width: 1024px;
   height: 50px;
-  z-index: 1;
+  z-index: 2;
   background-color: #9CAAB6;
 }
 .header .menu a {
-  display: none;
+  position: relative;
+  top: 278px;
   text-decoration: none;
   color: white;
   font-weight: bold;
-  padding-right: 300px;
+  padding-right: 325px;
   font-size: 3.5rem;
-  line-height: 2.2em;
+  line-height: 1.9em;
+  z-index: 2;
 }
 .header .menu a:hover {
-  color: black;
+  color: #222222;
+  opacity: 0.5;
 }
 .header .menu h1 {
   margin-right: auto;
@@ -291,14 +298,31 @@ body {
   height: 50px;
   background-color: #9CAAB6;
   display: absolute;
-  z-index: -1;
+  z-index: 0;
   margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.infinityMenu {
+  position: fixed;
+  top: 0px;
+  display: flex;
+  width: 100%;
+  height: 600px;
+  background-color: #9CAAB6;
+  display: absolute;
+  z-index: 1;
+  margin-bottom: 0px;
+  opacity: 0.9;
   padding-bottom: 0px;
 }
 @media (max-width: 1024px) {
   .infinityNav {
     right: 0px;
   }
+}
+.onService a {
+  color: red;
+  margin-top: 100px;
 }
 @media (max-width: 500px) {
   .header {
@@ -354,6 +378,13 @@ body {
 .mobile {
   display: none;
 }
+.concertHall {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  left: 0;
+  margin-left: 0;
+}
 .wrapper {
   position: relative;
   top: 0;
@@ -368,14 +399,31 @@ body {
   display: none;
 }
 .wrapper .jumbotron .hugeFont {
-  position: relative;
-  bottom: 275px;
+  position: sticky;
+  bottom: 25px;
   left: 83px;
   font-size: 5rem;
   line-height: 6rem;
   letter-spacing: 0.07rem;
+  padding-top: 325px;
+  padding-left: 83px;
+}
+.infinityWrapper {
+  position: absolute;
+  top: 600px;
+  display: flex;
+  width: 100%;
+  height: 3000px;
+  background-color: white;
+  display: absolute;
+  z-index: -1;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .containerTwo {
+  position: sticky;
+  z-index: -1;
+  background-color: white;
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 85px;
@@ -397,6 +445,10 @@ body {
   font-size: 1.3rem;
   width: 135px;
   height: 46px;
+}
+.containerTwo .content .copy button:hover {
+  background-color: black;
+  color: white;
 }
 @media (max-width: 500px) {
   .containerTwo .content .copy button {
@@ -475,6 +527,18 @@ body {
     margin-top: 200px;
   }
 }
+@media (max-width: 917px) {
+  .hugeFont {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    color: black;
+    bottom: 100px;
+    left: 80px;
+    margin-bottom: 50px;
+    margin-top: 0px;
+  }
+}
 @media (max-width: 500px) {
   .mobile {
     display: block;
@@ -483,15 +547,19 @@ body {
     height: 253px;
     margin-bottom: 100px;
   }
+  .hugeFont {
+    color: white;
+  }
   .wrapper .jumbotron {
     width: 320px;
     height: 150px;
   }
   .wrapper .jumbotron .hugeFont {
-    position: relative;
-    bottom: 197px;
-    left: 15px;
-    font-size: 2.5rem;
+    position: absolute;
+    padding-right: 40px;
+    bottom: 524px;
+    right: 25px;
+    font-size: 2.8rem;
     line-height: 3.3rem;
     letter-spacing: 0.2rem;
   }
@@ -523,6 +591,10 @@ body {
     font-size: 1.3rem;
     width: 135px;
     height: 46px;
+  }
+  .containerTwo .content .copy button:hover {
+    background-color: black;
+    color: white;
   }
   .containerTwo img,
   .containerTwo h2,
@@ -825,6 +897,7 @@ body .service {
     background-color: #828282;
     padding: 0px;
     align-items: flex-start;
+    padding-top: 5px;
   }
   .footer .list {
     padding-left: 18px;
