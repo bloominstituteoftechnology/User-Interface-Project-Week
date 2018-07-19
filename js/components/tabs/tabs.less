@@ -6,11 +6,18 @@ section.tabs-section {
         width: 100%;
         .tabs-buttons {
             .flex(space-between, center, row);
+            @media @phone {
+                flex-direction: column;
+            }
             .tab-button {
                 .button-maker(185px, 50px, @white, 1px solid @mine-shaft);
                 color: @mine-shaft;
                 font-weight: bold;
                 font-size: 2rem;
+                @media @phone {
+                    margin: 1rem;
+                    width: 100%;
+                }
                 &:hover {
                     background-color: @tab-hover-bg;
                     color: @tab-hover;
@@ -49,6 +56,9 @@ section.tabs-section {
         } // .tab-content
         .tab-content-selected {
             .flex(space-between, flex-start, row);
+            @media @phone {
+                flex-direction: column;
+            }
         } // .tab-content-selected
     } // .tabs
 } // section.tabs
