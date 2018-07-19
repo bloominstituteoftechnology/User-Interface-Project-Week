@@ -19,141 +19,6 @@
 }
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: ’’;
-  content: none;
-}
-ins {
-  text-decoration: none;
-}
-del {
-  text-decoration: line-through;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 .width-100 {
   width: 100%;
 }
@@ -162,67 +27,92 @@ table {
   justify-content: center;
   align-items: center;
 }
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto';
-  background-color: #fffef7;
-}
 .container {
-  max-width: 900px;
+  max-width: 1024px;
   margin: auto;
   border: 1px solid blue;
 }
-.main-content {
+.container .header {
+  width: 1024px;
+  height: 35px;
+  background-color: #388E3C;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.container .menu {
+  display: none;
+  position: fixed;
+  top: 25px;
+  width: 1024px;
+  height: 100vh;
+  background-color: #81C784;
+  border: 1px solid #004D40;
+  border-left: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+.container .menu-button {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+.container .menu-button-close {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+.container .menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
+  text-align: center;
+}
+.container .menu--open {
+  display: block;
+}
+.container .main-content {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
-.main-content .img-jumbotron {
+.container .main-content .img-jumbotron.img-jumbotronSrvc {
   display: block;
-  max-width: 100%;
+  margin: auto;
   z-index: -1;
 }
-.main-content .top-content {
+.container .main-content .top-content {
   display: flex;
   justify-content: space-around;
 }
-.main-content .btn-features {
+.container .main-content .btn-features {
   display: block;
 }
-.main-content .top-left {
+.container .main-content .top-left {
   display: flex;
   border: 1px solid black;
 }
-.main-content .design {
+.container .main-content .design {
   display: flex;
 }
-.main-content .btn-features {
+.container .main-content .btn-features {
   margin-top: 20px;
   width: 100px;
   height: 50px;
-  background-color: #577ae4;
+  background-color: #e0e0e0;
   border: 1px solid black;
   color: white;
+  justify-content: center;
   cursor: pointer;
 }
-.main-content .bottom-content {
-  display: flex;
+.container .main-content .bottom-content {
+  display: block;
+  margin: 30px 30px;
   justify-content: space-around;
 }
-.villas > p {
-  text-align: center;
-  border: 1px solid red;
-}
 .home-villas-img .home-outskirts-img {
-  max-width: 100%;
-}
-.section-c {
-  display: flex;
-  padding: 20px;
+  max-width: 1024px;
 }
 ul {
   list-style-type: none;
@@ -240,34 +130,40 @@ li + li {
   margin: 20px;
   top: -200px;
   font-size: 18px;
-  border: 1px solid red;
 }
-.blocks {
-  width: 100px;
-  height: 50px;
-  background-color: lightgrey;
+div.villaText {
+  display: block;
+  margin-left: 300px;
+  margin-right: 300px;
+  justify-content: space-around;
 }
-.villas {
-  width: 100px;
-  height: 50px;
-  background-color: lightgrey;
+.outskirtBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 80px;
+  background-color: #D8D8D8;
+  position: relative;
+  bottom: 50px;
+  font-size: 18px;
 }
 .outskirt {
-  width: 100px;
-  height: 50px;
-  background-color: lightgrey;
+  display: block;
+  margin-left: 300px;
+  margin-right: 300px;
+  justify-content: center;
 }
-html,
-body {
-  height: 100%;
+.blocks {
+  display: block;
+  margin-left: 300px;
+  margin-right: 300px;
+  justify-content: center;
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+.section-c {
+  display: flex;
+  padding: 20px;
+  background-color: #D8D8D8;
 }
 .cards-container {
   display: none;
@@ -296,11 +192,6 @@ h5 {
   width: 100%;
   height: 47px;
   background-color: white;
-}
-@media (min-width: 1280px) {
-  .tabs {
-    width: 1280px;
-  }
 }
 .tabs .topics {
   display: flex;
@@ -338,43 +229,4 @@ h5 {
   justify-content: none;
   align-items: center;
   flex-direction: row;
-}
-.header {
-  width: 800px;
-  height: 75px;
-  background-color: #388E3C;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-}
-.menu-button {
-  position: absolute;
-  right: 20px;
-  cursor: pointer;
-}
-.menu {
-  display: none;
-  position: fixed;
-  top: 75px;
-  left: 0;
-  width: 350px;
-  background-color: #81C784;
-  border: 1px solid #004D40;
-  border-left: none;
-  border-bottom: none;
-  z-index: 2;
-  /* This set the layer level of the element, it has precendence over initial level of 1*/
-}
-.menu ul li {
-  list-style-type: none;
-  font-size: 32px;
-  padding: 30px 0;
-  text-align: center;
-}
-.menu--open {
-  display: block;
 }

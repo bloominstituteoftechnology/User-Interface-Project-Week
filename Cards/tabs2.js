@@ -3,12 +3,18 @@ var state = {
     cards: document.querySelectorAll('.card')
   };
 
-  var nodesArray = [].slice.call(document.querySelectorAll(".cards-container"));
-  var cards = document.getElementById("debug");
+  //var nodesArray = [].slice.call(document.querySelectorAll(".cards-container"));
 
-// Get all buttons with class="btn" inside the container
-var tab = cards.getElementsByClassName(".cards-container");
-  console.log(nodesArray)
+  // let tabOff = document.querySelector(".card1");
+  // tabOff.style.display = "none";
+
+  var tabHide = document.getElementsByClassName("off"); //divsToHide is an array
+    for(var i = 0; i < tabHide.length; i++){
+        // tabHide[i].style.visibility = "hidden"; // or
+        tabHide[i].style.display = "none";} // depending on what you're doing
+
+
+  // console.log(nodesArray)
   // event listener
   function updateActive(filter) {
     

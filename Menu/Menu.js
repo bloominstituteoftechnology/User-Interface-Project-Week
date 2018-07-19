@@ -10,12 +10,20 @@ let menu = document.querySelector(".menu");
 //let myButtons = document.querySelectorAll("li");
 let menuButton = document.querySelector(".menu-button");
 menuButton.addEventListener('click', (event)=> {
-  menu.classList.toggle("menu--open")
+ menu.classList.toggle("menu--open")
 })
+// menuButton.addEventListener('click',openNav);
+
 //console.log(info)
 console.log(menu)
 console.log(menuButton)
+// function openNav() {
+//   document.getElementsByClassName("myNav").style.height = "100%";
+// }
 
+// function closeNav() {
+//   document.getElementById("myNav").style.height = "0%";
+// }
 
 
 // create a reference to the ".menu-button" class
