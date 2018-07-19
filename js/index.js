@@ -88,3 +88,20 @@ function tweenComplete() {
   
   let tabs = document.querySelectorAll('.tabs');
   tabs = Array.from(tabs).map( tab => new Tabs(tab));
+
+
+  //Button animation
+  class Button {
+    constructor(element) {
+      this.element = element;
+      this.element.addEventListener('mouseover', () => {
+        TweenMax.to(this.element, 0.5, {scale:1.2});
+      });
+      this.element.addEventListener('mouseleave', () => {
+         TweenMax.to(this.element, 0.5, {scale:1});
+      });
+    }
+  }
+
+  let customButton = document.querySelectorAll('.custom-button');
+  customButton = Array.from(customButton).map( button => new Button(button));
