@@ -1,6 +1,6 @@
 // JS goes here
 const fadeNavPanel = function(){
-  TweenMax.fromTo('.nav-page', 1, {opacity:0}, {opacity: 1})
+  TweenMax.fromTo('.nav-page', 1, {opacity:0}, {opacity: .9})
 }
 const showNavPanel = function(){
   navPage[0].classList.toggle('showNav');
