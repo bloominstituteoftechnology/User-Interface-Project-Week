@@ -44,14 +44,21 @@ const changeSelected = (newButtonSelection) =>{
 }
 
 const updateActive = (passin) =>{
-    document.querySelector(".tabTitle").innerHTML = `${tabArray[passin].name}`;
+    changeSelected(passin);
+    document.querySelector(".fadeRow").classList.add('fade');
+
+    setTimeout(function(){
+        document.querySelector(".tabTitle").innerHTML = `${tabArray[passin].name}`;
     document.querySelector(".tabText").innerHTML = `${tabArray[passin].text}`;
     document.querySelector(".tabImage").src=`${tabArray[passin].img}`;
     document.querySelector(".tabImage").srcset=`${tabArray[passin].srcset}`;
     document.querySelector(".tabImage").sizes=`${tabArray[passin].sizes}`;
-    changeSelected(passin);
+    }, 500);
+    setTimeout(function(){
+        document.querySelector(".fadeRow").classList.remove('fade');
+
+    }, 1000);
 }
-updateActive(activeTab);
 tabButtons.forEach(function (x,index){
 
     x.addEventListener("click", function(){

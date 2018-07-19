@@ -81,4 +81,6 @@ const slideChange = () =>{
 
     }
 }
-const myVar = setInterval(slideChange, 5000);
+const slideTimer = setInterval(slideChange, 5000);
+
+
