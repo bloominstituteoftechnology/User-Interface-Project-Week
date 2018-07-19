@@ -8,12 +8,15 @@
     font-family: Roboto, Arial, sans-serif;
     font-weight: regular;
     line-height: 24px;
-    max-width: 1024px;
-    margin: 0 auto;
 
     @media @mobile {
         width: 100vw;
     }
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .menubar {
@@ -36,9 +39,7 @@
         font-size: 24px;
     }
 
-    .nav-content, .close-button {
-        display: none;
-    }
+    
 
     img {
         margin-left: 88.5%;
@@ -46,57 +47,75 @@
         position: absolute;
     }
 
-    .nav-expanded {
-        display: flex;
-        flex-flow: column wrap;
-        width: 100%;
-        height: 100vh;
-        .center;
-        background-color: @menubar-bg;
-        opacity: 100;
-    }
-
-    .show-close {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 9%;
-    }
-
-    .nav-content a {
-        font-size: 60px;
-        color: white;
-        line-height: 70px;
-        text-decoration: none;
-        text-align: start;
-        font-weight: bold;
-        width: 250px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .nav-current a {
-        color: @theTwos;
-        text-align: start;  
-    }
-
-    .nav-current-home a {
-        margin-left: -70px;
-    }
-
-    #homelink {
-        margin-bottom: -30px;
-    }
-
-    #contactlink {
-        margin-top: -30px;
-    }
-
-    #aboutuslink {
-        margin-top: -30px;
-    }
+    
     
 }
+
+.nav-content, .close-button {
+    display: none;
+}
+
+.nav {
+    height: 0;
+}
+
+.nav-expanded {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    margin: 0 auto;
+    .center;
+    background-color: @menubar-bg;
+    opacity: 1;
+    z-index: 15;
+}
+
+.show-close {
+    display: flex;
+    position: absolute;
+    top: 20vh;
+    right: 20vw;
+}
+
+.nav-content a {
+    font-size: 60px;
+    color: white;
+    line-height: 70px;
+    text-decoration: none;
+    text-align: start;
+    font-weight: bold;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.nav-current a {
+    color: @theTwos;
+    text-align: start;  
+}
+
+.nav-current-home a {
+    margin-left: -70px;
+}
+
+.nav-current-home-toggle {
+    display: none;
+}
+
+#homelink {
+    margin-bottom: -30px;
+}
+
+#contactlink {
+    margin-top: -30px;
+}
+
+#aboutuslink {
+    margin-top: -30px;
+}
+
+
 
 p {
     font-size: 16px;
