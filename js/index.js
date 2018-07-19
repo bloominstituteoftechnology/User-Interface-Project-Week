@@ -4,6 +4,7 @@
 let navHome = document.querySelector('.home');
 let navServices = document.querySelector('.services');
 let navContact = document.querySelector('.contact');
+let infNav = document.querySelector('.infinityNav');
 navHome.style.display = "none";
 navServices.style.display = "none";
 navContact.style.display = "none";
@@ -18,6 +19,8 @@ $(document).ready(function() {
       navContact.style.display = "block";
       navServices.style.display = "block";
       navHome.style.display = "block";
+      infNav.style.opacity = "45";
+
       // $(".services").fadeIn(500);
       // $(".home").fadeIn(1000);
     }
