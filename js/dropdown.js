@@ -27,19 +27,29 @@
 
 
 // below uses no classes
+// actual buttons on the nav bars
 const button = document.querySelector(".dropdown-button");
 const mobButton = document.querySelector(".mob-dropdown-button")
-// const mobNavButton = document.querySelector()
-const mobNavButton = document.querySelector(".mob-nav-text-container");
+
+// gets divs containing hidden dropdown
 const navButton = document.querySelector(".nav-text-container");
+const mobNavButton = document.querySelector(".mob-nav-text-container");
+
+const navBurger = document.querySelector(".nav-burger");
+const mobNavBurger = document.querySelector(".mob-nav-burger");
+console.log(navBurger.src)
 button.addEventListener("click", () => {
         navButton.classList.toggle("dropdown-hidden");
-        
+        if (navBurger.src === "img/nav-hamburger-close.png") {
+            navBurger.src = "/img/nav-hamburger.png";
+        }
+        else {
+            navBurger.src = "/img/nav-hamburger-close.png";
+        }
 })
 
 mobButton.addEventListener("click", () => {
     mobNavButton.classList.toggle("mob-dropdown-hidden");
-    console.log('this works')
 })
 
 
