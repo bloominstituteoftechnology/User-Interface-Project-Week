@@ -18,16 +18,7 @@ navContact.style.display = "none";
 
 
 
-// $(document).ready(function() {
-//     $(".hamburger").click(function() {
-//         if (this.src.length === 43){
-//       this.src="/img/nav-hamburger-close.png";
-//       infMenu.style.display = "flex";
-//     //   navItems.style.display = "flex";
-//       // infMenu.style.display = "block";
-//       navContact.style.display = "block";
-//       navServices.style.display = "block";
-//       navHome.style.display = "block";
+
 
 
       hamburger.addEventListener("click", function(element){
@@ -98,7 +89,6 @@ navContact.style.display = "none";
 
 
 pre.addEventListener("click", function(element){
-
   if (pre.style.color = "black"){
     pre.style.color = "white";
     pre.style.backgroundColor = "#5E9FB9";
@@ -113,9 +103,6 @@ pre.addEventListener("click", function(element){
     susContent.style.display = "none";
     preContent.style.display = "flex";
    }
-
-
-
 })
 
 
@@ -127,7 +114,6 @@ pre.addEventListener("click", function(element){
 
 
 con.addEventListener("click", function(element){
-
         if (con.style.color = "black"){
       con.style.color = "white";
       con.style.backgroundColor = "#5E9FB9";
@@ -146,7 +132,6 @@ con.addEventListener("click", function(element){
 
 
     des.addEventListener("click", function(element){
-
         if (des.style.color = "black"){
       des.style.color = "white";
       des.style.backgroundColor = "#5E9FB9";
@@ -165,7 +150,6 @@ con.addEventListener("click", function(element){
 
 
     sus.addEventListener("click", function(element){
-
         if (sus.style.color = "black"){
       sus.style.color = "white";
       sus.style.backgroundColor = "#5E9FB9";
