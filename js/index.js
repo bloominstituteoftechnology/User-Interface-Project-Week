@@ -18,8 +18,8 @@ $(document).ready(function() {
       navContact.style.display = "block";
       navServices.style.display = "block";
       navHome.style.display = "block";
-      $(".services").fadeIn(500);
-      $(".home").fadeIn(1000);
+      // $(".services").fadeIn(500);
+      // $(".home").fadeIn(1000);
     }
 
 
