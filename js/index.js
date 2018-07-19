@@ -1,4 +1,3 @@
-// JS goes here
 class Tabs {
     constructor (element) {
         this.element=element;
@@ -40,7 +39,6 @@ class TabItem{
         this.element=element;
     }
     select(){
-        console.log(this.element.classList)
         this.element.classList.add('selected');
     }
     deselect(){
