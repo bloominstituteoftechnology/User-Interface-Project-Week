@@ -209,9 +209,15 @@ body {
 }
 .menu--open {
   display: flex;
+  animation-name: slide-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 .menu--close {
-  display: none;
+  display: flex;
+  animation-name: slide-out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 img {
   width: 100%;
@@ -500,6 +506,22 @@ footer input {
   height: 45px;
   border-radius: 5px;
   margin: 10px 0;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-584px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes slide-out {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-584px);
+  }
 }
 .jumbo .srvc-title {
   position: absolute;
