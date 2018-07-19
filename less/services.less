@@ -18,6 +18,9 @@
 
 .services-content {
   padding: 35px 8% 1px;
+  @media @mobile {
+    padding: 10px 5% 1px;
+  }
 
   p {
     font-size: 1.6rem;
@@ -28,6 +31,9 @@
     font-weight: bold;
     font-size: 2.8rem;
     color: #222222;
+    @media @mobile {
+      font-size: 2.5rem;
+    }
   }
 
   .services {
@@ -56,10 +62,15 @@
       &:hover {
         background: #222222;
         color: #FFF;
+        cursor: pointer;
       }
 
       p {
         font-size: 2rem;
+      }
+      @media @mobile {
+        width: 90%;
+        margin-bottom: 21px;
       }
     }
 
@@ -73,6 +84,9 @@
 
     .tabs-item {
       display: flex;
+      @media @mobile {
+        flex-direction: column;
+      }
 
       .item-info {
         width: 50%;
@@ -80,16 +94,42 @@
         p {
           padding: 14px 0;
         }
+        @media @mobile {
+          width: 100%;
+
+          p {
+            padding: 24px 0;
+          }
+        }
       }
 
       .item-img {
         width: 50%;
         padding: 35px;
+
+        .mobile-img {
+          display: none;
+        }
+        @media @mobile {
+          width: 100%;
+          padding: 0;
+
+          .desktop-img {
+            display: none;
+          }
+
+          .mobile-img {
+            display: block;
+          }
+        }
       }
     }
 
     .inactive-tab-item {
       display: none;
+    }
+    @media @mobile {
+      margin: 27px 0;
     }
   }
 }
