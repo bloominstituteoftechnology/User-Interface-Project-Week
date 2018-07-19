@@ -1,3 +1,8 @@
+// alert for breapoint
+
+const breakpoint = document.querySelector(".main-content");
+
+breakpoint ? alert("breakpoint is @600px") : null;
 // NAVBAR
 // pulling in navbar and icon
 const navbar = document.querySelector(".navbar");
