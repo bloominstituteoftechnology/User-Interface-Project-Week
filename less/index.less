@@ -1,60 +1,318 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
+@import "variables.less";
+.home-container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    padding-left: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+   
+    h4 {
+        font-size: 1.5rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    p {}
+    .menu {
+        position: fixed;
+        z-index: 1001;
+        top: 0px;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 1000px;
+        height: 60px;
+        background-color: #9AA5B0;
+        color: #fff;
+        .menu-h4 {
+            margin-left: 100px;
+        }
+        .hamburger {
+            width: 32px;
+            height: 21px;
+            background-image: url('../img/nav-hamburger.png');
+            margin-right: 100px;
+            border-radius: 2px;
+        }
+        @media screen and (max-width: 405px){
+            width: 405px;
+        }
+    }
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
-}
-body{
-  line-height:1;
-}
-ol,ul{
-  list-style:none;
-}
-blockquote,q{
-  quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
-}
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
-}
+     
+    .homepage-content {
+        margin: 0;
+        .header-content {
+            display: flex;
+            flex-flow: column;
+            .banner-img {
+                width: 1000px;
+                height: 598px;
+                background-image: url('../img/home/home-jumbotron.png');
+                @media screen and (max-width:405px) {
+                    width: 100%;
+                    height: 260px;
+                    display: flex;
+                    flex-flow: column;
+                    background-image: url('../img/home/home-mobile-jumbotron.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    
+                }
+            }
+            .slogan {
+                position: absolute;
+                font-size: 4rem;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: white;
+                top: 39%;
+                left: 21%;
+            }
+            @media screen and (max-width: 405px){
+                display:flex;
+                flex-flow: column;
+                .slogan {
+                        left: 40px;
+    top: 110px;
+    font-size: 2.7rem;
+                }
 
-table{
-  border-collapse:collapse;
-  border-spacing:0;
-}
+            }
+        }
+        .content-block {
+            max-width: 1000px;
+            width: 100%;
+            margin: 5% auto;
+            display: flex;
+            flex-flow: row;
+            justify-content: space-around;
+            .content-sub-block {
+                width: 450px;
+                padding: 5% 0;
+                .content-h4 {
+                    margin: 20px;
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+                .content-text {
+                    margin: 20px;
+                    line-height: 1.2;
+                }
+                .content-btn {
+                    width: 150px;
+                    padding: 3% 2%;
+                    margin-left: 20px;
+                    border: solid 1px black;
+                    text-align: center;
+                }
+            }
+            .img-block.smith-jones-img {
+                display: block;
+                background-image: url('../img/home/home-img-1.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                max-width: 450px;
+                max-height: 275px;
+                width: 100%;
+            }
+            .img-block.futuristic-img {
+                display: block;
+                background-image: url('../img/home/home-img-2.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                max-width: 450px;
+                max-height: 275px;
+                width: 100%;
+            }
+            @media screen and (max-width: 405px){
+                display:flex;
+                flex-flow: column;
+                width: 405px;
+                .content-sub-block {
+                    order: 3;
+                    width: 405px;
+                    display: flex;
+                    flex-flow: column;
+                    .content-h4 {
+                        margin: 20px;
+                        font-size: 2rem;
+                        font-weight: 500;
+                    }
+                }
+                .img-block {
+                    width: 405px;
+                    height: 260px;
+                    order: 0;
+                    
+                    &.smith-jones-img {
+                        background-image: url('../img/home/home-mobile-img-1.png');
+                    }
+                    &.futuristic-img {
+                        background-image: url('../img/home/home-mobile-img-2.png');
+                    }
+                }
+            }
+        }
+        .recent-projects {
+            max-width: 1000px;
+            width: 100%;
+            .recent-projects-block {
+                max-width: 1000px;
+                width: 100%;
+                display: flex;
+                flex-flow: column;
+                margin: 5% 0;
+                .recent-content-sub-block {
+                    display: flex;
+                    flex-flow: column;
+                    width: 1000px;
+                    .recent-img.villas-img {
+                        width: 1000px;
+                        height: 230px;
+                        background-image: url('../img/home/home-villas-img.png');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                    .recent-img.outskirts-img {
+                        width: 1000px;
+                        height: 230px;
+                        background-image: url('../img/home/home-outskirts-img.png');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                    .recent-img.the-blocks-img {
+                        width: 1000px;
+                        height: 230px;
+                        background-image: url('../img/home/home-the-blocks-img.png');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                    .gray-block {
+                        position: relative;
+                        width: 100%;
+                        height: 100px;
+                        top: -54px;
+                        display: flex;
+                        flex-flow: row;
+                        &.villas {
+                            justify-content: flex-end;
+                        }
+                        &.outskirts {
+                            justify-content: flex-start;
+                        }
+                        &.blocks {
+                            justify-content: flex-end;
+                        }
+                        .recent-title-h4 {
+                            position: absolute;
+                            height: 100%;
+                            width: 33%;
+                            line-height: 4;
+                            letter-spacing: 6px;
+                            text-align: center;
+                            background-color: #D8D8D8;
+                        }
+                    }
+                    .recent-projects-content-text {
+                        width: 50%;
+                        margin: 0 auto;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            // .recent-projects-img {}
+            // .gray-block {}
+             @media screen and (max-width: 405px){
+                display:flex;
+                flex-flow: column;
+                width: 405px;
+                .content-h4 {
+                     margin: 20px;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        text-align: center;
+                }
+                .recent-projects-block {
+                    width: 405px;
+                    display: flex;
+                    flex-flow: column;
+                    margin: 0px;
+                    .recent-content-sub-block {
+                        width: 405px;
+                        display: flex;
+                        flex-flow: column;
+                        margin: 0px;
+                        .recent-img {
+                            // display: flex;
+                            // flex-flow: column;
+                            width: 405px;
+                            height: 260px;
+                            
+                            &.villas-img {
+                                 width: 405px;
+                            height: 260px;
+                                background-image: url('../img/home/home-mobile-villas-img.png');
+                                background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                            }
+                            &.outskirts-img {
+                                  width: 405px;
+                            height: 260px;
+                                background-image: url('../img/home/home-mobile-outskirts-img.png');
+                                background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                            }
+                            &.the-blocks-img {
+                                  width: 405px;
+                            height: 260px;
+                                background-image: url('../img/home/home-mobile-the-blocks-img.png');
+                                background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                            }
+                        }
+                        .gray-block {
+                            width: 380px;
+                            height: 100px;
+                            display: block;
+                           
+                            h4.recent-title-h4 {
+                                    width: 380px;
+                                     height: 100px;
+                                left: 10px;
+                            }
 
-/* Your Code Goes Here */
+                    }
+                    .recent-projects-content-text {
+                            width: 405px;
+                            display: flex;
+                            flex-flow: column;
+                            margin: 0;
+                            font-size: 1.2rem;
+                            padding: 10%;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 405px){
+       
+            width: 405px;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: column;
+            padding-left: 0px;
+        .menu {
+            width: 405px;
+        }
+    }
+}
+@media screen and (max-width: 405px){
+            width: 405px;
+            margin: 0;
+    }
+}
