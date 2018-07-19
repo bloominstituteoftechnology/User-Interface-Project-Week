@@ -2,29 +2,14 @@
 
 let menu = document.querySelector('.menu')
 let menuItems = document.querySelector('.menu-items')
-
-// const toggleMenu = () => {
-//   if(menu.classList.contains('menu--close')){
-//     menu.classList.remove('menu--close');
-//     menu.classList.add('menu--open');
-//   }
-//   else if(menu.classList.contains('menu--open')){
-//     menu.classList.remove('menu--open');
-//     menu.classList.add('menu--close');
-//   }
-// }
-
-let slide = TweenMax.from(menuItems, 0.5, {paused: true, y:-50, autoAlpha: 0, ease:Power1.easeOut})
+let slide = TweenMax.from(menuItems, 0.25, {paused: true, y:-50, autoAlpha: 0, ease:Power1.easeOut})
 
 menu.addEventListener('click', () =>{
   if(slide.reversed()){
     slide.play();
-    menu.classList.add('menu--open');
   }
   else{
     slide.reverse();
-    menu.fadeOut(1600);
-    menu.classList.remove('menu--open');
   }
 });
 
