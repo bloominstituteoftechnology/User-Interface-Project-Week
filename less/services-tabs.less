@@ -1,4 +1,9 @@
+.section {
+  .flexit;
+}
+
 .tabs {
+  max-width: 880px;
   width: 100%;
 
   .tabs-items {
@@ -9,7 +14,6 @@
   }
   .tabs-item {
     display: none;
-    max-width: 1020px;
 
     .tabs-item-title {
       font-size: 24px;
@@ -18,23 +22,35 @@
     }
 
     .tabs-item-content {
-      height: 450px;
-      justify-content: space-evenly;
+      height: 600px;
+
+      @media @small {
+        height: 350px;
+        justify-content: space-evenly;
+      }
 
       img {
-        width: 500px;
+        width: 100%;
       }
     }
   }
 
   .tabs-item-selected {
     display: inline-block;
-    max-width: 1020px;
+    max-width: 880px;
   }
 
   .tabs-links {
-    display: flex;
+    height: 300px;
+    .flexit;
+    flex-direction: column;
     justify-content: space-between;
+    // width:
+
+    @media @medium {
+      flex-flow: row nowrap;
+      height: auto;
+    }
   }
 
   .tabs-link {
@@ -43,6 +59,7 @@
     border: 1px solid black;
     cursor: pointer;
     font-weight: bold;
+    text-align: center;
 
     &:hover {
       background-color: #222222;
