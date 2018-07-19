@@ -1,16 +1,19 @@
-// JS goes here
-/*let serviceLinks = document.querySelectorAll('.service-link');
-let preConstructionLink = serviceLinks[0];
-let constructionLink = serviceLinks[1];
-let designBuildLink = serviceLinks[2];
-let sustainabilityLink = serviceLinks[3];
-
-preConstructionLink.addEventListener('click', () => {});
-constructionLink.addEventListener('click', () => {});
-designBuildLink.addEventListener('click', () => {});
-sustainabilityLink.addEventListener('click', () => {});*/
+let navBtn = document.querySelector('#navToggle');
+let navModal = document.querySelector('.nav-expand');
+let navCloseBtn = document.querySelector('#navClose');
 
 
+navBtn.addEventListener('click', () => {
+  navModal.style.display = 'block';
+  navBtn.style.display = 'none';
+  navCloseBtn.style.display = 'inline';
+});
+
+navCloseBtn.addEventListener('click', () => {
+  navModal.style.display = 'none';
+  navBtn.style.display = 'inline';
+  navCloseBtn.style.display = 'none';
+});
 
 class Tabs {
   constructor(element) {
