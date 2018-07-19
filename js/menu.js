@@ -1,8 +1,6 @@
 console.log("menu connected")
 
-const toggleMenu = () => {
-  }
-  
+ 
   const menu = document.querySelector(".menu");
   const menuButton = document.querySelector(".menu-button");
   
