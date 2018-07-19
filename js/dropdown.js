@@ -48,9 +48,7 @@ button.addEventListener("click", () => {
         }
 })
 
-mobButton.addEventListener("click", () => {
-    mobNavButton.classList.toggle("mob-dropdown-hidden");
-})
+
 
 
 
