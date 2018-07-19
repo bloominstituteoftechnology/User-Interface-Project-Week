@@ -7,12 +7,11 @@ const navContact = document.querySelector('.contact');
 const infNav = document.querySelector('.infinityNav');
 const infMenu = document.querySelector('.infinityMenu');
 const hamburger = document.querySelector('.hamburger');
+const logo = document.querySelector('.logo');
 infMenu.style.display = "none";
 navHome.style.display = "none";
 navServices.style.display = "none";
 navContact.style.display = "none";
-
-
 
 
 
