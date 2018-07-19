@@ -9,10 +9,31 @@ const hamburgerMenu = document.querySelector(".hamburger");
 const closeButton = document.querySelector(".close-button");
 const menuNav = document.querySelector(".menu-navigation");
 
-
 hamburgerMenu.addEventListener("click", (event)=> {
     // console.log("I work when clicked!");
     menuNav.classList.toggle("full-display");
+    
+});
+
+
+
+// hamburgerMenu.addEventListener("click", () => {
+//     document.querySelector(".menu-navigation").style.display = "flex";
+//     hamburgerMenu.style.display = "none";
+//     closeButton.style.display = "block";
+// })
+
+
+// closeButton.addEventListener("click",() => {
+//     document.querySelector(".menu-navigation").style.display = "none";
+//     hamburgerMenu.style.display = "block";
+//     closeButton.style.display = "none";
+// })
+
+
+
+
+
 
 
     // const x = closeButton.classList.toggle("close-button");
@@ -26,9 +47,6 @@ hamburgerMenu.addEventListener("click", (event)=> {
     // }
     
     // hamburgerMenu.classList.toggle("hamburger-none");
-    
-});
-
 // closeButton.addEventListener("click", (event) =>{
     
     
@@ -57,54 +75,102 @@ hamburgerMenu.addEventListener("click", (event)=> {
 
 
 
-
 class LinkTabs{
     constructor(element) {
         this.element = element;
         this.element.addEventListener("click", () => {this.tabClicked()});
-
         this.linkTabs = this.element.dataset.tab;
-
-        this.tabContent = document.querySelector(`.tab-content[data-tab="${this.linkTabs}"]`);
+        this.tabContent = document.querySelector(`.tab-content[data-tab="${this.linkTabs}"]`); 
         this.tabContent = new Content(this.tabContent);
+
 
     }
     tabClicked() {
         console.log("I was clicked");
-        this.tabContent.toggleContent();
+        // if(this.linkTabs != "pre-construction"){
+        //     this.tabContent = new Remove(this.tabContent);
+        //     // console.log(this.tabContent)
+        // }else{
+            this.tabContent.toggleContent();
+        }
+        
     }
 
-}
+
 
 class Content {
     constructor(tabContent){
         this.tabContent = tabContent;
+        // this.tabContent = new RemovePre(this.tabContent);
 
     }
     toggleContent() {
-        this.tabContent.classList.toggle("tab-content");
+
         this.tabContent.classList.toggle("tab-show");
         console.log(this.tabContent);
     }
+    // removePreConst(){
+    //     this.tabContent.classList.toggle("tab-content");
+
+    // }
 }
 
 
+// class Remove {
+//     constructor(preContent){
+//         this.preContent = preContent;
+//         this.preContent.removePreConst();
 
-
-
-
-
-
-
-
-
-
-
+//     }
+// }
 
 let tabs = document.querySelectorAll('.tab');
-
 tabs = Array.from(tabs).map(tab => new LinkTabs(tab));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let preConstruction = document.getElementByID("pre-construction");
+
+// preConstruction.addEventListener("click", (event) => {
+//     console.log("remove all elements");
+// });
+
+// let construction = document.getElementById("construction");
+// let designBuild = document.getElementById("design-build");
+// let sustainability = document.getElementById("sustainability");
+
+
+
+
+// hamburgerMenu.addEventListener("click", (event)=> {
+//     // console.log("I work when clicked!");
+//     menuNav.classList.toggle("full-display");
+// });
+
+
+
+// construction.addEventListener('click', () => {
+//     console.log("remove all elements ");
+// })
+
+// designBuild.addEventListener('click', () => {
+//     console.log("remove all elements ");
+// })
+
+// sustainability.addEventListener('click', () => {
+//     console.log("remove all elements ");
+// })
 
 
 
