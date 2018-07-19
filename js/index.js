@@ -15,7 +15,9 @@ $(document).ready(function() {
       this.src="/img/nav-hamburger-close.png";
     //   navItems.style.display = "flex";
       $(".menu").height("100%");
-      $(".contact").fadeIn();
+      navContact.style.display = "block";
+      navServices.style.display = "block";
+      navHome.style.display = "block";
       $(".services").fadeIn(500);
       $(".home").fadeIn(1000);
     }
