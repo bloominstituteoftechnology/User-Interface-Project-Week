@@ -40,11 +40,11 @@ const mobNavBurger = document.querySelector(".mob-nav-burger");
 console.log(navBurger.src)
 button.addEventListener("click", () => {
         navButton.classList.toggle("dropdown-hidden");
-        if (navBurger.src === "img/nav-hamburger-close.png") {
-            navBurger.src = "/img/nav-hamburger.png";
+        if (navBurger.src === "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png") {
+            navBurger.src = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger.png";
         }
         else {
-            navBurger.src = "/img/nav-hamburger-close.png";
+            navBurger.src = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png";
         }
 })
 
