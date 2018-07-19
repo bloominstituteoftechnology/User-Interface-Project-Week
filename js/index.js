@@ -93,9 +93,13 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
 // ----------- script for menu toggle -------------
 
-const toggleMenu = () => {
+const openMenu = () => {
     //toggle the "menu--open" class on the menu reference
-    menu.classList.toggle("menu--open");
+    menu.style.height = "100%";
+};
+
+const closeMenu = () => {
+    menu.style.height = "0vh";
 };
 
 //start here:  create a reference to the "nav" class
@@ -108,6 +112,15 @@ menuButton.addEventListener('click', ()=> {
     console.log("menu-button was clicked")
 });
 
+//create a reference to the ".close-button" class
+const closeButton = document.querySelector(".close-button");
+closeButton.addEventListener('click',() =>{
+    console.log("close-button was clicked")
+});
+
 
 //using the menu button reference, add a click handler that calls toggleMenu
-menuButton.addEventListener('click', toggleMenu)
+menuButton.addEventListener('click', openMenu);
+
+//using the close button reference, add a click handler that calls closeMenu
+closeButton.addEventListener('click', closeMenu);
