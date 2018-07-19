@@ -1,26 +1,30 @@
 // JS goes here
+//dropdown
+class Dropdown {
+  constructor(element) {
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+    // assign this.element to the dropdown element
+    this.element = element;
+    // assign the ".dropdown-button" class found in the dropdown element (look at the HTML for context)
+    this.button = element.querySelector('.dropdown-button');
+  
+    // assign the reference to the ".dropdown-content" class found in the dropdown element
+    this.content = this.element.querySelector('.dropdown-content');
+    // Add a click handler to the button reference and call the toggleContent method.
+    this.button.addEventListener('click', () => {this.toggleContent()});
+  }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+  toggleContent() {
+    // Toggle the ".dropdown-hidden" class off and on
+    this.content.classList.toggle('dropdown-hidden');
   }
 }
+// Nothing to do here, just study what the code is doing and move on to the Dropdown class
+let dropdowns = document.querySelectorAll('.dropdown');
+dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
+//end dropdown
 
 
-  
-  
+
+ 
+
