@@ -87,7 +87,7 @@ class ExpandedNav {
     expandContent() {
         this.content.classList.toggle("nav-expanded");
 
-        TweenMax.fromTo(this.content, 2, {opacity:0, scaleX: 0, scaleY:0, xPercent:100, yPercent:-100}, {opacity:0.9, scaleX:1, scaleY:1, xPercent: 0, yPercent:0})
+        TweenMax.fromTo(this.content, 2, {opacity:0, scaleX: 0, scaleY:0, xPercent:100, yPercent:-100, rotation:-180}, {opacity:0.9, scaleX:1, scaleY:1, xPercent: 0, yPercent:0, rotation:0})
 
         this.closeButton.classList.toggle("show-close");
         this.closeButton.style.display = "block";
@@ -96,7 +96,7 @@ class ExpandedNav {
 
     contractContent() {
         // this.element.style.display = "none";
-        TweenMax.fromTo(this.content, 1, {opacity:0.9, scaleX: 1, scaleY:1, xPercent:0, yPercent:0}, {opacity:0, scaleX:0, scaleY:0, xPercent: 100, yPercent:-100, onComplete: () => {
+        TweenMax.fromTo(this.content, 1, {opacity:0.9, scaleX: 1, scaleY:1, xPercent:0, yPercent:0, rotation:0}, {opacity:0, scaleX:0, scaleY:0, xPercent: 100, yPercent:-100, rotation:-180, onComplete: () => {
             this.content.classList.toggle("nav-expanded");
             this.closeButton.style.display = "none";
             this.openButton.style.display = "block";
