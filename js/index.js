@@ -46,3 +46,69 @@ hamburgerMenu.addEventListener("click", (event)=> {
 //     //console.log(mainNav.classList);
 //     mainNav.classList.toggle("display-flex");
 
+
+//-------------------------------------------------------------------
+//services tabs below
+
+
+class Tabs {
+    constructor(element){
+        this.element = element;
+        this.serviceTab = document.querySelectorAll(".tab");
+        // console.log(this.serviceTab);
+        this.serviceTabArr = Array.from(this.serviceTab).map( servTab => new TabContent(servTab, this));
+        // console.log("I work");
+        // console.log(this.serviceTabArr);
+    }
+
+    updateActiveTab(){
+
+    }
+
+    getTabs(data){
+        if(data === "pre-construction"){
+            return document.querySelector(`.tab[data-tab="pre-construction"]`);
+        } else{
+            return document.querySelector(`.tab[data-tab="${data}"]`);
+        }
+    }
+
+}
+
+
+class TabContent {
+    constructor(element, parent){
+        this.element = element;
+        this.parent = parent;
+        this.constTabs = this.parent.getTabs(this.element.dataset.tab);
+        this.constTabs = Array.from(this.constTabs).map(tabDisplay => new TabOnOFF));
+        this.element.addEventListener('click', () => {this.selectTab()});
+        console.log(this.element);
+
+
+
+    }
+    selectTab(){
+        this.parent.updateActiveTab(this);
+
+        this.element.classlist.add('active-tab');
+
+        this.constTabs.forEach( tabC => tabC.deselectTab());
+    }
+
+    deselectTab(){
+        this.element.classList.remove('active-tab');
+        this.constTabs.forEach( tabC => tabC.deselectTab());
+
+    }
+
+}
+
+
+
+
+
+
+let tabs = document.querySelectorAll(".tabs");
+
+tabs = Array.from(tabs).map (tablink => new Tabs (tablink));
