@@ -42,8 +42,12 @@ const openCloseToggle = () => {
     } else {
         navButton.src = "img/nav-hamburger.png";
         navButton.classList.add('navButtonOpen');
-        document.querySelector(".navExpanded");
-        let fish = navRow.removeChild(document.querySelector(".navExpanded"));
+        document.querySelector(".navExpanded").classList.add("navDisapear");
+        
+         setTimeout(function () {
+            navRow.removeChild(document.querySelector(".navExpanded"));
+    
+        }, 500);
 
     }
 
