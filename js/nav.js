@@ -11,7 +11,7 @@ class Nav {
   }
 
   open (e) {
-    TweenMax.from(this.navItems, .3, {x:300, y:-300, opacity:0, scale:0.5});
+    TweenMax.from(this.navItems, .7, {x:200, y:-300, opacity:0, scale:0.7});
     this.burger.classList.toggle('display-none');
     this.navItems.classList.toggle('main-nav__items--active');
     this.logo.classList.toggle('display-none');
