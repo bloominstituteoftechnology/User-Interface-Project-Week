@@ -50,15 +50,21 @@ tabs=Array.from(tabs).map(tab=>new Tabs(tab));
 class DropDown {
     constructor(element) {
         this.element=element;
-        this.button=this.element.querySelector('.dropdown-button');
+        this.closedButton=this.element.querySelector('.dropdown-button-closed');
+        this.openButton=this.element.querySelector('.dropdown-button-open');
         this.content=this.element.querySelector('.dropdown-content');
-        this.button.addEventListener('click',()=>this.toggleDropDownMenu())
+        this.closedButton.addEventListener('click',()=>this.toggleDropDownMenu())
+        this.openButton.addEventListener('click',()=>this.toggleDropDownMenu());
     }
     toggleDropDownMenu() {
         if (this.content.classList.contains('dropdown-hidden')) {
-            TweenLite.to(this.content, 1, {css:{className:'-=dropdown-hidden'}, ease: Elastic.easeOut} );
+            TweenLite.to(this.content, 0.3, {css:{className:'-=dropdown-hidden'}, ease: Elastic.easeOut} );
+            this.closedButton.style.display='none';
+            this.openButton.style.display='block';
           } else {
-            TweenLite.to(this.content, 1, {css:{className:'+=dropdown-hidden'}, ease: Elastic.easeIn} );
+            TweenLite.to(this.content, 0.3, {css:{className:'+=dropdown-hidden'}, ease: Elastic.easeIn} );
+            this.openButton.style.display='none';
+            this.closedButton.style.display='block';
           }
     }
 }
