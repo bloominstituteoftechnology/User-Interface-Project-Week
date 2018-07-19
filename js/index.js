@@ -26,6 +26,7 @@ navContact.style.display = "none";
             infMenu.style.display = "flex";
           //   navItems.style.display = "flex";
             // infMenu.style.display = "block";
+            $(".infinityMenu").fadeIn(1000);
             navContact.style.display = "block";
             navServices.style.display = "block";
             navHome.style.display = "block";
