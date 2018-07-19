@@ -95,15 +95,15 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
 const openMenu = () => {
     //toggle the "menu--open" class on the menu reference
-    menu.style.height = "100%";
+    menu.style.display = "block";
 };
 
 const closeMenu = () => {
-    menu.style.height = "0vh";
+    menu.style.display = "none";
 };
 
 //start here:  create a reference to the "nav" class
-const menu = document.querySelector(".nav");
+const menu = document.querySelector(".nav1");
 console.log(menu);
 
 //create a reference to the ".menu-button" class
@@ -117,7 +117,6 @@ const closeButton = document.querySelector(".close-button");
 closeButton.addEventListener('click',() =>{
     console.log("close-button was clicked")
 });
-
 
 //using the menu button reference, add a click handler that calls toggleMenu
 menuButton.addEventListener('click', openMenu);
