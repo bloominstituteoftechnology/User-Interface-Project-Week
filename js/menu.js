@@ -14,14 +14,12 @@ const closeMenu = () => {
     menuButton.classList.remove("hidden");
 }
 
-
 const menu = document.querySelector(".menu");
 const menuButton = document.querySelector(".menu-button");
 const menuClose = document.querySelector(".close-button");
 
 menuButton.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
-
 
 menuClose.addEventListener("mouseover", (event) => {
     TweenMax.to(".menu-items", .5, {opacity:.3});
