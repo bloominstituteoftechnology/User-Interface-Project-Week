@@ -154,8 +154,9 @@ table {
 .page header {
   background-color: #9EA8B1;
   padding: 10px 6%;
-  position: fixed;
+  position: absolute;
   width: 100%;
+  z-index: 3;
 }
 .page header nav .home-nav {
   display: flex;
@@ -309,7 +310,7 @@ table {
 }
 .container .property img {
   width: 100%;
-  position: relative;
+  z-index: -1;
 }
 .container .property .villas-button {
   position: relative;
@@ -323,6 +324,7 @@ table {
   float: right;
   top: -40px;
   letter-spacing: 5px;
+  z-index: 1;
 }
 @media (max-width:576px) {
   .container .property .villas-button {
@@ -597,9 +599,6 @@ footer .copyright {
   font-weight: bold;
   font-family: 'Roboto', Arial, Sans-serif;
 }
-.container {
-  flex-direction: row;
-}
 @media (max-width:576px) {
   .container {
     flex-direction: column;
@@ -635,7 +634,11 @@ footer .copyright {
   }
 }
 .container .where-we-work {
-  width: 50%;
+  width: 40%;
+  float: right;
+  position: absolute;
+  top: 42%;
+  right: 3%;
 }
 @media (max-width:576px) {
   .container .where-we-work {
