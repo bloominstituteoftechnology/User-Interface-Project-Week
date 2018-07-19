@@ -31,11 +31,8 @@
 const button = document.querySelector(".dropdown-button");
 const navBurger = document.querySelector(".nav-burger");
 
-
-
 // gets divs containing hidden dropdown
 const navButton = document.querySelector(".nav-text-container");
-
 
 // src vars
 const navBurgerImgClosed = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png";
