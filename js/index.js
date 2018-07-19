@@ -7,15 +7,20 @@ const menuClose = document.querySelector('.menu-close');
  
 menuButton.addEventListener('click', () => {
   menu.classList.toggle('menu--open');
+  TweenMax.fromTo(menu, 1.5, {yPercent:-100}, {yPercent:0});
   menuButton.style.display = 'none';
   menuClose.style.display = 'block';
 });
 
 menuClose.addEventListener('click', () => {
-  menu.classList.toggle('menu--open');
   menuButton.style.display = 'block';
   menuClose.style.display = 'none';
+  TweenMax.fromTo(menu, 1.5, {yPercent:0}, {yPercent:-100, onComplete:tweenComplete});
 });  
+
+function tweenComplete() {
+  menu.classList.toggle('menu--open');
+}
 
   //Services Tabs Component
   class Tabs {
