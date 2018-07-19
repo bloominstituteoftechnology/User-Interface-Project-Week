@@ -15,32 +15,70 @@ closeBtn.addEventListener("click", (event) => {
     closeBtn.classList.remove("visibility");
 })
 
-let links = document.querySelectorAll(".link");
+class Tabs {
+    constructor(element) {
+        this.element = element;
+        this.links = this.element.querySelectorAll('.tabs-link');
+        this.links = Array.from(this.links).map(link => {
+            return new TabsLink(link, this);
+        });
+        this.activeLink = this.links[0];
+        this.init();
+    }
 
+    init() {
+        this.activeLink.select();
+    }
 
-class Tab {
-    constructor(link) {
+    updateActive(newActive) {
+        this.activeLink.deselect();
+        this.activeLink = newActive;
+    }
+
+    getTab(data) {
+        return this.element.querySelector(`#tab-content[data-tab="${data}"]`);
+    }
+
+}
+
+class TabsLink {
+    constructor(link, parent) {
         this.link = link;
-        this.link.addEventListener("click", () => { this.linkClick() });
+        this.tabs = parent;
+        this.tabsItem = parent.getTab(this.link.dataset.tab);
+        this.tabsItem = new TabsItem(this.TabsItem);
+        this.link.addEventListener('click', () => {
+            this.tabs.updateActive(this);
 
-        this.linkData = this.link.dataset.tab;
-        this.tabContent = document.querySelector(`.content[data-tab="${this.linkData}"]`);
-        this.tabContent = new Content(this.tabContent);
+            this.select();
+        });
     }
 
-    linkClick() {
-        this.tabContent.toggleContent();
+    select() {
+        this.link.classList.add("tabs-link-selected");
+        this.tabsItem.select();
+    }
+
+    deselect() {
+        this.link.classList.remove("tabs-link-selected");
+        this.tabsItem.deselect();
     }
 }
 
-class Content {
-    constructor(tabContent) {
-        this.tabContent = tabContent;
+class TabsItem {
+    constructor(element) {
+        this.element = element;
     }
 
-    toggleContent() {
-        this.tabContent.classList.toggle("tab-show");
+    select() {
+        this.element.classList.add("tabs-item-selected");
+    }
+
+    deselect() {
+        this.element.classList.remove("tabs-item-selected");
     }
 }
 
-links = Array.from(links).map(link => new Tab(link));
+
+let tabs = document.querySelectorAll(".tabs");
+tabs = Array.from(tabs).map(tab => new Tabs(tab));
