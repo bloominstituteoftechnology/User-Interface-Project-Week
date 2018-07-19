@@ -57,7 +57,9 @@ class DropDownItem {
         a.setAttribute('href', this.url);
         a.setAttribute(`data-${this.dataAttr}`, this.dataAttr);
         a.setAttribute('class', this.class);
-        a.setAttribute('target', "_blank");
+        if(this.title === "KEWL" || this.title === "ERIK"){
+            a.setAttribute('target', "_blank");
+        }
         a.innerHTML = this.title;
         this.a = a;
         return a;
@@ -76,20 +78,20 @@ const tags = {
     closeButton: document.querySelector('.close-button'),
     titles : [
     {
-        title: "silly",
+        title: "HOME",
+        url: "/Users/erikkimsey/Desktop/lambda/User-Interface-Project-Week/index.html"
+    },
+    {
+        title: "SERVICES",
+        url: "/Users/erikkimsey/Desktop/lambda/User-Interface-Project-Week/services.html"
+    },
+    {
+        title: "KEWL",
         url: "https://en.wikipedia.org/wiki/Cybernetic_Culture_Research_Unit"
     },
     {
-        title: "billy",
-        url: "https://en.wikipedia.org/wiki/Cybernetic_Culture_Research_Unit"
-    },
-    {
-        title: "fo",
-        url: "https://en.wikipedia.org/wiki/Cybernetic_Culture_Research_Unit"
-    },
-    {
-        title: "rilly",
-        url: "https://en.wikipedia.org/wiki/Cybernetic_Culture_Research_Unit"
+        title: "ERIK",
+        url: "http://erikkimsey.com"
     }
 ]
 };
