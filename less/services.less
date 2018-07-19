@@ -1,0 +1,95 @@
+// Services Page Styling
+.services .jumbotron {
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 75px;
+  color: #FFFFFF;
+  position: relative;
+  .jumbotron-text {
+    opacity: 0;
+    z-index: 2;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 60%;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.services .main-content {
+  width: 82%;
+  margin: 40px auto;
+  .services-tabs {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    @media @phone {
+      justify-content: center;
+      flex-direction: column;
+    }
+    .tab {
+      border: 1px solid #222222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 10px;
+      cursor: pointer;
+      @media @phone {
+        margin-bottom: 20px;
+      }
+      h3 {
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+      &:hover {
+        background-color: #222222;
+        h3{
+          color: white;
+        }
+      }
+    }
+    .tab-active {
+      background-color: #5E9FB9;
+      h3 {
+        color: white;
+      }
+      border: none;
+    }
+  }
+  .services-content {
+    .content {
+      margin-top: 40px;
+      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation-name: fade;
+      animation-duration: 0.5s;
+      .text-content {
+        width: 50%;
+        @media @phone {
+          width: 100%;
+        }
+      }
+      .image-content {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        @media @phone {
+          width: 100%;
+          justify-content: center;
+        }
+        img {
+          width: 95%;
+          @media @phone {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .content-active {
+      display: flex;
+    }
+  }
+}
