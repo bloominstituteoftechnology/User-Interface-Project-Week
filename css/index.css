@@ -154,7 +154,7 @@ body {
 }
 h2 {
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: #222222;
 }
 h3 {
@@ -163,7 +163,7 @@ h3 {
   line-height: 2.4rem;
   color: #fff;
 }
-.container {
+.wrap {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
@@ -177,7 +177,7 @@ h3 {
   display: flex;
   align-content: center;
   justify-content: space-between;
-  padding: 15px 85px 10px;
+  padding: 13px 85px 10px;
   margin: 0 auto;
 }
 @media only screen and (max-width: 480px) {
@@ -212,6 +212,7 @@ h3 {
   }
 }
 .menu .navigation-links a {
+  width: 200px;
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 8.5rem;
@@ -222,7 +223,7 @@ h3 {
 .menu .navigation-links :hover {
   color: #222222;
 }
-.jumbo {
+.jumbotron {
   background-image: url("../img/home/home-jumbotron.png");
   height: 598px;
   position: relative;
@@ -230,22 +231,22 @@ h3 {
   background-repeat: no-repeat;
 }
 @media only screen and (max-width: 480px) {
-  .jumbo {
+  .jumbotron {
     background-image: url(../img/home/home-mobile-jumbotron.png);
     height: 260px;
   }
 }
-.jumbo h1 {
+.jumbotron h1 {
   font-weight: bold;
   font-size: 6.4rem;
   line-height: 7.5rem;
   color: #FFFFFF;
   bottom: 50px;
-  margin-left: 65px;
+  margin-left: 60px;
   position: absolute;
 }
 @media only screen and (max-width: 480px) {
-  .jumbo h1 {
+  .jumbotron h1 {
     margin-left: 0px;
     bottom: 13px;
     font-size: 3.2rem;
@@ -271,14 +272,15 @@ h3 {
   position: absolute;
 }
 .top-content {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin: 25px auto;
   padding-top: 25px;
   padding-bottom: 50px;
+  padding-left: 0;
+  padding-right: 0;
   max-width: 855px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 @media only screen and (max-width: 480px) {
   .top-content {
@@ -295,16 +297,16 @@ h3 {
     flex-direction: column-reverse;
   }
 }
-.top-content .snj-image-holder {
-  padding-right: 0;
-}
-.top-content .snj-image-holder .snj-image {
+.top-content .snj-image {
   background-image: url(../img/home/home-img-1.png);
   height: 275px;
-  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media only screen and (max-width: 480px) {
-  .top-content .snj-image-holder .snj-image {
+  .top-content .snj-image {
     background-image: url(../img/home/home-mobile-img-1.png);
   }
 }
@@ -316,16 +318,15 @@ h3 {
     margin-top: 40px;
   }
 }
-.top-content .fd-image-holder {
-  padding-left: 0;
-}
-.top-content .fd-image-holder .fd-image {
+.top-content .fd-image {
   background-image: url(../img/home/home-img-2.png);
   height: 275px;
-  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media only screen and (max-width: 480px) {
-  .top-content .fd-image-holder .fd-image {
+  .top-content .fd-image {
     background-image: url(../img/home/home-mobile-img-2.png);
     margin-bottom: 20px;
   }
@@ -360,15 +361,19 @@ h3 {
 .top-content p {
   margin-top: 20px;
 }
-.services-top-content {
-  padding: 50px 85px;
+.section {
+  max-width: 855px;
+  margin: 0 auto;
+}
+.section .services-top-content {
+  margin-top: 50px;
+  margin-bottom: 45px;
 }
 .tabs {
   width: 100%;
-  padding: 0 55px;
 }
 .tabs .tabs-items {
-  padding-top: 50px;
+  padding-top: 55px;
 }
 .tabs .tabs-item {
   display: none;
@@ -376,10 +381,22 @@ h3 {
 .tabs .tabs-item h2 {
   font-size: 2.4rem;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 .tabs .tabs-item-selected {
   display: flex;
+}
+.tabs .tabs-item-selected .image {
+  padding: 0;
+  margin-top: 35px;
+  margin-left: 30px;
+}
+.tabs .tabs-item-selected .text {
+  padding-left: 0;
+}
+.tabs .tabs-item-selected .text p {
+  line-height: 2.6rem;
+  font-weight: 500;
 }
 .tabs .tabs-links {
   display: flex;
@@ -411,16 +428,14 @@ h3 {
   background-color: #222222;
 }
 .middle-content {
-  margin-top: 50px;
+  margin: 50px auto 0 auto;
   max-width: 855px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-bottom: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .middle-content p {
   font-size: 1.7rem;
-}
-.middle-content h2 {
-  font-size: 2.4rem;
 }
 .middle-content .recent-projects,
 .middle-content .description {
@@ -430,12 +445,10 @@ h3 {
 @media only screen and (max-width: 480px) {
   .middle-content {
     margin-top: 45px;
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 .middle-content .villa {
-  margin-top: 50px;
+  margin-top: 45px;
   margin-bottom: 50px;
   position: relative;
   height: 270px;
@@ -451,7 +464,7 @@ h3 {
   background-image: url(../img/home/home-villas-img.png);
   height: 230px;
   width: 100%;
-  background-size: 100% 100%;
+  background-size: cover;
   padding-left: 0;
   padding-right: 0;
 }
@@ -467,12 +480,12 @@ h3 {
   background-color: #D8D8D8;
   height: 95px;
   padding-top: 35px;
-  width: 320px;
+  width: 315px;
   right: 0;
-  bottom: 5px;
+  bottom: 0;
   text-align: center;
   font-size: 2.4rem;
-  letter-spacing: 0.7rem;
+  letter-spacing: 0.8rem;
 }
 @media only screen and (max-width: 480px) {
   .middle-content .villa .overlay {
@@ -496,7 +509,7 @@ h3 {
   background-image: url(../img/home/home-outskirts-img.png);
   height: 230px;
   width: 100%;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 @media only screen and (max-width: 480px) {
   .middle-content .outskirts .outskirt-img {
@@ -512,15 +525,14 @@ h3 {
   padding-top: 35px;
   width: 315px;
   left: 0;
-  bottom: 5px;
+  bottom: 0;
   text-align: center;
   font-size: 2.4rem;
-  letter-spacing: 0.7rem;
+  letter-spacing: 0.8rem;
 }
 @media only screen and (max-width: 480px) {
   .middle-content .outskirts .overlay {
     width: 270px;
-    right: 15px;
   }
 }
 .middle-content .block {
@@ -541,7 +553,7 @@ h3 {
   width: 855px;
   height: 230px;
   width: 100%;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 @media only screen and (max-width: 480px) {
   .middle-content .block .block-img {
@@ -555,12 +567,12 @@ h3 {
   background-color: #D8D8D8;
   height: 95px;
   padding-top: 35px;
-  width: 320px;
+  width: 315px;
   right: 0;
-  bottom: 5px;
+  bottom: 0;
   text-align: center;
   font-size: 2.4rem;
-  letter-spacing: 0.7rem;
+  letter-spacing: 0.8rem;
 }
 @media only screen and (max-width: 480px) {
   .middle-content .block .overlay {
@@ -570,13 +582,14 @@ h3 {
 .footer {
   background: #828282;
   display: flex;
-  justify-content: flex-end;
-  margin-top: 100px;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 90px;
 }
 @media only screen and (max-width: 480px) {
   .footer {
     flex-direction: column;
-    margin-top: 90px;
   }
 }
 .footer .contact {
