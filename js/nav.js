@@ -1,4 +1,3 @@
-// JS goes here
 
 class Nav {
   constructor(props) {
@@ -9,7 +8,6 @@ class Nav {
     this.logo = this.props.querySelector('.main-logo');
     this.closeIcon = this.navItems.querySelector('.main-nav__close');
     this.closeIcon.addEventListener('click', () => {this.close()});
-    console.log(this.logo)
   }
 
   open (e) {
