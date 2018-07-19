@@ -23,3 +23,16 @@ menuButton.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
 
 
+menuClose.addEventListener("mouseover", (event) => {
+    TweenMax.to(".menu-items", .5, {opacity:.3});
+    event.stopPropagation();
+})
+
+menuClose.addEventListener("mouseleave", (event) => {
+    TweenMax.to(".menu-items", .5, {opacity:1});
+    event.stopPropagation();
+})
+
+
+
+
