@@ -45,3 +45,40 @@ const openCloseToggle = () =>{
 navButton.addEventListener("click", openCloseToggle);
 
 
+let currentImg = 0;
+const slideChange = () =>{
+    switch (currentImg){
+        case 0:
+        document.getElementById("image0").classList.add("hidden");
+        document.getElementById("image1").classList.remove("imgNext");
+        document.getElementById("image2").classList.remove("hidden");
+        document.getElementById("image2").classList.add("imgNext");
+
+        currentImg=1;
+        break;
+        case 1:
+        document.getElementById("image1").classList.add("hidden");
+        document.getElementById("image2").classList.remove("imgNext");
+        document.getElementById("image0").classList.remove("hidden");
+        document.getElementById("image0").classList.add("imgNext");
+
+
+        currentImg=2;
+
+        break;
+        case 2:
+        document.getElementById("image2").classList.add("hidden");
+        document.getElementById("image0").classList.remove("imgNext");
+        document.getElementById("image1").classList.remove("hidden");
+        document.getElementById("image1").classList.add("imgNext");
+
+        currentImg=0;
+
+        break;
+
+
+
+
+    }
+}
+const myVar = setInterval(slideChange, 5000);
