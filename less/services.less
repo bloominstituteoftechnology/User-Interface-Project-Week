@@ -41,7 +41,6 @@
             align-items: center;   
             margin-left: 6%;
 
-
             a {
                 color: #FFFFFF;
                 font-size: 40px;
@@ -71,7 +70,7 @@
     justify-content: flex-end; 
 
     h1 {
-        font-size: 64px; 
+        font-size: 5.4rem; 
         line-height: 75px;;
         color: #FFFFFF;
         font-weight: bold;
@@ -93,8 +92,13 @@
 
         .tabs-services {
             display: flex; 
+            flex-direction: row;
             justify-content: space-between;
             margin: 30px 0;
+            @media @phone {
+                flex-direction: column;
+                margin: 1% 0;
+            }
 
             .service-tab {
                 width: 20%; 
@@ -103,6 +107,11 @@
                 text-align: center; 
                 font-size: 1.6rem;
                 font-weight: bold;
+                @media @phone {
+                    width: 100%;
+                    margin: 2% 0;
+                    background-size: contain;
+                }
 
                 &:hover {
                     background-color: #5E9FB9;
@@ -112,6 +121,7 @@
 
             .tab-selected {
                 background-color: #5E9FB9;
+                color: #FFFFFF;
             }
         }
 
@@ -120,18 +130,37 @@
             .tab-content {
                 display: flex;
                 display: none;
+                @media @phone {
+                    flex-direction: column;
+                }
 
                 .tab-content-text {
                     margin-right: 20px;
-                    
+                    @media @phone {
+                        margin-right: 0;
+                    }
+
                     h3 {
                         font-weight: bold; 
                         font-size: 2.8rem;
                     } 
+
+                    p {
+                        @media @phone {
+                            margin: 5% 0;
+                        }
+                    }
                 }
 
                 .tab-content-img {
-                    margin-top: 11%;
+
+                    img {
+                        margin-top: 24%;
+                        @media @phone {
+                            margin: 0 auto;
+                            width: 95vw;
+                        }
+                    }
                 }
             }
 
