@@ -35,19 +35,25 @@ const navBurger = document.querySelector(".nav-burger");
 const navButton = document.querySelector(".nav-text-container");
 
 // src vars
-const navBurgerImgClosed = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png";
-const navBurgerImgOpen = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger.png";
+// const navBurgerImgClosed = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger-close.png";
+// const navBurgerImgOpen = "https://raw.githubusercontent.com/szincone/User-Interface-Project-Week/master/img/nav-hamburger.png";
 
+const navBurgerImgClosed = "img/nav-hamburger-close.png"
+const navBurgerImgOpen = "img/nav-hamburger.png"
 
 button.addEventListener("click", () => {
-        navButton.classList.toggle("dropdown-hidden");
-        if (navBurger.src === navBurgerImgClosed) {
+        let isOpen = navButton.classList.toggle("dropdown-hidden");
+        if (isOpen) {
             navBurger.src = navBurgerImgOpen;
         }
         else {
             navBurger.src = navBurgerImgClosed;
         }
 })
+
+// isOpen ?
+//     navBurger.src = navBurgerImgOpen : 
+//     navBurger.src = navBurgerImgClosed;
 
 
 
