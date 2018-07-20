@@ -1,55 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Services</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
-	 crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="css/index.css">
-	<!--[if IE]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
-
-<body>
-	<script defer="defer" src="./components/Dropdown/Dropdown.js"></script>
-	<script defer="defer" src="./components/Tabs/Tabs.js"></script>
-
-	<div class="header-container">
-		<div class="container">
-
-			<div class="header"> S&J</div>
-
-			<div class="dropdown">
-				<img src="img/nav-hamburger.png" class="dropdown-button" />
-				<div class="dropdown-content">
-					<a class="dropdown-link" href="index.html" target="_self">Home</a>
-					<a class="dropdown-link" href="services.html" target="_self">Services</a>
-					<a class="dropdown-link" href="contact.html" target="_self">Contact</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="jumbotron-container">
-		<img class="jumbo-img desktop-img" src="img/services/services-jumbotron.png" />
-		<img class="jumbo-img mobile-img" src="img/services/services-mobile-jumbotron.png" />
-		<div class="container jumbo-text services-jumbo">
-			<h1>Services</h1>
-		</div>
-	</div>
-
-	<div class="container services">
+<template>
+<div class="container">
+<div class="services">
 		<p>Services include: completely synergize resource taxing relationships via premier niche markets. Professionally cultivate
 			one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the
 			art customer service.</p>
 	</div>
 
-	<div class="container section">
+	<div class="section">
 		<div class="tabs">
 			<div class="tabs-links">
 				<div class="tabs-link" data-tab="1">Pre-Construction</div>
@@ -133,52 +90,41 @@
 			</div>
 		</div>
 	</div>
+  </div>
+</template>
 
-	<footer>
-		<div class="container">
-			<div class="address-box">
-				<div class="email-input">
-					<h1>Interested in starting a project?
-						<br> Let's Talk:</h1>
-					<input type="email" placeholder="Enter email">
-					<p>We'll never share your email with anyone else.</p>
-				</div>
+<script type = "text/javascript" >
 
+export default {
+};
+</script>
 
-				<div class="address address1">
-					<h1>New York</h1>
-					<p>123 Lane</p>
-					<p>Suite 100</p>
-					<p>Albany, NY 12345</p>
-					<p>202 555 0144</p>
-				</div>
+<style lang="less">
+@import '../assets/mixins.less';
+@import '../assets/global-styles.less';
+  .services {
+  padding-top: 52px;
 
-				<div class="address address1">
-					<h1>Florida</h1>
-					<p>Ocean Drive</p>
-					<p>Suite 201</p>
-					<p>Orlando, FL 22345</p>
-					<p>502 555 0144</p>
-				</div>
+  @media @phone {
+    padding-top: 35px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 25px;
 
-				<div class="address">
-					<h1>California</h1>
-					<p>Mountain Street</p>
-					<p>Suite 105</p>
-					<p>San Diego, CA 22345</p>
-					<p>702 555 0144</p>
-				</div>
-			</div>
-		</div>
-		<div class="copyright">
-			<p>Copyright © 2018 Smith and Jones</p>
-		</div>
+    @media @phone {
+      font-size: 20px;
+      line-height: 33px;
+    }
+  }
+}
+.section {
+  margin: 44px auto 65px auto;
+  display: flex;
+  overflow: hidden;
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		 crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-		 crossorigin="anonymous"></script>
-		<script src="js/index.js"></script>
-</body>
-
-</html>
+  @media @phone {
+    margin: 49px auto 82px auto;
+  }
+}
+</style>
