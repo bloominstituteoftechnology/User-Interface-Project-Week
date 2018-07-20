@@ -6,24 +6,28 @@
 
 // Start Here: Create a reference to the ".menu" class
 //const menu;
-let menu = document.querySelector(".menu");
+ let menu = document.querySelector(".menu");
+ menuState = document.getElementsByClassName("menu");
 //let myButtons = document.querySelectorAll("li");
-let menuButton = document.querySelector(".menu-button");
-menuButton.addEventListener('click', (event)=> {
- menu.classList.toggle("menu--open")
-})
-// menuButton.addEventListener('click',openNav);
+ let menuButton = document.querySelector(".menu-button");
+ let menuClose = document.querySelector(".menu-button-close");
+
+// menuButton.addEventListener('click', (event)=> {
+//  menu.classList.toggle("menu--open")
+// })} 
+
+
+if (true){
+    menuButton.addEventListener("click",function(){menu.classList.toggle("menu--close")});
+}else {
+    menuClose.addEventListener("click",function(){menu.classList.toggle("menu--open")});
+}
+
+
 
 //console.log(info)
 console.log(menu)
 console.log(menuButton)
-// function openNav() {
-//   document.getElementsByClassName("myNav").style.height = "100%";
-// }
-
-// function closeNav() {
-//   document.getElementById("myNav").style.height = "0%";
-// }
 
 
 // create a reference to the ".menu-button" class
