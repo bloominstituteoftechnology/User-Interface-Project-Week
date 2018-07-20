@@ -14,26 +14,26 @@ navServices.style.display = "none";
 navContact.style.display = "none";
 
 
-      hamburger.addEventListener("click", function(element){
-        if (this.src.length === 43){
-            this.src="/img/nav-hamburger-close.png";
-            infMenu.style.display = "flex";
-            $(".infinityMenu").fadeIn(1000);
-            navContact.style.display = "block";
-            navServices.style.display = "block";
-            navHome.style.display = "block";        
-    } else if (this.src.length === 49){
-        this.src="/img/nav-hamburger.png";
-        infMenu.style.display = "none";
-        navHome.style.display = "none";
-        navServices.style.display = "none";
-        navContact.style.display = "none";
-     }
-    });
+hamburger.addEventListener("click", function (element) {
+  if (this.src.length === 43) {
+    this.src = "/img/nav-hamburger-close.png";
+    infMenu.style.display = "flex";
+    $(".infinityMenu").fadeIn(1000);
+    navContact.style.display = "block";
+    navServices.style.display = "block";
+    navHome.style.display = "block";
+  } else if (this.src.length === 49) {
+    this.src = "/img/nav-hamburger.png";
+    infMenu.style.display = "none";
+    navHome.style.display = "none";
+    navServices.style.display = "none";
+    navContact.style.display = "none";
+  }
+});
 
 
-  //Service Tab Nav
- 
+//Service Tab Nav
+
 
 const pre = document.querySelector('.pre');
 const preContent = document.querySelector('.preContent');
@@ -56,74 +56,74 @@ susContent.style.display = "none";
 
 
 
-pre.addEventListener("click", function(element){
-  if (this.style.color = "black"){
+pre.addEventListener("click", function (element) {
+  if (this.style.color = "black") {
     this.style.color = "white";
     this.style.backgroundColor = "#5E9FB9";
     con.style.color = "black";
-    con.style.backgroundColor = "white"; 
+    con.style.backgroundColor = "white";
     des.style.color = "black";
-    des.style.backgroundColor = "white"; 
+    des.style.backgroundColor = "white";
     sus.style.color = "black";
-    sus.style.backgroundColor = "white"; 
+    sus.style.backgroundColor = "white";
     conContent.style.display = "none";
     desContent.style.display = "none";
     susContent.style.display = "none";
     preContent.style.display = "flex";
-   }
+  }
 })
 
-con.addEventListener("click", function(element){
-        if (this.style.color = "black"){
-      this.style.color = "white";
-      this.style.backgroundColor = "#5E9FB9";
-      pre.style.color = "black";
-      pre.style.backgroundColor = "white"; 
-      des.style.color = "black";
-      des.style.backgroundColor = "white"; 
-      sus.style.color = "black";
-      sus.style.backgroundColor = "white"; 
-      conContent.style.display = "flex";
-      desContent.style.display = "none";
-      susContent.style.display = "none";
-      preContent.style.display = "none";
-     }
- });
-
-
-des.addEventListener("click", function(element){
-        if (this.style.color = "black"){
-      this.style.color = "white";
-      this.style.backgroundColor = "#5E9FB9";
-      pre.style.color = "black";
-      pre.style.backgroundColor = "white"; 
-      con.style.color = "black";
-      con.style.backgroundColor = "white"; 
-      sus.style.color = "black";
-      sus.style.backgroundColor = "white";
-      conContent.style.display = "none";
-      desContent.style.display = "flex";
-      susContent.style.display = "none";
-      preContent.style.display = "none"; 
-     }
+con.addEventListener("click", function (element) {
+  if (this.style.color = "black") {
+    this.style.color = "white";
+    this.style.backgroundColor = "#5E9FB9";
+    pre.style.color = "black";
+    pre.style.backgroundColor = "white";
+    des.style.color = "black";
+    des.style.backgroundColor = "white";
+    sus.style.color = "black";
+    sus.style.backgroundColor = "white";
+    conContent.style.display = "flex";
+    desContent.style.display = "none";
+    susContent.style.display = "none";
+    preContent.style.display = "none";
+  }
 });
 
 
-sus.addEventListener("click", function(element){
-        if (this.style.color = "black"){
-      this.style.color = "white";
-      this.style.backgroundColor = "#5E9FB9";
-      pre.style.color = "black";
-      pre.style.backgroundColor = "white"; 
-      con.style.color = "black";
-      con.style.backgroundColor = "white"; 
-      des.style.color = "black";
-      des.style.backgroundColor = "white";
-      conContent.style.display = "none";
-      desContent.style.display = "none";
-      susContent.style.display = "flex";
-      preContent.style.display = "none"; 
-   }
+des.addEventListener("click", function (element) {
+  if (this.style.color = "black") {
+    this.style.color = "white";
+    this.style.backgroundColor = "#5E9FB9";
+    pre.style.color = "black";
+    pre.style.backgroundColor = "white";
+    con.style.color = "black";
+    con.style.backgroundColor = "white";
+    sus.style.color = "black";
+    sus.style.backgroundColor = "white";
+    conContent.style.display = "none";
+    desContent.style.display = "flex";
+    susContent.style.display = "none";
+    preContent.style.display = "none";
+  }
+});
+
+
+sus.addEventListener("click", function (element) {
+  if (this.style.color = "black") {
+    this.style.color = "white";
+    this.style.backgroundColor = "#5E9FB9";
+    pre.style.color = "black";
+    pre.style.backgroundColor = "white";
+    con.style.color = "black";
+    con.style.backgroundColor = "white";
+    des.style.color = "black";
+    des.style.backgroundColor = "white";
+    conContent.style.display = "none";
+    desContent.style.display = "none";
+    susContent.style.display = "flex";
+    preContent.style.display = "none";
+  }
 });
 
 
@@ -136,4 +136,3 @@ sus.addEventListener("click", function(element){
 
 
 
-  
