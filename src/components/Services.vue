@@ -4,41 +4,87 @@
   Services
 </Jumbotron>
 <div class="container">
-<div class="services">
+  <div class="services">
 		<p>Services include: completely synergize resource taxing relationships via premier niche markets. Professionally cultivate
 			one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the
 			art customer service.</p>
 	</div>
-
 	<div class="section">
     <tabs>
-      <tab name="Pre-Construction">
-        <h1> This is the tab </h1>
+      <div class="tabs-items">
+      <tab class="tabs-item" name="Pre-Construction" :selected="true">
+        <div class="tabs-item-title">Pre-Construction</div>
+        <div class="tabs-item-description">
+          <div class="tabs-text">
+            <p>
+            Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer
+						service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer
+						service.<br><br> Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive
+						e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable
+						potentialities.
+            </p>
+          </div>
+          <div>
+            <img class="desktop-img" src="../assets/services/services-tab-pre-construction-img.png" />
+          </div>
+        </div>
       </tab>
 
-      <tab name="Construction">
-        <h1> This is the other tab </h1>
+      <tab class="tabs-item" name="Construction">
+        <div class="tabs-item-title">Construction</div>
+        <div class="tabs-item-description">
+          <div class="tabs-text">
+            <p>
+            Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer
+						service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer
+						service.<br><br> Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive
+						e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable
+						potentialities.
+            </p>
+          </div>
+          <div>
+            <img class="desktop-img" src="../assets/services/services-tab-construction-img.png" />
+          </div>
+        </div>
       </tab>
+      <tab class="tabs-item" name="Design Build">
+        <div class="tabs-item-title">Design Build</div>
+        <div class="tabs-item-description">
+          <div class="tabs-text">
+            <p>
+            Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer
+						service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer
+						service.<br><br> Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive
+						e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable
+						potentialities.
+            </p>
+          </div>
+          <div>
+            <img class="desktop-img" src="../assets/services/services-tab-design-build-img.png" />
+          </div>
+        </div>
+      </tab>
+      <tab class="tabs-item" name="Sustainability">
+        <div class="tabs-item-title">Sustainability</div>
+        <div class="tabs-item-description">
+          <div class="tabs-text">
+            <p>
+            Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer
+						service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer
+						service.<br><br> Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive
+						e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable
+						potentialities.
+            </p>
+          </div>
+          <div>
+            <img class="desktop-img" src="../assets/services/services-tab-pre-construction-img.png" />
+          </div>
+        </div>
+      </tab>
+      </div>
     </tabs>
-		<!-- <div class="tabs">
-			<div class="tabs-links"> -->
-        
-          <!-- <Tab title="Pre-Construction">
-            <div class="tabs-item-description">
-              <p>
-                Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer
-								service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer
-								service.<br><br>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive
-								e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable
-								potentialities.
-              </p>
-              <img src="../assets/services/services-tab-pre-construction-img.png">
-            </div>
-          </Tab> -->
-				<!-- <div class="tabs-link" data-tab="2">Construction</div>
-				<div class="tabs-link" data-tab="3">Design Build</div>
-				<div class="tabs-link" data-tab="4">Sustainability</div> -->
 	</div>
+  
   </div>
   </div>
 </template>
@@ -72,7 +118,7 @@ export default {
 <style lang="less">
 @import '../assets/mixins.less';
 @import '../assets/global-styles.less';
-  .services {
+.services {
   padding-top: 52px;
 
   @media @phone {
@@ -96,9 +142,6 @@ export default {
   @media @phone {
     margin: 49px auto 82px auto;
   }
-}
-.tabs {
-  width: 100%;
   .tabs-items {
     width: 100%;
     height: 400px;
@@ -113,14 +156,12 @@ export default {
         width: 100%;
       }
     }
-  }
-  .tabs-item {
-    display: none;
-    width: 100%;
-    padding-top: 20px;
-    @media @phone {
-      padding-top: 11px;
-    }
+    .tabs-item {
+      width: 100%;
+      padding-top: 20px;
+      @media @phone {
+        padding-top: 11px;
+      }
     .tabs-item-title {
       font-size: 24px;
       font-weight: bold;
@@ -152,48 +193,8 @@ export default {
       }
     }
   }
-  .tabs-item-selected {
-    display: block;
-    
   }
-  .tabs-links {
-    .flex(space-between);
-
-    @media @phone {
-      .flex(space-between, none, column);
-    }
-  }
-  .tabs-link {
-    height: 50px;
-    width: 183px;
-    font-size: 20px;
-    .flex(center, center);
-    font-weight: bold;
-    background-color: @white;
-    border: 1px solid black;
-    color: black;
-    cursor: pointer;
-    &:hover {
-      background-color: @accent;
-      color: @white;
-    }
-
-    @media @phone {
-      width: 100%;
-      height: 62px;
-      font-size: 26px;
-      margin-bottom: 30px;
-    }
-  }
-  .tabs-link-selected {
-    border-right: 1px solid @gray-background;
-    background-color: @teal;
-    color: black;
-    &:hover {
-      background-color: @accent;
-      color: @white;
-    }
-  }
-
 }
+
+
 </style>
