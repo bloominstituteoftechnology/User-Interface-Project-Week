@@ -1,25 +1,4 @@
-// JS goes here
 /* 
-import Menu from '../components/Header';
-import Tabs from '../components/Tabs'; */
-
-let menuButton = document.querySelector(".menu-button");
-let closeButton = document.querySelector(".close-button");
-
-menuButton.addEventListener("click", () => {
-    document.querySelector(".navigation-links").style.display = "flex";
-    menuButton.style.display = "none";
-    closeButton.style.display = "block";
-})
-
-closeButton.addEventListener("click", () => {
-    document.querySelector(".navigation-links").style.display = "none";
-    menuButton.style.display = "block";
-    closeButton.style.display = "none";
-})
-
-
-
 class Tabs {
     constructor(element) {
       this.element = element;
@@ -109,4 +88,4 @@ class Tabs {
   // map through each tabs element and create a new Tabs object.  Be sure to pass in a reference to the tab when creating the Tabs object.
   tabs = Array.from(tabs).map(tab => new Tabs(tab));
   
-  
+   */
