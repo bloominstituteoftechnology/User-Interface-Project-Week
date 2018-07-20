@@ -1,6 +1,7 @@
 <template>
-  <div :class="{'active': active}">
-    <slot></slot>
+  <div v-if="isActive">
+    <slot>
+    </slot>
   </div>
 </template>
 
@@ -8,26 +9,22 @@
 export default {
   data() {
     return {
-      active: false,
+      isActive: false,
     }
   },
   props: {
-    'title': {
+    'name': {
       required: true,
       type: String
     },
-    'isActive': {
-      required: false,
-      type: Boolean,
-      default: false
-    }
+    // 'selected': {
+    //   type: Boolean,
+    //   default: false
+    // }
   },
-  created() {
-    this.active = this.isActive;
-  },
-  mounted() {
-    this.$parent.addTab(this);
-  }
+  // mounted() {
+  //   console.log(this)
+  // }
 }
 </script>
 <style lang="less">

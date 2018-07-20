@@ -1,42 +1,47 @@
 <template>
   <div>
-    <div class="tabs-links">
-      <div class="tabs-link"
-        :for="tab in tabs"
-        :class="[{'active': current === tab}, 'item']"
-        on:click="changeTab(tab)">
-          {{tab.title}}
-      </div>
+    <div class="tabs">
+      <ul>
+        <li v-for="tab in tabs" :class="{ 'is-active': tab.isActive }">
+          <button @click="selectTab(tab)">{{ tab.name }}</button>
+        </li>
+      </ul>
     </div>
-    <slot></slot>
+
+    <div class="tab-details" >
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script type = "text/javascript">
+import Tab from './Tab.vue';
+
 export default {
   data() {
     return {
       tabs: [],
-      current: ''
+      tab: ''
+      
     }
   },
-  methods: {
-    addTab(tab) {
-      this.tabs.push(tab);
-      if (tabs.active === true) {
-        this.current = tab;
-      }
-    },
-    changeTab(tab) {
-      this.current = tab;
-      this.tabs.forEach(function(value) {
-        if (value === tab) {
-          value.active = true;
-        } else {
-          value.active = false;
-        }
-      });
+  created() {
+    this.tabs = this.$children;
+    tab: this.tabs[0].name
+
+  },
+  mounted() {
+    // console.log(JSON.parse(JSON.stringify(this.tabs)))
+  },
+  methods: { 
+    selectTab(selectedTab) {
+      this.tabs.forEach(tab => {
+        tab.isActive = (tab.name === selectedTab.name)
+      })
     }
+  },
+  components: {
+    Tab,
   }
 }
 </script>

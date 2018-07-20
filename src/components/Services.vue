@@ -11,10 +11,19 @@
 	</div>
 
 	<div class="section">
+    <tabs>
+      <tab name="Pre-Construction">
+        <h1> This is the tab </h1>
+      </tab>
+
+      <tab name="Construction">
+        <h1> This is the other tab </h1>
+      </tab>
+    </tabs>
 		<!-- <div class="tabs">
 			<div class="tabs-links"> -->
-        <Tabs>
-          <Tab title="Pre-Construction">
+        
+          <!-- <Tab title="Pre-Construction">
             <div class="tabs-item-description">
               <p>
                 Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer
@@ -25,12 +34,10 @@
               </p>
               <img src="../assets/services/services-tab-pre-construction-img.png">
             </div>
-          </Tab>
+          </Tab> -->
 				<!-- <div class="tabs-link" data-tab="2">Construction</div>
 				<div class="tabs-link" data-tab="3">Design Build</div>
 				<div class="tabs-link" data-tab="4">Sustainability</div> -->
-			</Tabs>
-		</div>
 	</div>
   </div>
   </div>
@@ -39,21 +46,26 @@
 <script type = "text/javascript" >
 import Jumbotron from './Jumbotron.vue'
 import Tabs from './Tabs.vue'
+import Tab from './Tab.vue'
+
 
 
 export default {
   data() {
     return {
       imgURL: require('../assets/services/services-jumbotron.png'),
+      tabs: [],
     }
+  },
+  created() {
+    this.tabs = this.$children;
   },
   components: {
     Jumbotron,
-    Tabs
+    Tabs,
+    Tab
   },
-  props: {
-
-  }
+  
 };
 </script>
 
