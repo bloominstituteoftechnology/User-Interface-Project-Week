@@ -1,68 +1,101 @@
-.header{
-background-color: @gray;
-opacity: .95;
-position:fixed;
-z-index: 1;
-width:100%;
-padding-top:18px;
+.header {
+  display: flex;
+  background-color: @gray;
+  opacity: 0.95;
+  position: fixed;
+  z-index: 1;
+  width: 110vw;
+  padding-top: 18px;
+left:0;
+
 }
 
-.header .logo{
-  position:relative;
-  left:20%;
-  color:white;
-  font-size:2.5rem;
+.header .logo {
+  // position:relative;
+  left: 100px;
+  color: white;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
+//MENU//
 
+.menu-button {
+  position: absolute;
+  right: 20%;
+  cursor: pointer;
+  z-index: 12;
+}
 
+.menu {
+  display: none;
+  position: fixed;
+  top: 7.5%;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: @gray;
+  opacity: 0.75;
+  z-index: 120; /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
 
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
+  text-align: center;
+  // align-content: center;
+}
+
+.menu--open {
+  display: block;
+}
 
 .jumbo {
   position: relative;
-  display:flex;
+ display:flex;
+width:100%;
+margin: 0 auto;
+
+
+.jumbotext {
+  position: absolute;
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: @white;
+  bottom: 0;
+  padding: 6.25% 6.25%;
+
+  @media @phone {
+    // line-height:50px;
+    margin-top: 20px;
+    font-size: 5rem;
+  }
 }
 
-  .jumbotext {
-    position: absolute;
-    font-weight: bold;
-    font-size: 6.4rem;
-    line-height: 75px;
-    color: @white;
-    bottom: 0;
-    padding: 6.25% 6.25%;
-
-@media @phone {
-  // line-height:50px;
-  margin-top: 20px;
-  font-size:5rem;
+.jumbo2 {
+  display: none;
+  @media @phone {
+    display: block;
+    width: 100%;
+    margin-top:13%;
+  }
+}
+.jumbo1 {
+  display: block;
+  margin-top:52px;
+  width:100%;
+  @media @phone {
+    display: none;
+  }
 }
 
+.jumbo2 {
+  @media @phone {
+    display: block;
   }
-
-    .jumbo2{
-      display:none;
-      @media @phone{
-        display:block;
-        width:100%;
-      }    
-    }
-    .jumbo1 {
-      display:block;
-      @media @phone{
-        display:none;
-      }
-    }
-
-    .jumbo2{ @media @phone {
-      display:block;
-
-    }
-  }
-
-
-  
+}
 
 // SERVICES//
 
@@ -74,4 +107,5 @@ padding-top:18px;
   color: @white;
   bottom: 0;
   padding: 0, 6.25%;
+}
 }
