@@ -52,7 +52,7 @@ class DropDown {
         this.element=element;
         this.closedButton=this.element.querySelector('.dropdown-button-closed');
         this.openButton=this.element.querySelector('.dropdown-button-open');
-        this.content=this.element.querySelector('.dropdown-content');
+        this.content=document.querySelector('.dropdown-content');
         this.closedButton.addEventListener('click',()=>this.toggleDropDownMenu())
         this.openButton.addEventListener('click',()=>this.toggleDropDownMenu());
     }
