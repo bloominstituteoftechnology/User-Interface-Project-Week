@@ -140,7 +140,7 @@ html {
   max-width: 1024px;
 }
 .bottomContainer {
-  background: gray;
+  background: #828282;
 }
 .no-gutters {
   margin-right: 0;
@@ -507,14 +507,16 @@ nav .menu {
 }
 .tabs-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  font-weight: bold;
 }
-.tabs-link-selected {
+.tabs-links .tabs-link-selected {
   z-index: 2;
   background-color: #5E9FB9;
 }
 .tabs .tabs-link-selected:hover {
   background-color: #ffffff;
+  color: #FFF;
 }
 .tabs-item-description {
   font-size: 1.2rem;
@@ -533,7 +535,16 @@ nav .menu {
   cursor: pointer;
 }
 .toggledImg {
+  position: absolute;
+  right: 5%;
+  top: 7px;
+  cursor: pointer;
   padding: 15px 0 0 0;
+}
+@media (max-width: 320px) {
+  .toggledImg {
+    padding-top: 15px;
+  }
 }
 .menu {
   display: none;
@@ -547,10 +558,19 @@ nav .menu {
   z-index: 2;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
+.menu .menuSpan {
+  padding-top: 0px;
+  padding-left: 10%;
+}
 .menu ul {
   position: relative;
   top: 200px;
   left: 50%;
+}
+@media (max-width: 320px) {
+  .menu ul {
+    left: 25%;
+  }
 }
 .menu ul li {
   list-style-type: none;
@@ -561,6 +581,9 @@ nav .menu {
   font-weight: bold;
   text-decoration: none;
   color: white;
+}
+.menu ul li a:hover {
+  color: #222222;
 }
 .menu--open {
   display: block;

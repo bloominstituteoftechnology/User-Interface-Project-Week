@@ -5,7 +5,14 @@
   cursor: pointer;
 }
 .toggledImg {
-    padding: 15px 0 0 0;
+  position: absolute;
+  right: 5%;
+  top: 7px;
+  cursor: pointer;
+  padding: 15px 0 0 0;
+  @media (max-width: 320px) {
+    padding-top: 15px;
+  }
 }
 .menu {
   display: none;
@@ -17,10 +24,17 @@
   background-color: lightgray;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
+.menu .menuSpan {
+  padding-top: 0px;
+  padding-left: 10%;
+}
 .menu ul {
   position: relative;
   top: 200px;
   left: 50%;
+  @media (max-width: 320px) {
+    left: 25%;
+  }
 }
 .menu ul li {
   list-style-type: none;
@@ -32,9 +46,12 @@
   text-decoration: none;
   color: white;
 }
+.menu ul li a:hover {
+  color: #222222;
+}
 .menu--open {
   display: block;
 }
 .menu--close {
-    display: none;
+  display: none;
 }

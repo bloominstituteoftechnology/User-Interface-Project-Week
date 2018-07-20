@@ -1,11 +1,13 @@
-//Menu
+// Menu
 const toggleMenu = () => {
   // Toggle the "menu--open" class on your menu refence. 
   menu.classList.toggle("menu--open");
+  menu.classList.remove("menu--close");
 }
 const unToggleMenu = () => {
   // Toggle the "menu--close" class on your menu refence.
   menu.classList.toggle("menu--close");
+  menu.classList.remove("menu--open");
 }
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelector(".menu");
@@ -21,6 +23,29 @@ menuButton.addEventListener("click", (event) => {
 toggledImg.addEventListener("click", (event) => {
   unToggleMenu();
 })
+
+// class Menu {
+//   constructor(element) {
+//     this.element = element;
+//     this.menuButton = document.querySelector(".menu-button");
+//     this.toggledImg = document.querySelector(".toggledImg");
+//     this.menuButton.addEventListener("click", (event) => {
+//       this.toggleMenu();
+//     })
+//     this.toggledImg.addEventListener("click", (event) => {
+//       this.unToggleMenu();
+//     })
+//   }
+//   toggleMenu() {
+//     this.menu.classList.toggle("menu--open");
+//   }
+//   unToggleMenu() {
+//     this.menu.classList.toggle("menu--close");
+//   }
+// }
+
+// let menus = document.querySelectorAll(".menu");
+// menus = Array.from(menus).map(menu => new Menu(menu));
 
 //Tabs
 class Tabs {
