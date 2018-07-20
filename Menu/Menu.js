@@ -17,11 +17,10 @@
 // })} 
 
 
-if (true){
+
+    menuButton.addEventListener("click",function(){menu.classList.toggle("menu--open")});
     menuButton.addEventListener("click",function(){menu.classList.toggle("menu--close")});
-}else {
-    menuClose.addEventListener("click",function(){menu.classList.toggle("menu--open")});
-}
+
 
 
 
