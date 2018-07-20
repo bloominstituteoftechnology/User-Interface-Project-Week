@@ -1,0 +1,123 @@
+.homePg {
+  padding: 50px 0;
+  width: 100vw;
+  .myJumbo('./../img/home/home-jumbotron.png', 598px);
+
+  .pg-content{
+    max-width: @width-constraint;
+    padding: 0 5%;
+    margin: 0 auto;
+
+    .content-box{
+      margin-top: 100px;
+      .flex-mix(@just: space-between;);
+
+      .big-img {
+        width: 45%;
+        height: auto;
+
+        @media @phone{
+          display: none;
+        }//big-img phone query
+      }//end big-img
+
+      .little-img{
+        display: none;
+
+        @media @phone{
+          display: block;
+          width: 95%;
+          height: auto;
+        }//little-img phone query
+      }//end little img
+
+      .box-text{
+        .flex-mix(@just: center; @align: flex-start; @dir: column);
+        width: 45%;
+
+        @media @phone{
+          align-items: center;
+          margin-top: 40px;
+          width: 95%;
+          line-height: 2.9rem;
+        }//box-text phone query
+
+        h4{
+          font-weight: bold;
+          font-size: 2.8rem;
+          margin-bottom: 15px;
+        }
+
+        .content-btn{
+          .myBtn();
+        }//content-btn end
+      }//box-text end
+
+      @media @phone{
+        .flex-mix(@dir: column; @just: center; @align: center;);
+      }//content-box phone query
+    }//content-box end
+
+    .content-break{
+      margin-top: 100px;
+      .sub-header();
+    }
+
+    .prj-header {
+      margin: 50px 0 auto;
+      width: 100%;
+      position: relative;
+
+      .prj-img{
+        width: 100%;
+        height: auto;
+
+        @media @phone{
+          display: none;
+        }
+      }
+
+      .prj-img-small{
+        display: none;
+        width: 100%;
+        height: auto;
+
+        @media @phone{
+          display: block;
+        }
+      }
+
+      .prj-header-title-r {
+        right: 0;
+        border-left: 2px solid white;
+        .prj-header-box();
+
+        @media @phone{
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
+
+      .prj-header-title-l {
+        left: 0;
+        border-right: 2px solid white;
+        .prj-header-box();
+
+        @media @phone{
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .prj-container{
+      margin: 80px 0;
+      padding: 0 29%;
+
+      @media @phone{
+        margin: 160px 0 80px;
+        padding: 0 2%;
+      }
+    }
+  }
+}

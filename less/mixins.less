@@ -1,0 +1,116 @@
+.prj-header-box(){
+  position: absolute;
+  bottom: -20%;
+  width: 37%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: sans-serif;;
+  font-size: 2rem;
+  font-weight: lighter;
+  letter-spacing: 6px;
+  background: @prj-box-color;
+  border-top: 2px solid white;
+
+  @media @phone{
+    width: 95%;
+    bottom: -35%;
+    border: none;
+  }
+}
+
+.myJumbo(@imgPath, @height){
+  .jumbo{
+    background-image: url(@imgPath);
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: @height;
+
+    .cta-header{
+      position: absolute;
+      bottom: 5%;
+      left: 10%;
+
+      h1 {
+        color: @jumbo-color;
+        font-weight: bold;
+        font-size: 6.4rem;
+        line-height: 7.5rem;
+      }
+    }
+  }
+}
+
+.center(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.flex-mix(@just: flex-start; @align: stretch; @dir: row; @wrap: nowrap){
+  display: flex;
+  justify-content: @just;
+  align-items: @align;
+  flex-flow: @dir @wrap;
+}
+
+.fix-top(){
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sub-header(){
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: @sub-header-color;
+}
+
+.general-style(){
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.footer-style{
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: @footer-text-color;
+}
+
+.footer-headings(){
+  h3{
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: @footer-heading-color;
+  }
+}
+
+.responsive-img-inside(){
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.myBtn(){
+  border: 1px solid black;
+  width: 135px;
+  height: 47px;
+  .center();
+  cursor: pointer;
+  margin-top: 15px;
+
+  @media @phone {
+    width: 100%;
+  }
+
+  &:hover{
+    color: @btn-hover-color;
+    background: @btn-hover-background;
+  }
+}
