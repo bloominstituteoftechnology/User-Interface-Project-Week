@@ -1,11 +1,10 @@
 // JS goes here
 const fadeNavPanel = function(){
-
   TweenMax.fromTo('.nav-page', 1, {opacity:0}, {opacity: .9})
 }
 
   //--------------greensock------------------------//
-  TweenMax.from('.nav-page', 1, {display: 'flex', backgroundColor:'red', opacity:.9, zIndex:19, })
+  // TweenMax.from('.nav-page', 1, {display: 'flex', backgroundColor:'red', opacity:.9, zIndex:19, })
 
   //-----------tweenMax attempt for navBTN---------//
   // TweenMax.to(target, 1, {opacity: 1});
