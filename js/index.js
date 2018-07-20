@@ -39,47 +39,13 @@ let menuOpen = document.querySelector('.menu-closed');
 menuOpen.classList.toggle('custom-col')
 }
 
-//tab Navigator
-let allimg=document.querySelector('.tabButtonsImgs').children;
-let heading=document.querySelector('#headingtab');
-//PreConstructionButton
-let PreConstructionButton=document.querySelector('.Pre-ConstructionButton')
-PreConstructionButton.addEventListener('click',()=>{
-for (var i = 0; i < allimg.length; i++) {
-  allimg[i].classList.remove("tab-active");
-}
-heading.innerHTML="Pre-Construction";
-allimg[0].classList.add("tab-active");
 
-});
-
-//ConstructionButton
-let ConstructionButton=document.querySelector('.ConstructionButton')
-ConstructionButton.addEventListener('click',()=>{
-for (var i = 0; i < allimg.length; i++) {
-  allimg[i].classList.remove("tab-active");
-}
-heading.innerHTML="Construction";
-allimg[1].classList.add("tab-active");
-
-});
-//DesignBuildButton
-let DesignBuildButton=document.querySelector('.DesignBuildButton')
-DesignBuildButton.addEventListener('click',()=>{
-for (var i = 0; i < allimg.length; i++) {
-  allimg[i].classList.remove("tab-active");
-}
-heading.innerHTML="Design Build";
-allimg[2].classList.add("tab-active");
-
-});
-//SustainabilityButton
-let SustainabilityButton=document.querySelector('.SustainabilityButton')
-SustainabilityButton.addEventListener('click',()=>{
-for (var i = 0; i < allimg.length; i++) {
-  allimg[i].classList.remove("tab-active");
-}
-heading.innerHTML="Sustainability";
-allimg[3].classList.add("tab-active");
-
-});
+//animations
+function shake(){
+TweenMax.fromTo('.customButton',0.15, {x:-20},{x:20,repeat:5,yoyo:true,ease:Sine.easeInOut,onComplete:function(){TweenMax.to(this.target,1.5,{x:0,ease:Elastic.easeOut})}})}
+let button = document.querySelectorAll('.customButton');
+for (var i = 0; i < button.length; i++) {
+  button[i].addEventListener("click",()=>{
+    shake();
+  });
+};
