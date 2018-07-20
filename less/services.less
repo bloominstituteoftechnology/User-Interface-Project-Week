@@ -22,18 +22,25 @@
 //        font-size: 1rem;
 //         line-height: 1.5rem;
 //     }
-    .services-text {
-        display: flex;
-
-    }
+   .texts-container {
+       display: flex;
+       .services-text {
+           justify-content: center;
+           margin: 2rem 5rem;
+           font-size: 1.5rem;
+       }
+   }
 
   
-
-     .service {
+.tab-component {
+    // border: solid 2px blue
+}
+     .tabs {
         display: flex;
          justify-content: space-evenly;
         //  margin: 0 5rem;
-        .tab {
+        // border: 2px solid greenyellow;
+        .tab  {
             // position: absolute;
             border: 2px black solid;
             padding: .5rem 2rem;
@@ -78,5 +85,191 @@
     img {
         margin-left: 3rem;
         margin-top: 3rem;
+    }
+}
+
+.content:not(.active-tab) {
+    display: none;
+}
+
+footer {
+    background: #828282;
+    height: 25%;
+    // display: flex;
+    .foot {
+    // border: 1px red solid;
+    top: 2rem;
+    padding: 3rem 4rem .5rem 4rem;
+    display: flex;
+        .footer-content {
+        //    border: solid greenyellow 2px;
+           color: white;
+           width: 40%;
+           
+           h3 {
+               font-weight: 400px;
+               font-size: 1.25rem;
+               line-height: 1.625rem;
+           }
+           h5 {
+               font-size: 12px;
+           }
+           form {
+            //    display: flex;
+                input {
+                    border-radius: 5px;
+                    width: 300px;
+                    height:35px;
+                    color: rgba(128, 128, 128, 0.576);
+                    font-size: 14px;
+                }
+           }
+        }
+        .cities {
+            // border: 2px purple solid;
+            width: 20%;
+            .footer-texts();
+            // text-align: center;
+            h3 {
+                .footer-headings();
+            }
+        }
+    }
+    
+    .bottom {
+        h5{
+            text-align: center;
+            font-size: 12px;
+            color: @white;
+        }
+    }
+}
+
+@media @tablet{
+    .services {
+     width: 100%;
+    height: 20rem;
+    position: relative;
+    background: url('../img/services/services-mobile-jumbotron.png');
+    background-size: cover;
+    h1 {
+          color: white;
+         position: absolute;
+        font-weight: @bold;
+        font-size: 4.5rem;
+        line-height: 4.6875rem;
+        color: @white;
+        bottom: 20px;
+        margin-left: 5rem;
+       
+    }
+}
+    .texts-container {
+       display: flex;
+       .services-text {
+        //    justify-content: center;
+           margin: 02rem 1rem;
+           font-size: 16px;
+       }
+   }
+       .tabs {
+        display: block;
+        .tab  {
+            text-align: center;
+            // position: absolute;
+            // border: 2px red solid;
+            padding: .5rem 2rem;
+            // width: 25%;
+            font-weight: 700;
+            font-size: 1.4rem; 
+            width: 100%;
+            align-items: center;
+            margin-top: 1rem;
+            cursor: pointer;
+            &:hover {
+                color: #FFF;
+                background-color: black;
+              }
+         }
+             .active-tab {
+                background-color: #5E9FB9;
+                color: #FFF;
+                }
+        }
+        .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+         .text-content {
+        margin: 3rem 0;
+        width: 100%;
+            }
+        }     
+        footer{
+        background: #828282;
+        height: 25%;
+        display: flex;
+        flex-wrap: wrap;
+          .foot {
+              top: 2rem;
+            padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+              .footer-content {
+                color: white; 
+                width: 100%;
+              h3 {
+               font-weight: 400px;
+               font-size: 1.25rem;
+               line-height: 1.625rem;
+               margin-top: 3rem;
+           }
+           h5 {
+               font-size: 12px;
+           }
+           form {
+            //    display: flex;
+                input {
+                    border-radius: 5px;
+                    width: 300px;
+                    height:35px;
+                    color: rgba(128, 128, 128, 0.576);
+                    font-size: 14px;
+                }
+           }
+        }
+          .cities {
+              width: 100%;
+              .footer-texts();
+              margin-top: 1rem;
+                h3 {
+                .footer-headings();
+            }
+         }
+    }
+}
+ .bottom {
+     margin-bottom: 5rem;
+        h5{
+            text-align: center;
+            font-size: 12px;
+            color: @white;
+            margin-left: 1rem;
+            margin-bottom: -50px;
+        }
+    }
+    
+        .pre-construction-img {
+            background-image: url('../img/services/services-tab-mobile-pre-construction-img.png')
+        
+    }
+    .construction-img {
+        display: none;
+    }
+}
+
+@media @desktop {
+    .mobile-construction-img {
+        display: none;
     }
 }
