@@ -77,7 +77,7 @@
             </p>
           </div>
           <div>
-            <img class="desktop-img" src="../assets/services/services-tab-pre-construction-img.png" />
+            <img class="desktop-img" src="../assets/services/services-tab-sustainability-img.png" />
           </div>
         </div>
       </tab>

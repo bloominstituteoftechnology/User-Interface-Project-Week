@@ -3,12 +3,14 @@
     <div class="tabs">
       <div class="tabs-links">
         <div v-for="tab in tabs" :class="{ 'is-active': tab.isActive }">
-          <button class="tabs-link" @click="selectTab(tab)">{{ tab.name }}</button>
+          <button class="tabs-link" 
+            @click="selectTab(tab)" 
+              >{{ tab.name }}</button>
         </div>
       </div>
     </div>
 
-    <div class="tabs-stuff">
+    <div>
       <slot></slot>
     </div>
   </div>
@@ -20,7 +22,8 @@ import Tab from './Tab.vue';
 export default {
   data() {
     return {
-      tabs: [],  
+      tabs: [], 
+      activeColor: '@white' 
     }
   },
   created() {
@@ -70,6 +73,17 @@ export default {
       height: 62px;
       font-size: 26px;
       margin-bottom: 30px;
+    }
+  }
+  .is-active {
+    .tabs-link {
+      border-right: 1px solid @gray-background;
+      background-color: @teal;
+      color: @white;
+      &:hover {
+        background-color: @accent;
+        color: @white;
+      }
     }
   }
 }
