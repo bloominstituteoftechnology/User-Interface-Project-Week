@@ -154,7 +154,6 @@ table {
 }
 html,
 body {
-  margin: 0 auto;
   height: auto;
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 62.5%;
@@ -173,7 +172,7 @@ h5 {
 }
 .container {
   height: 100%;
-  width: 1024px;
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
   font-size: 1.6rem;
@@ -184,38 +183,86 @@ h5 {
   }
 }
 .header {
-  display: flex;
   background-color: #828282;
   opacity: 0.95;
   position: fixed;
   z-index: 1;
-  width: 110vw;
+  width: 100%;
   padding-top: 18px;
-  left: 0;
 }
 .header .logo {
-  left: 100px;
+  position: relative;
+  left: 20%;
   color: white;
   font-size: 2.5rem;
   font-weight: bold;
 }
+.jumbo {
+  position: relative;
+  display: flex;
+}
+.jumbotext {
+  position: absolute;
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFFFFF;
+  bottom: 0;
+  padding: 6.25% 6.25%;
+}
+@media (max-width:400px) {
+  .jumbotext {
+    margin-top: 20px;
+    font-size: 5rem;
+  }
+}
+.jumbo2 {
+  display: none;
+}
+@media (max-width:400px) {
+  .jumbo2 {
+    display: block;
+    width: 100%;
+  }
+}
+.jumbo1 {
+  display: block;
+}
+@media (max-width:400px) {
+  .jumbo1 {
+    display: none;
+  }
+}
+@media (max-width:400px) {
+  .jumbo2 {
+    display: block;
+  }
+}
+.jumbotexty {
+  position: absolute;
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFFFFF;
+  bottom: 0;
+  padding: 0, 6.25%;
+}
 .menu-button {
   position: absolute;
-  right: 20%;
+  right: 0;
   cursor: pointer;
-  z-index: 12;
+  z-index: 13;
 }
 .menu {
   display: none;
   position: fixed;
-  top: 7.5%;
   left: 0;
   width: 100vw;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #828282;
   opacity: 0.75;
-  z-index: 120;
+  z-index: 12;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
 .menu ul li {
@@ -226,61 +273,6 @@ h5 {
 }
 .menu--open {
   display: block;
-}
-.jumbo {
-  position: relative;
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-}
-.jumbo .jumbotext {
-  position: absolute;
-  font-weight: bold;
-  font-size: 6.4rem;
-  line-height: 75px;
-  color: #FFFFFF;
-  bottom: 0;
-  padding: 6.25% 6.25%;
-}
-@media (max-width:400px) {
-  .jumbo .jumbotext {
-    margin-top: 20px;
-    font-size: 5rem;
-  }
-}
-.jumbo .jumbo2 {
-  display: none;
-}
-@media (max-width:400px) {
-  .jumbo .jumbo2 {
-    display: block;
-    width: 100%;
-    margin-top: 13%;
-  }
-}
-.jumbo .jumbo1 {
-  display: block;
-  margin-top: 52px;
-  width: 100%;
-}
-@media (max-width:400px) {
-  .jumbo .jumbo1 {
-    display: none;
-  }
-}
-@media (max-width:400px) {
-  .jumbo .jumbo2 {
-    display: block;
-  }
-}
-.jumbo .jumbotexty {
-  position: absolute;
-  font-weight: bold;
-  font-size: 6.4rem;
-  line-height: 75px;
-  color: #FFFFFF;
-  bottom: 0;
-  padding: 0, 6.25%;
 }
 .main-content {
   width: 100%;
