@@ -2,14 +2,14 @@
 class Menu {
     constructor(element) {
       this.element = element;
-      this.button = this.element.querySelector('.menu-icon');
+      this.menu = this.element.querySelector('.menu-icon');
       this.content = this.element.querySelector('.menu-content');
-      this.button.addEventListener('click', () => {this.toggleContent()});
+      this.button.addEventListener('click', () => {this.toggleMenu()});
     }
-    toggleContent() {
-      this.content.classList.toggle('menu-hidden');
+    toggleMenu() {
+      this.content.classList.toggle('.menu-hidden');
     }
   }
  
-  let hamburgers = document.querySelectorAll('.hamburger');
-  hamburgers = Array.from(hamburgers).map( hamburger => new Menu(hamburgers));
+  let menus = document.querySelectorAll('.menu-icon');
+  menus = Array.from(menus).map( menu => new Menu(menus));

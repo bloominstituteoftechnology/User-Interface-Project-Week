@@ -89,7 +89,6 @@ video {
   border: 0;
   outline: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -136,87 +135,109 @@ table {
 }
 * {
   box-sizing: border-box;
+  font: inherit;
 }
 html,
 body {
   background: #FFFFFF;
+  font-family: 'Roboto', 'Arial', 'sans-serif';
 }
 .container {
   max-width: 1024px;
   margin: auto;
-  font-family: 'Roboto, Arial, sans-serif';
 }
 .section1 {
   width: 100%;
-  height: 597px;
   display: flex;
 }
 .jumbotron {
   display: flex;
+  width: 100%;
+  height: 597px;
   position: relative;
+  z-index: 0;
+}
+.jtron-text {
+  z-index: 2;
+  display: flex;
+  font-weight: bold;
+  font-size: 64px;
+  color: #FFFFFF;
+  position: absolute;
+  width: 480px;
+  height: 360px;
+  line-height: 75px;
+  background: transparent;
+  top: 237px;
+  padding: 80px;
+}
+.desktop-jumbotron {
+  display: flex;
+  width: 100%;
+  height: 597px;
+  z-index: 1;
+  position: absolute;
 }
 .home-header {
-  z-index: 2;
   position: fixed;
   display: flex;
-  height: 52;
-  width: 1024;
+  width: 1024px;
+  height: 80px;
   background: #D8D8D8;
   color: #FFFFFF;
+  justify-content: space-between;
+  z-index: 3;
 }
 .logo {
-  display: flex;
-  width: 20%;
   font-weight: bold;
-  font-size: 24px;
-  position: absolute;
-}
-.hamburger {
+  font-size: 28px;
+  width: 80px;
   display: flex;
-  align-items: flex-end;
-  width: 20%;
-  position: absolute;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 75px;
 }
-.menu-icon {
+a .menu-icon {
+  z-index: 3;
+  display: flex;
   cursor: pointer;
   color: #FFFFFF;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  background: #D8D8D8;
+  right: 75px;
 }
 .menu-content {
   width: 100%;
   height: 100vh;
-  position: absolute;
   background-color: #D8D8D8;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2;
+  z-index: 4;
+  position: fixed;
 }
-.menu-content .menu-hidden {
+.menu-hidden {
   display: none;
 }
 .menu-link {
-  width: 100%;
   text-align: center;
+  flex-direction: column;
   text-decoration: none;
   list-style-type: none;
   font-size: 48px;
   font-weight: bold;
   color: #FFFFFF;
-  margin-top: 85px;
+  cursor: pointer;
 }
-.menu-link:hover {
+.menu-link :hover {
   color: #222222;
-}
-.jtron-text {
-  width: 40%;
-  height: 500px;
-  line-height: 75px;
-  z-index: 2;
-  text-align: left;
-  display: flex;
-  font-weight: bold;
-  font-size: 64px;
-  color: #FFFFFF;
+  text-decoration: underline;
 }
 .section2 {
   display: flex;
@@ -233,7 +254,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   flex-direction: column;
-  padding: 30px 0 30px 90px;
+  padding: 30px 0 30px 80px;
 }
 .architects-text h4 {
   font-weight: bold;
@@ -255,8 +276,8 @@ body {
 }
 .architects-img {
   display: flex;
-  margin-left: 20px;
-  padding-right: 90px;
+  margin-left: 50px;
+  padding: 0 60px 0 40px;
 }
 .section3 {
   display: flex;
@@ -269,8 +290,8 @@ body {
 }
 .designs-img {
   display: flex;
-  margin-right: 20px;
-  padding-left: 90px;
+  margin-right: 50px;
+  padding-left: 80px;
 }
 .designs-text {
   display: flex;
@@ -278,7 +299,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   flex-direction: column;
-  padding: 30px 90px 30px 0;
+  padding: 30px 80px 30px 0;
 }
 .designs-text h4 {
   font-weight: bold;
@@ -314,13 +335,13 @@ body {
 .section4 {
   display: flex;
   width: 876px;
-  height: 915px;
+  height: 615px;
 }
 .villas {
   display: flex;
   position: absolute;
   flex-direction: column;
-  margin-left: 90px;
+  margin: 0 80px 0 80px;
 }
 .desktop-villas {
   display: flex;
@@ -330,9 +351,9 @@ body {
   width: 318px;
   height: 86px;
   position: relative;
-  left: 560px;
-  top: 260px;
-  font-weight: bold;
+  left: 558px;
+  top: 270px;
+  font-weight: regular;
   font-size: 28px;
   color: #222222;
   background: #D8D8D8;
@@ -356,13 +377,13 @@ body {
 .section5 {
   display: flex;
   width: 876px;
-  height: 915px;
+  height: 615px;
 }
 .outskirts {
   display: flex;
   position: absolute;
   flex-direction: column;
-  margin-left: 90px;
+  margin: 0 80px 0 80px;
 }
 .desktop-outskirts {
   display: flex;
@@ -373,8 +394,8 @@ body {
   height: 86px;
   position: relative;
   left: 0;
-  top: 260px;
-  font-weight: bold;
+  top: 270px;
+  font-weight: regular;
   font-size: 28px;
   color: #222222;
   background: #D8D8D8;
@@ -398,13 +419,13 @@ body {
 .section6 {
   display: flex;
   width: 876px;
-  height: 915px;
+  height: 750px;
 }
 .blocks {
   display: flex;
   position: absolute;
   flex-direction: column;
-  margin-left: 90px;
+  margin: 0 80px 0 80px;
 }
 .desktop-blocks {
   display: flex;
@@ -415,8 +436,8 @@ body {
   height: 86px;
   position: relative;
   left: 560px;
-  top: 260px;
-  font-weight: bold;
+  top: 270px;
+  font-weight: regular;
   font-size: 28px;
   color: #222222;
   background: #D8D8D8;
@@ -438,10 +459,9 @@ body {
   margin-top: 50px;
 }
 .home-footer {
-  display: flex;
   width: 100%;
   height: 251px;
-  background: #D8D8D8;
+  background: #828282;
   color: #FFFFFF;
 }
 .footer-top {
@@ -452,11 +472,17 @@ body {
 .email-form {
   width: 40%;
   display: flex;
+  flex-direction: column;
+  padding: 50px 10px 50px 50px;
+  margin-left: 25px;
 }
 .email-form h5 {
   font-weight: regular;
   font-size: 20px;
   line-height: 24px;
+}
+.form-control {
+  margin: 10px 0 10px 0;
 }
 .email-form p {
   font-weight: regular;
@@ -466,11 +492,13 @@ body {
 .contact-cities {
   width: 60%;
   display: flex;
-  text-align: left;
+  justify-content: space-between;
+  padding: 50px 70px 30px 10px;
 }
 .city-info {
   width: 20%;
   display: flex;
+  flex-direction: column;
 }
 .city-info h5 {
   font-weight: regular;
@@ -486,5 +514,7 @@ body {
   display: flex;
   width: 100%;
   height: 35px;
-  text-align: center;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 12px;
 }
