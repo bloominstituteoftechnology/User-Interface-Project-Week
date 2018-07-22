@@ -31,6 +31,13 @@ menuClose.addEventListener("mouseleave", (event) => {
     event.stopPropagation();
 })
 
+const menuItems = document.querySelectorAll(".menu-item");
 
+menuButton.addEventListener('mouseenter', function(){
+    TweenMax.to(menuButton, 1, {scale:1.3});
+})
 
+menuButton.addEventListener('mouseleave', function(){
+    TweenMax.to(menuButton, 1, {scale:1});
+})
 
