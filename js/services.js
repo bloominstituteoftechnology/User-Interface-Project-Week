@@ -3,6 +3,7 @@ class Tabs {
     constructor(element) {
         this.element = element;
         this.links = this.element.querySelectorAll(".tab-link");
+        this.items = document.querySelector(".tabs-items");
         this.links = Array.from(this.links).map(link => {
             return new TabsLink(link, this);
         });
@@ -20,7 +21,7 @@ class Tabs {
     }
 
     getTab(data) {
-        return this.element.querySelector(`.tabs-item[data-tab="${data}"]`);
+        return this.items.querySelector(`.tabs-item[data-tab="${data}"]`);
     }
 }
 
@@ -28,7 +29,7 @@ class TabsLink {
     constructor(link, parent) {
         this.link = link;
         this.tabs = parent;
-        this.tabsItem = parent.getTab(this.link.dataset.tab);
+        this.tabsItem = this.tabs.getTab(this.link.dataset.tab);
         this.tabsItem = new TabsItem(this.tabsItem);
         this.link.addEventListener('click', () => {
             this.tabs.updateActive(this);
@@ -62,5 +63,5 @@ class TabsItem {
 }
 
 
-let tabs = document.querySelectorAll(".tbs");
+let tabs = document.querySelectorAll(".tabs-links");
 tabs = Array.from(tabs).map(each => new Tabs(each));
