@@ -9,6 +9,7 @@
     font-weight: bold;
     font-size: 2.4rem;
     color: @nav;
+    cursor: pointer;
   }
   
   .nav-text-expanded () {
@@ -18,6 +19,7 @@
     color: @nav-expanded;
   
     a {
+      text-decoration: none;
       color: @nav-expanded;
   
       &:hover {
@@ -87,20 +89,31 @@
   }
 
   .jumbotron-mixin (@image-address, @height) {
+    width: 100%;
     height: @height;
     background: @image-address;
     background-size: cover;
-    border: 1px solid red;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    .center();
+    // border: 1px solid red;
   
     img {
       width: 100%;
-      border: 1px solid green;
+      // border: 1px solid green;
     }
   
     .jtron-header {
       max-width: 894px;
       bottom: 8.3%;
       z-index: 10;
-      border: 1px solid blueviolet;
+      color: @white;
+      position: absolute;
+      font-size: 6.4rem;
+      font-weight: bold;
+      // border: 1px solid blueviolet;
+      width: 100%;
+      line-height: 8rem;
     }
   }
