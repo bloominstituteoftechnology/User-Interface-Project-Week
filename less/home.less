@@ -6,57 +6,99 @@
 .main-content {
     position: relative;
 
-    .top-content-block {
+    .main-content-top {
 
-        // border: 1px solid blue;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-        margin: 50px auto;
-        // :nth-child(2n-1){
-        //     display: flex;
-        //     flex-direction: row-reverse;
-        // }
-
-
-        .desktop-img {
-            // border: 1px solid black;
+        .top-content-block:nth-child(odd) {
             display: flex;
-            padding-right: 20px;
+            flex-direction: row-reverse;
         }
 
-        .top-content-info {
-            // border: 2px solid red;
+        .top-content-block {
+
+            // border: 1px solid blue;
             display: flex;
-            flex-direction: column;
-            padding: 20px;
-
-            h3 {
-                .sub-headers();
-                // border: 2px solid brown;
-                margin: 4px 0;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            // :nth-child(2n-1){
+            //     display: flex;
+            //     flex-direction: row-reverse;
+            // }
+    
+    
+            .desktop-img {
+                // border: 1px solid black;
+                display: flex;
+                padding-right: 20px;
             }
-
-            span {
-                // border: 2px solid yellowgreen;
-                font-size: 1.5rem;
-                padding: 10px 0;
-                margin: 12px 0;
-                width: 410px;
-                line-height: 3rem;
-            }
-
-            .button {
-                #buttons.btn-main();
+    
+            .top-content-info {
+                // border: 2px solid red;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+    
+                h3 {
+                    .sub-headers();
+                    // border: 2px solid brown;
+                    margin: 4px 0;
+                }
+    
+                span {
+                    // border: 2px solid yellowgreen;
+                    font-size: 1.5rem;
+                    padding: 10px 0;
+                    margin: 12px 0;
+                    width: 410px;
+                    line-height: 3rem;
+                }
+    
+                .button {
+                    #buttons.btn-main();
+                }
             }
         }
+
     }
 
     .main-content-bottom {
 
         h3 {
             margin: 20px 320px;
+            .sub-headers();
+        }
+
+        .bottom-content-block {
+            .center();
+            flex-direction: column;
+            margin-top: 50px;
+            margin-left: -20px;
+
+            .projects {
+                position: relative;
+
+                .recent-project-titles:nth-child(2n-1) {
+                    display: flex;
+                    flex-direction: row-reverse;
+                }
+
+                .recent-project-titles {
+                    .project-titles();
+                    position: absolute;
+                    left: 0;
+                    bottom: -50px;
+                    z-index: 10;
+                }
+            }
+
+            .project-text {
+                .center();
+                width: 400px;
+                line-height: 2.5rem;
+                margin-top: 100px;
+            }
+
         }
     }
 }
