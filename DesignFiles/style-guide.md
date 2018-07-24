@@ -10,17 +10,17 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 
 ## Page Specific
 
-### Home Page
+<!-- ### Home Page
 - Recent Projects Gray Square: #D8D8D8
-- Button borders: #222222
+- Button borders: #222222 -->
 
 ### Services Page
 - Tab selected background: #5E9FB9
 - Tab Hover background: #222222
 - Tab Hover color: #FFF;
 
-## Footer 
-Background: #828282
+<!-- ## Footer 
+Background: #828282 -->
 
 ### General Text
 - Font Weight: Regular
@@ -33,10 +33,10 @@ Background: #828282
 - Line Height: 75px
 - Color: #FFFFFF
 
-### Sub Headers
+<!-- ### Sub Headers
 - Font Weight: Bold
 - Font Size: 28px
-- Color: #222222
+- Color: #222222 -->
    
 ### Footer Headings
 - Font Weight: Regular
@@ -50,10 +50,10 @@ Background: #828282
 - Line Height: 26px
 - Color: #FFFFFF
 
-### Navigation Logo
+<!-- ### Navigation Logo
 - Font Weight: Bold
 - Font Size: 24px
-- Color: #FFFFFF
+- Color: #FFFFFF -->
 
 ### Navigation Text (Expanded)
 - Font Weight: Bold

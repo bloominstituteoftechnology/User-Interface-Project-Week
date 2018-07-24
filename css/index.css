@@ -1,1 +1,778 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #222222;
+  font-size: 62.5%;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+.nav {
+  display: flex;
+  background-color: #9499a2e2;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+.nav h1 {
+  color: white;
+  margin-left: 5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.nav .nav-hamburger {
+  margin-right: 6rem;
+  height: 1.5rem;
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: #9499a2d3;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 1.875rem;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 5.3125rem;
+  color: white;
+  display: block;
+  cursor: pointer;
+}
+.overlay a:hover {
+  text-decoration: #222222;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+.jumbotron {
+  width: 100%;
+  height: 43rem;
+  position: relative;
+  background: url('../img/home/home-jumbotron.png') no-repeat;
+  background-size: cover;
+}
+.jumbotron .jumbo {
+  position: absolute;
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 4.6875rem;
+  color: white;
+  bottom: 2rem;
+  left: 5rem;
+}
+.top-container {
+  max-width: 80%;
+  margin: 5rem 7rem;
+}
+.top-container .top-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.top-container .top-content .img-1 {
+  padding-left: 2rem;
+}
+.top-container .top-content .img-2 {
+  padding-right: 2rem;
+}
+.top-container .top-content .text-content {
+  width: 50%;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  margin-top: 2.5rem;
+}
+@media (max-width: 800px) {
+  .top-container .top-content .text-content {
+    width: 100%;
+  }
+}
+.top-container .top-content .text-content p {
+  margin-top: 2rem;
+}
+.top-container .top-content .text-content .button {
+  border: 1px solid #222222;
+  width: 8rem;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+@media (max-width: 800px) {
+  .top-container .top-content .img-content {
+    width: 100%;
+  }
+}
+.top-container h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.project-container {
+  max-width: 80%;
+  margin: 5rem 7rem;
+}
+.project-container h1 {
+  font-weight: 700;
+  margin-bottom: -5rem;
+}
+.project-container h2.out-left {
+  left: 0%;
+}
+.project-container .villas,
+.project-container .outskirts,
+.project-container .blocks {
+  position: relative;
+}
+.project-container .villas h2,
+.project-container .outskirts h2,
+.project-container .blocks h2 {
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  border: solid 1px white;
+  background: #D8D8D8;
+  height: 6rem;
+  width: 21rem;
+  text-align: center;
+  padding: 2rem;
+  top: 85%;
+  right: 0%;
+}
+.project-container .villas img,
+.project-container .outskirts img,
+.project-container .blocks img {
+  width: 100%;
+  margin-top: 8rem;
+}
+.villa-content,
+.outskirts-content,
+.blocks-content {
+  margin-top: 5rem;
+  font-size: 1.25rem;
+  padding: 0 20%;
+  line-height: 2rem;
+}
+footer {
+  background: #828282;
+  height: 25%;
+}
+footer .foot {
+  top: 2rem;
+  padding: 3rem 4rem .5rem 4rem;
+  display: flex;
+}
+footer .foot .footer-content {
+  color: white;
+  width: 40%;
+}
+footer .foot .footer-content h3 {
+  font-weight: 400px;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+}
+footer .foot .footer-content h5 {
+  font-size: 12px;
+}
+footer .foot .footer-content form input {
+  border-radius: 5px;
+  width: 300px;
+  height: 35px;
+  color: rgba(128, 128, 128, 0.576);
+  font-size: 14px;
+}
+footer .foot .cities {
+  width: 20%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color: white;
+}
+footer .foot .cities h3 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+}
+footer .bottom h5 {
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}
+.services {
+  width: 100%;
+  height: 20rem;
+  position: relative;
+  background: url('../img/services/services-jumbotron.png');
+  background-size: cover;
+}
+.services h1 {
+  position: absolute;
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 4.6875rem;
+  color: white;
+  bottom: 20px;
+  margin-left: 5rem;
+}
+.texts-container {
+  display: flex;
+}
+.texts-container .services-text {
+  justify-content: center;
+  margin: 2rem 5rem;
+  font-size: 1.5rem;
+}
+.tabs {
+  display: flex;
+  justify-content: space-evenly;
+}
+.tabs .tab {
+  border: 2px black solid;
+  padding: .5rem 2rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  align-items: center;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+.tabs .tab:hover {
+  color: #FFF;
+  background-color: black;
+}
+.tabs .active-tab {
+  background-color: #5E9FB9;
+  color: #FFF;
+}
+.tab-content {
+  margin: 3rem;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.content .text-content {
+  width: 50%;
+}
+.content .text-content h1 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 2rem;
+}
+.content .text-content p {
+  font-size: 16px;
+}
+.content img {
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+.content:not(.active-tab) {
+  display: none;
+}
+footer {
+  background: #828282;
+  height: 25%;
+}
+footer .foot {
+  top: 2rem;
+  padding: 3rem 4rem .5rem 4rem;
+  display: flex;
+}
+footer .foot .footer-content {
+  color: white;
+  width: 40%;
+}
+footer .foot .footer-content h3 {
+  font-weight: 400px;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+}
+footer .foot .footer-content h5 {
+  font-size: 12px;
+}
+footer .foot .footer-content form input {
+  border-radius: 5px;
+  width: 300px;
+  height: 35px;
+  color: rgba(128, 128, 128, 0.576);
+  font-size: 14px;
+}
+footer .foot .cities {
+  width: 20%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color: white;
+}
+footer .foot .cities h3 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+}
+footer .bottom h5 {
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}
+@media (max-width: 800px) {
+  .services {
+    width: 100%;
+    height: 20rem;
+    position: relative;
+    background: url('../img/services/services-mobile-jumbotron.png');
+    background-size: cover;
+  }
+  .services h1 {
+    position: absolute;
+    font-weight: 700;
+    font-size: 4.5rem;
+    line-height: 4.6875rem;
+    color: white;
+    bottom: 20px;
+    margin-left: 5rem;
+  }
+  .texts-container {
+    display: flex;
+  }
+  .texts-container .services-text {
+    margin: 02rem 1rem;
+    font-size: 16px;
+  }
+  .tabs {
+    display: block;
+  }
+  .tabs .tab {
+    text-align: center;
+    padding: .5rem 2rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+    width: 100%;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  .tabs .tab:hover {
+    color: #FFF;
+    background-color: black;
+  }
+  .tabs .active-tab {
+    background-color: #5E9FB9;
+    color: #FFF;
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .content .text-content {
+    margin: 3rem 0;
+    width: 100%;
+  }
+  footer {
+    background: #828282;
+    height: 25%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  footer .foot {
+    top: 2rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  footer .foot .footer-content {
+    color: white;
+    width: 100%;
+  }
+  footer .foot .footer-content h3 {
+    font-weight: 400px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    margin-top: 3rem;
+  }
+  footer .foot .footer-content h5 {
+    font-size: 12px;
+  }
+  footer .foot .footer-content form input {
+    border-radius: 5px;
+    width: 300px;
+    height: 35px;
+    color: rgba(128, 128, 128, 0.576);
+    font-size: 14px;
+  }
+  footer .foot .cities {
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color: white;
+    margin-top: 1rem;
+  }
+  footer .foot .cities h3 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: white;
+  }
+  .bottom {
+    margin-bottom: 5rem;
+  }
+  .bottom h5 {
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    margin-left: 1rem;
+    margin-bottom: -50px;
+  }
+  .pre-construction-img {
+    background-image: url('../img/services/services-tab-mobile-pre-construction-img.png');
+  }
+  .construction-img {
+    display: none;
+  }
+}
+@media (min-width:800px) {
+  .mobile-construction-img {
+    display: none;
+  }
+}
+.general-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.sub-headers {
+  font-weight: 700;
+  font-size: 28px;
+  color: #222222;
+}
+.footer-texts {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color: white;
+}
+.footer-headings {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+}
+.desktop-margins {
+  max-width: 80%;
+  border: 2px solid black;
+  margin: 5rem 7rem;
+}
+.nav {
+  display: flex;
+  background-color: #9499a2e2;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+.nav h1 {
+  color: white;
+  margin-left: 5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.nav .nav-hamburger {
+  margin-right: 6rem;
+  height: 1.5rem;
+}
+.jumbo-contact {
+  width: 100%;
+  height: 20rem;
+  position: relative;
+  background: url('../img/contact/contact-jumbotron.png') no-repeat;
+  background-size: cover;
+}
+.jumbo-contact .jumbo-text {
+  position: absolute;
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 4.6875rem;
+  color: white;
+  bottom: 2rem;
+  left: 5rem;
+}
+.contact-container {
+  display: flex;
+  bottom: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.contact-container .contact-row {
+  width: 50%;
+}
+@media (max-width: 800px) {
+  .contact-container .contact-row {
+    width: 100%;
+  }
+}
+.contact-container .contact-row .contact-col {
+  padding-left: 3rem;
+  padding-top: 2rem;
+}
+@media (max-width: 800px) {
+  .contact-container .contact-row .contact-col {
+    padding: 2rem;
+  }
+}
+.contact-container .contact-row .contact-col h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  margin-bottom: 1rem;
+}
+.contact-container .contact-row .contact-col .forms input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.contact-container .contact-row .contact-col .forms h5 {
+  font-size: 12px;
+  margin-top: -5px;
+  color: gray;
+}
+.contact-container .contact-row .contact-col label {
+  font-size: 12px;
+}
+.contact-container .contact-row .contact-col #number {
+  width: 100%;
+  padding: 1rem;
+}
+.contact-container .contact-row .contact-col .textbox {
+  font-size: 12px;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+.contact-container .contact-row .contact-col .textbox #textbox {
+  width: 100%;
+  height: 10rem;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+.contact-container .contact-row form {
+  font-size: 12px;
+  line-height: 2;
+}
+.contact-container .contact-row input[type=submit] {
+  width: 25%;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+@media (max-width: 800px) {
+  .contact-container .contact-row input[type=submit] {
+    width: 100%;
+  }
+}
+.contact-container .contact-row2 {
+  margin-left: 5rem;
+  width: 30%;
+}
+@media (max-width: 800px) {
+  .contact-container .contact-row2 {
+    width: 100%;
+    margin-left: 2rem;
+  }
+}
+.contact-container .contact-row2 .contact-col2 {
+  padding-left: 7rem;
+  padding-top: 2rem;
+}
+@media (max-width: 800px) {
+  .contact-container .contact-row2 .contact-col2 {
+    padding: 0rem;
+    padding-top: 2rem;
+  }
+}
+.contact-container .contact-row2 .contact-col2 h2 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  margin-bottom: 2rem;
+}
+.contact-container .contact-row2 .contact-col2 .contact-city {
+  line-height: 1.25rem;
+}
+.contact-container .contact-row2 .contact-col2 .contact-city h3 {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.contact-container .contact-row2 .contact-col2 .contact-city p {
+  margin-bottom: 2rem;
+  font-size: .75rem;
+}
+@media (max-width: 800px) {
+  .contact-row {
+    width: 100%;
+  }
+  .contact-row2 {
+    width: 100%;
+  }
+}
