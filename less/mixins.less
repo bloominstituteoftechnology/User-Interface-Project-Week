@@ -1,50 +1,129 @@
-.generalText() {
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 24px;
-}
-
-.jumboHeader(){
+.center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .nav-bar(){
+        background-color: @nav-bar-bg;
+        opacity: @menu-opacity;
+        width: 100%;
+        z-index: 20;
+        justify-content: space-around;
+        padding: 1.25rem;
+   }
+   .fixed (){
+        position: fixed;
+        top: 0;       
+   }
+   .nav-logo () {
     font-weight: bold;
-    font-size: 4rem;
-    line-height: 75px;
-    color: @headerText;
-}
-
-.subHeader(){
+    font-size: 2.4rem;
+    color: @nav;
+   }
+   
+   .nav-text-expanded () {
     font-weight: bold;
-    font-size: 1.75rem;
-    color: @headerText;
-}
-.footerHeader(){
-    font-weight: normal;
-    font-size: 1.25rem;
-    line-height: 24px;
-    color: @headerText;
-}
-.footerText(){
-    font-weight: normal;
-    font-size: .875rem;
-    color: @footerText
-}
-.navLogo(){
-    font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 85px;
-    color: @navText
-}
-.navText(){
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 85px;
-    color: @navText;
-}
-    &:hover{
-        color: @hoverColor
+    font-size: 4.8rem;
+    line-height: 8.5rem;
+    color: @nav-expanded;
+    background: @nav-bar-bg;
+    // Remove with JS
+    display: none;
+    
+   
+    a {
+      color: @nav-expanded;
+      text-decoration: none;
+   
+      &:hover {
+        color: @nav-expanded-hover;
+      }
     }
-.homeButton(){
-    background: @buttonBg;
-    border: solid 1px @buttonBorder;
-    width: 135px;
-    height: 35px;
-}
+   }
+   
+   .sub-headers () {
+    font-weight: bold;
+    font-size: 2.8rem;
+    color: @sub-header;
+   }
+   
+   .project-titles () {
+    .center;
+    position: absolute;
+    position: relative;
+    bottom: 50px;
+    height: 95px;
+    width: 315px;
+    font-size: 2rem;
+    font-weight: lighter;
+    letter-spacing: 0.7rem;
+    background-color: @project-title-bg;
+    border: solid 1px white;
+   }
+   
+   .footer-headers () {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: @footer;
+   }
+   .footer-text () {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    color: @footer;
+   }
+   
+   #buttons {
+    .hover {
+      background: @tab-hover-bg;
+      color: @tab-hover;
+    }
+   
+    .btn-main () {
+      .center;
+      border: solid 1px @button-border;
+      width: 135px;
+      height: 45px;
+      cursor: pointer;
+   
+      &:hover {
+        #buttons.hover;
+      }
+    }
+   
+    .tabs () {
+      .center;
+      border: solid 1px @button-border;
+      width: 180px;
+      height: 50px;
+      cursor: pointer;
+   
+      &:hover {
+        #buttons.hover;
+      }
+    }
+   }
+
+   .jumbotron-mixin (@image-address, @height) {
+    height: @height;
+    background: @image-address;
+    background-size: cover;
+    display: flex;
+
+    img {
+      width: 100%;
+    }
+
+    .jtron-header {
+      align-self: flex-end;
+      font-size: 6.4rem;
+      line-height: 7.5rem;
+      color: @jumbotron-header;
+      max-width: 894px;
+      bottom: 8.3%;
+      z-index: 10;
+      padding-left: 20%;
+    }
+   }
+   .max-width(){
+   max-width: @page-width;
+   }
