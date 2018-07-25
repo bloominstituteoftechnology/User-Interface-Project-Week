@@ -10,6 +10,11 @@
     display: flex;
     justify-content: center;
 
+    @media @mobile {
+        .jumbotron-mixin(@home-jumbo-mobile,350px);
+        background-size: cover;
+    }
+
     .jtron-header {
         .jtron-header;
         position: absolute;
@@ -18,7 +23,18 @@
         font-size: 6.4rem;
         line-height:7.5rem;
         color: @jumbotron-header;  
-        margin: 19% 0 0 0;  
+        margin: 19% 0 0 0;
+        padding: 0 0 0 30px;  
+
+        @media @mobile {
+            font-size: 2.4rem;
+            line-height: 3.5rem;
+            left: 0px;
+            right: 0px;
+            margin-left: auto;
+            margin-right: auto;
+            // background: red;
+        }
     } 
 
 }
@@ -37,12 +53,38 @@
     justify-content: space-between;
     margin: 50px 0;
 
+    @media @mobile {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    // .mobile-img {
+
+    //     @media @mobile {
+    //         width: 100%;
+    //     }
+    // }
 
 }
 
     .top-content-info {
         width: 50%;
         margin: 0 50px 0 0;
+
+        
+        
+        .mobile-img {
+            @media @mobile {
+                display: block;
+                width: 100%;
+            }
+        }
+
+
+        @media @mobile {
+            width: 100%;
+            margin: 0 0 0 30px;
+        }
 
         h3{
             margin: 30px 0;
@@ -58,6 +100,10 @@
             #buttons.btn-main();
             margin: 30px 0;
             
+            @media @mobile{
+                width: 100%;
+            }
+
             &:hover{
                 #buttons.hover();
             }
@@ -75,6 +121,10 @@
 
 .projects{
     position: relative;
+    @media @mobile {
+        display: flex;
+        flex-direction: column;
+    }
     .desktop-img {
         width: 100%;
     }
@@ -84,6 +134,13 @@
         .project-titles();
         bottom: -50px;
 
+        @media @mobile {
+            width: 90%;
+            height: 75px;
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+        }
     }
 }
 
@@ -94,6 +151,10 @@
     font-weight: normal;
     font-size: 1.6rem;
     line-height: 2.4rem;
+
+    @media @mobile {
+        width: 100%;
+    }
 }
 
 
@@ -101,6 +162,3 @@
 
 
 
-// .mobile-img {
-//     display: none;
-//

@@ -7,6 +7,11 @@
     display: flex;
     justify-content: center;
 
+    @media @mobile {
+        .jumbotron-mixin(@services-jumbo-mobile,350px);
+        background-size: cover;
+    }   
+
     .jtron-header {
         .jtron-header;
         position: absolute;
@@ -17,6 +22,16 @@
         color: @jumbotron-header;  
         margin: 19% 0 0 0;  
         text-shadow: 2px 2px @mine-shaft;
+
+        @media @mobile {
+            font-size: 2.4rem;
+            line-height: 3.5rem;
+            left: 0px;
+            right: 0px;
+            margin-left: auto;
+            margin-right: auto;
+            // background: red;
+        }
     } 
 
 }
@@ -38,8 +53,21 @@
     display: flex;
     justify-content: space-evenly;
     margin: 50px 0 0 0;
+    padding: 0 10px;
+
+    @media @mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        align-items: center;
+    }
     .each-tab{
         .service-tab-design();
+
+        @media @mobile {
+            width: 90%;
+            margin: 10px 0;
+        }
     }
 
 }
@@ -47,18 +75,43 @@
 .tab-content{
     margin: 50px 0;
 
+    
+    @media @mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
     .tab-content-info{
         display: flex;
         width: 98%;
         align-items: center; 
+
+        @media @mobile {
+            width: 90%;
+            flex-direction: column;
+        }
+
+        h3 {
+            @media @mobile{
+                width: 100%;
+            }
+        }
         
         span{
             .general-text();
             width: 49%;
             padding: 0 20px 0 0;
+
+            @media @mobile {
+                width: 90%;
+            }
         }
         img{
             width: 49%;
+            
+            @media @mobile {
+                width: 90%;
+            }
         }
     }
 }
