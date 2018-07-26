@@ -1,73 +1,95 @@
-
- .services-jtron{
-    .jumbotron-mixin(@services-jumbo, 300px);
-} 
-
-
- 
-
-    
-
-    .services-content {
-        max-width: 894px;
-        width: 100%;
-        margin: auto;
-        // h3{
-        //     margin: 10 0;
-
-        .intro {
-            margin-top: 50px;
-            line-height: @line-height;
-        }
-        
-            .tabs {
-                .center;
-                justify-content: space-between;
-                margin: 50px 0; 
-                border: 1px solid black;
-                    .each-tab { 
-                        padding: 20px;
-                        border: 1px solid red;
-                        #buttons.hover {
-                        background: @tab-hover-bg;
-                        color: @tab-hover;
-                    }
-                 }
-             }
-
-          
-    
-        .tab-content {
-            display: flex;
-            flex-direction: column;
-            margin: 15px 0;
-            border: 1px solid red;
-           // width: 100%;
-          
-
-            .tab-content-info{
-                display: flex           
-                justify-content: space-evenly;
-                margin: 30 0;
-                border: 1px solid black;
-                background: yellow;
-               
-          
-                span {
-                   
-                    line-height: @line-height;
-                    width: 48%;
-                    border: 1px solid blue;
-                
-                    
-                }
-        
-            }
-
-         }   
-            
-    }   
+.services-jtron {
+//   .jumbotron-mixin(@services-jumbo, 300px);
+//   .jumbotron-mixin (@image-address, @height) {
+    height: 300px;
+    background:@services-jumbo;
+    background-size: cover;
+    border: 1px solid red;
+    overflow: hidden;
+    //.center();
   
+    img {
+      width: 100%;
+      border: 1px solid green;
+    }
+  
+    .jtron-header {
+     // max-width: 100px;
+      width: 100%;
+      margin-top: 5%;
+      z-index: 10;
+      border: 1px solid blueviolet;
+      font-size: 7.5rem;
+      line-height: 7.5rem;
+      font-weight: bold;
+      color: @jumbotron-header;
+      padding-left: 20px;
+    }
+  }
 
- 
+.services-content {
+  max-width: 894px;
+  width: 100%;
+  margin: auto;
+  // h3{
+  //     margin: 10 0;
 
+  .intro {
+    margin-top: 50px;
+    line-height: @line-height;
+  }
+
+  .tabs {
+    .center;
+    justify-content: space-between;
+    margin: 50px 0;
+    .each-tab {
+      #buttons.tab();
+    }
+    @media @mobile{ //start media query
+        display: flex;
+        flex-direction: column;
+        justify-items: space-evenly;
+    }//end media query
+  }
+
+  .tab-content {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    // width: 100%;
+
+    .desktop-img{
+        display: block;
+        @media @mobile{
+            display: none;
+        }
+    }
+    .mobile-img{
+        display: none;
+
+        @media @mobile{
+            display: block;
+        }
+    }
+
+    .tab-content-info {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 30 0;
+
+      @media @mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+
+      span {
+        line-height: @line-height;
+        width: 48%;
+
+      }
+    }
+  }
+}
