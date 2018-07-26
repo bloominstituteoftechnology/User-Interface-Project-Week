@@ -1,5 +1,8 @@
 .services-jtron {
   .jumbotron-mixin(@services-jumbo, 300px);
+
+  @media @mobile {
+  }
 }
 
 .services-content {
@@ -15,35 +18,65 @@
     width: 100%;
     line-height: @line-height;
     padding: 45px 0;
-    
+
+    @media @mobile {
+      max-width: 600px;
+      width: 90%;
+      line-height: @line-height;
+      padding: 45px 0;
+    }
   }
-  
+
   .tabs {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     max-width: 900px;
     width: 100%;
+
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
     .each-tab {
       #buttons.tabs();
+
+      @media @mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
     }
   }
-  
+
   .tab-content {
     max-width: 900px;
     width: 100%;
     padding: 45px 0;
-    
+
     .tab-content-info {
       display: flex;
       justify-content: space-between;
       line-height: @line-height;
 
-      span {
-        width: 46%;
+      @media @mobile {
+        display: block;
+        max-width: 600px;
+        width: 90%;
+        padding: 10px 0 10 0;
       }
 
-    
+      span {
+        width: 46%;
+        @media @mobile {
+          padding: 10px 0 10 0;
+        }
+      }
+      img {
+        padding: 10px auto;
+      }
     }
   }
 }
