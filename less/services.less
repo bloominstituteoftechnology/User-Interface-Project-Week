@@ -10,6 +10,7 @@
     @media @mobile {
         .jumbotron-mixin(@services-jumbo-mobile,350px);
         background-size: cover;
+    
     }   
 
     .jtron-header {
@@ -30,6 +31,7 @@
             right: 0px;
             margin-left: auto;
             margin-right: auto;
+            padding: 0 0 0 20px;
             // background: red;
         }
     } 
@@ -43,10 +45,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    @media @mobile{
+        align-items: center;
+    }
+
 }
 
 .intro {
     margin: 50px 0 0 0;
+
+    @media @mobile {
+        width: 90%;
+    }
 }
 
 .tabs{
@@ -58,8 +69,10 @@
     @media @mobile {
         display: flex;
         flex-direction: column;
-        justify-content: space-between; 
-        align-items: center;
+        justify-content: space-between;
+        align-items: center; 
+        width: 100%;
+       
     }
     .each-tab{
         .service-tab-design();
@@ -73,12 +86,22 @@
 }
 
 .tab-content{
-    margin: 50px 0;
+    margin: 50px 0 0 0;
 
     
     @media @mobile {
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+
+    
+    h3 {
+        @media @mobile{
+            width: 90%;
+            justify-content: flex-start;
+            margin: 0 10px;
+        }
     }
 
     .tab-content-info{
@@ -89,13 +112,9 @@
         @media @mobile {
             width: 90%;
             flex-direction: column;
+            align-items: center;
         }
 
-        h3 {
-            @media @mobile{
-                width: 100%;
-            }
-        }
         
         span{
             .general-text();
@@ -103,14 +122,14 @@
             padding: 0 20px 0 0;
 
             @media @mobile {
-                width: 90%;
+                width: 100%;
             }
         }
         img{
             width: 49%;
             
             @media @mobile {
-                width: 90%;
+                width: 100%;
             }
         }
     }
