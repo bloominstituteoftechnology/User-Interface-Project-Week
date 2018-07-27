@@ -6,11 +6,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+    
+  }
   .main-content-top {
+    
     .top-content-block {
       margin: 50px auto;
       .center();
 
+      @media @mobile {
+        width: 100%;
+        display: block;
+      }
+      
       .top-content-info {
         margin: 20px;
         padding-top: 15px;
@@ -21,12 +30,24 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @media @mobile {
+          .center;
+          width: 100%;
+        }
+
         span {
           padding: 6 0px;
         }
 
         .button {
           #buttons.btn-main();
+
+          @media @mobile {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            padding: 10px;
+          }
         }
       }
     }
@@ -35,15 +56,22 @@
     max-width: 1024px;
     width: 100%;
 
+    
     h3 {
       .sub-headers();
       margin: 20px 100px;
     }
     .bottom-content-block {
+
       .projects {
         margin-left: 100px;
         padding-top: 20px;
         position: relative;
+        
+        @media @mobile {
+          display: block;
+          width: 100%;
+        }
         .recent-project-titles {
           .project-titles();
           position: absolute;
@@ -62,4 +90,4 @@
       }
     }
   }
-}
+
