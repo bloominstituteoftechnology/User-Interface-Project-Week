@@ -201,26 +201,31 @@ h4 {
 }
 .menu-items {
   display: none;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  margin-top: 50px;
+  background: #828282;
+  opacity: 0.9;
+  z-index: 20;
+}
+.menu-items li {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu-items li a {
+  color: #ffffff;
+}
+.menu-items li a:hover {
+  color: #222222;
 }
 .menu-items_revealed {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  font-size: 4.8rem;
-  line-height: 8.5rem;
-  width: 100%;
-  height: 100vh;
-  color: #ffffff;
-  background: #828282;
-  opacity: 0.9;
-  z-index: 2;
-}
-.menu-items_revealed a {
-  color: #ffffff;
-}
-.menu-items_revealed a:hover {
-  color: #222222;
 }
 .home-jtron {
   height: 600px;
@@ -270,6 +275,9 @@ h4 {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+.main-content .main-content-top .top-content-block:nth-child(odd) {
+  flex-direction: row-reverse;
+}
 @media (max-width: 600px) {
   .main-content .main-content-top .top-content-block {
     flex-direction: column;
@@ -308,6 +316,9 @@ h4 {
     margin-top: 25px;
   }
 }
+.main-content .main-content-top .top-content-block .top-content-info h3 {
+  margin-bottom: 50px;
+}
 .main-content .main-content-top .top-content-block .top-content-info .button {
   display: flex;
   justify-content: center;
@@ -316,6 +327,7 @@ h4 {
   width: 135px;
   height: 45px;
   cursor: pointer;
+  margin-top: 25px;
 }
 .main-content .main-content-top .top-content-block .top-content-info .button:hover {
   background: #222222;
@@ -325,7 +337,6 @@ h4 {
 @media (max-width: 600px) {
   .main-content .main-content-top .top-content-block .top-content-info .button {
     width: 100%;
-    margin-top: 25px;
   }
 }
 .main-content-bottom {
@@ -470,6 +481,16 @@ h4 {
   cursor: pointer;
 }
 .services-content .tab-content {
+  display: none;
+}
+.tab_selected {
+  background: #5e9fb9;
+  color: #ffffff;
+}
+.all-tab-content {
+  display: flex;
+}
+.all-tab-content .tab-content_revealed {
   width: 880px;
   height: 425px;
   display: flex;
@@ -477,12 +498,12 @@ h4 {
   flex-direction: column;
   margin-bottom: 50px;
 }
-.services-content .tab-content h3 {
+.all-tab-content .tab-content_revealed h3 {
   display: flex;
   width: 880px;
   height: 50px;
 }
-.services-content .tab-content .tab-content-info {
+.all-tab-content .tab-content_revealed .tab-content-info {
   width: 880px;
   height: 325px;
   display: flex;
@@ -492,13 +513,13 @@ h4 {
   line-height: 2.4rem;
   color: #222222;
 }
-.services-content .tab-content .tab-content-info span {
+.all-tab-content .tab-content_revealed .tab-content-info span {
   display: flex;
   width: 48%;
   height: 325px;
   line-height: 2.8rem;
 }
-.services-content .tab-content .tab-content-info img {
+.all-tab-content .tab-content_revealed .tab-content-info img {
   display: flex;
   width: 48%;
   height: 325px;
@@ -514,7 +535,7 @@ footer {
 }
 @media (max-width: 600px) {
   footer {
-    height: 1000px;
+    height: 800px;
   }
 }
 footer .footer-content {
@@ -555,7 +576,7 @@ footer .footer-content .contact input {
     width: 100%;
   }
 }
-footer .footer-content .locations {
+.locations {
   display: flex;
   width: 20%;
   flex-direction: column;
@@ -565,29 +586,35 @@ footer .footer-content .locations {
   padding-top: 50px;
 }
 @media (max-width: 600px) {
-  footer .footer-content .locations {
+  .locations {
     flex-direction: row;
     padding-left: 0;
     padding-bottom: 0;
     padding-top: 0;
     width: 100%;
     margin-bottom: 50px;
-    align-items: flex-start;
+    justify-content: left;
+  }
+  .locations h4 {
+    font-size: 2rem;
+    line-height: 0;
+    color: #ffffff;
   }
 }
-footer .footer-content .locations h4 {
-  font-size: 2rem;
-  line-height: 0rem;
-  color: #ffffff;
+@media (max-width: 600px) and (max-width: 600px) {
+  .locations h4 {
+    line-height: 2.4rem;
+    margin-left: 50px;
+  }
 }
-footer .copyright {
+.locations .copyright {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
 }
 @media (max-width: 600px) {
-  footer .copyright {
+  .locations .copyright {
     height: 50px;
   }
 }
