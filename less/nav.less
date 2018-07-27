@@ -18,10 +18,34 @@ nav {
         justify-content: space-between;
         margin: 0 100px;
 
+        @media @mobile {
+            margin: 0 30px;
+        }
+
         .nav-logo();
     }
 }
 
-.menu-items{
+.menu-items {
     display: none;
-}
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    margin-top: @menu-height;
+    background: @nav-bar-bg;
+    opacity: @menu-opacity;
+    z-index: 20;
+  
+    li {
+      .nav-text-expanded;
+        
+        a {
+            text-decoration: none;
+        }
+    }
+
+  }
+  
+  .menu-items_revealed {
+    .center;
+  }
