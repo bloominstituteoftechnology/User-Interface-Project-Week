@@ -69,9 +69,6 @@
         }
     } 
     .main-content-bottom { 
-        @media @mobile {
-            margin: 0 10px;
-        }
 
         h3 {
             margin-top: 50px;
@@ -82,17 +79,22 @@
             display:flex;
             align-items:center;
             flex-direction: column;
-            
+        
+           
+
             .mobile-img {
                 border: 1px solid black;
                 display: none;
                 @media @mobile {
-                  display:flex;
+                  display:block;
                 //   max-width: 600px;
                   width:100%;
                 }
               }
             .projects {
+                @media @mobile {
+                    width: 100%
+                }
 
                 position: relative;
                 .recent-project-titles {
@@ -112,14 +114,16 @@
                 
             }
             .project-text {
-                border: 1px dashed lime;
                 width: 100%;
                 max-width: 435px;
                 margin: 100px 0px;
                 line-height: @line-height;
-                
+
+                @media @mobile {
+                    padding: 0 10px;
+              }    
             }
-         &:nth-child(even) {
+            &:nth-child(even) {
              .recent-project-titles {
                  display: flex;
                  flex-direction: row-reverse;
@@ -131,13 +135,10 @@
                     margin-left: auto;
                     margin-right: auto;
                  }
-                
-            
              }
          }  
          
-        }
-        
+        }    
     }
 }
     
