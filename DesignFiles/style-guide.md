@@ -14,8 +14,8 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Recent Projects Gray Square: #D8D8D8
 - Button borders: #222222
 
-### Services Page
-- Tab selected background: #5E9FB9
+### Services Page5E9FB9
+- Tab selected background: #
 - Tab Hover background: #222222
 - Tab Hover color: #FFF;
 
