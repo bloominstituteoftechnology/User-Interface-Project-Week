@@ -1,0 +1,198 @@
+.home-jtron {
+    
+    .jumbotron-mixin(@home-jumbo, 600px);
+    display:flex;
+    justify-content: center;
+
+    @media @mobile {
+        .jumbotron-mixin(@home-jumbo-mobile, 515px);
+    }
+}
+
+.main-content {
+    position: relative;
+
+    .main-content-top {
+
+        // .top-content-block:nth-child(odd) {
+        //     display: flex;
+        //     flex-direction: row-reverse;
+        // }
+
+        .top-content-block {
+
+            // border: 1px solid blue;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            
+            &:nth-child(2n-1){
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            @media @mobile {
+                    
+                .mobile-img {
+                    display: block;
+                    width: 90%;
+                }
+
+                margin: 50px 0;
+                display: flex;
+                flex-wrap: wrap;
+            }
+    
+    
+            .desktop-img {
+                // border: 1px solid black;
+                display: flex;
+                padding-right: 20px;
+
+                @media @mobile {
+                    display: none;
+                }
+            }
+    
+            .top-content-info {
+                // border: 2px solid red;
+                display: flex;
+                flex-direction: column;
+                // padding: 20px;
+                margin: 20px;
+
+                @media @mobile {
+                    width: 90%;
+                }
+    
+                h3 {
+                    .sub-headers();
+                    // border: 1px dashed brown;
+                    // width: 100%;
+                    margin: 4px 0;
+                }
+    
+                span {
+                    // border: 1px dashed yellowgreen;
+                    font-size: 1.5rem;
+                    padding: 10px 0;
+                    margin: 12px 0;
+                    width: 410px;
+                    line-height: 3rem;
+
+                    @media @mobile {
+                        width: 90%;
+                        
+                    }
+                }
+    
+                .button {
+                    #buttons.btn-main();
+
+                    @media @mobile {
+                        #buttons.btn-mobile;
+                        margin-top: 30px;
+                        align-self: center;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .main-content-bottom {
+
+        h3 {
+            margin: 20px 320px;
+            .sub-headers();
+
+            @media @mobile {
+                width: 90%;
+                margin-left: 35px;
+            }
+        }
+
+        .bottom-content-block {
+            // border: 1px solid black;
+            .center();
+            flex-direction: column;
+            // max-width: 910px;
+            // width: 100%;
+            margin-top: 50px;
+            margin-left: -20px;
+
+            .projects {
+                position: relative;
+                width: 100%;
+
+                .desktop-img {
+                    margin: 0 335px;
+                }
+
+                @media @mobile {
+                    .desktop-img {
+                        display: none;
+                    }
+
+                    .mobile-img {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+
+                .recent-project-titles {
+                    .project-titles();
+                    position: absolute;
+                    left: 335px;
+                    bottom: -50px;
+                    z-index: 10;
+
+                    @media @mobile {
+                        // height: 70px;
+                        width: 290px;
+                        bottom: -75px;
+                        left: 0px;
+                        right: 0px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      }
+                }
+
+            }
+
+            .project-text {
+                // border: 1px solid blue;
+                .center();
+                width: 100%;
+                max-width: 435px;
+                line-height: 2.5rem;
+                margin-top: 100px;
+
+                @media @mobile {
+                    width: 47%;
+                }
+            }
+
+            &:nth-child(even) {
+                
+                .recent-project-titles {
+                    // border: solid 2px red;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    left: 875px;
+
+                    @media @mobile {
+                        left: 0px;
+                        right: 0px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
