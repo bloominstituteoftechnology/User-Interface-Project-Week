@@ -4,7 +4,6 @@ class Dropdown {
         this.element = element;
 
         this.button = this.element.querySelector('.dropdown-button');
-
         this.content = this.element.querySelector('.dropdown-content');
 
         this.button.addEventListener('click', () => { this.toggleContent(); });
@@ -13,6 +12,15 @@ class Dropdown {
 
     toggleContent() {
         this.content.classList.toggle('dropdown-hidden');
+
+        if (this.content.classList.contains('dropdown-hidden')) {
+            this.button.src = '../img/nav-hamburger.png';
+        }
+        else {
+            this.button.src = '../img/nav-hamburger-close.png';
+        }
+        
+
     }
 }
 
