@@ -58,11 +58,15 @@ table{
 }
 
 /* Your Code Goes Here */
+@phone: ~"( max-width: 500px )";
 
 body{
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+  @media @phone{
+    width:100%;
+  }
 
   .navigation{
     display: flex;
@@ -106,7 +110,16 @@ body{
         margin-top: -28%;
         margin-left: 8%;
         margin-bottom: 10%;
+        @media @phone{
+          margin-top: -40%;
+          margin-left: 6%;
+          margin-bottom: 10%;
+        }
         h1{
+          @media @phone{
+            font-size: 50px;
+            line-height: 55px;
+          }
           font-size: 64px;
           line-height: 75px;
           color: #ffffff;
@@ -121,21 +134,39 @@ body{
 
       .twobox{
         display: flex;
+        flex-flow: row-reverse;
         margin-bottom: 100px;
+        @media @phone{
+          display: inline;
+        }
 
         .text{
           margin-top: 40px;
           h3{
+            @media @phone{
+              font-size: 36px;
+              margin: 0px 0px 20px;
+              font-weight: bold;
+              margin: 0 0 0 7%;
+            }
             font-size: 22px;
             margin: 0px 0px 20px 10%;
             font-weight: bold;
           }
           p{
+            @media @phone{
+              font-size: 20px;
+              margin: 0 3% 30px 7%;
+            }
             margin: 0px 3% 40px 10%;
             font-size: 16px;
             line-height: 22px;
           }
           .LearnButton{
+            @media @phone{
+              margin: 0px 0% 14px 5%;
+              padding: 19px 37% 20px 32%;
+            }
             border: 1px solid black;
             padding: 15px 25px;
             margin: 0 10%;
@@ -146,26 +177,47 @@ body{
         }
         .img{
           margin: 0px 7% 0 0%;
+          @media @phone{
+            margin: 0 0 0 6%;
+          }
         }
       }
       .twobox-reverse{
         display: flex;
-        flex-flow: row-reverse;
+        
         margin-bottom: 50px;
+        @media @phone{
+          display: inline;
+          margin-top:50px;
+        }
 
         .text{
           margin-top: 40px;
           h3{
+            @media @phone{
+              font-size: 36px;
+              margin: 0px 0px 20px;
+              font-weight: bold;
+              margin: 0 0 0 7%;
+            }
             font-size: 22px;
             margin: 0px 0px 20px 10%;
             font-weight: bold;
           }
           p{
+            @media @phone{
+              font-size: 20px;
+              margin: 0 3% 30px 7%;
+            }
             margin: 0px 3% 40px 10%;
             font-size: 16px;
             line-height: 22px;
           }
           .LearnButton{
+            @media @phone{
+              margin: 0px 0% 14px 5%;
+              padding: 19px 37% 20px 32%;
+            }
             border: 1px solid black;
             padding: 15px 25px;
             margin: 0 10%;
@@ -175,6 +227,9 @@ body{
           }
         }
         .img{
+          @media @phone{
+            margin: 50px 1% 0 5%;
+          }
           margin: 0px 1% 0 5%;
         }
       }
@@ -191,11 +246,26 @@ body{
         
         
         img{
+          @media @phone{
+            display: none;
+          }
           
           margin: 0 0 0 4%;
           width: 94%;
         }
+        .mobile{
+          display:none;
+          @media @phone{
+            display: inline;
+            margin: 0;
+            width: 100%;
+            
+          }
+        }
         .imgText{
+          @media @phone{
+
+          }
           display:flex;
           flex-direction: row-reverse;
           margin-top: -40px;
@@ -203,6 +273,14 @@ body{
           margin-right: 0.5%;
           
           h2{
+            @media @phone{
+              font-size: 30px;
+              border: 1px solid white;
+              padding: 25px 37% 28px 38%;
+              width: 17%;
+              background: #D8D8D8;
+              font-family: Roboto, Arial, sans-serif;
+            }
             font-size: 30px;
             border: 1px solid white;
             padding: 50px 10%;
@@ -212,6 +290,7 @@ body{
           }
         }
         .imgText-reverse{
+          
           display:flex;
           flex-direction: row;
           margin-top: -40px;
@@ -219,6 +298,14 @@ body{
           margin-right: 4.5%;
           margin-left: 4.5%;
           h2{
+            @media @phone{
+              font-size: 30px;
+              border: 1px solid white;
+              padding: 50px 50% 50px 30%;
+              width: 20%;
+              background: #D8D8D8;
+              font-family: Roboto, Arial, sans-serif;
+            }
             font-size: 30px;
             border: 1px solid white;
             padding: 50px 10%;
@@ -235,6 +322,14 @@ body{
           margin-right: 3.5%;
           
           h2{
+            @media @phone{
+              font-size: 30px;
+              border: 1px solid white;
+              padding: 50px 23% 50px 23%;
+              width: 51%;
+              background: #D8D8D8;
+              font-family: Roboto, Arial, sans-serif;
+            }
             font-size: 30px;
             border: 1px solid white;
             padding: 50px 10%;
@@ -245,8 +340,16 @@ body{
         }
       }
       .paragraphs{
+        @media @phone{
+          margin: 10px 15% 15px 11%;
+        }
         margin: 35px 30% 90px 30%;
         p{
+          @media @phone {
+            margin-left: 7%;
+            margin-top: 30px;
+            font-weight: bold;
+          }
           margin-bottom: 35px;
           line-height: 30px;
         }
@@ -259,15 +362,21 @@ body{
 }
 footer{
   background: gray;
-  width:100%;
+  width:90%;
   padding: 5%;
   .content{
     .footerstuff{
+      @media @phone{
+        display: inline;
+      }
       display:flex;
       justify-content: space-evenly;
     }
     .email{
       h3{
+        @media @phone{
+          font-size: 30px;
+        }
         color:white;
         font-weight: bold;
         margin-bottom: 15px;
@@ -288,6 +397,10 @@ footer{
     }
     .location{
       h4{
+        @media @phone{
+          margin-top: 25px;
+          margin-bottom: 10px;
+        }
         color:white;
         font-weight: bold;
       }
@@ -299,6 +412,9 @@ footer{
     
   }
   .copy{
+    @media @phone{
+      margin: 30px 0;
+    }
     margin: 28px 41% 0;
     color:whitesmoke;
     
