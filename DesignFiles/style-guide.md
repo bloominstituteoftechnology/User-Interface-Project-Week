@@ -20,10 +20,10 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Tab Hover color: #FFF;
 
 ## Header 
-Background: #97A4B0
+- [x] Background: #97A4B0
 
 ## Footer 
-Background: #828282
+- Background: #828282
 
 ### General Text
 - Font Weight: Regular
@@ -54,13 +54,13 @@ Background: #828282
 - Color: #FFFFFF
 
 ### Navigation Logo
-- Font Weight: Bold
-- Font Size: 24px
-- Color: #FFFFFF
+- [x] Font Weight: Bold
+- [x] Font Size: 24px
+- [x] Color: #FFFFFF
 
 ### Navigation Text (Expanded)
-- Font Weight: Bold
-- Font Size: 48px
-- Line Height: 85px
-- Color: #FFFFFF
-- Hover Color: #222222
+- [x] Font Weight: Bold
+- [x] Font Size: 48px
+- [x] Line Height: 85px
+- [x] Color: #FFFFFF
+- [x] Hover Color: #222222
