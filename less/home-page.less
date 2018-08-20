@@ -10,7 +10,23 @@
         
         .home-jumbotron {
             width: 100%;
+
+            @media @phone {
+                display:none;
+            }
         } 
+
+        .mobile {
+            display: none;
+        }
+
+        @media @phone {
+            .mobile {
+                display: block;
+                width: 100%;
+                height: 250px;
+            }
+        }
     
         .home-motto-content {
         position: absolute;
@@ -33,6 +49,10 @@
 
     .top {
         margin: 0 70px; 
+
+        .mobile {
+            display: none;
+        }
         
         h2 {
             font-size: 1.4rem;
@@ -68,6 +88,14 @@
         @media @phone {
             margin: 0 30px; 
 
+            .mobile {
+                display: block;
+            }
+
+            .intro-img {
+                display: none;
+            }
+
             .intro {
                 flex-direction: column;
                 margin: 20px 0;
@@ -81,7 +109,9 @@
 
                 .intro-content {
                     .btn {
-                        width: 100%;
+                        .button(100%, 50px, #FFFFFF, #222222);
+                    border: 1px solid #222222;
+                    .center;
                     }
                 }
             }
@@ -90,7 +120,29 @@
     }//top
 
     .middle {
-        margin: 70px 70px; 
+        margin: 70px 70px;
+        
+        .mobile {
+            display: none;
+        }
+
+        @media @phone {
+            margin: 20px 0;
+
+            h2 {
+                margin: 0 30px; 
+            }
+
+            .mobile {
+                display: block;
+                width: 100%; 
+            }
+
+            .examples-img {
+                display: none;
+            }
+
+        }//mobile
         
         h2 {
             font-size: 1.4rem;
@@ -108,10 +160,19 @@
             font-size: 1.1rem;
             color: #222222;
 
+            @media @phone {
+                width: 90%;
+                margin: 20px 30px;
+                line-height: 24px;
+            }
         }
 
         .example-img-title {
-            position: relative;   
+            position: relative;
+            
+            @media @phone {
+                margin-bottom: 95px;
+            }
         
             .example-title-right {
                 .center;
@@ -124,6 +185,13 @@
                 letter-spacing: 7px; 
                 font-size: 1.5rem; 
                 border: 1px solid #FFFFFF;
+
+                @media @phone {
+                    right: 10%;
+                    bottom: -75px;
+                    width: 80%;
+                    
+                }
             }
             .example-title-left {
                 .center;
@@ -136,10 +204,18 @@
                 letter-spacing: 7px; 
                 font-size: 1.5rem; 
                 border: 1px solid #FFFFFF;
+
+                @media @phone {
+                    left: 10%;
+                    bottom: -75px;
+                    width: 80%;
+                    
+                }
             }
         }
        
-    }
+
+    }//middle 
 
     footer {
         padding: 0 70px;
@@ -150,8 +226,16 @@
             justify-content: space-between;
             align-items: flex-start;
 
+            @media @phone {
+                flex-direction: column;
+            }
+
             .contact {
                 line-height: 27px; 
+
+                @media @phone {
+                    margin-top: 20px; 
+                }
             }
 
             input {
