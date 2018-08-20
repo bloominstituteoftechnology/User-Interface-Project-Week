@@ -8,8 +8,12 @@
 #nav {
   .flexbox(row, space-between);
   background: #9BA6B2;
-  .padding(10px 0);
+  .padding(20px 0);
   .margin(20px 0 0);
+  @media (max-width: 500px){
+    margin: 0;
+    justify-content: space-between;
+  }
 }
 
 .home-nav-text {
@@ -36,7 +40,12 @@
   background-size: cover;
   height: 500px;
   width: 100%;
-  margin: 20px 0;
+  margin: 0 0 20px;
+
+  @media (max-width: 500px){
+    margin: 0px;
+    height: 50%;
+  }
 
   .home-text {
     font-size: 54px;
@@ -56,9 +65,19 @@
   flex-wrap: wrap;
   margin: 75px 3%;
 
+  @media (max-width: 500px){
+    margin: 40px 0;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+  }
+
   .text-card {
     width: 40%;
     margin: 20px 3%;
+    
+    @media (max-width: 500px){
+      width: 100%;
+    }
 
     h2 {
       font-size: 1.6rem;
@@ -75,13 +94,29 @@
       border: 1px solid black;
       padding: 10px 20px;
       font-size: .9rem;
-    }
+      @media (max-width: 500px){
+        width: 100%;
+        padding: 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    } // button
+  } // text card
+}
+
+@media (max-width: 500px){
+  .cards:nth-of-type(3){
+    flex-wrap: wrap;
   }
 }
 
-.recent-projects {
+.recent-projects /* the villas */ {
   margin: 75px 6%;
   position: relative;
+  @media (max-width: 500px) {
+    padding: 0;
+    margin: 0;
+  }
   
   h2 {
     font-size: 1.6rem;
@@ -91,9 +126,11 @@
 
   .relative {
     position: relative;
+    
 
     img {
       width: 100%;
+      height: 225px;
     }
   
     h3 {
@@ -108,6 +145,10 @@
       bottom: -30px;
       border: 1px solid #fff;
       font-weight: bold;
+      @media (max-width: 500px){
+        right: 90px;
+        bottom: -40px;
+      }
     }
   }
 
@@ -120,17 +161,28 @@
     width: 45%;
     margin: 20px auto;
     flex-wrap: wrap;
+    @media (max-width: 500px){
+      width: 100%;
+      padding: 20px;
+    }
   }
 }
 
 .outskirts {
   margin: 75px 6%;
+  @media (max-width: 500px) {
+    margin: 0;
+    width: 100%;
+  }
 
   .relative {
     position: relative;
 
     img {
       width: 100%;
+      @media (max-width: 500px){
+        height: 200px;
+      }
     }
   
     h3 {
@@ -145,6 +197,11 @@
       bottom: -30px;
       border: 1px solid #fff;
       font-weight: bold;
+
+      @media (max-width: 500px){
+        left: 85px;
+        bottom: -35px;
+      }
     }
   }
 
@@ -157,16 +214,28 @@
     width: 45%;
     margin: 20px auto;
     flex-wrap: wrap;
+    
+    @media (max-width: 500px){
+      width: 100%;
+      padding: 20px;
+    }
   }
 }
 
 .the-blocks {
   .relative {
-    margin: 75px 6%;
+    margin: 75px 6% 20px;
     position: relative;
+    @media (max-width: 500px){
+      margin: 0;
+      width: 100%;
+    }
 
     img {
       width: 100%;
+      @media (max-width: 500px){
+        height: 200px;
+      }
     }
   
     h3 {
@@ -181,6 +250,11 @@
       bottom: -30px;
       border: 1px solid #fff;
       font-weight: bold;
+
+      @media (max-width: 500px){
+        right: 85px;
+        bottom: -35px;
+      }
     }
   }
 
@@ -193,14 +267,28 @@
     width: 45%;
     margin: 20px auto;
     flex-wrap: wrap;
+    @media (max-width: 500px){
+      width: 100%;
+      padding: 20px;
+    }
   }
 }
 
 #footer {
   background: #828282;
   padding: 20px 0;
+  @media (max-width: 500px){
+    padding: 0;
+  }
   .contactInfo {
     .flexbox(row, space-around);
+    
+    @media (max-width: 500px){
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      width: 100%;
+    }
 
     input {
       width: 100%;
@@ -211,11 +299,19 @@
 
     .address {
       margin: 0;
+      @media (max-width: 500px){
+        width: 100%;
+      }
     }
 
     p {
       margin: 10px -10px;
       width: 100%;
+      @media (max-width: 500px){
+        font-size: .9rem;
+        width: 100%;
+        margin: 10px -35px;
+      }
     }
 
     h2 {
@@ -223,11 +319,17 @@
       color: #fff;
       font-weight: bold;
       margin: 0 0 10px;
+      @media (max-width: 500px){
+        font-size: 1.6rem;
+      }
     }
 
     li {
       color: #fff;
       margin: 10px 0;
+      @media (max-width: 500px){
+        font-size: 1rem;
+      }
     }
   }
 
@@ -237,3 +339,6 @@
     margin: 20px 0 0;
   }
 }
+
+// *** Mobile for Home ***
+
