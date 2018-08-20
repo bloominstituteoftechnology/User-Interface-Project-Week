@@ -1,6 +1,8 @@
 // Home Page styles
+@import "variables.less";
+@import "mixins.less";
 
-.home {
+ .home {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -15,22 +17,49 @@
         left: 83px;
         width: 100%;
         z-index: 2;
-        font-weight: bold;
-        font-size: 6.4rem;
-        line-height: 7.5rem;
-        color: @white;
+        
     }
 
-    .top-content .intro {
-        border: 2px solid black;
-        width: 90%;
-        margin-top: 50px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+    .top-content 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
 
-        .text-content {
-            padding: 0 20px;
+           
+            .intro {
+                .top-content-row();
+                img {
+                    padding-right: 20px;
+                }
+          
+                  .text-content {
+                      .top-text-content();
+                      
+                  }
+                  
+              }
+
+            .designs {
+                .top-content-row();
+                img {
+                    order: -1;
+                    padding-left: 35px;
+                }
+
+                .text-content {
+                    .top-text-content();
+                    padding: 20px;
+                }
+            }
+        }
+    
+    .bottom-content {
+       
+        .projects {
+            width: 90%;
+            margin: 50px;
         }
     }
+
 }
