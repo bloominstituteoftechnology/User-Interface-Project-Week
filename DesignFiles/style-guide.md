@@ -17,7 +17,7 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 ### Services Page
 - Tab selected background: #5E9FB9
 - Tab Hover background: #222222
-- Tab Hover color: #FFF;
+- Tab Hover color: #FFFFF;
 
 ## Footer 
 Background: #828282
