@@ -1,4 +1,4 @@
-class Menu {
+class FullScreenMenu {
     constructor(element) {
       
       // Assign this.element to the dropdown element
@@ -23,5 +23,6 @@ class Menu {
   }
   
   // Nothing to do here, just study what the code is doing and move on to the Dropdown class
-  let mainMenus = document.querySelectorAll('#menu');
-  mainMenus = Array.from(mainMenus).map( mainMenu => new Menu(mainMenu));
+  let mainMenus = document.querySelectorAll('.');
+  mainMenus = Array.from(mainMenus).map( mainMenu => new FullScreenMenu(mainMenu));
+  console.log(mainMenus)
