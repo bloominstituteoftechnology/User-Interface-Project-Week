@@ -69,3 +69,19 @@ let tabs = document.querySelectorAll(".services");
 tabs = Array.from(tabs).map(tab => {
   return new Tabs(tab);
 });
+
+// overlay stuff
+let overlay = document.querySelector(".overlay-container");
+let burgerBtn = document.querySelector(".nav-burger");
+alert(burgerBtn);
+
+let closeBtn = document.querySelector(".close-button");
+let nav = document.querySelector(".navbar");
+
+burgerBtn.addEventListener('click', function() {
+  overlay.setAttribute("style", "display: block;")
+});
+
+closeBtn.addEventListener('click', function() {
+  overlay.setAttribute("style", "display: none;")
+});
