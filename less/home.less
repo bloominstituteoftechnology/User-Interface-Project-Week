@@ -6,7 +6,28 @@
   .jumbo-text {
     position: absolute;
     color: @jumbotron;
-    margin: 326px 8.2%;
+    margin: 32% 8.2%;
+
+    @media @mobile {
+      font-size: 3.5rem;
+      line-height: 40px;
+      margin: 35% 4%;
+    }
+  }
+
+  @media @mobile {
+    .jumbotron-image {
+      display: none;
+    }
+  }
+
+  .jumbo-mobile {
+    display: none;
+
+    @media @mobile {
+      display: block;
+      width: 100%;
+    }
   }
 } //home-header
 
@@ -20,49 +41,129 @@
   width: 100%;
   margin-top: 55px;
 
-  .architects {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 100px;
-    
-    h2 {
-      margin: 50px 0 20px 4%;
-    }
+  @media @mobile {
+    margin-top: 35px;
+  }
+}
 
-    p {
-      margin: 0 4% 30px;
-    }
+.architects {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 100px;
 
-    .button {
-      .button-creator(136px, 47px);
-      margin-left: 4%;
-    }
-  }//architects
+  @media @mobile {
+    width: 96%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 50px;
+  }
+  
+  h2 {
+    margin: 50px 0 20px 4%;
 
-  .designs {
-    display: flex;
-    margin: 0 0 100px 2%;
-    
-    h2 {
-      margin: 50px 0 20px 8%;
+    @media @mobile {
+      margin: 25px 2% 20px;
     }
+  }
 
-    p {
-      margin: 0 0 30px 8%;
-    }
+  p {
+    margin: 0 4% 30px;
 
-    .button {
-      .button-creator(136px, 47px);
-      margin-left: 8%;
+    @media @mobile {
+      margin: 0 2% 30px;
     }
-  }//designs
-} //intro
+  }
+
+  .button {
+    .button-creator(136px, 47px);
+    margin-left: 4%;
+
+    @media @mobile {
+      .button-creator(96%, 47px);
+      margin-left: 2%;
+    }
+  }
+
+  @media @mobile {
+    .drafting-desk {
+      display: none;
+    }
+  }
+  .drafting-mobile {
+    display: none;
+
+    @media @mobile {
+      display: block;
+      width: 96%;
+    }
+  }
+}//architects
+
+.designs {
+  width: 90%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 0 100px 2%;
+
+  @media @mobile {
+    width: 96%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 60px;
+  }
+  
+  h2 {
+    margin: 50px 0 20px 8%;
+
+    @media @mobile {
+      margin: 25px 2% 20px;
+    }
+  }
+
+  p {
+    margin: 0 0 30px 8%;
+
+    @media @mobile {
+      margin: 0 2% 30px;
+    }
+  }
+
+  .button {
+    .button-creator(136px, 47px);
+    margin-left: 8%;
+
+    @media @mobile {
+      .button-creator(96%, 47px);
+      margin-left: 2%;
+    }
+  }
+
+  @media @mobile {
+    .designs-desk {
+      display: none;
+    }
+  }
+  .designs-mobile {
+    display: none;
+
+    @media @mobile {
+      display: block;
+      width: 96%;
+    }
+  }
+}//designs
+
 
 .recent-projects {
   width: 100%;
 
   h2 {
     margin: 0 0 50px 2.5% ;
+
+    @media @mobile {
+      margin: 0 0 30px 4%;
+    }
   }
 
   p {
@@ -74,32 +175,116 @@
     margin: 24px 25% 87px;
   }
 
-  img {
-    margin-left: 2.5%;
-  }
-
-
-  .villas {
-    .title {
-      position: absolute;
-      margin: 17% 0 0 56%; 
-      .project-titles(315px, 95px);
+  @media @mobile {
+    p {
+      width: 96%;
+      margin: 100px 4% 0;
     }
-  }
 
-  .outskirts {
-    .title {
-      position: absolute;
-      margin: 17% 0 0 2.1%; 
-      .project-titles(315px, 95px);
-    }
-  }
-
-  .blocks {
-    .title {
-      position: absolute;
-      margin: 17% 0 0 55.8%; 
-      .project-titles(315px, 95px);
+    p:last-child{
+      width: 96%;
+      margin: 24px 4% 65px;
     }
   }
 }//recent projects
+
+.villas {
+  width: 100%;
+
+  .title {
+    position: absolute;
+    margin: 17% 0 0 58%; 
+    .project-titles(32%, 95px);
+
+    @media @mobile {
+      width: 95%;
+      margin: 57% 5% 0 5%;
+      .project-titles(90%, 95px);
+    }
+  }
+  .villas-desk {
+    margin-left: 2.5%;
+    width: 95%;
+
+    @media @mobile {
+      display: none;
+    }
+  }
+
+  .villas-mobile {
+    display: none;
+
+    @media @mobile {
+      display: block;
+      width: 100%;
+      margin: 0 0;
+    }
+  }
+}
+
+.outskirts {
+  width: 100%;
+  .title {
+    position: absolute;
+    margin: 17% 0 0 2.1%; 
+    .project-titles(32%, 95px);
+
+    @media @mobile {
+      width: 95%;
+      margin: 57% 5% 0 5%;
+      .project-titles(90%, 95px);
+    }
+  }
+
+  .outskirts-desk {
+    margin-left: 2.5%;
+    width: 95%;
+
+    @media @mobile {
+      display: none;
+    }
+  }
+
+  .outskirts-mobile {
+    display: none;
+
+    @media @mobile {
+      display: block;
+      width: 100%;
+      margin: 0 0;
+    }
+  }
+}
+
+.blocks {
+  width: 100%;
+  .title {
+    position: absolute;
+    margin: 17% 0 0 55.8%; 
+    .project-titles(32%, 95px);
+
+    @media @mobile {
+      width: 95%;
+      margin: 57% 5% 0 5%;
+      .project-titles(90%, 95px);
+    }
+  }
+  .blocks-desk {
+    margin-left: 2.5%;
+    width: 95%;
+
+    @media @mobile {
+      display: none;
+    }
+  }
+
+  .blocks-mobile {
+    display: none;
+
+    @media @mobile {
+      display: block;
+      width: 100%;
+      margin: 0 0;
+    }
+  }
+}
