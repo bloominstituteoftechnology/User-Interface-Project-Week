@@ -1,14 +1,14 @@
 header {
   position: fixed;
   width: 100%;
-  height: 50px;
-  background: #A2ACB5;
-  opacity: .95;
+  background: @nav-bg;
+  // border-bottom: 2px solid @gray;
   z-index: 2;
 
   .navbar {
     display: flex;
     justify-content: space-between;
+    height: 50px;
     padding-top: 14px;
 
     .logo {
@@ -20,16 +20,28 @@ header {
       align-self: flex-start;
     }
   }
-  nav a {
+  .nav-container {
     display: none;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 85px;
-    text-decoration: none;
-    color: @nav-text;
+    justify-content: center;
+    // align-items: center;
+    height: 100vh;
 
-    &:hover {
-      color: @nav-text-hover;
+    nav {
+      display: flex;
+      flex-direction: column;
+      margin-top: 120px;
+
+      a {
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 85px;
+        text-decoration: none;
+        color: @nav-text;
+
+        &:hover {
+          color: @nav-text-hover;
+        }
+      }
     }
   }
 }
