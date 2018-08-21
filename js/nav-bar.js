@@ -1,5 +1,5 @@
 
-const d = document
+// @index.js: const d = document
 
 const nav = d.getElementsByClassName('nav-bar')[0]
 const hamburger = d.getElementsByClassName('hamburger')[0]
