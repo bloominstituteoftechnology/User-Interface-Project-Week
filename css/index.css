@@ -187,14 +187,81 @@ table {
   }
 }
 .header .hamburger {
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
 }
 .header .hamburger:hover {
-  cursor: pointer;
+  opacity: 0.5;
+}
+.header .hamburger-box {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+}
+.header .hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.header .hamburger-inner,
+.header .hamburger-inner::before,
+.header .hamburger-inner::after {
+  width: 30px;
+  height: 3px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.header .hamburger-inner::before,
+.header .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.header .hamburger-inner::before {
+  top: -10px;
+}
+.header .hamburger-inner::after {
+  bottom: -10px;
+}
+.header .hamburger--stand .hamburger-inner {
+  transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
+}
+.header .hamburger--stand .hamburger-inner::before {
+  transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.header .hamburger--stand .hamburger-inner::after {
+  transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.header .hamburger--stand.is-active .hamburger-inner {
+  transform: rotate(90deg);
+  background-color: transparent;
+  transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
+}
+.header .hamburger--stand.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-45deg);
+  transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.header .hamburger--stand.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(45deg);
+  transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .header.navigation-show {
-  height: 100%;
   align-items: flex-start;
   padding-top: 12px;
 }
@@ -686,6 +753,226 @@ table {
     margin: 10px 0 0 0;
   }
 }
+#contact .container {
+  display: flex;
+  align-items: center;
+}
+#contact .container section {
+  max-width: 855px;
+  margin-bottom: 40px;
+}
+@media (max-width: 800px) {
+  #contact .container section {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 600px) {
+  #contact .container {
+    width: 94%;
+  }
+}
+#contact .jumbotron {
+  background-image: url(../img/contact/contact-jumbotron.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 250px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+@media (max-width: 600px) {
+  #contact .jumbotron {
+    height: 350px;
+    background-image: url(../img/contact/contact-mobile-jumbotron.png);
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+}
+#contact .jumbotron-container {
+  align-items: flex-start;
+  padding-left: 8.45rem;
+}
+@media (max-width: 800px) {
+  #contact .jumbotron-container {
+    padding-left: 0rem;
+  }
+}
+@media (max-width: 600px) {
+  #contact .jumbotron-container {
+    padding-left: 1.5rem;
+  }
+}
+@media (max-width: 800px) {
+  #contact .jumbotron-container h1 {
+    font-size: 6rem;
+    line-height: 7rem;
+  }
+}
+@media (max-width: 600px) {
+  #contact .jumbotron-container h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
+#contact h2 {
+  margin-bottom: 40px;
+}
+#contact label {
+  font-size: 1.6rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+#contact label:first-child {
+  margin-top: 0;
+}
+#contact label[name="building-number"] {
+  margin-top: 30px;
+}
+#contact .contact-container {
+  max-width: 855px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media (max-width: 800px) {
+  #contact .contact-container {
+    flex-direction: column;
+    max-width: 75%;
+  }
+}
+@media (max-width: 600px) {
+  #contact .contact-container {
+    max-width: 96%;
+  }
+}
+#contact .contact-container section {
+  display: flex;
+  flex-direction: column;
+}
+#contact .contact-form {
+  width: 50%;
+}
+@media (max-width: 800px) {
+  #contact .contact-form {
+    width: 100%;
+  }
+}
+#contact .contact-form .contact {
+  display: flex;
+  flex-direction: column;
+}
+#contact .contact-form input[type="text"],
+#contact .contact-form select {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 5px;
+  margin-bottom: 0px;
+  border: 1px solid #D8D8D8;
+}
+#contact .contact-form input::placeholder {
+  color: #D8D8D8;
+}
+#contact .contact-form p {
+  font-size: 1.3rem;
+  color: #D8D8D8;
+}
+#contact .contact-form textarea {
+  height: 125px;
+  margin-bottom: 30px;
+  padding-left: 5px;
+  border-radius: 3px;
+  border: 1px solid #D8D8D8;
+}
+#contact .contact-form input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+#contact .contact-form label.radio-item {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 0;
+  cursor: pointer;
+}
+#contact .contact-form label.radio-item:hover input ~ .custom-radio {
+  background-color: #D8D8D8;
+}
+#contact .contact-form label.radio-item input:checked ~ .custom-radio {
+  background-color: #D8D8D8;
+}
+#contact .contact-form label.radio-item .radio-text {
+  font-size: 1.6rem;
+  margin-left: 5px;
+}
+#contact .contact-form label.radio-item .custom-radio {
+  border: 1px solid #D8D8D8;
+  background-color: #FFFFFF;
+  position: relative;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+}
+#contact .contact-form .form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  border: 1px solid #222222;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+@media (max-width: 800px) {
+  #contact .contact-form .form-button {
+    align-self: center;
+  }
+}
+@media (max-width: 600px) {
+  #contact .contact-form .form-button {
+    width: 100%;
+  }
+}
+#contact .contact-form .form-button:hover {
+  color: #FFFFFF;
+  background-color: #222222;
+}
+#contact .offices {
+  width: 30%;
+}
+@media (max-width: 800px) {
+  #contact .offices {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+#contact .offices section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+}
+#contact .offices section a {
+  text-decoration: none;
+  color: #222222;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+}
 * {
   box-sizing: border-box;
 }
@@ -717,6 +1004,9 @@ h4 {
 p {
   line-height: 2.4rem;
   font-size: 1.6rem;
+}
+button:focus {
+  outline: 0;
 }
 a {
   font-size: 1.6rem;
