@@ -145,138 +145,110 @@ table {
   top: 0;
   width: 100%;
 }
-.nav {
-  position: fixed;
-  right: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  font-size: 48px;
-  font-weight: bold;
-  padding: 30px;
-  border: 2px solid red;
-  height: 500px;
-  width: 800px;
-  background: #97A4B0;
-  color: white;
-  z-index: 1;
-  display: none;
+body {
+  margin: 0;
+  padding: 0;
+  /* make it look decent enough */
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
 }
 a {
   text-decoration: none;
-  color: white;
+  color: #232323;
+  transition: color 0.3s ease;
 }
-.hamburger {
-  position: fixed;
-  right: 0;
-  top: 0;
-  padding: 30px;
-  color: white;
-  cursor: pointer;
+a:hover {
+  color: tomato;
 }
-.line {
-  width: 30px;
-  height: 3px;
+#menuToggle {
   display: block;
-  background: white;
-  margin: 8px auto;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-}
-.nav {
-  -webkit-transition: left 0.5s ease;
-  -moz-transition: left 0.5s ease;
-  -ms-transition: left 0.5s ease;
-  -o-transition: left 0.5s ease;
-  transition: left 0.5s ease;
-  background: #28dde0;
-  color: white;
-  cursor: pointer;
-  font-size: 2rem;
-  height: 100vh;
-  left: -20rem;
-  padding: 6rem 2rem 2rem 2rem;
-  position: fixed;
-  top: 0;
-  width: 20rem;
+  position: relative;
+  top: 50px;
+  left: 50px;
   z-index: 1;
-}
-.nav.expanded {
-  left: 0;
-}
-.nav ul {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.nav-toggle {
   -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
-  cursor: pointer;
-  height: 2rem;
-  left: 2rem;
-  position: fixed;
-  top: 2rem;
-  width: 3.6rem;
-  z-index: 2;
 }
-.nav-toggle:hover {
-  opacity: 0.8;
-}
-.nav-toggle .nav-toggle-bar,
-.nav-toggle .nav-toggle-bar::after,
-.nav-toggle .nav-toggle-bar::before {
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  background: white;
-  content: '';
-  height: 0.4rem;
-  width: 100%;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
 }
-.nav-toggle .nav-toggle-bar {
-  margin-top: 0;
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
-.nav-toggle .nav-toggle-bar::after {
-  margin-top: 0.8rem;
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
 }
-.nav-toggle .nav-toggle-bar::before {
-  margin-top: -0.8rem;
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
 }
-.nav-toggle.expanded .nav-toggle-bar {
-  background: transparent;
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
 }
-.nav-toggle.expanded .nav-toggle-bar::after,
-.nav-toggle.expanded .nav-toggle-bar::before {
-  background: white;
-  margin-top: 0;
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
 }
-.nav-toggle.expanded .nav-toggle-bar::after {
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
 }
-.nav-toggle.expanded .nav-toggle-bar::before {
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: none;
 }
 .Big-Home-Img {
   position: relative;
