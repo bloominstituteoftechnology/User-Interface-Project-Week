@@ -1,4 +1,62 @@
 // JS goes here
+// Navigation system design
+let menu = document.querySelector('.hamburger');
+let content = document.querySelector('.dropdown-content');
+let close = document.querySelector('.menu-close');
+
+menu.addEventListener('click', () => {
+    content.classList.toggle('hidden');
+    menu.classList.toggle('img-hide');
+    close.classList.toggle('img-hide');
+});
+
+close.addEventListener('click', () => {
+    content.classList.toggle('hidden');
+    menu.classList.toggle('img-hide');
+    close.classList.toggle('img-hide');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let menu = document.querySelector('.hamburger');
+// let content = document.querySelector('.dropdown-content');
+// let close = document.querySelector('.menu-close');
+
+// function expand() {
+//         menu.classList.toggle('hidden');
+//         content.classList.toggle('hidden');
+//         close.classList.toggle('hidden');
+// };
+
+// menu.addEventListener('click', () => {expand()});
+// close.addEventListener('click', () => {expand()});
+
+
+
+
+
+
+
+
+
+
+
+// Services page tab navigator design
 class TabLink {
     constructor(element) {
       this.element = element;
