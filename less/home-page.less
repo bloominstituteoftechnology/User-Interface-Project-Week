@@ -63,6 +63,9 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 100px;
+    @media @mobile {
+      margin-bottom: 50px;
+    }
   
     .project-container {
       display: flex;
@@ -71,9 +74,21 @@
       width: 100%;
       margin-bottom: 65px;
 
-      img {
+      .desktop {
         align-self: flex-start;
         width: 100%;
+        @media @mobile {
+          display: none;
+        }
+      }
+      .mobile {
+        // .full-width;
+        width: 100%;
+        display: none;
+        align-self: flex-start;
+        @media @mobile {
+          display: block;
+        }
       }
       .project-square {
         position: absolute;
@@ -85,17 +100,27 @@
         font-weight: normal;
         letter-spacing: 6px;
         border: 1px solid white;
-        margin: 40px 0 0;
+        margin-top: 40px;
         z-index: 1;
+        @media @mobile {
+          align-self: center;
+          margin-top: 80px;
+        }
       }
       .reverse {
         align-self: flex-start;
+        @media @mobile {
+          align-self: center;
+        }
       }
     }
     p {
       max-width: 52%;
       font-size: 18px;
       margin-top: 25px;
+      @media @mobile {
+        max-width: 100%;
+      }
     }
   }
 }
