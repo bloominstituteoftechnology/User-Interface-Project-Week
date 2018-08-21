@@ -208,7 +208,6 @@ a:visited {
 .overlay-container {
   width: 100vw;
   height: 100vh;
-  display: none;
   position: fixed;
   opacity: 0.96;
   overflow: hidden;
@@ -229,6 +228,11 @@ a:visited {
   color: #222222;
   cursor: pointer;
 }
+@media (max-width: 400px) {
+  .overlay-container .overlay-brand {
+    left: 55px;
+  }
+}
 .overlay-nav-content {
   display: flex;
   justify-content: center;
@@ -246,15 +250,21 @@ a:visited {
   line-height: 8.5rem;
   color: #ffffff;
   text-decoration: none;
+  margin-bottom: 25px;
 }
 .overlay-nav-content nav a:hover {
   color: #222222;
   cursor: pointer;
 }
+@media (max-width: 400px) {
+  .overlay-nav-content nav a {
+    line-height: 6.1rem;
+  }
+}
 header .close-button {
   z-index: 201;
   width: 45px;
-  height: 45px;
+  height: 25px;
   position: absolute;
   top: 15px;
   right: 50px;
@@ -267,6 +277,21 @@ header .close-button {
 header .close-button:hover {
   color: #222222;
   cursor: pointer;
+}
+@media (max-width: 400px) {
+  header .close-button {
+    right: 15px;
+    top: -15px;
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 8.5rem;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  header .close-button:hover {
+    color: #222222;
+    cursor: pointer;
+  }
 }
 .jumbotron-home {
   width: 1020px;
@@ -613,11 +638,11 @@ footer .form-and-loc-container .location-container {
     margin-bottom: 30px;
   }
 }
-footer .form-and-loc-container .copyright {
+footer .copyright {
   text-align: center;
 }
 @media (max-width: 400px) {
-  footer .form-and-loc-container .copyright {
+  footer .copyright {
     text-align: left;
     padding-left: 14px;
   }
