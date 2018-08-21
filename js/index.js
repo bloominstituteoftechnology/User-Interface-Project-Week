@@ -14,10 +14,10 @@ class Dropdown {
         this.content.classList.toggle('dropdown-hidden');
 
         if (this.content.classList.contains('dropdown-hidden')) {
-            this.button.src = '../img/nav-hamburger.png';
+            this.button.src = 'img/nav-hamburger.png';
         }
         else {
-            this.button.src = '../img/nav-hamburger-close.png';
+            this.button.src = 'img/nav-hamburger-close.png';
         }
         
 
