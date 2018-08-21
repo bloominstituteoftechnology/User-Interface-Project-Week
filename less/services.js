@@ -1,5 +1,3 @@
-// JS goes here
-
 class LinkCreator {
     constructor(linkItem) {
       this.link = linkItem;
@@ -30,12 +28,11 @@ class LinkCreator {
     }
     
     toggleContent() {
-        this.tabContent.classList.remove('tabitem-hide');
-      this.tabContent.classList.add('tabitem-show');
+      this.tabContent.classList.toggle('tab-toggle');
       console.log(event.currentTarget);
     }
     away() {
-      this.tabContent.classList.remove('tabitem-show');
+      this.tabContent.classList.remove('tab-toggle');
     }
   }
   
