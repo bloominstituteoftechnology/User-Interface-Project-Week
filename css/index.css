@@ -177,8 +177,8 @@ table {
 }
 @media (max-width: 500px) {
   .home .jumbotron .jumbotron-text {
-    top: 15%;
-    padding-left: 23;
+    top: 30%;
+    padding-left: 3%;
     left: 0;
   }
 }
@@ -333,11 +333,16 @@ table {
 * {
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+}
 body {
   font-family: Roboto, Arial, sans-serif;
   font-weight: regular;
   font-size: 16px;
   line-height: 24px;
+  height: 100%;
+  position: relative;
 }
 h2 {
   font-weight: bold;
@@ -356,7 +361,12 @@ h2 {
   align-items: center;
   height: 48px;
   padding: 2px 8.2% 0 8.2%;
-  position: relative;
+  position: fixed;
+  z-index: 3;
+  max-width: 1024px;
+  width: 100%;
+  opacity: 0.9;
+  border-bottom: 1px solid #979797;
 }
 .main-navigation .nav-logo {
   font-weight: bold;
@@ -365,23 +375,28 @@ h2 {
 }
 .main-navigation .dropdown {
   cursor: pointer;
+  position: relative;
+}
+.main-navigation .nav-logo,
+.main-navigation .dropdown-button {
+  position: relative;
+  z-index: 3;
 }
 .main-navigation .dropdown-content {
   font-weight: bold;
   font-size: 48px;
   line-height: 85px;
-  position: absolute;
-  max-width: 1024px;
-  top: 38px;
+  position: fixed;
+  top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
+  right: 0;
   width: 100%;
-  height: 558px;
-  z-index: 3;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
   background: #98a4af;
 }
 .main-navigation .dropdown-content a {
@@ -390,9 +405,6 @@ h2 {
 }
 .main-navigation .dropdown-content a:hover {
   color: #222222;
-}
-.main-navigation .dropdown-content .dropdown-link {
-  margin-left: 40%;
 }
 .main-navigation .dropdown-hidden {
   display: none;
