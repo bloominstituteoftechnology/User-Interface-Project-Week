@@ -16,6 +16,7 @@
             display: none;
             @media @phone {
                 display: block;
+                width:100%;
             }
         }
         h2 {
@@ -84,8 +85,14 @@
             }
             .content-module:nth-child(2) {
                 flex-direction: row-reverse;
+                @media @phone {
+                    flex-direction: column;
+                }
                 .content-text {
                     padding-left: 30px;
+                    @media @phone {
+                        padding-left: 0px;
+                    }
                 }
             }
         } // .content-top
@@ -97,19 +104,30 @@
                 margin-bottom: 45px;
             }
             .project-module {
+                .mobile-image {
+                    display: none;
+                    @media @phone {
+                        display: block;
+                    }
+                }
                 .flex-center();
                 flex-direction: column;
                 align-items: center;
                 .module-header-right {
-                    .title-box(flex-end);
+                    .title-box(flex-end, -50px);
                     margin-right: 5px;
+                    @media @phone {
+                        .title-box(center, 0);
+                        margin-right: 0;
+                    }
                 }
                 .module-header-left {
-                    .title-box(flex-start);
+                    .title-box(flex-start, -50px);
                     margin-left: 5px;
-                }
-                img {
-                    z-index: -1;
+                    @media @phone {
+                        .title-box(center, -10px);
+                        margin-left: 0;
+                    }
                 }
                 .project-module-text {
                     .flex-center();
@@ -118,9 +136,17 @@
                     width: 49.7%;
                     margin-top: 50px;
                     margin-bottom: 74px;
+                    @media @phone {
+                        width: 90%;
+                    }
                     p {
                         margin-bottom: 22px;
                         font-size: 1.8rem;
+                    }
+                }
+                @media @phone {
+                    .desktop-image {
+                        display: none;
                     }
                 }
             }
