@@ -14,6 +14,11 @@ h1 {
   font-size: 64px;
   line-height: 75px;
   color: @jumbo-header;
+  @media @mobile {
+    position: absolute;
+    font-size: 34px;
+    line-height: 45px;
+  }
 }
 
 h2 {
@@ -33,12 +38,36 @@ p {
   width: 100%;
   margin: 0 auto;
   padding: 0 1%;
+  @media @mobile {
+    padding: 0 3%;
+  }
 }
 
-.top-image {
-  img {
+.jumbotron {
+  display: flex;
+
+  .desktop {
     position: absolute;
     left: 50%;
+    @media @mobile {
+      display: none;
+    }
+  }
+  .mobile {
+    position: relative;
+    display: none;
+    align-self: flex-start;
+    width: 100%;
+    @media @mobile {
+      display: block;
+    }
+  }
+  h1 {
+    padding-bottom: 50px;
+    @media @mobile {
+      align-self: flex-end;
+      padding-bottom: 15px;
+    }
   }
 }
 

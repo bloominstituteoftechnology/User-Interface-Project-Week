@@ -1,36 +1,59 @@
-.top-image {
-  img {
+.jumbotron {
+  .desktop {
     margin-left: -512px;
   }
   h1 {
-    height: 598px;
     padding-top: 325px;
   }
 }
 
 .home {
 
-
   .top-content {
     display: flex;
     justify-content: space-between;
     padding: 50px 0;
+    @media @mobile {
+      flex-direction: column-reverse;
+      padding: 35px 0 10px;
+    }
 
     .text-container {
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
       flex-direction: column;
       max-width: 48.5%;
-      padding: 40px 0;
+      padding: 50px 0;
+      @media @mobile {
+        max-width: 100%;
+        padding: 30px 0 0;
+      }
+
+      p {
+        margin: 20px 0 25px;
+      }
     }
-    img {
+    .desktop {
       align-self: flex-start;
       max-width: 48.5%;
+      @media @mobile {
+        display: none;
+      }
+    }
+    .mobile {
+      display: none;
+      width: 100%;
+      @media @mobile {
+        display: block;
+      }
     }
   }
 
   .reverse {
     flex-direction: row-reverse;
+    @media @mobile {
+      flex-direction: column-reverse;
+    }
   }
   .projects-header {
     margin: 50px 0 45px;
@@ -50,6 +73,7 @@
 
       img {
         align-self: flex-start;
+        width: 100%;
       }
       .project-square {
         position: absolute;

@@ -145,6 +145,13 @@ h1 {
   line-height: 75px;
   color: #FFFFFF;
 }
+@media ( max-width: 517px ) {
+  h1 {
+    position: absolute;
+    font-size: 34px;
+    line-height: 45px;
+  }
+}
 h2 {
   font-weight: bold;
   font-size: 24px;
@@ -164,9 +171,45 @@ h1 {
   margin: 0 auto;
   padding: 0 1%;
 }
-.top-image img {
+@media ( max-width: 517px ) {
+  .container,
+  .navbar,
+  .footer-container,
+  h1 {
+    padding: 0 3%;
+  }
+}
+.jumbotron {
+  display: flex;
+}
+.jumbotron .desktop {
   position: absolute;
   left: 50%;
+}
+@media ( max-width: 517px ) {
+  .jumbotron .desktop {
+    display: none;
+  }
+}
+.jumbotron .mobile {
+  position: relative;
+  display: none;
+  align-self: flex-start;
+  width: 100%;
+}
+@media ( max-width: 517px ) {
+  .jumbotron .mobile {
+    display: block;
+  }
+}
+.jumbotron h1 {
+  padding-bottom: 50px;
+}
+@media ( max-width: 517px ) {
+  .jumbotron h1 {
+    align-self: flex-end;
+    padding-bottom: 15px;
+  }
 }
 .button {
   display: flex;
@@ -245,11 +288,10 @@ footer .copyright {
 footer .copyright p {
   font-size: 12px;
 }
-.top-image img {
+.jumbotron .desktop {
   margin-left: -512px;
 }
-.top-image h1 {
-  height: 598px;
+.jumbotron h1 {
   padding-top: 325px;
 }
 .home .top-content {
@@ -257,19 +299,52 @@ footer .copyright p {
   justify-content: space-between;
   padding: 50px 0;
 }
+@media ( max-width: 517px ) {
+  .home .top-content {
+    flex-direction: column-reverse;
+    padding: 35px 0 10px;
+  }
+}
 .home .top-content .text-container {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   max-width: 48.5%;
-  padding: 40px 0;
+  padding: 50px 0;
 }
-.home .top-content img {
+@media ( max-width: 517px ) {
+  .home .top-content .text-container {
+    max-width: 100%;
+    padding: 30px 0 0;
+  }
+}
+.home .top-content .text-container p {
+  margin: 20px 0 25px;
+}
+.home .top-content .desktop {
   align-self: flex-start;
   max-width: 48.5%;
 }
+@media ( max-width: 517px ) {
+  .home .top-content .desktop {
+    display: none;
+  }
+}
+.home .top-content .mobile {
+  display: none;
+  width: 100%;
+}
+@media ( max-width: 517px ) {
+  .home .top-content .mobile {
+    display: block;
+  }
+}
 .home .reverse {
   flex-direction: row-reverse;
+}
+@media ( max-width: 517px ) {
+  .home .reverse {
+    flex-direction: column-reverse;
+  }
 }
 .home .projects-header {
   margin: 50px 0 45px;
@@ -289,6 +364,7 @@ footer .copyright p {
 }
 .home .mid-content .project-container img {
   align-self: flex-start;
+  width: 100%;
 }
 .home .mid-content .project-container .project-square {
   position: absolute;
