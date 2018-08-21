@@ -155,13 +155,14 @@ table {
   margin: 0 auto;
 }
 .navigation header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
   background-color: #97a4b0;
 }
 .navigation header h1 {
-  margin: 1% 5%;
+  float: left;
+  margin: 2% 5%;
   font-size: 2.4rem;
   font-weight: bold;
   color: #fff;
@@ -170,74 +171,145 @@ table {
   display: none;
 }
 .navigation header .menu-logo {
-  margin: 1% 5%;
+  float: right;
+  margin: 2% 5%;
+}
+.navigation header .menu-logo:hover {
+  cursor: pointer;
 }
 .navigation header .menu-logo img {
   width: 100%;
   height: 100%;
 }
-.jumbo-logo {
+.home-container {
+  width: 100%;
+  margin: 0 auto;
+}
+.home-container .jumbo-logo {
   height: 80vh;
 }
-.jumbo-logo img {
+@media (max-width: 800px) {
+  .home-container .jumbo-logo {
+    height: 60vh;
+  }
+}
+.home-container .jumbo-logo img {
   position: relative;
+  top: 10%;
   text-align: center;
   width: 100%;
   height: 100%;
   margin: 0 auto;
 }
-.jumbo-logo h1 {
+.home-container .jumbo-logo h1 {
   position: absolute;
   bottom: 20%;
-  left: 5%;
+  left: 7%;
   font-weight: bold;
   font-size: 6.4rem;
   line-height: 7.5rem;
   color: #ffffff;
 }
-.home-container {
-  width: 100%;
-  margin: 0 auto;
+@media (max-width: 800px) {
+  .home-container .jumbo-logo h1 {
+    bottom: 39%;
+    left: 12%;
+    font-size: 4rem;
+    line-height: 5rem;
+  }
 }
-.home-container .outline-container {
+@media (max-width: 500px) {
+  .home-container .jumbo-logo h1 {
+    bottom: 43%;
+    left: 10%;
+  }
+}
+.home-container .outline {
+  margin-top: 5%;
+}
+.home-container .outline .outline-container {
   display: flex;
   width: 100%;
 }
-.home-container .outline-container .outline-content {
+@media (max-width: 500px) {
+  .home-container .outline .outline-container {
+    flex-direction: column;
+  }
+}
+.home-container .outline .outline-container .outline-content {
   width: 50%;
   padding: 7% 5%;
 }
-.home-container .outline-container .outline-content h2 {
+@media (max-width: 500px) {
+  .home-container .outline .outline-container .outline-content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -10%;
+  }
+}
+.home-container .outline .outline-container .outline-content h2 {
   font-weight: bold;
   font-size: 2.8rem;
   color: #222222;
   margin: 5% 3%;
 }
-.home-container .outline-container .outline-content p {
+@media (max-width: 800px) {
+  .home-container .outline .outline-container .outline-content h2 {
+    font-size: 2rem;
+  }
+}
+.home-container .outline .outline-container .outline-content p {
   margin: 5% 3%;
   line-height: 2.4rem;
 }
-.home-container .outline-container .outline-content .btn {
+@media (max-width: 800px) {
+  .home-container .outline .outline-container .outline-content p {
+    font-size: 1.6rem;
+  }
+}
+.home-container .outline .outline-container .outline-content .btn {
   margin: 5% 3%;
-  width: 40%;
+  width: 45%;
   padding: 3% 5%;
   text-align: center;
   text-decoration: none;
   color: #222222;
   border: 1px solid #222222;
 }
-.home-container .outline-container .outline-content .btn:hover {
+@media (max-width: 500px) {
+  .home-container .outline .outline-container .outline-content .btn {
+    width: 100%;
+    height: 60px;
+    line-height: 40px;
+    padding: 2%;
+    margin-left: -1%;
+  }
+}
+.home-container .outline .outline-container .outline-content .btn:hover {
   background-color: #222222;
   color: #ffffff;
   cursor: pointer;
 }
-.home-container .outline-container .outline-img {
+.home-container .outline .outline-container .outline-img {
   width: 50%;
   padding: 5%;
 }
-.home-container .outline-container .outline-img img {
+@media (max-width: 800px) {
+  .home-container .outline .outline-container .outline-img {
+    height: 80%;
+    margin-top: 5%;
+  }
+}
+.home-container .outline .outline-container .outline-img img {
   width: 100%;
   height: 100%;
+}
+@media (max-width: 500px) {
+  .home-container .outline .outline-container .outline-img {
+    order: -1;
+    width: 100%;
+    margin-bottom: -10%;
+  }
 }
 .home-container .projects h1 {
   font-weight: bold;
@@ -253,6 +325,11 @@ table {
   align-self: center;
   width: 80%;
 }
+@media (max-width: 500px) {
+  .home-container .projects .projects-container .projects-div .projects-img {
+    width: 100%;
+  }
+}
 .home-container .projects .projects-container .projects-div .projects-img img {
   width: 100%;
   height: 100%;
@@ -263,6 +340,13 @@ table {
   margin-top: -4.5%;
   margin-right: 12%;
   background-color: #d8d8d8;
+}
+@media (max-width: 500px) {
+  .home-container .projects .projects-container .projects-div .projects-header {
+    align-self: center;
+    padding: 7% 20%;
+    margin-right: 0%;
+  }
 }
 .home-container .projects .projects-container .projects-div .projects-header h2 {
   font-weight: 100;
@@ -276,6 +360,13 @@ table {
   margin-left: 12%;
   background-color: #d8d8d8;
 }
+@media (max-width: 500px) {
+  .home-container .projects .projects-container .projects-div .projects-inverse {
+    align-self: center;
+    padding: 7% 20%;
+    margin-left: 0%;
+  }
+}
 .home-container .projects .projects-container .projects-div .projects-inverse h2 {
   font-weight: 100;
   font-size: 2.8rem;
@@ -286,6 +377,12 @@ table {
   margin: 3% 25%;
   text-align: center;
   line-height: 2.4rem;
+}
+@media (max-width: 500px) {
+  .home-container .projects .projects-container p {
+    margin: 3%;
+    text-align: left;
+  }
 }
 .footer {
   position: relative;
@@ -302,10 +399,26 @@ table {
   justify-content: space-around;
   align-items: baseline;
 }
+@media (max-width: 500px) {
+  .footer .footer-container {
+    flex-direction: column;
+    text-align: left;
+  }
+}
 .footer .footer-container .footer-cta {
-  width: 40%;
+  width: 35%;
   padding: 3%;
   text-align: left;
+}
+@media (max-width: 800px) {
+  .footer .footer-container .footer-cta {
+    width: 40%;
+  }
+}
+@media (max-width: 500px) {
+  .footer .footer-container .footer-cta {
+    width: 100%;
+  }
 }
 .footer .footer-container .footer-cta h4 {
   margin: 1%;
@@ -313,30 +426,98 @@ table {
   line-height: 2.4rem;
   color: #ffffff;
 }
+@media (max-width: 800px) {
+  .footer .footer-container .footer-cta h4 {
+    margin-bottom: 5%;
+    font-size: 1.6rem;
+    line-height: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .footer .footer-container .footer-cta h4 {
+    font-size: 2.5rem;
+    line-height: 2.4rem;
+    margin-bottom: 2%;
+  }
+}
 .footer .footer-container .footer-cta input {
   width: 80%;
   padding: 3%;
   margin: 2% 0%;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+@media (max-width: 500px) {
+  .footer .footer-container .footer-cta input {
+    width: 90%;
+  }
 }
 .footer .footer-container .footer-cta p {
   font-size: 1.4rem;
   line-height: 2.6rem;
   color: #d3d3d3;
 }
+@media (max-width: 800px) {
+  .footer .footer-container .footer-cta p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .footer .footer-container .footer-cta p {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+  }
+}
 .footer .footer-container .locations {
   width: 20%;
   padding: 4%;
   margin-right: 2.5%;
+}
+@media (max-width: 500px) {
+  .footer .footer-container .locations {
+    width: 100%;
+  }
 }
 .footer .footer-container .locations h6 {
   font-size: 2rem;
   line-height: 2.4rem;
   color: #ffffff;
 }
+@media (max-width: 800px) {
+  .footer .footer-container .locations h6 {
+    margin-bottom: 15%;
+    font-size: 1.6rem;
+    line-height: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .footer .footer-container .locations h6 {
+    margin-bottom: 2%;
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
 .footer .footer-container .locations p {
   font-weight: 100;
   font-size: 1.4rem;
   line-height: 2.6rem;
   color: #d3d3d3;
+}
+@media (max-width: 800px) {
+  .footer .footer-container .locations p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .footer .footer-container .locations p {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+  }
+}
+@media (max-width: 500px) {
+  .footer p {
+    margin: 3%;
+    text-align: left;
+  }
 }
