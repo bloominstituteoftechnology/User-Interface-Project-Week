@@ -7,6 +7,7 @@ function expand() {
         menu.classList.toggle('hide');
         navLinks.classList.toggle('hide');
         xMark.classList.toggle('hide');
+        TweenMax.to('.links', 2, {opacity: 1})
 };
 
 menu.addEventListener('click', () => {expand()});
