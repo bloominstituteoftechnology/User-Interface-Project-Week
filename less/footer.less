@@ -3,9 +3,13 @@ footer {
     width: 100%;
     background: @footer-bg;
     color: white;
+    @media @phone {
+        height: 100%;
+    }
     h5 {
         font-size: 2rem;
         margin-bottom: 8px;
+        text-emphasis: bold;
     }
     p {
         font-size: 1.4rem;
@@ -16,15 +20,30 @@ footer {
         margin:auto;
         display: flex;
         justify-content: space-between;
+        @media @phone {
+            flex-direction: column;
+            width: 90%;
+        }
+        address h5 {
+            @media @phone {
+            padding-top: 20px;
+            }
+        }
         .contact-form {
             display: flex;
             flex-direction: column;
             margin-right: -34px;
+            @media @phone {
+                line-height: 2.4rem;
+            }
             #email {
                 width: 280px;
                 height: 45px;
                 .border-radius(2%);
                 border: 0;
+                @media @phone {
+                    width: 83%;
+                }
             }
         }
     }
@@ -34,6 +53,9 @@ footer {
         p {
             font-size: 1.2rem;
         }
-        
+        @media @phone {
+            justify-content: flex-start;
+            padding-left: 18px;
+        }
     }
 }
