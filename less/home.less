@@ -2,64 +2,117 @@
 @import "variables.less";
 @import "mixins.less";
 
- .home {
-    width: 100%;
+.main {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 
-    .jumbotron img {
-        position: relative;
-        
-    }
-    .jumbotron h2 {
-        position: absolute;
-        top: 324px;
-        left: 83px;
+    .home {
         width: 100%;
-        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+    
+        .jumbotron {
+            width: 100%;
+    
+            img {
+                width: 100%;
+                position: relative;
+            }
+    
+            h2 {
+                 position: absolute;
+                top: 324px;
+                left: 83px;
+                width: 100%;
+                z-index: 2;
         
-    }
-
-    .top-content 
-        {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-
-           
-            .intro {
-                .top-content-row();
-                img {
-                    padding-right: 20px;
-                }
-          
-                  .text-content {
-                      .top-text-content();
+            }
+            
+        }
+    
+    
+        .top-content 
+            {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+    
+               
+                .intro {
+                    .top-content-row();
+                    img {
+                        padding-right: 20px;
+                    }
+              
+                      .text-content {
+                          .top-text-content();
+                          
+                      }
                       
                   }
-                  
-              }
-
-            .designs {
-                .top-content-row();
+    
+                .designs {
+                    .top-content-row();
+                    img {
+                        order: -1;
+                        padding-left: 35px;
+                    }
+    
+                    .text-content {
+                        .top-text-content();
+                        padding: 20px;
+                    }
+                }
+            }
+        
+        .bottom-content {
+           width: 100%;
+           display: flex;
+           justify-content: center;
+           
+    
+            .projects {
+                display: flex;
+                flex-wrap: wrap;
+               // align-items: flex-start;
+                width: 90%;
+                margin: 65px;
+                padding: 3px, 35px;
+    
+                .overlay {
+    
+                    display: flex;
+            
+    
+                         .textbox {
+                  display: flex;
+                    position: absolute;
+                    border: 1px solid black;
+                    height: 100px;
+                    width: 315px;
+                    align-self: flex-end;
+                    left: 63%;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 25px 0;
+                   
+                    
+                    
+                }
+    
                 img {
-                    order: -1;
-                    padding-left: 35px;
+                   position: relative;
+                    margin-top: 33px;
+                    margin-bottom: 20px;
                 }
-
-                .text-content {
-                    .top-text-content();
-                    padding: 20px;
-                }
+    
+              
+            }    
+                
+    
+        
             }
         }
     
-    .bottom-content {
-       
-        .projects {
-            width: 90%;
-            margin: 50px;
-        }
     }
-
 }
