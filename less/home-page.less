@@ -6,28 +6,38 @@
   .main-image {
     position: relative;
 
-    img {
-      height: 360px;
+    .img {
+      width: 100%;
+      height: 33rem;
+      background-image: url(../img/home/home-jumbotron.png);
+      background-position: bottom;
 
       @media @phone {
-        height: 250px;
+        width: 100%;
+        height: 13rem;
+        margin: 0 auto;
+        background-image: url(../img/home/home-mobile-jumbotron.png);
+        background-size: 100%;
       }
     }
 
     .slogan {
       width: 20rem;
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: white;
       position: absolute;
       bottom: 8%;
       left: 8%;
 
       @media @phone {
+        margin-left: 1.5rem;
       }
     }
   } //main-image closing tag
 
   .learn-more {
+    border: 1px solid blue;
+
     display: flex;
     margin: 2rem;
 
@@ -36,6 +46,7 @@
     }
 
     .text {
+      border: 1px solid red;
       align-self: center;
       //   width: 60%;
 
@@ -77,13 +88,28 @@
     }
 
     .img {
-      //   background-color: red;
-      //   background-image: url(img/home/home-img-1.png);
-
-      //   NEED TO FIGURE OUT HOW TO CHANGE IMAGE ON MEDIA QUERY
-      width: 20rem;
-      height: 12rem;
+      width: 55rem;
+      height: 16.5rem;
+      border: 1px solid yellow;
       margin: 1rem;
+    } //img
+
+    .first-image {
+      background-image: url(../img/home/home-img-1.png);
+
+      @media @phone {
+        width: 18rem;
+        background-image: url(../img/home/home-mobile-img-1.png);
+      }
+    }
+
+    .second-image {
+      background-image: url(../img/home/home-img-2.png);
+
+      @media @phone {
+        width: 18rem;
+        background-image: url(../img/home/home-mobile-img-2.png);
+      }
     }
   } // learn-more closing tag
 
@@ -96,10 +122,42 @@
     .project {
       .image-name {
         position: relative;
+
+        .project-img {
+          width: 100%;
+          height: 14rem;
+          border: 1px solid purple;
+
+          @media @phone {
+            width: 65%;
+            height: 12.5rem;
+            margin: 0 auto;
+          }
+        }
+        .villas {
+          background-image: url(../img/home/home-villas-img.png);
+          @media @phone {
+            background-image: url(../img/home/home-mobile-villas-img.png);
+          }
+        }
+
+        .outskirts {
+          background-image: url(../img/home/home-outskirts-img.png);
+          @media @phone {
+            background-image: url(../img/home/home-mobile-outskirts-img.png);
+          }
+        }
+
+        .blocks {
+          background-image: url(../img/home/home-the-blocks-img.png);
+          @media @phone {
+            background-image: url(../img/home/home-mobile-the-blocks-img.png);
+          }
+        }
       }
 
       .project-name {
-        width: 12rem;
+        width: 14rem;
         text-align: center;
         padding: 1.3rem 2rem;
         font-size: 1.2rem;
@@ -108,6 +166,8 @@
         bottom: -2rem;
         border: 1px solid white;
         background-color: @gray;
+
+        letter-spacing: 10px;
 
         @media @phone {
           right: 0;
@@ -145,73 +205,4 @@
       }
     }
   } //recent-projects losing tag
-
-  .footer {
-    background-color: gray;
-
-    .footer-content {
-      display: flex;
-      height: 20%;
-      font-size: 1rem;
-      color: white;
-      justify-content: space-around;
-      margin: 0 2rem;
-      align-items: center;
-
-      @media @phone {
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 5%;
-      }
-    }
-    .subscribe {
-      width: 22%;
-
-      @media @phone {
-        width: 100%;
-      }
-
-      .email {
-        width: 13rem;
-        height: 1.5rem;
-        margin-top: 1rem;
-        border: 1px solid gray;
-        border-radius: 2px;
-
-        @media @phone {
-          width: 100%;
-        }
-      }
-
-      .disclaimer {
-        margin-top: 0.5rem;
-        font-size: 0.5rem;
-      }
-    }
-
-    .location {
-      font-size: 0.5rem;
-      font-style: light;
-      width: 15%;
-
-      @media @phone {
-        width: 30%;
-        margin: 0;
-        margin-top: 1rem;
-      }
-      h4 {
-        font-size: 1rem;
-      }
-      p {
-        margin: 0.5rem 0;
-      }
-    }
-
-    .copyright {
-      margin: 1rem 0;
-      color: white;
-      text-align: center;
-    }
-  }
 } // content-container closing tag
