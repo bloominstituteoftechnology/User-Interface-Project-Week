@@ -141,7 +141,7 @@ table {
   height: 50px;
   width: 100%;
   background-color: rgba(153, 164, 174, 0.9);
-  z-index: 20;
+  z-index: 15;
 }
 .header .container {
   display: flex;
@@ -157,17 +157,46 @@ table {
 }
 .header .navigation {
   display: none;
+  z-index: 20;
+}
+.header .navigation a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 4.8rem;
+  font-weight: bold;
+  line-height: 8.5rem;
+}
+.header .navigation a:hover {
+  color: #222222;
+}
+.header .navigation a.active {
+  color: #222222;
 }
 .header .navigation-show {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  left: 45%;
+}
+@media (max-width: 800px) {
+  .header .navigation-show {
+    width: 100%;
+    left: 25%;
+  }
 }
 .header .hamburger {
-  height: 100%;
   display: flex;
   align-items: center;
 }
 .header .hamburger:hover {
   cursor: pointer;
+}
+.header.navigation-show {
+  height: 100%;
+  align-items: flex-start;
+  padding-top: 12px;
 }
 .footer {
   background-color: #828282;

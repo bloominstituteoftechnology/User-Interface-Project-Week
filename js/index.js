@@ -1,21 +1,16 @@
-// JS goes here
 
-class TabMenuItem {
-    constructor(item) {
-        this.item = item;
-        this.data = this.item.dataset.tab;
-        this.item.addEventListener('click', () => this.tabSelect());
-        this.content = document.querySelector(`.tab-content[data-tab="${this.data}"]`);
+// Navigation
+const hamburger = document.querySelector('.hamburger img');
+const navigation = document.querySelector('.navigation');
+const header = document.querySelector('header.header');
+let open = hamburger.addEventListener('click', () => {
+    navigation.classList.toggle('navigation-show');
+    header.classList.toggle('navigation-show');
+    if (header.classList.contains('navigation-show')) {
+    hamburger.src='img/nav-hamburger-close.png';
+    hamburger.alt='Close Menu';
+    } else {
+    hamburger.src='img/nav-hamburger.png';
+    hamburger.alt='Open Menu';
     }
-
-    tabSelect() {
-        document.querySelectorAll(".tab").forEach(tabContent => tabContent.classList.remove("active"));
-        document.querySelectorAll(".tab-content").forEach(tabContent => tabContent.classList.remove("active"));
-        this.item.classList.add("active");
-        this.content.classList.add("active");
-    }
-}
-
-let tabs = document.querySelectorAll(".tab");
-tabs = Array.from(tabs).map(tab => new TabMenuItem(tab));
-tabs[0].tabSelect();
+});
