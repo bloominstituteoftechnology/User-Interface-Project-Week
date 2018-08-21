@@ -59,6 +59,7 @@ table{
 
 /* Your Code Goes Here */
 @import 'variables.less';
+@import 'mixins.less';
 
 html{
   font-size: 62.5%;
@@ -72,6 +73,7 @@ html{
   height: 35px;
   align-items: center;
   margin: 0 auto;
+  font-family: @general-font;
   
   .anchors{
     display: none;
@@ -113,22 +115,40 @@ html{
   .SJA-full-block{
     display: flex;
     justify-content: space-around;
-    // margin: @full-block-margin;
-    .content-block-one{
+    margin: @full-block-margin;
+    align-items: center;
+
+    .content-block{
       color: @font-color;
       width: 40%;
+      margin: @content-margin;
 
       h2{
         font-size: @general-font-size;
+        margin-top: 10px;
+        font-weight: bold;
       }
 
       p{
         font-size: @p-font-size;
+        margin: 20px auto;
+        line-height: @p-line-height;
       }
 
-      img{
-        width: 40%;
-      }
+      btn{
+        font-size: @p-font-size;
+        border: 1px solid @button-border-color;
+        padding: @button-padding;
+      } 
     }
+    
+    img{
+      width: 40%;
+      margin: @content-margin;
+    }
+  }
+
+  .FD-full-block{
+    .firstTwoContentBlocks;
   }
 }
