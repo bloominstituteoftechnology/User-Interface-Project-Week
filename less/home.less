@@ -14,9 +14,15 @@ h1 {
 .home {
   display: flex;
   flex-direction: column;
+  @media @phone {
+    flex-flow: column wrap;
+  }
   .heading-text {
     img {
       width: 100%;
+      @media @phone {
+        height: 30rem;
+      }
     }
     //To achieve text-over-image, we must style the parent container to be position relative and the child text container to be position absolute.
     display: flex;
@@ -27,32 +33,63 @@ h1 {
 
     .jumbotext {
       position: absolute;
-      top: 300px;
-      left: 80px;
+      top: 30rem;
+      left: 8rem;
+      @media @phone {
+        top: 5rem;
+        left: 3rem;
+      }
     }
   }
   .content-box {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 80px;
     padding-right: 80px;
     padding-top: 50px;
+    @media @phone {
+      flex-direction: column-reverse;
+      flex-wrap: wrap-reverse;
+      padding: 2rem;
+    }
     img {
       width: 50%;
+      @media @phone {
+        width: 100%;
+      }
     }
     h2 {
       padding-top: 1rem;
       padding-bottom: 2rem;
       padding-left: 1rem;
+      @media @phone {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+      }
       }
       p {
         padding: 0.5rem;
         margin: 0.5rem;
+        @media @phone {
+          width: 100%;
+
+        }
       }
       .text-content {
+
         width: 50%;
         margin: 3rem;
+        @media @phone {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding: 0;
+          justify-content: center;
+          align-items: center;
+        }
        .button {
          .button-maker(4rem, 15rem, white, black);
 
