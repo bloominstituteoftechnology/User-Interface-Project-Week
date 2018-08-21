@@ -7,6 +7,17 @@
         position: relative;
         margin: 0;
         overflow: hidden;
+        .home-jumbo {
+            @media @phone {
+                display: none;
+            }
+        }
+        .home-jumbo-mobile {
+            display: none;
+            @media @phone {
+                display: block;
+            }
+        }
         h2 {
             line-height: 7.5rem;
             position: absolute;
@@ -15,17 +26,36 @@
             font-size: 6.4rem;
             font-weight: bold;
             color: white;
+            @media @phone {
+                line-height: 3.5rem;
+                left: 15px;
+                bottom: 30px;
+                font-size: 3.4rem
+            }
         }
-    } // CTA
+    } // CTA end
     .main-content {
         margin: 50px 80px 0 80px;
+        @media @phone {
+            .flex-center();
+            flex-direction: column;
+            margin: 0;
+        }
         .content-top {
             .flex-center();
             flex-direction: column;
+            @media @phone {
+                align-content: center;
+                margin: 0 15px;
+                width: 100%;
+            }
             .content-module {
                 .flex-center();
                 flex-direction: row;
                 margin-bottom: 80px;
+                @media @phone {
+                    flex-direction: column;
+                }
                 .content-text {
                     width: 53%;
                     padding: 50px 0;
@@ -35,9 +65,21 @@
                     .button {
                         .btn(1.6rem,none,136px,47px, solid, 1px, black,0,white,black)
                     }
+                    @media @phone {
+                        width: 100%;
+                    }
                 }
-                img {
+                .desktop-image {
                     width: 47%;
+                    @media @phone {
+                        display: none;
+                    }
+                }
+                .mobile-image {
+                    display: none;
+                    @media @phone {
+                        display: flex;
+                    }
                 }
             }
             .content-module:nth-child(2) {
