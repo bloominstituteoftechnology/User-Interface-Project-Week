@@ -161,9 +161,16 @@ p {
   width: 100%;
   margin: 0 auto;
 }
+@media ( max-width: 500px ) {
+  .container {
+    max-width: 500px;
+    width: 100%;
+  }
+}
 header {
   display: flex;
   justify-content: center;
+  justify-content: flex-start;
   position: fixed;
   height: 50px;
   width: 1024px;
@@ -171,13 +178,18 @@ header {
   flex-direction: row;
   z-index: 100;
 }
+@media ( max-width: 500px ) {
+  header {
+    max-width: 500px;
+  }
+}
 header h1 {
   display: flex;
   align-items: center;
   font-size: 2.4rem;
   font-weight: bold;
   width: 50%;
-  padding-left: 85px;
+  padding-left: 15px;
   color: white;
 }
 header nav {
@@ -185,18 +197,19 @@ header nav {
   justify-content: flex-end;
   align-items: center;
   width: 50%;
-  padding-right: 85px;
+  padding-right: 15px;
 }
-header nav .menu a {
-  display: none;
-  height: 100%;
-  width: 100%;
+header nav .menu-button {
+  cursor: pointer;
+  display: flex;
+}
+@media ( max-width: 500px ) {
+  header nav {
+    width: 15%;
+  }
 }
 .menu {
   z-index: 2;
-}
-.menu .menu-button {
-  cursor: pointer;
 }
 .menu .menu-content {
   position: absolute;
