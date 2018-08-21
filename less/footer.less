@@ -1,15 +1,21 @@
 #footer-all {
+    .footer-text();
     background: @footer-bg;
     width: 100%;
     height: 250px;
     display: flex;
     flex-direction: column;
-    .footer-text;
+
+    @media @mobile {
+      height: 700px;
+    }
 
     h3 {
-        .footer-headings;
+        .footer-headings();
         margin-bottom: 5px;
         font-weight: bold;
+
+        @media @mobile {}
     }
 
     .contact {
@@ -18,7 +24,16 @@
         margin-top: 60px;
         margin-bottom: 30px;
 
+        @media @mobile {
+          flex-direction: column;
+          padding: 5%;
+        }
+
         .email-form {
+
+          @media @mobile {
+            margin-top: 5%;
+          }
 
           h3 {
             padding-bottom: 1%;
@@ -29,6 +44,10 @@
             padding-top: 2%;
           }
 
+        } // email-form
+
+        address {
+          margin-top: 20px;
         }
     }
 
@@ -43,5 +62,12 @@
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
+
+        @media @mobile {
+          margin-top: 70px;
+          justify-content: flex-start;
+          margin-left: 5%;
+          margin-bottom: 20px;
+        }
     }
 }
