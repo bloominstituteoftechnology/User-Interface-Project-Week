@@ -44,11 +44,17 @@ class TabsLink {
   }
 }
 
-// tabsitem class TODO: fill in logic
+// tabsitem class
 class TabsItem {
-  constructor(element) {}
+  constructor(element) {
+    this.element = element;
+  }
 
-  select() {}
+  select() {
+    this.element.classList.add("tabs-link-selected");
+  }
 
-  deselect() {}
+  deselect() {
+    this.element.classList.remove("tabs-link-selected");
+  }
 }
