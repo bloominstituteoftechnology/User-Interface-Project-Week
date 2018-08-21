@@ -1,46 +1,49 @@
 // JS goes here
 
+// Services Tab Navigator
+
 class LinkCreator {
-    constructor(linkItem) {
-      this.link = linkItem;
+    constructor(link) {
+      this.link = link;
       
-      this.link.addEventListener('click', () => { this.linkClick() });
+      this.link.addEventListener('click', ()=> { this.linkClick()});
       this.link.addEventListener('mouseout', ()=> {this.mouseOut()});
      
       
-      this.linkData = this.link.dataset.tab;        
-      this.tabContent = document.querySelector(`.tabitem[data-tab="${this.linkData}"]`);
+      this.data = this.link.dataset.tab;        
+      this.tabItem = document.querySelector(`.tabitem[data-tab="${this.data}"]`);
       
-      this.tabContent = new Content(this.tabContent);
+      this.tabItem = new TabItem(this.tabItem);
     }
     
     linkClick() {
       console.log('This worked!');
-      this.tabContent.toggleContent();
+      this.tabItem.toggleContent();
     }
     mouseOut() {
-      this.tabContent.away();
+      this.tabItem.away();
     }
   }
   
-  class Content {
-    constructor(tabContent) {
-      console.log(tabContent);
-      this.tabContent = tabContent;
+  class TabItem {
+    constructor(tabItem) {
+      console.log(tabItem);
+      this.tabItem = tabItem;
     }
     
     toggleContent() {
-        this.tabContent.classList.remove('tabitem-hide');
-      this.tabContent.classList.add('tabitem-show');
+      this.tabItem.classList.toggle('tabitem-show');
       console.log(event.currentTarget);
     }
     away() {
-      this.tabContent.classList.remove('tabitem-show');
+      this.tabItem.classList.remove('tabitem-show');
     }
   }
   
   
-  let links = document.querySelectorAll('.link');
+  let tabLinks = document.querySelectorAll('.tablink');
   
-  links = Array.from(links).map( linkItem => new LinkCreator(linkItem));
+  tabLinks = Array.from(tabLinks).map( link => new LinkCreator(link));
+
+  // Navigation System
   
