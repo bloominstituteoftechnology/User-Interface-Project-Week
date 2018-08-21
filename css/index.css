@@ -162,11 +162,10 @@ html {
   cursor: pointer;
 }
 .header .nav {
-  margin-right: 30px;
+  opacity: 0;
 }
-.header .nav a {
-  justify-content: flex-end;
-  color: red;
+.header .nav-hamburger {
+  margin-right: 30px;
 }
 .footer {
   height: 250px;
@@ -218,6 +217,11 @@ html {
   max-width: 100%;
   max-height: 100%;
 }
+@media (max-width: 500px) {
+  .container {
+    max-width: 100%;
+  }
+}
 .container .big-img {
   position: relative;
   text-align: center;
@@ -228,7 +232,7 @@ html {
   left: 100px;
   bottom: 100px;
   font-size: 75px;
-  color: white;
+  color: #FFFFFF;
 }
 .container .big-img img {
   width: 100%;
@@ -237,11 +241,24 @@ html {
 .container .main {
   margin: 0 50px;
 }
+@media (max-width: 500px) {
+  .container .main .first-content-img {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 .container .main .content-div {
   margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .container .main .content-div {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .container .main .content-div .txt-content {
   line-height: 24px;
@@ -273,8 +290,20 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .container .main .inverse-div {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
 .container .main .inverse-div .image2 {
   width: 48%;
+}
+@media (max-width: 500px) {
+  .container .main .inverse-div .image2 {
+    margin-right: 15px;
+  }
 }
 .container .main .inverse-div .txt-content {
   line-height: 24px;
@@ -284,6 +313,13 @@ html {
   align-content: center;
   justify-content: center;
   width: 48%;
+}
+@media (max-width: 500px) {
+  .container .main .inverse-div .txt-content {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 .container .main .inverse-div .txt-content h2 {
   font-size: 24px;
