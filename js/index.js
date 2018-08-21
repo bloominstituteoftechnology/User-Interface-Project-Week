@@ -16,7 +16,6 @@ class MenuConstructor {
   }
 let mainMenu = document.querySelectorAll('.menu');
 mainMenu = Array.from(mainMenu).map( mainMenuArray => new MenuConstructor(mainMenuArray));
-console.log(mainMenu)
 
 
 class TabLink {
