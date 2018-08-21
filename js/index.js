@@ -19,9 +19,36 @@ class Tabs {
 
 }
 
-// tablink class TODO: fill in logic
+// tablink class
 class TabsLink {
-  constructor(element, parentElement) {}
+  // decided it might be easyer if I just track the parentElement of the objects
+  constructor(element, parentElements) {
+    this.element = element;
+    this.tabIndex = element.dataset.tab;
+    this.tabs = parentElements;
+    this.tabItem = parentElements.getTab(this.tabIndex);
+    this.tabItem = new this.tabItem(this.tabsItem);
+    this.element.addEventListener('click', () => {
+      this.tabs.activate(this);
+      this.select();
+    })
+  }
+  select() {
+    this.element.classList.add("tabs-link-selected");
+    this.tabsItem.select();
+  }
+
+  deselect() {
+    this.element.classList.remove("tabs-link-selected");
+    this.tabsItem.deselect();
+  }
+}
+
+// tabsitem class TODO: fill in logic
+class TabsItem {
+  constructor(element) {}
+
   select() {}
+
   deselect() {}
 }
