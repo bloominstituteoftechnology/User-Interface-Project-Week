@@ -11,13 +11,9 @@ class TabLink {
     // Get the tab data attribute and save the value here
     this.tabData = this.element.dataset.tab;
     console.log(this.tabData);
-
-    // Find all elements with the .card class in index.html that correspond to the tab data attribute
-    // If the data is 'all' then select all cards regardless of their data attribute
+    // Get card specific to data attribute
     this.card = document.querySelector(`.card[data-tab="${this.tabData}"]`);
-
-    // Map over the cards array and convert each card element into a new instance of the TabCard class.
-    // Pass in the card object to the TabCard class.
+    // pass card to new Tab Card class
     this.card = new TabCard(this.card);
     console.log(this.card);
     // Add a click event that invokes selectTab
@@ -37,9 +33,9 @@ class TabLink {
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
-    // Iterate through the NodeList setting the display style each one to 'none'
+    // Set all cards to display none
     cards.forEach((card) => (card.style.display = 'none'));
-    // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
+    // Invoke function on specific card
     this.card.selectCard();
   }
 }
@@ -51,7 +47,7 @@ class TabCard {
     console.log(this.element);
   }
   selectCard() {
-    // Update the style of this.element to display = null
+    // Update the style of this.element to display = flex
     this.element.style.display = 'flex';
   }
 }
