@@ -28,7 +28,6 @@ class Carousel {
 
     this.imgs = document.querySelectorAll('.home-jumbotron');
     Array.from(this.imgs);
-    console.log(this.imgs);
 
     this.position = 0;
 
