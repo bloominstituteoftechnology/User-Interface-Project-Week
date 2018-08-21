@@ -138,8 +138,8 @@ table {
 
 /* Your Code Goes Here */
 
-@import 'variables.less';
-@import 'mixins.less';
+@import "variables.less";
+@import "mixins.less";
 
 /* GENERAL STYLES */
 body {
@@ -151,13 +151,12 @@ body {
 
 header {
   position: relative;
-
 }
 
 header nav .nav-container {
   position: fixed;
   width: 100%;
-  background: #98A3AD;
+  background: #98a3ad;
   padding: 20px 0px;
   display: flex;
   justify-content: space-between;
@@ -174,7 +173,6 @@ header nav .nav-container {
       outline: none;
       text-decoration: none;
     }
-    
   }
 
   .nav-expanded {
@@ -189,16 +187,22 @@ header nav .nav-container {
     left: 0;
     margin: 0;
     top: 60px;
-    background-color: #98A3AD;
+    background-color: #98a3ad;
     opacity: 0.9;
 
     a {
       position: relative;
+      font-size: 3rem;
+      font-weight: bold;
       padding: 20px;
       margin: 10px 0;
       color: white;
       outline: none;
       text-decoration: none;
+
+      &:hover {
+        color: #222222;
+      }
     }
   }
 
@@ -209,27 +213,26 @@ header nav .nav-container {
       font-size: 24px;
     }
   }
-
 }
 
 /* HOME PAGE */
 .home-banner {
   position: relative;
   top: 60px;
-  
+
   @media @mobile {
-  background: url('../img/home/home-mobile-jumbotron.png') no-repeat;
-  height: 300px;
-  background-size: cover;
-  background-position: bottom;
-  width: 100%;
+    background: url("../img/home/home-mobile-jumbotron.png") no-repeat;
+    height: 300px;
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
   }
 
   img {
     width: 100%;
     height: auto;
 
-    @media @mobile{
+    @media @mobile {
       display: none;
     }
   }
@@ -293,7 +296,7 @@ header nav .nav-container {
     }
 
     p {
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
   }
 
@@ -302,16 +305,22 @@ header nav .nav-container {
     padding: 10px;
     display: inline-block;
     font-size: 0.75rem;
+
+    &:hover {
+      background: #222222;
+      color: white;
+      border: 1px solid white;
+      cursor: pointer;
+    }
   }
 
   .home-card {
     width: 50%;
-    
+
     @media @mobile {
       width: 100%;
       order: -1;
       margin: 20px 0px;
-      
     }
 
     img {
@@ -334,8 +343,12 @@ header nav .nav-container {
     margin-bottom: 60px;
 
     p {
-      font-size: 0.75rem;
+      font-size: 1rem;
       margin: 0 25%;
+
+      @media @mobile {
+        margin: 0px;
+      }
     }
   }
 
@@ -376,6 +389,7 @@ header nav .nav-container {
 footer {
   background: #828282;
   padding: 40px;
+  font-size: 14px;
 
   .footer-container {
     display: flex;
@@ -393,7 +407,7 @@ footer {
       }
 
       .tinytext {
-        font-size: 0.5rem;
+        font-size: 0.75rem;
       }
 
       input {
@@ -406,19 +420,20 @@ footer {
         outline: none;
         color: gray;
       }
-      
     }
 
     address {
       color: white;
       line-height: 24px;
       margin: 0px 10px;
+      @media @mobile {
+        margin: 10px 0px;
+      }
 
       h3 {
         font-weight: 600;
         font-size: 1.2rem;
       }
-
     }
   }
 
@@ -427,5 +442,89 @@ footer {
     margin: 20px 0px;
     font-size: 10px;
     color: white;
+  }
+}
+
+.services-banner {
+  width: 100%;
+  position: relative;
+  top: 60px;
+
+  img {
+    width: 100%;
+  }
+
+  h1 {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    margin: 40px;
+    font-size: 4rem;
+    color: white;
+  }
+}
+
+.services-content {
+  margin-top: 60px;
+}
+
+.services-about {
+  color: black;
+  padding: 30px 0px;
+  font-size: 1rem;
+}
+
+.services-tabs {
+  display: flex;
+  justify-content: space-between;
+
+  .tab-link {
+    padding: 10px;
+    border: 1px solid black;
+    width: 15%;
+    text-align: center;
+
+    &:hover {
+      background: #222222;
+      cursor: pointer;
+      color: white;
+    }
+
+    // &:focus {
+    //   background: #5E9FB9;
+    // }
+  }
+
+  .active-link {
+    background: #5E9FB9;
+    color: white;
+  }
+}
+
+.card {
+  margin: 40px 0px;
+  display: none;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0px;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+
+    .card-text {
+      width: 50%;
+
+      .card-img {
+        width: 50%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
