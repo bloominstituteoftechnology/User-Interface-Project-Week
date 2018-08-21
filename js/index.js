@@ -4,8 +4,29 @@
 class Menu {
   constructor(element) {
     this.element = element;
-    this.button = this.element.querySelectorAll(".button");
-    
+
+    //buttons
+    this.hamburger = this.element.querySelector(".hamburger");
+    this.cross = this.element.querySelector(".cross");
+
+    //Menus
+    this.nonExtend = this.element.querySelector(".main-navigation");
+    this.extend = this.element.querySelector(".overlay");
+
+    this.hamburger.addEventListener('click', () => { this.clickNav() });
+    this.cross.addEventListener('click', () => { this.clickNav() });
+  }
+  clickNav() {
+    this.element.classList.toggle("extend");
+
+    this.nonExtend.classList.toggle("hidden");
+    this.extend.classList.toggle("hidden");
+
+    this.hamburger.classList.toggle("active");
+    this.cross.classList.toggle("active");
+
+    console.log(this.button)
+
   }
 }
 
