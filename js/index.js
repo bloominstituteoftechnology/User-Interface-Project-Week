@@ -7,6 +7,7 @@ class Tabs {
       return new TabsLink(link, this);
     });
     this.activeLink = this.links[0];
+    console.log(this.activeLink);
     this.activeLink.select();
   }
 
@@ -15,7 +16,7 @@ class Tabs {
     this.activeLink = link;
   }
 
-  getTab(dataValue) { return this.element.querySelector(`.tabs-item[data-tab="${dataValue}"]`); }
+  getTab(dataValue) { return this.element.querySelector(`.tab-item[data-tab="${dataValue}"]`) }
 
 }
 
@@ -24,10 +25,11 @@ class TabsLink {
   // decided it might be easyer if I just track the parentElement of the objects
   constructor(element, parentElements) {
     this.element = element;
-    this.tabIndex = element.dataset.tab;
+    // FIXED: bug in this linethis.tabIndex = element.dataset.tab;
     this.tabs = parentElements;
-    this.tabItem = parentElements.getTab(this.tabIndex);
-    this.tabItem = new this.tabItem(this.tabsItem);
+    this.tabsItem = parentElements.getTab(element.dataset.tab);
+    console.log("TABSITEM: " + this.tabsItem)
+    this.tabsItem = new TabsItem(this.tabsItem);
     this.element.addEventListener('click', () => {
       this.tabs.activate(this);
       this.select();
@@ -51,10 +53,19 @@ class TabsItem {
   }
 
   select() {
-    this.element.classList.add("tabs-link-selected");
+    // fixed typo
+    this.element.classList.add("tab-item-selected");
   }
 
   deselect() {
-    this.element.classList.remove("tabs-link-selected");
+    // fixed typo
+    this.element.classList.remove("tab-item-selected");
   }
 }
+
+// setup the tabs under the services page
+
+let tabs = document.querySelectorAll(".services");
+tabs = Array.from(tabs).map(tab => {
+  return new Tabs(tab);
+});
