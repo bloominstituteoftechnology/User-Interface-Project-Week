@@ -68,12 +68,6 @@ table{
 
 //Global
 
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1000px;
-}
-
 p {
   line-height: 24px;
 }
@@ -81,22 +75,43 @@ p {
 //Regular
 
 .container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
   header {
     position: relative;
     nav {
       display: flex;
       justify-content: space-between;
       background-color: #828282;
-      padding: 10px 10%;
       color: #FFFFFF;
       position: fixed;
-      z-index: 4;
-      height: 50px;
+      z-index: 10;
+      height: 35px;
+      width: 100%;
+      max-width: 1000px;
+      @media @phone {
+        height: 40px;
+      }
       h1 {
         font-size: 1.2rem;
+        margin-top: 5px;
+        margin-left: 60px;
+        @media @phone {
+          font-size: 1.6rem;
+          margin-left: 10px;
+        }
       }
       .name {
         z-index: 5;
+      }
+      .burger {
+        margin-top: 5px;
+        margin-right: 60px;
+        @media @phone {
+          margin-top: 7px;
+          margin-right: 10px;
+        }
       }
     }
     .menu {
@@ -156,7 +171,7 @@ p {
         width: 49%;
         align-self: center;
         @media @phone {
-          width: 95%;
+          width: 90%;
         }
         h2 {
           font-size: @subtitleFont;
@@ -194,31 +209,52 @@ p {
     h2 {
       font-size: @subtitleFont;
       margin-bottom: 20px;
+      @media @phone {
+        margin-left: 10%;
+      }
     }
     .project {
       .project-banner {
         position: relative;
+        @media @phone {
+          display: flex;
+          justify-content: center;
+        }
         h3 {
           font-size: @projectSubtitle;
-          z-index: 10;
+          z-index: 4;
           position: absolute;
           background-color: #D8D8D8;
           top: 81%;
           padding: 20px 5%;
+          @media @phone {
+            padding: 25px 20%;
+          }
         }
         img {
           width: 100%;
+          @media @phone {
+            height: 150px;
+          }
         }
       }
       p {
         margin: 60px 30%;
         font-size: 1.1rem;
+        @media @phone {
+          margin-left: 10%;
+          margin-right: 10%;
+        }
       }
     }
     .flip {
       .project-banner {
         h3 {
           right: 0;
+          @media @phone {
+            right: auto;
+            padding: 25px 20%;
+          }
         }
       }
     }
@@ -234,6 +270,18 @@ p {
       margin: 10px 10%;
       justify-content: space-between;
       padding-bottom: 10px;
+      @media @phone {
+        justify-content: column;
+        flex-wrap: wrap;
+        margin: 0 5%;
+      }
+      address {
+        @media @phone {
+          width: 60%;
+          margin-top: 10px;
+          line-height: 24px;
+        }
+      }
       input[type=text] {
         width: 80%;
         padding: 10px 20px;
@@ -248,6 +296,10 @@ p {
     }
     .copyright {
       text-align: center;
+      @media @phone {
+        text-align: initial;
+        margin: 20px 5%;
+      }
     }
   }
 }
