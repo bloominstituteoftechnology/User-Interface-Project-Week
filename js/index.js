@@ -20,6 +20,11 @@ class LinkCreator {
 
     }
     linkClick() {
+        const link = document.querySelectorAll('.link');
+        link.forEach(tabs => {
+            tabs.classList.remove('active-link')
+          });
+        this.link.classList.add('active-link');
         this.tabContent.toggleContent()
 
         
@@ -31,7 +36,11 @@ class Content {
     }
 
     toggleContent() {
-        this.tabContent.classList.toggle('tab-toggle');
+        const tabs = document.querySelectorAll('.content');
+        tabs.forEach(tabs => {
+            tabs.classList.remove('tab-toggle')
+          });
+        this.tabContent.classList.add('tab-toggle');
     }
 }
 
