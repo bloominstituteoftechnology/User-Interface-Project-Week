@@ -17,19 +17,22 @@ class TabLink {
     this.element = element;
     this.tabData = this.element.dataset.tab; 
 
-    if(this.tabData === 'all'){
-      this.cards = document.querySelectorAll('.card');
-    } else {
-      this.cards = document.querySelectorAll(`.card[data-tab = "${this.tabData}"]`);
-    }
-    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+    // if(this.tabData === 'all'){
+    //   this.cards = document.querySelectorAll('.card');
+    // } else {
+    //   this.cards = document.querySelectorAll(`.card[data-tab = "${this.tabData}"]`);
+    // }
+   
+    this.cards = document.querySelectorAll(`.middle-four-nav[data-tab = "${this.tabData}"]`);
     
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+
     this.element.addEventListener('click', ()=> {this.selectTab()
   });
   }
 
   selectTab(){
-    const tabs = document.querySelectorAll('.tab');
+    const tabs = document.querySelectorAll('.button2');
 
     tabs.forEach(function(item){
       item.classList.remove('active-tab')
@@ -37,7 +40,7 @@ class TabLink {
 
     this.element.classList.add('active-tab');
 
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.middle-four-nav');
 
     cards.forEach(function(item){
       item.style.display = 'none';
@@ -57,6 +60,6 @@ class TabCard {
 
 }
 
-let tabs = document.querySelectorAll('.tab');
+let tabs = document.querySelectorAll('.button2');
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
 tabs[0].selectTab();
