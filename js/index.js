@@ -1,18 +1,18 @@
 // JS goes here
 
-const openMenu = () => {
-    if (menu.style.display = 'none') {
-        menu.style.display = 'block';
+const menu = document.querySelector('.menu');
+
+let image_tracker = 'f';
+function openMenu() {
+    const burger = document.querySelector('burger');
+    if (image_tracker = 'f') {
         burger.src = 'img/nav-hamburger-close.png';
-        burger.style.zIndex = '4';
-    } else if (menu.style.display = 'block') {
-        menu.style.display = 'none';
+        image_tracker = 't';
+    }
+    else {
         burger.src = 'img/nav-hamburger.png';
-        burger.style.zIndex = '1';
+        image_tracker = 'f';
     }
 }
-
-const menu = document.querySelector('.menu');
-const burger = document.querySelector('.burger');
 
 burger.addEventListener('click', openMenu);
