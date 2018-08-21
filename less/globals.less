@@ -21,26 +21,42 @@ h2 {
     width: 100%;
     padding: 0 3% 5% 4.5%;
 
+    
+
     .tabs-items {
-      width: 100%;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      padding-top: 60px;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        padding-top: 60px;
+
     }
 
     .tabs-item {
-      display: none;
+        display: none;
 
-      padding: 5%;
+        padding: 5%;
 
-      .tab-wrapper {
-          display: flex;
+        @media @mobile {
+            padding-left: 0;
+            padding-right: 2%;
+        }
 
-      }
+        .tab-wrapper {
+            display: flex;
 
-      .tabs-item-description {
-        width: 85%;
+            @media @mobile {
+                flex-direction: column;
+            }
+
+        }
+
+        .tabs-item-description {
+            width: 85%;
+
+            @media @mobile {
+                width: 100%;
+            }
     }
 
     img {
@@ -59,30 +75,62 @@ h2 {
     }
   
     .tabs-links {
-      display: flex;
-      justify-content: space-evenly;
+        display: flex;
+        justify-content: space-evenly;
+
+        @media @mobile {
+            flex-direction: column;
+        }
     }
   
     .tabs-link {
-      width: 185px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      font-weight: bold;
-      background-color: @white;
-      border: 1px solid black;
+        width: 185px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: @white;
+        border: 1px solid black;
 
-      cursor: pointer;
-      &:hover {
-        background-color: @tab-hover-bg;
-        color: @tab-hover-color;
-      }
+        cursor: pointer;
+        &:hover {
+            background-color: @tab-hover-bg;
+            color: @tab-hover-color;
+        }
+
+        @media @mobile {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+      
     }
     .tabs-link-selected {
-      z-index: 2;
-      background-color: @tab-selected-bg;
-      color: @white;
+        z-index: 2;
+        background-color: @tab-selected-bg;
+        color: @white;
+    }
+}
+
+// Toggles desktop images and mobile images
+// Desktop
+.desktop {
+    // visibility: visible;
+    display: block;
+
+    @media @mobile {
+        display: none;
+    }
+}
+
+// Mobile
+.mobile {
+    display: none;
+
+    @media @mobile {
+        display: block;
     }
 }
