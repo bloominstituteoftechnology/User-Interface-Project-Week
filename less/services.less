@@ -1,6 +1,10 @@
 .services-page {
   p {
     .general-text;
+
+    @media @mobile {
+      line-height: 26px;
+    }
   }
 
   .jumbo-header {
@@ -17,12 +21,23 @@
         position: absolute;
         top: 63%;
         left: 8.3%;
+
+        @media @mobile {
+          top: 69%;
+          left: 6%;
+          font-size: 3.4rem;
+        }
       }
     }
 
     .text-content {
       width: 83%;
       margin-top: 52px;
+
+      @media @mobile {
+        margin-top: 32px;
+        width: 58%;
+      }
     }
   } //jumbo header
 
@@ -30,8 +45,18 @@
     width: 83%;
     margin-top: 44px;
 
+    @media @mobile {
+      margin-top: 35px;
+      width: 58%;
+    }
+
     .tab-component {
       .flex(space-between);
+
+      @media @mobile {
+        .flex(none, none, column);
+        height: 262px;
+      }
       .tab {
         border: 1px solid @button-border;
         height: 50px;
@@ -40,6 +65,10 @@
         font-size: 1.8rem;
         .flex(center, center);
         cursor: pointer;
+
+        @media @mobile {
+          width: 290px;
+        }
       }
 
       .tab:hover {
@@ -57,15 +86,34 @@
         margin-top: 55px;
         display: none;
 
+        @media @mobile {
+          .flex(none, none, column);
+          margin-top: 48px;
+        }
+
         h2 {
           .sub-header;
           font-size: 2.3rem;
+        }
+
+        p {
+          @media @mobile {
+            margin-top: 21px;
+            margin-bottom: 5px;
+          }
         }
 
         img {
           width: 50%;
           margin-left: 20px;
           margin-top: 34px;
+
+          @media @mobile {
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 22px;
+            margin-bottom: 8px;
+          }
         }
 
         .text-content {
@@ -74,4 +122,17 @@
       }
     }
   } // main content
+
+  .non-mobile-img {
+    @media @mobile {
+      display: none;
+    }
+  }
+
+  .mobile-img {
+    display: none;
+    @media @mobile {
+      display: flex;
+    }
+  }
 } // services page
