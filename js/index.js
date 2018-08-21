@@ -12,4 +12,9 @@
 
       hamburger.nav.addEventListener('click', function(e) {hamburger.doToggle(e);});
     }());
-    
+
+var tabLinks = new Array();
+var contentDivs = new Array(); 
+
+
+
