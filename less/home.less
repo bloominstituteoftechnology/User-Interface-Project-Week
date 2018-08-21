@@ -1,13 +1,24 @@
 .home-page {
   .jumbotron-header {
+    position: relative;
+    top: -51px;
     .jumbotron-header-text {
       position: absolute;
-      top: 325px;
-      left: 20.1%;
+      top: 54.1%;
+      left: 8%;
       .jumbotron-header-text;
+      @media @mobile {
+        font-size: 3.5rem;
+        line-height: 4.1rem;
+        top: 43%;
+        left: 5%;
+      }
     }
     .jumbotron-header-img {
       width: 100%;
+
+      @media @mobile {
+      }
     }
   }
 
@@ -17,24 +28,48 @@
 
   h2 {
     .sub-header;
+
+    @media @mobile {
+      font-size: 2.4rem;
+    }
   }
 
   .intro-content {
     width: 83%;
     .flex(space-between, center);
     flex-wrap: wrap;
-    .text-content {
-      width: 48%;
+
+    @media @mobile {
+      flex-direction: column;
+      justify-content: center;
+
+      .text-content {
+        width: 48%;
+
+        @media @mobile {
+          width: 70%;
+        }
+      }
     }
 
     img {
       width: 48%;
       margin-top: 50px;
       margin-bottom: 50px;
+
+      @media @mobile {
+        width: 70%;
+        margin-top: -15px;
+        margin-bottom: 26px;
+      }
     }
 
     .text-content {
       height: 175px;
+
+      @media @mobile {
+        margin-bottom: 124px;
+      }
 
       h2 {
         margin-bottom: 21px;
@@ -46,6 +81,10 @@
       button {
         .button-creator(136px, 45px);
         .general-text;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
     }
   } // intro content
@@ -100,4 +139,18 @@
       }
     } // title cards
   } // main-content
+  .non-mobile-img {
+    display: block;
+
+    @media @mobile {
+      display: none;
+    }
+  }
+  .mobile-img {
+    display: none;
+
+    @media @mobile {
+      display: block;
+    }
+  }
 } // home-page
