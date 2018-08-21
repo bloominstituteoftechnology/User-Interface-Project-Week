@@ -2,7 +2,6 @@ const toggleMenu = () => {
     header.classList.toggle('header-open')
     header.classList.toggle('opacity-on')
     homeLinks.classList.toggle('on')
-    homeLinks.classList.toggle('opacity-on')
     dropButton.style.display = 'none'
     dropButton2.style.display = 'block'
   }
@@ -13,7 +12,6 @@ const toggleMenu = () => {
     header.classList.toggle('header-open')
     header.classList.toggle('opacity-on')
     homeLinks.classList.toggle('on')
-    homeLinks.classList.toggle('opacity-on')
   }
 
   
