@@ -3,12 +3,14 @@
 @import "mixins.less";
 
 .main {
-    display: flex;
-    flex-direction: column;
+   position: absolute;
+   // flex-direction: column;
 
     .home {
         width: 100%;
         display: flex;
+        justify-content: space-around;
+        align-items: center;
         flex-wrap: wrap;
     
         .jumbotron {
@@ -17,6 +19,7 @@
             img {
                 width: 100%;
                 position: relative;
+                //margin-bottom: 20px;
             }
     
             h2 {
@@ -28,7 +31,7 @@
         
             }
             
-        }
+        } //jumbotron
     
     
         .top-content 
@@ -36,6 +39,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
+                margin: 20px 0;
     
                
                 .intro {
@@ -63,12 +67,16 @@
                         padding: 20px;
                     }
                 }
-            }
+            } //top-content
         
         .bottom-content {
            width: 100%;
-           display: flex;
-           justify-content: center;
+          // display: flex;
+          // justify-content: center;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin: 20px 0;
            
     
             .projects {
@@ -76,43 +84,45 @@
                 flex-wrap: wrap;
                // align-items: flex-start;
                 width: 90%;
-                margin: 65px;
-                padding: 3px, 35px;
+               // margin: 65px;
+                padding: 7px 35px;
     
                 .overlay {
     
                     display: flex;
+                    justify-content: flex-end;
             
     
-                         .textbox {
-                  display: flex;
-                    position: absolute;
-                    border: 1px solid black;
-                    height: 100px;
-                    width: 315px;
-                    align-self: flex-end;
-                    left: 63%;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 25px 0;
-                   
-                    
-                    
-                }
-    
-                img {
-                   position: relative;
-                    margin-top: 33px;
-                    margin-bottom: 20px;
-                }
+                    .textbox {
+                        .textbox();
+                        
+                                                                        
+                    }
+
+                       
+                    img {
+                        position: relative;
+                        margin-top: 33px;
+                        margin-bottom: 20px;
+                    }
     
               
-            }    
+                }  //overlay  
                 
+                .overlay.left {
+                    justify-content: flex-start;
+                }
+
+                .text-content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 55%;
+                    margin: 0 20%;
+                    padding-top: 10%;
+                }
+          
+            } // projects
+        } //bottom-content
     
-        
-            }
-        }
-    
-    }
-}
+    } //home
+} //main
