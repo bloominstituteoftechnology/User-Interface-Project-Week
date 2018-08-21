@@ -1,6 +1,6 @@
 // JS goes here
 
-// *** HOME PAGE JS ***
+// *** Nav JS ***
 console.log('hi');
 const hamburger = document.querySelector('.nav-burger');
 const nav = document.querySelector('#nav');
