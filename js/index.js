@@ -8,8 +8,7 @@ function expand() {
         menu.classList.toggle('hide');
         navLinks.classList.toggle('hide');
         xMark.classList.toggle('hide');
-    };
-
+};
 
 menu.addEventListener('click', () => {expand()});
 xMark.addEventListener('click', () => {expand()});
