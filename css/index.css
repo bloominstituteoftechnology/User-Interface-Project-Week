@@ -1,4 +1,13 @@
 /*------------------------------------*\
+IMPORTS
+\*------------------------------------*/
+/*------------------------------------*\
+VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
 RESET
 \*------------------------------------*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -133,93 +142,190 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/*------------------------------------*\
+GLOBAL
+\*------------------------------------*/
 * {
   box-sizing: border-box;
 }
 html {
   font-size: 62.5%;
 }
-.main-nav {
-  width: 100%;
-  height: 50px;
-  background: grey;
+html,
+body {
+  font-family: Roboto, Arial, sans-serif;
 }
-.main-nav .header {
-  display: flex;
-  justify-content: space-around;
+h1 {
+  font-size: 4rem;
 }
-.main-nav .header .hamburger-button {
-  cursor: pointer;
+h2 {
+  font-size: 2.8rem;
+  padding-bottom: 10px;
 }
-.main-nav .menu {
-  display: none;
+h4 {
+  font-size: 1.8rem;
+  padding-bottom: 10px;
 }
-.main-nav .menu .menu ul li {
-  font-size: 32rem;
+p {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  padding-bottom: 10px;
 }
-.main-nav .menu-open {
-  display: block;
+img {
+  max-width: 100%;
+  height: auto;
 }
-.home {
+.container {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
 }
-.home .welcome .jumbotron {
+footer {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+}
+/*------------------------------------*\
+Navigation
+\*------------------------------------*/
+.navigation {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.navigation .nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background-color: #98A4AF;
+}
+.navigation .nav-bar h1 {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+}
+.navigation .nav-bar img {
+  cursor: pointer;
+}
+.navigation .menu {
+  display: none;
+  height: 700px;
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+  background-color: #98A4AF;
+  color: #FFFFFF;
+  text-align: center;
+}
+.navigation .menu a:link {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.navigation .menu a:visited {
+  color: #FFFFFF;
+}
+.navigation .menu a:hover {
+  color: #222222;
+}
+.navigation .jumbotron {
   position: relative;
-}
-.home .welcome .text-block {
-  position: absolute;
-  bottom: 60px;
-  left: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: white;
-}
-.home .content-section {
-  display: flex;
-  flex-direction: column;
-}
-.home .content-section .cta-section {
-  display: flex;
-  justify-content: space-around;
-}
-.home .content-section .cta-section .text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 48%;
-}
-.home .content-section .cta-section .text-container .button {
-  padding: 20px 20px;
-  border: 1px solid black;
-}
-.home .recent-projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.home .recent-projects .project-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.home .recent-projects .project-container .image-container {
-  display: flex;
-  justify-content: center;
   width: 100%;
 }
-.home .recent-projects .project-container .text-container {
-  width: 30%;
+.navigation .jumbotron .jumbotron-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 4% 4%;
+  font-weight: bold;
+  font-size: 6.4rem;
+  color: #FFFFFF;
 }
+/*------------------------------------*\
+FOOTER
+\*------------------------------------*/
 footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  background-color: gray;
+  background-color: #828282;
+  color: #FFFFFF;
 }
-footer .footer-link-section {
+footer .address {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  line-height: 16px;
+  letter-spacing: 1px;
 }
+footer .address .input {
+  margin: 10px 0;
+  border-radius: 3px;
+  color: #828282;
+}
+footer .copyright {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+/*------------------------------------*\
+HOME PAGE
+\*------------------------------------*/
+.home-page .content-section-1 {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+}
+.home-page .content-section-1 .text-content {
+  width: 48%;
+  line-height: 24px;
+}
+.home-page .content-section-1 .text-content h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+}
+.home-page .content-section-1 .text-content p {
+  margin-bottom: 18px;
+}
+.home-page .content-section-1 .text-content .button {
+  border: 1px solid black;
+  padding: 2px 10px;
+  width: 20%;
+  text-align: center;
+}
+.home-page .content-section-1 .image-content {
+  width: 48%;
+}
+.home-page h2 {
+  font-weight: bold;
+  margin: 45px 0 55px 0;
+}
+.home-page .content-section-2 {
+  margin: 20px 0;
+}
+.home-page .content-section-2 .image-content-2 {
+  position: relative;
+}
+.home-page .content-section-2 .image-content-2 h3 {
+  padding: 18px 25px;
+  background-color: #D8D8D8;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  letter-spacing: 3px;
+  font-size: 1.8rem;
+}
+.home-page .content-section-2 .text-content-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-page .content-section-2 .text-content-2 p {
+  margin-top: 40px;
+  width: 38%;
+}
+/*------------------------------------*\
+CONTACT
+\*------------------------------------*/
+/*------------------------------------*\
+SERVICES-PAGE
+\*------------------------------------*/
