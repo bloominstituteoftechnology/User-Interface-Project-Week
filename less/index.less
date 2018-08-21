@@ -138,6 +138,9 @@ table {
 
 /* Your Code Goes Here */
 
+@import 'variables.less';
+@import 'mixins.less';
+
 /* GENERAL STYLES */
 body {
   p {
@@ -163,6 +166,15 @@ header nav .nav-container {
 
   .nav-button {
     cursor: pointer;
+    outline: none;
+  }
+
+  .nav-title {
+    a {
+      outline: none;
+      text-decoration: none;
+    }
+    
   }
 
   .nav-expanded {
@@ -204,21 +216,38 @@ header nav .nav-container {
 .home-banner {
   position: relative;
   top: 60px;
+  
+  @media @mobile {
+  background: url('../img/home/home-mobile-jumbotron.png') no-repeat;
+  height: 300px;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  }
 
   img {
     width: 100%;
     height: auto;
+
+    @media @mobile{
+      display: none;
+    }
   }
 
   h2 {
     position: absolute;
     bottom: 0;
     margin: 40px;
-    // width: 100%;
     text-align: left;
-    font-size: 3rem;
+    font-size: 64px;
     color: white;
     font-weight: 600;
+    line-height: 75px;
+
+    @media @mobile {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
   }
 }
 
@@ -233,16 +262,30 @@ header nav .nav-container {
   flex-flow: row wrap;
   justify-content: space-between;
 
+  @media @mobile {
+    flex-flow: column nowrap;
+  }
+
   .home-row {
     margin-top: 60px;
     flex-flow: row wrap;
     display: flex;
+
+    @media @mobile {
+      flex-flow: column nowrap;
+      margin: 0px;
+    }
   }
 
   .home-text {
     width: 45%;
     align-self: center;
     padding: 0 2.5%;
+
+    @media @mobile {
+      width: 100%;
+      margin: 20px 0px;
+    }
 
     h2 {
       font-size: 1rem;
@@ -255,7 +298,7 @@ header nav .nav-container {
   }
 
   .home-button {
-    border: 1px solid black;
+    border: 1px solid #222222;
     padding: 10px;
     display: inline-block;
     font-size: 0.75rem;
@@ -263,6 +306,13 @@ header nav .nav-container {
 
   .home-card {
     width: 50%;
+    
+    @media @mobile {
+      width: 100%;
+      order: -1;
+      margin: 20px 0px;
+      
+    }
 
     img {
       width: 100%;
@@ -296,6 +346,7 @@ header nav .nav-container {
 
     img {
       width: 100%;
+      display: block;
     }
 
     .project-title {
@@ -305,6 +356,14 @@ header nav .nav-container {
       bottom: -25px;
       right: 0;
       border: 1px solid white;
+      text-align: center;
+
+      @media @mobile {
+        width: 70%;
+        margin-left: 5%;
+        left: initial;
+        right: initial;
+      }
 
       h2 {
         letter-spacing: 3px;
@@ -321,6 +380,11 @@ footer {
   .footer-container {
     display: flex;
     justify-content: space-between;
+    flex-flow: row nowrap;
+
+    @media @mobile {
+      flex-flow: column nowrap;
+    }
 
     .email {
       p {
@@ -328,13 +392,19 @@ footer {
         font-weight: 400;
       }
 
+      .tinytext {
+        font-size: 0.5rem;
+      }
+
       input {
-        width: 100%;
+        max-width: 100%;
+        width: 80%;
         border: none;
         border-radius: 5px;
         padding: 10px;
         margin: 10px 0px;
         outline: none;
+        color: gray;
       }
       
     }
@@ -342,11 +412,13 @@ footer {
     address {
       color: white;
       line-height: 24px;
+      margin: 0px 10px;
 
       h3 {
         font-weight: 600;
         font-size: 1.2rem;
       }
+
     }
   }
 

@@ -156,6 +156,11 @@ header nav .nav-container {
 }
 header nav .nav-container .nav-button {
   cursor: pointer;
+  outline: none;
+}
+header nav .nav-container .nav-title a {
+  outline: none;
+  text-decoration: none;
 }
 header nav .nav-container .nav-expanded {
   position: fixed;
@@ -192,18 +197,39 @@ header nav .nav-container div h1 {
   position: relative;
   top: 60px;
 }
+@media (max-width: 500px) {
+  .home-banner {
+    background: url('../img/home/home-mobile-jumbotron.png') no-repeat;
+    height: 300px;
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+  }
+}
 .home-banner img {
   width: 100%;
   height: auto;
+}
+@media (max-width: 500px) {
+  .home-banner img {
+    display: none;
+  }
 }
 .home-banner h2 {
   position: absolute;
   bottom: 0;
   margin: 40px;
   text-align: left;
-  font-size: 3rem;
+  font-size: 64px;
   color: white;
   font-weight: 600;
+  line-height: 75px;
+}
+@media (max-width: 500px) {
+  .home-banner h2 {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
 }
 .container {
   max-width: 90%;
@@ -215,15 +241,32 @@ header nav .nav-container div h1 {
   flex-flow: row wrap;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .home-content {
+    flex-flow: column nowrap;
+  }
+}
 .home-content .home-row {
   margin-top: 60px;
   flex-flow: row wrap;
   display: flex;
 }
+@media (max-width: 500px) {
+  .home-content .home-row {
+    flex-flow: column nowrap;
+    margin: 0px;
+  }
+}
 .home-content .home-text {
   width: 45%;
   align-self: center;
   padding: 0 2.5%;
+}
+@media (max-width: 500px) {
+  .home-content .home-text {
+    width: 100%;
+    margin: 20px 0px;
+  }
 }
 .home-content .home-text h2 {
   font-size: 1rem;
@@ -233,13 +276,20 @@ header nav .nav-container div h1 {
   font-size: 0.75rem;
 }
 .home-content .home-button {
-  border: 1px solid black;
+  border: 1px solid #222222;
   padding: 10px;
   display: inline-block;
   font-size: 0.75rem;
 }
 .home-content .home-card {
   width: 50%;
+}
+@media (max-width: 500px) {
+  .home-content .home-card {
+    width: 100%;
+    order: -1;
+    margin: 20px 0px;
+  }
 }
 .home-content .home-card img {
   width: 100%;
@@ -267,6 +317,7 @@ header nav .nav-container div h1 {
 }
 .home-recent .project-img img {
   width: 100%;
+  display: block;
 }
 .home-recent .project-img .project-title {
   position: absolute;
@@ -275,6 +326,15 @@ header nav .nav-container div h1 {
   bottom: -25px;
   right: 0;
   border: 1px solid white;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .home-recent .project-img .project-title {
+    width: 70%;
+    margin-left: 5%;
+    left: initial;
+    right: initial;
+  }
 }
 .home-recent .project-img .project-title h2 {
   letter-spacing: 3px;
@@ -287,22 +347,34 @@ footer {
 footer .footer-container {
   display: flex;
   justify-content: space-between;
+  flex-flow: row nowrap;
+}
+@media (max-width: 500px) {
+  footer .footer-container {
+    flex-flow: column nowrap;
+  }
 }
 footer .footer-container .email p {
   color: white;
   font-weight: 400;
 }
+footer .footer-container .email .tinytext {
+  font-size: 0.5rem;
+}
 footer .footer-container .email input {
-  width: 100%;
+  max-width: 100%;
+  width: 80%;
   border: none;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0px;
   outline: none;
+  color: gray;
 }
 footer .footer-container address {
   color: white;
   line-height: 24px;
+  margin: 0px 10px;
 }
 footer .footer-container address h3 {
   font-weight: 600;
