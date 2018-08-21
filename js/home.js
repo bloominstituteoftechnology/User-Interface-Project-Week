@@ -14,7 +14,9 @@ function expand() {
 menu.addEventListener('click', () => {expand()});
 xMark.addEventListener('click', () => {expand()});
 
-
+AOS.init({
+  duration: 1200
+});
 
 //Carousel
 class Carousel {
