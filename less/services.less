@@ -52,6 +52,11 @@
             margin: 30px 0;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
+
+            @media @tablet {
+                justify-content: space-around;
+            }
 
             .tab-link {
                 .center;
@@ -77,14 +82,39 @@
             .show {
                 display: flex;
                 justify-content: space-between;
-                
-                img {
-                    width: 47%;
-                    margin: 20px 0px 20px 20px; 
+
+                @media @phone {
+                    flex-direction: column-reverse;
                 }
+                
+                .output-img {
+                    width: 47%;
+                    margin: 20px 0px 20px 20px;
+                    
+                    @media @phone {
+                        display: none;
+                    }
+                }
+
+                .mobile {
+                    display: none;
+
+                    @media @phone {
+                        display: block;
+                        width: 95%;
+                        margin: 20px;
+                    }
+                }
+
+
 
                 .content {
                     width: 47%;
+
+                    @media @phone {
+                        width: 95%;
+                        margin: 0 20px;
+                    }
 
                     h2 {
                         font-size: 1.3rem;
