@@ -1,3 +1,4 @@
+// JS goes here
 const toggleMenu = () => {
   menu.classList.toggle('menu--open');
 };
