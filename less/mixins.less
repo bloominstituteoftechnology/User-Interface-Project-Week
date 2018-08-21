@@ -1,4 +1,7 @@
 // Mixins below variables
+.width-100 {
+  width: 100%;
+}
 .center() {
     display: flex;
     justify-content: center;
@@ -12,16 +15,26 @@
   }
 
 .button-creator(@width, @height, @bg-color, @font-color) {
-    .border-radius(3px);
+    
     .center;
     width: @width;
     height: @height;
-    background-color: #103070;
-    color: @font-color;
+    background-color: white;
+    color: black;
     border: 1px solid @silver;
     
     &:hover {
-      background-color: @font-color;
-      font-color: @bg-color;
+      background-color: black;
+      color:white;
     }
+  }
+  .border-bottom-grey {
+    border-bottom: 1px solid grey;
+  }
+  
+  .flex(@jc: none, @ai: none, @dir: row) {
+    display: flex;
+    justify-content: @jc;
+    align-items: @ai;
+    flex-direction: @dir;
   }
