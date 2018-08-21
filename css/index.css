@@ -113,11 +113,11 @@ section {
 body {
   line-height: 1;
   font-size: 62.5%;
-  width: 1200px;
   max-width: 100%;
-  padding: 0 20px;
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
 }
 @media (max-width: 500px) {
   body {
@@ -158,7 +158,9 @@ table {
   display: flex;
   background: #9BA6B2;
   padding: 20px 0;
-  margin: 20px 0 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
 }
 @media (max-width: 500px) {
   #nav {
@@ -171,13 +173,11 @@ table {
   color: white;
   margin: 0 50px;
 }
-.home-nav-dropdown {
-  display: none;
-}
 .nav-burger {
   height: 21px;
   width: 32px;
   margin: 0 50px;
+  cursor: pointer;
 }
 #home {
   flex-direction: column;
@@ -188,7 +188,6 @@ table {
   background-size: cover;
   height: 500px;
   width: 100%;
-  margin: 0 0 20px;
 }
 @media (max-width: 500px) {
   #home {
@@ -524,6 +523,41 @@ table {
   border: 1px solid black;
   padding: 10px;
   width: 175px;
+  cursor: pointer;
+}
+.expand-nav-500 {
+  position: absolute;
+  top: -20px;
+  height: 500px;
+  z-index: 999;
+  opacity: 0.9;
+  max-width: 100%;
+}
+.expand-nav-500 h1,
+.expand-nav-500 img {
+  margin: 40px;
+}
+.expand-nav-500 .expand-nav-500-menu {
+  position: absolute;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.expand-nav-500 .expand-nav-500-menu a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+.expand-nav-500 .expand-nav-500-menu a:hover {
+  color: #000;
+}
+.container {
+  width: 1200px;
+  max-width: 100%;
 }
 .hide {
   display: none;
