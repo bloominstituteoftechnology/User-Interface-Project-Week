@@ -329,6 +329,10 @@ body {
 	.main-footer {
 		background: #828282;
 
+		@media @mobile {
+			display: flex;
+			flex-direction: column;
+		}
 		.email-addr {
 			display: flex;
 			justify-content: space-around;
@@ -336,34 +340,100 @@ body {
 			padding-bottom: 40px;
 			.text-style(@regular, 1.4rem, 2.6rem, #ffffff);
 
+			@media @mobile {
+				flex-direction: column;
+				margin-left: 5%;
+			}
 			.email-content {
 				.text-style(@regular, 1.4rem, 2.6rem, #ffffff);
 
 				h3 {
+					@media @mobile {
+						font-weight: @bold;
+						font-size: 1.8rem;
+						line-height: 2.4rem;
+						color: #ffffff;
+					}
 				}
 
 				p {
 					padding-bottom: 15px;
+
+					@media @mobile {
+						font-weight: @bold;
+						font-size: 1.8rem;
+						line-height: 2.4rem;
+						color: #ffffff;
+					}
+				}
+
+				form {
+					p {
+						@media @mobile {
+							font-weight: @regular;
+							font-size: 1.2rem;
+							line-height: 2.4rem;
+							color: #d8d8d8;
+							padding-top: 2%;
+						}
+					}
 				}
 				input {
 					width: 100%;
 					padding: 12px 20px;
+
+					@media @mobile {
+						width: 95%;
+						border: none;
+						border-radius: 5px;
+					}
 				}
 			}
 		}
 
 		.locations {
 			display: flex;
+
+			@media @mobile {
+				flex-direction: column;
+			}
 		}
 
 		address {
 			margin-right: 40px;
 
-			h3 {
-				font-weight: @regular;
+			@media @mobile {
+				// margin-left: 5%;
+			}
+
+			h2 {
+				font-weight: @bold;
 				font-size: 2rem;
 				line-height: 2.4rem;
 				color: #ffffff;
+
+				@media @mobile {
+					font-weight: @bold;
+					font-size: 1.8rem;
+					line-height: 2.4rem;
+					color: #ffffff;
+				}
+			}
+
+			@media @mobile {
+				.text-style(@regular, 1.4rem, 2.6rem, #d8d8d8);
+			}
+		}
+
+		.addr-florida {
+			@media @mobile {
+				padding-top: 5%;
+			}
+		}
+
+		.addr-california {
+			@media @mobile {
+				padding-top: 5%;
 			}
 		}
 
@@ -371,6 +441,13 @@ body {
 			.text-style(@regular, 1.2rem, 2rem, #ffffff);
 			text-align: center;
 			padding-bottom: 10px;
+
+			@media @mobile {
+				text-align: left;
+				margin-left: 5%;
+				padding-bottom: 5%;
+				color: #d8d8d8;
+			}
 		}
 	}
 }
