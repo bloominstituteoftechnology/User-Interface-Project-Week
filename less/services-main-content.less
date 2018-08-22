@@ -1,23 +1,32 @@
 .main-content {
     margin-top: 50px;
     width: 100%;
-    margin-bottom: 64px;
+    margin-bottom: 58px;
 
     .jumbotron {
         background-image: url("../img/services/services-jumbotron.png");
         background-position: 0 -50px;
         background-repeat: no-repeat;
-        //width: 100%;
         height: 250px;
         font-weight: bold;
         font-size: 64px;
         line-height: 75px;
         color: @white;
         margin: auto;
+
+        @media @mobile {
+            background-image: url("../img/services/services-mobile-jumbotron.png");
+            font-size: 35px;
+        }
         
         .tagline {
             padding-top: 108px;
             padding-left: 85px;
+
+            @media @mobile {
+                padding-top: 128px;
+                padding-left: 16px;
+            }
         }
     } // .jumbotron
 
@@ -27,6 +36,11 @@
         justify-content: center;
         align-items: center;
         padding: 2px 88px;
+
+        @media @mobile {
+            padding: 0 14px;
+            margin-top: -10px;
+        }
 
         p {
             font-weight: normal;
@@ -41,6 +55,10 @@
             width: 100%;
             margin-top: 15px;
 
+            @media @mobile {
+                flex-direction: column;
+            }
+
             .btn {
                 border: 1px solid @btn-border-color;
                 width: 183px;
@@ -50,6 +68,10 @@
                 margin-top: 25px;
                 font-size: 20px;
                 font-weight: bold;
+
+                @media @mobile {
+                    width: 287px;
+                }
 
                 &:hover {
                     cursor: pointer;
@@ -67,6 +89,12 @@
             justify-content: center;
             align-items: center;
             margin-top: 52px;
+
+            @media @mobile {
+                margin: auto;
+                margin-top: 30px;
+                flex-direction: column;
+            }
             
             h2 {
                 font-weight: bold;
@@ -78,11 +106,30 @@
             p {
                 width: 93%;
                 margin-bottom: 26px;
+                margin-top: 21px;
+
+                @media @mobile {
+                    width: 100%;
+                }
             }
 
-            .tab-navitor-image {
+            .tab-navigator-image {
                 text-align: center;
+
+                .mobile-content {
+                    display: none;
+                }
+
+                @media @mobile {
+                    .desktop-content {
+                        display: none;
+                    }
+
+                    .mobile-content {
+                        display: inline;
+                    }
+                }
             }
-        } // .main-content .content-section .tab-navigator
+        } // .main-content .content-section .tab-navigator-item
     } // .main-content .content-section
 } // .main-content
