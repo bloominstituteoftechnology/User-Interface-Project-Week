@@ -80,6 +80,12 @@ class TabItem {
 
     // Add a class named "tabs-item-selected" to this element 
     this.element.classList.add('tabs-item-selected');
+
+    var tl = new TimelineLite();
+    tl.from(".tabs-item-title", 1, {y: -50, rotationX: 180, opacity: 0})
+      .from(".tabs-item-description p:nth-child(1)", 1, {x: -50, rotationY: 180, opacity: 0}, "-=1")
+      .from(".tabs-item-description p:nth-child(2)", 1, {y: 50, opacity: 0}, "-=0.25")
+      .from(".tabs-item-photo", 2, {opacity: 0, rotationX: 90}, "-=2")
   }
 }
 
