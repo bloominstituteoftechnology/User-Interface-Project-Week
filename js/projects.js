@@ -31,17 +31,22 @@ let projects = new Vue({
         search: 'Search Our Projects',
         projects: [
             {id: 0, title: "Nothing Found", description: "No Project Found. Try Typing: 'all' to see all of our projects!", img:"https://media.wired.com/photos/5a0201b14834c514857a7ed7/master/pass/1217-WI-APHIST-01.jpg"},
-            {id: 1, title: "Superlative", description: "Only the very best", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 2, title: "Our Best Work", description: "Better than the very best", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 3, title: "Greatest Ever", description: "Truly the greatest", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 4, title: "Superlative", description: "Only the very best", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 5, title: "Our Best Work", description: "Better than the very best", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 6, title: "Greatest Ever", description: "Truly the greatest", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 7, title: "Superlative", description: "Only the very best", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 8, title: "Our Best Work", description: "Better than the very best", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 9, title: "Greatest Ever", description: "Truly the greatest", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 10, title: "Our Best Work", description: "Better than the very best", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"},
-            {id: 11, title: "Greatest Ever", description: "Truly the greatest", img: "https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg"}
+            {id: 1, title: "Superlative", description: "Only the very best.", img: "https://cdn0.vox-cdn.com/thumbor/RVLsMWM08RKiNl7fiTB34a69-6Q=/250x250/cdn3.vox-cdn.com/uploads/chorus_asset/file/7818995/shutterstock_503553712.jpg"},
+            {id: 2, title: "Our Best Work", description: "Better than the very best.", img: "https://image.architonic.com/img_pro1-6/121/8185/balkon-1-sq.jpg"},
+            {id: 3, title: "Greatest Ever", description: "Truly the greatest.", img: "https://s3-media1.fl.yelpcdn.com/bphoto/51lp_2GpfSoJIjSlY7jWqQ/ls.jpg"},
+            {id: 4, title: "Superlative", description: "Only the very best.", img: "http://static.reservedirect.com/media/product/gallery/224/Best_Architecture_Walking_Tour_Since_Sliced_Bread_(65992).jpg"},
+            {id: 5, title: "Our Best Work", description: "Better than the very best.", img: "http://www.weareenzyme.com/wp-content/uploads/2016/06/FLOATING-VILLAS-250.jpg"},
+            {id: 6, title: "Greatest Ever", description: "Truly the greatest.", img: "http://www.aais.org.uk/wp-content/uploads/2018/06/Modern-Architecture.jpg"},
+            {id: 7, title: "Superlative", description: "Only the very best.", img: "https://cdn.vox-cdn.com/thumbor/kIumK5l407nNlXd0R7kw4h7t660=/250x250/cdn.vox-cdn.com/uploads/chorus_asset/file/4574433/Sweet_20Bird_20South-_20Studio_20Gang_20-_20CHOICE_20for_20web.0.jpg"},
+            {id: 8, title: "Our Best Work", description: "Better than the very best.", img: "https://i2.wp.com/art4d.com/wp-content/uploads/2017/05/AUS-061_low-res.jpg?resize=250%2C250"},
+            {id: 9, title: "Greatest Ever", description: "Truly the greatest.", img: "https://www.worldsiteguides.com/pic/europe/france/paris/sacre-coeur-basilica/sacre-3.jpg"},
+            {id: 10, title: "Our Best Work", description: "Better than the very best.", img: "http://specarcsys.com/wp-content/uploads/2016/07/Vero-Beach-HOME-250x250.jpg"},
+            {id: 11, title: "Greatest Ever", description: "Truly the greatest.", img: "https://d3qvqlc701gzhm.cloudfront.net/thumbs/eca7f3a676853840ad275ab54166ea03829fb13152b942a3b0c3519ca8a57aff-250.jpg"},
+            {id: 12, title: "Greatest Ever", description: "Truly the greatest.", img: "http://s3.amazonaws.com/architecture-org/files/glossary/sqr_sml_marquette-building-tripartite-ear.jpg"},
+            {id: 13, title: "Our Best Work", description: "Better than the very best.", img: "https://i2.wp.com/art4d.com/wp-content/uploads/2017/05/AUS-061_low-res.jpg?resize=250%2C250"},
+            {id: 14, title: "Greatest Ever", description: "Truly the greatest.", img: "https://www.worldsiteguides.com/pic/europe/france/paris/sacre-coeur-basilica/sacre-3.jpg"},
+            {id: 15, title: "Our Best Work", description: "Better than the very best.", img: "http://specarcsys.com/wp-content/uploads/2016/07/Vero-Beach-HOME-250x250.jpg"},
+            {id: 16, title: "Greatest Ever", description: "Truly the greatest.", img: "https://d3qvqlc701gzhm.cloudfront.net/thumbs/eca7f3a676853840ad275ab54166ea03829fb13152b942a3b0c3519ca8a57aff-250.jpg"}
         ]
     },
         computed: {
