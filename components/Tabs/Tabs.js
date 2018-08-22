@@ -6,7 +6,7 @@ class Tab {
     this.tabItem = new TabItem(this.tabItem);
     console.log(this.tabItem);
 
-    this.element.addEventListener("click", () => this.selectTab());
+    this.element.addEventListener("click", event => this.selectTab());
   }
   selectTab() {
     //Remove active class from all tab links
@@ -23,6 +23,9 @@ class Tab {
 
     //Call Tab Item select() method
     this.tabItem.select();
+
+    //Prevent from refreshing the page
+    event.preventDefault();
   }
 }
 
