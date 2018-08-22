@@ -29,10 +29,13 @@ class TabItem {
     const allItems = document.querySelectorAll(".tabs-item");
 
     Array.from(allItems).forEach(item => { item.classList.remove("tabs-item-selected") });
+
     this.element.classList.add("tabs-item-selected");
   }
 }
 
 let allLinks = document.querySelectorAll(".tabs-link");
+
 allLinks = Array.from(allLinks).map( link => new TabLink(link));
-console.log(allLinks);
+
+allLinks[0].select();
