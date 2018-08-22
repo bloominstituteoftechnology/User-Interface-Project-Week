@@ -29,10 +29,11 @@ class TabContent {
       item.classList.remove('active-item');
     });
     this.element.classList.add('active-item');
+
   }
 }
 
 
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(tab => new ServicesTab(tab));
-// tabs[0].select();
+tabs[0].select();
