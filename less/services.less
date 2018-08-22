@@ -5,6 +5,9 @@
         position: relative;
         .home-jumbo-mobile {
             display: none;
+            @media @phone {
+                display: flex;
+            }
         }
         .home-jumbo {
             @media @phone {
@@ -20,80 +23,27 @@
             letter-spacing: 2px;
             @media @phone {
                 line-height: 4rem;
-                left: 13px;
-                bottom: 45px;
+                letter-spacing: 1px;
+                left: 15px;
+                bottom: 23px;
                 font-size: 3.5rem
             }
+        }
+    }
+    .section {
+        @media @phone {
+            padding-top: 8px;
         }
     }
     .service-intro {
         .flex-center();
         padding: 50px 86px 41px 86px;
         margin: auto;
+        @media @phone {
+            padding: 30px 15px;
+        }
         p {
             line-height: 2.6rem;
         }
     }
-    .tabs {
-        .flex-center();
-        padding: 0px 84px;
-        flex-direction: column;
-        .tabs-items {
-            display: flex;
-            padding-top: 54px;
-            padding-bottom: 64px;
-        }
-        .tabs-item {
-            display: none; 
-            width: 100%;
-            flex-direction: column;
-            .tabs-item-title {
-                font-size: 2.2rem;
-                font-weight: bold;
-                padding-bottom: 10px;
-            }
-            .tabs-item-description {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                .tabs-item-text {
-                    width: 50%;
-                    p {
-                        padding-bottom: 24px;
-                        line-height: 2.7rem;
-                    }
-                }
-                img {
-                    height: 275px;
-                    width: 400px;
-                }
-            }
-        }
-        .tabs-item-selected {
-            display: flex;
-        }
-        .tabs-links {
-            display: flex;
-            justify-content: space-between;
-        }
-        .tabs-link {
-            display: flex;
-            font-size: 24px;
-            .btn(1.8rem, bold, 185px, 50px, solid, 1px, black, 0, white, black);
-            cursor: pointer;
-            &:hover {
-                background-color: grey;
-            }
-        }
-        .tabs-link-selected {
-          z-index: 2;
-          border-right: 1px solid red;
-          background-color: @services-tab-selected-bg;
-          color: black;
-          &:hover {
-            background-color: @services-tab-hover-bg;
-            color: @services-tab-hover-color;
-          }
-        }
-      }
 }
