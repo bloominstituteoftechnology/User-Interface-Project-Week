@@ -144,28 +144,68 @@ p {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
-.navigation {
-  background-color: #97A4B0;
-  height: 7.3vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0 auto;
+header {
+  background: #97A4B0;
+  height: 7vh;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
 }
-.navigation h1 {
-  font-size: 2.4rem;
+header h1 {
+  margin-right: 66%;
+  font-size: 2.5rem;
+}
+header .openbtn {
+  cursor: pointer;
+}
+header .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  background-color: rgba(153, 167, 178, 0.7);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+header .overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 6rem;
+  cursor: pointer;
+}
+header .overlay .overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: left;
+  padding-left: 45%;
+  margin-top: 30px;
+}
+@media (max-width: 500px) {
+  header .overlay .overlay-content {
+    padding-left: 35%;
+  }
+}
+header .overlay .overlay-content a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 3.6rem;
   color: #FFFFFF;
-  margin-left: 7%;
+  display: block;
+  font-weight: bold;
 }
-.navigation header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
+header .overlay .overlay-content a:hover {
+  color: #222222;
 }
-.navigation header a {
-  margin-right: 7%;
+h1 {
+  color: #FFFFFF;
+  font-size: 1.6rem;
 }
 .top-content {
   width: 100%;
@@ -198,7 +238,7 @@ p {
 .services-top-content {
   width: 100%;
   max-width: 1400px;
-  height: 28vh;
+  height: 48vh;
   background-image: url('../img/services/services-jumbotron.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -232,11 +272,11 @@ p {
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
-  padding-bottom: 20%;
+  padding-bottom: 80%;
 }
 @media (max-width: 500px) {
   .home .middle-content {
-    padding-bottom: 170%;
+    padding-bottom: 320%;
   }
 }
 .home .middle-content .box-divider {
@@ -527,28 +567,49 @@ p {
     margin-top: 60%;
   }
 }
-.construction-content {
+.tabs {
   padding-top: 2%;
+  width: 100%;
 }
-.construction-content h1 {
+.tabs .tabs-items .tabs-item {
+  display: none;
+}
+.tabs .tabs-items h1 {
   font-weight: bold;
   font-size: 2.8rem;
   color: #222222;
-  padding-bottom: 4%;
 }
-.construction-content .services-two-column {
+.tabs .tabs-item-title h1 {
+  padding-bottom: 2%;
+}
+.tabs .tabs-item-description .flex-two-column {
   display: flex;
-  padding-bottom: 5%;
 }
-.construction-content .services-two-column .services-column-one {
+.tabs .tabs-item-description .flex-two-column .flex-column-one {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.construction-content .services-two-column .services-column-one p {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  width: 90%;
+.tabs .tabs-links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  cursor: pointer;
+}
+.tabs .tabs-links .tabs-link {
+  border: 1.2px solid #222222;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 20px 30px;
+}
+.tabs .tabs-links .tabs-link:hover {
+  color: #FFFFFF;
+  background-color: #5E9FB9;
+}
+.tabs .tabs-links .tabs-link-selected {
+  z-index: 2;
+  color: #FFFFFF;
+  background-color: #5E9FB9;
 }
 footer {
   background-color: #828282;

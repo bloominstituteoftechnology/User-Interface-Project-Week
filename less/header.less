@@ -1,29 +1,76 @@
-.navigation {
-    background-color: @header-background;
-    height: 7.3vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0 auto;
-    width: 100%;
+header {
+  background: @header-background;
+  height: 7vh; 
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
   
-    h1 {
-      font-size: 2.4rem;
-      color: @white;
-      margin-left: 7%;   
-    } // h1
-  
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
+  h1 {
+    margin-right: 66%;
+    font-size: 2.5rem;
+  }
+
+  .openbtn {
+    cursor: pointer;
+  }
+
+  .overlay {    
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2; 
+    left: 0;
+    top: 0;
+    background-color: rgba(153, 167, 178, 0.7); 
+    overflow-x: hidden;
+    transition: 0.5s; 
+
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 6rem;
+      cursor: pointer;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%; 
       width: 100%; 
-      
+      text-align: left;
+      padding-left: 45%;
+      margin-top: 30px; 
+
+      @media @phone {
+        padding-left: 35%;
+      }
+    
       a {
-        margin-right: 7%;      
-      } // img
-    } // header
-  } // .nav
+        padding: 8px;
+        text-decoration: none;
+        font-size: 3.6rem;
+        color: @white;
+        display: block;     
+        font-weight: bold;
+      } // a href
+      a:hover {
+        color: @button-border;
+      } // hover and focus
+    } // overlay content
+  } // overlay
+} // header
+
+h1 {
+  color: @white;
+  font-size: 1.6rem;
+}
+
+
+
+
   
   .top-content {
     width: 100%;
@@ -62,7 +109,7 @@
   .services-top-content {
     width: 100%;
     max-width: 1400px;
-    height: 28vh;
+    height: 48vh;
     background-image: url('../img/services/services-jumbotron.png');
     background-position: center;
     background-repeat: no-repeat;
