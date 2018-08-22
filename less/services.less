@@ -1,13 +1,13 @@
 // Services page styles
 .container-services {
+    
     header {
+        
         .main-nav {
 
             .top-nav {
                 width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                .row;
                 position: fixed;
                 background-color: #97A4B0;
                 padding: 15px 75px;
@@ -19,9 +19,9 @@
                 }
 
                 .nav-logo {
-                    font-weight: bold;
-                    font-size: 24px;
-                    color: #FFFFFF;
+                    .bold;
+                    .fs-24;
+                    color: @white;
                     text-decoration: none;
                     cursor: pointer;
                 }
@@ -32,25 +32,30 @@
 
             .dropdown-content {
                 width: 100%;
-                height: 210px;
+                height: 263px;
                 margin-top: 50px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
+                .column;
                 align-items: center;
                 position: fixed;
                 background-color: #97A4B0;
                 z-index: 3;
+
+                @media @mobile {
+                    height: 184px;
+                }
                 
                 .nav-link {
                     width: 100%;
                     text-align: center;
                     text-decoration: none;
-                    color: #FFFFFF;
+                    color: @white;
                     font-size: 48px;
                     &:hover {
                         color: #514545;
                         background-color: #98A5AF;
+                    }
+                    @media @mobile {
+                        .fs-24;
                     }
                 }
             }
@@ -60,37 +65,41 @@
         
         }// main-nav
 
-    }// header
-}
+    }
+}// container-services
 
 
 .container-services {
 
     .jumbotron {
         position: relative;
-        font-weight: bold;
+        .bold;
         font-size: 64px;
         line-height: 75px;
-        color: #ffffff;
+        color: @white;
 
-        // @media @mobile {
-        //     font-weight: 550;
-        //     font-size: 45px;
-        //     line-height: 55px;
-        // }
+        @media @mobile {
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 40px;
+        }
 
         .jumbo-img {
             width: 100%;
+
+            @media @mobile {
+                height: 234px;
+            }
         }
         .jumbo-header {
             position: absolute;
             bottom: 60px;
             left: 80px;
 
-            // @media @mobile {
-            //     bottom: 45px;
-            //     left: 20px;
-            // }
+            @media @mobile {
+                bottom: 45px;
+                left: 20px;
+            }
         }
     } // jumbotron
 
@@ -99,84 +108,107 @@
         margin: 50px 50px;
         padding: 10px 40px;
 
+        @media @mobile {
+            margin: 50px 0;
+            padding: 10px 15px;
+        }
+
         p {
             font-size: 19px;
-            line-height: 24px;
+            .lh-24;
             margin-top: -20px;
+            color: #656565;
+
+            @media @mobile {
+                // border: 1px solid black;
+                // width: 100%;
+                text-align: justify;
+            }
         }
         .tabs {
             width: 100%;
 
             .tabs-links {
-                display: flex;
-                justify-content: space-between;
-                background-color: #ffffff;
-                margin-top: 30px;
+                .row;
+                background-color: @white;
+                .mt-30;
+
+                @media @mobile {
+                    .column;
+                }
 
                 .tabs-link {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    .center;
                     padding: 20px 25px;
-                    font-size: 24px;
-                    background-color: #ffffff;
+                    .fs-24;
+                    background-color: @white;
                     border: 1px solid black;
                     height: 50px;
                     cursor: pointer;
                     &:hover {
                         background-color: #00ace6;
-                        color: #ffffff;
+                        color: @white;
+                    }
+
+                    @media @mobile {
+                        .mt-20;
                     }
                 }
                 .tabs-link-selected {
                     z-index: 2;
-                    background-color: #0086b3;
-                    color: #ffffff;
+                    background-color: #59A0B6;
+                    color: @white;
                     &:hover {
-                        background-color: #0086b3;
+                        background-color: #59A0B6;
                     }
                 }
             }// tabs-links
             .tabs-items {
                 width: 100%;
                 height: 300px;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
+                .wrap;
                 padding-top: 60px;
 
                 .tabs-item {
                     display: none;
-                    width: 950px;
+                    width: 100%;
                     height: 328px;
                     margin-top: -28px;
                     // border: 1px solid black;
 
+                    @media @mobile {
+                        border: 1px solid black;
+                        height: 625px;
+                    }
+
                     .tabs-item-title {
                         // border: 1px solid black;
-                        font-size: 24px;
-                        font-weight: bold;
-                        margin-left: -30px;
+                        width: 190px;
+                        .fs-24;
+                        .bold;
                     }
                     .tabs-item-description {
                         // border: 1px solid black;
                         width: 400px;
-                        margin-top: 30px;
+                        .mt-30;
+
+                        @media @mobile {
+                            // border: 1px solid black;
+                            width: 100%;
+                        }
 
                         p {
                             margin-top: 10px;
-                            margin-left: -30px;
                             font-size: 18px;
+                            color: #656565;
                         }
                     }
                 }
                 .tabs-item-selected {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
+                    .wrap;
 
                     img {
-                        margin: auto -30px;
+                        margin: auto 0;
                         height: 250px;
                     }
                 }
@@ -185,5 +217,7 @@
     }// main-section
 
 }// container-services
+
+
 
 
