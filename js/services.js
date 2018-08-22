@@ -57,6 +57,7 @@ class TabLink {
       })
 
       this.output.classList.add('show');
+      TweenMax.fromTo('.output-img', 2, {x:500}, {x:0});
     }
 }
 
