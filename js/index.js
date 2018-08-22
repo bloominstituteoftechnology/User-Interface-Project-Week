@@ -1,4 +1,9 @@
 // Navigation Bar
+const modalNavTween = TweenMax.from('.navigation', 0.5, {y: -200, skewY: 100});
+const modalModalTween = TweenMax.from('.modal', 0.5, {y: 200});
+const navLinkTween = TweenMax.from('.navLink', 0.5, {scale: 0.1, y: -400, ease: Back.easeOut});
+const navLinkATween = TweenMax.from('.navLink a', 3, {y:500, ease: Elastic.easeOut, rotationX: 540});
+
 document.querySelector('.hamburger').addEventListener('click', () => openNav());
 document.querySelector('.cross').addEventListener('click', () => closeNav());
 
@@ -8,14 +13,24 @@ function openNav() {
   document.querySelector('.navigation').classList.add('modal');
   document.querySelector('.navLinks').classList.remove('hidden');
   document.querySelector('.navigation').style.justifyContent = 'center';
+  modalModalTween.restart();
+  navLinkTween.restart();
+  navLinkATween.restart();
 }
 
 function closeNav() {
-  document.querySelector('.hamburger').classList.remove('hidden');
-  document.querySelector('.cross').classList.add('hidden');
-  document.querySelector('.navigation').classList.remove('modal');
-  document.querySelector('.navLinks').classList.add('hidden');
-  document.querySelector('.navigation').style.justifyContent = 'space-between';
+  // document.querySelector('.hamburger').classList.remove('hidden');
+  // document.querySelector('.cross').classList.add('hidden');
+  // document.querySelector('.navLinks').classList.add('hidden');
+  // document.querySelector('.navigation').style.justifyContent = 'space-between';
+  // document.querySelector('.navigation').classList.remove('modal');
+
+  navLinkTween.reverse();
+  navLinkATween.reverse(); 
+  TweenMax.set('.navigation', {className: "-=modal", delay: 0.6});
+  TweenMax.set('.hamburger', {className: "-=hidden", delay: 0.6});
+  TweenMax.set('.cross, .navLinks', {className: "+=hidden", delay: 0.6});
+  TweenMax.set('.navigation', {justifyContent: 'space-between', delay: 0.6});
 }
 
 // Services Tabs
