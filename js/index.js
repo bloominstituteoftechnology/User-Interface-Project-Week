@@ -1,6 +1,6 @@
 // JS goes here
 
-// Navigation system design
+// Navigation JS
 let menu = document.querySelector('.hamburger');
 let content = document.querySelector('.dropdown-content');
 let close = document.querySelector('.menu-close');
