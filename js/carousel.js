@@ -8,8 +8,14 @@ class Carousel {
 
     this.index = 0
 
-    this.rightArrow.addEventListener('click', () => this.scrollRight())
-    this.leftArrow.addEventListener('click', () => this.scrollLeft())
+    this.rightArrow.addEventListener('click', () => {
+      clearInterval(slider)
+      this.scrollRight()
+    })
+    this.leftArrow.addEventListener('click', () => {
+      clearInterval(slider)
+      this.scrollLeft()
+    })
 
   }
 
@@ -51,6 +57,7 @@ var length = carousel.images.length
 
 let slide = true
 
+var slider = setInterval(function() {return carousel.scrollRight()}, 3500)
 // setTimeout(function() {return carousel.scrollRight()}, 3000)
 // setInterval(carousel.scrollRight(), 9000)
 // setInterval(carousel.scrollRight(), 9000)
