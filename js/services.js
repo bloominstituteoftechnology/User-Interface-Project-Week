@@ -69,3 +69,17 @@ class TabLink {
   
   //Once you are complete, call the .select method on the first tab
   tabs[0].selectTab()
+
+
+const open = () => {
+    menu.classList.add('menu--open');
+  }
+const menuClose = ( ) => {
+    menu.classList.remove('menu--open');
+}
+  
+const close = document.querySelector('.close');  
+const menu = document.querySelector('.menu');
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', open);
+close.addEventListener('click', menuClose);
