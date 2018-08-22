@@ -5,17 +5,43 @@
   flex-direction: column;
   margin: 0 auto;
   .content {
-    padding: 8rem;
+    padding: 6rem;
 
     .section {
       .tabs {
         .tabs-links {
           display:flex;
           justify-content: space-between;
-          padding: 3rem 0;
+          padding: 4rem 0;
           .tabs-link {
+            margin: 0;
             .flex();
+            flex-wrap: nowrap;
             .button-maker(5rem, 25%, @main-bg, @main-color);
+            font-weight: bold;
+            font-size: 2rem;
+          }
+        }
+        .tabs-items {
+          .flex();
+          flex-flow: row wrap;
+          .tabs-item {
+            .flex();
+            flex-flow: column;
+            .tabs-item-title {
+              font-size: @heading-font-size;
+            }
+            .tabs-item-content {
+              display: flex;
+              width: 100%;
+              flex-flow: row-reverse;
+              p {
+                margin: 3rem 0;
+              }
+              img {
+               margin-left: 2rem;
+              }
+            }
           }
         }
       }
