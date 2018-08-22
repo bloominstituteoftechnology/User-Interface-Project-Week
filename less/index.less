@@ -65,6 +65,20 @@ html{
   font-size: 62.5%;
 }
 
+.mobile{
+  display: none;
+}
+
+@media @mobile{
+  .mobile{
+    display: block;
+    width: 100%;
+  }
+  .full{
+    display: none;
+  }
+}
+
 .menu-content{
   display: flex;
   justify-content: space-between;
@@ -255,10 +269,53 @@ footer{
         font-size: @p-font-size;
       }
     }
+
+    @media @mobile{
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .interested{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        h3{
+          width: 100%;
+          font-size: 2rem;
+        }
+
+        form{
+          width: 100%;
+        }
+        input[type=text]{
+          width: 100%;
+        }
+
+        h4{
+          font-size: 1.4rem;
+        }
+      }
+
+      .locations{
+        width: 100%;
+        flex-wrap: wrap;
+
+        .location{
+          width: 100%;
+          margin: 10px auto;
+        }
+      }
+    }
   }
 
   .copyright{
     margin-top: 30px;
     text-align: center;
+
+    @media @mobile{
+      margin-bottom: 15px;
+      text-align: left;
+    }
   }
 }
