@@ -59,12 +59,16 @@ table{
 
 /* Your Code Goes Here */
 @phone: ~"( max-width: 500px )";
+@tablet: ~"( max-width: 750px )";
 
 body{
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   @media @phone{
+    width:100%;
+  }
+  @media @tablet{
     width:100%;
   }
 
@@ -196,11 +200,17 @@ body{
         margin-top: -28%;
         margin-left: 8%;
         margin-bottom: 10%;
+        @media @tablet{
+          margin-top: -40%;
+          margin-left: 6%;
+          margin-bottom: 10%;
+        }
         @media @phone{
           margin-top: -40%;
           margin-left: 6%;
           margin-bottom: 10%;
         }
+        
         h1{
           @media @phone{
             font-size: 50px;
@@ -228,6 +238,7 @@ body{
         display: inline;
         
       }
+      
       display: flex;
       justify-content: space-evenly;
       .active-link{
@@ -236,14 +247,28 @@ body{
           width: 50%;
           margin-left: 20%;
         }
+        
         background: #529DB9;
         color: white;
       }
       .link{
+        @media @tablet{
+          text-align: center;
+          width: 20%;
+          padding: 10px;
+          font-size: 19px;
+          
+        }
         @media @phone{
           text-align: center;
           width: 50%;
           margin-left: 20%;
+          margin-top: 60px;
+          margin-bottom: 60px;
+          padding: 20px;
+          border: 1px solid black;
+          font-weight: bold;
+          font-size: 26px;
         }
         cursor: pointer;
         margin-top: 60px;
@@ -253,7 +278,10 @@ body{
         font-weight: bold;
         font-size: 26px;
       }
-    }
+        
+        
+      }
+  }
 
     .tab-content{
 
@@ -261,17 +289,25 @@ body{
         display:none;
       }
       .tab-toggle{
+        @media @tablet{
+          display: inline;
+        }
         @media @phone{
           display: inline;
         }
+        
         display:flex;
         width: 92%;
         margin: 0 auto 60px;
 
       .text{
+        @media @tablet{
+          margin-left: 8%;
+        }
         @media @phone {
           margin-left: 8%;
         }
+        
         margin-right: 5%;
         h1{
           font-weight: bold;
@@ -283,11 +319,19 @@ body{
         }
       }
       img{
+        @media @tablet{
+          margin-left: 22%;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          width: 55%;
+        }
         @media @phone{
           margin-left: 8%;
           margin-top: 30px;
           margin-bottom: 30px;
+          width: 85%;
         }
+        
       }
         
       }
@@ -300,9 +344,11 @@ body{
         display: flex;
         flex-flow: row-reverse;
         margin-bottom: 100px;
+        width:100%;
         @media @phone{
           display: inline;
         }
+        
 
         .text{
           margin-top: 40px;
@@ -339,6 +385,10 @@ body{
             font-size: 18px;
           }
           .LearnButton:hover{
+            @media @phone{
+              margin: 0px 0% 14px 5%;
+              padding: 19px 37% 20px 32%;
+            }
             border: 1px solid black;
             padding: 15px 25px;
             margin: 0 10%;
@@ -350,9 +400,14 @@ body{
         }
         .img{
           margin: 0px 7% 0 0%;
+          @media @tablet{
+            margin: 30px 7% 0 0%;
+            width: 100%;
+          }
           @media @phone{
             margin: 0 0 0 6%;
           }
+          
         }
       }
       .twobox-reverse{
@@ -399,6 +454,10 @@ body{
             font-size: 18px;
           }
           .LearnButton:hover{
+            @media @phone{
+              margin: 0px 0% 14px 5%;
+              padding: 19px 37% 20px 32%;
+            }
             border: 1px solid black;
             padding: 15px 25px;
             margin: 0 10%;
@@ -538,7 +597,7 @@ body{
         
       }
     }
-  }
+  
 
 
 }
