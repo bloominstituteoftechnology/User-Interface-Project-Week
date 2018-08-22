@@ -4,6 +4,20 @@
     .center;
     flex-direction: column;
 
+    .mobile-img {
+        display: none;
+
+        @media @mobile {
+            display: flex;
+        }
+    }
+
+    .desktop-img {
+        @media @mobile {
+            display: none;
+        }
+    }
+
     .hdr {
         font-weight: bold;
         font-size: 2.8rem;
@@ -19,9 +33,14 @@
         line-height: 75px;
         color: @jumbotron-font;
 
-        .jumbo-img {
+        @media @mobile {
+            .margin-btm;
+            font-size: 4.8rem;
+            line-height: 60px;
+        }
+
+        img {
             z-index: 1;
-            // position: relative;
         }
 
         .jumbo-text {
@@ -29,31 +48,64 @@
             position: relative;
             margin-top: -350px;
             margin-left: 10%;
+
+            @media @mobile {
+                margin-top: -200px;
+                margin-left: 5%;
+            }
         }
     }
 
     .btn {
         .button-creator(135px, 50px, @button-bg, @glb-font, @button-border);
+
+        @media @mobile {
+            .center;
+            .button-creator(99%, 50px, @button-bg, @glb-font, @button-border);
+        }
     }
 
     .top-content {
         width: 49%;
+
+        @media @mobile {
+            width: 99%;
+        }
     }
 
     .intro {
         .center-margin-between;
 
+        @media @mobile {
+            flex-direction: column;
+        }
+
         img{
             order: 1;
+
+            @media @mobile {
+                margin-bottom: 30px;
+                order: 0;
+            }
         }
     }
 
     .designs {
         .center-margin-between;
+
+        @media @mobile {
+            flex-direction: column;
+        }
+
+        img {
+            @media @mobile {
+                margin-bottom: 30px;
+            }
+        }
     }
 
     .projects {
-        .center-80;
+        .center-margin;
         flex-direction: column;
 
         h2 {
@@ -65,6 +117,9 @@
 
             img {
                 width: 100%;
+                @media @mobile {
+                    width: 320px;
+                }
             }
 
             h3 {
@@ -76,22 +131,38 @@
                 letter-spacing: 10px;
                 background-color: @project-bg;
                 border-color: @project-border;
+
+                @media @mobile {
+                    width: 90%;
+                    margin: auto;
+                    margin-bottom: 25px;
+                }
             }
 
             p {
                 width: 50%;
                 margin: auto;
+
+                @media @mobile {
+                    width: 90%;
+                }
             }
 
             .right {
                 position: relative;
                 margin-top: -60px;
                 margin-left: auto;
+                @media @mobile {
+                    margin-top: -15px;
+                }
             }
 
             .left {
                 position: relative;
                 margin-top: -60px;
+                @media @mobile {
+                    margin-top: -15px;
+                }
             }
         }
     }
