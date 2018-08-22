@@ -33,7 +33,7 @@ class Menu {
   closeNav() {
     const timeline = new TimelineMax();
 
-    timeline.fromTo(".overlay", 1.5, {  y: "0%" }, { ease: Back.easeInOut.config(1), y: "-100%", onComplete: () => {
+    timeline.fromTo(".overlay", 1, {  y: "0%" }, { ease: Back.easeInOut.config(1), y: "-100%", onComplete: () => {
       this.element.classList.remove("extend");
 
       this.nonExtend.classList.remove("hidden");
