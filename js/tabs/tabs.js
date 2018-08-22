@@ -9,6 +9,8 @@ class TabLink {
         // Get and set the tabs-item data
         this.itemElement = document.querySelector(`.tabs-item[data-tab="${this.dataTab}"]`);
 
+        this.tabTog = 0;
+
         // Set the tab item to a new TabItem class
         this.tabItem = new TabItem(this.itemElement);
 
@@ -47,11 +49,20 @@ class TabItem {
 
         // Remove all tabs-item-selected class
         allItems.forEach(elem => {
+            // Stretch
+            TweenMax.to(elem, 0.2, {opacity: 0, ease: Power0.easeInOut});
+            // End of Stretch
+            
             elem.classList.remove('tabs-item-selected');
+
         });
 
         // Add tabs-item-selected class to the currently selected item
         this.element.classList.add('tabs-item-selected');
+
+        // Stretch
+        TweenMax.to(this.element, 0.2, {opacity: 1, ease: Power0.easeInOut});
+        // End of Stretch
     }
 }
 
