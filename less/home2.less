@@ -5,6 +5,9 @@
 
 .main {
     position: absolute;
+  //  @media @phone {
+    //    max-width: 400;
+    //}
 
     .home {
         width: 100%;
@@ -13,11 +16,15 @@
         justify-content: space-around;
         align-items: center;
         margin-top: -5%;
+        @media @phone {
+            flex-wrap: column-wrap;}
 
         .jumbotron {
             width: 100%;
             display: flex;
             align-items: flex-end;
+            @media @phone {
+                justify-content: flex-start; }
 
             img {
                 position: relative;
@@ -29,10 +36,29 @@
                 z-index: 2;
                 margin-left: 8%;
                 padding-bottom: 5%;
+                @media @phone {
+                    font-size: 3.5rem;
+                    line-height: 4rem;
+                    margin-left: 5%;
+                    padding-bottom: 8%;
+                   
+                    }
+            }
+            
+            .jumbo-desk {
+                position: relative;
+                align-self: center;
+                @media @phone {
+                    display: none; }
             }
 
             .jumbo-mobile {
                 display: none;
+                width: 100%;
+                @media @phone {
+                    display: flex;
+                width: 100%;
+            margin-top: 5%; } 
             }
 
         } //.jumbotron
@@ -42,38 +68,79 @@
             flex-wrap: wrap;
             justify-content: center;
             margin: 5% 0 5% 0;
-            background: blue;
+            @media @phone {
+                flex-wrap: column-wrap;
+                width: 100%;
+                margin: 2% 0 2% 0;
+            }
+            
             
             .intro {
                 .top-content-row(); 
-                margin-bottom: 10%; 
+                margin-bottom: 10%;
+
+                @media @phone {
+                    flex-direction: column-reverse;
+                     width: 100%;
+                   margin: 10%; }
 
                 .img-1-desk {
                     padding: 0 2%;
+                    @media @phone {
+                        display: none;
+                    }
                 } 
+                
+                .img-1-mobile {
+                    display: none;
+                    @media @phone {
+                       padding: 0 2%;
+                        display: flex; }
+                }
 
                 .text-content {
                     padding: 5.5% 0 0 4%;
                     p {
                         padding-top: 3%;
                     }
+
+                    @media @phone {
+                        .mobile-width();
+                        padding-top: 8%; }
                 }
             }
 
 
             .designs {
                 .top-content-row();
+
+                @media @phone {
+                    flex-direction: column-reverse;
+                    width: 100%;
+                    margin: 10%;
+                }
                 
                 .img-2-desk {
                     order: -1;
                     padding-left: 4%;
+                    @media @phone {
+                        display: none; }
                 }
 
+                .img-2-mobile {
+                    display: none;
+                    @media @phone {
+                        display: flex;
+                    }
+                }
+                
+
                 .text-content {
-                    padding-top: 4.5%;
+                    padding-top: 8%;
                     padding-left: 3%;
                     p {
                         padding-top: 3%;
+                   
                     }
                 }
               
@@ -82,59 +149,73 @@
             
             //Mobile Images
 
-            .img-1-mobile {
-                display: none;
-            }
+            
 
-            .img-2-mobile {
-                display: none;
-            }
+            
 
         }//.top-content
 
 
         .bottom-content {
-            background: darkred;
+            
             display: flex;
+          
 
             .projects {
-                background: darkorange;
+                
                 display: flex;
                 flex-wrap: wrap;
+              
 
                 h3 {
-                    background: goldenrod;
                     padding-top: 5%;
                     padding-left: 8.5%;
 
                 }//.projects h3
 
                 .block {
-                    background: darkgreen;
+                    
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-evenly;
                     margin-top: 3%;
                     margin-bottom: 5.5%;
+                 
                     
                     .overlay {
-                        background: darkblue;
-                        border: 2px solid darkmagenta;
                         display: flex;
                         justify-content: flex-end;
+                            @media @phone {
+                                justify-content: center;
+                                width: 100%;
+                            }
 
+                        .desk {
+                            display: flex;
+                            @media @phone {
+                                display: none; }
+                            }
+                        
                         .mobile {
                             display: none;
-                        }
+                            @media @phone {
+                                display: flex; }
+                            }
+
+
                     } //.overlay
 
                     .overlay.left {
                         justify-content: flex-start; 
+
+                        @media @phone {
+                            justify-content: center;
+                            width: 100%;
+                        }
                     }
 
                     .text-content {
-                        background: darkorchid;
-                        border: 2px solid darkmagenta;
+                        
                         display: flex;
                         flex-wrap: wrap;
                         width: 44%;
@@ -142,7 +223,12 @@
                         p {
                             font-size: 1.8rem;
                         }
-                    }
+
+                       @media @phone {
+                            padding-top: 30%; }
+                            width: 90%;
+                        } 
+                    
 
                 } //.block
 
