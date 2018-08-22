@@ -96,18 +96,18 @@
   .mobile {
     display: none;
 
-    // position: absolute;
+    // position: absolute; //shifts page content when resized
     // left: 0;
     // align-self: flex-start;
     // width: 100%;
 
-    // position: relative;
+    // position: relative; //causes horizontal scrollbar, feels hacky
     // width: 100vw;
     // margin-left: -50vw;
     // left: 50%;
     // margin-top: 100px;
     
-    align-self: flex-start;
+    align-self: flex-start; //splits up .container .home
     width: 100%;
     @media @mobile {
       display: block;
@@ -123,11 +123,13 @@
     font-weight: normal;
     letter-spacing: 8px;
     border: 1px solid white;
-    margin-top: 40px;
+    margin-top: 40px; //chrome
+    margin-bottom: -40px; //firefox
     z-index: 1;
     @media @mobile {
       align-self: center;
-      margin-top: 80px;
+      margin-top: 80px; //chrome
+      margin-bottom: -80px; //firefox
     }
   }
   .reverse {
