@@ -1,17 +1,16 @@
-// JS goes here
-const toggleMenu = () => {
-  // Toggle the "menu--open" class on your menu refence.
-  menu.classList.toggle(`menu--open`);
-  document.querySelector(".hambaobao").src = "img/nav-hamburger-close.png";
-};
+// Navigation JS
+let menu = document.querySelector(".hamburger");
+let content = document.querySelector(".dropdown-content");
+let close = document.querySelector(".menu-close");
 
-// Start Here: Create a reference to the ".menu" class
-const menu = document.querySelector(".menu");
+menu.addEventListener("click", () => {
+  content.classList.toggle("hidden");
+  menu.classList.toggle("img-hide");
+  close.classList.toggle("img-hide");
+});
 
-// create a reference to the ".menu-button" class
-const menuButton = document.querySelector(".menu-button");
-
-// Using your menuButton reference, add a click handler that calls toggleMenu
-menuButton.addEventListener("click", event => {
-  toggleMenu();
+close.addEventListener("click", () => {
+  content.classList.toggle("hidden");
+  menu.classList.toggle("img-hide");
+  close.classList.toggle("img-hide");
 });

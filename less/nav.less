@@ -1,73 +1,62 @@
-// Navigation Styles
-.main-nav {
-  width: 100%;
-  height: 50px;
-  background: #97a4b0;
-  display: flex;
-  justify-content: space-between;
-  @media @mobile {
-    justify-content: flex-between;
-  }
-  .main-left {
-    .nav-logo();
-    margin: 13px 80px;
-    @media @mobile {
-      margin: 15px 15px;
-    }
-  }
-  .main-right {
-    // holder till using JS
-    // .nav-text;
-    display: flex;
-    flex-direction: row-reverse;
-    margin-right: 50px;
-    margin-top: 15px;
-    height: 20px;
-    .hambaobao {
+header {
+  .main-nav {
+    .top-nav {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: fixed;
+      background-color: #97a4b0;
+      padding: 15px 75px;
+      z-index: 2;
       cursor: pointer;
-    }
-    @media @mobile {
-      .hambaobao {
-        height: 20px;
-        margin: 15px -50px;
+      @media @mobile {
+        padding: 15px 30px;
+      }
+      .nav-logo {
+        font-weight: bold;
+        font-size: 24px;
+        color: #ffffff;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .img-hide {
+        display: none;
       }
     }
-  }
-}
+    .dropdown-content {
+      width: 100%;
+      height: 580px;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      line-height: 100px;
+      align-items: center;
+      position: fixed;
+      background-color: #97a4b0;
+      opacity: 0.9;
+      z-index: 2;
+      @media @mobile {
+        height: 242px;
+      }
 
-.menu {
-  span {
-    .nav-logo();
-    margin-left: 40px;
+      .nav-link {
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 48px;
+        &:hover {
+          color: #514545;
+          background-color: #98a5af;
+        }
+        @media @mobile {
+          font-size: 24px;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
   }
-
-  display: none;
-  position: fixed;
-  margin-top: 50px;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  opacity: 50%;
-  height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #97a4b0;
-  opacity: 0.9;
-  border-left: none;
-  border-bottom: none;
-  z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
-}
-.menu ul a {
-  list-style-type: none;
-  font-size: 32px;
-  padding: 30px 0;
-  text-align: center;
-  line-height: 50px;
-  text-decoration: none;
-  color: white;
-  :hover {
-    color: black;
-  }
-}
-
-.menu--open {
-  display: block;
 }
