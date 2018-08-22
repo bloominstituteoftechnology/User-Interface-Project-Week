@@ -13,19 +13,36 @@ class Menu {
     this.nonExtend = this.element.querySelector(".main-navigation");
     this.extend = this.element.querySelector(".overlay");
 
-    this.hamburger.addEventListener('click', () => { this.clickNav() });
-    this.cross.addEventListener('click', () => { this.clickNav() });
+    this.hamburger.addEventListener('click', () => { this.openNav() });
+    this.cross.addEventListener('click', () => { this.closeNav() });
   }
-  clickNav() {
-    this.element.classList.toggle("extend");
 
-    this.nonExtend.classList.toggle("hidden");
-    this.extend.classList.toggle("hidden");
+  openNav() {
+    this.element.classList.add("extend");
 
-    this.hamburger.classList.toggle("active");
-    this.cross.classList.toggle("active");
+    this.nonExtend.classList.add("hidden");
+    this.extend.classList.remove("hidden");
 
-    console.log(this.button)
+    this.hamburger.classList.remove("active");
+    this.cross.classList.add("active");
+
+    TweenMax.fromTo(".overlay", 1, { ease: Power4.easeOut, y: "-100%" }, { y: "0%" });
+
+  }
+
+  closeNav() {
+    const timeline = new TimelineMax();
+
+    timeline.fromTo(".overlay", 1.5, {  y: "0%" }, { ease: Back.easeInOut.config(1), y: "-100%", onComplete: () => {
+      this.element.classList.remove("extend");
+
+      this.nonExtend.classList.remove("hidden");
+      this.extend.classList.add("hidden");
+
+      this.hamburger.classList.add("active");
+      this.cross.classList.remove("active");
+
+    }}).fromTo(".main-navigation", 1, {  y:"-100%" }, { y: "0%" } );
 
   }
 }
