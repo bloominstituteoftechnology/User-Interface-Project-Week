@@ -84,7 +84,6 @@ submit.addEventListener('click', function() {
     contactSubmitted.classList.remove('hide');
 
     const name = document.getElementById('name');
-    console.log(name);
 
     const app = new Vue({
         el: '#app',
