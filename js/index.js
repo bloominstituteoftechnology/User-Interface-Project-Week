@@ -33,3 +33,55 @@ toggleContent() {
 
 let dropdowns = document.querySelectorAll('.dropdown');
 dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown)); // mapping new dropdown elements via the Dropdown class
+
+// tab navigation code
+
+//establish TabLink class and associated select() method
+
+class TabLink {
+  constructor(element) {
+    this.element = element;
+    this.dataTab = this.element.dataset.tab;
+    this.itemElement = document.querySelector(`.tabs-item[data-tab = "${this.dataTab}"]`);
+    this.tabItem = new TabItem(this.itemElement);
+    this.element.addEventListener('click', () => {
+      this.select();
+    });
+  }
+
+  select() {
+    const links = document.querySelectorAll('.tabs-link');
+
+    links.forEach(item => {
+      item.classList.remove('tabs-link-selected');
+    });
+
+    this.element.classList.add('tabs-link-selected');
+
+    this.tabItem.select();
+  }
+} // TabLink
+
+// establish TabItem to call with TabLink and associated select() method
+
+class TabItem {
+  constructor(element) {
+    this.element = element;
+  }
+
+  select() {
+    let allTabLinks = document.querySelectorAll('.tabs-item');
+
+    allTabLinks.forEach(item => {
+      item.classList.remove('tabs-item-selected');
+    });
+
+    this.element.classList.add('tabs-item-selected');
+  }
+
+} // TabItem
+
+let links = document.querySelectorAll('.tabs-link');
+links = Array.from(links).map( link => new TabLink(link));
+
+links[0].select();
