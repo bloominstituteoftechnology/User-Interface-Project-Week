@@ -1,5 +1,4 @@
 .service {
-
   
   .tabs-area {
     .tabs {
@@ -7,10 +6,21 @@
       justify-content: space-between;
       margin-bottom: 50px;
 
+      @media @phone {
+        flex-wrap: wrap;
+      }
+
       .btn {
         .button(@font-color, @font-color, @bg-color);
         width: 20%;
         padding: 10px 0;
+
+        @media @phone {
+          width: 100%;
+          padding: 20px 0;
+          margin: 15px 0;
+        }
+
 
         &:hover {
           .button(@tab-hover-color, @tab-hover-color, @tab-hover)
@@ -34,13 +44,25 @@
       .flex {
         .center;
         align-items: flex-start;
+
+        @media @phone {
+          flex-wrap: wrap;
+        }
       }
 
       .tab-content {
         padding-right: 5%;
 
+        @media @tablet {
+          padding-right: 1%;
+        }
+
         p {
           padding-bottom: 20px;
+
+          @media @phone {
+            line-height: 1.5;
+          }
         }
         
 
@@ -48,6 +70,16 @@
 
       img {
         height: 90%;
+      }
+
+      @media @tablet {
+        .desktop {
+          display: none;
+        }
+
+        .mobile {
+          display: inherit;
+        }
       }
     } //tab end
 

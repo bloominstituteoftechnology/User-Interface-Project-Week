@@ -1,19 +1,5 @@
 .home {
-  .mobile {
-    display: none;
-
-    @media @phone {
-      display: inherit;
-      width: 100%;
-    }
-  }
-
-  @media @phone {
-    .desktop {
-      display: none;
-    }
-  }
-
+  
   .articles {
     padding: 40px 0;
 
@@ -21,6 +7,7 @@
       .center;
       justify-content: space-between;
       padding: 20px 0;
+
 
       @media @phone {
         flex-direction: column;
@@ -46,9 +33,21 @@
       .article-content {
         line-height: 2.5;
 
+        @media @tablet {
+            h2 {
+              line-height: 1;
+              padding-bottom: 10px;
+            }
+          }
+        @media @phone {
+          h2 {
+            line-height: 2.5;
+            padding-bottom: 0;
+          }
+        }
+
         .button {
           .button(@font-color, @bt-br, @bg-color);
-          cursor: pointer;
           padding: 10px 0;
           margin-top: 20px;
           width: 35%;
@@ -57,6 +56,10 @@
           &:hover {
             .button(@tab-hover-color, @tab-hover-color, @tab-hover);
             box-shadow: inset 0px 0px 0 2px #D8D8D8;
+          }
+
+          @media @tablet {
+            width: 55%;
           }
 
           @media @phone {
