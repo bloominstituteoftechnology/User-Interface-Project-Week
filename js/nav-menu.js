@@ -19,6 +19,6 @@ mainNavBtns.forEach(btn => btn.addEventListener("click", () => {
     mainNav.classList.toggle("toggle-opacity");
     mainNavBtns.forEach(btn => btn.classList.toggle("toggle-display"));
 
-    TweenMax.fromTo(navMenu, 1, {x:-500, scale: 0, skewX: "45deg"}, {ease: Bounce.easeOut, x:0, scale: 1, skewX: "0deg"});
-    TweenMax.fromTo(mainNavBtns, 1, {ease: Bounce.easeOut, scale: 0}, {ease: Bounce.easeOut, scale: 1});
+    TweenMax.fromTo(navMenu, 1.5, {x:-500, scale: 0, skewX: "45deg"}, {ease: Elastic.easeOut, x:0, scale: 1, skewX: "0deg"});
+    TweenMax.fromTo(mainNavBtns, 1, {scale: 0}, {ease: Elastic.easeOut, scale: 1});
 }));

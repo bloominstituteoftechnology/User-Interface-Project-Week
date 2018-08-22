@@ -29,7 +29,11 @@ class TabItem {
 
         Array.from(tabNavigatorItems).map(item => item.style.display = "none");
 
-        document.querySelector(`.tab-navigator-item[data-tab="${this.data}"]`).style.display = "flex";
+        const currentElement = document.querySelector(`.tab-navigator-item[data-tab="${this.data}"]`);
+        
+        currentElement.style.display = "flex";
+
+        TweenMax.fromTo(currentElement, 1, {x: -100, opacity: 0}, {ease: Bounce.easeOut, x:0, opacity: 1});
     }
 }
 
