@@ -1,0 +1,144 @@
+#projects {
+
+    .container { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media @mobile {
+            width: 94%;
+            }
+
+        input {
+            position: relative;
+            width: 40%;
+            height: 40px;
+            border-radius: 3px;
+            padding-left: 5px;
+            margin-bottom: 0px;
+            border: 2px solid @silver;
+            font-size: 2.4rem;
+            text-align: center;
+            color: @silver;
+
+            &::placeholder{
+                font-size: 2.4rem;
+            }
+        }
+
+        
+    }
+
+.jumbotron {
+    background-image: url(../img/projects/projects-jumbotron.jpg);
+    background-position: top;
+    background-repeat:no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 250px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+
+    @media @mobile {
+        height: 350px;
+        background-image: url(../img/projects/projects-jumbotron.jpg);
+        background-size: cover;
+        background-position: bottom;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+.jumbotron-container {
+    align-items: flex-start;
+    padding-left: 8.45rem;
+
+    @media @tablet {
+        padding-left: 0rem;
+    }
+
+    @media @mobile {
+    padding-left: 1.5rem;
+    }
+
+    h1 {
+        @media @tablet {
+            font-size: 6rem;
+            line-height: 7rem;
+        }
+
+        @media @mobile {
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+  }
+}
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 80px 0 40px 0;
+    min-height: 600px;
+    max-width: 855px;
+
+    .project {
+        position: relative;
+        max-width: 22%;
+        margin-bottom: 40px;
+        cursor: pointer;
+        transition: max-width .15s ease-in-out, margin-bottom .15s ease-in-out;
+
+        &:hover {
+            max-width: 23%;
+            margin-bottom: 30px;
+        }
+
+        
+        @media @tablet {
+            margin-bottom: 20px;
+        }
+
+        div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 10px;
+        right: -10px;
+        background-color: rgba(216, 216, 216, 0.95);
+        padding: 10px 0;
+        width: 100%;
+        height: 45px;
+        transition: height .1s, width .1s;
+        }
+
+        p {
+            display: none;
+        }
+
+        .expand {
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: height .1s, width .1s;
+        }
+
+        div.expand {
+            padding-left: 10px;
+        }
+
+        p.expand {
+            margin-top: 20px;
+        }
+
+    }
+
+    [class="project 0"] {
+        margin: 0 auto;
+    }
+
+
+}
+}
