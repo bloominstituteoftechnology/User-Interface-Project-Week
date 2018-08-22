@@ -1,9 +1,16 @@
 // JS goes here
 
-// const navigationButton = document.querySelector('.navigation-button');
-// const navigationContent = document.querySelector('.navigation-content');
+const navigationOpenButton = document.querySelector('.nav-hamburger');
+const navigationCloseButton = document.querySelector('.nav-close');
+const navigationContent = document.querySelector('.navigation-content');
 
-// navigationButton.addEventListener('click', (event) => {
-//     event.navigationContent.classList.toggle('navigation-hidden');
-//     console.log('Nav button clicked');
-// });
+navigationOpenButton.addEventListener('click', (event) => {
+    navigationContent.classList.toggle('navigation-hidden');
+    console.log('Nav Open button clicked');
+});
+
+navigationCloseButton.addEventListener('click', (event) => {
+    navigationContent.classList.toggle('navigation-hidden');
+    console.log('Nav Open button clicked');
+});
+
