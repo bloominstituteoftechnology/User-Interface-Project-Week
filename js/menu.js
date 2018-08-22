@@ -8,7 +8,6 @@ class MenuConstructor {
       this.closeButton.addEventListener('click', () => {this.toggleContent()});
       this.link = element.querySelectorAll('.menu-link')
     }
-  
     toggleContent() {
       this.content.classList.toggle('menu-hidden');
       console.log('activating menu')
