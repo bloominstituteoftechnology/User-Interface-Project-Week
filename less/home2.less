@@ -19,16 +19,14 @@
             align-items: flex-end;
 
             img {
-                width: 100%;
                 position: relative;
                 align-self: center;
-                margin-left: 15px;
             }
 
             h2 {
                 position: absolute;
                 z-index: 2;
-                margin-left: 9.5%;
+                margin-left: 8%;
                 padding-bottom: 5%;
             }
 
@@ -39,19 +37,48 @@
         } //.jumbotron
 
         .top-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 5% 0 5% 0;
             background: blue;
             
             .intro {
-                background: purple;
-                border: 2px solid magenta;   
+                .top-content-row(); 
+                margin-bottom: 10%; 
+
+                .img-1-desk {
+                    padding: 0 2%;
+                } 
+
+                .text-content {
+                    padding: 5.5% 0 0 4%;
+                    p {
+                        padding-top: 3%;
+                    }
+                }
             }
 
 
             .designs {
-                background: purple;
-                border: 2px solid magenta;
-            }
+                .top-content-row();
+                
+                .img-2-desk {
+                    order: -1;
+                    padding-left: 4%;
+                }
 
+                .text-content {
+                    padding-top: 4.5%;
+                    padding-left: 3%;
+                    p {
+                        padding-top: 3%;
+                    }
+                }
+              
+            } //designs
+            
+            
             //Mobile Images
 
             .img-1-mobile {
@@ -67,30 +94,51 @@
 
         .bottom-content {
             background: darkred;
+            display: flex;
+            flex-wrap: wrap;
 
             .projects {
                 background: darkorange;
+                display: flex;
+                flex-wrap: wrap;
 
                 h3 {
                     background: goldenrod;
+                    padding-top: 5%;
+                    padding-left: 8.5%;
 
                 }//.projects h3
 
                 .block {
                     background: darkgreen;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    margin: 3% 0;
                     
                     .overlay {
                         background: darkblue;
                         border: 2px solid darkmagenta;
+                        display: flex;
+                        justify-content: flex-end;
 
                         .mobile {
                             display: none;
                         }
+                    } //.overlay
+
+                    .overlay.left {
+                        justify-content: flex-start; 
                     }
 
                     .text-content {
                         background: darkorchid;
                         border: 2px solid darkmagenta;
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 55%;
+                        font-size: 1.8rem;
+                        padding-top: 10%;
                     }
 
                 } //.block
