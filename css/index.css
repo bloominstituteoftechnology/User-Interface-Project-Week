@@ -153,6 +153,15 @@ html {
 }
 html,
 body {
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: Roboto, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: Roboto, Arial, sans-serif;
 }
 h1 {
@@ -207,20 +216,37 @@ Navigation
 .navigation .nav-bar img {
   cursor: pointer;
 }
-.navigation .menu {
+.navigation .menu-display-none {
   display: none;
-  height: 700px;
+}
+.navigation .menu-display-block {
+  display: block;
+  opacity: 0.9;
+}
+.navigation .menu {
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 85px;
   background-color: #98A4AF;
   color: #FFFFFF;
-  text-align: center;
 }
 @media (max-width: 500px) {
   .navigation .menu {
-    height: 350px;
+    height: 100%;
   }
+}
+.navigation .menu .menu-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .navigation .menu a:link {
   color: #FFFFFF;
@@ -232,11 +258,14 @@ Navigation
 .navigation .menu a:hover {
   color: #222222;
 }
-.navigation .jumbotron {
+/*------------------------------------*\
+JUMBOTRON
+\*------------------------------------*/
+.jumbotron {
   position: relative;
   width: 100%;
 }
-.navigation .jumbotron .jumbotron-text {
+.jumbotron .jumbotron-text {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -325,18 +354,17 @@ HOME PAGE
 }
 @media (max-width: 500px) {
   .home-page .content-section-1 .image-content .image1 {
-    display: none;
-    content: url("./img/home/home-mobile-img-1.png");
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .home-page .content-section-1 .image-content .image2 {
+    width: 100%;
   }
 }
 @media (max-width: 500px) {
   .home-page .inverse {
     flex-direction: column-reverse;
-  }
-}
-@media (max-width: 500px) {
-  .home-page .inverse #image2 {
-    background: ur("http://imgur.com/SZ8Cm.jpg");
   }
 }
 .home-page h2 {
@@ -378,62 +406,54 @@ CONTACT
 /*------------------------------------*\
 SERVICES-PAGE
 \*------------------------------------*/
-.services-page {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-bewteen;
-}
 .services-page .text-content {
-  margin-top: 40px;
-}
-.services-page .tabs {
-  margin-top: 40px;
-}
-.services-page .tabs .topics {
-  height: 65px;
+  display: flex;
   margin: 0 auto;
-  margin-bottom: 30px;
+  justify-content: center;
+}
+.services-page .tabs .tabs-links {
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  margin: 50px 0;
 }
-.services-page .tabs .topics .tab {
+.services-page .tabs .tabs-link {
   font-size: 2rem;
-  padding: 20px 20px;
-  border: 1px solid #222222;
+  padding: 15px 20px;
+  border: 1px solid ;
+  font-weight: bold;
   cursor: pointer;
 }
-.services-page .tabs .topics .tab:hover {
+.services-page .tabs .tabs-link:hover {
   background-color: #222222;
   color: #FFFFFF;
 }
-.services-page .tabs .topics .tab:active {
+.services-page .tabs .tabs-link:active {
   background-color: #5e9fb9;
 }
-.services-page .card {
-  margin-top: 40px;
+.services-page .tabs .tabs-items {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.services-page .card .headline {
-  margin-top: 20px;
-  font-size: 2.8rem;
-}
-.services-page .card .card-content {
-  display: flex;
-  justify-content: space-bewteen;
-  margin-top: 20px;
-}
-.services-page .card .card-content .text-content {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  justify-content: center;
   padding-top: 20px;
+}
+.services-page .tabs .tabs-item {
+  display: none;
+  padding: 30px 30px;
+}
+.services-page .tabs .tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
   padding-bottom: 20px;
+  margin-left: 3%;
+}
+.services-page .tabs .tabs-item .content-container {
+  display: flex;
+  justify-content: space-around;
+}
+.services-page .tabs .tabs-item .content-container .tabs-item-description {
   width: 48%;
 }
-.services-page .card .card-content .image-content img {
-  width: 100%;
+.services-page .tabs .tabs-item-selected {
+  display: block;
 }
