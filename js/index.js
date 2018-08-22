@@ -1,5 +1,8 @@
+var delayInMilliseconds = 3000;
+
 const toggleMenu = () => {
   menu.classList.toggle('menu--open');
+  
 };
 
 let toggle = false;
@@ -22,3 +25,4 @@ menuButton.addEventListener('click', e => {
   toggleMenu();
   toggleimg();
 });
+
