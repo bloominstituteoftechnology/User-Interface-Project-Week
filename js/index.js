@@ -18,3 +18,5 @@ hamburger.addEventListener('click', (event) => {
     };
 } )
 
+document.querySelector('.nav-link').style.color = 'gray';
+
