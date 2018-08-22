@@ -8,7 +8,8 @@ function change() {
     if (image_tracker == 'f') {
         image.src = 'img/nav-hamburger-close.png';
         image_tracker = 't';
-        nav.style.height = '500px';
+        TweenMax.to('nav', 1, {height: 300});
+        TweenMax.staggerFrom('.menu a', 1, {opacity:0}, .1);
         nav.style.opacity = '0.9';
         menu.style.display = 'block';
 
@@ -17,7 +18,7 @@ function change() {
     else {
         image.src = 'img/nav-hamburger.png';
         image_tracker = 'f';
-        nav.style.height = '35px';
+        TweenMax.to('nav', 1, {height: 35});
         menu.style.display = 'none';
     }
 }
