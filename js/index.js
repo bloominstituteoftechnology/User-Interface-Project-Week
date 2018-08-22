@@ -4,6 +4,7 @@ const toggleMenu = () => {
     homeLinks.classList.toggle('on')
     dropButton.style.display = 'none'
     dropButton2.style.display = 'block'
+    // dropButton.classList.toggle('off')
   }
 
   const toggleoff = () => {
