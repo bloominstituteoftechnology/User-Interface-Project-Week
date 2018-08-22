@@ -10,3 +10,9 @@ const menuClose = ( ) => {
   const menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', open);
   close.addEventListener('click', menuClose);
+  
+  const btn = document.querySelector('.btn');
+  const none = () => {
+    btn.classList.toggle('none');
+  }
+  btn.addEventListener('click', none);
