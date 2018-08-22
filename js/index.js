@@ -49,7 +49,18 @@ class Content {
 let links = document.querySelectorAll('.link');
 links = Array.from(links).map( linkItem => new LinkCreator(linkItem));
 
+function OpenNav(){
+    document.getElementById('nav').style.width = "100%";
+    document.getElementById('nav').style.height = "100%";
+    document.getElementById('open').style.display = "none";
+    document.getElementById('content-nav').style.display = "block";
+}
 
+function CloseNav(){
+    document.getElementById('nav').style.width = "0%";
+    document.getElementById('close').style.display = "none";
+    document.getElementById('content-nav').style.display = "none";
+}
 
 
 
