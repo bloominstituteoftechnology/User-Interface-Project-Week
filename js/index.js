@@ -46,4 +46,19 @@ class LinkCreator {
   tabLinks = Array.from(tabLinks).map( link => new LinkCreator(link));
 
   // Navigation System
+
+  const toggleMenu = ()=> {
+    navLinks.classList.toggle('hide');
+  }
   
+  const navLinks = document.querySelector('.navlinks');
+  const hamburger = document.querySelector('.hamburger');
+
+  hamburger.addEventListener('click', ()=>{
+    toggleMenu();
+    if (navLinks.classList.contains('hide')) {
+      hamburger.src = 'img/nav-hamburger.png';
+    } else {
+      hamburger.src = 'img/nav-hamburger-close.png';
+    }
+  });
