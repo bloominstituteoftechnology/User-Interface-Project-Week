@@ -1,21 +1,11 @@
+// nav bar
 const toggleMenu = () => {
     header.classList.toggle('header-open');
     header.classList.toggle('opacity-on');
     homeLinks.classList.toggle('on');
-    // dropButton.style.display = 'none'
-    // dropButton2.style.display = 'block'
     dropButton.classList.toggle('none');
-    dropButton2.classList.toggle('on');
-    dropButton2.classList.add('on');
+    dropButton2.classList.toggle('drop-button2');
   }
-
-  // const toggleoff = () => {
-  //   dropButton2.style.display = 'none'
-  //   dropButton.style.display = 'block'
-  //   header.classList.toggle('header-open')
-  //   header.classList.toggle('opacity-on')
-  //   homeLinks.classList.toggle('on')
-  // }
 
   
   
@@ -34,7 +24,8 @@ const toggleMenu = () => {
   dropButton.addEventListener('click', toggleMenu);
   dropButton2.addEventListener('click', toggleMenu);
 
-  
+  //Tabs
+
   class TabLink {
     constructor(element) {
       this.element = element;
