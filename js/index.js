@@ -1,19 +1,21 @@
 const toggleMenu = () => {
-    header.classList.toggle('header-open')
-    header.classList.toggle('opacity-on')
-    homeLinks.classList.toggle('on')
-    dropButton.style.display = 'none'
-    dropButton2.style.display = 'block'
-    // dropButton.classList.toggle('off')
+    header.classList.toggle('header-open');
+    header.classList.toggle('opacity-on');
+    homeLinks.classList.toggle('on');
+    // dropButton.style.display = 'none'
+    // dropButton2.style.display = 'block'
+    dropButton.classList.toggle('none');
+    dropButton2.classList.toggle('on');
+    dropButton2.classList.add('on');
   }
 
-  const toggleoff = () => {
-    dropButton2.style.display = 'none'
-    dropButton.style.display = 'block'
-    header.classList.toggle('header-open')
-    header.classList.toggle('opacity-on')
-    homeLinks.classList.toggle('on')
-  }
+  // const toggleoff = () => {
+  //   dropButton2.style.display = 'none'
+  //   dropButton.style.display = 'block'
+  //   header.classList.toggle('header-open')
+  //   header.classList.toggle('opacity-on')
+  //   homeLinks.classList.toggle('on')
+  // }
 
   
   
@@ -30,7 +32,7 @@ const toggleMenu = () => {
   // click and toggle
   
   dropButton.addEventListener('click', toggleMenu);
-  dropButton2.addEventListener('click', toggleoff);
+  dropButton2.addEventListener('click', toggleMenu);
 
   
   class TabLink {
