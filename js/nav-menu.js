@@ -7,6 +7,8 @@ if (document.querySelector(".container").classList.contains("index")) {
     aLinks[0].classList.add("selected-link");
 } else if (document.querySelector(".container").classList.contains("services")) {
     aLinks[1].classList.add("selected-link");
+} else if (document.querySelector(".container").classList.contains("contact")) {
+    aLinks[2].classList.add("selected-link");
 }
 
 mainNavBtns.forEach(btn => btn.addEventListener("click", () => {
