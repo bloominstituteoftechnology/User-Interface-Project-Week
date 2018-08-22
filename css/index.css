@@ -185,6 +185,7 @@ span {
 .container {
   max-width: 1025px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 .container nav {
   position: fixed;
@@ -585,10 +586,6 @@ footer .footer-container span {
   justify-content: center;
   align-items: center;
 }
-.top-services .buttons a:hover {
-  background-color: #222222;
-  color: #ffffff;
-}
 @media (max-width: 768px) {
   .top-services .buttons a {
     width: 100%;
@@ -731,22 +728,39 @@ footer .footer-container span {
   }
 }
 .slideshow-container {
+  height: auto;
   padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 1px solid red;
+  width: 90%;
+  margin: 0 auto;
 }
 .slideshow-container .text {
   margin: 15px 0;
 }
-.slideshow-container .slides {
+.slideshow-container .content {
+  height: auto;
+  max-height: 535px;
+  width: 100%;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .slideshow-container .content {
+    max-height: 350px;
+  }
+}
+.slideshow-container .content .slides {
   display: none;
 }
-.slideshow-container .slides .demo-pictures {
-  height: 100px;
-  width: 100%;
-}
-.slideshow-container .visible {
+.slideshow-container .content .visible {
   display: block;
+  max-height: 535px;
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 .slideshow-container .demo-pictures {
   display: flex;
@@ -754,20 +768,12 @@ footer .footer-container span {
   flex-wrap: wrap;
   width: 100%;
 }
-.slideshow-container .col {
+.slideshow-container .demo-pictures .col {
   width: 18%;
+  height: 100px;
 }
-.slideshow-container .col img {
-  height: 60%;
+.slideshow-container .demo-pictures img {
+  height: 100%;
   width: 100%;
   object-fit: cover;
-}
-.slideshow-container .col img:hover {
-  cursor: pointer;
-}
-.slideshow-container .content {
-  height: 535px;
-  width: 100%;
-  border: 1px solid red;
-  margin-bottom: 40px;
 }

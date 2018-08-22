@@ -71,6 +71,7 @@ class Demo {
     //adds click listener to demo image
     this.image.addEventListener("click", () => {
       this.displayImage();
+      console.log(`${this.slide}`)
     });
   }
   displayImage() {
@@ -87,5 +88,34 @@ class Demo {
 //capture demo images
 let demoImages = document.querySelectorAll(".demo");
 Array.from(demoImages).map(image => new Demo(image));
+
+class Demovw {
+  constructor(image) {
+    this.image = image;
+    //gets dataset info for demo image
+    this.data = this.image.dataset.set;
+    //gets mainslide corresponding to demo image data
+    this.slide = document.querySelector(`.vwslides[data-set="${this.data}"`);
+    //adds click listener to demo image
+    this.image.addEventListener("click", () => {
+      this.displayImage();
+      console.log('hi')
+    });
+  }
+  displayImage() {
+    //gets nodelist of all large image elements
+    let images = document.querySelectorAll(".vwslides");
+  
+    //set display on each nodelist item to none
+    images.forEach(slide => slide.classList.remove("visible"));
+    //
+    this.slide.classList.toggle('visible');
+  }
+}
+
+//capture demo images
+let demovwImages = document.querySelectorAll(".demovw");
+Array.from(demovwImages).map(image => new Demovw(image));
+
 
 
