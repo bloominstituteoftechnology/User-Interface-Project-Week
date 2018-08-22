@@ -13,11 +13,25 @@
     margin-bottom: 46px;
     position: relative;
 
+    @media @mobile {
+      width: 100%;
+    }
+
+    img {
+      @media @mobile {
+        width: 100%;
+      }
+    }
+
     h1 {
       .jumbotron-header-text;
       position: absolute;
       left: 8.3%;
       bottom: 7%;
+
+      @media @mobile {
+        font-size: 4.8rem;
+      }
     }
   }
 
@@ -26,8 +40,17 @@
     width: 83.3%;
     margin-bottom: 8px;
 
+    @media @mobile {
+      .flex(none, none, column);
+    }
+
     .contact-form {
       width: 50%;
+
+      @media @mobile {
+        width: 100%;
+        margin-bottom: 50px;
+      }
 
       h2 {
         margin-bottom: 42px;
@@ -42,6 +65,10 @@
         .border-creator(1px, 1px, 1px, 1px);
         border-radius: 3px;
         padding-left: 10px;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
 
       h4 {
@@ -55,6 +82,10 @@
         height: 38px;
         width: 410px;
         margin-bottom: 8px;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
 
       textarea[name='overview'] {
@@ -62,6 +93,10 @@
         height: 135px;
         margin-top: 4px;
         margin-bottom: 22px;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
 
       input[type='radio'] {
@@ -80,6 +115,10 @@
         .general-text;
         cursor: pointer;
 
+        @media @mobile {
+          width: 100%;
+        }
+
         &:hover {
           color: white;
           background: black;
@@ -92,6 +131,10 @@
       margin-top: 12px;
       .general-text;
 
+      @media @mobile {
+        width: 100%;
+      }
+
       h4 {
         .sub-header;
         font-size: 2rem;
@@ -103,4 +146,18 @@
       }
     }
   } // main-content
+
+  .non-mobile-img {
+    @media @mobile {
+      display: none;
+    }
+  }
+
+  .mobile-img {
+    display: none;
+
+    @media @mobile {
+      display: flex;
+    }
+  }
 } // contact page
