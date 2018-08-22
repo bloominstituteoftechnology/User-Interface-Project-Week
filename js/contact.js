@@ -73,5 +73,14 @@ class FaqLink {
 
 let faqs = document.querySelectorAll('.faqs');
 
-
 faqs = Array.from(faqs).map(faq => new FaqLink(faq));
+
+const submit = document.querySelector('.submit');
+const content = document.querySelector('.contact-form');
+const contactSubmitted = document.querySelector('.contact-submitted');
+console.log(contactSubmitted);
+
+submit.addEventListener('click', function() {
+    content.classList.add('hide');
+    contactSubmitted.classList.remove('hide');
+});
