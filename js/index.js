@@ -10,3 +10,9 @@ menu.addEventListener('click', () => {
 menu.addEventListener('click', () => {
     menu.src = "img/nav-hamburger-close.png";
 });
+
+const close = document.querySelector('.close')
+
+close.addEventListener('click', () => {
+    nav.classList.remove('full-menu');
+});
