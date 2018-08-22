@@ -9,7 +9,7 @@
     font-size: 2.4rem;
     font-weight: bold;
     margin-left: 85px;
-    
+    z-index: 1;
 
     @media @mobile {
       margin-left: 15px;
@@ -23,6 +23,14 @@
     align-items: center;
     height: 5rem;
 
+    top: 0px;
+    z-index: 1;
+
+      span {
+        font-size: 30px;
+        cursor: pointer;
+        margin-left: 789px;
+
       .menu-button {
         height: max-content;
         margin-right: 66px;
@@ -31,11 +39,64 @@
           margin-right: 15px;
         };
       };
-
+    };
       .nav-link {
         display: none;
       };
   };
+
+  .overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#778899;
+    background-color:#778899;
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .overlay a.nav-link {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #FFFFFF;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover, .overlay a:focus {
+    color: #222222;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 45px;
+    font-size: 60px;
+    color: #FFFFFF;
+  }
+
+    @media screen and (max-height: 450px) {
+    .overlay {overflow-y: auto;}
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+    };
+
   .jumbotron-container{
     position: relative;
 

@@ -183,6 +183,7 @@ p {
   font-size: 2.4rem;
   font-weight: bold;
   margin-left: 85px;
+  z-index: 1;
 }
 @media (max-width: 500px) {
   .main-navigation .nav-logo {
@@ -195,18 +196,75 @@ p {
   justify-content: space-between;
   align-items: center;
   height: 5rem;
+  top: 0px;
+  z-index: 1;
 }
-.main-navigation .nav-container .menu-button {
+.main-navigation .nav-container span {
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 789px;
+}
+.main-navigation .nav-container span .menu-button {
   height: max-content;
   margin-right: 66px;
 }
 @media (max-width: 500px) {
-  .main-navigation .nav-container .menu-button {
+  .main-navigation .nav-container span .menu-button {
     margin-right: 15px;
   }
 }
 .main-navigation .nav-container .nav-link {
   display: none;
+}
+.main-navigation .overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #778899;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+.main-navigation .overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.main-navigation .overlay a.nav-link {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #FFFFFF;
+  display: block;
+  transition: 0.3s;
+}
+.main-navigation .overlay a:hover,
+.main-navigation .overlay a:focus {
+  color: #222222;
+}
+.main-navigation .overlay .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 45px;
+  font-size: 60px;
+  color: #FFFFFF;
+}
+@media screen and (max-height: 450px) {
+  .main-navigation .overlay {
+    overflow-y: auto;
+  }
+  .main-navigation .overlay a {
+    font-size: 20px;
+  }
+  .main-navigation .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
 }
 .main-navigation .jumbotron-container {
   position: relative;
