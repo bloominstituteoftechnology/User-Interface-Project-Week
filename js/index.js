@@ -1,5 +1,6 @@
 // JS goes here
 
+// ---
 // Create references to nav button classes and nav content class
 let navigationOpenButton = document.querySelector('.nav-hamburger');
 let navigationCloseButton = document.querySelector('.nav-close');
