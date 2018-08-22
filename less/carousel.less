@@ -1,0 +1,133 @@
+  .carousel {
+    display: flex;
+    justify-content: center;
+    height: 550px;
+    width: 100%;
+    max-width: 855px;
+    margin: 60px auto 0;
+    position: relative;
+
+    img {
+      max-width: 855px;
+      width: 100%;
+      height: 550px;
+      display: none;
+      object-fit: cover;
+    }
+    .left-button,
+    .right-button {
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      color: #fff;
+      background-color: #333;
+      font-size: 40px;
+      border-radius: 50%;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+    .left-button {
+      position: absolute;
+      left: 0px;
+      top: 40%
+    }
+    .right-button {
+      position: absolute;
+      right: 0px;
+      top: 40%
+    }
+    .carousel-active-right{
+      display: block;
+      position: absolute;
+      animation-name: slideInRight;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+    }
+    .carousel-inactive-right{
+      display: block;
+      position: relative;
+      animation-name: slideOutRight;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+    .carousel-active-left{
+      display: block;
+      position: absolute;
+      animation-name: slideInLeft;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      visibility: visible;
+
+    }
+    .carousel-inactive-left{
+      display: block;
+      position: relative;
+      animation-name: slideOutLeft;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      visibility: visible;
+      animation-fill-mode: forwards;
+      // opacity: 0;
+    }
+  }
+
+
+@keyframes slideInRight {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  to {
+    left: 0%;
+  }
+}
+//
+@keyframes slideOutRight {
+  from {
+    left: 0%;
+  }
+
+
+  to {
+    left: -100%;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  to {
+    left: 0%;
+  }
+}
+//
+@keyframes slideOutLeft {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: 100%;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
