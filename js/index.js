@@ -41,24 +41,25 @@ dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown)); // m
 class TabLink {
   constructor(element) {
     this.element = element;
-    this.dataTab = this.element.dataset.tab;
-    this.itemElement = document.querySelector(`.tabs-item[data-tab = "${this.dataTab}"]`);
-    this.tabItem = new TabItem(this.itemElement);
+    this.data = this.element.dataset.tab;
+    this.item = document.querySelector(`.tabs-item[data-tab = "${this.data}"]`);
+    this.tabItem = new TabItem(this.item);
     this.element.addEventListener('click', () => {
       this.select();
     });
-  }
+  };
 
   select() {
     const links = document.querySelectorAll('.tabs-link');
 
-    links.forEach(item => {
-      item.classList.remove('tabs-link-selected');
+    links.forEach(link => {
+      link.classList.remove('tabs-link-selected');
     });
 
     this.element.classList.add('tabs-link-selected');
 
     this.tabItem.select();
+    // console.log('works');
   }
 } // TabLink
 
@@ -70,13 +71,14 @@ class TabItem {
   }
 
   select() {
-    let allTabLinks = document.querySelectorAll('.tabs-item');
+    let items = document.querySelectorAll('.tabs-item');
 
-    allTabLinks.forEach(item => {
+    items.forEach(item => {
       item.classList.remove('tabs-item-selected');
     });
 
     this.element.classList.add('tabs-item-selected');
+    // console.log('working');
   }
 
 } // TabItem
