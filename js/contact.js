@@ -59,7 +59,6 @@ class FaqLink {
       this.tabData = this.element.dataset.tab;
       
       this.answer = document.querySelector(`.answer[data-tab="${this.tabData}"]`);
-      console.log(this.answer); 
 
       this.element.addEventListener('click', () => {this.selectFaq()});
     }
