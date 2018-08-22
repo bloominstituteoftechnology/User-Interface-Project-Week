@@ -165,7 +165,8 @@ p {
 .container,
 .navbar,
 .footer-container,
-.copyright {
+.copyright,
+h1 {
   max-width: 880px;
   width: 100%;
   margin: 0 auto;
@@ -175,8 +176,9 @@ p {
   .container,
   .navbar,
   .footer-container,
-  .copyright {
-    padding: 0 3%;
+  .copyright,
+  h1 {
+    padding: 0 4%;
   }
 }
 .jumbotron {
@@ -219,6 +221,11 @@ p {
   width: 135px;
   height: 46px;
   border: 1px solid #222222;
+}
+@media ( max-width: 517px ) {
+  .button {
+    width: 100%;
+  }
 }
 header {
   position: fixed;
@@ -270,7 +277,7 @@ footer {
 }
 @media ( max-width: 517px ) {
   footer {
-    margin-top: 80px;
+    margin-top: 65px;
   }
 }
 footer h2 {
@@ -333,8 +340,11 @@ footer .copyright {
 footer .copyright p {
   font-size: 12px;
 }
-.home h1 {
+.home-h1 {
   padding-top: 325px;
+}
+.home {
+  margin-bottom: 80px;
 }
 .home .top-content {
   display: flex;
@@ -393,7 +403,7 @@ footer .copyright p {
 }
 @media ( max-width: 517px ) {
   .home .projects-header {
-    margin-bottom: 32px;
+    margin-bottom: 25px;
   }
 }
 .home .mid-content {
@@ -416,8 +426,7 @@ footer .copyright p {
 }
 @media ( max-width: 517px ) {
   .home .mid-content .project-container {
-    margin-top: 275px;
-    margin-bottom: 80px;
+    margin-bottom: 70px;
   }
 }
 .home .mid-content .project-container .desktop {
@@ -430,11 +439,12 @@ footer .copyright p {
   }
 }
 .home .mid-content .project-container .mobile {
-  position: absolute;
   display: none;
-  align-self: flex-start;
-  width: 100%;
-  left: 0;
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  margin-top: 100px;
+  left: 50%;
 }
 @media ( max-width: 517px ) {
   .home .mid-content .project-container .mobile {
@@ -480,14 +490,25 @@ footer .copyright p {
     max-width: 100%;
   }
 }
-.services h1 {
+.services-h1 {
   padding-top: 157px;
   margin-bottom: 20px;
+}
+@media ( max-width: 517px ) {
+  .services .top-content {
+    margin-top: 40px;
+  }
 }
 .services .tab-nav {
   display: flex;
   justify-content: space-between;
   margin: 45px 0;
+}
+@media ( max-width: 517px ) {
+  .services .tab-nav {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
 }
 .services .tab-nav .tab-link {
   display: flex;
@@ -500,6 +521,12 @@ footer .copyright p {
   border: 1px solid #222222;
   cursor: pointer;
 }
+@media ( max-width: 517px ) {
+  .services .tab-nav .tab-link {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 .services .tab-nav .tab-link:hover {
   color: #FFFFFF;
   background: #222222;
@@ -507,6 +534,7 @@ footer .copyright p {
 .services .tab-nav .current-tab {
   color: #FFFFFF;
   background: #5E9FB9;
+  border: 1px solid #B5C0C6;
 }
 .services .tab {
   display: none;
@@ -515,8 +543,8 @@ footer .copyright p {
 }
 @media ( max-width: 517px ) {
   .services .tab {
-    flex-direction: column-reverse;
-    padding: 35px 0 10px;
+    flex-direction: column;
+    margin-bottom: 0;
   }
 }
 .services .tab .text-container {
@@ -527,7 +555,6 @@ footer .copyright p {
 @media ( max-width: 517px ) {
   .services .tab .text-container {
     max-width: 100%;
-    padding: 30px 0 0;
   }
 }
 .services .tab .text-container p {
