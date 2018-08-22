@@ -1,7 +1,8 @@
 // JS goes here
-class TopicLink {
-  constructor(topic) {
-    this.element = topic;
+class TabLink {
+  constructor(tablink) {
+    this.element = tablink;
+    
     
     // Get the custom data attribute on the Topic
     this.data = this.element.dataset.tab;
@@ -18,11 +19,11 @@ class TopicLink {
 
   select() {
     // Get all of the elements with the tab class
-    const topics = document.querySelectorAll('.tab');
+    const tabs = document.querySelectorAll('.tab');
 
     // Using a loop or the forEach method remove the 'tab-selected' class from all of the topics
-    topics.forEach( topic => {
-      topic.classList.remove('tab-selected')
+    Array.from(tabs).forEach( tab => {
+      tab.classList.remove('tab-selected')
     });
 
     // Add a class named "tab-selected" to this link
@@ -50,10 +51,12 @@ class TabItem {
   }
 }
 
-// START HERE: create a reference to the ".tabs-link" class
-let topics = document.querySelectorAll('.topics');
+// START HERE: create a reference to the ".tab" class
+// let topics = document.querySelectorAll('.topics');
+let tabs = document.querySelectorAll('.tab');
 // Following the code in the Dropdown file, iterate through the array you created above creating a new instance of the TabLink class for each item. 
-topics = Array.from(topics).map( topic => new TopicLink(topic));
+// topics = Array.from(topics).map( topic => new TopicLink(topic));
+tabs = Array.from(tabs).map( tablink => new TabLink(tablink));
 
 // Do this last!!!
-topics[0].select()
+tabs[0].select()
