@@ -18,5 +18,5 @@ class TabLink {
 
 let tabLinks = Array.from( document.querySelectorAll( '.tab-link' ) ).map( link => new TabLink( link ) );
 
-tabLinks[0].select();
-let currentTab = tabLinks[0];
+tabLinks[1].select();
+let currentTab = tabLinks[1];
