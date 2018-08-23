@@ -7,18 +7,29 @@ function addFire(){
 	let fireRan = Math.floor(Math.random() * 10);
 	let toFire = document.querySelectorAll('.fired');
 
-	let bol;
-
 	if (toFire[fireRan].classList.value.indexOf('show-fire') !== -1){
-		alert('you already fired this employee');
+		let possible = [];
+		toFire.forEach(function(employee){
+			if (employee.classList.value.indexOf('show-fire') === -1){
+				possible.push(employee);
+			}
+		});
+		let newRan = Math.floor(Math.random() * possible.length);
+		console.log(newRan);
+		console.log(possible);
+		possible[newRan].classList.add('show-fire');
 	} else {
 		toFire[fireRan].classList.add('show-fire');
-		alert('The customer is always right');
 	}
 }
 
 
 function generatorEmployess(){
+
+	let employs = document.querySelectorAll('.emlpoyees-section');
+	employs.forEach(function(item){
+		item.classList.add('show-emps');
+	})
 
 	btnFire[0].classList.add('show-fire');
 
@@ -37,7 +48,7 @@ function generatorEmployess(){
 	for (let i = 0; i < 10; i++){
 		let ranName = names[Math.floor(Math.random() * 10)];
 		let ranPosish = positions[Math.floor(Math.random() * 10)];
-		let yearsCompany = Math.floor(Math.random() * 15) +1;
+		let yearsCompany = Math.floor(Math.random() * 15);
 		let employee = new Employee ({
 			'name': ranName,
 			'position': ranPosish,
