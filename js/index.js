@@ -1,4 +1,15 @@
 // JS goes here
+// Animations
+let navTitle = document.querySelector('.nav-title');
+navTitle.addEventListener('mouseover', () => {
+    TweenMax.fromTo(navTitle, 1, {scale: 1}, {scale: 1.15, ease: Elastic.easeOut});
+});
+
+navTitle.addEventListener('mouseout', () => {
+    TweenMax.fromTo(navTitle, 1, {scale: 1.15}, {scale: 1, ease: Elastic.easeOut});
+});
+
+
 
 // Navigation expand/collapse
 
@@ -6,16 +17,26 @@ let navButton = document.querySelector('.nav-button');
 let navigation = document.querySelector('#navigation');
 let isOpen = false;
 
-navButton.addEventListener('click', function () {
+navButton.addEventListener('click', () => {
     if (isOpen == false) {
         navigation.style.display = 'flex';
         navButton.innerHTML = `<img src = './img/nav-hamburger-close.png'></img>`;
+        TweenMax.fromTo(navigation, 0.5, {scale: 0, y: -800}, {scale: 1.0, y: 0, ease: Expo.easeOut});
         isOpen = true;
     } else {
-        navigation.style.display = 'none';
+        
         navButton.innerHTML = `<img src = './img/nav-hamburger.png'></img>`
+        TweenMax.fromTo(navigation, 0.5, {scale: 1.0, y: 0, display: 'flex'}, {scale: 0, y:-800, display: 'none', ease: Expo.easeOut});
         isOpen = false;
     }
+});
+
+navButton.addEventListener('mouseover', () => {
+    TweenMax.fromTo(navButton, 1, {scale: 1}, {scale: 1.15, ease: Elastic.easeOut});
+});
+
+navButton.addEventListener('mouseout', () => {
+    TweenMax.fromTo(navButton, 1, {scale: 1.15}, {scale: 1, ease: Elastic.easeOut});
 });
 
 var mobileWidth = window.matchMedia('(min-width: 500px)');
@@ -78,14 +99,17 @@ class TabLink {
             each.style.display = 'none';
         });
             card.style.display = 'inline-block';
+            TweenMax.fromTo(card, 1, {opacity: 0}, {opacity: 1, ease: Power1.easeOut});
     }
 
     tabSelect(element) {
         let allTabs = document.querySelectorAll('.tab-link');
         allTabs.forEach(function (each) {
             each.classList.remove('active-link');
+            TweenMax.fromTo(each, 0.1, {scale: 1}, {scale: 1, ease: Power1.easeOut});
         });
         element.classList.add('active-link');
+        TweenMax.fromTo(element, 0.1, {scale: 1}, {scale: 1.15, ease: Power1.easeOut});
     }
 }
 
@@ -96,6 +120,7 @@ if (document.title === 'Services') {
     tabs = Array.from(tabs).map(tabs => new TabLink(tabs));
 
     tabs[0].showCard(tabs[0].card);
+    tabs[0].tabSelect(tabs[0].element);
 
 
 }
@@ -170,11 +195,11 @@ class Carousel {
 
     lastImage() {
         let lastImg = this.images[this.currentIndex];
-        TweenMax.fromTo(lastImg, 0.5, {
-            ease: Power1.easeOut,
+        TweenMax.fromTo(lastImg, 1, {
+            ease: Expo.easeOut,
             x: 0
         }, {
-            ease: Power1.easeOut,
+            ease: Expo.easeOut,
             x: -1200
         });
         setTimeout(function () {
@@ -205,11 +230,11 @@ class Carousel {
     nextImage() {
         let lastImg = this.images[this.currentIndex];
 
-        TweenMax.fromTo(lastImg, 0.5, {
-            ease: Power1.easeOut,
+        TweenMax.fromTo(lastImg, 1, {
+            ease: Expo.easeOut,
             x: 0
         }, {
-            ease: Power1.easeOut,
+            ease: Expo.easeOut,
             x: 1200
         });
         setTimeout(function () {
