@@ -3,11 +3,13 @@
 // header .head-nav
 //      div
 // 		    h1
-// 		    nav .hamburglar-links .hidden
-// 			    a
-// 			    a
-//              //a
 // 		    img .hamburglar-toggle
+// 
+// nav .hamburglar-links (.show-links)
+//      div
+//          a
+//          a
+//          //a
 
 .head-nav {
     .center;
@@ -15,11 +17,11 @@
     color: @nav-text;
     font-weight: bold;
     font-size: 2.4rem;
-    z-index: 98;
+    z-index: 99;
     position: fixed;
     top: 0;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
 
     div {
         width: 100%;
@@ -31,29 +33,42 @@
         @media @mobile {
             max-width: @mobile-width;
         }
+
+        .hamburglar-toggle {
+            cursor: pointer;
+        }
+    }
+
+}
+
+.hamburglar-links {
+    .center;
+    position: fixed;
+    z-index: 99;
+    background-color: rgba(151,164,176,0.97);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
     }
 
     a {
-        .center;
         color: @nav-text;
+        font-weight: bold;
         font-size: 4.8rem;
         line-height: 85px;
+        text-decoration: none;
         &:hover {
             color: @nav-hover;
         }
     }
+}
 
-    .hamburglar-toggle {
-        cursor: pointer;
-    }
-
-    .hamburglar-links {
-        background-color: green;
-        width: 100%;
-        height: 100%;
-    }
-
-    .hidden {
-        display: none;
-    }
+.show-links {
+    display: flex;
 }

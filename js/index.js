@@ -4,7 +4,7 @@
 const menu = document.querySelector('.hamburglar-links');
 const menuToggle = document.querySelector('.hamburglar-toggle');
 menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+    menu.classList.toggle('show-links');
 
     if(menuToggle.src.indexOf('nav-hamburger.png') !== -1) {
         menuToggle.src = 'img/nav-hamburger-close.png';
@@ -39,8 +39,8 @@ class TabItem {
 
     select() {
         const items = document.querySelectorAll('.tab-item');
-        Array.from(items).forEach((item) => item.classList.remove('show') );
-        this.element.classList.add('show');
+        Array.from(items).forEach((item) => item.classList.remove('show-item') );
+        this.element.classList.add('show-item');
     }
 }
 
