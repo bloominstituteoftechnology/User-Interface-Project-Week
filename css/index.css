@@ -592,7 +592,7 @@ html {
 .services-page .main-content .tab-component .tab {
   border: 1px solid #222222;
   height: 50px;
-  width: 185px;
+  width: 22%;
   font-weight: bold;
   font-size: 2.8rem;
   color: #222222;
@@ -605,7 +605,7 @@ html {
 }
 @media (max-width: 800px) {
   .services-page .main-content .tab-component .tab {
-    width: 150px;
+    width: 22%;
   }
 }
 @media (max-width: 500px) {
@@ -623,6 +623,15 @@ html {
 .services-page .main-content .cards-container .card {
   margin-top: 55px;
   display: none;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  .services-page .main-content .cards-container .card {
+    display: flex;
+    justify-content: center;
+    align-items: none;
+    flex-direction: column;
+  }
 }
 @media (max-width: 500px) {
   .services-page .main-content .cards-container .card {
@@ -639,9 +648,12 @@ html {
   color: #222222;
   font-size: 2.3rem;
 }
+.services-page .main-content .cards-container .card p {
+  margin-top: 20px;
+}
 @media (max-width: 800px) {
   .services-page .main-content .cards-container .card p {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 }
 @media (max-width: 500px) {
@@ -657,7 +669,7 @@ html {
 }
 @media (max-width: 800px) {
   .services-page .main-content .cards-container .card img {
-    width: 42%;
+    width: 75%;
   }
 }
 @media (max-width: 500px) {
@@ -713,16 +725,13 @@ html {
 }
 .about-page .main-content {
   width: 83%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+  margin-top: 40px;
 }
 .about-page .main-content .people-tabs {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
 }
 .about-page .main-content .people-tabs .person {
@@ -731,10 +740,48 @@ html {
   justify-content: center;
   align-items: none;
   flex-direction: column;
+  position: relative;
 }
 .about-page .main-content .people-tabs .person img {
-  opacity: 0.3;
   width: 100%;
+  opacity: 1;
+  transition: opacity 0.7s;
+}
+.about-page .main-content .people-tabs .person img:hover {
+  opacity: 0.2;
+}
+.about-page .main-content .people-tabs .person .text-content {
+  position: absolute;
+  width: 90%;
+  left: 8%;
+  z-index: -1;
+}
+.about-page .main-content .people-tabs .person .text-content h1 {
+  font-weight: 500;
+  font-size: 2.4rem;
+  margin-top: 10px;
+}
+.about-page .main-content .people-tabs .person .text-content h2 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+.about-page .main-content .people-tabs .person .text-content h3 {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 24px;
+  margin-top: 10px;
+}
+.about-page .main-content .card h2 {
+  font-weight: 500;
+  font-size: 2.4rem;
+  margin-top: 20px;
+}
+.about-page .main-content .card p {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 24px;
+  margin-top: 12px;
 }
 .contact-page h2 {
   font-weight: bold;
