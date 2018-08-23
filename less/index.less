@@ -1,10 +1,21 @@
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0b1 | 201101
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
+
+@import './variables';
+@import './mixins';
+@import './header';
+@import './home-content';
+@import './services-content';
+@import './main-content';
+@import './about';
+@import './footer';
+@import './carousel';
+
 
 html,body,div,span,applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,
@@ -58,3 +69,25 @@ table{
 }
 
 /* Your Code Goes Here */
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  max-width: 1024px;
+  width: 100%;
+  background-color: @background;
+  color: @color;
+  font-weight: @font-weight;
+  font-size: @font-size;
+  line-height: @line-height;
+  font-family: @font-family;
+
+  @media @phone {
+    max-width: 320px;
+  }
+
+}
