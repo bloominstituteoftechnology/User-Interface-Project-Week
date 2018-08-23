@@ -29,11 +29,15 @@ menuCloseButton.addEventListener('click', (e) => {
 
 class TabLink {
     constructor(tab){
-      // assign this.element to the element reference
-      this.element = tab;
-      //console.log(this.element);
-      // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
-      this.cards = document.querySelectorAll('.services-bottom-content .img-content img');
+        // assign this.element to the element reference
+        this.element = tab;
+        //console.log(this.element);
+        // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
+        // Get the tab data attribute and save the value here
+        this.tabData = this.element.dataset.tab; 
+        // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
+
+        this.cards = document.querySelectorAll(`.services-bottom-content-section[data-tab="${this.tabData}"]`);
       //console.log(this.cards);
   
       // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
@@ -57,8 +61,8 @@ class TabLink {
         this.element.classList.add('active-tab');
 
       // Select all of the elements with the .card class on them
-      const cards = document.querySelectorAll('.services-bottom-content .img-content img');
-      //console.log(cards);
+      const cards = document.querySelectorAll('.services-bottom-content-section');
+      console.log(cards);
       // Iterate through the NodeList setting the display style each one to 'none'
       cards.forEach(function(card) {
           console.log(card);
