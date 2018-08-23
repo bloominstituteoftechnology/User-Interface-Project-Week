@@ -10,10 +10,10 @@ class TabImage {
 
   switch() {
     let i = Math.floor(images.indexOf(this)/3)
-    console.log('i:', i);
     images.forEach(item => display[i].classList.remove(item.dataTab))
     display[i].classList.add(this.dataTab)
-    paragraphs.forEach(item => {
+
+    paragraphs.slice(i*3, i*3+3).forEach(item => {
       item.classList.add("inactive")
       this.dataTab === item.dataset.paragraph ?
       item.classList.remove('inactive') :
@@ -25,13 +25,15 @@ class TabImage {
 }
 
 
-const display = d.querySelectorAll('.main-img')
+let display = Array.from(d.querySelectorAll('.main-img'))
+// display = Array.from(display)
 
-const paragraphs = d.querySelectorAll('article > p')
+let paragraphs = Array.from(d.querySelectorAll('article > p'))
+// paragraphs = Array.from(paragraphs)
 
 let images = d.querySelectorAll('.img')
 images = Array.from(images).map(image => new TabImage(image))
 
-console.log(images);
-console.log(display);
-console.log(paragraphs);
+// console.log(images);
+// console.log(display);
+// console.log(paragraphs);
