@@ -16,43 +16,9 @@ close.addEventListener('click', () => {
     close.classList.toggle('img-hide');
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let menu = document.querySelector('.hamburger');
-// let content = document.querySelector('.dropdown-content');
-// let close = document.querySelector('.menu-close');
-
-// function expand() {
-//         menu.classList.toggle('hidden');
-//         content.classList.toggle('hidden');
-//         close.classList.toggle('hidden');
-// };
-
-// menu.addEventListener('click', () => {expand()});
-// close.addEventListener('click', () => {expand()});
-
-
-
-
-
-
-
-
+menu.addEventListener('mouseenter', () => {
+  TweenMax.to(menu, 0.5, {rotation:360, scale:1});
+})
 
 
 
