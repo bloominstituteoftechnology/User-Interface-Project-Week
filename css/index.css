@@ -1,1 +1,732 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+.contenttitles {
+  color: black;
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.contenttext {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+.btn {
+  border: 1px solid black;
+  width: 25%;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 2px 2px;
+}
+.content-chunks {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  margin-top: 60px;
+}
+.recentprojects {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  margin-top: 60px;
+  position: relative;
+}
+.graysquares {
+  position: absolute;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  background: #d8d8d8;
+  width: 20%;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  margin-top: -25px;
+}
+.projectstext {
+  width: 60%;
+  line-height: 1.75;
+  align-item: center;
+  margin-left: 20%;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.btnhover {
+  background: #222222;
+  color: white;
+}
+html {
+  font-family: Arial, sans-serif;
+}
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+.container .topbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #97A4B0;
+  padding: 10px;
+  padding-right: 40px;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+  width: 95%;
+}
+.container .topbar .hamburger {
+  width: 4%;
+  height: 30px;
+}
+@media (max-width: 500px) {
+  .container .topbar .hamburger {
+    width: 9%;
+  }
+}
+.container .topbar .logo {
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  font-size: 36px;
+  letter-spacing: 8px;
+  color: white;
+  padding-left: 40px;
+}
+.container .navlinks {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  max-width: 1000px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #97A4B0;
+  opacity: 0.9;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+.container .navlinks .nav-link {
+  color: white;
+  font-size: 48px;
+  line-height: 85px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.container .navlinks .nav-link:hover {
+  color: #222222;
+}
+.container .hide {
+  display: none;
+}
+.container .jumbotron {
+  display: flex;
+  flex-direction: column;
+}
+.container .jumbotron .jumbotron-img {
+  position: relative;
+}
+@media (max-width: 500px) {
+  .container .jumbotron .jumbotron-img {
+    width: 100%;
+    height: 300px;
+  }
+}
+.container .jumbotron .slogan {
+  position: absolute;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  margin-left: 50px;
+  margin-top: 300px;
+}
+@media (max-width: 500px) {
+  .container .jumbotron .slogan {
+    font-size: 40px;
+    margin-top: 100px;
+    line-height: 60px;
+  }
+}
+.container .sjarchitects {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  margin-top: 60px;
+}
+@media (max-width: 500px) {
+  .container .sjarchitects {
+    flex-direction: column-reverse;
+    margin-left: 0%;
+    justify-content: center;
+  }
+}
+.container .sjarchitects .content-titles {
+  color: black;
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .container .sjarchitects .content-titles {
+    margin-top: 40px;
+  }
+}
+.container .sjarchitects .content-text {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+.container .sjarchitects .button {
+  border: 1px solid black;
+  width: 25%;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 2px 2px;
+}
+@media (max-width: 500px) {
+  .container .sjarchitects .button {
+    width: 70%;
+  }
+}
+.container .sjarchitects .button:hover {
+  background: #222222;
+  color: white;
+}
+.container .futuristic-designs {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  margin-top: 60px;
+}
+@media (max-width: 500px) {
+  .container .futuristic-designs {
+    flex-direction: column;
+    margin-left: 0%;
+    justify-content: center;
+  }
+}
+.container .futuristic-designs .stuff {
+  margin-left: 4%;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .container .futuristic-designs .stuff {
+    margin-left: 0%;
+    margin-top: 40px;
+  }
+}
+.container .futuristic-designs .stuff .content-titles {
+  color: black;
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.container .futuristic-designs .stuff .content-text {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+.container .futuristic-designs .stuff .content-text-2 {
+  width: 100%;
+}
+.container .futuristic-designs .stuff .button {
+  border: 1px solid black;
+  width: 25%;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 2px 2px;
+}
+@media (max-width: 500px) {
+  .container .futuristic-designs .stuff .button {
+    width: 70%;
+  }
+}
+.container .futuristic-designs .stuff .button:hover {
+  background: #222222;
+  color: white;
+}
+.container .recent-projects-1 {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  margin-top: 60px;
+  position: relative;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-1 .projects-img {
+    width: 100%;
+  }
+}
+.container .recent-projects-1 .content-titles {
+  color: black;
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.container .recent-projects-1 .projects-titles {
+  position: absolute;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  background: #d8d8d8;
+  width: 20%;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  margin-top: -25px;
+  margin-left: 75%;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-1 .projects-titles {
+    width: 65%;
+    margin-top: -15px;
+    padding: 20px;
+    font-size: 28px;
+    letter-spacing: 8px;
+    margin-left: 11%;
+  }
+}
+.container .recent-projects-1 .projects-text {
+  width: 60%;
+  line-height: 1.75;
+  align-item: center;
+  margin-left: 20%;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-1 .projects-text {
+    margin-top: 100px;
+  }
+}
+.container .recent-projects-2 {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  margin-top: 60px;
+  position: relative;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-2 {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .container .recent-projects-2 .projects-img {
+    width: 100%;
+  }
+}
+.container .recent-projects-2 .projects-titles {
+  position: absolute;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  background: #d8d8d8;
+  width: 20%;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  margin-top: -25px;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-2 .projects-titles {
+    width: 65%;
+    margin-top: -15px;
+    padding: 30px;
+    font-size: 32px;
+    letter-spacing: 8px;
+    margin-left: 11%;
+  }
+}
+.container .recent-projects-2 .projects-text {
+  width: 60%;
+  line-height: 1.75;
+  align-item: center;
+  margin-left: 20%;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-2 .projects-text {
+    margin-top: 100px;
+  }
+}
+.container .recent-projects-3 {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  margin-top: 60px;
+  position: relative;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-3 {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .container .recent-projects-3 .projects-img {
+    width: 100%;
+  }
+}
+.container .recent-projects-3 .projects-titles {
+  position: absolute;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  background: #d8d8d8;
+  width: 20%;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  margin-top: -25px;
+  margin-left: 75%;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-3 .projects-titles {
+    width: 65%;
+    margin-top: -15px;
+    padding: 20px;
+    font-size: 24px;
+    letter-spacing: 8px;
+    margin-left: 11%;
+  }
+}
+.container .recent-projects-3 .projects-text {
+  width: 60%;
+  line-height: 1.75;
+  align-item: center;
+  margin-left: 20%;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+@media (max-width: 500px) {
+  .container .recent-projects-3 .projects-text {
+    margin-top: 100px;
+  }
+}
+.container footer {
+  background: #828282;
+}
+.container footer .contact-info {
+  display: flex;
+  justify-content: space-evenly;
+  color: lightgray;
+  margin-top: 20px;
+  padding-top: 20px;
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  .container footer .contact-info {
+    flex-direction: column;
+    line-height: 2;
+    margin-left: 5%;
+  }
+}
+.container footer .contact-info .footer-titles {
+  font-weight: bold;
+  color: white;
+}
+.container footer .contact-info .email {
+  background: white;
+  width: 70%;
+  border-radius: 3px;
+  padding-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container footer .contact-info .never-share {
+  font-size: 12px;
+  font-style: italic;
+}
+.container footer .copyright {
+  font-size: 12px;
+  color: lightgray;
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .container footer .copyright {
+    text-align: left;
+    margin-top: 40px;
+    margin-left: 5%;
+    padding-bottom: 40px;
+  }
+}
+.tab-items {
+  display: flex;
+  justify-content: space-between;
+}
+html {
+  font-family: Arial, sans-serif;
+}
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+.container .topbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #97A4B0;
+  padding: 10px;
+  padding-right: 40px;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+  width: 95%;
+}
+.container .topbar .hamburger {
+  width: 4%;
+  height: 30px;
+}
+.container .topbar .logo {
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  letter-spacing: 8px;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding-left: 40px;
+}
+.container .navlinks {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  max-width: 1000px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #97A4B0;
+  opacity: 0.9;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+.container .navlinks .nav-link {
+  color: white;
+  font-size: 48px;
+  line-height: 85px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.container .navlinks .nav-link:hover {
+  color: #222222;
+}
+.container .hide {
+  display: none;
+}
+.container .serv-jumbotron {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.container .serv-jumbotron .services {
+  position: absolute;
+  font-weight: bold;
+  font-size: 64px;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin-left: 50px;
+  margin-top: 160px;
+}
+.container .content {
+  margin: 50px;
+}
+.container .content .serv-include {
+  margin-bottom: 30px;
+  line-height: 1.75;
+}
+.container .tablinks {
+  display: flex;
+  justify-content: space-between;
+}
+.container .tablinks .tablink {
+  border: 1px solid black;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  box-shadow: 2px 2px #97A4B0;
+}
+.container .tablinks .tablink:hover {
+  color: white;
+  background: #97A4B0;
+}
+.container .tabitem {
+  display: flex;
+  justify-content: space-between;
+  display: none;
+}
+.container .tabitem .tabitem-text {
+  width: 50%;
+}
+.container .tabitem .tabitem-text .tabitem-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.container .tabitem .tabitem-text .tabitem-p {
+  line-height: 1.75;
+}
+.container .tabitem-show {
+  display: flex;
+  justify-content: space-between;
+}
