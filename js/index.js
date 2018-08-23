@@ -36,7 +36,7 @@ class TabCard {
 }
 let tabs = document.querySelectorAll(".tab");
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
-tabs[0].selectTab();
+
 
 const hamburger = document.querySelector('.hamburger');
 const mainNav = document.querySelector('.main-nav');
