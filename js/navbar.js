@@ -1,6 +1,7 @@
 // Menu animation
 const toggleNav = () => {
   !open ? (
+    hamburgers.forEach(element => element.classList.toggle('flex')),
     navContainer.classList.toggle('flex'),
     nightMode.classList.toggle('flex'),
     TweenMax.fromTo( navContainer, .3, {height: '0vh'}, {height: '100vh'} ),
@@ -8,6 +9,7 @@ const toggleNav = () => {
     TweenMax.fromTo( nightMode, .4, {opacity: 0}, {opacity: 1, delay: .2} ),
     open = true
   ) : (
+    hamburgers.forEach(element => element.classList.toggle('flex')),
     TweenMax.fromTo( navContainer, .2, {height: '100vh'}, {height: '0vh', delay: .2} ),
     TweenMax.fromTo( nav, .2, {y: 0, opacity: 1}, {y: -33, opacity: 0} ),
     TweenMax.fromTo( nightMode, .2, {opacity: 1}, {opacity: 0} ),
@@ -18,10 +20,10 @@ const toggleNav = () => {
 
 const navContainer = document.querySelector('.nav-container');
 const nav = document.querySelector('nav');
-const hamburger = document.querySelector('.hamburger');
+const hamburgers = Array.from(document.querySelectorAll('.hamburger'));
 let open = false;
 
-hamburger.addEventListener('click', toggleNav);
+hamburgers.forEach(element => element.addEventListener('click', toggleNav));
 
 // Night mode
 const toggleNightMode = () => {
