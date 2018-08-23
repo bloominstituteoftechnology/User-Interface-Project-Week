@@ -28,7 +28,7 @@ const toggleNightMode = () => {
   document.querySelector('body').classList.toggle('dark');
   (document.querySelector('header').classList.toggle('header-dark'));
   (document.querySelector('footer').classList.toggle('footer-dark'));
-  Array.from(document.querySelectorAll('p, h2:not(.project-square), h3, .button')).forEach(element => element.classList.toggle('light'));
+  Array.from(document.querySelectorAll('p, h2:not(.project-square), h3, .button, label')).forEach(element => element.classList.toggle('light'));
 };
 
 const nightMode = document.querySelector('.night-mode');
