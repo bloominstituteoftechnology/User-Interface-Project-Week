@@ -2,18 +2,36 @@
   position: fixed;
   display: block;
   background: @nav-bg;
-  height: 50px;
   width: 100%;
   z-index: 10;
+
+  .open-menu {
+    max-width: 850px;
+    width: 100%;
+    position: absolute;
+    margin: -89px 0 0 89.4%;
+    cursor: pointer;
+
+    @media @mobile {
+      max-width: 320px;
+      width: 100%;
+      margin-left: 88.4%;
+    }
+  }
+
+  .dropdown-hidden {
+    display: none;
+  }
 
   .nav-container {
     max-width: 850px;
     width: 95%;
+    height: 50px;
     margin: 0 auto;
     padding-top: 12px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
   
     .logo-heading {
       font-size: 2.4rem;
@@ -23,11 +41,47 @@
   
     .hamburger-close {
       height: 20px;
+      cursor: pointer;
     }
   }//nav-container
 
   .expanded-nav {
-    display: none;
+    width: 100%;
+    height: 539px;
+    padding-top: 50px;
+
+    @media @mobile {
+      max-width: 320px;
+      width: 100%;
+      height: 443px;
+    }
+
+    .navigation {
+      display: flex;
+      flex-direction: column;
+      margin: 7.5% 0 0 41%;
+
+      @media @mobile {
+        width: 90%;
+        justify-content: center;
+        margin-left: 19%;
+      }
+
+      .nav-link {
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 5rem;
+        color: @jumbotron;
+        margin: 20px 0;
+        cursor: pointer;
+        &:hover {
+          color:#3B2C1C;
+        }
+      }
+    }
+
+
+    
   }//expanded-nav
 
 }//main-navigation
