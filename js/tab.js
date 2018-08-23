@@ -48,7 +48,12 @@ class TabCard {
   }
   selectCard() {
     // Update the style of this.element to display = flex
+    let cards = document.querySelectorAll('.card');
+    cards.forEach((card) => {
+      TweenMax.to(card, 1, { opacity: 0 });
+    });
     this.element.style.display = 'flex';
+    TweenMax.to(this.element, 1, { opacity: 1 });
     console.log(this.element);
   }
 }
@@ -59,4 +64,4 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map((tabItem) => new TabLink(tabItem));
 
 //Once you are complete, call the .select method on the first tab
-tabs[0].selectTab();
+// tabs[0].selectTab();
