@@ -1,3 +1,32 @@
+// Image Slide Event
+const slideImages = document.querySelectorAll('.slide');
+
+function checkSlide() {
+  slideImages.forEach(slideImage => {
+    const slideInAt = (window.scrollY + window.innerHeight) - slideImage.height / 2;
+    const halfShown = slideInAt > slideImage.offsetTop;
+    const imageBottom = slideImage.offsetTop  + slideImage.height;
+    const notPassed = window.scrollY < imageBottom;
+    const hasSlideClass = slideImage.classList.contains('slide');
+
+    const slide = () => {
+      slideImage.classList.remove('slide');
+
+      if (slideImage.classList.contains('slideFromRight')) {
+        TweenMax.fromTo('.slideFromRight', 1, {x: 50, opacity: 0}, {x: 0, opacity: 1});
+      } else if (slideImage.classList.contains('slideFromLeft')) {
+        TweenMax.fromTo('.slideFromLeft', 1, {x: -50, opacity: 0}, {x: 0, opacity: 1});
+      }
+    }
+    
+    if (halfShown && notPassed && hasSlideClass) {
+      slide();
+    } 
+  })
+}
+
+window.addEventListener('scroll', checkSlide);
+
 // Navigation Bar
 const modalNavTween = TweenMax.from('.navigation', 0.5, {y: -200, skewY: 100});
 const modalModalTween = TweenMax.from('.modal', 0.5, {y: 200});
