@@ -48,7 +48,7 @@ header {
       overflow: hidden;
       transition: opacity .35s, visibility .35s, height .35s;
       &.open {
-        opacity: .9;
+        opacity: .95;
         visibility: visible;
         height: 100%;
         .cross {
@@ -70,9 +70,26 @@ header {
     display: none;
     &.open {
       display: flex;
+      height: 100%;
       align-content: center;
       justify-content: center;
       align-items: center;
+      align-self: center;
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        a {
+          text-decoration: none;
+          font-size: @nav-expanded-font-size;
+          color: @nav-font-color;
+          line-height: @nav-expanded-line-height;
+          font-weight: @nav-font-weight;
+          &:hover {
+            color: @nav-expanded-hover-color;
+          }
+        }
+      }
     }
   }
 }
