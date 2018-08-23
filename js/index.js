@@ -2,11 +2,15 @@
 const hamburger = document.querySelector("#ham-closed");
 const closeNav = document.querySelector("#ham-open");
 const mainNav = document.querySelector(".main-nav");
+const navShow = document.querySelector("#show-nav");
 
     hamburger.addEventListener("click", () => {
         mainNav.classList.toggle("hide-nav");
         hamburger.classList.toggle("hide-this");
         closeNav.classList.toggle("hide-hamburger");
+        navShow.classList.toggle("nav");
+        
+        
         console.log('hi');
     });
 
@@ -14,6 +18,8 @@ const mainNav = document.querySelector(".main-nav");
         mainNav.classList.toggle("hide-nav");
         hamburger.classList.toggle("hide-this");
         closeNav.classList.toggle("hide-hamburger");
+        navShow.classList.toggle("nav");
+        
     })
 
    
@@ -23,25 +29,35 @@ const mainNav = document.querySelector(".main-nav");
 
     // Services page-----------------------------
 
-    const button1 = document.querySelector(".btn-1");
-    const button2 = document.querySelector(".btn-2");
-    const button3 = document.querySelector(".btn-3");
-    const button4 = document.querySelector(".btn-4");
-    const middle = document.querySelector(".middle-section");
+    class BtnCreator {
+        constructor(btnItem) {
+            this.btn = btnItem;
+            this.btn.addEventListener('click', () => {
+                this.btnClick()
+            });
+            this.btnData = this.btn.dataset.tab;
+            this.tabContent = document.querySelector(`.content[data-tab="${this.btnData}"]`);
 
-    button1.addEventListener("click", () => {
-        middle.classList.toggle("button-1 content");
-        console.log("button 1 clicked");
-    });
+            this.tabContent = new Content(this.tabContent);
+        }
 
-    button2.addEventListener("click", () => {
-        middle.classList.toggle("button-2 content");
-    });
+        btnClick() {
+            console.log('This worked!');
+            this.tabContent.toggleContent();
+        }
+    }
 
-    button3.addEventListener("click", () => {
-        middle.classList.toggle("button-3 content");
-    });
+    class Content {
+        constructor(tabContent) {
+            console.log(tabContent);
+            this.tabContent = tabContent;
+        }
+        toggleContent() {
+            this.tabContent.classList.toggle("test-content");
+        }
+    }
+    
+    
+    let btns = document.querySelectorAll(".btn");
 
-    button4.addEventListener("click", () => {
-        middle.classList.toggle("button-4 content");
-    });
+    btns = Array.from(btns).map( btnItem => new BtnCreator(btnItem));
