@@ -20,8 +20,11 @@
 		}
 	}
 	.section2 {
+		@media @phone {
+			.column();
+		}
 		display: flex;
-		margin: 0 auto;
+		margin: 20px auto;
 		
 		.box {
 			display: flex;
@@ -41,6 +44,11 @@
 			.button {
 				.center();
 				.button-creator(@but-width,@but-height, @but-bg-color, @but-font-color, @p-font-size);
+
+				&:hover {
+					background-color: @but-hov-bg-color;
+					color: @but-hov-font-color;
+				}
 			}
 		}
 		.box1Img {
@@ -50,6 +58,10 @@
 		}
 	}
 	.section3 {
+		@media @phone {
+			.column();
+		}
+
 		display: flex;
 
 		.box2Img {
@@ -73,6 +85,11 @@
 			.button {
 				.center();
 				.button-creator(@but-width,@but-height, @but-bg-color, @but-font-color, @p-font-size);
+
+				&:hover {
+					background-color: @but-hov-bg-color;
+					color: @but-hov-font-color;
+				}
 			}
 		}
 	}
@@ -81,24 +98,30 @@
 		margin: @basic-margin;
 	}
 
-		
-
 		.project-box1 {
 			display: flex;
 			flex-direction: column;
-			margin: @basic-margin;
 			.center();
+			margin: @basic-margin;
 
+			@media @phone {
+				.column();
+			}
 			.villa-img {
 				img {
 					width: 100%;
+					position: absolute;
+					z-index: 1;
 				}
 			}
 			.project-villas {
-				align-self: flex-end;
+				position: relative;
+				top: -50px;
+				left: 41%;
 				.grey-label(@lab-width, @lab-height, @lab-bg-color, @lab-font-color, @p-font-size);
 			}
-			div {
+		}
+			.project-p {
 				display: flex;
 				flex-direction: column;
 				.center();
@@ -110,47 +133,65 @@
 					font-size: @p-font-size;
 				}
 			}
-		}
+		
 		.project-box2 {
-			margin: @basic-margin;
+			display: flex;
+			flex-direction: column;
+			.center();
+					
 			.outskirt-img {
 				img {
 					width: 100%;
+					position: absolute;
+					z-index: 1;
 				}
 			}
 			.project-outskirts {
-				align-self: flex-start;
-				.grey-label(@lab-width,@lab-height, @lab-bg-color, @lab-font-color, @p-font-size);
-			}
-			div {
-				p {
-
-				}
-				p {
-
-				}
+				position: relative;
+				top: -50px;
+				left: -41%;
+				.grey-label(@lab-width, @lab-height, @lab-bg-color, @lab-font-color, @p-font-size);
 			}
 		}
+			.project-p {
+				p {
+					padding: @home-project-p-padding;
+					margin: @basic-margin;
+				}
+				p {
+
+				}
+			}
+
 		.project-box3 {
+			display: flex;
+			flex-direction: column;
+			.center();
 			margin: @basic-margin;
+
 			.block-img {
 				img {
 					width: 100%;
+					position: absolute;
+					z-index: 1;	
 				}
 			}
 			.project-blocks {
-				align-self: flex-end;
-				.grey-label(@lab-width,@lab-height, @lab-bg-color, @lab-font-color, @p-font-size);
-			}
-			div {
-				p {
-
-				}
-				p {
-
-				}
+				position: relative;
+				top: -50px;
+				left: 41%;
+				.grey-label(@lab-width, @lab-height, @lab-bg-color, @lab-font-color, @p-font-size);
 			}
 		}
+			.project-p {
+				p {
+
+				}
+				p {
+
+				}
+			}
+		
 	
 }
 
