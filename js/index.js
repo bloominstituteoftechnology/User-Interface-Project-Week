@@ -35,7 +35,7 @@ let isOpen = false;
 navButton.addEventListener('click', () => {
     if (isOpen == false) {
         navigation.style.display = 'flex';
-        navButton.innerHTML = `<img src = './img/nav-hamburger-close.png'></img>`;
+        navButton.innerHTML = `<img src = './img/nav-hamburger-close.png'>`;
         TweenMax.fromTo(navigation, 0.5, {
             scale: 0,
             y: -800
@@ -47,7 +47,7 @@ navButton.addEventListener('click', () => {
         isOpen = true;
     } else {
 
-        navButton.innerHTML = `<img src = './img/nav-hamburger.png'></img>`
+        navButton.innerHTML = `<img src = './img/nav-hamburger.png'>`
         TweenMax.fromTo(navigation, 0.5, {
             scale: 1.0,
             y: 0,
