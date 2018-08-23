@@ -23,18 +23,18 @@ class Carousel {
         if (direction === "up") {
             if (indexOfBlockImage === this.images.length - 1) {
                 this.images[0].style.display = "block";
-                TweenMax.fromTo(this.images[0], 1, {y: 100, opacity: 0}, {y: 0, opacity: 1});
+                TweenMax.fromTo(this.images[0], 2, {y: 200, opacity: 0}, {ease: Elastic.easeOut.config(1.2, 0.5), y: 0, opacity: 1});
             } else {
                 this.images[indexOfBlockImage + 1].style.display = "block";
-                TweenMax.fromTo(this.images[indexOfBlockImage + 1], 1, {y: 100, opacity: 0}, {y: 0, opacity: 1});
+                TweenMax.fromTo(this.images[indexOfBlockImage + 1], 2, {y: 200, opacity: 0}, {ease: Elastic.easeOut.config(1.2, 0.5), y: 0, opacity: 1});
             }
         } else {
             if (indexOfBlockImage === 0) {
                 this.images[this.images.length - 1].style.display = "block";
-                TweenMax.fromTo(this.images[this.images.length - 1], 1, {y: -100, opacity: 0}, {y: 0, opacity: 1});
+                TweenMax.fromTo(this.images[this.images.length - 1], 2, {y: -200, opacity: 0}, {ease: Elastic.easeOut.config(1.2, 0.5), y: 0, opacity: 1});
             } else {
                 this.images[indexOfBlockImage - 1].style.display = "block";
-                TweenMax.fromTo(this.images[indexOfBlockImage - 1], 1, {y: -100, opacity: 0}, {y: 0, opacity: 1});
+                TweenMax.fromTo(this.images[indexOfBlockImage - 1], 2, {y: -200, opacity: 0}, {ease: Elastic.easeOut.config(1.2, 0.5), y: 0, opacity: 1});
             }
         }
     }
