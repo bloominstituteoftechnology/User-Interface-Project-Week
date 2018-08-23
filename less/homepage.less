@@ -3,6 +3,9 @@
 .homepage-content {
 	background-color: @bg-color;
 
+	@media @phone {
+		.column();
+	}
 	.section1 {
 		.homeImg {
 			img {
@@ -10,6 +13,10 @@
 				left: 0px;
 				top: 0px;
 				z-index: 1;
+
+				@media @phone {
+					display: none;
+				}
 			}
 		}
 		h1 {
@@ -18,13 +25,21 @@
 			color: @h-color;
 			font-size: 4rem;
 		}
+		.mobile {
+			display: none;
+
+			@media @phone {
+				display: block;
+			}
+		}
 	}
 	.section2 {
+		display: flex;
+		margin: 20px auto;
+
 		@media @phone {
 			.column();
 		}
-		display: flex;
-		margin: 20px auto;
 		
 		.box {
 			display: flex;
@@ -96,22 +111,27 @@
 	.recent-projects {
 		font-size: @h2-font-size;
 		margin: @basic-margin;
+
+		@media @phone {
+			.column();
+		}
+		
 	}
 
 		.project-box1 {
 			display: flex;
 			flex-direction: column;
 			.center();
-			margin: @basic-margin;
 
-			@media @phone {
-				.column();
-			}
 			.villa-img {
 				img {
 					width: 100%;
 					position: absolute;
 					z-index: 1;
+
+					@media @phone {
+						display: none;
+					}
 				}
 			}
 			.project-villas {
@@ -119,6 +139,19 @@
 				top: -50px;
 				left: 41%;
 				.grey-label(@lab-width, @lab-height, @lab-bg-color, @lab-font-color, @p-font-size);
+
+				@media @phone {
+					width: 100%;
+				}
+			}
+			.mobile {
+				.villa-mobile {
+						display: none;
+
+						@media @phone {
+							display: block;
+						}
+				}
 			}
 		}
 			.project-p {
@@ -144,13 +177,31 @@
 					width: 100%;
 					position: absolute;
 					z-index: 1;
+
+					@media @phone {
+						display: none;
+					}
 				}
+			
 			}
 			.project-outskirts {
 				position: relative;
 				top: -50px;
 				left: -41%;
 				.grey-label(@lab-width, @lab-height, @lab-bg-color, @lab-font-color, @p-font-size);
+
+				@media @phone {
+					width: 100%;
+				}
+			}
+			.mobile {
+				.out-mobile {
+						display: none;
+
+						@media @phone {
+							display: block;
+						}
+					}
 			}
 		}
 			.project-p {
@@ -173,14 +224,32 @@
 				img {
 					width: 100%;
 					position: absolute;
-					z-index: 1;	
+					z-index: 1;
+
+					@media @phone {
+						display: none;
+					}
 				}
 			}
+
 			.project-blocks {
 				position: relative;
 				top: -50px;
 				left: 41%;
 				.grey-label(@lab-width, @lab-height, @lab-bg-color, @lab-font-color, @p-font-size);
+
+				@media @phone {
+					width: 100%;
+				}
+			}
+			.mobile {
+				.block-mobile {
+						display: none;
+
+						@media @phone {
+							display: block;
+						}
+				}	
 			}
 		}
 			.project-p {
