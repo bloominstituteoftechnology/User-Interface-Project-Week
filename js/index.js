@@ -1,9 +1,18 @@
 // JS goes here
-const mobileWidth = 500;
-var mobileImages = [];
-mobileImages.push('./img/home/home-mobile-jumbotron.png');
-mobileImages.push('./img/home/home-mobile-img-1.png');
-mobileImages.push('./img/home/home-mobile-img-2.png');
-mobileImages.push('./img/home/home-mobile-villas-img.png');
-mobileImages.push('./img/home/home-mobile-outskirts-img.png');
-mobileImages.push('./img/home/home-mobile-the-blocks-img.png');
+let hamburger = document.querySelector('.nav-button');
+let unclicked = true;
+let menuHeader = document.querySelector('.menu-header');
+let menuButton = document.querySelector('.nav-button');
+hamburger.addEventListener('click',()=>{
+    document.querySelector('.menu-content').classList.toggle('menu--open');
+    menuHeader.classList.toggle('menu-header--style');
+    menuButton.classList.toggle('menu-button--style');
+    document.querySelector('.anchors').classList.toggle('anchors--invis');
+    if(unclicked){
+        hamburger.setAttribute('src','./img/nav-hamburger-close.png');
+        unclicked = false;
+    }else{
+        hamburger.setAttribute('src','./img/nav-hamburger.png');
+        unclicked = true;
+    }
+})
