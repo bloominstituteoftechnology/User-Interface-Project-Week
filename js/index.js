@@ -1,10 +1,14 @@
 // JS goes here
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
+    document.querySelector(".openbtn").style.display = "none";
+    document.querySelector(".open-header").style.marginRight = "77.3%";
 }
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+    document.querySelector(".openbtn").style.display = "block";
+    document.querySelector(".open-header").style.marginRight = "57%";
 }
 
 
