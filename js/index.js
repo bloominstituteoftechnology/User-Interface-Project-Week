@@ -14,7 +14,7 @@ const toggleimg = () => {
         nav.style.maxWidth = '100vw'; 
         nav.style.left = '0';
         toggle = true;
-        TweenMax.to(menuButton, 2, {x:50, ease:Bounce.easeOut});
+        TweenMax.to(menuButton, 1, {x:50, ease:Bounce.easeOut});
         TweenMax.to(menuButton, 3, {rotation: 360});
     } else if (toggle === true){
         menuButton.src = 'img/nav-hamburger.png';
