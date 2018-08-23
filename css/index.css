@@ -203,6 +203,7 @@ html {
   z-index: 1;
   opacity: 0.9;
   height: 49px;
+  z-index: 2;
 }
 @media (max-width: 500px) {
   .nav {
@@ -746,11 +747,12 @@ html {
   margin-top: 40px;
 }
 .about-page .main-content .people-tabs {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
+  display: none;
 }
 .about-page .main-content .people-tabs .person {
   width: 22%;
@@ -800,6 +802,10 @@ html {
 .about-page .main-content .card {
   display: none;
   opacity: 0;
+  justify-content: center;
+}
+.about-page .main-content .card .text-content {
+  width: 90%;
 }
 .about-page .main-content .card h2 {
   font-weight: 500;
@@ -1161,4 +1167,48 @@ footer .copyright {
     text-align: left;
     margin-left: 10%;
   }
+}
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: row;
+  color: white;
+  background-color: #97a4b0;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #97a4b0;
+  background-color: white;
+  border: 2px solid #97a4b0;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 0px;
+  transform: translate(0, -50%);
+  z-index: 1;
+}
+.carousel .right-button {
+  top: 50%;
+  right: 0px;
+  transform: translate(0, -50%);
 }
