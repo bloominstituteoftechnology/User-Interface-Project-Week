@@ -1,5 +1,4 @@
 // JS goes here
-
 class TabLink {
   constructor(link) {
     this.element = link;
