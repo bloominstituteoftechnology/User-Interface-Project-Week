@@ -22,13 +22,13 @@ class MenuButton {
 
     let navContent = document.querySelector('.nav-content');
     // navContent.classList.remove('display-none');
-    TweenMax.to(navContent, 1, { marginTop: 0 });
+    TweenMax.to(navContent, 0.7, { marginTop: 0 });
 
     let menuClose = document.querySelector('.menu-close');
     menuClose.classList.contains('display-none')
-      ? (TweenMax.to(nav, 1, { height: '49px' }),
+      ? (TweenMax.to(nav, 0.7, { height: '49px' }),
         TweenMax.to(navContent, 0.5, { opacity: 0, y: '-300' }))
-      : (TweenMax.to(nav, 1, { height: '100%' }),
+      : (TweenMax.to(nav, 0.7, { height: '100%' }),
         TweenMax.to(navContent, 1, { opacity: 1, y: 0 }));
   }
 }
