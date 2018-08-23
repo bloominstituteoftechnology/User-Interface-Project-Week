@@ -32,3 +32,5 @@ This is the presentation Branch for CS13 Lambda School. I have added a task list
 - [x] Host your site on a domain you own
 
 - [x] Create 2 more pages named "About Us" and "Projects".  Be creative on what kind of content you would put in there but match the heading layout of the services/contact us pages.  Be sure to add the new pages to the menu system as well.
+
+- [x] Create a carousel showcasing the projects.
