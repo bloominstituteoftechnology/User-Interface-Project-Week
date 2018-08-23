@@ -146,6 +146,11 @@ h3 {
   font-size: 2.8rem;
   color: #222222;
 }
+@media (max-width: 500px) {
+  h3 {
+    font-size: 3.4rem;
+  }
+}
 h4 {
   font-size: 2.4rem;
   color: #222222;
@@ -167,7 +172,11 @@ img {
   max-width: 855px;
   width: 100%;
   margin: 0 auto;
-  position: relative;
+}
+@media (max-width: 500px) {
+  .container {
+    max-width: 100%;
+  }
 }
 .main-nav {
   width: 100%;
@@ -186,12 +195,19 @@ img {
   font-weight: bold;
   font-size: 2.4rem;
   color: #FFFFFF;
+  padding: 0 2%;
+}
+.main-nav .menu {
+  padding: 0 2%;
 }
 .jumbotron {
   height: auto;
-  max-height: 598px;
+  width: 100%;
   z-index: -1;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .jumbotron h2 {
   font-weight: bold;
@@ -199,8 +215,16 @@ img {
   line-height: 7.5rem;
   color: #FFFFFF;
   position: absolute;
-  bottom: 49px;
-  left: 82px;
+  bottom: 13%;
+  left: 8%;
+}
+@media (max-width: 500px) {
+  .jumbotron h2 {
+    font-size: 4.2rem;
+    line-height: 48px;
+    bottom: 7%;
+    left: 3%;
+  }
 }
 .home {
   display: flex;
@@ -213,14 +237,34 @@ img {
   margin: 51px 0;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .home .content-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
 .home .content-description img {
   width: 48%;
+}
+@media (max-width: 500px) {
+  .home .content-description img {
+    width: 96%;
+    order: 1;
+  }
 }
 .home .content-description .text-content {
   width: 48%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .home .content-description .text-content {
+    width: 96%;
+    order: 2;
+  }
 }
 .home .content-description .text-content .btn {
   -webkit-border-radius: 0px;
@@ -241,6 +285,12 @@ img {
   background-color: #222222;
   color: #FFFFFF;
 }
+@media (max-width: 500px) {
+  .home .content-description .text-content .btn {
+    width: 96%;
+    order: 3;
+  }
+}
 .home .content-description .text-content h3 {
   margin: 50px 0 0 0;
 }
@@ -259,9 +309,20 @@ img {
 .home .recent-projects img {
   margin: 75px 0;
 }
+@media (max-width: 500px) {
+  .home .recent-projects img {
+    width: auto;
+    height: auto;
+  }
+}
 .home .recent-projects p {
   margin: 10px 0;
   width: 51%;
+}
+@media (max-width: 500px) {
+  .home .recent-projects p {
+    width: 96%;
+  }
 }
 .home .recent-projects .villas,
 .home .recent-projects .outskirts,
@@ -273,6 +334,12 @@ img {
 }
 .home .recent-projects .outskirts .text-block {
   left: 0;
+}
+@media (max-width: 500px) {
+  .home .recent-projects .outskirts .text-block {
+    top: 190px;
+    left: 17%;
+  }
 }
 .home .recent-projects .text-block {
   position: absolute;
@@ -289,6 +356,61 @@ img {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .home .recent-projects .text-block {
+    top: 190px;
+    right: 17%;
+  }
+}
+.services-jumbotron {
+  height: auto;
+  width: 100%;
+  z-index: -1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.services-jumbotron h2 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 6%;
+  left: 8%;
+}
+.services-offered p {
+  font-size: 1.6rem;
+  margin: 50px 0;
+}
+.tabs .tab-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 50px 0;
+}
+.tabs .tab-buttons .button {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 185px;
+  height: 50px;
+  background-color: #FFFFFF;
+  color: #222222;
+  font-size: 2rem;
+  border: 1px solid #222222;
+  cursor: pointer;
+  font-weight: bold;
+}
+.tabs .tab-buttons .button:hover {
+  background-color: #5E9FB9;
+  color: #FFFFFF;
+}
 footer {
   width: 100%;
   background-color: #828282;
@@ -301,6 +423,17 @@ footer .reach-out {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+@media (max-width: 500px) {
+  footer .reach-out {
+    display: flex;
+    flex-direction: column;
+    padding: 10% 10% 0 10%;
+  }
+}
+footer .reach-out .contact-info,
+footer .reach-out .location {
+  margin: 5% 0;
 }
 footer .reach-out .contact-info p,
 footer .reach-out .location p {
@@ -320,6 +453,13 @@ footer .copyright {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 500px) {
+  footer .copyright {
+    display: flex;
+    justify-content: left;
+    padding-left: 10%;
+  }
 }
 footer .copyright p {
   font-size: 1.3rem;
