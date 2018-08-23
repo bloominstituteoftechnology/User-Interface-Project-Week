@@ -4,7 +4,7 @@ btnFire = document.querySelectorAll('.control-btn2');
 
 btnFire[0].addEventListener('click', addFire);
 function addFire(){
-	let fireRan = Math.floor(Math.random() * 10);
+	let fireRan = Math.floor(Math.random() * 12);
 	let toFire = document.querySelectorAll('.fired');
 
 	if (toFire[fireRan].classList.value.indexOf('show-fire') !== -1){
@@ -48,7 +48,7 @@ function generatorEmployess(){
 	let positions = ['Janitor', 'Lifter', 'Welder', 'Smith', 'Operator', 'Crane', 'Supervisor', 'Manager', 'Slacker', 'Shift Supervisor'];
 	let arr = [];
 
-	for (let i = 0; i < 10; i++){
+	for (let i = 0; i < 12; i++){
 		let ranName = names[Math.floor(Math.random() * 10)];
 		let ranPosish = positions[Math.floor(Math.random() * 10)];
 		let yearsCompany = Math.floor(Math.random() * 15) + 1;
