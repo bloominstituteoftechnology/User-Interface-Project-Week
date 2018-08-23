@@ -2,7 +2,7 @@
 const modalNavTween = TweenMax.from('.navigation', 0.5, {y: -200, skewY: 100});
 const modalModalTween = TweenMax.from('.modal', 0.5, {y: 200});
 const navLinkTween = TweenMax.from('.navLink', 0.5, {scale: 0.1, y: -400, ease: Back.easeOut});
-const navLinkATween = TweenMax.from('.navLink a', 3, {y:500, ease: Elastic.easeOut, rotationX: 540});
+const navLinkATween = TweenMax.from('.navLink a', 1, {y:500, ease: Back.easeOut, rotationX: 540});
 
 document.querySelector('.hamburger').addEventListener('click', () => openNav());
 document.querySelector('.cross').addEventListener('click', () => closeNav());
