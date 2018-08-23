@@ -87,3 +87,7 @@ class Project {
 
 let projects = document.querySelectorAll(".projects");
 projects = Array.from(projects).map(project => new Project(project));
+
+
+
+
