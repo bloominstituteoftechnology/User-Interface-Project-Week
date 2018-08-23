@@ -2,17 +2,15 @@ const hamburgerIMG = document.querySelector(".hamburger");
 const close = document.querySelector(".close");
 const menu = document.querySelector(".menu");
 
-hamburgerIMG.addEventListener("click", () => {
-  menu.classList.toggle("menu-hidden");
-  hamburgerIMG.classList.toggle("display-none");
-  close.classList.toggle("display-none");
-});
+hamburgerIMG.addEventListener("click", menuActions);
 
-close.addEventListener("click", () => {
+close.addEventListener("click", menuActions);
+
+function menuActions(){
   menu.classList.toggle("menu-hidden");
   hamburgerIMG.classList.toggle("display-none");
   close.classList.toggle("display-none");
-});
+}
 
 class Button {
   constructor(button) {
@@ -58,7 +56,6 @@ class Content {
 let buttons = document.querySelectorAll(".button");
 buttons = Array.from(buttons).map(button => new Button(button));
 
-
 ////
 //// Inspiration Page JS
 class Demo {
@@ -71,17 +68,17 @@ class Demo {
     //adds click listener to demo image
     this.image.addEventListener("click", () => {
       this.displayImage();
-      console.log(`${this.slide}`)
+      console.log(`${this.slide}`);
     });
   }
   displayImage() {
     //gets nodelist of all large image elements
     let images = document.querySelectorAll(".slides");
-  
+
     //set display on each nodelist item to none
     images.forEach(slide => slide.classList.remove("visible"));
     //
-    this.slide.classList.toggle('visible');
+    this.slide.classList.toggle("visible");
   }
 }
 
@@ -99,17 +96,17 @@ class Demovw {
     //adds click listener to demo image
     this.image.addEventListener("click", () => {
       this.displayImage();
-      console.log('hi')
+      console.log("hi");
     });
   }
   displayImage() {
     //gets nodelist of all large image elements
     let images = document.querySelectorAll(".vwslides");
-  
+
     //set display on each nodelist item to none
     images.forEach(slide => slide.classList.remove("visible"));
     //
-    this.slide.classList.toggle('visible');
+    this.slide.classList.toggle("visible");
   }
 }
 
@@ -117,5 +114,82 @@ class Demovw {
 let demovwImages = document.querySelectorAll(".demovw");
 Array.from(demovwImages).map(image => new Demovw(image));
 
+//grab all workers
+let workers = document.querySelectorAll(".workers");
+let workerspic =document.querySelectorAll(".workerspic")
+workers.forEach(worker => (worker.style.display = "none"));
+workerspic.forEach(workerpic => (workerpic.style.display ="none"));
+workers = Array.from(workers);
+workerspic = Array.from(workerspic);
+workerspic[0].style.display=  "block";
+let x = 0;
+workers[x].style.display = "inline-block";
+let length = workers.length - 1;
+
+const next = document.querySelector(".next");
+next.addEventListener("click", nextClear);
+function nextFunction(){
+  workers.forEach(worker => (worker.style.display = "none"));
+  workerspic.forEach(workerpic => (workerpic.style.display ="none"));
+  if(x+1 <= length){
+    x += 1;
+    console.log(x);
+    workers[x].style.display = "block";
+    let picToDisplay = document.querySelector(`.workerspic[data-person="${x+1}"]`)
+    picToDisplay.style.display ="block";
+  } else {
+    x=0;
+    workers[x].style.display = "block";
+    let picToDisplay = document.querySelector(`.workerspic[data-person="${x+1}"]`)
+    picToDisplay.style.display ="block";
+  }
+}
+
+const previous = document.querySelector('.previous');
+function previousFunction(){
+  workers.forEach(worker => (worker.style.display = "none"));
+  workerspic.forEach(workerpic => (workerpic.style.display ="none"));
+  if(x === 0){
+    duration = 0;
+    x = workers.length-1;
+    workers[x].style.display = "block";
+    let picToDisplay = document.querySelector(`.workerspic[data-person="${x+1}"]`)
+    picToDisplay.style.display ="block";
+  } else {
+    x = x-1;
+    console.log(x);
+    workers[x].style.display = "block";
+    let picToDisplay = document.querySelector(`.workerspic[data-person="${x+1}"]`)
+    picToDisplay.style.display ="block";
+  }
+}
 
 
+
+function playSlideshow(){
+   if(x+1 <= length){
+    nextFunction();
+    timeout = setTimeout(function(){ playSlideshow(); }, 1500);
+    } else {
+      nextFunction();
+      setTimeout(function(){ playSlideshow(); }, 1500);
+    }
+  }
+
+  let play = document.querySelector('.play');
+play.addEventListener('click', playSlideshow);
+
+let pause = document.querySelector('.pause');
+pause.addEventListener('click', clearTimeout)
+
+
+let timeout;
+function clearTimeout(){
+  clearTimeout(timeout);
+}
+
+function nextClear(){
+  nextFunction();
+  clearTimeout();
+  console.log(timeout);
+}
