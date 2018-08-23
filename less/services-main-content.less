@@ -1,0 +1,130 @@
+.main-content {
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 58px;
+
+    .jumbotron {
+        background-image: url("../img/services/services-jumbotron.png");
+        background-position: 0 -50px;
+        background-repeat: no-repeat;
+        height: 250px;
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 75px;
+        color: @white;
+        margin: auto;
+
+        @media @mobile {
+            background-image: url("../img/services/services-mobile-jumbotron.png");
+            font-size: 35px;
+        }
+        
+        .tagline {
+            padding-top: 108px;
+            padding-left: 85px;
+
+            @media @mobile {
+                padding-top: 128px;
+                padding-left: 16px;
+            }
+        }
+    } // .jumbotron
+
+    .content-section {
+        .flex(@fd: column, @ai: center);
+        padding: 2px 88px;
+
+        @media @mobile {
+            padding: 0 14px;
+            margin-top: -10px;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        .btn-div {
+            .flex(@jc: space-between, @ai: center);
+            width: 100%;
+            margin-top: 15px;
+
+            @media @mobile {
+                flex-direction: column;
+            }
+
+            .btn {
+                border: 1px solid @btn-border-color;
+                width: 183px;
+                height: 48px;
+                line-height: 48px; // centers text vertically when line-height === height
+                text-align: center;
+                margin-top: 25px;
+                font-size: 20px;
+                font-weight: bold;
+
+                @media @mobile {
+                    width: 287px;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: @white;
+                    background-color: @soft-black;
+                }
+            }
+
+            .tab-selected {
+                background-color: @tab-selected-color;
+                color: @white;
+            }
+        } // .main-content .content-section .btn-div
+
+        .tab-navigator-item {
+            .flex(@ai: center);
+            margin-top: 52px;
+
+            @media @mobile {
+                margin: auto;
+                margin-top: 30px;
+                flex-direction: column;
+            }
+            
+            h2 {
+                font-weight: bold;
+                font-size: 24px;
+                color: @soft-black;
+                margin-bottom: 14px;
+            }
+
+            p {
+                width: 93%;
+                margin-bottom: 26px;
+                margin-top: 21px;
+
+                @media @mobile {
+                    width: 100%;
+                }
+            }
+
+            .tab-navigator-image {
+                text-align: center;
+
+                .mobile-content {
+                    display: none;
+                }
+
+                @media @mobile {
+                    .desktop-content {
+                        display: none;
+                    }
+
+                    .mobile-content {
+                        display: inline;
+                    }
+                }
+            }
+        } // .main-content .content-section .tab-navigator-item
+    } // .main-content .content-section
+} // .main-content
