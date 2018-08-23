@@ -1,5 +1,6 @@
 //Homepage styling goes here
 
+
 h1 {
   color: #FFFFFF;
   font-weight: bold;
@@ -23,11 +24,25 @@ h1 {
       }
     }
   }
+
+
   .heading-text {
+    .jumbotron {
+      display: flex;
+      @media @phone {
+        display: none;
+      }
+    }
+    .mobile-jumbotron {
+      display: none;
+      @media @phone {
+        display: flex;
+      }
+    }
     img {
       width: 100%;
       @media @phone {
-        height: 26rem;
+      //  height: 26rem;
         //height: 30rem;
       }
     }
@@ -62,7 +77,33 @@ h1 {
       flex-wrap: wrap-reverse;
       padding: 1rem;
     }
-
+    &.img-right {
+      .img-right {
+        @media @phone {
+        display: none;
+      }
+      }
+      .mobile-img-right {
+        display: none;
+        @media @phone {
+          display: flex;
+          padding: 4rem 0;
+        }
+      }
+    }
+    &.img-left {
+      .img-left {
+        @media @phone {
+          display: none;
+        }
+      }
+      .mobile-img-left {
+        display: none;
+        @media @phone {
+          display: flex;
+        }
+      }
+    }
        img {
       @media @phone {
         width: 100%;
@@ -144,6 +185,9 @@ h1 {
       margin-botton: 2rem;
       @media @phone {
         display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
       }
     }
 
@@ -151,14 +195,16 @@ h1 {
       display: flex;
       width: 100%;
       @media @phone {
-  
+
 
 
       }
     }
     .img-title {
       display: flex;
+      position: relative;
       width: 100%;
+      justify-content: center;
 
   }
     .right-abs-text {
@@ -172,12 +218,12 @@ h1 {
       background-color: @home-text-box-bg;
       @media @phone {
         display: flex;
-        right: 1.5rem;
+        right: 1rem;
         height: 10rem;
         padding: 1rem;
         align-items: center;
         bottom: -8rem;
-        width: 90%;
+        width: 95%;
         justify-content: center;
       }
     }
@@ -197,8 +243,8 @@ h1 {
        height: 10rem;
        padding: 2rem;
        bottom: -5rem;
-       right: 3rem;
-       width: 90%;
+       right: 1rem;
+       width: 95%;
        justify-content: center;
     }
   }
@@ -214,16 +260,18 @@ h1 {
       @media @phone {
         display: flex;
         padding: 2rem;
+        right: 1rem;
         height: 10rem;
-        align-items: center;
-        right: 3rem;
-        width: 90%;
-        justify-content: center;
+        width: 95%;
+        align-self: center;
         text-align: center;
+        margin: auto;
+
 
       }
 
       span {
+        align-self: center;
         width: 100%;
         justify-content: space-between;
       }
@@ -233,7 +281,7 @@ h1 {
       flex-direction: column;
       padding: @text-content-padding;
       @media @phone {
-        padding: 1rem;
+        padding: 0rem;
       }
       p {
         padding: 3rem 5rem;
