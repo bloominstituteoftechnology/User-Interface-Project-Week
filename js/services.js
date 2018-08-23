@@ -38,4 +38,4 @@ class TopicItem{
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(tab => new TopicTab(tab));
 
-tabs[1].activeTab();
+tabs[0].activeTab();
