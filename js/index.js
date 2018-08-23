@@ -1,5 +1,4 @@
-// JS goes here
-
+// Services.html tab functionality
 class TabLink {
   constructor(link) {
     this.link = link;
