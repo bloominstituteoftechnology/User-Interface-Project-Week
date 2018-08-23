@@ -53,7 +53,7 @@ const navShow = document.querySelector("#show-nav");
             this.tabContent = tabContent;
         }
         toggleContent() {
-            this.tabContent.classList.toggle("test-content");
+            this.tabContent.classList.toggle("hide-this");
         }
     }
     
