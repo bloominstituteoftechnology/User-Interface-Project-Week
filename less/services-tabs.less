@@ -1,0 +1,104 @@
+.tabs {
+    .flex-center();
+    padding: 0px 84px;
+    flex-direction: column;
+    @media @phone {
+        padding: 0;
+        align-items: center;
+    }
+    .tabs-items {
+        display: flex;
+        padding-top: 54px;
+        padding-bottom: 64px;
+        @media @phone {
+            padding: 30px 15px 64px 15px;
+        }
+    }
+    .tabs-item {
+        display: none; 
+        width: 100%;
+        flex-direction: column;
+        .tabs-item-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            padding-bottom: 10px;
+            @media @phone {
+                padding-bottom: 20px;
+            }
+        }
+        .tabs-item-description {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @media @phone {
+                flex-direction: column;
+            }
+            .mobile-image {
+                display: none;
+                @media @phone {
+                    display: block;
+                }
+            }
+            .desktop-image {
+                display: flex;
+                @media @phone {
+                    display: none;
+                }
+            }
+            .tabs-item-text {
+                width: 50%;
+                @media @phone {
+                    flex-direction: column;
+                    width: 100%;
+                }
+                p {
+                    padding-bottom: 24px;
+                    line-height: 2.7rem;
+                    @media @phone {
+                        line-height: 2.6rem;
+                    }
+                }
+            }
+            img {
+                height: 275px;
+                width: 400px;
+                @media @phone {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        } // tabs-item-description end
+    } 
+    .tabs-item-selected {
+        display: flex;
+    }
+    .tabs-links {
+        display: flex;
+        justify-content: space-between;
+        @media @phone {
+            flex-direction: column;
+        }
+    }
+    .tabs-link {
+        display: flex;
+        font-size: 24px;
+        .btn(1.8rem, bold, 185px, 50px, solid, 1px, black, 0, white, black);
+        cursor: pointer;
+        @media @phone {
+            .btn(1.8rem, bold, 290px, 50px, solid, 1px, black, 0, white, black);
+            margin-bottom: 20px;
+        }
+        &:hover {
+            background-color: grey;
+        }
+    }
+    .tabs-link-selected {
+        z-index: 2;
+        background-color: @services-tab-selected-bg;
+        color: black;
+        &:hover {
+            background-color: @services-tab-hover-bg;
+            color: @services-tab-hover-color;
+        }
+    }
+}
