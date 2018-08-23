@@ -48,7 +48,15 @@ class TabLink {
     }
   }
   
-  
+	// console.log(window.onload = function(){
+	// 							document.querySelector(`.tabs-item[data-tab="${1}"]`).classList.add('tabs-link-selected');
+  // 						});
+  window.onload = function(){
+    document.querySelector(`.tabs-link[data-tab="${1}"]`).classList.add('tabs-link-selected');
+    document.querySelector(`.tabs-item[data-tab="${1}"]`).classList.add('tabs-item-selected');
+
+  }
+
   // START HERE: create a reference to the ".tabs" classes
   let links = document.querySelectorAll('.tabs-link');
   //1 Created my nodeList psuedo array
