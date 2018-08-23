@@ -30,26 +30,47 @@ let desktopImages = document.querySelectorAll('.desktop-image');
 // Create reference to desktop images in homepage top-content
 let mobileImages = document.querySelectorAll('.mobile-image');
 
-// Function to make changes for mobile screens (<= 500px)
-function mobileChanges(widthCheck) {
-    if (widthCheck.matches) {
-        desktopImages.forEach(image => {
-            image.classList.add('hide-image');
-        });
-        mobileImages.forEach(image => {
-            image.classList.remove('hide-image');
-        });
-    } else {
-        desktopImages.forEach(image => {
-            image.classList.remove('hide-image');
-        });
-        mobileImages.forEach(image => {
-            image.classList.add('hide-image');
-        });
-    }
-}
+// window.addEventListener("load", () => {
+//     console.log("Window load detected");
+//     if (window.screen.width <= 600) {
+//         desktopImages.forEach(image => {
+//             image.classList.add('hide-image');
+//         });
+//         mobileImages.forEach(image => {
+//             image.classList.remove('hide-image');
+//         });
+//     } else {
+//         desktopImages.forEach(image => {
+//             image.classList.remove('hide-image');
+//         });
+//         mobileImages.forEach(image => {
+//             image.classList.add('hide-image');
+//         });
+//     }
+// });
 
-windowWidth.addListener(mobileChanges);
+// // Function to make changes for mobile screens (<= 600px)
+// function mobileChanges(widthCheck) {
+//     if (widthCheck.matches) {
+//         desktopImages.forEach(image => {
+//             image.classList.add('hide-image');
+//         });
+//         mobileImages.forEach(image => {
+//             image.classList.remove('hide-image');
+//         });
+//     } else {
+//         desktopImages.forEach(image => {
+//             image.classList.remove('hide-image');
+//         });
+//         mobileImages.forEach(image => {
+//             image.classList.add('hide-image');
+//         });
+//     }
+// }
+
+// windowWidth.addListener(mobileChanges);
+
+
 
 // ----- CHANGE ACTIVE TAB AND TAB-CONTENT ON SERVICES PAGE -----
 
