@@ -305,8 +305,12 @@ img {
     flex-direction: column;
   }
 }
+.home .content-section-top .text-content .test {
+  display: flex;
+  flex-direction: row;
+}
 .home .content-section-top .text-content .pool {
-  margin-right: 450px;
+  margin-right: 50px;
   width: 350px;
   height: 225px;
 }
@@ -395,6 +399,7 @@ img {
 @media (max-width: 500px) {
   .home .inverse-content .recent-projects p {
     align-items: center;
+    margin-left: 125px;
   }
 }
 .home .inverse-content .recent-projects .top-par {
@@ -566,7 +571,7 @@ img {
 }
 .headerimgs {
   width: 100%;
-  height: 225px;
+  height: 265px;
 }
 h1 {
   position: absolute;
@@ -1028,6 +1033,30 @@ h1 {
 }
 .header .hamburger-inner::after {
   bottom: -10px;
+}
+.header .hamburger--stand .hamburger-inner {
+  transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
+}
+.header .hamburger--stand .hamburger-inner::before {
+  transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.header .hamburger--stand .hamburger-inner::after {
+  transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.header .hamburger--stand.is-active .hamburger-inner {
+  transform: rotate(90deg);
+  background-color: transparent;
+  transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
+}
+.header .hamburger--stand.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-45deg);
+  transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.header .hamburger--stand.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(45deg);
+  transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .header.navigation-show {
   align-items: flex-start;
