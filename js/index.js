@@ -43,4 +43,3 @@
   
   
   links[0].select()
-  
