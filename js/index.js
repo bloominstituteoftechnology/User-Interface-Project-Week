@@ -4,6 +4,11 @@ const projects = document.querySelectorAll('.project');
 
 window.addEventListener('scroll', checkSlide);
 
+var tl = new TimelineLite();
+tl.from(".slogan1", 1, {opacity: 0})
+  .from(".slogan2", 1, {opacity: 0})
+  .from(".slogan3", 1, {opacity: 0})
+
 function checkSlide() {
   // Image Slide Event
   slideImages.forEach(slideImage => {
@@ -18,7 +23,8 @@ function checkSlide() {
 
       if (slideImage.classList.contains('slideFromRight')) {
         TweenMax.fromTo('.slideFromRight', 1, {x: 50, opacity: 0}, {x: 0, opacity: 1});
-      } else if (slideImage.classList.contains('slideFromLeft')) {
+      } 
+      else if (slideImage.classList.contains('slideFromLeft')) {
         TweenMax.fromTo('.slideFromLeft', 1, {x: -50, opacity: 0}, {x: 0, opacity: 1});
       }
     }
@@ -37,10 +43,10 @@ function checkSlide() {
       project.classList.remove('rotate');
 
       if (project.classList.contains('skewFromRight')) {
-        TweenMax.fromTo('.skewFromRight', 3, {skewX:-5, opacity: 0}, {skewX:0, opacity: 1})
+        TweenMax.fromTo('.skewFromRight', 3, {skewX:-3, opacity: 0}, {skewX:0, opacity: 1})
       }
       else if (project.classList.contains('skewFromLeft')) {
-        TweenMax.fromTo('.skewFromLeft', 3, {skewX:5, opacity: 0}, {skewX:0, opacity: 1})
+        TweenMax.fromTo('.skewFromLeft', 3, {skewX:3, opacity: 0}, {skewX:0, opacity: 1})
       }
     }
 
