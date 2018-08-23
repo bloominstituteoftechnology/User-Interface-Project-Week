@@ -1,8 +1,8 @@
 const toggleNav = () => {
   !open ? (
     navContainer.classList.toggle('flex'),
-    TweenMax.fromTo( navContainer, .4, {height: '0vh'}, {height: '100vh'} ),
-    TweenMax.fromTo( nav, .5, {y: -100, opacity: 0}, {y: 0, opacity: 1, delay: .2} ),
+    TweenMax.fromTo( navContainer, .3, {height: '0vh'}, {height: '100vh'} ),
+    TweenMax.fromTo( nav, .4, {y: -100, opacity: 0}, {y: 0, opacity: 1, delay: .2} ),
     open = true
   ) : (
     TweenMax.fromTo( navContainer, .2, {height: '100vh'}, {height: '0vh', delay: .2} ),
