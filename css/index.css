@@ -151,6 +151,7 @@ table {
   color: #fff;
 }
 .footerHeaderStyle {
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
@@ -161,6 +162,50 @@ table {
   font-size: 12px;
   line-height: 26px;
   color: #fff;
+}
+.containerStyling {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.headerStyling {
+  width: 100%;
+  height: 8rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+}
+@media (max-width: 500px) {
+  .headerStyling {
+    position: bottom;
+    background-size: 100%;
+  }
+}
+.headerStyling h1 {
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #fff;
+  margin-bottom: 0;
+  align-self: flex-end;
+  margin-left: 5%;
+  margin-bottom: 1%;
+}
+.buttonStyle {
+  display: block;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  width: 8rem;
+  height: 2rem;
+  padding-top: 1.3rem;
+  border: 2px solid black;
+  box-shadow: 7px 10px black;
+}
+.buttonStyle:hover {
+  color: black;
+  box-shadow: 5px 10px #97a4b0;
 }
 .nav-container {
   font-family: "Roboto", Arial, sans-serif;
@@ -177,12 +222,13 @@ table {
   padding: 8px 0;
   align-items: center;
   justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .nav-container .nav-bar .logo {
   font-weight: bold;
   font-size: 24px;
   color: #fff;
-  margin-left: 10%;
 }
 .nav-container .nav-bar .logo a {
   text-decoration: none;
@@ -191,7 +237,6 @@ table {
 .nav-container .nav-bar .menu {
   width: 25px;
   height: 25px;
-  margin-right: 10%;
   cursor: pointer;
   background-image: url(../img/nav-hamburger.png);
   background-repeat: no-repeat;
@@ -304,15 +349,15 @@ table {
   border: 2px solid black;
   box-shadow: 7px 10px black;
 }
+.content-container .learn-more .text a:hover {
+  color: black;
+  box-shadow: 5px 10px #97a4b0;
+}
 @media (max-width: 500px) {
   .content-container .learn-more .text a {
     width: 90%;
     margin: 0 auto;
   }
-}
-.content-container .learn-more .text a:hover {
-  color: black;
-  box-shadow: 5px 10px #97a4b0;
 }
 .content-container .learn-more .img {
   width: 55rem;
@@ -452,14 +497,13 @@ table {
 .services-container .services-header {
   width: 100%;
   height: 8rem;
-  background-image: url(../img/services/services-jumbotron.png);
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
+  background-image: url(../img/services/services-jumbotron.png);
 }
 @media (max-width: 500px) {
   .services-container .services-header {
-    background-image: url(../img/services/services-mobile-jumbotron.png);
     position: bottom;
     background-size: 100%;
   }
@@ -469,11 +513,15 @@ table {
   font-size: 64px;
   line-height: 75px;
   color: #fff;
-  color: white;
   margin-bottom: 0;
   align-self: flex-end;
   margin-left: 5%;
   margin-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .services-container .services-header {
+    background-image: url(../img/services/services-mobile-jumbotron.png);
+  }
 }
 .services-container .content {
   width: 85%;
@@ -494,7 +542,7 @@ table {
   background-color: #828282;
 }
 .footer .footer-content {
-  width: 880px;
+  max-width: 880px;
   display: flex;
   height: 20%;
   justify-content: space-around;
@@ -509,22 +557,16 @@ table {
     margin-left: 1rem;
   }
 }
-.footer .subscribe {
-  width: 40%;
-}
 .footer .subscribe p {
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
   color: #fff;
 }
 @media (max-width: 500px) {
-  .footer .subscribe {
-    width: 100%;
-  }
 }
 .footer .subscribe .email {
-  width: 13rem;
   height: 1.5rem;
   margin-top: 1rem;
   border: 1px solid gray;
@@ -553,6 +595,7 @@ table {
   }
 }
 .footer .location h4 {
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
@@ -694,6 +737,136 @@ table {
 }
 .tab-container .tab-item-active {
   display: flex;
+}
+.contact-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contact-header {
+  width: 100%;
+  height: 8rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  background-image: url(../img/contact/contact-jumbotron.png);
+}
+@media (max-width: 500px) {
+  .contact-header {
+    position: bottom;
+    background-size: 100%;
+  }
+}
+.contact-header h1 {
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #fff;
+  margin-bottom: 0;
+  align-self: flex-end;
+  margin-left: 5%;
+  margin-bottom: 1%;
+}
+@media (max-width: 500px) {
+  .contact-header {
+    background-image: url(../img/contact/contact-mobile-jumbotron.png);
+  }
+}
+.contact-page {
+  display: flex;
+}
+.contact-page .contact-form {
+  width: 70%;
+  margin: 5%;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+.contact-page .contact-form .question {
+  margin: 2rem 0;
+}
+.contact-page .contact-form h2 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #222;
+}
+.contact-page .contact-form p {
+  margin: 0.5rem 0;
+}
+.contact-page .contact-form .email {
+  width: 80%;
+  height: 1.5rem;
+}
+.contact-page .contact-form .disclaimer {
+  font-size: 12px;
+  color: gray;
+}
+.contact-page .contact-form .select {
+  width: 80%;
+  background-color: white;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+.contact-page .contact-form .description {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  width: 80%;
+  height: 7rem;
+  resize: both;
+}
+.contact-page .contact-form .button {
+  display: block;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  width: 8rem;
+  height: 2rem;
+  padding-top: 1.3rem;
+  border: 2px solid black;
+  box-shadow: 7px 10px black;
+  padding-top: 10px;
+  margin: 2rem 0;
+}
+.contact-page .contact-form .button:hover {
+  color: black;
+  box-shadow: 5px 10px #97a4b0;
+}
+.contact-info {
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 30%;
+}
+.contact-info h2 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #222;
+}
+.contact-info .location {
+  width: 100%;
+  margin: 2.5rem 0;
+}
+@media (max-width: 500px) {
+  .contact-info .location {
+    width: 30%;
+    margin: 1rem 0;
+  }
+}
+.contact-info .location h4 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #222;
+  font-size: 24px;
+}
+.contact-info .location p {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 26px;
+  color: #fff;
+  font-size: 14px;
+  color: black;
 }
 .container {
   font-family: "Roboto", Arial, sans-serif;

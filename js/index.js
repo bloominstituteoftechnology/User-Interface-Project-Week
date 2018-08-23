@@ -15,3 +15,7 @@ menu.addEventListener("click", function(e) {
   menu.classList.toggle("menu-close");
   console.log("menu was clicked");
 });
+
+function submit() {
+  alert("Thank you for your form!");
+}
