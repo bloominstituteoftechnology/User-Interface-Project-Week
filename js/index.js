@@ -68,5 +68,19 @@ let closeBtn = document.querySelector(".close-button");
 let nav = document.querySelector(".navbar");
 
 // adding overlay event listeners
-burgerBtn.addEventListener('click', function() { overlay.setAttribute("style", "display: block;") });
-closeBtn.addEventListener('click', function() { overlay.setAttribute("style", "display: none;") });
+burgerBtn.addEventListener('click', function() { 
+  overlay.setAttribute("style", "display: block;");
+  TweenMax.fromTo(overlay, 1, {opacity: 0, y: 50}, {opacity: 1, y: 0});
+});
+closeBtn.addEventListener('click', function() {
+  // added an animation with function call
+  var t1 = new TimelineMax({onComplete:dispNone});
+  t1.fromTo(overlay, 1, {opacity: 1, y: 0}, {opacity: 0, y: 50});
+
+  // function to call at end of animation
+  function dispNone() {
+    overlay.setAttribute("style", "display: none");
+  }
+});
+
+//anim test
