@@ -1,17 +1,32 @@
 // JS goes here
-// Animations
+
+/************************************************************************************************/
+
+/*** NAVIGATION HOVER ZOOM JAVASCRIPT ***/
 let navTitle = document.querySelector('.nav-title');
 navTitle.addEventListener('mouseover', () => {
-    TweenMax.fromTo(navTitle, 1, {scale: 1}, {scale: 1.15, ease: Elastic.easeOut});
+    TweenMax.fromTo(navTitle, 1, {
+        scale: 1
+    }, {
+        scale: 1.15,
+        ease: Elastic.easeOut
+    });
 });
 
 navTitle.addEventListener('mouseout', () => {
-    TweenMax.fromTo(navTitle, 1, {scale: 1.15}, {scale: 1, ease: Elastic.easeOut});
+    TweenMax.fromTo(navTitle, 1, {
+        scale: 1.15
+    }, {
+        scale: 1,
+        ease: Elastic.easeOut
+    });
 });
 
+/*** END NAVIGATION HOVER ZOOM JAVASCRIPT ***/
 
+/************************************************************************************************/
 
-// Navigation expand/collapse
+/*** NAVIGATION EXPAND AND COLLAPSE JAVASCRIPT ***/
 
 let navButton = document.querySelector('.nav-button');
 let navigation = document.querySelector('#navigation');
@@ -21,23 +36,61 @@ navButton.addEventListener('click', () => {
     if (isOpen == false) {
         navigation.style.display = 'flex';
         navButton.innerHTML = `<img src = './img/nav-hamburger-close.png'></img>`;
-        TweenMax.fromTo(navigation, 0.5, {scale: 0, y: -800}, {scale: 1.0, y: 0, ease: Expo.easeOut});
+        TweenMax.fromTo(navigation, 0.5, {
+            scale: 0,
+            y: -800
+        }, {
+            scale: 1.0,
+            y: 0,
+            ease: Expo.easeOut
+        });
         isOpen = true;
     } else {
-        
+
         navButton.innerHTML = `<img src = './img/nav-hamburger.png'></img>`
-        TweenMax.fromTo(navigation, 0.5, {scale: 1.0, y: 0, display: 'flex'}, {scale: 0, y:-800, display: 'none', ease: Expo.easeOut});
+        TweenMax.fromTo(navigation, 0.5, {
+            scale: 1.0,
+            y: 0,
+            display: 'flex'
+        }, {
+            scale: 0,
+            y: -800,
+            display: 'none',
+            ease: Expo.easeOut
+        });
         isOpen = false;
     }
 });
 
+/*** END NAVIGATION EXPAND AND COLLAPSE JAVASCRIPT ***/
+
+/************************************************************************************************/
+
+/*** NAV BUTTON ANIMATIONS ***/
+
 navButton.addEventListener('mouseover', () => {
-    TweenMax.fromTo(navButton, 1, {scale: 1}, {scale: 1.15, ease: Elastic.easeOut});
+    TweenMax.fromTo(navButton, 1, {
+        scale: 1
+    }, {
+        scale: 1.15,
+        ease: Elastic.easeOut
+    });
 });
 
 navButton.addEventListener('mouseout', () => {
-    TweenMax.fromTo(navButton, 1, {scale: 1.15}, {scale: 1, ease: Elastic.easeOut});
+    TweenMax.fromTo(navButton, 1, {
+        scale: 1.15
+    }, {
+        scale: 1,
+        ease: Elastic.easeOut
+    });
 });
+
+/*** END NAV BUTTON ANIMATIONS ***/
+
+/************************************************************************************************/
+
+/*** HOME PAGE PROJECT TITLE ORIENTATION ***/
 
 var mobileWidth = window.matchMedia('(min-width: 500px)');
 
@@ -70,10 +123,14 @@ function shiftLeft() {
         for (i = 0; i < eoTitle.length; i++) {
             eoTitle[i].style.cssText = 'left: initial; right: initial;';
         }
-
     }
-
 }
+
+/*** END HOME PAGE PROJECT TITLE ORIENTATION ***/
+
+/************************************************************************************************/
+
+/*** SERVICES PAGE TABS JAVASCRIPT ***/
 
 //take all tabs and map them into a constructor
 class TabLink {
@@ -98,18 +155,33 @@ class TabLink {
         hideAll.forEach(function (each) {
             each.style.display = 'none';
         });
-            card.style.display = 'inline-block';
-            TweenMax.fromTo(card, 1, {opacity: 0}, {opacity: 1, ease: Power1.easeOut});
+        card.style.display = 'inline-block';
+        TweenMax.fromTo(card, 1, {
+            opacity: 0
+        }, {
+            opacity: 1,
+            ease: Power1.easeOut
+        });
     }
 
     tabSelect(element) {
         let allTabs = document.querySelectorAll('.tab-link');
         allTabs.forEach(function (each) {
             each.classList.remove('active-link');
-            TweenMax.fromTo(each, 0.1, {scale: 1}, {scale: 1, ease: Power1.easeOut});
+            TweenMax.fromTo(each, 0.1, {
+                scale: 1
+            }, {
+                scale: 1,
+                ease: Power1.easeOut
+            });
         });
         element.classList.add('active-link');
-        TweenMax.fromTo(element, 0.1, {scale: 1}, {scale: 1.15, ease: Power1.easeOut});
+        TweenMax.fromTo(element, 0.1, {
+            scale: 1
+        }, {
+            scale: 1.15,
+            ease: Power1.easeOut
+        });
     }
 }
 
@@ -124,6 +196,12 @@ if (document.title === 'Services') {
 
 
 }
+
+/*** END SERVICES PAGE TABS JAVASCRIPT ***/
+
+/************************************************************************************************/
+
+/*** MOBILE IMAGES SOURCE SWAP JAVASCRIPT ***/
 
 class ImageSwap {
     constructor(element) {
@@ -168,8 +246,11 @@ let images = document.querySelectorAll('img');
 
 images = Array.from(images).map(images => new ImageSwap(images));
 
+/*** END MOBILE IMAGES SOURCE SWAP JAVASCRIPT ***/
 
-// Carousel JS
+/************************************************************************************************/
+
+/*** PROJECTS PAGE CAROUSEL JAVASCRIPT ***/
 
 class Carousel {
     constructor(element) {
@@ -265,3 +346,7 @@ class Carousel {
 let carousel = document.querySelectorAll('.carousel');
 
 carousel = Array.from(carousel).map(carousel => new Carousel(carousel));
+
+/*** END PROJECTS PAGE CAROUSEL JAVASCRIPT ***/
+
+/************************************************************************************************/
