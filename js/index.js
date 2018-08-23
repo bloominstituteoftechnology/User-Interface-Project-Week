@@ -10,6 +10,14 @@ function openNav() {
   document.querySelector('.navigation').style.justifyContent = 'center';
 }
 
+function closeNav() {
+   document.querySelector('.hamburger').classList.remove('hidden');
+   document.querySelector('.cross').classList.add('hidden');
+   document.querySelector('.navLinks').classList.add('hidden');
+   document.querySelector('.navigation').style.justifyContent = 'space-between';
+   document.querySelector('.navigation').classList.remove('modal');
+}
+
 // Services Tabs
 class TabLink {
   constructor(element) {
