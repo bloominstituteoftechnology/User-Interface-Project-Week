@@ -14,10 +14,18 @@
 .contact-page {
   display: flex;
 
+  @media @phone {
+    flex-direction: column;
+  }
+
   .contact-form {
     width: 70%;
     margin: 5%;
     .generalFontStyle();
+
+    @media @phone {
+      width: 95%;
+    }
 
     .question {
       margin: 2rem 0;
@@ -32,8 +40,11 @@
     }
 
     .email {
+      .generalFontStyle();
       width: 80%;
-      height: 1.5rem;
+      height: 2rem;
+      border: 1px solid gray;
+      border-radius: 5px;
     }
     .disclaimer {
       font-size: 12px;
@@ -58,6 +69,10 @@
       .buttonStyle();
       padding-top: 10px;
       margin: 2rem 0;
+
+      @media @phone {
+        width: 80%;
+      }
     }
   }
 } //contact-form tag
@@ -67,16 +82,26 @@
   margin-top: 2rem;
   width: 30%;
 
+  @media @phone {
+    width: 100%;
+    margin-left: 2rem;
+  }
+
   h2 {
     .subHeaderStyle();
+
+    @media @phone {
+      margin-bottom: 2rem;
+    }
   }
 
   .location {
     width: 100%;
     margin: 2.5rem 0;
+
     @media @phone {
-      width: 30%;
-      margin: 1rem 0;
+      width: 100%;
+      margin: 2rem 0;
     }
     h4 {
       .subHeaderStyle();
