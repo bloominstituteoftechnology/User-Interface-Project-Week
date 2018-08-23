@@ -1,0 +1,119 @@
+.tab-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+
+  .tab-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media @phone {
+      flex-direction: column;
+    }
+
+    a {
+      // Make look like button //
+      width: 150px;
+      height: 30px;
+      text-decoration: none;
+      padding-top: 14px;
+      text-align: center;
+      font-size: 1rem;
+      color: black;
+
+      border: 2px solid gray;
+
+      @media @phone {
+        width: 95%;
+        margin: 7px auto;
+      }
+
+      &:hover {
+        background-color: @tab-hover;
+        color: #fff;
+      }
+    }
+    .active {
+      background-color: @tab-selected;
+      color: white;
+    }
+  } //tab-links tag
+
+  .tab-item {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    display: none;
+
+    @media @phone {
+      flex-direction: column;
+    }
+
+    .text {
+      width: 55%;
+
+      @media @phone {
+        width: 95%;
+      }
+
+      h2 {
+        .subHeaderStyle();
+        margin: 1rem 0;
+      }
+      p {
+        .generalFontStyle();
+        margin: 1rem 0;
+      }
+    }
+
+    .img {
+      width: 45%;
+      height: 15rem;
+      background-repeat: no-repeat;
+      margin: 1rem;
+
+      @media @phone {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .preconstruction {
+      background-image: url(../img/services/services-tab-pre-construction-img.png);
+
+      @media @phone {
+        background-image: url(../img/services/services-tab-mobile-pre-construction-img.png);
+      }
+    }
+
+    .construction {
+      background-image: url(../img/services/services-tab-construction-img.png);
+
+      @media @phone {
+        background-image: url(../img/services/services-tab-mobile-construction-img.png);
+      }
+    }
+
+    .design {
+      background-image: url(../img/services/services-tab-design-build-img.png);
+
+      @media @phone {
+        background-image: url(../img/services/services-tab-mobile-design-build-img.png);
+      }
+    }
+
+    .sustainability {
+      background-image: url(../img/services/services-tab-sustainability-img.png);
+
+      @media @phone {
+        background-image: url(../img/services/services-tab-mobile-sustainability-img.png);
+      }
+    }
+  }
+
+  .tab-item-active {
+    display: flex;
+  }
+} //tab-container tag
