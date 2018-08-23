@@ -106,8 +106,55 @@ function navigateServices() {
     window.location.href = "./services.html";
 }
 
+const homeLink = document.querySelector('#home-link');
+
+const animateHomeNav = () => {
+  TweenMax.to(homeLink, .5, {
+    x:1000, 
+    ease:Power4.easeIn
+});
+
+setTimeout (
+  toggleMenu, 500
+)
+
+setTimeout (
+  containerLeave, 1000
+)
+
+setTimeout(
+navigateHome, 1250
+)
+}
+
+const servicesLink = document.querySelector('#services-link');
+
 const animateServicesNav = () => {
-  setTimeout(
-    navigateServices, 2000
+  TweenMax.to(servicesLink, .5, {
+    x:1000, 
+    opacity: 0,
+    ease:Power4.easeIn
+});
+
+  setTimeout (
+    toggleMenu, 500
   )
+
+  setTimeout (
+    containerLeave, 1000
+  )
+
+  setTimeout(
+  navigateServices, 1250
+  )
+}
+
+const container = document.querySelector('.container');
+
+const containerLeave = () => {
+  TweenMax.to(container, .5, {
+    x:1000,
+    opacity: 0,
+    ease:Power4.easeOut
+  });
 }

@@ -3,10 +3,8 @@
 class TabLink {
     constructor(link) {
       this.link = link;
-           
       this.data = this.link.dataset.tab;
-          
-            this.itemElement = document.querySelector(`.tab-item[data-tab="${this.data}"]`);
+      this.itemElement = document.querySelector(`.tab-item[data-tab="${this.data}"]`);
       
      
       this.tabItem = new TabItem(this.itemElement);
