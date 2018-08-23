@@ -25,30 +25,30 @@ class TabLink {
       });
       // Add a class named "tabs-link-selected" to this link
       this.e.classList.add('active-tab');
+      
       let box = document.querySelectorAll('.Blank');
       let content = document.querySelectorAll('.content');
+      content = Array.from(content[0].children);
 
-      if(this.navData === 'Pre-Construction') {
+      if(this.navData == 'Pre-Construction') {
         box[0].innerHTML = '<img src="./img/services/services-tab-pre-construction-img.png" id="content-img">';
-
+        content[1].children[0].innerText = 'Pre-Construction';
       }
 
       if(this.navData === 'Construction') {
         box[0].innerHTML = '<img src="./img/services/services-tab-construction-img.png" id="content-img">';
-
+        content[1].children[0].innerText = 'Construction';
       }
 
       if(this.navData === 'Design Build') {
         box[0].innerHTML = '<img src="./img/services/services-tab-design-build-img.png" id="content-img">';
-
+        content[1].children[0].innerText = 'Design Build';
       }
 
       if(this.navData === 'Sustainability') {
         box[0].innerHTML = '<img src="./img/services/services-tab-sustainability-img.png" id="content-img">';
-
+        content[1].children[0].innerText = 'Sustainability';
       }
-
-
     }
   }
 
