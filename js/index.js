@@ -11,7 +11,6 @@ const toggleMenu = () => {
           ease: Circ.easeOut, 
           height: 50
         });
-
        
       } else {
         menu.classList.add("menu--open");
@@ -26,11 +25,9 @@ const toggleMenu = () => {
   }
 
   const collapseButton = () => {
-   // TweenLite.to()
     menuButton.style.display = "none";
-    //move rapidly up and out
     menuClose.style.display = "block";
-    //move rapidly up and in
+    
   }
 
   
