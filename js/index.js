@@ -153,7 +153,7 @@ class Carousel {
         this.leftButton = element.querySelector('.left-button');
         this.rightButton = element.querySelector('.right-button');
         // Get all images within carousel element
-        this.images = this.element.querySelectorAll('img');
+        this.images = this.element.querySelectorAll('.carousel-img');
         // Set default index to 0
         this.currentIndex = 0;
         // Show first image by default
