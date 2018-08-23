@@ -4,6 +4,7 @@
 const hamburger = document.querySelector('.nav-burger');
 const nav = document.querySelector('#nav');
 const navMenuContent = document.querySelector('.home-nav-dropdown');
+const form = document.querySelector('form');
 
 hamburger.addEventListener('click', () => {
   nav.classList.toggle('expand-nav-500');
@@ -17,3 +18,8 @@ hamburger.addEventListener('click', () => {
     hamburger.setAttribute("src", '../img/nav-hamburger.png');
   }
 });
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+})
+
