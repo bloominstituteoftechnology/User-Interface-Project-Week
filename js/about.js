@@ -10,6 +10,9 @@ class TabImage {
 
   switch() {
     let i = Math.floor(images.indexOf(this)/3)
+    images.slice(i*3, i*3+3).forEach(item => item.element.classList.remove('selected'))
+    this.element.classList.add('selected')
+
     images.forEach(item => display[i].classList.remove(item.dataTab))
     display[i].classList.add(this.dataTab)
 

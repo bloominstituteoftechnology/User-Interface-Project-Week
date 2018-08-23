@@ -9,7 +9,7 @@
   hamburger.addEventListener('click', () => {
     var tlLinks = new TimelineMax();
     if (nav.classList.length === 2) {
-      TweenMax.fromTo(nav, 1, {opacity: 0, height: "auto"}, {opacity:1, height: window.innerHeight})
+      TweenMax.fromTo(nav, 1, {opacity: 0, height: "auto"}, {opacity:.96, height: window.innerHeight})
 
       tlLinks.add('start')
       .from(links[0], 1.8, {opacity: 0, x:-400}, {opacity: 1})
