@@ -23,7 +23,7 @@ close.addEventListener("click", () => {
 
  function navToggle()  {	
 	//to close
-	if (nav.style.height <= "275px") {
+	if (nav.style.height <= "400px") {
 	nav.style.height = "50px";
 	main.style.marginTop = "50px";
 	
@@ -32,19 +32,19 @@ close.addEventListener("click", () => {
 	menu[i].style.opacity="0.0";
 	menu[i].style.marginTop="100px";
 	};
-    	document.body.style.backgroundColor = "rgba(0,0,0,0.0)";
+    	document.body.style.backgroundColor = "rgba(ffffff)";
 	
 	} 
 	//to open
 	else if (nav.style.height <= "50px") {
-	nav.style.height = "275px";
+	nav.style.height = "400px";
 	main.style.marginTop = "275px";
     	let i = 0;
     	for (i = 0; i < menu.length; i++){
 	menu[i].style.opacity="1.0";
 	menu[i].style.marginTop="0px";
 	};
-    	document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    	document.body.style.backgroundColor = "rgba(ffffff)";
 	
 	}
 
