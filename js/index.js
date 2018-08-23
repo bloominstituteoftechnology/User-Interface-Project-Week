@@ -32,28 +32,39 @@ const navShow = document.querySelector("#show-nav");
     class BtnCreator {
         constructor(btnItem) {
             this.btn = btnItem;
-            this.btn.addEventListener('click', () => {
-                this.btnClick()
-            });
             this.btnData = this.btn.dataset.tab;
             this.tabContent = document.querySelector(`.content[data-tab="${this.btnData}"]`);
-
             this.tabContent = new Content(this.tabContent);
-        }
+            this.btn.addEventListener('click', () => {
+                this.select()
+                this.btn.style.backgroundColor = '#5E9FB9';
+                this.btn.style.color = '#FFF';
+            });
+        };
 
-        btnClick() {
-            console.log('This worked!');
-            this.tabContent.toggleContent();
+        select() {
+            const btns = document.querySelectorAll(".btn");
+            btns.forEach( btn => {
+                btn.classList.remove("button1-content")
+            });
+            this.element.classList.add("button1-content");
+            this.tabItem.select();
         }
-    }
+    };
+
+    
+
 
     class Content {
         constructor(tabContent) {
-            console.log(tabContent);
             this.tabContent = tabContent;
         }
-        toggleContent() {
-            this.tabContent.classList.toggle("hide-this");
+        select() {
+            const items = document.querySelectorAll(".content");
+            items.forEach( item => {
+                item.classList.remove("tabs-item-selected");
+            })
+            this.tabContent.classList.add('tabs-item-selected');
         }
     }
     
