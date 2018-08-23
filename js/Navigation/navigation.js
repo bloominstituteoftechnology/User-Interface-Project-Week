@@ -16,3 +16,7 @@ const menuClose = document.querySelector(".close-button");
 
 menuButton.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
+
+menuButton.addEventListener('click', () => { 
+  TweenMax.from(".menu", 1, {autoAlpha:0, y: -5});
+});
