@@ -1,0 +1,46 @@
+// Mixins
+
+.center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-creator(@width, @height, @bgColor, @fontColor, @navBorder) {
+    .center;
+    // border-radius: 20px;
+    width: @width;
+    height: @height;
+    background-color: @bgColor;
+    color: @fontColor;
+    border: 1px solid @navBorder;
+    cursor: pointer;
+
+    &:hover {
+        background-color: @fontColor;
+        color: @bgColor;
+    }
+}
+
+.center-margin() {
+    .center;
+    width: 84%;
+
+    @media @mobile {
+        width: 90%;
+    }
+}
+
+.margin-btm() {
+    margin-bottom: 100px;
+
+    @media @mobile {
+        margin-bottom: 50px;
+    }
+}
+
+.center-margin-between() {
+    .center-margin;
+    .margin-btm;
+    justify-content: space-between;
+}
