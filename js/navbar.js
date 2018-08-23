@@ -26,6 +26,7 @@ hamburger.addEventListener('click', toggleNav);
 // Night mode
 const toggleNightMode = () => {
   document.querySelector('body').classList.toggle('dark');
+  (document.querySelector('header').classList.toggle('header-dark'));
   (document.querySelector('footer').classList.toggle('footer-dark'));
   Array.from(document.querySelectorAll('p, h2:not(.project-square), h3, .button')).forEach(element => element.classList.toggle('light'));
 };
