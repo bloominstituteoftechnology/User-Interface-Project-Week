@@ -77,7 +77,7 @@ class TabLink {
         hideAll.forEach(function (each) {
             each.style.display = 'none';
         });
-        card.style.display = 'inline-block';
+            card.style.display = 'inline-block';
     }
 
     tabSelect(element) {
@@ -111,7 +111,7 @@ class ImageSwap {
         window.addEventListener('load', () => {
             if (window.innerWidth <= 500) {
                 this.mobileSrc();
-            } else if (window.innerWidth > 500){
+            } else if (window.innerWidth > 500) {
                 this.desktopSrc();
             }
         });
@@ -119,7 +119,7 @@ class ImageSwap {
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 500) {
                 this.mobileSrc();
-            } else if (window.innerWidth > 500){
+            } else if (window.innerWidth > 500) {
                 this.desktopSrc();
             }
         });
@@ -139,9 +139,104 @@ class ImageSwap {
 
 }
 
-
-
-
 let images = document.querySelectorAll('img');
 
 images = Array.from(images).map(images => new ImageSwap(images));
+
+
+// Carousel JS
+
+class Carousel {
+    constructor(element) {
+        this.element = element;
+        // Get left and right buttons from carousel element
+        this.leftButton = element.querySelector('.left-button');
+        this.rightButton = element.querySelector('.right-button');
+        // Get all images within carousel element
+        this.images = this.element.querySelectorAll('img');
+        // Set default index to 0
+        this.currentIndex = 0;
+        // Show first image by default
+        this.images[this.currentIndex].style.display = 'block';
+
+        this.leftButton.addEventListener('click', () => {
+            this.lastImage();
+        })
+
+        this.rightButton.addEventListener('click', () => {
+            this.nextImage();
+        })
+    }
+
+    lastImage() {
+        let lastImg = this.images[this.currentIndex];
+        TweenMax.fromTo(lastImg, 0.5, {
+            ease: Power1.easeOut,
+            x: 0
+        }, {
+            ease: Power1.easeOut,
+            x: -1200
+        });
+        setTimeout(function () {
+            lastImg.style.display = 'none';
+        }, 150);
+
+        // Shift index -1 on left click, wraparound if index < 0
+        if ((this.currentIndex - 1) < 0) {
+            this.currentIndex = this.images.length - 1;
+        } else {
+            this.currentIndex -= 1;
+        }
+
+        let currentImg = this.images[this.currentIndex];
+        setTimeout(function () {
+            currentImg.style.display = 'block';
+        }, 150);
+        TweenMax.fromTo(currentImg, 0.5, {
+            ease: Power1.easeOut,
+            x: 1200
+        }, {
+            ease: Power1.easeOut,
+            x: 0
+        });
+
+    }
+
+    nextImage() {
+        let lastImg = this.images[this.currentIndex];
+
+        TweenMax.fromTo(lastImg, 0.5, {
+            ease: Power1.easeOut,
+            x: 0
+        }, {
+            ease: Power1.easeOut,
+            x: 1200
+        });
+        setTimeout(function () {
+            lastImg.style.display = 'none';
+        }, 150);
+
+        // Shift index +1 on right click, wraparound if index > images.length - 1
+        if ((this.currentIndex + 1) > this.images.length - 1) {
+            this.currentIndex = 0;
+        } else {
+            this.currentIndex += 1;
+        }
+
+        let currentImg = this.images[this.currentIndex];
+        setTimeout(function () {
+            currentImg.style.display = 'block';
+        }, 150);
+        TweenMax.fromTo(currentImg, 0.5, {
+            ease: Power1.easeOut,
+            x: -1200
+        }, {
+            ease: Power1.easeOut,
+            x: 0
+        });
+    }
+}
+
+let carousel = document.querySelectorAll('.carousel');
+
+carousel = Array.from(carousel).map(carousel => new Carousel(carousel));
