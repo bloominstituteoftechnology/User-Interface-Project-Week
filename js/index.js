@@ -1,4 +1,16 @@
 // JS goes here
+function on() {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("xmarks").style.display = "block";
+    document.getElementById("ham").style.display = "none";
+    console.log('should display');
+}
+function off() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("xmarks").style.display = "none";
+    document.getElementById("ham").style.display = "block";
+}
+
 
 class TabLink {
     constructor(element) {
@@ -12,6 +24,7 @@ class TabLink {
 	
 	// Using the Item element, create a new instance of the TabItem class
 	this.tabItem = new TabItem(this.itemElement);
+	this.tabHeader = new TabHeader(this.itemElement);
 	
 	// Add a click event listener on this instance, calling the select method on click
 	this.element.addEventListener('click', () => {
@@ -41,19 +54,31 @@ class TabItem {
     constructor(element) {
 	this.element = element;
     }
-
     select() {
 	// Select all items elements from the DOM
 	const items = document.querySelectorAll(`.tabs-item`);
-	
 	// Remove the class "tabs-item-selected" from each element
 	Array.from(items).forEach(function(items) {
 	    items.classList.remove('tabs-item-selected');
 	});
-	
 	// Add a class named "tabs-item-selected" to this element
 	this.element.classList.add('tabs-item-selected');
-	
+    }
+}
+
+class TabHeader {
+    constructor(element) {
+	this.element = element;
+    }
+    select() {
+	// Select all items elements from the DOM
+	const headers = document.querySelectorAll(`.tabs-header`);
+	// Remove the class "tabs-item-selected" from each element
+	Array.from(headers).forEach(function(headers) {
+	    headers.classList.remove('tabs-header-selected');
+	});
+	// Add a class named "tabs-item-selected" to this element
+	this.element.classList.add('tabs-header-selected');	
     }
 }
 
@@ -68,4 +93,3 @@ links = Array.from(links);
 // headers = Array.from(headers);
 
 links[0].select();
-// headers[0].select();
