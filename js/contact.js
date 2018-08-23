@@ -22,12 +22,16 @@ button.addEventListener('click', function(e) {
       }
     })
     .fromTo(sent, 2, {
-        x: "200%", opacity: 0}, {
+        y: "50%", opacity: 0}, {
         ease: Elastic.easeOut.config(1, 0.4),
-        x: "0%", opacity: 1, onStart: () => {
+        y: "0%", opacity: 1, onStart: () => {
           sent.classList.toggle("show");
-        },
+        }, onComplete: () => {
+          TweenLite.set(sent, {clearProps:"y"});
+        }
     }, 0.5);
+    
+    
   }
   
 });
