@@ -1,11 +1,20 @@
 // nav bar
 const toggleMenu = () => {
-    header.classList.toggle('header-open');
     header.classList.toggle('opacity-on');
     homeLinks.classList.toggle('on');
     dropButton.classList.toggle('none');
     dropButton2.classList.toggle('drop-button2');
+  
   }
+const tweenOn = () =>
+{
+  TweenMax.to('header', 1, {height: 1000})
+}
+
+const tweenOff= () =>
+{
+  TweenMax.to('header', 1, {height: 30})
+}
 
   
   
@@ -23,6 +32,8 @@ const toggleMenu = () => {
   
   dropButton.addEventListener('click', toggleMenu);
   dropButton2.addEventListener('click', toggleMenu);
+  dropButton.addEventListener('click', tweenOn);
+  dropButton2.addEventListener('click', tweenOff);
 
   //Tabs
 
