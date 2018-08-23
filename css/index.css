@@ -177,8 +177,7 @@ h4 {
 }
 .container {
   width: 100%;
-  max-width: 880px;
-  margin: 0 70px 0 85px;
+  max-width: 850px;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -192,8 +191,8 @@ button {
 }
 @media (max-width: 320px) {
   .container {
-    max-width: 320px;
-    padding: 0 0 0 15px;
+    width: 320px;
+    padding: 0;
     width: 100%;
     margin: auto;
     display: flex;
@@ -201,7 +200,7 @@ button {
   }
   button {
     width: 100%;
-    height: 48px;
+    height: 70px;
     font-size: 1.5rem;
     background-color: #FFFFFF;
     border: 1px solid #222222;
@@ -243,10 +242,12 @@ body .main-nav .nav-container .dropdown {
 body .main-nav .nav-container .dropdown .hamburger-img {
   height: auto;
   width: auto;
+  cursor: pointer;
 }
 body .main-nav .nav-container .dropdown .hamburger-close-img {
   height: auto;
   width: auto;
+  cursor: pointer;
 }
 body .dropdown-content {
   width: 100%;
@@ -280,7 +281,8 @@ body .homepage-content {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 body .homepage-content .jumbotron-container {
   position: relative;
@@ -293,7 +295,6 @@ body .homepage-content .jumbotron-container .jumbotron-img {
 body .homepage-content .main-content {
   width: 100%;
   align-items: flex-start;
-  justify-content: flex-start;
   flex-direction: column;
 }
 body .homepage-content .main-content .slogan {
@@ -302,7 +303,7 @@ body .homepage-content .main-content .slogan {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: space-between;
-  margin: -277px 0 0 -2px;
+  margin: -277px 0 0 0;
   z-index: 2;
 }
 body .homepage-content .main-content .slogan h1 {
@@ -314,12 +315,13 @@ body .homepage-content .main-content .slogan h1 {
   margin: 0 0 1rem 0;
 }
 body .homepage-content .main-content .intro-content {
-  margin: 100px 0;
+  margin: 120px 0;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 body .homepage-content .main-content .intro-content .intro-container {
+  margin: 0 0 50px 0;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -327,11 +329,11 @@ body .homepage-content .main-content .intro-content .intro-container {
   height: 300px;
 }
 body .homepage-content .main-content .intro-content .intro-container .text-intro {
-  width: 47%;
+  width: 48%;
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 body .homepage-content .main-content .intro-content .intro-container .text-intro h2 {
   font-weight: Bold;
@@ -342,7 +344,7 @@ body .homepage-content .main-content .intro-content .intro-container .text-intro
   font-size: 1.8rem;
 }
 body .homepage-content .main-content .intro-content .intro-container img {
-  width: 47%;
+  width: 48%;
   height: 276px;
 }
 body .homepage-content .main-content .recent-projects {
@@ -353,7 +355,7 @@ body .homepage-content .main-content .recent-projects h3 {
   font-weight: bold;
 }
 body .homepage-content .main-content .recent-projects .projects-container {
-  margin: 25px 0 105px 0;
+  margin: 0 0 105px 0;
   display: flex;
   flex-direction: column;
 }
@@ -383,26 +385,34 @@ body .homepage-content .main-content .recent-projects .projects-container p {
   font-size: 2rem;
 }
 @media (max-width: 320px) {
+  p {
+    line-height: 1;
+    font-size: 14px;
+  }
   body .homepage-content .jumbotron-container .jumbotron-img {
     content: url("../img/home/home-mobile-jumbotron.png");
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: 260px;
   }
   body .homepage-content .main-content .slogan {
-    line-height: 0.9;
-    margin: -145px 0 0 0;
+    align-items: center;
+    margin: -155px 0 0 15px;
   }
   body .homepage-content .main-content .slogan h1 {
+    line-height: 1;
     font-size: 3.5rem;
   }
   body .homepage-content .main-content .intro-content {
-    margin: 55px 0;
+    width: 100%;
+    margin: 50px 0;
   }
   body .homepage-content .main-content .intro-content .intro-container {
     flex-direction: column-reverse;
     justify-content: space-between;
+    align-content: center;
+    width: 100%;
     height: 540px;
-    margin: 0 0 50px 0;
   }
   body .homepage-content .main-content .intro-content .intro-container img {
     content: url("../img/home/home-mobile-img-1.png");
@@ -414,6 +424,9 @@ body .homepage-content .main-content .recent-projects .projects-container p {
     justify-content: space-between;
     width: 100%;
   }
+  body .homepage-content .main-content .intro-content .intro-container .text-intro h2 {
+    font-size: 2rem;
+  }
   body .homepage-content .main-content .intro-content .intro-container .text-intro p {
     line-height: 1.25;
   }
@@ -424,6 +437,17 @@ body .homepage-content .main-content .recent-projects .projects-container p {
     content: url("../img/home/home-mobile-img-2.png");
     width: 290px;
     height: 275px;
+  }
+  body .homepage-content .main-content .intro-content .bottom-intro .text-intro {
+    height: 240px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  body .homepage-content .main-content .intro-content .bottom-intro .text-intro h2 {
+    font-size: 2rem;
+  }
+  body .homepage-content .main-content .intro-content .bottom-intro .text-intro p {
+    line-height: 1.25;
   }
   body .homepage-content .main-content .recent-projects {
     margin: -55px 0 0 0;
@@ -468,20 +492,21 @@ body .homepage-content .main-content .recent-projects .projects-container p {
 }
 body footer {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 250px;
   margin: 0;
   flex-direction: column;
-  justify-content: center;
   background-color: #828282;
   color: #FFFFFF;
 }
 body footer .footer-container {
   width: 100%;
-  height: 230px;
+  height: 150px;
   display: flex;
   justify-content: space-between;
+  align-content: center;
   margin: 60px 0;
 }
 body footer .footer-container .contact-us {
@@ -489,7 +514,7 @@ body footer .footer-container .contact-us {
   font-size: 20px;
   line-height: 24px;
   color: #FFFFFF;
-  width: 33%;
+  width: 34%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -501,7 +526,7 @@ body footer .footer-container .contact-us p {
 body footer .footer-container .contact-us input {
   margin: 10px 0;
   border-radius: 5px;
-  line-height: 30px;
+  line-height: 40px;
   color: gray;
 }
 body footer .footer-container .contact-us .tiny-font {
@@ -515,10 +540,6 @@ body footer .footer-container .addresses {
   flex-direction: row;
   justify-content: space-between;
 }
-body footer .footer-container .addresses address {
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
 body footer .footer-container .addresses address .state {
   top: 0;
   font-weight: Bold;
@@ -527,15 +548,17 @@ body footer .footer-container .addresses address .state {
   color: #FFFFFF;
 }
 body footer .foot-note {
+  bottom: 2px;
   font-size: 1.2rem;
-  margin: 0 0 10px 15px;
 }
 @media (max-width: 320px) {
   body footer {
+    width: 100%;
     height: auto;
   }
   body footer .footer-container {
     height: auto;
+    width: 100%;
     flex-direction: column;
     align-content: center;
   }
@@ -544,6 +567,7 @@ body footer .foot-note {
     height: auto;
   }
   body footer .footer-container .contact-us input {
+    width: 100%;
     margin: 15px 15px 10px 0;
     line-height: 45px;
   }
@@ -565,7 +589,8 @@ body .services-content {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 body .services-content .jumbotron-container {
   position: relative;
@@ -576,8 +601,8 @@ body .services-content .jumbotron-container .jumbotron-img {
   height: 250px;
 }
 body .services-content .main-content {
+  width: 100%;
   align-items: flex-start;
-  justify-content: flex-start;
   flex-direction: column;
 }
 body .services-content .main-content .slogan {
@@ -591,8 +616,10 @@ body .services-content .main-content .slogan {
 }
 body .services-content .main-content .slogan h1 {
   font-size: 6.4rem;
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 65px;
   color: #FFFFFF;
-  font-weight: bold;
   margin: 0 0 1rem 0;
 }
 body .services-content .main-content .intro-content {
@@ -654,6 +681,72 @@ body .services-content .main-content .tab-descriptions .tab-description .tab-des
   height: auto;
 }
 @media (max-width: 320px) {
+  body .services-content {
+    font-size: 14px;
+  }
+  body .services-content .jumbotron-container .jumbotron-img {
+    content: url("../img/services/services-mobile-jumbotron.png");
+    width: 320px;
+    height: 260px;
+  }
+  body .services-content .main-content .slogan {
+    line-height: 0.9;
+    margin: -145px 0 0 0;
+  }
+}
+body .contact-content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .contact-content .jumbotron-container {
+  position: relative;
+  width: 100%;
+}
+body .contact-content .jumbotron-container .jumbotron-img {
+  width: 100%;
+  height: 250px;
+}
+body .contact-content .main-content {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body .contact-content .main-content .slogan {
+  width: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+  margin: -90px 0 10px 0;
+  z-index: 2;
+}
+body .contact-content .main-content .slogan h1 {
+  font-size: 6.4rem;
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 65px;
+  color: #FFFFFF;
+  margin: 0 0 1rem 0;
+}
+body .contact-content .main-content .mid-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .contact-content .main-content .mid-section .get-in-touch {
+  width: 50%;
+  margin: 50px 0;
+}
+body .contact-content .main-content .mid-section .where-we-work {
+  width: 40%;
+}
+@media (max-width: 320px) {
+  body .services-content {
+    font-size: 14px;
+  }
   body .services-content .jumbotron-container .jumbotron-img {
     content: url("../img/services/services-mobile-jumbotron.png");
     width: 320px;

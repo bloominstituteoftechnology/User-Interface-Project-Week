@@ -3,7 +3,8 @@ body .homepage-content{
     max-width:100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     
     .jumbotron-container{
         position: relative;
@@ -16,7 +17,7 @@ body .homepage-content{
     .main-content{
         width:100%;
         align-items: flex-start;
-        justify-content: flex-start;
+        // justify-content: center;
         flex-direction: column;
         
         .slogan{
@@ -25,7 +26,7 @@ body .homepage-content{
             flex-flow: row wrap;
             justify-content: flex-start;
             align-content: space-between;
-            margin: -277px 0 0 -2px;
+            margin: -277px 0 0 0;
             z-index: 2;
             
             h1 {
@@ -39,24 +40,23 @@ body .homepage-content{
         }
 
         .intro-content{
-            margin: 100px 0;
+            margin: 120px 0;
             display:flex;
             flex-direction: column;
             width:100%;
             .intro-container{
-               
+                margin:0 0 50px 0;
                 width:100%;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 height: 300px;
                 .text-intro{
-                    width: 47%;
+                    width: 48%;
                     height: auto;
                     display:flex;
-
                     flex-direction:column;
-                    justify-content: space-between;
+                    justify-content: center;
                     h2{
                         font-weight:@subheader-ft-weight;
                         font-size:@subheader-ft-size;
@@ -67,10 +67,11 @@ body .homepage-content{
                     } 
                 }
                 img{
-                    width: 47%;
+                    width: 48%;
                     height: 276px;
                 }
             }
+            // .bottom-intro{}
         }
         .recent-projects{
             margin: -100px 0 0 0;
@@ -79,7 +80,7 @@ body .homepage-content{
                 font-weight:bold;
             }
             .projects-container{
-                margin: 25px 0 105px 0;
+                margin: 0 0 105px 0;
                 display: flex;
                 flex-direction: column;
                 .img-label{
@@ -112,28 +113,38 @@ body .homepage-content{
     }
 }
 @media (max-width:320px){
+    p{
+        line-height: 1;
+        font-size: 14px;
+    }
     body .homepage-content{
         .jumbotron-container .jumbotron-img{
             content: url("../img/home/home-mobile-jumbotron.png");
-            width: 320px;
+            width: 100%;
+            max-width:320px;
             height: 260px;
         }
         .main-content {
             .slogan{
-                line-height: 0.9;
-                margin: -145px 0 0 0;
+                align-items: center;
+                margin: -155px 0 0 15px;
                 h1{
+                    line-height: 1;
                     font-size: 3.5rem;
                 }
             }
             .intro-content{
-                margin: 55px 0;
+                // margin: 55px 0;
+                width:100%;
+                margin:50px 0;  
                 
                 .intro-container{
                     flex-direction: column-reverse;
                     justify-content: space-between;
+                    align-content: center;
+                    width:100%;
                     height:540px;
-                    margin: 0 0 50px 0;
+                    // margin: 0 0 50px 0;
                     img {
                         content: url("../img/home/home-mobile-img-1.png");
                         width: 290px;
@@ -143,10 +154,14 @@ body .homepage-content{
                         height: 240px;
                         justify-content: space-between;
                         width: 100%;
+                        h2 {
+                            font-size:2rem;
+                        }
                         p{
                             line-height: 1.25;       
                         }
                     }
+                    
                 }
                 .bottom-intro{
                     flex-direction: column;
@@ -154,6 +169,17 @@ body .homepage-content{
                         content: url("../img/home/home-mobile-img-2.png");
                         width: 290px;
                         height: 275px;
+                    }
+                    .text-intro {
+                        height: 240px;
+                        justify-content: space-between;
+                        width: 100%;
+                        h2{
+                            font-size:2rem;
+                        }
+                        p{
+                            line-height: 1.25;       
+                        }
                     }
                 }
             }
