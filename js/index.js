@@ -1,10 +1,8 @@
 // JS goes here
 
 //// Header Navigation ////
-// get elements
 const menu = document.querySelector('.hamburglar-links');
 const menuToggle = document.querySelector('.hamburglar-toggle');
-// watch for clicks. do the thing!
 menuToggle.addEventListener('click', () => {
     menu.classList.toggle('hidden');
 
@@ -17,4 +15,36 @@ menuToggle.addEventListener('click', () => {
 
 
 //// Tab Navigation ////
+class TabLink {
+    constructor(element) {
+        this.element = element;
+        this.data = this.element.dataset.tab;
+        this.itemElement = document.querySelector(`.tab-item[data-tab='${this.data}']`);
+        this.tabItem = new TabItem(this.itemElement);
+        this.element.addEventListener('click', () => this.select() );
+    }
 
+    select() {
+        const links = document.querySelectorAll('.tab-link');
+        Array.from(links).forEach((link) => link.classList.remove('tab-select') );
+        this.element.classList.add('tab-select');
+        this.tabItem.select();
+    }
+}
+
+class TabItem {
+    constructor(element) {
+        this.element = element;
+    }
+
+    select() {
+        const items = document.querySelectorAll('.tab-item');
+        Array.from(items).forEach((item) => item.classList.remove('show') );
+        this.element.classList.add('show');
+    }
+}
+
+let links = document.querySelectorAll('.tab-link'); 
+links = Array.from(links).map((link) => new TabLink(link) );
+
+links[0].select();
