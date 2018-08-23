@@ -9,5 +9,6 @@ function swap() {
 }
 
 
-
-
+hamburger.addEventListener('click', function() {
+    TweenMax.staggerTo(".ani", .5, {rotation:360, y:100}, .1);
+});
