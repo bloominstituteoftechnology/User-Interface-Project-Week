@@ -23,8 +23,6 @@ class Menu {
     this.nonExtend.classList.add("hidden");
     this.extend.classList.remove("hidden");
 
-    this.hamburger.classList.remove("active");
-    this.cross.classList.add("active");
 
     TweenMax.fromTo(".overlay", 1, { ease: Power4.easeOut, y: "-100%" }, { y: "0%" });
 
@@ -39,8 +37,6 @@ class Menu {
       this.nonExtend.classList.remove("hidden");
       this.extend.classList.add("hidden");
 
-      this.hamburger.classList.add("active");
-      this.cross.classList.remove("active");
 
     }}).fromTo(".main-navigation", 1, {  y:"-100%" }, { y: "0%" } );
 
