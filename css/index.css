@@ -1,1 +1,664 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: Roboto, Arial, sans-serif;
+  background: #FFFFFF;
+}
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+.container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.main-nav {
+  width: 100%;
+  height: 50px;
+  background: #97A4B0;
+  position: fixed;
+  z-index: 1;
+}
+.main-nav nav {
+  font-size: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 13px;
+  color: #FFFFFF;
+  padding: 13px 65px 0 75px;
+}
+.main-nav nav .menu-button {
+  cursor: pointer;
+}
+.main-nav nav .img-hide {
+  display: none;
+}
+.main-nav .dropdown-content {
+  width: 100%;
+  height: 1000px;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  background: #97A4B0;
+  z-index: 2;
+}
+@media (max-width: 500px) {
+  .main-nav .dropdown-content {
+    height: 184px;
+  }
+}
+.main-nav .dropdown-content .nav-link {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 48px;
+}
+.main-nav .dropdown-content .nav-link:hover {
+  color: #514545;
+  background-color: #98A5AF;
+}
+@media (max-width: 500px) {
+  .main-nav .dropdown-content .nav-link {
+    font-size: 24px;
+  }
+}
+.main-nav .hidden {
+  display: none;
+}
+@media (max-width: 500px) {
+  .main-nav {
+    width: 100%;
+    height: 50px;
+    background: #afafaf;
+    position: fixed;
+    z-index: 1;
+  }
+  .main-nav nav {
+    font-size: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 13px;
+    color: #FFFFFF;
+    padding: 13px 20px 0 20px;
+  }
+}
+.main-header {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding-top: 50px;
+  font-weight: bold;
+}
+.main-header .slogan {
+  position: absolute;
+  bottom: 45px;
+  left: 80px;
+  font-size: 5.3rem;
+  text-align: left;
+  line-height: 6.4rem;
+}
+.content-section {
+  margin: 40px 0 70px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.content-section img {
+  width: 85%;
+}
+.content-section .text-content {
+  padding: 45px 10px 0 0;
+  font-weight: regular;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  width: 48%;
+  color: #222222;
+}
+.content-section .button {
+  margin-top: 20px;
+  border: solid 1px #222222;
+  text-align: center;
+  width: 33%;
+  height: 40px;
+  padding-top: 6px;
+}
+.content-section .button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.inverse-content {
+  margin: 70px 0 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.inverse-content img {
+  width: 87%;
+}
+.inverse-content .text-content {
+  padding: 25px 50px 0 0;
+  font-weight: regular;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  width: 49%;
+  color: #222222;
+}
+.inverse-content .button {
+  margin-top: 20px;
+  border: solid 1px #222222;
+  text-align: center;
+  width: 33%;
+  height: 40px;
+  padding-top: 6px;
+}
+.inverse-content .button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.recentprojects {
+  padding: 10px 0 30px 75px;
+}
+.recent-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 76px;
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+.recent-projects .img-header {
+  position: relative;
+}
+.recent-projects .img-header .the-villas {
+  font-size: 2rem;
+  letter-spacing: 0.6rem;
+  position: absolute;
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  padding: 27px 60px;
+  right: 40px;
+  bottom: 35px;
+}
+.recent-projects img {
+  position: relative;
+  width: 95%;
+  padding-bottom: 65px;
+}
+.recent-projects p {
+  margin-bottom: 70px;
+  width: 50%;
+  line-height: 2rem;
+}
+.recent-projects .outskirts {
+  font-size: 2rem;
+  letter-spacing: 0.6rem;
+  position: absolute;
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  padding: 25px 60px;
+  bottom: 35px;
+}
+.recent-projects .the-blocks {
+  font-size: 2rem;
+  letter-spacing: 0.6rem;
+  position: absolute;
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  padding: 25px 55px;
+  right: 41px;
+  bottom: 35px;
+}
+.footer {
+  margin-top: 10px;
+  margin-left: 45px;
+  color: white;
+  padding: 50px 50px 30px 50px;
+  background-color: #989898;
+  display: flex;
+}
+.footer .email-section {
+  width: 50%;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+.footer .email-section h1 {
+  padding-bottom: 8px;
+}
+.footer .email-section .email {
+  padding: 7px 80px 7px 7px;
+  font-size: 1.5rem;
+  border-radius: 7px;
+}
+.footer .email-section h4 {
+  font-size: 1rem;
+  padding-top: 3px;
+}
+.footer .contact {
+  width: 25%;
+  line-height: 2rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.footer .contact .city {
+  padding-bottom: 7px;
+  font-size: 1.6rem;
+}
+.copyright {
+  margin-left: 45px;
+  padding-bottom: 8px;
+  background-color: #989898;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+@media (max-width: 500px) {
+  .main-header {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-top: 50px;
+    font-weight: bold;
+  }
+  .main-header .slogan {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    font-size: 4rem;
+    text-align: left;
+    line-height: 5.4rem;
+  }
+  .content-section {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
+  .content-section .img-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .content-section .text-content {
+    padding: 45px 0 0 0;
+    font-weight: regular;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    width: 85%;
+    color: #222222;
+  }
+  .content-section .text-content h2 {
+    text-align: center;
+    font-size: 2.8rem;
+  }
+  .content-section .button {
+    margin-top: 20px;
+    border: solid 1px #222222;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    padding-top: 6px;
+  }
+  .content-section .button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+  .inverse-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 60px 0 0 0;
+  }
+  .inverse-content .img-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .inverse-content .text-content {
+    padding: 45px 0 0 0;
+    font-weight: regular;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    width: 85%;
+    color: #222222;
+  }
+  .inverse-content .text-content h2 {
+    text-align: left;
+    font-size: 2.8rem;
+  }
+  .inverse-content .button {
+    margin-top: 20px;
+    border: solid 1px #222222;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    padding-top: 6px;
+  }
+  .inverse-content .button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+  .recentprojects {
+    font-size: 3rem;
+    padding: 50px 0 0 10px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .recent-projects {
+    margin-top: 30px;
+    width: 100%;
+    padding: 0;
+  }
+  .recent-projects .img-header {
+    position: relative;
+  }
+  .recent-projects .img-header .the-villas {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 0.6rem;
+    position: absolute;
+    background-color: #D8D8D8;
+    border: 1px solid white;
+    width: 95%;
+    padding: 20px 0;
+    bottom: 15px;
+    left: 10px;
+  }
+  .recent-projects img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 65px;
+  }
+  .recent-projects h2 {
+    padding-left: 30px;
+  }
+  .recent-projects p {
+    width: 100%;
+    font-size: 1.7rem;
+    padding: 10px;
+    line-height: 2.2rem;
+  }
+  .recent-projects .outskirts {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 0.6rem;
+    position: absolute;
+    background-color: #D8D8D8;
+    border: 1px solid white;
+    width: 95%;
+    padding: 20px 0;
+    bottom: 15px;
+    left: 10px;
+  }
+  .recent-projects .the-blocks {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 0.6rem;
+    position: absolute;
+    background-color: #D8D8D8;
+    border: 1px solid white;
+    width: 95%;
+    padding: 20px 0;
+    bottom: 15px;
+    left: 10px;
+  }
+  .footer {
+    margin-top: 60px;
+    color: white;
+    padding: 30px 20px 30px 20px;
+    background-color: #989898;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .email-section {
+    width: 100%;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+  .footer .email-section h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    padding-bottom: 8px;
+    width: 100%;
+  }
+  .footer .email-section .email {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    border-radius: 7px;
+  }
+  .footer .email-section h4 {
+    font-size: 1.2rem;
+    padding: 7px 0 20px 0;
+  }
+  .footer .contact {
+    width: 40%;
+    padding-bottom: 15px;
+    line-height: 2rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  .footer .contact .city {
+    padding: 7px 0 7px 0;
+    font-size: 1.8rem;
+  }
+  .copyright {
+    padding-bottom: 25px;
+    padding-left: 20px;
+    background-color: #989898;
+    color: white;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 1rem;
+  }
+}
+.services .services-slogan {
+  position: absolute;
+  bottom: 20px;
+  left: 80px;
+  font-size: 5.3rem;
+  text-align: left;
+  line-height: 6.4rem;
+}
+.services .headline {
+  width: 92%;
+  padding: 30px 0 20px 83px;
+  font-weight: regular;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: #222222;
+}
+.services .buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 13px;
+}
+.services .buttons .button {
+  border: solid 1px #222222;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
+  width: 15%;
+}
+.services .buttons .button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.services .cards-container {
+  margin-left: 55px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.services .cards-container .card {
+  margin: 60px 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.services .cards-container .card .content {
+  width: 35%;
+  font-weight: regular;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: #222222;
+}
+.services .cards-container .card .img-container {
+  width: 55%;
+}
