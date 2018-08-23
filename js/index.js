@@ -67,9 +67,3 @@ class TabItem {
         this.element.classList.add('tabs-item-selected');
     }
 }
-
-
-
-
-
-
