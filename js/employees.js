@@ -18,8 +18,10 @@ function addFire(){
 		console.log(newRan);
 		console.log(possible);
 		possible[newRan].classList.add('show-fire');
+		TweenMax.from(possible[newRan], 2.5, {opacity: 0.5, x:100, rotation: 360});
 	} else {
 		toFire[fireRan].classList.add('show-fire');
+		TweenMax.from(toFire[fireRan], 2.5, {opacity: 0.5, x:100, rotation: 360});
 	}
 }
 
@@ -29,8 +31,9 @@ function generatorEmployess(){
 	let employs = document.querySelectorAll('.emlpoyees-section');
 	employs.forEach(function(item){
 		item.classList.add('show-emps');
+		
 	})
-
+	TweenMax.staggerFrom(employs, 2, {opacity: 0.5, rotation: 180, scale: -1}, .2);
 	btnFire[0].classList.add('show-fire');
 
 	class Employee {
@@ -48,7 +51,7 @@ function generatorEmployess(){
 	for (let i = 0; i < 10; i++){
 		let ranName = names[Math.floor(Math.random() * 10)];
 		let ranPosish = positions[Math.floor(Math.random() * 10)];
-		let yearsCompany = Math.floor(Math.random() * 15);
+		let yearsCompany = Math.floor(Math.random() * 15) + 1;
 		let employee = new Employee ({
 			'name': ranName,
 			'position': ranPosish,
