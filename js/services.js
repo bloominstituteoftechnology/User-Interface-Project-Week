@@ -11,18 +11,19 @@ class Tab {
         this.tabContent = new TabContent(this.tabElement);
 
         this.element.addEventListener('click', () => {
-            this.selectTab();
+            this.select();
         });
     }
 
-    selectTab() {
+    select() {
         const links = document.querySelectorAll('.button');
 
         links.forEach(element => {
             element.classList.remove('tabs-link-selected');
         })
-
-        this.element.classList.add('tabs-link-selected');
+        
+        this.element.classList.toggle('tabs-link-selected');
+       
 
         this.tabContent.select();
     
@@ -51,4 +52,4 @@ let links = document.querySelectorAll('.button');
 
 links = Array.from(links).map(link => new Tab(link));
 
-links[0].selectTab();
+links[0].select();
