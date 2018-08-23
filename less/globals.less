@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    .general-text;
+}
+
+h2 {
+    .sub-headers;
+    margin-bottom: 20px;
+}
+
+// Site wrapper
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+// Tabs
+.tabs {
+    width: 100%;
+    padding: 0 3% 5% 4.5%;
+
+    
+
+    .tabs-items {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        padding-top: 60px;
+
+    }
+
+    .tabs-item {
+        display: none;
+        opacity: 0;
+
+        padding: 5%;
+
+        @media @mobile {
+            padding-left: 0;
+            padding-right: 2%;
+        }
+
+        .tab-wrapper {
+            display: flex;
+
+            @media @mobile {
+                flex-direction: column;
+            }
+
+        }
+
+        .tabs-item-description {
+            width: 85%;
+
+            @media @tablet {
+                width: 90%;
+            }
+
+            @media @mobile {
+                width: 100%;
+            }
+    }
+
+    img {
+        margin-top: 30px;
+
+        @media @tablet {
+            height: 200px;
+        }
+    }
+
+      .tabs-item-title {
+        font-size: 24px;
+        font-weight: bold;
+        padding-bottom: 10px;
+      }
+
+    }
+    .tabs-item-selected {
+      display: block;
+    }
+  
+    .tabs-links {
+        display: flex;
+        justify-content: space-evenly;
+
+        @media @mobile {
+            flex-direction: column;
+        }
+    }
+  
+    .tabs-link {
+        width: 185px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: @white;
+        border: 1px solid black;
+
+        cursor: pointer;
+        &:hover {
+            background-color: @tab-hover-bg;
+            color: @tab-hover-color;
+        }
+
+        @media @tablet {
+            width: 100%;
+            margin: 1%;
+        }
+
+        @media @mobile {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+      
+    }
+    .tabs-link-selected {
+        z-index: 2;
+        background-color: @tab-selected-bg;
+        color: @white;
+    }
+}
+
+// Toggles desktop images and mobile images
+// Desktop
+.desktop {
+    // visibility: visible;
+    display: block;
+
+    @media @mobile {
+        display: none;
+    }
+}
+
+// Mobile
+.mobile {
+    display: none;
+
+    @media @mobile {
+        display: block;
+    }
+}
+
+// Jumbotron
+.jumbotron {
+    .jumobotron-headers;
+    position: relative;
+
+    // Jumbotron Image
+    img {
+        width: 100%;
+    }
+
+    // Jumbotron Header
+    .jumbotron-text {
+        position: absolute;
+        top: 53%;
+        left: 8%;
+
+        @media @tablet {
+            top: 43%;
+            left: 0;
+            padding-left: 5%;
+        }
+
+        @media @mobile {
+            top: 40%;
+            padding-left: 6%;
+            left: 0;
+        }
+    }
+}
+
+// Columns
+.column-wrapper {
+    display: flex;
+    justify-content: space-between;
+    color: @mine-shaft;
+
+    @media @mobile {
+        flex-direction: column;
+    }
+
+    // Columns
+    .column {
+        padding: 5%;
+        width: 100%;
+    }
+
+    // Contact Address specific Column
+    .column-second {
+        width: 80%;
+        padding-right: 0;
+        padding-left: 10%;
+    }
+}
+
+// Form
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    height: 40px;
+    border: 1px solid @alto;
+    border-radius: 3px;
+    padding: 1%;
+}
+
+select {
+    height: 40px;
+    border: 1px solid @alto;
+    border-radius: 3px;
+    background-color: @white;
+}
+
+textarea {
+    border: 1px solid @alto;
+    border-radius: 3px;
+    background-color: @white;
+    padding: 1%;
+}
+
+// Radio Button Appearance
+input[type='radio']:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    top: 10px;
+    left: -4px;
+    position: relative;
+    background-color: #FFFFFF;
+    content: '';
+    display: flex;
+    visibility: visible;
+    border: 1px solid @alto;
+    cursor: pointer;
+}
+
+input[type='radio']:checked:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    top: 10px;
+    left: -4px;
+    position: relative;
+    background-color: @hippie-blue;
+    content: '';
+    display: flex;
+    visibility: visible;
+    border: 1px solid @alto;
+    cursor: pointer;
+}
+
+fieldset label {
+    margin-left: 1%;
+    position: relative;
+    top: -12px;
+    cursor: pointer;
+}
+
+// Buttons
+.btn {
+    .button-creator;
+    width: 150px;
+    border-radius: 0;
+
+}
+
+// STRETCH
+// Animates elements into view
+@keyframes fade-in {
+    from {opacity: 0; transform: scale(.7,.7)}
+    to {opacity: 1;}
+}
+
+.fade-in-element {
+    animation: fade-in 1.4s;
+}
+
+.hidden {
+    opacity: 0;
+}
