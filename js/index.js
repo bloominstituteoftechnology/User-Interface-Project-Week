@@ -5,19 +5,23 @@ let content = document.querySelector('.dropdown-content');
 let close = document.querySelector('.menu-close');
 
 menu.addEventListener('click', () => {
-    content.classList.toggle('hidden');
-    menu.classList.toggle('img-hide');
-    close.classList.toggle('img-hide');
+  content.classList.toggle('hidden');
+  menu.classList.toggle('img-hide');
+  close.classList.toggle('img-hide');
 });
 
 close.addEventListener('click', () => {
-    content.classList.toggle('hidden');
-    menu.classList.toggle('img-hide');
-    close.classList.toggle('img-hide');
+  content.classList.toggle('hidden');
+  menu.classList.toggle('img-hide');
+  close.classList.toggle('img-hide');
 });
 
-menu.addEventListener('mouseenter', () => {
-  TweenMax.to(menu, 0.5, {rotation:360, scale:1});
+menu.addEventListener('mouseover', () => {
+  TweenMax.to(menu, 0.3, {rotation:360, scale:1});
+})
+
+close.addEventListener('mouseover', () => {
+  TweenMax.to(close, 0.3, {rotation:360, scale:1});
 })
 
 
