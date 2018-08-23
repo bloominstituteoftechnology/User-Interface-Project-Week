@@ -72,7 +72,9 @@
     }
   } // tabs end
 
+
   .projects {
+    position: relative;
 
     h3 {
       padding-bottom: 20px;
@@ -82,8 +84,68 @@
       }
     }
 
+    .left-button, .right-button {
+      background-color: @rp-square;
+      color: @font-color;
+      font-size: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      .center;
+      cursor: pointer;
+      position: absolute;
+      z-index: 3;
+
+      &:hover {
+        color: @bg-color
+        ;
+        background-color: @font-color;
+
+      }
+
+      @media @phone {
+        display: none;
+      }
+
+    }
+
+    .left-button {
+      top: 60%; 
+      left: 1%;
+      transform: translate(0, -50%);
+  
+    }
+    .right-button {
+      top: 60%; 
+      right: 1%;
+      transform: translate(0, -50%);
+  
+    }
+
+    .background {
+      background-color: @nav-ex-bg;
+      height: 625px;
+      width: 10000px;
+      position: absolute;
+      z-index: -20;
+      right: -500px;
+      overflow-x: hidden;
+
+      @media @phone {
+        background-color: @bg-color; 
+      }
+    }
+
+
     .project {
-      padding: 20px 0;
+      display: none;
+      margin: 20px 0 30px 0;
+      z-index: 5;
+
+      @media @phone {
+        display: inherit;
+        background-color: @bg-color;
+      }
 
       .project-title {
         position: relative;
@@ -133,6 +195,10 @@
         }
       }
     } //project end
+
+    .display {
+      display: inherit;
+    }
   } //projects end
 
 
