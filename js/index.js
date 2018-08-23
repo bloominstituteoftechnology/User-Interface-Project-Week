@@ -16,6 +16,7 @@ const close = document.querySelector('.close')
 
 close.addEventListener('click', () => {
     nav.classList.remove('full-menu');
+    menu.src = "img/nav-hamburger.png"
 });
 
 //Tab Component
