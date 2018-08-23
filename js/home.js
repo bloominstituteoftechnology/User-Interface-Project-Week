@@ -1,4 +1,4 @@
-const timeline = new TimelineMax();
+let timeline = new TimelineMax();
 
 class Project {
   constructor(element) {

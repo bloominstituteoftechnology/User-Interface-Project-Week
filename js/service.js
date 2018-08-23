@@ -1,5 +1,5 @@
 //Service tabs
-const timeline = new TimelineMax();
+let timeline = new TimelineMax();
 
 
 
@@ -39,7 +39,7 @@ class TabContent {
   activate() {
     const contents = document.querySelectorAll(".tab");
 
-    timeline.fromTo(".active", 1, {y: "0%"}, {ease: Power1.easeOut, y: "10%", opacity: 0, onComplete: () => {
+    timeline.fromTo(".active", 0.5, {y: "0%"}, {ease: Power1.easeOut, y: "10%", opacity: 0, onComplete: () => {
       contents.forEach(content => {
         content.classList.remove("active");
       });

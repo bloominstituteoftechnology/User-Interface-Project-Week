@@ -5,16 +5,24 @@ const email = document.querySelector("#email");
 const textera = document.querySelector("#overview");
 const radio = document.querySelector("#small");
 
-console.log(radio.value)
+const small = document.querySelector("#small");
+const residential = document.querySelector("#residential");
+const corporation = document.querySelector("#corporation");
+
+let timeline = new TimelineMax();
 
 
 
+console.log((small.checked || residential.checked || corporation.checked))
 
 
 button.addEventListener('click', function(e) {
-  if(email.value === "") {
+  if (email.value === "" || textera.value === "")  {
+    
+  
+  } else if ((small.checked || residential.checked || corporation.checked) === false) {
+    alert("Make sure to choose your business.")
   } else {
-    const timeline = new TimelineMax();
     timeline.to(button, 0.5, {
       ease: Power1.easeOut,
       x: "-100%", opacity: 0, onComplete: () => {
