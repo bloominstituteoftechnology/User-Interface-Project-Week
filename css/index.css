@@ -147,9 +147,13 @@ html {
   width: 100%;
 }
 html body {
+  font-family: 'Roboto', Arial, sans-serif;
   width: 100%;
   margin: 0;
   background-color: #FFFFFF;
+  font-weight: Regular;
+  font-size: 16px;
+  line-height: 24px;
 }
 h1,
 h2,
@@ -174,8 +178,8 @@ h4 {
 .container {
   width: 100%;
   max-width: 880px;
-  margin: auto;
-  padding: 0 0 0 20px;
+  margin: 0 70px 0 85px;
+  padding: 0;
   display: flex;
   justify-content: center;
 }
@@ -206,6 +210,9 @@ button {
 .display-off {
   display: none;
 }
+.tab-selected {
+  background-color: #5E9FB9;
+}
 body .main-nav {
   display: flex;
   justify-content: center;
@@ -218,14 +225,15 @@ body .main-nav {
 }
 body .main-nav .nav-container {
   width: 100%;
-  height: 51px;
+  height: 50px;
   justify-content: space-between;
 }
 body .main-nav .nav-container .company-name {
   display: flex;
   align-items: center;
-  color: white;
-  font-size: 2.5rem;
+  font-weight: Bold;
+  font-size: 24px;
+  color: #FFFFFF;
   text-decoration: none;
 }
 body .main-nav .nav-container .dropdown {
@@ -235,7 +243,6 @@ body .main-nav .nav-container .dropdown {
 body .main-nav .nav-container .dropdown .hamburger-img {
   height: auto;
   width: auto;
-  margin: 0 5px 0 0;
 }
 body .main-nav .nav-container .dropdown .hamburger-close-img {
   height: auto;
@@ -245,21 +252,29 @@ body .dropdown-content {
   width: 100%;
   height: 100%;
   position: fixed;
+  background-color: #222222;
   opacity: 0.9;
   z-index: 3;
-  background-color: black;
   margin: 50px 0 0 0;
 }
-body .dropdown-content a {
-  color: #FFFFFF;
-  width: 100%;
-  font-size: 10rem;
-  margin: 0 auto;
+body .dropdown-content .anchors {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+body .dropdown-content .anchors a {
   text-decoration: none;
   text-align: center;
+  font-weight: Bold;
+  font-size: 48px;
+  line-height: 85px;
+  color: #FFFFFF;
 }
-body .dropdown-content a:hover {
+body .dropdown-content .anchors a:hover {
   text-decoration: underline;
+  color: #222222;
+  background-color: #FFFFFF;
 }
 body .homepage-content {
   max-width: 100%;
@@ -276,6 +291,7 @@ body .homepage-content .jumbotron-container .jumbotron-img {
   height: 600px;
 }
 body .homepage-content .main-content {
+  width: 100%;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
@@ -286,13 +302,15 @@ body .homepage-content .main-content .slogan {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: space-between;
-  margin: -273px 0 0 -3px;
+  margin: -277px 0 0 -2px;
   z-index: 2;
 }
 body .homepage-content .main-content .slogan h1 {
   font-size: 6.4rem;
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 65px;
   color: #FFFFFF;
-  font-weight: bold;
   margin: 0 0 1rem 0;
 }
 body .homepage-content .main-content .intro-content {
@@ -302,26 +320,30 @@ body .homepage-content .main-content .intro-content {
   width: 100%;
 }
 body .homepage-content .main-content .intro-content .intro-container {
-  margin: 0 0 100px 0;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 300px;
 }
 body .homepage-content .main-content .intro-content .intro-container .text-intro {
-  width: 48%;
+  width: 47%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 body .homepage-content .main-content .intro-content .intro-container .text-intro h2 {
-  font-size: 2.4rem;
-  font-weight: bold;
+  font-weight: Bold;
+  font-size: 28px;
+  color: #222222;
 }
 body .homepage-content .main-content .intro-content .intro-container .text-intro p {
   font-size: 1.8rem;
 }
 body .homepage-content .main-content .intro-content .intro-container img {
-  width: 48%;
+  width: 47%;
+  height: 276px;
 }
 body .homepage-content .main-content .recent-projects {
   margin: -100px 0 0 0;
@@ -450,7 +472,6 @@ body footer {
   width: 100%;
   height: 250px;
   margin: 0;
-  background-color: grey;
   flex-direction: column;
   justify-content: center;
   background-color: #828282;
@@ -462,10 +483,12 @@ body footer .footer-container {
   display: flex;
   justify-content: space-between;
   margin: 60px 0;
-  font-size: 2rem;
-  line-height: 1.2;
 }
 body footer .footer-container .contact-us {
+  font-weight: Bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
   width: 33%;
   height: 100%;
   display: flex;
@@ -498,8 +521,10 @@ body footer .footer-container .addresses address {
 }
 body footer .footer-container .addresses address .state {
   top: 0;
-  font-size: 2rem;
-  font-weight: bold;
+  font-weight: Bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
 }
 body footer .foot-note {
   font-size: 1.2rem;
@@ -595,20 +620,21 @@ body .services-content .main-content .services-tabs .services-tab {
   justify-content: center;
   font-size: 2rem;
   font-weight: bold;
-  background-color: #FFFFFF;
   border: 1px solid #222222;
 }
 body .services-content .main-content .services-tabs .services-tab:hover {
-  background-color: green;
-  color: #FFFFFF;
+  background-color: #222222;
+  cursor: pointer;
+  color: #FFF;
 }
 body .services-content .main-content .tab-descriptions {
   width: 100%;
   margin: 10px 0 100px 0;
 }
 body .services-content .main-content .tab-descriptions .tab-title {
-  font-weight: bold;
-  font-size: 2.5rem;
+  font-weight: Bold;
+  font-size: 28px;
+  color: #222222;
 }
 body .services-content .main-content .tab-descriptions .tab-description {
   margin: 10px 0;

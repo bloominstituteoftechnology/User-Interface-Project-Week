@@ -10,26 +10,19 @@ const dropdownContent = document.querySelector(".dropdown-content");
 dropdownContent.classList.add("display-off");
 
 hamburgerButton.addEventListener('click', (event) => {
-    hamburgerButton.classList.toggle("display-off");
-    closeButton.classList.toggle("display-off");
-    dropdownContent.classList.toggle("display-off");    
+    hamburgerButton.classList.add("display-off");
+    closeButton.classList.remove("display-off");
+    dropdownContent.classList.remove("display-off");    
 });
 closeButton.addEventListener('click', (event) => {
-    hamburgerButton.classList.toggle("display-off");
-    closeButton.classList.toggle("display-off");
-    dropdownContent.classList.toggle("display-off");    
+    hamburgerButton.classList.remove("display-off");
+    closeButton.classList.add("display-off");
+    dropdownContent.classList.add("display-off");    
 });
 
 
 //Services tabs on Services page
-const serviceArray=["Pre-Construction","Construction","Design Build","Sustainability"]
 
-const serviceImgArray=[
-    "services-tab-pre-construction-img.png",
-    "services-tab-construction-img.png",
-    "services-tab-design-build-img.png",
-    "services-tab-sustainability-img"
-]
 
 let serviceTabTitle = document.querySelector(".tab-title");
 
@@ -38,12 +31,35 @@ let serviceDescriptionImg = document.querySelector(".tab-description-img");
 class ServicesTab{
     constructor(element){
         this.element = element;
-        console.log(this.element[index]);
         this.element.addEventListener('click', (event) => {
+            //Update title of service description to the tab clicked
             serviceTabTitle.innerText = this.element.innerText;
-            console.log(serviceTabTitle.innerText);
-            serviceDescriptionImg.src = `$serviceImgArray[this.element.index]`;
-            console.log(serviceDescriptionImg.src);
+
+            //Update image of service description to the appropriate image
+            //set up arrays of service types and service images
+            const serviceArray=["Pre-Construction","Construction","Design Build","Sustainability"];
+            const serviceImgArray = [
+                "services-tab-pre-construction-img.png",
+                "services-tab-construction-img.png",
+                "services-tab-design-build-img.png",
+                "services-tab-sustainability-img.png"
+            ];
+            
+            //Determine which service image to display
+            let iterator = -1;
+            let arrayIndex = 0;          
+            do{
+                iterator++;
+                if (this.element.innerText === serviceArray[iterator]){
+                    arrayIndex = iterator;
+                }               
+            } while(this.element.innerText !== serviceArray[iterator] && iterator < serviceArray.length)
+            serviceDescriptionImg.src = `./img/services/${serviceImgArray[arrayIndex]}`;
+
+            //Ensure only the selected tab has the appropriate background color
+            const allServiceTabs = document.querySelectorAll(".services-tab");
+            Array.from(allServiceTabs).forEach( serviceTab => serviceTab.classList.remove("tab-selected"));
+            this.element.classList.add("tab-selected");
         });
     }
 }
