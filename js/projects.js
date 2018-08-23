@@ -23,7 +23,6 @@ Vue.component('project-tile', {
 });
 
 
-
 let projects = new Vue({
     el: '#projects',
     data: {
