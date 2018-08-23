@@ -1,0 +1,115 @@
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: @soft-blue;
+    
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 855px;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: @logo-color;
+        font-weight: bold;
+        font-size: 2.4rem;
+    }
+
+    .navigation {
+        display: none;
+        z-index: 20;
+
+        a {
+            text-decoration: none;
+            color: @white;
+            font-size: 4.8rem;
+            font-weight: bold;
+            line-height: 8.5rem;
+
+            
+        }
+
+        a.active {
+            color: @font-color;
+        }
+    }
+
+    .navigation-show {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 25%;
+        left: 45%;
+
+        @media @phone {
+            width: 100%;
+            left: 25%;
+            }
+    }
+
+    // .hamburger {
+    //     display: flex;
+    //     align-items: center;
+    //     background: none;
+    //     border: none;
+
+    //  &:hover{
+    //    cursor: pointer;
+    //  }
+    // }
+    .hamburger {
+        display: inline-block;
+        cursor: pointer;
+        text-transform: none;
+        background-color: transparent;
+        border: 0;
+        margin: 0;
+        overflow: visible; }
+        .hamburger:hover {
+          opacity: 0.5; }
+      
+      .hamburger-box {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        position: relative; }
+      
+      .hamburger-inner {
+        display: block;
+        top: 50%;
+        margin-top: -2px; }
+        
+        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+          width: 30px;
+          height: 3px;
+          background-color: @white;
+          border-radius: 4px;
+          position: absolute;
+          transition-property: transform;
+          transition-duration: 0.15s;
+          transition-timing-function: ease; }
+        .hamburger-inner::before, .hamburger-inner::after {
+          content: "";
+          display: block; }
+        .hamburger-inner::before {
+          top: -10px; }
+        .hamburger-inner::after {
+          bottom: -10px; }
+
+    
+      
+      
+
+}
+
+.header.navigation-show {
+    align-items: flex-start;
+    padding-top: 12px;
+}
