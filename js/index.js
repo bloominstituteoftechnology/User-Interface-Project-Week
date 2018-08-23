@@ -16,7 +16,7 @@ navigationOpenButton.addEventListener('click', (event) => {
 // Add event listener for click on nav close button
 navigationCloseButton.addEventListener('click', (event) => {
     navigationContent.classList.toggle('navigation-hidden');
-    console.log('Nav Open button clicked');
+    console.log('Nav Close button clicked');
 });
 
 // ----- CHANGE IMAGE SOURCES ON MOBILE/DESKTOP -----

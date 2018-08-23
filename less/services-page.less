@@ -13,43 +13,73 @@
 
     .intro-section {
         margin-top: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
     .tabs {
         
-        display: flex;
+        .flex-and-wrap;
         justify-content: space-between;
+        
         .tab {
             border: 1px solid #222222;
             font-size: 2rem;
             font-weight: bold;
-            padding-top: 12px;
-            padding-bottom: 12px;
+            // padding-top: 12px;
+            // padding-bottom: 12px;
+            padding: 12px 12px 12px 12px;
+            margin: 20px 0 0 0;
             width: 22%;
+            min-width: 170px;
             display: flex;
             justify-content: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            cursor: pointer;
             &:hover {
                 background-color: #222222;
                 color: #FFFFFF;
             }
+            @media @mobile {
+                width: 100%;
+                
+            }
+        }
+        .active-tab {
+            background-color: #5E9FB9;
+            color: #FFFFFF;
         }
     }
 
     .tab-content {
         display: none;
         
-        .tab-text-content {
-            width: 47%;
-        }
-        .tab-image-content {
-
-        }
+        
     }
 
     .active-tab-content {
         margin: 50px auto 50px auto;
-        .flex-and-wrap;
+        display: flex;
         justify-content: space-between;
+        align-items: flex-end;
+        @media @mobile {
+            flex-wrap: wrap;
+        }
+        .tab-text-content {
+            width: 50%;
+            @media @mobile {
+                width: 100%;
+            }
+        }
+        .tab-image-content {
+            margin-bottom: 20px;
+            width: 44%;
+            @media @mobile {
+                width: 100%;
+            }
+            img {
+                width: 100%;
+            }
+        }
     }
 }

@@ -149,7 +149,6 @@ body {
   margin: 0 auto 0 auto;
 }
 .header-container {
-  background-color: #828282;
   width: 100%;
   max-width: 1024px;
   margin: 0 auto 0 auto;
@@ -159,43 +158,24 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px 80px 10px 80px;
-  position: relative;
+  background-color: #8E9AA6;
+  position: fixed;
+  top: 0;
+  margin-left: auto;
+  margint-right: auto;
+  width: 100%;
+  max-width: 1024px;
+  z-index: 2;
 }
 .header-container .navigation .header-logo {
   color: #FFFFFF;
   font-size: 2.4rem;
 }
-.header-container .navigation-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #7084A1;
-}
-.header-container .navigation-content h1 {
-  color: #FFFFFF;
-  position: absolute;
-  top: 10px;
-  left: 80px;
-}
-.header-container .navigation-content .header-logo {
-  color: #FFFFFF;
-  font-size: 2.4rem;
-}
-.header-container .navigation-content .navigation-button {
+.header-container .navigation .navigation-button {
   position: absolute;
   top: 15px;
   right: 80px;
-}
-.header-container .navigation-hidden {
-  display: none;
+  cursor: pointer;
 }
 .header-container .header-image {
   position: relative;
@@ -210,8 +190,9 @@ body {
   left: 80px;
   color: #FFFFFF;
   font-weight: bold;
-  font-size: 5.7rem;
-  line-height: 7rem;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  letter-spacing: 2px;
   width: 30%;
 }
 a {
@@ -223,6 +204,39 @@ a {
 }
 a:hover {
   color: black;
+}
+.navigation-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  background-color: #7084A1;
+}
+.navigation-content h1 {
+  color: #FFFFFF;
+  position: absolute;
+  top: 10px;
+  left: 80px;
+}
+.navigation-content .header-logo {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+}
+.navigation-content .navigation-button {
+  position: absolute;
+  top: 15px;
+  right: 80px;
+  cursor: pointer;
+}
+.navigation-hidden {
+  display: none;
 }
 .footer-container {
   background-color: #828282;
@@ -391,6 +405,11 @@ a:hover {
     width: 100%;
   }
 }
+@media (max-width: 600px) {
+  .home .recent-projects h3 {
+    margin-left: 20px;
+  }
+}
 .home .recent-projects .project {
   display: flex;
   flex-wrap: wrap;
@@ -403,6 +422,7 @@ a:hover {
 @media (max-width: 600px) {
   .home .recent-projects .project-header {
     width: 100%;
+    margin-top: 10px;
   }
 }
 .home .recent-projects .project-header img {
@@ -489,35 +509,71 @@ a:hover {
 }
 .services .intro-section {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .services .tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .services .tabs .tab {
   border: 1px solid #222222;
   font-size: 2rem;
   font-weight: bold;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 12px 12px 12px 12px;
+  margin: 20px 0 0 0;
   width: 22%;
+  min-width: 170px;
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  cursor: pointer;
 }
 .services .tabs .tab:hover {
   background-color: #222222;
   color: #FFFFFF;
 }
+@media (max-width: 600px) {
+  .services .tabs .tab {
+    width: 100%;
+  }
+}
+.services .tabs .active-tab {
+  background-color: #5E9FB9;
+  color: #FFFFFF;
+}
 .services .tab-content {
   display: none;
-}
-.services .tab-content .tab-text-content {
-  width: 47%;
 }
 .services .active-tab-content {
   margin: 50px auto 50px auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-end;
+}
+@media (max-width: 600px) {
+  .services .active-tab-content {
+    flex-wrap: wrap;
+  }
+}
+.services .active-tab-content .tab-text-content {
+  width: 50%;
+}
+@media (max-width: 600px) {
+  .services .active-tab-content .tab-text-content {
+    width: 100%;
+  }
+}
+.services .active-tab-content .tab-image-content {
+  margin-bottom: 20px;
+  width: 44%;
+}
+@media (max-width: 600px) {
+  .services .active-tab-content .tab-image-content {
+    width: 100%;
+  }
+}
+.services .active-tab-content .tab-image-content img {
+  width: 100%;
 }
