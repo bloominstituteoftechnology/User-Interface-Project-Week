@@ -1,5 +1,17 @@
 // JS goes here
 
+//Scrollmagic
+// var controller = new ScrollMagic.controller();
+
+// var scene = new ScrollMagic.Scene({
+//     triggerElement: '.recent-projects'
+// })
+// .setClassToggle('.recent-projects', 'show')
+// .addTo(controller);
+
+
+
+//Navbar
 let image_tracker = 'f';
 function change() {
     var image = document.querySelector('.burger');
@@ -8,7 +20,7 @@ function change() {
     if (image_tracker == 'f') {
         image.src = 'img/nav-hamburger-close.png';
         image_tracker = 't';
-        TweenMax.to('nav', 1, {height: 300});
+        TweenMax.to('nav', 1, {height: '100%'});
         TweenMax.staggerFrom('.menu a', 1, {opacity:0}, .1);
         nav.style.opacity = '0.9';
         menu.style.display = 'block';
@@ -18,7 +30,7 @@ function change() {
     else {
         image.src = 'img/nav-hamburger.png';
         image_tracker = 'f';
-        TweenMax.to('nav', 1, {height: 35});
+        TweenMax.to('nav', 0.5, {height: 35});
         menu.style.display = 'none';
     }
 }
