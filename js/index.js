@@ -76,3 +76,40 @@ class Dropdown {
 // Set the dropdown and set the dropdown to a class of Dropdown
 let dropdowns = document.querySelectorAll('.dropdown');
 dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
+
+// Animate the elements into view
+let animateHTML = function () {
+    let elems, windowHeight;
+
+    let init = function () {
+        // Get all elements with hidden class
+        elems = document.querySelectorAll('.hidden');
+        // Set window height
+        windowHeight = window.innerHeight;
+        _addEventHandlers();
+    };
+
+    // Add event listeners to the window
+    let _addEventHandlers = function () {
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', init);
+    };
+
+    // Check the position of the elements
+    let checkPosition = function () {
+      for (var i = 0; i < elems.length; i++) {
+            // Get the top position
+            var posFromTop = elems[i].getBoundingClientRect().top;
+            // Replace hidden class with fade-in-element class
+            if (posFromTop - windowHeight <= 0) {
+                elems[i].className = elems[i].className.replace('hidden', 'fade-in-element');
+            }
+        }
+    };
+
+    return {
+        init: init
+    };
+};
+
+animateHTML().init();
