@@ -231,19 +231,19 @@ h1 {
     padding: 2rem;
   }
 }
-.home .content-box img {
-  width: 50%;
-}
 @media ( max-width: 500px ) {
   .home .content-box img {
     width: 100%;
   }
 }
+.home .content-box .img-title {
+  display: flex;
+  position: relative;
+}
 .home .content-box h2 {
   align-self: flex-start;
   padding-top: 1rem;
   padding-bottom: 2rem;
-  padding-left: 1rem;
 }
 @media ( max-width: 500px ) {
   .home .content-box h2 {
@@ -252,18 +252,15 @@ h1 {
     text-align: center;
   }
 }
-.home .content-box p {
-  padding: 0.5rem;
-  margin: 0.5rem;
-}
 @media ( max-width: 500px ) {
   .home .content-box p {
     width: 100%;
   }
 }
 .home .content-box .text-content {
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  margin: 3rem;
 }
 @media ( max-width: 500px ) {
   .home .content-box .text-content {
@@ -277,7 +274,7 @@ h1 {
 }
 .home .content-box .text-content .button {
   display: flex;
-  height: 4rem;
+  height: 6rem;
   width: 15rem;
   background-color: white;
   color: black;
@@ -286,6 +283,12 @@ h1 {
   align-items: center;
   justify-content: center;
   align-content: center;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+.home .content-box .text-content .button:hover {
+  background-color: #222222;
+  color: #FFF;
 }
 @media ( max-width: 500px ) {
   .home .content-box .text-content .button {
@@ -471,8 +474,10 @@ h1 {
 }
 header {
   display: flex;
-  position: static;
-  max-width: 1024px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  opacity: 0.9;
   background-color: #99A4AF;
   margin: 0 auto;
   justify-content: space-between;
