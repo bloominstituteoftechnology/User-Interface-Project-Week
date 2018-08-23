@@ -16,6 +16,7 @@ const close = document.querySelector('.close')
 
 close.addEventListener('click', () => {
     nav.classList.remove('full-menu');
+    menu.src = "img/nav-hamburger.png"
 });
 
 //Tab Component
@@ -72,4 +73,6 @@ let links = document.querySelectorAll('.tabs-link');
 links = Array.from(links).map(linkItem => new TabLink(linkItem));
 
 
-links[0].select();
+//GSAP Animations
+
+// TweenMax.to(".header-text", 2, {left:100});
