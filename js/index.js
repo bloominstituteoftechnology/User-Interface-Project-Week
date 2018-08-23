@@ -1,14 +1,18 @@
-// Image Slide Event
+// Animations
 const slideImages = document.querySelectorAll('.slide');
+const projects = document.querySelectorAll('.project');
+
+window.addEventListener('scroll', checkSlide);
 
 function checkSlide() {
+  // Image Slide Event
   slideImages.forEach(slideImage => {
     const slideInAt = (window.scrollY + window.innerHeight) - slideImage.height / 2;
     const halfShown = slideInAt > slideImage.offsetTop;
     const imageBottom = slideImage.offsetTop  + slideImage.height;
     const notPassed = window.scrollY < imageBottom;
     const hasSlideClass = slideImage.classList.contains('slide');
-
+  
     const slide = () => {
       slideImage.classList.remove('slide');
 
@@ -23,9 +27,28 @@ function checkSlide() {
       slide();
     } 
   })
-}
 
-window.addEventListener('scroll', checkSlide);
+  // Project Skew Event
+  projects.forEach(project => {
+    const view = window.scrollY + window.innerHeight;
+    const hasRotateClass = project.classList.contains('rotate');
+
+    const rotate = () => {
+      project.classList.remove('rotate');
+
+      if (project.classList.contains('skewFromRight')) {
+        TweenMax.fromTo('.skewFromRight', 3, {skewX:-5, opacity: 0}, {skewX:0, opacity: 1})
+      }
+      else if (project.classList.contains('skewFromLeft')) {
+        TweenMax.fromTo('.skewFromLeft', 3, {skewX:5, opacity: 0}, {skewX:0, opacity: 1})
+      }
+    }
+
+    if (view > project.offsetTop && hasRotateClass) {
+      rotate();
+    } 
+  })
+}
 
 // Navigation Bar
 const modalNavTween = TweenMax.from('.navigation', 0.5, {y: -200, skewY: 100});
