@@ -1,0 +1,145 @@
+.home-h1 {
+  padding-top: 325px;
+  @media @tablet {
+    padding-top: 250px;
+  }
+}
+
+.home {
+
+  .top-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0 100px;
+    @media @mobile {
+      flex-direction: column-reverse;
+      margin: 40px 0 50px;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 48.5%;
+      @media @mobile {
+        max-width: 100%;
+        margin-top: 25px;
+      }
+      p {
+        margin: 20px 0 25px;
+      }
+    }
+    .desktop {
+      align-self: center;
+      object-fit: cover;
+      max-width: 48.5%;
+      height: 275px;
+      @media @mobile {
+        display: none;
+      }
+    }
+    .mobile {
+      display: none;
+      width: 100%;
+      @media @mobile {
+        display: block;
+      }
+    }
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+    @media @mobile {
+      flex-direction: column-reverse;
+    }
+  }
+  .projects-header {
+    margin: 30px 0 50px;
+    @media @mobile {
+      margin-bottom: 25px;
+    }
+  }
+  .mid-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    @media @mobile {
+      margin-bottom: 50px;
+    }
+    p {
+      max-width: 52%;
+      font-size: 18px;
+      margin-top: 25px;
+      @media @mobile {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 65px;
+  @media @mobile {
+    margin-bottom: 70px;
+    padding: 0;
+  }
+
+  .desktop {
+    align-self: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    @media @mobile {
+      display: none;
+    }
+  }
+  .mobile {
+    display: none;
+
+    // position: absolute; //shifts page content when resized
+    // left: 0;
+    // align-self: flex-start;
+    // width: 100%;
+
+    // position: relative; //causes horizontal scrollbar, feels hacky
+    // width: 100vw;
+    // margin-left: -50vw;
+    // left: 50%;
+    // margin-top: 100px;
+    
+    align-self: flex-start; //splits up .container .home
+    width: 100%;
+    @media @mobile {
+      display: block;
+    }
+  }
+  .project-square {
+    position: absolute;
+    align-self: flex-end;
+    .center;
+    width: 316px;
+    height: 96px;
+    background: @project-square-bg;
+    font-weight: normal;
+    letter-spacing: 8px;
+    border: 1px solid white;
+    margin-top: 40px; //chrome
+    margin-bottom: -40px; //firefox
+    z-index: 1;
+    @media @mobile {
+      align-self: center;
+      margin-top: 80px; //chrome
+      margin-bottom: -80px; //firefox
+    }
+  }
+  .reverse {
+    align-self: flex-start;
+    @media @mobile {
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: @main-bg;
+  color: @main-text;
+  font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+h1 {
+  position: relative;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: @jumbo-header;
+  @media @tablet {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  @media @mobile {
+    position: absolute;
+    font-size: 34px;
+    line-height: 45px;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: @sub-header;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 20px;
+  color: @sub-header;
+}
+
+p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.container, .navbar, .project-container, .footer-container, .copyright, .team-container, h1 {
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1%;
+  @media @mobile {
+    padding: 0 4%;
+  }
+}
+
+.jumbotron {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  .desktop {
+    position: absolute;
+    left: 50%;
+    margin-left: -512px;
+    @media @tablet {
+      max-width: 800px; //desktop style
+      margin-left: -400px;
+      // position: relative; //mobile style
+      // align-self: flex-start;
+      // width: 100%;
+      // left: 0;
+      // margin-left: 0;
+    }
+    @media @mobile {
+      display: none;
+    }
+  }
+  .mobile {
+    position: relative;
+    display: none;
+    align-self: flex-start;
+    width: 100%;
+    @media @mobile {
+      display: block;
+    }
+  }
+  h1 {
+    padding-bottom: 50px;
+    @media @mobile {
+      align-self: flex-end;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.button {
+  .center;
+  width: 135px;
+  height: 46px;
+  border: 1px solid @button-border;
+  cursor: pointer;
+  @media @tablet {
+    width: 100%;
+  }
+}
+
+.dark {
+  background: #333d44;
+}
+.header-dark {
+  background: rgba(30, 38, 44, 0.95);
+}
+.footer-dark {
+  background: #242d35;
+}
+.light {
+  color: #e2f3ff;
+  border-color: #e2f3ff;
+}
