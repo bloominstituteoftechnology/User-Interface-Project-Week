@@ -1,25 +1,54 @@
 .services-header {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 
+  @media @mobile {
+    .services-desk {
+      display: none;
+    }
+  }
+
   .services-mobile {
     display: none;
+
+    @media @mobile {
+      width: 100%;
+      display: block;
+    }
   }
 
   h1 {
     align-self: flex-start;
     margin: -98px 0 20px 8%;
     color: @jumbotron;
+
+    @media @mobile {
+      font-size: 3.8rem;
+      margin: -81px 0 20px 5%;
+    }
   }
 
   p{
     margin: 5.5% 8.4% 5.4% 8.1%;
+    
+    @media @mobile {
+      width: 90%;
+      margin: 20px auto 40px;
+    }
   }
 } //header
 
 .content-items {
   width: 85%;
   margin: 70px 8% 80px;
+
+  @media @mobile {
+    width: 90%;
+    margin: 20px auto;
+  }
 
   .item {
     width: 100%;
@@ -28,9 +57,21 @@
     justify-content: space-evenly;
     align-items: center;
     margin: 0 0 50px;
+
+    @media @mobile {
+      flex-direction: column;
+
+      .desktop-img {
+        display: none;
+      }
+    }
   
     .mobile-img {
       display: none;
+
+      @media @mobile {
+        display: block;
+      }
     }
   
     p {
@@ -50,12 +91,24 @@
   width: 85%;
   margin: 0 8% 43px;
 
+  @media @mobile {
+    width: 90%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
   .tab {
     .button-creator(23%, 50px);
     font-size: 2rem;
     font-weight: bold;
     &:hover {
       text-decoration: underline;
+    }
+
+    @media @mobile {
+      .button-creator(100%, 50px);
+      font-size: 2.1rem;
+      margin-bottom: 25px;
     }
   }
 
