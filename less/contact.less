@@ -1,18 +1,38 @@
 .contact-header {
+  width: 100%;
   display: flex;
   flex-direction: column;
 
+  @media @mobile {
+    max-width: 320px;
+    width: 100%;
+  }
+
   .contact-mobile {
     display: none;
+
+    @media @mobile {
+      width: 100%;
+      display: block;
+    }
   }
 
   .contact-desk {
     width: 100%;
+    
+    @media @mobile {
+      display: none;
+    }
   }
 
   h1 {
     color: @nav-text;
     margin: -90px 0 70px 10%;
+    
+    @media @mobile {
+      font-size: 3.7rem;
+      margin: -80px 0% 40px 6%;
+    }
   }
 }//contact header
 
@@ -23,12 +43,28 @@
   justify-content: space-evenly;
   margin: 0 0 50px 8%;
 
+  @media @mobile {
+    max-width: 320px;
+    width: 90%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
   .contact-content {
     width: 70%;
+
+    @media @mobile {
+      width: 100%;
+    }
     
     .email {
       width: 80%;
       margin: 50px 0;
+      
+      @media @mobile {
+        width: 100%;
+        margin-bottom: 30px;
+      }
 
       input[type="text"] {
         .button-creator(100%, 45px);
@@ -40,12 +76,22 @@
       p {
         font-size: 1.4rem;
         color: @gull-gray;
+
+        @media @mobile {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
       }
     } //email
 
     .planning {
       width: 80%;
       margin-bottom: 50px;
+
+      @media @mobile {
+        width: 100%;
+        margin-bottom: 30px;
+      }
 
       #building {
         .button-creator(100%, 45px);
@@ -59,12 +105,20 @@
       width: 80%;
       margin-bottom: 30px;
 
+      @media @mobile {
+        width: 100%;
+      }
+
       #overview {
         width: 100%;
         height: 200px;
         border-radius: 4px;
         border: 1px solid @gull-gray;
         margin-top: 10px;
+
+        @media @mobile {
+          height: 150px;
+        }
       }
     } //overview
 
@@ -79,16 +133,29 @@
     .submit {
       input[type="submit"] {
         .button-creator(22%, 50px);
+        @media @mobile {
+          .button-creator(100%, 50px);
+          background-color: @white;
+          margin-bottom: 50px;
+        }
       }
     } //submit
   }
 
   .location {
     width: 30%;
+    @media @mobile {
+      width: 90%;
+      margin-bottom: 30px;
+    }
 
     .location-info {
       h2 {
         margin: 5px 0;
+
+        @media @mobile {
+          margin: 0 0;
+        }
       }
 
       h3 {
@@ -101,8 +168,8 @@
         line-height: 25px;
         margin-top: 5px;
       }
-    }
+    } //location info
 
-  }
+  }//location
 
-}
+} //contact header
