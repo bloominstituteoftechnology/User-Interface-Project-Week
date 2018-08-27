@@ -16,7 +16,6 @@ class TabLink {
 
     Array.from(links).forEach(linkItem => linkItem.classList.remove('tabs-link-selected'));
 
-    this.element.classList.add('tabs-item-selected');
     this.element.classList.add('tabs-link-selected');
     
     this.tabItem.select();
