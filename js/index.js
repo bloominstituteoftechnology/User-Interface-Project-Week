@@ -9,36 +9,36 @@ menuButton.addEventListener("click", toggleMenu);
 //Service Tabs
 
 class TabLink {
-	constructor(element) {
-		this.element = element;
-		this.data = this.element.dataset.tab;
-		this.item = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
-		this.tabItem = new TabItem(this.item);
-		this.element.addEventListener("click", () => {this.select() });
+	constructor(link) {
+		this.link = link; //this reps the links
+		this.link.addEventListener("click", () => {this.linkClick() }); //putting a click event on the link/element
+		this.data = this.link.dataset.tab; //calling the dataset
+		this.tabContent = document.querySelector(`.tabs-item[data-tab="${this.data}"]`); //connecting the dataset. e=link, tCont=content
+		
+		this.tabContent = new Content(this.tabContent); //establishing a new class for the content
+		
 	}
-	select() {
-		const links =document.querySelectorAll("tabs-link");
-		links.forEach(link => { link.classList.remove("tabs-link-selected")
-	});
-		this.element.classList.add("tabs-link-selected");
-		this.tabItem.select();
+
+	linkClick() {
+		this.tabContent.toggleContent(); //method to toggle content
+		console.log("this works?");
 	}
 }
-class TabItem {
-	constructor(element) {
-		this.element = element;
+
+class Content {
+	constructor(tabContent) {
+		this.tabContent = tabContent; //this reps the content
 	}
-	Select() {
-		const items = document.querySelectorAll(".tabs-item");
-		items.forEach(item => { item.classList.remove("tabs-items-selected");
-		})
-		this.element.classList.add("tabs-item-selected");
+	toggleContent() {
+		this.tabContent.classList.toggle('tab-toggle');  //the toggle
 	}
 }
 
 
-let links = document.querySelectorAll(".tabs-link");
-links = Array.from(links).map(link => new TabLink(link));
+let links = document.querySelectorAll(".tabs-link"); //grabbing the links themselves
+links = Array.from(links).map(link => new TabLink(link)); //making the links into an array for easier access
+
+
 
 
 
