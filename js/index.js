@@ -13,17 +13,17 @@ class TabLink {
 		this.element = element; //this reps the links
 		this.data = this.element.dataset.tab; //calling the dataset
 		this.item = document.querySelector(`.tabs-item[data-tab="${this.data}"]`); //connecting the dataset.e=link, tCont=content
-		this.tabItem= new TabItem(this.item); //establishing a new class for the content
+		this.tabItem = new TabItem(this.item); //establishing a new class for the content
 		this.element.addEventListener('click', () => { this.select(); //putting a click event on the link/element
 		}); 
 	};
 
 	select() {
-		const links = document.querySelectorAll('.tabs-link');
+		const links = document.querySelectorAll('.tabs-links');
 		links.forEach( link => {
-			link.classList.remove('tabs-link-selected')
+			link.classList.remove('tabs-link-selected') //on the link/element add/remove this class
 		});
-		this.element.classList.add('tabs-link-selected');
+		this.element.classList.add('tabs-link-selected'); 
 		this.tabItem.select();
 	}
 }
