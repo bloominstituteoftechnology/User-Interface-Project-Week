@@ -19,7 +19,7 @@ class TabLink {
 	};
 
 	select() {
-		const links = document.querySelectorAll('.tabs-links');
+		const links = document.querySelectorAll('.tabs-link');
 		links.forEach( link => {
 			link.classList.remove('tabs-link-selected') //on the link/element add/remove this class
 		});
