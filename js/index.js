@@ -1,6 +1,8 @@
 // JS goes here
 
-// Tabs JS
+// Nav Bar Functionality
+
+// Tab & Tab Items Functionality
 class TabLink {
     constructor(element) {
       this.element = element;
