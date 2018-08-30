@@ -173,7 +173,7 @@ a {
   color: white;
   text-decoration: none;
 }
-.navbar {
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -184,81 +184,42 @@ a {
   font-size: 2.4rem;
 }
 @media (max-width: 500px) {
-  .navbar {
+  .header {
     width: 100%;
     margin: 0 auto;
   }
 }
-.navbar img {
+.header img {
   width: 2rem;
 }
-.nav-burger {
+.menu-button {
+  position: absolute;
+  right: 20px;
   cursor: pointer;
 }
-.overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */
-  height: 100%;
-  width: 0;
+.menu {
+  display: none;
   position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
   left: 0;
-  top: 0;
-  background-color: #000000;
-  /* Black fallback color */
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Black w/opacity */
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  width: 100vw;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #9da4b1;
+  border: 1px solid #004d40;
+  border-left: none;
+  border-bottom: none;
+  opacity: 0.96;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
 }
-/* Position the content inside the overlay */
-.overlay-content {
-  position: relative;
-  top: 25%;
-  /* 25% from the top */
-  width: 100%;
-  /* 100% width */
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
   text-align: center;
-  /* Centered text/links */
-  margin-top: 30px;
-  /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
-/* The navigation links inside the overlay */
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
+.menu--open {
   display: block;
-  /* Display block instead of inline */
-  transition: 0.3s;
-  /* Transition effects on hover (color) */
-}
-/* When you mouse over the navigation links, change their color */
-.overlay a:hover,
-.overlay a:focus {
-  color: #f1f1f1;
-}
-/* Position the close button (top right corner) */
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px;
-  }
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
 }
 .jumbotron-home {
   width: 1024px;
@@ -448,15 +409,52 @@ h1 {
   position: absolute;
   top: 130px;
 }
-.services .services-menu {
-  margin: 30px 0 0 0;
+.tabs {
   width: 100%;
 }
-.services .services-menu .tab-container {
+.tabs-items {
+  width: 100%;
+  height: 300px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 45px 0;
+  justify-content: center;
+  padding-top: 60px;
+  border: 5px solid red;
+}
+.tabs-item {
+  display: none;
+  width: 75%;
+}
+.tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs-item-selected {
+  display: block;
+}
+.tabs-links {
+  display: flex;
+  background-color: teal;
+}
+.tabs-link {
+  padding: 20px 25px;
+  font-size: 24px;
+  background-color: orange;
+  border-right: 1px solid #b37b7b;
+  color: white;
+  cursor: pointer;
+}
+.tabs-link:hover {
+  background-color: red;
+}
+.tabs-link-selected {
+  z-index: 2;
+  border-right: 1px solid red;
+  background-color: white;
+  color: black;
+}
+.tabs-link-selected:hover {
+  background-color: white;
 }
 footer {
   background-color: darkgrey;
