@@ -8,7 +8,7 @@ class TabLink {
 		console.log(this.data);
 
 		this.item = document.querySelector(
-			`.tab-content-item[data-tab=${this.data}"]`
+			`.tab-content-item[data-tab="${this.data}"]`
 		);
 		this.tabItem = new TabItem(this.item);
 
@@ -36,17 +36,17 @@ class TabItem {
 	}
 
 	select() {
-		const items = document.querySelectorAll('tabs-content-item');
+		const items = document.querySelectorAll('.tabs-content-item');
 
-		items.forEach((item  => {
-			item.classList.remove('active-tab-item');
-		})
+		items.forEach((item) => {
+			item.classList.remove('tabs-content-item-selected');
+		});
 
-		this.element.classList.add('active-tab-item');
+		this.element.classList.add('tabs-content-item-selected');
 	}
 }
 
-let links = document.querySelector('.tab-btn');
+let links = document.querySelectorAll('.tab-btn');
 links = Array.from(links).map((link) => new TabLink(link));
 
 links[0].select();
