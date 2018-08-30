@@ -1,8 +1,13 @@
 // JS goes here
 
 // Nav Bar Functionality
+const toggleMenu = () => {
+  menu.classList.toggle('menu--open')
+}
 
-
+const menu = document.querySelector('.nav-list');
+const menuButton = document.querySelector('.closed-menu');
+menuButton.addEventListener('click', toggleMenu);
 
 // Tab & Tab Items Functionality
 class TabLink {
