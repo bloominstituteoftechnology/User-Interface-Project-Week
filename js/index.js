@@ -39,10 +39,10 @@ class TabItem{
         this.element=element;
     }
     select(){
-        TweenLite.to(this.element, .3, {css:{className:'+=selected'}});
+        TweenLite.to(this.element, 0.1, {css:{className:'+=selected'}});
     }
     deselect(){
-        TweenLite.to(this.element, .3, {css:{className:'-=selected'}})
+        TweenLite.to(this.element, 0.1, {css:{className:'-=selected'}})
     }
 }
 let tabs=document.querySelectorAll('.tabs');
