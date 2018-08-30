@@ -15,11 +15,11 @@ class TabLink {
     };
   
     select() {
-      const links = document.querySelectorAll('.tabs-link');
+      const links = document.querySelectorAll('.tabslink');
       links.forEach( link => {
-        link.classList.remove('tabs-link-selected')
+        link.classList.remove('tabslink-selected')
       });
-      this.element.classList.add('tabs-link-selected');
+      this.element.classList.add('tabslink-selected');
       this.tabItem.select();
     }
   }
@@ -38,7 +38,7 @@ class TabLink {
     }
   }
 
-  let links = document.querySelectorAll('.tabs-link');
+  let links = document.querySelectorAll('.tabslink');
   links = Array.from(links).map( link => new TabLink(link));
   
   links[0].select()
