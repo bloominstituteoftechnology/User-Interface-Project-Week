@@ -2,6 +2,8 @@
 
 // Nav Bar Functionality
 
+
+
 // Tab & Tab Items Functionality
 class TabLink {
     constructor(element) {
