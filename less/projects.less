@@ -193,9 +193,14 @@
         z-index: 9000;
 
         div {
-            width: 855px;
+            max-width: 855px;
             display: flex;
             justify-content: space-around;
+            padding: 0 15px;
+
+            @media @mobile {
+                flex-direction: column;
+            }
 
             div {
                 flex-direction: column;
@@ -210,9 +215,18 @@
         }
 
         img {
-            max-width: 100%;
+            max-width: 250px;
             height: auto;
             margin-right: 20px;
+
+            @media @mobile {
+                max-width: auto;
+                flex-direction: column;
+                align-self: center;
+                margin-right: 0;
+                margin-bottom: 50px;
+            }
+
         }
     }
 

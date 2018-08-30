@@ -1169,9 +1169,15 @@ table {
   z-index: 9000;
 }
 #projects .projects .project-modal div {
-  width: 855px;
+  max-width: 855px;
   display: flex;
   justify-content: space-around;
+  padding: 0 15px;
+}
+@media (max-width: 600px) {
+  #projects .projects .project-modal div {
+    flex-direction: column;
+  }
 }
 #projects .projects .project-modal div div {
   flex-direction: column;
@@ -1183,9 +1189,18 @@ table {
   font-size: 1.6rem;
 }
 #projects .projects .project-modal img {
-  max-width: 100%;
+  max-width: 250px;
   height: auto;
   margin-right: 20px;
+}
+@media (max-width: 600px) {
+  #projects .projects .project-modal img {
+    max-width: auto;
+    flex-direction: column;
+    align-self: center;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
 }
 #projects .projects .modal-show {
   display: flex;
