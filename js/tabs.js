@@ -18,13 +18,15 @@ class TabLink {
 	}
 
 	select() {
-		const buttons = document.querySelectorAll('.tabs-btn');
+		const links = document.querySelectorAll('.tab-btn');
+		// console.log(links);
 
-		buttons.forEach((button) => {
-			button.classList.remove('active-tab');
+		links.forEach((link) => {
+			link.classList.remove('active-tab');
 		});
 
 		this.element.classList.add('active-tab');
+		console.log(this.element);
 
 		this.tabItem.select();
 	}
@@ -47,6 +49,7 @@ class TabItem {
 }
 
 let links = document.querySelectorAll('.tab-btn');
+console.log(links);
 links = Array.from(links).map((link) => new TabLink(link));
 
 links[0].select();
