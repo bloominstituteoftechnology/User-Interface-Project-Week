@@ -20,13 +20,13 @@ class Dropdown {
 	}
 
 	toggleOpenContent() {
-		this.content.classList.remove('nav-hidden');
+		this.content.classList.add('nav-hidden');
 		this.openButton.classList.remove('button-hidden');
 		this.closedButton.classList.add('button-hidden');
 	}
 
 	toggleClosedContent() {
-		this.content.classList.add('nav-hidden');
+		this.content.classList.remove('nav-hidden');
 		this.openButton.classList.add('button-hidden');
 		this.closedButton.classList.remove('button-hidden');
 	}
