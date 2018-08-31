@@ -2,10 +2,10 @@
 class TabLink {
 	constructor(element) {
 		this.element = element;
-		console.log(this.element);
+		//console.log(this.element);
 
 		this.data = this.element.dataset.tab;
-		console.log(this.data);
+		//console.log(this.data);
 
 		this.item = document.querySelector(
 			`.tab-content-item[data-tab="${this.data}"]`
@@ -36,13 +36,13 @@ class TabItem {
 	}
 
 	select() {
-		const items = document.querySelectorAll('.tabs-content-item');
+		const items = document.querySelectorAll('.tab-content-item');
 
 		items.forEach((item) => {
-			item.classList.remove('tabs-content-item-selected');
+			item.classList.remove('tab-content-item-selected');
 		});
 
-		this.element.classList.add('tabs-content-item-selected');
+		this.element.classList.add('tab-content-item-selected');
 	}
 }
 
