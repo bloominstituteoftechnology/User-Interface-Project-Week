@@ -1,3 +1,9 @@
+let closeBtn = document.querySelector(".close-button");
+
+closeBtn.addEventListener("click", function() {
+  menu.classList.toggle("menu--open");
+});
+
 const toggleMenu = () => {
   console.log("hello");
   menu.classList.toggle("menu--open");
