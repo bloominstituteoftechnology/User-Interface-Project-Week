@@ -1,43 +1,81 @@
 .homepage-content {
-	width: 900px;
-	
+	max-width: 900px;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid teal;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+
 
 	.homeHeader {
 		top: 50px;
 		
 		.homeHeaderImg {
 			width: 100%;
+			height: 598px;
 
+			@media @phone {
+				display: none;
+			}
+
+		}
+		.homeHeaderImgMobile {
+			display: none;
+
+			@media @phone {
+				display: flex;
+			}
 		}
 		h1 {
 			font-size: @h1-font-size;
 			color: @h-color;
 			position: absolute;
-			top: 260px;
+			top: 40%;
 			z-index: 1;
+
+			@media @phone {
+				top: 10%;
+			}
 		}
 	}
 	.textPic1 {
 		display: flex;
 		flex-direction: row;
 		margin-top: 30px;
-		width: 850px;
+		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 		justify-content: center;
 		align-items: center;
 
+		@media @phone {
+			flex-direction: column-reverse;
+
+		}
+
 
 		.textButton {
-			width: 95%;
+			width: 50%;
 			padding-top: 60px;
-			margin-left: 10px;
-
+			display: flex;
+			flex-direction: column;
+			margin: 10px;
+			
+			
 			h2 {
 				font-size: @h2-font-size;
+				margin: 10px 0px 10px 0px;
+
+				@media @phone {
+					width: 100%;
+					font-size: @textH2-font-size;
+					text-align: center;
+				}
+
 			}
 			p {
 				font-size: @p-font-size;
@@ -50,29 +88,54 @@
 					color: @but-hov-font-color;
 				}
 			}
-			img {
-				width: 100%;
+		}
+		.img1 {
+			width: 50%;
 
+			@media @phone {
+				display: none;
 			}
+		}
+		.img1Mobile {
+			display: none;
+
+			@media @phone {
+				display: flex;
+	
+			}
+
 		}
 	}
 	.textPic2 {
 		display: flex;
 		flex-direction: row-reverse;
 		margin-top: 30px;
-		width: 850px;
+		width: 90%;
 		margin-left: auto;
 		margin-right: auto;
 		justify-content: center;
 		align-items: center;
 
+		@media @phone {
+			flex-direction: column-reverse;
+		}
+
 		.textButton {
-			width: 95%;
+			width: 50%;
 			padding-top: 60px;
-			margin-left: 10px;
+			display: flex;
+			flex-direction: column;
+			margin: 10px;
+		
 
 			h2 {
 				font-size: @h2-font-size;
+				margin: 10px 0px 10px 0px;
+
+				@media @phone {
+					width: 100%;
+					font-size: @textH2-font-size;
+				}
 			}
 			p {
 				font-size: @p-font-size;
@@ -80,23 +143,43 @@
 			.button {
 				.button-creator(@but-width,@but-height, @but-bg-color, @but-font-color, @p-font-size);
 
+				@media @phone {
+					width: 80%;
+				}
+
 				&:hover {
 					background-color: @but-hov-bg-color;
 					color: @but-hov-font-color;
 				}
 			}
-			img {
-				width: 100%;
+		}
+		.img2 {
+			width: 50%;
 
+			@media @phone {
+				display: none;
 			}
+		}
+		.img2Mobile {
+			display: none;
+
+			@media @phone {
+				display: flex;
+			}
+
 		}
 	}
 
 	.recentProjectsHead {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+
 		h2 {
 			font-size: @h2-font-size;
-			margin: 10px;
-			width: 75%;
+			margin: 30px;
+			width: 100%;
 		}
 
 	}
@@ -109,30 +192,51 @@
 		.imgGreyBox {
 			display: flex;
 			justify-content: center;
+			height: 200px;
 
 			img {
 				width: 75%;
-				margin-left: auto;
+				margin-left: 100px;
 				margin-right: auto;
 
+				@media @phone {
+					display: none;
+				}
+
+			}
+			.villaMobile {
+				display: none;
+
+				@media @phone {
+					display: flex;
+					flex-direction: column;
+					margin-left: 25%;
+
+				}
 			}
 			.greyBox {
-				position: absolute;
-				left: 70%;
-				top: 140%;
+				position: relative;
+				left: -10%;
+				top: 170px;
 				z-index: 1;
 				.grey-label(@lab-width,@lab-height, @lab-bg-color, @lab-font-color, @h3-font-size);
 
+				@media @phone {
+					.media-grey-label(@medialab-width,@medialab-height, @medialab-bg-color, @medialab-font-color, @mediah3-font-size);
+					top: 85%;
+					left: -37%;
+					text-align: center;
+				}
 			}
 		}
-		p {
+		.villaP1 {
 			width: 50%;
 			font-size: @p-font-size;
 			margin: @basic-margin;
-			padding-top: 20px;
+			padding-top: 40px;
 
 		}
-		p {
+		.villaP2 {
 			width: 50%;
 			font-size: @p-font-size;
 			margin: @basic-margin;
@@ -145,20 +249,52 @@
 		align-items: center;
 
 		.imgGreyBox {
+			display: flex;
+			justify-content: center;
+			height: 200px;
+
 			img {
 				width: 75%;
+				margin-left: 100px;
+				margin-right: auto;
+
+				@media @phone {
+					display: none;
+				}
+			}
+			.outskirtsMobile {
+				display: none;
+
+				@media @phone {
+					display: flex;
+					flex-direction: column;
+					margin-left: 25%;
+
+				}
 			}
 			.greyBox {
+				position: relative;
+				left: -75%;
+				top: 170px;
 				z-index: 1;
 				.grey-label(@lab-width,@lab-height, @lab-bg-color, @lab-font-color, @h3-font-size);
+			
+				@media @phone {
+					.media-grey-label(@medialab-width,@medialab-height, @medialab-bg-color, @medialab-font-color, @mediah3-font-size);
+					top: 85%;
+					left: -37%;
+					text-align: center;
+				}
 			}
 		}
-		p {
+		.outP1 {
 			width: 50%;
 			font-size: @p-font-size;
 			margin: @basic-margin;
+			padding-top: 40px;
+
 		}
-		p {
+		.outP2 {
 			width: 50%;
 			font-size: @p-font-size;
 			margin: @basic-margin;
@@ -171,23 +307,55 @@
 		align-items: center;
 
 		.imgGreyBox {
+			display: flex;
+			justify-content: center;
+			height: 200px;
+
 			img {
 				width: 75%;
+				margin-left: 100px;
+				margin-right: auto;
+
+				@media @phone {
+					display: none;
+				}
+			}
+			.blocksMobile {
+				display: none;
+
+				@media @phone {
+					display: flex;
+					flex-direction: column;
+					margin-left: 25%;
+
+				}
 			}
 			.greyBox {
+				position: relative;
+				left: -14%;
+				top: 170px;
 				z-index: 1;
 				.grey-label(@lab-width,@lab-height, @lab-bg-color, @lab-font-color, @h3-font-size);
+
+				@media @phone {
+					.media-grey-label(@medialab-width,@medialab-height, @medialab-bg-color, @medialab-font-color, @mediah3-font-size);
+					top: 85%;
+					left: -37%;
+					text-align: center;
+				}
 			}
 		}
-		p {
+		.blockP1 {
 			width: 50%;
 			font-size: @p-font-size;
 			margin: @basic-margin;
+			padding-top: 40px;
 		}
-		p {
+		.blockP2 {
 			width: 50%;
 			font-size: @p-font-size;
 			margin: @basic-margin;
+
 		}
 	}
 }
