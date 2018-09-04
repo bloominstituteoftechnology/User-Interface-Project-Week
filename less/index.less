@@ -6,55 +6,359 @@ v2.0b1 | 201101
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
 }
-body{
-  line-height:1;
+body {
+	line-height: 1;
 }
-ol,ul{
-  list-style:none;
+ol,
+ul {
+	list-style: none;
 }
-blockquote,q{
-  quotes:none;
+blockquote,
+q {
+	quotes: none;
 }
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: ’’;
+	content: none;
 }
-ins{
-  text-decoration:none;
+ins {
+	text-decoration: none;
 }
-del{
-  text-decoration:line-through;
+del {
+	text-decoration: line-through;
 }
 
-table{
-  border-collapse:collapse;
-  border-spacing:0;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 /* Your Code Goes Here */
+/******* IMPORTS ***************/
+@import './variables';
+@import './mixins';
+@import './navigation';
+@import './footer';
+@import './services';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i,900');
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-size: 62.5%;
+	font-family: Roboto, Arial, sans-serif;
+}
+
+.container {
+	.container-mixin(880px, 100%, 0 auto, 1.6rem);
+	@media @mobile {
+		.container-mixin(400px, 100%, 0 auto, 1.6rem);
+	}
+}
+
+.homepage-header {
+	.homepage-header-content {
+		display: flex;
+		height: 550px;
+		// position: relative;
+		@media @mobile {
+			height: 260px;
+		}
+
+		img {
+			width: 100%;
+		}
+		.visible-mobile {
+			display: none !important;
+		}
+
+		@media @mobile {
+			.visible-mobile {
+				display: inline !important;
+			}
+			.hidden-mobile {
+				width: 100%;
+				display: none !important;
+			}
+		}
+		.home-header-text {
+			position: absolute;
+			display: flex;
+
+			.heading {
+				.jumbotron-headers;
+				padding-top: 294px;
+				padding-left: 65px;
+				@media @mobile {
+					font-weight: 700;
+					font-size: 33px;
+					line-height: 44px;
+					color: #ffffff;
+					padding-top: 110px;
+					padding-left: 14px;
+				}
+			}
+		}
+	}
+}
+
+.homepage-top-content {
+	display: flex;
+	flex-wrap: wrap;
+	@media @mobile {
+		flex-direction: column;
+	}
+	.homepage-card {
+		display: flex;
+		justify-content: space-around;
+		padding: 50px;
+		.general-text(@regular, 1.6rem, 2.4rem);
+		@media @mobile {
+			flex-direction: column-reverse;
+			padding: 20px;
+		}
+		.top-content-text {
+			display: flex;
+			flex-wrap: wrap;
+			padding-right: 25px;
+			h3 {
+				.sub-headers(@bold, 2.8rem, #222222);
+				@media @mobile {
+					font-weight: 700;
+					letter-spacing: 2.5px;
+					font-size: 24px;
+					color: #222222;
+					padding-top: 30px;
+					padding-bottom: 30px;
+				}
+			}
+
+			p {
+			}
+
+			.button {
+				.button-creator;
+				@media @mobile {
+					margin-top: 20px;
+					width: 400px;
+				}
+			}
+		}
+
+		.visible-mobile {
+			display: none !important;
+		}
+
+		@media @mobile {
+			.visible-mobile {
+				display: inline !important;
+			}
+			.hidden-mobile {
+				display: none !important;
+			}
+		}
+	}
+	.homepage-card:last-child {
+		@media @mobile {
+			flex-direction: column;
+		}
+	}
+	.top-content-text:last-child {
+		padding-left: 25px;
+	}
+}
+
+.homepage-recent-projects-content {
+	display: flex;
+	flex-wrap: wrap;
+	h3 {
+		.sub-headers(@bold, 2.8rem, #222222);
+		margin: 5%;
+	}
+
+	.homepage-projects-card {
+		margin-left: 5%;
+		margin-right: 5%;
+		.homepage-recent-proj-img {
+			// margin-left: 5%;
+			// margin-right: 5%;
+			position: relative;
+			.visible-mobile {
+				display: none !important;
+			}
+
+			.hidden-mobile {
+				width: 100%;
+			}
+
+			@media @mobile {
+				.visible-mobile {
+					display: inline !important;
+					width: 100%;
+				}
+				.hidden-mobile {
+					display: none !important;
+				}
+			}
+
+			// .project-title-card {
+			// 	margin-right: 150px;
+			// 	background: #d8d8d8;
+			// 	width: 275px;
+			// 	height: 90px;
+			// 	.sub-headers(@bold, 2.8rem, #222222);
+			// }
+		}
+		.project-title-card {
+			margin-right: 150px;
+			background: #d8d8d8;
+			width: 275px;
+			height: 90px;
+			.sub-headers(@bold, 2.8rem, #222222);
+			.center;
+			@media @mobile {
+				font-size: 25px;
+				width: 315px;
+			}
+		}
+		.bottom-right-card {
+			.bottom-right(170px, 517px);
+			// padding-top: 35px;
+			letter-spacing: 10px;
+			@media @mobile {
+				.bottom-right(170px, 20px);
+			}
+		}
+
+		.bottom-left-card {
+			.bottom-left(165px, 367px);
+			// padding-top: 30px;
+			@media @mobile {
+				left: 20px;
+			}
+		}
+		.recent-projects-text {
+			p {
+				.general-text(@regular, 1.6rem, 2.4rem);
+				margin: 75px 215px 25px;
+				@media @mobile {
+					line-height: 2.7rem;
+					margin: 85px 5px 25px 0px;
+				}
+			}
+
+			p:last-child {
+				margin: 25px 215px 75px;
+				@media @mobile {
+					margin: 22px 0px 35px;
+				}
+			}
+		}
+	}
+}
