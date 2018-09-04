@@ -157,6 +157,9 @@ html {
 
 .container {
 	.container-mixin(880px, 100%, 0 auto, 1.6rem);
+	@media @mobile {
+		.container-mixin(400px, 100%, 0 auto, 1.6rem);
+	}
 }
 
 .homepage-header {
@@ -164,6 +167,9 @@ html {
 		display: flex;
 		height: 550px;
 		// position: relative;
+		@media @mobile {
+			height: 260px;
+		}
 
 		img {
 			width: 100%;
@@ -188,6 +194,14 @@ html {
 				.jumbotron-headers;
 				padding-top: 294px;
 				padding-left: 65px;
+				@media @mobile {
+					font-weight: 700;
+					font-size: 33px;
+					line-height: 44px;
+					color: #ffffff;
+					padding-top: 110px;
+					padding-left: 14px;
+				}
 			}
 		}
 	}
@@ -196,13 +210,17 @@ html {
 .homepage-top-content {
 	display: flex;
 	flex-wrap: wrap;
+	@media @mobile {
+		flex-direction: column;
+	}
 	.homepage-card {
 		display: flex;
 		justify-content: space-around;
 		padding: 50px;
 		.general-text(@regular, 1.6rem, 2.4rem);
 		@media @mobile {
-			flex-direction: column;
+			flex-direction: column-reverse;
+			padding: 20px;
 		}
 		.top-content-text {
 			display: flex;
@@ -211,6 +229,12 @@ html {
 			h3 {
 				.sub-headers(@bold, 2.8rem, #222222);
 				@media @mobile {
+					font-weight: 700;
+					letter-spacing: 2.5px;
+					font-size: 24px;
+					color: #222222;
+					padding-top: 30px;
+					padding-bottom: 30px;
 				}
 			}
 
@@ -219,6 +243,10 @@ html {
 
 			.button {
 				.button-creator;
+				@media @mobile {
+					margin-top: 20px;
+					width: 400px;
+				}
 			}
 		}
 
@@ -234,6 +262,9 @@ html {
 				display: none !important;
 			}
 		}
+	}
+	.homepage-card:last-child {
+		flex-direction: column;
 	}
 	.top-content-text:last-child {
 		padding-left: 25px;
