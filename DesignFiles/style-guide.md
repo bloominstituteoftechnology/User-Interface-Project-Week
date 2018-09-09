@@ -4,15 +4,15 @@ Use this guide to help you navigate the design files.  In a professional work pl
 Font family can be found here: https://fonts.google.com/specimen/Roboto
 
 ### GENERAL STYLES
-- Background: #FFFFFF
-- Color: #222222
+<!-- - Background: #FFFFFF
+- Color: #222222 -->
 - Font Family: Roboto, Arial, sans-serif
 
 ## Page Specific
 
 ### Home Page
-- Recent Projects Gray Square: #D8D8D8
-- Button borders: #222222
+<!-- - Recent Projects Gray Square: #D8D8D8
+- Button borders: #222222 -->
 
 ### Services Page
 - Tab selected background: #5E9FB9
@@ -20,7 +20,7 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Tab Hover color: #FFF;
 
 ## Footer 
-Background: #828282
+<!-- Background: #828282 -->
 
 ### General Text
 - Font Weight: Regular
@@ -31,7 +31,7 @@ Background: #828282
 - Font Weight: Bold
 - Font Size: 64px
 - Line Height: 75px
-- Color: #FFFFFF
+<!-- - Color: #FFFFFF -->
 
 ### Sub Headers
 - Font Weight: Bold
