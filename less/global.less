@@ -1,3 +1,7 @@
+html {
+  font-size: 62.5%;
+}
+
 html,body,div,span,applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,
 a,abbr,acronym,address,big,cite,code,
@@ -17,6 +21,8 @@ time,mark,audio,video{
   font-size:100%;
   font:inherit;
   vertical-align:baseline;
+  font-family: @main-font;
+  color: @main-color;
 }
 /* HTML5 display-role reset for older browsers */
 article,aside,details,figcaption,figure,
@@ -49,7 +55,110 @@ table{
   border-spacing:0;
 }
 
+section {
+  padding: 0 40px;
+}
+
+h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h3 {
+  color: @main-color;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+
+h4 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.row-reverse {
+  flex-direction: row-reverse!important;
+}
+
 nav {
-  .flex(row, center, space-around, 100%);
-  height: 100px;
+  .flex(row, space-between, center, 100%);
+  height: 50px;
+  background: #98A4AF;
+  padding: 10px 20px;
+  .border-box;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  padding: 5px;
+}
+
+button {
+  background: white;
+  border: thin solid #222222;
+  padding: 15px;
+  min-width: 150px;
+  cursor: pointer;
+  .border-radius(2px);
+}
+
+footer {
+  .flex(column, space-between, center, 100%);
+  height: 170px;
+  padding: 50px 50px 10px 50px;
+  background: @footer-background;
+  color: white;
+
+  .footer-content {
+    .flex(row, space-between, center, 100%);
+    height: 150px;
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .email {
+    .flex(column);
+    width: 40%;
+    height: 100%;
+
+  }
+
+  .location {
+    width: 15%;
+    height: 100%;
+
+    address {
+      .flex(column);
+      color: white;
+      font-size: .8rem;
+    }
+  }
+
+  input {
+    margin: 20px 0 10px 0;
+    width: 100%;
+  }
+
+  span {
+    font-size: .8rem;
+    color: white;
+  }
+}
+
+input {
+  .border-radius(3px);
+  padding: 5px;
+  height: 30px;
+  border: none;
 }
