@@ -7,7 +7,7 @@ const switchImages = (id, src) => {
 
   screen.width < 501 ? id.setAttribute('src', src) : true;
 }
-
+switchImages("jumbotron", './img/home/home-mobile-jumbotron.png')
 switchImages("homeImgOne", './img/home/home-mobile-img-1.png')
 switchImages("homeImgTwo", './img/home/home-mobile-img-2.png')
 switchImages("villas", './img/home/home-mobile-villas-img.png')
