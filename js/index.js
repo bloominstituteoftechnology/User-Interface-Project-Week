@@ -152,3 +152,11 @@ const secTwo = new CreateSection({
 secOne.placeCTA();
 secTwo.placeCTA();
 // fdesigns.placeCTA();
+
+function placeItemInHtml(source, type, style, text, place){
+    source = document.querySelector(`${source}`);
+    const obj = document.createElement(type);
+    obj.classList.add(style);
+    obj.innerHTML = text;
+    place === "append" ? source.appendChild(obj) : source.prependChild(obj);
+}
