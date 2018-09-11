@@ -1,20 +1,4 @@
 // JS goes here
-const navigation = {
-    "nav": {
-        "nav-item": "Home",
-        "nav-item": "Services",
-
-    }
-
-}
-
-const homePage = {
-
-}
-
-const services = {
-
-}
 
 
 class Navigation {
@@ -64,22 +48,60 @@ contactLink.placeLink();
 
 
 
-class CallToAction {
-    constructor(cta){
-        this.className = cta.className;
+class CreateSection {
+    constructor(obj){
+        this.className = obj.className;
         this.location = document.querySelector('.container');
-        this.ctaSection = new CallToActionSection(cta.ctaSection);
-        console.log(this.ctaSection)
+        if (this.className === "cta"){
+            this.childSection = new CallToActionSection(obj.childSection);
+        }
+        else{
+            this.childSection = new ProjectSection(obj.childSection);
+        }
+
+        console.log(this.childSection);
+        // console.log(this.ctaSection)
+        this.section = document.createElement('section');
     }
 
     placeCTA(){
-        const section = document.createElement('section');
-        section.className = "cta";
-        section.classList.add(`${this.className}`);
-        const trial = Array.from(this.ctaSection.placeCTASection());
-        console.log(trial);
-        // section.appendChild(this.ctaSection.placeCTASection);
-        this.location.appendChild(section);
+        // Bind values to  cta section
+        this.section.className = this.className;
+        this.section.classList.add(`${this.childSection.placement}`);
+        
+        // Create child objects
+            // Text Section
+        const textSection = document.createElement('div');
+        textSection.className = "text";
+        
+        const h2 = document.createElement('h2');
+        h2.innerHTML = this.childSection.heading;
+        
+        const p = document.createElement('p');
+        p.innerHTML = this.childSection.text;
+        p.className = "";       //TODO: Define class
+
+        const button = document.createElement('p');
+        button.className = "button";
+        button.innerHTML = this.childSection.buttonText;
+
+        textSection.appendChild(h2);
+        textSection.appendChild(p);
+        textSection.appendChild(button);
+
+            // Image section
+        const image = document.createElement('img');
+        image.src = this.childSection.img;
+        
+        // Append all children
+        this.section.appendChild(textSection);
+        this.section.appendChild(image);
+        this.location.appendChild(this.section);
+    }
+
+    placeProject() {
+        this.section.className = this.className;
+        this.section.classList.add(`${this.childSection.placement}`);
     }
 }
 
@@ -89,45 +111,22 @@ class CallToActionSection {
         this.text = section.text;
         this.buttonText = section.buttonText;
         this.img = section.img;
-        // this.placement = section.placement;
-    }
-
-    placeCTASection(){
-        // const location = document.querySelector('.cta');
-        const textSection = document.createElement('div');
-        textSection.className = "text";
-        
-        const h2 = document.createElement('h2');
-        h2.innerHTML = this.heading;
-        
-        const p = document.createElement('p');
-        p.innerHTML = this.text;
-        p.className = "";       //TODO: Define class
-
-        const button = document.createElement('p');
-        button.className = "button";
-        button.innerHTML = this.buttonText;
-        
-        // const image = document.createElement('img');
-        // image.src = this.img;
-        // console.log(this.img)
-
-        // location.classList.add(`${this.placement}`)     //TODO: Add class right or left
-        textSection.appendChild(h2);
-        textSection.appendChild(p);
-        textSection.appendChild(button);
-
-        // location.appendChild(textSection);
-        // location.appendChild(image);
+        this.placement = section.placement;
     }
 }
 
+class ProjectSection {
+    
+
+}
+
+// Create call to action sections
 const snj = new CallToActionSection({
     "heading": "Smith & Jones Architects",
     "text": "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem.",
     "buttonText": "Learn more",
     "img": "img/home/home-img-1.png",
-    // "placement": "right",
+    "placement": "right",
 })
 
 const fdesigns = new CallToActionSection({
@@ -135,13 +134,20 @@ const fdesigns = new CallToActionSection({
     "text": "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem.",
     "buttonText": "View Designs",
     "img": "img/home/home-img-2.png",
-    // "placement": "left",
+    "placement": "left",
 })
 
-const secOne = new CallToAction({
+// Create each CTA with child object.
+const secOne = new CreateSection({
     "className": "cta",
     "ctaSection": snj,
 })
 
+const secTwo = new CreateSection({
+    "className": "cta",
+    "ctaSection": fdesigns,
+})
+
 secOne.placeCTA();
+secTwo.placeCTA();
 // fdesigns.placeCTA();
