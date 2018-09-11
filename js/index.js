@@ -66,15 +66,34 @@ contactLink.placeLink();
 
 class CallToAction {
     constructor(cta){
-        this.heading = cta.heading;
-        this.text = cta.text;
-        this.buttonText = cta.buttonText;
-        this.img = cta.img;
-        this.placement = cta.placement;
+        this.className = cta.className;
+        this.location = document.querySelector('.container');
+        this.ctaSection = new CallToActionSection(cta.ctaSection);
+        console.log(this.ctaSection)
     }
 
     placeCTA(){
-        const location = document.querySelector('.cta');
+        const section = document.createElement('section');
+        section.className = "cta";
+        section.classList.add(`${this.className}`);
+        const trial = Array.from(this.ctaSection.placeCTASection());
+        console.log(trial);
+        // section.appendChild(this.ctaSection.placeCTASection);
+        this.location.appendChild(section);
+    }
+}
+
+class CallToActionSection {
+    constructor(section){
+        this.heading = section.heading;
+        this.text = section.text;
+        this.buttonText = section.buttonText;
+        this.img = section.img;
+        // this.placement = section.placement;
+    }
+
+    placeCTASection(){
+        // const location = document.querySelector('.cta');
         const textSection = document.createElement('div');
         textSection.className = "text";
         
@@ -84,16 +103,45 @@ class CallToAction {
         const p = document.createElement('p');
         p.innerHTML = this.text;
         p.className = "";       //TODO: Define class
-        
-        const image = document.createElement('img');
-        img.src = this.img;
 
-        location.classList.add(`${this.placement}`)     //TODO: Add class right or left
+        const button = document.createElement('p');
+        button.className = "button";
+        button.innerHTML = this.buttonText;
+        
+        // const image = document.createElement('img');
+        // image.src = this.img;
+        // console.log(this.img)
+
+        // location.classList.add(`${this.placement}`)     //TODO: Add class right or left
         textSection.appendChild(h2);
         textSection.appendChild(p);
-        location.appendChild(textSection);
-        location.appendChild(image);
+        textSection.appendChild(button);
 
-
+        // location.appendChild(textSection);
+        // location.appendChild(image);
     }
 }
+
+const snj = new CallToActionSection({
+    "heading": "Smith & Jones Architects",
+    "text": "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem.",
+    "buttonText": "Learn more",
+    "img": "img/home/home-img-1.png",
+    // "placement": "right",
+})
+
+const fdesigns = new CallToActionSection({
+    "heading": "Futuristic Designs",
+    "text": "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem.",
+    "buttonText": "View Designs",
+    "img": "img/home/home-img-2.png",
+    // "placement": "left",
+})
+
+const secOne = new CallToAction({
+    "className": "cta",
+    "ctaSection": snj,
+})
+
+secOne.placeCTA();
+// fdesigns.placeCTA();
