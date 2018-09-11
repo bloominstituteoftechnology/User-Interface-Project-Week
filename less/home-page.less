@@ -6,14 +6,36 @@
     z-index: 2;
     bottom: 40px;
     left: 8%;
+
+    @media @phone {
+        bottom: 25px;
+        left: 5%;
+    }
 }
 
 .top {
     position: relative;
 
-    img {
+    @mobile @phone {
+        width: 100%;
+    }
+
+    .Desktop-Image {
         height: auto;
         width: 100%;
+
+        @media @phone {
+            display: none;
+        }
+    }
+
+    .Mobile-Image {
+        display: none;
+
+        @media @phone {
+            display: block;
+            width: 100%;
+        }
     }
 }
 
@@ -27,6 +49,10 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+
+    @media @phone {
+        width: 100%;
+    }
 }
 
 //Upper Section
@@ -34,6 +60,11 @@
 .Upper-Section {
     display: flex;
     flex-direction: column;
+    
+    @media @phone {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 .Outer-Box {
@@ -41,6 +72,14 @@
     justify-content: space-between;
     align-items: center;
     margin: 40px 0;
+
+    @media @phone {
+        flex-direction: column;
+        margin: 20px 0;
+
+        .Project-Image {order: 1;};
+        .Text-Box {order:2;};
+    }
 }
 
 .Text-Box {
@@ -50,6 +89,12 @@
     width: 50%;
     height: 200px;
 
+    @media @phone {
+        height: 250px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     .button {
         height: 40px;
         width: 30%;
@@ -57,6 +102,13 @@
         text-align: center;
         padding-top: 12px;
         .font-size(14);
+
+        @media @phone {
+            width: 100%;
+            .font-size(16);
+            height: 50px;
+            padding-top: 16px;
+        }
     }
 }
 
@@ -64,6 +116,21 @@
     width: 45%;
     height: 250px;
     overflow: hidden;
+
+    @media @phone {
+        display: none;
+    }
+}
+
+.Mobile-Image {
+    display: none;
+
+    @media @phone {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
 }
 
 //Bottom Section
