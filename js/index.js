@@ -105,19 +105,20 @@ class CreateSection {
     }
 }
 
-class CallToActionSection {
+class ProjectSection {
     constructor(section){
         this.heading = section.heading;
         this.text = section.text;
-        this.buttonText = section.buttonText;
         this.img = section.img;
         this.placement = section.placement;
     }
 }
 
-class ProjectSection {
-    
-
+class CallToActionSection extends ProjectSection {
+    constructor(section){
+        super(section);     //TODO: FIX THIS
+        this.buttonText = section.buttonText;
+    }
 }
 
 // Create call to action sections
