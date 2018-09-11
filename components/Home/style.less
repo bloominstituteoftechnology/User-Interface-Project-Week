@@ -6,6 +6,10 @@ header {
     height: 500px;
     width: 100%;
     .background('../img/home/home-jumbotron.png');
+
+    @media @mobile {
+      height: 300px;
+    }
   }
 
   .title {
@@ -13,6 +17,13 @@ header {
     width: 200px;
     margin: 50px;
     line-height: 3.5rem;
+
+    @media @mobile {
+      font-size: 2.5rem;
+      width: 100px;
+      margin: 20px;
+      line-height: 3rem;
+    }
   }
 }
 
@@ -22,27 +33,45 @@ header {
   .promo-row {
     .flex(row, center);
     margin-bottom: 60px;
+    flex-wrap: wrap;
 
     &:first-child {
       margin-top: 60px;
+
+      @media @mobile {
+        margin-top: 20px;
+      }
+    }
+
+    @media @mobile {
+      .flex(column, flex-start, center, 100%);
+      margin-bottom: 20px;
     }
   }
 
   .promo-content {
     .flex(column, center);
-    width: 50%;
+    width: 45%;
     margin: 0 20px;
     height: 250px;
 
     h3, p {
       margin-bottom: 25px;
     }
+
+    @media @mobile {
+      .mobile-width;
+    }
   }
 
   .promo-img-1, .promo-img-2 {
-    width: 50%;
+    width: 43%;
     height: 250px;
     margin: 0 20px;
+
+    @media @mobile {
+      .mobile-width;
+    }
   }
 
   .promo-img-1 {
@@ -52,12 +81,26 @@ header {
   .promo-img-2 {
     .background('../img/home/home-img-2.png');
   }
+
+  .row-reverse {
+    flex-direction: row-reverse;
+
+    @media @mobile {
+      flex-direction: column;
+    }
+  }
 }
 
 
 //////////////////// RECENT PROJECTS ////////////////////
 
 .recent-projects {
+  .flex(column, center, center, 100%);
+
+  @media @mobile {
+    margin-top: 50px;
+  }
+
   h3 {
     margin-bottom: 20px;
   }
@@ -67,6 +110,10 @@ header {
     height: 187px;
     position: relative;
     margin-bottom: 60px;
+
+    @media @mobile {
+      max-width: 400px;
+    }
 
     .project-title {
       .flex(row, center, center);
@@ -102,6 +149,10 @@ header {
 
     p {
       width: 50%;
+
+      @media @mobile {
+        .mobile-width;
+      }
     }
   }
 }

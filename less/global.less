@@ -57,6 +57,10 @@ table{
 
 section {
   padding: 0 40px;
+
+  @media @mobile {
+    padding: 0;
+  }
 }
 
 h1 {
@@ -78,10 +82,6 @@ h4 {
   font-weight: bold;
 }
 
-.row-reverse {
-  flex-direction: row-reverse!important;
-}
-
 nav {
   .flex(row, space-between, center, 100%);
   height: 50px;
@@ -99,6 +99,7 @@ nav {
   max-width: 800px;
   width: 100%;
   padding: 5px;
+  box-sizing: border-box;
 }
 
 button {
@@ -112,14 +113,26 @@ button {
 
 footer {
   .flex(column, space-between, center, 100%);
-  height: 170px;
+  height: 234px;
   padding: 50px 50px 10px 50px;
   background: @footer-background;
   color: white;
+  box-sizing: border-box;
+
+  @media @mobile {
+    height: auto;
+    padding: 20px 20px 5px 20px;
+  }
 
   .footer-content {
     .flex(row, space-between, center, 100%);
     height: 150px;
+
+    @media @mobile {
+      .flex(column, space-between, flex-start, 100%);
+      height: auto;
+      width: 100%;
+    }
   }
 
   h4 {
@@ -132,11 +145,21 @@ footer {
     width: 40%;
     height: 100%;
 
+    @media @mobile {
+      max-width: 300px;
+      width: 100%;
+    }
   }
 
   .location {
     width: 15%;
     height: 100%;
+
+    @media @mobile {
+      max-width: 300px;
+      width: 100%;
+      margin-top: 20px;
+    }
 
     address {
       .flex(column);

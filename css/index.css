@@ -5,6 +5,10 @@ RESET
 v2.0b1 | 201101 
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
+.mobile-width {
+  max-width: 400px;
+  width: 100%;
+}
 html {
   font-size: 62.5%;
 }
@@ -141,6 +145,11 @@ table {
 section {
   padding: 0 40px;
 }
+@media (max-width: 700px) {
+  section {
+    padding: 0;
+  }
+}
 h1 {
   color: white;
   font-size: 2.5rem;
@@ -155,9 +164,6 @@ h4 {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-}
-.row-reverse {
-  flex-direction: row-reverse !important;
 }
 nav {
   display: flex;
@@ -180,6 +186,7 @@ nav img {
   max-width: 800px;
   width: 100%;
   padding: 5px;
+  box-sizing: border-box;
 }
 button {
   background: white;
@@ -197,10 +204,17 @@ footer {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 170px;
+  height: 234px;
   padding: 50px 50px 10px 50px;
   background: #828282;
   color: white;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  footer {
+    height: auto;
+    padding: 20px 20px 5px 20px;
+  }
 }
 footer .footer-content {
   display: flex;
@@ -209,6 +223,16 @@ footer .footer-content {
   justify-content: space-between;
   width: 100%;
   height: 150px;
+}
+@media (max-width: 700px) {
+  footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+  }
 }
 footer h4 {
   font-weight: bold;
@@ -223,9 +247,22 @@ footer .email {
   width: 40%;
   height: 100%;
 }
+@media (max-width: 700px) {
+  footer .email {
+    max-width: 300px;
+    width: 100%;
+  }
+}
 footer .location {
   width: 15%;
   height: 100%;
+}
+@media (max-width: 700px) {
+  footer .location {
+    max-width: 300px;
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 footer .location address {
   display: flex;
@@ -265,11 +302,24 @@ header .banner {
   background-size: cover;
   background-position: 0 0;
 }
+@media (max-width: 700px) {
+  header .banner {
+    height: 300px;
+  }
+}
 header .title {
   font-size: 3rem;
   width: 200px;
   margin: 50px;
   line-height: 3.5rem;
+}
+@media (max-width: 700px) {
+  header .title {
+    font-size: 2.5rem;
+    width: 100px;
+    margin: 20px;
+    line-height: 3rem;
+  }
 }
 .promos .promo-row {
   display: flex;
@@ -278,9 +328,25 @@ header .title {
   justify-content: center;
   width: auto;
   margin-bottom: 60px;
+  flex-wrap: wrap;
 }
 .promos .promo-row:first-child {
   margin-top: 60px;
+}
+@media (max-width: 700px) {
+  .promos .promo-row:first-child {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .promos .promo-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 .promos .promo-content {
   display: flex;
@@ -288,7 +354,7 @@ header .title {
   align-items: flex-start;
   justify-content: center;
   width: auto;
-  width: 50%;
+  width: 45%;
   margin: 0 20px;
   height: 250px;
 }
@@ -296,11 +362,24 @@ header .title {
 .promos .promo-content p {
   margin-bottom: 25px;
 }
+@media (max-width: 700px) {
+  .promos .promo-content {
+    max-width: 400px;
+    width: 100%;
+  }
+}
 .promos .promo-img-1,
 .promos .promo-img-2 {
-  width: 50%;
+  width: 43%;
   height: 250px;
   margin: 0 20px;
+}
+@media (max-width: 700px) {
+  .promos .promo-img-1,
+  .promos .promo-img-2 {
+    max-width: 400px;
+    width: 100%;
+  }
 }
 .promos .promo-img-1 {
   background-image: url('../img/home/home-img-1.png');
@@ -314,6 +393,26 @@ header .title {
   background-size: cover;
   background-position: 0 0;
 }
+.promos .row-reverse {
+  flex-direction: row-reverse;
+}
+@media (max-width: 700px) {
+  .promos .row-reverse {
+    flex-direction: column;
+  }
+}
+.recent-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .recent-projects {
+    margin-top: 50px;
+  }
+}
 .recent-projects h3 {
   margin-bottom: 20px;
 }
@@ -322,6 +421,11 @@ header .title {
   height: 187px;
   position: relative;
   margin-bottom: 60px;
+}
+@media (max-width: 700px) {
+  .recent-projects .project-img {
+    max-width: 400px;
+  }
 }
 .recent-projects .project-img .project-title {
   display: flex;
@@ -368,6 +472,12 @@ header .title {
 }
 .recent-projects .project-content p {
   width: 50%;
+}
+@media (max-width: 700px) {
+  .recent-projects .project-content p {
+    max-width: 400px;
+    width: 100%;
+  }
 }
 .tab-selected {
   background: #5E9FB9;
