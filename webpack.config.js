@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    index: './src/js/index.js'
+    index: './src/static/js/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -10,13 +10,22 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.less$/,
+      test: /\.(less|css)$/,
       use: [{
         loader: 'style-loader'
       }, {
         loader: 'css-loader'
       }, {
         loader: 'less-loader'
+      }]
+    },
+    {
+      test: /\.(png|jpg|gif)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          outputPath: '../../../dist'
+        }
       }]
     }]
   }
