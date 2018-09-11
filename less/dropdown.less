@@ -1,41 +1,60 @@
 // .dropdown {
-//     z-index: 2;
-//     position: absolute;
-//     left: 25px;
-//     cursor: pointer;
-//     .dropdown-button {
-//       padding: 9px;
-//       margin: 5px 0;
-//       border: 2px solid white;
-//       color: white;
-//       font-size: 14px;
-//     }
 //     .dropdown-content {
-//       width: 100%;
-//       position: absolute;
-//       background-color: white;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;  
-//       margin-top: 10px;
-//       border: 2.5px solid white;
-//     }
-//     .dropdown-link {
-//       width: 100%;
-//       text-align: center;
-//       padding: 15px 0;
-//       font-size: 14px;
-//       font-weight: 300;
-//       text-decoration: none;
-//       color: @sj-color-navigation
+//         .flex(center, center, column);
+//         .width-100();
+//         z-index: 3;
+//         background: @sj-color-navigation;
+//         opacity: 0.75;
+//         color: @sj-color-background;
+//         font-size: @navtext-font-size;
+//         line-height: @navtext-line-height;
+//         font-weight: bold;
+//         &:hover {
+//             color: @sj-color-black;
+//         }
 //     }
 //     .dropdown-hidden {
-//       margin-top: -13em;
+//         display: none;
 //     }
-//   }
-  
-  
-  
-  
-  
-  
+// }
+/* The Overlay (background) */
+.dropdown {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: @sj-color-navigation;
+    opacity: 0.94;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    .dropdown-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px; 
+    }
+
+    a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: @navtext-font-size;
+        line-height: @navtext-line-height;
+        font-weight: bold;
+        color: @sj-color-background;
+        display: block;
+        transition: 0.3s;
+        &:hover, &:focus{
+            color: @sj-color-black;
+        }
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 12px;
+        right: 70px;
+    }
+}

@@ -163,16 +163,19 @@ body {
   font-family: 'Roboto', Arial, sans-serif;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  font-weight: 700;
 }
 h2 {
   font-size: 2.8rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #23283a;
 }
 p {
   font-size: 1.6rem;
   line-height: 2.4rem;
+  font-weight: 400;
   color: #222;
 }
 img {
@@ -194,13 +197,51 @@ header {
   padding: 0px 5%;
   height: 50px;
 }
-header .dropdown-content {
-  display: none;
-}
 header .logo {
   font-size: 2.4rem;
   font-weight: bold;
   color: #fff;
+  z-index: 4;
+}
+/* The Overlay (background) */
+.dropdown {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: #98a4ad;
+  opacity: 0.94;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.dropdown .dropdown-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.dropdown a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 6.4rem;
+  line-height: 8.5rem;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+.dropdown a:hover,
+.dropdown a:focus {
+  color: #222;
+}
+.dropdown .closebtn {
+  position: absolute;
+  top: 12px;
+  right: 70px;
 }
 .hero-section {
   position: relative;
