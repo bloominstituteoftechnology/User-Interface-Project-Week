@@ -51,13 +51,16 @@ contactLink.placeLink();
 class CreateSection {
     constructor(obj){
         this.className = obj.className;
+        this.childSection = new CallToActionSection(obj.childSection);
         this.location = document.querySelector('.container');
+        /*
         if (this.className === "cta"){
             this.childSection = new CallToActionSection(obj.childSection);
         }
         else{
             this.childSection = new ProjectSection(obj.childSection);
         }
+        */
 
         console.log(this.childSection);
         // console.log(this.ctaSection)
@@ -96,14 +99,15 @@ class CreateSection {
         // Append all children
         this.section.appendChild(textSection);
         this.section.appendChild(image);
-        this.location.appendChild(this.section);
+        this.location.prepend(this.section);
     }
 
     placeProject() {
-        this.section.className = this.className;
-        this.section.classList.add(`${this.childSection.placement}`);
+        // this.section.className = this.className;
+        // this.section.classList.add(`${this.childSection.placement}`);
     }
 }
+
 
 class ProjectSection {
     constructor(section){
@@ -138,19 +142,22 @@ const fdesigns = new CallToActionSection({
     "placement": "left",
 })
 
+console.log(snj)
 // Create each CTA with child object.
 const secOne = new CreateSection({
     "className": "cta",
-    "ctaSection": snj,
+    "childSection": snj,
 })
 
+console.log(secOne)
 const secTwo = new CreateSection({
     "className": "cta",
-    "ctaSection": fdesigns,
+    "childSection": fdesigns,
 })
 
-secOne.placeCTA();
 secTwo.placeCTA();
+secOne.placeCTA();
+
 // fdesigns.placeCTA();
 
 function placeItemInHtml(source, type, style, text, place){
@@ -160,3 +167,14 @@ function placeItemInHtml(source, type, style, text, place){
     obj.innerHTML = text;
     place === "append" ? source.appendChild(obj) : source.prependChild(obj);
 }
+
+/* - LOOK INTO THIS LATER
+function placeItemInHtml(source, obj){
+    source = document.querySelector(`${source}`);
+    const obj = new CreateSection;
+    obj.classList.add(style);
+    obj.innerHTML = text;
+    place === "append" ? source.appendChild(obj) : source.prependChild(obj);
+}
+*/
+
