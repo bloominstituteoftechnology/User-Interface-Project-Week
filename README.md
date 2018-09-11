@@ -12,11 +12,11 @@ You will use Trello to report your progress on the MVP and any extra features yo
 - Don't overplan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction
 
 ## Trello Set Up:
-* [ ] Create a [Trello account](https://trello.com/)
-* [ ] Create a new public board called "S&J Architects - By Your Name"
-* [ ] Create lists titled ```backlog```,```To Do```, ```In Progress```, and ```Done```
-* [ ] Fill in the ```To Do``` list with the MVP features listed below
-* [ ] Fill in the ```backlog``` list with all the extra features listed below
+* [x] Create a [Trello account](https://trello.com/)
+* [x] Create a new public board called "S&J Architects - By Your Name"
+* [x] Create lists titled ```backlog```,```To Do```, ```In Progress```, and ```Done```
+* [x] Fill in the ```To Do``` list with the MVP features listed below
+* [x] Fill in the ```backlog``` list with all the extra features listed below
 * [ ] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance
 
 ## Assets Provided:
@@ -42,7 +42,7 @@ Once you have accomplished the required MVP features, **reach out to your projec
 Extra features are not in order of importance, it's just a list of features the client wishes they could have by the demo.  Pick in any order you wish.
 * Build layout **HTML/LESS**: [Services page mobile design](/DesignFiles/Services/services-mobile.png)
 * Build layout **HTML/LESS**: [Contact page desktop design](/DesignFiles/Contact/contact-desktop.png)
-* Build layout **HTML/LESS**: [Contact page mobile design](/DesignFiles/Contact/contact-mobile.png)
+* Build layout **HTML/LESS**: [Contact page desktop design](/DesignFiles/Contact/contact-mobile.png)
 * Make tablet look good if you haven't already
 * Create 2 more pages named "About Us" and "Projects".  Be creative on what kind of content you would put in there but match the heading layout of the services/contact us pages.  Be sure to add the new pages to the menu system as well.  Ideas for creativity: create a carousel showcasing all of the projects.  Use [pexel.com](https://www.pexels.com/) to get free images to create custom content around an architecture/building theme.  For the about us page, you could make a list of employees that work there and showcase credentials.  Make heavy use of lorem ipsum, don't waste time on content creativity at this point
 * Use [Greensock](https://greensock.com/gsap) to add animation to the menu system when it opens and closes
