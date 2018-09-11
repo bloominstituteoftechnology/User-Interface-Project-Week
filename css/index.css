@@ -15,11 +15,22 @@
   line-height: 7.5rem;
   color: #fff;
 }
+.jumbotron-text-mobile {
+  font-size: 3.2rem;
+  line-height: 3.75rem;
+  color: #fff;
+}
 .button {
   font-size: 1.6rem;
   height: 45px;
   width: 32%;
   border: 1px solid #222;
+  text-align: center;
+}
+.button-mobile {
+  font-size: 1.6rem;
+  height: 55px;
+  width: 90%;
   text-align: center;
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -203,13 +214,11 @@ header .logo {
   color: #fff;
   z-index: 4;
 }
-/* The Overlay (background) */
 .dropdown {
   height: 0;
   width: 100%;
   position: fixed;
   z-index: 3;
-  /* Sit on top */
   left: 0;
   top: 0;
   background-color: #98a4ad;
@@ -243,6 +252,15 @@ header .logo {
   top: 12px;
   right: 70px;
 }
+@media (max-width:500px) {
+  .dropdown .dropdown-content {
+    top: 10%;
+  }
+  .dropdown .closebtn {
+    top: 12px;
+    right: 25px;
+  }
+}
 .hero-section {
   position: relative;
 }
@@ -255,6 +273,18 @@ header .logo {
   z-index: 2;
   bottom: 50px;
   left: 5%;
+}
+@media (max-width:500px) {
+  .hero-section .hero-text {
+    bottom: 28px;
+    left: 3%;
+  }
+  .hero-section .hero-text h1 {
+    font-size: 4rem;
+    line-height: 4.4rem;
+    bottom: 20px;
+    left: 3%;
+  }
 }
 .top-content-section {
   display: flex;
@@ -284,6 +314,32 @@ header .logo {
 .top-content-section .top-img-content img {
   border-radius: 2px;
 }
+@media (max-width:500px) {
+  .top-content-section {
+    flex-direction: column-reverse;
+  }
+  .top-content-section .top-text-content {
+    padding-top: 25px;
+    width: 92%;
+  }
+  .top-content-section .top-img-content {
+    width: 92%;
+  }
+  .top-content-section button {
+    font-size: 1.6rem;
+    height: 55px;
+    width: 90%;
+    text-align: center;
+  }
+}
+@media (max-width:500px) {
+  .inverse-content {
+    flex-direction: column;
+  }
+  .recent-project-title {
+    padding-left: 3%;
+  }
+}
 .recent-content-section {
   display: flex;
   justify-content: center;
@@ -296,6 +352,9 @@ header .logo {
   position: relative;
   margin-top: 45px;
   margin-bottom: 70px;
+}
+.recent-content-section .mobile-img {
+  display: none;
 }
 .recent-content-section .recent-title {
   height: 85px;
@@ -334,6 +393,55 @@ header .logo {
   z-index: 2;
   top: 215px;
   right: 0px;
+}
+@media (max-width:500px) {
+  .recent-content-section img {
+    display: none;
+  }
+  .recent-content-section .mobile-img {
+    display: flex;
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 80px;
+  }
+  .recent-content-section .recent-title {
+    height: 85px;
+    width: 92%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d8d8d8;
+    border: 1px solid white;
+    color: #222;
+    font-size: 2.2rem;
+    letter-spacing: 0.5rem;
+  }
+  .recent-content-section .recent-text-content {
+    position: relative;
+    width: 91%;
+  }
+  .recent-content-section .recent-text-content p {
+    padding: 10px 0;
+  }
+  .recent-content-section #the-villas {
+    position: absolute;
+    z-index: 2;
+    top: 255px;
+    right: 15px;
+  }
+  .recent-content-section #outskirts {
+    position: absolute;
+    z-index: 2;
+    top: 255px;
+    left: 15px;
+  }
+  .recent-content-section #the-blocks {
+    position: absolute;
+    z-index: 2;
+    top: 255px;
+    right: 15px;
+  }
 }
 .footer-contact {
   width: 100%;
@@ -377,6 +485,22 @@ header .logo {
   margin-top: 10px;
   margin-bottom: 2px;
 }
+@media (max-width:500px) {
+  .footer-contact {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+  }
+  .footer-contact .footer-contact-section {
+    width: 92%;
+    padding: 2%;
+  }
+  .footer-contact .contact-form {
+    width: 92%;
+  }
+}
 footer {
   display: flex;
   justify-content: center;
@@ -388,4 +512,13 @@ footer p {
   color: white;
   font-size: 1.2rem;
   line-height: 2.4rem;
+}
+@media (max-width:500px) {
+  footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: none;
+    flex-direction: row;
+    padding-left: 6%;
+  }
 }
