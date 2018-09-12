@@ -1,69 +1,8 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
-
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
-}
-body{
-  line-height:1;
-}
-ol,ul{
-  list-style:none;
-}
-blockquote,q{
-  quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
-}
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
-}
-
-table{
-  border-collapse:collapse;
-  border-spacing:0;
-}
-
-* {
-  box-sizing: border-box;
-}
 
 /* Your Code Goes Here */
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
+@import './Reset.less';
 @import './Variables.less';
 @import './Mix-ins.less';
 
@@ -78,7 +17,7 @@ table{
 .main-container {
   max-width: 880px;
   width: 100%;
-  border: 2px solid blue;
+  
   .marginCenter;
  
 }
@@ -86,37 +25,99 @@ table{
 .main-sub-container {
   max-width: 800px;
   width: 100%;
-  border: 2px solid black;
+  
   .marginCenter;
+
+}
+.top-bar {
+  display: flex;
+  flex-direction: row;
+background-color: lightgray;
+max-width: 100%;
+font-size: 32px;
+color: white;
+padding-left: 30px;
+height: 40px;
+padding-top: 5px;
+p {
+  font-size: 28px;
+}
+
+.menu-button {
+  
+  position: relative;
+  left: 700px;
+  top: 0px;
+  max-width: 10%;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
 
 }
 
 .nav {
-  display: flex;
+  display: none;
   flex-direction: column;
-  flex-flow: wrap;
-  width: 100%;
-  justify-content: center;
+  position: absolute;
+  max-width: 50%;
+  top: 75px;
+  width: 60%;
+  height: 20vh; 
+ justify-content: center;
+  background-color: aquamarine;
+  z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+padding-top: 100px;
   
-  border: 2px solid green;
+}
+
+.nav-open {
+  display: block;
+}
+
+.nav-close {
+  display: none;
 }
 
 .navLi {
   max-width: 100%;
   .marginCenter;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 20px;
  
 }
 
 .jumbotron {
   max-width: 100%;
   .marginCenter;
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+  height: 550px;
   
 }
   
+.jumbotron .main-text {
+  display: flex;
+  position: relative;
+  padding: 20px;
+  max-width: 36%;
+  height: 100px;
+  left: 20px;
+  top: -240px;
+  font-size: 52px;
+  color: #FFFFFF;
+
+}
+
 .sec1Container {
   display: flex;
   flex-direction: row;
-  border: 2px solid aqua;
+ 
 }
 
 .sec1SubContainer {
@@ -124,7 +125,7 @@ table{
   max-width: 80%;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid purple;
+ 
 
 }
 
@@ -132,7 +133,7 @@ table{
   display: flex;
   padding-top: 20px;
   padding-bottom: 20px;
-  border: 2px solid green;
+ 
 }
 
 .sec1SubHeading {
@@ -146,10 +147,15 @@ table{
   padding-top: 10px;
   text-align: center;
   border: 2px solid black;
+  padding-left: 20px;
+  //margin: auto;
   
 }
-
-.img1 {
+.sec1SubButton:hover {
+  animation: moveIt 3s infinite;
+  
+}
+  .img1 {
   max-width: 100%;
   height: 225px;
   width: 46%;
@@ -165,7 +171,7 @@ table{
 .sec2Container {
   display: flex;
   flex-direction: row;
-  border: 2px solid red;
+ 
 }
 
 .sec2SubContainer {
@@ -174,7 +180,7 @@ table{
   width: 60%;
   flex-direction: column;
   padding-left: 20px;
-  border: 2px solid yellow; 
+  
   }
 
   .sec2SubHeading {
@@ -186,20 +192,25 @@ table{
   padding-top: 20px;
   padding-bottom: 20px;
   max-width: 100%;
-  border: 2px solid orange; 
 }
 
 .sec2SubButton {
   display: flex;
   width: 130px;
   height: 50px;
-  .marginCenter;
+ // .marginCenter;
   text-align: center;
   border: 2px solid black;
+  padding-top: 10px;
+  padding-left: 16px;
+}
+
+.sec2SubButton:hover {
+  animation: moveIt 2s infinite;
 }
 
 .heading1 {
-  border: 2px solid green;
+  
   font-size: 28px;
   font-weight: bold;
   color: #222222;
@@ -208,7 +219,7 @@ table{
 }
 
 .img2 {
-  border: 2px solid blue;
+ 
   max-width: 100%;
   height: 230px;
   width: 45%;
@@ -217,7 +228,7 @@ table{
 .sec3Container {
   display: flex;
   flex-direction: column;
-  border: 2px solid gray;
+ 
 }
 
 .sec3Text {
@@ -225,14 +236,14 @@ table{
  // text-align: center;
   padding-left: 25%;
   padding-right: 25%;
-  border: 2px solid blue;
+ 
   //left: 30%;
 }
 
 .sec3Title {
   display: flex;
   position: relative;
-  border: 2px solid blue;
+ 
   background-color: lightgrey;
   padding: 20px;
   max-width: 36%;
@@ -244,13 +255,13 @@ table{
 
 .img3 {
   max-width: 100%;
-  border: 2px solid red;
+ 
 }
 .sec4Container {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
-  border: 2px solid purple;
+  
 }
 
 .sec4Text {
@@ -258,12 +269,12 @@ table{
   // text-align: center;
    padding-left: 25%;
    padding-right: 25%;
-  border: 2px solid blue;
+ 
 }
 .sec4Title {
   display: flex;
   position: relative;
-  border: 2px solid blue;
+ 
   background-color: lightgrey;
   padding: 20px;
   max-width: 36%;
@@ -274,21 +285,21 @@ table{
 }
 
 .img4 {
-  border: 2px solid red;
+  
   max-width: 100%;
 }
 
 .sec5Container {
   display: flex;
   flex-direction: column;
-  border: 2px solid green;
+ 
   padding-top: 30px;
 }
 
 .sec5Title {
   display: flex;
   position: relative;
-  border: 2px solid blue;
+  
   background-color: lightgrey;
   padding: 20px;
   max-width: 36%;
@@ -302,14 +313,21 @@ table{
   // text-align: center;
    padding-left: 25%;
    padding-right: 25%;
-  border: 2px solid blue;
+ 
 }
 
 .img5 {
-  border: 2px solid orange;
+  
   max-width: 100%;
 }
 
 .main-menu {
   display: none;
+}
+
+@keyframes moveIt {
+  0% {background-color: white;font-size: 1.0rem;}
+  25% {background-color: mediumslateblue;font-size: 1.2rem;}
+  50% {background-color: lightslategray;font-size: 1.2rem;}
+  100% {background-color: white;font-size: 1.0rem;}
 }
