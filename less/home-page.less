@@ -20,8 +20,29 @@
             color: white;
         }
 
-        img{
+        img.desktop{
             width: 100%;
+        }
+
+        img.mobile{
+            display: none;
+        }
+
+        @media @mobile{
+            img.desktop{
+                display: none;
+            }
+    
+            img.mobile{
+                display: block;
+                width: 100%;
+            }
+
+            p{
+                top: 50%;
+                font-size: 2.8rem;
+                line-height: 32px;
+            }
         }
     }
 
@@ -40,14 +61,18 @@
                 width: 48%;
             }
 
-            img{
+            img.desktop{
                 width: 48%;
+            }
+
+            img.mobile{
+                display: none;
             }
 
             h2{
                 font-size: 2.8rem;
                 font-weight: bold;
-                color: #222222;
+                color: @main-gray;
                 margin-top: 40px;
             }
 
@@ -61,6 +86,39 @@
                 .normal-font();
                 .box-creator(30%, 46px, white, 1px, solid, #222222);
             }
+
+            @media @mobile{
+                flex-direction: column-reverse;
+                width: 90%;
+                margin-bottom: 40px;
+
+                .upper-para{
+                    width: 100%;
+                }
+
+                img.desktop{
+                    display: none;
+                }
+    
+                img.mobile{
+                    display: block;
+                    width: 100%;
+                }
+
+                h2{
+                    font-size: 2.2rem;
+                }
+
+                .button{
+                    width: 100%;
+                }
+            }
+        }
+
+        @media @mobile{
+            .upper-para-img.no-reverse{
+                flex-direction: column;
+            }
         }
 
         .lower-section-header{
@@ -69,6 +127,11 @@
             font-size: 2.8rem;
             font-weight: bold;
             color: #222222;
+
+            @media @mobile{
+                margin-left: 5%;
+                margin-bottom: 20px;
+            }
         }
 
         .lower-para-img{
@@ -84,8 +147,12 @@
                 align-items: flex-end;
                 margin-bottom: 100px;
 
-                img{
+                img.desktop{
                     width: 100%;
+                }
+
+                img.mobile{
+                    display: none;
                 }
 
                 h3{
@@ -107,6 +174,23 @@
                 width: 50.0%;
                 .normal-font();
                 align-self: center;
+            }
+
+            @media @mobile{
+                width: 100%;
+                margin-top: 0px;
+                margin-bottom: 30px;
+
+                .image{
+                    img.desktop{
+                        display: none;
+                    }
+
+                    img.mobile{
+                        display: block;
+                        width: 100%;
+                    }
+                }
             }
         }
     }
