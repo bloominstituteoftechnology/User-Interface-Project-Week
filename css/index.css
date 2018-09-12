@@ -155,15 +155,44 @@ body a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 13px 8.5%;
+  padding: 13px 0;
   font-size: 2.5rem;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+.top-bar p {
+  padding-left: 8.5%;
 }
 .top-bar .nav-btn {
   cursor: pointer;
+  position: fixed;
+  top: 13px;
+  left: calc(100% - 8.5%);
+  z-index: 3;
 }
-.top-bar .nav-items {
+.top-bar nav {
+  padding-right: 8.5%;
   display: none;
-  cursor: pointer;
+}
+.top-bar nav .nav-items {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #98a4af;
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.top-bar nav .nav-items a:hover {
+  color: #222222;
 }
 .jumbotron {
   font-weight: bold;
@@ -176,14 +205,27 @@ body a {
   background-position: bottom;
   background-repeat: no-repeat;
   height: 547px;
-  height: calc(100vh - 51px);
-  background-attachment: fixed;
+  height: calc(100vh);
+}
+@media (max-width:500px) {
+  .jumbotron {
+    height: 210px;
+    padding-top: 100px;
+    background-image: url(../img/home/home-mobile-jumbotron.png);
+  }
 }
 .jumbotron h1 {
   position: relative;
   left: 8.5%;
-  top: calc(100vh - 326px);
+  top: calc(100vh - 276px);
   display: inline-block;
+}
+@media (max-width:500px) {
+  .jumbotron h1 {
+    font-size: 4rem;
+    line-height: 54px;
+    top: 26px;
+  }
 }
 .home {
   width: 100%;
@@ -293,6 +335,8 @@ body a {
   display: flex;
   justify-content: space-evenly;
   padding: 57px 0 28px 0;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 .footer .email {
   display: flex;
