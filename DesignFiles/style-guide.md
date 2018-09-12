@@ -4,14 +4,14 @@ Use this guide to help you navigate the design files.  In a professional work pl
 Font family can be found here: https://fonts.google.com/specimen/Roboto
 
 ### GENERAL STYLES
-- Background: #FFFFFF
-- Color: #222222
-- Font Family: Roboto, Arial, sans-serif
+- Background: #FFFFFF [x]
+- Color: #222222 [x]
+- Font Family: Roboto, Arial, sans-serif [x]
 
 ## Page Specific
 
 ### Home Page
-- Recent Projects Gray Square: #D8D8D8
+- Recent Projects Gray Square: #D8D8D8 [x]
 - Button borders: #222222
 
 ### Services Page
@@ -20,23 +20,23 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Tab Hover color: #FFF;
 
 ## Footer 
-Background: #828282
+Background: #828282 
 
 ### General Text
-- Font Weight: Regular
-- Font Size: 16px
-- Line Height: 24px
+- Font Weight: Regular [x]
+- Font Size: 16px [x]
+- Line Height: 24px [x]
 
 ### Jumbotron Headers
 - Font Weight: Bold
-- Font Size: 64px
+- Font Size: 64px 
 - Line Height: 75px
 - Color: #FFFFFF
 
 ### Sub Headers
-- Font Weight: Bold
-- Font Size: 28px
-- Color: #222222
+- Font Weight: Bold [x]
+- Font Size: 28px [x]
+- Color: #222222 [x]
    
 ### Footer Headings
 - Font Weight: Regular
