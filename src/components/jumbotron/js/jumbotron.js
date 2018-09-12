@@ -25,7 +25,7 @@ Jumbotron.prototype.animate = function() {
   const component = this.component;
   component.classList.add('animated');
   component.classList.add('fadeIn');
-  component.classList.add('fast');
+  // component.classList.add('fast');
 }
 Jumbotron.prototype.setText = function(textArr) {
   const textContainer = document.createElement('h1');
