@@ -69,32 +69,52 @@ table{
 @white: #FFFFFF;
 @black: #222222;
 @font-size-jumbo: 5.3rem;
-@font-size-h2: 2.3rem;
-@font-size-h3: 2rem;
+@font-size-h2: 2rem;
+@font-size-h3: 1.8rem;
+@font-size-p: 1.2rem;
+@footer-heading: 1.8rem;
+@footer-text: 1rem;
 @graysq-font-family: 'Arial', sans-serif;
 
 // Mixin
 .graysq-right() {
   position: absolute;
   bottom: -18px;
-  right: 70px;
+  right: 80px;
   background-color: @recentsqcolor;
   width: 30%;
   height: 60px;
   font-family: @graysq-font-family;
-  padding-top: 15px;
+  padding-top: 20px;
+  letter-spacing: 0.6rem;
 }
 
 .graysq-left() {
   position: absolute;
   bottom: -18px;
-  left: 70px;
+  left: 80px;
   background-color: @recentsqcolor;
   width: 30%;
   height: 60px;
   font-family: @graysq-font-family;
-  padding-top: 15px;
+  padding-top: 20px;
+  letter-spacing: 0.6rem;
 }
+
+.button() {
+  border: 1px solid @black;
+  width: 30%;
+  height: 35px;
+  font-size: 1.2rem;
+  padding: 10px 0 0 10px;
+}
+
+.footer-text() {
+  font-size: @footer-text;
+  line-height: 26px;
+  color: @white;
+}
+
 
 * {
   box-sizing: border-box;
@@ -125,13 +145,11 @@ h3 {
   font-size: @font-size-h3;
 }
 
-.button {
-  border: 1px solid @black;
-  width: 30%;
-  height: 30px;
-  font-size: 13px;
-  padding: 15px 0 0 10px;
+p {
+  font-size: @font-size-p;
+  line-height: 24px;
 }
+
 
 .recent-head {
   margin: 20px 0 40px 50px;
@@ -159,7 +177,7 @@ h3 {
     }
 
     .hamburger {
-      height: 20px;
+      height: 35px;
       padding: 15px 70px 0 0;
     }
 
@@ -190,7 +208,10 @@ h3 {
       width: 40%;  
       height: 200px;  
       margin: 25px;
-      padding-top: 20px;  
+      padding-top: 20px; 
+      .button {
+        .button();
+      } 
     }
   } //.main-content
 
@@ -213,8 +234,6 @@ h3 {
       }
     }
 
-    
-    
     .recent-text{
       border: 1px solid green;
       width: 40%;
@@ -228,20 +247,32 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 200px;
+    height: 220px;
+    
 
     .footer-contact{
       border: 1px solid red;
-      width: 30%;
-      padding-top: 30px;
+      width: 32%;
+      padding: 30px 5px 0 0;
+      margin-right: 15px;
+      .footer-text();
+      input[type="text"]{
+        width: 220px;
+        height: 30px;
+      }
     }
 
     .footer {
       border: 1px solid red;
-      width: 20%;
-      padding-top: 30px;
+      width: 17%;
+      padding: 30px 0 0 5px;
+      .footer-text();
+
+      h2 {
+        font-size: @footer-heading;
+      }
     }
-  }
+  }// footer
 
 //photosize
   .jumbo img {
