@@ -27,6 +27,9 @@ h1 {
 h2 {
   font-size: @font-size-h2;
   font-weight: bold;
+  @media @phone {
+    font-size: @font-size-h2-mobile;
+  }
 }
 
 h3 {
@@ -36,6 +39,9 @@ h3 {
 p {
   font-size: @font-size-p;
   line-height: 24px;
+  @media @phone {
+    font-size: @font-size-p-mobile;
+  }
 }
 
 
@@ -51,27 +57,6 @@ p {
 
   @media @phone {
     border: 1px solid red;
-
-    .first-content-photo {
-      order: -1;
-      display: none;
-    }
-    .first-content-photo.mobile {
-      order: -1;
-      display: block;
-      width: 90%;
-      height: 330px;
-    }
-
-    .content-photo {
-      display: none;
-    }
-
-    .content-photo.mobile {
-      display: block;
-      width: 90%;
-      height: 330px;
-    }
   } //@media @phone class="content-photo"
   
   header {
@@ -130,10 +115,21 @@ p {
       height: 200px;  
       margin: 25px;
       padding-top: 20px; 
+
       .button {
         .button();
       } 
-    }
+
+      @media @phone {
+        // border: 1px solid green;
+        height: 250px;
+        width: 90%;
+
+        .button {
+          .button-mobile();
+        }
+      } //@media phone
+    } //.content-text
   } //.main-content
 
   .recent-content {
@@ -198,7 +194,7 @@ p {
   }
 
 //photosize
-  .jumbo img {
+  .jumbo img{
     width: 100%;
   }
 
@@ -206,13 +202,39 @@ p {
     width: 80%;
   }
   
-  .content-photo {
-    width: 40%;
-    height: 200px;
-    margin: 25px;
-    // @media @phone {
-    //   width: 90%;
-    //   height: 330px;
-    // }
-  } //.content-photo
+  .content-photo1 {
+    .content-photo-desktop();
+
+    @media @phone {
+      display: none;
+    }
+  } //.content-photo1
+
+  .content-photo1.mobile {
+    display: none;
+
+    @media @phone {
+      order: -1;
+      display: block;
+      .content-photo-mobile();
+    }
+  }
+
+  .content-photo2 {
+    .content-photo-desktop();
+
+    @media @phone {
+      display: none;
+    }
+  } //.content-photo2
+
+  .content-photo2.mobile {
+    display: none;
+
+    @media @phone {
+      display: block;
+      .content-photo-mobile();
+    }
+  }
+
 }//.container
