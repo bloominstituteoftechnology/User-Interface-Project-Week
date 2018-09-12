@@ -65,6 +65,95 @@ HTML{
 }
 /* Your Code Goes Here */
 
+// body:{
+//   width: 100%;
+// }
+
+@phone: ~"(max-width: 501px)";
+@h2rem: 2rem;
+@prem: 1.6rem;
+@20mar: 20px 0px;
+
+/* imports */
+@import "mixins.less";
+
 /* smartphone width*/
-@smartphones: ~"(max-width: 500px)";
+@media screen and (max-width: 501px){
+  body {
+    width: 100%;
+    max-width: 501px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+  .desktopImg {
+    display: none;
+  }
+
+  .mobileImg {
+    width: 100%;
+  }      
+
+  .mobileImgJumbo {
+    width: 100%;
+    max-height: 280px;
+  }
+
+  .jumbotron {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;  
+
+    h1 {
+      font-size: 5rem;
+      position: absolute;
+      align-self: flex-end;
+      padding: 0px 0px 30px 30px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+    .mobileImgLineDraw {
+      width: 357px;
+      margin: @20mar;
+    }
+
+    h2 {
+      font-size: @h2rem;
+      margin: @20mar;
+    }
+
+    p {
+      font-size: @prem;
+      margin: @20mar;
+    }
+
+    .button {
+      width: 100%;
+      height: 50px;
+      border-radius: 5px;
+      color: white;
+      background-color: darkblue;
+      text-align: center;
+      line-height: 3;
+      font-size: @prem;
+      margin: @20mar;
+
+      &:hover {
+          cursor: pointer;
+          background-color: dodgerblue;
+      }
+  }
+  }
+}   
+}
+
+
 
