@@ -60,6 +60,42 @@ table{
 /* Your Code Goes Here */
 /* Import LESS files here */
 
+
+
+// Variables - colors & fonts
+@navcolor: #9aa6b0;
+@footercolor: #828282;
+@recentsqcolor: #D8D8D8;
+@white: #FFFFFF;
+@black: #222222;
+@font-size-jumbo: 5.3rem;
+@font-size-h2: 2.3rem;
+@font-size-h3: 2rem;
+@graysq-font-family: 'Arial', sans-serif;
+
+// Mixin
+.graysq-right() {
+  position: absolute;
+  bottom: -18px;
+  right: 70px;
+  background-color: @recentsqcolor;
+  width: 30%;
+  height: 60px;
+  font-family: @graysq-font-family;
+  padding-top: 15px;
+}
+
+.graysq-left() {
+  position: absolute;
+  bottom: -18px;
+  left: 70px;
+  background-color: @recentsqcolor;
+  width: 30%;
+  height: 60px;
+  font-family: @graysq-font-family;
+  padding-top: 15px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -69,24 +105,28 @@ html {
 }
 
 html, body {
-  background-color: white;
+  background-color: @white;
   font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-  font-size: 64px;
+  font-size: @font-size-jumbo;
   font-weight: bold;
   line-height: 75px;
-  color: #FFFFFF;
+  color: @white;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: @font-size-h2;
   font-weight: bold;
 }
 
+h3 {
+  font-size: @font-size-h3;
+}
+
 .button {
-  border: 1px solid #222222;
+  border: 1px solid @black;
   width: 30%;
   height: 30px;
   font-size: 13px;
@@ -105,7 +145,7 @@ h2 {
   
   header {
     border: 1px solid blue;
-    background-color: #9aa6b0;
+    background-color: @navcolor;
     display: flex;
     justify-content: space-between;
     height: 50px;
@@ -113,7 +153,7 @@ h2 {
 
     .logo {
       font-size: 24px;
-      color: #FFFFFF;
+      color: @white;
       font-weight: bold;
       padding: 15px 0 0 70px;
     }
@@ -131,7 +171,7 @@ h2 {
   .jumbo {
     position: relative;
     text-align: center;
-    color: white;
+    color: @white;
 
     .jumbo-text {
       position: absolute;
@@ -165,21 +205,11 @@ h2 {
       text-align: center;
 
       .graysq-villa {
-        position: absolute;
-        bottom: -18px;
-        right: 70px;
-        background-color: #D8D8D8;
-        width: 30%;
-        height: 60px;
+        .graysq-right();
       }
 
       .graysq {
-        position: absolute;
-        bottom: -18px;
-        left: 70px;
-        background-color: #D8D8D8;
-        width: 30%;
-        height: 60px;
+        .graysq-left();
       }
     }
 
@@ -194,7 +224,7 @@ h2 {
   } //.recent-content
 
   footer {
-    background-color: #828282;
+    background-color: @footercolor;
     display: flex;
     flex-direction: row;
     justify-content: center;
