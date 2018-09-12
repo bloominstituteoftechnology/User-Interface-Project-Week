@@ -33,20 +33,36 @@
             color: @sj-color-background;
         }
     }
+
+    .tab-selected {
+        background-color: @sj-tab-selected;
+        color: @sj-color-background;
+    }
 }
+.service-container {
+    overflow: hidden;
 
-.service-detail {
-    .flex(space-between, center, row);
-
-    .service-text-container {
-        width: 46%;
-
-        p {
-            padding: 12px 0;
+    .service-detail {
+        .flex(space-between, center, row);
+        visibility: hidden; 
+        opacity: 0;
+    
+        .service-text-container {
+            width: 46%;
+    
+            p {
+                padding: 12px 0;
+            }
+        }
+    
+        .service-img-container {
+            width: 46%;
         }
     }
-
-    .service-img-container {
-        width: 46%;
+    
+    .service-detail-selected {
+        transition: visibility 0s, opacity 0.5s linear;
+        opacity: 1;
+        visibility: visible;
     }
 }
