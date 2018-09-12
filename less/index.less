@@ -63,6 +63,9 @@ table{
 @Background: #FFFFFF;
 @Color: #222222;
 @Roboto: 'Roboto';
+@ContainerWidth: 81.9rem ;
+
+//
 
 // Nav Styling
 @NavBG:	#9CAAB6 ;
@@ -73,21 +76,32 @@ table{
 @SelectedTab: #5E9FB9;
 @TabHoverBG: @Color;
 @TabHover: @Background ;
+@flx: flex ;
+@clmn: column;
+@cntr: center ;
 
 //Footer Styling.
 @FooterBG: #828282 ;
 
 //General Text Styling
 
+//Mixins
 .flexRow(){
-  display: flex;
+  display: @flx;
   flex-direction: row ;
 }
 
 .flexColumn(){
-  display: flex ;
-  flex-direction: column ;
+  display: @flx ;
+  flex-direction: @clmn ;
 }
+
+.flexCenter(){
+  display: @flx ;
+  justify-content: @cntr ;
+}
+
+// Global Styling
 * {
   box-sizing: border-box ;
   border: 1px solid black !important ;
@@ -99,16 +113,17 @@ html {
 
 body {
  font-size: 1.6rem ;
- width: 81.9rem ;
+ width: @ContainerWidth;
  margin: 0 auto ;
  font-family: @Roboto;
 }
 .container{
-  display: flex ;
-  flex-direction: column ;
+  display: @flx ;
+  flex-direction: @clmn ;
   justify-content: center ;
 }
 
+// Regular Styling
 .imgStyle {
   width: 100% ;
   max-width: 81.9rem;
@@ -130,7 +145,7 @@ body {
 
   .SJADiv {
     width: 100% ;
-    max-width: 81.9rem;  
+    max-width: @ContainerWidth;  
     border: 1px solid green !important ;
   }
 }
@@ -139,4 +154,25 @@ body {
 .flexRow();
 
 }
+.textStyling {
+  // .flexCenter();
+  // flex-direction: row;
+  display: flex ;
+  flex-direction: column ;
+  // justify-content: @cntr ;
+  text-align: center ;
+  .BasicTxt2 {
+  width: 100%;
+  max-width: 40rem;
+  // justify-content: @cntr ;
+  border: 1px solid green !important ;
+  
+}
+}
 
+.footerContent {
+  display: flex;
+  flex-direction: row ;
+  background:  #828282 ;
+  color: white ;
+}
