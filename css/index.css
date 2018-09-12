@@ -144,7 +144,7 @@ body {
   font-family: "Roboto", "Arial", "sans-serif";
 }
 .container {
-  max-width: 880px;
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
   background-color: #FFFFFF;
@@ -208,14 +208,42 @@ img {
   color: #FFFFFF;
   border: 1px solid #222222;
 }
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.jumbotron .banner {
+  z-index: 1;
+}
+.jumbotron #jumbotron-text {
+  position: relative;
+  left: 8.3%;
+  z-index: 5;
+  width: 50%;
+  height: 0px;
+}
 .header {
+  position: fixed;
   width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  z-index: 9;
   background-color: #828282;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-around;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 10px 25px;
+}
+.header h3 {
+  font-size: 2.4rem;
+}
+.header h4,
+.header img {
+  margin-left: 6%;
+  margin-right: 6%;
 }
 .header a {
   visibility: hidden;
@@ -263,48 +291,39 @@ img {
 .footer-container h5 {
   font-family: "sans-serif";
 }
-.home .jumbotron {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.home .jumbotron .banner {
-  z-index: 1;
+@media (max-width:500px) {
+  .home .jumbotron {
+    border: 2px solid red;
+  }
 }
 .home .jumbotron #jumbotron-text {
-  z-index: 5;
-  position: relative;
-  left: 7%;
-  bottom: 270px;
-  width: 50%;
-  height: 0px;
+  bottom: 273px;
 }
 .home .top-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding-left: 3%;
-  padding-right: 3%;
+  margin-top: 55px;
+  margin-bottom: 95px;
+  padding-left: 7%;
+  padding-right: 7%;
 }
 .home .top-content .text-content {
   flex-direction: column;
-  width: 49%;
+  width: 47%;
 }
 .home .top-content img {
-  width: 48%;
+  width: 46%;
 }
 .home .inverse {
   flex-direction: row-reverse;
 }
 .home .bottom-container {
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 9px;
 }
 .home .bottom-container .bottom-content {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -312,12 +331,14 @@ img {
 }
 .home .bottom-container .bottom-content img {
   z-index: 1;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 10px;
 }
 .home .bottom-container .bottom-content h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: inline-flex;
   z-index: 5;
   height: 0px;
   position: relative;
@@ -338,5 +359,13 @@ img {
 .home .bottom-container .bottom-content .text-content {
   margin: 0 auto;
   width: 47%;
-  margin-bottom: 30px;
+  margin-bottom: 65px;
+}
+@media (max-width:500px) {
+  .services {
+    border: 2px solid red;
+  }
+}
+.services .jumbotron #jumbotron-text {
+  bottom: 75px;
 }
