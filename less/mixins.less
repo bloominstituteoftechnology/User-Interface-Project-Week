@@ -1,41 +1,35 @@
-/*Mixins*/
+// Mixins
 
-.p {
-	line-height: 24px;
-	font-weight: normal;
-	color: @fontColor;
+.flexbox(@justify:center, @align: center){
+	display: flex;
+	justify-content: @justify;
+	align-content: @align;
 }
 
-.h1 {
-	font-weight: bold;
-	line-height: 75px;
-	color: @h1Color;
+.margin(@margin-top: 10px, @margin-bottom: 10x){
+	margin-top: @margin-top;
+	margin-bottom: @margin-bottom;
 }
 
-.h2 {
-	font-weight: bold;
-	color: @h2Color;
+.padding(@padding-top: 10px, @padding-bottom: 10px){
+	padding-top: @padding-top;
+	padding-bottom: @padding-bottom;
 }
 
-.h4 {
-	line-height: 24px;
-	font-weight: normal;
-	color: @h4Color;
-}
-
-.nav-logo-text {
-	font-weight: bold;
-	color: @navColor;
-}
-
-.menu-text {
-	line-height: 85px;
-	font-weight: bold;
-	color: @menuColor;
-}
-
-.footer-text {
-	line-height: 26px;
-	font-weight: normal;
-	color: @footerText;
+.buttonCreate(@bgColor:@white,@text:@black, @border:@black){
+    background-color:@bgColor;
+    color:@text;
+    border-radius: 2px;
+    width: 35%;
+    height: 50px;
+    .flexbox();
+    flex-direction: row;
+	border: 1px solid @border;
+	
+		&:hover{
+			cursor: pointer;
+			background-color: black;
+			color: white;
+			border: 1px solid black;
+		}
 }
