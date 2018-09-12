@@ -10,7 +10,13 @@
     h2 {
       font-size: 2.4rem;
       font-weight: bold;
+      
+    @media @mobile {
+      width: 100%;
+      max-width: 350px;
     }
+  }
+
 }
 
 .hero {
@@ -21,7 +27,6 @@
   background-size: cover;
   background-position: bottom;
   .flex-display(row, flex-start, flex-end);
-
   padding: 60px 8%;
 
   .hero__text {
@@ -29,14 +34,30 @@
     font-weight: bold;
     font-size: 6.4rem;
     line-height: 7.5rem;
+
+    @media @mobile {
+      font-size: 3.6rem;
+      line-height: 4.2rem;
+    }
   }
+
+  @media @mobile {
+    height: 210px;
+    padding: 30px 5%
+  }
+
 }
 
 .cta{
   margin: 0px 8%;
   .flex-display(row, space-between, center);
   flex-wrap: wrap;
-  height: 370px;
+
+  @media @mobile {
+    .flex-display(column-reverse, center, center);
+    flex-wrap: nowrap;
+    width: 100%;
+  }
 
   .cta__text {
     width: 49%;
@@ -47,17 +68,39 @@
       width: 136px;
       .flex-display(row, center, center);
       margin: 10px 1%;
+
+      @media @mobile {
+        width: 96%;
+      }
     }
+
+    @media @mobile {
+      width: 90%;
+    }
+
   }
 
   img {
     width: 49%;
     max-width: 400px; 
+
+    @media @mobile {
+      width: 96%;
+      height: 275px;
+      margin: 20px 2%;
+    }
   }
+
 }
 
 .cta:nth-of-type(even) {
   .flex-display(row-reverse, space-between, center);
+
+  @media @mobile {
+    .flex-display(column-reverse, center, center);
+    flex-wrap: nowrap;
+    width: 100%;
+  }
 }
 
 
