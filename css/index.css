@@ -302,10 +302,10 @@ li {
 }
 .footer {
   display: flex;
-  height: 200px;
-  flex-direction: row;
+  flex-shrink: 0;
+  padding: 20px;
   justify-content: space-around;
-  flex-wrap: wrap;
+  height: 200px;
   background-color: #828282;
   color: #ffffff;
   padding: 15px 5px;
@@ -319,9 +319,11 @@ li {
 .quarter {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  padding: 10px 15px;
+  width: 25%;
 }
 .copyright {
+  display: flex;
   text-align: center;
   display: block;
   color: white;
@@ -333,53 +335,57 @@ li {
 /* Style the tab */
 .tab {
   overflow: hidden;
-  margin: 0 0 30px 0;
 }
-/* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
-  border: none;
-  outline: none;
-  cursor: pointer;
+  display: inline-block;
+  float: left;
+  margin: 0 40px;
   padding: 14px 16px;
+  outline: none;
   transition: 0.3s;
   font-size: 17px;
+  width: 200px;
 }
-/* Change background color of buttons on hover */
+button {
+  display: inline;
+}
 .tab button:hover {
   background-color: #ddd;
 }
-/* Create an active/current tablink class */
 .tab button.active {
   background-color: #ccc;
 }
-/* Style the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
 }
-.tabcontent h3 {
-  font-size: 22px;
-  padding: 25px 0;
-}
-.tab {
+.tab-info {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-button {
-  display: inline-flex;
-  border: 1px solid black;
+  margin: 20px 0;
 }
 .tableft,
 .tabright {
-  width: 48%;
   display: flex;
   flex-direction: column;
+  width: 45%;
+  float: left;
+  padding: 25px 0;
+  margin: 0 auto;
 }
 .tabright img {
   width: 100%;
-  height: auto;
+  border-radius: 10px;
+}
+.tableft h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222222;
+}
+.tableft p {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 10px;
 }
 #main {
   transition: margin-left 0.5s;
