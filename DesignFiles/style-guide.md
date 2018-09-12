@@ -19,13 +19,13 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Tab Hover background: #222222
 - Tab Hover color: #FFF;
 
-## Footer 
-Background: #828282
+<!-- ## Footer 
+Background: #828282 -->
 
-### General Text
+<!-- ### General Text
 - Font Weight: Regular
 - Font Size: 16px
-- Line Height: 24px
+- Line Height: 24px -->
 
 ### Jumbotron Headers
 - Font Weight: Bold
@@ -49,11 +49,11 @@ Background: #828282
 - Font Size: 14px
 - Line Height: 26px
 - Color: #FFFFFF
-
+<!-- 
 ### Navigation Logo
 - Font Weight: Bold
 - Font Size: 24px
-- Color: #FFFFFF
+- Color: #FFFFFF -->
 
 ### Navigation Text (Expanded)
 - Font Weight: Bold
