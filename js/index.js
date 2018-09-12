@@ -52,9 +52,6 @@ class Tab {
     console.log(tabs)
     this.element.classList.add('active-tab')
   }
-  deselect() {
-
-  }
 }
 let links = document.querySelectorAll('.button')
 links = Array.from(links).map(links => new Button(links))
