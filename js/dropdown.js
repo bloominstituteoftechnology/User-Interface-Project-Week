@@ -1,4 +1,3 @@
-/* Navigation */
 /* Open */
 function openNav() {
     document.querySelector(".dropdown").style.height = "100%";
