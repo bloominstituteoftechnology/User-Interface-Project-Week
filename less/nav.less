@@ -2,9 +2,10 @@ header {
     background-color: @header-background-color;
     height: 50px;
     .flex(space-between, center);
-    position: absolute;
+    position: fixed;
     max-width: 1024px;
     width: 100%;
+    z-index: 100;
 
     h3.logo {
         font-weight: @font-weight-bold;
@@ -21,8 +22,16 @@ header {
         padding-right: 8.3%;
         .flex();
 
+        &hover {
+            color: @nav-hover-color;
+        }
+
         .dropdown-button {
             padding-bottom: 12px;
+        }
+
+        .dropdown-hidden a {
+            display: none;
         }
     }
 }
