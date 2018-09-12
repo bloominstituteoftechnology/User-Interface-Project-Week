@@ -1,14 +1,54 @@
 @import 'variables.less';
+
+
+
 .navContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #D8D8D8;
-    padding: 5px;
-    .navigation {
-        .hamLinks {
-            display: flex;
-            flex-direction: column;
+    background-color: @header-bg;
+    padding: 2%;
+    .navText {
+        font-weight: bold;
+        font-size: @navtext-fontSize;
+        color: @navtext-fontColor;
+    }
+    .hamburger {
+        cursor: pointer;
+    }
+
+}
+
+.jumbotronContainer {
+    .hamLinks {
+        display: none;
+        z-index: 2;
+        position: absolute;
+        text-align: center;
+        margin: auto 0;
+        top: 0;
+        width: 100%;
+        height: 99%;
+        background-color: @header-bg;
+        opacity: 0.95;
+        .linkContainer {
+            display: block;
+            position: relative;
+            top: 100px;
+        }
+        a {
+            color: @navigation-color;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: @navigation-fontSize;
+            line-height: @navigation-lineHeight;
+        }
+        a:hover {
+            color: @navigation-colorHover;
         }
     }
+    .displayHam {
+        display: block;
+    }
+    
 }
