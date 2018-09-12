@@ -3,11 +3,9 @@
 function interface() {
 let menuOpen = true;
 
-console.log("im here");
+
 
 const menuButton = document.querySelector(".menu-button");
-//let menu = document.querySelector(".menu");
-console.log(menuButton);
 menuButton.addEventListener("click", clickMenu);
 let menu = document.querySelector(".nav");
 menuButton.style.cursor = "pointer";
