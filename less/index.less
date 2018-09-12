@@ -85,13 +85,13 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -107,42 +107,78 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 
 body {
-  line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: ’’;
-  content: none;
+    content: ’’;
+    content: none;
 }
 
 ins {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 del {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Your Code Goes Here */
+
+@import "./mixins.less";
+@import "./variables.less";
+html {
+    font-size: 62.5%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.navi {
+    width: 100%;
+    height: 60px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: right;
+    font-family: @projectFont;
+    background-color: @navigationColor;
+    .navigationLogo;
+    .menuList {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        li {
+            width: 100%;
+            display: none;
+        }
+    }
+}
+
+.menuButton {
+    display: flex;
+    justify-content: right;
+    width: 85%;
+    height: 20px;
+    margin: auto 20px;
+}
