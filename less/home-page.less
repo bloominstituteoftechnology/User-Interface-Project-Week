@@ -2,8 +2,16 @@
     width: 100%;
     position: relative;
 
-    img {
+    .img-container {
         width: 100%;
+        height: 900px;
+        background-image: url("../img/home/home-jumbotron.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        @media @mobile {
+          background-image: url("../img/home/home-mobile-jumbotron.png");
+          height: 400px;
+        }
     }
 
     .slogan {
@@ -11,6 +19,13 @@
         position: absolute;
         bottom: 120px;
         left: 115px;
+    }
+
+    @media @mobile {
+      .slogan {
+        bottom: 20px;
+        left: 20px;
+      }
     }
 }
 
@@ -25,60 +40,125 @@
     
         .text-content {
           width: 48%;
-          padding-right: 1%;
+          padding-right: 2%;
           button {
             .btn-creator();
           }
         }
     
         .img-content {
+          height: 276px;
           width: 48%;
           padding-left: 1%;
-          img {
-            width: 100%;
+        }
+        #img1 {
+          background-image: url(../img/home/home-img-1.png);
+          background-repeat: no-repeat;
+          @media @mobile {
+            background-image: url(../img/home/home-mobile-img-1.png);
+            height: 340px;
+            background-size: cover;
+          }
+        }
+
+        #img2 {
+          background-image: url(../img/home/home-img-2.png);
+          background-repeat: no-repeat;
+          @media @mobile {
+            background-image: url(../img/home/home-mobile-img-2.png);
+            height: 340px;
+            background-size: cover;
+          }
+        }
+
+        @media @mobile {
+          margin: 0;
+          .flex-column();
+          flex-direction: column-reverse;
+          .text-content {
+            width: 90%;
+            padding: 20px 0;
+          }
+
+          .img-content {
+            width: 90%;
+            padding: 20px 0;
           }
         }
       }
     
       .inverse-content {
-        // padding-bottom: 30px;
-    
+        @media @mobile {
+        flex-direction: column;
+        }
         .text-content {
           padding-left: 1%;
-          padding-right: 0;
+          padding-right: 1%;
+
+          @media @mobile {
+            padding: 20px 0;
+          }
         }
     
         .img-content {
-          padding-right: 1%;
+          padding-right: 0;
           padding-left: 0;
+
+          @media @mobile {
+            padding: 20px 0;
+          }
         }
+
       }
-    
-      .content-destination {
-        width: 75%;
-        margin: 0 auto 30px;
-    
-        img {
-          border-radius: 10px;
-        }
       }
   
   .projects-container {
     margin-top: 50px;
     .flex-column();
-
+    @media @mobile {
+      margin: 0;
+    }
     .h2-box {
     width: 100%;
     margin-top: 50px;
+
+    @media @mobile {
+      padding-left: 5%;
+    }
+
     }
 
     .project-img-container{
       width:100%;
       margin-top: 50px;
 
-      img {
+      .img-box {
         width: 100%;
-        position: relative;
+        height: 250px;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #villa-img {
+      background-image: url('../img/home/home-villas-img.png');
+      @media @mobile {
+        background-image: url("../img/home/home-mobile-villas-img.png");
+      }
+      }
+      #outskirts-img {
+        background-image: url('../img/home/home-outskirts-img.png');      
+        @media @mobile {
+          background-image: url("../img/home/home-mobile-outskirts-img.png");
+        }
+      }
+      #blocks-img {
+        background-image: url('../img/home/home-the-blocks-img.png');      
+        @media @mobile {
+          background-image: url("../img/home/home-mobile-the-blocks-img.png");
+        }
+      }
+      
+      @media @mobile {
+        margin: 0;
       }
 
       .h3-box {
@@ -90,15 +170,26 @@
         left: 70%;
         bottom: 40px;
         border: 1px solid white;
+
+        @media @mobile {
+          width:90%;
+          left:5%;
+          bottom:15px;
+        }
       }
 
       .reverse-box {
-        left:0;
+        left: 0;
+        @media @mobile {
+        left:5%;
+        }
       }
     }
 
     .project-content {
       width: 50%;
+      @media @mobile {
+        width:90%;
+      }
     }
   }
-}
