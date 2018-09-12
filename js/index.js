@@ -3,26 +3,27 @@
 class TabButton {
     constructor(element){
         this.element = element;
-        console.log(`${this.element}`);
+        // console.log(`${this.element}`);
 
         this.data = this.element.dataset.tab;
-        console.log(`this.data is ${this.data}`);
+        // console.log(`this.data is ${this.data}`);
 
-        // this.infoElement = document.querySelectorAll(`.Tab-Info[data-info="1"]`);
-        this.infoElement = document.querySelectorAll(`.Tab-Info[data-info="${this.data}"]`);
-        console.log(`this.infoElement is ${this.infoElement}`);
+        this.infoElement = document.querySelector(`.Tab-Info[data-info="${this.data}"]`);
+        // console.log(`this.infoElement is ${this.infoElement}`);
 
         this.tabInfo = new TabInfo(this.infoElement);
-        console.log(`this.tabInfo is ${this.tabInfo}`);
+        // console.log(`this.tabInfo is ${this.tabInfo}`);
 
         this.element.addEventListener('click', ()=>{this.select()});
     }
 
     select() {
         let tabs = document.querySelectorAll('.Tab-Button');
+
         Array.from(tabs).forEach(function(item){
             item.classList.remove('tab-button-selected');
         });
+
         this.element.classList.add('tab-button-selected');
 
         let infos = document.querySelectorAll('.Tab-Info');
@@ -31,7 +32,7 @@ class TabButton {
 
         this.tabInfo.select();
 
-        })
+        }.bind(this))
     }
 }
 
@@ -42,11 +43,12 @@ class TabInfo {
     select() {
         let info = document.querySelectorAll('.Tab-Info');
         Array.from(info).forEach(function(item){
-            item.classList.remove('')
+            item.style = 'display: none';
         });
-        this.element.classList.add('tab-info-selected');
+
+        this.element.style = 'display: block';
     }
-}
+} 
 
 let tabs = document.querySelectorAll('.Tab-Button');
 console.log(`tabs is ${tabs}`);
