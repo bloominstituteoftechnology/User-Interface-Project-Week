@@ -63,6 +63,7 @@ table{
 @gray-square: #D8D8D8;
 @button-border: #222222;
 @footer-background: #828282;
+@mobile: ~"(max-width: 400px)";
 .container{
     display: flex;
     margin: 0 auto;
@@ -71,6 +72,26 @@ table{
     max-width: 1024px;
     width: 100%;
     font-family: Roboto, Arial, sans-serif;
+    @media only screen and @mobile{
+        width: 80%;
+        align-items: flex-start;
+        margin: 0;
+    }
+    img{
+        @media only screen and @mobile{
+            display: none;
+        }
+    }
+
+    .mobileImg{
+        display: none;
+        @media only screen and @mobile{
+            display: block;
+        }
+    }
+    .navImg{
+        display: block;
+    }
     .nav{
         width: 100%;
         max-width: 1024px;
@@ -81,6 +102,9 @@ table{
         justify-content: space-around;
         padding: 13px 0;
         background: @navbar;
+        @media only screen and @mobile{
+            width: 80%;
+        }
         .logo{
             padding-right: 59.15%;
             font-weight: bolder;
@@ -105,6 +129,12 @@ table{
             left: 82.5px;
             line-height: 75px;
             color: @alt-text-color;
+            @media only screen and @mobile{
+                margin-top: -150px;
+                left: 15px;
+                line-height: 42px;
+                font-size: 36px;
+            }
         }
         .lineSeparator{
             position: relative;
@@ -115,12 +145,19 @@ table{
         display: flex;
         line-height: 24px;
         justify-content: center;
+        @media only screen and @mobile{
+            flex-direction: column;
+        }
         h2{
             margin-top: -2px;
             margin-bottom: 7px;
             font-size: 24px;
             font-weight: bold;
             line-height: 52px;
+            @media only screen and @mobile{
+                margin-left: -5%;
+                margin-top: 7%;
+            }
         }
         .sub-content{
             display: flex;
@@ -129,6 +166,11 @@ table{
             align-items: flex-start;
             width: 40%;
             margin: 2%;
+            @media only screen and @mobile{
+                width: 90%;
+                align-items: center;
+                margin: 0 auto;
+            }
             p{
                 margin-bottom: -8px;
             }
@@ -145,21 +187,47 @@ table{
                 width: 134px;
                 height: 45px;
                 border: solid 1px @button-border;
+                @media only screen and @mobile{
+                    width: 100%;
+                }
             }
         }
     }
     .section-2{
         margin-top: 29px;
+        @media only screen and @mobile{
+            margin-top: 10px;
+            // margin-left: 1%;
+        }
+
 
         .img-2{
             order: -1;
             // padding-left: 1%;
             margin-right: 3.4%;
+            @media only screen and @mobile{
+                margin-right: 5%;
+                margin-top: 4%;
+            }
         }
 
         .text-2{
             margin-top: 3px;
             margin-left: -1%;
+            @media only screen and @mobile{
+                margin-top: -1%;
+                margin-left: 4%;
+            }
+            h2{
+                @media only screen and @mobile{
+                    margin-left: -32%;
+                }
+            }
+            .button{
+                    @media only screen and @mobile{
+                        margin-top: 8%;
+                    }
+            }
         }
     }
     article{
@@ -169,13 +237,28 @@ table{
         display: flex;
         flex-direction: column;
         padding-bottom: 87px;
+        @media only screen and @mobile{
+            width: 100%;
+        }
         h2{
             font-size: 24px;
             font-weight: bold;
             padding-bottom: 47px;
+            @media only screen and @mobile{
+                margin-left: 5%;
+                margin-top: -7%;
+            }
         }
         img{
             margin: 0 auto;
+            @media only screen and @mobile{
+                margin-top: -7%;
+            }
+        }
+        .mobileImg2{
+            @media only screen and @mobile{
+                margin-top: -40px;
+            }
         }
         .gray-square{
             display: flex;
@@ -185,20 +268,34 @@ table{
             align-self: flex-end;
             font-size: 24px;
             letter-spacing: 8px;
-            // top: 262%;
             margin-top: 247px;
             border: 1px white solid;
             background: @gray-square;
             width: 318px;
             height: 94px;
+            @media only screen and @mobile{
+                width: 288px;
+                margin-top: 212px;
+                margin-left: -3%;
+            }
         }
         .gray-square-2{
             margin-top: 175px;
             width: 313px;
             align-self: flex-start;
+            @media only screen and @mobile{
+                width: 288px;
+                margin-top: 148px;
+                margin-left: 0;
+                align-self: center;
+            }
         }
         .gray-square-3{
             margin-top: 175px;
+            @media only screen and @mobile{
+                margin-top: 155px;
+                margin-left: -4%;
+            }
         }
         p{
             padding-top: 90px;
@@ -207,6 +304,11 @@ table{
             font-size: 18px;
             line-height: 24px;
             margin-bottom: -65px;
+            @media only screen and @mobile{
+                width: 90%;
+                margin-top: 20px;
+                margin-bottom: -85px;
+            }
         }
     }
     .footer{
@@ -219,6 +321,10 @@ table{
         height: 250px;
         font-size: 14px;
         line-height: 26px;
+        @media only screen and @mobile{
+            height: 100%;
+            margin-top: 65px;
+        }
         h2{
             font-size: 20px;
             line-height: 24px;
@@ -227,6 +333,10 @@ table{
             display: flex;
             align-items: center;
             height: 90%;
+            @media only screen and @mobile{
+                flex-direction: column;
+
+            }
             .footer-form{
                 display: flex;
                 flex-direction: column;
@@ -234,12 +344,20 @@ table{
                 margin-top: 30px;
                 margin-left: 3%;
                 padding: 0 5%;
+                @media only screen and @mobile{
+                    width: 100%;
+                    margin-top: 20px;
+                    margin-left: 8%;
+                }
                 input{
                     font-size: 16px;
                     margin: 2% 0;
                     width: 280px;
                     height: 40px;
                     border-radius: 5px;
+                    @media only screen and @mobile{
+                        margin-top: 20px;
+                    }
                 }
             }
             .addresses{
@@ -248,11 +366,27 @@ table{
                 width: 50%;
                 margin-top: 30px;
                 margin-left: -2%;
+                @media only screen and @mobile{
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    margin-top: 15px;
+                    margin-left: -40%;
+                }
+                address{
+                    @media only screen and @mobile{
+                        margin-bottom: 30px;
+                    }
+                }
             }
         }
         .copyright{
             margin: -2px auto 0 auto;
             font-size: 12px;
+            @media only screen and @mobile{
+                margin: 0;
+                padding-left: 4%;
+            }
         }
 
     }
