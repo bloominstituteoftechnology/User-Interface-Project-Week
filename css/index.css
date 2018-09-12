@@ -144,7 +144,8 @@ body {
   font-family: 'Roboto', Arial, sans-serif;
 }
 .container {
-  width: 76%;
+  max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
 }
 img {
@@ -172,7 +173,8 @@ h4 {
   line-height: 2.4rem;
   color: #FFFFFF;
 }
-p {
+p,
+.btn {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
@@ -195,11 +197,18 @@ header {
   width: 100%;
   height: 600px;
 }
+.open {
+  display: block;
+}
+.closed {
+  display: none;
+}
 .top-nav {
   display: flex;
   justify-content: space-between;
   background-color: #999999;
-  width: 76%;
+  max-width: 1024px;
+  width: 100%;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -222,26 +231,23 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 76%;
+  max-width: 1024px;
+  width: 100%;
   height: 100%;
   background-color: #999999;
   position: fixed;
   top: 50px;
-  left: 12%;
+  left: 11.99%;
   z-index: 3;
   opacity: 0.9;
-}
-.open {
-  display: block;
-}
-.closed {
-  display: none;
 }
 footer {
   display: flex;
   flex-direction: column;
   background-color: #828282;
-  height: 250px;
+}
+footer .copyright {
+  margin: 0 auto;
 }
 footer h4 {
   padding-bottom: 5px;
@@ -249,16 +255,14 @@ footer h4 {
 footer p {
   font-size: 1.2rem;
   color: #FFFFFF;
-  margin: 0 auto;
 }
 footer .footer-container {
   display: flex;
-  height: 222px;
   justify-content: space-between;
   align-items: center;
-  padding-left: 8.3%;
-  padding-right: 8.3%;
-  padding-top: 35px;
+  max-width: 854.031px;
+  width: 100%;
+  margin: 0 auto;
 }
 footer .footer-container p {
   font-size: 1.4rem;
@@ -267,12 +271,20 @@ footer .footer-container p {
 footer .footer-container .footer-form-block {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  height: 187px;
+  justify-content: center;
+  max-width: 280px;
+  width: 32.786%;
+  height: 226px;
+}
+@media (max-width: 832px) {
+  footer .footer-container .footer-form-block {
+    justify-content: flex-start;
+    padding-right: 2%;
+    padding-top: 20px;
+  }
 }
 footer .footer-container .footer-form-block h4 {
-  padding-top: 27px;
-  padding-bottom: 12px;
+  padding-bottom: 13px;
 }
 footer .footer-container .footer-form-block input {
   width: 100%;
@@ -289,6 +301,10 @@ footer .footer-container .footer-form-block p {
 footer .footer-container .footer-state-block {
   display: flex;
   flex-direction: column;
+  max-width: 132px;
+  width: 22.404%;
+  height: 226px;
+  justify-content: center;
 }
 .jumbotron {
   position: relative;
@@ -311,6 +327,8 @@ footer .footer-container .footer-state-block {
 }
 .cta .cta-content img {
   padding-left: 2%;
+  max-height: 275px;
+  width: 48%;
 }
 .cta .cta-content .cta-text {
   display: flex;
@@ -325,16 +343,13 @@ footer .footer-container .footer-state-block {
 .cta .cta-content .cta-text p {
   padding-bottom: 26px;
 }
-.cta .cta-content .cta-text .button {
+.cta .cta-content .cta-text .btn {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #222222;
-  width: 33.33%;
+  width: 134px;
   height: 46px;
-}
-.cta .cta-content .cta-text .button p {
-  padding-bottom: 0;
 }
 .cta .cta-content-inverse {
   padding-top: 100px;
@@ -376,6 +391,11 @@ footer .footer-container .footer-state-block {
   width: 37%;
   letter-spacing: 0.75rem;
   padding-left: 1%;
+}
+@media (max-width: 756px) {
+  .main-content .main-content-picture .img-div {
+    width: 225px;
+  }
 }
 .main-content .main-content-picture-inverse .img-div {
   left: 0;
