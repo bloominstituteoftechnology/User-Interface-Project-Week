@@ -3,14 +3,25 @@
     background-color: @dark-grey;
     .flexbox(flex-start, center);
     flex-direction: column;
+    @media @phone{
+        align-items: flex-start;
+    }
     .footer-content{
         .flexbox(flex-start, flex-start);
         padding: 7%;
         width: @width-100percent;
         .padding-tb(63px, 30px);
+        @media @phone{
+            flex-direction: column;
+            .padding-tb(30px, 10px);
+        }
         .footer-contact{
             width: 38%;
             flex-direction: column;
+            @media @phone{
+                width: @width-100percent;
+                margin-bottom: 20px;
+            }
             .email-box{
                 background-color: @white;
                 max-width: 282px;
@@ -19,17 +30,41 @@
                 color: @light-grey;
                 height: 40px;
                 border-radius: 5px;
+                @media @phone{
+                    .margin-tb(15px, 10px);
+                    width: @width-100percent;
+                }
+            }
+        }
+        h4{
+            @media @phone{
+              font-size: 1.8rem;
+              font-weight: @bold;
             }
         }
         .locations{
             .flexbox(space-around, flex-start);
             width: 61%;
+            @media @phone{
+                flex-direction: column;
+            }
             h4{
                 margin-bottom: 5px;
+            }
+            address{
+                @media @phone{
+                    margin-bottom: 20px;
+                }
             }
         }
     }
     h5{
         font-family: "sans-serif";
+    }
+    .copyright{
+        @media @phone{
+            margin-bottom: 20px;
+            margin-left: 7%;
+        }
     }
 }
