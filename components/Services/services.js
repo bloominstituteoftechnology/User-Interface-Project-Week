@@ -26,12 +26,17 @@ class TabLink {
 class TabItem {
     constructor(element) {
         this.element = element;
+        this.hide(this.element);
+    }
+
+    hide(element) {
+        TweenLite.to(element, 0, {autoAlpha: 0, display: 'none'});
     }
 
     select() {
         let links = document.querySelectorAll('.tab-content .wrapper');
-        Array.from(links).forEach(el => el.classList.remove('tabs-item-selected'));
-        this.element.classList.add('tabs-item-selected');
+        Array.from(links).forEach(el => this.hide(el));
+        TweenLite.fromTo(this.element, .5, {opacity:0, marginLeft: "300px"}, {marginLeft: "0px", autoAlpha: 1, display: "flex"});
     }
 }
 
