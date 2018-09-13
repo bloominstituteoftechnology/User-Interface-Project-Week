@@ -130,7 +130,7 @@ p, a {
 
 /* main content mixins */
 
-.main-section-mixin(@direction) {
+.main-section-mixin(@direction: row) {
   display: flex;
   flex-direction: @direction;
   justify-content: space-between;
@@ -172,7 +172,7 @@ p, a {
 }
 
 .designs {
-  .main-section-mixin(row);
+  .main-section-mixin();
   margin: 90px 0 110px 0;
 }
 
@@ -324,5 +324,37 @@ footer {
       color: #FFFFFF;
       margin-bottom: 20px;
     }
+  }
+}
+
+.about-services {
+  margin: 45px auto;
+}
+
+.service-tab-links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+
+  p {
+    font-weight: bold;
+    font-size: 1.8rem;
+    border: 1px solid #222222;
+    padding: 10px;
+    width: 18%;
+    text-align: center;
+  }
+
+  p:hover {
+    cursor: pointer;
+    color: #FFF;
+    background-color: #222222;
+  }
+}
+
+.tab-content {
+
+  h2 {
+    .subheader();
   }
 }
