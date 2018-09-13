@@ -4,16 +4,27 @@ nav {
     background-size: 1024px 598px;
     height: 598px;
     background-color: @nav-background;
+    background-repeat: no-repeat;
     color: @nav-color;
   
+    @media @mobile {
+      background-size: 320px 210px;
+      background-position: bottom;
+      height: 260px;
+    }
+
     .nav-row {
       .flex();
   
       .menu {
         .flex(row,center,space-between);
         width: 100%;
-        padding: 14px 85px;
+        padding: 17px 85px;
         background-color: @nav-background;
+
+        @media @mobile {
+          padding: 12px 12px;
+        }
   
         .name {
           font-size: 24px;
@@ -42,6 +53,12 @@ nav {
         .flex(row,flex-end,left);
         height: 500px;
         width: 84%;
+
+        @media @mobile {
+          height: 185px;
+          font-size: 33px;
+          line-height: 40px;
+        }
       }
     } // End nav-row
   }// End nav
