@@ -7,6 +7,9 @@
     img {
       z-index: -2;
       margin-top: -50px;
+      @media @mobile {
+        margin-top: 0px;
+      }
     }
 
     h1 {
@@ -17,6 +20,13 @@
       left: 82px;
       line-height: 73px;
       font-weight: 600;
+      @media @mobile {
+        font-size: 3.3rem;
+        bottom: 28px;
+        left: 14px;
+        line-height: 41px;
+        font-weight: 600;
+      }
     }
   }
 
@@ -32,6 +42,12 @@
       flex-flow: row nowrap;
       justify-content: space-between;
       padding-bottom: 99px;
+      @media @mobile {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        justify-content: space-between;
+        padding-bottom: 36px;
+      }
 
       .text-content {
         display: flex;
@@ -39,18 +55,52 @@
         justify-content: space-evenly;
         width: 49%;
         padding: 21px 0px 13px 0px;
+        @media @mobile {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          width: 100%;
+          padding: 21px 0px 13px 0px;
+        }
 
         h3 {
           padding-top: 5px;
+          @media @mobile {
+            padding-bottom: 18px;
+          }
+        }
+
+        p {
+          @media @mobile {
+            padding-bottom: 25px;
+          }
         }
 
         .button {
           .button-creator();
+          @media @mobile {
+            .button-creator(@white, black, 100%, 47px);
+          }
         }
       }
 
       .small-img {
         width: 48%;
+        @media @mobile {
+          width: 100%;
+        }
+
+        img {
+          height: 273px;
+        }
+      }
+    }
+
+    .second {
+      @media @mobile {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
       }
     }
   }
@@ -66,16 +116,25 @@
       padding-bottom: 46px;
     }
 
-    .wide-img {
+    .wide-img-container {
       display: flex;
       flex-flow: column nowrap;
 
       img {
         z-index: -1;
+        @media @mobile {
+          height: 199px;
+        }
       }
 
       .graybox {
         .box-creator(flex-end);
+        @media @mobile {
+          .box-creator(center);
+          width: 92%;
+          margin-top: -16px;
+          margin-bottom: 12px;
+        }
       }
     }
 
@@ -83,6 +142,10 @@
       width: 53%;
       margin: 0 auto;
       padding-bottom: 87px;
+      @media @mobile {
+        width: 92%;
+        padding-bottom: 30px;
+      }
 
       p {
         font-size: 1.78rem;
@@ -90,16 +153,16 @@
       }
     }
 
-    .wide-img-middle {
-      display: flex;
-      flex-flow: column nowrap;
-
-      img {
-        z-index: -1;
-      }
+    .middle {
 
       .graybox {
         .box-creator(flex-start);
+        @media @mobile {
+          .box-creator(center);
+          width: 92%;
+          margin-top: -16px;
+          margin-bottom: 12px;
+        }
       }
     } 
   }
