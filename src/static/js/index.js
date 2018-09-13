@@ -22,9 +22,10 @@ const header = document.createElement('header');
 body.appendChild(header);
 const homeJumbotron = new Jumbotron(header);
 
-// const topContainer = document.createElement('section');
-
-
+// Section one
+const sectionOne = document.createElement('section');
+sectionOne.classList.add('section-one');
+body.appendChild(sectionOne);
 
 // Horizontal card.
 const horizontalCardData = [{
@@ -42,8 +43,18 @@ const horizontalCardData = [{
 }];
 
 horizontalCardData.forEach(function(obj) {
-  const card = new HorizontalCard(body, obj);
+  const card = new HorizontalCard(sectionOne, obj);
 });
+
+// Section two
+const sectionTwo = document.createElement('section');
+sectionTwo.classList.add('section-two');
+body.appendChild(sectionTwo);
+
+const sectionTwoLabel = document.createElement('h2');
+sectionTwoLabel.innerHTML = "Recent Projects";
+sectionTwoLabel.classList.add('section-two-label');
+sectionTwo.appendChild(sectionTwoLabel);
 
 // Project card.
 const cardData =[{
@@ -73,7 +84,7 @@ const cardData =[{
 }];
 
 cardData.forEach(function(obj) {
-  new ProjectCard(body, obj);
+  new ProjectCard(sectionTwo, obj);
 });
 
 
