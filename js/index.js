@@ -8,8 +8,15 @@ class Menu{
   }
 
   expand(){
-   this.element.classList.toggle('show');
+    this.element.classList.toggle('show');
+    if(this.element.classList =="show"){
+      this.button.src ="/img/nav-hamburger-close.png";
+    }
+    else if(this.element.classList ==""){
+      this.button.src ="/img/nav-hamburger.png";
+    }
   }
+
 }
 
 let nav = document.querySelector('nav')
