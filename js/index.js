@@ -3,7 +3,7 @@
 // replace images if screen width is below 500px
 
 const switchImages = (id, src) => {
-  console.log(id);
+  
   id = document.getElementById(id);
 
   screen.width < 501 ? id.setAttribute('src', src) : true;
