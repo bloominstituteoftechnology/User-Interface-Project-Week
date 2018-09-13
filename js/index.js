@@ -1,7 +1,7 @@
 // JS goes here
 
 // check for body to load and then fade in
-window.addEventListener("load", ()=>{
+window.addEventListener("load", () => {
 const body = document.querySelector("body");
 
   TweenMax.fromTo(body, 3, {opacity:0},{opacity:1});
