@@ -1,5 +1,38 @@
 // JS goes here
 
+//Navigation Dropdown
+
+class Dropdown {
+    constructor(element) {
+        this.element = element;
+
+        this.button = this.element.querySelector('.Menu-Bars');
+
+        this.close = this.element.querySelector('.close')
+
+        this.content = this.element.querySelector('.menu-background');
+
+        this.hidden = this.element.querySelector('header');
+
+        this.button.addEventListener('click', ()=>{
+            this.drop();
+        });
+
+        this.close.addEventListener('click', ()=>{
+            this.drop();
+        })
+    }
+
+    drop(){
+        this.content.classList.toggle('dropdown-hidden');
+        this.hidden.classList.toggle('header-hidden');
+    }
+}
+
+let dropdown = document.querySelector('body');
+dropdown = new Dropdown(dropdown);
+
+//Services Tab Functionality
 class TabButton {
     constructor(element){
         this.element = element;
@@ -29,10 +62,10 @@ class TabButton {
         let infos = document.querySelectorAll('.Tab-Info');
         infos.forEach(function(item){
             item.style = 'display: none';
+        })
 
         this.tabInfo.select();
 
-        }.bind(this))
     }
 }
 
