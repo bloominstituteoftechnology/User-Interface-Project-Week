@@ -6,7 +6,11 @@ html {
         .genText;
         .container {
             width: 65%;
+            max-width: 850px;
             margin: 0 auto;
+            @media @mobile {
+                max-width: 450px;
+            }
         }
     }
 }
@@ -15,85 +19,156 @@ html {
     display: flex;
     background: url("../img/home/home-jumbotron.png") no-repeat center;
     background-size: cover;
-    height: 59.8rem;
+    height: 598px;
     padding-left: 5%;
     padding-bottom: 5%;
+    @media @mobile {
+        background: url("../img/home/home-mobile-jumbotron.png") no-repeat;
+        background-size: cover;
+        padding: 0;
+        height: 282px;
+        width: 100%;
+    }
     .jumbotron-header {
         align-self: flex-end;
         .jumboFont;
+        @media @mobile {
+            font-size: 4rem;
+            line-height: 45px;
+            padding-bottom: 7%;
+            margin-left: 20px;
+        }
     };
 };
 
 .section{
     display: flex;
     justify-content: space-evenly;
-    padding: 5rem 0;
-    
+    padding: 50px;
+    @media @mobile {
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 47%;
+        @media @mobile {
+            width: 100%;
+        }
+    }   
+    .image {
+        width: 47%;
+        @media @mobile {
+            display: none;
+        }
+    }
+    .mobile-image {
+        display: none;
+        @media @mobile {
+            display: block;
+            width: 100%;
+            margin: 30px 0;
+        }
+    }    
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40%;
+.designs-content {
+    margin-left: 25px;
+    @media @mobile {
+        margin: 0;
+    }
 }
+
 
 .button {
     .buttons;
+    @media @mobile {
+        width: 100%;
+    }
 }
 
 h3 {
     font-weight: bold;
     font-size: 2.8rem;
     color: @secondaryColor;
+    @media @mobile {
+        font-size: 2.4rem;
+    }
 }
 
 p{
-    margin: 2rem 0;
+    margin: 20px 0;
 }
 
 .recent-projects {
-    margin-top: 5rem;
+    margin-top: 50px;
+    h3 {
+        margin-left: 6%;
+    }
 }
 
-.recent-projects h3 {
-    margin-left: 6.7%;
-}
+
 .pro-images-container {
-    margin: 4rem 6.7%;
+    margin: 40px 6%;
     text-align: center;
+    @media @mobile {
+        margin: 0;
+    }
 }
 
 .projects {
     background-size: contain;
-    height: 26.5rem;    
+    height: 270px;    
     display: flex;
     align-items: flex-end;
+    @media @mobile {
+        height: 279px;
+    }
 }
 
 .first-project .projects {
     background: url(../img/home/home-villas-img.png) no-repeat;
     justify-content: flex-end;
+    @media @mobile {
+        background: url("../img/home/home-mobile-villas-img.png") no-repeat;
+        justify-content: center;
+        margin-top: 25px;
+    }
 }
 
 .second-project .projects {
-    background: url(../img/home/home-outskirts-img.png) no-repeat;    
+    background: url(../img/home/home-outskirts-img.png) no-repeat;
+    @media @mobile {
+        background: url("../img/home/home-mobile-outskirts-img.png") no-repeat;
+        justify-content: center;
+    }    
 }
 
 .third-project .projects {
     background: url(../img/home/home-the-blocks-img.png) no-repeat;
     justify-content: flex-end;
+    @media @mobile {
+        background: url("../img/home/home-mobile-the-blocks-img.png") no-repeat;
+        justify-content: center;
+    }
 }
 
 span {
     width: 35%;
-    height: 8rem;
+    height: 90px;
     border: 1px solid @primaryColor;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #d7dae0;
     font-size: 2.5rem;
+    @media @mobile {
+        width: 90%;
+    }
 }
 .space{
     color: #d7dae0;
@@ -108,7 +183,14 @@ span {
     text-align: start;
     margin: 0 auto;
     font-size: 1.9rem;
-    margin-top: 5rem;
+    margin-top: 50px;
+    @media @mobile {
+        width: 100%;
+        font-size: 1.79rem;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
 }
 
 
