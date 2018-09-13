@@ -14,6 +14,8 @@ function change() {
         TweenMax.staggerFrom('.menu a', 1, {opacity:0}, .1);
         nav.style.opacity = '0.9';
         menu.style.display = 'block';
+
+        
     }
     else {
         image.src = 'img/nav-hamburger.png';
