@@ -3,12 +3,12 @@
 function interface() {
 let menuOpen = true;
 
-
-
 const menuButton = document.querySelector(".menu-button");
 menuButton.addEventListener("click", clickMenu);
 let menu = document.querySelector(".nav");
-menuButton.style.cursor = "pointer";
+const formInput = document.querySelector(".input");
+formInput.addEventListener("focus", inputFocus);
+formInput.addEventListener("keyup", inputEnter);
 
 
     function clickMenu() {
@@ -23,11 +23,25 @@ menuButton.style.cursor = "pointer";
           }    
         
      
+    }
+
+
+function inputFocus() {
+// clears the input for the user to type their email
+if (formInput.value === "Enter Email:") {
+  formInput.value = "";
+  }
 }
 
-
-
-
+function inputEnter() {
+//check for bad input???? Like not an real email address...
+ let theKey = formInput.value;
+ console.log("the key is: " + theKey);
+  if (theKey === "enter") {
+    alert("Thank you for submitting your email. We will be contacting you shortly.");
+    //submit the page
+  };
+}
 
 
 
