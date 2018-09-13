@@ -15,10 +15,10 @@ class Header {
 
 let navMenu = document.querySelector('.navMenu');
 console.log(navMenu)
-navMenu.addEventListener('click', () => {
-    console.log('got it')
+// navMenu.addEventListener('click', () => {
+//     console.log('got it')
 
-})
+// })
 
 // Services Page JS
 let headers = document.querySelectorAll('.header');
@@ -45,3 +45,23 @@ class Button {
     console.log(serviceButtons);
     // console.log(buttonData);
     // console.log(dataTabs);
+
+let open = document.getElementById('openModal')
+navMenu.addEventListener('click', function(){
+
+    open.style.display = 'block';
+})
+    let modal = document.querySelector('#navOpen');
+    let close = document.querySelector('.closedNav');
+    close.addEventListener('click', function(){
+        // navMenu.style.display = 'none';
+        console.log('something')
+    })
+
+    window.addEventListener('click', function(){
+        if (event.target == navMenu){
+            // navMenu.style.display = 'none';
+        }
+    })
+
+
