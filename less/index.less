@@ -57,7 +57,7 @@ table{
   border-spacing:0;
 }
 
-/* mixins */
+/* global mixins and variables*/
 
 .containermixin {
   max-width: 860px;
@@ -79,6 +79,11 @@ p, a {
   color: #222222;
 }
 
+@mobile: (max-width: 320px);
+@mobilewidth: 90%;
+
+/* nav styling */
+
 .main-nav {
   width: 100%;
   background-color: #9BA4AE;
@@ -86,7 +91,7 @@ p, a {
   position: fixed;
   z-index: 1;
   top: 0;
-  
+
   h2 {
     font-weight: bold;
     font-size: 2.4rem;
@@ -98,6 +103,11 @@ p, a {
     display: flex;
     justify-content: space-between;
     padding: 14px 0;
+
+    @media @mobile {
+      padding: 10px auto;
+      width: 90%;
+    }
   }
 }
 
@@ -114,42 +124,32 @@ p, a {
     display: flex;
     align-items: flex-end;
 
+    @media @mobile {
+      width: 90%;
+    }
+
     h1 {
       font-weight: bold;
       font-size: 6.4rem;
       line-height: 7.5rem;
       color: #FFFFFF;
       margin-bottom: @margin-bottom;
+
+      @media @mobile {
+        font-size: 3.4rem;
+        line-height: 4.0rem;
+      }
     }
   }
 }
 
 .index-header{
   .header-mixin(600px, url('../img/home/home-jumbotron.png'), 50px);
+
+  @media @mobile {
+    .header-mixin(250px, url('../img/home/home-mobile-jumbotron.png'), 15px);
+  }
 } 
-
-// .header-background {
-//   display: block;
-//   width: 100%;
-//   height: 600px;
-//   background-image: url('../img/home/home-jumbotron.png');
-//   background-repeat: no-repeat;
-
-//   header {
-//     .containermixin();
-//     height: 600px;
-//     display: flex;
-//     align-items: flex-end;
-
-//     h1 {
-//       font-weight: bold;
-//       font-size: 6.4rem;
-//       line-height: 7.5rem;
-//       color: #FFFFFF;
-//       margin-bottom: 50px;
-//     }
-//   }
-// }
 
 .container {
   .containermixin();
@@ -205,14 +205,11 @@ p, a {
 
 /* projects mixins */
 
-.projects-content {
-
-}
-
 .projects-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .projects-header {
@@ -249,6 +246,7 @@ p, a {
 
   .villas-header {
     position: relative;
+    width: 100%;
 
     h3 {
       .projects-header();
@@ -263,6 +261,7 @@ p, a {
 
   .outskirts-header {
     position: relative;
+    width: 100%;
 
     h3 {
       .projects-header();
@@ -277,6 +276,7 @@ p, a {
 
   .blocks-header {
     position: relative;
+    width: 100%;
 
     h3 {
       .projects-header();
