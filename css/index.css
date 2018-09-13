@@ -185,6 +185,17 @@ li {
   color: #ffffff;
   align-items: center;
 }
+.jumbo-about {
+  display: flex;
+  height: 300px;
+  background: url('../img/about/jumbo-about-desktop.png') no-repeat center center fixed;
+  background-size: 100% 100%;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 75px;
+  color: #ffffff;
+  align-items: center;
+}
 .jumbo-services h1,
 .jumbo-contact h1 {
   padding: 155px 0 0 25px;
@@ -443,7 +454,8 @@ input[type=submit]:hover {
   background-color: white;
   color: black;
 }
-.container {
+.container,
+.about-container {
   display: flex;
   width: 100%;
   max-width: 880px;
@@ -453,8 +465,50 @@ input[type=submit]:hover {
   padding: 20px;
   margin: 0 auto;
 }
+.about-container {
+  flex-direction: column;
+}
+.about-container h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 25px 0;
+}
+.member-1,
+.member-2,
+.member-3,
+.member-4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.about-left h3 {
+  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+.about-left h5 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.about-left p {
+  padding: 10px 0;
+  line-height: 20px;
+}
+.about-right img {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
 .contact-left,
-.contact-right {
+.contact-right,
+.about-left,
+.about-right {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -496,7 +550,7 @@ label {
     font-size: 18px;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 320px) and (max-width: 500px) {
   .jumbo-text {
     font-size: 48px;
   }
@@ -552,5 +606,28 @@ label {
   .tabright {
     width: 100%;
     display: flex;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-left,
+  .contact-right {
+    width: 90%;
+    max-width: 300px;
+  }
+  .member-1,
+  .member-2,
+  .member-3,
+  .member-4 {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-left,
+  .about-right {
+    width: 95%;
+    max-width: 500px;
+    display: flex;
+    margin-bottom: 25px;
   }
 }
