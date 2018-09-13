@@ -19,6 +19,8 @@ bars.addEventListener('click', () => {
   let nav = document.querySelector('.navbar');
   nav.style.display = 'flex';
 
+// add tweenmax to slowly bring down nav
+  TweenMax.to(nav,1,{opacity: 0.8});
   // hide bars
   bars.style.display = 'none';
 
@@ -32,8 +34,11 @@ close.addEventListener('click', () => {
 
   // get navbar and hide it
   let nav = document.querySelector('.navbar');
-  nav.style.display = 'none';
-
+  
+  
+  // add tweenmax to slowly bring down nav
+  TweenMax.to(nav,0.5,{opacity: 0});
+  
   // hide close
   close.style.display = 'none';
 
