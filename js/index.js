@@ -34,34 +34,45 @@ class Button {
     constructor(button) {
         this.element = button;
         this.element.addEventListener('click', () => {
-                console.log('got it');
+            console.log('got it');
 
 
-            })
-        }
+        })
     }
-    let serviceButtons = Array.from(document.querySelectorAll('.serviceBtn'));
-    serviceButtons.map(button => new Button(button));
-    console.log(serviceButtons);
-    // console.log(buttonData);
-    // console.log(dataTabs);
+}
+let serviceButtons = Array.from(document.querySelectorAll('.serviceBtn'));
+serviceButtons.map(button => new Button(button));
+console.log(serviceButtons);
+// console.log(buttonData);
+// console.log(dataTabs);
 
+
+
+let modal = document.querySelector('#navOpen');
 let open = document.getElementById('openModal')
-navMenu.addEventListener('click', function(){
+navMenu.addEventListener('click', function () {
 
     open.style.display = 'block';
+    //  if (event.target == open) {
+        modal.style.display = 'none';
+    // }
 })
-    let modal = document.querySelector('#navOpen');
-    let close = document.querySelector('.closedNav');
-    close.addEventListener('click', function(){
-        // navMenu.style.display = 'none';
-        console.log('something')
-    })
 
-    window.addEventListener('click', function(){
-        if (event.target == navMenu){
-            // navMenu.style.display = 'none';
-        }
-    })
+let close = document.querySelector('.closedNav');
+close.addEventListener('click', function () {
+    open.style.display = 'none';
+    modal.style.display = 'block';
+    console.log('something')
+})
+
+// window.addEventListener('click', function () {
+  
+// })
 
 
+
+
+let anchors = Array.from(document.querySelectorAll('.navAnchor'));
+
+// anchors = anchors.map(anchor => new Anchor(anchor));
+console.log(anchors);
