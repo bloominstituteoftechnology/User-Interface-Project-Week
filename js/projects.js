@@ -8,17 +8,31 @@ class ProjectLinks {
     // find all elements with the project-card class
     this.projectCard = document.querySelectorAll('.project-card');
 
+    // get all project popups
+    const popups = document.querySelectorAll('.project-popup');
+
+    // add an data-index to each project in the list
+    this.popupIndex = Array.from(popups).map((project, index) => {
+      project.setAttribute('data-index', index);
+    });
+
+    // add an data-index to each card and match it to a project
+    this.index = Array.from(this.projectCard).map((card, index) => {
+      card.setAttribute('data-index', index);
+    });
+
     // if linkData is all, select all else select only cards
     if (this.linkData === 'all') {
+
+      // set this.cards to all cards
       this.cards = this.projectCard;
-      console.log(this.cards);
+
     } else {
       this.cards = document.querySelectorAll(`.project-card[data-cards="${this.linkData}"]`);
-      console.log(this.cards);
     }
 
     // use map to create a new instance of projectCard for all instances
-    this.cards = Array.from(this.cards).map((card) => {
+    this.cards = Array.from(this.cards).map((card, index) => {
       return new ProjectCard(card);
     });
 
@@ -58,12 +72,58 @@ class ProjectLinks {
 class ProjectCard {
   constructor(element){
     this.element = element;
+
+    // get this elements button
+    this.button = element.querySelector('.project-button');
+    // get the data-index attribute
+    this.data = this.element.dataset.index;
+
+    // add an event listener to button
+    this.button.addEventListener('click', () => {
+      this.selectProject(element);
+    });
   }
   selectCard() {
     // update style of this element
     this.element.style.display = 'flex';
   }
+  selectProject(element) {
+
+    // get index of current project card
+    this.index = element.dataset.index;
+
+    // get all of the project popups
+    let popups = document.querySelectorAll('.project-popup');
+
+    // transform into an array of popup Projects
+    popups = Array.from(popups);
+
+    // add a project class to each project
+    popups.map((project) => {
+      return new Projects(project);
+    });
+
+    // get the project to display
+    popups[this.index].classList.remove('hidden');
+  }
 }
+
+// create a projects class
+class Projects {
+  constructor(element) {
+    this.element = element;
+
+    // get the current elements close button
+    this.close = this.element.querySelector('.closePopUp');
+
+    // set an event listener that will add the hidden class back to element
+    this.close.addEventListener('click', () => {
+      element.classList.add('hidden');
+    });
+  }
+}
+
+
 // create a nodeList of all project links
 let links = document.querySelectorAll('.project-link');
 
