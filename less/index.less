@@ -60,24 +60,38 @@ table{
 /* Your Code Goes Here */
 
 // Variables
-@navigation-color: #828282;
+@navigation-color: #9a9b9b;
 @logo-color: #FFFFFF;
 @title-color: #FFFFFF;
 @fonts: Roboto, Arial, sans-serif;
 @subtitles-color: #222222;
-@subtitles-size: 28px;
+@subtitles-size: 24px;
+@recent-projects-bg-color: #D8D8D8;
+@general-line-height: 24px;
+@general-font-size: 18px;
+@footer-title-font-size: 20px;
+@footer-text-font-size: 14px;
 
 //Mix-ins
-.button-maker (@width, @height, @margin, @padding, @font-size) {
+.flex-center-center (@width, @height, @margin, @padding) {
   width: @width;
   height: @height;
   margin: @margin;
   padding: @padding;
-  font-size: @font-size;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.flex-space-evenly-center(@width, @height, @margin, @padding){
+  width: @width;
+  height: @height;
+  margin: @margin;
+  padding: @padding;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+// .flex-space-between(@width, @height, )
 .relative-mover (@top, @right, @bottom, @left) {
   position: relative;
   top: @top;
@@ -89,6 +103,7 @@ table{
 // Main
 html{
   width: 1025px;
+  height: auto;
   margin: auto;
   font-family: @fonts;
 }
@@ -112,6 +127,7 @@ body{
     height: 600px;
     h1{
       font-size: 64px;
+      line-height: 75px;
       font-weight: bold;
       color: @title-color;
       // .relative-mover(0px, 0px, 273px, 80px);
@@ -133,31 +149,143 @@ body{
     display: flex;
     width: 90%;
     margin: auto;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
     img{
-      width: 40%;
+      width: 45%;
     }
     .content-block{
-      width: 40%;
-      height: 300px;
+      width: 45%;
+      height: 275px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      margin-bottom: 10px;
-      border: 1px solid;
+      justify-content: space-evenly;
       h3{
         color: @subtitles-color;
         font-weight: bold;
         font-size: @subtitles-size;
-        border: 1px solid;
+        margin-top: 20px;
       }
       p{
-        border: 1px solid;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        line-height: @general-line-height;
       }
       .subtitle-buttons{
         border: 1px solid;
-        .button-maker(150px, 50px, auto, auto, auto);
+        .flex-center-center(135px, 50px, null, null);
       }
     }
+  }
+  .bottom-categories{
+    width: 85%;
+    margin: auto;
+    h3{
+      color: @subtitles-color;
+        font-weight: bold;
+        font-size: @subtitles-size;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    .recent-projects{
+      margin-bottom: 75px;
+      .title-pic-combo{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        img{
+          height: 230px;
+          width: 98%;
+          margin: auto;
+        }
+        .subtitles-overlay{
+          border: 2px solid @logo-color;
+          background-color: @recent-projects-bg-color;
+          .flex-center-center(315px, 100px, null, null);
+          position: relative;
+          bottom: 55px;
+          right: 10px; 
+        }
+        #Outskirts-title{
+          right: 550px;
+          height: 90px;
+        }
+      }
+      .text-content{
+        width: 52%;
+        margin: auto;
+        margin-bottom: 25px;
+        line-height: @general-line-height;
+        font-size: @general-font-size;
+        position: relative;
+        bottom: 20px;
+      }
+    }
+  }
+  footer{
+    background-color: @navigation-color;
+    height: 230px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-size: @footer-text-font-size;
+    .footer-titles{
+      font-weight: bold;
+      font-size: @footer-title-font-size;
+      line-height: @general-line-height;
+    }
+    #start-project-block{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 40%;
+      line-height: @general-line-height;
+      border: 1px solid;
+      margin-top: 30px;
+      margin-left: 20px;
+      #email-enter{
+        background-color: white;
+        border-radius: 3px;
+        width: 70%;
+        height: 40px;
+        color: grey;
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        #email-enter-text{
+          margin-left: 5px;
+        }
+      }
+      #security-notice{
+        font-size: 12px;
+        width: 70%;
+        margin-top: 5px;
+      }
+    }
+    #locations-list{
+      display: flex; 
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 60%;
+      border: 1px solid;
+      .locations{
+        display: flex;
+        flex-direction: column;
+        line-height: @general-line-height;
+        margin-right: 80px;
+        margin-top: 25px;
+      }
+    }
+  }
+  #Copyright{
+    display: flex;
+    justify-content: center;
+    background-color: @navigation-color;
+    font-size: 12px;
+    color: white;
+    height: 20px;
   }
 }
