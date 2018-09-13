@@ -17,14 +17,20 @@ h1, h2{
         margin: 48px;
 
         @media @mobile {
-            .flex(column-reverse);
+            &:first-child{
+                .flex(column-reverse);
+            }
+            .flex(column);
             width: 310px;
+            margin: 28px 48px 14px 48px;
         }
 
         .cta-image {
             @media @mobile {
-                width: 305px;
-                height: auto;
+                width: 290px;
+                margin: auto;
+                // width: 305px;
+                // height: auto;
                 overflow: hidden;
             }
         }
@@ -35,9 +41,9 @@ h1, h2{
         padding-right: 15px;
 
         @media @mobile {
-            width: 98%;
-            padding-right: 0px;
-            border: 1px solid red;
+            width: 94%;
+            padding: 22px 0px 0px;
+            border: 1px solid blue;
         }
 
         .button {
@@ -46,19 +52,29 @@ h1, h2{
             border: 1px solid @page-text;
             height: 43px;
             width: 137px;
+            @media @mobile {
+                width: 290px;
+            }
         }
     }
 
     .cta-text.right {
         .flex(column, left);
         padding-left: 27px;
-
+        @media @mobile {
+            width: 94%;
+            padding: 28px 0px 0px;
+            border: 1px solid blue;
+        }            
         .button {
             .flex();
             margin-top: 30px;
             border: 1px solid @page-text;
             height: 43px;
             width: 137px;
+            @media @mobile {
+                width: 290px;
+            }
         }
     }
 } // end .cta
