@@ -8,11 +8,11 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Color: #222222
 - Font Family: Roboto, Arial, sans-serif
 
-## Page Specific
 
-### Home Page
+## Page Specific
+<!-- ### Home Page
 - Recent Projects Gray Square: #D8D8D8
-- Button borders: #222222
+- Button borders: #222222 -->
 
 ### Services Page
 - Tab selected background: #5E9FB9
