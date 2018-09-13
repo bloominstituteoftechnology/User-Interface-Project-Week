@@ -1,5 +1,3 @@
-
-
 /*on hamburger click event
 change hamburger logo to close "x"
 change height of header to 100%
