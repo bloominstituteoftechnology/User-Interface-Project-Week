@@ -1,13 +1,22 @@
 .menu {
     .width-100;
+    position: fixed;
     background-color: @lambda-color-home-bg;
     height: 50px;
+   
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
      display: flex;
     flex-wrap: wrap;   
     justify-content: space-between;
+
+    .menu-active {
+        height: 550px;
+        opacity: 0.9;
+        
+        
+    }
     h1 {
         padding: 20px;
         margin-left: 30px;
@@ -27,17 +36,41 @@
         border-radius: 2px;
         transition: 0.4s;
     }
+    &:hover{
+        opacity: 0.8;
+    }
+    
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    
+    .change .bar2 {opacity: 0;}
+    
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+
+
 }
 
 
     nav {
-        display: flex;
+        display:none;
+        // display: flex;
         flex-direction: column;
-        display: none;
+        
         a {
+            margin-top:60px;
             text-decoration: none;
-            font-size: .9rem;
+            font-size: 3.6rem;
             color: white;
+            &:hover {
+                color: @tab-hover-bg-color;
+            }
         }
+
+        
     }
 }

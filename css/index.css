@@ -400,6 +400,7 @@ body {
 }
 .menu {
   width: 100%;
+  position: fixed;
   background-color: #97a5b6;
   height: 50px;
   background-position: center center;
@@ -408,6 +409,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.menu .menu-active {
+  height: 550px;
+  opacity: 0.9;
 }
 .menu h1 {
   padding: 20px;
@@ -431,15 +436,32 @@ body {
   border-radius: 2px;
   transition: 0.4s;
 }
+.menu .hamburger:hover {
+  opacity: 0.8;
+}
+.menu .hamburger .change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.menu .hamburger .change .bar2 {
+  opacity: 0;
+}
+.menu .hamburger .change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
 .menu nav {
-  display: flex;
-  flex-direction: column;
   display: none;
+  flex-direction: column;
 }
 .menu nav a {
+  margin-top: 60px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 3.6rem;
   color: white;
+}
+.menu nav a:hover {
+  color: #222222;
 }
 .services-container {
   width: 100%;
