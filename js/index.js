@@ -1,11 +1,11 @@
 // JS goes here
 
-function openNavBar() {
-   let navBarOpen = document.querySelector(".dropdown").style.height = "100%";
-
-};
-
-function closeNavBar(){
-    let navBarClosed = document.querySelector(".dropdown").style.height = "0%";
-}
-
+/* Open */
+function openNav() {
+    document.querySelector(".dropdown").style.height = "100%";
+  }
+  
+/* Close */
+function closeNav() {
+    document.querySelector(".dropdown").style.height = "0%";
+} 
