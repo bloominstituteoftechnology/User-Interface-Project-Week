@@ -138,7 +138,7 @@ body {
   align-content: center;
   margin: 0 auto;
   width: 100%;
-  max-width: 1024px;
+  max-width: 880px;
   font-family: 'Roboto', sans-serif;
   background-color: #FFFFFF;
 }
@@ -152,6 +152,7 @@ header {
   background-repeat: no-repeat;
   width: 100%;
   height: 589px;
+  max-height: 525px;
 }
 header div {
   font-size: 64px;
@@ -159,11 +160,12 @@ header div {
   line-height: 75px;
   font-weight: bold;
   margin-left: 60px;
-  margin-top: 325px;
+  margin-top: 250px;
 }
 .sectionsContainer {
   display: inline-flex;
-  margin: 50px 60px;
+  max-width: 880px;
+  margin: 50px 10px;
 }
 .sectionsContainer .leftHalf {
   justify-self: left;
@@ -189,13 +191,12 @@ header div {
   position: relative;
 }
 .content1 {
-  max-width: 75%;
+  max-width: 95%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 75px;
+  margin-top: -5px;
   position: relative;
-  right: 65px;
 }
 .content1 h2 {
   font-weight: bold;
@@ -203,11 +204,11 @@ header div {
   margin: 10px 0px;
 }
 .content2 {
-  max-width: 75%;
+  max-width: 95%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 75px;
+  margin-top: -5px;
   position: relative;
   left: 25px;
 }
@@ -225,9 +226,10 @@ header div {
 }
 .titleIMGVilla {
   background-image: url(../img/home/home-villas-img.png);
-  width: 90%;
+  width: 100%;
   height: 230px;
   margin: 50px auto;
+  background-repeat: no-repeat;
 }
 .titleIMGVilla #theVillasHeader {
   display: flex;
@@ -238,7 +240,7 @@ header div {
   justify-content: center;
   position: relative;
   top: 185px;
-  left: 698px;
+  left: 635px;
 }
 .titleIMGVilla #theVillasHeader h3 {
   display: flex;
@@ -260,9 +262,10 @@ header div {
 }
 .titleIMGOutskirts {
   background-image: url(../img/home/home-outskirts-img.png);
-  width: 90%;
+  width: 100%;
   height: 230px;
   margin: 50px auto;
+  background-repeat: no-repeat;
 }
 .titleIMGOutskirts #theOutskirtsHeader {
   display: flex;
@@ -282,9 +285,10 @@ header div {
 }
 .titleIMGBlock {
   background-image: url(../img/home/home-the-blocks-img.png);
-  width: 90%;
+  width: 100%;
   height: 230px;
   margin: 50px auto;
+  background-repeat: no-repeat;
 }
 .titleIMGBlock #theBlockHeader {
   display: flex;
@@ -295,7 +299,7 @@ header div {
   justify-content: center;
   position: relative;
   top: 185px;
-  left: 698px;
+  left: 635px;
 }
 .titleIMGBlock #theBlockHeader h3 {
   display: flex;
@@ -306,7 +310,7 @@ header div {
 .footerSection {
   display: flex;
   max-width: 100%;
-  height: 200px;
+  height: 215px;
   background-color: #828282;
   line-height: 24px;
   font-size: 16px;
@@ -316,7 +320,7 @@ header div {
 }
 .footerSection .footerSectionSplits {
   margin: 10px 10px;
-  max-width: 30%;
+  max-width: 35%;
 }
 .footerSection h4 {
   font-size: 20px;
@@ -331,12 +335,13 @@ header div {
 .footerSection #copyRights {
   position: relative;
   margin-bottom: 10px;
-  top: 10px;
-  right: 375px;
+  top: 20px;
+  right: 325px;
   margin: 0 auto;
 }
 .footerSection input {
   width: 275px;
+  max-width: 475px;
   height: 30px;
   margin: 15px 0px;
   border: 1px solid transparent;
@@ -344,12 +349,15 @@ header div {
 }
 .navigationBar {
   width: 100%;
+  max-width: 880px;
   height: 45px;
   background-color: #96A6BA;
   color: #222222;
   display: flex;
   align-content: space-around;
   justify-content: center;
+  position: fixed;
+  z-index: 2;
 }
 .navigationBar h1 {
   font-size: 24px;
@@ -377,8 +385,45 @@ header div {
   color: #222222;
 }
 @media (max-width: 500px) {
-  p {
+  body {
+    width: 100%;
     max-width: 500px;
-    background-color: purple;
+  }
+  .navigationBar {
+    max-width: 500px;
+  }
+  .navigationBar h1 {
+    position: relative;
+    right: -50px;
+  }
+  .navigationBar nav .openCloseButton {
+    position: relative;
+    left: -50px;
+    cursor: pointer;
+  }
+  .sectionsContainer {
+    max-width: 500px;
+    flex-direction: column;
+  }
+  .recentProjectsStructure {
+    flex-direction: column;
+  }
+  .footerSection {
+    flex-direction: column;
+    height: 775px;
+    margin-bottom: -50px;
+  }
+  .footerSection input {
+    position: relative;
+    width: 450px;
+  }
+  .footerSectionSplits h4 {
+    width: 400px;
+  }
+  .footerSectionSplits p {
+    width: 400px;
+  }
+  .footerSectionSplits #copyRights {
+    color: purple;
   }
 }
