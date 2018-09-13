@@ -2,6 +2,15 @@
 .container {
 	max-width: 1024px;
 	width: 100%;
+
+	 /********************
+	    Mobile view - - Arrange the items in column
+	 ***********************/
+      @mobile {
+         .display-flex();
+          flex-direction: column;
+      }
+
 	.jumbotron-image {
 	   margin-top:-5px;
 	   background-image: url("../img/home/home-jumbotron.png");
@@ -10,26 +19,50 @@
        background-size:cover;
        height: 590px;
        position:relative;
+                /************************
+			      Mobile view - Jumbotron
+			    **************************/
+			    @media @mobile {
+			       height: 255px;
+			    }  
 	        .text {
 	            position: absolute;
 	            bottom:48px;
 	            left:82px;
+	             @media @mobile {
+	               left: 15px;
+	               bottom:20px;
+	             }
 			    h1 {
 				  font-size: 6.4rem;
-				  line-height:75px;
+				  line-height:7.5rem;
 				  font-weight:bold;
 				  color: #FFFFFF;
+				   @media @mobile {
+				     font-size: 3.4rem;
+				     line-height:4.5rem;
+				   }
 				}
 			}
+
+	    		
 	}
 
 			.information {
 		           .display-flex(space-between, center);
 		           margin-top:50px;
 		           padding: 0px 84px;
+		             @media @mobile {
+		                flex-direction:column;
+		                padding: 0px 15px;
+		             }
 
-		           .info {
-		                
+		           .info { 
+		                @media @mobile {
+		                    flex-direction:column;
+		                   .display-flex(space-between, center);
+		                   order:2;
+		                }
 				           h1 {
 				             font-size:2.8rem;
 				             color:#222222;
@@ -40,7 +73,7 @@
 				           p {
 				              font-size:1.6rem;
 				              line-height:2.4rem
-				           }
+				            }
 				          .button {
 				             .create-buttons(138px, #FFFFFF, #222222, 0px, 1.6rem);
 				             padding:1.5rem 2.0rem;
@@ -61,6 +94,9 @@
 	.projects {
 	        margin-top:100px;
 	        padding: 0px 84px;
+	         @media @mobile {
+	              padding:10px;
+	            }
 
 	        h1 {
 	          font-size:2.8rem;
@@ -71,6 +107,9 @@
 	        .para{
 	           width:45rem;
 	           margin: 100px auto;
+	            @media @mobile {
+	               width:100%;
+	              }
 	           p {
 	              margin-top:30px;
 	             }
@@ -95,6 +134,9 @@
 	                  width: 31.6rem;
 	                  height:93px;
 	                  .display-flex(center,center);
+	                    @media @mobile {
+	                       width:100%;
+	                    }
 		                  h1 {
 		                     .projects-banner-heading();
 		                  }
@@ -120,6 +162,9 @@
 	                  background: #D8D8D8;
 	                  width: 31.6rem;
 	                  height:93px;
+	                    @media @mobile {
+	                       width:100%;
+	                    }
 	                  .display-flex(center,center);
 		                  h1 {
 		                    .projects-banner-heading();
@@ -146,6 +191,9 @@
 	                  background: #D8D8D8;
 	                  width: 31.6rem;
 	                  height:93px;
+	                     @media @mobile {
+	                       width:100%;
+	                    }
 	                  .display-flex(center,center);
 		                  h1 {
 		                    .projects-banner-heading();
@@ -169,6 +217,8 @@
 	      color: #FFFFFF;
 	      font-size: 1.4rem;
 	      line-height:26px;
+	      margin-top:8px;
+
 	    }
 	    address {
 	      font-size:1.4rem;
@@ -176,8 +226,16 @@
 	    }
 	   .contact {
 		   .display-flex(space-between, center);
-		   padding: 60px 90px;
-
+		   padding: 60px 90px 10px 90px;
+            @media @mobile {
+               padding: 10px;
+               display:flex;
+               flex-direction: column;
+               justify-content:space-between;
+               align-items:flex-start;
+               
+            }
+             
 		   .email {
 		     input {
 		        margin-top:3px;
