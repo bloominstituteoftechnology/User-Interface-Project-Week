@@ -1,4 +1,5 @@
 
+//Scrollmagic
 
 //Navbar
 let image_tracker = 'f';
