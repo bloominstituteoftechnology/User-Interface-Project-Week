@@ -6,10 +6,11 @@
 	color: #fff;
   }
 
-.flexbox(){
+.flexbox(@jc: none, @ai: none, @dir: row){
 	display: flex;
-	justify-content: center;
-	align-content: center;
+	justify-content: @jc;
+	align-content: @ai;
+	flex-direction: @dir;
 }
 
 .margin(@margin-top: 10px, @margin-bottom: 10x){
@@ -22,22 +23,22 @@
 	padding-bottom: @padding-bottom;
 }
 
-.button(){
-    background-color: white;
-    color: black;
-    border-radius: 2px;
-    width: 35%;
-    height: 50px;
-    .flexbox();
-    flex-direction: row;
-	border: 1px solid black;
-	
-		&:hover{
-			cursor: pointer;
-			background-color: black;
-			color: white;
-			border: 1px solid black;
-		}
+.button() {
+	font-size: @general-font-size;
+	height: 45px;
+	width: 32%;
+	border: 1px solid @black;
+	text-align: center;
 }
 
-
+.button-mobile {
+	font-size: @general-font-size;
+	height: 55px;
+	width: 98%;
+	text-align: center;
+	cursor: pointer;
+	&:hover {
+	  background-color: black;
+	  color: #fff;
+  }
+  }

@@ -1,43 +1,67 @@
-// Footer styling
-
-.footer {
+.footer-contact {
     width: 100%;
-    background-color: darkgray;
-    .flexbox();
-    flex-direction: column;
-
-    .footer-content {
-        .flexbox();
-        padding: 7%;
-        width: 100%;
-        .padding(63px, 30px);
-        
-        .footer-contact {
-            width: 38%;
-            flex-direction: column;
-
-            .email-box {
-                background-color: white;
-                max-width: 282px;
-                width: 90%;
-                .margin(15px, 5px);
-                color: lightgray;
-                height: 40px;
-                border-radius: 5px;
-            }
-        }
-
-        .locations {
-            .flexbox();
-            width: 61%;
-
-            h4 {
-                margin-bottom: 5px;
-            }
-        }
+    .flexbox(space-evenly, center, row);
+    background: @sj-color-footer;
+    height: 235px;
+    padding-top: 35px;
+    margin-top: 75px;
+    h4 {
+        color: white;
+        font-weight: bold;
+        font-size: @footerhead-font-size;
+        line-height: @footerhead-line-height;
+    }
+    p {
+        color: white;
+        font-size: @footertext-font-size;
+        line-height: @footertext-line-height;
+    }
+    .footer-contact-section {
+        width: 19%;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+    }
+    .email-box {
+        width: 37%;
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        width: 93%;
+        height: 40px;
+        border-radius: 5px;
+        font-size: @footertext-font-size;
+        color: @sj-color-navigation;
+        margin-top: 10px;
+        margin-bottom: 2px;
     }
 
-    h5 {
-        font-family: 'sans-serif';
+    @media @phone {
+        .flex(flex-start, center, column);
+        height: auto;
+
+        .footer-contact-section {
+            width: 92%;
+            padding: 2%;
+        }
+        .email-box {
+            width: 92%;
+        }
+    }
+}
+
+footer {
+    .flex(center, center);
+    background: #828282;
+    p {
+        color: white;
+        font-size: @footertext-font-size;
+        line-height: @footertext-line-height;
+    }
+
+    @media @phone {
+        .flexbox(flex-start);
+        padding-left: 6%;
     }
 }
