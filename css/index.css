@@ -140,37 +140,77 @@ html {
 * {
   box-sizing: border-box;
 }
+.nav-div {
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
-  width: 1024px;
+  width: 100%;
+  max-width: 1024px;
   background: #99a5af;
-  padding: 15px 84px;
+  padding: 13px 85px;
   font-size: 2.4rem;
   color: #FFFFFF;
   font-weight: bold;
+  position: fixed;
+  z-index: 1;
+}
+@media (max-width: 320px) {
+  header {
+    padding: 13px 10px;
+  }
 }
 header img {
-  max-width: 100%;
+  min-width: 32px;
+  height: 21px;
 }
 .container {
   display: flex;
   flex-flow: row wrap;
   margin: 0 auto;
-  width: 1024px;
+  max-width: 1024px;
 }
 .container .cta {
   position: relative;
 }
+.container .cta img {
+  max-width: 100%;
+  height: auto;
+}
 .container .cta .jumbo-text {
   position: absolute;
-  bottom: 98px;
-  left: 80px;
+  bottom: 8.5%;
+  left: 8%;
   font-size: 6.4rem;
   line-height: 7.5rem;
   color: #FFFFFF;
   font-weight: bold;
+}
+@media (max-width: 320px) {
+  .container .cta .jumbo-text {
+    font-size: 3.2rem;
+    bottom: 10%;
+    left: 10%;
+    line-height: 3.6rem;
+  }
+}
+@media (max-width: 320px) {
+  .container .cta .img-desktop {
+    display: none;
+  }
+}
+.container .cta .img-mobile {
+  display: none;
+}
+@media (max-width: 320px) {
+  .container .cta .img-mobile {
+    display: inline-block;
+  }
 }
 .container .button {
   display: flex;
@@ -180,38 +220,99 @@ header img {
   border: 1px solid #222222;
   padding: 15px;
 }
+@media (max-width: 320px) {
+  .container .button {
+    width: 100%;
+  }
+}
 .container .top-content {
   width: 83.496%;
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 10px 0;
+}
+@media (max-width: 320px) {
+  .container .top-content {
+    width: 100%;
+    justify-content: center;
+  }
 }
 .container .top-content h2 {
   font-size: 2.4rem;
   font-weight: bold;
 }
+.container .top-content .architects {
+  display: flex;
+  justify-content: space-between;
+}
+.container .top-content .futuristic-designs {
+  display: flex;
+  justify-content: space-between;
+}
 .container .top-content .text-box {
   width: 50%;
   display: flex;
-  flex-flow: column wrap;
-  justify-content: space-around;
-  margin: 80px 0;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+}
+@media (max-width: 320px) {
+  .container .top-content .text-box {
+    width: 95%;
+  }
 }
 .container .top-content .right {
-  padding-left: 20px;
+  padding-left: 13px;
+}
+.container .top-content .img-div {
+  width: 50%;
+  max-width: 410px;
+}
+@media (max-width: 320px) {
+  .container .top-content .img-div {
+    width: 95%;
+  }
+}
+.container .top-content .img-div .img-mobile {
+  display: none;
+}
+@media (max-width: 320px) {
+  .container .top-content .img-div .img-mobile {
+    display: inline-block;
+  }
+}
+@media (max-width: 320px) {
+  .container .top-content .img-div .img-desktop {
+    display: none;
+  }
+}
+.container .top-content .first {
+  max-width: 410px;
 }
 .container .top-content img {
   padding: 40px 0;
+  max-width: 410px;
+  width: 100%;
+  height: auto;
 }
 .container .text-box {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
+@media (max-width: 320px) {
+  .container .text-box {
+    width: 100%;
+  }
+}
 .container .recent-projects {
   margin: 0 auto;
   width: 83.496%;
+}
+.container .recent-projects img {
+  height: auto;
+  max-width: 100%;
 }
 .container .recent-projects h2 {
   font-size: 2.4rem;
@@ -233,6 +334,7 @@ header img {
 }
 .container .recent-projects .img-container {
   position: relative;
+  width: 100%;
 }
 .container .recent-projects .text-over {
   position: absolute;

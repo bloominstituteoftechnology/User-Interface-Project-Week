@@ -73,19 +73,34 @@ html {
   box-sizing: border-box;
 }
 
+.nav-div {
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
-  width: 1024px;
+  width: 100%;
+  max-width: 1024px;
   background: #99a5af;
-  padding: 15px 84px;
+  padding: 13px 85px;
   font-size: 2.4rem;
   color: #FFFFFF;
   font-weight: bold;
+  position: fixed;
+  z-index: 1;
+
+  @media (max-width: 320px) {
+    padding: 13px 10px;
+  }
 
   img {
-    max-width: 100%;
+    min-width: 32px;
+    height: 21px;
   }
 }
 
@@ -93,73 +108,160 @@ header {
   display: flex;
   flex-flow: row wrap;
   margin: 0 auto;
-  width: 1024px;
+  max-width: 1024px;
   
   .cta {
     position: relative;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
     
 
     .jumbo-text {
       position: absolute;
-      bottom: 98px;
-      left: 80px;
+      bottom: 8.5%;
+      left: 8%;
       font-size: 6.4rem;
       line-height: 7.5rem;
       color: #FFFFFF;
       font-weight: bold;
+
+      @media (max-width: 320px) {
+        font-size: 3.2rem;
+        bottom: 10%;
+        left: 10%;
+        line-height: 3.6rem;
+      }
+    }
+
+    .img-desktop {
+      @media (max-width: 320px) {
+        display: none;
+      }
+    }
+
+    .img-mobile {
+      display: none;
+
+      @media (max-width: 320px) {
+        display: inline-block;
+      }
     }
   }
   
   .button {
     display: flex;
     justify-content: center;
-    align-items: center; // create mixin for centered flex
+    align-items: center;
     width: 150px;
     border: 1px solid #222222;
     padding: 15px;
+
+    @media (max-width: 320px) {
+      width: 100%;
+    }
   }
 
   .top-content {
     width: 83.496%;
     margin: 0 auto;
     display: flex;
-    flex-flow: row wrap; // create mixin
+    flex-flow: row wrap;
     justify-content: space-between;
-    padding: 40px 0;
+    padding: 10px 0;
+
+    @media (max-width: 320px) {
+      width: 100%;
+      justify-content: center;
+    }
 
     h2 {
       font-size: 2.4rem;
       font-weight: bold; 
     }
 
+    .architects {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .futuristic-designs {
+      display: flex;
+      justify-content: space-between;
+    }
     .text-box {
-      // style for inside top content
+      
       width: 50%;
       display: flex;
-      flex-flow: column wrap;
-      justify-content: space-around;
-      margin: 80px 0;
+      flex-flow: row wrap;
+      align-items: center;
+      align-content: center;
+      
+
+      @media (max-width: 320px) {
+        width: 95%;
+      }
     }
 
     .right {
-      padding-left: 20px;
+      padding-left: 13px;
+    }
+
+    .img-div {
+      width: 50%;
+      max-width: 410px;
+
+      @media (max-width: 320px) {
+        width: 95%;
+      }
+    
+      .img-mobile {
+        display: none;
+
+        @media (max-width: 320px) {
+          display: inline-block;
+        }
+      }
+
+      .img-desktop {
+       @media (max-width: 320px) {
+          display: none;
+        }
+      }
+    }
+
+    .first {
+      max-width: 410px;
     }
 
     img {
       padding: 40px 0;
+      max-width: 410px;
+      width: 100%;
+      height: auto;
     }
   }
 
   .text-box {
     font-size: 1.6rem;
     line-height: 2.4rem;
-    // general text-box style
+    
+    @media (max-width: 320px) {
+      width: 100%;
+    }
     
   }
 
   .recent-projects {
     margin: 0 auto;
     width: 83.496%;
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
 
     h2 {
       font-size: 2.4rem;
@@ -169,7 +271,7 @@ header {
 
     h3 {
       font-size: 2.8rem;
-      // font-weight: bold;
+      
       color: #222222;
     }
 
@@ -186,6 +288,7 @@ header {
 
     .img-container {
       position: relative;
+      width: 100%;
     }
 
     .text-over {
@@ -241,8 +344,7 @@ header {
     }
     
     .footer-address {
-      // display: flex;
-      // flex-flow: column wrap;
+
       width: 15%;
       margin: 0 20px 30px 0;
     }
