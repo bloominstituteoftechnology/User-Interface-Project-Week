@@ -6,13 +6,8 @@ toggle the .hidden class
 class Dropdown{
     constructor(el){
         this.el = el;
-
         this.button = this.el.querySelector("img");
         this.navMenu = this.el.querySelector("nav");
-
-        console.log(this.el);
-        console.log(this.button);
-        console.log(this.navMenu);
 
         this.button.addEventListener("click", () => {
             this.toggleNav();
@@ -26,9 +21,7 @@ class Dropdown{
         } else {
             this.el.style.height = "100%";
             this.button.src = "img/nav-hamburger-close.png";
-            console.log(this.button);
         }
-        console.log("I was clicked!");
     }
 }
 
