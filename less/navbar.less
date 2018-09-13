@@ -1,55 +1,114 @@
-.header{
-  background-color:@navbarColor;;
-  height:40px;
-  .container{
-    header{
-      width: 100%;
-      display:flex;
-      justify-content: space-between;
-      flex-direction: row;
-      align-items: center;
-      padding:5px 0px 5px;
-      h3{
-        font-Weight: Bold;
-        font-size: 2.4rem;
-        Color: @white;
-        .font();
-        letter-spacing: 1px;
-      }
-      img{
-        cursor: pointer;
-      }
+.container{
+  header{
+    width: 100%;
+    max-width:860px;
+    background-color:@navbarColor;;
+    height:40px;
+    display:flex;
+    justify-content: space-between;
+    flex-direction:row;
+    align-items: center;
+    padding:@padding-mobile;
+    h3{
+      font-Weight: Bold;
+      font-size: 2.4rem;
+      Color: @white;
+      .font();
+      letter-spacing: 1px;
     }
-    nav{
+    img{
+      cursor: pointer;
+    }
+  }
+  nav{
+    @media @mobile{
+      width:100%;
+      max-width:498px;
+    }
+    .flex-centered();
+    flex-direction: column;
+    background-color:rgba(153, 162, 175, 0.8);
+    z-index:10;
+    height:480px;
+    position: absolute;
+    max-width: 858px;
+    width:100%;
+    top:40px;
+    display:none;
+    .nav-wrapper{
       display:flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: 860px;
-      background-color:rgba(153, 162, 175, 0.8);
-      height: 320px;
-      z-index: 2;
-      position: relative;
-      top: 6px;
-      //display: none;
-      .nav-wrapper{
-        display:flex;
-        flex-direction: column;
-        a{
-          text-decoration:none;
-          .font();
-          font-weight:Bold;
-          font-size: 3.8rem;
-          line-height:2;
-          color:@white;
-          letter-spacing: 1px;
-          text-align:left;
-          &:hover{
-            Color:@dark;
-          }
+      a{
+        text-decoration:none;
+        .font();
+        font-weight:Bold;
+        font-size: 3.8rem;
+        line-height:2;
+        color:@white;
+        letter-spacing: 1px;
+        text-align:left;
+        &:hover{
+          Color:@dark;
         }
       }
     }
   }
+  .jumbotron{
+    width: 100%;
+    height: 480px;
+    margin-bottom:40px;
+    img{
+      width: 100%;
+      height:100%
+    }
+    .heading{
+      position: relative;
+      top:-240px;
+      padding:@padding-mobile;
+      h1{
+        font-Weight: Bold;
+        font-size: 6.0rem;
+        Line-height:1.2;
+        Color:@white;
+        .font();
+        letter-spacing: 1px;
+      }
+    }
+  }
 }
+
+nav.show{
+  display:flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
