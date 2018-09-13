@@ -16,3 +16,38 @@ class NavButton {
 let navButttons = document.querySelectorAll('.change');
 
 navButttons = Array.from(navButttons).map( navButton => new NavButton(navButton));
+
+
+class MobileImg {
+    constructor(element) {
+        this.element = element;
+        window.innerWidth <= 500 ? this.element.classList.remove('closed') : this.element.classList.add('closed');
+        window.addEventListener('resize', () => this.swapInMobile());
+        
+        
+    }
+    swapInMobile() {
+        window.innerWidth <= 500 ? this.element.classList.remove('closed') : this.element.classList.add('closed');
+    }
+}
+
+let mobileImgs = document.querySelectorAll('.closed');
+
+mobileImgs = Array.from(mobileImgs).map( mobileImg => new MobileImg(mobileImg));
+
+
+
+class DesktopImg {
+    constructor(element) {
+        this.element = element;
+        window.innerWidth > 500 ? this.element.classList.remove('closed') : this.element.classList.add('closed');
+        window.addEventListener('resize', () => this.swapInDesktop());
+    }
+    swapInDesktop() {
+        window.innerWidth > 500 ? this.element.classList.remove('closed') : this.element.classList.add('closed');
+    }
+}
+
+let desktopImgs= document.querySelectorAll('.desktop-img');
+
+desktopImgs = Array.from(desktopImgs).map( desktopImg => new DesktopImg(desktopImg));
