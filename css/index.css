@@ -138,17 +138,22 @@ table {
   display: none;
 }
 .header-container {
+  width: 90%;
+  max-width: 1024px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 90px;
   background-color: #98A4B0;
+  position: fixed;
 }
 @media (max-width: 550px) {
   .header-container {
     padding: 10px;
-    position: fixed;
-    width: 61.2%;
+    width: 61.7%;
+    max-width: 450px;
   }
 }
 .logo {
@@ -167,9 +172,10 @@ html body {
   line-height: 24px;
 }
 html body .container {
-  width: 65%;
-  max-width: 850px;
+  width: 90%;
+  max-width: 1024px;
   margin: 0 auto;
+  border: 1px solid black;
 }
 @media (max-width: 550px) {
   html body .container {
@@ -178,23 +184,21 @@ html body .container {
 }
 .jumbotron {
   display: flex;
-  background: url("../img/home/home-jumbotron.png") no-repeat center;
+  background: url("../img/home/home-jumbotron.png") no-repeat;
   background-size: cover;
   height: 598px;
-  padding-left: 5%;
-  padding-bottom: 5%;
 }
 @media (max-width: 550px) {
   .jumbotron {
     background: url("../img/home/home-mobile-jumbotron.png") no-repeat;
     background-size: cover;
-    padding: 0;
     height: 282px;
-    width: 100%;
+    border: 1px solid black;
   }
 }
 .jumbotron .jumbotron-header {
   align-self: flex-end;
+  margin: 0 0 43px 43px;
   font-weight: bold;
   font-size: 6.4rem;
   color: #FFFFFF;
@@ -204,8 +208,7 @@ html body .container {
   .jumbotron .jumbotron-header {
     font-size: 4rem;
     line-height: 45px;
-    padding-bottom: 7%;
-    margin-left: 20px;
+    margin: 0 0 20px 20px;
   }
 }
 .section {
@@ -381,48 +384,15 @@ span {
     margin-bottom: 40px;
   }
 }
-.footer-contact-info {
-  display: flex;
-  justify-content: space-between;
-}
-@media (max-width: 550px) {
-  .footer-contact-info {
-    flex-direction: column;
-  }
-}
-.footer-contact-info .address {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 20%;
-}
-@media (max-width: 550px) {
-  .footer-contact-info .address {
-    width: 100%;
-    align-items: flex-start;
-    line-height: 4px;
-    margin-left: 20px;
-  }
-}
-.footer-contact-info .address .footer-p {
-  margin-top: 5px;
-}
-.footer-contact-info .email {
-  width: 40%;
-}
-@media (max-width: 550px) {
-  .footer-contact-info .email {
-    width: 100%;
-  }
-}
 footer {
   width: 100%;
+  max-width: 1024px;
   background-color: #828282;
   font-weight: normal;
   font-size: 1.2rem;
-  line-height: 16px;
+  line-height: 5px;
   color: #FFFFFF;
-  padding: 35px 3% 10px 3%;
+  padding: 60px 3% 10px 3%;
 }
 @media (max-width: 550px) {
   footer {
@@ -431,11 +401,46 @@ footer {
     font-size: 1.4rem;
   }
 }
+footer .footer-contact-info {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 550px) {
+  footer .footer-contact-info {
+    flex-direction: column;
+  }
+}
+footer .footer-contact-info .address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+@media (max-width: 550px) {
+  footer .footer-contact-info .address {
+    width: 100%;
+    align-items: flex-start;
+    line-height: 4px;
+    margin-left: 20px;
+  }
+}
+footer .footer-contact-info .address .footer-p {
+  margin-top: 5px;
+}
+footer .footer-contact-info .email {
+  width: 40%;
+}
+@media (max-width: 550px) {
+  footer .footer-contact-info .email {
+    width: 100%;
+  }
+}
 h4 {
   font-weight: normal;
   font-size: 2rem;
   line-height: 24px;
   color: #FFFFFF;
+  margin-bottom: 20px;
 }
 @media (max-width: 550px) {
   h4 {
@@ -445,7 +450,7 @@ h4 {
   }
 }
 .email-input {
-  margin-top: 10px;
+  margin: 10px 0;
   height: 36px;
   width: 100%;
   border-radius: 5px;
@@ -463,6 +468,7 @@ h4 {
   justify-content: center;
   align-items: flex-end;
   margin-top: 15px;
+  margin-bottom: 5px;
 }
 @media (max-width: 550px) {
   .copyright {
@@ -471,9 +477,11 @@ h4 {
     margin-left: 20px;
   }
 }
+.special {
+  margin-bottom: 0;
+}
 @media (max-width: 550px) {
   .special {
-    margin-bottom: 0px;
     font-size: 2.2rem;
     line-height: 18px;
   }
