@@ -7,6 +7,10 @@
         background-repeat: no-repeat;
         padding-top: 350px;
         padding-bottom: 50px;
+        @media @mobile {
+            padding-top: 200px;
+            background-size: cover;
+        }
         h1 {
             font-weight: bold;
             font-size: 4rem;
@@ -21,11 +25,33 @@
         row);
         padding: 40px 2% 40px 2%;
         line-height: 24px;
+        @media @mobile {
+            .flex(center,
+            center,
+            column);
+            text-align: center;
+            padding: 25px 2%;
+        }
+        .top-section-para:first-child {
+            padding-right: 40px;
+            @media @mobile {
+                padding-right: 0px;
+                margin-bottom: 20px;
+            }
+        }
+        .top-section-para:last-child {
+            padding-left: 40px;
+            @media @mobile {
+                padding-left: 0px;
+            }
+        }
         .top-section-para {
             h2 {
-                font-weight: bold;
-                font-size: 1.75rem;
+                .sub-headers();
                 padding-bottom: 20px;
+                @media @mobile {
+                    padding-top: 20px;
+                }
             }
             .button {
                 border: 1px solid #222222;
@@ -37,17 +63,29 @@
                 &:hover {
                     cursor: pointer;
                 }
+                @media @mobile {
+                    width: 100%;
+                    max-width: 435px;
+                }
             }
-        }
-        .top-section-para:first-child {
-            padding-right: 40px;
-        }
-        .top-section-para:last-child {
-            padding-left: 40px;
+            @media @mobile {
+                padding-right: 2%;
+                padding-left: 2%;
+            }
         }
     }
 }
 
+#mobile-reversed {
+    @media @mobile {
+        flex-direction: column-reverse;
+    }
+    .button {
+        @media @mobile {
+            max-width: 425px;
+        }
+    }
+}
 .projects {
     // width: 100%;
     .container-margins();
@@ -79,8 +117,7 @@
         }
     }
     h3 {
-        font-weight: bold;
-        font-size: 1.75rem;
+        .sub-headers();
         margin-top: 50px;
     }
     .justify-left-box,
@@ -96,12 +133,23 @@
         position: absolute;
         z-index: 1;
         top: 210px;
+        @media @mobile {
+            width: 80%;
+            top: 110px;
+            left: 1.5%;
+        }
     }
     .justify-right-box {
         right: 0;
+        @media @mobile {
+            right: 1.5%;
+        }
     }
     .project-text {
         margin: 100px 28% 50px 28%;
         line-height: 24px;
+        @media @mobile {
+            margin: 100px 2% 50px 2%;
+        }
     }
 }
