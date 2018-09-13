@@ -59,7 +59,17 @@ body {
             }
         }
     }// header & footer
+
+    .copyright {
+        .copyright-mixin();
+        @media @phone {
+            text-align: left;
+            padding-left: 20px;
+        }
+    }//.copyright
+
 }// .services-container
+
 
 // .services-jumbo
 .services-jumbo {
@@ -85,5 +95,39 @@ body {
     }
 }
 
+// .services-main-content
+.services-main-content {
+    margin-top: 30px;
 
+    .services-text {
+        border: 1px solid red;
+        width: 85%;
+        margin: 0 auto;
+    }
 
+    .services-tabs {
+        border: 1px solid blue;
+        width: 85%;
+        margin: 0 auto;
+        .tabs-links {
+            .flex-row-between();
+        }
+    }
+} // .services-main-content
+
+//tabs button
+.tabs-link {
+    .services-button();
+    h4 {
+       font-size: 1.4rem;
+    }
+}
+
+.tabs-link:hover {
+    background-color: @black;
+    color: @white;
+}
+
+.tabs-link:active {
+    background-color: #5E9FB9;
+}
