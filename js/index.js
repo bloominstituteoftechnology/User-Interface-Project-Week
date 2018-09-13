@@ -8,8 +8,7 @@ class Menu{
   }
 
   expand(){
-   this.element.classList.toggle('show'); 
-  
+   this.element.classList.toggle('show');
   }
 }
 
