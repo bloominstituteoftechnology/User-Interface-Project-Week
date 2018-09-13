@@ -7,16 +7,38 @@ h1, h2{
 .cta {
     .flex(column);
     padding: 8px 6px;
-
+    @media @mobile {
+        border: 1px solid red;
+        width: 95%;
+    }
     .cta-row{
         .flex();
         width: 84%;
         margin: 48px;
+
+        @media @mobile {
+            .flex(column-reverse);
+            width: 310px;
+        }
+
+        .cta-image {
+            @media @mobile {
+                width: 305px;
+                height: auto;
+                overflow: hidden;
+            }
+        }
     }
 
     .cta-text.left {
         .flex(column, left);
         padding-right: 15px;
+
+        @media @mobile {
+            width: 98%;
+            padding-right: 0px;
+            border: 1px solid red;
+        }
 
         .button {
             .flex();
