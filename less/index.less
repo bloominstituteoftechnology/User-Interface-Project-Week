@@ -101,16 +101,16 @@ p, a {
   }
 }
 
-.header-background {
+.header-mixin(@height, @img, @margin-bottom) {
   display: block;
   width: 100%;
-  height: 600px;
-  background-image: url('../img/home/home-jumbotron.png');
+  height: @height;
+  background-image: @img;
   background-repeat: no-repeat;
 
   header {
     .containermixin();
-    height: 600px;
+    height: @height;
     display: flex;
     align-items: flex-end;
 
@@ -119,10 +119,37 @@ p, a {
       font-size: 6.4rem;
       line-height: 7.5rem;
       color: #FFFFFF;
-      margin-bottom: 50px;
+      margin-bottom: @margin-bottom;
     }
   }
 }
+
+.index-header{
+  .header-mixin(600px, url('../img/home/home-jumbotron.png'), 50px);
+} 
+
+// .header-background {
+//   display: block;
+//   width: 100%;
+//   height: 600px;
+//   background-image: url('../img/home/home-jumbotron.png');
+//   background-repeat: no-repeat;
+
+//   header {
+//     .containermixin();
+//     height: 600px;
+//     display: flex;
+//     align-items: flex-end;
+
+//     h1 {
+//       font-weight: bold;
+//       font-size: 6.4rem;
+//       line-height: 7.5rem;
+//       color: #FFFFFF;
+//       margin-bottom: 50px;
+//     }
+//   }
+// }
 
 .container {
   .containermixin();
@@ -304,27 +331,8 @@ footer {
 
 /* services */
 
-.services-header-background {
-  display: block;
-  width: 100%;
-  height: 250px;
-  background-image: url('../img/services/services-jumbotron.png');
-  background-repeat: no-repeat;
-
-  header {
-    .containermixin();
-    height: 250px;
-    display: flex;
-    align-items: flex-end;
-
-    h1 {
-      font-weight: bold;
-      font-size: 6.4rem;
-      line-height: 7.5rem;
-      color: #FFFFFF;
-      margin-bottom: 20px;
-    }
-  }
+.services-header {
+  .header-mixin(250px, url('../img/services/services-jumbotron.png'), 20px);
 }
 
 .about-services {
@@ -353,8 +361,5 @@ footer {
 }
 
 .tab-content {
-
-  h2 {
-    .subheader();
-  }
+  .main-section-mixin();
 }
