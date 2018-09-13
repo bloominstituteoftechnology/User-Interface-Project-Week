@@ -102,7 +102,7 @@ class ProjectCard {
     popups.map((project) => {
       return new Projects(project);
     });
-
+    popups[this.index].style.height = '100vh';
     // get the project to display
     popups[this.index].classList.remove('hidden');
   }
