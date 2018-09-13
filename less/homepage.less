@@ -9,6 +9,11 @@
     line-height: 24px;
     margin: 0 auto;
     font-family: @main-font1, @main-font2, sans-serif;
+    font-weight: normal;
+    @media (max-width: @mobile) {
+        max-width: @mobile;
+        width: 100%;
+    }
 }
 
 .jumbotronContainer {
@@ -22,6 +27,25 @@
         line-height: @jumbotron-lineHeight;
         bottom: 10%;
         left: 10%;
+        @media (max-width: @mobile) {
+            left: 15%;
+            font-size: @jumbotron-fontSize-mobile;
+            line-height: @jumbotron-lineHeight-mobile;
+        }
+    }
+    .jumbotronMobile {
+        display: none;
+    }
+    @media (max-width: @mobile) {
+        max-width: @mobile;
+        .jumbotronDesktop {
+            display: none;
+        }
+        .jumbotronMobile {
+            display: flex;
+            margin: 0 auto;
+        }
+      
     }
 }
 
@@ -38,18 +62,45 @@
 }
 
 .callToActionContainer {
-    margin: 15px auto;
-    width: 80%;
+    
+    margin: 5% 5%;
     .ctaCard {
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin: 8% 0;
+        .ctaTxt {
+            margin: 0 5%;
+        }
+        @media (max-width: @mobile) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .ctaCard.cardTwo {
+        @media (max-width: @mobile) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+    .btn { 
+        border: 1px solid black;
+        width: 150px;
+        text-align: center;
+    }
+    @media (max-width: @mobile) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
 .projectsContainer {
-    width: 80%;
-    margin: 0 auto;
+    
+    margin: 5% 5%;
+    .subheader {
+        margin: 0% 4%;
+    }
     img {
         width: 100%;
     }
@@ -57,6 +108,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 2% 0;
         .projectText {
             width: 50%;
             margin: 5%;
@@ -66,7 +118,7 @@
         position: relative;
         .imgTxtContainer {
             position: absolute;
-            bottom: 0;
+            bottom: -10%;
             border: 1px solid white;
             text-align: center;
             height: 70px;
@@ -74,14 +126,22 @@
             background: @gray-square;
             .imgTxt {
                 position: relative;
-                top: 30%;
+                top: 35%;
+            }
+            .imgTxtContainer.right {
+                right: 0;
+            }
+            @media (max-width: @mobile) {
+                left: 15%;
+                bottom: -45%;
+                border: none;
             }
         }
-        .imgTxtContainer.right {
-            right: 0;
+        
+        @media (max-width: @mobile) {
+            margin-bottom: 15%;
         }
     }
-    
 }
 
 
@@ -91,6 +151,10 @@ footer {
     flex-direction: column;
     padding: 5%;
     background-color: @footer-bg;
+    font-size: @footer-fontSize;
+    color: @footer-fontColor;
+    line-height: @footer-lineHeight;
+
     .footerCards {
         display: flex;
         flex-direction: row;
@@ -98,9 +162,22 @@ footer {
         .footerCard {
             display: flex;
             flex-direction: column;
+            @media (max-width: @mobile) {
+                margin: 0 10%;
+            }
+        }
+        @media (max-width: @mobile) {
+            display: flex;
+            flex-direction: column;
         }
     }
     .copyright {
+        position: relative;
+        top: 40px;
         text-align: center;
+        @media (max-width: @mobile) {
+            top: 15px;
+            text-align: left;
+        }
     }
 }
