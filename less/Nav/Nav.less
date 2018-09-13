@@ -10,76 +10,65 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
 
-    .menu-active {
-        height: 550px;
-        opacity: 0.9;
+h1 {
+    padding: 20px;
+    margin-left: 30px;
+    line-height: 5px;
+    font-size: 2.4rem;
+    font-family: Roboto, Arial, sans-serif;
+    color: white;
+}
 
-
+.hamburger {
+    margin: 5px;
+    cursor: pointer;
+    .bar1,
+    .bar2,
+    .bar3 {
+        margin: 5px 30px;
+        width: 35px;
+        height: 4px;
+        background-color: @lambda-color-white;
+        border-radius: 2px;
+        transition: 0.4s;
     }
+    &:hover {
+        opacity: 0.8;
+    }
+}
 
-    h1 {
-        padding: 20px;
-        margin-left: 30px;
-        line-height: 5px;
-        font-size: 2.4rem;
-        font-family: Roboto, Arial, sans-serif;
+nav {
+    display: none; // display: flex;
+    flex-direction: column;
+    a {
+        margin-top: 55px;
+        text-decoration: none;
+        font-size: 3.6rem;
         color: white;
-    }
-
-    .hamburger {
-        margin: 5px;
-        cursor: pointer;
-
-        .bar1,
-        .bar2,
-        .bar3 {
-            margin: 5px 30px;
-            width: 35px;
-            height: 4px;
-            background-color: @lambda-color-white;
-            border-radius: 2px;
-            transition: 0.4s;
-        }
-
         &:hover {
-            opacity: 0.8;
+            color: @tab-hover-bg-color;
         }
-
-        .change .bar1 {
-            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-            transform: rotate(-45deg) translate(-9px, 6px);
-        }
-
-        .change .bar2 {
-            opacity: 0;
-        }
-
-        .change .bar3 {
-            -webkit-transform: rotate(45deg) translate(-8px, -8px);
-            transform: rotate(45deg) translate(-8px, -8px);
-        }
-
-
     }
+}
 
-
+.menu--active {
+    height: 550px;
+    position: fixed;
+    opacity: 0.9;
     nav {
-        display: none;
-        // display: flex;
-        flex-direction: column;
-
-        a {
-            margin-top: 60px;
-            text-decoration: none;
-            font-size: 3.6rem;
-            color: white;
-
-            &:hover {
-                color: @tab-hover-bg-color;
-            }
-        }
-
-
+        display: flex;
+    }
+   .bar1 {
+        -webkit-transform: rotate(-32deg) translate(-1px, 8px);
+        transform: rotate(-32deg) translate(-1px, 8px);
+    }
+    .bar2 {
+        opacity: 0;
+    }
+    .bar3 {
+        -webkit-transform: rotate(34deg) translate(-3px, -11px);
+        transform: rotate(34deg) translate(-3px, -11px);
     }
 }
