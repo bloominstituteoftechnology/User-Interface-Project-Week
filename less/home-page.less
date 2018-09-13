@@ -3,14 +3,23 @@
         .flexMix(column, space-evenly, center);
         margin: 5px auto;
         width: 90%;
-        height: 100%;
+        // height: 100%;
         .designBlock {
             display: flex;
             align-content: center;
             justify-content: space-between;
+            @media @mobile{
+                flex-direction: column-reverse;
+                margin: 15px auto;
+            }
             .designText {
                 align-self: center;
                 width: 45%;
+                @media @mobile{
+                    width: 90%;
+                    margin: 15px auto;
+                    text-align-last: left;
+                }
                 h2 {
                     font-size: 2.8rem;
                     font-weight: bold;
@@ -18,6 +27,9 @@
                 }
                 .button {
                     .buttonCreator();
+                    @media @mobile{
+                        .buttonCreator(90%, 45px);
+                    }
                 }
                 .img {
                     width: 49%;
@@ -26,9 +38,11 @@
         }
         .reverse {
             .flexMix(row-reverse, space-between, center);
+            @media @mobile{
+                flex-direction: column-reverse;
+            }
         }
     }
-   
 }
 
 .recentProjects {
@@ -79,10 +93,9 @@
     background: @footer;
     color: @white;
     height: 200px;
-    
     .daFeet {
         .flexMix(row, space-around, center);
-        width:100%;
+        width: 100%;
         h3 {
             font-size: 2rem;
             line-height: 24px;
@@ -91,8 +104,8 @@
             font-size: 1.4rem;
             font-weight: 100;
         }
-        .infoRequest{
-            width:30%;
+        .infoRequest {
+            width: 30%;
         }
         .locations {
             .flexMix(row, space-evenly, center);
