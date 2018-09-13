@@ -4,58 +4,99 @@
   max-width: 1024px;
   margin: auto;
   
-  img {
-    width: 100%;
-    height: auto;
-  }
-  
   h2 {
     .fontDesign(bold; 2.4rem; @main-color);
   }
-
+  
   .title {
     position: relative;
     width: 100%;
-  }
 
+    @media @phone {
+      padding-top: 50px;
+    }
+  }
+  
   .title img {
     width: 100%;
-  }
 
+    @media @phone {
+      height: 210px;
+    }
+  }
+  
   .title-words {
     .fontDesign(bold; 6.4rem; @bckgrnd; 75px);
     position: absolute;
     width: 20%;
     bottom: 58px;
     left: 8.2%;
-  }
 
+    @media @phone {
+      .fontDesign(bold; 3.6rem; @bckgrnd; 42px);
+      bottom: 30px;
+      left: 5.2%;
+    }
+  }
+  
   .middle-intro {
     padding: 25px 5%;
     width: 100%;
-  }
 
+    @media @phone {
+      padding: 0;
+      width: 98%;
+    }
+    
+    img {
+      width: 50%;
+      height: auto;
+      
+      @media @phone {
+        width: 95%;
+        padding: 0;
+      }
+    }
+
+  }
+  
   .intro {
-    .flex(row; center; space-evenly);
+    .flex(row; space-around; center);
     margin: 0 3.4% 50px;
     padding: 15px 0;
-
+    
+    @media @phone {
+      .flex(column-reverse, center, center);
+      margin-bottom: 10px;
+    }
   }
 
   .intro-info {
     .flex(column; center; flex-start);
     padding-top: 15px;
 
+    @media @phone {
+      .flex(column; center; center);
+    }
+
     p {
       margin: 15px 6px;
       padding: 7px 0;
+
+      @media @phone {
+        margin: 15px 0;
+      }
     }
   }
 
   .unique {
-    .flex(row-reverse; center; space-evenly);
+    .flex(row-reverse; space-around; center);
     margin: 0 3.4% 50px;
     padding: 15px 0;
+
+    @media @phone {
+      .flex(column-reverse, center, center);
+    }
 
     img {
       padding-top: 20px;
@@ -65,11 +106,20 @@
   .unique-info {
     .flex(column; center; flex-start);
     padding-top: 20px;
-    padding-left: 30px;
+    padding-left: 5.9%;
+
+    @media @phone {
+      .flex(column; center; center);
+      padding-left: 0;
+    }
 
     p {
       margin: 15px 6px;
       padding: 7px 0;
+      
+      @media @phone {
+        margin: 15px 0;
+      }
     }
   }
 
@@ -78,7 +128,7 @@
   }
 
   .recent-projects-title {
-    margin: 10px 0 44px 85px;
+    margin: 10px 0 44px 8.2%;
   }
 
   .project {
@@ -89,6 +139,7 @@
 
     img {
       width: 83.5%;
+      min-width: 750px;
     }
   }
 
