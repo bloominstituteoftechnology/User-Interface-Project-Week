@@ -25,7 +25,41 @@ body {
         }
     }
     
-}
+    footer {
+        background-color: @footercolor;
+        height: 220px;
+        .flex-row-center();
+
+        @media @phone {
+            .flex-column-around();
+            height: 950px;
+        }
+
+
+        .footer-contact {
+            .footer-contact-mixin();
+            input[type="text"]{
+                width: 220px;
+                height: 30px;
+            }
+            @media @phone {
+                .footer-contact-mobile-mixin();
+                input[type="text"]{
+                    width: 90%;
+                    height: 70px;
+                    margin-left: 10px;
+                    border-radius: 8px;
+                }
+            }
+        }//.footer-contact
+        .footer {
+            .footer-mixin();
+            @media @phone {
+                .footer-mobile-mixin();
+            }
+        }
+    }// header & footer
+}// .services-container
 
 // .services-jumbo
 .services-jumbo {
