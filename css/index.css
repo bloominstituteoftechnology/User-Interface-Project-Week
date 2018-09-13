@@ -165,7 +165,7 @@ h4 {
 p {
   line-height: 2.4rem;
   font-size: 1.6rem;
-  padding-bottom: 2px;
+  padding-bottom: 0;
 }
 a {
   font-size: 1.6rem;
@@ -188,7 +188,7 @@ img {
   align-items: center;
 }
 #home .container section {
-  max-width: 100%;
+  max-width: 855px;
 }
 @media (max-width: 600px) {
   #home .container {
@@ -220,9 +220,20 @@ img {
   align-items: flex-start;
   padding-left: 8.45rem;
 }
+@media tablet {
+  #home .jumbotron .jumbo-container {
+    padding-left: 0;
+  }
+}
 @media (max-width: 600px) {
   #home .jumbotron .jumbo-container {
-    padding-left: 1rem;
+    padding-left: 1.4rem;
+  }
+}
+@media (max-width: 750px) {
+  #home .jumbotron .jumbo-container h1 {
+    font-size: 6rem;
+    line-height: 7rem;
   }
 }
 @media (max-width: 600px) {
@@ -386,12 +397,13 @@ img {
   height: 50px;
   width: 100%;
   background-color: rgba(152, 164, 176, 0.88);
-  z-index: 20;
+  z-index: 16;
 }
 .header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 855px;
 }
 .header .logo a {
   text-decoration: none;
@@ -401,6 +413,20 @@ img {
 }
 .header .navigation {
   display: none;
+  z-index: 20;
+}
+.header .navigation a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 4.7rem;
+  font-weight: bold;
+  line-height: 8.4rem;
+}
+.header .navigation a:hover {
+  color: #222222;
+}
+.header .navigation a.active {
+  color: #222222;
 }
 .header .navigation-show {
   display: flex;
@@ -409,9 +435,28 @@ img {
   height: 100%;
   display: flex;
   align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  left: 45%;
+}
+@media (max-width: 750px) {
+  .header .hamburger {
+    width: 100%;
+    left: 25%;
+  }
+}
+.header .hamburger {
+  display: flex;
+  align-items: center;
 }
 .header .hamburger:hover {
   cursor: pointer;
+}
+.header .navigation-show {
+  height: 100%;
+  align-items: flex-start;
+  padding-top: 12px;
 }
 .footer {
   background-color: #828282;

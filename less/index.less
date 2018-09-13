@@ -96,7 +96,7 @@ h4 {
 p {
     line-height: 2.4rem;
     font-size: 1.6rem;
-    padding-bottom: 2px;
+    padding-bottom: 0;
 }
 
 a {
@@ -126,7 +126,7 @@ img {
         align-items: center;
 
         section {
-            max-width: 100%;
+            max-width: 855px;
         }
 
         @media @mobile {
@@ -158,11 +158,20 @@ img {
             align-items: flex-start;
             padding-left: 8.45rem;
 
+            @media tablet {
+                padding-left: 0;
+            }
+
             @media @mobile {
-                padding-left: 1rem;
+                padding-left: 1.4rem;
             }
 
             h1 {
+                @media @tablet {
+                    font-size: 6rem;
+                    line-height: 7rem;
+                }
+
                 @media @mobile {
                     font-size: 4rem;
                     line-height: 5rem;
@@ -339,12 +348,13 @@ img {
     height: 50px;
     width: 100%;
     background-color: @bluish;
-    z-index: 20;
+    z-index: 16;
 
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        max-width: 855px;
     }
 
     .logo a {
@@ -356,6 +366,23 @@ img {
 
     .navigation {
         display: none;
+        z-index: 20;
+
+        a {
+            text-decoration: none;
+            color: @white;
+            font-size: 4.7rem;
+            font-weight: bold;
+            line-height: 8.4rem;
+
+            &:hover {
+                color: @font-color;
+            }
+        }
+
+        a.active {
+            color: @font-color;
+        }
     }
 
     .navigation-show {
@@ -366,11 +393,31 @@ img {
         height: 100%;
         display: flex;
         align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 25%;
+        left: 45%;
+
+        @media @tablet {
+            width: 100%;
+            left: 25%;
+        }
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
 
         &:hover {
             cursor: pointer;
         }
     }
+}
+
+.header .navigation-show {
+    height: 100%;
+    align-items: flex-start;
+    padding-top: 12px;
 }
 
 // footer
