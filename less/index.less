@@ -42,7 +42,6 @@ blockquote,q{
 }
 blockquote:before,blockquote:after,
 q:before,q:after{
-  content:’’;
   content:none;
 }
 ins{
@@ -82,6 +81,7 @@ body {
   background-color: @background-color;
   max-width: 88rem;
   margin: 0 auto;
+  padding: 0 15rem;
 }
 
 .menu-container{
@@ -138,19 +138,53 @@ body {
 
   .sideways {
   display: flex;
-  align-items: stretch;
+
   padding-bottom: 2rem;
+  border: 1px solid green;
 
-  .projectIMG();
+    .projectIMG {
+      height: auto;
+      width: 100%;
+      padding: 3rem;
+      border: 5px solid blue;
+    }
 
-//  .mobileIMG();
+    .mobileIMG{
+      display: none;
+    }
+
+    @media @mobile{
+      display: flex;
+      flex-direction: column-reverse;
+
+      h2 {
+        border: 1px solid blue;
+      }
+      .projectIMG{
+        display: none;
+      }
+      .mobileIMG{
+        order: 1;
+        display: contents;
+      }
+      .top .textBox{
+        order:2;
+      }
+
+    }
 
   }
+
+
+
+
+
 
   .textBox{
   display: flex;
   flex-direction: column;
   padding: 3rem;
+
 
     h2{
       font-size: 3rem;
@@ -183,7 +217,6 @@ body {
 
   .middleIMG();
 
-  .mobileIMG();
 
   .villas{
     background-color: @background-recentProjects;
