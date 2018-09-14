@@ -192,12 +192,7 @@ body {
   margin: 0 auto;
   padding: 0 15rem;
 }
-.topStuff {
-  display: flex;
-  flex-direction: column;
-  border: 3px solid purple;
-}
-.topStuff .menu-container {
+.menu-container {
   background-color: lightgrey;
   display: flex;
   justify-content: space-between;
@@ -208,20 +203,19 @@ body {
   height: auto;
   top: 0;
   z-index: 3;
-  border: 2px solid green;
 }
-.topStuff .menu-container .hamburgerIMG {
+.menu-container .hamburgerIMG {
   width: 4rem;
   height: 4rem;
   cursor: pointer;
   padding-right: 10rem;
 }
-.topStuff .menu-container .title {
+.menu-container .title {
   padding: 2rem 2rem 2rem 10rem;
   font-size: 4rem;
   color: #FFFFFF;
 }
-.topStuff .menu-container .dropdown-content {
+.menu-container .dropdown-content {
   display: none;
 }
 .top-container h1 {
@@ -237,15 +231,28 @@ body {
 }
 .top-container .desktopIMG {
   width: 100%;
-  height: auto;
+}
+.top-container .mobileIMG {
+  display: none;
+}
+@media (max-width: 500px) {
+  .top-container .desktopIMG {
+    display: none;
+  }
+  .top-container .mobileIMG {
+    width: 100%;
+    display: contents;
+  }
 }
 .top {
   position: relative;
 }
 .top .sideways {
   display: flex;
+  flex-direction: row;
   padding-bottom: 2rem;
   border: 1px solid green;
+  width: 100%;
 }
 .top .sideways .textBox {
   display: flex;
@@ -286,12 +293,15 @@ body {
     display: none;
   }
   .top .sideways .mobileIMG {
-    order: 1;
     display: contents;
+    height: auto;
+    order: 1;
   }
   .top .sideways .textBox {
     order: 2;
     background-color: yellow;
+    width: 100%;
+    border: 1px solid pink;
   }
 }
 .bottom {

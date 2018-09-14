@@ -85,12 +85,7 @@ body {
 }
 // START fixing HERE **************************
 
-.topStuff {
-  display: flex;
-  flex-direction: column;
-  // }
 
-  border: 3px solid purple;
 
   .menu-container {
     background-color: @menu-color;
@@ -104,9 +99,6 @@ body {
     height: auto;
     top: 0;
     z-index: 3;
-    border: 2px solid green;
-
-
 
     .hamburgerIMG {
       width: 4rem;
@@ -126,11 +118,10 @@ body {
       display: none;
     }
 
-  }
-  // end menu-container
-}
+
+}  // end menu-container
+
 .top-container{
-  // display: flex;
 
   h1{
     z-index: 2;
@@ -145,10 +136,25 @@ body {
   }
 
   .desktopIMG{
-    width: 100%;
-    height: auto;
+   width: 100%;
+    // height: auto;
   }
 
+  .mobileIMG{
+    display: none;
+  }
+
+
+  @media @mobile{
+    .desktopIMG{
+      display: none;
+    }
+    .mobileIMG{
+      width: 100%;
+      display: contents;
+    }
+
+  }
 
 
 }  // end top-container
@@ -159,13 +165,13 @@ body {
 .top {
   position: relative;
 
-  // .desktopIMG();
-
   .sideways {
     display: flex;
+    flex-direction: row;
 
     padding-bottom: 2rem;
     border: 1px solid green;
+    width: 100%;
 
     .textBox{
       display: flex;
@@ -190,9 +196,6 @@ body {
       }
 
     }
-
-
-
 
     .projectIMG {
       height: auto;
@@ -219,14 +222,17 @@ body {
       }
 
       .mobileIMG{
-        order: 1;
+
         display: contents;
+        height: auto;
+        order: 1;
       }
 
       .textBox{
         order:2;
         background-color: yellow;
-
+        width: 100%;
+        border: 1px solid pink;
       }
 
     }
