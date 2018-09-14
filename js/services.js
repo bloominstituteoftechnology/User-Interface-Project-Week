@@ -1,5 +1,5 @@
-class TabLink {
-    constructor(el) {
+class TabLink{
+    constructor(el){
         this.el = el;
 
         //get data attribute for tabs
@@ -21,9 +21,9 @@ class TabLink {
         //add event listener for click
         this.el.addEventListener("click", () => {
             this.select();
-        })
+        });
     }
-    select() {
+    select(){
         //switch header based on data-tab
         if(this.data === "1"){
             this.header.innerHTML = "Pre-Construction";
@@ -40,11 +40,11 @@ class TabLink {
     }
 }
 
-class TabPic {
-    constructor(el) {
+class TabPic{
+    constructor(el){
         this.el = el;
     }
-    display() {
+    display(){
         //grab nodelist of images for desktop
         const desktopImg = document.querySelectorAll(".tab-img");
         
@@ -56,7 +56,7 @@ class TabPic {
         //remove hidden class from current img
         this.el.classList.remove("hidden");
     }
-    mobileDisplay() {
+    mobileDisplay(){
         //grab nodelist of images for mobile
         const mobileImg = document.querySelectorAll(".mobile");
 

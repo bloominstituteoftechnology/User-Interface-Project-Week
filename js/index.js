@@ -11,7 +11,7 @@ class Dropdown{
 
         this.button.addEventListener("click", () => {
             this.toggleNav();
-        })
+        });
     }
     toggleNav(){
         this.navMenu.classList.toggle("hidden");
