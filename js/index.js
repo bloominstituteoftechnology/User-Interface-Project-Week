@@ -50,10 +50,10 @@ class Image {
         this.element = element;
     }
 
-    imageToggle(){
+    imageToggle() {
         let images = document.querySelectorAll('.image')
-        images.forEach(function(image){
-        image.classList.remove('image-selected')
+        images.forEach(function (image) {
+            image.classList.remove('image-selected')
         })
         this.element.classList.toggle('image-selected')
     }
@@ -61,6 +61,9 @@ class Image {
 }
 
 let buttons = document.querySelectorAll('.servicebutton');
-let buttonsArray= Array.from(buttons).map((button) => {
-    return new Button (button)
+let buttonsArray = Array.from(buttons).map((button) => {
+    return new Button(button)
 });
+let images = document.querySelectorAll('.image')
+images = Array.from(images);
+buttonsArray[0].clickHandler();
