@@ -20,6 +20,7 @@ class TabItem {
 
     selectToggle() {
         let links = document.querySelectorAll('.tabs-item');
+        console.log(links)
         Array.from(links).map((element) => element.classList.remove('tabs-item-selected'));
         this.element.classList.toggle('tabs-item-selected');
     }
@@ -30,4 +31,3 @@ class TabItem {
 
 let links = document.querySelectorAll('.tabs-link');
 links = Array.from(links).map((element)=> {return new TabLink(element)});
-console.log(links);
