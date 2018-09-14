@@ -182,6 +182,10 @@ p, a {
 
   p {
     margin: 20px 0px 40px 0px;
+
+    @media @mobile {
+      margin: 20px 0px 25px 0px;
+    }
   }
 
   a {
@@ -256,30 +260,49 @@ p, a {
   width: 100%;
 }
 
-.projects-header {
-  font-size: 2.4rem;
-  position: absolute;
-  bottom: -35px;
-  background-color: #D8D8D8;
-  border: 1px solid white;
-  padding: 35px 10%;
-}
-
-.projects-text {
-  margin: 70px auto;
-
-  p {
-    font-size: 1.7rem;
-    width: 48%;
-    margin: 25px auto;
-  }
-}
-
 .projects-image(@background) {
   width: 100%;
   height: 230px;
   background-repeat: no-repeat;
   background-image: @background;
+
+  @media @mobile {
+    width: 109%;
+    margin-left: -4.5%;
+  }
+}
+
+.projects-header {
+  font-size: 2.4rem;
+  position: absolute;
+  bottom: -50px;
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  padding: 35px 10%;
+
+  @media @mobile {
+    text-align: center;
+    width: 79%;
+    left: 0;
+  }
+}
+
+.projects-text {
+  margin: 70px auto;
+
+  @media @mobile {
+    margin: 40px auto;
+  }
+
+  p {
+    font-size: 1.7rem;
+    width: 48%;
+    margin: 25px auto;
+
+    @media @mobile {
+      width: 92%;
+    }
+  }
 }
 
 /* projects content */
@@ -288,6 +311,10 @@ p, a {
 .projects-h2 {
   .subheader();
   margin: 40px 0;
+
+  @media @mobile {
+    margin-bottom: 20px;
+  }
 }
 
 
@@ -301,6 +328,10 @@ p, a {
     .villas-image {
       .projects-image(url('../img/home/home-villas-img.png'));
       right: 5px;
+
+      @media @mobile {
+        .projects-image(url('../img/home/home-mobile-villas-img.png'));
+      }
     }
 
     h3 {
@@ -319,7 +350,11 @@ p, a {
     width: 100%;
 
     .outskirts-image {
-      .projects-image(url('../img/home/home-outskirts-img.png'))
+      .projects-image(url('../img/home/home-outskirts-img.png'));
+
+      @media @mobile {
+        .projects-image(url('../img/home/home-mobile-outskirts-img.png'));
+      }
     }
 
     h3 {
@@ -338,8 +373,12 @@ p, a {
     width: 100%;
 
     .blocks-image {
-      .projects-image(url('../img/home/home-the-blocks-img.png'))
+      .projects-image(url('../img/home/home-the-blocks-img.png'));
+
+      @media @mobile {
+        .projects-image(url('../img/home/home-mobile-the-blocks-img.png'));
       }
+    }
 
     h3 {
       .projects-header();
