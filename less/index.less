@@ -59,6 +59,8 @@ table{
 
 /* Your Code Goes Here */
 
+@mobile:~"(max-width: 700px)";
+
 @blackborder: 1px solid black;
 
 .flexcolumn(){
@@ -97,6 +99,8 @@ p {
   max-width: 880px;
   width: 100%;
   align-items: center;
+
+  
   
 
 }
@@ -141,6 +145,10 @@ nav {
   height: 500px;
   background-image: url(../img/home/home-jumbotron.png);
 
+  @media @mobile {
+    height: 300px;
+  }
+
 
 }
 
@@ -151,28 +159,60 @@ nav {
   margin: 50px;
   color: #FFFFFF;
   font-weight: bold;
+
+  @media @mobile {
+    font-size: 5.5rem;
+    width: 100px;
+    margin: 20px;
+    line-height: 7rem;
+  }
 }
 
 .about {
   .flexcolumn();
   width: 90%;
   height: 700px;
-
+  
   justify-content: space-around;
+  @media @mobile {
+    align-items: center;
+    height: 1000px;
+  }
+  
+
 
   .aboutone{
     .flexrow();
     justify-content: space-between;
     
+
+  
+    @media @mobile {
+      .flexcolumn();
+      flex-direction: column-reverse;
+      align-items: center;
+      
+      
+    }
+    
   }
   .abouttwo{
     .flexrow();
     justify-content: space-between;
+    @media @mobile {
+      .flexcolumn();
+      align-items: center;
+    }    
   }
   .aboutcontent{
     .flexcolumn();
     width: 48%;
     justify-content: space-evenly;
+    @media @mobile {
+      width: 100%;
+      justify-content: space-around;
+    }
+    
   }
 
   h2 {
@@ -185,12 +225,20 @@ nav {
     .buttons();
     width: 35%;
     height: 15%;
+    @media @mobile {
+      width: 100%;
+      height: 40px;
+    }
   }
 
  .aboutimg {
    width: 48%;
    height: 48%;
    img {
+     width: 100%;
+     height: 100%;
+   }
+   @media @mobile {
      width: 100%;
      height: 100%;
    }
@@ -246,6 +294,10 @@ justify-content: space-around;
     .reverse {
       left: 10px;
     }
+
+    @media @mobile {
+      max-width: 450px;
+    }
     
 
 
@@ -258,8 +310,14 @@ justify-content: space-around;
     
     margin-bottom: 60px;
 
+    
+
     h3{
       align-self: flex-start;
+    }
+
+    @media @mobile {
+      width: 95%;
     }
 
   }
@@ -270,6 +328,10 @@ justify-content: space-around;
 
 .villas{
   background-image: url(../img/home/home-villas-img.png);
+  max-width: 100%;
+  height: 100%;
+  
+  
 }
 .outskirts {
   background-image: url(../img/home/home-outskirts-img.png);
@@ -294,16 +356,36 @@ footer {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    @media @mobile {
+      flex-direction: column;
+      
+    }
+
 
 
 }
 
+@media @mobile {
+  height: 1000px;
+}
+
   .places {
-    width: 15%
+    width: 15%;
+    @media @mobile {
+      width: 100%;
+      margin-bottom: 15px;
+      margin-left: 5px;
+      
+    }
   }
 
   .email {
     width: 30%;
+    @media @mobile {
+      width: 95%;
+      align-self: center;
+      
+    }
   }
 
   h3 {
