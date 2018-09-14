@@ -227,6 +227,35 @@ body {
 .menu-container .dropdown-content {
   display: none;
 }
+.banner {
+  position: relative;
+}
+.banner h1 {
+  z-index: 2;
+  position: absolute;
+  color: #FFFFFF;
+  bottom: 10rem;
+  left: 10rem;
+  font-weight: bold;
+  font-size: 6.4rem;
+  height: auto;
+  line-height: normal;
+}
+.banner .mobileIMG {
+  display: none;
+}
+@media (max-width: 500px) {
+  .banner {
+    width: 50rem;
+  }
+  .banner .projectIMG {
+    display: none;
+  }
+  .banner .mobileIMG {
+    width: 50rem;
+    display: contents;
+  }
+}
 .top {
   position: relative;
   width: 88rem;
@@ -250,6 +279,7 @@ body {
 }
 .top .sideways .projectIMG {
   height: auto;
+  width: 100%;
   padding: 3rem;
   border: 5px solid blue;
 }
@@ -258,8 +288,12 @@ body {
 }
 @media (max-width: 500px) {
   .top .sideways {
+    width: 50rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  .top .sideways h2 {
+    border: 1px solid blue;
   }
   .top .sideways .projectIMG {
     display: none;
@@ -267,16 +301,10 @@ body {
   .top .sideways .mobileIMG {
     order: 1;
     display: contents;
+    width: 5rem;
   }
-  .top .sideways h2 {
+  .top .sideways .top .textBox {
     order: 2;
-  }
-  .top .sideways p {
-    order: 3;
-  }
-  .top .sideways .button {
-    order: 4;
-    display: block;
   }
 }
 .top .textBox {
