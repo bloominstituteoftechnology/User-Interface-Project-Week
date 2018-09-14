@@ -1,5 +1,5 @@
 // JS goes here
-/************Expanded Menu********** */
+/************Expanded Menu******************************************* */
 class Menu{
   constructor(element){
     this.element = element;
@@ -21,3 +21,44 @@ class Menu{
 
 let nav = document.querySelector('nav')
 nav = new Menu(nav)
+
+/************************Tabs Servicees Pages*************************** */
+class TabLink{
+  constructor(link){
+    this.link = link;
+    this.data = this.link.dataset.tab;
+    //console.log(this.data);
+    this.itemLink = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
+    //console.log(this.itemLink);
+    this.tabItem = new LinkItem(this.itemLink);
+    this.link.addEventListener('click', () =>{this.selectTab()})
+  }
+
+  selectTab(){
+    const links = document.querySelectorAll('.tabs-link');
+    Array.from(links).map(link => {
+      link.classList.remove('tabs-link-selected')
+    });
+    this.link.classList.add('tabs-link-selected');
+    this.tabItem.selectItem();
+  }
+}
+
+class LinkItem{
+  constructor(item){
+    this.item = item;
+  }
+  selectItem(){
+   const items = document.querySelectorAll('.tabs-item');
+   Array.from(items).map(item =>{
+     item.classList.remove('tabs-item-selected');
+   })
+   this.item.classList.add('tabs-item-selected');
+  
+  }
+}
+
+let links = document.querySelectorAll('.tabs-link')
+links = Array.from(links).map(link =>{ return new TabLink(link)});
+console.log(links);
+links[0].selectTab();
