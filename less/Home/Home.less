@@ -1,14 +1,25 @@
 .container {
     .width-100;
+    @media @mobile{
+        .width-100;
+        margin: 0 auto;
+    }
+
     .jumbotron {
         background-image: url('../img/home/home-jumbotron.png');
+         @media @mobile {
+            background: url(/img/home/home-mobile-jumbotron.png) no-repeat;
+            .width-100;    
+            height:260px;
+                  }
         height: 600px;
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         align-items: flex-end;
-        .header h1{
+
+        .header h1 {
             line-height: 85px;
             padding: 50px;
             margin-left: 15px;
@@ -16,12 +27,20 @@
             font-family: Roboto, Arial, sans-serif;
             font-weight: bold;
             color: white;
+            @media @mobile {
+                font-size: 2.2rem;
+                line-height:24px;
+                margin-left:5px;
+                padding: 10px;
+            }
         }
     }
+
     .main-section {
         .flex(center,
         center,
         column);
+
         .waw-section {
             .flex-wrap(@jc: center,
             @ai: none,
@@ -29,6 +48,7 @@
             line-height: 21px;
             margin: 10px 0px;
             align-items: center;
+
             img {
                 margin-top: 20px;
                 margin-right: 35px;
@@ -40,17 +60,19 @@
                 align-items: center;
                 margin: 30px;
 
-        
-           
+
+
                 img {
-                   background: url(/img/home/home-mobile-img-1.png) no-repeat;
-                   width: 75%;
-                   margin-bottom:30px;
+                    background: url(/img/home/home-mobile-img-1.png) no-repeat;
+                    width:95%;
+                    margin-left: 40px;
+                    margin-bottom: 30px;
                 }
 
-              
-       
+
+
             }
+
             .content {
                 h2 {
                     font-size: 2.8rem;
@@ -58,7 +80,13 @@
                     color: #222222;
                     font-weight: bold;
                     margin-bottom: 30px;
+                    @media @mobile {
+                        font-size: 1.9rem;
+                        margin-left: 20px;
+                    }
+                
                 }
+
                 p {
                     margin-bottom: 30px;
                     margin-right: 20px;
@@ -66,18 +94,24 @@
                     font-size: 1.6rem;
                     font-family: Roboto, Arial, sans-serif;
                     color: #222222;
+                    @media @mobile {
+                        width: 290px;
+                    }
                 }
+
                 .button {
                     .button-creator(25%,
                     1.4rem);
+
                     @media @mobile {
-                        margin-left: 110px;
-                        .button-creator(55%,
+                        margin-left: 40px;
+                        .button-creator(80%,
                         1.4rem);
                     }
                 }
             }
         }
+
         .future-section {
             display: flex;
             justify-content: flex-start;
@@ -85,22 +119,25 @@
             margin: 60px 0px 73px 68px;
             align-items: center;
 
+
             @media @mobile {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 margin: 30px;
+             
 
-        
-           
+
                 img {
-                   background: url(/img/home/home-mobile-img-2.png) no-repeat;
-                   width: 75%;
-                   margin-bottom:30px;
+                    background: url(/img/home/home-mobile-img-2.png) no-repeat;
+                    width:90%;
+                    margin-right: 5px;
+                    margin-bottom: 30px;
+                    
                 }
 
-              
-       
+
+
             }
 
             // .media-mobile__future;
@@ -113,7 +150,12 @@
                     font-weight: bold;
                     margin-bottom: 30px;
                     margin-left: 20px;
+                    @media @mobile {
+                        font-size: 1.9rem;
+                        margin-left: 20px;
+                    }
                 }
+
                 p {
                     margin-bottom: 30px;
                     margin-left: 20px;
@@ -121,7 +163,11 @@
                     font-size: 1.6rem;
                     font-family: Roboto, Arial, sans-serif;
                     color: #222222;
+                    @media @mobile {
+                        width: 290px;
+                    }
                 }
+
                 .button {
                     margin-left: 20px;
                     .button-creator(25%,
@@ -129,18 +175,26 @@
                     padding: 12px;
 
                     @media @mobile {
-                        margin-left: 120px;
-                        .button-creator(55%,
+                        margin-left: 40px;
+                        .button-creator(80%,
                         1.4rem);
                     }
                 }
             }
         }
+
         .recent-projects {
             .flex(@jc: center,
             @ai: center,
             @dir: column);
             width: 100%;
+
+            @media @largedst {
+                width: 90%;
+            }
+
+         
+
             h2 {
                 align-self: flex-start;
                 font-size: @font-sub-heading;
@@ -149,71 +203,139 @@
                 font-weight: bold;
                 margin-bottom: 30px;
             }
+
             .villa-heading {
                 position: relative;
-                width:900px;
-                .villas {
-                    @media @mobile {
-                        margin-left:250px;
-                        background: url(/img/home/home-mobile-villas-img.png) no-repeat;
-                        width: 390px;
-                        height:200px;
+                width: 900px;
+
+              
+                .img-villas-mobile {
+                    display: none;
+                }
+
+                @media @mobile {
+                    .img-villas {
+                        display: none;
+                    }
+
+                    .img-villas-mobile {
+                        display: block;
+                        margin-left: 300px;
+                        width: 25%;
                     }
                 }
+
                 h3 {
                     .img-heading(@right: 45px,
                     @bottom: -25px);
+
                     @media @mobile {
-                        .img-heading(@right: 315px, @bottom:-25px)
+                        .img-heading(@right: 315px, @bottom: -25px)
                     }
                 }
             }
+
             .villas-content {
                 padding: 50px 0;
                 line-height: 30px;
-                width: 100%;
+                width: 50%;
                 font-size: @font-regular;
+
+                @media @mobile {
+                    width: 100%;
+                }
             }
+
             .outskirt-heading {
                 position: relative;
                 width: 900px;
-                .outskirts {
-                    @media @mobile {
-                        margin-left:250px;
-                        background: url(/img/home/home-mobile-outskirts-img.png) no-repeat;
-                        width: 390px;
-                        height:200px;
 
+              
+                .img-outskirts-mobile {
+                    display: none;
+                }
+
+                @media @mobile {
+                    .img-outskirts {
+                        display: none;
+                    }
+
+                    .img-outskirts-mobile {
+                        display: block;
+                        margin-left: 300px;
+                        width:310px;
                     }
                 }
+
                 h3 {
-                    
+
                     .img-heading(@left: 0px,
                     @bottom: -25px);
-                    @media @mobile{
+
+                    @media @mobile {
                         .img-heading(@left: 315px,
-                    @bottom: -25px);
+                        @bottom: -25px);
                     }
                 }
             }
+
             .outskirts-content {
                 padding: 50px 0;
                 line-height: 30px;
-                width: 100%;
+                width: 50%;
+
+                @media @mobile {
+                    width: 100%;
+                }
+
                 font-size: 1.6rem;
             }
+
             .block-heading {
                 position: relative;
                 width: 900px;
+
+                .img-block {
+
+                    background: url(/img/home/home-the-blocks-img.png) no-repeat;
+                }
+
+                .img-mobile-block {
+                    display: none;
+                }
+
+                @media @mobile {
+                    .img-block {
+                        display: none;
+                    }
+
+                    .img-mobile-block {
+                        display: block;
+                        margin-left: 280px;
+                    }
+                }
+
                 h3 {
                     .img-heading(@right: 45px,
                     @bottom: -25px);
+
+                    @media @mobile {
+                        .img-heading(@right: 315px,
+                        @bottom: -25px);
+                        width: 290px;
+                    }
                 }
             }
+
             .blocks-content {
                 padding: 50px 0;
                 line-height: 30px;
-                width: 100%;
+                width: 50%;
+
+                @media @mobile {
+                    width: 100%;
+                }
+
                 font-size: @font-regular;
             }
         }
