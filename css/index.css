@@ -149,6 +149,7 @@ body {
   position: relative;
   color: white;
   margin-bottom: 50px;
+  z-index: 1;
 }
 .jumbotron .bottom-left {
   position: absolute;
@@ -282,7 +283,7 @@ body {
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 2;
 }
 .navigation .nav-content {
   display: flex;
@@ -294,12 +295,48 @@ body {
   font-weight: bold;
   color: white;
   font-size: 25px;
+  z-index: 4;
 }
-.navigation .nav-content .dropdown-button div {
+.navigation .nav-content .dropdown .dropdown-button {
+  cursor: pointer;
+}
+.navigation .nav-content .dropdown .dropdown-button div {
   width: 35px;
   height: 5px;
   background-color: white;
   margin: 6px 0;
+}
+.overlay {
+  background-color: #96a4af;
+  opacity: 0.95;
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  overflow-x: hidden;
+}
+.overlay .close-button {
+  color: white;
+  font-weight: bold;
+  font-size: 48px;
+  cursor: pointer;
+}
+.overlay .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 115px;
+}
+.overlay .dropdown-content a {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 85px;
+  color: white;
+  text-decoration: none;
+}
+.overlay .dropdown-content a:hover {
+  color: #222222;
 }
 footer {
   display: flex;
