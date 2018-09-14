@@ -15,8 +15,10 @@
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: cover;
-        display: flex;
-        align-items: flex-end;
+        .flex-wrap(@jc: none,
+        @ai: flex-end,
+        @fw: none);
+       
         .header h1 {
             line-height: 85px;
             padding: 50px;
@@ -37,10 +39,12 @@
         .flex(center,
         center,
         column);
+        max-width: 880px;
+        margin: 0 auto;
         .waw-section {
             .flex-wrap(@jc: center,
             @ai: none,
-            @fw: wrap);
+            @fw: none);
             .width-100;
             margin: 10px 0px;
             align-items: center;
@@ -70,10 +74,9 @@
                     font-weight: bold;
                     margin-bottom: 30px;
                     @media @mobile {
-                       width:80%;
+                        width: 80%;
                         font-size: 1.7rem;
                         margin-left: 20px;
-                    
                     }
                 }
                 p {
@@ -105,9 +108,7 @@
             line-height: 21px;
             margin: 60px 0px 73px 68px;
             align-items: center;
-            .width-100;
             @media @mobile {
-    
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -129,8 +130,7 @@
                     margin-bottom: 30px;
                     margin-left: 20px;
                     @media @mobile {
-                    
-                        width:80%;
+                        width: 80%;
                         font-size: 1.7rem;
                         margin-left: 20px;
                     }
@@ -144,8 +144,7 @@
                     color: #222222;
                     @media @mobile {
                         width: 100%;
-                        margin:0px;
-                     
+                        margin: 0px;
                     }
                 }
                 .button {
@@ -154,7 +153,6 @@
                     1.4rem);
                     padding: 12px;
                     @media @mobile {
-                
                         margin-left: 20px;
                         .button-creator(80%,
                         1.4rem);
@@ -167,9 +165,7 @@
             @ai: center,
             @dir: column);
             .width-100;
-            @media @largedst {
-                width: 90%;
-            }
+
             h2 {
                 align-self: flex-start;
                 font-size: @font-sub-heading;
