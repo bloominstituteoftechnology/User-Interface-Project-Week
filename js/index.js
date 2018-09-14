@@ -23,12 +23,33 @@ class Tab {
     this.element.addEventListener('click', () => {
       this.selected();
     });
-    // this.data =
+    this.data = this.element.dataset.tab;
+    console.log(this.data);
+    this.componentElement = document.querySelector(
+      `.component[data-content="${this.data}"]`
+    );
+    this.componentItem = new TabComponent(this.componentElement);
+    console.log(this.componentElement);
   }
 
   selected() {
     tabs.forEach(tab => tab.element.classList.remove('selected'));
     this.element.classList.add('selected');
+    this.componentItem.selected();
+  }
+}
+
+class TabComponent {
+  constructor(element) {
+    this.element = element;
+  }
+
+  selected() {
+    let components = document.querySelectorAll('.component');
+    components = Array.from(components).forEach(item =>
+      item.classList.add('hide')
+    );
+    this.element.classList.remove('hide');
   }
 }
 
