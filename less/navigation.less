@@ -1,59 +1,82 @@
 @import 'variables.less';
 
 .navContainer {
+    position: relative;
+    //border: 1px solid purple;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: @header-bg;
-    padding: 2%;
+    width: 100%;
+
+    z-index: 2;
     .navText {
-        font-weight: bold;
-        font-size: @navtext-fontSize;
-        color: @navtext-fontColor;
+        padding: 2%;
     }
-    .hamburger {
+    .navigation {
+        padding: 2%;
         cursor: pointer;
     }
 
 }
 
-.jumbotronContainer {
-    .hamLinks {
-        display: none;
-        z-index: 2;
-        position: absolute;
-        text-align: center;
-        margin: auto 0;
-        top: 0;
+.navFixed {
+    max-width: 1024px;
+    top: 0;
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    height: 7.5%;
+    z-index: 3;
+    padding: 0;
+}
+
+.hamContainer {
+    display: none;
+    position: fixed;
+    background-color: @header-bg;
+    top: 7%;
+    max-width: 1024px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0.95;
+    
+    .linkContainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
-        height: 99%;
-        background-color: @header-bg;
-        opacity: 0.95;
-        .linkContainer {
-            display: block;
-            position: relative;
-            top: 100px;
-        }
-        a {
-            color: @navigation-color;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: @navigation-fontSize;
-            line-height: @navigation-lineHeight;
-            @media (max-width: @mobile) {
-                font-size: @navigation-fontSize-mobile;
-                line-height: @navigation-lineHeight-mobile;
-            }
-        }
-        a:hover {
-            color: @navigation-colorHover;
-        }
         @media (max-width: @mobile) {
-            height: 100%;
+            width: @mobile;
         }
-    }
-    .displayHam {
-        display: block;
     }
     
+    a {
+        color: @navigation-color;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: @navigation-fontSize;
+        line-height: @navigation-lineHeight;
+        @media (max-width: @mobile) {
+            font-size: @navigation-fontSize-mobile;
+            line-height: @navigation-lineHeight-mobile;
+        }
+    }
+    a:hover {
+        color: @navigation-colorHover;
+    }
+    @media (max-width: @mobile) {
+        height: 100%;
+    }
+    .navText {
+        font-weight: bold;
+        font-size: @navtext-fontSize;
+        color: @navtext-fontColor;
+    }
+}
+
+.displayHam {
+    display: block;
 }

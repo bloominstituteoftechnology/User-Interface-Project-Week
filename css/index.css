@@ -135,38 +135,55 @@ table {
 }
 /* Your Code Goes Here */
 .navContainer {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #9AA5B0;
-  padding: 2%;
+  width: 100%;
+  z-index: 2;
 }
 .navContainer .navText {
-  font-weight: bold;
-  font-size: 2.4rem;
-  color: #FFFFFF;
+  padding: 2%;
 }
-.navContainer .hamburger {
+.navContainer .navigation {
+  padding: 2%;
   cursor: pointer;
 }
-.jumbotronContainer .hamLinks {
-  display: none;
-  z-index: 2;
-  position: absolute;
-  text-align: center;
-  margin: auto 0;
+.navFixed {
+  max-width: 1024px;
   top: 0;
+  margin: 0 auto;
+  position: fixed;
   width: 100%;
-  height: 99%;
+  height: 7.5%;
+  z-index: 3;
+  padding: 0;
+}
+.hamContainer {
+  display: none;
+  position: fixed;
   background-color: #9AA5B0;
+  top: 7%;
+  max-width: 1024px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
   opacity: 0.95;
 }
-.jumbotronContainer .hamLinks .linkContainer {
-  display: block;
+.hamContainer .linkContainer {
   position: relative;
-  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
-.jumbotronContainer .hamLinks a {
+@media (max-width: 500px) {
+  .hamContainer .linkContainer {
+    width: 500px;
+  }
+}
+.hamContainer a {
   color: #FFFFFF;
   text-decoration: none;
   font-weight: bold;
@@ -174,23 +191,29 @@ table {
   line-height: 85px;
 }
 @media (max-width: 500px) {
-  .jumbotronContainer .hamLinks a {
+  .hamContainer a {
     font-size: 2.4rem;
     line-height: 42.5px;
   }
 }
-.jumbotronContainer .hamLinks a:hover {
+.hamContainer a:hover {
   color: #222222;
 }
 @media (max-width: 500px) {
-  .jumbotronContainer .hamLinks {
+  .hamContainer {
     height: 100%;
   }
 }
-.jumbotronContainer .displayHam {
+.hamContainer .navText {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+}
+.displayHam {
   display: block;
 }
 .pageContainer {
+  border: 1px solid black;
   max-width: 1024px;
   width: 100%;
   display: flex;
@@ -205,10 +228,12 @@ table {
   .pageContainer {
     max-width: 500px;
     width: 100%;
+    margin: 0 0;
   }
 }
 .jumbotronContainer {
   position: relative;
+  width: 100%;
 }
 .jumbotronContainer .jumbotronTxt {
   z-index: 1;
@@ -227,6 +252,9 @@ table {
     line-height: 32.5px;
   }
 }
+.jumbotronContainer .jumbotronDesktop {
+  width: 100%;
+}
 .jumbotronContainer .jumbotronMobile {
   display: none;
 }
@@ -239,7 +267,7 @@ table {
   }
   .jumbotronContainer .jumbotronMobile {
     display: flex;
-    margin: 0 auto;
+    width: 100%;
   }
 }
 .subheader {
@@ -261,6 +289,9 @@ table {
   align-items: center;
   margin: 8% 0;
 }
+.callToActionContainer .ctaCard .ctaImg {
+  width: 100%;
+}
 .callToActionContainer .ctaCard .ctaTxt {
   margin: 0 5%;
 }
@@ -278,17 +309,22 @@ table {
   }
 }
 .callToActionContainer .btn {
+  margin: 5% auto;
+  padding: 2%;
   border: 1px solid black;
   width: 150px;
   text-align: center;
+  cursor: pointer;
 }
 @media (max-width: 500px) {
   .callToActionContainer {
     display: flex;
     flex-direction: column;
+    margin: 0 0;
   }
 }
 .projectsContainer {
+  border: 1px solid black;
   margin: 5% 5%;
 }
 .projectsContainer .subheader {
@@ -307,6 +343,12 @@ table {
   width: 50%;
   margin: 5%;
 }
+@media (max-width: 500px) {
+  .projectsContainer .projectCard .projectText {
+    width: 100%;
+    margin: 0 0;
+  }
+}
 .projectsContainer .imgWithTxt {
   position: relative;
 }
@@ -323,9 +365,6 @@ table {
   position: relative;
   top: 35%;
 }
-.projectsContainer .imgWithTxt .imgTxtContainer .imgTxtContainer.right {
-  right: 0;
-}
 @media (max-width: 500px) {
   .projectsContainer .imgWithTxt .imgTxtContainer {
     left: 15%;
@@ -333,9 +372,17 @@ table {
     border: none;
   }
 }
+.projectsContainer .imgWithTxt .imgTxtContainer.right {
+  right: 0;
+}
 @media (max-width: 500px) {
   .projectsContainer .imgWithTxt {
     margin-bottom: 15%;
+  }
+}
+@media (max-width: 500px) {
+  .projectsContainer {
+    margin: 0 0;
   }
 }
 footer {
@@ -369,12 +416,13 @@ footer .footerCards .footerCard {
 }
 footer .copyright {
   position: relative;
-  top: 40px;
+  top: 20px;
   text-align: center;
 }
 @media (max-width: 500px) {
   footer .copyright {
-    top: 15px;
+    top: 0%;
+    left: 10%;
     text-align: left;
   }
 }

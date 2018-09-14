@@ -1,6 +1,7 @@
 @import 'variables.less';
 
 .pageContainer {
+    border: 1px solid black;
     max-width: 1024px;
     width: 100%;
     display: flex;
@@ -13,11 +14,13 @@
     @media (max-width: @mobile) {
         max-width: @mobile;
         width: 100%;
+        margin: 0 0;
     }
 }
 
 .jumbotronContainer {
     position: relative;
+    width: 100%;
     .jumbotronTxt {
         z-index: 1;
         position: absolute;
@@ -33,17 +36,21 @@
             line-height: @jumbotron-lineHeight-mobile;
         }
     }
+    .jumbotronDesktop {
+        width: 100%;
+    }
     .jumbotronMobile {
         display: none;
     }
     @media (max-width: @mobile) {
         max-width: @mobile;
+        
         .jumbotronDesktop {
             display: none;
         }
         .jumbotronMobile {
             display: flex;
-            margin: 0 auto;
+            width: 100%;
         }
       
     }
@@ -62,13 +69,17 @@
 }
 
 .callToActionContainer {
-    
     margin: 5% 5%;
+
     .ctaCard {
+        
         display: flex;
         flex-direction: row;
         align-items: center;
         margin: 8% 0;
+        .ctaImg {
+            width: 100%;
+        }
         .ctaTxt {
             margin: 0 5%;
         }
@@ -85,18 +96,22 @@
         }
     }
     .btn { 
+        margin: 5% auto;
+        padding: 2%;
         border: 1px solid black;
         width: 150px;
         text-align: center;
+        cursor: pointer;
     }
     @media (max-width: @mobile) {
         display: flex;
         flex-direction: column;
+        margin: 0 0;
     }
 }
 
 .projectsContainer {
-    
+    border: 1px solid black;
     margin: 5% 5%;
     .subheader {
         margin: 0% 4%;
@@ -112,6 +127,10 @@
         .projectText {
             width: 50%;
             margin: 5%;
+            @media (max-width: @mobile) {
+                width: 100%;
+                margin: 0 0;
+            }
         }
     }
     .imgWithTxt {
@@ -128,19 +147,23 @@
                 position: relative;
                 top: 35%;
             }
-            .imgTxtContainer.right {
-                right: 0;
-            }
+            
             @media (max-width: @mobile) {
                 left: 15%;
                 bottom: -45%;
                 border: none;
             }
         }
+        .imgTxtContainer.right {
+            right: 0;
+        }
         
         @media (max-width: @mobile) {
             margin-bottom: 15%;
         }
+    }
+    @media (max-width: @mobile) {
+        margin: 0 0;
     }
 }
 
@@ -173,10 +196,11 @@ footer {
     }
     .copyright {
         position: relative;
-        top: 40px;
+        top: 20px;
         text-align: center;
         @media (max-width: @mobile) {
-            top: 15px;
+            top: 0%;
+            left: 10%;
             text-align: left;
         }
     }
