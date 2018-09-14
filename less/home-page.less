@@ -3,19 +3,28 @@
         .flexMix(column, space-evenly, center);
         margin: 5px auto;
         width: 90%;
-        // height: 100%;
         .designBlock {
             display: flex;
             align-content: center;
             justify-content: space-between;
-            @media @mobile{
+            .mobileImg {
+                display: none
+            }
+            @media @mobile {
                 flex-direction: column-reverse;
                 margin: 15px auto;
+                .homeImg {
+                    display: none;
+                }
+                .mobileImg {
+                    display: block;
+                    margin: 0 auto;
+                }
             }
             .designText {
                 align-self: center;
                 width: 45%;
-                @media @mobile{
+                @media @mobile {
                     width: 90%;
                     margin: 15px auto;
                     text-align-last: left;
@@ -27,18 +36,15 @@
                 }
                 .button {
                     .buttonCreator();
-                    @media @mobile{
+                    @media @mobile {
                         .buttonCreator(90%, 45px);
                     }
-                }
-                .img {
-                    width: 49%;
                 }
             }
         }
         .reverse {
             .flexMix(row-reverse, space-between, center);
-            @media @mobile{
+            @media @mobile {
                 flex-direction: column-reverse;
             }
         }
@@ -58,12 +64,30 @@
     .project {
         .flexMix(column, space-between, center);
         width: 90%;
+        img {
+            width: 100vw;
+        }
+        .homeImg {
+            @media @mobile {
+                display: none;
+            }
+        }
+        .mobileImg {
+            display: none;
+            @media @mobile {
+                display: block;
+                width: 100vw;
+            }
+        }
         .projectText {
             .flexMix();
             width: 50%;
             line-height: 24px;
             margin: 60px auto;
             margin-top: 40px;
+            @media @mobile {
+                width: 90%;
+            }
         }
         .pName {
             position: relative;
@@ -75,14 +99,25 @@
             font-size: 1.6rem;
             .flexMix();
             font-weight: lighter;
+            @media @mobile {
+                width: 88%;
+                height: 100px;
+                margin-top: -25px;
+            }
         }
         .right {
             align-self: flex-end;
             margin-right: 2.5%;
+            @media @mobile {
+                align-self: center;
+            }
         }
         .left {
             align-self: flex-start;
             margin-left: 2.5%;
+            @media @mobile {
+                align-self: center;
+            }
         }
     }
 }
@@ -93,12 +128,26 @@
     background: @footer;
     color: @white;
     height: 200px;
+    @media @mobile {
+        height: 80%;
+    }
     .daFeet {
         .flexMix(row, space-around, center);
         width: 100%;
+        @media @mobile {
+            flex-direction: column;
+            padding-left: 15px;
+        }
+        h4{
+            @media @mobile{
+                text-align: left;
+            }
+        }
         h3 {
             font-size: 2rem;
             line-height: 24px;
+            font-weight: bold;
+            margin-top: 10px;
         }
         p {
             font-size: 1.4rem;
@@ -106,10 +155,34 @@
         }
         .infoRequest {
             width: 30%;
+            @media @mobile {
+                width: 100%;
+                margin: 10px auto;
+                text-align:left;
+                padding-left: 15px
+            }
         }
         .locations {
             .flexMix(row, space-evenly, center);
             width: 60%;
+            @media @mobile {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                text-align: left;
+                padding-left: 15px;
+            }
         }
+    }
+    .underStuff{
+        p{
+            font-size: 1.4rem;
+            font-weight: 100;
+        }
+        @media @mobile{
+            align-self: flex-start;
+            padding-left:15px
+        }
+    
     }
 }
