@@ -10,6 +10,22 @@ footer {
     flex-wrap: wrap;
     padding: 20px 20px 0px 20px;
 
+    @media @tablet {
+        .flex(center, center);
+        flex-direction: column;
+        height: auto;
+
+        address {
+            margin: 10px 0px;
+        }
+    }
+
+    @media @phone {
+        .flex(center, flex-start);
+        padding: 10px 4%;
+        margin-top: 30px;
+    }
+
     // Footer Headings
     h4 {
         font-size:2.0rem;
@@ -19,18 +35,26 @@ footer {
 
     input {
         border-radius: 5px;
-        width: 275px;
+        width: 100%;
         height: 40px;
         padding: 5px;
         color: #828282;
         font-size: 1.6rem;
-        margin-top: 10px;
+        margin: 10px 0px;
+
+        @media @tablet {
+            height: 50px;
+        }
     }
 
     .left-side {
         .flex(center, flex-start);
         flex-direction: column;
         padding-top: 40px;
+
+        @media @tablet {
+            padding-top: 20px;
+        }
     }
 
     span {
@@ -42,7 +66,16 @@ footer {
         .flex();
         font-size: 1.2rem;
         height: 25px;
-        // font-size: 8px;
         margin-bottom: -5px;
+
+        @media @tablet {
+            justify-content: center;
+        }
+
+        @media @phone {
+            justify-content:flex-start;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
     }
 }

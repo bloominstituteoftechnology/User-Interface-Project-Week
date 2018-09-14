@@ -7,10 +7,6 @@
 @import 'nav.less';
 @import 'footer.less';
 
-.jumbotron{
-  width: 100%;
-}
-
 .top {
   position: relative;
 
@@ -23,28 +19,127 @@
     position: absolute;
     z-index: 2;
     bottom: 50px;
+
+    @media @tablet {
+      font-size: 4.5rem;
+      line-height: 45px;
+      bottom: 22px;
+      padding-left: 4.5%;
+    }
+
+    @media @phone {
+      font-size: 3.5rem;
+      width: 100%;
+      letter-spacing: .05rem;
+      line-height: 42px;
+    }
   }
 }
-  
+
+.jumbotron{
+  width: 100%;
+}
+
+.desktop {
+  @media @phone{ 
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @media @phone {
+    display: block;
+  }
+}
+
 .top-main-section {
   padding: 0px 8.3% 10px 8.3%;
   .flex(space-between, center);
   flex-wrap: wrap;
   margin-bottom: 10px;
+
+  @media @tablet {
+    flex-directon: column-reverse;
+  }
+
+  @media @phone {
+    padding: 0px;
+  }
   
   img {
     margin: 50px 0 45px 0;
+
+    @media @phone {
+      margin: 35px 0px 0px 0px;
+    }
   }
 
+  .top-main-section-row-1 {
+    .flex(space-between, center);
+
+    @media @tablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .top-main-section-row-2 {
+    .flex(space-between, center);
+
+    @media @tablet {
+      flex-direction: column;
+    }
+  }
+
+  .home-img-1 {
+    @media @tablet {
+      width: 100%;
+    }
+  }
+
+  .home-img-2 {
+    @media @tablet {
+      width: 100%;
+    }
+
+    @media @phone {
+      margin-top: 45px;
+      margin-bottom: 20px;
+    }
+  }
+  
   .text-box-top {
     width: 48.5%;
-    height: 277px;
+    // height: 277px;
+    .flex(center, flex-start);
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media @tablet {
+      width: 65%;
+      height: auto;
+      align-items: center;
+    }
+
+    @media @phone {
+      width: 91%;
+      justify-content: center;
+    }
 
     h2 {
       font-weight: @font-weight-bold;
       font-size: 2.4rem;
-      padding-top: 51px;
+      padding-top: 20px;
       padding-bottom: 22px;
+
+      @media @tablet {
+        padding-top: 27px;
+      }
+
+      @media @phone {
+        align-self: flex-start;
+      }
     }
 
     p {
@@ -60,13 +155,17 @@
       // padding: 13px 27px;
       width: 137px;
       height: 47px;
+
+      @media @phone {
+        width: 100%;
+      }
     }
     
   }
 
   .text-box-row-2 {
     h2 {
-      padding-top: 44px;
+      padding-top: 10px;
     }
   }
 }
@@ -76,12 +175,19 @@
   .flex();
   flex-direction: column;
 
-
-  .recent-projects {
+  @media @phone {
+    padding: 0px;
+  }
+  .middle-section-title {
     font-weight: @font-weight-bold;
     font-size: 2.4rem;
     margin: 35px 0px 45px 0px;
     align-self: flex-start;
+    
+    @media @phone {
+      padding: 0px 5%;
+      margin-bottom: 25px;
+    }
   }
 
   .img-middle-main-section {
@@ -91,57 +197,65 @@
       max-width: 100%;
     }
 
-    .the-villas-text-box {
+    .recent-projects {
       background-color: @recent-projects-gray-square;
       z-index: 1;
       height: 95px;
-      width: 37%;
+      width: 315px;
       border: 1px solid white;
       margin-top: -56px;
-      right: 0px;
       position: absolute;
       .flex();
       letter-spacing: .8rem;
-      
+
       h3 {
         font-size: 2.4rem;
         margin: 0 auto;  
+
+        @media @tablet {
+          font-size: 1.8rem;
+        }
+
+        @media @phone {
+          font-size: 2.4rem;
+        }
       }
+
+      @media @tablet {
+        height: 65px;
+        max-width: 285px;
+        width: 75%;
+        margin-top: -25px;
+     }
+
+     @media @phone {
+       margin-top: -15px;
+       height: 100px;
+       width: 90%;
+     }
+    }
+
+    .the-villas-text-box {
+        right: 20px;
+
+        @media @phone {
+          right: 5%;
+        }
     }
 
     .outskirts-text-box {
-      background-color: @recent-projects-gray-square;
-      z-index: 1;
-      height: 95px;
-      width: 37%;
-      border: 1px solid white;
-      margin-top: -56px;
-      left: 0px;
-      position: absolute;
-      .flex();
-      letter-spacing: .8rem;
+      left: 20px;
       
-      h3 {
-        font-size: 2.4rem;
-        margin: 0 auto;  
+      @media @phone {
+        left: 5%;
       }
     }
 
     .the-blocks-text-box {
-      background-color: @recent-projects-gray-square;
-      z-index: 1;
-      height: 95px;
-      width: 37%;
-      border: 1px solid white;
-      margin-top: -56px;
-      right: 0px;
-      position: absolute;
-      .flex();
-      letter-spacing: .8rem;
-      
-      h3 {
-        font-size: 2.4rem;
-        margin: 0 auto;  
+      right: 20px;
+
+      @media @phone {
+        right: 5%;
       }
     }
   }
@@ -151,5 +265,15 @@
     font-size: 1.8rem;
     width: 53%;
     line-height: @line-height-general;
+
+    @media @tablet {
+      width: 65%;
+    }
+
+    @media @phone {
+      width: 90%;
+      margin-top: 110px;
+      margin-bottom: 45px;
+    }
   }
 }
