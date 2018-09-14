@@ -149,6 +149,7 @@ html {
   color: #222222;
   font-family: Roboto, Arial, sans-serif;
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 p,
 a {
@@ -258,6 +259,13 @@ a {
     line-height: 4rem;
   }
 }
+/* main content mixins */
+.subheader {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #222222;
+}
+/* main content */
 .container {
   max-width: 860px;
   width: 98%;
@@ -268,28 +276,18 @@ a {
     width: 92%;
   }
 }
-/* main content mixins */
-.subheader {
-  font-weight: bold;
-  font-size: 2.4rem;
-  color: #222222;
-}
-.button-mixin {
-  border: 1px solid #222222;
-  padding: 14px 6.5%;
-}
-/* main content */
 .about {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   margin: 50px 0;
+  width: 100%;
 }
 @media (max-width: 320px) {
   .about {
     flex-direction: column;
-    margin: 35px 0;
+    margin: 30px 0;
   }
 }
 .about h2 {
@@ -300,17 +298,53 @@ a {
 .about div {
   width: 50%;
 }
+@media (max-width: 320px) {
+  .about div {
+    width: 95%;
+    margin: 10px 0;
+  }
+}
 .about p {
   margin: 20px 0px 40px 0px;
 }
 .about a {
   border: 1px solid #222222;
   padding: 14px 6.5%;
+  text-align: center;
+}
+@media (max-width: 320px) {
+  .about a {
+    display: block;
+  }
+}
+@media (max-width: 320px) {
+  .about {
+    width: 100%;
+  }
 }
 .about .blueprint-image {
   background-image: url('../img/home/home-img-1.png');
+  background-repeat: no-repeat;
   width: 47.6%;
   height: 275px;
+}
+@media (max-width: 320px) {
+  .about .blueprint-image {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .about .blueprint-image {
+    background-image: url('../img/home/home-mobile-img-1.png');
+    background-repeat: no-repeat;
+    width: 47.6%;
+    height: 275px;
+  }
+}
+@media (max-width: 320px) and (max-width: 320px) {
+  .about .blueprint-image {
+    width: 100%;
+  }
 }
 .designs {
   display: flex;
@@ -318,12 +352,13 @@ a {
   justify-content: space-between;
   align-items: center;
   margin: 50px 0;
+  width: 100%;
   margin: 90px 0 110px 0;
 }
 @media (max-width: 320px) {
   .designs {
     flex-direction: column;
-    margin: 35px 0;
+    margin: 30px 0;
   }
 }
 .designs h2 {
@@ -334,17 +369,48 @@ a {
 .designs div {
   width: 50%;
 }
+@media (max-width: 320px) {
+  .designs div {
+    width: 95%;
+    margin: 10px 0;
+  }
+}
 .designs p {
   margin: 20px 0px 40px 0px;
 }
 .designs a {
   border: 1px solid #222222;
   padding: 14px 6.5%;
+  text-align: center;
+}
+@media (max-width: 320px) {
+  .designs a {
+    display: block;
+  }
 }
 .designs .design-image {
   background-image: url('../img/home/home-img-2.png');
+  background-repeat: no-repeat;
   width: 47.6%;
   height: 275px;
+}
+@media (max-width: 320px) {
+  .designs .design-image {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .designs .design-image {
+    background-image: url('../img/home/home-mobile-img-2.png');
+    background-repeat: no-repeat;
+    width: 47.6%;
+    height: 275px;
+  }
+}
+@media (max-width: 320px) and (max-width: 320px) {
+  .designs .design-image {
+    width: 100%;
+  }
 }
 /* projects mixins */
 .projects-section {
@@ -359,7 +425,7 @@ a {
   bottom: -35px;
   background-color: #D8D8D8;
   border: 1px solid white;
-  padding: 32px 8%;
+  padding: 35px 10%;
 }
 .projects-text {
   margin: 70px auto;
@@ -391,6 +457,7 @@ a {
   height: 230px;
   background-repeat: no-repeat;
   background-image: url('../img/home/home-villas-img.png');
+  right: 5px;
 }
 .villas .villas-header h3 {
   font-size: 2.4rem;
@@ -398,7 +465,7 @@ a {
   bottom: -35px;
   background-color: #D8D8D8;
   border: 1px solid white;
-  padding: 32px 8%;
+  padding: 35px 10%;
   right: 0;
 }
 .outskirts {
@@ -423,7 +490,7 @@ a {
   bottom: -35px;
   background-color: #D8D8D8;
   border: 1px solid white;
-  padding: 32px 8%;
+  padding: 35px 10%;
   left: 0;
 }
 .blocks {
@@ -448,7 +515,7 @@ a {
   bottom: -35px;
   background-color: #D8D8D8;
   border: 1px solid white;
-  padding: 32px 8%;
+  padding: 35px 10%;
   right: 5px;
 }
 /* footer */
@@ -557,11 +624,12 @@ footer .copyright {
   justify-content: space-between;
   align-items: center;
   margin: 50px 0;
+  width: 100%;
 }
 @media (max-width: 320px) {
   .tab-content {
     flex-direction: column;
-    margin: 35px 0;
+    margin: 30px 0;
   }
 }
 .tab-content h2 {
@@ -572,10 +640,22 @@ footer .copyright {
 .tab-content div {
   width: 50%;
 }
+@media (max-width: 320px) {
+  .tab-content div {
+    width: 95%;
+    margin: 10px 0;
+  }
+}
 .tab-content p {
   margin: 20px 0px 40px 0px;
 }
 .tab-content a {
   border: 1px solid #222222;
   padding: 14px 6.5%;
+  text-align: center;
+}
+@media (max-width: 320px) {
+  .tab-content a {
+    display: block;
+  }
 }
