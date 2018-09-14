@@ -45,3 +45,12 @@ let links = document.querySelector('.tabs');
 links = Array.from(links.children).map(el => new TabLink(el));
 
 links[0].select();
+
+/*
+links = Array.from(links.children).map(el => new Vue({
+    el: el,
+    data: {
+        message: 'Hello Vue!'
+    }
+}));
+*/
