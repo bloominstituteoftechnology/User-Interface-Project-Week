@@ -2,7 +2,10 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    index: './src/static/js/index.js'
+    index: './src/static/js/index.js',
+    services: './src/static/js/services.js',
+    contact: './src/static/js/contact.js'
+
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
