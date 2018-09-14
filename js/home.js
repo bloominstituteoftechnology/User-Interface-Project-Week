@@ -16,6 +16,8 @@ document.addEventListener('scroll', (e) => {
 
     if (largeSections[0].style.right === 0 ) {
       return true;
+
+      
     }
   }
 });
