@@ -63,6 +63,10 @@ table{
   max-width: 860px;
   width: 98%;
   margin: 0 auto;
+
+  @media @mobile {
+    width: 92%;
+  }
 }
 
 html {
@@ -80,7 +84,7 @@ p, a {
 }
 
 @mobile: (max-width: 320px);
-@mobilewidth: 90%;
+@mobilewidth: 92%;
 
 /* nav styling */
 
@@ -106,7 +110,7 @@ p, a {
 
     @media @mobile {
       padding: 10px auto;
-      width: 90%;
+      width: @mobilewidth;
     }
   }
 }
@@ -123,10 +127,6 @@ p, a {
     height: @height;
     display: flex;
     align-items: flex-end;
-
-    @media @mobile {
-      width: 90%;
-    }
 
     h1 {
       font-weight: bold;
@@ -147,7 +147,7 @@ p, a {
   .header-mixin(600px, url('../img/home/home-jumbotron.png'), 50px);
 
   @media @mobile {
-    .header-mixin(250px, url('../img/home/home-mobile-jumbotron.png'), 15px);
+    .header-mixin(260px, url('../img/home/home-mobile-jumbotron.png'), 25px);
   }
 } 
 
@@ -163,6 +163,11 @@ p, a {
   justify-content: space-between;
   align-items: center;
   margin: 50px 0;
+
+  @media @mobile {
+    flex-direction: column;
+    margin: 35px 0;
+  }
 
   h2 {
     .subheader();
@@ -192,15 +197,29 @@ p, a {
   padding: 14px 6.5%;
 }
 
+.mainimage (@background) {
+  background-image: @background;
+  width: 47.6%;
+  height: 275px;
+}
+
 /* main content */
 
 .about {
   .main-section-mixin(row-reverse);
+
+  .blueprint-image {
+    .mainimage(url('../img/home/home-img-1.png'));
+  }
 }
 
 .designs {
   .main-section-mixin();
   margin: 90px 0 110px 0;
+
+  .design-image {
+    .mainimage(url('../img/home/home-img-2.png'));
+  }
 }
 
 /* projects mixins */
@@ -218,7 +237,7 @@ p, a {
   bottom: -35px;
   background-color: #D8D8D8;
   border: 1px solid white;
-  padding: 32px 8%;
+  padding: 35px 10%;
 }
 
 .projects-text {
@@ -231,6 +250,13 @@ p, a {
   }
 }
 
+.projects-image(@background) {
+  width: 100%;
+  height: 230px;
+  background-repeat: no-repeat;
+  background-image: @background;
+}
+
 /* projects content */
 
 
@@ -241,12 +267,16 @@ p, a {
 
 
 .villas {
-
   .projects-section();
 
   .villas-header {
-    position: relative;
     width: 100%;
+    position: relative;
+
+    .villas-image {
+      .projects-image(url('../img/home/home-villas-img.png'))
+      right: 5px;
+    }
 
     h3 {
       .projects-header();
@@ -263,6 +293,10 @@ p, a {
     position: relative;
     width: 100%;
 
+    .outskirts-image {
+      .projects-image(url('../img/home/home-outskirts-img.png'))
+    }
+
     h3 {
       .projects-header();
       left: 0;
@@ -278,9 +312,13 @@ p, a {
     position: relative;
     width: 100%;
 
+    .blocks-image {
+      .projects-image(url('../img/home/home-the-blocks-img.png'))
+      }
+
     h3 {
       .projects-header();
-      right: 0;
+      right: 5px;
     }
   }
 }
