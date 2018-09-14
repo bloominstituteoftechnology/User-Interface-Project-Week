@@ -14,12 +14,24 @@
     max-width: 820px;
     margin: 20px auto 60px;
 
+    @media @mobile {
+        width: 92%;
+        max-width: 350px;
+        margin: 25px auto 20px;
+        border: 2px solid red;
+    }
+
 } //.overview
 
 .smith-jones {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
+    border: 2px solid green;
+
+    @media @mobile {
+        margin-bottom: 20px;
+    }
 
     .smith-jones-text {
         width: 48%;  //393.6 px
@@ -34,21 +46,53 @@
             border: 1px solid @button-border-color;
             width: 40%;
             height: 45px;
+
+            @media @mobile {
+                width: 100%;
+            }
+        }
+
+        @media @mobile {
+            padding: 20px 0 20px;
         }
     }
 
     img {
         width: 48%;
+
+        @media @mobile {
+            width: 100%;
+            order: -1;
+        }
     }
+
+    @media @mobile {
+        flex-direction: column;
+        .smith-jones-text {
+            width: 100%;
+        }
+
+    } //media query
+
 } //.smith-jones
 
 .futuristic {
     display: flex;
     justify-content: space-between;
+    border: 2px solid blue;
+
+    @media @mobile {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
 
     img {
         width: 48%;
-    }
+
+        @media @mobile{
+            width: 100%;
+        }
+    } //img
 
     .futuristic-text {
         width: 48%;  //393.6 px
@@ -63,11 +107,21 @@
             border: 1px solid @button-border-color;
             width: 40%;
             height: 45px;
+
+            @media @mobile {
+                width: 100%;
+            }
+        } //.overview-button
+
+        @media @mobile {
+            width: 100%;
+            padding: 20px 0 20px;
         }
-    }
+
+    } //.futuristic-text
 
 
-}
+}  //.futuristic
 
 // .villas
 .villas {
