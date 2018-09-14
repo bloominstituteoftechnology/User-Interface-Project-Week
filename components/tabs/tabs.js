@@ -4,7 +4,7 @@ class TabLink {
 
         this.dataSet = this.element.dataset.tab;
 
-        this.itemElement = document.querySelector(`.service-container[data-tab="${this.dataSet}"]`);
+        this.itemElement = document.querySelector(`.service-well[data-tab="${this.dataSet}"]`);
 
         this.tabItem = new TabItem(this.itemElement);
 
@@ -29,7 +29,7 @@ class TabItem {
 
     select() {
 
-        const items = document.querySelectorAll('.service-container');
+        const items = document.querySelectorAll('.service-well');
     
         Array.from(items).forEach(item => item.style.display='none');
      
