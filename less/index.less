@@ -74,59 +74,18 @@ HTML{
 @prem: 1.6rem;
 @20mar: 20px 0px;
 @paraMargin: 100px 0px 30px 0px;
+@deskmar: 20px 4%;
+@deskMax: 1000px;
 
 /* imports */
 @import "mixins.less";
 
-/*desktop*/
-  body{
-    width: 100%;
-    max-width: 1080px;
-    display: flex;
-    flex-direction: column;
-  
-    .mobileImg {
-      display: none;
-    }
-  
-    .mobileImgJumbo {
-      display: none;
-    }
-  
-    .mobileImgLineDraw {
-      display: none;
-    }
-  
-    .jumbotron {
-      display: flex;
-      height: 500px;
-      
-      h1 {
-        font-size: 5rem;
-        position: absolute;
-        align-self: flex-end;
-        padding: 0px 0px 30px 30px;
-        color: white;
-        font-family: 'Roboto', sans-serif;
-      }
-    }
-
-    section {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 90%;
-
-
-    }
-  }
-
 
 /* smartphone width*/
-@media screen and (max-width: 501px){
+@media screen and (max-width: 500px){
   body {
     width: 100%;
-    max-width: 501px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,11 +141,13 @@ HTML{
     p {
       font-size: @prem;
       padding-bottom: 15px;
+      max-width: @deskMax;
     }
 
     .imageBox{
       position: relative;
       width: 100%;
+      max-width: @deskMax;
     }
 
     .paragraphs {
@@ -262,6 +223,168 @@ HTML{
 }/*body*/   
 }/*media*/
 
+
+/*desktop*/
+@media screen and (min-width: 501px){
+  body{
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  
+    .mobileImg {
+      display: none;
+    }
+  
+    .mobileImgJumbo {
+      display: none;
+    }
+  
+    .mobileImgLineDraw {
+      display: none;
+    }
+  
+    .jumbotron {
+      height: 500px;
+      
+      h1 {
+        font-size: 5rem;
+        position: absolute;
+        align-self: flex-end;
+        padding: 0px 0px 30px 30px;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+
+      h2 {
+        font-size: @h2rem;
+        margin: @deskmar;
+      }
+
+      p {
+        font-size: @prem;
+        padding-bottom: 15px;
+        margin: @deskmar;
+      }
+
+      .button {
+        width: 50%;
+        height: 50px;
+        border-radius: 5px;
+        color: white;
+        background-color: darkblue;
+        text-align: center;
+        line-height: 3;
+        font-size: @prem;
+        margin: @deskmar;
+
+          &:hover {
+            cursor: pointer;
+            background-color: dodgerblue;
+          }
+        }
+
+        .firstImg{
+          display: flex;
+          flex-direction: row-reverse;
+          margin: @deskmar;
+        }
+
+        .secondImg{
+          display: flex;
+          flex-direction: row;
+          margin: @deskmar;
+        }
+
+        .imageBox{ 
+            .deskGreyBox1 {
+              width: 30%;
+              background-color: lightgrey;
+              height: 100px;
+              text-align: center;
+              line-height: 5;
+              margin: 0px;
+              position: absolute;
+              bottom: -629px;
+              right: 21px;
+            }
+
+            .deskGreyBox2 {
+              width: 30%;
+              background-color: lightgrey;
+              height: 100px;
+              text-align: center;
+              line-height: 5;
+              margin: 0px;
+              position: absolute;
+              bottom: -1090px;
+              left: 15px;
+            }
+
+            .deskGreyBox3 {
+              width: 30%;
+              background-color: lightgrey;
+              height: 100px;
+              text-align: center;
+              line-height: 5;
+              margin: 0px;
+              position: absolute;
+              bottom: -1575px;
+              right: 21px;
+            }
+          }
+
+        .paragraphs{
+          margin-top: 65px;
+        }   
+    }/*section*/
+
+          footer{
+            background-color: grey;
+            color: white;
+            width: 100%;
+        
+            .footContainer{
+              width: 90%;
+              padding: 30px 0px;
+              display: flex;
+              justify-content: space-evenly;
+        
+            h3{
+              font-size: @h2rem;
+              margin: 30px 0px;
+            }
+        
+            h4{
+              font-size: @prem;
+              margin: 10px 0px;
+            }
+        
+            input[type=email], select {
+              width: 100%;
+              padding: 12px 20px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              margin-bottom: 10px;
+          }
+          }/*foot container*/
+        }/*footer*/
+
+        h5{
+          font-size: 1rem;
+          margin-top: 20px;
+          text-align: center;
+        }
+  }/*body*/
+}/*media*/
 
 
 
