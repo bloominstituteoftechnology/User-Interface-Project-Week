@@ -16,10 +16,12 @@ function contact() {
       
     function clickMenu() {
       if (menuOpen === true) {
+        menuButton.classList.add("menu-button-close");
         menu.classList.remove("nav-close");
         menu.classList.add("nav-open");
         menuOpen = false;
       } else {
+        menuButton.classList.remove("menu-button-close");
         menu.classList.remove("nav-open");
         menu.classList.add("nav-close");
         menuOpen = true;

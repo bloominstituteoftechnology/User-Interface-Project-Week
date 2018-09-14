@@ -7,22 +7,21 @@ function interface() {
   menuButton.addEventListener("click", clickMenu);
   let menu = document.querySelector(".nav");
   const formInput = document.querySelector(".input");
-  formInput.addEventListener("focus", inputFocus);
-  formInput.addEventListener("keyup", inputEnter);
-
+  formInput.addEventListener("click", inputFocus);
+  
 
   function clickMenu() {
     if (menuOpen === true) {
+      menuButton.classList.add("menu-button-close");
       menu.classList.remove("nav-close");
       menu.classList.add("nav-open");
       menuOpen = false;
     } else {
+      menuButton.classList.remove("menu-button-close");
       menu.classList.remove("nav-open");
       menu.classList.add("nav-close");
       menuOpen = true;
     }
-
-
   }
 
 
@@ -32,17 +31,6 @@ function interface() {
       formInput.value = "";
     }
   }
-
-  function inputEnter() {
-    //check for bad input???? Like not an real email address...
-    let theKey = formInput.value;
-    console.log("the key is: " + theKey);
-    if (theKey === "enter") {
-      alert("Thank you for submitting your email. We will be contacting you shortly.");
-      //submit the page
-    };
-  }
-
 
 }
 
