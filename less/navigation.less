@@ -5,13 +5,12 @@ header {
     background-color: @header-bg;
 
     h1 {
-        margin-left: 10%;
-        width: 15%;
+        margin-left: 12%;
         color: @header-color;
     }
 
     .menu-btn {
-        margin-right: 10%;
+        margin-right: 12%;
     }
 
     @media @mobile {
@@ -21,13 +20,32 @@ header {
     }
 }
 
-nav {
-    .flex-row(space-between);
-    width: 25%;
-    margin-right: 18%;
-    display: none;
-    a {
-        text-decoration: none;
-        color: @header-color;
+.dropdown {
+    z-index: 2;
+    margin-right:12%;
+    cursor: pointer;
+    .dropdown-content {
+      width: 10%;
+      position: absolute;
+      background-color: @header-bg;
+      display: flex;
+      flex-direction: column;
+      align-items: center;  
+      margin-top: 10px;
     }
-}
+    .dropdown-link {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 18px;
+      color: @header-color;
+      text-decoration: none;
+      &:hover {
+        color: @header-bg;
+        background-color: white;
+      }
+    }
+    .dropdown-hidden {
+      display: none;
+    }
+  }
