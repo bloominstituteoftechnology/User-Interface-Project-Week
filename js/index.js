@@ -1,27 +1,21 @@
 const navButton = document.querySelector('.menu');
-const anchors = document.querySelectorAll('a');
+const nav = document.querySelector('nav');
 
 let hamburgerIsClosed = true;
 
-anchors.forEach(a => {
-    a.style.display = 'none';
-});
+nav.style.display = 'none';
 
 const hamburgerHandler = function() {
     if (hamburgerIsClosed) {
         document.getElementById('hamburger').src = '../img/nav-hamburger-close.png';
 
-        anchors.forEach(a => {
-            a.style.display = '';
-        });
+        nav.style.display = '';
 
         hamburgerIsClosed = false;
     } else {
         document.getElementById('hamburger').src = '../img/nav-hamburger.png';
 
-        anchors.forEach(a => {
-            a.style.display = 'none';
-        });
+        nav.style.display = 'none';
         
         hamburgerIsClosed = true;
     }
