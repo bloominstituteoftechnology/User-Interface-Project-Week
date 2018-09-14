@@ -150,42 +150,51 @@ table {
   background-color: black;
   color: #fff;
 }
-.header {
+.nav {
   width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  padding: 10px;
-  background-color: #98A4B0;
+  max-width: 880px;
+  height: 26px;
   position: fixed;
   z-index: 20;
+  display: flex;
+  justify-content: space-around;
+  padding: 29px 0;
+  background: #98A4AF;
 }
 @media (max-width:500px) {
-  .header {
-    max-width: 500px;
+  .nav {
+    width: 100%;
   }
 }
-.header nav {
-  margin-right: 90px;
-}
-@media (max-width:500px) {
-  .header nav {
-    margin-right: 15px;
-  }
-}
-.header a {
-  visibility: hidden;
-}
-.header .logo {
+.nav .logo {
+  padding-right: 59.15%;
+  font-weight: bolder;
+  font-size: 2.4rem;
   color: white;
-  margin-left: 90px;
 }
-@media (max-width:500px) {
-  .header .logo {
-    margin-left: 15px;
-  }
+.nav .links {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  position: fixed;
+  z-index: 3;
+  top: 16.25%;
+  left: 43%;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 85px;
+}
+.nav a {
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+}
+.nav a:hover {
+  color: #222222;
+}
+.hamClose {
+  display: none;
 }
 * {
   box-sizing: border-box;
@@ -229,6 +238,7 @@ body {
 }
 .footer {
   margin-top: 78px;
+  margin-bottom: 28px;
   display: flex;
   flex-direction: column;
   background: #828282;
@@ -331,14 +341,10 @@ body {
 }
 @media (max-width:500px) {
   .jumbotron .jumbotron-text {
-    bottom: 28px;
-    left: 3%;
-  }
-  .jumbotron .jumbotron-text h1 {
-    font-size: 4rem;
-    line-height: 4.4rem;
-    bottom: 20px;
-    left: 3%;
+    margin-top: -150px;
+    left: 15px;
+    line-height: 42px;
+    font-size: 36px;
   }
 }
 .top-content {
@@ -352,6 +358,13 @@ body {
   justify-content: space-between;
   padding-left: 3%;
   padding-right: 3%;
+}
+@media (max-width:500px) {
+  .top-content {
+    width: 100%;
+    align-items: flex-start;
+    margin: 0;
+  }
 }
 .top-content .top-text {
   flex-direction: column;
@@ -375,6 +388,11 @@ body {
 }
 .top-content img {
   width: 100%;
+}
+@media (max-width:500px) {
+  .top-content img {
+    display: none;
+  }
 }
 .future-sec {
   width: 100%;
