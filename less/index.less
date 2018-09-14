@@ -63,6 +63,7 @@ table{
 @navigation-color: #9a9b9b;
 @logo-color: #FFFFFF;
 @title-color: #FFFFFF;
+@title-font-size: 64px;
 @fonts: Roboto, Arial, sans-serif;
 @subtitles-color: #222222;
 @subtitles-size: 24px;
@@ -71,6 +72,7 @@ table{
 @general-font-size: 18px;
 @footer-title-font-size: 20px;
 @footer-text-font-size: 14px;
+@mobile: ~"(max-width: 650px)";
 
 //Mix-ins
 .flex-center-center (@width, @height, @margin, @padding) {
@@ -102,7 +104,7 @@ table{
 
 // Main
 html{
-  width: 1025px;
+  max-width: 1025px;
   height: auto;
   margin: auto;
   font-family: @fonts;
@@ -122,11 +124,18 @@ body{
     #nav-bar-open{
       display: none;
     }
+    @media @mobile{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
   #title{
     height: 600px;
+    @media @mobile{
+      height: 250px;
+    }
     h1{
-      font-size: 64px;
+      font-size: @title-font-size;
       line-height: 75px;
       font-weight: bold;
       color: @title-color;
@@ -139,10 +148,19 @@ body{
       // flex-direction: column;
       // justify-content: space-between;
       height: 220px;
+      @media @mobile{
+        font-size: 36px;
+        line-height: 44px;
+        left: 15px;
+        bottom: 160px;
+      }
     }
     img{
       width: 100%;
       height: 550px;
+      @media @mobile{
+        height: 210px;
+      }
     }
   }
   .top-categories{
@@ -151,65 +169,117 @@ body{
     margin: auto;
     justify-content: space-evenly;
     margin-bottom: 100px;
+    @media @mobile{
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-bottom: 10px;
+      height: 570px;
+      justify-content: center;
+    }
     img{
       width: 45%;
+      @media @mobile{
+        width: 100%;
+        height: 270px;
+      }
     }
     .content-block{
       width: 45%;
+      min-width: 40%;
       height: 275px;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      @media @mobile{
+        width: 100%;
+        height: 320px;
+
+      }
       h3{
         color: @subtitles-color;
         font-weight: bold;
         font-size: @subtitles-size;
         margin-top: 20px;
+        @media @mobile{
+          margin-top: null;
+          width: 100%;
+        }
       }
       p{
-        height: 75px;
+        height: 85px;
         display: flex;
         align-items: center;
         line-height: @general-line-height;
       }
       .subtitle-buttons{
         border: 1px solid;
-        .flex-center-center(135px, 50px, null, null);
+        .flex-center-center(32.52%, 50px, null, null);
+        @media @mobile{
+          width: 100%;
+        }
       }
+    }
+  }
+  #Futuristic-Designs-block{
+    @media @mobile{
+      flex-direction: column;
     }
   }
   .bottom-categories{
     width: 85%;
     margin: auto;
+    @media @mobile{
+      width: 100%;
+    }
     h3{
       color: @subtitles-color;
         font-weight: bold;
         font-size: @subtitles-size;
         height: 50px;
         margin-bottom: 15px;
+        @media @mobile{
+          margin-left: 15px;
+          margin-bottom: 0px;
+        }
     }
     .recent-projects{
       margin-bottom: 75px;
+      @media @mobile{
+        margin-bottom: 25px;
+      }
       .title-pic-combo{
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        // max-width: 871.250px;
         img{
           height: 230px;
           width: 98%;
           margin: auto;
+          @media @mobile{
+            height: 205px;
+          }
         }
         .subtitles-overlay{
           border: 2px solid @logo-color;
           background-color: @recent-projects-bg-color;
-          .flex-center-center(315px, 100px, null, null);
+          .flex-center-center(36.15%, 100px, null, null);
           position: relative;
           bottom: 55px;
-          right: 10px; 
+          right: 10px;
+          @media @mobile{
+            width: 92%;
+            bottom: 15px;
+            margin-bottom: 25px;
+          }
         }
         #Outskirts-title{
-          right: 550px;
+          right: 62.75%;
           height: 90px;
+          @media @mobile{
+            width: 92%;
+            right: 3%;
+          }
         }
       }
       .text-content{
@@ -220,6 +290,10 @@ body{
         font-size: @general-font-size;
         position: relative;
         bottom: 20px;
+        @media @mobile{
+          width: 90%;
+          line-height: 31px;
+        }
       }
     }
   }
@@ -230,6 +304,12 @@ body{
     justify-content: space-evenly;
     color: white;
     font-size: @footer-text-font-size;
+    @media @mobile{
+      flex-direction: column;
+      height: auto;
+      width: 100%;
+      height: 660px;
+    }
     .footer-titles{
       font-weight: bold;
       font-size: @footer-title-font-size;
@@ -243,24 +323,41 @@ body{
       width: 40%;
       line-height: @general-line-height;
       margin-top: 30px;
-      margin-left: 20px;
+      margin-left: 1.9525%;
+      @media @mobile{
+        width: 92%;
+        margin: 0px;
+      }
+      #email-entry-title{
+        width: 72%;
+        @media @mobile{
+          width: 90%;
+        }
+      }
       #email-enter{
         background-color: white;
         border-radius: 3px;
-        width: 70%;
+        width: 72%;
         height: 40px;
         color: grey;
         display: flex;
         align-items: center;
         margin-top: 25px;
+        @media @mobile{
+          width: 90%;
+          height: 50px;
+        }
         #email-enter-text{
           margin-left: 5px;
         }
       }
       #security-notice{
         font-size: 12px;
-        width: 70%;
-        margin-top: 5px;
+        width: 72%;
+        margin-top: 1.9525%;
+        @media @mobile{
+          width: 90%;
+        }
       }
     }
     #locations-list{
@@ -269,12 +366,26 @@ body{
       justify-content: space-evenly;
       align-items: center;
       width: 60%;
+      @media @mobile{
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        margin-left: 15px;
+        height: 450px;
+      }
       .locations{
+        // width: 25%;
+        // height: 144px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         line-height: @general-line-height;
-        margin-right: 80px;
+        margin-right: 13.01%;
         margin-top: 25px;
+        min-width: 80px;
+        @media @mobile{
+          margin: 0px;
+        }
       }
     }
   }
@@ -285,5 +396,14 @@ body{
     font-size: 12px;
     color: white;
     height: 20px;
+    @media @mobile{
+      height: 30px;
+      justify-content: flex-start;
+    }
+    span{
+      @media @mobile{
+        margin-left: 15px;
+      }
+    }
   }
 }
