@@ -18,7 +18,7 @@ function interface() {
       menuOpen = false;
     } else {
       menuButton.classList.remove("menu-button-close");
-      menu.classList.remove("nav-open");
+     menu.classList.remove("nav-open");
       menu.classList.add("nav-close");
       menuOpen = true;
     }

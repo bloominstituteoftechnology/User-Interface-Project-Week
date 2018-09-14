@@ -36,12 +36,13 @@
 .nav {
     display: none;
     flex-direction: column;
-    position: relative;
+    position: fixed;
     max-width: 100%;
-    top: 50px;
-    width: 100%;
-    height: 90vh;
-    left: -60px;
+    top: 60px;
+    width: 40%;
+    //height: 90vh;
+    height: 500px;
+    left:30%;
     justify-content: center;
     background-color: rgb(216, 216, 216);
     border: 4px solid darkgray;
@@ -51,24 +52,43 @@
 }
 
 .nav-open {
-    display: flex;
+    display: block;
+    animation: moveIt2 1s 1;
 }
 
 .nav-close {
-    display: none;
+    display: block;
+    animation: loseIt2 1s 1 forwards;
+   
 }
 
+.navUl {
+    //top: 200px;
+    padding-top: 120px;
+    //border: 2px solid blue;
+}
 .navLi {
     max-width: 100%;
     .marginCenter;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    
     font-size: 4.0rem;
     text-align: center;
     padding-bottom: 20px;
     padding-top: 20px;
 }
+
+@keyframes moveIt2 {
+    0% {top: -500px;}
+   100% {top: 50px;}
+  }
+
+@keyframes loseIt2 {
+    0% {top: 50px;}
+   100% {top: -500px;}
+  }
 
 //*********************************************
 //*** FOR SCREENS SMALLER THAN 320 ************
@@ -94,12 +114,12 @@
     }
     .nav {
         display: none;
-        position: relative;
+        position: fixed;
         max-width: 320px;
         top: 50px;
-        width: 100%;
-        height: 90vh;
-        left: -6.54%;
+        width: 90%;
+        height: 400px;
+        left: 5%;
         justify-content: center;
         background-color: rgb(216, 216, 216);
         border: 2px solid darkgray;
@@ -107,10 +127,12 @@
         /* This set the layer level of the element, it has precendence over initial level of 1*/
     }
     .nav-open {
-        display: flex;
+        display: block;
+        animation: moveItMobile 1s 1;
     }
     .nav-close {
-        display: none;
+        display: block;
+        animation: loseItMobile 1s 1 forwards;
     }
     .navLi {
         max-width: 100%;
@@ -118,9 +140,20 @@
         margin-left: auto;
         margin-right: auto;
         width: 50%;
-        font-size: 2.0rem;
+        font-size: 3.0rem;
         text-align: center;
         padding-bottom: 10px;
         padding-top: 10px;
     }
+    
+    @keyframes moveItMobile {
+        0% {top: -500px;}
+       100% {top: 50px;}
+      }
+    
+    @keyframes loseItMobile {
+        0% {top: 50px;}
+       100% {top: -500px;}
+      }
+    
 }
