@@ -33,7 +33,7 @@ this.tabItem.select();
 
 class TabItem {
 constructor(element) {
-this.element;
+this.element = element;
 }
 
 select() {
