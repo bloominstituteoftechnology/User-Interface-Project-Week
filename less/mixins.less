@@ -1,18 +1,32 @@
+
+
+
+// Setting Width
+
 .width-100 {
     width: 100%;
-} //Center and Column or Row Flex
+}
+
+
+//Center and Column or Row Flex
 .flex(@jc: none, @ai: none, @dir: row) {
     display: flex;
     justify-content: @jc;
     align-items: @ai;
     flex-direction: @dir;
-} //Flex Wrap
+} 
+
+
+//Flex Wrap
 .flex-wrap(@jc: none, @ai: none, @fw: wrap) {
     display: flex;
     justify-content: @jc;
     align-items: @ai;
     flex-wrap: @fw;
-} // Headers & Footers 
+} 
+
+
+// Headers & Footers 
 .header4 (@size: none, @color: none) {
     h4 {
         font-size: @size;
@@ -32,7 +46,7 @@
 }
 
 // Parametric Mix-in Flex and Button Creator
-.button-creator( @width: 200px, @font-btn-size: 2rem) {
+.button-creator( @width: "", @font-btn-size: 2rem) {
     font-size: @font-btn-size;
     width: @width;
     border-radius: 2px;
@@ -41,6 +55,9 @@
     cursor: pointer;
     padding: 10px 0px;
 }
+
+
+// Image heading on home page
 
 .img-heading (@right: "", @left: "", @bottom: "") {
     position: absolute;
@@ -61,9 +78,27 @@
     font-size: 2rem;
 }
 
+
+// Trying transitions mixins
+
 .transition(@prams: height 200ms ease-in) {
     -webkit-transition: @prams;
     -moz-transition: @prams;
     -ms-transition: @prams;
     -o-transition: @prams;
 }
+
+
+//media mix-in 
+ .media-mobile__future {
+
+    @media @mobile {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+box-sizing: border-box;
+  background: url(/img/home/home-mobile-img-2.png) no-repeat;
+  width: 180px;
+  height: 236px;
+    }
+ }
