@@ -1,0 +1,157 @@
+
+@mobile:~"(max-width:500px)";
+@white:  #FFFFFF;
+@black: #222222;
+@standard-font-size: 1.6rem;
+@standard-line-height:2.4rem;
+.sub-headers{
+    font-weight:bold;
+    font-size:2.8rem;
+    color:@black;
+  }
+
+  .footer-headers{
+    font-weight: regular;
+    font-size: 2rem;  
+    line-height: 2.4rem;
+    color: @white;
+  }
+
+html{
+    font-size:62.5%;
+    box-sizing:border-box;
+    background-color: @white;
+    color: @black;
+    font-family: Roboto, Arial, sans-serif;
+}   
+body{
+    max-width:1024px;
+    margin:0 auto;
+    
+    //navigation section below
+    .navigation-section{
+        background-color:#98A4AF;
+        display:flex;
+        justify-content:space-between;
+        position:fixed;
+        max-width:1024px;
+        height:70px;
+        width:100%;
+        z-index:1;
+
+    
+        .logo{
+            font-weight:bold;
+            font-size:2.4rem;
+            color:@white;
+            padding:20px 7%;
+            }   
+        
+        nav{
+            padding:20px 7%;
+            
+            a{
+            display:none;
+            }
+        }
+    
+
+        .navigation-expanded{
+            font-weight: bold;
+            font-size: 4.8rem;
+            line-height: 8.5rem;
+            color:@white;
+            
+            &:hover { 
+            color: @black;
+            }
+        }
+    }
+    //jumbotron section
+    .jumbotron-section{
+        position:relative;
+        width:100%;
+
+
+        .jumbo-header{   
+            position:absolute;
+            bottom:45px;
+            left:8%;
+            font-weight:bold;
+            font-size:6.4rem;
+            line-height:7.5rem;
+            color:@white;
+            
+            @media @mobile{
+                font-size:4.8rem;
+            }
+        }
+    }
+    
+    //footer section below
+    footer{
+        background-color:#828282;
+        display:flex;
+        flex-direction:column;
+        font-size:1.4rem;
+        line-height:2.6rem; 
+        color:@white;
+        padding:30px 7%;
+        margin-top:30px;
+        
+        @media @mobile{
+            font-size:2rem;
+            line-height:3.2rem;
+        }
+        
+        .footer-main{
+            display:flex;
+            justify-content:space-around;
+            
+            @media @mobile{
+                flex-direction: column;
+            }
+            .email-section{
+                display:flex;
+                flex-direction:column;
+                width:35%;
+                @media @mobile{
+                width:100%;
+           
+                .footer-header{
+                    .footer-headers;
+                    
+                    @media @mobile{
+                    font-size:3rem;
+                    line-height:3.6rem;
+                    }
+                }
+            }
+        
+            .address-section{
+                display:flex;
+                justify-content:space-around;
+                width:65%;
+
+                @media @mobile{
+                flex-direction:column;
+                }
+
+                .footer-header{
+                    .footer-headers;
+                    
+                    @media @mobile{
+                    font-size:3rem;
+                    line-height:3.6rem;
+                    }
+                }
+            }
+        }
+        h5{
+            text-align:center;
+            margin-top:50px;
+            }  
+        }    
+
+    }   
+}
