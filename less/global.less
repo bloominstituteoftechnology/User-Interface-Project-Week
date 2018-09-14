@@ -27,47 +27,54 @@ html{
 body{
     max-width:1024px;
     margin:0 auto;
+    width:100%;
     
     //navigation section below
-    .navigation-section{
-        background-color:#98A4AF;
-        display:flex;
-        justify-content:space-between;
+    .nav-bar{
         position:fixed;
+        height:70px; 
+        background-color:#9CA8B1;
+        color:@white;
         max-width:1024px;
-        height:70px;
         width:100%;
         z-index:1;
+        .nav-closed{
+            display:flex;
+            justify-content:space-between;
+            padding:20px 7%;
 
-    
-        .logo{
-            font-weight:bold;
-            font-size:2.4rem;
-            color:@white;
-            padding:20px 7%;
-            }   
-        
-        nav{
-            padding:20px 7%;
-            
-            a{
-            display:none;
+            .logo{
+                font-size: 2.4rem;
+                font-weight:bold;
             }
-            img{
+            .close-btn{
                 display:none;
             }
         }
-    
 
-        .nav-expanded{
-            font-weight: bold;
-            font-size: 4.8rem;
-            line-height: 8.5rem;
-            color:@white;
-            display:flex;
+        .nav-open{
+            display:none;
             
-            &:hover { 
-            color: @black;
+            nav{
+                display:flex;
+                flex-direction:column;  
+                justify-content:center;
+                align-items:center;
+                width:100%;
+                height:100%;
+                
+                a{
+                    text-decoration:none;
+                    font-weight: bold;
+                    font-size: 4.8rem;
+                    line-height: 8.5rem;
+                    color: @white;
+                    text-decoration:none;
+                    margin-top:80px;
+                    &:hover {
+                        color: @black;
+                    }
+                }
             }
         }
     }
@@ -76,7 +83,10 @@ body{
         position:relative;
         width:100%;
 
-
+        #jumbo-img{
+            max-width:1024px;
+            width:100%;
+        }
         .jumbo-header{   
             position:absolute;
             bottom:45px;
@@ -87,75 +97,75 @@ body{
             color:@white;
             
             @media @mobile{
-                font-size:4.8rem;
+                font-size:3.2rem;
+                line-height:4rem;
+                bottom:20px;
+                left:5%;
             }
         }
     }
     
-    //footer section below
+    // //footer section below
     footer{
         background-color:#828282;
         display:flex;
         flex-direction:column;
-        font-size:1.4rem;
-        line-height:2.6rem; 
+        justify-content:space-around;
         color:@white;
-        padding:30px 7%;
-        margin-top:30px;
-        
+        font-size:@standard-font-size;
+        align-items:center;
+        max-width:1024px;
+        height:280px;
+        width:100%;
+
         @media @mobile{
-            font-size:2rem;
-            line-height:3.2rem;
+            height:auto;
         }
         
+
         .footer-main{
             display:flex;
-            justify-content:space-around;
+            width:90%;
+            height:170px;
+
+           @media @mobile{
+               flex-direction:column;
+               height:auto;
+           }
             
-            @media @mobile{
-                flex-direction: column;
-            }
+
             .email-section{
+                width:32%;
                 display:flex;
                 flex-direction:column;
-                width:35%;
-                @media @mobile{
-                width:100%;
-           
+                justify-content:space-around;
+
+               
                 .footer-header{
                     .footer-headers;
-                    
-                    @media @mobile{
-                    font-size:3rem;
-                    line-height:3.6rem;
-                    }
+                }
+                input{
+                    width:70%;
                 }
             }
-        
             .address-section{
+                width:68%;
                 display:flex;
                 justify-content:space-around;
-                width:65%;
 
-                @media @mobile{
-                flex-direction:column;
-                }
-
+               
                 .footer-header{
                     .footer-headers;
+                }
+                .address{
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:space-around;
                     
-                    @media @mobile{
-                    font-size:3rem;
-                    line-height:3.6rem;
-                    }
+                   
                 }
             }
-        }
-        h5{
-            text-align:center;
-            margin-top:50px;
-            }  
-        }    
 
-    }   
+        }
+    }
 }
