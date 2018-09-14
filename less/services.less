@@ -10,6 +10,7 @@ h3 {
     height: 195px;
     .flex-display(row, flex-start, flex-end);
     color: @main-bg;
+    font-weight: bold;
     padding: 10px 8%;
 }
 
@@ -21,12 +22,23 @@ h3 {
     .flex-display(row, space-between, center);
     width: 84%;
 
+    @media @mobile {
+        .flex-display(row, space-between, space-between);
+        flex-wrap: wrap;
+        height: 124px;
+    }
+
     .tabs__button {
         .flex-display(row, center, center);
         border: 1px solid @font-color;
         height: 50px;
-        width: 20%;
+        width: 23%;
         color: @font-color;
+
+        @media @mobile {
+            width: 48%;
+
+        }
 
     }
 
@@ -43,6 +55,12 @@ h3 {
     margin: 50px 0;
     margin-bottom: 100px;
 
+    @media @mobile {
+        .flex-display(column-reverse, center, center);
+        margin: 25px 0;
+        margin-bottom: 75px;
+    }
+
     .tab-content__title {
         display: none;
         text-align: left;
@@ -57,8 +75,16 @@ h3 {
         .flex-display(column, flex-start, center);
         width: 47%;
 
+        @media @mobile {
+            width: 100%
+        }
+
         p {
             margin: 20px 0;
+
+            @media @mobile {
+                margin: 5px 0;
+            }
         }
     }
 
@@ -66,6 +92,11 @@ h3 {
         width: 47%;
         height: 275px;
         display: none;
+
+        @media @mobile {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
 
     .tab-content__image-selected {
