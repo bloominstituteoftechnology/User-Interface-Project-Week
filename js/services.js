@@ -5,7 +5,7 @@ class TabLink {
         this.data = this.el.dataset.tab;
 
         this.header = document.querySelector(".content-header");
-
+        console.log(this.data);
         this.el.addEventListener("click", () => {
             this.display();
         })
