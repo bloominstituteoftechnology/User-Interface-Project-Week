@@ -18,11 +18,14 @@ function toggleMenuOpenButton () {
  menuLinks.classList.toggle("openMenu");
  burgerOpen.style.display = "none";
  burgerClose.style.display = "block";
+ siteLogo.style.left = "35px"
 }
 function toggleMenuCloseButton () {
     menuOpenBackground.classList.toggle("openMenu");
+    menuLinks.classList.toggle("openMenu");
     burgerOpen.style.display = "block";
     burgerClose.style.display = "none";
+    siteLogo.style.left = "-30px";
 }
 
 burgerOpen.addEventListener('click', () => {toggleMenuOpenButton();});
