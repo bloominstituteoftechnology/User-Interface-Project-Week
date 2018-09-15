@@ -1,6 +1,10 @@
 /* Page specific nav settings */
 .content.home nav {
   .nav-settings("../img/home/home-jumbotron.png",1024px 598px,598px);
+
+  @media @mobile {
+    .nav-settings("../img/home/home-mobile-jumbotron.png",320px 260px, 260px);
+  }
 }
 .content.services nav {
   .nav-settings("../img/services/services-jumbotron.png",1024px 250px, 250px);
@@ -33,8 +37,10 @@ nav {
         right: 0;
         width: 854px;
         margin: auto;
+        z-index: 1;
         @media @mobile {
           padding: 12px 12px;
+          width: 320px;
         }
   
         .name {
@@ -47,11 +53,16 @@ nav {
         }
     
         .menu-closed {
-          
+          @media @mobile {
+            padding-right: 20px;
+          }
         }
     
         .menu-opened {
           display: none;
+          @media @mobile {
+            padding-right: 20px;
+          }
         }
     
         .menu-items {
@@ -60,11 +71,12 @@ nav {
           width: 1024px;
           margin: auto;
           height: 100%;
-          top: 120px;
+          top: 100px;
           left: 0;
           right: 0;
           bottom: 0;
           background-color: @nav-background;
+          z-index: 1;
 
           .menu-block {
             .flex(column, center, flex-end);
@@ -95,8 +107,9 @@ nav {
         width: 84%;
         
         @media @mobile {
-          height: 185px;
-          font-size: 33px;
+          width: 90%;
+          height: 233px;
+          font-size: 35px;
           line-height: 40px;
         }
       }
