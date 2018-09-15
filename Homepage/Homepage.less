@@ -1,6 +1,32 @@
+body {
+  @media @phone {
+    width: 400px;
+  }
+}
+
+.container {
+  @media @phone {
+    width: 80%;
+  }
+}
+
 .home-header {
   position: relative;
   width: 100%;
+
+  .headerImage-mobile {
+    display: none;
+  }
+  @media @phone {
+    .headerImage {
+      display: none;
+    }
+
+    .headerImage-mobile {
+      display: block;
+      width: 400px;
+    }
+  }
   /* for IE 6 */
   .header-text {
     position: absolute;
@@ -14,6 +40,12 @@
     font-family: @main-font;
     font-weight: 700;
     line-height: 75px;
+    @media @phone {
+      font-size: 4.45em;
+      line-height: 52px;
+      padding-left: 0;
+      bottom: 5px;
+    }
   }
 }
 
@@ -23,6 +55,10 @@
   padding-right: 145px;
   flex-direction: row-reverse;
   width: 94%;
+  @media @phone {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
   .future-text {
     padding-top: 0;
@@ -72,6 +108,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @media @phone {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
   .text-content {
     padding-top: 2px;
@@ -117,6 +157,21 @@
 
   .img-content {
     width: 48%;
+
+    .home-image-mobile {
+      display: none;
+    }
+    @media @phone {
+      .home-image {
+        display: none;
+      }
+
+      .home-image-mobile {
+        display: flex;
+        justify-content: center;
+        width: 320px;
+      }
+    }
   }
 }
 
@@ -134,11 +189,15 @@
   .project {
     position: relative;
     width: 100%;
+
     &:nth-child(odd) {
-      h3 {left: 33px;
-      right: 0px;
-    width:230px;}
+      h3 {
+        left: 33px;
+        right: 0;
+        width: 230px;
+      }
     }
+
     p {
       font-family: @main-font;
       font-size: 1.9em;
@@ -187,12 +246,12 @@ footer {
     color: @white;
     font-family: @main-font;
     position: absolute;
-  right: 0;
-  bottom: 120;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  bottom:0;
+    right: 0;
+    bottom: 120;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    bottom: 0;
   }
 
   .locations {
