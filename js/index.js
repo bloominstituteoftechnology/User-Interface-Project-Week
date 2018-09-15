@@ -29,28 +29,31 @@ class TabLink {
 
         // Get custom data attribute on the link
         this.data = this.el.dataset.tab;
-
+        
         // Get associated item element
-        this.itemElement = document.querySelectorAll(`.cta-row.service-tab[data-tab="${this.data}"]`);
-
+        this.itemElement = document.querySelector(`.service-tab[data-tab="${this.data}"]`);
+        
         // Create a new instance of the TabItem class
-        this.tabItem = new this.tabItem(this.itemElement);
-
+        this.tabItem = new TabItem(this.itemElement);
+        
         // Add a click listener - calling select method on click
         this.el.addEventListener('click', () => {this.select()});
     };
 
     select() {
         // Get all button elements
-        this.links = document.querySelectorAll('.cta-row.button');
-
+        this.links = document.querySelectorAll('.cta-row .button');
+        
         // Remove the selected class from all links
         Array.from(this.links).forEach( function(element) {
-            element.classList.remove('.button-selected');
+            element.classList.remove('button-selected');
         });
 
         // Add .button-selected to this button
-        this.el.classList.add('.button-selected');
+        this.el.classList.add('button-selected');
+
+        // Call select method on item associated with this link
+        this.tabItem.select();
     }
 }
 
@@ -60,21 +63,23 @@ class TabItem{
     }
 
     select() {
+        console.log("this.el:", this.el);
         // Select all tab content
         this.itemElements = document.querySelectorAll('.cta-row.service-tab');
-
+        
         // Remove class .service-tab-selected from each element
         Array.from(this.itemElements).forEach( function(itemElement) {
-            itemElement.classList.remove('.service-tab-selected');
+            itemElement.classList.remove('service-tab-selected');
         });
 
         // Add .service-tab-selected to selected element
-        this.el.classList.add('.service-tab-selected');
+        this.el.classList.add('service-tab-selected');
+        console.log("classlist",this.el.classList);
     }
 }
 
-
-let links = document.querySelectorAll('.cta-row.button');
+// Get all buttons
+let links = document.querySelectorAll('.cta-row .button');
 
 // Create a new instance of TabLink for each button item
 links = Array.from(links).map( (link) => {return new TabLink(link)});
