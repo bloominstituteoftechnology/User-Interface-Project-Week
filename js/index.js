@@ -10,7 +10,7 @@ class Dropdown{
 
         this.button = document.querySelector(".hamburger"); 
 
-        this.button.addEventListener("click",() => {
+        this.button.addEventListener("click", () => {
             this.toggleContent()
             })
     }
@@ -20,8 +20,10 @@ class Dropdown{
           this.nav.style.alignItems = "flex-start"; 
           this.button.style.paddingTop = "18px"; 
           this.element.style.display = "flex"; 
+          this.button.setAttribute("src", "img/nav-hamburger-close.png");
           this.open = true; 
     }else {
+          this.button.setAttribute("src", "img/nav-hamburger.png"); 
           this.nav.style.backgroundColor = ""; 
           this.element.style = ""; 
           this.open = false; 
