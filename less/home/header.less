@@ -1,8 +1,8 @@
 header{
 background: @color-header;
-height: 50px;
+
 width: 100%;
-padding: 10px;
+
 .display-flex-spacebtween-centered;
 
 .nav{
@@ -15,6 +15,7 @@ padding: 10px;
             font-weight:bold ;
             font-size: 2.4rem; 
             color:@color-white;
+            margin-left: 1%;
             @media @mobile{
                 font-size: 1.3rem;
                 font-weight: bold;
@@ -22,21 +23,60 @@ padding: 10px;
         }
 
         &--btn{
-
-            &__open{
-
-            }
-
-            &__close{
-                display: none;
+            width: 35px;
+            height: 30px;
+            margin: 20px 1%;
+            
+            @media @mobile{
+                width: 25px;
+                height: 20px;
+                margin: 20px 2%;
             }
         }
 
+        .open{
+            background: url(../img/nav-hamburger.png);
+            .bacground-image;
+        }
+
+        .close{
+           
+            background: url(../img/nav-hamburger-close.png);
+            .bacground-image;
+        }
     }
+
+    
     .nav--links{
         display: none;
+        position: absolute;
+        background: @color-header;
+        width: 100%;
+        
+
+        .link{
+            display: block;
+            padding: 10px 2%;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: @color-white;
+            text-align: center;
+            transition: color 1s ease, padding-left 1s ease;
+            
+        }
+
+        .link:hover{
+            color: @color-DarkGrey;
+            padding-left: 3%;
+          
+            
+        }
     }
+
+    .nav--links__open{
+        display: block;
 }
 
 }
 
+}
