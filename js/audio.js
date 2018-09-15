@@ -32,8 +32,7 @@ function updatePlayPause() {
 function endAudio() {
     document.getElementById("play").value = "Play";
     document.getElementById("audioSeek").value = 0;
-    document.getElementById("duration").innerHTML = "0/" + Math.round
-        (audio.duration);
+    document.getElementById("duration").innerHTML = "0/" + Math.round(audio.duration);
 }
 
 audio.addEventListener("durationchange", setupSeek, false);
@@ -51,8 +50,7 @@ function updateSeek() {
     let seek = document.getElementById("audioSeek");
     seek.value = Math.round(audio.currentTime);
     let duration = document.getElementById("duration");
-    duration.innerHTML = Math.round(audio.currentTime) + "/" +
-        Math.round(audio.duration);
+    duration.innerHTML = Math.round(audio.currentTime) + "/" + Math.round(audio.duration);
 }
 
 document.getElementById("audioSeek").addEventListener("change", seekAudio, false);
