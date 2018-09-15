@@ -5,7 +5,7 @@ let hamClose = document.querySelector('.hamClose');
 let links = document.querySelector('.links');
 let nav = document.querySelector('.nav');
 
-console.log(links);
+// console.log(links); 
 
 hamburger.addEventListener('click', () => {
     hamburger.style.display = 'none';
@@ -19,4 +19,7 @@ hamClose.addEventListener('click', () => {
     hamClose.style.display = 'none';
     links.style.display = 'none';
     nav.classList.toggle('open');
-})
+});
+
+// Services tab JS
+
