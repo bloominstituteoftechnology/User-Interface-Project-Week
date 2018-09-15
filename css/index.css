@@ -446,7 +446,7 @@ img {
   display: inline-block;
   max-width: 50%;
   padding-top: 48px;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
   line-height: 26px;
 }
 .contact-container-right .contact-container-d .contact-head-1d {
@@ -457,6 +457,23 @@ img {
 .contact-container-right .contact-container-d .contact-text-1d {
   color: black;
   font-size: 1.6rem;
+}
+.contact-container-right input[type="button"] {
+  width: 75px;
+  background-color: lightblue;
+  border-radius: 5px;
+  display: none;
+}
+.contact-container-right #audioSeek {
+  width: 50px;
+  display: none;
+}
+.contact-container-right .duration {
+  display: none;
+}
+.contact-container-right #volume {
+  width: 20px;
+  display: none;
 }
 .top-bar {
   display: flex;
@@ -547,6 +564,24 @@ img {
     top: -510px;
   }
 }
+@media (max-width: 620px) {
+  .top-bar .menu-button {
+    left: 71.17%;
+    top: 0px;
+    width: 13.05%;
+    height: 25px;
+  }
+  .nav {
+    width: 60%;
+    left: 20%;
+  }
+}
+@media (max-width: 490px) {
+  .nav {
+    width: 80%;
+    left: 10%;
+  }
+}
 @media (max-width: 320px) {
   .top-bar {
     font-size: 2.8rem;
@@ -567,52 +602,17 @@ img {
     height: 25px;
   }
   .nav {
-    display: none;
-    position: fixed;
     max-width: 320px;
     top: 50px;
     width: 90%;
     height: 400px;
     left: 5%;
     justify-content: center;
-    background-color: #d8d8d8;
-    border: 2px solid darkgray;
-    z-index: 2;
-    /* This set the layer level of the element, it has precendence over initial level of 1*/
-  }
-  .nav-open {
-    display: block;
-    animation: moveItMobile 1s 1;
-  }
-  .nav-close {
-    display: block;
-    animation: loseItMobile 1s 1 forwards;
   }
   .navLi {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
     font-size: 3rem;
-    text-align: center;
     padding-bottom: 10px;
     padding-top: 10px;
-  }
-  @keyframes moveItMobile {
-    0% {
-      top: -500px;
-    }
-    100% {
-      top: 50px;
-    }
-  }
-  @keyframes loseItMobile {
-    0% {
-      top: 50px;
-    }
-    100% {
-      top: -500px;
-    }
   }
 }
 .contact {
@@ -680,7 +680,6 @@ img {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
   padding-top: 20px;
   color: white;
   background-color: #828282;
@@ -722,6 +721,7 @@ img {
     width: 100%;
     margin-left: 0px;
     padding-top: 0px;
+    padding-left: 14px;
   }
   .footer-container {
     max-width: 100%;
@@ -730,10 +730,6 @@ img {
 @media (max-width: 320px) {
   .contact {
     width: 320px;
-  }
-  .footer {
-    margin-left: 14px;
-    padding-top: 20px;
   }
   .footer-container {
     width: 320px;
