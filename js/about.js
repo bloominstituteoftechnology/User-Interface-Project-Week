@@ -90,7 +90,7 @@ function about() {
                 showFlg = false;
                 this.controlButton.innerHTML = "Click Here to Start";
             } else {
-                let delay = document.querySelector("#myRange").value;
+                let delay = document.querySelector("#slider-range").value;
                 delay = delay * 1000;
 
                 this.controlButton.innerHTML = "Click Here to Stop";
