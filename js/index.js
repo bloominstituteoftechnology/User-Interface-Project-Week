@@ -15,13 +15,13 @@ class DropDown{
   expandMenu(){
     this.menuOpen.style.display = 'none';
     this.menuClose.style.display = 'block';
-    this.content.classList.add('menuList');
+    this.menuItems.classList.add('menuList');
   }
 
   closeMenu(){
     this.menuOpen.style.display = 'block';
     this.menuClose.style.display = 'none';
-    this.content.classList.remove('menuList');
+    this.menuItems.classList.remove('menuList');
   }
 }
 
