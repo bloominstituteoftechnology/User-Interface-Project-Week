@@ -54,6 +54,9 @@ close.addEventListener('click', function () {
     console.log('something')
 })
 
+
+
+
 // Services Page JS
 
 // console.log(headers);
@@ -90,7 +93,7 @@ class Button {
             console.log('got it');
 
             this.serviceSelector();
-
+            
 
         })
     }
