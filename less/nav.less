@@ -40,8 +40,10 @@ nav {
         .name {
           font-size: 24px;
           font-weight: bold;
-          font-color: @nav-color;
-          text-decoration: none;
+          a{
+            color: @nav-color;
+            text-decoration: none;  
+          }
         }
     
         .menu-closed {
@@ -54,6 +56,33 @@ nav {
     
         .menu-items {
           display: none;
+          position: fixed;
+          width: 1024px;
+          margin: auto;
+          height: 100%;
+          top: 120px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: @nav-background;
+
+          .menu-block {
+            .flex(column, center, flex-end);
+            height: 400px;
+
+            a{
+              color: @nav-color;
+              text-decoration: none;
+              font-weight: bold;
+              font-size: 48px;
+              line-height: 85px;
+              
+            }
+            a:hover {
+              color: @page-text;
+            }
+
+          }
         }
       } // End of menu
   
