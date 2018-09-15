@@ -1,96 +1,8 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
-
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
-}
-body{
-  line-height:1;
-}
-ol,ul{
-  list-style:none;
-}
-blockquote,q{
-  quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
-}
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
-}
-
-table{
-  border-collapse:collapse;
-  border-spacing:0;
-}
-
+@import "variables.less";
+@import "mixins.less";
+@import "reset.less";
+@import "global.less";
 /* Your Code Goes Here */
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  // max-width: 1024px;
-}
-
-h1 {
-  font-size: 3.5rem;
-}
-
-h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 3%
-}
-
-p {
-  font-size: 1.6rem;
-  margin-bottom: 3%;
-  // padding: 0.25%;
-  line-height: 150%;
-}
 
 // br {
 //   margin-bottom: 5%;
@@ -109,14 +21,18 @@ p {
 }
 
 .main-img {
-  display: flex;
-  flex-direction: column;
+  .flexbox-set(@fDir: column);
   width: 100%;
   margin-bottom: 2%;
   max-height: 500px;
 
+  
+
   .img {
 
+    @media @phone {
+      height: 100%;
+    }
   }
 }
 
@@ -125,7 +41,11 @@ p {
   color: white;
   margin-top: -15%;
   margin-left: 3%;
-  
+ 
+  @media @phone {
+    // position: fixed;
+    margin-top: -70%;
+  }
 }
 
 // This section is generated dynamically, no references in HTML :-)
@@ -138,12 +58,23 @@ p {
   flex-direction: column;
   margin: 8%;
   max-width: 1024px;
+
+  @media @phone {
+    padding-top: 15%;
+    // background: red;
+    // max-width: 00px;
+  }
 }
 
 .cta {
-  display: flex;
-  justify-content: center;
+  .flexbox-set(@fJustify: center);
+  // display: flex;
+  // justify-content: center;
   margin-bottom: 5%;
+
+  @media @phone {
+    .flexbox-set(@fJustify: center, @fDir: column-reverse, @fWrap: wrap);
+  }
 
   .text{
     display: flex;
@@ -151,6 +82,9 @@ p {
     justify-content: center;
     padding: 3.5% 1.5%;
     // width: 50%;
+    @media @phone {
+      display: flex;
+    }
 
     .button {
       display: flex;
@@ -170,6 +104,13 @@ p {
 }
 
 // This section is static in the HTML
+.recent-projects {
+  @media @phone {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .project {
   display: flex;
   flex-direction: column;
@@ -228,4 +169,69 @@ p {
     padding-left: 2.5%;
   }
   
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // max-width: 1024px;
+  // padding-right: 8%;
+  // padding-left: 8%;
+  background: @footerBgColor;
+  color: @whiteForeColor;
+
+  .subscribe {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5%;
+    margin-right: 2%;
+    width: 35%;
+
+    h2 {
+      line-height: 10px;
+    }
+
+    form {
+      // width: 50%;
+
+      input{
+        width: 100%;
+        padding: 2%;
+      }
+    }
+
+  }
+
+  .office {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5%;
+    width: 15%;
+
+    address {
+      line-break: loose;
+      line-height: 130%;
+      font-size: @addFontSize;
+      margin-bottom: 2%;
+    }
+
+    a {
+      margin-top: 1%;
+      color: @whiteForeColor;
+      text-decoration: none;
+    }
+  }
+}
+
+.copy {
+  background: @@footerBgColor;
+  color: @whiteForeColor;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+}
+
+.fsmalltext {
+  font-size: @fsmalltext;
 }
