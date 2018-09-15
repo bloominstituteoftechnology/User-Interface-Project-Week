@@ -2,10 +2,8 @@
 
 
 let menuOpenButton = document.querySelector(".openOpenButton");
-console.log(menuOpenButton);
 
 let menuOpenBackground = document.querySelector('.openNavBackground');
-console.log(menuOpenBackground);
 
 let menuLinks = document.querySelector(".navLinks");
 
@@ -18,7 +16,8 @@ function toggleMenuOpenButton () {
  menuLinks.classList.toggle("openMenu");
  burgerOpen.style.display = "none";
  burgerClose.style.display = "block";
- siteLogo.style.left = "35px"
+ siteLogo.style.left = "81.5px";
+ burgerClose.style.left = "121px";
 }
 function toggleMenuCloseButton () {
     menuOpenBackground.classList.toggle("openMenu");
