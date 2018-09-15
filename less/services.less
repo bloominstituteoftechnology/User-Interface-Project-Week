@@ -76,6 +76,8 @@ table{
 @footer-title-font-size: 20px;
 @footer-text-font-size: 14px;
 @tab-selected-bg-color: #5E9FB9;
+@tab-hover-bg-color: #222222;
+@tab-hover-color: #FFF;
 @mobile: ~"(max-width: 650px)";
 //Mix-ins
 .flex-center-center (@width, @height, @margin, @padding) {
@@ -139,6 +141,7 @@ body{
   .nav-bar-open{
     height: 200px;
     width: 100%;
+    max-width: 1025px;
     margin: auto;
     font-weight: Bold;
     font-size: @nav-content-font-size;
@@ -206,10 +209,14 @@ body{
       margin-bottom: 50px;
       .tab{
         border: 1px solid;
-        .flex-center-center(200px, 50px, none, none);
+        .flex-center-center(21.1%, 50px, none, none);
         font-weight: bold;
         font-size: @general-font-size;
         cursor: pointer;
+      }
+      .tab:hover{
+        background-color: @tab-hover-bg-color;
+        color: @tab-hover-color;
       }
       .active-tab{
         background-color: @tab-selected-bg-color;
@@ -290,6 +297,7 @@ body{
         }
       }
       #email-enter{
+        cursor: pointer;
         background-color: white;
         border-radius: 3px;
         width: 72%;
