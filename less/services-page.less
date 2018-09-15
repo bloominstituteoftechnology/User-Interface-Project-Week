@@ -21,8 +21,31 @@
             color: white;
         }
         
-        img{
+        img.desktop{
             width: 100%;
+        }
+
+        img.mobile{
+            display: none;
+        }
+
+        @media @mobile{
+            margin-bottom: 35px;
+
+            img.desktop{
+                display: none;
+            }
+    
+            img.mobile{
+                display: block;
+                width: 100%;
+            }
+
+            p{
+                top: 71%;
+                font-size: 3.2rem;
+                line-height: 38px;
+            }
         }
     }
 
@@ -30,6 +53,11 @@
         width: 83.6%;
         .normal-font();
         margin-bottom: 50px;
+
+        @media @mobile{
+            width: 95%;
+            margin-bottom: 40px;
+        }
     }
 
     .tabs{
@@ -50,6 +78,16 @@
         .selected{
             background-color: #5E9FB9;
         }
+
+        @media @mobile{
+            width: 95%;
+            margin-bottom: 20px;
+
+            .tab{
+                width: 100%;
+                margin-bottom: 25px;
+            }
+        }
     }
 
     .content{
@@ -69,19 +107,53 @@
             display: flex;
             justify-content: space-between;
 
-            img{
+            .para{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 49%;
+    
+                p{
+                    .normal-font();
+                }
+            }
+
+            img.desktop{
                 width: 45%;
+            }
+
+            img.mobile{
+                display: none;
             }
         }
 
-        .para{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 49%;
+        @media @mobile{
+            width: 95%;
+            margin-bottom: 60px;
 
-            p{
-                .normal-font();
+            h2{
+                margin-bottom: 10px;
+            }
+
+            .para-img{
+                flex-direction: column;
+
+                .para{
+                    width: 95%;
+
+                    p{
+                        margin: 15px 0px;
+                    }
+                }
+
+                img.desktop{
+                    display: none;
+                }
+
+                img.mobile{
+                    display: flex;
+                    width: 100%;
+                }
             }
         }
     }
