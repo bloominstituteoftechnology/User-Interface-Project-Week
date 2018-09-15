@@ -8,7 +8,9 @@ function interface() {
   let menu = document.querySelector(".nav");
   const formInput = document.querySelector(".input");
   formInput.addEventListener("click", inputFocus);
-  
+  const navButton = document.querySelector(".nav-button");
+    navButton.addEventListener("click", clickMenu);
+    console.log("this is navbutton:" + navButton);
 
   function clickMenu() {
     if (menuOpen === true) {
