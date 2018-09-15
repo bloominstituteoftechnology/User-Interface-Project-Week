@@ -134,158 +134,161 @@ table {
   border-spacing: 0;
 }
 /* Your Code Goes Here */
-.jumbo-img {
-  position: relative;
-  z-index: 0;
+.wrapper {
+  max-width: 1024px;
   width: 100%;
-}
-.container {
-  max-width: 800px;
   margin: 0 auto;
-  background: #FFFFFF;
 }
-.h1-content {
-  position: absolute;
-  top: 290px;
-  left: 25%;
+@media (max-width: 400px) {
+  .wrapper {
+    max-width: 400px;
+    width: 95%;
+    margin: 0 auto;
+    background: red;
+  }
+}
+.wrapper .top-content {
   font-weight: bold;
-  font-size: 46px;
-  color: #FFFFF2;
+  font-size: 48px;
 }
-.menu-content {
+.wrapper .top-content h1 {
   position: absolute;
-  top: 0%;
-  width: 800px;
+  color: white;
+  width: 200px;
+  top: 400px;
+  left: 18%;
+  z-index: 1;
+}
+.wrapper .top-content img {
+  z-index: 0;
+  position: relative;
+  width: 1024px;
+}
+@media (max-width: 400px) {
+  .wrapper .top-content {
+    font-size: 16px;
+  }
+  .wrapper .top-content h1 {
+    position: relative;
+    bottom: 50px;
+  }
+  .wrapper .top-content img {
+    width: 400px;
+  }
+}
+.wrapper .mid-content {
+  position: relative;
+  left: 50px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+}
+.wrapper .mid-content h2 {
+  position: relative;
+  font-weight: bold;
+  top: 20px;
+}
+.wrapper .mid-content p {
+  padding: 60px;
+  line-height: 25px;
+}
+.wrapper .mid-content button {
+  position: relative;
+  bottom: 30px;
+  left: 50px;
+  width: 175px;
+  height: 50px;
+  background: white;
+  border: 1px solid #222222;
+  font-size: 20px;
+}
+.wrapper .mid-content button:hover {
+  background: #222222;
+  color: white;
+}
+.wrapper .rp-text {
+  margin-top: 100px;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+.wrapper .bottom-content img {
+  position: relative;
+  left: 15px;
+  width: 90%;
+}
+.wrapper .bottom-content span {
+  position: relative;
+  height: 60px;
+  width: 250px;
+  font-size: 32px;
+  border: 1px solid black;
+  background: white;
+  padding: 20px;
+}
+.wrapper .bottom-content .buildings-text-r span {
+  left: 75%;
+  bottom: 25px;
+}
+.wrapper .bottom-content article {
+  position: relative;
+  left: 20%;
+  margin-top: 60px;
+  max-width: 600px;
+  line-height: 25px;
+}
+.wrapper .bottom-content article section {
+  margin-bottom: 25px;
+}
+.wrapper .bottom-content article p {
+  margin-bottom: 60px;
+}
+/*
+
+@media (max-width:400px){
+	.wrapper{
+		max-width:400px;
+		margin:0 auto;
+		background:red;
+	}
+} */
+.footer-content {
+  /*	background:red;	*/
+  background: darkgrey;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  line-height: 25px;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+.footer-content h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.nav-bar {
+  z-index: 3;
+  position: fixed;
+  background: blue;
+  height: 40px;
+  width: 1016px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 30px;
-  background: #5E9FB9;
-  /* FIND OUT REAL COLOR */
-  color: #FFFFFF;
-}
-.menu-content span {
-  font-weight: bold;
-  font-size: 24px;
-  color: #FFFFFF;
-}
-.menu-content nav {
-  font-weight: bold;
-  /*	font-size:48px;  UNCOMMENT WHEN BUILDING JS FUNCTIONALITY*/
-  color: #FFFFFF;
-  /*line-height:85px; UNCOMMENT WHEN READY*/
-}
-.menu-content nav:hover {
-  color: #222222;
-}
-.body-top-content {
-  margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 80%;
-  font-size: 16px;
-  line-height: 25px;
-}
-.body-top-content h2 {
-  font-weight: bold;
-}
-.sj-content {
-  margin: 20px;
-  width: 60%;
-}
-.home-img-1 {
-  width: 20%;
-}
-.home-img-2 {
-  margin-top: 30px;
-  width: 20%;
-}
-.future-content {
-  position: relative;
-  margin: 20px;
-  width: 60%;
-  left: 290px;
-  top: 30px;
-}
-.learn-more-button {
-  height: 40px;
-  width: 150px;
-  border: 1px solid #222222;
-  margin-top: 40px;
-}
-.learn-more-button:hover {
-  background: #222222;
-  color: white;
-}
-.body-mid-content {
-  margin-top: 30px;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-left: 15%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
-.body-mid-content h2 {
+.nav-bar .s-j {
   font-weight: bold;
+  font-size: 26px;
 }
-.body-mid-content article {
-  margin: 20px;
-}
-.body-mid-content article section {
-  margin: 20px;
-}
-.rp-text {
-  margin: 20px;
-  left: 0%;
-  font-weight: bold;
-}
-.bigtext-content {
-  position: relative;
-  bottom: 50px;
-  font-size: 48px;
-  width: 250px;
-  padding: 30px;
-  border: 1px solid white;
-  background: lightgrey;
-}
-.footer-content {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  line-height: 20px;
-  background: #222222;
-  color: white;
-  padding: 50px;
-}
-.locations {
-  display: flex;
-  flex-direction: row;
-  line-height: 30px;
-}
-.city-name {
-  font-weight: bold;
-}
-.copyright {
-  position: relative;
-  bottom: 20px;
-  text-align: center;
-  color: #FFFFFF;
-  font-size: 13px;
-}
-/* I MESSED UP CREATE A NAVIGATION.less TOMORROW AND FIX THIS NAV ISSUE */
-.wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.wrapper h1 {
-  position: relative;
-  bottom: 70px;
-  left: 40px;
-  font-weight: bold;
-  font-size: 48px;
-  color: white;
-}
-.jumbo-img {
-  max-width: 800px;
+@media (max-width: 400px) {
+  .nav-bar {
+    width: 400px;
+  }
+  .nav-bar .s-j {
+    font-size: 16px;
+  }
 }
