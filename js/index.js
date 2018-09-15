@@ -31,9 +31,7 @@ class TabLink {
     this.element = element;
     this.data = this.element.dataset.tab;
     this.itemElement = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
-    console.log(this.itemElement);
     this.tabItem = new TabItem(this.itemElement);
-    console.log(this.tabItem);
     this.element.addEventListener('click', () => {this.select()});
     };
 
