@@ -1,60 +1,282 @@
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
-body{
-  line-height:1;
+body {
+  line-height: 1;
 }
-ol,ul{
-  list-style:none;
+ol, ul {
+  list-style: none;
 }
-blockquote,q{
-  quotes:none;
+blockquote, q {
+  quotes: none;
 }
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
 }
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-table{
-  border-collapse:collapse;
-  border-spacing:0;
+/* <--- >>> BEGIN OLIVER'S CSS ---> */
+
+* {
+  font-size: 62.5%;
+}
+.container {
+  background-color: #FFFFFF;
 }
 
-/* Your Code Goes Here */
+/* <!--- >>> BEGIN SECTION 1 : HEADER --->  */
+.section1 {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #99A4AF;
+  z-index: 3;
+  //border: 1px solid green; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+  .navigation-bar {
+    display: flex;
+    width: 90%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    max-width: 1024px;
+    //border: 1px solid purple; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-grow: 1;
+      margin-left: 25px;
+      //border: 1px solid blue; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+      a { // <!--- PIXEL PERFECT : DO NOT ALTER! //
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+
+    .menu-icon {
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 1;
+      margin-right: 45px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+      //border: 1px solid orange; /* <--- FOR TESTING PURPOSES ONLY ---> */
+    }
+  }
+}
+/* <!--- >>> BEGIN SECTION 2 : HERO IMAGE --->  */
+.section2 {
+  display: flex;
+  //justify-content: center; // <!--- THIS AFFECTS CONTAINERS *BELOW* THIS ELEMENT //
+  align-items: flex-end;
+  background-color: dodgerblue;
+  width: 100%;
+  height: 600px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+  z-index: 1;
+  //border: 1px solid yellow; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+  .text-box {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-left: 85px;
+    //background-color: lightgray; /* <--- FOR TESTING PURPOSES ONLY ---> */
+    width: 80%;
+    height: 500px;
+    max-width: 1024px;
+    //border: 1px solid red; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+      h1 {
+        color: #FFFFFF;
+        font-family: Roboto, sans-serif;
+        font-size: 64px;
+        font-weight: bold;
+        line-height: 75px;
+      }
+  }
+}
+/* <!--- >>> BEGIN SECTION 3 : BODY --->  */
+.section3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 1500px;
+  margin: auto;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 880px;
+  //background-color: #F2F2F2; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+  .mini-box1 {
+    display: flex;
+    width: 97%; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+    height: 275px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+    margin-top: 50px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+    margin-bottom: 50px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+    //background-color: pink; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+    .learn-more {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-grow: 1;
+      //border: 1px solid orange; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+      h2 {
+        margin-top: 48px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+        font-family: Roboto, sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+        color: #222222;
+        //border: 1px solid greenyellow; /* <--- FOR TESTING PURPOSES ONLY ---> */
+      }
+
+      P {
+        margin-top: 20px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+        font-family: Roboto, sans-serif;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        width: 100%;
+        height: 70px;
+        //background-color: darkgreen; /* <--- FOR TESTING PURPOSES ONLY ---> */
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        //background-color: #99A4AF; /* <--- FOR TESTING PURPOSES ONLY ---> */
+        width: 135px;
+        height: 46px;
+        border: 1px solid black;
+
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 135px;
+          height: 46px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+    .mini-box2 {
+      display: flex;
+      width: 97%; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+      height: 275px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+      margin-top: 50px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+      margin-bottom: 50px;
+      //background-color: darkorchid; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+      .futuristic-designs {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-grow: 1;
+        margin-left: 27px; /* <--- TEST ---> */
+        //border: 1px solid orange; /* <--- FOR TESTING PURPOSES ONLY ---> */
+
+        h2 {
+          margin-top: 40px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+          //margin-left: 25px;
+          font-family: Roboto, sans-serif;
+          font-weight: bold;
+          font-size: 24px;
+          color: #222222;
+
+          //border: 1px solid greenyellow; /* <--- FOR TESTING PURPOSES ONLY ---> */
+        }
+
+        P {
+          margin-top: 20px; // <!--- PIXEL PERFECT : DO NOT ALTER! //
+          //margin-left: 25px;
+          font-family: Roboto, sans-serif;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          width: 100%;
+          height: 70px;
+          //background-color: darkgreen; /* <--- FOR TESTING PURPOSES ONLY ---> */
+        }
+
+        .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 32px;
+          //margin-left: 28px;
+          //background-color: #99A4AF; /* <--- FOR TESTING PURPOSES ONLY ---> */
+          width: 135px;
+          height: 46px;
+          border: 1px solid black;
+
+          p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 46px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+}
+ /* <!--- >>> BEGIN SECTION 4 : FOOTER --->  */
+ .section4 {
+        display: flex;
+        width: 100%;
+        height: 250px; // <!--- KEEP THIS PROPERTY //
+        //position: fixed;
+        background-color: #828282;
+ }
+
+
+/* <!--- * LESS VARIABLES (FOR LAZY EVALUATION) * --->  */
