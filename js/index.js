@@ -1,15 +1,29 @@
 // JS goes here
 
 
-let menuOpenButton = document.getElementsByClassName("openOpenButton");
-console.log(menuOpenButton[0]);
+let menuOpenButton = document.querySelector(".openOpenButton");
+console.log(menuOpenButton);
 
-let menuArray = Array.from(menuOpenButton[0]);
-console.log(menuArray);
+let menuOpenBackground = document.querySelector('.openNavBackground');
+console.log(menuOpenBackground);
 
+let menuLinks = document.querySelector(".navLinks");
+
+let burgerOpen = document.querySelector(".openOpenButton");
+let burgerClose = document.querySelector(".openCloseButton");
+let siteLogo = document.querySelector(".siteLogo");
 
 function toggleMenuOpenButton () {
- menuOpenButton[0].classList.toggle = "openMenu";
+ menuOpenBackground.classList.toggle("openMenu");
+ menuLinks.classList.toggle("openMenu");
+ burgerOpen.style.display = "none";
+ burgerClose.style.display = "block";
+}
+function toggleMenuCloseButton () {
+    menuOpenBackground.classList.toggle("openMenu");
+    burgerOpen.style.display = "block";
+    burgerClose.style.display = "none";
 }
 
-toggleMenuOpenButton();
+burgerOpen.addEventListener('click', () => {toggleMenuOpenButton();});
+burgerClose.addEventListener('click', () => {toggleMenuCloseButton();});
