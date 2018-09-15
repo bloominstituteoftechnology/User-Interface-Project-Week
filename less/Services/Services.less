@@ -1,13 +1,20 @@
 .services-container {
     .width-100;
     .services-jumbotron {
-        background-image: url('/img/services/services-jumbotron.png');
+    
+        background-image: url(/img/services/services-jumbotron.png);
         height: 600px;
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         align-items: flex-end;
+        @media @mobile {
+            background-image: url(/img/services/services-mobile-jumbotron.png) no-repeat;
+            background-position: center bottom;
+            background-size: cover;
+            width: 100%;
+        }
         .header {
             line-height: 85px;
             padding: 50px;
@@ -41,6 +48,10 @@
             border: 1px solid @tab-hover-bg-color;
             font-size: 1.6rem;
             font-weight: bold;
+            @media @mobile {
+                margin: 20px;
+                text-align: center;
+            }
             &:hover {
                 background-color: @tab-hover-bg-color;
                 color: @tab-hover-font-color;
@@ -63,6 +74,17 @@
             justify-content: center;
             align-items: center;
             animation: scaleUp .7s ease both;
+         
+            @media @mobile {
+                width: 100%;
+                flex-direction: column;
+                margin: 0 auto;
+            }
+        }
+        img {
+            @media @mobile {
+                width: 100%;
+            }
         }
         .tabs-item-selected {
             display: flex;
@@ -72,6 +94,10 @@
                 font-size: 2rem;
                 font-weight: bold;
                 margin-bottom: 20px;
+                @media @mobile {
+                    font-size: 1.7rem;
+                    text-align: center;
+                }
             }
         }
         .tabs-item-description {
@@ -79,6 +105,9 @@
             padding: 20px;
             line-height: 28px;
             font-size: 1.6rem;
+            @media @mobile {
+                width: 100%;
+            }
         }
         margin-bottom:150px;
     }
