@@ -56,7 +56,8 @@ class Tab {
 }
 
 const serviceButtons = document.querySelector('.services-buttons');
+
 let links = serviceButtons.querySelectorAll("a");
 
+
 links = Array.from(links).map(link =>new Anchorlink(link));
-console.log(links);
