@@ -12,6 +12,12 @@ header {
         font-size: 2.4rem;
         color: @font-color-white;
         padding-left: 8.3%;
+        cursor: pointer;
+
+        a {
+            text-decoration: none;
+            color: @font-color-white;
+        }
 
         @media @phone {
             padding-left: 5%;
@@ -23,23 +29,41 @@ header {
         font-size: 4.8rem;
         line-height: 85px;
         color: @font-color-white;
-        padding-right: 8.3%;
+        padding-right: 9.85%;
         .flex();
+        cursor: pointer;
+
+        @media @phone {
+            padding-right: 4.5%;
+        }
 
         &hover {
             color: @nav-hover-color;
         }
 
-        .dropdown-button {
-            padding-bottom: 12px;
-        }
+        .dropdown {
+            position: absolute;
+            z-index: 2;
 
-        .dropdown-hidden a {
-            display: none;
-        }
-
-        @media @phone {
-            padding-right: 4.5%;
+            .dropdown-button {
+                padding-bottom: 12px;
+            }
+            
+            .dropdown-content {
+                width: 100%;
+                position: absolute;
+                background-color: red;
+                
+                .dropdown-link {
+                    width: 100%;
+                    position: absolute;
+                    margin: 0 auto;
+                    
+                }
+            }
+            .dropdown-hidden {
+                display: none;
+            }
         }
     }
 }
