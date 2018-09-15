@@ -20,3 +20,64 @@ hamburgerX.addEventListener( 'click', function(e) {
     hamburger.style.display = "";
     menu.style.display = "none";
 });
+
+
+/* Services Page - Tabs */
+class TabLink {
+    constructor(el) {
+        this.el = el;
+
+        // Get custom data attribute on the link
+        this.data = this.el.dataset.tab;
+
+        // Get associated item element
+        this.itemElement = document.querySelectorAll(`.cta-row.service-tab[data-tab="${this.data}"]`);
+
+        // Create a new instance of the TabItem class
+        this.tabItem = new this.tabItem(this.itemElement);
+
+        // Add a click listener - calling select method on click
+        this.el.addEventListener('click', () => {this.select()});
+    };
+
+    select() {
+        // Get all button elements
+        this.links = document.querySelectorAll('.cta-row.button');
+
+        // Remove the selected class from all links
+        Array.from(this.links).forEach( function(element) {
+            element.classList.remove('.button-selected');
+        });
+
+        // Add .button-selected to this button
+        this.el.classList.add('.button-selected');
+    }
+}
+
+class TabItem{
+    constructor(el) {
+        this.el = el;
+    }
+
+    select() {
+        // Select all tab content
+        this.itemElements = document.querySelectorAll('.cta-row.service-tab');
+
+        // Remove class .service-tab-selected from each element
+        Array.from(this.itemElements).forEach( function(itemElement) {
+            itemElement.classList.remove('.service-tab-selected');
+        });
+
+        // Add .service-tab-selected to selected element
+        this.el.classList.add('.service-tab-selected');
+    }
+}
+
+
+let links = document.querySelectorAll('.cta-row.button');
+
+// Create a new instance of TabLink for each button item
+links = Array.from(links).map( (link) => {return new TabLink(link)});
+
+// Select the first item in the array.
+links[0].select();
