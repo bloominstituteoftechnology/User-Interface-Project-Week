@@ -2,9 +2,13 @@ nav {
     background-color: #9bb4be;
     .flex; 
     justify-content: space-between;
+    align-items: center; 
     width: 100%; 
     font-size: @navFontSize;  
     border-bottom: 2px solid rgb(156, 128, 167); 
+
+   
+    
 
     .nav-logo{
         font-weight: bold;
@@ -13,33 +17,69 @@ nav {
         color: #ffffff; 
     }
 
-    .menu{
-        padding: 12px; 
-    }
+    .menu{   
+         padding-right: 12px; 
 
-    .hamburger{
-        padding-right: 50px; 
-
-        @media(max-width: 400px){
-            padding: 0px; 
+        .hamburger{
+            @media(max-width: 400px){
+                padding: 0px; 
+            }
+        }    
+        .hamburger-close{
+            display: none;    
         }
-    }
-
-    .navbar-menu{
-        display: none; 
     }
     
-    a{
+    
+    
+}
+
+ 
+.navbar-menu{
+    position: absolute; 
+    display: none; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    flex-direction: column; 
+    line-height: 2.5; 
+    align-items: center;
+    color: white; 
+    background-color: purple;  
+    max-width: 1000px; 
+    width: 100%; 
+    font-size: @navFontSize; 
+    z-index: 99;
+    height: 100%; 
+    opacity: 0.9; 
+    }
+
+    a{  
         color: white; 
         text-decoration: none; 
-        padding-left: 50px; 
-        
+        font-size: 3.0rem; 
+    
         @media(max-width: 400px){
-          padding: 0px;  
+        padding: 12px;  
         }
+        
+        &:hover{
+            transition: 1.4s; 
+            color: violet; 
+            font-size: 4rem; 
+            font-weight: bold; 
+        }
+    } 
 
-    }
-}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -108,3 +148,4 @@ footer{
     }
 
 }
+
