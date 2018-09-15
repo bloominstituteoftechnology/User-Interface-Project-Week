@@ -40,15 +40,24 @@
         .display-flex;
         justify-content: space-around;
         margin: 0 60px;
+        @media @phone{
+            flex-direction: column;
+        }
         .tabs-link{
             font-size: 2.0rem;
-            padding: 10px 20px;
+            padding: 15px 20px;
             border: 1px solid black;
             font-weight: 600;
+            @media @phone{
+                width: 90%;
+                margin: 15px;
+                text-align: center;
+            }
             cursor: pointer;
             &:hover {
             background-color: #5e9fb9;
             color: white;
+            
             }
         }
     }
@@ -60,24 +69,41 @@
     }
     .tabs-item {
       display: none;
-      width: 80%;
+      width: 90%;
+      @media @phone {
+          flex-direction: column;
+          width: 100%;
+      }
       .tabs-item-text {
         font-size: 2.4rem;
         font-weight: bold;
         width: 50%;
+        @media @phone {
+            width: 100%;
+            margin-left: 10%;
+        }
         p{
             font-size: 1.6rem;
             font-weight: 100;
             margin: 20px 0;
             margin-right: 10%;
             line-height: 2.4rem;
+            @media @phone {
+                margin: 20px 10% 20px 0;
+            }
         }
       }
       .tabs-item-img {
           width: 50%;
+          @media @phone{
+            width: 80%;
+        }
           img{
             width: 410px;
             height: 300px;
+            @media @phone{
+                width: 100%;
+            }
             
           }
       }
@@ -88,10 +114,8 @@
     }
   
     .tabs-link-selected {
-      z-index: 2;
-     
-      background-color: white;
-      color: black;
+      background-color: #5e9fb9;
+      color: white;
       &:hover {
         background-color: white;
       }
