@@ -97,11 +97,46 @@ p, a {
   z-index: 1;
   top: 0;
 
+  .nav-content {
+    .containermixin();
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+
+    @media @mobile {
+      padding: 10px auto;
+      width: @mobilewidth;
+    }
+  }
+
   h2 {
     font-weight: bold;
     font-size: 2.4rem;
     color: #FFFFFF;
   }
+
+  .menu-links {
+    display: none;
+  }
+
+  .menu-button {
+    background-image: url(../img/nav-hamburger.png);
+    width: 3.2rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+}
+
+.main-nav-expanded {
+  width: 100%;
+  height: 100%;
+  background-color: #9BA4AE; 
+  opacity: 0.9;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+
 
   .nav-content {
     .containermixin();
@@ -114,15 +149,51 @@ p, a {
       width: @mobilewidth;
     }
   }
+
+  h2 {
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #FFFFFF;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 155px;
+
+    @media @mobile {
+      margin-top: 75px;
+    }
+
+    a {
+      font-weight: bold;
+      font-size: 4.8rem;
+      line-height: 8.5rem;
+      color: #FFFFFF;
+      &:hover {
+        color: #222222;
+      }
+    }
+  }
+
+  .menu-button {
+    background-image: url(../img/nav-hamburger-close.png);
+    height: 2.5rem;
+    width: 3.2rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
 }
 
+
+/* header styling */
+
 .header-mixin(@height, @img, @margin-bottom) {
-  display: block;
-  width: 100%;
   height: @height;
   background-image: @img;
   background-repeat: no-repeat;
-
+  background-position: center; 
+  
   header {
     .containermixin();
     height: @height;

@@ -1,3 +1,16 @@
+// adding menu dropdown functionality
+
+let menuButton = document.querySelector('.menu-button');
+let nav = document.querySelector('nav');
+
+function toggleMenu() {
+    nav.classList.toggle('main-nav-expanded');
+}
+
+menuButton.addEventListener('click', toggleMenu);
+
+// adding tab functionality to services page
+
 class TabLink {
     constructor(element) {
         this.element = element;
@@ -22,7 +35,6 @@ class TabItem {
 
     select() {
         const tabItems = document.querySelectorAll('.tab-content');
-        console.log(tabItems);
         tabItems.forEach(item => {return item.classList.remove('tab-content-selected')});
         this.element.classList.add('tab-content-selected');
     }
@@ -32,3 +44,7 @@ let tabLinks = document.querySelectorAll('.service-tab-links p');
 tabLinks = Array.from(tabLinks).map(tabLink => {return new TabLink(tabLink)});
 
 tabLinks[0].select();
+
+
+
+
