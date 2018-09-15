@@ -2,18 +2,46 @@
     .page-content{
         .flexbox(space-between, flex-start);
         .padding-lr(8.5%, 17.7%);
+        @media @phone{
+            .padding-lr(4.5%, 4.5%);
+            flex-direction: column;
+        }
         h2{
             font-weight: @bold;
         }
         .leftside{
             width: 77%;
             padding-top: 47px;
+            @media @phone{
+                padding-top: 32px;
+                width: @width-100percent;
+            }
             p{
                 margin-bottom: 3px;
                 margin-top: 25px;
             }
+            .mobile{
+                display: none;
+                @media @phone{
+                    display: flex;
+                }
+            }
+            .desktop{
+                @media @phone{
+                    display: none;
+                }
+            }
+            .project-needs{
+                margin-top: 39px;
+                @media @phone{
+                    margin-top: 14px;
+                }
+            }
             form {
                 padding-top: 19px;
+                @media @phone {
+                    padding-top: 26px;
+                }
                 .form-box{
                     max-width: 409px;
                     width: @width-100percent;
@@ -31,12 +59,21 @@
                     width: @width-100percent;
                     height: 46px;
                     margin-bottom: 50px;
+                    @media @phone{
+                        max-width: 337px;
+                        margin-bottom: 0px;
+                    }
                 }
             }
         }
         .rightside {
             width: 23%;
             padding-top: 60px;
+            @media @phone{
+                width: @width-100percent;
+                padding-left: 2%;
+                padding-top: 46px;
+            }
             .locations{
                 .margin-tb(35px, 10px);
                 h4{
