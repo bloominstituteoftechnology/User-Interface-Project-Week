@@ -155,11 +155,13 @@ table {
   max-width: 880px;
   height: 26px;
   position: fixed;
-  z-index: 20;
+  z-index: 1;
   display: flex;
   justify-content: space-around;
-  padding: 29px 0;
-  background: #98A4AF;
+  text-align: center;
+  padding: 25px 0;
+  background: #9AA5B0;
+  cursor: pointer;
 }
 @media (max-width:500px) {
   .nav {
@@ -172,29 +174,40 @@ table {
   font-size: 2.4rem;
   color: white;
 }
-.nav .links {
+.nav .menu a {
+  display: none;
+}
+.nav .hamClose {
+  display: none;
+}
+.open {
+  text-align: center;
+  height: 560px;
+  z-index: 2;
+  opacity: 0.7;
+}
+.open .menu a {
+  display: block;
+}
+.links {
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  text-align: center;
   position: fixed;
   z-index: 3;
   top: 16.25%;
-  left: 43%;
-  font-size: 48px;
   font-weight: bold;
   line-height: 85px;
 }
-.nav a {
+.links a {
   text-decoration: none;
   color: white;
   opacity: 0.7;
+  font-size: 4.8rem;
 }
-.nav a:hover {
+.links a:hover {
   color: #222222;
-}
-.hamClose {
-  display: none;
 }
 * {
   box-sizing: border-box;
@@ -517,7 +530,7 @@ p {
   max-width: 880px;
 }
 .jumboservice {
-  background: url("../img/services/services-jumbotron.png");
+  background: url('../img/services/services-jumbotron.png');
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -525,7 +538,7 @@ p {
   margin: auto;
   padding-bottom: 45px;
   max-width: 100%;
-  height: 45vh;
+  height: 40vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -560,4 +573,40 @@ p {
 }
 .sections .button-tabs .button {
   padding: 14px 30px;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background-color: white;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.sections .button-tabs .button:active {
+  color: white;
+}
+.sections .button-tabs .button:hover {
+  background-color: #5e9fb9;
+}
+.sections .button.active-button {
+  background-color: #5E9FB9;
+}
+.tab {
+  display: none;
+}
+.tab-section.active-tab {
+  margin-bottom: 100px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.tab-section.active-tab h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  text-align: justify;
+  line-height: 24px;
+}
+.tab-image {
+  width: 45%;
 }
