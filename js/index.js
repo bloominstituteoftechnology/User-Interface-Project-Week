@@ -3,7 +3,6 @@ const ham = document.querySelector('.ham');
 const close = document.querySelector('.close-btn');
 const navigation = document.querySelector('.nav-bar');
 const links = document.querySelector('.navigation')
-console.log(close)
 ham.addEventListener('click', ()=>{
     navigation.style.height = '100%';
     close.style.display='block';
@@ -51,37 +50,3 @@ tabs = Array.from(tabs).map(element => {
 
 tabs[0].selectTab();
 
-// .mobile{
-//     display: none;
-// }
-// @media(max - width: 500px) {
-//   .mobile {
-//         display: inline;
-//     }
-//  .jumbo - container.bottom - left{
-//         font - size: 4.8rem;
-//         line - height: 60px;
-//     }
-//   .villa - container.bottom - right{
-//         position: absolute;
-//         bottom: -60px;
-//         left: 45px;
-//         width: 65 %;
-
-//     }
-//   /* .project-text-mobile{
-//     margin-top:50px;
-//   } */
-//   .outskirts - container.bottom{
-
-//     }
-//   .blocks - container.bottom - right - block{
-
-//     }
-// }
-
-// @media(max - width: 500px) {
-//   .desktop {
-//         display: none;
-//     }
-// }
