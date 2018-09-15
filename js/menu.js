@@ -8,10 +8,6 @@ const toggleMenu = () => {
 
 
 
-
-
-
-
 let navigation = document.querySelector('.navigation');
 
 let hamburger = document.querySelector('.hamburger');
@@ -19,3 +15,5 @@ let hamburger = document.querySelector('.hamburger');
 let hamburgerClick = hamburger.addEventListener('click', toggleMenu);
 
 let hamburgerOpen = document.querySelector('.hamburger-close');
+
+
