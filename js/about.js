@@ -51,6 +51,9 @@ function about() {
             this.controlButton.addEventListener("click", () => { this.showStart() });
             this.optionsButton = document.querySelector(".options-button");
             this.optionsButton.addEventListener("click", () => { this.showTransition() });
+            this.optionsAudio = document.querySelector(".options-audio");
+            this.optionsAudio.addEventListener("click", () => { this.beginAudio() });
+
         }
         selectRight() {
             if (index2 < 5) {
@@ -107,6 +110,16 @@ function about() {
 
                 this.optionsButton.innerHTML = "Click to Stop";
             }
+        }
+        beginAudio() {
+            if ( this.optionsAudio.innerHTML === "Click Here to Start") {
+                this.optionsAudio.innerHTML = "Click Here to Stop";
+                togglePlay();
+            }  else {
+                this.optionsAudio.innerHTML = "Click Here to Start";
+                togglePlay();
+            }
+           
         }
 
     }
