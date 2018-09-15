@@ -21,8 +21,6 @@ class TabButton{
             element.style.display = 'none'
         });
         this.card.style.display = 'flex';
-        // console.log(allTabBlocks);
-        // this.allTabBlocks.forEach(card => card.selectCard());
     }
 };
 

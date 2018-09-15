@@ -62,6 +62,9 @@ table{
 // Variables
 @navigation-color: #9a9b9b;
 @logo-color: #FFFFFF;
+@nav-content-font-size: 48px;
+@nav-content-line-height: 85px;
+@nav-content-hover-color: #222222;
 @title-color: #FFFFFF;
 @title-font-size: 64px;
 @fonts: Roboto, Arial, sans-serif;
@@ -72,7 +75,7 @@ table{
 @general-font-size: 18px;
 @footer-title-font-size: 20px;
 @footer-text-font-size: 14px;
-@mobile: ~"(max-width: 650px)";
+@mobile: ~"(max-width: 675px)";
 //Mix-ins
 .flex-center-center (@width, @height, @margin, @padding) {
   width: @width;
@@ -121,12 +124,40 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    #nav-bar-open{
+    #nav-bar-closed{
+      cursor: pointer;
+    }
+    #close-button{
       display: none;
     }
     @media @mobile{
       padding-left: 15px;
       padding-right: 15px;
+    }
+  }
+  .nav-bar-open{
+    height: 550px;
+    width: 100%;
+    margin: auto;
+    font-weight: Bold;
+    font-size: @nav-content-font-size;
+    background-color: @navigation-color;
+    color: @logo-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: @nav-content-line-height;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    opacity: .9;
+    @media @mobile{
+      height: 210px;
+    }
+    p:hover{
+      color: @nav-content-hover-color;
+      cursor: pointer;
     }
   }
   #title{
@@ -214,6 +245,7 @@ body{
       .subtitle-buttons{
         border: 1px solid;
         .flex-center-center(32.52%, 50px, null, null);
+        cursor: pointer;
         @media @mobile{
           width: 100%;
         }
@@ -335,6 +367,7 @@ body{
         }
       }
       #email-enter{
+        cursor: pointer;
         background-color: white;
         border-radius: 3px;
         width: 72%;

@@ -62,6 +62,9 @@ table{
 // Variables
 @navigation-color: #9a9b9b;
 @logo-color: #FFFFFF;
+@nav-content-font-size: 48px;
+@nav-content-line-height: 75px;
+@nav-content-hover-color: #222222;
 @title-color: #FFFFFF;
 @title-font-size: 64px;
 @fonts: Roboto, Arial, sans-serif;
@@ -122,12 +125,40 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    #nav-bar-open{
+    #nav-bar-closed{
+      cursor: pointer;
+    }
+    #close-button{
       display: none;
     }
     @media @mobile{
       padding-left: 15px;
       padding-right: 15px;
+    }
+  }
+  .nav-bar-open{
+    height: 200px;
+    width: 100%;
+    margin: auto;
+    font-weight: Bold;
+    font-size: @nav-content-font-size;
+    background-color: @navigation-color;
+    color: @logo-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: @nav-content-line-height;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    opacity: .9;
+    @media @mobile{
+      height: 210px;
+    }
+    p:hover{
+      color: @nav-content-hover-color;
+      cursor: pointer;
     }
   }
   #main-content{
