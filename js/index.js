@@ -1,6 +1,6 @@
 // JS goes here
 class Dropdown {
-    contructor (element) {
+    constructor (element) {
 
     this.element = element;
     this.button = this.element.querySelector(".dropdown-button");
