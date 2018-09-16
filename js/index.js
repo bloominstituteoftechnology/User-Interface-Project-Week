@@ -9,9 +9,14 @@ const hamburgerHandler = function() {
     if (hamburgerIsClosed) {
         document.getElementById('hamburger').src = '../img/nav-hamburger-close.png';
 
-        nav.style.display = '';
-
+        TweenMax.from(nav, 1, {
+            backgroundColor: 'black',
+            ease:  Power4. easeOut, y: -500 
+          });
+        
+        nav.style.display = '',  
         hamburgerIsClosed = false;
+
     } else {
         document.getElementById('hamburger').src = '../img/nav-hamburger.png';
 
