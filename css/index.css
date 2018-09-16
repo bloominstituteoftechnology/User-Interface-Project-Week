@@ -1,101 +1,251 @@
-/* Should be empty until you compile your LESS */
-
-/* 
-TEMPORARY UNTIL LESS CONVERSION
-*/
-.Whitespace {
-  margin-bottom: 100px;
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
-.ProjectName {
-
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
-
-.Button {
-  border: solid;
-  border-color: #222222
-  border-width: 1px;
-  width: 135px;
-  height: 45px;
-  padding: 20px 10px 20px 10px;
-  font-size: 12pt;
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+.header {
+  width: 100%;
+  height: 75px;
+  background-color: lightslategrey;
+  color: white;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 48px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+.menu-button {
+  position: absolute;
+  right: 80px;
+  cursor: pointer;
+}
+.menu {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: lightcyan;
+  border: 1px solid lightblue;
+  border-left: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
   text-align: center;
+  /* font-size: 32px;
+  padding: 10px 0;
+  text-align: left; */
+}
+.menu--open {
+  display: block;
 }
 
-.Form-email {
-
+/* MY BUTTON STYLE */
+/* General button style (reset) */
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
-.Container {
-  background-color: #ffffff;
-  color: #222222;
-  font-family: Roboto, Arial, sans-serif;
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
-.Home {
-  recentProjectsGraySquare: #D8D8D8;
+.expandButton {
+  display: block;
+  border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 5px 10px;
+	/* display: inline-block; */
+	margin: 5px 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	/* position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s; */
+	transition: all 0.3s;
 }
 
-.Services {
-
-  Tab selected background: #5E9FB9
-  Tab Hover background: #222222
-  Tab Hover color: #FFF;
-
+.expandShow {
+  display: block;
 }
 
-.Footer {
-  background: #828282
-
+html,
+body {
+  margin: 50px 10px;
+  padding: 5;
+  font-family: 'Roboto';
+  background-color: #fffef7;
 }
-
-.General {
-  font-weight: Regular
-  font-size: 16px
-  line-Height: 24px
-}
-
-.General Text {
-
- }
- 
-.Jumbotron Headers
-  font-weight: Bold
-  font-size: 64px
-  line-Height: 75px
-  Color: #FFFFFF
-
-.Sub Headers {
-  font-weight: Bold
-  font-size: 28px
-  Color: #222222
-}
-
-.Footer Headings{
-  font-weight: Regular
-  font-size: 20px
-  line-Height: 24px
-  Color: #FFFFFF
-}
-
-.Footer Text{
-  font-weight: Regular
-  font-size: 14px
-  line-Height: 26px
-  Color: #FFFFFF
-}
-
-.Navigation Logo{
-  font-weight: Bold
-  font-size: 24px
-  Color: #FFFFFF
-}
-
-.Navigation Text (Expanded){
-  font-weight: Bold
-  font-size: 48px
-  line-Height: 85px
-  Color: #FFFFFF
-  Hover Color: #222222
-}
-
