@@ -4,15 +4,15 @@ class TabLink{
 
     this.tabData = this.element.dataset.tab;
 
-    this.services = document.querySelectorAll('.service[data-tab = "${this.tabData}"]');
+    this.services = document.querySelectorAll(`.service[data-tab = "${this.tabData}"]`);
 
-
+/*
     if(this.tabData === 'pre-construction'){
       this.services = document.querySelectorAll('.service');
     } else {
-      this.services = document.querySelectorAll('.service[data-tab = "${this.tabData}"]');
+      this.services = document.querySelectorAll(`.service[data-tab = "${this.tabData}"]`);
     }
-
+*/
 
     this.services = Array.from(this.services).map(item => new TabService(item));
 
@@ -50,4 +50,4 @@ let tabs = document.querySelectorAll('.tab');
 
 tabs = Array.from(tabs).map(item => new TabLink(item));
 
-tabs[0].selectService();
+tabs[0].selectTab();
