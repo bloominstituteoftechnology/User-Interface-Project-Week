@@ -1,4 +1,4 @@
-.services-hero-section {
+.projects-hero-section {
     margin-top: 50px;
     position: relative;
 
@@ -38,7 +38,7 @@
     }
 }
 
-.services-include {
+.project-intro {
     max-width: @max-interior-width;
     margin: 40px auto;
 
@@ -48,20 +48,24 @@
     }
 }
 
-.service-buttons {
+.project-buttons {
     max-width: @max-interior-width;
     margin: 0 auto 40px auto;
     .flex(space-between, center, row);
 
     .tab {
         .flex(center, center);
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         font-weight: bold;
         text-align: center;
-        width: 20%;
+        // width: 20%;
         height: 50px;
-        border: 1px solid @sj-color-black;
+        border-right: 1px solid @sj-color-black;
         cursor: pointer;
+
+        &:last-child {
+            border-right: none; 
+        }
 
         &:hover {
             background-color: @sj-color-black;
@@ -80,24 +84,31 @@
         .flex(center, center, column);
 
         .tab {
-            margin: 10px 5px;
+            margin: 0;
+            padding: 10px 5px;
             width: 94%;
+            border-right: none;
+            border-bottom: 1px solid black;
+
+            &:last-child {
+                border-bottom: none;
+            }
         }
     }
 }
 
-.service-container {
+.project-container {
     overflow: hidden;
     max-width: @max-interior-width;
     margin: 0 auto;
 
-    .service-detail {
+    .project-detail {
         .flex(space-between, center, row);
         // visibility: hidden; 
         // opacity: 0;
         display: none;
     
-        .service-text-container {
+        .project-text-container {
             width: 46%;
     
             p {
@@ -105,7 +116,7 @@
             }
         }
     
-        .service-img-container {
+        .project-img-container {
             width: 46%;
         }
 
@@ -114,7 +125,7 @@
         }
     }
     
-    .service-detail-selected {
+    .project-detail-selected {
         .flex(space-between, center, row);
         transition: visibility 0s, opacity 0.5s linear;
         opacity: 1;
@@ -122,19 +133,19 @@
     }
 
     @media @phone {
-        .service-container {
+        .project-container {
             max-width: @max-mobile-width;
         }
-        .service-detail {
+        .project-detail {
             max-width: @max-mobile-width;
             width: 100%;
             flex-direction: column;
 
-            .service-text-container {
+            .project-text-container {
                 width: 94%;
             }
 
-            .service-img-container {
+            .project-img-container {
                 display: none;
             }
 
@@ -146,3 +157,12 @@
         }
     }
 }
+
+// <div data-tab="chelsea" class="tab">Chelsea Property</div>
+// <div data-tab="fulham" class="tab">Fulham Property</div>
+// <div data-tab="east-london" class="tab">East London Property</div>
+// <div data-tab="dulwich" class="tab">Dulwich Property</div>
+// <div data-tab="south-london" class="tab">South London Property</div>
+// <div data-tab="hampstead" class="tab">Hampstead Property</div>
+// <div data-tab="blackheath" class="tab">Blackheath Property</div>
+// <div data-tab="day" class="tab">Day Nursery</div>
