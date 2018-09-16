@@ -40,6 +40,8 @@ document.getElementById("play").addEventListener("click", togglePlay, false);
 audio.addEventListener("play", updatePlayPause, false);
 audio.addEventListener("pause", updatePlayPause, false);
 audio.addEventListener("ended", endAudio, false);
+document.getElementById("track2").addEventListener("click", nextFile, false);
+document.getElementById("track1").addEventListener("click", nextFile2, false);
 
 function seekAudio() {
     let seek = document.getElementById("audioSeek");
@@ -74,6 +76,18 @@ function setVolume() {
     let volume = document.getElementById("volume");
     audio.volume = volume.value;
 }
+
+function nextFile() {
+    audio.src = "../audio/piano3.mp3";
+    
+    audio.play();
+    }
+
+    function nextFile2() {
+        audio.src = "../audio/song56.mp3";
+        
+        audio.play();
+        }
 
 
 
