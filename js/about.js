@@ -3,7 +3,9 @@ function about() {
     let showFlg = false;
     let timer = "";
     let transitionFlg = false;
-
+    let index2 = 0;
+    //document.querySelector(".carousel").onload = selectRight;
+    
     const menuButton = document.querySelector(".menu-button");
     menuButton.addEventListener("click", clickMenu);
     const navButton = document.querySelector(".nav-button");
@@ -24,7 +26,7 @@ function about() {
         }
     }
 
-    let index2 = 0;
+   
 
     class Carousel {
         constructor(element) {
@@ -41,6 +43,7 @@ function about() {
             this.optionsButton.addEventListener("click", () => { this.showTransition() });
             this.optionsAudio = document.querySelector(".options-audio");
             this.optionsAudio.addEventListener("click", () => { this.beginAudio() });
+         
 
         }
         selectRight() {
@@ -93,12 +96,12 @@ function about() {
         }
         showTransition() {
             if (transitionFlg) {
-                this.optionsButton.innerHTML = "Click to Start";
+                this.optionsButton.innerHTML = "Click to Enable";
                 transitionFlg = false;
             } else {
                 transitionFlg = true;
 
-                this.optionsButton.innerHTML = "Click to Stop";
+                this.optionsButton.innerHTML = "Click to Disable";
             }
         }
         beginAudio() {
