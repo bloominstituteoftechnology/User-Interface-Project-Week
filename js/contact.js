@@ -1,7 +1,7 @@
 new Vue({
     el: '#editor',
     data: {
-      input: '# hello'
+      input: '*Hi!* You can write in **Markdown** 👇🏼 and it will be turned into styled text over there 👉🏼'
     },
     computed: {
       compiledMarkdown: function () {
