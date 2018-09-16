@@ -20,6 +20,7 @@ class TabLink{
 
     this.element.classList.add('active-tab');
 
+
     const services = document.querySelectorAll('.service');
 
     services.forEach(item => item.style = 'display: none');
