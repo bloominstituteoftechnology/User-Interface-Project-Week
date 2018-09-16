@@ -1,0 +1,469 @@
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
+html,
+body {
+  font-family: 'Roboto', 'Arial', 'sans-serif';
+  background-color: #FFFFFF;
+  color: #222222;
+}
+html a,
+body a {
+  text-decoration: none;
+}
+html {
+  font-size: 16px;
+  line-height: 24px;
+}
+body {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+}
+@media (max-width: 450px) {
+  body {
+    max-width: 450px;
+    overflow-x: hidden;
+  }
+}
+.hidden {
+  opacity: 0;
+}
+.fade-in {
+  animation: fadein 2s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+nav {
+  background-color: #9AA4AE;
+  position: fixed;
+  overflow: hidden;
+  z-index: 10;
+  width: 100%;
+  margin: auto;
+  max-width: 1000px;
+  height: 60px;
+  transition: 0.5s ease-in;
+}
+@media (max-width: 450px) {
+  nav {
+    max-width: 450px;
+  }
+}
+nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 15px 7%;
+}
+nav .navbar h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+nav .navbar .not-selected {
+  display: none;
+}
+nav .navbar .selected {
+  display: block;
+}
+nav .navbar img:hover {
+  cursor: pointer;
+}
+nav .nav-items {
+  display: none;
+}
+nav .nav-show {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 5.31rem;
+}
+nav .nav-show a {
+  color: #FFFFFF;
+}
+nav .nav-show a:hover {
+  color: #222222;
+}
+.scrolled {
+  opacity: 0.9;
+  background-color: #222222;
+}
+.scrolled a:hover {
+  color: #9AA4AE;
+}
+.full-height {
+  height: 100vh;
+  opacity: 0.9;
+  background-color: #9AA4AE;
+}
+.container .jumbotron {
+  background-image: url('../img/contact/contact-jumbotron.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 200px;
+  padding-bottom: 50px;
+}
+.container .jumbotron h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 4.68rem;
+  color: #FFFFFF;
+  padding-left: 7%;
+}
+.container h2 {
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+.container h3 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.container .main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+.container .main-content .screen-right {
+  margin-right: 90px;
+}
+.container .main-content .screen-right .contact-address {
+  line-height: 28px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.container .main-content .screen-right .contact-address:first-child {
+  padding-top: 60px;
+}
+.container .main-content .screen-left {
+  margin-left: 60px;
+}
+.container .main-content .screen-left .dropdown,
+.container .main-content .screen-left .overview,
+.container .main-content .screen-left .radio-buttons {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.container .main-content .screen-left .email {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.container .main-content .screen-left .email input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  width: 96%;
+  color: silver;
+  font-size: 0.875rem;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+.container .main-content .screen-left .email p:last-child {
+  font-size: 12px;
+  color: silver;
+}
+.container .main-content .screen-left .radio-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.container .main-content .screen-left .radio-buttons .radio {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.container .main-content .screen-left .radio-buttons .radio:first-child {
+  padding-top: 10px;
+}
+.container .main-content .screen-left .dropdown select {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  margin-top: 10px;
+  border: 1px solid silver;
+}
+.container .main-content .screen-left .overview textarea {
+  width: 99%;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+.container .main-content .screen-left .button {
+  border: 1px solid #222222;
+  width: 25%;
+  text-align: center;
+  padding: 15px 15px;
+  margin-top: 20px;
+}
+.container .main-content .screen-left .button:hover {
+  cursor: pointer;
+}
+.footer {
+  background-color: #828282;
+  color: #FFFFFF;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (max-width: 450px) {
+  .footer {
+    max-width: 450px;
+  }
+}
+.footer .contact-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 60px;
+}
+@media (max-width: 450px) {
+  .footer .contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  .footer .contact-info .state-address {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.footer .contact-info h4 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+.footer .contact-info p {
+  font-size: 0.875rem;
+  line-height: 1.625rem;
+}
+.footer .contact-info input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: #828282;
+  font-size: 0.875rem;
+  margin-top: 10px;
+  width: 100%;
+}
+.footer .contact-info .email p {
+  font-size: 0.75rem;
+  margin-top: 5px;
+}
+.footer .copyright {
+  text-align: center;
+  width: 100%;
+  font-size: 0.75rem;
+}
+@media (max-width: 450px) {
+  .footer .copyright {
+    text-align: left;
+    padding-bottom: 50px;
+    padding-left: 20px;
+  }
+}

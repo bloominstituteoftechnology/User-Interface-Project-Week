@@ -1,14 +1,19 @@
-const emailInput = document.querySelector('input');
-emailInput.addEventListener('focus', () => {
-    emailInput.value = "";
+const emailInput = document.querySelectorAll('.email-input');
+const footerOnly = document.querySelector('.footer-email');
+emailInput.forEach((input) => {
+    input.addEventListener('focus', () => {
+        input.value = "";
+    })
 })
 window.addEventListener('keypress', (event) => {
     if (event.which === 13 || event.which === 27) {
         event.preventDefault()
-        emailInput.value = "Thanks!";
+        emailInput.forEach((input) => {
+            input.value = "Enter email";
+        })
     }
 })
 
-emailInput.addEventListener('blur', () => {
-    emailInput.value = "Enter email";
+footerOnly.addEventListener('blur', () => {
+    footerOnly.value = "Enter email";
 })
