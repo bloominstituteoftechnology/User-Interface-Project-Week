@@ -66,7 +66,7 @@ class Tabs {
     this.element = element;
     this.data = this.element.dataset.tab;
     this.matchingContent = document.querySelector(
-      `.services-content-box[data-tab="${this.data}"]`
+      `.tab-box[data-tab="${this.data}"]`
     );
     this.tabBox = new TabBox(this.matchingContent);
     this.element.addEventListener("click", () => this.select());
@@ -86,7 +86,7 @@ class TabBox {
   }
 
   select() {
-    const items = document.querySelectorAll(".services-content-box");
+    const items = document.querySelectorAll(".tab-box");
     Array.from(items).forEach(item =>
       item.classList.remove("tab-box-selected")
     );
