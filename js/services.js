@@ -4,15 +4,8 @@ class TabLink{
 
     this.tabData = this.element.dataset.tab;
 
+    //   backticks  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     this.services = document.querySelectorAll(`.service[data-tab = "${this.tabData}"]`);
-
-/*
-    if(this.tabData === 'pre-construction'){
-      this.services = document.querySelectorAll('.service');
-    } else {
-      this.services = document.querySelectorAll(`.service[data-tab = "${this.tabData}"]`);
-    }
-*/
 
     this.services = Array.from(this.services).map(item => new TabService(item));
 
