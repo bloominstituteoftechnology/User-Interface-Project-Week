@@ -1,5 +1,6 @@
 .jumbo {
   position: relative;
+  width: 100%;
 
   img {
     height: auto;
@@ -17,9 +18,9 @@
 
     @media @phone {
       bottom: 10%;
-      font-size: 3.2rem;
-      left: 10%;
-      line-height: 3.6rem;
+      font-size: 3.6rem;
+      left: 15px;
+      line-height: 4.2rem;
     }
   }
 
@@ -43,12 +44,28 @@
   flex-flow: row wrap;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 50px 0 52px 0;
+  margin-top: 50px;
   width: 83.2%;
 
   @media @phone {
     justify-content: center;
-    width: 100%;
+    margin-top: 34px;
+    width: 290px;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:link, &:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:hover, &:active {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+    }
   }
 
   .button {
@@ -56,11 +73,14 @@
     border: 1px solid @button-border-color;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 15px;
-    width: 150px;
+    height: 45px;
+    width: 135px;
   
     @media @phone {
-      width: 100%;
+      height: 45px;
+      width: 290px;
     }
   } 
 
@@ -72,11 +92,38 @@
   .architects {
     display: flex;
     justify-content: space-between;
+
+    @media @phone {
+      align-items: center;
+      flex-direction: column-reverse;
+    }
+
+    .text-box {
+      margin-top: 10px;
+      @media @phone {
+        margin-top: 25px;
+      }
+
+      p {
+        margin-top: 21px;
+        margin-bottom: 26px;
+        @media @phone {
+          margin-top: 21px;
+          margin-bottom: 26px;
+        }
+      }
+    }
   }
 
   .futuristic-designs {
     display: flex;
     justify-content: space-between;
+    margin-top: 97px;
+
+    @media @phone {
+      flex-direction: column;
+      margin-top: 45px;
+    }
   }
     
   .text-box {
@@ -85,15 +132,32 @@
     display: flex;
     flex-flow: row wrap;
     width: 50%;
+
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     
-      
     @media @phone {
-      width: 95%;
+      width: 100%;
     }
+
   }
 
   .right {
     padding-left: 13px;
+
+    @media @phone {
+      margin-top: 27px;
+      padding-left: 0;
+    }
+    
+    p {
+      margin-bottom: 28px;
+      margin-top: 21px;
+      @media @phone {
+        margin-bottom: 26px;
+        margin-top: 21px;
+      }
+    }
   }
 
   .img-div {
@@ -101,7 +165,7 @@
     width: 50%;
 
     @media @phone {
-      width: 95%;
+      width: 100%;
     }
     
     .img-mobile {
@@ -125,24 +189,27 @@
     img {
       height: auto;
       max-width: 410px;
-      padding: 40px 0;
       width: 100%;
-    }
-  }
 
-  .text-box {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    
-    @media @phone {
-      width: 100%;
-    }  
+      @media @phone {
+        padding: 0px;
+      }
+    }
   }
 }
 
 .recent-projects {
   margin: 0 auto;
   width: 83%;
+  margin-top: 97px;
+
+  @media @phone {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+  }
 
   img {
     height: auto;
@@ -153,27 +220,65 @@
     color: @sub-header-color;
     font-size: 2.4rem;
     font-weight: bold;
+    margin-bottom: 46px;
+
+    @media @phone {
+      margin-left: 15px;
+      margin-bottom: 25px;
+    }
   }
 
   h3 {
     color: @sub-header-color;
-    font-size: 2.8rem;  
+    font-size: 2.8rem;
+    
+    @media @phone {
+      font-size: 2.4rem;
+    }
   }
 
   .text-box {
     font-size: 1.8rem;
     line-height: 2.4rem;
-    margin: 80px auto;
+    margin: 90px auto;
     width: 53%;
 
+    @media @phone {
+      margin: 0 auto;
+      margin-bottom: 25px;
+      width: 290px;
+    }
+
     p {
-      margin: 20px 0;
+      margin: 24px 0;
+
+      @media @phone {
+        margin-top: 25px;
+      }
     }
   }
 
   .img-container {
     position: relative;
     width: 100%;
+
+    @media @phone {
+      margin-bottom: 80px;
+    }
+
+    .img-desktop {
+      @media @phone {
+        display: none;
+      }
+    }
+
+    .img-mobile {
+      display: none;
+
+      @media @phone {
+        display: inline-block;
+      }
+    }
   }
 
   .text-over {
@@ -184,6 +289,22 @@
     padding: 30px 57px;
     position: absolute;
     right: 1px;
+    text-align: center;
+
+    @media @phone {
+      bottom: -80px;
+      padding: 35px 0;
+      right: 7px;
+      width: 290px;
+    }
+
+  }
+
+  .blocks {
+    @media @phone {
+      bottom: -85px;
+      padding: 35px 0;
+    }
   }
 
   .right-over {
@@ -194,5 +315,14 @@
     letter-spacing: 5px;
     padding: 30px 57px;
     position: absolute;
+    text-align: center;
+
+    @media @phone {
+      bottom: -82px;
+      left: 7px;
+      padding: 35px 0;
+      width: 290px;
+
+    }
   }
 }
