@@ -12,9 +12,14 @@ emailInput.forEach((input) => {
 window.addEventListener('keypress', (event) => {
     if (event.which === 13 || event.which === 27) {
         event.preventDefault()
-        emailInput.forEach((input) => {
-            input.value = "Enter email";
-        })
+            //check validity of email entered
+        let isValid = footerOnly.checkValidity();
+        if (isValid === true)
+            footerOnly.value = "Thank you!";
+        else if (isValid === false) {
+            footerOnly.value = "";
+            window.alert('Please enter a valid email');
+        }
     }
 })
 
