@@ -85,7 +85,7 @@ class ProjectCard {
   }
   selectCard() {
     // update style of this element
-    this.element.style.display = 'flex';
+    TweenMax.fromTo(this.element,1, {opacity: 0, display: 'none'}, {opacity: 1, display: 'flex'})
   }
   selectProject(element) {
 
@@ -105,6 +105,7 @@ class ProjectCard {
 
     // get the project to display
     popups[this.index].classList.remove('hidden');
+    TweenMax.fromTo(popups[this.index],1,{opacity:0},{opacity:0.9})
   }
 }
 
