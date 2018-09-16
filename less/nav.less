@@ -42,11 +42,26 @@ nav {
         width: 854px;
         margin: auto;
         z-index: 1;
+       
+        // Ugly block of media queries to adjust static size
+        @media(max-width: 950px) {width: 800px;}
+        @media(max-width: 870px) {width: 700px;}
+        @media(max-width: 790px) {width: 620px;}
+        @media(max-width: 710px) {width: 550px;}
+        @media(max-width: 630px) {width: 460px;}
+        @media(max-width: 550px) {width: 400px;}
+        @media(max-width: 470px) {width: 300px;}
+        @media(max-width: 390px) {width: 200px;}
+
+        // End of ugly block - Real media queries here.
         @media @mobile {
           padding: 12px 12px;
           width: 320px;
         }
-  
+        .menu-navbar {
+          .flex(row,center,space-between);
+          width: 100%;
+        }
         .name {
           font-size: 24px;
           font-weight: bold;
@@ -81,6 +96,18 @@ nav {
           bottom: 0;
           background-color: @nav-background;
           z-index: 1;
+
+          // Ugly block of media queries to adjust static size
+          @media(max-width: 950px) {width: 950px;}
+          @media(max-width: 870px) {width: 870px;}
+          @media(max-width: 790px) {width: 790px;}
+          @media(max-width: 710px) {width: 710px;}
+          @media(max-width: 630px) {width: 630px;}
+          @media(max-width: 550px) {width: 550px;}
+          @media(max-width: 470px) {width: 470px;}
+          @media(max-width: 390px) {width: 390px;}
+
+          // End of ugly block - Real media queries here.
           @media @mobile {
             width: 320px;
           }
@@ -106,7 +133,9 @@ nav {
           }
         }
       } // End of menu
-  
+
+      // Should have left this page specific, but initially thought that
+      // the nav menu covered just the jumbotron.
       .jumbotron {
         font-weight: bold;
         font-size: 64px;
@@ -127,7 +156,7 @@ nav {
         @media @mobile {
           height: 233px;
         }
-      }
+      } // End of jumbotron
 
     } // End nav-row
   }// End nav
