@@ -9,8 +9,8 @@ const menu = document.querySelector('.menu-items');
 hamburger.addEventListener( 'click', function(e) {
     console.log("hamburger clicked");
     hamburger.style.display = "none";
-    hamburgerX.style.display = "inline";
-    menu.style.display = "block";
+    hamburgerX.style.display = "flex";
+    menu.style.display = "flex";
 });
 
 /* Close menu on click */
