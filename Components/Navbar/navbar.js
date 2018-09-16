@@ -14,14 +14,14 @@ navOpenButton.addEventListener('click', () => {
 });
 
 navCloseButton.addEventListener('click', () => {
-    navItems.classList.remove('nav-show');
-    navOpenButton.classList.add('selected');
-    navOpenButton.classList.remove('not-selected');
-    navCloseButton.classList.add('not-selected');
-    navCloseButton.classList.remove('selected');
-    navbar.classList.remove('full-height');
-})
-
+        navItems.classList.remove('nav-show');
+        navOpenButton.classList.add('selected');
+        navOpenButton.classList.remove('not-selected');
+        navCloseButton.classList.add('not-selected');
+        navCloseButton.classList.remove('selected');
+        navbar.classList.remove('full-height');
+    })
+    //changes opacity and color of navbar on scroll. if navbar is at top of window, reverts back to original styling.
 document.addEventListener('scroll', () => {
     navbar.classList.add('scrolled');
     if (window.scrollY === 0) {

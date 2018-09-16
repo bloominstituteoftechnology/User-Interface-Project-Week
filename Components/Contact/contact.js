@@ -5,6 +5,7 @@ const radios = document.querySelectorAll(".radio-input");
 const commentBox = document.querySelector('textarea');
 const dropdownMenu = document.querySelector('select');
 
+//reset forms
 submit.addEventListener('click', () => {
     emails.forEach((email) => {
         email.value = 'Enter email';

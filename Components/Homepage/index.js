@@ -2,6 +2,8 @@ const topImages = document.querySelectorAll('.top-section-img img');
 const villas = document.querySelector('#villas img');
 const outskirts = document.querySelector('#outskirts img');
 const blocks = document.querySelector('#blocks img');
+
+//elements fade in as window is scrolled
 const fadeHTML = function() {
     let elements;
     let windowHeight;
@@ -20,6 +22,7 @@ const fadeHTML = function() {
 
     function checkPosition() {
         for (let i = 0; i < elements.length; i++) {
+            //returns element's position relative to top of viewport
             let positionTop = elements[i].getBoundingClientRect().top;
             if (positionTop - windowHeight <= 0) {
                 elements[i].className = elements[i].className.replace('hidden', 'fade-in');
@@ -31,6 +34,8 @@ const fadeHTML = function() {
     }
 }
 
+
+//check width of window and replace mobile/desktop images as needed.
 function checkWidth() {
     if (window.innerWidth > 450) {
         topImages[0].setAttribute('src', 'img/home/home-img-1.png');
@@ -47,6 +52,8 @@ function checkWidth() {
     }
 }
 
+
+//calls checkWidth if window is resized
 window.addEventListener('resize', checkWidth);
 
 checkWidth();
