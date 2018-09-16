@@ -3,6 +3,12 @@
     .flex(row,center,space-around);
     width: 100%;
 
+    .contact-col.addresses {
+        @media(max-width: 630px) {
+            // Removing addresses from tablet views - since they are in the footer
+            display: none;       
+        };
+    }
     .contact-col{
         .flex(column,left,space-between);
         padding: 0px 20px;
@@ -20,12 +26,18 @@
                 width: 400px;
                 height: 30px;
                 border-radius: 5px;
+                @media @contact {
+                    width: 300px;
+                }
             }
             textarea {
                 border: 1px solid @nav-background;
                 width: 400px;
                 height: 150px;
                 border-radius: 5px;
+                @media @contact {
+                    width: 300px;
+                }
             }
             .button {
                 .flex();
