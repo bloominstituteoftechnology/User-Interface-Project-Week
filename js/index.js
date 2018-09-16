@@ -48,3 +48,4 @@ class TabLink {
   
   let links = document.querySelectorAll('.tabs-link');
   links = Array.from(links).map(link => new TabLink(link));
+  tabs[0].select();
