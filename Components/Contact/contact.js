@@ -15,5 +15,5 @@ submit.addEventListener('click', () => {
         radio.checked = false;
     });
     commentBox.value = "";
-
+    window.alert('Thank you for contacting us! We will get back to you within 2 business days.')
 })
