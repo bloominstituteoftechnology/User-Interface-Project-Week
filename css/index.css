@@ -175,6 +175,12 @@ nav {
   height: 50px;
   justify-content: space-between;
 }
+nav a {
+  text-decoration: none;
+}
+nav a:hover {
+  opacity: 0.5;
+}
 .logo {
   color: #ffffff;
   font-size: 2.4rem;
@@ -230,6 +236,9 @@ footer {
   height: 40px;
   font-size: 1.5rem;
 }
+.form-control:focus {
+  background-color: #c9c8c8;
+}
 @media (max-width: 500px) {
   footer {
     height: 700px;
@@ -273,6 +282,10 @@ footer {
   margin-top: 25px;
   padding: 15px 30px;
 }
+.learn-more-btn:hover {
+  background-color: #222222;
+  color: white;
+}
 .futuristic-section {
   display: flex;
   margin-top: 50px;
@@ -284,10 +297,16 @@ footer {
 .home-img-1 {
   width: 100%;
 }
+.home-img-1-mobile {
+  display: none;
+}
 .home-img-2 {
   margin-bottom: 60px;
   margin-top: 50px;
   width: 100%;
+}
+.home-img-2-mobile {
+  display: none;
 }
 .view-designs-btn {
   background-color: #FFFFFF;
@@ -295,6 +314,10 @@ footer {
   font-size: 1.5rem;
   margin-top: 5px;
   padding: 15px 23px;
+}
+.view-designs-btn:hover {
+  background-color: #222222;
+  color: white;
 }
 .title-recent-projects {
   color: #222222;
@@ -305,20 +328,25 @@ footer {
 .the-villas-section {
   margin-top: 55px;
 }
-.villas-img {
+.villas-container {
   position: relative;
+}
+.villas-img {
   width: 95%;
 }
+.villas-img-mobile {
+  display: none;
+}
 .grey-square-right {
-  position: absolute;
-  margin-left: 31.05%;
-  padding: 35px 8.24%;
-  font-size: 2.4rem;
   background-color: #D8D8D8;
   border: 1px solid white;
-  z-index: 1;
-  margin-top: -60px;
+  font-size: 2.4rem;
+  position: absolute;
   letter-spacing: 7px;
+  margin-top: -60px;
+  padding: 35px ;
+  right: 0;
+  z-index: 1;
 }
 .text-container {
   display: flex;
@@ -341,6 +369,9 @@ footer {
 .outskirts-img {
   width: 100%;
 }
+.outskirts-img-mobile {
+  display: none;
+}
 .grey-square-left {
   position: absolute;
   padding: 35px 70px;
@@ -355,8 +386,25 @@ footer {
   margin-top: 80px;
   margin-bottom: 100px;
 }
+.the-blocks-container {
+  position: relative;
+}
 .the-blocks-img {
   width: 100%;
+}
+.the-blocks-img-mobile {
+  display: none;
+}
+.blocks-grey-square-right {
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  font-size: 2.4rem;
+  position: absolute;
+  letter-spacing: 7px;
+  margin-top: -60px;
+  padding: 35px ;
+  right: 0;
+  z-index: 1;
 }
 @media (max-width: 500px) {
   .about-section {
@@ -369,16 +417,20 @@ footer {
   .view-designs-btn {
     margin-left: 30px;
     padding: 15px 125px;
+    margin-top: 20px;
   }
   .grey-square-right {
     padding: 25px 50px;
-    margin-left: 50px;
+    margin-right: 88px;
     margin-top: -40px;
   }
   .grey-square-left {
     padding: 25px 50px;
-    margin-left: 70px;
+    margin-left: 96px;
     margin-top: -40px;
+  }
+  .blocks-grey-square-right {
+    margin-right: 98px;
   }
   .about-section {
     margin-left: 20px;
@@ -389,6 +441,41 @@ footer {
   .learn-more-btn {
     margin-left: 30px;
     padding: 15px 125px;
+  }
+  .villas-img {
+    display: none;
+  }
+  .outskirts-img {
+    display: none;
+  }
+  .the-blocks-img {
+    display: none;
+  }
+  .villas-img-mobile {
+    display: block;
+    margin: 0 auto;
+  }
+  .outskirts-img-mobile {
+    display: block;
+    margin: 0 auto;
+  }
+  .the-blocks-img-mobile {
+    display: block;
+    margin: 0 auto;
+  }
+  .home-img-1 {
+    display: none;
+  }
+  .home-img-2 {
+    display: none;
+  }
+  .home-img-1-mobile {
+    display: block;
+    margin: 0 auto;
+  }
+  .home-img-2-mobile {
+    display: block;
+    margin: 0 auto;
   }
 }
 .services-jumbotron {
@@ -489,4 +576,15 @@ footer {
 }
 .menu-open a:hover {
   color: #222222;
+}
+.overlay {
+  margin-top: 50px;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(173, 173, 173, 0.747);
+  transition: 0.5s;
 }
