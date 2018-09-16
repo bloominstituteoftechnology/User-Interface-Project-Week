@@ -4,7 +4,6 @@ function about() {
     let timer = "";
     let transitionFlg = false;
     let index2 = 0;
-    //document.querySelector(".carousel").onload = selectRight;
     
     const menuButton = document.querySelector(".menu-button");
     menuButton.addEventListener("click", clickMenu);
@@ -26,15 +25,12 @@ function about() {
         }
     }
 
-   
-
     class Carousel {
         constructor(element) {
             this.element = element;
             this.rightBtn = document.querySelector(".right-button");
             this.leftBtn = document.querySelector(".left-button");
             this.images = document.querySelectorAll(".carousel img");
-
             this.rightBtn.addEventListener("click", () => { this.selectRight() });
             this.leftBtn.addEventListener("click", () => { this.selectLeft() });
             this.controlButton = document.querySelector(".control-button");
@@ -42,9 +38,7 @@ function about() {
             this.optionsButton = document.querySelector(".options-button");
             this.optionsButton.addEventListener("click", () => { this.showTransition() });
             this.optionsAudio = document.querySelector(".options-audio");
-            this.optionsAudio.addEventListener("click", () => { this.beginAudio() });
-         
-
+            this.optionsAudio.addEventListener("click", () => { this.beginAudio() }); 
         }
         selectRight() {
             if (index2 < 5) {
@@ -52,8 +46,7 @@ function about() {
             } else {
                 index2 = 0;
             };
-          // index2 = index2 < 5 ? += 1: 0;
-           
+         
             this.images.forEach(function (item) {
                 item.style.display = "none"
             });
@@ -83,9 +76,7 @@ function about() {
                 showFlg = false;
                 this.controlButton.innerHTML = "Click Here to Start";
             } else {
-                let delay = document.querySelector("#slider-range").value;
-                delay = delay * 1000;
-
+                let delay = (document.querySelector("#slider-range").value * 1000);
                 this.controlButton.innerHTML = "Click Here to Stop";
                 showFlg = true;
                 timer = setInterval(() => { this.beginShow() }, delay);
@@ -100,7 +91,6 @@ function about() {
                 transitionFlg = false;
             } else {
                 transitionFlg = true;
-
                 this.optionsButton.innerHTML = "Click to Disable";
             }
         }
@@ -111,10 +101,8 @@ function about() {
             }  else {
                 this.optionsAudio.innerHTML = "Click Here to Start";
                 togglePlay();
-            }
-           
+            }    
         }
-
     }
 
     let carousel = document.querySelectorAll(".carousel");

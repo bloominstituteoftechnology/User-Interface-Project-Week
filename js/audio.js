@@ -81,13 +81,13 @@ function nextFile() {
     audio.src = "../audio/piano3.mp3";
     document.querySelector(".options-audio").innerHTML = "Click Here to Stop";
     audio.play();
-    }
+}
 
-    function nextFile2() {
-        audio.src = "../audio/song56.mp3";
-        document.querySelector(".options-audio").innerHTML = "Click Here to Stop";
-        audio.play();
-        }
+function nextFile2() {
+    audio.src = "../audio/song56.mp3";
+    document.querySelector(".options-audio").innerHTML = "Click Here to Stop";
+    audio.play();
+}
 
 
 
