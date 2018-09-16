@@ -35,6 +35,7 @@ function contact() {
         if (formInput.value === "Enter Email:") {
           formInput.value = "";
         }
+        //formInput.value = formInput.value = "Enter Email" ? "": ;
       }
 
       function inputFocus2() {

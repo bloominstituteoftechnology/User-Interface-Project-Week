@@ -61,6 +61,8 @@ function about() {
             } else {
                 index2 = 0;
             };
+          // index2 = index2 < 5 ? += 1: 0;
+           
             this.images.forEach(function (item) {
                 item.style.display = "none"
             });
