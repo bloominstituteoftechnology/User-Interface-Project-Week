@@ -6,7 +6,7 @@
 
 //grab nav button div
 const navButton = document.querySelector('.nav-button');
-console.log(navButton);
+
 //grab images within nav button
 const navImages = navButton.querySelectorAll('img');
 
@@ -29,10 +29,7 @@ const navButtonHandler = function(event){
 
     //set default focus on correct link
     navLinks.forEach(function(link){
-        console.log(link.textContent);
-        console.log(navButton.dataset.id);
         if(link.textContent === navButton.dataset.id){
-            console.log(link.textContent);
             link.style.color = '#222222';
         }
     });
@@ -43,3 +40,68 @@ const navButtonHandler = function(event){
 
 //Add event listenter to nav button
 navButton.addEventListener('click', navButtonHandler);
+
+//**************************************************************/
+
+/***********************************************************
+ * TAB NAVIGATOR COMPONENT FOR SERVICES.HTML
+ *********************************************************/
+
+class tabLink{
+    constructor(element){
+        this.element = element;
+        this.id = this.element.dataset.id;
+        this.card = document.querySelector(`.navigator-card[data-id="${this.id}"]`);
+        this.card = new navCard(this.card);
+
+        this.element.addEventListener('click', () => {this.selectLink()});
+    }
+
+    //event handler for tabLink click
+    selectLink(){
+        /*****show card associated with link */
+        //grab all cards
+        const cards = document.querySelectorAll('.navigator-card');
+        //hide all before displaying correct one
+        cards.forEach(function(card_el){
+            card_el.classList.remove('show-card');
+        });
+        //display card associated with clicked link
+        this.card.showCard();
+
+        //***handle styling of links */
+        //grab all links
+        const links_el = document.querySelectorAll('.button-link');
+        console.log(links_el);
+        //make sure all links have default style
+        links_el.forEach(function(link_el){
+            link_el.classList.remove('clicked-link');
+        });
+        //style the clicked link
+        console.log(this.element);
+        this.element.style.outline = 'none'; //remove default bluish outline on button element
+        this.element.classList.add('clicked-link');
+
+    }
+}
+
+class navCard{
+    constructor(element){
+        this.element = element;
+
+    }
+
+    showCard(){
+        this.element.classList.add('show-card');
+    }
+}
+
+
+//create tabLinks objects array
+const tabLinks_el = document.querySelectorAll('.navigator-links .button-link');
+const tabLinkObjects = Array.from(tabLinks_el).map(function(button_link){
+    return new tabLink(button_link);
+});
+
+
+
