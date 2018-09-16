@@ -89,7 +89,7 @@ video {
   outline: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
+  vertical-align: top;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -152,10 +152,18 @@ table {
   color: #ffffff;
 }
 .navigationTextExpand {
+  border: solid 2px #ffffff;
+  height: 270px;
+  width: 300px;
   font-weight: 700;
   font-size: 2.3;
   color: #ffffff;
   line-height: 85px;
+  text-align: center;
+}
+.navigationTextExpand a {
+  text-decoration: none;
+  color: inherit;
 }
 .navigationTextExpand a:hover {
   color: #222222;
@@ -198,6 +206,9 @@ html {
   max-width: 1024px;
   margin: 0 auto;
 }
+.container {
+  vertical-align: top;
+}
 p {
   background-color: #ffffff;
   color: #222222;
@@ -207,8 +218,11 @@ p {
   line-height: 24px;
 }
 .navi {
+  position: fixed;
+  z-index: 3;
+  opacity: 0.8;
   display: inline-flex;
-  width: 100%;
+  width: 1024px;
   height: 40px;
   flex-direction: row;
   justify-content: right;
@@ -227,19 +241,32 @@ p {
   display: flex;
   flex-direction: column;
 }
-.navi .menuList li {
-  width: 100%;
-  display: none;
+.expandMenu {
+  border: solid 2px #ffffff;
+  height: 270px;
+  width: 300px;
+  font-weight: 700;
+  font-size: 2.3;
+  color: #ffffff;
+  line-height: 85px;
+  text-align: center;
+}
+.expandMenu a {
+  text-decoration: none;
+  color: inherit;
+}
+.expandMenu a:hover {
+  color: #222222;
 }
 .logo {
   font-weight: 700;
   font-size: 2.1rem;
   color: #ffffff;
   line-height: 8px;
-  padding: 15px 160px 5px 0px;
-  width: 200px;
+  padding: 15px 0px 20px 20px;
+  width: 100%;
   display: flex;
-  justify-content: right;
+  justify-content: left;
 }
 .logo a:hover {
   color: #ffffff;
@@ -262,6 +289,7 @@ p {
   display: flex;
   width: 100%;
   position: absolute;
+  top: 0;
   z-index: -1;
 }
 .header .jumboTron .jumboH1 {
@@ -287,6 +315,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-top: 50px;
 }
 .designInfo .architects .archContent {
   display: flex;
@@ -336,19 +365,19 @@ p {
   margin: 50px 0px;
   position: relative;
 }
-.projects .villaWrap .subHeader {
+.projects .villaWrap .villaHeader {
   padding: 35px;
   width: 320px;
   height: 30px;
   background-color: #d8d8d8;
   border: solid 2px #ffffff;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   text-align: center;
   bottom: 57%;
   right: 0;
 }
-.projects .villaWrap .subHeader h1 {
+.projects .villaWrap .villaHeader h1 {
   font-family: 'Roboto', 'Arial', 'sans-serif';
   font-weight: 200;
   font-size: 3rem;
@@ -365,7 +394,7 @@ p {
   background-color: #d8d8d8;
   border: solid 2px #ffffff;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   text-align: center;
   bottom: 57%;
   left: 0;
@@ -387,7 +416,7 @@ p {
   background-color: #d8d8d8;
   border: solid 2px #ffffff;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   text-align: center;
   bottom: 57%;
   right: 0;

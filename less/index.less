@@ -91,7 +91,7 @@ video {
     outline: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline;
+    vertical-align: top;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -155,13 +155,20 @@ html {
     margin: 0 auto;
 }
 
+.container {
+    vertical-align: top;
+}
+
 p {
     .generalSettings;
 }
 
 .navi {
+    position: fixed;
+    z-index: 3;
+    opacity: 0.8;
     display: inline-flex;
-    width: 100%;
+    width: 1024px;
     height: 40px;
     flex-direction: row;
     justify-content: right;
@@ -172,19 +179,26 @@ p {
         width: 100%;
         display: flex;
         flex-direction: column;
-        li {
-            width: 100%;
-            display: none;
-        }
+        
     }
+}
+
+.expandMenu {
+    //     - Font Weight: Bold
+    // - Font Size: 48px
+    // - Line Height: 85px
+    // - Color: #FFFFFF
+    // - Hover Color: #222222
+    .navigationTextExpand;
+    // display: none;
 }
 
 .logo {
     .navigationLogo;
-    padding: 15px 160px 5px 0px;
-    width: 200px;
+    padding: 15px 0px 20px 20px;
+    width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: left;
 }
 
 .menuButton {
@@ -205,6 +219,7 @@ p {
         display: flex;
         width: 100%;
         position: absolute;
+        top: 0;
         z-index: -1;
         .jumboH1 {
             .jumboHeader;
@@ -228,6 +243,7 @@ p {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        margin-top: 50px;
         .archContent {
             display: flex;
             flex-direction: column;
@@ -271,14 +287,14 @@ p {
         width: 100%;
         margin: 50px 0px;
         position: relative;
-        .subHeader {
+        .villaHeader {
             padding: 35px;
             width: 320px;
             height: 30px;
             background-color: #d8d8d8;
             border: solid 2px #ffffff;
             position: absolute;
-            z-index: 1;
+            z-index: 0;
             text-align: center;
             bottom: 57%;
             right: 0;
@@ -302,7 +318,7 @@ p {
         background-color: #d8d8d8;
         border: solid 2px #ffffff;
         position: absolute;
-        z-index: 1;
+        z-index: 0;
         text-align: center;
         bottom: 57%;
         left: 0;
@@ -325,7 +341,7 @@ p {
         background-color: #d8d8d8;
         border: solid 2px #ffffff;
         position: absolute;
-        z-index: 1;
+        z-index: 0;
         text-align: center;
         bottom: 57%;
         right: 0;
@@ -356,26 +372,24 @@ footer {
     height: 100%;
     display: flex;
     flex-direction: row;
-        .emailWrap {
-            display: flex;
-            flex-direction: column;
-            width: 35%;
-            padding: 5%;
-
-           input{
-               height: 40px;
-               width: 270px;
-               border-radius: 5px;
-               padding-left: 5px;
-           }
-
-           h3{
-               font-size: 1.2rem;
-           }
+    .emailWrap {
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        padding: 5%;
+        input {
+            height: 40px;
+            width: 270px;
+            border-radius: 5px;
+            padding-left: 5px;
         }
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
 }
 
-input::placeholder{
+input::placeholder {
     color: grey;
 }
 
@@ -384,11 +398,10 @@ input::placeholder{
     padding-top: 5%;
     display: flex;
     justify-content: space-evenly;
-
-        p {
-            background-color: @footerBgColor;
-            .footerText;
-        }
+    p {
+        background-color: @footerBgColor;
+        .footerText;
+    }
 }
 
 #copyright {

@@ -136,11 +136,8 @@ table {
     border-spacing: 0;
 }
 
-
-
 @import "./mixins.less";
 @import "./variables.less";
-
 html {
     font-size: 62.5%;
     max-width: 1024px;
@@ -152,6 +149,7 @@ p {
 }
 
 .navi {
+    opacity: 0.8;
     display: inline-flex;
     width: 100%;
     height: 40px;
@@ -204,7 +202,7 @@ p {
             color: @fontColorWhite;
             position: absolute;
             z-index: 0;
-            bottom:5%;
+            bottom: 5%;
             right: 70%;
         }
     }
@@ -215,79 +213,87 @@ p {
     padding: 0 5%;
 }
 
-.tabs{
+.buttons {
     width: 100%;
     height: 100px;
 }
 
-.tabs-links{
+.button-links {
     margin: 5% 0;
     padding: 0 2%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    .tabs-link {
-        width: 100%;
-        text-align: center;
+    .button-link {
+        height: 50px;
+        width: 50px;
+        border: solid 1px #222222;
+        font-family: @projectFont;
+        font-weight: 700;
+        font-size: 1.8rem;
+        .button;
+        width: 180px;
+        height: 50px;
     }
 }
 
-.tabs-link { 
-    height: 20px;
-    width: 100px;
-        button {
-            font-family: @projectFont;
-            font-weight: 700;
-            font-size: 1.8rem;
-            .button;
-            width: 180px;
-            height: 50px;
-        }
-}
 
-button:hover{
+
+button:hover {
     color: #fff;
     background-color: #222222;
 }
 
-button::active{
+button::active {
     color: #5e9fb9;
 }
 
-.tab-items{
+.button-items {
+    margin-top: 100%;
     width: 100%;
     height: 300px;
-    margin: 5% 0 ;
+    margin: 5% 0;
 }
 
-.tabs-item {
+.button-item {
     display: flex;
     padding: 0 5%;
     height: 300px;
-        h1{
-            font-family: @projectFont;
-            .subHeaders;
-        }
+    h1 {
+        font-family: @projectFont;
+        .subHeaders;
+    }
+    img {
+        padding: 3%;
+    }
+}
 
-        img {
-            padding: 3%;
-        }
+// .button-item[data-button="1"] {
+//     display: flex;
+// }
+
+.button-item {
+    display: none;
+}
+
+.displayItem{
+    display: flex;
 }
 
 .tabs-text {
     padding-right: 5%;
 }
 
+.button-item-selected {
+    display: flex;
+}
 
-
-
-
-
-
-
-
-
-
+.button-link-selected {
+    height: 100px;
+    width: 200px;
+    color: #fff;
+    background-color: #5e9fb9;
+}
 
 footer {
     background-color: #828282;
@@ -295,32 +301,29 @@ footer {
     position: relative;
     font-family: @projectFont;
     .footerHeadings;
-}
-
-.footerWrap {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+    .footerWrap {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
         .emailWrap {
             display: flex;
             flex-direction: column;
             width: 35%;
             padding: 5%;
-
-           input{
-               height: 40px;
-               width: 270px;
-               border-radius: 5px;
-               padding-left: 5px;
-           }
-
-           h3{
-               font-size: 1.2rem;
-           }
+            input {
+                height: 40px;
+                width: 270px;
+                border-radius: 5px;
+                padding-left: 5px;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
         }
+    }
 }
 
-input::placeholder{
+input::placeholder {
     color: grey;
 }
 
@@ -329,11 +332,10 @@ input::placeholder{
     padding-top: 5%;
     display: flex;
     justify-content: space-evenly;
-
-        p {
-            background-color: @footerBgColor;
-            .footerText;
-        }
+    p {
+        background-color: @footerBgColor;
+        .footerText;
+    }
 }
 
 #copyright {
