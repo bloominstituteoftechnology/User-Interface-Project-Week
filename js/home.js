@@ -6,18 +6,52 @@ switchImages("homeImgTwo", './img/home/home-mobile-img-2.png');
 switchImages("villas", './img/home/home-mobile-villas-img.png');
 switchImages("outskirts", './img/home/home-mobile-outskirts-img.png');
 
-// get all large sections and move them out of the screen view
-let largeSections = document.querySelectorAll('.large-section section');
-largeSections[0].style.position = 'relative';
+// get all large sections
+const largeSections = document.querySelectorAll('.large-section section');
 
-document.addEventListener('scroll', (e) => {
-  if (largeSections[0].offsetTop - 500 > e.pageY) {
-    TweenMax.fromTo(largeSections[0], 1, {right: '-9999px'}, {right: 0})
+// scroll event for largeSections
+window.addEventListener('scroll', (e) => {
 
-    if (largeSections[0].style.right === 0 ) {
-      return true;
+  largeSections.forEach(image => {
+    // halfway point of image
+    const slideInPoint = (window.scrollY + window.innerHeight) - (image.clientHeight / 2);
 
-      
+    // bottom of image
+    const imageBottom = image.offsetTop + image.clientHeight;
+
+    const isHalfShown = slideInPoint > image.offsetTop;
+
+    const isNotScrolledPast = window.scrollY < imageBottom;
+
+    if(isHalfShown && isNotScrolledPast){
+      image.classList.add('active');
     }
-  }
+    else {
+      image.classList.remove('active');
+    }
+  });
+});
+
+// get all sections with dissolved class
+const dissolved  = document.querySelectorAll('.dissolved')
+window.addEventListener('scroll', (e) => {
+  
+  dissolved.forEach(image => {
+    // halfway point of image
+    const slideInPoint = (window.scrollY + window.innerHeight) - (image.clientHeight / 2);
+
+    // bottom of image
+    const imageBottom = image.offsetTop + image.clientHeight;
+
+    const isHalfShown = slideInPoint > image.offsetTop;
+
+    const isNotScrolledPast = window.scrollY < imageBottom;
+
+    if(isHalfShown && isNotScrolledPast){
+      image.classList.add('undissolved');
+    }
+    else {
+      image.classList.remove('undissolved');
+    }
+  });
 });
