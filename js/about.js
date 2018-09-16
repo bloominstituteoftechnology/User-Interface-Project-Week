@@ -1,7 +1,6 @@
 function about() {
 
     let showFlg = false;
-    let menuOpen = true;
     let timer = "";
     let transitionFlg = false;
 
@@ -9,24 +8,13 @@ function about() {
     menuButton.addEventListener("click", clickMenu);
     const navButton = document.querySelector(".nav-button");
     navButton.addEventListener("click", clickMenu);
-
     const formInput2 = document.querySelector(".input2");
     formInput2.addEventListener("click", inputFocus2);
-
     let menu = document.querySelector(".nav");
 
     function clickMenu() {
-        if (menuOpen === true) {
-            menuButton.classList.add("menu-button-close");
-            menu.classList.remove("nav-close");
-            menu.classList.add("nav-open");
-            menuOpen = false;
-        } else {
-            menuButton.classList.remove("menu-button-close");
-            menu.classList.remove("nav-open");
-            menu.classList.add("nav-close");
-            menuOpen = true;
-        }
+        menu.classList.toggle("nav-open");
+        menuButton.classList.toggle("menu-button-close");
     }
 
     function inputFocus2() {

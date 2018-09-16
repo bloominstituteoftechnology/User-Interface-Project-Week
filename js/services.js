@@ -1,6 +1,5 @@
 function services() {
-  let menuOpen = true;
-
+ 
   const menuButton = document.querySelector(".menu-button");
   menuButton.addEventListener("click", clickMenu);
   let menu = document.querySelector(".nav");
@@ -8,19 +7,10 @@ function services() {
   formInput.addEventListener("click", inputFocus);
   const navButton = document.querySelector(".nav-button");
   navButton.addEventListener("click", clickMenu);
-  console.log("this is navbutton:" + navButton);
+  
   function clickMenu() {
-    if (menuOpen === true) {
-      menuButton.classList.add("menu-button-close");
-      menu.classList.remove("nav-close");
-      menu.classList.add("nav-open");
-      menuOpen = false;
-    } else {
-      menuButton.classList.remove("menu-button-close");
-      menu.classList.remove("nav-open");
-      menu.classList.add("nav-close");
-      menuOpen = true;
-    }
+    menu.classList.toggle("nav-open");
+    menuButton.classList.toggle("menu-button-close");
   }
 
  function inputFocus() {
