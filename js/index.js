@@ -1,15 +1,20 @@
 // JS goes here
 
-const menu = document.querySelector('.nav img')
+const menuO = document.querySelector('.open')
+const menuC = document.querySelector('.close')
 
-function Menu () {
-    if (menu.src === 'img/nav-hamburger-close.png') {
-        menu.src = 'img/nav-hamburger.png';
-    }
-    else (menu.src = 'img/nav-hamburger-close.png')
+function MenuO () {
+
+        menuO.style.display = 'none';
+        menuC.style.display = 'block'; 
+}
+
+function MenuC () {
+    menuC.style.display = 'none';
+    menuO.style.display = 'block';
 }
 
 
-menu.addEventListener('click',function() {Menu()})
+menuO.addEventListener('click',function() {MenuO()})
 
-console.log(menu);
+menuC.addEventListener('click',function() {MenuC()})
