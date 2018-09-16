@@ -8,10 +8,14 @@ class Topic {
     this.selectedButton = this.buttons[0].element;
     this.selectedButton.classList.add("topic-showing");
     this.selectedPic = this.buttons[0].topicPic.element;
-    this.selectedPic.classList.add("topic-showing");
+    this.selectedPic.style.display = "block";
+    this.selectedPic.style.opacity = "1";
     this.selectedPara = this.buttons[0].topicPara.element;
-    this.selectedPara.classList.add("topic-showing");
+    this.selectedPara.style.display = "block";
+    this.selectedPara.style.opacity = "1";
   }
+
+  switchSelected() {}
 }
 
 class TopicButton {
@@ -30,19 +34,55 @@ class TopicButton {
   }
 
   select() {
-    this.deselect(topic.selectedButton);
-    this.topicPic.deselect(topic.selectedPic);
-    this.topicPara.deselect(topic.selectedPara);
+    topic.selectedButton.classList.remove("topic-showing");
     topic.selectedButton = this.element;
-    topic.selectedPic = this.topicPic.element;
-    topic.selectedPara = this.topicPara.element;
-    this.element.classList.add("topic-showing");
-    this.topicPic.select();
-    this.topicPara.select();
+    topic.selectedButton.classList.add("topic-showing");
+    const t1 = new TimelineMax();
+    t1.set(topic.selectedPic, { zIndex: 0 })
+      .set(topic.selectedPara, { zIndex: 0 })
+      .to(topic.selectedPic, 1, {
+        opacity: 0,
+        x: -300,
+        scale:0
+      })
+      .to(
+        topic.selectedPara,
+        1,
+        {
+          opacity: 0,
+          y: -300,
+          scale: 0
+        },
+        "-=1"
+      )
+      .addCallback(() => {
+        topic.selectedPic.style.display = "none";
+        topic.selectedPara.style.display = "none";
+        topic.selectedPic = this.topicPic.element;
+        topic.selectedPara = this.topicPara.element;
+        topic.selectedPic.style.display = "block";
+        topic.selectedPara.style.display = "block";
+        this.showElements();
+      }, 1);
   }
 
-  deselect(link) {
-    link.classList.remove("topic-showing");
+  showElements() {
+    const t2 = new TimelineMax();
+    t2.set(topic.selectedPic, { x: 300, opacity: 0, scale: 1 })
+      .set(topic.selectedPara, { y: 300, opacity: 0, scale: 1 })
+      .to(topic.selectedPic, 2, {
+        x: 0,
+        opacity: 1
+      })
+      .to(
+        topic.selectedPara,
+        2,
+        {
+          y: 0,
+          opacity: 1
+        },
+        "-=2"
+      );
   }
 }
 
@@ -50,27 +90,11 @@ class TopicPic {
   constructor(element) {
     this.element = element;
   }
-
-  select() {
-    this.element.classList.add("topic-showing");
-  }
-
-  deselect(item) {
-    item.classList.remove("topic-showing");
-  }
 }
 
 class TopicPara {
   constructor(element) {
     this.element = element;
-  }
-
-  select() {
-    this.element.classList.add("topic-showing");
-  }
-
-  deselect(item) {
-    item.classList.remove("topic-showing");
   }
 }
 
