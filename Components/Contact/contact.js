@@ -5,8 +5,13 @@ const radios = document.querySelectorAll(".radio-input");
 const commentBox = document.querySelector('textarea');
 const dropdownMenu = document.querySelector('select');
 
+
+//direct user to utilize email box above instead of footer email box
+emails[1].value = "Please enter contact info in form above";
+
 //reset forms
 submit.addEventListener('click', () => {
+    //check validity of email entered
     let isValid = emails[0].checkValidity();
     if (isValid === true) {
         window.alert('Thank you for contacting us! We will get back to you within 2 business days.')
