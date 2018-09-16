@@ -1,15 +1,14 @@
+
+
+// The main navigation for all pages
 .menu {
     .width-100;
     position: fixed;
     background-color: @lambda-color-home-bg;
-    height: 50px;
+    height: 40px;
     z-index: 1;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    .flex-wrap(@jc: space-between, @ai: none, @fw: wrap);
+
     @media @mobile {
         .width-100;
     }
@@ -18,16 +17,15 @@
 .menu h1 {
     padding: 20px;
     margin-left: 30px;
-    line-height: 5px;
-    font-size: 2.4rem;
-    font-family: Roboto, Arial, sans-serif;
-    color: white;
+    .font(@size: 2.4rem, @weight: 500, @height: 5px);
+  
     @media @mobile {
-        font-size: 2rem;
-        font-weight: bold;
+        .font(@size: 2rem, @weight: 500, @height: 5px);
     }
 }
 
+
+//CSS Style designed Hamburger
 .hamburger {
     margin: 5px;
     cursor: pointer;
@@ -46,6 +44,7 @@
     }
 }
 
+// Basic Navigation items
 nav {
     margin-top: 85px;
     display: none; // display: flex;
@@ -60,13 +59,13 @@ nav {
             font-size: 2.2rem;
         }
         &:hover {
-            display: flex;
-            align-items: center;
+            
             color: rgb(51, 42, 38);
             font-weight: bold;
             font-size: 3.2rem;
             @media @mobile {
                 font-size: 2.2rem;
+                font-weight:bold;
             }
         }
         .services&:target {
@@ -75,6 +74,8 @@ nav {
         }
     }
 }
+
+// When menu becomes active
 
 .menu--active {
     height: 100%;
