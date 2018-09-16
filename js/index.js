@@ -1,10 +1,10 @@
 // JS goes here
 class DropDown{
-  constructor(element) {
+  constructor(element) {   // element = div.menu-container
     this.element = element;
 
-    this.menuOpen = this.element.querySelector('.openMe');
-    this.menuClose = this.element.querySelector('.closeMe');
+    this.menuOpen = this.element.querySelector('.openMe');    //  = div.hamburgerIMG.openMe
+    this.menuClose = this.element.querySelector('.closeMe');  //  = div.hamburgerIMG.closeMe
 
     this.menuItems = this.element.querySelector('.dropdown-content');
 
@@ -13,9 +13,15 @@ class DropDown{
   }
 
   expandMenu(){
+
     this.menuOpen.style.display = 'none';
     this.menuClose.style.display = 'block';
     this.menuItems.classList.add('menuList');
+
+   //  this.menuItems.style.height = '3000px';
+
+  //   this.menuItems.style.height = document.body.clientHeight;
+
   }
 
   closeMenu(){
@@ -25,5 +31,8 @@ class DropDown{
   }
 }
 
-let menuDropdown = document.querySelector('.menu-container');
+
+
+let menuDropdown = document.querySelector('.menu-container');  // = div.menu-container
+
 menuDropdown = new DropDown(menuDropdown);
