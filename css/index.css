@@ -1,1 +1,481 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  height: 100vh;
+}
+main {
+  max-width: 1028px;
+  margin: 0 auto;
+}
+p {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 24px;
+}
+h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFFFFF;
+}
+h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+h3 {
+  font-weight: normal;
+  font-size: 2.8rem;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+address p {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+h4 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+}
+#nav {
+  background-color: #828282;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 1028px;
+  z-index: 10;
+  opacity: 0.9;
+}
+#nav #nav-well {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#nav #nav-well .nav-container {
+  width: 50%;
+  display: flex;
+  margin: 0 5%;
+  padding: 10px 0;
+}
+#nav #nav-well .menu {
+  justify-content: flex-end;
+}
+#nav nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+#nav nav a {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#nav nav a:hover {
+  color: #222222;
+}
+footer {
+  background-color: #828282;
+  color: #FFFFFF;
+}
+footer #footer-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 0;
+}
+footer #footer-container input {
+  width: 100%;
+  padding: 12px 5px;
+  color: grey;
+  font-size: 1.7rem;
+  margin: 20px 0;
+}
+footer #footer-container #share {
+  margin: 0;
+}
+@media (max-width: 500px) {
+  footer #footer-container {
+    width: 90%;
+    padding: 0;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  footer #footer-container h3,
+  footer #footer-container p {
+    padding: 8px 0;
+  }
+}
+footer #footer-container p {
+  margin: 10px 0;
+}
+footer #copyright {
+  text-align: center;
+}
+@media (max-width: 500px) {
+  footer #copyright {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 500px) {
+  footer {
+    padding: 50px 0;
+  }
+}
+#jumbotron {
+  width: 100%;
+  height: 440px;
+  background-image: url(../img/home/home-jumbotron.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#jumbotron section {
+  padding-left: 80px;
+}
+@media (max-width: 500px) {
+  #jumbotron {
+    height: 400px;
+  }
+}
+#call-to-action {
+  margin: 50px 0;
+}
+#call-to-action section {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 20px;
+}
+#call-to-action section .action-container {
+  width: 50%;
+}
+@media (max-width: 500px) {
+  #call-to-action section .action-container {
+    width: 100%;
+  }
+  #call-to-action section .action-container img {
+    width: 100%;
+  }
+}
+#call-to-action section .action-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media (max-width: 500px) {
+  #call-to-action section .action-text-container h2,
+  #call-to-action section .action-text-container p {
+    margin: 20px 0;
+  }
+}
+#call-to-action section .button {
+  width: 30%;
+  background-color: #FFFFFF;
+  font-size: 1.6rem;
+  padding: 10px 30px;
+  border: 2px solid #222222;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  #call-to-action section .button {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 500px) {
+  #call-to-action section {
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 500px) {
+  #call-to-action .action-well {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #call-to-action .reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+#projects {
+  width: 70%;
+  margin: 0 auto;
+}
+#projects h2 {
+  margin-bottom: 50px;
+}
+#projects .project-img {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+#projects .project-img img {
+  margin: 0 auto;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  #projects .project-img img {
+    height: 250px;
+  }
+}
+@media (max-width: 500px) {
+  #projects .project-img {
+    justify-content: center;
+  }
+}
+#projects .img-text {
+  position: absolute;
+  padding: 20px 80px;
+  bottom: -20px;
+  background-color: #D8D8D8;
+}
+@media (max-width: 500px) {
+  #projects .img-text {
+    bottom: -40px;
+  }
+}
+#projects .left {
+  justify-content: flex-start;
+}
+@media (max-width: 500px) {
+  #projects .left {
+    justify-content: center;
+  }
+}
+#projects .project-description {
+  width: 40%;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+@media (max-width: 500px) {
+  #projects .project-description {
+    width: 90%;
+  }
+}
+@media (max-width: 500px) {
+  #projects {
+    width: 100%;
+  }
+}
+main #services-jumbotron {
+  width: 100%;
+  height: 300px;
+  background-image: url(../img/services/services-jumbotron.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+main #services-jumbotron h1 {
+  padding: 0 80px;
+}
+main #services-description {
+  padding-top: 60px;
+  margin: 0 auto;
+  width: 80%;
+}
+main #tab-navigator {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+main #tab-navigator .service-button {
+  width: 20%;
+  background-color: #FFFFFF;
+  font-size: 1.6rem;
+  padding: 15px 0;
+  border: 2px solid #222222;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+main #tab-navigator .active {
+  background-color: #5E9FB9;
+  color: #FFFFFF;
+}
+main .service-well {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+main .service-well h2 {
+  margin-bottom: 20px;
+}
+main .service-well .service-tunnel {
+  display: flex;
+  justify-content: space-between;
+}
+main .service-well .service-tunnel .service-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+main .service-well .service-tunnel .service-container p {
+  margin: 10px 0;
+}
+main .service-well .service-tunnel .service-container img {
+  width: 100%;
+  height: 100%;
+}
