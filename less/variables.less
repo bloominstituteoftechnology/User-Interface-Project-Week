@@ -9,6 +9,7 @@
 @button-selected: #5E9FB9;
 
 @mobile: ~ "(max-width: 320px)";
+@tablet800:  ~ "(max-width: 800px)";
 @tablet:  ~ "(max-width: 500px)";
 
 /* Mixins */
@@ -35,6 +36,17 @@
     background-image: url(@bkg);
     background-repeat: no-repeat;
     background-position: top;
+    @media @tablet800 {
+        max-width: 770px;
+        width: 100%;
+        height: 270px;
+        margin: 30px 1%;
+    }
+    @media @tablet {
+        margin-top: 3px;
+        width: 500px;
+        height: 280px;
+    }
     @media @mobile {
         margin-top: 3px;
         width: 320px;
@@ -58,6 +70,12 @@ html{
     margin: auto;
     overflow: hidden;
 
+    @media @tablet800 {
+        max-width: 800px;
+    }
+    @media @tablet {
+        max-width: 500px;
+    }
     @media @mobile {
         max-width: 320px;
     }

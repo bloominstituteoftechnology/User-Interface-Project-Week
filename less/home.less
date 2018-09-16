@@ -6,6 +6,7 @@ h1, h2{
     padding-bottom: 20px;
 }
 
+/* Call to Action */
 .cta {
     .flex(column);
     padding: 8px 6px;
@@ -17,6 +18,14 @@ h1, h2{
         width: 84%;
         margin: 48px;
 
+        @media @tablet {
+            &:first-child{
+                .flex(column-reverse);
+            }
+            .flex(column);
+            width: 500px;
+            margin: 28px 48px 14px 48px;
+        }
         @media @mobile {
             &:first-child{
                 .flex(column-reverse);
@@ -27,12 +36,20 @@ h1, h2{
         }
 
         .cta-image {
+            @media @tablet800 { display: none; }
+            @media @tablet {
+                display: inline-block;
+            }
             @media @mobile {
                 display: none;
             }
         }
         .cta-image.mobile {
             display: none;
+            @media @tablet800 { display: inline-block; };
+            @media @tablet {
+                display: none;
+            }
             @media @mobile {
                 display: inline-block;
                 // width: 290px;
@@ -48,6 +65,10 @@ h1, h2{
         .flex(column, left);
         padding-right: 15px;
 
+        @media @tablet {
+            width: 80%;
+            padding: 22px 0px 0px;
+        }
         @media @mobile {
             width: 94%;
             padding: 22px 0px 0px;
@@ -68,6 +89,10 @@ h1, h2{
     .cta-text.right {
         .flex(column, left);
         padding-left: 27px;
+        @media @tablet {
+            width: 80%;
+            padding: 28px 0px 0px;
+        }
         @media @mobile {
             width: 94%;
             padding: 28px 0px 0px;
@@ -99,9 +124,13 @@ h3 {
     }
 }
 
+/* Recent Projects/Main Content */
 .main-content {
     margin: 35px auto;
     width: 855px;
+    @media @tablet800 {
+        width: 98%;
+    }
     @media @mobile {
         width: 100%;
         margin: 30px auto;
@@ -144,6 +173,9 @@ h3 {
         .project-text {
             margin: 51px auto 100px;
             width: 53%;
+            @media @tablet {
+                width: 80%
+            }
             @media @mobile {
                 margin: 0px auto 10px;
                 width: 90%;

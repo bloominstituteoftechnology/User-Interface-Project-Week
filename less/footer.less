@@ -1,6 +1,12 @@
+/* Footer Settings */
+
 footer{
     background: @footer-background;
     padding: 60px 63px;
+    @media @tablet {
+        max-width: 500px;
+        width: 100%;
+    }
     @media @mobile {
         margin-top: 105px;
         padding: 13px 6px;
@@ -9,6 +15,11 @@ footer{
     }
     .footer-row{
         .flex(row,center,space-between);
+        @media @tablet {
+            .flex(column, normal, normal);
+            width: 500px;
+            margin: auto;
+        }
         @media @mobile {
             .flex(column, normal, normal);
             width: 320px;
@@ -18,7 +29,7 @@ footer{
         .footer-col{
             .flex(column, left);
             padding: 0px 20px;
-            @media @mobile {
+            @media @tablet {
                 padding: 0px 0px;
             }
 
@@ -26,8 +37,8 @@ footer{
                 font-size: 20px;
                 line-height: 24px;
                 color: @nav-color;
-                @media @mobile {
-                    padding-top: 10px;
+                @media @tablet {
+                    padding-top: 20px;
                 }
             }
 
@@ -43,6 +54,9 @@ footer{
                 height: 40px;
                 margin: 20px 0px 10px;
                 border-radius: 5px;
+                @media @tablet {
+                    width: 75%;
+                }
                 @media @mobile {
                     width: 90%;
                 }
