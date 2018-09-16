@@ -1,8 +1,10 @@
 //menu elements
 
+
 //toggles the menu-open and sets the old nav opacity to zero
 const toggleMenuOn = element => {
     newMenu.classList.toggle('menu-open');
+
     oldMenu.style.opacity = '0';
 };
 
@@ -26,5 +28,28 @@ hamburger.addEventListener('click', toggleMenuOn);
 const menuClose = document.querySelector('.menuclose');
 menuClose.addEventListener('click', toggleMenuOff);
 
-//for buttons and pictures
+//animations
 
+
+window.sr = ScrollReveal({
+    reset: false
+});
+
+sr.reveal('.recentprojects', {
+    origin: 'right',
+    distance: '60px',
+    duration: 2000,
+    interval: 1000
+});
+
+sr.reveal('.twoboxes', {
+    origin: 'left',
+    duration: 2000,
+    delay: 500,
+    interval: 600
+
+});
+
+sr.reveal('.footer',{
+duration: 3000,
+});
