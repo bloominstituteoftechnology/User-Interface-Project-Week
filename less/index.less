@@ -92,6 +92,7 @@ p, a {
 .main-nav {
   width: 100%;
   background-color: #9BA4AE;
+  opacity: 0.9;
   display: block;
   position: fixed;
   z-index: 1;
@@ -193,7 +194,7 @@ p, a {
   background-image: @img;
   background-repeat: no-repeat;
   background-position: center; 
-  
+
   header {
     .containermixin();
     height: @height;
@@ -281,6 +282,8 @@ p, a {
   background-repeat: no-repeat;
   width: 47.6%;
   height: 275px;
+  background-position: right; 
+
 
   @media @mobile {
     width: 100%;
@@ -525,16 +528,30 @@ footer {
 
 .services-header {
   .header-mixin(250px, url('../img/services/services-jumbotron.png'), 20px);
+
+  @media @mobile {
+    .header-mixin(250px, url('../img/services/services-mobile-jumbotron.png'), 20px);
+  }
 }
 
 .about-services {
   margin: 45px auto;
+
+  @media @mobile {
+    margin-bottom: 25px;
+  }
 }
 
 .service-tab-links {
   display: flex;
   justify-content: space-between;
   margin-bottom: 45px;
+
+  @media (max-width: 585px) {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
 
   p {
     font-weight: bold;
@@ -543,6 +560,11 @@ footer {
     padding: 10px;
     width: 18%;
     text-align: center;
+
+    @media (max-width: 585px) {
+      margin: 15px auto;
+      width: 90%;
+    }
   }
 
   p:hover {
@@ -563,6 +585,49 @@ footer {
 
 .tab-content-selected {
   .main-section-mixin();
+  @media @mobile {
+    margin-bottom: 30px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @media @mobile {
+    margin-top: 10px;
+  }
+}
+
+.preconstruction-img {
+  .mainimage(url('../img/services/services-tab-pre-construction-img.png'));
+
+  @media @mobile {
+    .mainimage(url('../img/services/services-tab-mobile-pre-construction-img.png'));
+  }
+}
+
+.construction-img {
+  .mainimage(url('../img/services/services-tab-construction-img.png'));
+
+  @media @mobile {
+    .mainimage(url('../img/services/services-tab-mobile-construction-img.png'));
+  }
+}
+
+.designbuild-img {
+  .mainimage(url('../img/services/services-tab-design-build-img.png'));
+
+  @media @mobile {
+    .mainimage(url('../img/services/services-tab-mobile-design-build-img.png'));
+  }
+}
+
+.sustainability-img {
+  .mainimage(url('../img/services/services-tab-sustainability-img.png'));
+
+  @media @mobile {
+    .mainimage(url('../img/services/services-tab-mobile-sustainability-img.png'));
+  }
 }
 
 
