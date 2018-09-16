@@ -1,17 +1,16 @@
 // JS goes here
 
-/* Nav bar expansion code
-
-let navImg = document.getElementById("NavImg");
-
-function MenuClickHandler (item) {
-
-    console.log(item.src);
-if (item.src=='/img/nav-hamburger.png')
-    {
-        item.setAttribute('src', '/img/nav-hamburger-close');
+/* Nav bar expansion code */
+const navButton = document.getElementById("NavImg");
+const navExpansion = document.querySelector('.NavExpansion');
+console.log(navExpansion);
+navButton.onclick = function (event) {
+    if (navExpansion.style.display == "flex") {
+        navExpansion.style.display = "none";
     }
-}
-
-navImg.addEventListener('click', MenuClickHandler(event));
- */
+    
+    else if (navExpansion.style.display !== "flex") {
+        navExpansion.style.display = "flex";
+    }
+};
+console.log(navButton);
