@@ -1,5 +1,5 @@
 // JS goes here
-class Dropdown {
+/*class Dropdown {
     constructor(element) {
       
       this.element = element;
@@ -12,13 +12,37 @@ class Dropdown {
       
       this.element.addEventListener('click', () => {
         this.toggleContent()
+        console.log(clickd)
       })
     }
-  
+ 
     toggleContent() {
       this.content.classList.toggle('menu-hidden');
     }
   }
+ */
+
+  class Dropdown {
+    constructor(element){
+      this.element = element;
+      this.open = document.querySelector(".menu-button");
+      this.content = document.querySelector(".menu-content");
+      this.close = document.querySelector(".close-button");
+
+      this.open.addEventListener("click", () => {this.toggleContent()
+      this.open.classList.add('hide');
+      this.close.classList.remove('hide');})
+      
+
+      this.close.addEventListener("click", () =>{this.toggleContent()
+      this.close.classList.add('hide');
+      this.open.classList.remove('hide');})
+    }
+
+    toggleContent() {
+      this.content.classList.toggle('menu-hidden');
+    }
+  }
+
+  let dropdowns = new Dropdown();
   
-  let menuContent = document.querySelectorAll('.dropdown-menu');
-  dropdowns = Array.from(menuContent).map( menu => new Dropdown(menu));
