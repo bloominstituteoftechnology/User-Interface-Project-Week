@@ -4,7 +4,7 @@ class ButtonLink {
         this.data = this.element.dataset.tab;
         console.log(`this.data is ${this.data}`);
 
-        this.itemElement = document.querySelector(`.button-item[data-tab = '${this.data}']`);
+        this.itemElement = document.querySelector(`.button-item[data-tab = "${this.data}"]`);
 
         this.buttonItem = new ButtonItem(this.itemElement);
         console.log(`this.buttonItem is ${this.buttonItem}`);
@@ -15,7 +15,7 @@ class ButtonLink {
         const links = document.querySelectorAll('.button-link');
         Array.from(links).forEach(link => link.classList.remove('button-link-selected'));
         this.element.classList.add('button-link-selected');
-        this.tabItem.select();
+        this.buttonItem.select();
     }
 }
 
