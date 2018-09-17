@@ -4,6 +4,9 @@
     @media @tablet {
         height: 504px;
     }
+    @media @lmobile {
+        height: 306px;
+    }
     @media @mobile {
         height: 260px;
         margin-bottom: 37px;
@@ -31,11 +34,14 @@
         font-size: 6.4rem;
         line-height: 7.5rem;
         color: @white;
-        @media @mobile {
+        @media @lmobile {
             top: -150px;
             left: 0px;
-            font-size: 3.5rem;
+            font-size: 4rem;
             line-height: 4.3rem;
+        }
+        @media @mobile {
+            font-size: 3.5rem;
         }
     }
 }
@@ -122,9 +128,10 @@
 }
 
 .topbar {
-    z-index: 0;
+    z-index: 3;
     position: fixed;
-    top: 13px;
+    max-width: 1024px;
+    top: 0px;
     width: 100%;
     display: flex;
     background: @top-bar;
@@ -137,6 +144,9 @@
     padding: 1.32% 8.23%;
     width: 20%;
     cursor: pointer;       
+    @media @lmobile {
+        width: 22%;
+    }
     @media @mobile {
         padding: 4.5% 5%;
         width: 20%;        
@@ -156,7 +166,10 @@
 .nav-close {
     padding: 1.32% 8.23%;
     width: 20%;
-    cursor: pointer;       
+    cursor: pointer;
+    @media @lmobile {
+        width: 22%;
+    }       
     @media @mobile {
         padding: 4.5% 5%;
         width: 20%;        
@@ -166,11 +179,12 @@
     display: none;
     opacity: 0.96;
     width: 100%;
+    max-width: 1024px;
     position: fixed;
-    top: 13px;
+    top: 0px;
     height: 100vh;
     background: @top-bar;
-    z-index: 2;
+    z-index: 4;
 }
 
 .menu-top {
@@ -202,9 +216,9 @@ ul {
     }
 }
 .topbar-services {
-    top: 13px;
+    top: 0px;
 }
 
 .menu-services {
-    top: 13px;   
+    top: 0px;   
 }
