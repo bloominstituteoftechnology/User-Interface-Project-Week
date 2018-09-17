@@ -2,3 +2,131 @@
 body {
     background-color: lightgray;
 }
+
+
+
+.contact-container {
+
+    .pages-container();
+    header {
+        .header-navigation();
+        
+        .logo {
+            .logo-mixin();
+        }
+        .hamburger {
+            .hamburger-mixin();
+        }
+        // see menu.less
+    }
+    footer {
+        background-color: @footercolor;
+        height: 220px;
+        .flex-row-center();
+
+        @media @phone {
+            .flex-column-around();
+            height: 950px;
+        }
+
+
+        .footer-contact {
+            .footer-contact-mixin();
+            input[type="text"]{
+                width: 220px;
+                height: 30px;
+            }
+            @media @phone {
+                .footer-contact-mobile-mixin();
+                input[type="text"]{
+                    width: 90%;
+                    height: 70px;
+                    margin-left: 10px;
+                    border-radius: 8px;
+                }
+            }
+        }//.footer-contact
+        .footer {
+            .footer-mixin();
+            @media @phone {
+                .footer-mobile-mixin();
+            }
+        }
+    }// header & footer
+    .copyright {
+        .copyright-mixin();
+        @media @phone {
+            text-align: left;
+            padding-left: 20px;
+        }
+    }//.copyright
+ 
+}
+
+.contact-jumbo {
+    position: relative;
+
+    .contact-jumbo-text {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+        padding-left: 30px;
+        @media @phone {
+            padding-left: 10px;
+        }
+    }
+    .contact-jumbo-photo {
+        display: block;
+        width: 100%;
+        max-width: 800px;
+        padding-top: 15px;
+        @media @phone {
+            display: none;
+        }
+    }
+
+    .contact-jumbo-photo.mobile {
+        display: none;
+        @media @phone {
+            display: block;
+        }
+    }
+}
+
+.contact-main-content {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.user-input {
+    border: 1px solid blue;
+    width: 40%;
+    h2 {
+        margin-bottom: 10px;
+    }
+    .contact-email {
+        .contact-email-mixin();
+    }
+    .email-p p{
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+    #dropdown {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+    #textarea {
+        width: 100%;
+    }
+    .submit-button {
+        .button();
+    }
+}
+
+.locations {
+    border: 1px solid orange;
+}
