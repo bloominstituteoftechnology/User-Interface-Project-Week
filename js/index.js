@@ -28,12 +28,12 @@ const navButtonHandler = function(event){
     if(navImages[0].className === 'hide-nav'){
         TweenMax.to(navImages[0], .3, { css: { className: "" } });
     }else {
-        TweenMax.to(navImages[0], .1, { css: { className: "hide-nav" } });
+        TweenMax.to(navImages[0], 0, { css: { className: "hide-nav" } });
     }
     if(navImages[1].className === 'hide-nav'){
         TweenMax.to(navImages[1], .3, { css: { className: "" } });
     }else {
-        TweenMax.to(navImages[1], .1, { css: { className: "hide-nav" } });
+        TweenMax.to(navImages[1], 0, { css: { className: "hide-nav" } });
     }
 
     //Toggle nav dropdown
@@ -42,7 +42,7 @@ const navButtonHandler = function(event){
         TweenMax.to(navDropdown, .5, { css: { className: "-=hide-nav",left: null }, ease: Power2.easeOut});
         // navDropdown.style.position = 'relative';
     } else {
-        TweenMax.to(navDropdown, .5, { css: { className: "+=hide-nav", left: null}, ease: Power2.easeOut});
+        TweenMax.to(navDropdown, .2, { css: { className: "+=hide-nav", left: null}, ease: Power2.easeOut});
     }
 
     //set default focus on correct link
