@@ -18,12 +18,11 @@ burger.addEventListener('click', toggleNav);
 class TabLink{
     constructor(element){
         this.element=element;
-        console.log(element);
         this.tabData = element.dataset.tabname;
-        console.log(this.tabData);
         this.serviceDescription=document.querySelector(`.service-description[data-tabname="${this.tabData}"]`);
         this.serviceDescription=(new TabDescription(this.serviceDescription));
         this.element.addEventListener('click',this.selectTab.bind(this));
+        console.log(this);
   }
   selectTab(){
     const tabs = document.querySelectorAll(".tab");
@@ -53,4 +52,7 @@ let tabs = document.querySelectorAll(".tab");
 
 tabs = Array.from(tabs).map(function(tab){new TabLink(tab)});
 
-// tabs[1].selectTab();
+window.addEventListener("load",function(){
+let toClick=document.querySelector(".tab");
+toClick.click();
+});
