@@ -34,3 +34,14 @@ tabs1.forEach(function(element){
     }) 
 })
 
+const navIcons = document.querySelectorAll('nav img')
+navIcons.forEach(function(image){
+    image.addEventListener('click', function(event){
+        const dropDown = document.querySelector('.dropdown-menu')
+        dropDown.classList.toggle('hide')
+        navIcons.forEach(function(button){
+            button.classList.toggle('hide')
+        })
+    })
+
+})
