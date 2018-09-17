@@ -1,3 +1,4 @@
+
 // JS goes here
 
 //Tab JS
@@ -44,6 +45,3 @@ let links = document.querySelectorAll(".tab");
 
 links = Array.from(links).map(links => new TabLink(links));
 links[0].select();
-
-//Nav JS
-
