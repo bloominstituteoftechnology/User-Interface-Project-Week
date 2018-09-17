@@ -7,10 +7,13 @@ function about() {
     
     const menuButton = document.querySelector(".menu-button");
     menuButton.addEventListener("click", clickMenu);
+    
     const navButton = document.querySelector(".nav-button");
     navButton.addEventListener("click", clickMenu);
+    
     const formInput2 = document.querySelector(".input2");
     formInput2.addEventListener("click", inputFocus2);
+    
     let menu = document.querySelector(".nav");
 
     function clickMenu() {
@@ -30,23 +33,24 @@ function about() {
             this.element = element;
             this.rightBtn = document.querySelector(".right-button");
             this.leftBtn = document.querySelector(".left-button");
+            
             this.images = document.querySelectorAll(".carousel img");
+            
             this.rightBtn.addEventListener("click", () => { this.selectRight() });
             this.leftBtn.addEventListener("click", () => { this.selectLeft() });
+            
             this.controlButton = document.querySelector(".control-button");
             this.controlButton.addEventListener("click", () => { this.showStart() });
+            
             this.optionsButton = document.querySelector(".options-button");
             this.optionsButton.addEventListener("click", () => { this.showTransition() });
+            
             this.optionsAudio = document.querySelector(".options-audio");
             this.optionsAudio.addEventListener("click", () => { this.beginAudio() }); 
         }
         selectRight() {
-            if (index2 < 5) {
-                index2 += 1;
-            } else {
-                index2 = 0;
-            };
-         
+            index2 < 5 ? index2 += 1 : index2 = 0; 
+                   
             this.images.forEach(function (item) {
                 item.style.display = "none"
             });
@@ -57,11 +61,8 @@ function about() {
 
         }
         selectLeft() {
-            if (index2 > 0) {
-                index2 -= 1;
-            } else {
-                index2 = 5;
-            };
+            index2 > 0 ? index2 -= 1 : index2 = 5; 
+          
             this.images.forEach(function (item) {
                 item.style.display = "none"
             });

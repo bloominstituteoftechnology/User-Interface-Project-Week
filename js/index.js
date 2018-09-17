@@ -4,11 +4,14 @@ function interface() {
 
   const menuButton = document.querySelector(".menu-button");
   menuButton.addEventListener("click", clickMenu);
+  
   let menu = document.querySelector(".nav");
+  
   const formInput = document.querySelector(".input");
   formInput.addEventListener("click", inputFocus);
+  
   const navButton = document.querySelector(".nav-button");
-    navButton.addEventListener("click", clickMenu);
+  navButton.addEventListener("click", clickMenu);
     
   function clickMenu() {
       menu.classList.toggle("nav-open");
