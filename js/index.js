@@ -1,21 +1,20 @@
-
 // JS goes here
 
 //Tab JS
 class TabLink {
-    constructor(element){
+    constructor(element) {
         this.element = element;
         this.data = this.element.dataset.tab;
         this.contentElement = document.querySelector(`.tab-content[data-tab="${this.data}"]`);
         this.tabContent = new TabContent(this.contentElement);
-        this.element.addEventListener("click", () =>{
+        this.element.addEventListener("click", () => {
             this.select();
         });
     };
 
-    select(){
+    select() {
         const links = document.querySelectorAll(".tab");
-        Array.from(links).forEach( (item) => {
+        Array.from(links).forEach((item) => {
             item.classList.remove("tab-links-selected");
         });
 
@@ -25,14 +24,14 @@ class TabLink {
 
 }
 
-class TabContent{
-    constructor(element){
+class TabContent {
+    constructor(element) {
         this.element = element;
     }
 
     select() {
         let allItems = document.querySelectorAll(".tab-content");
-        Array.from(allItems).forEach( (item) =>{
+        Array.from(allItems).forEach((item) => {
             item.classList.remove("tab-content-selected");
         })
 
