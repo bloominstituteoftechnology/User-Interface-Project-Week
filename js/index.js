@@ -126,4 +126,8 @@ let serviceButtons = Array.from(document.querySelectorAll('.tab'));
 serviceButtons.map(button => new Button(button));
 console.log(serviceButtons);
 console.log('this is buttonData:', buttonData);
+
+
+let mobileImgs = document.querySelectorAll('.mobile');
+console.log(mobileImgs);
 // console.log('this is dataTabs:', this.dataTabs);
