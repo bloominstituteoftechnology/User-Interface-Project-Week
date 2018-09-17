@@ -140,17 +140,6 @@ html {
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
 }
-body .container {
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
-}
-@media (max-width: 320px) {
-  body .container {
-    max-width: 320px;
-    width: 100%;
-  }
-}
 p {
   font-weight: regular;
   font-size: 1.6rem;
@@ -175,25 +164,44 @@ h5 {
   line-height: 24px;
   color: #FFFFFF;
 }
-header {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
+.nav {
   background: #9AA5B0;
   height: 50px;
   width: 100%;
   position: absolute;
   z-index: 2;
 }
-header .burger {
+.nav .header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 13px;
+}
+.nav .header .burger {
   margin-right: 8.3%;
 }
-header .logo {
+.nav .header .logo {
   font-weight: bold;
   font-size: 2.4rem;
   color: #FFFFFF;
-  margin-left: 8.5%;
+  margin-left: 8.4%;
+}
+.nav .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nav .links a {
+  font-size: 4.8rem;
+  font-weight: bold;
+  line-height: 85px;
+  color: white;
+  text-decoration: none;
+}
+.nav .links a:hover {
+  color: #222222;
 }
 .footer {
   background: #828282;
@@ -208,10 +216,15 @@ header .logo {
   margin: 0 auto;
   margin-top: 45px;
 }
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .footer .footer-content {
-    max-width: 285px;
-    width: 100%;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .footer .footer-content .address {
+    margin-top: 15px;
   }
 }
 .footer .footer-content .form-content input {
@@ -228,6 +241,12 @@ header .logo {
   padding: 10px;
   margin-top: 20px;
 }
+@media (max-width: 400px) {
+  .copy {
+    text-align: left;
+    padding: 0px;
+  }
+}
 .cta .cta-text {
   font-weight: Bold;
   font-size: 6.4rem;
@@ -238,10 +257,14 @@ header .logo {
   top: 325px;
   left: 8.2%;
 }
-.cta .cta-desk {
-  width: 100%;
+@media (max-width: 400px) {
+  .cta .cta-text {
+    font-size: 3.7rem;
+    top: 175px;
+    line-height: 40px;
+  }
 }
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .cta .cta-desk {
     display: none;
   }
@@ -249,7 +272,7 @@ header .logo {
 .cta .cta-mobile {
   display: none;
 }
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .cta .cta-mobile {
     display: block;
     width: 100%;
@@ -261,14 +284,28 @@ header .logo {
   margin: auto;
   margin-top: 50px;
 }
+@media (max-width: 400px) {
+  .second-container {
+    width: 100%;
+  }
+}
 .first-box {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 400px) {
+  .first-box {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
 .first-box .draft-desk {
   display: block;
 }
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .first-box .draft-desk {
     display: none;
   }
@@ -276,11 +313,21 @@ header .logo {
 .first-box .draft-mobile {
   display: none;
 }
+@media (max-width: 400px) {
+  .first-box .draft-mobile {
+    display: block;
+  }
+}
 .box-content {
   width: 48%;
   margin-top: 50px;
 }
-.btn {
+@media (max-width: 400px) {
+  .box-content {
+    width: 100%;
+  }
+}
+.box-content .btn {
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
@@ -290,16 +337,30 @@ header .logo {
   height: 46.5px;
   margin-top: 27px;
 }
+@media (max-width: 400px) {
+  .box-content .btn {
+    width: 100%;
+  }
+}
 .second-box {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   margin-top: 99px;
 }
+@media (max-width: 400px) {
+  .second-box {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 50px;
+    width: 90%;
+    margin: auto;
+  }
+}
 .second-box .sky-desk {
   display: block;
 }
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .second-box .sky-desk {
     display: none;
   }
@@ -307,18 +368,74 @@ header .logo {
 .second-box .sky-mobile {
   display: none;
 }
+@media (max-width: 400px) {
+  .second-box .sky-mobile {
+    display: block;
+    width: 100%;
+  }
+}
 .second-box .box-content {
   width: 48.5%;
   margin-top: 44px;
 }
+@media (max-width: 400px) {
+  .second-box .box-content {
+    width: 100%;
+    margin-top: 25px;
+  }
+}
 .bottom-content {
   margin-top: 100px;
 }
+@media (max-width: 400px) {
+  .bottom-content {
+    width: 100%;
+    margin-top: 60px;
+  }
+}
+@media (max-width: 400px) {
+  .bottom-content .recent {
+    width: 90%;
+    margin-left: 20px;
+  }
+}
+.bottom-content .project-img-villas {
+  display: none;
+}
+@media (max-width: 400px) {
+  .bottom-content .project-img-villas {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.bottom-content .project-img-outskirts {
+  display: none;
+}
+@media (max-width: 400px) {
+  .bottom-content .project-img-outskirts {
+    display: block;
+    width: 100%;
+  }
+}
+.bottom-content .project-img-blocks {
+  display: none;
+}
+@media (max-width: 400px) {
+  .bottom-content .project-img-blocks {
+    display: block;
+    width: 100%;
+  }
+}
 .bottom-content .project-img {
-  width: 100%;
   margin-top: 46px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 400px) {
+  .bottom-content .project-img {
+    display: none;
+  }
 }
 .bottom-content span {
   background: #D8D8D8;
@@ -330,7 +447,24 @@ header .logo {
   font-size: 2.5rem;
   border: 1px solid #FFFFFF;
 }
-.bottom-content .villas {
+@media (max-width: 400px) {
+  .bottom-content span {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+}
+.bottom-content .project-text {
+  width: 52%;
+  margin: auto;
+  margin-bottom: 68px;
+}
+@media (max-width: 400px) {
+  .bottom-content .project-text {
+    width: 90%;
+  }
+}
+.villas {
   font-size: 2.4em;
   position: relative;
   z-index: 1;
@@ -338,23 +472,28 @@ header .logo {
   bottom: 57px;
   letter-spacing: 8px;
 }
-.bottom-content .outskirts {
+@media (max-width: 400px) {
+  .villas {
+    left: 0;
+  }
+}
+.outskirts {
   position: relative;
   z-index: 1;
   bottom: 58px;
   letter-spacing: 8px;
 }
-.bottom-content .blocks {
+.blocks {
   position: relative;
   z-index: 1;
   bottom: 60px;
   left: 63%;
   letter-spacing: 8px;
 }
-.bottom-content .project-text {
-  width: 52%;
-  margin: auto;
-  margin-bottom: 68px;
+@media (max-width: 400px) {
+  .blocks {
+    left: 0%;
+  }
 }
 .cta-services-text {
   font-size: 6.4rem;
