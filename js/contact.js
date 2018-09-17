@@ -12,7 +12,7 @@ function contact() {
     formInput.addEventListener("click", inputFocus);
     const navButton = document.querySelector(".nav-button");
     navButton.addEventListener("click", clickMenu);
-   // console.log("this is navbutton:" + navButton);  
+    
     function clickMenu() {
       menu.classList.toggle("nav-open");
       menuButton.classList.toggle("menu-button-close");
@@ -22,7 +22,7 @@ function contact() {
         // clears the input for the user to type their email
         if (formInput.value === "Enter Email:") {
           formInput.value = "";
-        }
+        } 
       }
 
       function inputFocus2() {

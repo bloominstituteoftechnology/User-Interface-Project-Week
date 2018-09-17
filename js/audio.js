@@ -42,7 +42,7 @@ audio.addEventListener("pause", updatePlayPause, false);
 audio.addEventListener("ended", endAudio, false);
 document.getElementById("track2").addEventListener("click", nextFile, false);
 document.getElementById("track1").addEventListener("click", nextFile2, false);
-
+const currentPlaying = document.querySelector(".options-text-4");
 function seekAudio() {
     let seek = document.getElementById("audioSeek");
     audio.currentTime = seek.value;
@@ -80,11 +80,13 @@ function setVolume() {
 function nextFile() {
     audio.src = "../audio/piano3.mp3";
     document.querySelector(".options-audio").innerHTML = "Click Here to Stop";
+    currentPlaying.innerHTML = "Piano3.mp3"
     audio.play();
 }
 
 function nextFile2() {
     audio.src = "../audio/song56.mp3";
+    currentPlaying.innerHTML = "Song56.mp3"
     document.querySelector(".options-audio").innerHTML = "Click Here to Stop";
     audio.play();
 }

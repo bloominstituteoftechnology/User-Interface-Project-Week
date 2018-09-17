@@ -1,8 +1,8 @@
 function about() {
 
-    let showFlg = false;
+    let showFlg,transitionFlg = false;
     let timer = "";
-    let transitionFlg = false;
+    //let transitionFlg = false;
     let index2 = 0;
     
     const menuButton = document.querySelector(".menu-button");
@@ -13,6 +13,8 @@ function about() {
     
     const formInput2 = document.querySelector(".input2");
     formInput2.addEventListener("click", inputFocus2);
+    
+    const currentPlaying = document.querySelector(".options-text-4");
     
     let menu = document.querySelector(".nav");
 
@@ -97,7 +99,7 @@ function about() {
         }
         beginAudio() {
             if ( this.optionsAudio.innerHTML === "Click Here to Start") {
-                this.optionsAudio.innerHTML = "Click Here to Stop";
+                this.optionsAudio.innerHTML = "Click Here to Stop ";
                 togglePlay();
             }  else {
                 this.optionsAudio.innerHTML = "Click Here to Start";
