@@ -138,6 +138,7 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 .inner-main {
   display: flex;
@@ -156,19 +157,53 @@ header {
   width: 100%;
 }
 header .nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav .top {
+  position: fixed;
+  z-index: 3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px 10px;
   background-color: #98A4AE;
-  width: 100%;
+  width: 86.96%;
 }
-header .nav h3 {
+header .nav .top h3 {
   font-weight: regular;
   font-size: 2rem;
   color: #FFFFFF;
   line-height: 24px;
+}
+header .nav .bottom {
+  z-index: 2;
+  width: 100%;
+  height: 1000%;
+  background-color: #98A4AE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+header .nav .bottom a {
+  text-decoration: none;
+  font-weight: regular;
+  font-size: 4rem;
+  color: white;
+  line-height: 24px;
+  margin: 50px 0px;
+}
+header .nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 header .Section1 {
   display: flex;
@@ -319,7 +354,6 @@ footer .copyright p {
   justify-content: space-between;
   align-items: flex-start;
   padding: 10px 10px;
-  background-color: #98A4AE;
   width: 30%;
 }
 .footer .states h3 {
@@ -336,19 +370,30 @@ section {
     width: 100%;
   }
 }
-section div .head-text {
+section .section-group .head-text {
   font-weight: bold;
   font-size: 2rem;
   color: #222222;
   line-height: regular;
 }
 @media (max-width: 600px) {
-  section div .head-text {
+  section .section-group .head-text {
     font-weight: bold;
     font-size: 2.5rem;
     color: #222222;
     line-height: regular;
   }
+}
+section .section-group a {
+  text-decoration: none;
+  font-weight: regular;
+  font-size: 1.6rem;
+  color: black;
+  line-height: 24px;
+  border: 1px solid gray;
+  padding: 10px;
+  width: 115px;
+  text-align: center;
 }
 p {
   font-weight: regular;
@@ -366,17 +411,6 @@ p {
     line-height: 30px;
     margin: 20px 0px 30px 0px;
   }
-}
-a {
-  text-decoration: none;
-  font-weight: regular;
-  font-size: 1.6rem;
-  color: black;
-  line-height: 24px;
-  border: 1px solid gray;
-  padding: 10px;
-  width: 115px;
-  text-align: center;
 }
 .smith-sec {
   width: 85%;
@@ -600,7 +634,7 @@ a {
 }
 .services-sec1 {
   margin: 50px 0px;
-  width: 850px;
+  width: 85%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -613,7 +647,7 @@ a {
   align-items: center;
   margin-top: 25px;
 }
-.services-sec1 div a {
+.services-sec1 div p {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.75rem;
@@ -624,27 +658,96 @@ a {
   width: 160px;
   text-align: center;
 }
-.tab {
+.pre-construction.tab {
   margin: 20px 0px;
   width: 850px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
-.tab .tab-stuff {
+.pre-construction.tab .tab-stuff {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   width: 400px;
 }
-.tab .tab-stuff p {
+.pre-construction.tab .tab-stuff p {
   margin: 10px 20px 10px 0px;
 }
-.tab .tab-stuff .head-text {
+.pre-construction.tab .tab-stuff .head-text {
   font-weight: bold;
   font-size: 2rem;
   color: #222222;
   line-height: regular;
+}
+.construction.tab {
+  margin: 20px 0px;
+  width: 850px;
+}
+.construction.tab .tab-stuff {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 400px;
+}
+.construction.tab .tab-stuff p {
+  margin: 10px 20px 10px 0px;
+}
+.construction.tab .tab-stuff .head-text {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #222222;
+  line-height: regular;
+}
+.design-build.tab {
+  margin: 20px 0px;
+  width: 850px;
+}
+.design-build.tab .tab-stuff {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 400px;
+}
+.design-build.tab .tab-stuff p {
+  margin: 10px 20px 10px 0px;
+}
+.design-build.tab .tab-stuff .head-text {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #222222;
+  line-height: regular;
+}
+.sustainability.tab {
+  margin: 20px 0px;
+  width: 850px;
+}
+.sustainability.tab .tab-stuff {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 400px;
+}
+.sustainability.tab .tab-stuff p {
+  margin: 10px 20px 10px 0px;
+}
+.sustainability.tab .tab-stuff .head-text {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #222222;
+  line-height: regular;
+}
+.visible {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.invisible {
+  display: none;
+}
+.clicked {
+  background-color: darkgray;
+  color: white;
 }

@@ -1,5 +1,3 @@
-// JS goes here
-
 const menuO = document.querySelector('.open');
 const menuC = document.querySelector('.close');
 const bottom = document.querySelector('.bottom');
@@ -39,4 +37,3 @@ function MenuC () {
 menuO.addEventListener('click',function() {MenuO()})
 
 menuC.addEventListener('click',function() {MenuC()})
-
