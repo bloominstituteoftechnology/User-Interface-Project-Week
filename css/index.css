@@ -661,8 +661,28 @@ html {
   font-weight: bold;
   color: white;
 }
-.container.contact .jumbotron img {
+.container.contact .jumbotron img.desktop {
   width: 100%;
+}
+.container.contact .jumbotron img.mobile {
+  display: none;
+}
+@media (max-width: 320px) {
+  .container.contact .jumbotron {
+    margin-bottom: 30px;
+  }
+  .container.contact .jumbotron img.desktop {
+    display: none;
+  }
+  .container.contact .jumbotron img.mobile {
+    display: block;
+    width: 100%;
+  }
+  .container.contact .jumbotron p {
+    top: 75%;
+    font-size: 3.2rem;
+    line-height: 38px;
+  }
 }
 .container.contact .main-content {
   display: flex;
@@ -688,6 +708,12 @@ html {
   line-height: 24px;
   margin-bottom: 10px;
 }
+.container.contact .main-content .information .email-label.desktop {
+  display: block;
+}
+.container.contact .main-content .information .email-label.mobile {
+  display: none;
+}
 .container.contact .main-content .information .email {
   width: 100%;
   height: 30px;
@@ -701,6 +727,12 @@ html {
   color: black;
   margin-top: 3px;
   margin-bottom: 20px;
+}
+.container.contact .main-content .information .num-of-buildings.desktop {
+  display: block;
+}
+.container.contact .main-content .information .num-of-buildings.mobile {
+  display: none;
 }
 .container.contact .main-content .information .amount {
   width: 100%;
@@ -724,6 +756,30 @@ html {
   height: 40px;
   background-color: white;
   border: 1px solid #222222;
+}
+@media (max-width: 320px) {
+  .container.contact .main-content .information {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .container.contact .main-content .information .email-label.desktop {
+    display: none;
+  }
+  .container.contact .main-content .information .email-label.mobile {
+    display: block;
+  }
+  .container.contact .main-content .information p {
+    font-size: 1.25rem;
+  }
+  .container.contact .main-content .information .num-of-buildings.desktop {
+    display: none;
+  }
+  .container.contact .main-content .information .num-of-buildings.mobile {
+    display: block;
+  }
+  .container.contact .main-content .information #submit {
+    width: 100%;
+  }
 }
 .container.contact .main-content .where-we-work {
   width: 33%;
@@ -749,4 +805,16 @@ html {
   font-size: 1.8rem;
   line-height: 30px;
   color: black;
+}
+@media (max-width: 320px) {
+  .container.contact .main-content .where-we-work {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .container.contact .main-content {
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 15px;
+  }
 }
