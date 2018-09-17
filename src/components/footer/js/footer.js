@@ -56,17 +56,17 @@ function Footer(element) {
       city: "Albany, NY 12345",
       phone: "202 555 0144"
     }, {
-      state: "New York",
-      addOne: "123 Lane",
-      addTwo: "Suite 100",
-      city: "Albany, NY 12345",
-      phone: "202 555 0144"
+      state: "FLorida",
+      addOne: "Ocean Drive",
+      addTwo: "Suite 201",
+      city: "Orlando, FL 22345",
+      phone: "502 555 0144"
     }, {
-      state: "New York",
-      addOne: "123 Lane",
-      addTwo: "Suite 100",
-      city: "Albany, NY 12345",
-      phone: "202 555 0144"
+      state: "Califoria",
+      addOne: "Mountain Street",
+      addTwo: "Suite 105",
+      city: "San Diego, CA 22345",
+      phone: "702 555 0144"
     }];
 
     this.initLocation(this.locationData, this.topContainer);

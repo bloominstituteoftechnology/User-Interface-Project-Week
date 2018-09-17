@@ -11,6 +11,8 @@ function ProjectCard(element, cardData) {
   this.banner.style.backgroundImage = `url(${cardData.imgSrc})`;
   this.component.appendChild(this.banner);
 
+
+
     // Banner label.
     this.label = document.createElement('div');
     this.label.classList.add('label');
