@@ -8,7 +8,6 @@ html {
             width: 90%;
             max-width: 1024px;
             margin: 0 auto;
-            z-index: -20;
             @media @mobile {
                 max-width: 450px;
             }
@@ -42,25 +41,33 @@ html {
     display: flex;
     justify-content: space-evenly;
     padding: 50px;
-    @media @mobile {
+    @media @tablet {
         flex-direction: column;
         width: 90%;
-        margin: 0 auto;
+        margin: 0 auto;        
+    }
+    @media @medium {
         padding: 0;
+        margin: 20px auto;
     }
     .content{
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 47%;
-        @media @mobile {
+        @media @tablet {
             width: 100%;
         }
-    }   
+    }
+    
     .image {
         width: 47%;
         @media @mobile {
             display: none;
+        }
+        @media @tablet {
+            width: 100%;
+            margin: 20px 0;
         }
     }
     .mobile-image {
@@ -80,6 +87,11 @@ html {
     }
 }
 
+.intro {
+    @media @tablet {
+        flex-direction: column-reverse;
+    }
+}
 
 .button {
     .buttons;
@@ -123,7 +135,11 @@ p{
     display: flex;
     align-items: flex-end;
     @media @mobile {
+        justify-content: center;
         height: 295px;
+    }
+    @media @medium {
+        justify-content: center;
     }
 }
 
@@ -133,8 +149,10 @@ p{
     @media @mobile {
         background: url("../img/home/home-mobile-villas-img.png") no-repeat;
         background-size: contain;
-        justify-content: center;
         margin-top: 25px;
+    }
+    @media @medium {
+        justify-content: center;
     }
 }
 
@@ -143,6 +161,8 @@ p{
     @media @mobile {
         background: url("../img/home/home-mobile-outskirts-img.png") no-repeat;
         background-size: contain;
+    }
+    @media @medium {
         justify-content: center;
     }    
 }
@@ -153,6 +173,8 @@ p{
     @media @mobile {
         background: url("../img/home/home-mobile-the-blocks-img.png") no-repeat;
         background-size: contain;
+    }
+    @media @medium {
         justify-content: center;
     }
 }
@@ -166,7 +188,7 @@ span {
     align-items: center;
     background-color: #d7dae0;
     font-size: 2.5rem;
-    @media @mobile {
+    @media @medium {
         width: 90%;
     }
 }
