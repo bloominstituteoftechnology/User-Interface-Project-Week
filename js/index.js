@@ -33,6 +33,7 @@ class Tab {
     }
 
     selectTab() {
+
         const tabs = document.querySelectorAll('.tab-button');
 
         tabs.forEach(tab => {

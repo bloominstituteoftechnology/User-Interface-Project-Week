@@ -10,10 +10,24 @@ html, body {
   margin: 0 auto;
 }
 
+.desktop-img {
+  @media @phone {
+    display: none;
+  }
+}
+
+.mobile-img {
+  display: none;
+  @media @phone {
+    display: flex;
+  }
+}
+
 .jumbotron {
 
   height: 598px;
 
+  
   h1 {
     position: relative;
     line-height: 7.5rem;
@@ -33,6 +47,12 @@ html, body {
   margin: 0 auto;
   margin-bottom: 100px;
   font-family: Roboto, Arial, sans-serif;
+  @media @phone {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 30px;
+  }
 
   p {
     margin: 20px 0;
@@ -53,6 +73,10 @@ html, body {
     justify-content: center;
     width: 40%;
     padding-top: 30px;
+    @media @phone {
+      width: 100%;
+      justify-content: center;
+    }
 
     .button {
       border: 1px solid black;
@@ -63,6 +87,9 @@ html, body {
       font-size: 1.2rem;
       width: 110px;
       height: 30px;
+      @media @phone {
+        width: 100%;
+      }
     }
 
     .button:hover {
@@ -74,26 +101,15 @@ html, body {
 .info1 {
   flex-direction: row-reverse;
   margin-top: 50px;
+  @media @phone {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .recent-projects {
 
   font-family: Roboto, Arial, sans-serif;
-
-  .project {
-    margin-bottom: 100px;
-    h2 {
-    font-size: 2.0rem;
-    background-color: lightgrey;
-    width: 20%;
-    height: 60px;
-    position: relative;
-    bottom: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-  }
 
   h3 {
     margin: 40px 0 40px 10%;
@@ -101,31 +117,75 @@ html, body {
     font-weight: bold;
   }
 
+  .project {
+    margin-bottom: 100px;
+
+    h2 {
+    font-size: 2.0rem;
+    background-color: lightgrey;
+    width: 20%;
+    height: 80px;
+    position: relative;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 8px;
+    @media @phone {
+      width: 90%;
+      text-align: center;
+    }
+    }
+  }
+
+
   p {
     margin: 20px 30%;
     font-size: 1.6rem;
     line-height: 2.4rem;
+    @media @phone {
+      margin: 20px 5%;
+    }
   }
 
   img {
     margin: 0 10%;
+    @media @phone {
+      margin: 0;
+    }
   }
 
   .villas {
     h2{
       left: 73.75%;
+      @media @phone {
+        left: 0;
+        margin: 0 5%;
+        bottom: 20px;
+      }
     }
   }
 
   .outskirts {
     h2 {
       left: 10%;
+      @media @phone {
+        left: 0;
+        margin: 0 5%;
+        bottom: 20px;
+        
+      }
     }
   }
 
   .blocks {
     h2 {
       left: 73.25%;
+      @media @phone {
+        left: 0;
+        margin: 0 5%;
+        bottom: 20px;
+      }
     }
   }
 }
