@@ -50,6 +50,6 @@ sr.reveal('.twoboxes', {
 
 });
 
-sr.reveal('.footer',{
-duration: 3000,
+sr.reveal('.footer', {
+    duration: 3000,
 });
