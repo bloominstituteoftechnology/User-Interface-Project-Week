@@ -34,16 +34,40 @@
 
 .home {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     font-size: 1.6rem;
     line-height: 2.4rem;
+
+    .blurb-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (@mobile) {
+            flex-direction: column;
+        }  
+    }
+
+    .blurb-content-reverse {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (@mobile) {
+            flex-direction: column;
+        }
+    }
 
     .blurb {
         display: flex;
         flex-direction: column;
         margin: 50px 0;
+
+        @media (@mobile) {
+            margin: 35px 0 0 0;
+        }
         
         h2 {
             font-size: 2.4rem;
@@ -68,6 +92,10 @@
                 color: #ffffff;
                 border: 1px solid #ffffff;
             }
+
+            @media (@mobile) {
+                width: 100%;
+            }
         }
     
         img {
@@ -76,16 +104,30 @@
     }
 
     .projects {
-        margin-top: 55px;
+        margin: 55px 0 0 0;
+
+        @media (@mobile) {
+            margin: 55px 0 40px 0;
+        }
         
         h2 {
             font-size: 2.4rem;
             font-weight: bold;
             color: #222222;
+
+            @media (@mobile) {
+                margin-bottom: 25px;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
         }
 
         .project {
             margin: 45px auto 100px auto;
+
+            @media (@mobile) {
+                margin: 0 auto 40px auto;
+            }
 
             .project-header {
                 position: relative;
@@ -108,25 +150,58 @@
                     text-align: center;
                     position: absolute;
                     top: 75%;
+
+                    @media (@mobile) {
+                        width: 90%;
+                        top: 93%;
+                    }
                 }
 
                 .align-left {
                     left: 0;
+
+                    @media (@mobile) {
+                        left: 5%;
+                    }
                 }
             
                 .align-right {
                     right: 0;
+
+                    @media (@mobile) {
+                        right: 5%;
+                    }
                 }
             }
 
             .project-body {
                 margin: 90px auto;
+
+                @media (@mobile) {
+                    margin: 110px auto 0 auto;
+                }
                 
                 p {
                     font-size: 1.8rem;
                     margin-bottom: 25px;
                 }
             }
+        }
+    }
+
+    .img-desktop {
+        display: block;
+
+        @media (@mobile) {
+            display: none;
+        }
+    }
+
+    .img-mobile {
+        display: none;
+
+        @media (@mobile) {
+            display: block;
         }
     }
 }
