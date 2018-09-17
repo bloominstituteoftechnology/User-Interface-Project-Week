@@ -1,43 +1,44 @@
-class ButtonLinks {
-    constructor(el) {
-        this.el = el;
-        this.data = this.el.dataset.button;
-        this.itemElement = document.querySelectorAll(`.button-item[data-button="${this.data}"]`);
-        this.buttonItem = new ButtonItem(this.itemElement)
-        this.el.addEventListener('click', () => {
-            this.select();
+class BtnLink {
+    constructor(element) {
+        this.element = element;
+        this.data = this.element.dataset.button;
+        this.btnItems = document.querySelector(`.button-item[data-button="${this.data}"]`);
+        this.buttonItem = new ButtonLinks(this.btnItems);
+        this.element.addEventListener('click', () => {
+            this.selectBtn();
         })
-    };
 
-    select() {
-        const link = document.querySelectorAll('.button-link');
-        Array.from(link).forEach(link => {
-            link.classList.remove("button-link-selected");
-        })
-        this.el.classList.add("button-link-selected");
-        this.buttonItem.select();
     }
-} // End ButtonLinks
 
+    selectBtn() {
+        const links = document.querySelectorAll('.button-link');
 
-class ButtonItem {
-    constructor(el) {
-        this.el = el;
-    };
+        links.forEach(link => {
+            link.classList.remove('active')
+        });
 
-    select() {
+        this.element.classList.add('active');
 
-        let btnItems = document.querySelectorAll('.button-item');
-
-        Array.from(btnItems).forEach(btnItem => {
-
-            btnItem.classList.remove("button-item-selected");
-        })
-        console.log(this.el); 
+        this.buttonItem.selectBtn();
     }
-    
 }
 
-let buttonLinks = document.querySelectorAll('.button-link');
+class ButtonLinks {
+    constructor(element) {
+        this.element = element;
+    }
 
-buttonLinks = Array.from(buttonLinks).map(buttonLinks => new ButtonLinks(buttonLinks));
+    selectBtn() {
+        let items = document.querySelectorAll('.button-item');
+        Array.from(items).forEach(items => {
+            items.classList.remove("button-item-selected");
+        })
+
+        this.element.classList.add("button-item-selected");
+        console.log(this.element);
+    }
+}
+
+let btnLinks = document.querySelectorAll('.button-link');
+
+btnLinks = Array.from(btnLinks).map(btnLinks => new BtnLink(btnLinks));
