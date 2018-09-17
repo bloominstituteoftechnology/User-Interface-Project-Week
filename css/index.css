@@ -133,6 +133,30 @@ table {
   border-spacing: 0;
 }
 /* Your Code Goes Here */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('PT Sans Italic'), local('PTSans-Italic'), url(https://fonts.gstatic.com/s/ptsans/v9/jizYRExUiTo99u79D0e0x8mN.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'), url(https://fonts.gstatic.com/s/ptsans/v9/jizdRExUiTo99u79D0e8fOydLxUY.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(https://fonts.gstatic.com/s/ptsans/v9/jizaRExUiTo99u79D0KEwA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v9/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
+}
 .b_red {
   border: 1px solid red;
 }
@@ -287,29 +311,82 @@ table {
   background-color: #222222;
 }
 .service {
-  border: 1px solid pink;
   margin: 0 auto;
   display: block;
   flex-direction: column;
   width: 90%;
 }
 .service .title {
-  border: 1px solid blue;
   font-size: 2.4rem;
   padding: 2rem;
 }
 .service .description {
-  border: 1px solid green;
   display: flex;
 }
 .service .description .info {
-  border: 1px solid purple;
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
 }
 .service .description .info p {
   padding-bottom: 2rem;
+}
+.width-100 {
+  width: 50rem;
+}
+.carousel {
+  width: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+}
+@media (min-width: 880px) {
+  .carousel {
+    width: 880px;
+  }
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: row;
+  color: #fff;
+  background-color: #333;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  width: 50rem;
+  display: none;
+}
+.projects_Info {
+  padding-bottom: 4rem;
 }
 html {
   font-size: 62.5%;
@@ -581,7 +658,7 @@ body {
 .footer-container .footerContent .officeLocation {
   padding: 4rem;
 }
-@media mobile {
+@media (max-width: 500px) {
   .footer-container {
     background-color: #828282;
     display: flex;
