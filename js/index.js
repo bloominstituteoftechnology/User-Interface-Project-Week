@@ -54,4 +54,6 @@ class TabNavigator {
 
 /* Create menu and tab navigator */
 const menu = new Menu("menu", "menu-button");
-const tabNavigator = new TabNavigator("tab-navigator");
+if (page === "services") {
+  const tabNavigator = new TabNavigator("tab-navigator");
+}
