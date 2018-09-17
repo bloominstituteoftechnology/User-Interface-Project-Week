@@ -3,7 +3,7 @@ const body = document.querySelector("body");
 
 // check for body to load and then fade in
 window.addEventListener("load", () => {
-  TweenMax.fromTo(body, 3, {opacity:0},{opacity:1});
+  TweenMax.fromTo(body, 2, {opacity:0},{opacity:1});
 });
 
 // check for navbar link clicks to change body opacity
