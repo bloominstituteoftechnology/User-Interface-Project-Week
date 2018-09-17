@@ -27,22 +27,41 @@ class Carousel {
     this.currentIndex = this.currentIndex === 0 ? 2 : this.currentIndex - 1;
     this.images.forEach(img => (img.style.display = "none"));
     this.images[this.currentIndex].style.display = "block";
-    Tweenlite.from(this.images[this.currentIndex], 5, {opacity:0, right:"100px"});
+    Tweenlite.from(this.images[this.currentIndex], 5, {
+      opacity: 0,
+      right: "100px"
+    });
   }
 
   nextSlide() {
     this.currentIndex = this.currentIndex === 2 ? 0 : this.currentIndex + 1;
     this.images.forEach(img => (img.style.display = "none"));
     this.images[this.currentIndex].style.display = "block";
-    Tweenlite.from(this.images[this.currentIndex], 5, {opacity:0, right:"100px"});
+    Tweenlite.from(this.images[this.currentIndex], 5, {
+      opacity: 0,
+      right: "100px"
+    });
   }
 }
 
 let residentialCarousel = document.querySelector(".resCarousel");
-const resCarousel = new Carousel(residentialCarousel, ".res-left-button", ".res-right-button", ".resCarouselImg", ".res-info-button", ".res-box");
+const resCarousel = new Carousel(
+  residentialCarousel,
+  ".res-left-button",
+  ".res-right-button",
+  ".resCarouselImg",
+  ".res-info-button",
+  ".res-box"
+);
 resCarousel.images[0].style.display = "block";
 
-
 let commercialCarousel = document.querySelector(".comCarousel");
-const comCarousel = new Carousel(commercialCarousel, ".com-left-button", ".com-right-button", ".comCarouselImg", ".com-info-button", ".com-box");
+const comCarousel = new Carousel(
+  commercialCarousel,
+  ".com-left-button",
+  ".com-right-button",
+  ".comCarouselImg",
+  ".com-info-button",
+  ".com-box"
+);
 comCarousel.images[0].style.display = "block";
