@@ -1,0 +1,75 @@
+//text mixin
+.fontDesign(@wt; @size; @clr; @ht: 1) {
+  font-weight: @wt;
+  font-size: @size;
+  color: @clr;
+  line-height: @ht;
+}
+
+//flex mixin
+.flex(@dir; @just; @al) {
+  display: flex;
+  flex-direction: @dir;
+  justify-content: @just;
+  align-items: @al;
+}
+
+//button design
+.buttonDesign {
+  .flex(row; center; center);
+  width: 35%;
+  min-width: 125px;
+  padding: 8px 12px;
+  color: @main-color;
+  border: 2px solid @button-brdr-color;
+
+  @media @phone {
+    width: 100%;
+  }
+}
+
+.tabDesign {
+  .flex(row; center; center);
+  width: 22%;
+  padding: 15px 0.3%;
+  color: @main-color;
+  border: 1px solid @button-brdr-color;
+}
+
+.projectsTitle {
+  .flex(row; center; center);
+  width: 31%;
+  min-width: 270px;
+  .fontDesign(normal; 2.4rem; @main-color; 24px);
+  padding: 35px 20px;
+  letter-spacing: 0.55rem;
+  background-color: @recent-proj-bkgrn;
+  border: 1px solid @bckgrnd;
+  position: absolute;
+  right: 8.2%;
+  top: 175px;
+
+  @media @phone {
+    width: 95%;
+    right: 2.5%;
+  }
+}
+
+.projectsTitleRev {
+  .flex(row; center; center);
+  width: 31%;
+  min-width: 270px;
+  .fontDesign(normal; 2.4rem; @main-color; 24px);
+  padding: 35px 20px;
+  letter-spacing: 0.55rem;
+  background-color: @recent-proj-bkgrn;
+  border: 1px solid @bckgrnd;
+  position: absolute;
+  left: 8.2%;
+  top: 175px;
+
+  @media @phone {
+    width: 95%;
+    left: 2.5%;
+  }
+}
