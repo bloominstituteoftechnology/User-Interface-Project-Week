@@ -96,7 +96,6 @@ class tabLink{
             link_el.classList.remove('clicked-link');
         });
         //style the clicked link
-        console.log(this.element);
         this.element.style.outline = 'none'; //remove default bluish outline on button element
         this.element.classList.add('clicked-link');
 
@@ -120,6 +119,10 @@ const tabLinks_el = document.querySelectorAll('.navigator-links .button-link');
 const tabLinkObjects = Array.from(tabLinks_el).map(function(button_link){
     return new tabLink(button_link);
 });
+
+//Cause construction tab to be selected on startup
+tabLinkObjects[1].card.showCard();
+tabLinkObjects[1].element.classList.add('clicked-link');
 
 
 
