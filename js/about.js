@@ -43,7 +43,7 @@ class TopicButton {
       .to(topic.selectedPic, 1, {
         opacity: 0,
         x: -300,
-        scale:0
+        scale: 0
       })
       .to(
         topic.selectedPara,
