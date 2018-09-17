@@ -6,7 +6,7 @@ class Project {
       return new ProjectButton(buttons);
     });
     this.selectedButton = this.buttons[0].element;
-    this.selectedButton.classList.add("project-showing");
+    this.selectedButton.classList.add("project-btn-showing");
     this.selectedProject = this.buttons[0].projectItem.element;
     this.selectedProject.classList.add("project-showing");
   }
@@ -28,12 +28,12 @@ class ProjectButton {
     this.projectItem.deselect(project.selectedProject);
     project.selectedButton = this.element;
     project.selectedProject = this.projectItem.element;
-    this.element.classList.add("project-showing");
+    this.element.classList.add('project-btn-showing');
     this.projectItem.select();
   }
 
   deselect(link) {
-    link.classList.remove("project-showing");
+    link.classList.remove('project-btn-showing');
   }
 }
 
