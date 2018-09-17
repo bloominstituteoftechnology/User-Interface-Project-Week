@@ -1,0 +1,111 @@
+.container {
+    line-height: 24px;
+    .intro-para {
+        .container-margins();
+        margin-bottom: 40px;
+    }
+    .top-img {
+        background-image: url('../img/services/services-jumbotron.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 170px;
+        padding-bottom: 30px;
+        width: 100%;
+        max-width: 1000px;
+        margin-bottom: 40px;
+        @media @mobile {
+            background-image: url('../img/services/services-mobile-jumbotron.png');
+            background-size: cover;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 4rem;
+            line-height: 4.68rem;
+            color: @secondary-text;
+            padding-left: 5%;
+        }
+    }
+    .tabs {
+        .flex(space-between,
+        center,
+        row);
+        @media @mobile {
+            flex-direction: column;
+        }
+        .container-margins();
+        .tab {
+            border: 1px solid @main-text;
+            width: 25%;
+            margin-right: 40px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 20px;
+            cursor: pointer;
+            &:hover {
+                color: @secondary-text;
+                background-color: @main-text;
+            }
+            @media @mobile {
+                width: 80%;
+                margin-right: 2%;
+                margin-left: 2%;
+                margin-bottom: 15px;
+            }
+        }
+        .selected-tab {
+            background-color: #5e9fb9;
+            color: @secondary-text;
+        }
+        .tab:last-child {
+            margin-right: 0px;
+            @media @mobile {
+                margin-right: 2%;
+            }
+        }
+    }
+    .cards {
+        .card {
+            .container-margins();
+            margin-top: 100px;
+            display: none;
+            margin-bottom: 100px;
+            @media @mobile {
+                margin-top: 50px;
+            }
+            .title {
+                .sub-headers();
+                margin-bottom: 40px;
+            }
+            .card-content {
+                .flex(space-between,
+                flex-start,
+                row);
+                .text-content {
+                    margin-right: 10%;
+                    line-height: 28px;
+                    @media @mobile {
+                        margin-right: 0%;
+                        margin-bottom: 40px;
+                    }
+                }
+                @media @mobile {
+                    flex-direction: column;
+                    align-content: center;
+                    .card-img {
+                        align-self: center;
+                    }
+                }
+            }
+        }
+        .selected-card {
+            .flex(space-between,
+            flex-start,
+            column);
+            -webkit-animation: fadein 2s;
+            -moz-animation: fadein 2s;
+            -ms-animation: fadein 2s;
+            -o-animation: fadein 2s;
+            animation: fadein 2s;
+        }
+    }
+}

@@ -1,0 +1,148 @@
+.container {
+    color: @main-text;
+    .jumbotron {
+        background-image: url('../img/contact/contact-jumbotron.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 200px;
+        padding-bottom: 50px;
+        @media @mobile {
+            background-image: url('../img/contact/contact-mobile-jumbotron.png');
+            background-size: cover;
+            padding-bottom: 0px;
+            height: 130px;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 4rem;
+            line-height: 4.68rem;
+            color: @secondary-text;
+            padding-left: 7%;
+            @media @mobile {
+                font-size: 2.8rem;
+                line-height: 24px;
+                padding-top: 70px;
+            }
+        }
+    }
+    h2 {
+        .sub-headers();
+    }
+    h3 {
+        font-size: 1.25rem;
+        line-height: 24px;
+        font-weight: bold;
+    }
+    .main-content {
+        .flex(space-between,
+        flex-start,
+        row);
+        padding-bottom: 40px;
+        padding-top: 20px;
+        @media @mobile {
+            .flex(space-between,
+            flex-start,
+            column);
+            max-width: 450px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .screen-right {
+            margin-right: 9%;
+            @media @mobile {
+                margin-right: 0;
+            }
+            .contact-address {
+                line-height: 28px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                &:first-child {
+                    padding-top: 60px;
+                }
+            }
+        }
+        .screen-left {
+            margin-left: 6%;
+            @media @mobile {
+                margin-left: 0;
+            }
+            .dropdown,
+            .overview,
+            .radio-buttons {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .email {
+                padding-top: 40px;
+                padding-bottom: 20px;
+                input {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    padding: 10px;
+                    width: 95%;
+                    color: #9AA4AE;
+                    font-size: 0.875rem;
+                    border-radius: 5px;
+                    border: 1px solid @nav-grey;
+                    @media @mobile {
+                        max-width: 450px;
+                    }
+                }
+                p:last-child {
+                    font-size: 0.75rem;
+                    color: @nav-grey;
+                }
+            }
+            .radio-buttons {
+                .flex(space-between,
+                flex-start,
+                column);
+                .radio {
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    &:first-child {
+                        padding-top: 10px;
+                    }
+                }
+            }
+            .dropdown {
+                select {
+                    width: 100%;
+                    height: 30px;
+                    background-color: @secondary-text;
+                    margin-top: 10px;
+                    border: 1px solid @nav-grey;
+                    color: @nav-grey;
+                    @media @mobile {
+                        max-width: 450px;
+                    }
+                }
+            }
+            .overview {
+                textarea {
+                    width: 99%;
+                    margin-top: 10px;
+                    border-radius: 5px;
+                    border: 1px solid #9AA4AE;
+                }
+            }
+            .button {
+                border: 1px solid @main-text;
+                width: 25%;
+                text-align: center;
+                padding: 15px 15px;
+                margin-top: 20px;
+                @media @mobile {
+                    width: 92%;
+                    max-width: 450px;
+                    margin-bottom: 60px;
+                }
+                &:hover {
+                    cursor: pointer;
+                    color: @secondary-text;
+                    background-color: @main-text;
+                }
+            }
+        }
+    }
+}

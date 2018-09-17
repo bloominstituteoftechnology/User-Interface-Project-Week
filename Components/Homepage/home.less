@@ -1,0 +1,146 @@
+.container {
+    .jumbotron {
+        width: 100%;
+        max-width: 1000px;
+        background-image: url('../img/home/home-jumbotron.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 350px;
+        padding-bottom: 50px;
+        @media @mobile {
+            padding-top: 200px;
+            max-width: 450px;
+            background-size: cover;
+            background-image: url('../img/home/home-mobile-jumbotron.png')
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 4rem;
+            line-height: 4.68rem;
+            color: @secondary-text;
+            padding-left: 5%;
+        }
+    }
+    .top-section {
+        .flex(space-between,
+        center,
+        row);
+        padding: 40px 2% 40px 2%;
+        line-height: 24px;
+        @media @mobile {
+            .flex(center,
+            center,
+            column);
+            text-align: center;
+            padding: 25px 2% 25px 2%;
+        }
+        .top-section-para:first-child {
+            padding-right: 4%;
+            @media @mobile {
+                padding-right: 0px;
+                margin-bottom: 20px;
+            }
+        }
+        .top-section-para:last-child {
+            padding-left: 4%;
+            @media @mobile {
+                padding-left: 0px;
+            }
+        }
+        .top-section-para {
+            .flex(flex-start,
+            center,
+            column);
+            h2 {
+                .sub-headers();
+                padding-bottom: 20px;
+                @media @mobile {
+                    padding-top: 20px;
+                }
+            }
+            .button {
+                border: 1px solid @main-text;
+                padding: 10px 15px;
+                width: 22%;
+                text-align: center;
+                margin-top: 40px;
+                max-width: 100px;
+                &:hover {
+                    cursor: pointer;
+                }
+                @media @mobile {
+                    width: 90%;
+                    max-width: 300px;
+                }
+            }
+            @media @mobile {
+                padding-right: 2%;
+                padding-left: 2%;
+            }
+        }
+    }
+}
+
+#mobile-reversed {
+    @media @mobile {
+        flex-direction: column-reverse;
+    }
+    .button {
+        @media @mobile {
+            max-width: 300px;
+        }
+    }
+}
+
+.projects {
+    .container-margins();
+    @media @mobile {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .project {
+        position: relative;
+        margin-top: 40px;
+        .project-img {
+            img {
+                .abs-img();
+            }
+        }
+    }
+    h3 {
+        .sub-headers();
+        margin-top: 50px;
+        @media @mobile {
+            margin-left: 2%;
+        }
+    }
+    .justify-left-box,
+    .justify-right-box {
+        border: 1px solid @secondary-text;
+        background-color: @project-background;
+        padding: 30px 40px;
+        width: 25%;
+        text-align: center;
+        font-weight: 300;
+        font-size: 1.75rem;
+        letter-spacing: 4px;
+        position: absolute;
+        z-index: 1;
+        top: 210px;
+        @media @mobile {
+            width: 60%;
+            top: 230px;
+            left: 10%;
+        }
+    }
+    .justify-right-box {
+        right: 0;
+    }
+    .project-text {
+        margin: 100px 28% 50px 28%;
+        line-height: 24px;
+        @media @mobile {
+            margin: 100px 2% 50px 2%;
+        }
+    }
+}
