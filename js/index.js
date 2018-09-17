@@ -21,11 +21,28 @@ const body = document.querySelector('body');
 
 //clickHandler for navButton
 const navButtonHandler = function(event){
-    //display correct menu button image
-    navImages.forEach(function(img){
-        img.classList.toggle("hide-nav");
-    });
-    navDropdown.classList.toggle('hide-nav');
+    // display correct menu button image
+    // navImages.forEach(function(img){
+    //     img.classList.toggle("hide-nav");
+    // });
+    if(navImages[0].className === 'hide-nav'){
+        TweenMax.to(navImages[0], .4, { css: { className: "" } })
+    }else {
+        TweenMax.to(navImages[0], .1, { css: { className: "hide-nav" } })
+    }
+    if(navImages[1].className === 'hide-nav'){
+        TweenMax.to(navImages[1], .4, { css: { className: "" } })
+    }else {
+        TweenMax.to(navImages[1], .1, { css: { className: "hide-nav" } })
+    }
+
+    //Toggle nav dropdown
+    // navDropdown.classList.toggle('hide-nav');
+    if (navDropdown.className === 'nav-dropdown hide-nav') {
+        TweenMax.to(navDropdown, .2, { css: { className: "-=hide-nav",left: null }, ease: Power2.easeOut});
+    } else {
+        TweenMax.to(navDropdown, .2, { css: { className: "+=hide-nav", left: null}, ease: Power2.easeOut});
+    }
 
     //set default focus on correct link
     navLinks.forEach(function(link){
