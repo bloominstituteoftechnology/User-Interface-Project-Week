@@ -22,18 +22,19 @@ function toggleMenuOpenButtonMobile () {
 
  menuOpenBackgroundMobile.classList.toggle("openMenu");
  menuLinksMobile.classList.toggle("openMenu");
- burgerOpenMobile.style.display = "none !important";
+ burgerOpenMobile.style = "display: none !important";
  siteLogoMobile.style.left = "161.5px";
  burgerCloseMobile.style = "z-index: +2 !important; display: block; position: relative; left: 40px;";
  menuLinksMobile.style.position = "relative";
- menuLinksMobile.style.right = "260px";
+ menuLinksMobile.style = "right: 275px";
 }
 function toggleMenuCloseButtonMobile () {
     menuOpenBackgroundMobile.classList.toggle("openMenu");
-    menuLinksMobile.classList.toggle("openMenuMobile");
+    menuLinksMobile.classList.toggle("openMenu");
     burgerOpenMobile.style.display = "block";
-    burgerCloseMobile.style.display = "none";
+    burgerOpenMobile.style = "right: 50px";
     siteLogoMobile.style.left = "50px";
+    burgerCloseMobile.style.display = "none";
 }
 burgerOpenMobile.addEventListener('click', () => {toggleMenuOpenButtonMobile();});
 burgerCloseMobile.addEventListener('click', () => {toggleMenuCloseButtonMobile();});
