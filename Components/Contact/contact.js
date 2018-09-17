@@ -8,8 +8,10 @@ const dropdownMenu = document.querySelector('select');
 
 //direct user to utilize email box above instead of footer email box
 emails[1].value = "Please enter contact info in form above";
-
-//reset forms
+emails[0].addEventListener('focus', () => {
+        emails[0].value = "";
+    })
+    //reset forms
 submit.addEventListener('click', () => {
     //check validity of email entered
     let isValid = emails[0].checkValidity();
