@@ -1,3 +1,9 @@
+.container {
+  @media @mobile {
+    max-width: 500px;
+  }
+}
+
 header {
     position: relative;
   
@@ -7,6 +13,7 @@ header {
   
     h1 {
       .jumbotron-header-mixin();
+  
     }
   }
 
@@ -23,12 +30,20 @@ header {
       display: flex;
       align-items: center;
       margin: 60px 4rem 0px 4rem;
+      @media @mobile {
+        flex-direction: column;
+        margin: 0px;
+      }
     }
   
     .futuristic {
       display: flex;
       align-items: center;
       margin: 60px 3rem 0px 3rem;
+      @media @mobile {
+        width: 100%;
+        flex-direction: column;
+      }
     }
   
     .text-content {
@@ -54,6 +69,9 @@ header {
   .intro-img {
     width: 35rem;
     height: 230px;
+    @media @mobile {
+      width: 100%;
+    }
   }
   
   .recent-projects-header {
@@ -66,7 +84,12 @@ header {
     margin: 0px 3rem;
   
     img {
+      width: 100%;
       margin-right: 50px;
+      @media @mobile {
+        height: 400px;
+        width: 50px;
+      }
     }
 
     h2 {

@@ -34,6 +34,3 @@ class ButtonItem {
 let links = document.querySelectorAll('.button-link');
 links = Array.from(links).map(link => new ButtonLink(link));
 links[0].select();
-
-
-//Navigation JS
