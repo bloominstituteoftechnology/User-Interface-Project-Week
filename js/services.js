@@ -12,9 +12,8 @@ class Tablinks {
     clickHandler(){
         
         this.el.classList.toggle("tabsBackgroundColorSelected");
+        this.el.classList.toggle("tabsColorSelected");
         this.tabInfo.toggle();
-        // this.el.style = "background-color: #5E9FB9";
-        // this.el.style.color = "#fffffff"
     }
 }
 
