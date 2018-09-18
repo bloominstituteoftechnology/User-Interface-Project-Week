@@ -1,60 +1,233 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
-
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
-}
-body{
-  line-height:1;
-}
-ol,ul{
-  list-style:none;
-}
-blockquote,q{
-  quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
-}
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
-}
-
-table{
-  border-collapse:collapse;
-  border-spacing:0;
-}
-
 /* Your Code Goes Here */
+
+@import 'variables.less';
+@import 'mixins.less';
+@import 'reset.less';
+@import 'global.less';
+@import 'nav.less';
+@import 'jumbotron.less';
+@import 'footer.less';
+
+.top-main-section {
+  padding: 0px 8.3% 10px 8.3%;
+  .flex(space-between, center);
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+
+  @media @tablet {
+    flex-directon: column-reverse;
+  }
+
+  @media @phone {
+    padding: 0px;
+  }
+  
+  img {
+    margin: 50px 0 45px 0;
+
+    @media @phone {
+      margin: 35px 0px 0px 0px;
+    }
+  }
+
+  .top-main-section-row-1 {
+    .flex(space-between, center);
+
+    @media @tablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .top-main-section-row-2 {
+    .flex(space-between, center);
+
+    @media @tablet {
+      flex-direction: column;
+    }
+  }
+
+  .home-img-1 {
+    @media @tablet {
+      width: 100%;
+    }
+  }
+
+  .home-img-2 {
+    @media @tablet {
+      width: 100%;
+    }
+
+    @media @phone {
+      margin-top: 45px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .text-box-top {
+    width: 48.5%;
+    // height: 277px;
+    .flex(center, flex-start);
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media @tablet {
+      width: 65%;
+      height: auto;
+      align-items: center;
+    }
+
+    @media @phone {
+      width: 91%;
+      justify-content: center;
+    }
+
+    h2 {
+      font-weight: @font-weight-bold;
+      font-size: 2.4rem;
+      padding-top: 20px;
+      padding-bottom: 22px;
+
+      @media @tablet {
+        padding-top: 27px;
+      }
+
+      @media @phone {
+        align-self: flex-start;
+      }
+    }
+
+    p {
+      font-size: @font-size-general;
+      line-height: @line-height-general;
+    }
+
+    button {
+      margin-top: 27px;
+      font-size: @font-size-general;
+      background-color: white;
+      border: 1px solid @button-border-color;
+      // padding: 13px 27px;
+      width: 137px;
+      height: 47px;
+
+      @media @phone {
+        width: 100%;
+      }
+    }
+    
+  }
+
+  .text-box-row-2 {
+    h2 {
+      padding-top: 10px;
+    }
+  }
+}
+
+.middle-main-section {
+  padding: 0 8.3%;
+  .flex();
+  flex-direction: column;
+
+  @media @phone {
+    padding: 0px;
+  }
+  .middle-section-title {
+    font-weight: @font-weight-bold;
+    font-size: 2.4rem;
+    margin: 35px 0px 45px 0px;
+    align-self: flex-start;
+    
+    @media @phone {
+      padding: 0px 5%;
+      margin-bottom: 25px;
+    }
+  }
+
+  .img-middle-main-section {
+    position: relative;
+
+    img {
+      max-width: 100%;
+    }
+
+    .recent-projects {
+      background-color: @recent-projects-gray-square;
+      z-index: 1;
+      height: 95px;
+      width: 315px;
+      border: 1px solid white;
+      margin-top: -56px;
+      position: absolute;
+      .flex();
+      letter-spacing: .8rem;
+
+      h3 {
+        font-size: 2.4rem;
+        margin: 0 auto;  
+
+        @media @tablet {
+          font-size: 1.8rem;
+        }
+
+        @media @phone {
+          font-size: 2.4rem;
+        }
+      }
+
+      @media @tablet {
+        height: 65px;
+        max-width: 285px;
+        width: 75%;
+        margin-top: -25px;
+     }
+
+     @media @phone {
+       margin-top: -15px;
+       height: 100px;
+       width: 90%;
+     }
+    }
+
+    .the-villas-text-box {
+        right: 0px;
+
+        @media @phone {
+          right: 5%;
+        }
+    }
+
+    .outskirts-text-box {
+      left: 0px;
+      
+      @media @phone {
+        left: 5%;
+      }
+    }
+
+    .the-blocks-text-box {
+      right: 0px;
+
+      @media @phone {
+        right: 5%;
+      }
+    }
+  }
+
+  .text-box-middle {
+    margin: 90px 0px 100px 0px;
+    font-size: 1.8rem;
+    width: 53%;
+    line-height: @line-height-general;
+
+    @media @tablet {
+      width: 65%;
+    }
+
+    @media @phone {
+      width: 90%;
+      margin-top: 110px;
+      margin-bottom: 45px;
+    }
+  }
+}
