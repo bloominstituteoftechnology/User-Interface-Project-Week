@@ -1,1 +1,312 @@
-/* Should be empty until you compile your LESS */
+/* Starting point - import all required files */
+/* Variables */
+/* Mixins */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Global settings */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+}
+h1 {
+  font-size: 6.2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 3.2rem;
+  padding-bottom: 10px;
+}
+h3 {
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
+p {
+  line-height: 1.4;
+  font-size: 1.4rem;
+  padding-bottom: 5px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+  }
+}
+/* Navigation bar and popup */
+.navbar {
+  width: 100%;
+  max-width: 1024px;
+  background-color: #99A4AF;
+  opacity: 0.98;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+.navbar .top-strip {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.navbar .top-strip .initials {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-left: 80px;
+}
+.navbar .top-strip .menu-icon {
+  margin-right: 80px;
+}
+.navbar .top-strip .menu-icon:hover {
+  cursor: pointer;
+}
+.navbar .nav-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 1600px;
+  /* run it off the screen! */
+  display: none;
+}
+.navbar .nav-overlay .link-box {
+  height: 200px;
+  width: 200px;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.navbar .nav-overlay .link-box .nav-link {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 4.6rem;
+  font-weight: 600;
+}
+.navbar .nav-overlay .link-box .nav-link:hover {
+  cursor: pointer;
+  color: #444444;
+}
+/* Page footer */
+.footer {
+  height: 250px;
+  width: 100%;
+  padding-top: 60px;
+  background: #828282;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .footer-box {
+  height: 150px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.footer .footer-box .talk-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 280px;
+  margin: 0 10px;
+}
+.footer .footer-box .talk-box form {
+  width: 100%;
+}
+.footer .footer-box .talk-box form input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  color: #AAAAAA;
+  padding-left: 10px;
+  margin: 5px 0px 10px 0px;
+}
+.footer .footer-box .talk-box p {
+  font-size: 1.3rem;
+  color: #DDDDDD;
+}
+.footer .footer-box .location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 10px;
+}
+.footer .footer-box .location address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #DDDDDD;
+}
+.footer .copyright {
+  text-align: center;
+  color: #DDDDDD;
+  font-size: 1.2rem;
+}
+/* Home page */
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: 80px;
+  padding-bottom: 50px;
+  height: 598px;
+  background-image: url("../img/home/home-jumbotron.png");
+}
+.jumbotron .jumbo-text {
+  color: #FFFFFF;
+}
