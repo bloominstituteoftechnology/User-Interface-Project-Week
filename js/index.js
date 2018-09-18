@@ -42,7 +42,7 @@ const contactLink = new Navigation({
     "className": "nav-item",
 })
 
-homeLink.placeLink()
+homeLink.placeLink();
 serviceLink.placeLink();
 contactLink.placeLink();
 
