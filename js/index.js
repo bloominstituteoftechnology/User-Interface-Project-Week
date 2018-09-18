@@ -6,6 +6,7 @@ const links = document.querySelector('.navigation')
 ham.addEventListener('click', ()=>{
     navigation.style.height = '100%';
     close.style.display='block';
+    navigation.style.opacity= 0.97;
     ham.style.display='none';
     links.style.display = 'block'
 })
@@ -13,7 +14,8 @@ close.addEventListener('click', () => {
     navigation.style.height = '';
     close.style.display = '';
     ham.style.display = '';
-    links.style.display = ''
+    links.style.display = '';
+    navigation.style.opacity = '';
 })
 
 class TabLink {
