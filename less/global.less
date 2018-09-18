@@ -1,0 +1,110 @@
+//general styling
+
+* {
+    box-sizing: border-box;
+  }
+  
+html {
+    font-size: 62.5%;
+}
+
+body{
+    font-family: "Roboto", "Arial", "sans-serif";
+}
+
+.container{
+    max-width: 1024px;
+    width: @width-100percent;
+    margin: 0 auto;
+    background-color: @white;
+    color: @black;
+}
+
+//jumbotron
+h1{
+    font-size: @font64;
+    font-weight: @bold;
+    line-height: @line-height75;
+    color: @white;
+}
+
+//label text ie "the villa"
+h2{
+    font-size: @font28;
+    font-family: "Roboto";
+}
+
+//subheadings
+h3 {
+    font-size: @font24;
+    font-weight: @bold;
+}
+
+//footer headers
+h4{
+    font-size: @font20;
+    line-height: @line-height24;
+    color: @white;
+}
+
+//footer text
+h5, address{
+    font-size: @font14;
+    line-height: @line-height26;
+    color: @light-grey;
+}
+
+//general text
+p, div, a{
+    font-size: @font16;
+    line-height: @line-height24;
+    color: @black;
+}
+
+p{
+    .margin-tb(20px,20px);
+}
+
+img{
+    max-width: @width-100percent;
+    height: auto;
+}
+.button{
+    .button-creator();
+}
+.jumbotron{
+    .flexbox(center, flex-start);
+    flex-direction: column;
+    .banner{
+        z-index: 1;
+        margin-top: 4px;
+        @media @tablet {
+            margin-top: 40px;
+        }
+        @media @phone{
+            display: none;
+        }
+    }
+    .mobile-banner {
+        display: none;
+        @media @phone{
+            display: flex;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+    .jumbotron-text{
+        position: relative;
+        left: 8.3%;
+        z-index: 5;
+        width: 90%;
+        height: 0px;
+        bottom: 94px;
+        @media @phone{
+            font-size: 3.5rem;
+            left: 10%;
+            bottom: 80px;
+            width: 60%
+        }
+    }
+}
