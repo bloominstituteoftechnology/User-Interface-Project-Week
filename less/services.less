@@ -1,0 +1,147 @@
+.services-hero-section {
+    margin-top: 50px;
+    position: relative;
+
+    h1 {
+        .jumbotron-text();
+        font-weight: bold;
+        position: absolute;
+        z-index: 2;
+        bottom: 50px;
+        left: 6.5%;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .mobile-img {
+        display: none;
+    }
+
+    @media @phone {
+        h1 {
+            font-size: 4.0rem;
+            line-height: 4.4rem;
+            bottom: 35px;
+            left: 5%;
+        }
+
+        img {
+            display: none;
+        }
+
+        .mobile-img {
+            display: flex;
+            width: 100%;
+        }
+    }
+}
+
+.services-include {
+    max-width: @max-interior-width;
+    margin: 40px auto;
+
+    @media @phone {
+        max-width: @max-mobile-width;
+        margin: 40px 10px;
+    }
+}
+
+.service-buttons {
+    max-width: @max-interior-width;
+    margin: 0 auto 40px auto;
+    .flex(space-between, center, row);
+
+    .tab {
+        .flex(center, center);
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        width: 20%;
+        height: 50px;
+        border: 1px solid @sj-color-black;
+        cursor: pointer;
+
+        &:hover {
+            background-color: @sj-color-black;
+            color: @sj-color-background;
+        }
+    }
+
+    .tab-selected {
+        background-color: @sj-tab-selected;
+        color: @sj-color-background;
+    }
+
+    @media @phone {
+        max-width: @max-mobile-width;
+        width: 100%;
+        .flex(center, center, column);
+
+        .tab {
+            margin: 10px 5px;
+            width: 94%;
+        }
+    }
+}
+
+.service-container {
+    overflow: hidden;
+    max-width: @max-interior-width;
+    margin: 0 auto;
+
+    .service-detail {
+        .flex(space-between, center, row);
+        display: none;
+    
+        .service-text-container {
+            width: 46%;
+    
+            p {
+                padding: 12px 0;
+            }
+        }
+    
+        .service-img-container {
+            width: 46%;
+        }
+
+        .mobile-img {
+            display: none;
+        }
+    }
+    
+    .service-detail-selected {
+        .flex(space-between, center, row);
+        transition: visibility 0s, opacity 0.5s linear;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media @phone {
+        .service-container {
+            max-width: @max-mobile-width;
+        }
+        
+        .service-detail {
+            max-width: @max-mobile-width;
+            width: 100%;
+            flex-direction: column;
+
+            .service-text-container {
+                width: 94%;
+            }
+
+            .service-img-container {
+                display: none;
+            }
+
+            .mobile-img {
+                display: flex;
+                width: 94%;
+                margin: 20px 10px 0px 10px; 
+            }
+        }
+    }
+}
