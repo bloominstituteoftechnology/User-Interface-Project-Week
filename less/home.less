@@ -1,0 +1,198 @@
+/* Main home page css/less */
+
+h1, h2{
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+/* Call to Action */
+.cta {
+    .flex(column);
+    padding: 8px 6px;
+    @media @mobile {
+        width: 95%;
+    }
+    .cta-row{
+        .flex();
+        width: 84%;
+        margin: 48px;
+
+        @media @tablet {
+            &:first-child{
+                .flex(column-reverse);
+            }
+            .flex(column);
+            width: 500px;
+            margin: 28px 48px 14px 48px;
+        }
+        @media @mobile {
+            &:first-child{
+                .flex(column-reverse);
+            }
+            .flex(column);
+            width: 310px;
+            margin: 28px 48px 14px 48px;
+        }
+
+        .cta-image {
+            @media @tablet800 { display: none; }
+            @media @tablet {
+                display: inline-block;
+            }
+            @media @mobile {
+                display: none;
+            }
+        }
+        .cta-image.mobile {
+            display: none;
+            @media @tablet800 { display: inline-block; };
+            @media @tablet {
+                display: none;
+            }
+            @media @mobile {
+                display: inline-block;
+                // width: 290px;
+                // margin: auto;
+                // // width: 305px;
+                // // height: auto;
+                // overflow: hidden;
+            }
+        }
+    }
+
+    .cta-text.left {
+        .flex(column, left);
+        padding-right: 15px;
+
+        @media @tablet {
+            width: 80%;
+            padding: 22px 0px 0px;
+        }
+        @media @mobile {
+            width: 94%;
+            padding: 22px 0px 0px;
+        }
+
+        .button {
+            .flex();
+            margin-top: 30px;
+            border: 1px solid @page-text;
+            height: 43px;
+            width: 137px;
+            @media @mobile {
+                width: 290px;
+            }
+        }
+        .button:hover {
+            background: @page-text;
+            color: @nav-color;
+        }
+    }
+
+    .cta-text.right {
+        .flex(column, left);
+        padding-left: 27px;
+        @media @tablet {
+            width: 80%;
+            padding: 28px 0px 0px;
+        }
+        @media @mobile {
+            width: 94%;
+            padding: 28px 0px 0px;
+        }            
+        .button {
+            .flex();
+            margin-top: 30px;
+            border: 1px solid @page-text;
+            height: 43px;
+            width: 137px;
+            @media @mobile {
+                width: 290px;
+            }
+        }
+        .button:hover {
+            background: @page-text;
+            color: @nav-color;
+        }
+    }
+} // end .cta
+
+h3 {
+    border: 1px solid white;
+    //height 80px;
+    width: 315px;
+    height: 86px;
+    .flex();
+    background: @box-bkg;
+    font-size: 22px;
+    letter-spacing: 9px;
+    @media @mobile {
+        width: 300px;
+    }
+}
+
+/* Recent Projects/Main Content */
+.main-content {
+    margin: 35px auto;
+    width: 855px;
+    @media @tablet800 {
+        width: 98%;
+    }
+    @media @mobile {
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    h2 {
+        @media @mobile {
+            padding-left: 10px;
+        }
+    }
+    .project {
+
+        .villas-title {
+            .project('../img/home/home-villas-img.png');
+            background-size: 855px 230px;
+           .flex(row-reverse, flex-end, '');
+            @media @mobile {
+                .project('../img/home/home-mobile-villas-img.png');
+                background-size:320px 200px;
+                .flex(row, flex-end, center);
+            }
+        }
+        .outskirts-title {
+            .project('../img/home/home-outskirts-img.png');
+            .flex(row, flex-end, '');
+            @media @mobile {
+                .project('../img/home/home-mobile-outskirts-img.png');
+                .flex(row, flex-end, center);
+            }
+        }
+        .blocks-title {
+            .project('../img/home/home-the-blocks-img.png');
+            .flex(row-reverse, flex-end, '');
+            @media @mobile {
+                .project('../img/home/home-mobile-the-blocks-img.png');
+                .flex(row, flex-end, center);
+            }
+        }
+
+        .project-text {
+            margin: 51px auto 100px;
+            width: 53%;
+            @media @tablet {
+                width: 80%
+            }
+            @media @mobile {
+                margin: 0px auto 10px;
+                width: 90%;
+            }
+        }
+        .project-text p{
+            font-size: 18px;
+            line-height: 24px;
+            margin: 28px 0px;
+        }
+    }
+} // end .main-content

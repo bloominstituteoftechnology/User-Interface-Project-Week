@@ -1,0 +1,91 @@
+/* Variables */
+@page-background: #FFFFFF;
+@page-text: #222222;
+@nav-background: #98A3AD;
+
+@footer-background: #828282;
+@nav-color: #FFFFFF;
+@box-bkg: #D8D8D8;
+@button-selected: #5E9FB9;
+
+@mobile: ~ "(max-width: 320px)";
+@tablet800:  ~ "(max-width: 800px)";
+@tablet:  ~ "(max-width: 500px)";
+@contact:  ~ "(max-width: 450px)";
+
+/* Mixins */
+// Sets the jumbotron image and size.
+.nav-settings(@bgimg, @bgsize, @navheight){
+    background-image: url(@bgimg);
+    background-size: @bgsize;
+    height: @navheight;
+}
+
+// Well used flex
+.flex(@dir:row, @al:center, @jc:center){
+    display: flex;
+    flex-direction: @dir;
+    align-items: @al;
+    justify-content: @jc;
+}
+
+// Home page - project settings
+.project(@bkg){
+    margin-top: 30px;
+    width: 855px;
+    height: 270px;
+    background-image: url(@bkg);
+    background-repeat: no-repeat;
+    background-position: top;
+    @media @tablet800 {
+        max-width: 770px;
+        width: 100%;
+        height: 270px;
+        margin: 30px 1%;
+    }
+    @media @tablet {
+        margin-top: 3px;
+        width: 500px;
+        height: 280px;
+    }
+    @media @mobile {
+        margin-top: 3px;
+        width: 320px;
+        height: 280px;
+    }
+}
+
+
+/* General Styles */
+html{
+    box-sizing: border-box;
+}
+
+
+.content {
+    max-width: 1024px;
+    width: 100%;
+    background-color: @page-background;
+    color: @page-text;
+    font-family: Roboto, Arial, sans-serif;
+    margin: auto;
+    overflow: hidden;
+
+    @media @tablet800 {
+        max-width: 800px;
+    }
+    @media @tablet {
+        max-width: 500px;
+    }
+    @media @mobile {
+        max-width: 320px;
+    }
+}
+
+p{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 5px 0px;
+}
+/* End of general styles */
