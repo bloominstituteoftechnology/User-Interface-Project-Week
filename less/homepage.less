@@ -1,0 +1,214 @@
+@import 'variables.less';
+
+.pageContainer {
+    max-width: 1024px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    line-height: 24px;
+    margin: 0 auto;
+    font-family: @main-font1, @main-font2, sans-serif;
+    font-weight: normal;
+    @media (max-width: @mobile) {
+        max-width: @mobile;
+        width: 100%;
+        margin: 0 0;
+    }
+}
+
+.navText {
+    color: @white;
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.jumbotronContainer {
+    position: relative;
+    width: 100%;
+    .jumbotronTxt {
+        z-index: 1;
+        position: absolute;
+        font-weight: bold;
+        font-size: @jumbotron-fontSize;
+        color: @jumbotron-fontColor;
+        line-height: @jumbotron-lineHeight;
+        bottom: 10%;
+        left: 10%;
+        @media (max-width: @mobile) {
+            left: 15%;
+            font-size: @jumbotron-fontSize-mobile;
+            line-height: @jumbotron-lineHeight-mobile;
+        }
+    }
+    .jumbotronDesktop {
+        width: 100%;
+    }
+    .jumbotronMobile {
+        display: none;
+    }
+    @media (max-width: @mobile) {
+        max-width: @mobile;
+        
+        .jumbotronDesktop {
+            display: none;
+        }
+        .jumbotronMobile {
+            display: flex;
+            width: 100%;
+        }
+      
+    }
+}
+
+.subheader {
+    font-size: @subheader-fontSize;
+    font-weight: bold;
+    color: @subheader-fontColor;
+}
+
+.footerHeader {
+    font-size: @footerHeader-fontSize;
+    font-weight: bold;
+    color: @footerHeader-fontColor;
+}
+
+.callToActionContainer {
+    margin: 5% 5%;
+
+    .ctaCard {
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 8% 0;
+        .ctaImg {
+            width: 100%;
+        }
+        .ctaTxt {
+            margin: 0 5%;
+        }
+        @media (max-width: @mobile) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .ctaCard.cardTwo {
+        @media (max-width: @mobile) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+    .btn { 
+        margin: 5% auto;
+        padding: 2%;
+        border: 1px solid black;
+        width: 150px;
+        text-align: center;
+        cursor: pointer;
+    }
+    @media (max-width: @mobile) {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0;
+    }
+}
+
+.projectsContainer {
+    margin: 5% 5%;
+    .subheader {
+        margin: 0% 4%;
+    }
+    img {
+        width: 100%;
+    }
+    .projectCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2% 0;
+        .projectText {
+            width: 50%;
+            margin: 5%;
+            @media (max-width: @mobile) {
+                width: 100%;
+                margin: 0 0;
+            }
+        }
+    }
+    .imgWithTxt {
+        position: relative;
+        .imgTxtContainer {
+            position: absolute;
+            bottom: -10%;
+            border: 1px solid white;
+            text-align: center;
+            height: 70px;
+            width: 250px;
+            background: @gray-square;
+            .imgTxt {
+                position: relative;
+                top: 35%;
+            }
+            
+            @media (max-width: @mobile) {
+                left: 15%;
+                bottom: -45%;
+                border: none;
+            }
+        }
+        .imgTxtContainer.right {
+            right: 0;
+        }
+        
+        @media (max-width: @mobile) {
+            margin-bottom: 15%;
+        }
+    }
+    @media (max-width: @mobile) {
+        margin: 0 0;
+    }
+}
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    background-color: @footer-bg;
+    font-size: @footer-fontSize;
+    color: @footer-fontColor;
+    line-height: @footer-lineHeight;
+
+    .footerCards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .footerCard {
+            display: flex;
+            flex-direction: column;
+            @media (max-width: @mobile) {
+                margin: 5% 0;
+            }
+        }
+        @media (max-width: @mobile) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .copyright {
+        position: relative;
+        top: 20px;
+        text-align: center;
+        @media (max-width: @mobile) {
+            top: 0%;
+            text-align: left;
+        }
+    }
+}

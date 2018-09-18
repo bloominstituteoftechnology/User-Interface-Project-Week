@@ -1,0 +1,67 @@
+@import 'variables.less';
+
+.contentContainer {
+    width: 80%;
+    margin: 0 auto;
+    .servicesDesc {
+        margin: 5% 0;
+    }
+}
+.tabList {
+    .tabs {
+       display: flex; 
+       justify-content: space-around;
+       margin: 5% 0;
+       .tab {
+           font-weight: bold;
+           border: 1px solid black;
+           padding: 1%;
+           max-width: 150px;
+           width: 100%;
+           text-align: center;
+           @media (max-width: @mobile) {
+               max-width: @mobile;
+               width: 100%;
+               margin: 5% 0;
+           }
+       }
+       @media (max-width: @mobile) {
+           display: flex;
+           flex-direction: column;
+       }
+    }
+}
+.tab:hover {
+    background-color: @button-borders;
+    color: @white;
+    cursor: pointer;
+}
+
+.tab-selected {
+    background-color: @tab-selected;
+}
+
+.tabCards {
+    .card {
+        display: none;
+        justify-content: space-around;
+        margin: 5% 0;
+        .subheader {
+            padding: 4% 0;
+        }
+        .cardText {
+            display: flex;
+            flex-direction: column;
+            margin-right: 2%;
+        }
+        @media (max-width: @mobile) {
+            justify-content: space-around;
+            flex-direction: column;
+        }
+    }
+    .card-visible {
+        display: flex;
+    }
+    
+}
+

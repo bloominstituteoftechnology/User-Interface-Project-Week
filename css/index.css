@@ -1,1 +1,500 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+.navContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #9AA5B0;
+  width: 100%;
+  z-index: 2;
+}
+.navContainer .navText {
+  padding: 2%;
+}
+.navContainer .navigation {
+  padding: 2%;
+  cursor: pointer;
+}
+.navFixed {
+  max-width: 1024px;
+  top: 0;
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  height: 7.5%;
+  z-index: 3;
+  padding: 0;
+}
+.hamContainer {
+  display: none;
+  position: fixed;
+  background-color: #9AA5B0;
+  top: 7%;
+  max-width: 1024px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.95;
+}
+.hamContainer .linkContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .hamContainer .linkContainer {
+    max-width: 500px;
+    width: 100%;
+  }
+}
+.hamContainer a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+}
+@media (max-width: 500px) {
+  .hamContainer a {
+    font-size: 2.4rem;
+    line-height: 42.5px;
+  }
+}
+.hamContainer a:hover {
+  color: #222222;
+}
+@media (max-width: 500px) {
+  .hamContainer {
+    height: 100%;
+  }
+}
+.hamContainer .navText {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+}
+.displayHam {
+  display: block;
+}
+.pageContainer {
+  max-width: 1024px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  line-height: 24px;
+  margin: 0 auto;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: normal;
+}
+@media (max-width: 500px) {
+  .pageContainer {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 0;
+  }
+}
+.navText {
+  color: #FFFFFF;
+}
+.btn {
+  width: 150px;
+  height: 40px;
+  border: 1px solid black;
+}
+.jumbotronContainer {
+  position: relative;
+  width: 100%;
+}
+.jumbotronContainer .jumbotronTxt {
+  z-index: 1;
+  position: absolute;
+  font-weight: bold;
+  font-size: 6.4rem;
+  color: #FFFFFF;
+  line-height: 75px;
+  bottom: 10%;
+  left: 10%;
+}
+@media (max-width: 500px) {
+  .jumbotronContainer .jumbotronTxt {
+    left: 15%;
+    font-size: 3.2rem;
+    line-height: 32.5px;
+  }
+}
+.jumbotronContainer .jumbotronDesktop {
+  width: 100%;
+}
+.jumbotronContainer .jumbotronMobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .jumbotronContainer {
+    max-width: 500px;
+  }
+  .jumbotronContainer .jumbotronDesktop {
+    display: none;
+  }
+  .jumbotronContainer .jumbotronMobile {
+    display: flex;
+    width: 100%;
+  }
+}
+.subheader {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #222222;
+}
+.footerHeader {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.callToActionContainer {
+  margin: 5% 5%;
+}
+.callToActionContainer .ctaCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 8% 0;
+}
+.callToActionContainer .ctaCard .ctaImg {
+  width: 100%;
+}
+.callToActionContainer .ctaCard .ctaTxt {
+  margin: 0 5%;
+}
+@media (max-width: 500px) {
+  .callToActionContainer .ctaCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 500px) {
+  .callToActionContainer .ctaCard.cardTwo {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.callToActionContainer .btn {
+  margin: 5% auto;
+  padding: 2%;
+  border: 1px solid black;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  .callToActionContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0;
+  }
+}
+.projectsContainer {
+  margin: 5% 5%;
+}
+.projectsContainer .subheader {
+  margin: 0% 4%;
+}
+.projectsContainer img {
+  width: 100%;
+}
+.projectsContainer .projectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2% 0;
+}
+.projectsContainer .projectCard .projectText {
+  width: 50%;
+  margin: 5%;
+}
+@media (max-width: 500px) {
+  .projectsContainer .projectCard .projectText {
+    width: 100%;
+    margin: 0 0;
+  }
+}
+.projectsContainer .imgWithTxt {
+  position: relative;
+}
+.projectsContainer .imgWithTxt .imgTxtContainer {
+  position: absolute;
+  bottom: -10%;
+  border: 1px solid white;
+  text-align: center;
+  height: 70px;
+  width: 250px;
+  background: #D8D8D8;
+}
+.projectsContainer .imgWithTxt .imgTxtContainer .imgTxt {
+  position: relative;
+  top: 35%;
+}
+@media (max-width: 500px) {
+  .projectsContainer .imgWithTxt .imgTxtContainer {
+    left: 15%;
+    bottom: -45%;
+    border: none;
+  }
+}
+.projectsContainer .imgWithTxt .imgTxtContainer.right {
+  right: 0;
+}
+@media (max-width: 500px) {
+  .projectsContainer .imgWithTxt {
+    margin-bottom: 15%;
+  }
+}
+@media (max-width: 500px) {
+  .projectsContainer {
+    margin: 0 0;
+  }
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  background-color: #828282;
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  line-height: 26px;
+}
+footer .footerCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+footer .footerCards .footerCard {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  footer .footerCards .footerCard {
+    margin: 5% 0;
+  }
+}
+@media (max-width: 500px) {
+  footer .footerCards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+footer .copyright {
+  position: relative;
+  top: 20px;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  footer .copyright {
+    top: 0%;
+    text-align: left;
+  }
+}
+.contentContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+.contentContainer .servicesDesc {
+  margin: 5% 0;
+}
+.tabList .tabs {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0;
+}
+.tabList .tabs .tab {
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 1%;
+  max-width: 150px;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .tabList .tabs .tab {
+    max-width: 500px;
+    width: 100%;
+    margin: 5% 0;
+  }
+}
+@media (max-width: 500px) {
+  .tabList .tabs {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.tab:hover {
+  background-color: #222222;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.tab-selected {
+  background-color: #5E9FB9;
+}
+.tabCards .card {
+  display: none;
+  justify-content: space-around;
+  margin: 5% 0;
+}
+.tabCards .card .subheader {
+  padding: 4% 0;
+}
+.tabCards .card .cardText {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+}
+@media (max-width: 500px) {
+  .tabCards .card {
+    justify-content: space-around;
+    flex-direction: column;
+  }
+}
+.tabCards .card-visible {
+  display: flex;
+}
+html {
+  font-size: 62.5%;
+}
