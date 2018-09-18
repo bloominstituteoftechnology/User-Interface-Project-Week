@@ -1,3 +1,15 @@
+class ServicesTabContent {
+  constructor(el) {
+    this.el = el;
+  }
+
+  select() {
+    const content = document.querySelectorAll('.services-tab-content');
+    Array.from(content).forEach(el => el.classList.remove('content-selected'));
+    this.el.classList.add('content-selected');
+  }
+}
+
 class ServicesTab {
   constructor(el) {
     this.el = el;
@@ -13,18 +25,6 @@ class ServicesTab {
     Array.from(tabs).forEach(el => el.classList.remove('tab-selected'));
     this.el.classList.add('tab-selected');
     this.tabContent.select();
-  }
-}
-
-class ServicesTabContent {
-  constructor(el) {
-    this.el = el;
-  }
-
-  select() {
-    const content = document.querySelectorAll('.services-tab-content');
-    Array.from(content).forEach(el => el.classList.remove('content-selected'));
-    this.el.classList.add('content-selected');
   }
 }
 
