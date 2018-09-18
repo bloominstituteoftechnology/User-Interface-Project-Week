@@ -42,7 +42,6 @@ blockquote,q{
 }
 blockquote:before,blockquote:after,
 q:before,q:after{
-  content:’’;
   content:none;
 }
 ins{
@@ -58,3 +57,414 @@ table{
 }
 
 /* Your Code Goes Here */
+
+
+// @import '../less/menu.less';
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic,900');
+
+@import 'variables.less';
+@import 'mixins.less';
+@import 'global.less';
+@import 'navigation.less';
+@import 'footer.less';
+@import 'services.less';
+@import 'contact.less';
+@import 'projects.less';
+@import 'about.less';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: @fontSize;
+  color: @text-color;
+  font-weight: normal;
+  line-height: @lineHeight;
+  background-color: @backgroundNAV-color;
+  max-width: 88rem;
+  margin: 0 auto;
+}
+// START fixing HERE **************************
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+.top-container{
+  max-width: 880px;
+  .slogan{
+    z-index: 3;
+    position: absolute;
+    color: @backgroundNAV-color;
+    top: 20rem;
+    left: 20rem;
+    font-weight: bold;
+    font-size: @jumboFont;
+    height: auto;
+    line-height: normal;
+  }
+
+  .desktopIMG{
+    // max-width: 45px;
+    // height: auto;
+    img{
+      width: 880px;
+    }
+  }
+
+  .mobileIMG{
+    display: none;
+  }
+
+
+  @media @mobile {
+    width: 50px;
+    .desktopIMG {
+      display: none;
+    }
+
+    .mobileIMG {
+      display: contents;
+      order: 1;
+      img {
+        width: 500px;
+
+      }
+
+    }
+
+    .slogan {
+      z-index: 2;
+      position: absolute;
+      color: @backgroundNAV-color;
+      top: 20rem;
+      left: 6rem;
+      font-weight: bold;
+      font-size: 4rem;
+      height: auto;
+      line-height: normal;
+    }
+
+  }
+
+
+} // end top-container
+
+
+.top {
+  // position: relative;
+
+  .sideways {
+
+
+    display: flex;
+    flex-direction: row;
+
+    padding-bottom: 2rem;
+    width: 100%;
+
+    .textBox{
+      display: flex;
+      flex-direction: column;
+      padding: 3rem;
+
+
+      h2{
+        font-size: 3rem;
+        padding: 2rem 0;
+      }
+
+      p{
+        padding: 2rem 0;
+      }
+
+      .button {
+        padding: 1rem;
+        display: inline;
+        width: 14rem;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+    }
+
+    .projectIMG {
+      height: auto;
+      width: 100%;
+      padding: 3rem;
+    }
+
+
+
+    .mobileIMG{
+      display: none;
+    }
+
+    @media @mobile{
+
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+      }
+
+      .projectIMG{
+        display: none;
+      }
+
+      .mobileIMG{
+        display: contents;
+        order: 1;
+        img{
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      .textBox{
+        order:2;
+        .button {
+          width: 90%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.bottom{
+  position: relative;
+  .middleIMG{
+    display: flex;
+    justify-content: center;
+
+    img{
+      width: 100%;
+    }
+
+  }
+
+  .mobileIMG{
+    display: none;
+  }
+
+  h2{
+    font-size: 3rem;
+    padding: 2rem 0;
+  }
+
+  .villas{
+    background-color: @background-recentProjects;
+    font-size: 2.8rem;
+    position: absolute;
+    right: 0;
+    top: 25rem;
+    z-index: 2;
+    padding: 2rem;
+  }
+
+  .outskirts {
+    background-color: @background-recentProjects;
+    font-size: 2.8rem;
+    position: absolute;
+    left: 0;
+    top: 90rem;
+    z-index: 2;
+    padding: 2rem;
+  }
+
+  .blocks {
+    background-color: @background-recentProjects;
+    font-size: 2.8rem;
+    position: absolute;
+    right: 0;
+    top: 154rem;
+    z-index: 2;
+    padding: 2rem;
+  }
+
+  .narrowText{
+    width: 40%;
+    margin: 0 auto;
+    padding: 6rem 0;
+  }
+
+  @media @mobile{
+    width: 50rem;
+
+
+    .middleIMG{
+      display: none;
+    }
+
+    .stackedRight{
+      width: 48rem;
+      display: flex;
+      flex-direction: column;
+      .mobileIMG{
+        border: 1px solid pink;
+        display: contents;
+        width: 48rem;
+        img{
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+    }
+
+    .stackedLeft{
+      width: 48rem;
+      display: flex;
+      flex-direction: column;
+      .mobileIMG{
+        border: 1px solid pink;
+        display: contents;
+        width: 48rem;
+        img{
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+    }
+
+    h2{
+      font-size: 3rem;
+      padding: 2rem;
+    }
+
+    .projectName{
+     display: flex;
+     justify-content: center;
+     padding-bottom: 4rem;
+      h3{
+        width: 90%;
+      }
+
+
+    }
+
+
+
+    .narrowText{
+      width: 90%;
+      padding-top: 10rem;
+    }
+
+    .villas{
+      width: 60%;
+      text-align: center;
+      background-color: @background-recentProjects;
+      font-size: 2.8rem;
+      position: absolute;
+      left: 2rem;
+      top: 24rem;
+      z-index: 2;
+      padding: 3rem;
+    }
+
+    .outskirts{
+      width: 60%;
+      text-align: center;
+      background-color: @background-recentProjects;
+      font-size: 2.8rem;
+      position: absolute;
+      left: 2rem;
+      top: 88rem;
+      z-index: 2;
+      padding: 3rem;
+    }
+
+    .blocks{
+      width: 60%;
+      text-align: center;
+      background-color: @background-recentProjects;
+      font-size: 2.8rem;
+      position: absolute;
+      left: 2rem;
+      top: 152rem;
+      z-index: 2;
+      padding: 3rem;
+    }
+
+
+  }
+
+
+
+} // end of bottom
+
+
+
+
+// .footer-container();
+
+.footer-container{
+
+  .footerContent {
+    background-color: @footer-background;
+    display: flex;
+    color: @backgroundNAV-color;
+
+    .email {
+      padding: 4rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 2.6rem;
+    }
+
+    .smallText {
+      font-size: 1rem;
+    }
+
+    .officeLocation {
+      padding: 4rem;
+    }
+  }
+    @media @mobile{
+        background-color: @footer-background;
+        display: flex;
+        flex-direction: column;
+        color: @backgroundNAV-color;
+
+        .email{
+          padding: 4rem;
+        }
+
+        p{
+          font-size: 1.4rem;
+          line-height: 2.6rem;
+        }
+
+        .smallText{
+          font-size: 1rem;
+        }
+
+        .officeLocation{
+          padding: 4rem;
+        }
+
+
+      .copyright{
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+
+  .copyright{
+    text-align: center;
+    font-size: 1rem;
+  }
+
+
+
+
+}

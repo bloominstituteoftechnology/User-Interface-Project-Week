@@ -1,0 +1,138 @@
+.width-100 {
+  width: 100rem;
+}
+
+.flex(@jc: none, @ai: none, @dir: row) {
+  display: flex;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-direction: @dir;
+}
+
+
+
+
+
+
+.carousel {
+  .width-100();
+  .flex(center, center);
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+  @media(min-width: 880px){
+    width: 880px;
+  }
+  .left-button, .right-button {
+    .flex(center,center, center);
+    color: @lambda-times-color-white;
+    background-color: @lambda-times-color-primary;
+    font-size: 40px;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    &:hover {
+      color: @lambda-times-color-primary;
+      background-color: @lambda-times-color-white;
+      border: 2px solid @lambda-times-color-primary;
+    }
+  }
+  .left-button {
+    top: 50%;
+    left: 25px;
+    transform: translate(0, -50%);
+  }
+  .right-button {
+    top: 50%;
+    right: 25px;
+    transform: translate(0, -50%);
+  }
+  img {
+    .width-100();
+    display: none;
+    //  transition: all 5.0s ease-in-out;
+  }
+}
+
+
+.project_tabs{
+  position: absolute;
+  top: 450px;
+  display: flex;
+  width: 880px;
+  justify-content: center;
+  border: 1px solid pink;
+  z-index: 99;
+
+
+  .topics{
+    border: 1px solid blue;
+    display: flex;
+    width: 440px;
+    justify-content: space-evenly;
+  }
+
+
+
+}
+span{
+  display: flex;
+  width: 100px;
+}
+
+.cir{
+  height: 25px;
+  width: 25px;
+  border: 1px solid dimgray;
+  border-radius: 50%;
+  display: flex;
+
+
+
+
+}
+.cir{
+  .active-tab{
+    background-color: @menu-color;
+  }
+}
+
+
+.cir:hover{
+  background-color: white;
+}
+
+
+
+
+.projects-container {
+  padding-bottom: 4rem;
+  .projectTitle{
+    padding: 5rem 0 5rem 0;
+    border: 1px solid purple;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+
+  .details {
+    border: 1px solid green;
+
+  }
+  .projectText{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+    width: 90%;
+    margin: 0 auto;
+    p{
+      padding-bottom: 2rem;
+    }
+  }
+
+}
+
+
