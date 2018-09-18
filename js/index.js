@@ -93,21 +93,23 @@ class Button {
             console.log('got it');
 
             this.serviceSelector();
+            if (this.element.style.background !== "#5E9FB9"){
+                this.element.style.background = '#5E9FB9';
+            }
             this.element.style.background = '#5E9FB9';
             this.element.style.color = '#FFFFF';
-
-            this.services.map(() => {
-                    if (event.currentTarget !== this.services.dataset.tab){
-                        // this.element.style.color = 'black';
-                        // this.element.style.background = 'white';
-                        this.element.style.background = '#5E9FB9';
-                        this.element.style.color = '#FFFFF';
-                    } 
-                    else {
-                        this.element.style.color = 'black';
-                        this.element.style.background = 'white';
-                    }
-            })
+        
+            // this.services.map(() => {
+            //         if (this.element.style.background !== 'white'){
+            //             // this.element.style.color = 'black';
+            //             // this.element.style.background = 'white';
+            //             // this.element.style.background = '#5E9FB9';
+            //             // this.element.style.color = '#FFFFF'; 
+            //             this.element.style.color = 'black';
+            //             this.element.style.background = 'white';
+            //         }
+                 
+            // })
           console.log(this.services);
             console.log(event.currentTarget)
             // let color = this.services.style.color ;
