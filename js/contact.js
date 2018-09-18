@@ -25,7 +25,7 @@ const submitForm = (form) => {
         formContent.push(comments);
       }
       if (item.type === 'radio' && item.checked === true) {
-        let businessType = item.name;
+        let businessType = item.value;
         formContent.push(businessType);
       }
     }
