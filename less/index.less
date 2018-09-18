@@ -30,7 +30,14 @@ html {
   margin: 0 auto;
   background-color: #FFFFFF;
   color: #222222;
-
+  .services {
+    background:url(../img/services/services-jumbotron.png) no-repeat center;
+    width:100%;
+    background-size: 100% 100%;
+    height:40%;
+    display:flex;
+    align-items: flex-end;
+  }
   .jumbo {
     width:100%;
     height:65%; 
@@ -38,28 +45,54 @@ html {
     background-size: 100% 100%;
     display:flex;
     align-items: flex-end;
-    .jumbo-text {
-      font-size: 6.4rem;
-      font-weight: bold;
-      line-height: 75px;
-      color: #FFFFFF;
-      padding-left: 4%;
-      padding-bottom: 4%;
+    
+  }
+  .jumbo-text {
+    font-size: 6.4rem;
+    font-weight: bold;
+    line-height: 75px;
+    color: #FFFFFF;
+    padding-left: 4%;
+    padding-bottom: 4%;
+    @media @phone {
+      font-size:5.4rem;
     }
   }
+  .header{
+    margin: 25px 0;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    p{
+      width:90%;
+      font-size:1.5rem;
+      line-height: 25px;
+      
+    }
+  }
+  
 }
 
 .middle-container{
   .flexIt(column, space-evenly, center);
   margin: 5px auto;
+
+
   .block-container{
     margin-top:3%;
-    .flexIt(row,  space-evenly, center)
+    .flexIt(row,  space-evenly, center);
+    @media @phone {
+      .flexIt(column);
+      margin: 10px 0;
+    }
   }
   .block-content{
     
     width: 45%;
-    .flexIt(column, none, flex-start)
+    .flexIt(column, none, flex-start);
+    @media @phone {
+      width:90%;
+    }
 
     
   }
@@ -76,13 +109,22 @@ html {
     line-height: 25px;
   }
   .content-reverse{
-    .flexIt(row-reverse,space-evenly)
+    .flexIt(row-reverse,space-evenly);
+    @media @phone {
+
+      flex-direction: column;
+    }
   }
   img{
     width:100%;
   }
   .img{
     width:40%;
+    @media @phone {
+      order:-1;
+      width:90%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -90,6 +132,9 @@ html {
   margin-top:1rem;
   cursor:pointer;
   .buttonIt();
+  @media @phone {
+    width:90%;
+  }
   
 }
 
@@ -100,13 +145,18 @@ html {
   margin-right:auto;
   margin-top: 3rem;
   width:90%;
+  @media @phone {
+    width:100%;
+  }
   h2{
     padding:2rem 0;
     font-weight: bold;
     font-size:2.8rem;}
 
   .container-project{
-    
+    h2{
+      word-spacing:1rem;
+    }
     img{
       width:100%;
     }
@@ -131,13 +181,24 @@ html {
       width: 25%;
       font-size: 1.6rem;
       letter-spacing: .5rem;
+      
+      
       h2{
         font-weight: normal;
+        
+      }
+      @media @phone {
+        margin: 0 auto;
+        width:90%;
+        top:-35px;     
       } 
     }
     .right{
       align-self: flex-end;
       left:75%;
+      @media @phone {
+        left: 0%;
+      }
       
     }
     .project-text{
@@ -150,12 +211,63 @@ html {
         width:50%;
         font-size:1.5rem;
         line-height:25px;
+        @media @phone{
+          width:90%;
+        }
         
       }
     }
     
   }
     
+}
+
+.tabs-container {
+  .flexIt(row, space-around,center);
+  @media @phone{
+    flex-direction: column;
+  }
+  width: 95%;
+  margin:25px auto;
+    .tabs-link{
+    font-size: 1.6rem;
+    .buttonIt(20%, 35px);
+    &:hover {
+      background: lightblue;
+      color: #FFF;
+      } 
+    }
+}
+
+.tabs-item {
+  .flexIt(row, space-evenly, center);
+  @media @phone{
+      flex-direction: column;
+  }
+  .tab-img{
+      @media @phone{
+          display: none;
+      }
+  }
+  .tab-mobile-img {
+      display: none;
+      @media @phone{
+          display:block;
+      }
+  }
+  .tabs-item-description {
+      width:45%;
+      @media @phone{
+          width:90%;
+      }
+      h1 {
+          font-size: 2.8rem;
+          font-weight: bold;
+          color:black;
+      }
+      padding: 30px;
+      // margin:0 auto;
+    } 
 }
 
 .footer-container{
@@ -168,11 +280,17 @@ html {
     
     font-size:1.5rem;
     padding: 1.5rem 0;
+    @media @phone {
+      .flexIt(column)
+    }
     
   }
 
   .info-request{
     width:20%;
+    @media @phone {
+      width:90%;
+    }
 
     input{
       width:100%;
@@ -184,6 +302,9 @@ html {
     font-weight: bold;
   }
   .locals{
+    @media @phone{
+      width:90%;
+    }
     p{
       font-size: 1.2rem;
       line-height: 20px;
@@ -193,6 +314,10 @@ html {
     display: flex;
     width:100%;
     justify-content: center;
+    @media @phone{
+      padding-left: 15px;
+      justify-content: flex-start;
+    }
   }
 
 }
