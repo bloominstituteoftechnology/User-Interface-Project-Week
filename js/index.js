@@ -52,17 +52,6 @@ class TabItem {
   }
 }
 
-/*
-// START HERE: create a reference to the ".tabs" classes
-let links = document.querySelectorAll(".tabs-link");
-
-// Following the code in the Dropdown file, iterate through the array you created above creating a new instance of the TabLink class for each item. 
-links = Array.from(links).map((link) => new TabLink(link));
-
-// DO THIS LAST: Once you have created an array of TabLink instances. call select() on the first item in the array
-links[0].select(); */
-
-
 /// END OF TABS START OF NAV DROPDOWN 
 
 class Dropdown {
@@ -79,7 +68,19 @@ class Dropdown {
  
     // Add a click handler to the button reference and call the toggleContent method.
     this.button.addEventListener('click', () => {
-      this.toggleContent();})
+
+			this.button2 = this.element.querySelector('.dropdown-button img');
+			console.log(this.button2);
+			this.button2.src = "img/nav-hamburger-close.png";
+			      
+			this.toggleContent();
+			})
+
+			this.button.addEventListener('click', () => {
+				this.button2 = this.element.querySelector('.dropdown-button img');
+				console.log(this.button2);
+				this.button2.src = "img/nav-hamburger.png";
+				})
   }
 
   toggleContent() {
@@ -93,11 +94,8 @@ class Dropdown {
 let dropdowns = document.querySelectorAll('.dropdown');
 dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
 
-// START HERE: create a reference to the ".tabs" classes
 let links = document.querySelectorAll(".tabs-link");
 
-// Following the code in the Dropdown file, iterate through the array you created above creating a new instance of the TabLink class for each item. 
 links = Array.from(links).map((link) => new TabLink(link));
 
-// DO THIS LAST: Once you have created an array of TabLink instances. call select() on the first item in the array
 links[0].select();
