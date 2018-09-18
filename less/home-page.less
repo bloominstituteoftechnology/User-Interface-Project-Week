@@ -31,8 +31,9 @@ header {
       align-items: center;
       margin: 60px 4rem 0px 4rem;
       @media @mobile {
-        flex-direction: column;
-        margin: 0px;
+      
+        flex-direction: column-reverse;
+        
       }
     }
   
@@ -41,7 +42,6 @@ header {
       align-items: center;
       margin: 60px 3rem 0px 3rem;
       @media @mobile {
-        width: 100%;
         flex-direction: column;
       }
     }
@@ -58,12 +58,18 @@ header {
   
       .button {
         .button-mixin(15rem, 40px);
+        @media @mobile {
+          .button-mixin(108%, 40px);
+        }
       }
     }
   }
   
   .futuristic .text-content {
     margin-left: 3.5rem;
+    @media @mobile {
+      margin-left: 0px;
+    }
   }
   
   .intro-img {
@@ -71,6 +77,8 @@ header {
     height: 230px;
     @media @mobile {
       width: 100%;
+      height: 300px;
+      margin-bottom: 40px;
     }
   }
   
@@ -82,13 +90,18 @@ header {
   .article-header {
     position: relative;
     margin: 0px 3rem;
+
+    @media @mobile {
+      margin: 0px;
+    }
   
     img {
       width: 100%;
       margin-right: 50px;
       @media @mobile {
-        height: 400px;
-        width: 50px;
+        height: 300px;
+        width: 100%;
+        
       }
     }
 
@@ -102,12 +115,20 @@ header {
       position: absolute;
       bottom: -40px;
       right: -3.5rem;
+
+      @media @mobile {
+        left: 10rem;
+      }
     }
   
     .left {
       position: absolute;
       bottom: -40px;
       left: 0px;
+
+      @media @mobile {
+        left: 10rem;
+      }
     }
   }
   
@@ -122,6 +143,11 @@ header {
       margin-top: 100px;
       margin-left: 15rem;
       margin-right: 15rem;
+
+      @media @mobile {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
     }
   
     .second-paragraph {
