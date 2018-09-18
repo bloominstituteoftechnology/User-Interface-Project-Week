@@ -24,7 +24,7 @@ class Carousel {
   }
 
   previousSlide() {
-    this.currentIndex = this.currentIndex === 0 ? 2 : this.currentIndex - 1;
+    this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
     this.images.forEach(img => (img.style.display = "none"));
     this.images[this.currentIndex].style.display = "block";
     Tweenlite.from(this.images[this.currentIndex], 5, {
@@ -34,7 +34,7 @@ class Carousel {
   }
 
   nextSlide() {
-    this.currentIndex = this.currentIndex === 2 ? 0 : this.currentIndex + 1;
+    this.currentIndex = this.currentIndex === this.images.length - 1 ? 0 : this.currentIndex + 1;
     this.images.forEach(img => (img.style.display = "none"));
     this.images[this.currentIndex].style.display = "block";
     Tweenlite.from(this.images[this.currentIndex], 5, {
