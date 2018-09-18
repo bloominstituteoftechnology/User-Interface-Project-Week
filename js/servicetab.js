@@ -45,3 +45,21 @@ let images = document.querySelectorAll('.image');
 images = Array.from(images);
 
 buttonsArray[0].clickHandler();
+
+let serviceH2 = document.getElementById('h2service')
+console.log(serviceH2)
+
+let serviceButtons = document.querySelectorAll('.servicebutton');
+serviceButtons[0].addEventListener('click', () => {
+    serviceH2.innerHTML = 'Pre-Construction'
+})
+serviceButtons[1].addEventListener('click', () => {
+    serviceH2.innerHTML = 'Construction'
+})
+
+serviceButtons[2].addEventListener('click', () => {
+    serviceH2.innerHTML = 'Design Build'
+})
+serviceButtons[3].addEventListener('click', () => {
+    serviceH2.innerHTML = 'Sustainability'
+})
