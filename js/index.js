@@ -1,6 +1,7 @@
 // JS goes here
 function openNav() {
     document.getElementById("mySidenav").style.width = "100%";
+    // document.getElementById('mySidenav').style.opacity = '0.5';
     document.getElementById("main").style.marginLeft = "100%";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
