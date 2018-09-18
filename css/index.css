@@ -324,31 +324,41 @@ p {
   color: #FFFFFF;
 }
 .navigation .nav-container {
-  width: 50%;
+  width: 90%;
   display: flex;
+  justify-content: space-between;
   margin: 0 5%;
   padding: 10px 0;
 }
 .navigation .nav-container :last-child {
   margin-right: 8%;
 }
-.navigation .menu {
-  justify-content: flex-end;
-}
 .navigation nav {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.navigation nav a {
+.navigation .menu {
+  display: none;
+  position: fixed;
+  width: 1024px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: silver;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+.navigation .menu a {
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 85px;
   color: #FFFFFF;
-  display: none;
 }
-.navigation nav a:hover {
+.navigation .menu a:hover {
   color: #222222;
+}
+.navigation .menu--open {
+  display: block;
 }
 footer {
   background-color: #828282;
@@ -678,4 +688,7 @@ footer .copyright {
 }
 .services-container .service-content-container .active-card .card-text {
   width: 50%;
+}
+.services-container .service-content-container .active-card .card-text p {
+  padding-bottom: 18px;
 }

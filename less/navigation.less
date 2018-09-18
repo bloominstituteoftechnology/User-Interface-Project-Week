@@ -16,8 +16,9 @@
 		}
 
 		.nav-container {
-			width: 50%;
+			width: 90%;
 			display: flex;
+			justify-content: space-between;
 			margin: 0 5%;
 			padding: 10px 0;
 			:last-child {
@@ -25,16 +26,21 @@
 			}
 		}
 
-		.menu {
-			justify-content: flex-end;
-		}
-
 		nav {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+		}
 
-			a {
+		.menu {
+			display: none;
+ 			position: fixed;
+  			width: 1024px;
+  			height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
+ 			background-color: @nav-border;
+  			z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+
+  			a {
 				font-weight: bold;
 				font-size: @font48;
 				line-height: @height85;
@@ -42,7 +48,11 @@
 					&:hover {
 						color: @black;
 					}
-				display: none;
 			}
 		}
+
+		.menu--open{
+			display: block;
+		}
+
 }

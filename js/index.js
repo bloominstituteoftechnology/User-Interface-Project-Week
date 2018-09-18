@@ -2,33 +2,17 @@
 
 //Navigation
 
-const navButton = document.querySelector('.menu');
-const anchors = document.querySelectorAll('a');
-
-let closedHamburger = true;
-
-anchors.forEach(a => {
-	a.style.display = 'none';
-});
-
-const hamburgerHandler = function() {
-	if(closedHamburger) {
-		document.getElementbyClass('hamburger').src = './img/nav-hamburger-close.png';
-
-		anchors.forEach(a => {
-			a.style.display = '';
-		});
-
-		closedHamburger = false;
-	} else {
-		document.getElementbyClass('hamburger').src = './img/nav-hamburger.png';
-
-		anchors.forEach(a => {
-			a.style.display = 'none';
-		});
-
-		closedHamburger = true;
-	}
+const toggleMenu = () => {menu.classList.toggle('menu--open');
+menuClosed.style.opacity = ('0');
+  // Toggle the "menu--open" class on your menu refence. 
 };
 
-navButton.addEventListener('click', hamburgerHandler);
+// Create a reference to the ".menu"  and ".menuClosed" class
+const menu = document.querySelector('.menu');
+
+// create a reference to the ".hamburger" class
+const menuButton = document.querySelector('.hamburger');
+
+// add a click handler that calls toggleMenu
+menuButton.addEventListener('click', toggleMenu);
+
