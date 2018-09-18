@@ -56,5 +56,435 @@ table{
   border-collapse:collapse;
   border-spacing:0;
 }
-
+/*adjusting font size so REM= 1-10*/
+HTML{
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
 /* Your Code Goes Here */
+
+// body:{
+//   width: 100%;
+// }
+
+@phone: ~"(max-width: 501px)";
+@h2rem: 2rem;
+@prem: 1.6rem;
+@20mar: 20px 0px;
+@paraMargin: 100px 0px 30px 0px;
+@deskmar: 20px 4%;
+@deskMax: 1000px;
+
+/*nav menu*/
+.header{
+  width: 100%;
+  max-width: 1000px;
+  background-color: lightgray; 
+  height: 40px;
+  display: flex;
+  position: fixed;
+
+  h1{
+    font-size: @h2rem;
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
+    color: white;
+  }
+}
+
+.menu-button {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.menu-button-close{
+  position: absolute;
+  right: 33px;
+  top: 7px;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  width: 100%;
+  max-width: 1000px;
+  height: 100vh; 
+  background-color: lightgrey;
+  border: 1px solid black;
+  z-index: 2; 
+
+
+  h1{
+    font-size: @h2rem;
+    display: flex;
+    align-self: center;
+    margin: 9px;
+    color: white;
+  }
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.menu ul li{
+  list-style-type: none;
+  font-size: 3.2rem;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.menu--open {
+  display: block;
+}
+
+
+/* smartphone width*/
+@media screen and (max-width: 500px){
+  body {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+  .desktopImg {
+    display: none;
+  }
+
+  .mobileImg {
+    width: 100%;
+    display: flex;
+  }      
+
+  .mobileImgJumbo {
+    width: 100%;
+    max-height: 280px;
+    display: flex;
+  }
+
+  .jumbotron {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;  
+
+    h1 {
+      font-size: 5rem;
+      position: absolute;
+      align-self: flex-end;
+      padding: 0px 0px 30px 30px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+    /*Needed a seperate class for this image because of the size of the image.*/
+    .mobileImgLineDraw {
+      display: flex;
+      width: 432px;
+      margin: @20mar;
+    }
+
+    h2 {
+      font-size: @h2rem;
+      margin: @20mar;
+    }
+
+    p {
+      font-size: @prem;
+      padding-bottom: 15px;
+      max-width: @deskMax;
+    }
+
+    .imageBox{
+      position: relative;
+      width: 100%;
+      max-width: @deskMax;
+    }
+
+    .paragraphs {
+      margin: @paraMargin
+    }
+
+    .greyTextBox {
+      width: 90%;
+      background-color: lightgrey;
+      height: 100px;
+      text-align: center;
+      line-height: 5;
+      margin: 0px;
+      position: absolute;
+      bottom: -70px;
+      right: 21px;
+    }
+
+    .button {
+      width: 100%;
+      height: 50px;
+      border-radius: 5px;
+      color: white;
+      background-color: darkblue;
+      text-align: center;
+      line-height: 3;
+      font-size: @prem;
+      margin: @20mar;
+
+      &:hover {
+        cursor: pointer;
+        background-color: dodgerblue;
+      }
+    }
+  }/*section*/
+
+  footer{
+    background-color: grey;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+
+    .footContainer{
+      width: 90%;
+      padding: 30px 0px;
+
+    h3{
+      font-size: @h2rem;
+      margin: 30px 0px;
+    }
+
+    h4{
+      font-size: @prem;
+      margin: 10px 0px;
+    }
+
+    input[type=email], select {
+      width: 100%;
+      padding: 12px 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+  }
+
+  }/*foot container*/
+  h5{
+    font-size: 1rem;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}/*footer*/
+}/*body*/   
+}/*media*/
+
+
+/*tablet*/
+@media screen and (min-width: 501px){
+  body{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  
+    .mobileImg {
+      display: none;
+    }
+  
+    .mobileImgJumbo {
+      display: none;
+    }
+  
+    .mobileImgLineDraw {
+      display: none;
+    }
+  
+    .jumbotron {
+      height: 500px;
+      width: 100%;
+      max-width: 1000px;
+      
+      h1 {
+        font-size: 5rem;
+        position: absolute;
+        align-self: flex-end;
+        padding: 0px 0px 30px 30px;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+
+    .desktopImg{
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1000px;
+
+      h2 {
+        font-size: @h2rem;
+        margin: @deskmar;
+      }
+
+      p {
+        font-size: @prem;
+        padding-bottom: 15px;
+        margin: @deskmar;
+      }
+
+      .button {
+        width: 50%;
+        height: 50px;
+        border-radius: 5px;
+        color: white;
+        background-color: darkblue;
+        text-align: center;
+        line-height: 3;
+        font-size: @prem;
+        margin: @deskmar;
+
+        &:hover {
+          cursor: pointer;
+          background-color: dodgerblue;
+        }
+      }
+
+      .firstImg{
+        display: flex;
+        flex-direction: row-reverse;
+        margin: @deskmar;
+      }
+
+      .secondImg{
+        display: flex;
+        flex-direction: row;
+        margin: @deskmar;
+      }
+
+      .imageBox{ 
+        width: 100%;
+        max-width: 1000px;
+
+        .deskGreyBox1 {
+          width: 30%;
+          background-color: lightgrey;
+          height: 100px;
+          text-align: center;
+          line-height: 5;
+          margin: 0px;
+          position: absolute;
+          bottom: -563px;
+          right: 20px;
+        }
+
+        .deskGreyBox2 {
+          width: 30%;
+          background-color: lightgrey;
+          height: 100px;
+          text-align: center;
+          line-height: 5;
+          margin: 0px;
+          position: absolute;
+          bottom: -1025px;
+          left: 20px;
+        }
+
+        .deskGreyBox3 {
+          width: 30%;
+          background-color: lightgrey;
+          height: 100px;
+          text-align: center;
+          line-height: 5;
+          margin: 0px;
+          position: absolute;
+          bottom: -1490px;
+          right: 20px;
+          }
+        }
+
+        .paragraphs{
+          margin-top: 65px;
+        }   
+  }/*section*/
+
+  footer{
+    background-color: grey;
+    color: white;
+    width: 100%;
+        
+    .footContainer{
+      width: 90%;
+      padding: 30px 0px;
+      display: flex;
+      justify-content: space-evenly;
+        
+      h3{
+        font-size: @h2rem;
+        margin: 30px 0px;
+      }
+        
+      h4{
+        font-size: @prem;
+        margin: 10px 0px;
+      }
+        
+      input[type=email], select {
+        width: 100%;
+        padding: 12px 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+    }/*foot container*/
+  }/*footer*/
+
+    h5{
+      font-size: 1rem;
+      margin-top: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }/*body*/
+}/*media*/
+
+/*desktop*/
+
+@media screen and (min-width: 800px){
+  .deskGreyBox1{
+    bottom: -615px;
+  }
+
+  .deskGreyBox2{
+    bottom: -1115px;
+  }
+
+  .deskGreyBox3{
+    bottom: -1615px;
+  }
+}
+
+
+
