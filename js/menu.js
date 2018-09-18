@@ -21,3 +21,4 @@ let hamburgerClick = hamburger.addEventListener('click', toggleMenu);
 let hamburgerOpen = document.querySelector('.hamburger-close');
 
 let hamburgerClickClose = hamburgerOpen.addEventListener('click', toggleClose);
+
