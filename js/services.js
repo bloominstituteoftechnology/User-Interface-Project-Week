@@ -36,7 +36,7 @@ class TabLink{
         
         this.element = element;
       }
-      
+
       selectCard(){
         
         this.element.style.display = null;

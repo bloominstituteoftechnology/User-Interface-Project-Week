@@ -16,7 +16,7 @@ class Dropdown{
     }
     toggleContent(){
         if(this.open === false){
-          this.nav.style.backgroundColor = "purple"; 
+          this.nav.style.backgroundColor = "#9bb4be"; 
           this.nav.style.alignItems = "flex-start"; 
           this.button.style.paddingTop = "18px"; 
           this.element.style.display = "flex"; 
