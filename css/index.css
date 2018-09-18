@@ -1,4 +1,3 @@
-/* Your Code Goes Here */
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -149,12 +148,15 @@ body {
   max-width: 400px;
   margin: 0 auto;
 }
-@media (min-width: 880px) {
+@media (min-width: 768px) {
   .container {
     max-width: 1024px;
   }
 }
 .home {
+  padding: 0 0;
+}
+.services {
   padding: 0 0;
 }
 .general-font-style {
@@ -198,7 +200,7 @@ body {
   padding: 15px 0;
   text-align: center;
 }
-.nav {
+.navigation {
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -210,29 +212,29 @@ body {
   padding-bottom: 15px;
   z-index: 25;
 }
-.nav h2 {
+.navigation h2 {
   margin-left: 15px;
   font-weight: 700;
   font-size: 3rem;
   color: #222222;
 }
-@media (min-width: 880px) {
-  .nav h2 {
+@media (min-width: 768px) {
+  .navigation h2 {
     margin-left: 75px;
     margin-top: 15px;
   }
 }
-.nav .hamburger {
+.navigation .hamburger {
   margin-right: 15px;
 }
-@media (min-width: 880px) {
-  .nav .hamburger {
+@media (min-width: 768px) {
+  .navigation .hamburger {
     margin-right: 75px;
     margin-top: 15px;
   }
 }
-@media (min-width: 880px) {
-  .nav {
+@media (min-width: 768px) {
+  .navigation {
     max-width: 1024px;
   }
 }
@@ -283,14 +285,14 @@ body {
   top: 20px;
   left: 20px;
 }
-.jumbo {
+.jumbo-home {
   width: 100%;
   height: 300px;
   margin: 0 auto;
   background: url("../img/home/home-mobile-jumbotron.png") no-repeat;
   background-size: cover;
 }
-.jumbo .jumbo-container {
+.jumbo-home .jumbo-container {
   height: 100%;
   position: relative;
   display: flex;
@@ -302,18 +304,42 @@ body {
   font-weight: 700;
   line-height: 7.5rem;
 }
-.jumbo .jumbo-container h1 {
+.jumbo-home .jumbo-container h1 {
   margin-left: 15px;
 }
-@media (min-width: 880px) {
-  .jumbo .jumbo-container h1 {
+@media (min-width: 786px) {
+  .jumbo-home .jumbo-container h1 {
     margin-left: 75px;
   }
 }
-@media (min-width: 880px) {
-  .jumbo {
+@media (min-width: 768px) {
+  .jumbo-home {
     height: 598px;
     background: url("../img/home/home-jumbotron.png") no-repeat;
+  }
+}
+.jumbo-services {
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+  background: url("../img/services/services-jumbotron.png") no-repeat;
+  background-position: center;
+}
+.jumbo-services .jumbo-container {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 15px;
+  padding-bottom: 15px;
+  color: #FFFFFF;
+  font-size: 6.4rem;
+  font-weight: 700;
+  line-height: 7.5rem;
+}
+@media (min-width: 786px) {
+  .jumbo-services .jumbo-container h1 {
+    margin-left: 40px;
   }
 }
 .footer {
@@ -343,27 +369,27 @@ body {
   position: relative;
   z-index: 10;
 }
-@media (min-width: 880x) {
+@media (min-width: 768px) {
   .home .imgOne {
     content: url("/img/home/home-img-1.png");
   }
 }
-@media (min-width: 880px) {
+@media (min-width: 768px) {
   .home .imgTwo {
     content: url("/img/home/home-img-2.png");
   }
 }
-@media (min-width: 880px) {
+@media (min-width: 768px) {
   .home .imgVillas {
     content: url("/img/home/home-villas-img.png");
   }
 }
-@media (min-width: 880px) {
+@media (min-width: 768px) {
   .home .imgOutskirts {
     content: url("/img/home/home-outskirts-img.png");
   }
 }
-@media (min-width: 880px) {
+@media (min-width: 768px) {
   .home .imgBlocks {
     content: url("/img/home/home-the-blocks-img.png");
   }
@@ -388,9 +414,57 @@ body {
   padding: 15px 0;
   text-align: center;
 }
-@media (min-width: 880px) {
-  .contact .padding {
-    max-width: 250px;
-    margin: 0 auto;
+.services .imgTest {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .services .imgOne {
+    content: url(/img/services/services-tab-pre-construction-img.png);
   }
+}
+@media (min-width: 768px) {
+  .services .imgTwo {
+    content: url(/img/services/services-tab-construction-img.png);
+  }
+}
+@media (min-width: 768px) {
+  .services .imgThree {
+    content: url(/img/services/services-tab-design-build-img.png);
+  }
+}
+@media (min-width: 768px) {
+  .services .imgFour {
+    content: url(/img/services/services-tab-sustainability-img.png);
+  }
+}
+.services .services-tabs {
+  width: 100%;
+  font-weight: 700;
+  font-size: 2.2rem;
+  border: 1px solid #222222;
+  padding: 15px 0;
+  text-align: center;
+}
+.services .services-tabs:hover {
+  background: #222222;
+  color: #FFF;
+}
+.services .services-tabs:active {
+  background: #5E9FB9;
+}
+.services .tabs-link-selected {
+  background-color: #5E9FB9;
+}
+.services .tab-item {
+  display: none;
+}
+.services .tab-item div {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.services .tabs-item-selected {
+  display: flex;
 }
