@@ -21,4 +21,71 @@
             display: none;
         }
     }
+}//.project-jumbo
+
+//carousel
+
+.carouselbox {
+    font-size: 2rem;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    border: 1px solid red;
+    box-shadow: 2px 2px 10px @black;
+    overflow: hidden;
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+}
+
+.content li {
+    font-size: 8rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+}
+
+//All we need to show and hide the different carousel items is to change the height of the carousel container 
+//and position all but the current one outside this height
+
+.active {
+    height: 130px;
+}
+
+.active li {
+    position: absolute;
+    top: 200px;
+}
+
+.active li.current {
+    top: 30px;
+}
+
+//security precaution for having HTML that is dependent on Javascript
+//instead of creating HTML using Javascript
+
+.active .buttons {
+    padding: 5px 0;
+    background: green;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+.carouselbox button {
+    border: none;
+    display: none;
+}
+
+.active button {
+    display: block;
+}
+
+.offscreen {
+    position: absolute;
+    left: -2000px;
 }

@@ -12,6 +12,7 @@ const toggleClose = () => {
 
 
 
+
 let navigation = document.querySelector('.navigation');
 
 let hamburger = document.querySelector('.hamburger');
