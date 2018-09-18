@@ -590,6 +590,8 @@ nav img {
   display: block;
   text-decoration: none;
   color: #FFFFFF;
+  animation-name: textAppear;
+  animation-duration: 2.5s;
 }
 .links :hover {
   color: #222222;
@@ -597,10 +599,36 @@ nav img {
 .expand {
   height: 600px;
   opacity: 0.9;
+  animation: appear 1.5s;
 }
 @media (max-width:400px) {
   .expand {
     height: 420px;
+    animation: mobileAppear 1.5s;
+  }
+}
+@keyframes appear {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 600px;
+  }
+}
+@keyframes mobileAppear {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 420px;
+  }
+}
+@keyframes textAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 .footer {
