@@ -1,0 +1,187 @@
+.container {
+    .offsetDesignBlocks {
+        .flexMix(column, space-evenly, center);
+        margin: 5px auto;
+        width: 90%;
+        .designBlock {
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+            .mobileImg {
+                display: none
+            }
+            @media @mobile {
+                flex-direction: column-reverse;
+                margin: 15px auto;
+                .homeImg {
+                    display: none;
+                }
+                .mobileImg {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+            .designText {
+                align-self: center;
+                width: 45%;
+                @media @mobile {
+                    width: 90%;
+                    margin: 15px auto;
+                    text-align-last: left;
+                }
+                h2 {
+                    font-size: 2.8rem;
+                    font-weight: bold;
+                    color: @black;
+                }
+                .button {
+                    .buttonCreator();
+                    @media @mobile {
+                        .buttonCreator(90%, 45px);
+                    }
+                }
+            }
+        }
+        .reverse {
+            .flexMix(row-reverse, space-between, center);
+            @media @mobile {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}
+
+.recentProjects {
+    font-size: 2.8rem;
+    .flexMix(column, space-between, center);
+    h2 {
+        font-size: 2.8rem;
+        align-self: flex-start;
+        margin-left: 8%;
+        margin-bottom: 28px;
+        margin-top: 30px
+    }
+    .project {
+        .flexMix(column, space-between, center);
+        width: 90%;
+        img {
+            width: 80%;
+        }
+        .homeImg {
+            @media @mobile {
+                display: none;
+            }
+        }
+        .mobileImg {
+            display: none;
+            @media @mobile {
+                display: block;
+                width: 100vw;
+            }
+        }
+        .projectText {
+            .flexMix();
+            width: 50%;
+            line-height: 24px;
+            margin: 60px auto;
+            margin-top: 40px;
+            @media @mobile {
+                width: 90%;
+            }
+        }
+        .pName {
+            position: relative;
+            margin-top: -40px;
+            border: 1px solid @white;
+            background: @projectsSqr;
+            height: 80px;
+            width: 200px;
+            font-size: 1.6rem;
+            .flexMix();
+            font-weight: lighter;
+            @media @mobile {
+                width: 88%;
+                height: 100px;
+                margin-top: -25px;
+            }
+        }
+        .right {
+            align-self: flex-end;
+            margin-right: 2.5%;
+            @media @mobile {
+                align-self: center;
+            }
+        }
+        .left {
+            align-self: flex-start;
+            margin-left: 2.5%;
+            @media @mobile {
+                align-self: center;
+            }
+        }
+    }
+}
+
+.footContainer {
+    .flexMix(column, space-evenly, center);
+    width: 100%;
+    background: @footer;
+    color: @white;
+    height: 200px;
+    @media @mobile {
+        height: 80%;
+    }
+    .daFeet {
+        .flexMix(row, space-around, center);
+        width: 100%;
+        @media @mobile {
+            flex-direction: column;
+            padding-left: 15px;
+        }
+        h4 {
+            @media @mobile {
+                text-align: left;
+            }
+        }
+        h3 {
+            font-size: 2rem;
+            line-height: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        p {
+            font-size: 1.4rem;
+            font-weight: 100;
+        }
+        .infoRequest {
+            width: 30%;
+            @media @mobile {
+                width: 100%;
+                margin: 10px auto;
+                text-align: left;
+                padding-left: 15px
+            }
+        }
+        .locations {
+            .flexMix(row, space-evenly, center);
+            width: 60%;
+            @media @mobile {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                text-align: left;
+                padding-left: 15px;
+            }
+        }
+    }
+    .underStuff {
+        p {
+            font-size: 1.4rem;
+            font-weight: 100;
+        }
+        @media @mobile {
+            align-self: flex-start;
+            padding-left: 15px
+        }
+    }
+}
