@@ -7,7 +7,11 @@
     position: relative;
 
     img {
-      height: 350px;
+      height: 360px;
+
+      @media @phone {
+        height: 250px;
+      }
     }
 
     .slogan {
@@ -15,10 +19,11 @@
       font-size: 3rem;
       color: white;
       position: absolute;
-      bottom: 2rem;
-      left: 4.5rem;
+      bottom: 8%;
+      left: 8%;
 
-      border: 1px solid purple;
+      @media @phone {
+      }
     }
   } //main-image closing tag
 
@@ -26,13 +31,14 @@
     display: flex;
     margin: 2rem;
 
-    border: 1px solid red;
+    @media @phone {
+      flex-direction: column;
+    }
 
     .text {
       align-self: center;
       //   width: 60%;
 
-      border: 1px solid green;
       h2 {
         font-size: 1.4rem;
         margin: 1rem 0rem;
@@ -55,16 +61,26 @@
         padding-top: 1.3rem;
 
         border: 2px solid black;
-        box-shadow: 7px 10px @gray;
 
-        &:hover {
-          color: black;
-          box-shadow: 5px 10px black;
+        @media @phone {
+          width: 90%;
+          margin: 0 auto;
         }
+        //add shadow
+        // box-shadow: 7px 10px black;
+
+        // &:hover {
+        //   color: black;
+        //   box-shadow: 5px 10px @gray;
+        // }
       }
     }
 
-    img {
+    .img {
+      //   background-color: red;
+      //   background-image: url(img/home/home-img-1.png);
+
+      //   NEED TO FIGURE OUT HOW TO CHANGE IMAGE ON MEDIA QUERY
       width: 20rem;
       height: 12rem;
       margin: 1rem;
@@ -80,8 +96,6 @@
     .project {
       .image-name {
         position: relative;
-
-        border: 1px solid purple;
       }
 
       .project-name {
@@ -94,6 +108,13 @@
         bottom: -2rem;
         border: 1px solid white;
         background-color: @gray;
+
+        @media @phone {
+          right: 0;
+          left: 0;
+          bottom: -3rem;
+          margin: 0 auto;
+        }
       }
 
       .content {
@@ -101,10 +122,15 @@
         width: 50%;
         margin: 3rem auto;
 
+        @media @phone {
+          width: 85%;
+          margin: 2rem auto;
+          margin-top: 4rem;
+        }
+
         p {
           margin: 1rem 0;
         }
-        border: 1px solid yellow;
       }
     }
     .reverse {
@@ -112,50 +138,80 @@
         position: absolute;
         left: 0;
         bottom: -2rem;
+
+        @media @phone {
+          bottom: -3rem;
+        }
       }
     }
   } //recent-projects losing tag
-} // content-container closing tag
 
-.footer {
-  background-color: gray;
-   .footer-content {
-    display: flex;
-    height: 10rem;
-    font-size: 1rem;
-    color: white;
-    justify-content: space-around;
-    margin: 0 2rem;
-    align-items: center;
-  }
-  .subscribe {
-    width: 15rem;
-     .email {
-      width: 13rem;
-      height: 1.5rem;
-      margin-top: 1rem;
-      border: 1px solid gray;
-      border-radius: 2px;
-    }
-     .disclaimer {
-      margin-top: 0.5rem;
-      font-size: 0.5rem;
-    }
-  }
-   .location {
-    font-size: 0.5rem;
-    font-style: light;
-    width: 15%;
-    h4 {
+  .footer {
+    background-color: gray;
+
+    .footer-content {
+      display: flex;
+      height: 20%;
       font-size: 1rem;
+      color: white;
+      justify-content: space-around;
+      margin: 0 2rem;
+      align-items: center;
+
+      @media @phone {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 5%;
+      }
     }
-    p {
-      margin: 0.5rem 0;
+    .subscribe {
+      width: 22%;
+
+      @media @phone {
+        width: 100%;
+      }
+
+      .email {
+        width: 13rem;
+        height: 1.5rem;
+        margin-top: 1rem;
+        border: 1px solid gray;
+        border-radius: 2px;
+
+        @media @phone {
+          width: 100%;
+        }
+      }
+
+      .disclaimer {
+        margin-top: 0.5rem;
+        font-size: 0.5rem;
+      }
+    }
+
+    .location {
+      font-size: 0.5rem;
+      font-style: light;
+      width: 15%;
+
+      @media @phone {
+        width: 30%;
+        margin: 0;
+        margin-top: 1rem;
+      }
+      h4 {
+        font-size: 1rem;
+      }
+      p {
+        margin: 0.5rem 0;
+      }
+    }
+
+    .copyright {
+      margin: 1rem 0;
+      color: white;
+      text-align: center;
     }
   }
-   .copyright {
-    margin: 1rem 0;
-    color: white;
-    text-align: center;
-  }
-}
+} // content-container closing tag
