@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About</title>
+    <title>Projects</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
     <!--[if IE]>
@@ -28,7 +29,7 @@
     <div class="nav-link"><a href="./projects.html">Projects</a></div>
 </div>
 
-<div class="container about">
+<div class="container projects">
     <header>
         <nav>
             <h4>S&J</h4>
@@ -37,29 +38,23 @@
 
         <div class="banner">
             <h1 class="title">
-                About Us
+                Projects
             </h1>
         </div>
     </header>
 
-    <!------------------------------ABOUT US------------------------------>
+    <!------------------------------PROJECTS------------------------------>
 
-    <section>
-        <div class="about-column">
-            <div class="about-text">
-                We are a group of world-class architects redefining architecture as we know it. Need a worm hole? You might be interested in our space-time bending ultra cosmic space-scraper. Like worms? Try our deep terrestrial man cave. The sky is the limit! Or is it?
-                <br><br>
-                Contact us today for a $1 trillion quote. We know you'll be thrilled by what is waiting around the corner. Did someone say corner? Yes, we do custom corners! Visit our contact page for more info.
-            </div>
+    <section id="vue">
+        <project v-for="project in projects"
+                 v-bind:key="project.id"
+                 v-bind:title="project.title"
+                 v-bind:description="project.description"
+                 v-bind:image="project.image"
+        />
+        <carousel>
 
-            <!--<div class="wave"></div>-->
-
-            <div class="person-column">
-                <div class="person">
-                    <div class="person-title">John Doe</div>
-                </div>
-            </div>
-        </div>
+        </carousel>
     </section>
 
 
@@ -111,5 +106,6 @@
 </div>
 
 <script src="js/index.js"></script>
+<script src="components/Projects/Projects.js"></script>
 </body>
 </html>
