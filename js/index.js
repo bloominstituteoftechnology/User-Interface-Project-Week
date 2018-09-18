@@ -53,3 +53,4 @@ sr.reveal('.twoboxes', {
 sr.reveal('.footer', {
     duration: 3000,
 });
+
