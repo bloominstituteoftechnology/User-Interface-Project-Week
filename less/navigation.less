@@ -1,0 +1,98 @@
+header {
+    
+    background-color: @navBG;
+    max-width: 1024px;
+    width: 100%;
+    .flexColumn;
+    justify-content: space-between;
+    height: 50px;
+    position: fixed;
+    z-index: 3;
+
+    @media @mobile {
+        width: 320px;
+    }
+}
+
+nav {
+    .center;
+    justify-content: space-between;
+    padding: 0 85px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 1024px;
+
+    @media @mobile {
+        padding: 3px 17px 0 17px;
+    }
+    
+    img {
+        cursor: pointer;
+    }
+}
+
+
+.navLogo {
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: @white;
+}
+
+.close {
+    cursor: pointer;
+    display: none;
+}
+
+.links {
+    text-decoration: none;
+    display: none;
+    font-weight: bold;
+    font-size: 4.8rem;
+    line-height: 8.5rem;
+    margin-bottom: 195px;
+
+    @media @mobile {
+        margin-bottom: 75px;
+
+    }
+
+    .link {
+        display: block;
+        text-decoration: none;
+        color: @white;
+        animation-name: textAppear;
+        animation-duration: 2.5s;
+
+    }
+
+    :hover {
+        color: @black;
+    }
+
+}
+
+.expand {
+    height: 600px;
+    opacity: 0.9;
+    animation: appear 1.5s;
+
+    @media @mobile {
+        height: 420px;
+        animation: mobileAppear 1.5s;
+    }
+}
+
+@keyframes appear {
+    from {height: 50px;}
+    to {height: 600px;}
+}
+
+@keyframes mobileAppear {
+        from {height: 50px;}
+        to {height: 420px;}
+}
+
+@keyframes textAppear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
