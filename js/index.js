@@ -34,9 +34,11 @@ console.log(navMenu);
         select() {
           const links = document.querySelectorAll('.tabs-link');
           Array.from(links).forEach((item) => {
-            item.classList.remove('.tabs-selected');
+            item.classList.remove('tabs-selected');
           });
-          this.element.classList.add('.tabs-selected');
+          this.element.classList.add('gittabs-selected');
+          console.log(this.element)
+          console.log(links)
           let notSeen = document.querySelectorAll('.tabs-item');
           notSeen.forEach((item)=>{
             item.style = 'display: none';
