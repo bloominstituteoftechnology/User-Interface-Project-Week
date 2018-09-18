@@ -63,3 +63,5 @@ serviceButtons[2].addEventListener('click', () => {
 serviceButtons[3].addEventListener('click', () => {
     serviceH2.innerHTML = 'Sustainability'
 })
+
+//updates
