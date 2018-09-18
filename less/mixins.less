@@ -1,0 +1,40 @@
+// Mixins
+.box-creator(@width, @height, @bgColor, @borderThickness, @borderStyle, @borderColor){
+    width: @width;
+    height: @height;
+    border: @borderThickness @borderStyle @borderColor;
+    background-color: @bgColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-creator(@width, @height, @color, @bgColor, @borderThickness, @borderStyle, @borderColor, @hoverColor, @hoverBgColor){
+    .box-creator(@width, @height, @bgColor, @borderThickness, @borderStyle, @borderColor);
+    color: @color;
+
+    &:hover{
+        color: @hoverColor;
+        background-color: @hoverBgColor;
+    }
+}
+
+.normal-font{
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 24px;
+}
+
+.footer-heading{
+    font-weight: normal;
+    font-size: 2.0rem;
+    line-height: 24px;
+    color: white;
+}
+
+.footer-text{
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 26px;
+    color: white;
+}
