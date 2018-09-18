@@ -6,23 +6,35 @@
   .main-image {
     position: relative;
 
-    img {
-      height: 360px;
+    .img {
+      width: 100%;
+      height: 33rem;
+      background-image: url(../img/home/home-jumbotron.png);
+      background-position: bottom;
 
       @media @phone {
-        height: 250px;
+        width: 100%;
+        height: 17rem;
+        margin: 0 auto;
+        background-image: url(../img/home/home-mobile-jumbotron.png);
+        background-size: 100%;
       }
     }
 
     .slogan {
       width: 20rem;
-      font-size: 3rem;
-      color: white;
+      .headerFontStyle();
       position: absolute;
       bottom: 8%;
       left: 8%;
 
       @media @phone {
+        margin-left: 1.5rem;
+
+        //change font style
+        font-size: 40px;
+        font-weight: bold;
+        line-height: normal;
       }
     }
   } //main-image closing tag
@@ -32,82 +44,128 @@
     margin: 2rem;
 
     @media @phone {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
 
     .text {
       align-self: center;
-      //   width: 60%;
 
       h2 {
-        font-size: 1.4rem;
-        margin: 1rem 0rem;
+        .subHeaderStyle();
       }
 
       p {
-        font-size: 1rem;
+        .generalFontStyle();
         margin: 1rem 0;
       }
 
       a {
         //Make it look like a button
-        display: block;
-        font-size: 0.8rem;
-        color: black;
-        text-decoration: none;
-        text-align: center;
-        width: 8rem;
-        height: 2rem;
-        padding-top: 1.3rem;
-
-        border: 2px solid black;
+        .buttonStyle();
 
         @media @phone {
           width: 90%;
           margin: 0 auto;
         }
-        //add shadow
-        // box-shadow: 7px 10px black;
-
-        // &:hover {
-        //   color: black;
-        //   box-shadow: 5px 10px @gray;
-        // }
       }
     }
 
     .img {
-      //   background-color: red;
-      //   background-image: url(img/home/home-img-1.png);
+      width: 55rem;
+      height: 16.5rem;
 
-      //   NEED TO FIGURE OUT HOW TO CHANGE IMAGE ON MEDIA QUERY
-      width: 20rem;
-      height: 12rem;
       margin: 1rem;
+
+      @media @phone {
+        margin: 1rem auto;
+        width: 95%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    } //img tag
+
+    .first-image {
+      background-image: url(../img/home/home-img-1.png);
+
+      @media @phone {
+        // width: 18rem;
+        background-image: url(../img/home/home-mobile-img-1.png);
+      }
+    }
+
+    .second-image {
+      background-image: url(../img/home/home-img-2.png);
+
+      @media @phone {
+        // width: 18rem;
+        background-image: url(../img/home/home-mobile-img-2.png);
+      }
     }
   } // learn-more closing tag
 
+  .reverse {
+    flex-direction: row-reverse;
+
+    @media @phone {
+      flex-direction: column-reverse;
+    }
+  }
   .recent-projects {
     h2 {
-      font-size: 1.6rem;
-      margin: 1rem 0.5rem;
+      .subHeaderStyle();
+      margin: 2rem 0.5rem;
     }
 
     .project {
       .image-name {
         position: relative;
+
+        .project-img {
+          width: 100%;
+          height: 14rem;
+
+          @media @phone {
+            width: 100%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            height: 12.5rem;
+            margin: 0 auto;
+          }
+        }
+        .villas {
+          background-image: url(../img/home/home-villas-img.png);
+          @media @phone {
+            background-image: url(../img/home/home-mobile-villas-img.png);
+          }
+        }
+
+        .outskirts {
+          background-image: url(../img/home/home-outskirts-img.png);
+          @media @phone {
+            background-image: url(../img/home/home-mobile-outskirts-img.png);
+          }
+        }
+
+        .blocks {
+          background-image: url(../img/home/home-the-blocks-img.png);
+          @media @phone {
+            background-image: url(../img/home/home-mobile-the-blocks-img.png);
+          }
+        }
       }
 
       .project-name {
-        width: 12rem;
+        width: 17rem;
         text-align: center;
         padding: 1.3rem 2rem;
-        font-size: 1.2rem;
+        font-size: 28px;
         position: absolute;
         right: 0;
         bottom: -2rem;
         border: 1px solid white;
         background-color: @gray;
+
+        letter-spacing: 10px;
 
         @media @phone {
           right: 0;
@@ -118,7 +176,7 @@
       }
 
       .content {
-        font-size: 1rem;
+        .generalFontStyle();
         width: 50%;
         margin: 3rem auto;
 
@@ -145,73 +203,4 @@
       }
     }
   } //recent-projects losing tag
-
-  .footer {
-    background-color: gray;
-
-    .footer-content {
-      display: flex;
-      height: 20%;
-      font-size: 1rem;
-      color: white;
-      justify-content: space-around;
-      margin: 0 2rem;
-      align-items: center;
-
-      @media @phone {
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 5%;
-      }
-    }
-    .subscribe {
-      width: 22%;
-
-      @media @phone {
-        width: 100%;
-      }
-
-      .email {
-        width: 13rem;
-        height: 1.5rem;
-        margin-top: 1rem;
-        border: 1px solid gray;
-        border-radius: 2px;
-
-        @media @phone {
-          width: 100%;
-        }
-      }
-
-      .disclaimer {
-        margin-top: 0.5rem;
-        font-size: 0.5rem;
-      }
-    }
-
-    .location {
-      font-size: 0.5rem;
-      font-style: light;
-      width: 15%;
-
-      @media @phone {
-        width: 30%;
-        margin: 0;
-        margin-top: 1rem;
-      }
-      h4 {
-        font-size: 1rem;
-      }
-      p {
-        margin: 0.5rem 0;
-      }
-    }
-
-    .copyright {
-      margin: 1rem 0;
-      color: white;
-      text-align: center;
-    }
-  }
 } // content-container closing tag
