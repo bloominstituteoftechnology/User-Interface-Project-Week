@@ -1,0 +1,184 @@
+@graySquare: #D8D8D8;
+@home-cta-button-border: #222222;
+
+.jumbotron-image {
+  max-height: 670px;
+  width: 100%;
+  z-index: 0;
+
+  @media @phones {
+    width: 0;
+
+  }
+}
+
+.jumbotron {
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+  .cta {
+    bottom: 35%;
+    color: @white;
+    display: flex;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 75px;
+    position: relative;
+    z-index: 1;
+
+    .cta-heading {
+      padding-left: 10%;
+    }
+  }
+  @media @phones {
+    background-image: url('../img/home/home-mobile-jumbotron.png');
+    background-size: cover;
+    height: 400px;
+
+    .cta {
+      top: 180px;
+      font-size: 44px;
+      line-height: 60px;
+      left: 2%;
+    }
+  }
+}
+
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 0;
+  section {
+    width: 48%;
+    img {
+      height: 90%;
+      width: 100%;
+    }
+  }
+  .section-text {
+    display: flex;
+    flex-direction: column;
+  }
+  h2 {
+    color: #222222;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0 0 10px;
+  }
+  p {
+    padding: 10px 0;
+  }
+
+  .home-cta-button {
+    color: #222222;
+    border: 1px solid @home-cta-button-border;
+    font-size: 16px;
+    padding: 2% 0;
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+  }
+  .home-cta-button:hover {
+    cursor: pointer;
+    background-color: @home-cta-button-border;
+    color: @white;
+  }
+  @media @phones {
+    flex-direction: column;
+    margin: 50px auto;
+    width: 90%;
+    section {
+      width: 100%;
+    }
+    h2 {
+      font-size: 36px;
+      margin-top: inherit;
+    }
+    .home-cta-button {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+}
+.section-container:nth-of-type(1) {
+  @media @phones {
+    flex-direction: column-reverse;
+  }
+}
+.large-section-container {
+
+  h2 {
+    color: #222222;
+    font-size: 28px;
+    font-weight: bold;
+    @media @phones {
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
+
+}
+.large-section {
+  margin: 50px 0;
+
+  .img-block {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    position: relative;
+    @media @phones {
+      height: 250px;
+    }
+  }
+  img {
+    width: 100%;
+    @media @phones {
+      min-height: 170px;
+    }
+  }
+  h2 {
+    background-color: @graySquare;
+    bottom: 20%;
+    font-weight: normal;
+    letter-spacing: 3px;
+    padding: 40px 0;
+    position: relative;
+    text-align: center;
+    max-width: 300px;
+    width: 33%;
+  }
+  p {
+    font-size: 20px;
+    margin: 0 auto;
+    line-height: 30px;
+    padding: 20px 0;
+    width: 45%;
+  }
+  @media @phones {
+    h2 {
+      bottom: 20px;
+      left: 0;
+      width: 90%;
+    }
+    p {
+      width: 90%;
+    }
+  }
+}
+.large-section-inverse {
+  section {
+    align-items: flex-start;
+  }
+  margin: 50px 0;
+  @media @phones {
+    h2 {
+        left: 0;
+        bottom: 20px;
+    }
+      p {
+        width: 90%;
+      }
+  }
+}
