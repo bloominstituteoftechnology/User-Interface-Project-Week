@@ -1,370 +1,669 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    font-size: 100%;
+    font-family:Roboto, Arial, sans-serif;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-body{
-  line-height:1;
+body {
+	line-height: 1;
 }
-ol,ul{
-  list-style:none;
+ol, ul {
+	list-style: none;
 }
-blockquote,q{
-  quotes:none;
+blockquote, q {
+	quotes: none;
 }
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
-ins{
-  text-decoration:none;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
-del{
-  text-decoration:line-through;
-}
-
-table{
-  border-collapse:collapse;
-  border-spacing:0;
-}
-
-/*Code*/
-
-body {  
-    background:#D9DDE1;
-}
-
+/**********************Code***********************************/
+/**********************Code***********************************/
+@media (max-width:320px) {
+/*Main body*/
 .Container {
-    max-width: 1024px;
-    max-height:3845px;
-    margin: auto;
-    display: flex;
-    flex-direction:column;
-    background:white;
+    max-width:320px;
 }
 
-/* Menu */
+/*Header*/
 .Menu {
-  height:600px;
-  width:100%;
-  background-image: url("/img/home/home-jumbotron.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
+    width:100%;
+    height:260px;
+    background-image: url(/img/home/home-jumbotron.png);
+    background-size: cover;
 }
 
-.Attention {
-  position: absolute;
-  top:8.58%;
-  z-index: 0;
-}
-.Container .Menu .Attention h1 {
-  position:relative;
-  left:85px;
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: bold;
-  font-size:4rem;
-  line-height:75px;
-  color:white;
-}
-
-/* NavBar */
-.NavBar { 
-  height:50px;
-  background:#99A4AF;
+/*Navigation bar*/
+.NavBar {
+    display:flex;
+    align-items: center;
+    width:100%;
+    height:50px;
+    background:#99A4AF;
 }
 
 .NavItems {
-  height:50px;
-  display:flex;
-  align-items: center;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:90%;
+    height:75%;
+    margin:0 auto 0 auto;
 }
 
-.NavH3 {
-  position:relative;
-  left: 85px;
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
-  color:white;
+/*Navigation details*/
+.NavItems h3,
+.NavItems img {
+    color:white;
 }
 
-.NavButton {
-position: relative;
-left:916px;
+.NavItems h3 {
+    font-weight:bold;
+    font-size:1.5rem;
 }
 
-/*Nav Expansion code*/
-
+/*Navigation Expanded*/
 .NavExpansion {
-  height:550px;
-  width:1024px;
-  background:#99A4AF;
-  opacity:.95;
-  position: absolute;
-  z-index: 1;
-  display:none;
-  flex-direction:column;
+    position:relative;
+    display:none;
+    justify-content: center;
+    width:100%;
+    height:80.76%;
+    background:#99A4AF;
+    opacity:.95;
+
 }
 
 .NavTabs {
-  display:flex;
-  flex-direction: column;
-  position: relative;
-  top:125px;
-  left:425px;
+    display:flex;
+    flex-direction: column;
 }
 
 .NavTabs a {
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 3rem;
-  line-height: 85px;
-  text-decoration-line: none;
-  color:white;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height:65px;
+    text-decoration-line: none;
+    color:white;
 }
 
 .NavTabs a:hover {
-  color:#222222
+    color:#222222;
 }
 
-/*Sections*/
+/*Attention*/
+.Attention {
+    position:absolute;
+    top:20%;
+    width:33%;
+    margin-left:6.25%;
+    z-index:0;
+}
 
+.Attention h1 { 
+    font-weight:bold;
+    font-size:2rem;
+    line-height:40px;
+    color:white;
+}
+
+/*Sections - Main*/
 .Sections {
-  height:3000px;
-  max-width:855px;
-  margin:0 auto 0 auto;
-  display:flex;
-  flex-direction: column;
+    margin: 10% 5% 0 5%;
 }
 
- .Sect {
-  display:flex;
-  flex-direction: column;
+.Sections,
+.Sections .Sect,
+.Sections .Sect .Designs
+.Sections .Sect .Designs .Text,
+.Sections .Sect .Designs .Text button,
+.Sections .Sect .Bottom,
+.Sections .Sect .Bottom .BuildStyle,
+.Sections .Sect .Bottom .BuildStyle .Text,
+.Sections .Sect .Bottom .BuildStyle .StyleImage {
+    max-width:288px;
 }
 
-/* Top Section*/
-
-.Sect .Top {
-  margin-top:50px;
-  height:800px;
-  display: flex;
-  flex-direction: column;
+/*Sections - Details*/
+.Sections img,
+.Sections .Sect img {
+    max-width:270px;
 }
 
-.Sect .Top h3 {
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: bold;
-  font-size:1.75rem;
-  margin-top:50px;
+/*Sections - Top*/
+.Sections .Sect .Top {
+
 }
 
-.Sect .Top p {
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 24px;
-  margin-top:30px;
+/*Sections - Top Designs + Details*/
+.Sections .Sect .Top .Designs .Text {
+    margin:10% 0 0 0;
 }
 
-/*Top section button*/
-
-button {
-  border:1px solid #222222;
-  margin-top:30px;
-  width:135px;
-  height:50px;
-  background:white;
+.Sections .Sect .Top .Designs p {
+    margin:7% 0 0 0;
+}
+.Sections .Sect .Top .Designs button {
+    width:100%;
+    height:50px;
+    margin:7% 0 0 0;
+    border:1px solid black;
+}
+.Sections .Sect .Top .Designs button,
+.Sections .Sect .Top .Designs button a {
+    text-align: center;
+    text-decoration-line: none;
+    color:black;
+    background:white;
 }
 
-button a {
-  text-decoration-line: none;
-  color:black;
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 24px;
+/*Sections - Top SJ*/
+.Sections .Sect .Top .SJ {
+    display:flex;
+    flex-direction: column-reverse;
+    margin-bottom:15%;
+}
+.Sections .Sect .Top .SJ .Text {
+    display:flex;
+    flex-direction: column;
+    margin-top
+    border:2px solid blue;
+}
+/*Sections - Top Future*/
+.Sections .Sect .Top .Future {
+    margin-bottom:12%;
+
 }
 
-/*Top S&J section*/
-.Sect .Top .SJ {
-  height:275px;
-  display:flex;
+/*Sections - Bottom Main*/
+.Sections .Sect .Bottom {
+    display:flex;
+    flex-direction: column;
 }
 
-.Sect .Top .SJ .Text {
-  margin-right:40px;
+.Sections .Sect .Bottom .BuildStyle {
+    position:relative;
+    margin:5% 0 10% 0;
 }
 
-/*Top Futuristic section*/
-
-.Sect .Top .Future {
-  height:275px;
-  margin-top:100px;
-  display:flex;
+/*Buttons*/
+.Sections .Sect .Bottom .BuildStyle .StyleH2 {
+    position:relative;
+    bottom:20px;
+    width:90%;
+    height:75px;
+    margin:0 5% 0 5%;
+    text-align: center;
+    background:#d8d8d8;
 }
 
-.Sect .Top .Future .Text {
-  margin-left:40px;
+.Sections .Sect .Bottom .BuildStyle .StyleH2 h2 {   
+    text-align: center;
+    line-height:75px;
+    font-weight: lighter;
+    font-size:1rem;
+    letter-spacing: .25rem;
 }
 
-/*Bottom Section*/
-
-.Sect .Bottom {
-  height:2200px;
-  margin-top:25px;
+/*Sections - Header Pictures*/
+.Sections .Sect .Bottom .BuildStyle .StylePic {
+    width:100%;
+    height:200px;
 }
 
-.Sect .Bottom h3 {
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 1.75rem;
-  margin-bottom:45px;
+.OPic {
+    background: url(/img/home/home-mobile-outskirts-img.png);}
+.VPic {
+    background: url(/img/home/home-mobile-villas-img.png);}
+.BPic {
+    background: url(/img/home/home-mobile-the-blocks-img.png);}
+/*Sections - Bottom Buildesigns texts*/
+.Sections .Sect .Bottom .BuildStyle .Text {
+    width:90%;
+    margin:0 5% 0 5%;
 }
 
-/*Style image Box & Text*/
-.Sect .Bottom .StyleImage .StyleH2 {
-  height:90px;
-  width:310px;
-  position: relative;
-  bottom:40px;
-  background:#D8D8D8;
-  display:flex;
-  justify-content: center;
-  align-items: center; 
+.Sections .Sect .Bottom .BuildStyle .Text {
+    text-align: left;
 }
 
-.Sect .Bottom .StyleImage .StyleH2 h2 {
-  font-family: Roboto, Arial, sans-serif;
-  letter-spacing: 15px;
-  font-size:1.125rem;
-  line-height: 24px;
-  font-weight: 500;
+.Sections .Sect .Bottom .BuildStyle .Text p:nth-child(2) {
+    margin-top:10%;
 }
 
-.VillasH2  {
-  position: relative;
-  left:545px;
-}
-.BlocksH2  {
-  position: relative;
-  left:545px;
+.BottomPFinal {
+    margin-top:10%;
+    margin-bottom:10%;
 }
 
-
-.Sect .Bottom .BuildStyle .Text  {
-  text-align: left;
-  display:flex;
-  flex-direction: column;
-  width:435px;
-  height:270px;
-  margin-right:auto;
-  margin-left:auto;
-  margin-bottom:75px;
-}
-
-.Sect .Bottom .BuildStyle .Text p {
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 24px;
-}
-
-.Sect .Bottom .BuildStyle .Text .BottomP {
-  margin-top:35px;
-}
-
-.Text .BottomPFinal {
-  margin-top:35px;
-}
-
-/* Footer */
-
+/*Footer*/
 .Footer {
-  height:250px;
-  background:#828282;
+    width:100%;
+    margin-top:10%;
+    background:#828282;
 }
 
 .FootBox {
-  margin-top: 50px;
-}
-
-.Information {
-    display:flex;
-    justify-content: space-between;
-    width:830px;
-    margin:0 auto 0 auto;
-
+    width:90%;
+    margin: 0 5% 0 5%;
 }
 
 .Footer .Information label {
-  font-size: 1.25rem;
-  line-height: 24px;
-  color:white;
+    width:100%;
+    font-size: 1rem;
+    line-height: 24px;
+    color:white;
 }
 
 label:nth-child(2) {
-  margin-bottom:10px;
-}
-
-.Footer .Information p {
-  color:white;
+    width:100%;
+    margin-bottom:10px;
 }
 
 .Footer .Interest {
-
-  display:flex;
-  flex-direction: column;
+    width:100%;
+    display:flex;
+    flex-direction: column;
 }
 
-.Form {
-  height:40px;
-  width:280px;
-  margin-bottom:5px;
-  padding-left:15px;
-}
-
-.Footer .Contact li {
-  font-family: Roboto, Arial, sans-serif;
-  font-size: .875rem;
-  line-height: 26px;
-  color:white;
-
+.Footer .Interest p {
+    text-align: center;
+    margin:3% 0 3% 0;
+    font-size:.6rem;
+    color:white;
 }
 
 .Contact { 
+    margin-top:5%;
+    width:100%;
     color:white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
+
+.Footer .Contact li {
+    width:100%;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: .875rem;
+    line-height: 30px;
+    color:white;
+}
+
 .Copyright {
-  margin-top:40px;
+    width:100%;
+    font-size: .7rem;
+    margin-top:5%;
     text-align: center;
     color:white;
+}
+
+#BPic, #OPic, #VPic {
+    display:none;
+}
+}
+
+/*****************Desktop View***************/
+
+@media (min-width:321px) {
+    .Container {
+        max-width:1024px;
+        margin:0 auto 0 auto;;
+    }
+
+    .Menu {
+        height:600px;
+        background-image: url(/img/home/home-jumbotron.png);
+    }
+
+/*Navigation bar*/
+    .NavBar {
+        display:flex;
+        align-items: center;
+        width:100%;
+        height:50px;
+        background:#99A4AF;
+    }
+
+    .NavItems {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        width:90%;
+        height:75%;
+        margin:0 auto 0 auto;
+    }
+
+/*Navigation details*/
+    .NavItems h3,
+    .NavItems img {
+        color:white;
+    }   
+
+    .NavItems h3 {
+        font-weight:bold;
+        font-size:1.5rem;
+    }   
+
+/*Navigation Expanded*/
+    .NavExpansion {
+        position:relative;
+        display:none;
+        justify-content: center;
+        width:100%;
+        height:91.5%;
+        background:#99A4AF;
+        opacity:.95;    
+    }
+
+    .NavTabs {
+        display:flex;
+        flex-direction: column;
+        margin-top:15%;
+    }
+    
+    .NavTabs a {
+        font-weight: bold;
+        font-size: 3rem;
+        line-height:75px;
+        text-decoration-line: none;
+        color:white;
+    }
+    
+    .NavTabs a:hover {
+        color:#222222;
+    }
+
+/*Attention*/
+    .Attention {
+        position:absolute;
+        top:64%;
+        width:33%;
+        margin-left:6.25%;
+        z-index:0;
+    }
+
+    .Attention h1 { 
+        font-weight:bold;
+        font-size:4rem;
+        line-height:75px;
+        color:white;
+    }
+
+/*Sections - Main*/
+    .Sections {
+        margin: 5% 7.5% 0 7.5%;
+    }
+    
+    .Sections,
+    .Sections .Sect,
+    .Sections .Sect .Designs
+    .Sections .Sect .Designs .Text,
+    .Sections .Sect .Designs .Text button,
+    .Sections .Sect .Bottom,
+    .Sections .Sect .Bottom .BuildStyle,
+    .Sections .Sect .Bottom .BuildStyle .Text,
+    .Sections .Sect .Bottom .BuildStyle .StyleImage {
+        max-width:1024px;
+    }  
+
+/*Sections - Top*/
+    .Sections .Sect .Top {
+
+}
+
+/*Sections - Top Designs + Details*/
+    .Sections .Sect .Top .Designs h3 {
+        font-size:28px;
+        font-weight:bold;
+    }
+
+    .Sections .Sect .Top .Designs p {
+        margin:3.5% 0 0 0;
+        font-size:1rem;
+    }
+
+    .Sections .Sect .Top .Designs .Text {
+        margin-top:5%;
+    }
+    .Sections .Sect .Top .Designs button {
+        width:25%;
+        height:45px;
+        margin:7% 0 0 0;
+        border:1px solid black;
+    }
+    .Sections .Sect .Top .Designs button,
+    .Sections .Sect .Top .Designs button a {
+        text-align: center;
+        text-decoration-line: none;
+        color:black;
+        background:white;
+    }
+
+/*Sections - Top SJ*/
+    .Sections .Sect .Top .SJ {
+        display:flex;
+        align-items: center;
+        margin-bottom:8%;
+    }
+    .Sections .Sect .Top .SJ .Text {
+        display:flex;
+        flex-direction: column;
+    }
+
+/*Sections - Top Future*/
+    .Sections .Sect .Top .Future {
+    display:flex;
+    margin-bottom:%;
+}
+
+    .Sections .Sect .Top .Future .Text {
+        margin-left:2.5%;
+    }
+
+    /*Sections - Bottom Main*/
+.Sections .Sect .Bottom {
+    display:flex;
+    flex-direction: column;
+}
+
+.Sections .Sect .Bottom h3 {
+    margin-top:8%;
+    font-size:1.2rem;
+}
+.Sections .Sect .Bottom .BuildStyle {
+    position:relative;
+    margin:2.5% 0 10% 0;
+}
+
+/*Buttons*/
+.Sections .Sect .Bottom .BuildStyle .StyleH2 {
+    position:relative;
+    bottom:20px;
+    width:30%;
+    height:95px;
+    margin:0 5% 0 5%;
+    text-align: center;
+    background:#d8d8d8;
+}
+.Sections .Sect .Bottom .BuildStyle .OutskirtsH2 {
+    position:relative;
+    right:5%;
+}
+.Sections .Sect .Bottom .BuildStyle .VillasH2,
+.Sections .Sect .Bottom .BuildStyle .BlocksH2 {
+    position:relative;
+    left:65.5%;
+    bottom:20px;
+    width:30%;
+    height:95px;
+    margin:0 5% 0 5%;
+    text-align: center;
+    background:#d8d8d8;
+}
+
+
+.Sections .Sect .Bottom .BuildStyle .StyleH2 h2 {   
+    text-align: center;
+    line-height:95px;
+    font-weight: lighter;
+    font-size:1rem;
+    letter-spacing: .25rem;
+}
+
+/*Sections - Header Pictures*/
+    .Sections .Sect .Bottom .BuildStyle .StylePic {
+        width:100%;
+        height:235px;
+    }
+    #BPic, #OPic, #VPic {
+        display:block;
+        width:inherit;
+        height:inherit;
+    }
+    .OPic {
+
+    }
+    .VPic {
+
+    }
+    .BPic {
+
+    }
+/*Sections - Bottom Buildesigns texts*/
+    .Sections .Sect .Bottom .BuildStyle .Text {
+        width:50%;
+        margin: 2.5% auto 0 auto;
+    }
+
+    .Sections .Sect .Bottom .BuildStyle .Text {
+        text-align: left;
+    }
+
+    .Sections .Sect .Bottom .BuildStyle .Text p:nth-child(2) {
+        margin-top:10%;
+    }
+
+    .BottomPFinal {
+        margin-top:10%;
+    }
+
+/*Footer*/
+    .Footer {
+        width:100%;
+        margin:auto;
+        background:#828282;
+    }
+
+    .FootBox {
+        display:flex;
+        flex-direction: column;
+        width:90%;
+        margin: auto 7.5% auto 7.5%;
+    }
+
+    .Footer .Information {
+        display:flex;
+        justify-content:space-evenly;
+    }
+
+    .Footer .Information label {
+        width:100%;
+        font-size: 1rem;
+        line-height: 24px;
+        color:white;
+    }
+
+    label:nth-child(2) {
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    .Footer .Interest {
+        width:100%;
+        margin-top:4.5%;
+        margin-right: 6%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .Footer .Interest p {
+        text-align: center;
+        margin:3% 0 3% 0;
+        font-size:.6rem;
+        color:white;
+    }
+
+    .Contact { 
+        margin-top:5%;
+        width:100%;
+        color:white;
+    }
+
+    .Footer .Contact li {
+        width:100%;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: .875rem;
+        line-height: 30px;
+        color:white;
+    }
+
+    .Copyright {
+        width:100%;
+        margin:2% auto auto auto;
+        font-size: .8rem;
+        text-align: center;
+        color:white;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
 }
