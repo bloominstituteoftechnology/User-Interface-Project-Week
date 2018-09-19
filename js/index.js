@@ -3,24 +3,55 @@
 class Menu{
   constructor(element){
     this.element = element;
-    this.button = document.querySelector('header img');
+    this.button = document.querySelector('header .header-wrapper img');
+    console.log(this.button)
+    this.header = document.querySelector('header');
+    this.header.style.height = '40px';
     this.button.addEventListener('click', () =>{this.expand()});
+
   }
 
   expand(){
     this.element.classList.toggle('show');
     if(this.element.classList =="show"){
       this.button.src ="/img/nav-hamburger-close.png";
+      this.header.style.height ="100%"
     }
     else if(this.element.classList ==""){
       this.button.src ="/img/nav-hamburger.png";
+      this.header.style.height = '40px';
     }
+    
   }
-
+  
 }
 
-let nav = document.querySelector('nav')
-nav = new Menu(nav)
+let nav = document.querySelector('header nav');
+nav = new Menu(nav);
+
+
+
+// class Menu{
+//   constructor(element){
+//     this.element = element;
+//     this.button = document.querySelector('header img');
+//     this.button.addEventListener('click', () =>{this.expand()});
+//   }
+
+  // expand(){
+    // this.element.classList.toggle('show');
+    // if(this.element.classList =="show"){
+    //   this.button.src ="/img/nav-hamburger-close.png";
+    // }
+    // else if(this.element.classList ==""){
+    //   this.button.src ="/img/nav-hamburger.png";
+    // }
+  // }
+
+// }
+
+// let nav = document.querySelector('nav')
+// nav = new Menu(nav)
 
 /************************Tabs Servicees Pages*************************** */
 class TabLink{
