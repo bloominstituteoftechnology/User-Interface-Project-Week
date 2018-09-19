@@ -24,6 +24,7 @@ window.addEventListener('scroll', (e) => {
     const isNotScrolledPast = window.scrollY < imageBottom;
 
     if(isHalfShown && isNotScrolledPast){
+
       image.classList.add('active');
     }
     else {
@@ -35,10 +36,10 @@ window.addEventListener('scroll', (e) => {
 // get all sections with dissolved class
 const dissolved  = document.querySelectorAll('.dissolved')
 window.addEventListener('scroll', (e) => {
-  
+
   dissolved.forEach(image => {
     // halfway point of image
-    const slideInPoint = (window.scrollY + window.innerHeight) - (image.clientHeight / 2);
+    const slideInPoint = (window.scrollY + window.innerHeight) - (image.clientHeight / 4);
 
     // bottom of image
     const imageBottom = image.offsetTop + image.clientHeight;
