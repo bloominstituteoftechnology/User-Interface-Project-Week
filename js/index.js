@@ -1,71 +1,52 @@
 // NAV
-const nav = document.querySelector('.nav');
-// const burger = document.querySelector('.burger');
-// const navLinks = document.querySelector('.links');
 
-// class NavDrop {
+
+
+
+// // TABS
+// class TabLink {
 //     constructor(el) {
 //         this.el = el;
-//         this.button = this.el.querySelector('.burger');
-//         this.nav = this.el.querySelector('.nav');
-        
-//         this.button.addEventListener('click', () => {
-//             this.toggle();
+//         this.data = this.el.dataset.tab;
+//         this.itemElement = document.querySelectorAll(`.tab-content[data-tab="${this.data}"]`);
+//         this.tabItem = new TabItem(this.itemElement);
+//         this.el.addEventListener('click', () => {
+//             this.select()
+//         });
+//         this.el.addEventListener('click', () => {
+//             this.deselect()
 //         })
+//     };
+
+//     select() {
+//         const buttons = document.querySelectorAll('.tab');
+//         this.element.classList.add('selected');
+//         this.tabItem.select();
+//     };
+
+//     deselect() {
+//         const clicked = document.querySelector('.selected');
+
+//     };
+// }
+
+// class TabItem {
+//     constructor(el) {
+//         this.el = el;
 //     }
-//     toggle(){
-//         this.nav.classList.toggle("links");
-//         if(this.nav.classList.length > 1) {
-//             this.el.style.height = "50px";
-//             this.button.src = "img/nav-hamburger.png";
-//         } else {
-//             this.el.style.height = "0px";
-//         }
+//     select() {
+//        const tabs = document.querySelectorAll('.tab-content');
+//        Array.from(tabs).forEach((item) => {
+//            item.classList.remove('clicked');
+//        });
+
+//        this.el.classList.add('clicked');
 //     }
 // }
 
-// const drop = document.querySelector('.header');
-// new NavDrop(drop);
-
-
-
-
-
-
-
-
-// TABS
-class TabLink {
-    constructor(el) {
-        this.el = el;
-        this.data = this.el.dataset.tab;
-        this.itemElement = document.querySelectorAll(`.tab-content[data-tab="${this.data}"]`);
-        this.tabItem = new TabItem(this.itemElement);
-        this.el.addEventListener('click', () => {
-            this.select()
-        });
-    }
-
-    select() {
-        const buttons = document.querySelectorAll('.tab');
-        buttons.forEach(item => item.classList.remove('.selected'));
-        this.element.classList.add('.selected');
-        this.tabItem.select();
-    }
-}
-
-class TabItem {
-    constructor(el) {
-        this.el = el;
-    }
-    select() {
-       const tabs = document.querySelectorAll('.tab-content');
-       tabs.forEach(item => item.style.display = 'none');
-       this.el.style.display = 'block';
-    }
-}
-
-let links = document.querySelectorAll('.tab');
-links = Array.from(links).map(el => new TabLink(el));
-links[0].select();
+// let buttons = document.querySelectorAll('.tab');
+// buttons = Array.from(buttons).map((el) =>{
+//     return new TabLink;
+// })
+// buttons[0].select();
    
