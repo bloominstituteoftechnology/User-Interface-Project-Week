@@ -2,7 +2,9 @@
 @import 'mixins.less';
 @import 'reset.less';
 @import 'variables.less';
-
+@import 'home.less';
+@import 'service.less';
+@import 'footer.less';
 
 
 /* Your Code Goes Here */
@@ -18,6 +20,7 @@ html {
   font-size: 62%;
 }
 
+/*For all website*/
 .container{
   max-width: 1100px;
   height: 100vh;
@@ -30,34 +33,8 @@ html {
   margin: 0 auto;
   background-color: #FFFFFF;
   color: #222222;
-  .services {
-    background:url(../img/services/services-jumbotron.png) no-repeat center;
-    width:100%;
-    background-size: 100% 100%;
-    height:40%;
-    display:flex;
-    align-items: flex-end;
-  }
-  .jumbo {
-    width:100%;
-    height:65%; 
-    background: url(../img/home/home-jumbotron.png) no-repeat center;
-    background-size: 100% 100%;
-    display:flex;
-    align-items: flex-end;
-    
-  }
-  .jumbo-text {
-    font-size: 6.4rem;
-    font-weight: bold;
-    line-height: 75px;
-    color: #FFFFFF;
-    padding-left: 4%;
-    padding-bottom: 4%;
-    @media @phone {
-      font-size:5.4rem;
-    }
-  }
+  
+  
   .header{
     margin: 25px 0;
     width:100%;
@@ -232,10 +209,14 @@ html {
     .tabs-link{
     font-size: 1.6rem;
     .buttonIt(20%, 35px);
-    &:hover {
-      background: lightblue;
-      color: #FFF;
+      &:hover {
+        background: lightblue;
+        color:white;
       } 
+    }
+    .tabs-link-selected{
+      background-color: blue;
+      color:white;
     }
 }
 
@@ -249,6 +230,7 @@ html {
           display: none;
       }
   }
+  
   .tab-mobile-img {
       display: none;
       @media @phone{
@@ -270,54 +252,4 @@ html {
     } 
 }
 
-.footer-container{
-  width:100%;
-  background-color: grey;
-  color:white;
 
-  .footer-content{
-    .flexIt(row, space-evenly, center);
-    
-    font-size:1.5rem;
-    padding: 1.5rem 0;
-    @media @phone {
-      .flexIt(column)
-    }
-    
-  }
-
-  .info-request{
-    width:20%;
-    @media @phone {
-      width:90%;
-    }
-
-    input{
-      width:100%;
-      height:30px;
-      border-radius: 1px;
-    }
-  }
-  h2{
-    font-weight: bold;
-  }
-  .locals{
-    @media @phone{
-      width:90%;
-    }
-    p{
-      font-size: 1.2rem;
-      line-height: 20px;
-    }
-  }
-  .below-bottom{
-    display: flex;
-    width:100%;
-    justify-content: center;
-    @media @phone{
-      padding-left: 15px;
-      justify-content: flex-start;
-    }
-  }
-
-}

@@ -1,28 +1,4 @@
-// JS goes here
-/*class Dropdown {
-    constructor(element) {
-      
-      this.element = element;
-      
-      this.button = this.element.querySelector(".menu-button");
-      
-      this.content = this.element.querySelector(".menu-content");
-
-      this.close = this.element.querySelector(".icon-close")
-      
-      this.element.addEventListener('click', () => {
-        this.toggleContent()
-        console.log(clickd)
-      })
-    }
- 
-    toggleContent() {
-      this.content.classList.toggle('menu-hidden');
-    }
-  }
- */
-
-  class Dropdown {
+class Dropdown {
     constructor(element){
       this.element = element;
       this.open = document.querySelector(".menu-button");
@@ -56,18 +32,18 @@
       this.itemElement = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
       this.tabItem = new TabItem(this.itemElement);
       this.element.addEventListener('click', () => {
-        this.select()
+        this.select();
+       
       })
   
     };
   
   
     select() {
-      const links = document.querySelectorAll('.tabs-link'); 
-      let notSeen = document.querySelectorAll('.tabs-item');
-      notSeen.forEach((item)=>{
-        item.style = 'display: none';
-      })  
+      const links = document.querySelectorAll('.tabs-link');
+      Array.from(links).forEach(item => 
+      item.classList.remove('tabs-link-selected'));
+      this.element.classList.add('tabs-link-selected');   
       this.tabItem.select();
     }
   }
@@ -79,12 +55,13 @@
     }
   
     select() {
-        let allItems = document.querySelectorAll('.tabs-item');
-        Array.from(allItems).forEach((item)=>{
-            item.style = 'display: none';
-        });
+      const items = document.querySelectorAll('.tabs-item');
+      Array.from(items).forEach((item)=>{item.style = 'display:none';
+    });
+      
 
-        this.element.style = 'display: flex'
+    this.element.style = 'display:flex';
+      
     }
   }
 
