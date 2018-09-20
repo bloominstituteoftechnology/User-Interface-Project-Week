@@ -27,9 +27,9 @@ class TabItem {
     select() {
         const items = document.querySelectorAll('.tab-content');
         Array.from(items).forEach((element) => {
-            element.classList.remove('tab-content-selected');
+            element.classList.add('tab-content-selected');
         });
-        this.element.classList.add('tab-content-selected');
+        this.element.classList.remove('tab-content-selected');
     }
 }
 
