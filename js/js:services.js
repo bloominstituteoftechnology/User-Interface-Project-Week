@@ -1,4 +1,3 @@
-//SERVICES TABS
 class TabLink {
     constructor(element) {
        this.element = element;
@@ -10,11 +9,9 @@ class TabLink {
     };
 
     select() {
-        const links = document.querySelectorAll('.tab');
-        Array.from(links).forEach((element) => {
-            element.classList.remove('tab-selected');
-        })       
-        this.element.classList.add('tab-selected');
+        const tabs = document.querySelectorAll('.tab');
+        Array.from(tabs).forEach(tab => {tab.classList.remove('selected')});       
+        this.element.classList.add('selected');
         this.tabItem.select();
     }
 }
@@ -25,19 +22,14 @@ class TabItem {
     }
 
     select() {
-        const items = document.querySelectorAll('.tab-content');
-        Array.from(items).forEach((element) => {
-            element.classList.remove('tab-content-selected');
-        });
-        this.element.classList.add('tab-content-selected');
+        const content = document.querySelectorAll('.tab-content');
+        Array.from(content).forEach(tab => {tab.classList.remove('content-selected')});
+        this.element.classList.add('content-selected');
     }
 }
 
 let links = document.querySelectorAll('.tab');
-links = Array.from(links).map((element) => {
-    return new TabLink(element);
-});
-
+links = Array.from(links).map(element => new TabLink(element));
 links[0].select();
 
 
