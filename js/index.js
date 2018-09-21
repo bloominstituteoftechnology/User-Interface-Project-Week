@@ -15,5 +15,15 @@ function openPage(pageName,elmnt,color) {
     elmnt.style.backgroundColor = color;
 
 }
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+//index html JS
+let mainNav = document.getElementById("js-menu");
+let navBarToggle = document.getElementById("js-navbar-toggle");
+
+navBarToggle.addEventListener("click", function() {
+  mainNav.classList.toggle("active");
+  //keep hamburger in place until X is added.
+  if(navBarToggle.style.display = 'none'){
+    navBarToggle.style.display = 'block';
+  }
+ 
+});
