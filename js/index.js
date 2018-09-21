@@ -48,7 +48,7 @@ class Tab {
     let imgs = document.querySelectorAll('.content img')
     let h2s = document.querySelectorAll('.content h2')
     let selected = document.querySelector('.selected')
-    console.log(selected)
+    // console.log(selected)
     if (selected !== null) {
       selected.classList.toggle('selected')
     }
@@ -71,4 +71,4 @@ class Tab {
 
 let tabs = document.querySelectorAll('.tab')
 tabs = Array.from(tabs).map(tab => new Tab(tab))
-tabs[0].select()
+tabs[0].select();
