@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+        // init controller
+        var controller = new ScrollMagic.Controller();
+      </script>
+       
+      <div class="spacer s2"></div>
+      <div id="trigger1" class="spacer s0"></div>
+      <div id="animate1" class="box2 skin">
+        <p>You wouldn't like me, when I'm angry!</p>
+        <a href="#" class="viewsource">view source</a>
+      </div>
+      <div class="spacer s2"></div>
+      <script>
+          // build scene
+          var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1"
+                  })
+                  .setTween("#animate1", 0.5, {backgroundColor: "green", scale: 2.5}) // trigger a TweenMax.to tween
+                  .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+                  .addTo(controller);
+      </script>
+
+</body>
+</html>
