@@ -8,10 +8,7 @@ class TabLink {
        } else {
            this.content = document.querySelectorAll(`.content[data-tab = "${this.tabData}"]`);
        }
-    //    this.itemElement = document.querySelectorAll(`.content[data-tab = "${this.data}"]`);
-    //    this.tabItem = new TabItem(this.itemElement);
-    //    this.element.addEventListener('click', () => {
-    //        this.select()});
+
     this.content = Array.from(this.content).map((el) => {
         return new TabItem(el);
     });
@@ -36,12 +33,6 @@ class TabLink {
         });
 
         this.content.forEach(content => content.select());
-    //   Array.from(links).forEach((el) => {
-    //       el.classList.remove("tab-selected");
-    //   });
-    //   this.element.classList.add("tab-selected");
-    //   this.tabItem.select();
-    // };
     }
 }
 
@@ -52,12 +43,6 @@ class TabItem {
 
     select() {
         this.element.style.display = '';
-    //     const items = document.querySelectorAll('.content');
-    //     Array.from(items).forEach((el) => {
-    //        el.classList.remove("content-selected");
-    //    });
-
-    //    this.element.classList.add('content-selected');
     };
 }
 
