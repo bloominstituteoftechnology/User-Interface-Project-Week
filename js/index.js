@@ -25,46 +25,66 @@ class Dropdown {
 
 
 
-  class TabLink {
+  class Tab {
     constructor(element) {
       this.element = element;
-      this.data = this.element.dataset.tab
-      this.itemElement = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
-      this.tabItem = new TabItem(this.itemElement);
-      this.element.addEventListener('click', () => {
+      this.links = this.element.querySelectorAll('.tabs-link');
+      this.links = Array.from(this.links).map(link => {
+        return new TabLink(link, this);
+      });
+      this.activeLink = this.links[0];
+      this.activeLink.select();
+      
+    }
+    activate(link){
+      this.activeLink.deselect();
+      this.activeLink = link;
+    }
+
+    getTab(dataValue){
+      return this.element.querySelector(`.tabs-item[data-tab='${dataValue}']`);
+    }
+  }
+  
+  class TabLink {
+    constructor(element, parent){
+      this.element = element;
+      this.tabs = parent;
+      this.tabItem = parent.getTab(element.dataset.tab);
+      this.tabItem = new TabItem(this.tabItem);
+
+      this.element.addEventListener('click', ()=>{
+        this.tabs.activate(this);
         this.select();
-       
-      })
-  
-    };
-  
-  
-    select() {
-      const links = document.querySelectorAll('.tabs-link');
-      Array.from(links).forEach(item => 
-      item.classList.remove('tabs-link-selected'));
-      this.element.classList.add('tabs-link-selected');   
+        
+      });
+    }
+    select(){
+      this.element.classList.add("tabs-link-selected");
       this.tabItem.select();
     }
-  }
-  
-  class TabItem {
-    constructor(element) {
-      this.element = element;
-
-    }
-  
-    select() {
-      const items = document.querySelectorAll('.tabs-item');
-      Array.from(items).forEach((item)=>{item.style = 'display:none';
-    });
-      
-
-    this.element.style = 'display:flex';
-      
+    deselect(){
+      this.element.classList.remove("tabs-link-selected");
+      this.tabItem.deselect();
     }
   }
+  
 
-  let links = document.querySelectorAll(".tabs-link");
-  links = Array.from(links).map(links => new TabLink(links));
-  links[0].select();
+  class TabItem{
+    constructor(element){
+      this.element= element;
+    }
+    select(){
+      this.element.classList.add('tabs-content-selected');
+    }
+    deselect(){
+      this.element.classList.remove('tabs-content-selected');
+    }
+  }
+
+  let tabs = document.querySelectorAll(".content");
+  
+  tabs = Array.from(tabs).map(tab => {
+    return new Tab(tab)
+  });
+ 
