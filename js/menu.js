@@ -42,3 +42,14 @@ const contactLink = new Navigation({
 homeLink.placeLink();
 serviceLink.placeLink();
 contactLink.placeLink();
+
+
+const menubutton = document.querySelector('.menu-button');
+const menu = document.querySelector('.menu');
+
+menubutton.addEventListener('click', menuClick);
+
+function menuClick() {
+    console.log("Toggle")
+    menu.classList.toggle('menu-activate');
+}
