@@ -57,3 +57,5 @@ Remember: This is a self driven challenge, try to accomplish MVP as soon as you 
 Thank you!
 
 GE
+
+Trello: https://trello.com/b/aZF6mCzX/sj-architects-by-govi-escudero 
