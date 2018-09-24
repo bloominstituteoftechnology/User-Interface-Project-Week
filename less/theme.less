@@ -1,17 +1,66 @@
 
 
-/*==============================================================================
+/*== Basic Theming - Colors, Fonts =============================================
+*/
 
+//-- Base Color Definitions ----------------------
+@color-white: #ffffff;
+@color-dark-grey: #222222;
+@color-grey: #828282;
+@color-light-grey: #9ba5af;
+
+//-- Color Role Assignments ----------------------
+
+@main-bg-color: @color-white;
+@main-text-color: @color-dark-grey;
+@main-font: Roboto, Arial, sans-serif;
+@header-bg-color: @color-light-grey;
+@footer-bg-color: @color-grey;
+@footer-text-color: @color-white;
+
+
+//-- Global Color & Font Theming -----------------
+body {
+    background-color: @main-bg-color;
+    color: @main-text-color;
+    font-family: @main-font;
+    line-height: 2.4rem;
+}
+body > header {
+    background-color: @header-bg-color;
+}
+body > footer {
+    background-color: @footer-bg-color;
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    Color: @footer-text-color;
+}
+
+
+//== Main Layout Spacing - Headers, Footers, Content ===========================
+
+//-- Main Page Spacing ---------------------------
+.content-spacer {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.container {
+    .content-spacer;
+}
+
+//------------------------------------------------
+body > header {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+
+
+/*
 Style Guide
-
-Use this guide to help you navigate the design files. In a professional work place you would be given this information in many different deliverables like a sketch file, photoshop file, or invision link. But for this week I am providing the necessary information to get you started.
-
-Font family can be found here: https://fonts.google.com/specimen/Roboto
-GENERAL STYLES
-
-    Background: #FFFFFF
-    Color: #222222
-    Font Family: Roboto, Arial, sans-serif
 
 Page Specific
 Home Page
@@ -24,15 +73,6 @@ Services Page
     Tab selected background: #5E9FB9
     Tab Hover background: #222222
     Tab Hover color: #FFF;
-
-Footer
-
-Background: #828282
-General Text
-
-    Font Weight: Regular
-    Font Size: 16px
-    Line Height: 24px
 
 Jumbotron Headers
 
@@ -52,13 +92,6 @@ Footer Headings
     Font Weight: Regular
     Font Size: 20px
     Line Height: 24px
-    Color: #FFFFFF
-
-Footer Text
-
-    Font Weight: Regular
-    Font Size: 14px
-    Line Height: 26px
     Color: #FFFFFF
 
 Navigation Logo
