@@ -1,0 +1,45 @@
+// Mixins Here
+
+// Layout using Flex
+.layout(@justi:space-between; @align:center) {
+	display: flex;
+	justify-content: @justi;
+	align-items: @align;
+  }
+
+  // Mobile layout with Flex
+  .Mlayout(@justi:space-between; @align:center){
+     display : flex;
+        flex-direction : column;
+      justify-content: @justi;
+      align-items: @align;
+  }
+
+  .button(@wid:50px; @padding:9px){
+    // background :@ebony-clay;
+    width : @wid;
+    padding : @padding;
+
+    color : @sea-shell;
+    background:@ebony-clay;
+    font-size: 1.8rem;
+
+    &:hover {
+        cursor : pointer;
+        animation-name: example;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes example {
+        
+        to {background:  @sea-shell;
+            color :@ebony-clay;
+        }
+    }
+  }
+    // put easy border
+.border(@size :1px, @color:red) {
+	border : @size solid @color;
+}
