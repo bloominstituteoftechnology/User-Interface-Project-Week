@@ -3,6 +3,10 @@ footer {
   background-color: @footer-bg;
   color: @footer-text;
 
+  @media @mobile {
+    padding-top: 30px;
+  }
+
   h3 {
     font-size: 2rem;
     letter-spacing: 0.5px;
@@ -23,9 +27,14 @@ footer {
 
     @media @mobile {
       max-width: 450px;
+      flex-wrap: wrap;
     }
 
     .work-together {
+      @media @mobile {
+        width: 100%;
+      }
+
       input {
         width: 96%;
         border: 1px solid transparent;
@@ -42,6 +51,14 @@ footer {
     address {
       width: 62%;
       .custom-layout(space-between);
+
+      @media @mobile {
+        flex-wrap: wrap;
+
+        .location-info {
+          width: 100%;
+        }
+      }
     }
   }
 
@@ -50,5 +67,10 @@ footer {
     padding-bottom: 10px;
     text-align: center;
 
+    @media @mobile {
+      text-align: left;
+      margin-left: 3%;
+      padding-bottom: 25px;
+    }
   }
 } // footer
