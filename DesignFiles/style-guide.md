@@ -4,9 +4,9 @@ Use this guide to help you navigate the design files.  In a professional work pl
 Font family can be found here: https://fonts.google.com/specimen/Roboto
 **done**
 ### GENERAL STYLES
-- Background: #FFFFFF
-- Color: #222222
-- Font Family: Roboto, Arial, sans-serif
+x Background: #FFFFFF
+x Color: #222222
+x Font Family: Roboto, Arial, sans-serif
 
 ## Page Specific
 
@@ -25,9 +25,9 @@ Background: #828282
 
 **done**
 ### General Text
-- Font Weight: Regular
-- Font Size: 16px
-- Line Height: 24px
+x Font Weight: Regular
+x Font Size: 16px
+x Line Height: 24px
 
 
 **done**
