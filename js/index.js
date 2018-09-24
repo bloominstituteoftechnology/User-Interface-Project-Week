@@ -23,6 +23,17 @@ class TabLink {
 
 let tabLinks = document.querySelectorAll('.tab-links > .tab-link');
 
-tabLinks = Array.from(tabLinks).map(n => new TabLink(n));
+if (tabLinks.length > 0){
+    tabLinks = Array.from(tabLinks).map(n => new TabLink(n));
+    tabLinks[0].tabClicked();
+};
 
-tabLinks[0].tabClicked();
+
+
+let navButton = document.querySelector('.hamburger');
+let navBar = document.querySelector('.navigation');
+
+navButton.addEventListener('click', e => {
+    navBar.classList.toggle('show-nav');
+    navButton.classList.toggle('fa-times');
+})
