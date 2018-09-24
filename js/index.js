@@ -1,7 +1,6 @@
 // JS goes here
 const hamburger = document.querySelector('.nav-img');
 const navbar = document.querySelector('.hidden');
-console.log(hamburger)
 let open = false;
 
 hamburger.addEventListener('click', () => open === false ? openNav() : closeNav());
