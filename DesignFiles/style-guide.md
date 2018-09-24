@@ -32,10 +32,10 @@ Background: #828282
 
 **done**
 ### Jumbotron Headers
-- Font Weight: Bold
-- Font Size: 64px
-- Line Height: 75px
-- Color: #FFFFFF
+x Font Weight: Bold
+x Font Size: 64px
+x Line Height: 75px
+x Color: #FFFFFF
 
 ### Sub Headers
 - Font Weight: Bold
