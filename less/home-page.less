@@ -131,6 +131,9 @@
   			}
   	}
 
+
+
+
   	.main-content {
   		margin: 85px 6.9% 85px 8.44%;
   		
@@ -146,9 +149,12 @@
   				padding-left: 5%;
           padding-bottom: 0;
           padding-top: 22px;
-          font: 2.4rem;
+          font-size: 2.4rem;
   			}
   		}
+
+
+
 
   		.img-right {
   			margin: 0 auto;
@@ -156,29 +162,40 @@
   			align-items: flex-end;
   			justify-content: flex-end;
   			position: relative;
-  			
   	
   			.img {
   				margin: 0 auto;
   			}
 
+        .desktop {
+          display: block;
+
+          @media @mobile {
+            display: none;
+          }
+        }
+
+        mobile{
+          display: none;
+
+          @media @mobile {
+            display: block;
+          }
+
+        }
   			.absolute {
   				position: absolute;
           top: 200px;
-  				
-          @media @mobile{
-  					position: unset;
-  				}
   			}
 
   			@media @mobile {
   				justify-content: center;
+          padding-top: 25px;
   			}
-
-        .none {
-          display: none;
-        }
   		}
+
+
+
 
   		.img-left {
   			margin: 0 auto;
@@ -194,6 +211,23 @@
   				margin: 0 auto;
   			}
 
+        .desktop {
+          display: block;
+
+          @media @mobile {
+            display: none;
+          }
+        }
+
+        mobile {
+          display: none;
+
+          @media @mobile {
+            display: block;
+          }
+
+        }
+
   			.absolute {
   				position: absolute;
           top: 2350px;
@@ -203,31 +237,38 @@
   					position: unset;
   				}
   			}
-
-        .none {
-          display: none;
-        }
-
   		}
 
-  		.titles {
-			font-weight: normal;
-			font-size: @font28;
-			line-height: @height24;
-			color: @black;
-			background-color: @gray;
-			padding: 20px 80px;
-			bottom: -20px;
-			display: flex;
 
-			 .right {
-				  justify-content: flex-end;
-			 }
 
-			 .left {
-				  justify-content: flex-start;
-			 }
-		  }
+
+  	.titles {
+		font-weight: normal;
+		font-size: @font28;
+		line-height: @height24;
+		color: @black;
+		background-color: @gray;
+		padding: 20px 80px;
+		bottom: -20px;
+		display: flex;
+
+			.right {
+				justify-content: flex-end;
+			}
+
+			.left {
+				justify-content: flex-start;
+			}
+
+      @media @mobile {
+        font-size: 2.3rem;
+        margin-top: 2px;
+        padding: 36px 85px;
+      }
+		}
+
+
+
 
 		.flex-centered {
 			display: flex;
@@ -242,8 +283,15 @@
 				margin-left: 5%;
 				margin-top: 30px;
 				margin-bottom: 30px;
+        padding-top: 80px;
 			}
 
+      p{
+        @media @mobile {
+          font-size: 1.8rem;
+          padding-bottom: 15px;
+        }
+      }
 		}
 		
 	}
