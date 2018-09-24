@@ -1,9 +1,17 @@
 .cta {
   width: 100%;
   height: 100vh;
-  background: url('../img/home/home-jumbotron.png');
+  background-image: url('../img/home/home-jumbotron.png');
   background-size: cover;
   .bottom-space(45px);
+
+  @media @mobile {
+    margin-top: 54px;
+    height: auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    .bottom-space(25px);
+  }
 
   header {
     max-width: 850px;
@@ -11,12 +19,25 @@
     .custom-layout(flex-start, flex-end);
     .center();
 
+    @media @mobile {
+      width: 450px;
+      height: auto;
+    }
+
     h1 {
       padding: 80px 0;
       font-size: 6.4rem;
       font-weight: bold;
       line-height: 75px;
       color: @heading;
+
+      @media @mobile {
+        padding: 0;
+        padding-top: 70px;
+        padding-bottom: 33px;
+        font-size: 5rem;
+        line-height: 60px;
+      }
     }
   }
 } // .cta
