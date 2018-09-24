@@ -1,6 +1,7 @@
 .home-page {
   .jumbotron {
     height: 100vh;
+    // height: 598px; match exact height for pixel perfect design
     background: url('../img/home/home-jumbotron.png');
     background-size: cover;
     background-position: top;
@@ -17,7 +18,7 @@
   }
 
   .cta {
-    margin: 5rem 0;
+    margin: 5rem 0 10rem;
     display: flex;
     flex-wrap: wrap;
     &__content,
@@ -38,9 +39,7 @@
     }
 
     &__heading {
-      font-weight: 700;
-      font-size: 2.8rem;
-      color: @main-color;
+      .sub-heading(2.4rem);
     }
 
     & p {
@@ -49,6 +48,55 @@
 
     .btn {
       .btn-creator(@main-bg, @main-color, 33%, 1px solid @main-color);
+    }
+  }
+
+  .projects {
+    // margin-top: 10rem;
+    &__heading {
+      .sub-heading(2.4rem);
+      margin-bottom: 5rem;
+    }
+
+    .project {
+      margin-bottom: 10rem;
+      position: relative;
+
+      &__img {
+        margin-bottom: 8.5rem;
+
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+
+      &__heading {
+        .center();
+        font-weight: 400;
+        font-size: 2.4rem;
+        letter-spacing: 8px;
+        background: @grey-square;
+        text-transform: uppercase;
+        position: absolute;
+        height: 95px;
+        width: 317px;
+        left: 63%;
+        top: 30%;
+        &--inverse {
+          left: 0;
+        }
+      }
+
+      &__content {
+        width: 50%;
+        margin: 0 auto;
+        font-size: 1.8rem;
+
+        p:first-child {
+          margin-bottom: 3rem;
+        }
+      }
     }
   }
 }
