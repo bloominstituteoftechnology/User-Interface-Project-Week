@@ -4,10 +4,21 @@ footer {
   height: 250px;
   color: @white;
 
+  @media @phone {
+    width: 100%;
+    padding: 15px 0;
+    height: auto;
+  }
+
   .footer__top {
     .flex(row, space-evenly);
     margin-top: 57px;
     padding: 0 25px;
+
+    @media @phone {
+      .flex(column, space-evenly);
+      margin-top: 20px;
+    }
 
     input[type="email"] {
       margin-top: 17px;
@@ -16,24 +27,46 @@ footer {
       padding: 10px;
       border: 1px solid @white;
       border-radius: 5px;
-      color: @medium-gray;
+      color: @light-gray;
+
+      @media @phone {
+        font-size: 1.8rem;
+        padding: 15px 10px;
+      }
     }
 
     p {
       font-size: 1.4rem;
       text-align: left;
+
+      @media @phone {
+        width: 100%;
+        margin-top: 10px;
+      }
     }
   }
 
   .footer__locations {
     margin: 0 10px;
     font-size: 1.4rem;
-    line-height: 26px;
+    line-height: 30px;
+
+    @media @phone {
+      margin: 15px 0;
+      font-size: 1.6rem;
+    }
   }
 
   p {
     font-size: 1.2rem;
     text-align: center;
     padding-bottom: 10px;
+
+    @media @phone {
+      text-align: left;
+      width: 90%;
+      .center();
+      margin-top: 20px;
+    }
   }
 }
