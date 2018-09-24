@@ -8,6 +8,7 @@
 @color-dark-grey: #222222;
 @color-grey: #828282;
 @color-light-grey: #9ba5af;
+@color-dark-purple: #1a1326;
 
 //-- Color Role Assignments ----------------------
 
@@ -17,6 +18,9 @@
 @header-bg-color: @color-light-grey;
 @footer-bg-color: @color-grey;
 @footer-text-color: @color-white;
+@button-border-color: @color-dark-grey;
+@button-text-color: @color-dark-purple;
+@button-bg-color: @color-white;
 
 
 //-- Global Color & Font Theming -----------------
@@ -34,6 +38,20 @@ body > footer {
     font-size: 1.4rem;
     line-height: 2.6rem;
     Color: @footer-text-color;
+}
+
+
+//== Theme Mixins ==============================================================
+
+.button-maker () {
+    color: @button-text-color;
+    border: solid 1px @button-border-color;
+    background: @button-bg-color;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+}
+.button {
+    .button-maker();
 }
 
 
@@ -66,7 +84,6 @@ Page Specific
 Home Page
 
     Recent Projects Gray Square: #D8D8D8
-    Button borders: #222222
 
 Services Page
 
