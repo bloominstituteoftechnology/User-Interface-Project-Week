@@ -3,15 +3,16 @@
 
 
   .intro {
-
+position: relative;
     h1 {
       padding: 10px;
       color : #FFFFFF;
-      position : relative;
-      top : -300px;
+      position : absolute;
+      top : 250px;
       left : 50px;
       font-size : 6.4rem;
-      line-height: 55px;
+      line-height: 75px;
+      width : 50%
     }
 
     img{
@@ -24,7 +25,13 @@
 .main-content{
   max-width : 800px;
   margin : 0 auto;
-  margin-top : -180px;
+   margin-top : 50px;
+  width : 90%;
+
+  @media @phone{
+    margin-top : 50px;
+    width : 95%;
+  } 
 
   .compInfo{
 
@@ -32,10 +39,18 @@
         .layout();
         margin-bottom : 50px; 
 
+        @media @phone{
+          .Mlayout();
+          width : 95%;
+          flex-direction : column-reverse;
+      }
         .compInfoText{
           margin : 10px ;
           width : 47%;
 
+          @media @phone{
+            width : 95%;
+          }
           h3{
             margin-top : 20px;
             font-weight : bold;
@@ -49,19 +64,24 @@
             text-align: center;
 
             @media @phone{
-              .button(200px, 15px);
+              .button(95%, 15px);
               margin-bottom : 15px;
             }
           }      
         }   
         img{
-          max-width : 47%;
+          width : 47%;
+
+          @media @phone{
+            width : 100%;
+          } 
         }          
       }
-
-    .imgLeft{
-      flex-direction : row-reverse;
-    }  
+    @media @PC{  
+      .imgLeft{
+        flex-direction : row-reverse;
+      }  
+    }
     } // compInfo
   } // main-content
  
@@ -85,11 +105,16 @@
           background : @navBackground;
           position : absolute;
           right : 0;
-          top : 180px;;
+          top : 140px;
           z-index: 3;
           text-align: center;
           letter-spacing: 6px;
 
+          @media @phone{
+            width : 90%;
+            right : 5%;
+            top : 220px;
+          }
         }
 
         img{
@@ -102,12 +127,17 @@
           margin : 0 auto;
           font-weight: bold;
           margin-bottom : 20px;
+          @media @phone{
+            width : 95%; 
+           }
         }
       }
       .titleLeft{
         h4{
-
         left : 0;
+        @media @phone{
+         left : 5%; 
+        }
         }
       }
     }

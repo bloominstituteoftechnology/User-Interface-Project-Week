@@ -139,14 +139,14 @@ table {
 }
 html {
   font-size: 62.5%;
-  font-weight: Regular;
+  font-weight: normal;
   line-height: 2.4rem;
 }
 html,
 body {
   font-family: 'Roboto', Arial, sans-serif;
   color: #222222;
-  FontWeight: Regular;
+  font-weight: normal;
 }
 h1 {
   font-size: 4rem;
@@ -172,6 +172,7 @@ p {
 @media (max-width:500px) {
   .container {
     width: 95%;
+    min-width: 200px;
   }
 }
 .disappear {
@@ -192,6 +193,7 @@ p {
   color: #FFFFFF;
   font-weight: bold;
   font-size: 2.4rem;
+  border: 1px solid red;
 }
 .nav a {
   text-decoration: none;
@@ -208,15 +210,12 @@ p {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-}
-@media (max-width:500px) {
-  .nav nav {
-    width: 90%;
-  }
+  border: 1px solid red;
 }
 @media (max-width:500px) {
   .nav {
-    position: static;
+    padding: 15px 30px;
+    width: 100%;
   }
 }
 footer {
@@ -224,18 +223,28 @@ footer {
   background: #999999;
   font-size: 1.4rem;
   line-height: 26px;
+  width: 100%;
 }
 footer .footer-main {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 40px 30px 20px 30px;
+}
+@media (max-width:500px) {
+  footer .footer-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 footer .footer-main .location h4 {
   font-size: 2rem;
   line-height: 24px;
   color: #FFFFFF;
   font-weight: bold;
+  padding-bottom: 10px;
 }
 footer .footer-main .location p {
   text-align: left;
@@ -244,18 +253,28 @@ footer .footer-main .location p {
 footer .footer-main .location input {
   margin: 15px 0;
 }
+@media (max-width:500px) {
+  footer .footer-main .location {
+    margin-bottom: 15px;
+  }
+}
 footer p {
   font-size: 1rem;
   text-align: center;
+  padding-bottom: 20px;
+}
+.intro {
+  position: relative;
 }
 .intro h1 {
   padding: 10px;
   color: #FFFFFF;
-  position: relative;
-  top: -300px;
+  position: absolute;
+  top: 250px;
   left: 50px;
   font-size: 6.4rem;
-  line-height: 55px;
+  line-height: 75px;
+  width: 50%;
 }
 .intro img {
   width: 100%;
@@ -263,7 +282,14 @@ footer p {
 .main-content {
   max-width: 800px;
   margin: 0 auto;
-  margin-top: -180px;
+  margin-top: 50px;
+  width: 90%;
+}
+@media (max-width:500px) {
+  .main-content {
+    margin-top: 50px;
+    width: 95%;
+  }
 }
 .main-content .compInfo .infoCard {
   display: flex;
@@ -271,9 +297,24 @@ footer p {
   align-items: center;
   margin-bottom: 50px;
 }
+@media (max-width:500px) {
+  .main-content .compInfo .infoCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    flex-direction: column-reverse;
+  }
+}
 .main-content .compInfo .infoCard .compInfoText {
   margin: 10px ;
   width: 47%;
+}
+@media (max-width:500px) {
+  .main-content .compInfo .infoCard .compInfoText {
+    width: 95%;
+  }
 }
 .main-content .compInfo .infoCard .compInfoText h3 {
   margin-top: 20px;
@@ -300,13 +341,13 @@ footer p {
 }
 @keyframes example {
   to {
-    background: #F1F1F1;
-    color: #23293B;
+    background: #222222;
+    color: #FFFFFF;
   }
 }
 @media (max-width:500px) {
   .main-content .compInfo .infoCard .compInfoText .btn {
-    width: 200px;
+    width: 95%;
     padding: 15px;
     color: #222222;
     background: #FFFFFF;
@@ -323,16 +364,23 @@ footer p {
   }
   @keyframes example {
     to {
-      background: #F1F1F1;
-      color: #23293B;
+      background: #222222;
+      color: #FFFFFF;
     }
   }
 }
 .main-content .compInfo .infoCard img {
-  max-width: 47%;
+  width: 47%;
 }
-.main-content .compInfo .imgLeft {
-  flex-direction: row-reverse;
+@media (max-width:500px) {
+  .main-content .compInfo .infoCard img {
+    width: 100%;
+  }
+}
+@media (min-width:500px) {
+  .main-content .compInfo .imgLeft {
+    flex-direction: row-reverse;
+  }
 }
 .main-content .projects h2 {
   margin: 20px 0;
@@ -349,10 +397,17 @@ footer p {
   background: #cccccc;
   position: absolute;
   right: 0;
-  top: 180px;
+  top: 140px;
   z-index: 3;
   text-align: center;
   letter-spacing: 6px;
+}
+@media (max-width:500px) {
+  .main-content .projects .project h4 {
+    width: 90%;
+    right: 5%;
+    top: 220px;
+  }
 }
 .main-content .projects .project img {
   width: 100%;
@@ -364,6 +419,16 @@ footer p {
   font-weight: bold;
   margin-bottom: 20px;
 }
+@media (max-width:500px) {
+  .main-content .projects .project p {
+    width: 95%;
+  }
+}
 .main-content .projects .titleLeft h4 {
   left: 0;
+}
+@media (max-width:500px) {
+  .main-content .projects .titleLeft h4 {
+    left: 5%;
+  }
 }
