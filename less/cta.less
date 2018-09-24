@@ -6,9 +6,18 @@
       height: 275px;
       margin-bottom: 100px;
       .flex(space-between);
+
+      @media @mobile {
+        .flex(space-between, center, column);
+        height: 540px;
+        margin-bottom: 45px;
+      }
   
       div {
         padding: 50px 20px 0px 0px;
+        @media @mobile {
+            padding: 0px 0px 0px 0px;
+        }
         h2 {
           font-size: 24px;
           font-weight: 700;
@@ -24,12 +33,18 @@
           height: 47px;
           border: 1px solid black;
           margin-top: 26px;
+          @media @mobile {
+              width: 100%;
+          }
         }
       }
   
       &:nth-child(2) {
         div {
           padding: 40px 0px 0px 30px;
+          @media @mobile {
+            padding: 25px 0px 0px 0px;
+        }
         }
         img {
           order: -1;
@@ -38,5 +53,17 @@
           margin-top: 30px;
         }
       }
+
+      @media @mobile {
+        img { 
+            order: -1;
+            width: 100%;
+            height: 275px;
+            object-fit: cover
+        }
+      }
     }
   } // End of .cta
+
+
+  
