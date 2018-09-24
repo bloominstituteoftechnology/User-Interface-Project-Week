@@ -10,7 +10,6 @@
     height: auto;
     background-size: 100%;
     background-repeat: no-repeat;
-    .bottom-space(25px);
   }
 
   header {
@@ -47,8 +46,18 @@
     .bottom-space(100px);
     .custom-layout(space-between, center);
 
+    @media @mobile {
+      flex-wrap: wrap;
+      .bottom-space(50px);
+    }
+
     .text-content {
       width: 48%;
+
+      @media @mobile {
+        width: 100%;
+        order: 2;
+      }
 
       h2 {
         .sub-heading-style();
@@ -60,6 +69,23 @@
         padding: 13px 4%;
         text-align: center;
         cursor: pointer;
+
+        @media @mobile {
+          width: 100%;
+          padding: 20px 4%;
+        }
+      }
+    }
+
+    @media @mobile {
+      .img-content {
+        width: 100%;
+        order: 1;
+        .bottom-space();
+
+        img {
+          width: 100%;
+        }
       }
     }
   } //.content-section
