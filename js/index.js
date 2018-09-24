@@ -4,6 +4,7 @@ let closeBtn = document.querySelector('#mainMenuClose');
 let menuDiv = document.querySelector('#menuDiv');
 let navMenu = document.querySelector('#navMenu');
 let headerTopNavDiv = document.querySelector('#headerTopNavDiv');
+let activePage = document.querySelector('#selectedPage');
 
 closeBtn.classList.add('hidden');
 navMenu.classList.add('hidden');
@@ -15,6 +16,7 @@ menuBtn.addEventListener('click',() => {
     closeBtn.classList.remove('hidden');
     headerTopNavDiv.classList.add('header-top-nav-expanded');
     navMenu.classList.remove('hidden');
+    activePage.classList.add('selectedPage');
 })
 
 closeBtn.addEventListener('click',() => {
