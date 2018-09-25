@@ -26,8 +26,10 @@ class TabItem {
     select() {
         let items = document.querySelectorAll('.tab-item');
         items.forEach(item => item.classList.remove('tab-item-selected'));
+        items.forEach(item => {TweenMax.to(item, .7, {autoAlpha: 0, y:100})})
 
         this.element.classList.add('tab-item-selected');
+        TweenMax.to(this.element, .7, {autoAlpha: 1, y: 0});
     }
 }
 
