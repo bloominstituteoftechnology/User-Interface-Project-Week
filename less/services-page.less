@@ -1,6 +1,5 @@
 .jumbotron {
   width: 100%;
-  margin-top: 54px;
   position: relative;
   .bottom-space(50px);
 
@@ -25,7 +24,7 @@
     width: 100%;
     .custom-layout(space-between, center);
 
-    .tab {
+    .tab-link {
       width: 20%;
       border: 1px solid @border;
       padding: 12px 0;
@@ -37,19 +36,36 @@
         background-color: @btn-hover-bg;
       }
     }
+
+    .tab-link-selected {
+      color: @white;
+      background-color: @btn-hover-bg;
+    }
   } // .tabs
 
-  .tab-content {
-    padding: 40px 0;
+  .tab-content-container {
     .custom-layout(space-between, center);
 
-    h2 {
-      .sub-heading-style();
+    .tab-content {
+      padding: 40px 0;
+      display: none;
+
+      .col-2 {
+        .custom-layout(space-between, center);
+        h2 {
+          .sub-heading-style();
+        }
+
+        .tab-content-text {
+          width: 50%;
+        }
+      }
     }
 
-    .tab-content-text {
-      width: 50%;
+    .tab-content-selected {
+      display: block;
     }
   }
-
 }
+
+
