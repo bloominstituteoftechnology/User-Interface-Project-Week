@@ -12,7 +12,7 @@ x Font Family: Roboto, Arial, sans-serif
 
 ### Home Page
 x Recent Projects Gray Square: #D8D8D8
-- Button borders: #222222
+x Button borders: #222222
 
 ### Services Page
 - Tab selected background: #5E9FB9
@@ -43,10 +43,10 @@ x Font Size: 28px
 x Color: #222222
    
 ### Footer Headings
-- Font Weight: Regular
-- Font Size: 20px
-- Line Height: 24px
-- Color: #FFFFFF
+x Font Weight: Regular
+x Font Size: 20px
+x Line Height: 24px
+x Color: #FFFFFF
 
 ### Footer Text
 - Font Weight: Regular
