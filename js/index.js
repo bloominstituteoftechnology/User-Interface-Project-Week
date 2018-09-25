@@ -14,8 +14,8 @@ menuBtn.addEventListener('click',() => {
     menuDiv.classList.add('header-overlay');
     menuBtn.classList.add('hidden');
     closeBtn.classList.remove('hidden');
-    headerTopNavDiv.classList.add('header-top-nav-expanded');
     headerTopNavDiv.classList.remove('justCenter');
+    headerTopNavDiv.classList.add('addMargin');
     navMenu.classList.remove('hidden');
     activePage.classList.add('selectedPage');
 })
@@ -23,8 +23,9 @@ menuBtn.addEventListener('click',() => {
 closeBtn.addEventListener('click',() => {
     menuDiv.classList.remove('header-overlay');
     menuBtn.classList.remove('hidden');
+    headerTopNavDiv.classList.add('justCenter');
+    headerTopNavDiv.classList.remove('addMargin');
     closeBtn.classList.add('hidden');
-    headerTopNavDiv.classList.remove('header-top-nav-expanded');
     navMenu.classList.add('hidden');
 })
 
