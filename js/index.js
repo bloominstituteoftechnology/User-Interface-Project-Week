@@ -15,18 +15,25 @@ class TabLink {
         this.tabContent = new Content(this.tabContent);
     }
     linkClick() {
+        const links = document.querySelectorAll('h2')
+        Array.from(links).forEach((element) => element.classList.remove('tabs-color'))
+        this.link.classList.add('tabs-color')
         this.tabContent.toggleContent();
     }
 }
+
 
 class Content {
     constructor(tabContent){
         this.tabContent = tabContent;
     }
     toggleContent() {
-        this.tabContent.classList.toggle('change');
+        const items = document.querySelectorAll('.middlePara')
+        Array.from(items).forEach((element) => element.classList.remove('change'))
+        this.tabContent.classList.add('change');
     }
 }
+
 
 
 
@@ -36,3 +43,4 @@ class Content {
 
 
 links = Array.from(selectBackground).map( link => new TabLink(link));
+links[0].linkClick();
