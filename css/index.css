@@ -152,11 +152,11 @@ table {
   background: #99A4AF;
   height: 50px;
   position: fixed;
+  z-index: 1;
 }
 .header {
   width: 1024px;
   margin: 0 auto;
-  z-index: 0;
 }
 @media only screen and (max-width: 500px) {
   .header {
@@ -177,6 +177,9 @@ table {
 .header header .logo :hover {
   cursor: pointer;
 }
+.header header .close-button {
+  display: none;
+}
 .header header .expanded-nav {
   display: flex;
   height: 100%;
@@ -194,15 +197,30 @@ table {
   display: none;
 }
 .expanded {
-  height: 600px;
+  height: 100vh;
   width: 1024px;
   background: #99A4AF;
   z-index: 10;
   margin: 0;
   opacity: 0.9;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 500px) {
+  .expanded {
+    width: 320px;
+  }
 }
 .expanded-header {
   height: 100%;
+  width: 100%;
+  background: #99A4AF;
+  margin: 0 auto;
+}
+.expanded-header-div {
+  width: 100%;
+  height: 100%;
+  background: #99A4AF;
+  opacity: 0.9;
 }
 .footer-div {
   width: 100%;
@@ -293,6 +311,7 @@ footer .copyright {
 }
 .container .jumbotron h1 {
   position: absolute;
+  z-index: 0;
   color: white;
   font-size: 64px;
   font-weight: bold;

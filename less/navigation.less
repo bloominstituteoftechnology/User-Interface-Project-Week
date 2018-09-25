@@ -3,12 +3,12 @@
   background: @navigation-color;
   height: 50px;
   position: fixed;
+  z-index: 1;
 }
 
 .header {
   width: 1024px;
   margin: 0 auto;
-  z-index: 0;
 
   @media @mobile {
     width: 320px;
@@ -26,6 +26,9 @@
       :hover {
         cursor: pointer;
       }
+    }
+    .close-button {
+        display: none;
     }
     .expanded-nav {
       display: flex;
@@ -47,16 +50,30 @@
 }
 
 .expanded {
-  height: 600px;
+  height: 100vh;
   width: 1024px;
   background: @navigation-color;
   z-index: 10;
   margin: 0;
   opacity: 0.9;
+  margin: 0 auto;
+  @media @mobile {
+      width: 320px;
+  }
 }
 
 .expanded-header {
   height: 100%;
+  width: 100%;
+  background: @navigation-color;
+  margin: 0 auto;
+}
+
+.expanded-header-div {
+    width: 100%;
+    height: 100%;
+    background: @navigation-color;
+    opacity: 0.9;
 }
 
 .footer-div {
@@ -64,8 +81,8 @@
   background: #828282;
 }
 footer {
-    width: 1024px;
-    margin: 0 auto;
+  width: 1024px;
+  margin: 0 auto;
   .contact {
     padding: 30px;
     display: flex;
