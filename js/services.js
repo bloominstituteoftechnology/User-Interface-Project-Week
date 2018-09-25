@@ -1,9 +1,4 @@
-// JS goes here
-AOS.init({
-    duration: 1200,
-  })
-
-  const hamburger = document.querySelector(".navbar img");
+const hamburger = document.querySelector(".navbar img");
 const dropdown = document.querySelector(".menu-items");
 let visibility = false;
 
