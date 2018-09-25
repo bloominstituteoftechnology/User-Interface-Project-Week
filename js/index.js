@@ -6,14 +6,23 @@ let hamburgerCloseTag = document.querySelector('#hamburgerClose');
 let navLinkTag = document.querySelector('.navLink');
 let navTag = document.querySelector('.nav');
 
-hamburgerTag.addEventListener('click', navClassToggle);
-hamburgerCloseTag.addEventListener('click', navClassToggle);
+
+hamburgerTag.addEventListener('click', navClicked);
+hamburgerCloseTag.addEventListener('click', navClicked);
+
+
+
+function navClicked() {
+    TweenMax.to('.nav', 3, {height : "100vh"});
+    setTimeout(navClassToggle, 2000);
+}
 
 function navClassToggle() {
+   
     hamburgerTag.classList.toggle('disappear');
     hamburgerCloseTag.classList.toggle('disappear');
     navLinkTag.classList.toggle('disappear');
-    navTag.classList.toggle('expanded');
+    navTag.classList.toggle('expanded');  
 }
 
 class Tab {
