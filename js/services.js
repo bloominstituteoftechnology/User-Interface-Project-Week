@@ -14,7 +14,6 @@ class Tablink {
   }
 
   select() {
-    
     // unselect all tabs
     const tabs = document.querySelectorAll('.tab-link');
     tabs.forEach(t => t.classList.remove('selected'));
@@ -49,3 +48,5 @@ class Tabcontent {
 
 let tabs = document.querySelectorAll('.tab-link');
 tabs = Array.from(tabs).map(t => new Tablink(t));
+
+tabs[0].select();
