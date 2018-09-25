@@ -28,15 +28,15 @@ Background: #828282
 - Line Height: 24px
 
 ### Jumbotron Headers
-- Font Weight: Bold
+<!-- - Font Weight: Bold
 - Font Size: 64px
 - Line Height: 75px
-- Color: #FFFFFF
+- Color: #FFFFFF -->
 
-### Sub Headers
+<!-- ### Sub Headers
 - Font Weight: Bold
 - Font Size: 28px
-- Color: #222222
+- Color: #222222 -->
    
 ### Footer Headings
 - Font Weight: Regular
