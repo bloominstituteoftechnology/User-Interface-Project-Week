@@ -44,3 +44,23 @@ class TabItem {
 const tabs = document.querySelectorAll('.tab');
 //Loops through node list and takes each element in the nodeList and puts it in the class.
 tabs.forEach(item => new TabLink(item));
+
+
+const hamburger = document.querySelector('.nav-image');
+const navigation = document.querySelector('.nav-links');
+let count = 0;
+hamburger.addEventListener('click', () => {
+    if (count%2 === 0) {
+        navigation.classList.add('nav-links-active');
+        hamburger.src = "../img/nav-hamburger-close.png";
+        document.querySelector('.main-nav').style.background = 'none';
+        
+        return count++;
+    } else {
+        navigation.classList.remove('nav-links-active');
+        hamburger.src = "../img/nav-hamburger.png";
+        document.querySelector('.main-nav').style.backgroundColor = '#9aa5b0';
+        return count++;
+    }
+    console.log(count);
+});
