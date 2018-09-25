@@ -25,12 +25,58 @@ header {
   }
 
   .hamburger {
+    margin-top: 2px;
+    height: 21px;
+    cursor: pointer;
+  }
+
+  .hamburger-close {
+    display: none;
+    // z-index: 1000;
+    height: 25px;
     cursor: pointer;
   }
 
   nav {
     display: none;
+  }
+}
+
+.expanded {
+  z-index: 2;
+  background-color: @nav-blue;
+  // background-size: cover;
+  // background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+
+  .hamburger {
+    display: none;
+  }
+
+  .hamburger-close {
+    display: inline-block;
+  }
+
+  nav {
+    display: block;
+    position: absolute;
+    top: 40%;
+    width: 90%;
+    .flex(column, center);
+    align-items: center;
+
     a {
+      color: @white;
+      text-decoration: none;
+      font-size: 4.8rem;
+      font-weight: bold;
+      line-height: 85px;
+
+      &:hover {
+        color: @dark-gray;
+      }
     }
   }
 }
