@@ -1,19 +1,33 @@
 .jumbotron{
-    .intro{
-        display: flex;
-        align-items: flex-end;
-        background-image:url("../img/home/home-jumbotron.png");
-        background-size:100% 100%;
-        background-repeat: none;
+    position: relative;
+    .intro-desktop{
         width:100%;
-        height:600px;
-        .img-text{
-            padding:5% 6%;
-            h3{
-                line-height: 6.5rem;
-                font-size: 6rem;
-                font-weight: bold;
+        @media @phone{
+            display: none;
+        }
+    }
+    .intro-mobile{
+        display: none;
+        @media @phone{
+            display: flex;
+            width:100%;
+        }
+    }
+
+    .img-text{
+        position: absolute;
+        top:50%;
+        padding:5% 6%;
+        h3{
+            line-height: 6.5rem;
+            font-size: 6rem;
+            font-weight: bold;
+            @media @phone{
+                font-size: 5rem;
             }
+        }
+         @media @phone{
+            top:35%;
         }
     }
 }
@@ -21,17 +35,34 @@
     display: flex;
     padding: 5% 8%;
     justify-content: space-between;
+    @media @phone{
+        display: flex;
+        flex-wrap:wrap;
+        flex-direction: column-reverse;
+        width:100%;
+        padding:none;
+    }
     .info-text{
-        // border: 1px solid black;
         display: flex;
         flex-direction: column;
         justify-content: center;
         width:48%;
+        color:black;
+        @media @phone{
+            width:100%;
+        }
         h3{
             padding-bottom: 5%;
             color:black;
+            font-weight: bold;
+            @media @phone{
+                padding-top: 5%;
+                font-size:3.5rem;
+            }  
         }
-        color:black;
+        p{
+            line-height: 30px;
+        }
 
         .button{
             margin-top:5%;
@@ -42,13 +73,32 @@
             font-size:1.5rem;
             text-decoration: none;
             color:black;
+            @media @phone{
+                width: 100%;
+                padding:5%;
+                font-size:2rem;
+            }  
         }
     }
     .info-image{
-        // border: 1px solid black;
         width:48%;
+        @media @phone{
+            width:100%;
+        }
         img{
             width:100%;
+        }
+        .info-mobile{
+            display: none;
+            @media @phone{
+                display: flex;
+                width:100%;
+            }
+        }
+        .info-desktop{
+            @media @phone{
+                display: none;
+            }
         }
     }
 }
@@ -97,46 +147,5 @@
             padding-top:10%;
             margin-bottom:10%;  
         }
-    }
-}
-footer{
-    background-color:#828282;
-    color:white;
-    max-width: 1024px;
-    margin:0 auto;
-        p{
-            font-size:1.4rem;
-            line-height: 2.3rem;
-            color:#E7E7E7;
-        }
-    .wrapper{
-        display:flex;
-        padding:5% 7%;
-        justify-content: space-between;
-        h3{
-            color:white;
-            font-size:2rem;
-            line-height: 2.3rem;
-            font-weight: bold;
-            padding-bottom:4%;
-        }
-        .input-section{
-            width:35%;
-            input{
-                width:100%;
-                padding:2% 2%;
-                border-radius: 5px;
-                font-size:1.6rem;
-                color:#E7E7E7;
-            }
-        }
-        .cities{
-            display: flex;
-            justify-content: space-between;
-            width:60%;
-        }
-    }
-    .copyright{
-        text-align: center;
     }
 }
