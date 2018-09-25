@@ -1,5 +1,3 @@
-/*-- color assignments -------------------------*/
-/*-- colors ------------------------------------*/
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -149,6 +147,14 @@ h1 {
   font-size: 6.4rem;
   font-weight: bold;
   line-height: 75px;
+  transform: translate(0, 144%);
+}
+@media (max-width: 320px) {
+  h1 {
+    font-size: 3.6rem;
+    line-height: 1.2;
+    transform: translate(0, 85%);
+  }
 }
 h2 {
   font-size: 2.4rem;
@@ -166,6 +172,11 @@ p {
 .container {
   max-width: 850px;
   margin: 0 auto;
+}
+@media (max-width: 320px) {
+  .container {
+    max-width: 290px;
+  }
 }
 header {
   background-color: #99a4af;
@@ -190,13 +201,16 @@ header .container.menu nav {
   display: none;
 }
 main .jumbotron {
-  background: url('../img/home/home-jumbotron.png') no-repeat center top;
+  background: url("../img/home/home-jumbotron.png") no-repeat center top;
   background-size: cover;
   height: 598px;
+  width: 100%;
 }
-main .jumbotron h1 {
-  position: absolute;
-  transform: translate(0, 144%);
+@media (max-width: 320px) {
+  main .jumbotron {
+    background: url("../img/home/home-mobile-jumbotron.png") no-repeat center top;
+    height: 260px;
+  }
 }
 main .container.home .about {
   display: flex;
@@ -208,6 +222,17 @@ main .container.home .about .about-img {
 main .container.home .about .about-img img {
   height: auto;
   width: 100%;
+}
+main .container.home .about .about-img img:nth-child(2) {
+  display: none;
+}
+@media (max-width: 320px) {
+  main .container.home .about .about-img img:nth-child(1) {
+    display: none;
+  }
+  main .container.home .about .about-img img:nth-child(2) {
+    display: block;
+  }
 }
 main .container.home .about .about-top {
   display: flex;
@@ -248,9 +273,20 @@ main .container.home .projects {
 main .container.home .projects h2 {
   margin: 47.5px 0;
 }
-main .container.home .projects img {
+main .container.home .projects .projects-img img {
   height: auto;
   width: 100%;
+}
+main .container.home .projects .projects-img img:nth-child(2) {
+  display: none;
+}
+@media (max-width: 320px) {
+  main .container.home .projects .projects-img img:nth-child(1) {
+    display: none;
+  }
+  main .container.home .projects .projects-img img:nth-child(2) {
+    display: block;
+  }
 }
 main .container.home .projects .projects-top {
   margin-bottom: 82px;
@@ -266,6 +302,11 @@ main .container.home .projects .projects-top .project-title {
   text-align: center;
   top: -55px;
   width: 315px;
+}
+@media (max-width: 320px) {
+  main .container.home .projects .projects-top .project-title {
+    width: 285px;
+  }
 }
 main .container.home .projects .projects-top p {
   clear: right;
@@ -288,6 +329,11 @@ main .container.home .projects .projects-middle .project-title {
   top: -55px;
   width: 315px;
 }
+@media (max-width: 320px) {
+  main .container.home .projects .projects-middle .project-title {
+    width: 285px;
+  }
+}
 main .container.home .projects .projects-middle p {
   clear: left;
   font-size: 1.75rem;
@@ -309,6 +355,11 @@ main .container.home .projects .projects-bottom .project-title {
   top: -55px;
   width: 315px;
 }
+@media (max-width: 320px) {
+  main .container.home .projects .projects-bottom .project-title {
+    width: 285px;
+  }
+}
 main .container.home .projects .projects-bottom p {
   clear: right;
   font-size: 1.75rem;
@@ -318,6 +369,7 @@ main .container.home .projects .projects-bottom p {
 footer {
   background-color: #828282;
   color: #ffffff;
+  width: 100%;
 }
 footer .container.footer {
   display: flex;
