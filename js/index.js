@@ -1,3 +1,4 @@
+//Tab Component Services Page
 class TabItem {
     constructor(link) {
         this.link = link;
@@ -10,7 +11,6 @@ class TabItem {
 
     }
 
-
     renderTab(e) {
         let tabitems = document.querySelectorAll('.tab-item');
         tabitems.forEach(item => item.classList.add('hide'));
@@ -22,10 +22,21 @@ class TabItem {
 
 }
 
-
-
-
-
-
 let links = document.querySelectorAll('.tab-link');
 links = Array.from(links).map(link => new TabItem(link));
+
+//Nav Open and Close
+const hamburger = document.querySelector('.nav-hamburger');
+const exitIcon = document.querySelector('.exit-icon');
+const navPage = document.querySelector('.nav-page');
+hamburger.addEventListener('click', (e) => {
+    e.target.classList.toggle('hide');
+    exitIcon.classList.toggle('hide');
+    navPage.classList.toggle('hide');
+
+});
+exitIcon.addEventListener('click', (e) => {
+    e.target.classList.toggle('hide');
+    hamburger.classList.toggle('hide');
+    navPage.classList.toggle('hide');
+});

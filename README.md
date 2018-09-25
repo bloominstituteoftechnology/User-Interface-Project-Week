@@ -33,7 +33,7 @@ These MVP features represent the fundamental knowledge you should have obtained 
 * [ ] Build layout **HTML/LESS/JavaScript**: [Navigation system design](DesignFiles/Navigation)
 	* [Non-expanded View Design](DesignFiles/Navigation/non-expanded/non-expanded.png): When the navigation is not active, it should be fixed to the top of the page at all times
 	* [Expanded View Design](DesignFiles/Navigation/expanded): When a user clicks on the navigation icon a full page overlay will pop over all the content on the page. The navigation icon will be replaced by a close icon. The user must click the close icon to return back to browsing the website. The home and services pages need to be linked together using `<a></a>` tags. You must use your own custom JavaScript for the opening and closing functionality, no bootstrap allowed for functionality on this feature
-* [ ] Build Custom Component **HTML/LESS/JavaScript**: [Services page tab navigator design](/DesignFiles/Services/tabs)
+* [X] Build Custom Component **HTML/LESS/JavaScript**: [Services page tab navigator design](/DesignFiles/Services/tabs)
 	* [Using the assets provided](/img/services), you must build the tab navigator using your own custom JavaScript component, no libraries allowed on this feature. You are encouraged to use code from previous weeks to accomplish this feature
 
 Once you have accomplished the required MVP features, **reach out to your project manager for approval to work on extra features of your choice**.  This project does not end at MVP.  Try to get as many extra features into your project as you can before the demonstration!
