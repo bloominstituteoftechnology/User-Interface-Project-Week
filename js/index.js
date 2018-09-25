@@ -15,6 +15,7 @@ menuBtn.addEventListener('click',() => {
     menuBtn.classList.add('hidden');
     closeBtn.classList.remove('hidden');
     headerTopNavDiv.classList.add('header-top-nav-expanded');
+    headerTopNavDiv.classList.remove('justCenter');
     navMenu.classList.remove('hidden');
     activePage.classList.add('selectedPage');
 })
