@@ -8,7 +8,7 @@ class NavMenu {
         this.expanderElement = this.element.querySelector('.main-navigation__expander')
         this.toggleElement = this.element.querySelector('.main-navigation__toggle');
         this.toggleElement.addEventListener("click", () => this.toggle());
-        this.open();
+        this.close();
     }
     toggle(){
         if(this.currentlyOpen){ this.close();}
@@ -16,7 +16,6 @@ class NavMenu {
     }
     close(){
         this.toggleElement.src = "/img/nav-hamburger.png";
-        console.log(this.expanderElement)
         this.element.classList.remove('expanded');
         this.currentlyOpen = false;
     }

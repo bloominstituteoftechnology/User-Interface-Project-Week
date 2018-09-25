@@ -75,33 +75,76 @@
     h2 {
         margin: 5rem 0rem;
     }
-    .project {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 9.6rem;
-        h3 {
-            vertical-align: middle;
-            text-align: center;
-            letter-spacing: 0.3em;
-            font-size: 2.5rem;
-            line-height: 9.6rem;
-            text-transform: uppercase;
-            width: 31.6rem;
-            height: 9.6rem;
-            background: @color-light-grey;
-            position: relative;
-            top: -5.75rem;
-            border: solid @color-white 1px;
+}
+.project {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 9.6rem;
+    @media @mobile {
+        margin-bottom: 2rem;
+    }
+    h3 {
+        vertical-align: middle;
+        text-align: center;
+        letter-spacing: 0.3em;
+        font-size: 2.5rem;
+        line-height: 9.6rem;
+        text-transform: uppercase;
+        width: 31.6rem;
+        height: 9.6rem;
+        background: @color-light-grey;
+        position: relative;
+        top: -5.75rem;
+        border: solid @color-white 1px;
+        @media @mobile {
+            width: 29rem;
+            top: -1rem;
+            border: unset;
+            align-self: center;
         }
-        &:nth-child(even) {
-            h3 {
-                align-self: flex-end;
+    }
+    &:nth-child(even) {
+        h3 {
+            align-self: flex-end;
+            @media @mobile {
+                align-self: center;
             }
         }
-        p {
-            max-width: 50%;
-            align-self: center;
-            margin-bottom: 2rem;
+    }
+    p {
+        max-width: 50%;
+        align-self: center;
+        margin-bottom: 2rem;
+        @media @mobile {
+            max-width: 29rem;
+        }
+    }
+    .img-header {
+        width: 100%;
+        height: 23rem;
+        background-size: cover;
+        background-position: bottom;
+        @media @mobile {
+            height: 20rem;
+            width: 32rem;
+        }
+        &.villas {
+            background-image: url('/img/home/home-villas-img.png');
+            @media @mobile {
+                background-image: url('/img/home/home-mobile-villas-img.png');
+            }
+        }
+        &.outskirts {
+            background-image: url('/img/home/home-outskirts-img.png');
+            @media @mobile {
+                background-image: url('/img/home/home-mobile-outskirts-img.png');
+            }
+        }
+        &.the-blocks {
+            background-image: url('/img/home/home-the-blocks-img.png');
+            @media @mobile {
+                background-image: url('/img/home/home-mobile-the-blocks-img.png');
+            }
         }
     }
 }
