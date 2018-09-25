@@ -143,12 +143,12 @@ body {
 }
 h2 {
   font-weight: bold;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   color: #222222;
 }
 p {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   color: #222222;
 }
 header {
@@ -175,14 +175,13 @@ header .navigation {
   align-items: center;
 }
 header .navigation .menu-close {
-  visibility: hidden;
+  display: none;
 }
 header .navigation .menu-open {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  visibility: inherit;
   font-weight: bold;
   font-size: 3rem;
   line-height: 5.3125rem;
@@ -275,6 +274,11 @@ footer .footer-content .footer-right div p {
   transform: translateX(-50%);
   margin-top: 50px;
 }
+@media (max-width: 400px) {
+  .jumbotron {
+    padding-bottom: 0;
+  }
+}
 .jumbotron img {
   max-width: 100%;
   height: auto;
@@ -287,8 +291,14 @@ footer .footer-content .footer-right div p {
   font-size: 4rem;
   line-height: 75px;
   z-index: 1;
-  bottom: 12%;
-  left: 15%;
+  bottom: 15%;
+  left: 5%;
+}
+@media (max-width: 400px) {
+  .jumbotron .img-text {
+    line-height: 50px;
+    bottom: 10%;
+  }
 }
 .container {
   max-width: 1024px;
@@ -296,12 +306,24 @@ footer .footer-content .footer-right div p {
   background-color: #FFFFFF;
   padding: 0 7%;
 }
+@media (max-width: 400px) {
+  .container {
+    max-width: 400px;
+    padding: 0 3%;
+  }
+}
 .container .intro-content-top {
   height: 275px;
   margin-bottom: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 400px) {
+  .container .intro-content-top {
+    height: auto;
+  }
 }
 .container .intro-content-top .top-left {
   height: 150px;
@@ -312,10 +334,15 @@ footer .footer-content .footer-right div p {
   flex-wrap: wrap;
 }
 .container .intro-content-top .top-left h2 {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+}
+@media (max-width: 400px) {
+  .container .intro-content-top .top-left h2 {
+    margin: 20px 0;
+  }
 }
 .container .intro-content-top .top-left p {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 .container .intro-content-top .top-left a {
   text-decoration: none;
@@ -324,8 +351,30 @@ footer .footer-content .footer-right div p {
   border: 1px solid #222222;
   color: #222222;
 }
+@media (max-width: 400px) {
+  .container .intro-content-top .top-left a {
+    padding: 15px 0;
+    padding-left: 40%;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .container .intro-content-top .top-left {
+    max-width: 100%;
+  }
+}
 .container .intro-content-top .top-right {
   max-width: 50%;
+}
+@media (max-width: 400px) {
+  .container .intro-content-top .top-right {
+    height: auto;
+    padding-top: 20px;
+    max-width: 100%;
+    order: -1;
+  }
+}
+.container .intro-content-top .top-right img {
   max-width: 100%;
   height: auto;
 }
@@ -335,6 +384,12 @@ footer .footer-content .footer-right div p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 400px) {
+  .container .intro-content-bottom {
+    height: auto;
+  }
 }
 .container .intro-content-bottom .bottom-right {
   height: 150px;
@@ -345,11 +400,21 @@ footer .footer-content .footer-right div p {
   align-items: center;
   flex-wrap: wrap;
 }
+@media (max-width: 400px) {
+  .container .intro-content-bottom .bottom-right {
+    padding-left: 0;
+  }
+}
 .container .intro-content-bottom .bottom-right h2 {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+}
+@media (max-width: 400px) {
+  .container .intro-content-bottom .bottom-right h2 {
+    margin: 20px 0;
+  }
 }
 .container .intro-content-bottom .bottom-right p {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 .container .intro-content-bottom .bottom-right a {
   text-decoration: none;
@@ -358,11 +423,31 @@ footer .footer-content .footer-right div p {
   border: 1px solid #222222;
   color: #222222;
 }
+@media (max-width: 400px) {
+  .container .intro-content-bottom .bottom-right a {
+    padding: 15px 0;
+    padding-left: 40%;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .container .intro-content-bottom .bottom-right {
+    max-width: 100%;
+  }
+}
 .container .intro-content-bottom .bottom-left {
   max-width: 50%;
+  order: -1;
+}
+@media (max-width: 400px) {
+  .container .intro-content-bottom .bottom-left {
+    height: auto;
+    max-width: 100%;
+  }
+}
+.container .intro-content-bottom .bottom-left img {
   max-width: 100%;
   height: auto;
-  order: -1;
 }
 .container .recent-top {
   position: relative;
