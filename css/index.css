@@ -40,6 +40,11 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 .header .container i:hover {
   cursor: pointer;
 }
+.hamburger {
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+}
 .navigation {
   position: fixed;
   left: 0;
@@ -57,8 +62,8 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 .navigation a {
   text-decoration: none;
   color: white;
-  font-size: 50px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: bold;
   line-height: 85px;
   width: 200px;
   user-select: none;
@@ -103,8 +108,8 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   }
 }
 .splash .splash-title h2 {
-  font-size: 63px;
-  font-weight: 700;
+  font-size: 64px;
+  font-weight: bold;
   line-height: 75px;
 }
 @media (max-width: 500px) {
@@ -115,7 +120,7 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 }
 .cta {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 52px;
 }
 .cta section {
   width: 100%;
@@ -198,7 +203,7 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 }
 .projects .project {
   width: 100%;
-  margin-top: 45px;
+  margin-top: 44px;
   margin-bottom: 100px;
 }
 @media (max-width: 500px) {
@@ -219,10 +224,10 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 .projects .project .project-header .project-title {
   position: absolute;
   right: 0;
-  bottom: -37px;
+  bottom: -41px;
   width: 315px;
   height: 95px;
-  background: #D3D2D3;
+  background: #D8D8D8;
 }
 @media (max-width: 500px) {
   .projects .project .project-header .project-title {
@@ -272,22 +277,25 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   font-size: 18px;
   line-height: 24px;
   font-weight: 200;
-  margin-bottom: 22px;
+  margin-bottom: 25px;
 }
 .footer {
-  width: 100%;
-  height: 255px;
-  padding: 68px 10px 0px;
+  width: 100vw;
+  position: absolute;
+  left: 0;
   background: #777777;
+}
+.footer .container {
+  height: 255px;
   color: white;
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: none;
   flex-direction: row;
 }
 @media (max-width: 500px) {
-  .footer {
+  .footer .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -297,55 +305,64 @@ USE WITH CAUTION AND TEST WITH ABANDON */
     padding: 27px 0px 80px;
   }
 }
-.footer .contact h3 {
+.footer .container .contact {
+  padding-top: 65px;
+}
+.footer .container .contact h3 {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: bold;
+  line-height: 23px;
 }
-@media (max-width: 500px) {
-  .footer .contact h3 {
-    line-height: 22px;
-  }
-}
-.footer .contact input {
+.footer .container .contact input {
   width: 100%;
   height: 42px;
   border: none;
-  border-radius: 5px;
-  margin: 17px 0px 10px;
-  padding: 0px 10px;
-  font-size: 15px;
+  border-radius: 4px;
+  margin: 14px 0px 7px;
+  padding: 0px 8px;
+  font-size: 16px;
 }
 @media (max-width: 500px) {
-  .footer .contact input {
+  .footer .container .contact input {
     height: 50px;
     margin-bottom: 14px;
   }
 }
-.footer .contact h4 {
-  font-size: 14px;
+.footer .container .contact h4 {
+  font-size: 13px;
+}
+.footer .container .location {
+  padding-top: 65px;
 }
 @media (max-width: 500px) {
-  .footer .location {
+  .footer .container .location {
     width: 100%;
     padding-left: 15px;
   }
 }
-.footer .location h3 {
+.footer .container .location:nth-child(2) {
+  margin-left: -36px;
+}
+.footer .container .location:nth-child(3) {
+  margin-left: -11px;
+}
+.footer .container .location h3 {
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 6px;
 }
-.footer .location address {
+.footer .container .location address {
   font-size: 14px;
-  line-height: 25px;
+  line-height: 26px;
 }
-.footer .copyright {
+.footer .container .copyright {
   position: absolute;
-  bottom: 13px;
+  bottom: 15px;
+  left: 41%;
   font-size: 12px;
 }
 @media (max-width: 500px) {
-  .footer .copyright {
+  .footer .container .copyright {
     bottom: 28px;
     left: 15px;
   }
@@ -562,13 +579,14 @@ table {
 }
 html {
   font-size: 62.5%;
-  font-family: 'Roboto';
+  font-family: 'Roboto', Arial, sans-serif;
 }
 .container {
   width: 100%;
   max-width: 1024px;
   margin: 0px auto;
   padding: 0px 85px;
+  position: relative;
 }
 @media (max-width: 500px) {
   .container {
