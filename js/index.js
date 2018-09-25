@@ -15,3 +15,40 @@ function navClassToggle() {
     navLinkTag.classList.toggle('disappear');
     navTag.classList.toggle('expanded');
 }
+
+class Tab {
+    constructor(element) {
+    this.element = element;
+    this.dataset = element.dataset.tab;
+
+    this.cardElement = document.querySelector(`.card[data-tab='${this.dataset}']`);
+    // this.itemElement = document.querySelector(`.tabs-item[data-tab='${this.dataset}']`);
+
+    this.card = new Card(this.cardElement);
+   
+    this.element.addEventListener('click', () => this.select());
+    };
+
+    select(){
+        tabs.forEach((tab) => tab.element.classList.remove('activeTab'))
+        this.element.classList.add('activeTab');
+        this.card.select();
+    }
+}
+
+class Card {
+    constructor(element){
+        this.element = element;
+    }
+
+    select(){
+        let cards =  document.querySelectorAll('.card');
+        Array.from(cards).forEach( (card)=> card.classList.remove('appear'));
+      
+        
+        this.element.classList.add('appear');
+    }
+}
+
+let tabs = document.querySelectorAll('.tab');
+tabs = Array.from(tabs).map((tab) => new Tab(tab));
