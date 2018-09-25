@@ -43,6 +43,7 @@ class PageSection {
         this.e.style.opacity = '0';
         this.e.style.transition = 'all 800ms ease-in-out';
 
+        if(window.innerHeight > this.x) this.e.style.opacity = 1;
         window.addEventListener('scroll', e => this.show(e));
     }
 
