@@ -28,8 +28,6 @@ if (tabLinks.length > 0){
     tabLinks[0].tabClicked();
 };
 
-
-
 let navButton = document.querySelector('.hamburger');
 let navBar = document.querySelector('.navigation');
 
@@ -37,3 +35,33 @@ navButton.addEventListener('click', e => {
     navBar.classList.toggle('show-nav');
     navButton.classList.toggle('fa-times');
 })
+
+class PageSection {
+    constructor(element) {
+        this.e = element;
+        this.x = this.e.offsetTop;
+        this.e.style.opacity = '0';
+        this.e.style.transition = 'all 800ms ease-in-out';
+
+        window.addEventListener('scroll', e => this.show(e));
+    }
+
+    show(e){
+        const scrollY = window.scrollY;
+        const height = window.innerHeight;
+        const total = height + scrollY;
+
+        if (total > this.x + 200) {
+            this.e.style.opacity = '1';
+        }
+    }
+
+}
+
+let pageSections = document.querySelectorAll('.cta > *, .projects > *');
+console.log('pageSections', pageSections);
+
+pageSections = Array.from(pageSections).map(n => new PageSection(n));
+
+
+
