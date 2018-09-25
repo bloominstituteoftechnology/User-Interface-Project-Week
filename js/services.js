@@ -31,9 +31,6 @@ class TabContent {
         })
         this.element.classList.toggle('tabs-content-toggle');
         this.element.style.display = "";
-        // if(content[this.index] === this.element){
-        //     content[this.index].classList.toggle('tabs-content-toggle');
-        // }
     }
 }
 
