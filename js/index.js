@@ -10,6 +10,7 @@ hamburger.addEventListener('click', () => {
     menuText.classList.remove('nav-hidden');
     menuText.classList.add('drop-down')
     nav.style.flexDirection = 'column-reverse';
+    nav.style.opacity = '50%';
    
     
 })
@@ -20,15 +21,44 @@ close.addEventListener('click', () => {
     menuText.style.display = 'none';
 })
 
-// let btn = document.querySelector('.nav-button');
-// let navItems = document.querySelector('.nav-items');
-//  btn.addEventListener('click', () => navToggle());
-//  const navToggle =() =>{
-//     navItems.classList.toggle('active');
-//     if (navItems.classList.contains('active')){
-//     btn.src = 'img/nav-hamburger-close.png';
-//     }
-//     else {
-//         btn.src = 'img/nav-hamburger.png';
-//     }
-// }
+
+// Tab Navigator Component 
+
+class Tabs {
+    constructor(element){
+      this.element = element;
+      this.tabData = element.dataset.tab;
+      this.tabContent = document.querySelector(`.card [data-tab='${this.tabData}']`);
+      this.tabContent = new TabContent(this.tabContent);
+      this.element.addEventListener('click', () => {
+        this.select();
+      })
+    }
+    select() {
+      const tabs = document.querySelectorAll('.tab');
+      Array.from(tabs).forEach(tab =>
+      tab.classList.remove('active-tab'));
+      this.element.classList.add('active-tab');
+      this.tabContent.select();
+    }
+  };
+  
+  class TabContent {
+    constructor(element) {
+      this.element = element;
+    }
+    select() {
+      const allContent = document.querySelectorAll('.card');
+      Array.from(allContent).forEach(item =>
+      item.classList.remove('active-tab'));
+      
+      this.element.classList.add('active-tab');
+    }
+  }
+  
+  let tabs = document.querySelectorAll('.tab');
+  
+  tabs = Array.from(tabs).map(tab =>
+  new Tabs(tab));
+  
+  tabs[0].select();
