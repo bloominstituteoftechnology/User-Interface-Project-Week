@@ -60,6 +60,7 @@ table{
 /* Your Code Goes Here */
 //Variables
 @mobile: ~"only screen and (max-width: 500px)";
+@bg-gray: #9FA9B3;
 
 
 //Variables End
@@ -131,13 +132,14 @@ HOME PAGE */
 
 .nav {
   width: 100%;
-  background-color:gray;
+  background-color: @bg-gray;
   position: fixed;
   display: flex;
   justify-content: space-between;
   top: 0;
   height: 50px;
   padding: 10px;
+  z-index: 11;
   
   .logo{
     font-weight: bold;
@@ -153,15 +155,45 @@ HOME PAGE */
   img {
     margin-right: 20px;
   }
-  nav {
-    display: none;
-  }
-
   
-
 }
 
-//NAVIGATION END
+//NAV OVERLAY
+nav {
+  display: flex;
+  .hidden{ 
+    display: none;
+  }
+  width: 100vw;
+  height: 100vh;
+  background-color: @bg-gray;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 11; 
+  position: fixed;
+  opacity: .8;
+
+  .link{
+    text-decoration: none;
+    font-size: 5rem;
+    font-weight: 700;
+    height: 8%;
+    margin: 2%;
+    color: white;
+    z-index: 11;
+
+    &:hover {
+      color: #6d6666;
+      transform: scale(1.5);
+  }
+}
+}
+
+
+
+/* NAVIGATION END */
 
 /* HEADER */
 
@@ -535,7 +567,6 @@ Font Size: 48px
 Line Height: 85px
 Color: #FFFFFF
 Hover Color: #222222
-
 
 
 */
