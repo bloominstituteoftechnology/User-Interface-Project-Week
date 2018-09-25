@@ -81,6 +81,8 @@ table{
 header  {
   img {
     z-index: 0;
+    }
+
   }
   h1{
     font-size: 6.4rem;
@@ -94,11 +96,62 @@ header  {
   z-index: 1;
  }
 
+.mobile-logo-pic {
+  display: none;
+}
+
+@media @phone {
+header{
+  .mobile-logo-pic {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .logo-pic {
+    display: none;
+  }
+  h1 {
+    font-size: 4.5rem;
+    display: flex;
+    padding: 100px 100px 20px 20px;
+    justify-content: center;
+    align-items: flex-start;
+
+  }
+}
 }
 
 .content-box {
     display: flex;
     margin: 60px 0px;
+
+    .mobile-learnmore {
+      display: none;
+    }
+
+    .mobile-viewdesigns {
+      display: none;
+    }
+
+    @media @phone {
+      display: flex;
+      flex-direction: column-reverse;
+
+      .desktop-learnmore {
+        display: none;
+      }
+      .mobile-learnmore {
+        display: block;
+      }
+
+      .desktop-viewdesigns {
+        display: none;
+      }
+
+      .mobile-viewdesigns {
+        display: block;
+      }
+    }
 
   .text-box {
         display: flex;
@@ -106,15 +159,6 @@ header  {
         padding: 40px 4% 50px 0%;
         justify-content: space-between;
 
-        // moved to global.less
-        // h2 {
-        //   font-size: 2.8rem;
-        //   font-weight: bold;
-        // }
-
-        // p {
-        //   font-size: 1.5rem;
-        // }
 
         .button {
           font-size: 1.5rem;
@@ -131,6 +175,10 @@ header  {
   flex-direction: row-reverse;
   .text-box {
     padding: 40px 0% 50px 4%;
+  }
+  @media @phone {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
@@ -167,25 +215,58 @@ header  {
   }
 }
 
-.villas h3 {
+.villas {
+  h3 {
   position: absolute;
   margin: 175px 0px 0px 269px;
-  // top: 270px;
-  // left: 269px;
+}
+  .mobile-villas {
+    display: none;
+  }
+  @media @phone {
+    .desktop-villas {
+      display: none;
+    }
+    .mobile-villas {
+      display: block;
+    }
+  }
 }
 
-.outskirts h3 {
+.outskirts {
+  h3 {
   position: absolute;
   margin: 175px 0px 0px -270px;
-//   top: 270px;
-//   right: 270px;
+}
+.mobile-outskirts {
+  display: none;
+}
+@media @phone {
+  .desktop-outskirts {
+    display: none;
+  }
+  .mobile-outskirts {
+    display: block;
+  }
+}
 }
 
-.blocks h3 {
+.blocks {
+  h3 {
   position: absolute;
   margin: 175px 0px 0px 269px;
-  // top: 270px;
-  // left: 269px;
+}
+.mobile-blocks {
+  display: none;
+}
+@media @phone {
+  .desktop-blocks {
+    display: none;
+  }
+  .mobile-blocks {
+    display: block;
+  }
+}
 }
 
 .footer {
