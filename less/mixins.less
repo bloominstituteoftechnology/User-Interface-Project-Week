@@ -7,6 +7,26 @@
 
 
 
+//mobile query
+@phone: (max-width: 500px);
+
+//this hides desktop images:
+.hide-img(){
+    @media @phone {
+        display:none;
+    }
+}
+
+
+
+//this displays the mobile images:
+.show-img(){
+    @media @phone{
+        width: 100%;
+        display: block;
+    }
+}
+
 
 //mixins:
 
@@ -28,6 +48,10 @@
             background:@dark-text;
             color: @white-text ;
         }
+
+        @media @phone{
+            width :95%;
+        }
 }
 
 .gray-box{
@@ -39,4 +63,11 @@
     padding: 3%;
     bottom: -12%;
     width: 38%;
+    letter-spacing: .75rem;
+    @media @phone {
+        width:95%;
+        padding: 10% 3%;
+        border: none;
+        bottom: -31%;
+    }
 }

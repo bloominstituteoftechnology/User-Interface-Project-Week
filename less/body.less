@@ -5,11 +5,27 @@
     align-items: center;
     font-size: 1.6rem;
     line-height: 2.4rem;
+
+    .desk-img{
+        width: 100%;
+        height: auto;
+       .hide-img();
+    }
+    .mobile-img{
+        display:none;
+       .show-img();
+       
+    }
+
     h3{
         font-weight:bold;
         font-size: 2.8rem;
         color: @dark-text;
         margin-bottom: 20px;
+
+        @media @phone{
+            margin: 20px 0;
+        }
          }
 
 
@@ -20,10 +36,7 @@
         // max-width: 1024px;
 
 
-        img{
-            width: 100%;
-            height: auto;
-        }
+        
         
         .jumbo-words{
             position: absolute;
@@ -39,6 +52,10 @@
                 color: @white-text;
                 font-weight: bold;
                 width:100%;
+                @media @phone{
+                    font-size: 4rem;
+                    line-height: 4rem;
+                }
                 
             }
         }
@@ -51,6 +68,10 @@
         align-items:center;
         max-width: 1300px;
         margin-bottom: 7%;
+
+        @media @phone {
+            padding: 0 4%;
+        }
 
 
     
@@ -68,17 +89,29 @@
             justify-content:space-between;
             align-items:center;
 
-            .small-text{
-
-                width:39%;
+            @media @phone {
                 
-               
-    
+                display:flex;
+                    flex-flow: column;
+                    align-items:center;
+            }
+
+            .small-text{
+                width:39%;
+                @media @phone{
+                    width: 95%;
+                    display:flex;
+                    flex-flow: column;
+                    align-items:center;
+                }
             }
          }
          img{
             width:48%;
             height:auto;
+            @media @phone{
+                width: 100%;
+            }
             }
             p{
             margin: 8% 0;
@@ -111,15 +144,24 @@
                 
                 h4{
                     right: 0%;
+                    @media @phone {
+                        right: 2%;
+                    }
                  }
             }
             .left{
                 h4{
                     left: 0%;
+                    @media @phone {
+                        left: 2%;
+                    }
                 }
             }
             p{
                 max-width: 50%;
+                @media @phone{
+                    max-width: 90%;
+                }
             }
             
             .recent-text{
@@ -128,6 +170,9 @@
                 flex-flow: column wrap;
                 align-items: center;
                 margin: 5% 0;
+                @media @phone{
+                    margin: 17% 0;
+                }
             }
             
 
