@@ -140,6 +140,7 @@ body {
   font-family: Roboto, Arial, sans-serif;
   line-height: 1.2;
   overflow-x: hidden;
+  animation: 2s fadeIn;
 }
 .footer-container {
   background: #828282;
@@ -266,9 +267,9 @@ nav .nav-wrapper .logo a {
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+  justify-content: flex-end;
   color: #fff;
+  flex-direction: column;
 }
 @media (max-width: 768px) {
   .home .landing-container {
@@ -278,20 +279,26 @@ nav .nav-wrapper .logo a {
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    justify-content: flex-end;
     color: #fff;
+    flex-direction: column;
   }
 }
 .home .landing-container h1 {
   width: 80%;
   margin: 0 auto;
   font-size: 5rem;
-  margin-bottom: 80px;
 }
 @media (max-width: 768px) {
   .home .landing-container h1 {
     font-size: 2.5rem;
+  }
+}
+.home .landing-container h1:last-of-type {
+  margin-bottom: 80px;
+}
+@media (max-width: 768px) {
+  .home .landing-container h1:last-of-type {
     margin-bottom: 40px;
   }
 }
@@ -481,6 +488,13 @@ nav .nav-wrapper .logo a {
   display: flex;
   align-items: flex-end;
 }
+@media (max-width: 768px) {
+  .services .services-header {
+    background: url("../img/services/services-mobile-jumbotron.png");
+    background-size: cover;
+    background-position: center;
+  }
+}
 .services .services-header h1 {
   font-size: 64px;
   line-height: 75px;
@@ -492,6 +506,11 @@ nav .nav-wrapper .logo a {
   width: 80%;
   margin: 50px auto;
 }
+@media (max-width: 768px) {
+  .services .services-section {
+    width: 90%;
+  }
+}
 .services .services-section h3 {
   font-size: 1.3rem;
   color: #222;
@@ -501,6 +520,13 @@ nav .nav-wrapper .logo a {
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .services .tabs {
+    width: 90%;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 .services .tabs .tab {
   border: 1px solid #222;
@@ -514,6 +540,11 @@ nav .nav-wrapper .logo a {
   color: #fff;
   background: #222222;
 }
+@media (max-width: 768px) {
+  .services .tabs .tab {
+    margin-bottom: 20px;
+  }
+}
 .services .tabs .active-tab {
   background: #5e9fb9;
   color: white;
@@ -523,6 +554,12 @@ nav .nav-wrapper .logo a {
   margin: 50px auto;
   display: flex;
 }
+@media (max-width: 768px) {
+  .services .card {
+    width: 90%;
+    flex-direction: column;
+  }
+}
 .services .card h1 {
   font-weight: 600;
   font-size: 1.4rem;
@@ -530,4 +567,61 @@ nav .nav-wrapper .logo a {
 .services .card p {
   margin: 20px 0;
   margin-right: 20px;
+}
+.services .card img {
+  display: block;
+  margin: auto;
+}
+.contact .landing-container {
+  background: url("../img/contact/contact-jumbotron.png");
+  height: 30vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  flex-direction: column;
+}
+.contact .landing-container h1 {
+  font-size: 3rem;
+  width: 80%;
+  margin: 0 auto 30px;
+}
+.contact h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 30px 0;
+}
+.contact .form-wrapper {
+  width: 80%;
+  margin: auto;
+}
+.contact .form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.contact .form-wrapper form input,
+.contact .form-wrapper form select,
+.contact .form-wrapper form textarea {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 0;
+}
+.contact .form-wrapper form #submit {
+  width: 100px;
+  margin: 20px 0;
+  font-size: 1.3rem;
+  background: none;
+  cursor: pointer;
+}
+.contact .form-wrapper form h3 {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+.contact .form-wrapper form p {
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
