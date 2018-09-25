@@ -1,4 +1,15 @@
 // JS goes here
+let nav = document.querySelector(".nav-expand");
+let navLinks = document.querySelector(".nav-links");
+let navX = document.querySelector(".navclose");
+
+nav.addEventListener("click", () => {
+    navLinks.classList.toggle("nav-extended");
+})
+
+navX.addEventListener("click", () => {
+    navLinks.classList.toggle("nav-extended");
+})
 
 class TabButton {
     constructor(element) {
