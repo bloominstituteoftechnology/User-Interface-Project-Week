@@ -105,9 +105,15 @@
 .recent-projects{
     color:black;
     padding: 5% 8%;
+        @media @phone{
+            padding:0;
+        } 
     h3{
         color:black;
+        margin-top:10%;
         margin-bottom:5%;
+        margin-left:5%;
+        font-weight: bold;
     }
     .project{
         &-intro{
@@ -115,37 +121,73 @@
             img{
                 width:100%;
             }
-            .right{
+            .right{  
+                display: flex;
+                align-items: center;
                 background: #D8D8D8;
-                width:37%;
-                padding:4% 0;
+                height: 95px;
+                width: 320px;
                 font-size:2rem;
                 letter-spacing:1rem;
                 text-transform: uppercase;
-                text-align:center;
-                position:absolute;
-                right:0;
-                top:185px;
+                justify-content: center;
+                position: absolute;
+                top: 74%;
+                right: 0%;
+                @media @phone{
+                    top: 95%;
+                    right: 10%;
+                    width: 400px;
+                }
             }
             .left{
+                display: flex;
+                align-items: center;
                 background: #D8D8D8;
-                width:37%;
-                padding:4% 0;
+                height: 95px;
+                width: 320px;
                 font-size:2rem;
                 letter-spacing:1rem;
                 text-transform: uppercase;
-                text-align:center;
-                position:absolute;
-                left:0;
-                top:185px;
+                justify-content: center;
+                position: absolute;
+                top: 74%;
+                left: 0%;
+                @media @phone{
+                    top: 95%;
+                    left: 10%;
+                    width: 400px;
+                }
             }
+            
         }
         
         &-text{
             width:50%;
             margin:0 auto;
             padding-top:10%;
-            margin-bottom:10%;  
+            margin-bottom:10%; 
+            @media @phone{
+                width:100%;
+                margin:0 auto;
+                padding:25% 8% 0;
+            }
+            p{
+                line-height:30px;
+                font-size: 2rem;
+            }  
+        }
+        &-desktop{
+            @media @phone{
+                display: none;
+            } 
+        }
+        &-mobile{
+            display: none;
+            @media @phone{
+                display: flex;
+                width:100%;
+            }
         }
     }
 }
