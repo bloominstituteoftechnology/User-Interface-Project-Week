@@ -61,4 +61,4 @@ class TabItem {
 let links = document.querySelectorAll('.tabs-link');
 links = Array.from(links).map( link => new TabLink(link));
 
-links[0].selected()
+links[1].selected();
