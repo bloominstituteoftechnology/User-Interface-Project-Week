@@ -8,9 +8,26 @@
         position: absolute;
         bottom: 50px;
         left: 80px;
+        @media @mobile {
+            font-size: 1rem;
+            line-height: 25px;
+            display: block;
+            left: 0;
+            bottom: 0;
+        }
     }
-    img {
+    .jumbotron {
         width: 100%;
+        @media screen {
+            display: none;
+        }
+    }
+    .mobileImage {
+        display: none;
+        @media screen {
+            display: block;
+            width: 100%;
+        }
     }
 }
 
@@ -20,31 +37,60 @@
     margin: 0 auto;
     font-size: 1.6rem;
     line-height: 24px;
-    // border: 1px solid red;
+    @media @mobile {
+        width: 100%;
+        // border: 1px solid blue;
+    }
 }
 
 .information {
     display: flex;
     margin-top: 50px;
+    @media @mobile {
+        flex-direction: column-reverse;
+        width: 100%;
+        margin-top: 37px;
+    }
     .text-info {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         padding: 35px 0;
+        @media @mobile {
+            margin: 0 14px;
+        }
         h2 {
             font-weight: bold;
             font-size: 2.8rem;
             color: #222222;
+            @media @mobile {
+                font-size: 2.4rem;
+                margin-bottom: 10px;
+            }
         }
         .button {
             border: 1px solid #222222;
             width: 138px;
             text-align: center;
             padding: 10px;
+            @media @mobile {
+                width: 100%;
+                margin-top: 32px;
+            }
         }
     }
     img {
         margin-left: 30px;
+        @media @mobile {
+            display: none;
+            margin: 0 auto;
+        }
+    }
+    .mobileImage {
+        display: none;
+        @media @mobile {
+            display: block;
+        }
     }
 }
 
@@ -54,6 +100,14 @@
     img {
         margin-right: 30px;
         margin-left: 0;
+        @media @mobile {
+            display: none;
+            margin: 0 auto;
+        }
+    }
+    @media @mobile {
+        flex-direction: column-reverse;
+        margin: 0 auto;
     }
 }
 
@@ -68,11 +122,23 @@
         font-size: 2.8rem;
         color: #222222;
         margin: 100px 0 40px 0;
+        @media @mobile {
+            margin: 15px;
+        }
     }
     .project-image {
         position: relative;
         img {
             width: 100%;
+            @media @mobile {
+                display: none;
+                margin-top: 32px
+            }
+        }
+        .mobileImage {
+            @media @mobile {
+                display: block;
+            }
         }
         h3 {
             background-color: #D8D8D8;
@@ -84,9 +150,18 @@
             padding: 36px 62px;
             right: 0;
             bottom: -38px;
+            @media @mobile {
+                bottom: -84px;
+                right: 18px;
+                padding: 36px;
+                width: 283px;
+            }
         }
         .middle {
             right: 558px;
+            @media @mobile {
+                right: 18px;
+            }
         }
     }
     .project-text {
@@ -94,6 +169,11 @@
         margin: 99px auto;
         max-width: 470px;
         width: 100%;
+        @media @mobile {
+            margin: 112px auto 4px auto;
+            padding: 0 15px;
+            max-width: 320px;
+        }
         .bottom-text {
             margin-top: 44px;
         }
