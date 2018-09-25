@@ -4,7 +4,7 @@ class Tablinks{
         this.index = index;
         this.data = this.element.dataset.tab;
         this.tabContent = document.querySelector(`.tabs-content[data-tab="${this.data}"]`);
-        this.tabContent = new TabContent(this.tabContent);
+        this.tabContent = new TabContent(this.tabContent,this.index);
         this.element.addEventListener('click', () => {
             this.select();
         })
@@ -20,7 +20,8 @@ class Tablinks{
 }
 
 class TabContent {
-    constructor(item){
+    constructor(item,index){
+        this.index = index;
         this.element = item;
     }
     select() {
@@ -28,7 +29,11 @@ class TabContent {
         content.forEach( (item) => {
             item.style.display = "none";  
         })
-        this.element.style.display = "flex";
+        this.element.classList.toggle('tabs-content-toggle');
+        this.element.style.display = "";
+        // if(content[this.index] === this.element){
+        //     content[this.index].classList.toggle('tabs-content-toggle');
+        // }
     }
 }
 
@@ -36,4 +41,4 @@ class TabContent {
 
 
 let tablinks = document.querySelectorAll('.button');
-tablinks = Array.from(tablinks).map( (item) => new Tablinks(item));
+tablinks = Array.from(tablinks).map( (item,index) => new Tablinks(item,index));
