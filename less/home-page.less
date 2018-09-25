@@ -29,24 +29,43 @@
   .intro-section {
     width: 87.5%;
     margin: 0 auto;
+    @media @mobile {
+      width: 90%;
+    }
     .intro-content {
       .flex();
       padding: 50px 0%;
       justify-content: space-between;
+      @media @mobile {
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 0;
+      }
       .text-content {
         width: 50%;
         .flex();
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-around;
+        @media @mobile {
+          width: 100%;
+        }
         .header {
           font-size: 2.4rem;
           font-weight: bold;
           padding: 10px 0;
+          @media @mobile {
+            font-size: 3.75rem;
+          }
         }
 
         p {
           padding: 20px 0;
+          @media @mobile {
+            font-size: 2.5rem;
+            line-height: 38px;
+          }
         }
 
         .button {
@@ -55,10 +74,27 @@
           margin: 12px;
           width: 32%;
           border: 1px solid black;
+          @media @mobile {
+            padding: 25px 0;
+            margin: 20px 0;
+            width: 100%;
+            font-size: 2.4rem;
+          }
         }
       }
       .image-content {
         width: 46%;
+        @media @mobile {
+          width: 100%;
+          overflow: hidden;
+          margin-bottom: 35px;
+          height: 430px;
+        }
+      }
+    }
+    .reverse {
+      @media @mobile {
+        flex-direction: column;
       }
     }
   }
