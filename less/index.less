@@ -59,23 +59,112 @@ table{
 
 /* Your Code Goes Here */
 
-@import 'variables';
-@import 'mixins';
-@import 'navigation';
+@import './variables.less';
+@import './mixins.less';
+@import './navigation.less';
 
 * {
-  box-sizing: border-box;
+  box-sizing: @borderBox;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Roboto, Arial, sans-serif;
+  color: #222222;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
 }
 
 .container {
+  font-size: 1.2rem;
   max-width: 1024px;
-  //flex(center, center, column);
+  .flex(center, center, column);
+  margin: 0 auto;
+  border: 2px solid black;
+
   .nav-container {
   display: none;
   }
+
   header {
-    //flex(center, center, row);
+    .flex(center, center, row);
     width: 100%;
+    position: relative;
+    //border: 2px solid blue;
+
+    div {
+      position: absolute;
+      left: 60px;
+      top: 380px;
+      z-index: 100;
+
+      p {
+        font-size: 5.5rem;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+    }
+  }
+  div.main-content {
+
+    article.more-info1 {
+      .flex(center,center,row);
+
+      section.left {
+        width: 43%;
+        //border: 2px solid red;
+       
+
+        h2 {
+          margin-top: 30px;
+          margin-bottom: 15px;
+        }
+        P {
+          margin-bottom: 50px;
+
+        }
+        a {
+          .btn;
+        }
+      }
+      img.right {
+        width: 43%;
+        margin-top: 35px;
+        //border: 2px solid blue;
+      }
+    }
+
+    article.more-info2 {
+      .flex(center,center,row);
+
+      img.left {
+        width: 43%;
+        //border: 2px solid red;
+        margin-top: 80px;
+       
+      }
+      section.right {
+        width: 43%;
+        margin-top: 35px;
+        margin-left: 25px;
+        //border: 2px solid blue;
+
+        h2 {
+          margin-top: 30px;
+          margin-bottom: 15px;
+        }
+        P {
+          margin-bottom: 50px;
+
+        }
+        a {
+          .btn;
+        }
+      }
+    }
   }
 }
 
