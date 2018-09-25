@@ -7,6 +7,33 @@ hamburger.addEventListener('click', () => {
   hamburger.src.includes('img/nav-hamburger.png') ? hamburger.src = 'img/nav-hamburger-close.png' : hamburger.src = 'img/nav-hamburger.png';
 })
 
+// scrolling animations
+ScrollReveal().reveal('.scroll1', {
+  origin: 'left',
+  duration: 2000,
+  distance: '300px',
+})
+ScrollReveal().reveal('.scroll2', {
+  origin: 'right',
+  duration: 2000,
+  distance: '300px',
+})
+ScrollReveal().reveal('.top-article', {
+  origin: 'left',
+  duration: 2000,
+  distance: '300px',
+})
+ScrollReveal().reveal('.mid-article', {
+  origin: 'right',
+  duration: 2000,
+  distance: '300px',
+})
+ScrollReveal().reveal('.bottom-article', {
+  origin: 'left',
+  duration: 2000,
+  distance: '300px',
+})
+
 // services page tab content JS
 class TabLink {
   constructor(element) {
