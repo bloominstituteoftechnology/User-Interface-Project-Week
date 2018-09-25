@@ -1,6 +1,7 @@
-// Navigation JS
+// Navigation JS -----------------------------------------
 let dropdown = document.querySelector(".dropdown-button");
 let content = document.querySelector(".dropdown-content");
+let header = document.querySelector("header");
 content.style.opacity = '0';
 content.style.visibility = 'hidden';
 
@@ -15,11 +16,15 @@ dropdown.addEventListener('click', function() {
     if (content.classList.contains('dropdown-hidden') === true) {
         dropdown.src = "./img/nav-hamburger.png";
         TweenMax.to(content, 0.5, {autoAlpha:0, y:0});
+        header.style.opacity = "1";
+
     }
     else {
-        TweenMax.to(content, 0.5, {autoAlpha:0.9, y:0});
+        TweenMax.to(content, 0.5, {autoAlpha:0.98, y:0});
+        header.style.opacity = "0.98";
     }
 });
+
 
 // replacing images on mobile
 window.addEventListener('resize', function() {
