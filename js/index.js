@@ -29,14 +29,29 @@ links = Array.from(links).map(link => new TabItem(link));
 const hamburger = document.querySelector('.nav-hamburger');
 const exitIcon = document.querySelector('.exit-icon');
 const navPage = document.querySelector('.nav-page');
+const header = document.querySelector('.txt-jumbo');
+const main = document.querySelector('.main-content');
+const footer = document.querySelector('.footer');
+const container = document.querySelector('.container');
+
+let bodyToggle = () => {
+    header.classList.toggle('hide');
+    main.classList.toggle('.hide');
+    footer.classList.toggle('.hide');
+};
+
 hamburger.addEventListener('click', (e) => {
     e.target.classList.toggle('hide');
+    container.style.visibility = "hidden";
     exitIcon.classList.toggle('hide');
     navPage.classList.toggle('hide');
+    
 
 });
 exitIcon.addEventListener('click', (e) => {
     e.target.classList.toggle('hide');
     hamburger.classList.toggle('hide');
     navPage.classList.toggle('hide');
+    container.style.visibility = "visible";
+    
 });
