@@ -1,27 +1,17 @@
 .home {
   // landing page styles
   .landing-container {
-    background: url("../img/home/home-jumbotron.png");
-    height: 85vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    color: #fff;
-    @media (max-width: 550px) {
-      height: 50vh;
-      background: url("../img/home/home-mobile-jumbotron.png");
-      background-size: cover;
-      background-position: center;
+    .landing-mixin(url("../img/home/home-jumbotron.png"), 85vh);
+
+    @media @mobile {
+      .landing-mixin(url("../img/home/home-mobile-jumbotron.png"), 50vh);
     }
     h1 {
       width: 80%;
       margin: 0 auto;
       font-size: 5rem;
       margin-bottom: 80px;
-      @media (max-width: 550px) {
+      @media @mobile {
         font-size: 2.5rem;
         margin-bottom: 40px;
       }
@@ -33,7 +23,7 @@
       display: flex;
       width: 80%;
       margin: 50px auto;
-      @media (max-width: 550px) {
+      @media @mobile {
         width: 90%;
         flex-direction: column;
       }
@@ -42,7 +32,7 @@
         flex-direction: column;
         width: 50%;
         align-self: center;
-        @media (max-width: 550px) {
+        @media @mobile {
           width: 100%;
         }
 
@@ -50,7 +40,7 @@
           color: #222;
           font-size: 1.7rem;
           font-weight: 700;
-          @media (max-width: 550px) {
+          @media @mobile {
             margin-bottom: 20px;
           }
         }
@@ -69,7 +59,7 @@
           padding: 20px;
           text-decoration: none;
           font-size: 1.2rem;
-          @media (max-width: 550px) {
+          @media @mobile {
             width: 90%;
             display: block;
           }
@@ -77,24 +67,24 @@
       }
       .main-content-img {
         width: 50%;
-        @media (max-width: 550px) {
+        @media @mobile {
           img:first-of-type {
             display: none;
           }
         }
         img:last-of-type {
           display: none;
-          @media (max-width: 550px) {
+          @media @mobile {
             display: block;
           }
         }
-        @media (max-width: 550px) {
+        @media @mobile {
           width: 100%;
           margin-bottom: 20px;
         }
         img {
           width: 80%;
-          @media (max-width: 550px) {
+          @media @mobile {
             display: block;
             margin: auto;
             width: 100%;
@@ -103,7 +93,7 @@
       }
     }
 
-    @media (max-width: 550px) {
+    @media @mobile {
       .main-content-1 {
         order: -1;
       }
@@ -116,18 +106,18 @@
     padding: 50px 0;
     width: 80%;
     margin: auto;
-    @media (max-width: 550px) {
+    @media @mobile {
       width: 100%;
     }
     .recent-projects {
-      @media (max-width: 550px) {
+      @media @mobile {
         img:first-of-type {
           display: none;
         }
       }
       img:last-of-type {
         display: none;
-        @media (max-width: 550px) {
+        @media @mobile {
           display: block;
         }
       }
@@ -135,7 +125,7 @@
         margin-bottom: 40px;
         font-weight: 800;
         font-size: 1.7rem;
-        @media (max-width: 550px) {
+        @media @mobile {
           width: 90%;
           margin: 0 auto 40px;
         }
@@ -145,7 +135,7 @@
         margin: auto;
         font-weight: 500;
         font-size: 1.3rem;
-        @media (max-width: 550px) {
+        @media @mobile {
           width: 90%;
         }
       }
@@ -167,7 +157,7 @@
           font-size: 2rem;
           font-weight: 500;
           letter-spacing: 10px;
-          @media (max-width: 550px) {
+          @media @mobile {
             bottom: -100px;
             margin: auto;
             left: 20px;
@@ -181,7 +171,7 @@
         h3 {
           left: 0;
           right: initial;
-          @media (max-width: 550px) {
+          @media @mobile {
             bottom: -100px;
             margin: auto;
             left: 20px;
