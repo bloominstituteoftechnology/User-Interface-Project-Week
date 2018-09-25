@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Contact Us</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/index.css">
@@ -23,7 +24,7 @@
 				<img src="img/nav-hamburger-close.png" class="nav-x" alt="x icon">
 			</div>
 			<div class="hamburger-menu">
-				<a href="/">Home</a>
+				<a href="index.html">Home</a>
 				<a href="services.html">Services</a>
 				<a href="#">Contact</a>
 			</div>
@@ -41,12 +42,12 @@
 		<div class="form-wrapper">
 			<div class="contact-form">
 				<h2>Get in Touch</h2>
-				<form action="">
+				<form action="contactform.php" method="POST">
 					<h3>Email Address</h3>
-					<input type="email" placeholder="Enter Email">
+					<input type="email" placeholder="Enter Email" name="email">
 					<p>We'll never share your email with anyone else.</p>
 					<h3>How many buildings do you need planned?</h3>
-					<select name="Select" id="select">
+					<select name="inputSelect" id="select">
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -56,19 +57,19 @@
 					<h3>Provide a brief overview of your project needs:</h3>
 					<textarea name="message" id="message" cols="30" rows="10"></textarea>
 					<div>
-						<input type="radio" name="smallBusiness" value="smallBusiness">
+						<input type="radio" value="smallBusiness" name="smallBusiness" value="smallBusiness">
 						<span>I am a small business</span>
 					</div>
 					<div>
-						<input type="radio" name="residential" value="residential">
+						<input type="radio" name="residential" value="residential" name="residential">
 						<span>I am a residential owner</span>
 					</div>
 					<div>
 						<input type="radio" name="corporation" value="corporation">
 						<span>I am a corporation</span>
 					</div>
-
-					<input type="submit" id="submit">
+					
+					<input type="submit" id="submit" name="submit">
 				</form>
 			</div>
 			<!-- where we work section -->
