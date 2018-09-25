@@ -165,7 +165,9 @@ function fadeOut(element) {
 	}, 50);
 }
 //fade out fullscreen loader on window load
-window.addEventListener('load', fadeOut('.fullscreen-loader'))
+window.addEventListener('load', function() {
+	fadeOut('.fullscreen-loader');
+});
 
 </script>
 </body>
