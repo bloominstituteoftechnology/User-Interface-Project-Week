@@ -1,4 +1,6 @@
-// JS goes here
+// ------------------
+//    TAB NAVIGATOR
+//-------------------
 class TabLink {
     constructor(element){
         this.element = element;
