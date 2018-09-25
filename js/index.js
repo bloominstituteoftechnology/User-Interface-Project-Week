@@ -1,6 +1,5 @@
 // Navigation JS
 let dropdown = document.querySelector(".dropdown-button");
-
 dropdown.addEventListener('click', function() {
     // change the hamburger to an X
     dropdown.src = "../img/nav-hamburger-close.png";
@@ -14,8 +13,6 @@ dropdown.addEventListener('click', function() {
         dropdown.src = "../img/nav-hamburger.png";
     }
 });
-
-
 
 // replacing images on mobile
 window.addEventListener('resize', function() {
