@@ -1,11 +1,19 @@
 .tab-navigator {
   width: 100%;
   margin-bottom: 10rem;
+  @media @phone {
+    width: 90%;
+    margin: 0 auto 5rem;
+  }
 
   .tabs {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5rem;
+
+    @media @phone {
+      flex-direction: column;
+    }
 
     .tab {
       .btn-creator(@main-bg, @main-color, 20.5%, 1px solid @main-color);
@@ -13,6 +21,14 @@
       font-size: 1.8rem;
       display: flex;
       justify-content: center;
+      @media @phone {
+        width: 100%;
+        font-size: 2rem;
+        padding: 10px;
+        &:not(:last-child) {
+          margin-bottom: 2.5rem;
+        }
+      }
     }
 
     .tab-active {
@@ -25,10 +41,17 @@
     .card {
       display: none;
       align-items: center;
+      flex-wrap: wrap;
 
       &__content {
         width: 48%;
         margin-right: 4%;
+
+        @media @phone {
+          width: 100%;
+          margin-right: 0%;
+          margin-bottom: 5rem;
+        }
         p:first-of-type {
           margin-bottom: 3.5rem;
         }
@@ -37,10 +60,17 @@
       &__header {
         .sub-heading();
         margin-bottom: 2rem;
+        @media @phone {
+          font-size: 2.4rem;
+        }
       }
 
       &__img {
         width: 48%;
+        @media @phone {
+          width: 100%;
+          margin-right: 0%;
+        }
       }
     }
 
