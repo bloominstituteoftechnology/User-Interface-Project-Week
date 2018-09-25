@@ -6,6 +6,7 @@ header {
   .header-contents {
     background: @headerBG;
     z-index: 100;
+    opacity: .9;
 
     padding: 14px 85px;
     .flex(row, space-between, center);
@@ -14,12 +15,31 @@ header {
       letter-spacing: 0.11rem;
       color: @colorBG;
     }
+  }
+}
     .nav-items {
       display: none;
     }
-  }
-}
-
+    .active{
+      .flex(column, flex-start, center);
+      position: fixed;
+      background: @headerBG;
+      width: 100vw;
+      height: 100vh;
+      opacity: .9;
+      padding: 164px 0;
+      .nav-item{
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 4.8rem;
+        color: @colorBG;
+        line-height: 8.5rem;
+        width: 13%;
+        &:hover{
+          color: @colorDefault;
+        }
+      }
+    }
 footer {
   background: @footerBG;
   color: @colorBG;
