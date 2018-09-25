@@ -11,7 +11,7 @@ x Font Family: Roboto, Arial, sans-serif
 ## Page Specific
 
 ### Home Page
-- Recent Projects Gray Square: #D8D8D8
+x Recent Projects Gray Square: #D8D8D8
 - Button borders: #222222
 
 ### Services Page
@@ -38,9 +38,9 @@ x Line Height: 75px
 x Color: #FFFFFF
 
 ### Sub Headers
-- Font Weight: Bold
-- Font Size: 28px
-- Color: #222222
+x Font Weight: Bold
+x Font Size: 28px
+x Color: #222222
    
 ### Footer Headings
 - Font Weight: Regular
