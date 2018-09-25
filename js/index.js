@@ -19,7 +19,7 @@ closeButton.addEventListener('click', function(){
 }); 
 // END OF NAV BAR
 
-
+// Start of Services Tabs Section
 class Tab {
     constructor(element) {
       this.element = element;
@@ -83,30 +83,4 @@ class Tab {
     return new Tab(tab);
   });
   console.log(tabs);
-
-
-// BAD TABS SECTION SAVE FOR REFERENCE
-// class ButtonSelector{
-//     constructor(element){
-//         this.element = element;
-//         this.data = this.element.innerHTML;
-//         this.card = document.querySelector(`#${this.data}-tab`);
-//         this.element.addEventListener('click', this.Clicks.bind(this));
-//     }
-//     Clicks(){
-//         const allButtonSelector = document.querySelectorAll('.button');
-//         allButtonSelector.forEach(function(element){
-//             element.classList.remove('activeButton')
-//         });
-//         this.element.classList.add('activeButton');
-//          const allInfoBox = document.querySelectorAll('.infoBox');
-//         allInfoBox.forEach(function(element){
-//             element.style.display = 'none'
-//         });
-//         this.card.style.display = 'none';
-//     }
-// };
-//  let tabList = document.querySelectorAll('.button');
-//  tabList = Array.from(tabList).map(function(element){
-//     return new ButtonSelector(element)
-// });
+//End of Services Tabs Section
