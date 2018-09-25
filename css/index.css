@@ -182,6 +182,13 @@ h4 {
   width: 100%;
   height: 50px;
   position: fixed;
+  z-index: 1;
+}
+@media (max-width: 500px) {
+  .main-nav {
+    position: fixed;
+    height: 100px;
+  }
 }
 .main-nav .nav-contain {
   display: flex;
@@ -210,21 +217,44 @@ h4 {
 .menu:hover {
   color: #222222;
 }
-.home .image-tag {
-  width: 100%;
-  background-image: url(../img/home/home-jumbotron.png);
-  height: 598px;
+.home .image-tag .img-text-contain {
+  position: relative;
 }
-.home .image-tag .intro {
-  display: flex;
-  width: 50%;
+.home .image-tag .img-text-contain .jumbo-main {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .home .image-tag .img-text-contain .jumbo-main {
+    display: none;
+  }
+}
+.home .image-tag .img-text-contain .mobile-main {
+  display: none;
+}
+@media (max-width: 500px) {
+  .home .image-tag .img-text-contain .mobile-main {
+    display: flex;
+    width: 100%;
+  }
+}
+.home .image-tag .img-text-contain .intro {
+  width: 285px;
   color: #FFFFFF;
-  justify-content: flex-end;
   flex-direction: column;
-  height: 100%;
+  height: 270px;
+  position: absolute;
+  bottom: 1%;
+  left: 0%;
   font-weight: bold;
   line-height: 75px;
   padding: 0 0 49px 8%;
+  display: flex;
+}
+@media (max-width: 500px) {
+  .home .image-tag .img-text-contain .intro {
+    font-size: 3.6rem;
+    line-height: 76px;
+  }
 }
 .home .main-content {
   margin: 47px 8% 0 8%;
