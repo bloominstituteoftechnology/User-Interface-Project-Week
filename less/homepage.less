@@ -5,10 +5,16 @@
 .container.home{
     display: flex;
     flex-direction: column;
+
     h2 {
         font-size: 2.8rem;
         font-weight: bold;
         color: @subheading-color;
+        @media @mobile {
+            font-size: 2.4rem;
+            width: 29rem;
+            align-self: center;
+        }
     }
 }
 
@@ -40,29 +46,63 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    .about-item {
+}
+.about-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @media @mobile {
+        flex-direction: column;
+        .button {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    & > * {
+        width: 48%;
+        margin: 5rem 0;
+        @media @mobile {
+            width: 29rem;
+            margin: 2rem 0;
+        }
+    }
+    .img-header {
+        width: 41rem;
+        height: 27.5rem;
+        @media @mobile {
+            width: 29rem;
+            height: 27.5rem;
+        }
+    }
+    &:nth-child(1){
+        .img-header {
+            background-image: url('/img/home/home-img-1.png');
+            @media @mobile {
+                background-image: url('/img/home/home-mobile-img-1.png');
+            }
+        }
+    }
+    &:nth-child(2){
+        .img-header {
+            background-image: url('/img/home/home-img-2.png');
+            @media @mobile {
+                background-image: url('/img/home/home-mobile-img-2.png');
+            }
+        }
+    }
+    div {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        & > * {
-            width: 48%;
-            margin: 5rem 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        p {
+            margin: 2rem 0;
         }
-        div {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            p {
-                margin: 2rem 0;
-            }
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-        &:nth-child(1) {
-            flex-direction: row-reverse;
+    }
+    &:nth-child(1) {
+        flex-direction: row-reverse;
+        @media @mobile {
+            flex-direction: column;   
         }
     }
 }
@@ -73,7 +113,10 @@
     flex-direction: column;
     margin: 0 auto;
     h2 {
-        margin: 5rem 0rem;
+        margin: 5rem 0;
+        @media @mobile {
+            margin: 2rem 0;
+        }
     }
 }
 .project {
