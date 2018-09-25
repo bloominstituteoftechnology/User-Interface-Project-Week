@@ -6,36 +6,44 @@ v2.0b1 | 201101
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
 .header {
-  width: 100%;
   height: 50px;
   background-color: #8E9AA6;
-  padding: 0px 85px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.header .container {
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  position: fixed;
-  z-index: 3;
 }
 @media (max-width: 320px) {
-  .header {
+  .header .container {
     padding: 0px 15px;
     position: relative;
   }
 }
-.header h2 {
+.header .container h2 {
   font-size: 24px;
   font-weight: 500;
 }
-.header i {
+.header .container i {
   font-size: 29px;
 }
-.header i:hover {
+.header .container i:hover {
   cursor: pointer;
 }
 .navigation {
   position: fixed;
+  left: 0;
+  top: 49px;
   z-index: 2;
   width: 100vw;
   height: 100%;
@@ -62,12 +70,20 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   display: flex;
 }
 .splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   width: 100%;
+  max-width: 1024px;
+  height: auto;
+  max-height: 100vh;
   position: relative;
+  margin: 0 auto;
 }
 .splash img {
-  width: 100%;
-  max-height: 100vh;
+  width: 100vw;
+  max-width: 1024px;
 }
 @media (max-width: 320px) {
   .splash img {
@@ -78,7 +94,7 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   position: absolute;
   color: white;
   bottom: 50px;
-  left: 82px;
+  left: 0px;
 }
 @media (max-width: 320px) {
   .splash .splash-title {
@@ -99,6 +115,7 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 }
 .cta {
   width: 100%;
+  margin-top: 50px;
 }
 .cta section {
   width: 100%;
@@ -541,8 +558,8 @@ html {
 .container {
   width: 100%;
   max-width: 1024px;
+  margin: 0px auto;
   padding: 0px 85px;
-  margin: 50px auto 0px;
 }
 @media (max-width: 320px) {
   .container {
