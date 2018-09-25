@@ -152,32 +152,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.container {
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-}
-.container .top-space {
-  margin-top: 70px;
-}
 /* Your Code Goes Here */
-.nav-container {
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-}
 .navigation {
+  top: 0;
   position: fixed;
-  display: flex;
-  align-items: center;
   width: 100%;
   height: 65px;
-  padding: 15px;
   background-color: #98a4af;
-  z-index: 9999;
+  z-index: 3;
 }
-.navigation .nav-logo {
+.navigation .nav-container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 15px auto;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+.navigation .nav-container .nav-logo {
   width: 50%;
   font-family: 'Roboto', 'Arial', sans-serif;
   color: #fff;
@@ -185,28 +177,31 @@ table {
   font-weight: bold;
   line-height: 1rem;
 }
-.navigation .nav-hamburger {
+.navigation .nav-container .nav-hamburger {
   width: 50%;
   text-align: right;
+  cursor: pointer;
 }
-.menu {
+.navigation .menu {
   display: none;
   position: absolute;
   top: 65px;
   width: 100%;
-  height: 100%;
+  height: auto;
   background-color: #98a4af;
   color: #fff;
+  cursor: pointer;
   z-index: 2;
+  border: 1px solid blue;
 }
-.menu ul {
+.navigation .menu ul {
   margin-top: 100px;
 }
-.menu ul li {
+.navigation .menu ul li {
   margin: 20px auto;
   width: 30%;
 }
-.menu ul li a {
+.navigation .menu ul li a {
   text-decoration: none;
   font-family: 'Roboto', 'Arial', sans-serif;
   color: #fff;
@@ -214,12 +209,19 @@ table {
   font-weight: bold;
   line-height: 5.3125rem;
 }
-.menu ul li a:hover {
+.navigation .menu ul li a:hover {
   color: #222222;
 }
-.menu-open {
+.navigation .menu-open {
   display: block;
 }
-.body-modal-open {
+.navigation .body-modal-open {
   overflow: hidden;
+}
+.header {
+  width: 100%;
+  height: 700px;
+  margin: 65px auto 0 auto;
+  background: url("../img/home/home-jumbotron.png") no-repeat left top;
+  background-size: 100% 100%;
 }
