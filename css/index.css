@@ -1,3 +1,47 @@
+/* Radial Out */
+.hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #222222;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover,
+.hvr-radial-out:focus,
+.hvr-radial-out:active {
+  color: white;
+}
+.hvr-radial-out:hover:before,
+.hvr-radial-out:focus:before,
+.hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -201,7 +245,6 @@ header .dropdown-button {
   margin-top: 39px;
   padding-top: 118px;
   background: #99a4af;
-  visibility: visible;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -217,9 +260,6 @@ header .dropdown-button {
 }
 .dropdown-content a:hover {
   color: #222222;
-}
-.dropdown-hidden {
-  visibility: hidden;
 }
 .container {
   max-width: 1024px;
@@ -260,7 +300,7 @@ h2 {
 @media (max-width: 500px) {
   .hero {
     height: 260px;
-    margin: 0 14%;
+    margin: 0 auto;
     background-size: contain;
   }
 }
@@ -347,7 +387,6 @@ h2 {
 .top-content .button:hover {
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
-  background: #222222;
 }
 @media (max-width: 500px) {
   .top-content .button {
@@ -404,10 +443,12 @@ h2 {
   font-size: 2.5rem;
   margin-top: -50px;
   margin-bottom: 35px;
+  width: 339px;
 }
 @media (max-width: 500px) {
   .projects div h3 {
     padding: 35px 48px;
+    width: 305px;
   }
 }
 .projects div p {
@@ -479,9 +520,11 @@ h2 {
   padding: 16px 39px;
 }
 .services .tabs .tab-link:hover {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #222222;
   color: #FFFFFF;
   background: #222222;
+  transition: 0.4s ease-in-out;
+  box-shadow: inset 0 0 0 25px #222222;
 }
 .services .tabs .tab-link-selected {
   color: #FFFFFF;
