@@ -14,6 +14,11 @@
 </head>
 
 <body>
+
+	<div class="fullscreen-loader">
+		<img src="spinner.svg" alt="">
+	</div>
+
 	<nav>
 		<div class="nav-wrapper">
 			<div class="logo">
@@ -151,6 +156,28 @@
 	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 	<script src="js/Tabs.js"></script>
 	<script src="js/index.js"></script>
+
+	<script>
+
+		// fadeout out function
+		function fadeOut(element) {
+			var fadeTarget = document.querySelector(element);
+			var fadeEffect = setInterval(function () {
+				if (!fadeTarget.style.opacity) {
+					fadeTarget.style.opacity = 1;
+				}
+				if (fadeTarget.style.opacity > 0) {
+					fadeTarget.style.opacity -= 0.1;
+				} else {
+					clearInterval(fadeEffect);
+					fadeTarget.style.display = "none";
+				}
+			}, 50);
+		}
+		//fade out fullscreen loader on window load
+		window.addEventListener('load', fadeOut('.fullscreen-loader'))
+
+	</script>
 </body>
 
 </html>
