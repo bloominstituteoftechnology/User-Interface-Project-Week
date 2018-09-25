@@ -26,18 +26,18 @@ window.addEventListener('resize', function() {
 
     if (width <= 500) {
         bkgd.style.backgroundImage = "url('../img/home/home-mobile-jumbotron.png')";
-        blueprint.src = "../img/home/home-mobile-img-1.png";
-        reflection.src = "../img/home/home-mobile-img-2.png";
-        villas.src = "../img/home/home-mobile-villas-img.png";
-        outskirts.src = "../img/home/home-mobile-outskirts-img.png";
-        blocks.src = "../img/home/home-mobile-the-blocks-img.png";
+        blueprint.src = "./img/home/home-mobile-img-1.png";
+        reflection.src = "./img/home/home-mobile-img-2.png";
+        villas.src = "./img/home/home-mobile-villas-img.png";
+        outskirts.src = "./img/home/home-mobile-outskirts-img.png";
+        blocks.src = "./img/home/home-mobile-the-blocks-img.png";
     }
     else if (width > 500) {
         bkgd.style.backgroundImage = "url('../img/home/home-jumbotron.png')";
-        blueprint.src = "../img/home/home-img-1.png";
-        reflection.src = "../img/home/home-img-2.png";
-        villas.src = "../img/home/home-villas-img.png";
-        outskirts.src = "../img/home/home-outskirts-img.png";
-        blocks.src = "../img/home/home-the-blocks-img.png";
+        blueprint.src = "./img/home/home-img-1.png";
+        reflection.src = "./img/home/home-img-2.png";
+        villas.src = "./img/home/home-villas-img.png";
+        outskirts.src = "./img/home/home-outskirts-img.png";
+        blocks.src = "./img/home/home-the-blocks-img.png";
     }
 })
