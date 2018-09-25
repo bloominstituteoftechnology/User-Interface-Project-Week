@@ -21,14 +21,19 @@ class Tablink {
 
     // hide all tab content
     const content = document.querySelectorAll('.tab-content');
-    content.forEach(c => c.style.display = 'none');
+    content.forEach(c => c.classList.remove('tab-content-showing'));
 
     // select this tab
     this.element.classList.add('selected');
 
+    // check children for h2
+
+    // // // create h1 from inner text
+    // const header = document.createElement('h2');
+    // header.innerText = this.element.innerText;
+
     // call select function on this.tabContent
     this.tabContent.select();
-
   }
 }
 
@@ -38,7 +43,7 @@ class Tabcontent {
   }
 
   select() {
-    this.element.style.display = 'block';
+    this.element.classList.add('tab-content-showing');
   }
 }
 
