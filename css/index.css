@@ -174,10 +174,9 @@ p {
   background: #99a4af;
   opacity: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: space-between;
   padding: 10px 80px;
-  align-items: center;
   position: fixed;
   top: 0;
   overflow: hidden;
@@ -190,18 +189,69 @@ p {
     position: static;
   }
 }
+.navBar .top-nav-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0px;
+  align-items: center;
+}
 .navBar h1 {
   font-size: 2.4rem;
   color: #F9FAFA;
   font-weight: bold;
+  justify-content: flex-start;
 }
 @media (max-width: 500px) {
   .navBar h1 {
     font-size: 2.8rem;
   }
 }
-.menu {
+.nav-hidden {
   display: none;
+  width: 50%;
+}
+.close-button {
+  display: none;
+}
+.expanded {
+  display: flex;
+  align-items: space-around;
+  flex-direction: column-reverse;
+  padding: 10px 80px;
+  height: 100vh;
+  width: 100vw;
+  background: #99a4af;
+  fill-opacity: 50%;
+  z-index: 1;
+}
+.expanded .menu-button {
+  display: none;
+}
+.expanded .close-button {
+  display: flex;
+}
+.expanded .nav-hidden {
+  display: flex;
+}
+.drop-down {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  font-size: 4.6rem;
+  padding: 0% 0% 15% 38%;
+}
+.drop-down a {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  justify-content: flex-start;
+  font-weight: bold;
+}
+.drop-down a:hover {
+  color: #504545;
 }
 footer {
   width: 100%;
@@ -336,7 +386,7 @@ footer .footer-contact-info .location p {
 .header h1 {
   position: absolute;
   display: flex;
-  top: 35%;
+  top: 45%;
   left: 8%;
   line-height: 75px;
   font-size: 6.4rem;
