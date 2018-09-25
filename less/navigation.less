@@ -1,29 +1,52 @@
 .navigation{
     position: fixed;
+    display: flex;
+    flex-flow: flex-start wrap;
     width: 100%;
-    height: 50px;
-    background-color: @navBackground;
+    height: 75px;
+    padding: 15px;
+    background-color: @navBackgroundColor;
     z-index: 1;
 
-    
+    .nav-logo{
+        width: 50%;
+        .generalFonts(@fontSize24px, @logoColor, @fontBold);
+        border: 1px solid blue;
+    }
+
+    .nav-hamburger{
+        width: 50%;
+        border: 1px solid purple;
+    }
 }
+
+
 
 .menu{
     display: none;
     position: absolute;
-    top:  50px;
+    top:  75px;
     width: 100%;
     height: 100%;
-    background-color: @navBackground;
+    background-color: @navBackgroundColor;
     color: #fff;
     z-index: 2;
+
     ul{
+        margin-top: 100px;
+
         li {
+            margin: 20px auto;
+            width: 30%;
 
             a {
                 text-decoration: none;
-                .generalFonts( 3rem, #fff);
-                line-height: 85px;
+                .generalFonts(
+                    @navFontSize, 
+                    @navLinksColor, 
+                    @fontBold, 
+                    @navLineHeight);
+                
                 &:hover{
                     color: #222222;
                 }
