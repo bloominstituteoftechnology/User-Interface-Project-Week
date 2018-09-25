@@ -44,7 +44,14 @@ document.addEventListener("keydown", e => {
                           if (e.keyCode === 73) {
                             document.addEventListener("keydown", e => {
                               if (e.keyCode === 80) {
-                                //do a backflip
+                                let degrees = getDegrees(document.body.style.transform);
+                                document.body.style.setProperty(
+                                  "transform",
+                                  `rotate(${degrees - 180}deg)`,
+                                  null
+                                );
+                                console.log(degrees);
+                                
                               }
                             });
                           }
@@ -61,3 +68,19 @@ document.addEventListener("keydown", e => {
     });
   }
 });
+
+
+function getDegrees(property) { 
+  let arr = property.split('');
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++){
+    if(isNaN(arr[i])){
+
+    } else {
+      newArr.push(arr[i]);
+    }
+  }
+  newArr = newArr.join('');
+  console.log(newArr);
+  return newArr;
+}
