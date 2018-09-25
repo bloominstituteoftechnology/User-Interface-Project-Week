@@ -144,11 +144,15 @@ html {
 body {
   font-size: 1.6rem;
 }
+p {
+  line-height: 24px;
+  margin: 30px 0 35px;
+}
 .modal {
-  background: black;
+  background: #828282;
   height: 100vh;
   width: 100vw;
-  opacity: 0.5;
+  opacity: 0.8;
   display: none;
   position: fixed;
   justify-content: center;
@@ -158,18 +162,25 @@ body {
 .modal .header-nav a {
   width: 100%;
   display: block;
-  font-size: 6.4rem;
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+  color: #FFFFFF;
+  text-decoration: none;
 }
-.top-header {
-  color: white;
-  background-color: rgba(141, 154, 166, 0.5);
+.modal .header-nav a:hover {
+  color: #222222;
+}
+.fixed-header {
+  color: #FFFFFF;
+  background-color: rgba(130, 130, 130, 0.8);
   width: 100%;
   height: 50px;
   position: fixed;
   top: 0;
   z-index: 100;
 }
-.top-header .header-container {
+.fixed-header .fixed-header-container {
   height: 100%;
   width: 100%;
   max-width: 1024px;
@@ -177,36 +188,57 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 0 8.25%;
+  padding: 0 5%;
 }
-.top-header .header-container .header-logo {
+.fixed-header .fixed-header-container .fixed-header-logo {
   font-size: 2.4rem;
-  font-weight: bold;
+  font-weight: normal;
 }
-.top-header .header-container .header-hamburger {
+.fixed-header .fixed-header-container .fixed-header-hamburger {
   cursor: pointer;
 }
-.top-header .header-container .header-hamburger .bar {
+.fixed-header .fixed-header-container .fixed-header-hamburger .topBar,
+.fixed-header .fixed-header-container .fixed-header-hamburger .middleBar,
+.fixed-header .fixed-header-container .fixed-header-hamburger .bottomBar {
   width: 31px;
   height: 4px;
-  background: white;
+  background: #FFFFFF;
   margin: 5px 0;
   border-radius: 5px;
+  transition: all 0.5s ease;
 }
-.container {
+.fixed-header .fixed-header-container .fixed-header-hamburger .change.topBar {
+  transform: translateY(9px) rotate(-45deg);
+}
+.fixed-header .fixed-header-container .fixed-header-hamburger .change.middleBar {
+  opacity: 0;
+}
+.fixed-header .fixed-header-container .fixed-header-hamburger .change.bottomBar {
+  transform: translateY(-9px) rotate(45deg);
+}
+.page-container {
   width: 100%;
   max-width: 1024px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 0 auto;
 }
-.container .container-header {
+.page-container h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+  width: 100%;
+}
+.page-container .page-header {
   position: relative;
 }
-.container .container-header img {
+.page-container .page-header img {
   z-index: 0;
   width: 100%;
   height: auto;
 }
-.container .container-header h2 {
+.page-container .page-header h2 {
   position: absolute;
   bottom: 8.5%;
   left: 8%;
@@ -214,52 +246,42 @@ body {
   letter-spacing: 0.25px;
   font-size: 6.4rem;
   line-height: 75px;
-  color: white;
+  color: #FFFFFF;
   font-weight: bold;
 }
-.container .content-container {
+.page-container .content-section {
   width: 100%;
-  padding: 0 8.25%;
-}
-.container .content-container h1,
-.container .content-container h2 {
-  font-size: 2.4rem;
-  color: #222222;
-  font-weight: bold;
-}
-.container .content-container .content-section {
+  padding: 50px 85px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  padding: 50px 0;
+  justify-content: space-between;
+  align-items: center;
 }
-.container .content-container .content-section .two-column-img {
+.page-container .content-section .content-img,
+.page-container .content-section .content-text {
   width: 48%;
 }
-.container .content-container .content-section .two-column-content {
-  width: 48.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@media (max-width: 500px) {
+  .page-container .content-section .content-img,
+  .page-container .content-section .content-text {
+    width: 100%;
+  }
 }
-.container .content-container .content-section .two-column-content p {
-  font-size: 1.6rem;
-  line-height: 24px;
-  margin: 30px 0 35px;
-}
-.container .content-container .content-section .two-column-content button {
+.page-container .content-section button {
   border: 1px solid black;
-  width: 137px;
-  height: 47px;
+  width: 135px;
+  height: 45px;
   text-align: center;
   font-size: 1.6rem;
-  margin: 0 0 ;
+  margin: 0;
 }
-.container .content-container .content-section .the-villas {
+.page-container .content-section .the-villas {
   position: relative;
-  margin: 43px 0 88px;
+  width: 100%;
+  height: auto;
+  margin-top: 47px;
 }
-.container .content-container .content-section .the-villas::after {
+.page-container .content-section .the-villas::after {
   content: 'THE VILLAS';
   position: absolute;
   display: flex;
@@ -274,11 +296,15 @@ body {
   width: 316px;
   height: 96px;
 }
-.container .content-container .content-section .outskirts {
+.page-container .content-section .the-villas img {
+  width: 100%;
+  height: auto;
+}
+.page-container .content-section .outskirts {
   position: relative;
   margin: 43px 0 88px;
 }
-.container .content-container .content-section .outskirts::after {
+.page-container .content-section .outskirts::after {
   content: 'OUTSKIRTS';
   position: absolute;
   display: flex;
@@ -293,11 +319,15 @@ body {
   width: 316px;
   height: 96px;
 }
-.container .content-container .content-section .the-blocks {
+.page-container .content-section .outskirts img {
+  width: 100%;
+  height: auto;
+}
+.page-container .content-section .the-blocks {
   position: relative;
   margin: 43px 0 88px;
 }
-.container .content-container .content-section .the-blocks::after {
+.page-container .content-section .the-blocks::after {
   content: 'THE BLOCKS';
   position: absolute;
   display: flex;
@@ -312,20 +342,17 @@ body {
   width: 316px;
   height: 96px;
 }
-.container .content-container .content-section .the-blocks img {
+.page-container .content-section .the-blocks img {
   width: 100%;
   height: auto;
 }
-.container .content-container .content-section .project-paragraph {
+.page-container .content-section .project-text {
+  width: 52%;
+  margin: 0 auto;
+}
+.page-container .content-section .project-text .project-paragraph {
   font-size: 1.8rem;
   line-height: 24px;
-  display: block;
-  width: 100%;
-  padding: 0 23.75%;
-  margin-bottom: 24px;
-}
-.container .content-container .no-top-padding {
-  padding-top: 10px;
 }
 footer {
   width: 100%;
@@ -337,7 +364,7 @@ footer {
   align-items: center;
   font-size: 1.4rem;
   line-height: 26px;
-  padding-top: 6%;
+  padding: 50px;
   color: #FFFFFF;
   font-weight: normal;
   margin: 0 auto;
@@ -349,7 +376,7 @@ footer .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0 8.25%;
+  padding: 0 5%;
 }
 footer .footer-content h2 {
   font-size: 2rem;
