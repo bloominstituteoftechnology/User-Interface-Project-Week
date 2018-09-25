@@ -396,7 +396,7 @@ p {
   left: 0;
   background-color: #9AA5B0;
   z-index: 2;
-  visibility: hidden;
+  visibility: visible;
 }
 .fixed-navbar .nav-container {
   max-width: 850px;
@@ -420,6 +420,9 @@ p {
 .fixed-navbar .nav-container .nav-toggler {
   cursor: pointer;
 }
+.hide-navbar {
+  visibility: hidden;
+}
 .navbar-expand {
   position: fixed;
   top: 0;
@@ -428,6 +431,7 @@ p {
   height: 100vh;
   background-color: rgba(154, 165, 176, 0.9);
   z-index: 4;
+  visibility: hidden;
 }
 .navbar-expand .nav-container {
   max-width: 850px;
@@ -437,6 +441,11 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+@media (max-width: 500px) {
+  .navbar-expand .nav-container {
+    max-width: 450px;
+  }
 }
 .navbar-expand .nav-container h1 {
   font-size: 2.4rem;
@@ -466,6 +475,9 @@ p {
 }
 .navbar-expand .nav-container .nav-toggler-close {
   cursor: pointer;
+}
+.show-navbar-expand {
+  visibility: visible;
 }
 footer {
   padding-top: 80px;
