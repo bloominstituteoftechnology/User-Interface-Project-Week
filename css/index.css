@@ -209,6 +209,9 @@ body {
 .addMargin {
   margin-top: 16px;
 }
+.min-height {
+  min-height: 250px;
+}
 .header {
   height: 37px;
   background-color: #99A4AF;
@@ -269,11 +272,16 @@ body {
     height: 91%;
   }
 }
+.header-bottom .addMarginTop {
+  margin-top: 162px;
+}
+.header-bottom .addMarginTopBig {
+  margin-top: 240px;
+}
 .header-bottom .header-bottom-inner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 240px;
   width: 92%;
 }
 @media (min-width:800px) {
@@ -576,7 +584,13 @@ body {
 }
 .tab-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+@media (min-width:800px) {
+  .tab-container {
+    justify-content: space-between;
+    flex-direction: row;
+  }
 }
 .tab-container .tab-container-tab {
   border: 1px solid black;
@@ -590,13 +604,29 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media (min-width:800px) {
+  .tab-item-container {
+    flex-direction: column;
+  }
+}
 .tab-item-container .tab-item-text-section {
   margin-top: 30px;
   width: 100%;
   display: flex;
+  flex-direction: column;
+}
+@media (min-width:800px) {
+  .tab-item-container .tab-item-text-section {
+    flex-direction: row;
+  }
 }
 .tab-item-container .tab-item-text-section div {
-  width: 50%;
+  width: 100%;
+}
+@media (min-width:800px) {
+  .tab-item-container .tab-item-text-section div {
+    width: 50%;
+  }
 }
 .tab-item-container .tab-item-text-section div p {
   line-height: 2.5rem;
