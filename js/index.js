@@ -20,10 +20,10 @@ class TabButton {
         let buttons = document.querySelectorAll(".tab-button");
 
         Array.from(buttons).forEach((tabButtons) => {
-            tabButtons.classList.remove("tabs-item-selected");
+            tabButtons.classList.remove("button-selected");
         });
 
-        this.element.classList.add("tabs-item-selected");
+        this.element.classList.add("button-selected");
 
         this.content.select();
     }
