@@ -29,11 +29,13 @@ const toggleMenu = () => {
 
 //Tab-Navigation
 
+
+
 class TabLink {
   constructor(element){
     this.element = element;
     this.tabData = this.element.dataset.tab;
-    this.cards = document.querySelector(`.card[data-tab='${this.tabData}']`);
+    this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
     this.cards = Array.from(this.cards).map( card => new TabCard(card));
     this.element.addEventListener('click', () => {this.selectTab() });
   }
@@ -47,15 +49,29 @@ class TabLink {
     this.element.classList.add('active-tab');
     this.cards.forEach(card => card.selectCard());
 
+
+    // let tabs = document.querySelectorAll('.tab');
+    // if ( tabs.classList.contains('.active-tab')) {
+    // tabs.forEach( tab => {tab.classList.remove('active-tab');
+    //  });
+    // } else {
+    // tabs.forEach( tab => {tab.classList.remove('active-tab');
+    // });
+    // let cards = document.querySelectorAll('.card');
+    // cards.forEach( card => card.style.display = 'none');
+    // this.element.classList.add('active-tab');
+    // this.cards.forEach(card => card.selectCard());
+      // }
+    }
   }
-}
+
 
 class TabCard {
   constructor(element){
     this.element = element;
   }
   selectCard(){
-    this.element.style.display = 'flex';
+    this.element.style = 'display: block;';
   }
 
 }
