@@ -4,16 +4,25 @@ footer {
     .container {
         color: @ftColor;
         padding: 30px 5%;
+        @media @phone {
+            padding: 10px 5%;
+        }
         h3 {
             font-weight: @fhFontWeight;
             font-size: @fhFontSize;
             line-height: @fhLineHeight;
             color: @fhColor;
+            @media @phone {
+                font-weight: bold;
+            }
         }
         .main-footer {
             display: flex;
             justify-content: space-between;
             margin: 20px 0;
+            @media @phone {
+                margin: 10px 0;
+            }
             input {
                 padding: 10px;
                 border-radius: 5px;
@@ -24,13 +33,35 @@ footer {
             }
             .address {
                 margin: 0 5px;
+                @media @phone {
+                    margin: 10px 0;
+                }
             }
-            .form-text {
-                font-size: 1.2rem;
+            form {
+                .form-text {
+                    font-size: 1.2rem;
+                }
+                @media @phone {
+                    h3,input {
+                        margin: 10px 0;
+                    }
+                }
+            }
+            
+            @media @phone {
+                flex-direction: column;
+                flex-wrap: wrap;
             }
         }
         .copyright {
             text-align: center;
+            @media @phone {
+                text-align: left;
+                p {
+                    font-size: 1.2rem;
+                }
+                
+            }
         }
     }
 }
