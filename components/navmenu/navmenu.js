@@ -25,4 +25,3 @@ class NavMenu {
         this.currentlyOpen = true;
     }
 }
-new NavMenu(document.querySelector('.main-navigation'));
