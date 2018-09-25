@@ -1,3 +1,6 @@
+.width-100 {
+  width: 100%;
+}
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -599,6 +602,8 @@ body {
   .about-page .jumbotron {
     background: url('../img/about/about-mobile-jumbotron.png');
     height: 260px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 }
 .about-page .jumbotron__heading {
@@ -650,6 +655,8 @@ body {
   .services-page .jumbotron {
     background: url('../img/services/services-mobile-jumbotron.png');
     height: 260px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 }
 .services-page .jumbotron__heading {
@@ -695,6 +702,8 @@ body {
   .contact-page .jumbotron {
     background: url('../img/contact/contact-mobile-jumbotron.png');
     height: 260px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 }
 .contact-page .jumbotron__heading {
@@ -777,6 +786,58 @@ body {
 .location__col {
   margin-bottom: 5rem;
 }
+.projects-page .jumbotron {
+  background: url('../img/projects/projects-jumbotron.png');
+  height: 250px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+}
+@media (max-width: 600px) {
+  .projects-page .jumbotron {
+    background: url('../img/projects/projects-mobile-jumbotron.png');
+    height: 260px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.projects-page .jumbotron__heading {
+  font-weight: 700;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  color: #fff;
+  padding-bottom: 3.5rem;
+}
+@media (max-width: 900px) {
+  .projects-page .jumbotron__heading {
+    width: 90%;
+    margin: auto;
+    font-size: 4.8rem;
+    padding-bottom: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .projects-page .jumbotron__heading {
+    padding-bottom: 0;
+    font-size: 3.6rem;
+    width: 90%;
+    margin: auto;
+  }
+}
+.projects-page .intro {
+  margin: 5rem 0;
+}
+@media (max-width: 900px) {
+  .projects-page .intro {
+    width: 90%;
+    margin: 3rem auto 5rem;
+  }
+}
+.projects-page .intro .projects-page__heading {
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #222;
+}
 .form {
   width: 100%;
 }
@@ -846,22 +907,51 @@ body {
   justify-content: space-between;
   margin-bottom: 5rem;
 }
+@media (max-width: 900px) {
+  .team {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 .team-member {
   width: 48%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 5rem;
+}
+@media (max-width: 900px) {
+  .team-member {
+    width: 40%;
+  }
+}
+@media (max-width: 600px) {
+  .team-member {
+    width: 100%;
+  }
 }
 .team-member__img {
   width: 40%;
 }
+@media (max-width: 900px) {
+  .team-member__img {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
 .team-member__img img {
   width: 100%;
+  display: block;
   border-radius: 50%;
 }
 .team-member__card {
   width: 55%;
+}
+@media (max-width: 900px) {
+  .team-member__card {
+    width: 100%;
+  }
 }
 .team-member__name {
   font-size: 2rem;
@@ -874,6 +964,11 @@ body {
 .team-member__bio {
   font-size: 1.4rem;
   margin-bottom: 1rem;
+}
+@media (max-width: 900px) {
+  .team-member__bio {
+    margin: 2rem 0;
+  }
 }
 .team-member__email {
   background: #fff;
@@ -892,4 +987,62 @@ body {
 .team-member__email:hover {
   color: #fff;
   background: #222;
+}
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 500px;
+  position: relative;
+  overflow-x: hidden;
+  margin-top: 16px;
+  margin-bottom: 5rem;
+}
+@media (min-width: 1200px) {
+  .carousel {
+    width: 1200px;
+  }
+}
+.carousel .slider {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  background-color: black;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 100;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  width: 100%;
+  flex: 0 0 auto;
 }
