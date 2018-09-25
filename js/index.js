@@ -13,7 +13,7 @@ let imgStates = {
 
 }
 navButton.addEventListener('click', function(event) {
-  navButton.dataset.state = navButton.dataset.state === 'off' ? 'on' : 'off';
+  navButton.dataset.state = navButton.dataset.state !== 'on' ? 'on' : 'off';
   navButton.src = imgStates[navButton.dataset.state];
   navBar.parentNode.classList.toggle('nav-expanded');
   navBar.classList.toggle('menu-show');
