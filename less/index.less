@@ -69,13 +69,25 @@ table{
 @import "services";
 
 .main-content {
-    max-width: 1024px;
-    width: 83%;
+    max-width: 855px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
+    @media @phone {
+      width: 90%;
+    }
+
+}
+.bottom-content {
+  max-width: 855px;
+  width: 100%;
+
+  @media @phone {
+    width: 100%;
+  }
 }
 
 header  {
@@ -101,7 +113,6 @@ header  {
 }
 
 @media @phone {
-header{
   .mobile-logo-pic {
     display: flex;
     margin: 0 auto;
@@ -110,20 +121,21 @@ header{
   .logo-pic {
     display: none;
   }
-  h1 {
+  .home h1 {
     font-size: 4.5rem;
-    display: flex;
-    padding: 100px 100px 20px 20px;
-    justify-content: center;
-    align-items: flex-start;
-
+    position: absolute;
+    margin: -180px 0px 0px 5%;
+    line-height: 5rem;
   }
 }
-}
+
 
 .content-box {
     display: flex;
     margin: 60px 0px;
+    @media @phone {
+      margin: 40px 0px 0px 0px;
+    }
 
     .mobile-learnmore {
       display: none;
@@ -158,6 +170,9 @@ header{
         flex-direction: column;
         padding: 40px 4% 50px 0%;
         justify-content: space-between;
+        @media @phone {
+          padding: 30px 0px 20px 0px;
+        }
 
 
         .button {
@@ -166,6 +181,11 @@ header{
           padding: 10px;
           width: 150px;
           text-align: center;
+          @media @phone {
+            width: 100%;
+            font-size: 2rem;
+            padding: 18px;
+          }
         }
   }
 
@@ -179,6 +199,10 @@ header{
   @media @phone {
     display: flex;
     flex-direction: column-reverse;
+    padding-bottom: 20px;
+    .text-box {
+      padding: 30px 0px 20px 0px;
+    }
   }
 }
 
@@ -186,7 +210,9 @@ header{
  justify-content: flex-start;
  width: 100%;
  margin: 60px 0px;
-
+@media @phone {
+  margin: 20px 0px;
+}
 }
 
 .content-box-2 {
@@ -200,6 +226,16 @@ header{
 
     p {
       margin: 30px 0px;
+    }
+  }
+
+  @media @phone {
+    .bottom-text {
+      width: 97%;
+      padding: 70px 0px 10px 0px;
+    }
+    p {
+      margin: 10px 0px;
     }
   }
 
@@ -228,8 +264,16 @@ header{
       display: none;
     }
     .mobile-villas {
-      display: block;
+      display: flex;
+      width: 100vw;
     }
+    h3 {
+      width: 90%;
+      position: absolute;
+      margin: 60% 5% 0px 0px;
+      border: none;
+    }
+
   }
 }
 
@@ -246,7 +290,14 @@ header{
     display: none;
   }
   .mobile-outskirts {
-    display: block;
+    display: flex;
+    width: 100vw;
+  }
+  h3 {
+    width: 90%;
+    position: absolute;
+    margin: 60% 5% 0px 0px;
+    border: none;
   }
 }
 }
@@ -264,7 +315,14 @@ header{
     display: none;
   }
   .mobile-blocks {
-    display: block;
+    display: flex;
+    width: 100vw;
+  }
+  h3 {
+    width: 90%;
+    position: absolute;
+    margin: 60% 5% 0px 0px;
+    border: none;
   }
 }
 }
@@ -272,16 +330,29 @@ header{
 .footer {
   background-color: @footer-bg;
   height: 230px;
+  @media @phone {
+    height: 660px;
+  }
 
   .main-footer-content {
     display: flex;
     color: @white;
     font-size: 1.4rem;
     line-height: 2.6rem;
-    display: flex;
     justify-content: space-evenly;
     padding-top: 40px;
     padding-bottom: 30px;
+    @media @phone {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 5%;
+    }
+  }
+
+  .footer-box {
+    @media @phone {
+      padding: 10px 0px;
+    }
   }
 
   h2 {
@@ -299,6 +370,9 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media @phone {
+      height: 150px;
+    }
   }
 
   input {
