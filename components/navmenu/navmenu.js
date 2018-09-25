@@ -5,21 +5,25 @@
 class NavMenu {
     constructor(containerElement){
         this.element = containerElement;
-        this.toggleElement = this.element.parentElement.querySelector('.nav-menu__toggle');
+        this.expanderElement = this.element.querySelector('.main-navigation__expander')
+        this.toggleElement = this.element.querySelector('.main-navigation__toggle');
         this.toggleElement.addEventListener("click", () => this.toggle());
-        this.close();
+        this.open();
     }
     toggle(){
-        if(this.open){ this.close();}
-        else         { this.open ();}
+        if(this.currentlyOpen){ this.close();}
+        else                  { this.open ();}
     }
     close(){
         this.toggleElement.src = "/img/nav-hamburger.png";
-        this.open = false;
+        console.log(this.expanderElement)
+        this.element.classList.remove('expanded');
+        this.currentlyOpen = false;
     }
     open(){
         this.toggleElement.src = "/img/nav-hamburger-close.png";
-        this.open = true;
+        this.element.classList.add('expanded');
+        this.currentlyOpen = true;
     }
 }
-new NavMenu(document.querySelector('.nav-menu'));
+new NavMenu(document.querySelector('.main-navigation'));
