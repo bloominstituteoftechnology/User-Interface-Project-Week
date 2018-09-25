@@ -16,8 +16,8 @@ x Button borders: #222222
 
 ### Services Page
 - Tab selected background: #5E9FB9
-- Tab Hover background: #222222
-- Tab Hover color: #FFF;
+x Tab Hover background: #222222
+x Tab Hover color: #FFF;
 
 ## Footer 
 Background: #828282
@@ -49,10 +49,10 @@ x Line Height: 24px
 x Color: #FFFFFF
 
 ### Footer Text
-- Font Weight: Regular
-- Font Size: 14px
+x Font Weight: Regular
+x Font Size: 14px
 - Line Height: 26px
-- Color: #FFFFFF
+x Color: #FFFFFF
 
 
 *** done***
