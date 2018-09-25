@@ -15,17 +15,48 @@
     margin: 0 auto;
     padding: 50px 5% 20px;
     .flex(no-wrap, row, space-between, center);
+    
+
+    @media @phone {
+      .flex(wrap, column, space-between, flex-start);
+      padding: 30px 5% 10px;
+    }
+
+    div {
+      @media @phone {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .contact {
+        input {
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+
+            @media @phone {
+              margin-bottom: 10px;
+              font-size: 2rem;
+            }
+        }
+    }
 
     h4 {
       font-weight: regular;
       font-size: 2rem;
       line-height: 2.4rem;
       color: #ffffff;
+
+      @media @phone {
+        font-weight: bold;
+      }
     }
   }
 
   .copyright {
-    .flex(no-wrap, row, center, center);
-    padding-bottom: 10px;
+    .flex(no-wrap, row, flex-start, center);
+    padding: 0 5% 10px;
   }
 }

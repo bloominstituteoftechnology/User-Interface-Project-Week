@@ -1,71 +1,192 @@
 .homeHeader {
-    max-width: 100%;
-    height: 500px;
-    // background-image: url("img/home/home-jumbotron.png");
-    background: black;
+  max-width: 100%;
+  height: 700px;
+  background-image: url("../img/home/home-jumbotron.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    h1 {
-        padding: 220px 0 0 5%;
+  @media @phone {
+    height: 300px;
+  }
+
+  h1 {
+    padding: 425px 0 0 5%;
+
+    @media @phone {
+      padding: 120px 0 0 5%;
     }
+  }
 }
 
 .home {
-    .topContent {
-        .flex(wrap, row, space-between, center);
+  .topContent {
+    .flex(wrap, row, space-between, center);
 
-        .box {
-            width: 44%;
-            height: 275px;
-            margin: 50px 0;
-        }
-
-        .textBox {
-            .flex(no-wrap, column, center, flex-start);
-
-            p {
-                margin: 20px 0;
-            }
-
-            button {
-                background: white;
-                padding: 10px 5%;
-                border: 1px solid #222222;
-
-                &:hover {
-                    background: black;
-                    color: white;
-                    transition: 2s all;
-                }
-            }
-        }
+    @media @phone {
+      .flex(wrap, column, space-between, flex-start);
     }
 
-    .mainContent {
-        h2 {
-            margin: 50px 0;
-        }
-
-        .contentSection {
-            margin-bottom: 100px;
-
-
-            h3 {
-                background: #D8D8D8;
-                width: 30%;
-                padding: 30px 5%;
-                text-transform: uppercase;
-                text-align: center;
-                letter-spacing: 0.4rem;
-                font-size: 2rem;
-                // font-family: Roboto;
-            }
-    
-            p {
-                width: 50%;
-                margin: 20px auto;
-            }
-        }
-
-        
+    .first {
+      @media @phone {
+        order: 1;
+      }
     }
+
+    .second {
+      @media @phone {
+        order: 2;
+      }
+    }
+
+    .third {
+      @media @phone {
+        order: 3;
+      }
+    }
+
+    .fourth {
+      @media @phone {
+        order: 4;
+      }
+    }
+
+    .box {
+      width: 48%;
+      height: 275px;
+      margin: 50px 0;
+
+      @media @phone {
+        margin: 0;
+        width: 30%;
+        height: 250px;
+      }
+    }
+
+    .imgBox {
+      img {
+        width: 100%;
+
+        @media @phone {
+          width: 100%;
+        }
+      }
+
+      @media @phone {
+        width: 100%;
+        margin: 30px 0 50px;
+      }
+    }
+
+    .textBox {
+      .flex(no-wrap, column, center, flex-start);
+
+      @media @phone {
+        .flex(wrap, column, space-between, flex-start);
+        width: 100%;
+        height: 200px;
+      }
+
+      p {
+        margin: 20px 0;
+
+        @media @phone {
+          height: 100px;
+          margin: 0;
+          line-height: 3rem;
+        }
+      }
+
+      button {
+        background: white;
+        padding: 15px 5%;
+        border: 1px solid #222222;
+
+        &:hover {
+          background: black;
+          color: white;
+          transition: 2s all;
+        }
+        @media @phone {
+          width: 100%;
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .mainContent {
+    h2 {
+      margin: 50px 0;
+      
+      @media @phone {
+          margin-bottom: 30px;
+      }
+    }
+
+    .contentSection {
+      margin-bottom: 100px;
+
+      @media @phone {
+        margin-bottom: 40px;
+      }
+
+      #mobile1 {
+        .mobileContentImage;
+      }
+
+      #mobile2 {
+        .mobileContentImage;
+      }
+
+      #mobile3 {
+        .mobileContentImage;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      #left {
+        .flex(no-wrap, row, flex-start, flex-start);
+
+        @media @phone {
+          .flex(no-wrap, row, space-around, center);
+        }
+        h3 {
+          .squareBox;
+          @media @phone {
+            .mobileSquareBox;
+            font-size: 3rem;
+            letter-spacing: 1.5rem;
+          }
+        }
+      }
+
+      .squareTitle {
+        .flex(no-wrap, row, flex-end, flex-start);
+
+        @media @phone {
+          .flex(no-wrap, row, space-around, center);
+        }
+        h3 {
+          .squareBox;
+          @media @phone {
+            .mobileSquareBox;
+            font-size: 3rem;
+            letter-spacing: 1.5rem;
+          }
+        }
+      }
+
+      p {
+        width: 50%;
+        margin: 20px auto;
+
+        @media @phone {
+          width: 100%;
+          line-height: 3rem;
+        }
+      }
+    }
+  }
 }
