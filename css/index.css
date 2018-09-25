@@ -164,6 +164,7 @@ h2 {
   font-weight: bold;
   font-size: 2.8rem;
   color: #222222;
+  margin: 20px 0;
 }
 h3 {
   font-size: 1.8rem;
@@ -232,27 +233,25 @@ HOME PAGE */
   left: 10px;
 }
 /* PAGE CONTENT MEDIA QUERY */
-/* CONTENT CONTAINER */
+/* TOP CONTENT */
 .container {
   width: 80%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  /*   @media (max-width: 500px){
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      margin: 0 auto;
+      width: 100%;
+    } */
 }
-@media (max-width: 500px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-/* TOP CONTENT */
 .top-content {
   width: 100%;
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   margin-top: 50px;
   flex-direction: column;
 }
@@ -260,13 +259,6 @@ HOME PAGE */
   width: 100%;
   display: flex;
   flex-direction: row;
-}
-@media (max-width: 500px) {
-  .top-content .content-row {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
 }
 .top-content .content-col {
   display: flex;
@@ -283,18 +275,30 @@ HOME PAGE */
   max-width: 90%;
 }
 .top-content .img-container.two {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
-.two {
+.img-container.two {
+  justify-content: flex-start;
+}
+.content-row.two {
   flex-direction: row-reverse;
 }
+/* @media (max-width: 500px){
+    .content-row{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    } */
 /* TOP CONTENT -- CONTENT COLUMN */
-.content-col h2 {
-  margin-bottom: 3px;
+.content-col {
+  /* h2{
+    margin-bottom: 20px;
+  } */
 }
 .content-col p {
   margin-bottom: 3px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  width: 90%;
 }
 .content-col .button {
   margin-bottom: 10px;
@@ -309,7 +313,6 @@ HOME PAGE */
 .bottom-content {
   display: flex;
   width: 100%;
-  min-width: 800px;
   flex-direction: column;
 }
 .projects {
@@ -330,14 +333,17 @@ HOME PAGE */
   width: 100%;
 }
 .projects p {
-  margin-bottom: 10px;
+  margin: 10px 0px;
+  padding: 20px;
+  font-size: 1.8rem;
+  align-self: center;
+  width: 65%;
 }
 /* BOTTOM CONTENT LABEL */
 .label {
   background-color: #D8D8D8;
   color: black;
   font-size: 1.4rem;
-  padding: 5px;
   letter-spacing: 0.8rem;
   z-index: 10;
   position: absolute;
@@ -351,6 +357,8 @@ HOME PAGE */
 }
 .label p {
   align-self: center;
+  text-align: center;
+  padding: 0;
 }
 .label.left {
   align-self: flex-end;
