@@ -1,7 +1,17 @@
 //Menu Toggle
 const toggleMenu = () => {
-    menu.classList.toggle('menu-open');
+    menu.classList.add('open-menu');
+    xButton.classList.add('show-x-button');
+    menuButton.classList.add('hide-menu-button');
   }
+
+  const toggleX = () => {
+    menu.classList.remove('open-menu');
+    xButton.classList.remove('show-x-button');
+    menuButton.classList.remove('hide-menu-button');
+  }
+
+  const xButton = document.querySelector('.x-button');
 
   const menu = document.querySelector('.menu');
 
@@ -10,6 +20,10 @@ const toggleMenu = () => {
   menuButton.addEventListener('click', () => {
     toggleMenu();
   });
+
+  xButton.addEventListener('click', () => {
+    toggleX();
+  })
 
 
 //Tab-Navigation
