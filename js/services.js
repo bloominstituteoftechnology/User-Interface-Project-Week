@@ -1,15 +1,20 @@
 class Tablinks{
-    constructor(item){
+    constructor(item,index){
         this.element = item;
+        this.index = index;
         this.data = this.element.dataset.tab;
         this.tabContent = document.querySelector(`.tabs-content[data-tab="${this.data}"]`);
-        console.log(this.tabContent);
         this.tabContent = new TabContent(this.tabContent);
         this.element.addEventListener('click', () => {
             this.select();
         })
     }
     select() {
+        const links = document.querySelectorAll('.button');
+        links.forEach((item) => {
+            item.classList.remove('selected-button');
+        })
+        this.element.classList.add('selected-button');
         this.tabContent.select();
     }
 }
