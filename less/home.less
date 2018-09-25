@@ -1,12 +1,16 @@
 .main-content {
     width: 80%;
     margin: auto;
+    @media @phone {
+        width: 100%;
+    }
     .main-info {
         .flex(space-between, center, row);
         margin-top: 70px;
         @media @phone {
             .flex(space-between, center, column-reverse);
-            margin-top: 30px;
+            margin: 25px auto 0;
+            width: 90%;
         }
         .text {
             width: 48%;
@@ -18,7 +22,6 @@
                 .h2();
                 @media @phone {
                     margin-top: 30px;
-                    font-size: 2.4rem;
                 }
             }
             p {
@@ -31,13 +34,20 @@
                 text-align: center;
                 cursor: pointer;
                 @media @phone {
-                    width: 100%;
+                    width: 92%;
                 }
             }
         }
-        img {
+        .home-desktop {
             width: 48%;
             @media @phone {
+                display: none;                
+            }
+        }
+        .home-mobile {
+            display: none;
+            @media @phone {
+                display: block;
                 width: 100%;
             }
         }
@@ -47,32 +57,57 @@
         margin: 90px 0; 
         @media @phone {
             .flex(space-between, center, column-reverse);
-            margin-top: 30px;
+            margin: 45px auto 50px;
         }
     }
     .recent-projects {
         h2 {
             .h2();
             margin-bottom: 50px;
+            @media @phone {
+                margin: 0 auto 25px;
+                width: 90%;
+            }
         }
         .project-head {
             position: relative;
-            img {
+            .project-desktop {
                 width: 100%;
                 z-index: 0;
+                @media @phone {
+                    display: none;
+                }
+            }
+            .project-mobile {
+                display: none;
+                @media @phone {
+                    display: inline;
+                    width: 100%;
+                    z-index: 0;
+                }
             }
             .project-right {
                 .project();
                 right: 0;
+                @media @phone {
+                    .projectMobile();
+                }
             }
             .project-left {
                 .project();
                 left: 0;
+                @media @phone {
+                    .projectMobile();
+                }
             }
         }
         p {
             margin: 90px auto;
             width: 60%;
+            @media @phone {
+                width: 90%;
+                margin: 100px auto 45px;
+            }
         }
     }
 }

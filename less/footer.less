@@ -2,29 +2,47 @@ footer {
     background-color: @footer-bg;
     color: @light;
     .footer-content {
+        letter-spacing: 0.7px;
         .flex(space-between, flex-start, row);
         padding: 60px 10% 40px;
+        @media @phone {
+            .flex(space-between, flex-start, column);
+            padding: 25px 5% 10px;
+        }
         h3 {
             font-size: 2rem;
         }
         input {
             font-size: 1.6rem;
-            padding: 8px;
+            padding: 10px 8px;
             margin: 15px 0 5px;
             border: 1px solid @light;
             border-radius: 5px;
             width: 90%;
+            @media @phone {
+                width: 100%;
+                padding: 14px 8px;
+            }
         }
         p {
             font-size: 1.2rem;
             font-weight: 100;
+            @media @phone {
+                margin-bottom: 15px;
+            }
         }
         .location {
             margin: 0 10px;
+            @media @phone {
+                margin: 0;
+            }
             address {
                 font-size: 1.4rem;
                 font-weight: 100;
                 line-height: 3rem;
+                @media @phone {
+                    margin-bottom: 15px;
+                }
             }
         }
     }
@@ -34,5 +52,10 @@ footer {
         text-align: center;
         margin: auto;
         padding-bottom: 10px;
+        @media @phone {
+            text-align: left;
+            margin: 0 5%;
+            padding-bottom: 20px;
+        }
     }
 }

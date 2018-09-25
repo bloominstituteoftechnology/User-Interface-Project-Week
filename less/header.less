@@ -23,11 +23,20 @@
 
 .jumbotron {
     position: relative;
-    img {
-        margin-top: 54px;
-        width: 100%;
-        z-index: 0;
+    .jumbo-desktop {
+        .jumboImg();
+        @media @phone {
+            display: none;
+        }
     }
+    .jumbo-mobile {
+        display: none;
+        @media @phone {
+            .jumboImg();
+            display: inline;
+        }
+    }
+
     h1 {
         position: absolute;
         bottom: 10px;
