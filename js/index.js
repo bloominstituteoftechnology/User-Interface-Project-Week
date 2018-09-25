@@ -1,6 +1,6 @@
 // JS goes here
 
-const menuButton = document.querySelector(".home-page .menu .button-img img");
+const menuButton = document.querySelector(".menu .button-img img");
 console.log(menuButton);
 const closedURL =
   "https://github.com/DaftBeowulf/User-Interface-Project-Week/blob/master/img/nav-hamburger.png?raw=true";
