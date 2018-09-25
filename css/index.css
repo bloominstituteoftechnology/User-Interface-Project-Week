@@ -147,13 +147,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.header-div {
+  width: 100%;
+  background: #99A4AF;
+  height: 50px;
+  position: fixed;
+}
 .header {
   width: 1024px;
   margin: 0 auto;
-  background: #99A4AF;
-  position: fixed;
-  height: 50px;
-  z-index: 1;
+  z-index: 0;
 }
 @media only screen and (max-width: 500px) {
   .header {
@@ -164,23 +167,50 @@ table {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 60px;
+  margin: 10px 0;
 }
 .header header .logo {
   color: white;
   font-size: 24px;
   font-weight: bold;
 }
+.header header .logo :hover {
+  cursor: pointer;
+}
+.header header .expanded-nav {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 24px;
+  color: white;
+  line-height: 80px;
+}
+.header header .expanded-nav a {
+  color: white;
+  text-decoration: none;
+}
 .header header .nav-hidden {
   display: none;
 }
-.header header .expanded {
-  height: 100vh;
-  width: 100vw;
+.expanded {
+  height: 600px;
+  width: 1024px;
   background: #99A4AF;
+  z-index: 10;
+  margin: 0;
+  opacity: 0.9;
+}
+.expanded-header {
+  height: 100%;
+}
+.footer-div {
+  width: 100%;
+  background: #828282;
 }
 footer {
-  background: #828282;
+  width: 1024px;
+  margin: 0 auto;
 }
 footer .contact {
   padding: 30px;
