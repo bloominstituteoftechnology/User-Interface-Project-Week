@@ -1,4 +1,7 @@
 // JS goes here
+//===================================================================================================
+//  TAB COMPONENT
+//===================================================================================================
 class TabLink {
     constructor(element) {
         // Assigns this.element to the element that was passed in the constructor
@@ -45,7 +48,9 @@ const tabs = document.querySelectorAll('.tab');
 //Loops through node list and takes each element in the nodeList and puts it in the class.
 tabs.forEach(item => new TabLink(item));
 
-
+//===================================================================================================
+//  NAVIGATION FULL PAGE
+//===================================================================================================
 const hamburger = document.querySelector('.nav-image');
 const navigation = document.querySelector('.nav-links');
 let count = 0;
