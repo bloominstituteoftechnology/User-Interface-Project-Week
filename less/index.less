@@ -69,12 +69,22 @@ table{
 .home-container {
   width : 880px;
   margin : 0 auto;
-  //border : 1px solid red;
+  
+  @media @phone {
+    width : 100%;
+    
+    .desktop {
+        display : none;
+    }
 
+    .mobile {
+        display : block;
+    }
+  }
 
 .header {
       width : 46.2%;
-      heught : 60px;
+      height : 60px;
       color : white;
       background-color : #D8D8D8;
       display : flex;
@@ -84,12 +94,18 @@ table{
       top : 0;
       z-index : 2;
 
+      @media @phone {
+          width : 100%;
+      }
+
       h1 {
         margin : 0;
         font-size : 1.3rpm;
         font-weight : bold;
         margin : 3px 0 3px 25px;
+
       }
+      
       .menu-button {
         position : absolute;
         right : 20px;
@@ -97,7 +113,14 @@ table{
         margin : 3px;
       }
       
-}//+++++++++++++++++++++++
+}
+
+    .header-image {
+
+        @media @phone {
+             width : 100%; //+++++++++++++++Not accepting changes at media query +++++++++.
+        }       
+    }
     .menu {
           border : 1px solid black;
           background: rgb(0, 0, 0);
@@ -111,6 +134,11 @@ table{
           position: fixed;
           z-index: 9999;
           top : 0;
+
+          @media @phone {
+              width : 100%;
+
+          }
     }
 
     .menu-open {
@@ -124,7 +152,6 @@ table{
           line-height : 85px;
           font-size : 48px;
     }
-//++++++++++++++++++++++++++++++++++++
 
 .header-image {
   position: relative;
@@ -138,6 +165,10 @@ table{
     bottom: 40px;
     left: 70px;
     line-height: 1.3;
+
+    @media @phone {
+          font-size : 2rpm; //+++++++++++++++Not accepting changes at media query +++++++++.
+    }
   }
 }
 .content-section {
@@ -149,18 +180,34 @@ table{
    .text-content {
       width: 45%;
       padding-right: 1%;
+
+      @media @phone {
+            width : 85%; 
+      }
       
         h2 {
             .font-header(20px, bold);
             margin-top : 30px;
+
+            @media @phone {
+                 .font-header(25px, bold);
+            }     
         }
 
-        .btn{
+        .btn {
           .custom-button(white, black);
+
+           @media @phone {
+               width : 90%;
+           }
         }
 
       .img-content {
             padding-left: 1%;
+
+             @media @phone {
+                margin-left : 10%;
+             }
       }
     } 
 }
@@ -173,6 +220,10 @@ table{
             .font-header(20px, bold);
             margin-top : 35px;
             margin-bottom : 20px;
+
+            @media @phone {
+                 .font-header(25px, bold);
+            }  
       }
       
       .img-content {
@@ -181,7 +232,7 @@ table{
           color: white;
 
           .classy-btn {
-              max-width: 300px;
+              max-width: 400px;
               padding: 20px;
               text-decoration: none;
               background: #D8D8D8;
@@ -195,7 +246,14 @@ table{
               bottom: -30px;
               right: 1px;
 
-              
+              @media @phone {
+                 bottom: -40px;
+                 left : 12px;
+                 width : 75%;
+                 letter-spacing: 6px;
+                 font-size : 1.8rem;
+                 padding : 25px;
+            }  
           }
       }
       .custom-btn {
@@ -211,9 +269,17 @@ table{
               margin-left : 120px;
               width : 60%;
 
+              @media @phone {
+                  margin-left : 0;
+                  width : 85%;
+              }
           }
       }
 }
 }
 
+
+.mobile{
+    display : none;
+}
 
