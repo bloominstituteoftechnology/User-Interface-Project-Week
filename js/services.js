@@ -22,7 +22,7 @@ class TabNav {
         this.activeTab.classList.add('tab_selected');
 
         const tabNumber = this.activeTab.dataset.tab;
-        const selectedContent = this.tabContent.querySelector(`[data-content=${tabNumber}]`);
+        const selectedContent = this.tabContent.querySelector("[data-content='0']");
 
         this.activeContent.classList.remove('tab-content_revealed');
         this.activeContent = selectedContent;
