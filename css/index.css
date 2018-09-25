@@ -163,7 +163,17 @@ header {
   padding: 6px 256px;
   position: fixed;
   width: 100%;
-  z-index: 1000;
+  z-index: 1001;
+}
+@media (max-width: 500px) {
+  header {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 header .logo {
   display: inline;
@@ -171,6 +181,11 @@ header .logo {
   font-weight: bold;
   font-size: 2.4rem;
   color: #FFFFFF;
+}
+@media (max-width: 500px) {
+  header .logo {
+    padding-left: 0;
+  }
 }
 header a {
   color: #FFFFFF;
@@ -222,11 +237,23 @@ h2 {
   font-size: 2.8rem;
   color: #222222;
 }
+@media (max-width: 500px) {
+  h2 {
+    font-size: 2.4rem;
+  }
+}
 .hero {
   background-image: url(../img/home/home-jumbotron.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 598px;
+}
+@media (max-width: 500px) {
+  .hero {
+    height: 260px;
+    margin: 0 16%;
+    background-size: contain;
+  }
 }
 .hero .hero-copy {
   line-height: 7.5rem;
@@ -236,6 +263,14 @@ h2 {
   font-size: 6.4rem;
   color: #FFFFFF;
 }
+@media (max-width: 500px) {
+  .hero .hero-copy {
+    line-height: 4.3rem;
+    padding-top: 108px;
+    padding-left: 3%;
+    font-size: 3.6rem;
+  }
+}
 .top-content {
   display: flex;
   flex-direction: row;
@@ -243,6 +278,16 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-top: 52px;
+}
+@media (max-width: 500px) {
+  .top-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 36px;
+  }
 }
 .top-content div {
   width: 49%;
@@ -252,57 +297,88 @@ h2 {
   justify-content: flex-start;
   align-items: flex-start;
 }
+@media (max-width: 500px) {
+  .top-content div {
+    width: 60%;
+  }
+}
 .top-content div p {
   padding: 28px 0;
 }
 .top-content img {
   width: 48%;
 }
-.top-content .image2 {
+@media (max-width: 500px) {
+  .top-content img {
+    width: auto;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .top-content #image1 {
+    order: -1;
+  }
+}
+.top-content #image2 {
   margin-top: 50px;
+}
+@media (max-width: 500px) {
+  .top-content #image2 {
+    margin-top: 10px;
+  }
 }
 .top-content .button {
   border: 1px solid #222222;
   color: #222222;
   font-size: 1.6rem;
   padding: 13px 27px;
+  text-align: center;
 }
 .top-content .button:hover {
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
   background: #222222;
 }
+@media (max-width: 500px) {
+  .top-content .button {
+    align-self: center;
+    width: 100%;
+  }
+}
 .projects {
   margin-top: 95px;
 }
+@media (max-width: 500px) {
+  .projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
 .projects div {
   margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 .projects div img {
   position: relative;
-  margin-bottom: 88px;
 }
 .projects div h3 {
   background: #D8D8D8;
   border: 0.5px solid #FFFFFF;
-  position: absolute;
-  display: inline;
   z-index: 100;
   letter-spacing: 6px;
   text-align: center;
   padding: 35px 62px;
   font-size: 2.5rem;
-}
-.projects div #project1 {
-  top: 1643px;
-  right: 333px;
-}
-.projects div #project2 {
-  top: 2289px;
-}
-.projects div #project3 {
-  top: 2938px;
-  right: 333px;
+  margin-top: -50px;
+  margin-bottom: 35px;
 }
 .projects div p {
   font-size: 1.8rem;
@@ -314,6 +390,11 @@ footer {
   margin-top: 100px;
   max-height: 250px;
   padding-bottom: 10px;
+}
+@media (max-width: 500px) {
+  footer {
+    max-height: 100%;
+  }
 }
 footer h4 {
   font-weight: bold;
@@ -338,6 +419,17 @@ footer div {
   align-items: center;
   max-height: 318px;
 }
+@media (max-width: 500px) {
+  footer div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    max-height: 100%;
+    padding: 0 20%;
+  }
+}
 footer div #footertext {
   display: flex;
   flex-direction: column;
@@ -345,14 +437,29 @@ footer div #footertext {
   justify-content: flex-start;
   align-items: flex-start;
 }
+@media (max-width: 500px) {
+  footer div #footertext {
+    padding: 0 0%;
+  }
+}
 footer div #footertext input {
   margin-top: 12px;
   padding: 12px 6px;
   width: 100%;
   border-radius: 5px;
 }
+@media (max-width: 500px) {
+  footer div #footertext input {
+    padding: 15px 6px;
+  }
+}
 footer div address {
   margin-top: 60px;
+}
+@media (max-width: 500px) {
+  footer div address {
+    margin-top: 30px;
+  }
 }
 footer div address h4 {
   font-weight: bold;
@@ -374,4 +481,10 @@ footer .copyright {
   display: block;
   margin-top: 28px;
   font-size: 1.2rem;
+}
+@media (max-width: 500px) {
+  footer .copyright {
+    text-align: inherit;
+    padding: 0 20%;
+  }
 }

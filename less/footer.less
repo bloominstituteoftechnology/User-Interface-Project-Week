@@ -4,6 +4,10 @@ footer {
     max-height: 250px;
     padding-bottom: 10px;
 
+    @media @mobile {
+        max-height: 100%;
+    }
+
     h4 {
         .text-styling(bold, 2rem, @white);
         line-height: 2.4rem;
@@ -21,19 +25,37 @@ footer {
         .flex(row,wrap, space-between, center);
         max-height: 318px;
 
+        @media @mobile {
+        .flex(column,nowrap, space-between, baseline);
+        max-height: 100%;
+        padding: 0 20%;
+        }
+
         #footertext {
             .flex(column,nowrap, flex-start, flex-start);
+
+            @media @mobile {
+                padding: 0 0%;
+                }
 
             input {
                 margin-top: 12px;
                 padding: 12px 6px;
                 width: 100%;
                 border-radius: 5px;
+
+                @media @mobile {
+                    padding: 15px 6px;
+                }
             }
         }
 
         address {
             margin-top: 60px;
+
+            @media @mobile {
+                margin-top: 30px;
+            }
 
             h4 {
                 .text-styling(bold, 2rem, @white);
@@ -55,6 +77,12 @@ footer {
         display: block;
         margin-top: 28px;
         font-size: 1.2rem;
+
+        @media @mobile {
+            text-align: inherit;
+            padding: 0 20%;
+        }
+    
     }
 
 }

@@ -13,6 +13,9 @@
   
   h2 {
     .text-styling(bold, 2.8rem, @darkgrey);
+    @media @mobile {
+      font-size: 2.4rem;
+    }
   }
   
   
@@ -21,22 +24,45 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 598px;
+
+    @media @mobile {
+     // height: 500px;
+      height: 260px;
+      margin: 0 16%;
+      background-size: contain;
+    }
   
     .hero-copy {
       line-height: 7.5rem;
       padding-top: 325px;
       padding-left: 8%;
       .text-styling(bold, 6.4rem, @white);
+
+      @media @mobile {
+        line-height: 4.3rem;
+        padding-top: 108px;
+        padding-left: 3%;
+        font-size: 3.6rem;
+      }
     }
   }
   
   .top-content {
     .flex(row, wrap, space-between, center);
     margin-top: 52px;
+
+    @media @mobile {
+      .flex(column, wrap, space-between, center);
+      margin-top: 36px;
+    }
   
     div {
       width: 49%;
       .flex(column,nowrap,flex-start,flex-start);
+
+      @media @mobile {
+        width: 60%;
+      }
   
       p {
         padding: 28px 0; 
@@ -45,52 +71,62 @@
   
     img {
       width: 48%;
+      @media @mobile {
+        width: auto;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    }
+
+    #image1 {
+      @media @mobile {
+        order: -1;
+      }
     }
   
-    .image2 {
+    #image2 {
       margin-top: 50px;
+      @media @mobile {
+        margin-top: 10px;
+      }
     }
   
     .button {
       .button-styling;
+
+      @media @mobile {
+        align-self: center;
+        width: 100%;
+      }
+  
     }
   }
   
   .projects {
     margin-top: 95px;
+    @media @mobile {
+      .flex(column, nowrap, center, flex-start);
+    }
   
     div {
       margin-top: 44px;
+      .flex(column, nowrap, flex-start, flex-end);
   
       img {
         position: relative;
-        margin-bottom: 88px;
       }
   
       h3 {
         background: @projectcolor;
         border: 0.5px solid @white;
-        position: absolute;
-        display: inline;
         z-index: 100;
         letter-spacing: 6px;
         text-align: center;
         padding: 35px 62px;
         font-size: 2.5rem;
+        margin-top: -50px;
+        margin-bottom: 35px;
       }
-      #project1 {
-        top: 1643px;
-        right: 333px;
-       }
-  
-       #project2 {
-        top: 2289px;
-       }
-  
-       #project3 {
-        top: 2938px;
-        right: 333px;
-       }
   
        p {
         font-size: 1.8rem;
