@@ -1,90 +1,134 @@
 .container {
   .container(1024px);
+  @media @mobile {
+    max-width: 320px;
+  }
   .splash {
     position: relative;
     z-index: -1;
-  }
-  h2 {
-    position: absolute;
-    font-weight: 600;
-    left: 82px;
-    bottom: 53px;
-    font-size: 9.8rem;
-    color: @colorBG;
-    p {
-      line-height: 7.5rem;
-      letter-spacing: 0.11rem;
+    img {
+      width: 100%;
+      height: auto;
     }
-  }
-}
-.main-content {
-  .content-card {
-    margin: 50px 84px;
-    .flex(row, flex-end, stretch);
-
-    .content-text {
-      margin: 37px 15px 22px 0;
-      .flex(column, space-around, flex-start);
-      h3 {
-        font-size: 2.4rem;
+    h2 {
+      position: absolute;
+      left: 82px;
+      bottom: 53px;
+      color: @colorBG;
+      @media @mobile {
+        left: 15px;
+        bottom: 25px;
       }
       p {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-      }
-      .content-btn {
-        display: inline-block;
-        border: 1px solid @buttonBorder;
-        font-size: 1.6rem;
-        padding: 15px 0;
-        width: 135px;
-        text-align: center;
+        line-height: 7.5rem;
+        letter-spacing: 0.11rem;
+        font-size: 9.8rem;
+        font-weight: bold;
+        @media @mobile {
+          font-size: 3.6rem;
+          line-height: 1.15;
+          letter-spacing: initial;
+        }
       }
     }
   }
-  .flipped {
-    flex-direction: row-reverse;
-    margin-top: 100px;
+  .main-content {
+    .content-card {
+      margin: 50px 84px;
+      .flex(row, flex-end, stretch);
+      @media @mobile {
+        .mobileContentCards();
+      }
+      .content-text {
+        margin: 37px 15px 22px 0;
+        .flex(column, space-around, flex-start);
+        @media @mobile{
+          margin: 27px 0 10px;
+        }
+        h3 {
+          font-size: 2.4rem;
+        }
+        p {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          @media @mobile{
+            margin: 20px 0 27px;
+          }
+        }
+        .content-btn {
+          display: inline-block;
+          border: 1px solid @buttonBorder;
+          font-size: 1.6rem;
+          padding: 15px 0;
+          width: 135px;
+          text-align: center;
+          @media @mobile{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .flipped {
+      flex-direction: row-reverse;
+      margin-top: 100px;
+      @media @mobile{
+        .mobileContentCards();
+      }
+      .content-text {
+        margin: 30px 0 30px 30px;
+        @media @mobile{
+          margin: 27px 0 10px;
+        }
+      }
+    }
+  }
+  .recent-projects {
+    margin: 97px 84px;
+    h3 {
+      margin: 45px 0;
+      font-size: 2.4rem;
+    }
+    .inset-text {
+      position: relative;
+      z-index: -1;
+      h4 {
+        position: absolute;
+        background: @insetBG;
+        font-size: 2.4rem;
+        letter-spacing: 0.8rem;
+        width: 314px;
+        padding: 33px 0 37px;
+        right: 2px;
+        bottom: -40px;
+        text-align: center;
+        font-weight: 100;
+        border: solid @colorBG 1px;
+      }
+    }
+    .flipped {
+      h4 {
+        left: 0px;
+      }
+    }
     .content-text {
-      margin: 30px 0 30px 30px;
+      margin: 90px auto 100px;
+      width: 53%;
+      p {
+        font-size: 1.8rem;
+        line-height: 1.35;
+        margin: 25px 10px 0 0;
+      }
     }
   }
 }
-.recent-projects {
-  margin: 97px 84px;
-  h3 {
-    margin: 45px 0;
-    font-size: 2.4rem;
+.mobile-img {
+  display: none;
+  @media @mobile {
+    display: block;
   }
-  .inset-text {
-    position: relative;
-    z-index: -1;
-    h4 {
-      position: absolute;
-      background: @insetBG;
-      font-size: 2.4rem;
-      letter-spacing: .8rem;
-      width: 314px;
-      padding: 33px 0 37px;
-      right: 2px;
-      bottom: -40px;
-      text-align: center;
-      font-weight: 100;
-      border: solid @colorBG 1px;
-    }
-  }
-  .flipped{
-    h4{
-      left: 0px;
-    }
-  }
-  .content-text {
-    margin: 90px auto 100px;
-    width: 53%;
-    p {
-      font-size: 1.8rem;
-      line-height: 1.35;
-      margin: 25px 10px 0 0;
-    }
+}
+.desktop-img {
+  @media @mobile {
+    display: none;
   }
 }
