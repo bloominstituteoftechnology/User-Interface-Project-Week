@@ -149,17 +149,16 @@ p {
   margin: 30px 0 35px;
 }
 .modal {
-  background: #828282;
+  background: rgba(130, 130, 130, 0.9);
   height: 100vh;
   width: 100vw;
-  opacity: 0.8;
   display: none;
   position: fixed;
   justify-content: center;
   align-items: center;
   z-index: 10;
 }
-.modal .header-nav a {
+.modal .fixed-header-nav a {
   width: 100%;
   display: block;
   font-weight: bold;
@@ -168,12 +167,12 @@ p {
   color: #FFFFFF;
   text-decoration: none;
 }
-.modal .header-nav a:hover {
+.modal .fixed-header-nav a:hover {
   color: #222222;
 }
 .fixed-header {
   color: #FFFFFF;
-  background-color: rgba(130, 130, 130, 0.8);
+  background-color: rgba(130, 130, 130, 0.9);
   width: 100%;
   height: 50px;
   position: fixed;
@@ -190,9 +189,11 @@ p {
   margin: 0 auto;
   padding: 0 5%;
 }
-.fixed-header .fixed-header-container .fixed-header-logo {
+.fixed-header .fixed-header-container a {
   font-size: 2.4rem;
   font-weight: normal;
+  text-decoration: none;
+  color: #FFFFFF;
 }
 .fixed-header .fixed-header-container .fixed-header-hamburger {
   cursor: pointer;
@@ -238,6 +239,14 @@ p {
   width: 100%;
   height: auto;
 }
+@media (max-width: 500px) {
+  .page-container .page-header img {
+    max-width: 500px;
+    height: auto;
+    overflow: hidden;
+    padding-top: 50px;
+  }
+}
 .page-container .page-header h2 {
   position: absolute;
   bottom: 8.5%;
@@ -249,6 +258,13 @@ p {
   color: #FFFFFF;
   font-weight: bold;
 }
+@media (max-width: 500px) {
+  .page-container .page-header h2 {
+    font-size: 4.8rem;
+    line-height: 48px;
+    font-weight: normal;
+  }
+}
 .page-container .content-section {
   width: 100%;
   padding: 50px 85px;
@@ -257,14 +273,28 @@ p {
   justify-content: space-between;
   align-items: center;
 }
-.page-container .content-section .content-img,
+@media (max-width: 500px) {
+  .page-container .content-section {
+    padding: 0;
+  }
+}
+.page-container .content-section .content-img {
+  width: 48%;
+}
+@media (max-width: 500px) {
+  .page-container .content-section .content-img {
+    order: -1;
+    width: 100%;
+    padding: 15px;
+  }
+}
 .page-container .content-section .content-text {
   width: 48%;
 }
 @media (max-width: 500px) {
-  .page-container .content-section .content-img,
   .page-container .content-section .content-text {
     width: 100%;
+    padding: 15px;
   }
 }
 .page-container .content-section button {
@@ -274,6 +304,11 @@ p {
   text-align: center;
   font-size: 1.6rem;
   margin: 0;
+}
+@media (max-width: 500px) {
+  .page-container .content-section button {
+    width: 100%;
+  }
 }
 .page-container .content-section .the-villas {
   position: relative;
@@ -350,6 +385,11 @@ p {
   width: 52%;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  .page-container .content-section .project-text {
+    width: 90%;
+  }
+}
 .page-container .content-section .project-text .project-paragraph {
   font-size: 1.8rem;
   line-height: 24px;
@@ -369,6 +409,11 @@ footer {
   font-weight: normal;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  footer {
+    height: auto;
+  }
+}
 footer .footer-content {
   width: 100%;
   max-width: 1024px;
@@ -377,6 +422,13 @@ footer .footer-content {
   justify-content: space-between;
   align-items: baseline;
   padding: 0 5%;
+}
+@media (max-width: 500px) {
+  footer .footer-content {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+  }
 }
 footer .footer-content h2 {
   font-size: 2rem;
@@ -387,6 +439,11 @@ footer .footer-content .footer-input {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media (max-width: 500px) {
+  footer .footer-content .footer-input {
+    width: 90%;
+  }
 }
 footer .footer-content .footer-input input[type=email] {
   width: 100%;
@@ -401,6 +458,13 @@ footer .footer-content .footer-input input[type=email] {
 footer .footer-content .location {
   width: 22.22%;
   padding-left: 6%;
+}
+@media (max-width: 500px) {
+  footer .footer-content .location {
+    width: 90%;
+    padding: 0;
+    margin-bottom: 10px;
+  }
 }
 footer .footer-content p {
   font-size: 1.2rem;
