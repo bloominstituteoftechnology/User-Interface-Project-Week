@@ -17,11 +17,53 @@
 			font-size: 2.5rem;
 			font-weight: bold;
 			color: #ffffff;
+			z-index: 1000;
 		}
 
-		nav {
+		.expanded {
+			z-index: 1000;
+		}
+
+		.non-expanded {
 			display: none;
 		}
+
+		nav, .expanded {
+			display: content;
+		}
+
+		.menu-modal {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+			opacity: .95;
+			background: grey;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 10;
+
+			.links-wrapper {
+				display: flex;
+				flex-direction: column;
+			}
+
+			a {
+				color: white;
+				font-size: 4rem;
+				font-weight: bold;
+				margin: 25px;
+				text-decoration: none;
+
+				&:hover {
+					color: black;
+				}
+			}
+
+		}
+
 	}
 
 	@media @tablet {

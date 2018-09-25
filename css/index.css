@@ -161,9 +161,44 @@ html {
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
+  z-index: 1000;
 }
-.header-wrapper header nav {
+.header-wrapper header .expanded {
+  z-index: 1000;
+}
+.header-wrapper header .non-expanded {
   display: none;
+}
+.header-wrapper header nav,
+.header-wrapper header .expanded {
+  display: content;
+}
+.header-wrapper header .menu-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.95;
+  background: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.header-wrapper header .menu-modal .links-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.header-wrapper header .menu-modal a {
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 25px;
+  text-decoration: none;
+}
+.header-wrapper header .menu-modal a:hover {
+  color: black;
 }
 @media (max-width: 800px) {
   .header-wrapper header {
