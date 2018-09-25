@@ -87,8 +87,6 @@ video {
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -106,7 +104,10 @@ section {
   display: block;
 }
 body {
+  box-sizing: border-box;
   line-height: 1;
+  font-size: 62.5%;
+  font-family: 'Roboto', Arial, san-serif;
 }
 ol,
 ul {
@@ -134,11 +135,54 @@ table {
   border-spacing: 0;
 }
 /* Your Code Goes Here */
-Header {
-  width: 1024px;
+header {
+  width: 100%;
+  position: fixed;
+  max-width: 1024px;
   margin: 0 auto;
 }
+header .header-contents {
+  background: #98A4AF;
+  z-index: 10;
+  padding: 14px 85px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-contents h1 {
+  font-size: 1.4rem;
+  letter-spacing: 1.8px;
+  color: #FFFFFF;
+}
+header .header-contents .nav-items {
+  display: none;
+}
 .container {
-  width: 1024px;
+  max-width: 1024px;
   margin: 0 auto;
+}
+.container .splash {
+  position: relative;
+  z-index: -1;
+}
+.container .splash img {
+  z-index: -1;
+}
+.container .splash h2 {
+  position: absolute;
+  font-weight: bold;
+  left: 82px;
+  bottom: 53px;
+  font-size: 4rem;
+  color: #FFFFFF;
+}
+.container .splash h2 p {
+  line-height: 4.7rem;
+}
+.container .main-content .content-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
