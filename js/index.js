@@ -38,6 +38,8 @@ class TabItem {
             item.style.display = "none";
         });
         this.element.style.display = "block";
+        TweenMax.from('.tab-item', .4, {opacity: 0});
+        TweenMax.to('.tab-item', .4, {opacity: 1});
     }
 }
 
@@ -59,13 +61,25 @@ hamburger.addEventListener('click', () => {
         navigation.classList.add('nav-links-active');
         hamburger.src = "../img/nav-hamburger-close.png";
         document.querySelector('.main-nav').style.background = 'none';
-        
+        TweenMax.from('.nav-image', .5, {opacity: 0});
+        TweenMax.to('.nav-image', .5, {opacity: 1});
+        TweenMax.from('.nav-links', .8, {y: -1000, opacity: .5});
+        TweenMax.to('.nav-links', .8, {y: 0, opacity: 1});
         return count++;
     } else {
         navigation.classList.remove('nav-links-active');
         hamburger.src = "../img/nav-hamburger.png";
+        document.querySelector('.nav-links').style.backgroundColor = '#9aa5b0';
         document.querySelector('.main-nav').style.backgroundColor = '#9aa5b0';
         return count++;
     }
-    console.log(count);
+});
+
+//Navigation will also click when clicking the background of the navlinks
+navigation.addEventListener('click', () => {
+    navigation.classList.remove('nav-links-active');
+    hamburger.src = "../img/nav-hamburger.png";
+    document.querySelector('.nav-links').style.backgroundColor = '#9aa5b0';
+    document.querySelector('.main-nav').style.backgroundColor = '#9aa5b0';
+    return count++;
 });
