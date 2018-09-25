@@ -4,13 +4,7 @@ class TabLink {
     this.element = element;
     // Get the tab data attribute and save the value here
     this.tabData = this.element.dataset.tab; 
-    // Find all element with the .card class in the app that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
-    //if(this.tabData === 'all'){
-     // this.cards = document.querySelectorAll(`.card`);
-    //} else {
-      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
-    //}
-    // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
+    this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     this.cards = Array.from(this.cards).map( card => new TabCard(card));
     // Add a click event that invokes selectTab
     this.element.addEventListener('click', () => {this.selectTab()});
@@ -19,6 +13,7 @@ class TabLink {
   selectTab(){
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll(".tab");
+    console.log(tabs);
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach( tab => {
       tab.classList.remove("active-tab");
@@ -26,6 +21,7 @@ class TabLink {
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
+    console.log(cards);
     // Iterate through the NodeList setting the display style each one to 'none'
     cards.forEach(card => card.style.display = 'none');
 
