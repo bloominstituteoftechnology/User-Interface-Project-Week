@@ -3,7 +3,6 @@ class TabLink {
     constructor(element) {
         // Assigns this.element to the element that was passed in the constructor
         this.element = element;
-        console.log(this.element);
         // Assigns this.tabData to the elements data attribute value;
         this.tabData = this.element.dataset.tab;
         // Assigns the this.itemElement to the tab item with the matching tabData
