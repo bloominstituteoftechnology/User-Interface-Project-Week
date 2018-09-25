@@ -9,7 +9,7 @@ class Dropdown {
     }
 
     toggleContent(event) {
-        this.content.classList.toggle('dropdown-hidden'); //links
+        this.content.classList.toggle('dropdown-hidden'); 
     }
 }
 
