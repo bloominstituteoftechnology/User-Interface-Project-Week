@@ -62,6 +62,9 @@ table{
 
 * {
   box-sizing: border-box;
+  
+}
+html {
   font-size: 62.5%;
 }
 
@@ -69,6 +72,7 @@ body {
   background-color: #fff;
   color: #222222;
   font-family: Roboto, Arial, sans-serif;
+  
 
 }
 /* GENERAL STYLES
@@ -106,7 +110,7 @@ Color: #222222 */
 p{
 
   font-size: 1.6rem;
-  color: #FFFFFF;
+  color: black;
   line-height: 2.4rem;
 }
 /* *General Text
@@ -123,38 +127,268 @@ HOME PAGE */
   position: fixed;
   display: flex;
   justify-content: space-between;
+  top: 0;
+  height: 50px;
+  padding: 10px;
 
   .logo{
     font-weight: bold;
     font-size: 2.4rem;
     color: #FFFFFF;
+    margin-left: 20px;
     /* *Navigation Logo
     Font Weight: Bold
     Font Size: 24px
     Color: #FFFFFF */
   }
 
+  img {
+    margin-right: 20px;
+  }
+
 }
 
+/* HEADER */
+
 .home-head{
-  background-image: url('/img/home/home-jumbotron.png');
+
+  /* background-image: url('/img/home/home-jumbotron.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 20%; */
+  margin-top: 50px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
   opacity: .8;
   width: 100%;
+  position: relative;
+  height: auto;
+
+  img {
+    width: 100%;
+    opacity: .8;
+    height: auto;
+  }  
+  
+  h1 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    
+  } 
 
 }
 
+/* PAGE CONTENT MEDIA QUERY */
+
+
+
+
+
+
+
+/* TOP CONTENT */ 
+
+.container {
+  width: 80%;
+  
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+/*   @media (max-width: 500px){
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      margin: 0 auto;
+      width: 100%;
+    } */
+  
+    
+    
+  
+  
+  }
+}
+
+.top-content {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  flex-direction: column;
+
+  .content-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+    
+    }
+    
+    
+    .content-col{
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding: 8% 0;
+    }
+    .img-container {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+
+      img{
+        max-width: 90%;
+      }
+      
+      &.two{
+        justify-content: flex-end;
+      }
+    }
+
+
+  }
+  .two{
+
+    flex-direction: row-reverse;
+  }
+
+  /* @media (max-width: 500px){
+    .content-row{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    } */
+
+
+/* TOP CONTENT -- CONTENT COLUMN */
+.content-col {
+  h2{
+    margin-bottom: 3px;
+  }
+  p {
+    margin-bottom: 3px;
+    font-size: 1.2rem;
+  }
+
+  .button {
+    margin-bottom: 10px;
+    border: solid 1px #222222;
+    text-align: center;
+    padding: 5px;
+    width: 20%;
+    height: 35%;
+    /* Button borders: #222222 */
+
+  }
+}
+
+/* BOTTOM CONTENT */
+
+.bottom-content {
+  display: flex;
+  width: 100%;
+  min-width: 800px;
+  flex-direction: column;
+  
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+
+    
+  .label-img{
+      width: 100%;
+      margin-bottom: 10px;
+      display: flex;
+      position: relative;
+      
+      img{
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      
+    }
+
+  p {
+    margin-bottom: 10px;
+  }
+  
+}
+
+/* BOTTOM CONTENT LABEL */
+
+.label {
+  background-color: #D8D8D8;
+  color: black;
+  font-size: 1.4rem;
+  padding: 5px;
+  letter-spacing: .8rem;
+  z-index: 10;
+  position: absolute;
+  right: 0px;
+  bottom: -8px;
+  height: 35%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+    p{
+      align-self: center;
+    }
+ 
+
+
+  
+  &.left{
+    align-self: flex-end;
+    justify-self: left;
+    left: 0px;
+  }
+
+  .right {
+  align-self: flex-end;
+  justify-self: right;
+  }
+
+}
+
+
+
+
+
+
+/* FOOTER */
+
+
+
 footer{
   background-color: #828282;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  
   /* *Footer
       Background: #828282 */
+
+  .contact {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
 
   h2 {
     font-size: 2rem;
     line-height: 2.4rem;
     color: #fff;
+    margin-bottom: 5px;
     /* *Footer Headings
         Font Weight: Regular
         Font Size: 20px
@@ -171,10 +405,33 @@ footer{
       Line Height: 26px
       Color: #FFFFFF */
   }
+
+  input{
+    margin-bottom: 5px;
+    border-radius: 5px;
+    height: 40px;
+    padding: 5px;
+  }
+
+
 }
 
+footer .location {
+  display: flex;
+  flex-direction: column;
+}
 
+.main-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px;
+}
 
+.copyright{
+  align-self: center;
+}
 
 /*  
 
@@ -183,7 +440,7 @@ Page Specific
 
 Home Page
 Recent Projects Gray Square: #D8D8D8
-Button borders: #222222
+
 
 Services Page
 Tab selected background: #5E9FB9
