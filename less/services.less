@@ -62,6 +62,8 @@
     }
 
     .active-link {
+      transition: background 500ms ease-in-out;
+      transition: color 500ms ease-in-out;
       background: #5e9fb9;
       color: white;
     }
@@ -70,13 +72,22 @@
   .tabs {
     width: 100%;
     padding-bottom: 100px;
+    position: relative;
+    height: 500px;
+
+    @media (max-width: 860px) {
+      height: 700px;
+    }
     @media @mobile {
       padding-bottom: 40px;
+      height: 800px;
     }
     .tab {
+      position: absolute;
+      top: 0;
+
       .flex(space-between);
       margin-top: 53px;
-
       @media @mobile {
         .flex(space-between, center, column);
         margin-top: 25px;

@@ -5,6 +5,9 @@ RESET
 v2.0b1 | 201101 
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
+.width-100 {
+  width: 100%;
+}
 .header {
   height: 50px;
   background-color: #8E9AA6;
@@ -70,7 +73,7 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 }
 .navigation a:hover {
   color: #222222;
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
   transform: scale(1.5);
   transform-origin: center left;
 }
@@ -468,19 +471,31 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   cursor: pointer;
 }
 .container .tab-links .active-link {
+  transition: background 500ms ease-in-out;
+  transition: color 500ms ease-in-out;
   background: #5e9fb9;
   color: white;
 }
 .container .tabs {
   width: 100%;
   padding-bottom: 100px;
+  position: relative;
+  height: 500px;
+}
+@media (max-width: 860px) {
+  .container .tabs {
+    height: 700px;
+  }
 }
 @media (max-width: 500px) {
   .container .tabs {
     padding-bottom: 40px;
+    height: 800px;
   }
 }
 .container .tabs .tab {
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: none;
@@ -612,6 +627,60 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 .contact-content .where .location address {
   font-size: 18px;
   line-height: 28px;
+}
+.carousel {
+  width: 100vw;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+}
+@media (min-width: 1200px) {
+  .carousel {
+    width: 1200px;
+  }
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: row;
+  color: #fff;
+  font-size: 40px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  text-shadow: #333 1px 0 5px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #333;
+  text-shadow: white 1px 0 5px;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  width: 100%;
+  position: absolute;
+}
+.carousel .hide-img {
+  display: none;
 }
 html,
 body,

@@ -14,10 +14,16 @@ class TabLink {
             n.classList.remove('active-link');
         });
         document.querySelectorAll('.tab').forEach(n => {
-            n.style.display = 'none';
+            n.style.transition = 'opacity 0.5s ease-in-out'
+            n.style.opacity = '0';
         });
         this.link.classList.add('active-link')
-        this.content.style.display = null;
+        this.content.style.display = 'flex';
+        
+        setTimeout(() => {
+            this.content.style.opacity = '1';
+            this.content.style.transitionDelay = '0.5s';
+        },0)
     }
 }
 
@@ -61,9 +67,88 @@ class PageSection {
 }
 
 let pageSections = document.querySelectorAll('.cta > *, .projects > *');
-console.log('pageSections', pageSections);
+// console.log('pageSections', pageSections);
 
 pageSections = Array.from(pageSections).map(n => new PageSection(n));
 
 
 
+class Carousel {
+    constructor(element) {
+        this.element = element;
+        this.leftButton = this.element.querySelector('.left-button');
+        this.rightButton = this.element.querySelector('.right-button');
+        this.images = this.element.querySelectorAll('img');
+
+        this.hideAll();
+        this.images[0].style.display = null;
+        this.imageIndex = 0;
+
+        this.leftButton.addEventListener('click', e => this.shiftLeft(e));
+        this.rightButton.addEventListener('click', e => this.shiftRight(e));
+
+    }
+
+    shiftLeft() {
+        const preIndex = this.imageIndex;
+        this.imageIndex -= 1;
+        if (this.imageIndex < 0) { this.imageIndex = this.images.length - 1}
+
+        this.animate(preIndex, this.imageIndex, 'left');
+    }
+
+    shiftRight() {
+        const preIndex = this.imageIndex;
+        this.imageIndex += 1;
+        if (this.imageIndex >= this.images.length) { this.imageIndex = 0 }
+
+        this.animate(preIndex, this.imageIndex, 'right');
+    }
+
+    animate(preIndex, index, direction) {
+        const preImg = this.images[preIndex];
+        const img = this.images[index];
+        const transition = 'all 600ms ease-in-out';
+        let from = '';
+        let to = ''
+
+        if (direction === 'left') {
+            from = 'translateX(100%)';
+            to = 'translateX(-100%)'
+        } else if (direction === 'right') {
+            from = 'translateX(-100%)';
+            to = 'translateX(100%)'
+        }
+
+        preImg.style.transition = transition;
+        preImg.style.transform = from;
+        
+        img.style.transform = to;
+        img.style.transition = transition;
+        img.style.display = null;
+
+        setTimeout(() => {
+            img.style.transform = 'translateX(0%)';
+            img.style.zIndex = -1;
+        },0)
+
+        setTimeout(() => {
+            this.hideAll();
+            img.style.display = null;
+        }, 600);
+    }
+
+    hideAll() {
+        this.images.forEach(n => {
+            n.style.display = 'none';
+            n.style.transform = 'translateX(0%)';
+            n.style.zIndex = -1;
+            n.style.transition = 'none';
+        });
+    }
+
+}
+
+let carousel = document.querySelector('.carousel');
+
+if (carousel) carousel = new Carousel(carousel);
