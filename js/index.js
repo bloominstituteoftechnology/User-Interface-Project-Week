@@ -58,7 +58,7 @@ window.addEventListener('resize', () => {
   });
 });
 
-window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY;
-  console.log(scrolled);
-});
+// window.addEventListener('scroll', () => {
+//   const scrolled = window.scrollY + window.innerHeight;
+//   console.log(scrolled);
+// });
