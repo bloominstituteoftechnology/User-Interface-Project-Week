@@ -16,7 +16,7 @@ navBurger.addEventListener('click', () => {
         dropdownNav.style.display = 'flex';
         dropdownNav.style['flex-direction'] = 'column';
         navBar.style.display = 'block';
-        fixedNav.style['justify-content'] = 'flex-start';
+        fixedNav.style['justify-content'] = 'space-around';
     } else {
         // hide menu
         navBurger.classList.add('menu-open');
