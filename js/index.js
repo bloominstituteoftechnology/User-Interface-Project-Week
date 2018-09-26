@@ -60,7 +60,7 @@ window.sr = ScrollReveal({ mobile: false });
 
 sr.reveal(".landing-container h1", {
   origin: "left",
-  delay: 0,
+  delay: 500,
   interval: 350,
   distance: "300px"
 });
