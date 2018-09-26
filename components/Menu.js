@@ -1,5 +1,8 @@
 let toggleMenu = () => {
-	menu.classList.add('menu-open');
+	//menu.classList.add('menu-open'); 
+	//as menu-button click listener was working for single click added styles instead of classList.add();
+	menu.style.display = "flex";
+	menu.style.flexDirection = "column";
 }
 
 
