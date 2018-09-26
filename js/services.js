@@ -4,6 +4,8 @@ class Buttons {
   constructor(element) {
     this.element = element;
     this.data = this.element.dataset.name;
+    this.title = document.querySelector(`h1[data-name=${this.data}]`)
+    this.pic = document.querySelector(`img[data-name=${this.data}]`)
     this.element.addEventListener('click', () => {
       this.selectButton();
     });
@@ -14,19 +16,26 @@ class Buttons {
   }
     selectButton() {
       const cardData = document.querySelector(`img[data-name=${this.data}]`)
-      // console.log(cardData);
       const buttons = document.querySelectorAll('.services-button');
-      let images = document.querySelectorAll('.services-main-content img');
-console.log(images);
+      const titles = document.querySelectorAll('.card-header');
+      const images = document.querySelectorAll('.services-main-content img');
+
       buttons.forEach(item => {
         item.classList.remove('selected');
       });
-      this.element.classList.add('selected');
-      images.forEach(item => {
+
+      titles.forEach(item => {
+        item.classList.add('hiding');
         console.log(item);
+      });
+
+      images.forEach(item => {
         item.classList.add('hiding-picture');
       });
+
       cardData.classList.remove('hiding-picture');
+      this.title.classList.remove('hiding');
+      this.element.classList.add('selected');
 
 
    }
