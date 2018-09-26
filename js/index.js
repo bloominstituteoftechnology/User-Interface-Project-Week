@@ -15,13 +15,6 @@ close.addEventListener("click", () => {
   close.classList.toggle("img-hide");
 });
 
-// menu.addEventListener("mouseover", () => {
-//   TweenMax.to(menu, 0.3, { rotation: 360, scale: 1 });
-// });
-
-// close.addEventListener("mouseover", () => {
-//   TweenMax.to(close, 0.3, { rotation: 360, scale: 1 });
-// });
 
 
 class TabLink {
