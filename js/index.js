@@ -39,7 +39,7 @@ class TabItem {
 
     select() {
         const items = document.querySelectorAll('.tab-item');
-        console.log(items);
+        // console.log(items);
         items.forEach(item => item.classList.remove('tabs-item-selected'))
         this.element.classList.add('tabs-item-selected');
     }
