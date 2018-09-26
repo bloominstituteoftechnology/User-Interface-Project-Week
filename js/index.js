@@ -9,10 +9,9 @@ class Dropdown {
     this.content = this.element.querySelector('.dropdown-content');
     this.expanded = this.element.querySelector('.expanded')
     this.button.addEventListener('click', () => {
-      this.toggleContent() })
+      this.toggleContent() });
     this.expanded.addEventListener('click', () => {
-      this.closeContent() 
-    })
+      this.closeContent() });
     
 
   }
@@ -67,7 +66,7 @@ class TabItem {
 }
 let links = document.querySelectorAll('.tabs-link');
 links = Array.from(links).map(link => new TabLink(link));
-links[0].selected();
+links[1].selected();
 
 
 
