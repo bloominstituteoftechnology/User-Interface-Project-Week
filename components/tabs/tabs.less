@@ -5,6 +5,9 @@
 .services nav {
     display: flex;
     justify-content: space-between;
+    @media @mobile {
+        flex-direction: column;
+    }
     .tab{
         font-weight: bold;
         font-size: 2rem;
@@ -15,9 +18,16 @@
         vertical-align: middle;
         border: solid 1px @button-border-color;
         white-space: nowrap;
+        @media @mobile {
+            width: 100%;
+            margin: 1rem 0;
+        }
         &.selected {
             color: @tab-select-fg;
             background: @tab-select-bg;
+            @media @mobile {
+                border-color: @color-grey;
+            }
         }
         &:hover {
             color: @tab-hover-fg;
@@ -37,14 +47,23 @@
     .tab-content-boxes {
         display: flex;
         justify-content: space-between;
+        @media @mobile {
+            flex-direction: column;
+        }
     }
     p {
         width: 40rem;
         margin-bottom: 2rem;
+        @media @mobile {
+            width: 100%;
+        }
     }
     .img-header {
         width: 40rem;
         height: 27.5rem;
+        @media @mobile {
+            width: 100%;
+        }
         &.pre-construction {
             background-image: url('/img/services/services-tab-pre-construction-img.png');
             @media @mobile {
