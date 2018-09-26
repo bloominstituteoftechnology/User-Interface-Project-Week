@@ -72,7 +72,9 @@ dropdown.addEventListener('click', function() {
 });
 
 // Page Load Effect ----------------------------------------
-let bkgd = document.querySelector('.hero');
-let heroCopy = document.querySelector('.hero-copy');
-TweenMax.from(bkgd, .8, {autoAlpha:0, y:-50, ease: Circ.easeOut,});
-TweenMax.from(heroCopy, .8, {autoAlpha:0, y:100, ease: Circ.easeOut,});
+TweenMax.from('.hero', .8, {autoAlpha:0, y:-50, ease: Circ.easeOut,});
+TweenMax.from('.hero-copy', .8, {autoAlpha:0, y:100, ease: Circ.easeOut,});
+
+let tl = new TimelineMax();
+tl.from('.intro', .4, {delay: .8 , autoAlpha:0, y:-20, ease: Circ.easeOut,});
+tl.from('.carousel', .4, {autoAlpha:0, y:-20, ease: Circ.easeOut,});

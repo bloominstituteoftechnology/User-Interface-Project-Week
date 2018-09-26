@@ -29,7 +29,7 @@ class TabItem {
         items.forEach(item => {TweenMax.to(item, .7, {autoAlpha: 0, y:-40})})
 
         this.element.classList.add('tab-item-selected');
-        TweenMax.to(this.element, .7, {autoAlpha: 1, y: 0});
+        TweenMax.to(this.element, .7, {autoAlpha: 1, y: 0, ease: Circ.easeOut});
     }
 }
 
@@ -92,7 +92,10 @@ window.addEventListener('resize', function() {
 });
 
 // // Page Load Effect ----------------------------------------
-let bkgd = document.querySelector('.hero');
-let heroCopy = document.querySelector('.hero-copy');
-TweenMax.from(bkgd, .8, {autoAlpha:0, y:-50, ease: Circ.easeOut,});
-TweenMax.from(heroCopy, .8, {autoAlpha:0, y:100, ease: Circ.easeOut,});
+TweenMax.from('.hero', .8, {autoAlpha:0, y:-50, ease: Circ.easeOut,});
+TweenMax.from('.hero-copy', .8, {autoAlpha:0, y:100, ease: Circ.easeOut,});
+
+let tl = new TimelineMax();
+tl.from('.services-content', .4, {delay: .8 , autoAlpha:0, y:-20, ease: Circ.easeOut,});
+tl.from('.tabs', .4, {autoAlpha:0, y:-20, ease: Circ.easeOut,});
+tl.from('.items', .7, {autoAlpha:0, y:-40, ease: Circ.easeOut,});
