@@ -42,7 +42,8 @@ let bodyToggle = () => {
 
 hamburger.addEventListener('click', (e) => {
     e.target.classList.toggle('hide');
-    container.style.visibility = "hidden";
+    main.classList.toggle('hide');
+    footer.classList.toggle('hide');
     exitIcon.classList.toggle('hide');
     navPage.classList.toggle('hide');
     
@@ -52,6 +53,7 @@ exitIcon.addEventListener('click', (e) => {
     e.target.classList.toggle('hide');
     hamburger.classList.toggle('hide');
     navPage.classList.toggle('hide');
-    container.style.visibility = "visible";
+    main.classList.toggle('hide');
+    footer.classList.toggle('hide');
     
 });
