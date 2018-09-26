@@ -36,14 +36,15 @@ closeBtn.addEventListener('click',() => {
 
 
 let logo = document.querySelector('#logo');
+TweenMax.to(logo, 1, { x:100 ,  ease:Power2.easeIn });
 
-TweenMax.to(logo, 1, 
-    { x:100 ,  ease:Power2.easeIn }
-    );
-
-let menu = document.querySelector('#menuDiv');
-
-TweenMax.to(menu, 1, { y:50 ,  ease:Power2.easeIn }
-    );
-
+let sjlogo = document.querySelector('#sjLogo');
+TweenMax.to(sjlogo, 1, { x:100 ,  ease:Power2.easeIn });
     
+let menu = document.querySelector('#menuDiv');
+TweenMax.to(menu, 1, { y:50 ,  ease:Power2.easeIn } );
+
+let hamburger = document.querySelector('#mainMenu');
+TweenMax.to(hamburger, 1, { x:-100 ,  ease:Power2.easeIn } );
+    
+
