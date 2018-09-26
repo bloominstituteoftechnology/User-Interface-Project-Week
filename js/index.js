@@ -1,9 +1,20 @@
 // Navigation System
+let menu = document.querySelector('.menu');
 document.querySelector('.nav-button').addEventListener('click', () => {
     document.querySelector('.hamburger').classList.toggle('hidden');
     document.querySelector('.close').classList.toggle('hidden');
-    document.querySelector('.menu').classList.toggle('hidden');
     document.querySelector('.nav').classList.toggle('lighten-nav');
+
+    const hideMenu = () => document.querySelector('.menu').classList.add('hidden');
+
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        TweenMax.fromTo('.menu', 1, {height: '1px'}, {height: '100vh'});
+        TweenMax.fromTo('.menu-link', 1, {opacity: 0}, {opacity: 1});
+    } else {
+        TweenMax.fromTo('.menu', 1, {height: '100vh'}, {height: '1px', onComplete: hideMenu});
+        TweenMax.fromTo('.menu-link', 1, {opacity: 1}, {opacity: 0});
+    }
 });
 
 // Services Tab System
