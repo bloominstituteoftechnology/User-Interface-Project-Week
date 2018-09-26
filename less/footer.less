@@ -6,41 +6,79 @@ footer {
     background-color: @footerBack;
     padding: 3rem 1.5rem 0;
 
-    .email {
+    @media @desktop {
+        margin-top: 0;
+    }
     
-        form {
-            margin-top: 1rem;
+    .footer {
+
+        @media @desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .email {
+
+            @media @desktop {
+                padding-top: 4rem;
+                width: 55%;
+            }
+        
+            form {
+                margin-top: 1rem;
+        
+                input {
+                    width: 98%;
+                    line-height: 4.5rem;
+                    border-radius: 0.5rem;
+        
+                    &::placeholder {
+                        padding: 2.5rem 0 2rem 1rem;
+                        font-size: 1.6rem;
+                        line-height: 2.7rem;
+                    }
+                }
+            }
+        
+            .promise {
+                // font-size: 1.2rem;
+                padding-top: 1rem;
+                color: @white;
+            }
+        } // end of email section
     
-            input {
-                width: 98%;
-                line-height: 4.5rem;
-                border-radius: 0.5rem;
+        .offices {
+            padding-top: 2.5rem;
     
-                &::placeholder {
-                    padding: 2.5rem 0 2rem 1rem;
-                    font-size: 1.6rem;
-                    line-height: 2.7rem;
+            @media @desktop {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+    
+            .address {
+                padding-bottom: 2.5rem;
+
+                @media @desktop {
+                    padding: 1rem 3rem;
                 }
             }
         }
-    
-        .promise {
-            // font-size: 1.2rem;
-            padding-top: 1rem;
-            color: @white;
-        }
-    } // end of email section
-
-    .offices {
-        padding-top: 2.5rem;
-
-        .address {
-            padding-bottom: 2.5rem;
+        
+        @media @desktop {
+            display: flex;
+            padding: 0 8.5rem;
         }
     }
 
+
     .copy {
+        text-align: center;
         padding-bottom: 4rem;
+
+        // @media @desktop {
+        //     width: 100%;
+        // }
     }
 
 }
