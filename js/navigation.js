@@ -13,8 +13,8 @@ fullScreenNav = document.querySelector('nav');
 hamburgerMenu = document.querySelector('.hamburger-menu');
 
 let openMenu = function(){
-    fullScreenNav.style.display = "flex";
-    hamburgerMenu.innerHTML = null;
+    fullScreenNav.classList.toggle('full-screen-nav');
+    hamburgerMenu.src = "img/nav-hamburger-close.png"
 }
 hamburgerMenu.addEventListener('click', openMenu);
 

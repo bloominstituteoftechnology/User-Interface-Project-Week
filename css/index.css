@@ -181,26 +181,29 @@ html body {
   border: 1px solid #222222;
   cursor: pointer;
 }
-nav {
+.full-screen-nav {
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   background: rgba(162, 172, 181, 0.95);
   margin-top: -93.5vh;
-  display: none;
+  z-index: 2;
 }
-nav a {
+.full-screen-nav a {
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 85px;
   color: #FFFFFF;
 }
-nav a:hover {
+.full-screen-nav a:hover {
   color: #222222;
+}
+nav {
+  display: none;
 }
 .container .navigation {
   position: fixed;
@@ -230,8 +233,9 @@ nav a:hover {
   }
 }
 .container .navigation .hamburger-menu {
-  height: 79%;
   cursor: pointer;
+  position: relative;
+  z-index: 9;
 }
 @media (max-width:500px) {
   .container .navigation .hamburger-menu {
@@ -369,6 +373,9 @@ footer .copyright {
   display: flex;
   justify-content: space-between;
 }
+.introduction .introduction-section .desktop-img {
+  height: 275px;
+}
 @media (max-width:500px) {
   .introduction .introduction-section {
     flex-direction: column-reverse;
@@ -451,6 +458,7 @@ footer .copyright {
   }
 }
 .main-content {
+  margin-top: 45px;
   margin-right: 8%;
   margin-left: 8%;
 }
@@ -462,7 +470,7 @@ footer .copyright {
 }
 .main-content h2 {
   color: #222222;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 39px;
 }
