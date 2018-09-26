@@ -5,6 +5,7 @@ let header = document.querySelector("header");
 content.style.opacity = '0';
 content.style.visibility = 'hidden';
 
+// Navigation JS -----------------------------------------
 dropdown.addEventListener('click', function() {
     // change the hamburger to an X
     dropdown.src = "./img/nav-hamburger-close.png";
@@ -24,3 +25,9 @@ dropdown.addEventListener('click', function() {
         header.style.opacity = "0.98";
     }
 });
+
+// Page Load Effect ----------------------------------------
+let bkgd = document.querySelector('.hero');
+let heroCopy = document.querySelector('.hero-copy');
+TweenMax.from(bkgd, .8, {autoAlpha:0, y:-50, ease: Circ.easeOut,});
+TweenMax.from(heroCopy, .8, {autoAlpha:0, y:100, ease: Circ.easeOut,});

@@ -90,3 +90,9 @@ window.addEventListener('resize', function() {
         sustainability.src = "./img/services/services-tab-sustainability-img.png";
     }
 });
+
+// // Page Load Effect ----------------------------------------
+let bkgd = document.querySelector('.hero');
+let heroCopy = document.querySelector('.hero-copy');
+TweenMax.from(bkgd, .8, {autoAlpha:0, y:-50, ease: Circ.easeOut,});
+TweenMax.from(heroCopy, .8, {autoAlpha:0, y:100, ease: Circ.easeOut,});
