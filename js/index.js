@@ -23,5 +23,21 @@ function toHam(){
     }
 }
 
+class Tab {
+    constructor(element){
+
+        this.element = element;
+
+
+        this.element.addEventListener('click', )
+
+    }
+}
+
+class TabItem {
+    constructor(element){
+
+    }
+}
 
 
