@@ -3,10 +3,10 @@ const toggleMenu = () => {
     menu.classList.toggle("menu-open");
 
     if (menu.classList.contains("menu-open")) {
-    menuButton.src="/img/nav-hamburger-close.png";
+    menuButton.src="./img/nav-hamburger-close.png";
     }
     else {
-        menuButton.src="/img/nav-hamburger.png";
+        menuButton.src="./img/nav-hamburger.png";
     }
 }
 
