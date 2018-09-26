@@ -10,3 +10,4 @@
 
 // let buttons = document.querySelectorAll('.services-button');
 // console.log(buttons);
+console.log(document.querySelector('.navbar'));
