@@ -52,8 +52,3 @@ let links = document.querySelectorAll(".tabLink")
 links = Array.from(links).map(tab => {
     new TabLink(tab)
 })
-
-// console.log(links)
-// console.log(links[1]);
-
-// links[1].select(); //=========================================//

@@ -23,7 +23,7 @@ overlay = Array.from(overlay).map(overlay => new Overlay(overlay))
 let navButton = document.querySelector(".navButton")
 
 navButton.addEventListener("click", () => {
-    navButton.src = "img/nav-hamburger-close.png"
+    navButton.classList.toggle("navButtonToggle")
 })
 
 // navButton.addEventListener("click", () => {
