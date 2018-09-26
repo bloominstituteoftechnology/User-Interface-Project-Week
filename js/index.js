@@ -117,7 +117,7 @@ class Carousel {
         
        
         this.cards[newNum].classList.remove('disappear')
-        TweenLite.fromTo(this.cards[newNum], 3, {x :-1000}, {x:0} );
+        TweenLite.fromTo(this.cards[newNum], 1, {x :-1000}, {x:0} );
     
         setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
         this.currentCard = newNum;  
@@ -131,7 +131,7 @@ class Carousel {
             newNum = this.maxCardNum - 1;
  
             this.cards[newNum].classList.remove('disappear')
-            TweenLite.fromTo(this.cards[newNum], 3, {x :1000}, {x:0} );
+            TweenLite.fromTo(this.cards[newNum], 1, {x :1000}, {x:0} );
         
             setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
     
