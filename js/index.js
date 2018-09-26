@@ -17,7 +17,7 @@ menuButton.addEventListener("click", () => {
   }
 });
 
-//tab navigator for services
+//tab navigator for services.html
 class TabLink {
   constructor(element) {
     this.element = element;
