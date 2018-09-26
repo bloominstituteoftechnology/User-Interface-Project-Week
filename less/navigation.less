@@ -2,68 +2,70 @@
 
     .nav{
         width : 100%;
-        .layout();
-        align-items : flex-start;
+        .Mlayout();
         background : @navBackground;
         position : sticky;
         top : 0;
-        padding : 15px 80px;
-        z-index: 5;
+        padding : 15px 40px;
+        // z-index: 5;
         opacity: 0.9;
-
-        h3{
-            color: #FFFFFF;
-            font-weight: bold;
-            font-size: 2.4rem;
-        }
+       height : auto;
+       
         nav{        
-            .Mlayout(space-between, flex-end );
-            width : 65%;
+            .layout();
+            align-items : flex-start;
+            width : 100%;
 
             @media @phone{
                 width : 80%;
             }
 
-            .navLink{
-                align-self : flex-start;
-                .Mlayout(space-between, flex-start);
-                margin-top : 50px;   
-                   
-                    a{
-                        text-decoration: none;   
-                        color:#FFFFFF;
-                        font-weight: bold;
-                        font-size: 4.8rem;
-                        line-height : 48px;
-                        padding : 20px 0;
-                    
-                        &:hover{
-                            color: #222222;
-                        }   
-                    }
-
-             }
-
-             .disappear{
-                 display : none;
-             }
-        } // navLink
+            h3{
+                color: #FFFFFF;
+                font-weight: bold;
+                font-size: 2.4rem;
+            }    
+        } // nav
 
      @media @phone{
             padding : 15px 30px;
             width : 100%;
         }
+        .disappear{
+            display : none;
+        }
+
+        .expanded{
+            align-items: flex-start;
+            position: absolute;
         
+            // width:100vw;
+            max-width : @max-width;
+            // height : 100vh;
+     
+        }
     }
 
-    .expanded{
-        align-items: flex-start;
-        position: absolute;
-    
-        // width:100vw;
-        max-width : @max-width;
-        // height : 100vh;
- 
-    }
+      .navLink{
+        align-self : center;
+        .Mlayout(space-between, center);
+        margin-top : 50px;   
+           position : absolute;
+           top : 50px;
+        //    opacity : 0.1;
+           z-index: 15;
 
+            a{
+                text-decoration: none;   
+                color:#FFFFFF;
+                font-weight: bold;
+                font-size: 4.8rem;
+                line-height : 48px;
+                padding : 20px 0;
+            
+                &:hover{
+                    color: #222222;
+                }   
+            }
 
+     }

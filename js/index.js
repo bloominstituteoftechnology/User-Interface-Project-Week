@@ -13,14 +13,30 @@ hamburgerCloseTag.addEventListener('click', navCloseClicked);
 
 
 function navOpenClicked() {
-    TweenLite.to('.nav', 2, {height : "100vh"});
-    setTimeout(navClassToggle, 2000);
-    // TweenLite.to('navLinkTag', 5, {opacity : "0.9"});
+    let tl = new TimelineLite;
+
+    TweenLite.to('.nav', 1, {height : "100vh"});
+    navClassToggle();
+    
+    tl.from('.navLink a:nth-child(1)', 1, {x :-600})
+    .from('.navLink a:nth-child(2)', 1, {x :-600})
+    .from('.navLink a:nth-child(3)', 1, {x :-600})
+        
+   
+    // setTimeout(navClassToggle, 1000);
+    // setTimeout((TweenLite.to('navLinkTag', 5, {opacity : "0.9"})),1000);
 }
 
 function navCloseClicked() {
-    navClassToggle();
-    TweenLite.to('.nav', 2, {height : "auto"});
+    let tl = new TimelineLite;
+    tl.to('.navLink a:nth-child(1)', 1, {x :-600})
+    .to('.navLink a:nth-child(2)', 1, {x :-600})
+    .to('.navLink a:nth-child(3)', 1, {x :-600})
+    .to('.nav', 1, {height : "auto"});
+
+    setTimeout( navClassToggle,4000);
+    
+
  }
 
 function navClassToggle() {
