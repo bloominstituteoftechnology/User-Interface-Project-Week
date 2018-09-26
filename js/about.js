@@ -47,7 +47,7 @@ window.addEventListener('resize', function() {
 })
 
 // Page Scroll Animations ---------------------------------------
-let tween1 = TweenMax.from('#founders', .8, {autoAlpha:0, x:-50, ease: Circ.easeOut,});  
+let tween1 = TweenMax.from('#founders', .8, {autoAlpha:0, y:-20, ease: Circ.easeOut,});  
 
 let tween2 = TweenMax.from('#smithpic', .8, {autoAlpha:0, y:100, ease: Circ.easeOut,});
 
@@ -64,7 +64,7 @@ let controller = new ScrollMagic.Controller();
 
 let scene1 = new ScrollMagic.Scene({
 triggerElement: '.hero-copy',
-offset: 500,
+offset: 420,
 }).setTween(tween1);
 
 let scene2 = new ScrollMagic.Scene({
