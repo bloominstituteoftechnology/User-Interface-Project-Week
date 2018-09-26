@@ -47,8 +47,6 @@ TweenMax.to(menu, 1, { y:50 ,  ease:Power2.easeIn } );
 let hamburger = document.querySelector('#mainMenu');
 TweenMax.to(hamburger, 1, { x:-100 ,  ease:Power2.easeIn } );
     
-let archImage = document.querySelector('#archImage');
-TweenMax.to(archImage, 1, { x:-100 ,  ease:Power2.easeIn } );
 
 
 console.log(window.pageYOffset)
