@@ -168,6 +168,18 @@ body > footer {
   line-height: 2.6rem;
   Color: #ffffff;
 }
+h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #222222;
+}
+@media (max-width: 500px) {
+  h2 {
+    font-size: 2.4rem;
+    width: 29rem;
+    align-self: center;
+  }
+}
 /*== Theme Mixins ============================================================*/
 .button {
   color: #1a1326;
@@ -279,9 +291,9 @@ footer .content-spacer {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  color: #ffffff;
 }
 .jumbotron h1 {
+  color: #ffffff;
   width: 100%;
   font-weight: bold;
   font-size: 6.4rem;
@@ -301,19 +313,6 @@ Style Guide
 
 Page Specific
 
-Services Page
-
-    Tab selected background: #5E9FB9
-    Tab Hover background: #222222
-    Tab Hover color: #FFF;
-
-Jumbotron Headers
-
-    Font Weight: Bold
-    Font Size: 64px
-    Line Height: 75px
-    Color: #FFFFFF
-
 Sub Headers
 
     Font Weight: Bold
@@ -324,35 +323,13 @@ Footer Headings
 
 Navigation Logo
 
-    Font Weight: Bold
-    Font Size: 24px
-    Color: #FFFFFF
-
 Navigation Text (Expanded)
-
-    Font Weight: Bold
-    Font Size: 48px
-    Line Height: 85px
-    Color: #FFFFFF
-    Hover Color: #222222
 
     */
 /*== Home Page (index.html) ====================================================*/
 .container.home {
   display: flex;
   flex-direction: column;
-}
-.container.home h2 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #222222;
-}
-@media (max-width: 500px) {
-  .container.home h2 {
-    font-size: 2.4rem;
-    width: 29rem;
-    align-self: center;
-  }
 }
 /*-- "Jumbotron" (Splash) ----------------------*/
 .jumbotron.home {
@@ -557,18 +534,22 @@ Navigation Text (Expanded)
 .jumbotron.services h1 {
   margin-bottom: 2rem;
 }
+/*-- Services ----------------------------------*/
+.container.services > * {
+  margin: 4rem 0;
+}
 /*== Navigation Menu Component ===============================================*/
 body > header {
   z-index: 10;
 }
 .main-navigation a {
   color: #ffffff;
-  font-size: 5rem;
+  font-size: 4.8rem;
   font-weight: bold;
-  line-height: 8rem;
+  line-height: 8.5rem;
 }
-.main-navigation a.main-navigation__selected {
-  color: #504545;
+.main-navigation a:hover {
+  color: #222222;
 }
 .main-navigation .main-navigation__top-bar {
   z-index: 10;
@@ -600,4 +581,81 @@ body > header {
 }
 .nav-menu__toggle {
   cursor: pointer;
+}
+/*== Tabs Component ==========================================================*/
+.services nav {
+  display: flex;
+  justify-content: space-between;
+}
+.services nav .tab {
+  font-weight: bold;
+  font-size: 2rem;
+  width: 18.5rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  vertical-align: middle;
+  border: solid 1px #222222;
+  white-space: nowrap;
+}
+.services nav .tab.selected {
+  color: #ffffff;
+  background: #5E9FB9;
+}
+.services nav .tab:hover {
+  color: #ffffff;
+  background: #222222;
+}
+.services .tab-content {
+  display: none;
+}
+.services .tab-content.selected {
+  display: block;
+}
+.services .tab-content h2 {
+  margin: 2rem 0;
+}
+.services .tab-content .tab-content-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+.services .tab-content p {
+  width: 40rem;
+  margin-bottom: 2rem;
+}
+.services .tab-content .img-header {
+  width: 40rem;
+  height: 27.5rem;
+}
+.services .tab-content .img-header.pre-construction {
+  background-image: url('/img/services/services-tab-pre-construction-img.png');
+}
+@media (max-width: 500px) {
+  .services .tab-content .img-header.pre-construction {
+    background-image: url('/img/services/services-tab-mobile-pre-construction-img.png');
+  }
+}
+.services .tab-content .img-header.construction {
+  background-image: url('/img/services/services-tab-construction-img.png');
+}
+@media (max-width: 500px) {
+  .services .tab-content .img-header.construction {
+    background-image: url('/img/services/services-tab-mobile-construction-img.png');
+  }
+}
+.services .tab-content .img-header.design-build {
+  background-image: url('/img/services/services-tab-design-build-img.png');
+}
+@media (max-width: 500px) {
+  .services .tab-content .img-header.design-build {
+    background-image: url('/img/services/services-tab-mobile-design-build-img.png');
+  }
+}
+.services .tab-content .img-header.sustainability {
+  background-image: url('/img/services/services-tab-sustainability-img.png');
+}
+@media (max-width: 500px) {
+  .services .tab-content .img-header.sustainability {
+    background-image: url('/img/services/services-tab-mobile-sustainability-img.png');
+  }
 }
