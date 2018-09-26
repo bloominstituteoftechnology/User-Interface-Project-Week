@@ -11,15 +11,15 @@
 
 fullScreenNav = document.querySelector('nav');
 hamburgerMenu = document.querySelector('.hamburger-menu');
+navigationBar = document.querySelector('.navigation');
 function changeImage() {
     console.log(hamburgerMenu.src);
+    //Don't judge me to hard on this
     if (hamburgerMenu.src.includes('close')) {
         hamburgerMenu.src = "img/nav-hamburger.png";
-        console.log("match");
     }
     else{
-        hamburgerMenu.src = "img/nav-hamburger-close.png";
-        console.log("else");
+        hamburgerMenu.src = "img/nav-hamburger-close.png";;
     }
 }
 let openMenu = function(){
