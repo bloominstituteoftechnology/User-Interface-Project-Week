@@ -11,9 +11,6 @@ let menuButton = document.querySelector('.menu-button');
 
 menuButton.addEventListener('click', toggleMenu);
 
-let container = document.querySelector('.container');
-
-
 
 // function to toggle the menu button
 
