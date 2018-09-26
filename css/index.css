@@ -11,7 +11,7 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   width: 100vw;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +49,7 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   position: fixed;
   left: 0;
   top: 49px;
-  z-index: 2;
+  z-index: -1;
   width: 100vw;
   height: 100%;
   background: rgba(152, 164, 174, 0.8);
@@ -57,7 +57,7 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  display: none;
+  transform: translateX(100%);
 }
 .navigation a {
   text-decoration: none;
@@ -70,9 +70,12 @@ USE WITH CAUTION AND TEST WITH ABANDON */
 }
 .navigation a:hover {
   color: #222222;
+  transition: all 300ms ease-in-out;
+  transform: scale(1.5);
+  transform-origin: center left;
 }
 .show-nav {
-  display: flex;
+  transform: translateY(0px);
 }
 .splash {
   display: flex;

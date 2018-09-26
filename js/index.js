@@ -32,6 +32,7 @@ let navButton = document.querySelector('.hamburger');
 let navBar = document.querySelector('.navigation');
 
 navButton.addEventListener('click', e => {
+    navBar.style.transition = "all 300ms ease-in-out"
     navBar.classList.toggle('show-nav');
     navButton.classList.toggle('fa-times');
 })
