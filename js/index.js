@@ -1,33 +1,22 @@
 // JS goes here
 
 //Navigation for home-page
-let burgerBtn = document.querySelector(".burger");
-let homePage = document.querySelector(".main");
-let footerSection = document.querySelector(".footer-content");
+const burgerBtn = document.querySelector(".burger");
+const openedBurger = document.querySelector(".opened-nav")
 let navPage = document.querySelector(".open-nav");
-let mainImg = document.querySelector(".jumbotron");
-let navMenu = document.querySelector(".nav-menu");
-
-let openedBurgerBtn = document.querySelector(".opened-nav");
-
-openedBurgerBtn.addEventListener("click", ()=> {
-    navPage.style.display = "none";
-    homePage.style.display = "block";
-    navMenu.style.display = "block";
-    footerSection.style.display = "flex";
-    mainImg.style.position = "relative";
-
-})
+let mainPage = document.querySelector(".main-nav");
 
 burgerBtn.addEventListener("click", ()=> {
-    homePage.style.display = "none";
-    footerSection.style.display = "none";
-    navMenu.style.display = "none";
-    mainImg.style.position = "absolute";
-    navPage.style.display = "block";
-    navPage.style.position = "absolute";
-    navPage.style.zIndex = "2";
+    navPage.classList.toggle("display-toggle");
+    mainPage.style.display = "none";
 })
+
+openedBurger.addEventListener("click", ()=> {
+    navPage.classList.toggle("display-toggle");
+    mainPage.style.display = "block";
+})
+
+
 
 
 
