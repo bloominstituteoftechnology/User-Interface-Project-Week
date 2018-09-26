@@ -2,7 +2,8 @@
 	@media @mobile {
 		display: flex;
 		flex-flow: column nowrap;
-		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
 	}
 	font-family: @gen-font-fam;
 	font-weight: @font-wt;
@@ -13,34 +14,41 @@
 	display: flex;
 	flex-flow: column nowrap;
 
-	.sj-intro {
+	.designs {
+		display: flex;
+		.text-content {
+			order: 1;
+		}
+		.main-content-image {
+			order: 0;
+			padding-left: 20px;
+		}
+	}
+
+	.sj-intro, 
+	.designs {
 
 		@media @mobile {
 			display: flex;	
 			flex-flow: column-reverse nowrap;
-			justify-content: center;
-			align-items: center;
-			margin: 0 auto; 
-			padding: 0;
-			width: 90%;
+			max-width: 100%;
+			padding: 20px;
+
+			
 		}
 		display: flex;
-		margin-top: 50px;
 		padding: 0 5px;
 		.text-content {
 			@media @mobile {
 				display: flex;
 				flex-flow: column nowrap;
-				align-items: center;
-				width: 100%;
-				text-align: center;
-				margin: 0 auto;
-				padding: 0;
+				width: 90%;
+				margin: 20px;
+				
 				
 			}
 			display: flex;
 			flex-flow: column nowrap;
-			height: 200px;
 			justify-content: space-around;
 			margin-top: 40px;
 			margin-left: 20px;
@@ -49,17 +57,24 @@
 			h3 {
 				@media @mobile {
 					order: 0;
-					width: 100%;
+					width: 90%;
+					margin-bottom: 20px;
 				}
 				font-weight: @bold;
 				font-size: 32px;
 				color: @muted-black;
 				
 			}
+			p {
+				@media @mobile {
+					width: 90%;
+					margin-bottom: 20px;
+				}
+			}
 
 			button {
 				@media @mobile {
-					margin: 0 20px;
+					align-self: center;
 					order: 1;
 					width: 90%;
 					background: white;
@@ -74,86 +89,12 @@
 		.main-content-img {
 			@media @mobile {
 				width: 100%;
-			}
-			width: 45%;
-			margin-left: 20px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-			align-self: center;
-		}
-
-		.mci-1 {
-			display: block;
-				@media @mobile {
-					display: none;
-				}
-		}
-
-		.mci-2 {
-			display: none;
-			@media @mobile {
-				display: block;
-				width: 90%;
-			}
-		}
-	}
-
-	.designs {
-		@media @mobile {
-			display: flex;
-			flex-flow: column-reverse nowrap;
-			justify-content: center;
-			text-align: center;
-			margin: 0 auto;
-			padding: 0;
-			width: 90%;
-		}
-		display: flex;
-		margin-top: 50px;
-		.text-content {
-			@media @mobile {
-				width: 100%;
 				margin: 0;
-				padding: 0;
-			}
-			display: flex;
-			flex-flow: column nowrap;
-			height: 200px;
-			justify-content: space-around;
-			margin-top: 40px;
-			margin-left: 50px;
-			margin-right: 20px;
-			width: 45%;
-			order: 1;
-			h3 {
-				font-weight: @bold;
-				font-size: 32px;
-				color: @muted-black;
-			}
-
-			button {
-				border: 1px solid @muted-black;
-				background: white;
-				width: 120px;
-				height: 50px;
-				font-size: 1.6rem;
-				@media @mobile {
-					width: 90%;
-					margin: 0 20px;
-					background: white;
-				}
-			}
-		}
-		.main-content-img {
-			@media @mobile {
-				width: 100%;
 			}
 			width: 45%;
 			margin-left: 20px;
 			margin-top: 20px;
 			margin-bottom: 20px;
-			order: 0;
-			margin-right: 30px;
 			align-self: center;
 		}
 
@@ -161,7 +102,6 @@
 			display: block;
 				@media @mobile {
 					display: none;
-					width: 90%;
 				}
 		}
 
@@ -170,6 +110,7 @@
 			@media @mobile {
 				display: block;
 				width: 90%;
+				margin: 0;
 			}
 		}
 	}
@@ -211,6 +152,7 @@
 			.proj-img {
 				@media @mobile {
 					width: 90%;
+		
 				}
 				margin: 0 auto;
 				position: relative;
@@ -234,19 +176,18 @@
 			.text-content {
 				@media @mobile {
 					width: 90%;
-					display: flex;
-					flex-flow: column nowrap;
+					position: absolute;
 					align-items: center;
 					position: unset;
 					margin-top: 0;
 				}
 				h3 {
 					@media @mobile {
-						width: 80%;
-						padding-left: 95px;
-						display: flex;
-						position: unset;
-						margin-bottom: 20px;
+						width: 100%;
+						position: absolute;
+						bottom: 400px;
+						right: 10px;
+						
 					}
 					position: absolute;
 					right: 40px;
@@ -266,6 +207,10 @@
 				p { 
 					@media @mobile {
 					width: 90%;
+					display: block;
+					positon: absolute;
+					
+					
 				}
 					text-align: justify;
 					font-size: 16px;
@@ -284,7 +229,7 @@
 
 		.outskirts {
 			@media @mobile {
-				display: flex;
+					display: flex;
 				flex-flow: column nowrap;
 				align-items: center;
 				width: 90%;
