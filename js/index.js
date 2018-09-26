@@ -39,37 +39,37 @@ var scene = new ScrollMagic.Scene({
   .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
+  triggerElement: ".nav-links"
+})
+  //.addIndicators()
+  .setTween(img1)
+  .addTo(controller);
+
+var scene = new ScrollMagic.Scene({
   triggerElement: ".left-info"
 })
-  .addIndicators()
-  .setTween(img1)
+  //.addIndicators()
+  .setTween(img2)
   .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
   triggerElement: ".row2"
 })
-  .addIndicators()
-  .setTween(img2)
+  //.addIndicators()
+  .setTween(bottomImg)
   .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
   triggerElement: "#img1"
 })
-  .addIndicators()
-  .setTween(bottomImg)
+  //.addIndicators()
+  .setTween(bottomImg2)
   .addTo(controller);
 
 var scene = new ScrollMagic.Scene({
   triggerElement: "#img2"
 })
-  .addIndicators()
-  .setTween(bottomImg2)
-  .addTo(controller);
-
-var scene = new ScrollMagic.Scene({
-  triggerElement: "#img3"
-})
-  .addIndicators()
+  //.addIndicators()
   .setTween(bottomImg3)
   .addTo(controller);
 
