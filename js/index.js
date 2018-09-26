@@ -1,5 +1,6 @@
 // JS goes here
 
+// Navigation Menu control
 
 let hamburgerTag = document.querySelector('#hamburger');
 let hamburgerCloseTag = document.querySelector('#hamburgerClose');
@@ -15,12 +16,15 @@ hamburgerCloseTag.addEventListener('click', navCloseClicked);
 function navOpenClicked() {
     let tl = new TimelineLite;
 
-    TweenLite.to('.nav', 1, {height : "100vh"});
     navClassToggle();
-    
-    tl.from('.navLink a:nth-child(1)', 1, {x :-600})
-    .from('.navLink a:nth-child(2)', 1, {x :-600})
-    .from('.navLink a:nth-child(3)', 1, {x :-600})
+   
+   // expand the nav to whole screen
+    TweenLite.to('.nav', 0.7, {height : "100vh"});
+   
+    // slideIn nav menu one at a time
+    tl.fromTo('.navLink a:nth-child(1)', 0.5, {x :-600}, {x:0, opacity :1})
+    .fromTo('.navLink a:nth-child(2)', 0.5, {x :-600}, {x:0, opacity :1})
+    .fromTo('.navLink a:nth-child(3)', 0.5, {x :-600}, {x:0, opacity :1})
         
    
     // setTimeout(navClassToggle, 1000);
@@ -29,12 +33,14 @@ function navOpenClicked() {
 
 function navCloseClicked() {
     let tl = new TimelineLite;
-    tl.to('.navLink a:nth-child(1)', 1, {x :-600})
-    .to('.navLink a:nth-child(2)', 1, {x :-600})
-    .to('.navLink a:nth-child(3)', 1, {x :-600})
-    .to('.nav', 1, {height : "auto"});
 
-    setTimeout( navClassToggle,4000);
+    // nav menu faze out and nav area collapse to original size
+    tl.to('.navLink a:nth-child(3)', 0.3, {opacity :0.1})
+    .to('.navLink a:nth-child(2)', 0.3, {opacity :0.1})
+    .to('.navLink a:nth-child(1)', 0.3, {opacity :0.1})
+    .to('.nav', 0.5, {height : "10vh"});
+
+    setTimeout( navClassToggle,1400);
     
 
  }
@@ -46,6 +52,10 @@ function navClassToggle() {
     navLinkTag.classList.toggle('disappear');
     navTag.classList.toggle('expanded');  
 }
+
+
+// In service page, connect tab to right material (card) to be shown
+
 
 class Tab {
     constructor(element) {
