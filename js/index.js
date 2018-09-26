@@ -47,8 +47,6 @@ let bodyToggle = () => {
 
 hamburger.addEventListener('click', (e) => {
     e.target.classList.toggle('hide');
-    main.classList.toggle('hide');
-    footer.classList.toggle('hide');
     exitIcon.classList.toggle('hide');
     navPage.classList.toggle('hide');
     
@@ -58,7 +56,4 @@ exitIcon.addEventListener('click', (e) => {
     e.target.classList.toggle('hide');
     hamburger.classList.toggle('hide');
     navPage.classList.toggle('hide');
-    main.classList.toggle('hide');
-    footer.classList.toggle('hide');
-    
 });
