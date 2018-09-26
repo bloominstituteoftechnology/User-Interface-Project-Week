@@ -9,7 +9,8 @@ hamburger.addEventListener("click", (event) => {
     visibility = dropdown.classList.toggle("menu-items_revealed");
     !visibility ? hamburger.src = "./img/nav-hamburger.png" : hamburger.src = "./img/nav-hamburger-close.png";
 })
-console.log('inside of index')
+
+// TweenMax.to('.menuItems', 2, {vars});
 
 
 
