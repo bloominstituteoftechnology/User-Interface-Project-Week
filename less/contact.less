@@ -3,10 +3,19 @@
   height: 250px;
   position: relative;
 
+  @media @phone {
+    background-image: url("../img/contact/contact-mobile-jumbotron.png");
+    .headerMobile();
+  }
+
   h1 {
     position: absolute;
     left: 85px;
     bottom: 18px;
+
+    @media @phone {
+      .h1Mobile();
+    }
   }
 }
 
@@ -15,6 +24,11 @@
   margin-top: 48px;
   margin-bottom: 50px;
   .flex(row, space-between);
+
+  @media @phone {
+    .flex(column, space-between);
+    margin-top: 32px;
+  }
 
   h2 {
     margin: 0;
@@ -25,11 +39,19 @@
     //  .border(red);
     width: 411px;
 
+    @media @phone {
+      width: 100%;
+    }
+
     .flex(column, space-between);
 
     form {
       .flex (column, space-between);
       margin-top: 12px;
+
+      @media @phone {
+        margin-top: 52px;
+      }
 
       input {
         width: 100%;
@@ -37,6 +59,10 @@
 
       label {
         margin-top: 30px;
+
+        @media @phone {
+          margin-top: 0;
+        }
       }
       input[type="email"] {
         letter-spacing: 1.2px;
@@ -44,6 +70,10 @@
         margin: 5px 0 2px 0;
         border-radius: 5px;
         .border(@light-gray);
+
+        @media @phone {
+          margin: 5px 0 4px 0;
+        }
       }
 
       input[type="number"] {
@@ -51,6 +81,10 @@
         margin: 5px 0 9px 0;
         border-radius: 5px;
         .border(@light-gray);
+
+        @media @phone {
+          margin: 1px 0 19px 0;
+        }
       }
 
       textarea {
@@ -60,15 +94,27 @@
         .border(@light-gray);
         font-family: "Roboto", Arial, sans-serif;
         font-size: 1.6rem;
+
+        @media @phone {
+          margin: 11px 0 2px 0;
+        }
       }
 
       p {
         font-size: 1.3rem;
-        //   margin-bottom: 30px;
+
+        @media @phone {
+          margin-bottom: 24px;
+        }
       }
 
       .radio {
         margin-top: 25px;
+
+        @media @phone {
+          margin-top: 14px;
+        }
+
         input {
           width: 20px;
           margin: 5px 0;
@@ -84,15 +130,33 @@
     margin-top: 12px;
     height: 550px;
 
+    @media @phone {
+      margin-top: 40px;
+      margin-left: 5px;
+      height: 530px;
+    }
+
     address {
       margin-top: 35px;
       line-height: 28px;
       letter-spacing: 1px;
 
+      @media @phone {
+        margin-top: 31px;
+        margin-bottom: 6px;
+        line-height: 27px;
+        font-size: 1.6rem;
+      }
+
       h4 {
         margin-bottom: 5px;
         letter-spacing: 0.2px;
         color: @dark-gray;
+
+        @media @phone {
+          font-size: 2rem;
+          margin-bottom: 2px;
+        }
       }
     }
   }
