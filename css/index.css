@@ -143,6 +143,7 @@ html {
 .container {
   width: 1024px;
   margin: 0 auto;
+  border: 1px solid white;
   position: relative;
   height: 100%;
 }
@@ -154,7 +155,7 @@ html {
 .container .main-nav {
   position: fixed;
   width: 1024px;
-  z-index: 10;
+  z-index: 3;
 }
 .container .nav-menu {
   background-color: #98A4AF;
@@ -187,7 +188,7 @@ html {
 }
 .container .nav-menu .burger {
   position: absolute;
-  top: 17px;
+  top: 13px;
   left: 883px;
   cursor: pointer;
 }
@@ -199,13 +200,16 @@ html {
 }
 .open-nav {
   display: none;
+  position: absolute;
   border: 1px solid white;
-  position: relative;
   width: 1024px;
   margin: 0 auto;
   font-weight: bold;
   background-color: #99A5B0;
-  height: 1000px;
+  height: 100%;
+  z-index: 2;
+  left: 449px;
+  opacity: 0.9;
   color: #FFFFFF;
 }
 .open-nav .home-nav {
@@ -247,12 +251,12 @@ html {
 .open-nav .sj-title-open {
   font-size: 28px;
   position: absolute;
-  top: 29px;
+  top: 13px;
   left: 101px;
 }
 .open-nav .opened-nav {
   position: absolute;
-  top: 29px;
+  top: 13px;
   left: 887px;
   cursor: pointer;
 }
@@ -296,6 +300,7 @@ html {
   }
 }
 .home-page .top-page {
+  width: 1024px;
   position: relative;
 }
 @media (max-width: 500px) {
@@ -307,8 +312,7 @@ html {
 .home-page .top-page .jumbotron {
   width: 100%;
   position: relative;
-  top: -55px;
-  z-index: -1;
+  top: -17px;
   display: block;
 }
 @media (max-width: 500px) {
@@ -320,7 +324,7 @@ html {
   font-size: 64px;
   font-weight: bold;
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   top: 275px;
   left: 64px;
   color: #FFFFFF;
@@ -344,6 +348,7 @@ html {
   }
 }
 .main .main-designs1 {
+  margin-top: 40px;
   margin-bottom: 55px;
   display: flex;
   justify-content: space-between;
@@ -457,13 +462,12 @@ html {
   display: inline;
   padding: 33px 58px;
   background-color: #D8D8D8;
-  border: 1px solid white;
 }
 @media (max-width: 500px) {
   .main-designs .villa {
     display: inline;
     top: 19px;
-    left: 24px;
+    left: 10px;
     font-weight: normal;
     letter-spacing: 7.5px;
     padding: 30px 50px;
@@ -480,7 +484,6 @@ html {
   display: inline;
   padding: 33px 70px;
   background-color: #D8D8D8;
-  border: 1px solid white;
   letter-spacing: 5px;
 }
 @media (max-width: 500px) {
@@ -527,7 +530,8 @@ html {
     display: flex;
     flex-flow: column;
     width: 100%;
-    height: 100%;
+    height: 800px;
+    border: 1px solid white;
   }
 }
 .footer-content .input {
@@ -599,28 +603,15 @@ html {
 .copyright-desktop {
   color: #FFFFFF;
   font-size: 12px;
-  margin-left: -4px;
-  padding: 20px;
-}
-@media (min-width: 500px) {
-  .copyright-desktop {
-    display: none;
-  }
-}
-.copyright {
-  font-size: 12px;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #828282;
-  color: #FFFFFF;
-  width: 1024px;
-  margin-bottom: 20px;
-  height: 30px;
-  margin: 0 auto;
+  position: absolute;
+  bottom: 8px;
+  right: 386px;
 }
 @media (max-width: 500px) {
-  .copyright {
-    display: none;
+  .copyright-desktop {
+    position: absolute;
+    bottom: 31px;
+    right: 170px;
   }
 }
 .jumbo-text {
@@ -692,4 +683,50 @@ html {
 }
 .display {
   display: block;
+}
+.display-background {
+  background-color: #5E9FB9;
+  color: white;
+  border-style: none;
+}
+.contact {
+  position: absolute;
+  font-weight: bold;
+  font-size: 64px;
+  color: #FFFFFF;
+  top: 164px;
+  left: 92px;
+  z-index: 1;
+}
+.input-info {
+  display: flex;
+  flex-flow: column;
+  width: 40%;
+}
+.check-box {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.check-box:checked:after {
+  /*Add another block-level blank space*/
+  content: '';
+  position: relative;
+  display: block;
+  top: 1px;
+  left: 5px;
+  /*Make it a small rectangle so the border will create an L-shape*/
+  width: 3px;
+  height: 8px;
+  /*Add a white border on the bottom and left, creating that 'L' */
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  /*Rotate the L 45 degrees to turn it into a checkmark*/
+  transform: rotate(45deg);
 }

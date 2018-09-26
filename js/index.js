@@ -1,23 +1,34 @@
 // JS goes here
 
 //Navigation for home-page
+let burgerBtn = document.querySelector(".burger");
+let homePage = document.querySelector(".main");
+let footerSection = document.querySelector(".footer-content");
+let navPage = document.querySelector(".open-nav");
+let mainImg = document.querySelector(".jumbotron");
+let navMenu = document.querySelector(".nav-menu");
 
-const burgerBtn = document.querySelector('.burger');
-const myHomepage = document.querySelector('.container');
-const copyRight = document.querySelector('.copyright');
-const openNav = document.querySelector('.open-nav');
-const closeBtn = document.querySelector('.opened-nav');
-burgerBtn.addEventListener('click', ()=> {
-    myHomepage.style.display = "none";
-    copyRight.style.display = "none";
-    openNav.style.display = "block";
-} )
+let openedBurgerBtn = document.querySelector(".opened-nav");
 
-closeBtn.addEventListener('click', ()=> {
-    myHomepage.style.display = "block";
-    copyRight.style.display = "block";
-    openNav.style.display = "none";
+openedBurgerBtn.addEventListener("click", ()=> {
+    navPage.style.display = "none";
+    homePage.style.display = "block";
+    navMenu.style.display = "block";
+    footerSection.style.display = "flex";
+    mainImg.style.position = "relative";
+
 })
+
+burgerBtn.addEventListener("click", ()=> {
+    homePage.style.display = "none";
+    footerSection.style.display = "none";
+    navMenu.style.display = "none";
+    mainImg.style.position = "absolute";
+    navPage.style.display = "block";
+    navPage.style.position = "absolute";
+    navPage.style.zIndex = "2";
+})
+
 
 
 // Service page button functionality
@@ -35,10 +46,10 @@ class Button {
         let infoContainer = document.querySelectorAll('.buttonss');
 
         Array.from(infoContainer).forEach(info => {
-            info.classList.remove("display");
+            info.classList.remove("display-background");
         });
 
-        this.buttonElements.classList.add("display");
+        this.buttonElements.classList.add("display-background");
         this.infoElements.clickMethod();
     }
 }
