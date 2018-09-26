@@ -12,6 +12,7 @@
 fullScreenNav = document.querySelector('nav');
 hamburgerMenu = document.querySelector('.hamburger-menu');
 navigationBar = document.querySelector('.navigation');
+nav = document.querySelector('nav');
 function changeImage() {
     console.log(hamburgerMenu.src);
     //Don't judge me to hard on this
@@ -23,6 +24,7 @@ function changeImage() {
     }
 }
 let openMenu = function(){
+    fullScreenNav.classList.toggle('no-display')
     fullScreenNav.classList.toggle('full-screen-nav');
     changeImage();
 }
