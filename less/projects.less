@@ -12,7 +12,7 @@
     }
 
     .hero {
-        background-image: url(../img/projects/projects-jumbo2.png);
+        background-image: url(../img/projects/projects-jumbotron.png);
         background-repeat: no-repeat;
         background-size: contain;
         width: 100%;
@@ -56,14 +56,17 @@
         position: relative;
         overflow: hidden;
         margin: 16px auto 0;
-        @media(min-width: 1200px){
-          width: 800px;
+        max-width: 800px;
+
+        @media @mobile {
+            height: 250px;
         }
+
         .left-button, .right-button {
           .flex(row, nowrap, center, center);
           color: @blue;
           background-color: @white;
-          font-size: 35px;
+          font-size: 3.5rem;
           border-radius: 50%;
           position: absolute;
           width: 50px;
@@ -73,6 +76,12 @@
           &:hover {
             color: @white;
             border: 2px solid @white;
+          }
+
+          @media @mobile {
+            font-size: 2rem;
+            width: 35px;
+            height: 35px;
           }
         }
         .left-button {
@@ -88,9 +97,12 @@
           z-index: 100;
         }
         img {
-          width: 800px;
+          max-width: 800px;
+          width: 100%;
           position: absolute;
           visibility: hidden;
+
+
         }
       }
 
@@ -103,6 +115,10 @@
             position: absolute;
             text-align: center;
             .text-styling(bold, 2rem, @blue);
+
+            @media @mobile {
+                .text-styling(regular, 1.6rem, @blue);
+            }
         }
     }
 }

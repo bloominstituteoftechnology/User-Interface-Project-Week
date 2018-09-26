@@ -63,3 +63,17 @@ let tl = new TimelineMax();
 tl.from('.intro', .4, {delay: .8 , autoAlpha:0, y:-20, ease: Circ.easeOut,});
 tl.from('.carousel', .4, {autoAlpha:0, y:-20, ease: Circ.easeOut,});
 tl.from('.captions', .4, {autoAlpha:0, y:-20, ease: Circ.easeOut,});
+
+// Picture Replacement for Mobile ----------------------------
+window.addEventListener('resize', function() {
+    let width = window.innerWidth;
+    let bkgd = document.querySelector('.hero');
+
+    if (width <= 500) {
+        bkgd.style.backgroundImage = "url('./img/projects/projects-mobile-jumbotron.png')";
+    }
+
+    else if (width > 500) {
+        bkgd.style.backgroundImage = "url('./img/projects/projects-jumbotron.png')";
+    }
+});

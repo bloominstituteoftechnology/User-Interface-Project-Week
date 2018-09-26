@@ -2,7 +2,7 @@
 let dropdown = document.querySelector(".dropdown-button");
 let content = document.querySelector(".dropdown-content");
 let header = document.querySelector("header");
-let links = document.querySelectorAll(".nav-item");
+let navlinks = document.querySelectorAll(".nav-item");
 let body = document.querySelector('body');
 
 content.style.opacity = '0';
@@ -26,7 +26,7 @@ dropdown.addEventListener('click', function() {
         TweenMax.to(content, 0.5, {autoAlpha:0.98, y:0});
         header.style.opacity = "0.98";
         let tl = new TimelineMax();
-        links.forEach(x => tl.from(x, .2, {autoAlpha:0, x: -100}))
+        navlinks.forEach(x => tl.from(x, .12, {autoAlpha:0, x: -100}))
         body.style.overflow = 'hidden';
     }
 });
