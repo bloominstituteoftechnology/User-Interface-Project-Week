@@ -8,13 +8,44 @@
 class Tab{
     constructor(tabElement){
         this.tabElement = tabElement;
-        this.dataElement = this.tabElement.dataset.tab
-        this.dataItem = document.querySelector(`.tabs-content[data-tab="${this.dataElement}"]`);
         
+        this.dataElement = this.tabElement.dataset.tab
+        
+        this.dataItem = document.querySelector(`.tabs-content[data-tab="${this.dataElement}"]`);
+       
+        this.tabItem = new TabContent(this.dataItem);
 
         this.tabElement.addEventListener("click", () =>{
-            console.log(this.dataItem);
+            this.selectTab();
         });
+    }
+
+    selectTab(){
+        const tabBtns = document.querySelectorAll(".tabs-btn");
+        
+        tabBtns.forEach(link => {
+          link.classList.remove("tabs-btn-selected");
+        })
+
+        this.tabElement.classList.add("tabs-btn-selected");
+        this.tabItem.selectTabItem();
+    }
+}
+
+
+class TabContent{
+    constructor(element){
+        this.element = element;
+    }
+
+    selectTabItem(){
+        const tabItems = document.querySelectorAll(".tabs-content");
+
+        tabItems.forEach(item => {
+            
+            console.log(item.dataset.tab,  item.classList);
+        })
+
     }
 }
 
