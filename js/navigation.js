@@ -11,10 +11,20 @@
 
 fullScreenNav = document.querySelector('nav');
 hamburgerMenu = document.querySelector('.hamburger-menu');
-
+function changeImage() {
+    console.log(hamburgerMenu.src);
+    if (hamburgerMenu.src.includes('close')) {
+        hamburgerMenu.src = "img/nav-hamburger.png";
+        console.log("match");
+    }
+    else{
+        hamburgerMenu.src = "img/nav-hamburger-close.png";
+        console.log("else");
+    }
+}
 let openMenu = function(){
     fullScreenNav.classList.toggle('full-screen-nav');
-    hamburgerMenu.src = "img/nav-hamburger-close.png"
+    changeImage();
 }
 hamburgerMenu.addEventListener('click', openMenu);
 
