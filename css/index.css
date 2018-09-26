@@ -145,15 +145,16 @@ html {
   margin: 0 auto;
   font-size: 1.6rem;
 }
-.menuContent {
+.menuContent .menuClose {
   display: flex;
-  background-color: #99A4AF;
+  background-color: #99a4af;
   width: 100%;
   padding: 1% 9%;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 @media (max-width: 500px) {
-  .menuContent {
+  .menuContent .menuClose {
     padding: 3% 9%;
   }
 }
@@ -166,9 +167,35 @@ html {
     font-size: 3rem;
   }
 }
-.menuContent a {
+.menuButton {
+  cursor: pointer;
+  object-fit: contain;
+}
+.menuHidden {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.9;
+  line-height: 2;
+}
+.menuOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
   text-decoration: none;
+  background-color: #99a4af;
+}
+.menuOptions .menuLink {
+  width: 10%;
+  text-align: center;
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+}
+.menuOptions .menuLink:hover {
+  color: #504545;
 }
 .homePageContent .homeText {
   background-image: url("https://raw.githubusercontent.com/LambdaSchool/User-Interface-Project-Week/master/img/home/home-jumbotron.png");
@@ -558,11 +585,11 @@ html {
 .tabsContainer .tabContents .tabContent .tabRightText {
   display: flex;
   flex-direction: column;
-  padding: 3% 3% 0% 3%;
+  padding: 3% -1% 0% 1%;
 }
 .tabsContainer .tabContents .tabContent .tabRightText .tabTitle {
   font-weight: bold;
-  margin: 2% 0%;
+  margin: 8% 0%;
   font-size: 2rem;
 }
 .tabsContainer .tabContents .tabContent .tabRightText p {

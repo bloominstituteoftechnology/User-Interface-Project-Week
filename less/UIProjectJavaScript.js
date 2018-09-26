@@ -47,3 +47,21 @@ let buttonFunction = document.querySelectorAll(".tabButton");
 buttonFunction = Array.from(buttonFunction).map(
   button => new ButtonLink(button)
 );
+
+class Dropdown {
+  constructor(element) {
+    this.element = element;
+    this.menuButton = this.element.querySelector(".menuButton");
+    this.content = document.querySelector(".menuHidden");
+    this.menuButton.addEventListener("click", event =>
+      this.toggleContent(event)
+    );
+  }
+
+  toggleContent(event) {
+    this.content.classList.toggle("menuOptions");
+  }
+}
+
+let dropdownMenu = document.querySelectorAll(".menuContent");
+dropdownMenu = Array.from(dropdownMenu).map(dropdown => new Dropdown(dropdown));
