@@ -61,6 +61,7 @@ table{
 /* Your Code Goes Here */
 //Variables
 @mobile: ~"only screen and (max-width: 500px)";
+@bigscreen: ~"only screen and (max-width: 1600px)";
 @bg-gray: #9FA9B3;
 
 
@@ -146,7 +147,8 @@ HOME PAGE */
     font-weight: bold;
     font-size: 2.4rem;
     color: #FFFFFF;
-    margin-left: 20px;
+    margin-left: 10%;
+    
     /* *Navigation Logo
     Font Weight: Bold
     Font Size: 24px
@@ -154,7 +156,8 @@ HOME PAGE */
   }
 
   img {
-    margin-right: 20px;
+    margin-right: 10%;
+    cursor: pointer;
   }
   
 }
@@ -211,15 +214,24 @@ nav {
   height: auto;
 
   img {
+    
     width: 100%;
     opacity: .8;
     height: auto;
+    max-height: 900px;
   }  
   
   h1 {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 50px;
+    left: 50px;
+    @media @mobile {
+      font-size: 3rem;
+      bottom: 20px;
+      left: 20px;
+      line-height: 4rem;
+    }
+
     
   } 
 
@@ -237,7 +249,7 @@ nav {
 
 .container {
   width: 80%;
-  
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -256,7 +268,7 @@ nav {
 .top-content {
   width: 100%;
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   margin-top: 50px;
   flex-direction: column;
   align-content: center;
@@ -266,6 +278,7 @@ nav {
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin: 25px;
 
     &.two {
 
@@ -291,25 +304,29 @@ nav {
     .content-col{
       display: flex;
       flex-direction: column;
-      width: 50%;
+      width: 48%;
       padding: 8% 0;
+      margin: 0 20px;
       @media @mobile {
         width: 100%;
         align-items: center;
+        
       }
     }
     .img-container {
-      width: 50%;
+      width: 48%;
       display: flex;
       justify-content: flex-end;
+      margin: 0 20px;
       @media @mobile {
         align-items: center;
         justify-content: center;
         width: 100%;
+        
       }
 
       img{
-        max-width: 100%;
+        width: 100%;
       }
       
       &.two{
@@ -340,22 +357,30 @@ nav {
 
 /* TOP CONTENT -- CONTENT COLUMN */
 .content-col {
-  /* h2{
-    margin-bottom: 20px;
-  } */
+
+   h2{
+    margin-bottom: unset;
+  } 
   p {
-    margin-bottom: 3px;
+    
     font-size: 1.4rem;
     width: 90%;
+    margin: 20px 0;
   }
 
   .button {
     margin-bottom: 10px;
     border: solid 1px #222222;
     text-align: center;
-    padding: 5px;
-    width: 20%;
-    height: 35%;
+    padding: 10px;
+    width: 25%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    &:hover {
+      background-color: #5E9FB9;
+            color: white; 
+    }
+    
     /* Button borders: #222222 */
 
   }
