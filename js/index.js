@@ -38,7 +38,7 @@ function navCloseClicked() {
     tl.to('.navLink a:nth-child(3)', 0.3, {opacity :0.1})
     .to('.navLink a:nth-child(2)', 0.3, {opacity :0.1})
     .to('.navLink a:nth-child(1)', 0.3, {opacity :0.1})
-    .to('.nav', 0.5, {height : "10vh"});
+    .to('.nav', 0.5, {height : "8vh"});
 
     setTimeout( navClassToggle,1400);
     
@@ -66,13 +66,22 @@ class Tab {
   
     this.card = new Card(this.cardElement);
    
-    this.element.addEventListener('click', () => this.select());
+    this.element.addEventListener('click', () => this.select("tab"));
     };
 
-    select(){
+    select(method){
         tabs.forEach((tab) => tab.element.classList.remove('activeTab'))
         this.element.classList.add('activeTab');
-        this.card.select();
+        
+        // this for loop keeps currentCard correct when tab is clicked
+        for (let i =0 ; i < tabs.length; i++){
+           if (tabs[i].element.classList.contains("activeTab"))
+           carousel.currentCard = i;
+       }
+       
+        // if it's carousel click, don't activate card.select
+        if(method === "tab")
+            this.card.select();
     }
 }
 
@@ -83,10 +92,58 @@ class Card {
 
     select(){
         let cards =  document.querySelectorAll('.card');
-        Array.from(cards).forEach( (card)=> card.classList.remove('appear'));
-        this.element.classList.add('appear');
+        Array.from(cards).forEach( (card)=> card.classList.add('disappear'));
+        this.element.classList.remove('disappear');
     }
 }
+
+
+// Carousel JS.  make cards rotate
+class Carousel {
+    constructor(element){
+        this.element = element;
+        this.currentCard = 0;
+        this.cards = this.element.querySelectorAll('.card');
+        this.maxCardNum = this.cards.length;
+             
+        this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
+        this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
+    }
+
+     rightClicked() {
+        let newNum = this.currentCard + 1;
+        if (newNum == this.maxCardNum )
+            newNum = 0;
+        
+       
+        this.cards[newNum].classList.remove('disappear')
+        TweenLite.fromTo(this.cards[newNum], 3, {x :-1000}, {x:0} );
+    
+        setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
+        this.currentCard = newNum;  
+
+        tabs[this.currentCard].select();
+      }
+
+    leftClicked(){
+        let newNum = this.currentCard - 1;
+        if (newNum == -1 )
+            newNum = this.maxCardNum - 1;
+ 
+            this.cards[newNum].classList.remove('disappear')
+            TweenLite.fromTo(this.cards[newNum], 3, {x :1000}, {x:0} );
+        
+            setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
+    
+        this.currentCard = newNum;   
+        tabs[this.currentCard].select();
+      }
+}
+
+let carousel = document.querySelector('.cards-container');
+carousel = new Carousel(carousel);
+
+
 
 let tabs = document.querySelectorAll('.tab');
 

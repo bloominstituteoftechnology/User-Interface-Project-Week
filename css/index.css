@@ -190,6 +190,7 @@ p {
   padding: 15px 40px;
   opacity: 0.9;
   height: auto;
+  position: relative;
 }
 .nav nav {
   display: flex;
@@ -230,7 +231,7 @@ p {
   align-items: center;
   margin-top: 50px;
   position: absolute;
-  top: 50px;
+  top: 120px;
   z-index: 15;
 }
 .navLink a {
@@ -528,6 +529,7 @@ footer p {
   text-align: center;
   font-size: 1.6rem;
   font-weight: bold;
+  cursor: pointer;
 }
 .service-content .tabLink .activeTab {
   color: #FFFFFF;
@@ -538,7 +540,12 @@ footer p {
   margin-bottom: 100px;
 }
 .cards-container .card {
-  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  width: 90%;
+  margin: 0 auto;
 }
 .cards-container .card .card-text {
   width: 45%;
@@ -549,8 +556,106 @@ footer p {
 .cards-container .card img {
   width: 45%;
 }
-.cards-container .appear {
+.cards-container .disappear {
+  display: none;
+  left: -100%;
+  z-index: -1;
+}
+.cards-container .doubleWidth {
+  width: 180%;
+}
+.cards-container {
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.cards-container .left-button,
+.cards-container .right-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #222222;
+  background-color: #FFFFFF;
+  font-size: 35px;
+  border-radius: 50%;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: 2px solid #222222;
+  padding-left: 3px;
+}
+.cards-container .left-button:hover,
+.cards-container .right-button:hover {
+  color: #FFFFFF;
+  background-color: #222222;
+  border: 2px solid #FFFFFF;
+}
+.cards-container .left-button {
+  top: 50%;
+  left: 1px;
+  z-index: 2;
+}
+.cards-container .right-button {
+  top: 50%;
+  right: 1px;
+  z-index: 2;
+}
+.cards-container .slideRightIn {
+  animation: slideRightIn 2s;
+}
+.cards-container .slideRightOut {
+  animation: slideRightOut 2s;
+  left: -100%;
+  z-index: -1;
+}
+.cards-container .slideLeftIn {
+  animation: slideLeftIn 2s;
+}
+.cards-container .slideLeftOut {
+  animation: slideLeftOut 2s;
+  left: 100%;
+  z-index: -1;
+}
+@keyframes slideRightIn {
+  0% {
+    left: 100%;
+    z-index: -1;
+  }
+  100% {
+    left: 0;
+    z-index: 0;
+  }
+}
+@keyframes slideRightOut {
+  0% {
+    left: 0;
+    z-index: 0;
+  }
+  100% {
+    left: -100%;
+    z-index: -1;
+  }
+}
+@keyframes slideLeftIn {
+  0% {
+    left: -100%;
+    z-index: -1;
+  }
+  100% {
+    left: 0;
+    z-index: 0;
+  }
+}
+@keyframes slideLeftOut {
+  0% {
+    left: 0;
+    z-index: 0;
+  }
+  100% {
+    left: 100%;
+    z-index: -1;
+  }
 }
