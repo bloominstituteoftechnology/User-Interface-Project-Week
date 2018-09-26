@@ -1,5 +1,5 @@
 let toggleMenu = () => {
-	menu.classList.toggle('menu-open');
+	menu.classList.add('menu-open');
 }
 
 
@@ -12,3 +12,12 @@ menuButton.addEventListener('click', (event) => {
 	toggleMenu(event);
 });
 
+
+
+let closeButton = document.querySelector('span');
+console.log(closeButton);
+
+closeButton.addEventListener('click', (event) => {
+		menu.style.display = "none";
+		console.log("event   :   "+event.target);
+});
