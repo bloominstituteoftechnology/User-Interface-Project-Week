@@ -1,13 +1,18 @@
-function openNav() {
-    let expander = document.querySelector(".expander");
-    expander.style.display = "block";
-    let hamburger = document.querySelector(".menu-button");
-    hamburger.style.display = "none";
-}
+{
+    let expandette = document.querySelector(".expander");
+    const hamburger = document.querySelector(".menu-button");
+    const closer = document.querySelector(".closebtn");
 
-function closeNav() {
-    let expander = document.querySelector(".expander");
-    expander.style.display = "none";
-    let hamburger = document.querySelector(".menu-button");
-    hamburger.style.display = "block";
+    function openNav() {
+        expandette.style.height = "100vh";
+        closer.style.display = "block";
+        hamburger.style.display = "none";
+
+    }
+
+    function closeNav() {
+        expandette.style.height = "0vh";
+        hamburger.style.display = "block";
+        closer.style.display = "none";
+    }
 }
