@@ -1,3 +1,5 @@
+
+//NAVIGATION TOGGLE
 const toggleNav = element => {
     nav.classList.toggle('expanded');
 }
@@ -6,6 +8,10 @@ const nav = document.querySelector('.nav');
 const navButton = document.querySelector('.nav-button');
 navButton.addEventListener('click', () => {toggleNav();
 });
+
+const collapseNav = document.querySelector('.expanded-nav-button');
+collapseNav.addEventListener('click', () => {toggleNav()});
+
 
 //SERVICES PAGE TAB SELECTION
 
