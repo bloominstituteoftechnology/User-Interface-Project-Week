@@ -42,10 +42,11 @@ class TabContent{
         const tabItems = document.querySelectorAll(".tabs-content");
 
         tabItems.forEach(item => {
-            
-            console.log(item.dataset.tab,  item.classList);
+            item.classList.remove("tabs-item-selected");
         })
 
+        this.element.classList.add("tabs-item-selected");
+        console.log(this.element);
     }
 }
 
