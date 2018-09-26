@@ -20,7 +20,6 @@ class TabLink {
 }
 class TabItem {
   constructor(item) {
-
     this.item = item;
   }
   active() {
