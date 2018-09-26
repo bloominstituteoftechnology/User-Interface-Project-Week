@@ -2,8 +2,9 @@ const navbar = document.querySelector('.navbar');
 const hamburger = document.querySelector('.index-hamburger-icon');
 const closingX = document.querySelector('.closingX');
 hamburger.addEventListener('click', ()=>{
-  navbar.classList.add('navbarFull');
+  navbar.classList.toggle('navbarFull');
   closingX.classList.toggle('closingXhidden');
+  hamburger.classList.toggle('hamburgerHidden');
 });
 //
 // class Dropdown {
