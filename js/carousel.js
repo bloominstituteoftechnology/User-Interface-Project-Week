@@ -22,7 +22,7 @@ class Carousel {
     let nextImg, toLast;
     this.carouselImages.forEach(img => {
       if (img.classList.contains('current-img')) {
-        TweenMax.to(this.slider, 0.75, {
+        TweenMax.to(this.slider, 0.5, {
           x: '-100%',
           ease: Power1.easeInOut
         });
@@ -36,7 +36,7 @@ class Carousel {
           img.classList.remove('current-img');
           nextImg = this.carouselImages[0];
           nextImg.classList.add('current-img');
-        }, 750);
+        }, 500);
       }
     });
   }

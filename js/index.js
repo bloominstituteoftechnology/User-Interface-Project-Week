@@ -22,3 +22,21 @@ navigationMenu.addEventListener('click', () => {
     hamburger.src = 'img/nav-hamburger.png';
   }
 });
+
+const imgs = document.querySelectorAll('.slider-img');
+if (window.innerWidth <= 760) {
+  imgs.forEach((img, i) => {
+    img.src = `img/projects/project-mobile-slider-${i + 1}.jpg`;
+  });
+}
+
+// REPLACE PROJECT IMGS AT 600px
+window.addEventListener('resize', () => {
+  imgs.forEach((img, i) => {
+    if (window.innerWidth <= 760) {
+      img.src = `img/projects/project-mobile-slider-${i + 1}.jpg`;
+    } else if (window.innerWidth > 760) {
+      img.src = `img/projects/project-slider-${i + 1}.jpg`;
+    }
+  });
+});

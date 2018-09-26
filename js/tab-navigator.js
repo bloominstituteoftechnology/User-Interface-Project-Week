@@ -30,7 +30,6 @@ class TabNavigator {
           if (i === this.tabs.length - 1) {
             this.currentTab = this.tabs[0];
           } else {
-            console.log(i);
             this.currentTab = this.tabs[i + 1];
           }
           this.currentTab.select();
@@ -45,7 +44,6 @@ class TabNavigator {
           if (i === 0) {
             this.currentTab = this.tabs[this.tabs.length - 1];
           } else {
-            console.log(i);
             this.currentTab = this.tabs[i - 1];
           }
           this.currentTab.select();
@@ -72,20 +70,6 @@ class Tab {
     this.tab.classList.remove('tab-active');
     this.currentCard.deselect();
   }
-}
-
-class Img extends Tab {
-  constructor(img) {
-    super(img);
-    this.img = img;
-  }
-
-  // imgSelect() {
-  //   let imgs = document.querySelectorAll('.img');
-  //   imgs.forEach(img => img.classList.remove('card-active'));
-  //   this.img.classList.add('current-img');
-  //   this.currentCard.select();
-  // }
 }
 
 class Card {
