@@ -154,11 +154,14 @@ p {
   background: rgba(141, 153, 163, 0.9);
   height: 100vh;
   width: 100vw;
-  display: none;
+  top: -100vh;
+  display: flex;
   position: fixed;
   justify-content: center;
   align-items: center;
   z-index: 10;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
 }
 .modal .fixed-header-nav a {
   width: 100%;
@@ -172,6 +175,10 @@ p {
 .modal .fixed-header-nav a:hover {
   color: #222222;
 }
+.modal-visible {
+  top: 0;
+  transition: all 0.5s ease-in;
+}
 .fixed-header {
   color: #FFFFFF;
   background-color: rgba(141, 153, 163, 0.9);
@@ -180,6 +187,7 @@ p {
   position: fixed;
   top: 0;
   z-index: 100;
+  transition: background-color 0.5s ease-in-out;
 }
 .fixed-header .fixed-header-container {
   height: 100%;

@@ -16,14 +16,14 @@ class Hamburger {
             this.top.classList.toggle('change');
             this.middle.classList.toggle('change');
             this.bottom.classList.toggle('change');
-            this.modal.style.display = 'none';
+            this.modal.classList.toggle('modal-visible');
             this.fixedHeader.classList.toggle('modalActive');
             this.active = false;
         } else {
             this.top.classList.toggle('change');
             this.middle.classList.toggle('change');
             this.bottom.classList.toggle('change');
-            this.modal.style.display = 'flex';
+            this.modal.classList.toggle('modal-visible');
             this.fixedHeader.classList.toggle('modalActive');
             this.active = true;
         }
