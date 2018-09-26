@@ -73,6 +73,12 @@ class Tab {
         tabs.forEach((tab) => tab.element.classList.remove('activeTab'))
         this.element.classList.add('activeTab');
         
+        // this for loop keeps currentCard correct when tab is clicked
+        for (let i =0 ; i < tabs.length; i++){
+           if (tabs[i].element.classList.contains("activeTab"))
+           carousel.currentCard = i;
+       }
+       
         // if it's carousel click, don't activate card.select
         if(method === "tab")
             this.card.select();
