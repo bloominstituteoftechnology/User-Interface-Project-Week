@@ -1,23 +1,21 @@
 main {
   .jumbotron {
-    background: url("../img/home/home-jumbotron.png") no-repeat center top;
-    background-size: cover;
-    height: 598px;
-    width: 100%;
-
-    @media @mobile {
-      background: url("../img/home/home-mobile-jumbotron.png") no-repeat center
-        top;
-      height: 260px;
-    }
+		img {
+			height: auto;
+			width: 100%;
+		}
+		
+		.img-res();
   }
 
   .container.home {
-    .about {
+	
+		.about {
       .basic-flex();
 
       .about-img {
-        width: 48%;
+				width: 48%;
+        .container-2();
 
         img {
           height: auto;
@@ -29,22 +27,35 @@ main {
 
       .about-top {
         .custom-flex(center, space-between);
-        flex-direction: row-reverse;
+				flex-direction: row-reverse;
         margin: 50px 0;
-        width: 100%;
+				width: 100%;
+				
+				@media @mobile {
+					margin: 35px 0 0 0;
+				}
       }
 
       .about-bottom {
-        .custom-flex(center, space-between);
+				.custom-flex(center, space-between);
         margin: 50px 0;
-        width: 100%;
+				width: 100%;
+				
+				@media @mobile {
+					margin: 45px 0 0 0;
+				}
       }
 
       .about-content {
-        max-width: 48%;
+				width: 48%;
+        .container-2();
 
         h2 {
-          margin-bottom: 20px;
+					margin-bottom: 20px;
+					
+					@media @mobile {
+						margin: 28px 0 22px 0;
+					}
         }
 
         .btn {
@@ -57,51 +68,61 @@ main {
       .basic-flex();
 
       h2 {
-        margin: 47.5px 0;
+				margin: 47.5px 0;
+				
+				@media @mobile {
+					margin: 52px auto 25px auto;
+					width: 90.625%;
+				}
       }
 
       .projects-img {
         img {
           height: auto;
-          width: 100%;
+					width: 100%;
         }
 
         .img-res();
-      }
+			}
 
       .projects-top {
-        margin-bottom: 82px;
+        .projects-margin(25px);
 
         .project-title {
           .project-square(right);
         }
 
         p {
-          .project-text(right);
-        }
+					.project-text(right);
+					.container-3(20px);
+				}
       }
 
       .projects-middle {
-        margin-bottom: 82px;
+        .projects-margin(21px);
 
         .project-title {
           .project-square(left);
         }
 
         p {
-          .project-text(left);
-        }
+					.project-text(left);
+					.container-3(25px);
+				}
+				
+				
       }
 
       .projects-bottom {
-        margin-bottom: 82px;
+        .projects-margin(53px);
 
         .project-title {
           .project-square(right);
         }
 
         p {
-          .project-text(right);
+					.project-text(right);
+					.container-3(25px);
         }
       }
     }
