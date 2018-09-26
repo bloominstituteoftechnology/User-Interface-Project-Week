@@ -1,15 +1,109 @@
-.width-100 {
-    width: 100%;
-  }
+// .width-100 {
+//     width: 100%;
+//   }
   
+// .flex(@jc: none, @ai: none, @dir: row) {
+//     display: flex;
+//     justify-content: @jc;
+//     align-items: @ai;
+//     flex-direction: @dir;
+//   }
+//   .border-bottom-grey {
+//     border-bottom: 1px solid @lambda-times-color-lightgrey;
+//   }
+
+
+// Setting Width
+
+.width-100 {
+  width: 100%;
+}
+
+
+//Center and Column or Row Flex
 .flex(@jc: none, @ai: none, @dir: row) {
-    display: flex;
-    justify-content: @jc;
-    align-items: @ai;
-    flex-direction: @dir;
-  }
-  .border-bottom-grey {
-    border-bottom: 1px solid @lambda-times-color-lightgrey;
-  }
+  display: flex;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-direction: @dir;
+}
 
 
+//Flex Wrap
+.flex-wrap(@jc: none, @ai: none, @fw: wrap) {
+  display: flex;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-wrap: @fw;
+}
+
+
+// Headers & Footers 
+.header4 (@size: none, @color: none) {
+  h4 {
+      font-size: @size;
+      color: @color;
+      margin: 5px 0;
+      font-weight: bold;
+  }
+}
+
+
+// jumbotron background
+.jumbo {
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+//Fonts and Text
+.font (@size: none, @weight: none, @height: none) {
+  font-size: @size;
+  font-weight: @weight;
+  line-height: @height;
+  font-family: Roboto, Arial, sans-serif;
+  color: @lambda-color-white;
+}
+
+// Parametric Mix-in Flex and Button Creator
+.button-creator(@width: "", @font-btn-size: 2rem) {
+  font-size: @font-btn-size;
+  width: @width;
+  border-radius: 2px;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 8px 15px 8px 10px;
+}
+
+
+// Image heading on home page
+
+.img-heading (@right: "", @left: "", @bottom: "", @width:"") {
+  position: absolute;
+  bottom: @bottom;
+  right: @right;
+  left: @left;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  background: lightgray;
+  border: 1px solid rgb(231, 230, 230);
+  color: #222222;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding: 30px;
+  width:@width;
+  font-size: 2rem;
+}
+
+
+// Trying transitions mixins
+
+.transition(@prams: height 200ms ease-in) {
+  -webkit-transition: @prams;
+  -moz-transition: @prams;
+  -ms-transition: @prams;
+  -o-transition: @prams;
+}
