@@ -6,15 +6,23 @@
 
 .services-content {
     padding: 40px 8%;
+    @media @phone {
+        padding: 30px 5%;
+    }
     .tabs {
         .flex(space-between, center, row);
+        flex-wrap: wrap;
         width: 100%;
         padding: 45px 0;
+        @media @phone {
+            .flex(center, space-between, column);  
+            padding: 30px 0;      
+        }
         .tab {
-            .tab(@dark, @light, 500);
+            .tab(@dark, @light, @dark, 500);
         }
         .active-tab {
-            .tab(@light, @tab-selected, 400);
+            .tab(@light, @tab-selected, @light, 400);
         }
     }
     .tab-content {
@@ -23,8 +31,15 @@
     .active-content {
         .flex(space-between, flex-start, row);
         margin-bottom: 70px;
+        @media @phone {
+            .flex(space-between, flex-start, column);
+            margin-bottom: 30px;
+        }
         .text-content {
             width: 48%;
+            @media @phone {
+                width: 100%;
+            }
             h2 {
                 font-size: 2.4rem;
                 font-weight: 500;
@@ -33,9 +48,20 @@
                 margin-top: 20px;
             }
         }
-        img {
+        .services-desktop {
             margin-top: 45px;
             width: 48%;
+            @media @phone {
+                display: none;
+            }
+        }
+        .services-mobile {
+            display: none;
+            @media @phone {
+                display: block;
+                margin-top: 30px;
+                width: 100%;
+            }
         }
     }
 }

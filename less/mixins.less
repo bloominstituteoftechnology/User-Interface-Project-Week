@@ -60,16 +60,21 @@
     }
 }
 
-.tab(@color, @bg, @weight) {
+.tab(@color, @bg, @border, @weight) {
     color: @color;
     background-color: @bg;
-    border: 1px solid @dark;
+    border: 1px solid @border;
+    font-weight: @weight;
     width: 160px;
     padding: 13px 12px;
+    margin: 20px 5px;
     text-align: center;
-    font-weight: @weight;
     font-size: 2rem;
     cursor: pointer;
+    @media @phone {
+        width: 90%;
+        margin: 10px 0;
+    }
 }
 
 .nav() {
