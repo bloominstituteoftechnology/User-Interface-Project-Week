@@ -20,7 +20,6 @@ class TabBar {
 class TabContent {
   constructor(tabItem) {
     this.tabItem = tabItem;
-    // console.log(tabItem);
   }
 
   select() {
@@ -28,6 +27,7 @@ class TabContent {
 
     items.forEach(item => item.classList.remove('tab-content-selected'));
     this.tabItem.classList.add('tab-content-selected');
+    TweenMax.from('.tab-content-selected', 1.5, {opacity: 0});
   }
 }
 

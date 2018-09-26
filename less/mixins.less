@@ -17,3 +17,30 @@
   justify-content: @justify;
   align-items: @align;
 }
+
+.fadeBackground(@duration, @color) {
+  animation: fadeBackground @duration;
+
+  @keyframes fadeBackground {
+    from { background-color: transparent; }
+    to { background-color: @color; }
+  }
+}
+
+.fadeColor(@duration, @fromColor, @toColor) {
+  animation: fadeColor @duration;
+
+  @keyframes fadeColor {
+    from { color: @fromColor; }
+    to { color: @toColor; }
+  }
+}
+
+.fadeInvert(@duration) {
+  animation: fadeInvert 0.5s;
+
+  @keyframes fadeInvert {
+    from {filter: invert(0%);}
+    to {filter: invert(80%);}
+  }
+}
