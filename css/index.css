@@ -668,6 +668,11 @@ USE WITH CAUTION AND TEST WITH ABANDON */
     width: 1200px;
   }
 }
+@media (max-width: 500px) {
+  .carousel {
+    height: 310px;
+  }
+}
 .carousel .left-button,
 .carousel .right-button {
   display: flex;
@@ -693,10 +698,20 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   transform: translate(0, -50%);
   z-index: 3;
 }
+@media (max-width: 500px) {
+  .carousel .left-button {
+    top: 40%;
+  }
+}
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+}
+@media (max-width: 500px) {
+  .carousel .right-button {
+    top: 40%;
+  }
 }
 .carousel h2 {
   position: absolute;
@@ -708,9 +723,27 @@ USE WITH CAUTION AND TEST WITH ABANDON */
   font-weight: bold;
   text-shadow: #333 1px 0 10px;
 }
+@media (max-width: 500px) {
+  .carousel h2 {
+    bottom: 0;
+    top: 200px;
+    left: 25px;
+    font-size: 50px;
+  }
+}
 .carousel img {
-  position: absolute;
   width: 100%;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  max-height: 100vh;
+  min-height: 310px;
+  object-fit: cover;
+}
+@media (max-width: 500px) {
+  .carousel img {
+    height: 300px;
+  }
 }
 .carousel .hide-img {
   display: none;

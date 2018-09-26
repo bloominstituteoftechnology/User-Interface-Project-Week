@@ -10,6 +10,9 @@
   @media (min-width: 1200px) {
     width: 1200px;
   }
+  @media @mobile {
+    height: 310px;
+  }
   .left-button,
   .right-button {
     .flex(center);
@@ -30,11 +33,17 @@
     left: 25px;
     transform: translate(0, -50%);
     z-index: 3;
+    @media @mobile {
+      top: 40%;
+    }
   }
   .right-button {
     top: 50%;
     right: 25px;
     transform: translate(0, -50%);
+    @media @mobile {
+      top: 40%;
+    }
   }
   h2 {
     position: absolute;
@@ -45,10 +54,24 @@
     font-size: 75px;
     font-weight: bold;
     text-shadow: #333 1px 0 10px;
+    @media @mobile {
+      bottom: 0;
+      top: 200px;
+      left: 25px;
+      font-size: 50px;
+    }
   }
   img {
-    position: absolute;
     .width-100();
+    position: absolute;
+    top: 0;
+    height: 100%;
+    max-height: 100vh;
+    min-height: 310px;
+    object-fit: cover;
+    @media @mobile {
+      height: 300px;
+    }
   }
 
   .hide-img {
