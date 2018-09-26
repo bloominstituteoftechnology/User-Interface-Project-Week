@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   background-image: url('../img/home/home-jumbotron.png');
+  background-position: center;
   background-attachment: fixed;
   background-size: cover;
   .bottom-space(45px);
@@ -9,6 +10,7 @@
   @media @mobile {
     height: auto;
     background-image: url('../img/home/home-mobile-jumbotron.png');
+    background-attachment: unset;
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -64,6 +66,13 @@
         .sub-heading-style();
       }
 
+      p {
+        @media @mobile {
+          text-align: justify;
+          word-break: break-all;
+        }
+      }
+
       .btn {
         border: 1px solid @black;
         width: 33%;
@@ -71,16 +80,25 @@
         text-align: center;
         cursor: pointer;
 
+        @media @tablet {
+          width: 37%;
+        }
+
         @media @mobile {
           width: 100%;
           padding: 20px 4%;
+        }
+
+        &:hover {
+          background-color: @btn-hover-bg;
+          color: @white;
         }
       }
     }
 
     .img-content {
-      .img-mobile {
-        display: none;
+      @media @tablet {
+        width: 48%;
       }
 
       @media @mobile {
@@ -91,13 +109,18 @@
         .img-desktop {
           display: none;
         }
+      }
 
-        .img-mobile {
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .img-mobile {
+        display: none;
+
+        @media @mobile {
           display: block;
-        }
-
-        img {
-          width: 100%;
         }
       }
     }
