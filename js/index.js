@@ -38,6 +38,7 @@ const main = document.querySelector('.main-content');
 const footer = document.querySelector('.footer');
 const container = document.querySelector('.container');
 const mainSvc = document.querySelector('.main-content-svc');
+const logoNav = document.querySelector('.logo-nav');
 
 let bodyToggle = () => {
     header.classList.toggle('hide');
@@ -49,6 +50,7 @@ hamburger.addEventListener('click', (e) => {
     e.target.classList.toggle('hide');
     exitIcon.classList.toggle('hide');
     navPage.classList.toggle('hide');
+    logoNav.style.visibility = "hidden";
     
 
 });
@@ -56,4 +58,5 @@ exitIcon.addEventListener('click', (e) => {
     e.target.classList.toggle('hide');
     hamburger.classList.toggle('hide');
     navPage.classList.toggle('hide');
+    logoNav.style.visibility = "visible";
 });
