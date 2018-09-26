@@ -1,11 +1,11 @@
 .footer{
     width: 100%;
-    height: 200px;
+    height: 300px;
     margin-top: 100px;
     background-color: @footerColor;
-    .flexing-boxes(columns, wrap, center);
+    .flexing-boxes(row, wrap, center);
     align-items: center;
-    .generalFonts(@footerFontSize, #236543, @fontReg, @footerLineHeight);
+    .generalFonts(@footerFontSize, @footerFontColor, @fontReg, @footerLineHeight);
     
 
     .footer-content{
@@ -13,14 +13,47 @@
         width: 100%;
         margin: 0 auto;
         display: flex;
-        .flexing-boxes(row, nowrap);
-        align-items: center;
+        .flexing-boxes(columns, nowrap, space-evenly);
 
         .footer-email{
             width: 100%;
-            border: 1px solid indianred;
+            margin-right: 10px;
 
+            .footer-input-email{
+                width: 100%;
+                padding: 4%;
+                margin: 10px 0;
+                border-radius: 5px;
+            }
+
+            .disclosure{
+                font-size: .75rem;
+            }
         }
+
+        h3{
+            margin: 20px 0;
+            .generalFonts(@footerHeadingSize, @footerFontColor, @fontReg, @footerHeaderLH);
+        }
+
+        .address-content{
+            width: 80%;
+            margin: 0;
+            .flexing-boxes(row, nowrap, space-evenly);
+            
+            .address{
+                width: 70%;
+                margin-left: 90px;
+                padding: 0;
+            }
+        }
+    }
+
+    .copyright{
+        max-width: @maxWidth;
+        width: 100%;
+        margin-top: 40px;
+        text-align: center;
     }
     
 }
