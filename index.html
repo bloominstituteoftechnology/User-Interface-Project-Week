@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<title>Home</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="css/index.css">	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -145,7 +145,23 @@
 	<script src="js/index.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
-	  AOS.init();
+
+		function detectmob() {
+			console.log("test")
+			if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+				let elements = document.querySelectorAll('.animation');
+				elements.forEach(el => {
+					el.removeAttribute('data-aos-duration');
+					el.removeAttribute('data-aos-anchor');
+					el.removeAttribute('data-aos');
+				})
+			} else {
+				AOS.init();
+			}
+		}
+		
+		detectmob();
+
 	</script>
 </body>
 </html>
