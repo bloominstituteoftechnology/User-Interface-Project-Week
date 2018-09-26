@@ -3,7 +3,7 @@ document.querySelector('.nav-button').addEventListener('click', () => {
     document.querySelector('.hamburger').classList.toggle('hidden');
     document.querySelector('.close').classList.toggle('hidden');
     document.querySelector('.menu').classList.toggle('hidden');
-    document.querySelector('.nav').classList.toggle('expanded-nav');
+    document.querySelector('.nav').classList.toggle('lighten-nav');
 });
 
 // Services Tab System
