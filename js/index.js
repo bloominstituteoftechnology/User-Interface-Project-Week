@@ -38,7 +38,7 @@ function navCloseClicked() {
     tl.to('.navLink a:nth-child(3)', 0.3, {opacity :0.1})
     .to('.navLink a:nth-child(2)', 0.3, {opacity :0.1})
     .to('.navLink a:nth-child(1)', 0.3, {opacity :0.1})
-    .to('.nav', 0.5, {height : "10vh"});
+    .to('.nav', 0.5, {height : "8vh"});
 
     setTimeout( navClassToggle,1400);
     

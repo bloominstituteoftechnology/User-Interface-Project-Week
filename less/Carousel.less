@@ -1,0 +1,91 @@
+
+
+
+.cards-container {
+  position: relative;
+  overflow: hidden;
+  .layout();
+ 
+
+  .left-button, .right-button {
+    .layout();
+    color: @color;
+    background-color: @background;
+    font-size: 35px;
+    border-radius: 50%;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 2px solid @color;
+    padding-left : 3px;
+    &:hover {
+      color: @background;
+      background-color: @color;
+      border: 2px solid @background;
+    }
+  }
+  .left-button {
+    top: 50%; 
+    left: 1px;
+    //  transform: translate(0, -50%);
+    z-index : 2;
+  }
+  .right-button {
+    top: 50%; 
+    right: 1px;
+    // transform: translate(0, -50%);
+    z-index : 2;
+  }
+  .card {
+   
+    // position:absolute;
+    z-index : 0;
+    width : 90%;
+    margin : 0 auto;
+  }
+ 
+  .disappear{
+    left : -100%;
+    z-index : -1;
+  }
+
+   .slideRightIn{
+    animation: slideRightIn 2s;
+   }
+
+   .slideRightOut{
+    animation: slideRightOut 2s;
+    left : -100%;
+    z-index : -1;
+   }
+  
+   .slideLeftIn{
+    animation: slideLeftIn 2s;
+   }
+
+   .slideLeftOut{
+    animation: slideLeftOut 2s;
+    left : 100%;
+    z-index : -1;
+   }
+}
+
+
+@keyframes slideRightIn {
+  0% { left: 100%;     z-index : -1; }
+   100% { left : 0; z-index: 0; }
+}
+@keyframes slideRightOut {
+  0% { left: 0;     z-index : 0; }
+   100% { left : -100%; z-index: -1; }
+}
+
+@keyframes slideLeftIn {
+  0% { left: -100%;     z-index : -1; }
+   100% { left : 0; z-index: 0; }
+}
+@keyframes slideLeftOut {
+  0% { left: 0;     z-index : 0; }
+   100% { left : 100%; z-index: -1; }
+}
