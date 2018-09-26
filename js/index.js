@@ -12,7 +12,7 @@ function fromHam(){
     if(hamburger.src = '/img/nav-hamburger.png'){
         hamburger.src = '/img/nav-hamburger-close.png';
         nav.style.display = 'flex';
-        headNav.style.opacity = '.95';
+        headNav.style.backgroundColor = 'unset';
         hamburger.addEventListener('click', toHam, {once: true} );
     }
 }
@@ -22,6 +22,7 @@ function toHam(){
         hamburger.src = '/img/nav-hamburger.png';
         nav.style.display = 'none';
         headNav.style.opacity = '1';
+        headNav.style.backgroundColor = '#9FA9B3';
         hamburger.addEventListener('click', fromHam, {once: true});
     }
 }
