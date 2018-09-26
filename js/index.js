@@ -32,7 +32,7 @@ class TabLink {
       const items = document.querySelectorAll('.tabs-item');
 
       items.forEach(item => item.classList.remove('tabs-item-selected'));
-       
+
       this.element.classList.add('tabs-item-selected');
     }
   }
@@ -43,4 +43,7 @@ class TabLink {
   links = Array.from(links).map(link => new TabLink(link));
 //   console.log(links);
 
-  links[0].select();
+links[0].select();
+
+
+//   Navigatioon System Design
