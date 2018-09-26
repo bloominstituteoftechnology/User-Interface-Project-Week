@@ -17,9 +17,9 @@ class TabLink {
             return new Link(link, this);
         })
         this.activeLink = this.links[0];
-        this.init()
+        this.selectTab()
     }
-        init() {
+        selectTab() {
             this.activeLink.select()
         }
         updateActive(newActive) {
@@ -41,16 +41,15 @@ class Link {
         this.element.addEventListener('click', () => {
             this.tabs.updateActive(this)
             this.select()
-            console.log('yeah')
         })
         console.log(this.element)
     }
     select() {
-        this.element.classList.add('.card')
+        this.element.classList.add('tab-selected')
         this.card.select()
     }
     deselect() {
-        this.element.classList.add('.card')
+        this.element.classList.remove('tab-selected')
         this.card.deselect()
     }
 }
@@ -59,10 +58,11 @@ class TabsCard {
         this.element = tabCard
     }
     select() {
-        this.element.classList.add('.card')
+        this.element.classList.add('card-selected')
+        console.log(this.element)
     }
     deselect() {
-        this.element.classList.remove('.card')
+        this.element.classList.remove('card-selected')
     }
 }
 
