@@ -66,13 +66,16 @@ class Tab {
   
     this.card = new Card(this.cardElement);
    
-    this.element.addEventListener('click', () => this.select());
+    this.element.addEventListener('click', () => this.select("tab"));
     };
 
-    select(){
+    select(method){
         tabs.forEach((tab) => tab.element.classList.remove('activeTab'))
         this.element.classList.add('activeTab');
-        this.card.select();
+        
+        // if it's carousel click, don't activate card.select
+        if(method === "tab")
+            this.card.select();
     }
 }
 
@@ -106,29 +109,28 @@ class Carousel {
         if (newNum == this.maxCardNum )
             newNum = 0;
         
-        // .classList = 'slideRightOut';
-        // this.cards[newNum].classList = 'slideRightIn';
        
-        // this.cards[this.currentCard].classList.add('doubleWidth');
-        // this.cards[newNum].classList.add('doubleWidth');
-        // TweenLite.fromTo(this.cards[this.currentCard], 3, {x :0}, {x:1000, display : "none"})
         this.cards[newNum].classList.remove('disappear')
         TweenLite.fromTo(this.cards[newNum], 3, {x :-1000}, {x:0} );
     
         setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
-        // setTimeout(this.cards[this.currentCard].classList.remove('doubleWidth'), 3000);
-        // setTimeout( this.cards[newNum].classList.remove('doubleWidth'), 3000);
         this.currentCard = newNum;  
+
+        tabs[this.currentCard].select();
       }
 
     leftClicked(){
         let newNum = this.currentCard - 1;
         if (newNum == -1 )
             newNum = this.maxCardNum - 1;
-        this.cards[this.currentCard].classList = 'slideLeftOut';
-        this.cards[newNum].classList = 'slideLeftIn';
-        this.currentPic = newNum;   
-
+ 
+            this.cards[newNum].classList.remove('disappear')
+            TweenLite.fromTo(this.cards[newNum], 3, {x :1000}, {x:0} );
+        
+            setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
+    
+        this.currentCard = newNum;   
+        tabs[this.currentCard].select();
       }
 }
 
