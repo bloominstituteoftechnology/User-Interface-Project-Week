@@ -7,8 +7,7 @@ const menuText = document.querySelector('.nav-hidden');
 hamburger.addEventListener('click', () => {
     nav.classList.remove('nav-hidden');
     nav.classList.add('expanded');
-    menuText.classList.remove('nav-hidden');
-    menuText.classList.add('drop-down')
+    nav.classList.add('drop-down')
     nav.style.flexDirection = 'column-reverse';
     nav.style.opacity = '50%';
    
@@ -18,7 +17,8 @@ hamburger.addEventListener('click', () => {
 close.addEventListener('click', () => {
     nav.classList.add('navBar');
     nav.classList.remove('expanded');
-    menuText.style.display = 'none';
+     nav.classList.remove('drop-down');
+    
 })
 
 
@@ -28,10 +28,13 @@ class TabLink {
   constructor(element) {
       this.element = element;
       this.data = this.element.dataset.tab;
-       this.itemElement = document.querySelector(`.tab[data-tab="${this.data}"]`);
+      this.itemElement = document.querySelector(`.card[data-tab="${this.data}"]`);
       this.tabItem = new TabItem(this.itemElement);
       
-      this.element.addEventListener('click', (event) => {this.select(); event.preventDefault();});
+      this.element.addEventListener('click', (event) => {
+          this.select(); 
+          
+        });
   };
    select() {
       const tabLinks = document.querySelectorAll('.tab');
@@ -53,4 +56,4 @@ class TabItem {
 }
 let links = document.querySelectorAll('.tab');
 links = Array.from(links).map(link => {return new TabLink(link);});
-// links[0].select();
+ links[0].select();
