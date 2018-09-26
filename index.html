@@ -15,12 +15,12 @@
 <body>
 	<section class='outterContainer innerColor'>
 		<header class='header image'>
-			<div id='menuDiv' class='header-top'  data-aos-duration="1000" data-aos="slide-down" data-aos-anchor="#homeText">
+			<div id='menuDiv' class='header-top animation'  data-aos-duration="1000" data-aos="slide-down" data-aos-anchor="#homeText">
 				<div id='headerTopNavDiv' class='innerContainer header-container justCenter'>
 					<div class='header-top-nav'>
-						<p data-aos-duration="1000" data-aos="fade-right" data-aos-anchor="#homeText">S&J</p>
-						<img class='finger' id='mainMenu' data-aos-duration="1000" data-aos="fade-left" data-aos-anchor="#homeText" src="./img//nav-hamburger.png" alt="menu">
-						<img class='finger' id='mainMenuClose' class='header-menu-close' src="./img/nav-hamburger-close.png" alt="Close Main Menu">
+						<p class='animation' data-aos-duration="1000" data-aos="fade-right" data-aos-anchor="#homeText">S&J</p>
+						<img class='finger animation' id='mainMenu' data-aos-duration="1000" data-aos="fade-left" data-aos-anchor="#homeText" src="./img//nav-hamburger.png" alt="menu">
+						<img class='finger animation' id='mainMenuClose' class='header-menu-close' src="./img/nav-hamburger-close.png" alt="Close Main Menu">
 					</div>
 					<nav id='navMenu' class='header-nav-menu'>
 						<a id='selectedPage' href="./index.html">Home</a>
@@ -147,7 +147,7 @@
 	<script>
 
 		function detectmob() {
-			console.log("test")
+			console.log(document.querySelectorAll('.animation'))
 			if(window.innerWidth <= 800 && window.innerHeight <= 600) {
 				let elements = document.querySelectorAll('.animation');
 				elements.forEach(el => {
@@ -156,6 +156,7 @@
 					el.removeAttribute('data-aos');
 				})
 			} else {
+				console.log('..in the else ')
 				AOS.init();
 			}
 		}
