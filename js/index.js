@@ -132,3 +132,4 @@ class TabArticle {
 
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(element => new Tabber(element));
+tabs[0].selectTab();
