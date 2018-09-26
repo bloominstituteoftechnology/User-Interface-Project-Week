@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase-firestore.js"></script>
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<link rel="stylesheet" href="css/index.css">
 	<!--[if IE]>
@@ -28,14 +30,14 @@
 			<h1>Contact Us</h1>
 		</header>
 		<div class="main-content">
-			<form>
+			<form class="contact-form">
 				<h2>Get In Touch</h2>
 				<label for="email">Email Address:</label><br>
-				<input id="email" type="email" placeholder="Enter email"><br>
+				<input id="email" type="email" name="email" placeholder="Enter email"><br>
 				<div class="email-text">We'll never share your email with anyone else.</div><br>
 
 				<label for="buildings">How many buildings do you need planned?</label><br>
-				<select name="" id="buildings">
+				<select name="buildings" id="buildings">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -44,13 +46,13 @@
 				</select><br>
 
 				<label for="textarea">Provide a brief overview of your project needs:</label><br>
-				<textarea name="" id="textarea" cols="60" rows="10"></textarea><br>
+				<textarea name="project-overview" id="textarea" cols="60" rows="10"></textarea><br>
 
-				<input id="sbusiness" type="radio" name="owner">
+				<input id="sbusiness" type="radio" name="business-type" value="small business">
 				<label for="sbusiness">I am a small business</label><br>
-				<input id="rowner" type="radio" name="owner">
+				<input id="rowner" type="radio" name="business-type" value="residential owner">
 				<label for="rowner">I am a residential owner</label><br>
-				<input id="corporation" type="radio" name="owner">
+				<input id="corporation" type="radio" name="business-type" value="corporation">
 				<label for="corporation">I am a corporation</label><br>
 
 				<input type="submit">
@@ -113,6 +115,21 @@
 			<p class="copyright">Copyright © 2018 Smith and Jones</p>
 		</footer>
 	</div>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA9NJfoFe4rFqqVJEtRXUXEj4GCvFteQck",
+      authDomain: "lambda-ui-project.firebaseapp.com",
+      databaseURL: "https://lambda-ui-project.firebaseio.com",
+      projectId: "lambda-ui-project",
+      storageBucket: "lambda-ui-project.appspot.com",
+      messagingSenderId: "369252374942"
+    };
+    firebase.initializeApp(config);
+		const db = firebase.firestore();
+		db.settings({timestampsInSnapshots: true});
+  </script>
 	<script src="js/index.js"></script>
+	<script src="js/Contact.js"></script>
 </body>
 </html>
