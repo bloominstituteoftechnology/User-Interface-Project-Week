@@ -226,7 +226,36 @@ p {
   width: 100%;
 }
 .full-width-nav .main-navigation nav .dropdown {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 0vh;
+  overflow: hidden;
+}
+@media (max-width:400px) {
+  .full-width-nav .main-navigation nav .dropdown {
+    flex-direction: column-reverse;
+  }
+}
+.full-width-nav .main-navigation nav .dropdown .nav-link {
+  text-decoration: none;
+  font-size: 5rem;
+  font-weight: 700;
+  height: 10%;
+  margin: 2%;
+  color: #FFFFFF;
+  z-index: 11;
+  opacity: 1;
+  text-align: center;
+}
+.full-width-nav .main-navigation nav .dropdown .nav-link:hover {
+  color: #504545;
+}
+@media (max-width:400px) {
+  .full-width-nav .main-navigation nav .dropdown .nav-link {
+    padding: 1%;
+  }
 }
 .full-width-nav .dropped {
   display: flex;
@@ -257,7 +286,6 @@ p {
 }
 @media (max-width:400px) {
   .full-width-nav .dropped .nav-link {
-    margin-top: -40%;
     padding: 1%;
   }
 }
@@ -749,7 +777,7 @@ footer .container .copyright {
 }
 @media (max-width: 800px) {
   .services .tabs .tab {
-    margin-bottom: 3%;
+    margin-bottom: 2%;
     padding: 5% 1%;
     width: 45%;
   }
@@ -802,6 +830,11 @@ footer .container .copyright {
   display: none;
   width: 100%;
   padding: 0 1%;
+}
+@media (max-width: 800px) {
+  .services .tab-content-container .tab-content {
+    margin-top: -8%;
+  }
 }
 @media (max-width: 700px) {
   .services .tab-content-container .tab-content {
@@ -1365,7 +1398,7 @@ footer .container .copyright {
 .projects .carousel .carousel-image {
   width: 0;
   height: 100%;
-  transition: all 2s cubic-bezier(0.5, 1, 0.5, 1);
+  transition: all 1s linear;
 }
 .projects .carousel .active {
   display: block;
@@ -1374,10 +1407,10 @@ footer .container .copyright {
 .projects .image-descriptions {
   width: 700px;
   margin: 2% auto;
+  height: 350px;
   overflow: hidden;
   padding: 5%;
   border-radius: 5px;
-  border: 10px solid #384869;
 }
 @media (max-width:400px) {
   .projects .image-descriptions {
@@ -1513,6 +1546,7 @@ footer .container .copyright {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    margin-top: 1%;
   }
 }
 .about .team .team1 .text-block {
@@ -1578,6 +1612,7 @@ footer .container .copyright {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    margin-top: 5%;
   }
 }
 .about .team .team2 .text-block {
@@ -1644,6 +1679,7 @@ footer .container .copyright {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    margin-top: 5%;
   }
 }
 .about .team .team3 .text-block {
