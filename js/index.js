@@ -99,7 +99,7 @@ class Card {
 
 
 // Carousel JS.  make cards rotate
-class Carousel {
+let Carousel = class {
     constructor(element){
         this.element = element;
         this.currentCard = 0;
@@ -117,10 +117,12 @@ class Carousel {
         
        
         this.cards[newNum].classList.remove('disappear')
-        TweenLite.fromTo(this.cards[newNum], 1, {x :-1000}, {x:0} );
+        // TweenLite.fromTo(this.cards[this.currentCard], 2, {x :0}, {x:1000} );
+        TweenLite.fromTo(this.cards[newNum], 2, {x :-1000}, {x:0} );
     
-        setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
-        this.currentCard = newNum;  
+         setTimeout((this.cards[this.currentCard].classList.add('disappear')),3000);
+        //  setTimeout((console.log("RIght Clickede")), 3000);
+         this.currentCard = newNum;  
 
         tabs[this.currentCard].select();
       }
@@ -131,10 +133,10 @@ class Carousel {
             newNum = this.maxCardNum - 1;
  
             this.cards[newNum].classList.remove('disappear')
-            TweenLite.fromTo(this.cards[newNum], 1, {x :1000}, {x:0} );
+            TweenLite.fromTo(this.cards[newNum], 3, {x :1000}, {x:0} );
         
             setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
-    
+      
         this.currentCard = newNum;   
         tabs[this.currentCard].select();
       }
