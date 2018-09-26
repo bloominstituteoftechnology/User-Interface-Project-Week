@@ -12,7 +12,8 @@ function fromHam(){
     if(hamburger.src = '/img/nav-hamburger.png'){
         hamburger.src = '/img/nav-hamburger-close.png';
         nav.style.display = 'flex';
-        headNav.style.backgroundColor = 'unset';
+        headNav.style.opacity = '1';
+        /* headNav.style.backgroundColor = 'unset'; */
         hamburger.addEventListener('click', toHam, {once: true} );
     }
 }
