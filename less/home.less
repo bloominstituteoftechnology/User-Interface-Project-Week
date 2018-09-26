@@ -32,25 +32,33 @@
   }
   .main-content {
     .content-card {
-      margin: 50px 84px;
+      margin: 50px 8.2%;
       .flex(row, flex-end, stretch);
+      @media @tablet {
+        flex-direction: column-reverse;
+        margin: 35px 15px 32px;
+      }
       @media @mobile {
-        .mobileContentCards();
+        margin: 35px 17px 32px 15px;
       }
       .content-text {
         margin: 37px 15px 23px 0;
         .flex(column, space-around, flex-start);
-        @media @mobile{
+        @media @tablet{
+          margin-right: 0;
+        }
+        @media @mobile {
           margin: 27px 0 10px;
         }
         h3 {
           font-size: 2.4rem;
+          margin: 0 15px;
         }
         p {
           font-size: 1.6rem;
           line-height: 2.4rem;
-          @media @mobile{
-            margin: 20px 0 27px;
+          @media @tablet {
+            margin: 20px 15px 27px;
           }
         }
         .content-btn {
@@ -60,41 +68,60 @@
           padding: 15px 0;
           width: 135px;
           text-align: center;
-          @media @mobile{
+          @media @tablet {
             width: 100%;
           }
+        }
+      }
+      .content-img {
+        @media @tablet {
+          margin: 0 auto;
         }
       }
     }
     .flipped {
       flex-direction: row-reverse;
       margin-top: 100px;
-      @media @mobile{
-        .mobileContentCards();
+      @media @tablet {
+        flex-direction: column-reverse;
+        margin: 35px 15px 32px;
+      }
+      @media @mobile {
+        margin: 35px 17px 32px 15px;
       }
       .content-text {
         margin: 30px 0 30px 30px;
-        @media @mobile{
+        @media @tablet{
+          margin: 30px 0;
+        }
+        @media @mobile {
           margin: 27px 0 10px;
         }
       }
     }
   }
   .recent-projects {
-    margin: 97px 84px;
-    @media @mobile{
-      margin: 0 0 16px;
+    margin: 97px 8.2%;
+    @media @tablet {
+      margin: 0 0 76px;
     }
     h3 {
       margin: 45px 0;
       font-size: 2.4rem;
-      @media @mobile{
+      @media @tablet{
+        margin-left: 30px;
+      }
+      @media @mobile {
         margin: 42px 15px 25px;
       }
     }
     .inset-text {
       position: relative;
       z-index: -1;
+      img {
+        width: 100%;
+        height: auto;
+      }
       h4 {
         position: absolute;
         background: @insetBG;
@@ -107,23 +134,33 @@
         text-align: center;
         font-weight: 100;
         border: solid @colorBG 1px;
+        @media @tablet {
+          .tabletInsetText();
+        }
         @media @mobile{
-          .mobileInsetText();
+          width: 90%;
         }
       }
     }
     .flipped {
       h4 {
         left: 0px;
+        @media @tablet {
+          .tabletInsetText();
+        }
         @media @mobile{
-          .mobileInsetText();
+          width: 90%;
         }
       }
     }
     .content-text {
       margin: 90px auto 100px;
-      width: 53%;
-      @media @mobile{
+      max-width: 542.72px;
+      @media @tablet{
+        width: 90%;
+        margin: 110px auto 50px;
+      }
+      @media @mobile {
         width: 100%;
         margin: 107px 15px 43px;
       }
@@ -131,8 +168,8 @@
         font-size: 1.8rem;
         line-height: 1.35;
         margin: 25px 10px 0 0;
-        @media @mobile{
-          margin-right: 30px;
+        @media @mobile {
+          margin-right: 9.4%;
         }
       }
     }
