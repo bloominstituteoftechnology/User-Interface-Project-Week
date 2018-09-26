@@ -1,3 +1,17 @@
+// --Overlay--
+const menu = document.querySelector('.menu-content');
+const menuButton = document.querySelector('.menu-button');
+const menuCloseButton = document.querySelector('.menu-close-button');
+
+const toggleMenu = () => {
+  menu.classList.toggle('menu--open');
+  menuButton.classList.toggle('button--hide');
+  menuCloseButton.classList.toggle('button--show');
+};
+
+menuButton.addEventListener('click', toggleMenu);
+menuCloseButton.addEventListener('click', toggleMenu);
+
 // --TABS--
 class TabLink {
   constructor(element) {
