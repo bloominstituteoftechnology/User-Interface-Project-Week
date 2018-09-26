@@ -37,9 +37,9 @@ window.addEventListener('resize', function() {
     let bkgd = document.querySelector('.hero');
 
     if (width <= 500) {
-        bkgd.style.backgroundImage = "url('../img/contact/contact-mobile-jumbotron.png')";
+        bkgd.style.backgroundImage = "url('../img/about/about-mobile-jumbotron.png')";
     }
     else if (width > 500) {
-        bkgd.style.backgroundImage = "url('../img/contact/contact-jumbotron.png')";
+        bkgd.style.backgroundImage = "url('../img/about/about-jumbotron.png')";
     }
 })
