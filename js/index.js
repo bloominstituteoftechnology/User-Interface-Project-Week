@@ -67,19 +67,22 @@ hamburger.addEventListener('click', () => {
         TweenMax.to('.nav-links', .8, {y: 0, opacity: 1});
         return count++;
     } else {
-        navigation.classList.remove('nav-links-active');
+        // navigation.classList.remove('nav-links-active');
         hamburger.src = "../img/nav-hamburger.png";
         document.querySelector('.nav-links').style.backgroundColor = '#9aa5b0';
         document.querySelector('.main-nav').style.backgroundColor = '#9aa5b0';
+        TweenMax.from('.nav-links', .8, {y: 0, opacity: 1});
+        TweenMax.to('.nav-links', .8, {y: -1000, opacity: 0});
         return count++;
     }
 });
 
 //Navigation will also click when clicking the background of the navlinks
 navigation.addEventListener('click', () => {
-    navigation.classList.remove('nav-links-active');
     hamburger.src = "../img/nav-hamburger.png";
     document.querySelector('.nav-links').style.backgroundColor = '#9aa5b0';
     document.querySelector('.main-nav').style.backgroundColor = '#9aa5b0';
+    TweenMax.from('.nav-links', .8, {y: 0, opacity: 1});
+    TweenMax.to('.nav-links', .8, {y: -1000, opacity: 0});
     return count++;
 });
