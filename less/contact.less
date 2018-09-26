@@ -25,6 +25,11 @@
 		p {
 	  	font-size: 1.6rem;
 	  }
+
+	  .small-text {
+			font-size: 1.3rem;
+			margin-bottom: 38px;
+		}
 	}
 
 	.where-we-work {
@@ -39,11 +44,6 @@
 
 	p {
 		margin-bottom: 10px;
-	}
-
-	.small-text {
-		font-size: 1.3rem;
-		margin-bottom: 38px;
 	}
 
 	input {
@@ -81,6 +81,12 @@
     padding: 14px 42px;
 	}
 
+	@media @phone {
+		button {
+			width: 100%;
+		}
+	}
+
 	input.email-input, select, textarea {
 		width: 410px;
 	}
@@ -107,6 +113,8 @@
 		}
 	}
 
+	// using 900 px instead of 800 (tablet) because 
+	// contact page is weird and breaks sooner than 800
 	@media (max-width: 900px) {
 		input.email-input, select, textarea {
 			width: 90%;
@@ -123,6 +131,34 @@
 
 		.page-content {
 			margin: 41px 20px;
+		}
+	}
+
+	@media @phone {
+		.page-content {
+			flex-direction: column;
+			margin: 31px 12px 0px;
+
+			> * {
+				width: 100%;
+			}
+
+			h2 {
+				margin-bottom: 54px;
+			}
+
+			input.email-input, select, textarea {
+				width: 100%;
+				margin-right: 0;
+			}
+
+			.get-in-touch {
+				margin-bottom: 50px;
+			}
+
+			.get-in-touch > * {
+				max-width: 100%;
+			}
 		}
 	}
 }
