@@ -4,4 +4,5 @@ let expanded = document.querySelector(".expanded")
 nav.addEventListener("click", (event) => {
     bar.classList.toggle("drop");
     expanded.classList.toggle("open")
+    nav.classList.toggle("x")
 })
