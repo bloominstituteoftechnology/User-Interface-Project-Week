@@ -11,9 +11,9 @@
 
 <body>
 
-  <div class="fullscreen-loader">
+  <!-- <div class="fullscreen-loader">
     <img src="spinner.svg" alt="">
-  </div>
+  </div> -->
   <nav>
     <div class="nav-wrapper">
       <div class="logo">
@@ -81,7 +81,7 @@
   </section>
 
 
-
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   <script src="js/index.js"></script>
 
   <script>
@@ -102,8 +102,17 @@
       }, 50);
     }
     //fade out fullscreen loader on window load
-    window.addEventListener('load', function () {
-      fadeOut('.fullscreen-loader');
+    // window.addEventListener('load', function () {
+    //   fadeOut('.fullscreen-loader');
+    // });
+
+    window.sr = ScrollReveal({ mobile: false });
+
+    sr.reveal(".landing-container", {
+      origin: "left",
+      delay: 1000,
+      interval: 500,
+      distance: "500px"
     });
   </script>
 </body>
