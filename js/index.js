@@ -4,6 +4,7 @@
 
 let hamburger = document.querySelector('.nav-ham');
 let nav = document.querySelector('nav');
+let headNav = document.querySelector('.nav');
 
 hamburger.addEventListener('click', fromHam, {once: true});
 
@@ -11,6 +12,7 @@ function fromHam(){
     if(hamburger.src = '/img/nav-hamburger.png'){
         hamburger.src = '/img/nav-hamburger-close.png';
         nav.style.display = 'flex';
+        headNav.style.opacity = '.95';
         hamburger.addEventListener('click', toHam, {once: true} );
     }
 }
@@ -19,6 +21,7 @@ function toHam(){
     if(hamburger.src = '/img/nav-hamburger-close.png'){
         hamburger.src = '/img/nav-hamburger.png';
         nav.style.display = 'none';
+        headNav.style.opacity = '1';
         hamburger.addEventListener('click', fromHam, {once: true});
     }
 }
@@ -85,8 +88,23 @@ let tabContent = document.querySelectorAll(".content");
 
 
 
+//IMAGE SWAPS 
+/* background-image: url("/img/home/home-the-blocks-img.png");
+            background-image: url("/img/home/home-mobile-villas-img.png");
+            background-image: url("/img/home/home-mobile-outskirts-img.png"); */
+
+let outskirts = document.querySelector('.outskirts');
+let outskirtsSrc = '/img/home/home-mobile-outskirts-img.png';
+let villasSrc = '/img/home/home-mobile-villas-img.png';
+let blocksSrc = '/img/home/home-the-blocks-img.png';
+
+outskirts.addEventListener();
+
+/* const imgSwap = (img, src) => {
 
 
+}
+ */
 
 
 
