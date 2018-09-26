@@ -138,9 +138,20 @@ table {
 }
 html {
   font-size: 62.5%;
-  background: #FFFFFF;
+  background: #ffffff;
   color: #222222;
   font-family: Roboto, Arial, sans-serif;
+}
+.mobile-img {
+  display: none;
+}
+@media (max-width: 500px) {
+  .desktop-img {
+    display: none;
+  }
+  .mobile-img {
+    display: initial;
+  }
 }
 .header-wrapper {
   background: #99A2AF;
@@ -236,11 +247,6 @@ html {
     bottom: 17px;
   }
 }
-@media (max-width: 500px) {
-  .jumbotron {
-    padding-top: 40px;
-  }
-}
 .home-page {
   margin: 0 auto;
   max-width: 1036px;
@@ -289,9 +295,15 @@ html {
   margin-top: 100px;
 }
 @media (max-width: 500px) {
+  .home-page .top-sections {
+    margin: 35px 1% 0;
+  }
   .home-page .top-sections section {
     flex-direction: column;
     margin: 30px 10px;
+  }
+  .home-page .top-sections section .content-group {
+    margin-top: 20px;
   }
   .home-page .top-sections section .img-right {
     order: -1;
@@ -302,6 +314,12 @@ html {
   }
   .home-page .top-sections section img {
     width: 100%;
+  }
+  .home-page .top-sections section button {
+    width: 100%;
+  }
+  .home-page .top-sections section.middle-section {
+    margin-top: 40px;
   }
 }
 .home-page .bottom-sections {
@@ -341,11 +359,11 @@ html {
 @media (max-width: 500px) {
   .home-page .bottom-sections section .image-with-title h2.right,
   .home-page .bottom-sections section .image-with-title h2.left {
-    right: 13%;
-    left: 13%;
-    width: 300px;
-    bottom: -49px;
-    padding: 20px;
+    right: 3%;
+    left: 3%;
+    width: 94%;
+    bottom: -90px;
+    padding: 35px 20px;
     text-align: center;
   }
 }
@@ -359,8 +377,33 @@ html {
   line-height: 2.5rem;
 }
 @media (max-width: 500px) {
+  .home-page .bottom-sections section .text {
+    margin: 88px 0 45px;
+  }
   .home-page .bottom-sections section p {
     width: 100%;
+    line-height: 2.4rem;
+    word-spacing: -0.2rem;
+    font-size: 1.9rem;
+  }
+}
+@media (max-width: 800px) {
+  .home-page .bottom-sections section p {
+    width: 90%;
+  }
+}
+@media (max-width: 500px) {
+  .home-page .bottom-sections {
+    margin: 0 1%;
+  }
+  .home-page .bottom-sections h2 {
+    margin: 50px 0 0 15px;
+  }
+  .home-page .bottom-sections section {
+    margin: 22px 0;
+  }
+  .home-page .bottom-sections section .image-with-title {
+    margin-bottom: 115px;
   }
 }
 .services-page {
@@ -371,11 +414,22 @@ html {
   left: 87px;
   bottom: 13px;
 }
+@media (max-width: 500px) {
+  .services-page .jumbotron-overlay {
+    left: 15px;
+    bottom: 17px;
+  }
+}
 .services-page .page-wrapper {
   margin: 0 8.7%;
 }
 .services-page .page-wrapper > * {
   margin: 30px 0;
+}
+@media (max-width: 800px) {
+  .services-page .page-wrapper > * {
+    margin: 0;
+  }
 }
 .services-page .page-wrapper .intro-section {
   font-size: 1.6rem;
@@ -396,9 +450,32 @@ html {
   cursor: pointer;
   text-align: center;
 }
+.services-page .page-wrapper .tabs .tab:hover {
+  background: #222222;
+  color: white;
+}
 .services-page .page-wrapper .tabs .active-tab {
   background: #5E9FB9;
   color: white;
+}
+@media (max-width: 800px) {
+  .services-page .page-wrapper .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .services-page .page-wrapper .tabs .tab {
+    width: 250px;
+    margin-bottom: 22px;
+    padding: 14px;
+  }
+  .services-page .page-wrapper .tabs .active-tab {
+    border: 1px solid transparent;
+  }
+}
+@media (max-width: 500px) {
+  .services-page .page-wrapper .tabs .tab {
+    width: 100%;
+  }
 }
 .services-page .page-wrapper .content-container {
   margin-bottom: 80px;
@@ -408,6 +485,11 @@ html {
 }
 .services-page .page-wrapper .content > * {
   width: 50%;
+}
+@media (max-width: 800px) {
+  .services-page .page-wrapper .content > * {
+    width: 100%;
+  }
 }
 .services-page .page-wrapper .content h3 {
   font-size: 2.4rem;
@@ -422,11 +504,110 @@ html {
   margin-left: 20px;
   object-fit: contain;
 }
+@media (max-width: 800px) {
+  .services-page .page-wrapper .content img {
+    margin: 0;
+  }
+}
 .services-page .page-wrapper .content .text-content {
   margin-right: 30px;
 }
 .services-page .page-wrapper .content .text-content > * {
   margin: 20px 0;
+}
+@media (max-width: 800px) {
+  .services-page .page-wrapper .content {
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .services-page .page-wrapper {
+    margin: -26px 1% 0;
+  }
+}
+.contact-page {
+  margin: 0 auto;
+  max-width: 1036px;
+}
+.contact-page .jumbotron-overlay {
+  left: 87px;
+  bottom: 13px;
+}
+@media (max-width: 500px) {
+  .contact-page .jumbotron-overlay {
+    left: 15px;
+    bottom: 17px;
+  }
+}
+.contact-page .page-content {
+  display: flex;
+  margin: 41px 83px;
+}
+.contact-page .get-in-touch {
+  width: 66%;
+}
+.contact-page .get-in-touch p {
+  font-size: 1.6rem;
+}
+.contact-page .where-we-work {
+  width: 34%;
+}
+.contact-page h2 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 45px;
+}
+.contact-page p {
+  margin-bottom: 10px;
+}
+.contact-page .small-text {
+  font-size: 1.3rem;
+  margin-bottom: 38px;
+}
+.contact-page input {
+  font-size: 1.6rem;
+  padding: 8px;
+  margin-bottom: 7px;
+}
+.contact-page select {
+  padding: 8px;
+  margin-bottom: 46px;
+}
+.contact-page textarea {
+  height: 133px;
+  margin-bottom: 27px;
+}
+.contact-page fieldset {
+  margin-bottom: 26px;
+}
+.contact-page fieldset label {
+  font-size: 1.6rem;
+}
+.contact-page fieldset input {
+  margin-bottom: 11px;
+}
+.contact-page button {
+  background: white;
+  border: 1px solid black;
+  font-size: 1.6rem;
+  padding: 14px 42px;
+}
+.contact-page .where-we-work {
+  margin-top: 12px;
+}
+.contact-page .where-we-work .location {
+  margin-bottom: 46px;
+}
+.contact-page .where-we-work h2 {
+  margin-bottom: 39px;
+}
+.contact-page .where-we-work h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.contact-page .where-we-work p {
+  font-size: 1.8rem;
 }
 .footer-wrapper {
   background: #828282;
