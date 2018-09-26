@@ -18,3 +18,14 @@ class Overlay {
 
 let overlay = document.querySelectorAll(".overlay")
 overlay = Array.from(overlay).map(overlay => new Overlay(overlay))
+
+// nav button switch
+let navButton = document.querySelector(".navButton")
+
+navButton.addEventListener("click", () => {
+    navButton.src = "img/nav-hamburger-close.png"
+})
+
+// navButton.addEventListener("click", () => {
+//     navButton.src = "img/nav-hamburger.png"
+// })
