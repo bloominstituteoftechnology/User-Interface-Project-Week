@@ -33,6 +33,7 @@ const header = document.querySelector('.txt-jumbo');
 const main = document.querySelector('.main-content');
 const footer = document.querySelector('.footer');
 const container = document.querySelector('.container');
+const mainSvc = document.querySelector('.main-content-svc');
 
 let bodyToggle = () => {
     header.classList.toggle('hide');
