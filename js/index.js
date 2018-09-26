@@ -3,6 +3,7 @@ class TabItem {
     constructor(link) {
         this.link = link;
         this.linkId = this.link.dataset.tab;
+        this.tabLink = document.querySelector(`.tab-link[data-tab='${this.linkId}']`);
         this.linkItem = document.querySelector(`.tab-item[data-tab='${this.linkId}']`);
         this.link.addEventListener('click', (e) => {
             this.renderTab(e);
@@ -12,9 +13,12 @@ class TabItem {
     }
 
     renderTab(e) {
+        let tabLinks = document.querySelectorAll('.tab-link');
+        tabLinks.forEach( item => item.classList.remove('active'));
         let tabitems = document.querySelectorAll('.tab-item');
         tabitems.forEach(item => item.classList.add('hide'));
         this.linkId = e.target.linkId;
+        this.tabLink.classList.add('active');
         this.linkItem.classList.remove('hide');
 
     }
