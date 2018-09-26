@@ -83,10 +83,59 @@ class Card {
 
     select(){
         let cards =  document.querySelectorAll('.card');
-        Array.from(cards).forEach( (card)=> card.classList.remove('appear'));
-        this.element.classList.add('appear');
+        Array.from(cards).forEach( (card)=> card.classList.add('disappear'));
+        this.element.classList.remove('disappear');
     }
 }
+
+
+// Carousel JS.  make cards rotate
+class Carousel {
+    constructor(element){
+        this.element = element;
+        this.currentCard = 0;
+        this.cards = this.element.querySelectorAll('.card');
+        this.maxCardNum = this.cards.length;
+             
+        this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
+        this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
+    }
+
+     rightClicked() {
+        let newNum = this.currentCard + 1;
+        if (newNum == this.maxCardNum )
+            newNum = 0;
+        
+        // .classList = 'slideRightOut';
+        // this.cards[newNum].classList = 'slideRightIn';
+       
+        // this.cards[this.currentCard].classList.add('doubleWidth');
+        // this.cards[newNum].classList.add('doubleWidth');
+        // TweenLite.fromTo(this.cards[this.currentCard], 3, {x :0}, {x:1000, display : "none"})
+        this.cards[newNum].classList.remove('disappear')
+        TweenLite.fromTo(this.cards[newNum], 3, {x :-1000}, {x:0} );
+    
+        setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
+        // setTimeout(this.cards[this.currentCard].classList.remove('doubleWidth'), 3000);
+        // setTimeout( this.cards[newNum].classList.remove('doubleWidth'), 3000);
+        this.currentCard = newNum;  
+      }
+
+    leftClicked(){
+        let newNum = this.currentCard - 1;
+        if (newNum == -1 )
+            newNum = this.maxCardNum - 1;
+        this.cards[this.currentCard].classList = 'slideLeftOut';
+        this.cards[newNum].classList = 'slideLeftIn';
+        this.currentPic = newNum;   
+
+      }
+}
+
+let carousel = document.querySelector('.cards-container');
+carousel = new Carousel(carousel);
+
+
 
 let tabs = document.querySelectorAll('.tab');
 
