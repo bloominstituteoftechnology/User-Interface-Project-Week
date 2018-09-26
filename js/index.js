@@ -1,53 +1,33 @@
 // JS goes here
 
-// Services page tabs
 
-class TabLink {
-  constructor(link) {
-    this.link = link;
-    // dataset numbers 1 - 4
-    this.linkData = this.link.dataset.tab;
+// nav links
+let container = document.querySelector('.overlay');
+let burger = document.querySelector('.burger');
+let logo = document.querySelector('.logo');
+let navH1 = document.querySelector('.navH1');
+console.log(logo);
 
-    if (this.linkData === '0') {
-      this.cards = document.querySelector('.content');
-    } else {
-      // content by dataset numbers
-      this.cards = document.querySelectorAll(`.content[data-tab="${this.linkData}"]`);
-    }
+burger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  container.classList.toggle('expandNav');
+  if (container.classList.contains('expandNav')) {
+    navH1.classList.add('open');
+    navH1.classList.remove('navH1');
+    burger.classList.remove('burger');
+    burger.classList.add('burgerClose');
+    logo.classList.remove('logo');
+    logo.classList.add('logoClose');
 
-    this.cards = Array.from(this.cards).map(cards => new TabCard(cards));
-
-    // event listener that calls method
-    this.link.addEventListener('click', () => {
-      event.stopPropagation();
-      this.selectCard()
-    });
-    // create new content class
-  } // methods go here
-  selectCard() {
-    //call content toggle method
-    const link = document.querySelectorAll('.link')
-    link.forEach(content => { content.classList.remove('active-link') });
-    this.link.classList.add("active-link");
-
-    const content = document.querySelectorAll('.content');
-    content.forEach(content => { content.style.display = "none" });
-    this.cards.forEach(content => content.selectCard());
-
+  } else {
+    navH1.classList.add('navH1');
+    navH1.classList.remove('open');
+    burger.classList.add('burger');
+    burger.classList.remove('burgerClose');
+    logo.classList.remove('logoClose');
+    logo.classList.add('logo');
   }
-} // end of TabLink
+});
 
-class TabCard {
-  constructor(content) {
-    this.content = content;
-  }
-  selectCard() {
-    this.content.style.display = "flex";
-  }
-}
-
-
-let links = document.querySelectorAll('.link');
-links = Array.from(links).map(link => new TabLink(link));
-
-links[0].selectCard();
+let navLinks = document.querySelectorAll('navH1');
+console.log(navLinks);
