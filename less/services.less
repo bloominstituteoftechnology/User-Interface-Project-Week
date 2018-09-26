@@ -7,9 +7,20 @@
     transform: translateX(-50%);
     margin-top: 50px;
 
-    img{
+    .desktop {
         .img-responsive();
-        display: block;
+
+        @media @mobile {
+            display: none;
+        }
+    }
+    .mobile {
+        .img-responsive();
+        display: none;
+
+        @media @mobile {
+            display: block;
+        }
     }
     .serv-img-text {
         color: @default-white;
@@ -29,6 +40,10 @@
     background-color: @default-white;
     padding: 0 5%;
 
+    @media @mobile {
+        padding: 0 10%;
+    }
+
     .tabs {
         width: 100%;
         margin-top: 20px;
@@ -39,6 +54,10 @@
           justify-content: center;
           padding-top: 60px;
           margin-bottom: 50px;
+
+          @media @mobile {
+              height: auto;
+          }
         }
         .tabs-item {
           display: none;
@@ -58,12 +77,38 @@
           opacity: 1;
           .tabs-item-description {
             .flex(space-between, center);
+            flex-wrap: wrap;
             p {
                 width: 50%;
+
+                @media @mobile {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
             }
-            img {
+            // img {
+            //     width: 45%;
+            //     height: auto;
+            // }
+            .desktop {
+                .img-responsive();
+                display: block;
                 width: 45%;
                 height: auto;
+    
+                @media @mobile {
+                    display: none;
+                }
+            }
+            .mobile {
+                .img-responsive();
+                display: none;
+    
+                @media @mobile {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
         }
@@ -71,6 +116,7 @@
         .tabs-links {
           display: flex;
           justify-content: space-between;
+          flex-wrap: wrap;
         }
       
         .tabs-link {
@@ -80,6 +126,11 @@
             border: 1px solid @default-black;
             cursor: pointer;
 
+            @media @mobile {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
             &:hover {
                 background-color: @default-black;
                 color: #FFF;
