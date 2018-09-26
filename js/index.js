@@ -9,25 +9,19 @@ class Hamburger{
 
     toggleContent(){
         
-        let buttons = this.element.querySelectorAll('.menu-button');
-        buttons.forEach(button => {
-            button.classList.remove('selected');
-        })
-        // this.body.classList.toggle('overflow');
+//         let buttons = this.element.querySelectorAll('.menu-button');
+//         buttons.forEach(button => {
+//             button.classList.remove('selected');
+//         })
+//         // this.body.classList.toggle('overflow');
         
         this.content.classList.toggle('menu-hidden');
-        // this.element.classList.toggle('selected');
-        this.element.classList.toggle('selected');
+//         // this.element.classList.toggle('selected');
+//         this.element.classList.toggle('selected');
         
     } //end toggleContent
 
 } // end Hamburger class
-
-
-
-
-
-
 
 let navMenu = document.querySelectorAll('.menu');
 navMenu = Array.from(navMenu).map(menu => new Hamburger(menu));
@@ -49,4 +43,22 @@ navMenu = Array.from(navMenu).map(menu => new Hamburger(menu));
 //     element.classList.remove('selected');
 // });
 //     this.element.classList.add('selected');
-navMenu[1].toggleContent();
+// navMenu[1].toggleContent();
+
+
+const hamburgerButton = document.querySelector('.span');
+const navigation = document.querySelector('.menu-button');
+let count = 0;
+hamburgerButton.addEventListener('click', () => {
+    if (count%2 === 0) {
+        navigation.classList.add('show');
+        navigation.classList.remove('hide');
+        hamburgerButton.src = "img/nav-hamburger-close.png";  
+        return count++;
+    } else {
+        navigation.classList.remove('show');
+        navigation.classList.add('hide');        
+        hamburgerButton.src = "img/nav-hamburger.png";  
+        return count++;
+    }
+});
