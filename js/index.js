@@ -28,59 +28,43 @@ hamburger.addEventListener("click", () => {
   counter++;
 });
 
-document.addEventListener("keydown", e => {
-  if (e.keyCode === 66) {
-    document.addEventListener("keydown", e => {
-      if (e.keyCode === 65) {
-        document.addEventListener("keydown", e => {
-          if (e.keyCode === 67) {
-            document.addEventListener("keydown", e => {
-              if (e.keyCode === 75) {
-                document.addEventListener("keydown", e => {
-                  if (e.keyCode === 70) {
-                    document.addEventListener("keydown", e => {
-                      if (e.keyCode === 76) {
-                        document.addEventListener("keydown", e => {
-                          if (e.keyCode === 73) {
-                            document.addEventListener("keydown", e => {
-                              if (e.keyCode === 80) {
-                                let degrees = getDegrees(document.body.style.transform);
-                                document.body.style.setProperty(
-                                  "transform",
-                                  `rotate(${degrees - 180}deg)`,
-                                  null
-                                );
-                                console.log(degrees);
-                                
-                              }
-                            });
-                          }
-                        });
-                      }
-                    });
-                  }
-                });
-              }
-            });
-          }
-        });
-      }
-    });
+// backflip functionality and bananas functionality
+
+const jumbotron = document.querySelector(".jumbo");
+
+let degrees = 0;
+const secret = "backflip";
+let input = "";
+document.body.addEventListener("keypress", e => {
+  input += String.fromCharCode(e.keyCode);
+  if (input == secret) {
+    document.body.style.setProperty(
+      "transform",
+      `rotate(${degrees - 180}deg)`,
+      null
+    );
+    degrees = getDegrees(document.body.style.transform);
+    input = "";
+  } else if (input == "bananas") {
+    jumbotron.src = "bananas.gif";
+    input = "";
   }
 });
 
+// reset input when pressing esc
+document.body.addEventListener("keyup", e => {
+  if (e.keyCode === 27) input = "";
+});
 
-function getDegrees(property) { 
-  let arr = property.split('');
+function getDegrees(property) {
+  let arr = property.split("");
   let newArr = [];
-  for(let i = 0; i < arr.length; i++){
-    if(isNaN(arr[i])){
-
+  for (let i = 0; i < arr.length; i++) {
+    if (isNaN(arr[i])) {
     } else {
       newArr.push(arr[i]);
     }
   }
-  newArr = newArr.join('');
-  console.log(newArr);
+  newArr = newArr.join("");
   return newArr;
 }
