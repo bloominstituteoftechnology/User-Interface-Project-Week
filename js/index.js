@@ -58,9 +58,7 @@ window.addEventListener('resize', function() {
     }
 })
 
-
-
-// --------------------------------------------------------------
+// Page Scroll Animations ---------------------------------------
 let tween1 = TweenMax.from('#top1', .8, {autoAlpha:0, x:-200, ease: Circ.easeOut,});
 
 let tween2 = TweenMax.from('#top2', .8, {autoAlpha:0, x:200, ease: Circ.easeOut,});
@@ -117,12 +115,12 @@ offset: 400
 
 let scene8 = new ScrollMagic.Scene({
     triggerElement: '#project2',
-    offset: 400,
+    offset: 390,
 }).setTween(tween8);
 
 let scene9 = new ScrollMagic.Scene({
     triggerElement: '#project2',
-    offset: 400
+    offset: 390
 }).setTween(tween9);
 
 controller.addScene([
@@ -136,5 +134,3 @@ controller.addScene([
     scene8,
     scene9,
 ]);
-
-
