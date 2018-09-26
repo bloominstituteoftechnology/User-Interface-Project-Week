@@ -8,16 +8,17 @@ let mainPage = document.querySelector(".main-nav");
 
 burgerBtn.addEventListener("click", ()=> {
     navPage.classList.toggle("display-toggle");
+    navPage.classList.toggle("fade-in");
     mainPage.style.display = "none";
 })
 
 openedBurger.addEventListener("click", ()=> {
     navPage.classList.toggle("display-toggle");
     mainPage.style.display = "block";
+    navPage.classList.remove("fade-in");
+    
+    
 })
-
-
-
 
 
 // Service page button functionality
