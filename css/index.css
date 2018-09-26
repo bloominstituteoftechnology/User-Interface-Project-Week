@@ -143,17 +143,18 @@ body {
   font-size: 62.5%;
 }
 h1 {
+  position: absolute;
   color: #ffffff;
   font-size: 6.4rem;
   font-weight: bold;
   line-height: 75px;
-  transform: translate(0, 144%);
+  transform: translate(25%, -122%);
 }
 @media (max-width: 320px) {
   h1 {
     font-size: 3.6rem;
     line-height: 1.2;
-    transform: translate(0, 85%);
+    transform: translate(8%, -117%);
   }
 }
 h2 {
@@ -175,7 +176,7 @@ p {
 }
 @media (max-width: 320px) {
   .container {
-    max-width: 290px;
+    max-width: 320px;
   }
 }
 header {
@@ -185,31 +186,42 @@ header {
   z-index: 2;
 }
 header .container.menu {
+  padding: 14px 0;
+}
+@media (max-width: 320px) and (max-width: 320px) {
+  header .container.menu {
+    margin: 0 auto;
+    width: 90.625%;
+  }
+}
+header .container.menu nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 14px 0;
 }
-header .container.menu h2 {
+header .container.menu nav h2 {
   color: #ffffff;
 }
-header .container.menu img {
+header .container.menu nav img {
   cursor: pointer;
 }
-header .container.menu nav {
+header .container.menu nav a {
   display: none;
 }
-main .jumbotron {
-  background: url("../img/home/home-jumbotron.png") no-repeat center top;
-  background-size: cover;
-  height: 598px;
+main .jumbotron img {
+  height: auto;
   width: 100%;
 }
+main .jumbotron img:nth-child(2) {
+  display: none;
+}
 @media (max-width: 320px) {
-  main .jumbotron {
-    background: url("../img/home/home-mobile-jumbotron.png") no-repeat center top;
-    height: 260px;
+  main .jumbotron img:nth-child(1) {
+    display: none;
+  }
+  main .jumbotron img:nth-child(2) {
+    display: block;
   }
 }
 main .container.home .about {
@@ -218,6 +230,12 @@ main .container.home .about {
 }
 main .container.home .about .about-img {
   width: 48%;
+}
+@media (max-width: 320px) {
+  main .container.home .about .about-img {
+    margin: 0 auto;
+    width: 90.625%;
+  }
 }
 main .container.home .about .about-img img {
   height: auto;
@@ -238,22 +256,45 @@ main .container.home .about .about-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   flex-direction: row-reverse;
   margin: 50px 0;
   width: 100%;
+}
+@media (max-width: 320px) {
+  main .container.home .about .about-top {
+    margin: 35px 0 0 0;
+  }
 }
 main .container.home .about .about-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 50px 0;
   width: 100%;
 }
+@media (max-width: 320px) {
+  main .container.home .about .about-bottom {
+    margin: 45px 0 0 0;
+  }
+}
 main .container.home .about .about-content {
-  max-width: 48%;
+  width: 48%;
+}
+@media (max-width: 320px) {
+  main .container.home .about .about-content {
+    margin: 0 auto;
+    width: 90.625%;
+  }
 }
 main .container.home .about .about-content h2 {
   margin-bottom: 20px;
+}
+@media (max-width: 320px) {
+  main .container.home .about .about-content h2 {
+    margin: 28px 0 22px 0;
+  }
 }
 main .container.home .about .about-content .btn {
   border: 1px solid #222222;
@@ -266,12 +307,23 @@ main .container.home .about .about-content .btn {
   text-align: center;
   vertical-align: middle;
 }
+@media (max-width: 320px) {
+  main .container.home .about .about-content .btn {
+    max-width: 290px;
+  }
+}
 main .container.home .projects {
   display: flex;
   flex-wrap: wrap;
 }
 main .container.home .projects h2 {
   margin: 47.5px 0;
+}
+@media (max-width: 320px) {
+  main .container.home .projects h2 {
+    margin: 52px auto 25px auto;
+    width: 90.625%;
+  }
 }
 main .container.home .projects .projects-img img {
   height: auto;
@@ -291,6 +343,11 @@ main .container.home .projects .projects-img img:nth-child(2) {
 main .container.home .projects .projects-top {
   margin-bottom: 82px;
 }
+@media (max-width: 320px) {
+  main .container.home .projects .projects-top {
+    margin-bottom: 25px;
+  }
+}
 main .container.home .projects .projects-top .project-title {
   background-color: #D8D8D8;
   border: 1px solid white;
@@ -298,14 +355,16 @@ main .container.home .projects .projects-top .project-title {
   font-size: 2.6rem;
   letter-spacing: 7px;
   line-height: 92.5px;
-  position: relative;
   text-align: center;
-  top: -55px;
+  transform: translate(0, -55%);
   width: 315px;
 }
 @media (max-width: 320px) {
   main .container.home .projects .projects-top .project-title {
-    width: 285px;
+    float: none;
+    margin: 0 auto;
+    transform: translate(0, -14%);
+    width: 290px;
   }
 }
 main .container.home .projects .projects-top p {
@@ -314,8 +373,19 @@ main .container.home .projects .projects-top p {
   margin: 0 auto 20px;
   width: 51.75%;
 }
+@media (max-width: 320px) {
+  main .container.home .projects .projects-top p {
+    margin: 15px auto 20px;
+    width: 88%;
+  }
+}
 main .container.home .projects .projects-middle {
   margin-bottom: 82px;
+}
+@media (max-width: 320px) {
+  main .container.home .projects .projects-middle {
+    margin-bottom: 21px;
+  }
 }
 main .container.home .projects .projects-middle .project-title {
   background-color: #D8D8D8;
@@ -324,14 +394,16 @@ main .container.home .projects .projects-middle .project-title {
   font-size: 2.6rem;
   letter-spacing: 7px;
   line-height: 92.5px;
-  position: relative;
   text-align: center;
-  top: -55px;
+  transform: translate(0, -55%);
   width: 315px;
 }
 @media (max-width: 320px) {
   main .container.home .projects .projects-middle .project-title {
-    width: 285px;
+    float: none;
+    margin: 0 auto;
+    transform: translate(0, -14%);
+    width: 290px;
   }
 }
 main .container.home .projects .projects-middle p {
@@ -340,8 +412,19 @@ main .container.home .projects .projects-middle p {
   margin: 0 auto 20px;
   width: 51.75%;
 }
+@media (max-width: 320px) {
+  main .container.home .projects .projects-middle p {
+    margin: 15px auto 25px;
+    width: 88%;
+  }
+}
 main .container.home .projects .projects-bottom {
   margin-bottom: 82px;
+}
+@media (max-width: 320px) {
+  main .container.home .projects .projects-bottom {
+    margin-bottom: 53px;
+  }
 }
 main .container.home .projects .projects-bottom .project-title {
   background-color: #D8D8D8;
@@ -350,14 +433,16 @@ main .container.home .projects .projects-bottom .project-title {
   font-size: 2.6rem;
   letter-spacing: 7px;
   line-height: 92.5px;
-  position: relative;
   text-align: center;
-  top: -55px;
+  transform: translate(0, -55%);
   width: 315px;
 }
 @media (max-width: 320px) {
   main .container.home .projects .projects-bottom .project-title {
-    width: 285px;
+    float: none;
+    margin: 0 auto;
+    transform: translate(0, -14%);
+    width: 290px;
   }
 }
 main .container.home .projects .projects-bottom p {
@@ -366,6 +451,12 @@ main .container.home .projects .projects-bottom p {
   margin: 0 auto 20px;
   width: 51.75%;
 }
+@media (max-width: 320px) {
+  main .container.home .projects .projects-bottom p {
+    margin: 15px auto 25px;
+    width: 88%;
+  }
+}
 footer {
   background-color: #828282;
   color: #ffffff;
@@ -373,30 +464,60 @@ footer {
 }
 footer .container.footer {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding-top: 60px;
+}
+@media (max-width: 320px) {
+  footer .container.footer {
+    margin: 0 auto;
+    padding-top: 22px;
+    width: 90.625%;
+  }
 }
 footer .container.footer input {
   border-radius: 5px;
   color: #828282;
-  height: 35%;
   font-size: 1.6rem;
   margin: 10px 0 2.5px 0;
-  padding-left: 5px;
+  padding: 10px 5px;
   width: 275px;
 }
-footer .container.footer div address {
+@media (max-width: 320px) {
+  footer .container.footer input {
+    padding: 15px 7px;
+    width: 100%;
+  }
+}
+footer .container.footer address {
   font-size: 1.4rem;
   line-height: 26px;
+}
+@media (max-width: 320px) {
+  footer .container.footer address {
+    margin-bottom: 22px;
+    width: 100%;
+  }
 }
 footer .container.footer .fineprint {
   font-size: 1.2rem;
   letter-spacing: 0.5px;
+}
+@media (max-width: 320px) {
+  footer .container.footer .fineprint {
+    margin: 7px 0 20px 0;
+  }
 }
 footer .container.footer .copyright {
   font-size: 1.2rem;
   margin: 30px 0 10px 0;
   text-align: center;
   width: 100%;
+}
+@media (max-width: 320px) {
+  footer .container.footer .copyright {
+    margin: 10px 0;
+    text-align: left;
+  }
 }
