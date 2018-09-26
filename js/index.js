@@ -8,12 +8,21 @@ const openURL =
   "https://github.com/DaftBeowulf/User-Interface-Project-Week/blob/master/img/nav-hamburger-close.png?raw=true";
 const menuNav = document.querySelector(".menu .nav");
 menuButton.addEventListener("click", () => {
+  //before greensock, this function just toggled .nav's display from 'none' to 'flex' and changed the button's image
+  //now it transitions to slide open, with expanding text for the links, and goes in reverse when closed
   if (menuButton.src === closedURL) {
     event.currentTarget.src = openURL;
     menuNav.style.display = "flex";
+    TweenMax.to(".nav", 1, { height: "100vh" });
+    TweenMax.to(".nav-link", 0.5, { fontSize: "4.8rem" });
+    TweenMax.to(".nav-link", 0.5, { lineHeight: "8.5rem" });
   } else {
     event.currentTarget.src = closedURL;
-    menuNav.style.display = "none";
+    // menuNav.style.display = "none";
+    TweenMax.to(".nav", 1, { height: "0vh" });
+    TweenMax.to(".nav", 0.8, { display: "none" });
+    TweenMax.to(".nav-link", 1, { fontSize: "0rem" });
+    TweenMax.to(".nav-link", 1, { lineHeight: "0rem" });
   }
 });
 
