@@ -10,3 +10,5 @@ openNav.addEventListener("click", () => {
 closeNav.addEventListener("click", () => {
   nav.style.display = "none";
 });
+
+// tab component
