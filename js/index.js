@@ -1,25 +1,31 @@
 // JS goes here
+window.addEventListener("load", () => {
+  TweenLite.from("h1", 2, { opacity: 0, x: 200 });
+  TweenLite.from(".home__img1--destkop", 1, { opacity: 0, delay: 2 });
+  TweenLite.from(".about__text", 1.5, { opacity: 0, delay: 2 });
+});
+
+// Menu Button
 const menuBtn = document.querySelector(".menu-btn");
 const header = document.querySelector("header");
 
 menuBtn.addEventListener("click", function(event) {
   event.stopPropagation();
   header.classList.toggle("expanded");
+  TweenMax.from(".expanded", 0.3, { scale: 0, x: 510, y: -515 });
 });
 
-// 3. Constructor class
+// Tab Nav Constructor
 class TabLink {
   constructor(tab) {
     this.tab = tab;
     this.linkData = this.tab.dataset.tab;
-    //  console.log(tab);
     this.tabContent = document.querySelector(
       `.tab__content[data-tab='${this.linkData}']`
     );
 
     this.tabItem = new Card(this.tabContent);
     this.tab.addEventListener("click", event => this.selectTab(event));
-    //  console.log(this.tabContent);
     console.log(this.tabItem);
   }
 
@@ -41,13 +47,21 @@ class Card {
     const cards = document.querySelectorAll(".tab__content");
     Array.from(cards).forEach(card => card.classList.remove("active"));
     this.card.classList.add("active");
-    //  console.log("display null");
   }
 }
 
-// 1. Grab elements
 let tabs = document.querySelectorAll(".tab");
-// 2. Mount
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
 tabs[1].selectTab();
+
+// const tweenMenu = TweenMax.fromTo(
+//   ".expanded",
+//   0.3,
+//   { scale: 0, x: 510, y: -515 },
+//   { scale: 1, x: 0, y: 0 }
+// ).reverse();
+
+//   if (!tweenMenu.isActive()) {
+//     tweenMenu.reversed(!tweenMenu.reversed());
+//   }
