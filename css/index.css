@@ -185,7 +185,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
+  z-index: 100;
   height: 100vh;
 }
 .dropdown .dropdown-link {
@@ -418,13 +418,13 @@ footer .copy-right {
   margin-top: 15px;
   max-height: 50px;
   padding-right: 10px;
+  text-align: center;
 }
 @media (max-width: 500px) {
   .btn {
     width: 100%;
     display: inline-block;
     max-width: 100%;
-    text-align: center;
   }
 }
 .middle {
@@ -436,49 +436,62 @@ footer .copy-right {
   }
 }
 p {
-  width: 85%;
   margin-top: 30px;
-  margin-bottom: 15px;
-  margin: 30px auto;
-}
-.tab {
-  width: 85%;
-  margin: 0 auto;
-}
-.tab .tab-links {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.tab .tab-links .tab-link {
-  font-size: 2rem;
-  font-weight: bold;
-  border: solid 1px black;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 20%;
-  text-align: center;
   margin-bottom: 30px;
 }
-.tab .tab-links .tab-link:hover {
-  color: #FFF;
-  background-color: #222222;
+.tabs {
+  margin-bottom: 30px;
+  width: 100%;
 }
-.tab .tab-contents .tab-content {
+.tabs .tabs-items {
+  width: 90%;
+  margin: 0 auto;
+}
+.tabs .tabs-item {
   display: none;
 }
-.tab .tab-contents .tab-content .tab-content-container {
+.tabs .tabs-item .tab-content-container {
   display: flex;
   justify-content: space-between;
 }
-.tab .tab-contents .tab-content .tab-content-container img {
-  margin-top: 31px;
-  align-self: baseline;
+.tabs .tabs-item .tab-content-container img {
+  width: 42%;
+  height: 270px;
+  margin-top: 30px;
 }
-.tab-link-selected {
-  background-color: #5E9FB9;
-  color: white;
+.tabs .tabs-item .tab-content-container .tab-content-text {
+  width: 42%;
 }
-.tab-content-selected {
+.tabs .tabs-item .tab-content-container .tab-content-text p {
+  margin-top: 30px;
+}
+.tabs .tabs-item-selected {
   display: block;
+}
+.tabs .tabs-links {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.tabs .tabs-link {
+  margin-bottom: 30px;
+  width: 22%;
+  padding: 10px 2% 10px 2%;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+.tabs .tabs-link:hover {
+  background-color: #222222;
+  color: #ffffff;
+}
+.tabs .tabs-link-selected {
+  z-index: 2;
+  border-right: 1px solid black;
+  background-color: #5E9FB9;
 }
