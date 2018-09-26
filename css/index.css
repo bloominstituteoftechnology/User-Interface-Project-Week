@@ -143,18 +143,15 @@ body {
   font-size: 62.5%;
 }
 h1 {
-  position: absolute;
   color: #ffffff;
   font-size: 6.4rem;
   font-weight: bold;
   line-height: 75px;
-  transform: translate(25%, -122%);
 }
 @media (max-width: 320px) {
   h1 {
     font-size: 3.6rem;
     line-height: 1.2;
-    transform: translate(8%, -117%);
   }
 }
 h2 {
@@ -186,6 +183,10 @@ header {
   z-index: 2;
 }
 header .container.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 14px 0;
 }
 @media (max-width: 320px) and (max-width: 320px) {
@@ -194,20 +195,37 @@ header .container.menu {
     width: 90.625%;
   }
 }
-header .container.menu nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-header .container.menu nav h2 {
+header .container.menu h2 {
   color: #ffffff;
 }
-header .container.menu nav img {
+header .container.menu img {
   cursor: pointer;
 }
-header .container.menu nav a {
+header .container.menu .close {
   display: none;
+}
+header nav {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+header nav a {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 4.8rem;
+  font-weight: bold;
+  line-height: 85px;
+  text-decoration: none;
+  transform: translate(41.2%, -60%);
+}
+@media (max-width: 320px) {
+  header nav a {
+    transform: translate(22%, -60%);
+  }
+}
+header nav a:hover {
+  color: #222222;
 }
 main .jumbotron.home img {
   height: auto;
@@ -222,6 +240,15 @@ main .jumbotron.home img:nth-child(2) {
   }
   main .jumbotron.home img:nth-child(2) {
     display: block;
+  }
+}
+main .jumbotron.home h1 {
+  position: absolute;
+  transform: translate(8vw, -122%);
+}
+@media (max-width: 320px) {
+  main .jumbotron.home h1 {
+    transform: translate(4.5vw, -117%);
   }
 }
 main .container.home .about {
@@ -473,7 +500,8 @@ main .jumbotron.services img:nth-child(2) {
   }
 }
 main .jumbotron.services h1 {
-  transform: translate(35%, -125%);
+  position: absolute;
+  transform: translate(8.4vw, -125%);
 }
 main .services-intro p {
   line-height: 26px;
