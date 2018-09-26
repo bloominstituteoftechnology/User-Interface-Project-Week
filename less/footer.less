@@ -2,30 +2,48 @@ footer {
   background-color: @footer-bg;
   color: @white;
   width: 100%;
-  
+
   .container.footer {
-    .basic-flex();
-    justify-content: space-between;
+    .custom-flex(center, space-between);
     padding-top: 60px;
+
+    @media @mobile {
+      margin: 0 auto;
+      padding-top: 22px;
+      width: 90.625%;
+    }
 
     input {
       border-radius: 5px;
       color: @footer-bg;
-      height: 35%;
       font-size: 1.6rem;
       margin: 10px 0 2.5px 0;
-      padding-left: 5px;
+      padding: 10px 5px;
       width: 275px;
+
+      @media @mobile {
+        padding: 15px 7px;
+        width: 100%;
+      }
     }
 
-    div address {
+    address {
       font-size: 1.4rem;
       line-height: 26px;
+
+      @media @mobile {
+        margin-bottom: 22px;
+        width: 100%;
+      }
     }
 
     .fineprint {
       font-size: 1.2rem;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
+
+      @media @mobile {
+        margin: 7px 0 20px 0;
+      }
     }
 
     .copyright {
@@ -33,6 +51,11 @@ footer {
       margin: 30px 0 10px 0;
       text-align: center;
       width: 100%;
+
+      @media @mobile {
+        margin: 10px 0;
+        text-align: left;
+      }
     }
   }
 }
