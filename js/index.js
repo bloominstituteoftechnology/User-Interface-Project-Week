@@ -84,4 +84,4 @@ clickMethod() {
 let serviceBtn = document.querySelectorAll(".buttonss");
 
 serviceBtn = Array.from(serviceBtn).map(buttonElements => new Button(buttonElements))
-serviceBtn[0].clickMethod();
+serviceBtn[1].clickMethod();
