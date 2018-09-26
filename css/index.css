@@ -134,6 +134,7 @@ table {
   border-spacing: 0;
 }
 /* Your Code Goes Here */
+@desktop (max-width: 1025px);
 .projecth3 {
   display: block;
   width: 320px;
@@ -162,14 +163,25 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-@media (max-width: 500px) {
-  .container {
-    max-width: 500px;
-  }
-}
 .body-container {
   max-width: 850px;
   margin: 0 auto;
+}
+.desktop-img {
+  display: block;
+}
+@media (max-width: 500px) {
+  .desktop-img {
+    display: none;
+  }
+}
+.mobile-img {
+  display: none;
+}
+@media (max-width: 500px) {
+  .mobile-img {
+    display: block;
+  }
 }
 .navbar {
   background: #97a2ae;
@@ -189,8 +201,13 @@ body {
   margin-left: 90px;
   color: #ffffff;
 }
-.navbar .bar {
-  height: 4px;
+@media (max-width: 500px) {
+  .navbar .nav-logo {
+    margin-left: 10px;
+  }
+}
+.navbar .hamburger .bar {
+  height: 3px;
   width: 35px;
   border-radius: 10px;
   background: #ffffff;
@@ -198,19 +215,40 @@ body {
   margin-bottom: 6px;
   margin-right: 90px;
 }
+@media (max-width: 500px) {
+  .navbar .hamburger .bar {
+    margin-right: 10px;
+  }
+}
 .navbar .nav-list {
   display: none;
 }
 .header .jumbotron {
-  background-image: url('/img/home/home-jumbotron.png');
+  position: relative;
   height: 600px;
-  padding-top: 300px;
-  padding-left: 90px;
+  margin-bottom: 50px;
+}
+.header .jumbotron .cta {
+  position: absolute;
+  top: 315px;
+  left: 80px;
   font-size: 6.4rem;
   font-weight: bold;
-  line-height: 7.5rem;
+  line-height: 6.8rem;
   color: #ffffff;
-  margin-bottom: 50px;
+}
+@media (max-width: 500px) {
+  .header .jumbotron .cta {
+    top: 100px;
+    left: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .header .jumbotron img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
 }
 .header .top-info {
   margin-top: 20px;
@@ -278,14 +316,15 @@ body {
   width: 450px;
   margin: 0 auto;
   font-size: 1.8rem;
-  line-height: 2.4rem;
+  line-height: 2.1rem;
   margin-bottom: 20px;
 }
 .recent-projects .project--img-txt-right {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .recent-projects .project--img-txt-left {
   padding-top: 50px;
+  padding-bottom: 30px;
 }
 .recent-projects .annotated-image-right {
   position: relative;
@@ -329,14 +368,14 @@ body {
   align-items: center;
   flex-wrap: wrap;
   font-size: 1.4rem;
-  line-height: 2.6rem;
+  line-height: 2.4rem;
   color: #fff;
-  padding: 50px 0;
-  margin: 50px 0;
+  padding: 60px;
+  margin-top: 100px;
 }
 .footer .footer-contact {
-  margin-left: 75px;
-  flex-basis: 30%;
+  margin-left: 15px;
+  flex-basis: 35%;
 }
 .footer .footer-contact p {
   font-size: 2.05rem;
@@ -361,8 +400,8 @@ body {
   font-weight: bold;
 }
 .footer .footer--copyright {
-  font-size: 1.6rem;
-  margin-top: 30px;
+  font-size: 1.2rem;
+  margin-top: 20px;
 }
 .services-banner {
   background-image: url('/img/services/services-jumbotron.png');
