@@ -71,17 +71,18 @@ let pageSections = document.querySelectorAll('.cta > *, .projects > *');
 
 pageSections = Array.from(pageSections).map(n => new PageSection(n));
 
-
-
 class Carousel {
     constructor(element) {
         this.element = element;
         this.leftButton = this.element.querySelector('.left-button');
         this.rightButton = this.element.querySelector('.right-button');
-        this.images = this.element.querySelectorAll('img');
+        this.title = this.element.querySelector('h2');
+        
+        this.content = this.element.querySelectorAll('img');
+        this.content = Array.from(this.content).map(n => new CarouselChild(n));
 
         this.hideAll();
-        this.images[0].style.display = null;
+        this.content[0].show();
         this.imageIndex = 0;
 
         this.leftButton.addEventListener('click', e => this.shiftLeft(e));
@@ -92,25 +93,42 @@ class Carousel {
     shiftLeft() {
         const preIndex = this.imageIndex;
         this.imageIndex -= 1;
-        if (this.imageIndex < 0) { this.imageIndex = this.images.length - 1}
-
+        if (this.imageIndex < 0) { this.imageIndex = this.content.length - 1};
+        
+        this.animateTitle();
         this.animate(preIndex, this.imageIndex, 'left');
     }
 
     shiftRight() {
         const preIndex = this.imageIndex;
         this.imageIndex += 1;
-        if (this.imageIndex >= this.images.length) { this.imageIndex = 0 }
+        if (this.imageIndex >= this.content.length) { this.imageIndex = 0 }
 
+        this.animateTitle();
         this.animate(preIndex, this.imageIndex, 'right');
     }
 
+    animateTitle() {
+        this.title.style.transition = 'all 300ms ease-in-out';
+        this.title.style.transitionDelay = '0ms'
+        this.title.style.opacity = '1';
+
+        setTimeout(() => {
+            this.title.style.opacity = '0';
+        }, 0);
+        setTimeout(() => {
+            this.title.innerText = this.content[this.imageIndex].data;
+            this.title.style.opacity = '1';
+        }, 300);
+    }
+
     animate(preIndex, index, direction) {
-        const preImg = this.images[preIndex];
-        const img = this.images[index];
+        const preImg = this.content[preIndex];
+        const img = this.content[index];
         const transition = 'all 600ms ease-in-out';
         let from = '';
         let to = ''
+
 
         if (direction === 'left') {
             from = 'translateX(100%)';
@@ -120,34 +138,53 @@ class Carousel {
             to = 'translateX(100%)'
         }
 
-        preImg.style.transition = transition;
-        preImg.style.transform = from;
+        preImg.e.style.transition = transition;
+        preImg.e.style.transform = from;
         
-        img.style.transform = to;
-        img.style.transition = transition;
-        img.style.display = null;
+        img.e.style.transform = to;
+        img.e.style.transition = transition;
+        img.e.style.display = null;
 
         setTimeout(() => {
-            img.style.transform = 'translateX(0%)';
-            img.style.zIndex = -1;
+            img.e.style.transform = 'translateX(0%)';
+            img.e.style.zIndex = -1;
         },0)
 
         setTimeout(() => {
             this.hideAll();
-            img.style.display = null;
+            img.show();
         }, 600);
     }
 
     hideAll() {
-        this.images.forEach(n => {
-            n.style.display = 'none';
-            n.style.transform = 'translateX(0%)';
-            n.style.zIndex = -1;
-            n.style.transition = 'none';
-        });
+        this.content.forEach(n => n.hide());
+    }
+}
+
+class CarouselChild {
+    constructor(element) {
+        this.e = element;
+        this.data = this.e.dataset.project;
+        this.content = document.querySelector(`.project-info > .info[data-project='${this.data}']`);
+    }
+
+    hide() {
+        this.e.style.display = 'none';
+        this.e.style.transform = 'translateX(0%)';
+        this.e.style.zIndex = -1;
+        this.e.style.transition = 'none';
+
+        this.content.style.display = 'none'
+    }
+
+    show(){
+        this.e.style.display = 'flex';
+        this.content.style.display = 'flex'
     }
 
 }
+
+
 
 let carousel = document.querySelector('.carousel');
 
