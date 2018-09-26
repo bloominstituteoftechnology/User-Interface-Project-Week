@@ -36,7 +36,7 @@ Background: #828282
 ### Sub Headers
 - Font Weight: Bold
 - Font Size: 28px
-- Color: #222222
+- @blackish: #222222;
    
 ### Footer Headings
 - Font Weight: Regular
@@ -49,7 +49,7 @@ Background: #828282
 - Font Size: 14px
 - Line Height: 26px
 - Color: #FFFFFF
-
+@whitish: #FFFFFF; 
 ### Navigation Logo
 - Font Weight: Bold
 - Font Size: 24px
@@ -61,3 +61,5 @@ Background: #828282
 - Line Height: 85px
 - Color: #FFFFFF
 - Hover Color: #222222
+
+

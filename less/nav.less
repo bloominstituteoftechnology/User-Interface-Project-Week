@@ -14,7 +14,7 @@ nav {
     h1{
       font-weight: Bold;
       font-size: 2.4rem;
-      color: #FFFFFF;
+      color: @whitish;
       @media @mobile{
         font-size: 3rem;
       }
@@ -27,7 +27,7 @@ nav {
       z-index: 1; 
       left: 0;
       top: 0;     
-      background-color: rgba(153, 164, 175, 0.863); 
+      background-color: @expander-color;
       overflow-x: hidden; 
       transition: 0.5s; 
      
@@ -35,6 +35,9 @@ nav {
       position: absolute;
       top: 2rem;
       left: 6rem;
+      @media @mobile{
+        left: 2rem;
+      }
       }
       .closebtn{
         position: absolute;
@@ -42,6 +45,9 @@ nav {
         right: 6rem;
         cursor: pointer;
         transform:translateX(-100%); 
+        @media @mobile{
+          right: 2rem;
+        }
       }
     }
     .menu{
@@ -57,14 +63,14 @@ nav {
         font-weight: bold;
         font-size: 4.8rem;
         line-height: 8.5rem;
-        color: #FFFFFF;
+        color: @whitish;
         padding: 8px;
     text-decoration: none;
    
     display: block; 
     transition: 0.3s; 
       &:hover{
-        color: #222222
+        color: @blackish;
       }
       
       }
@@ -76,9 +82,7 @@ nav {
   header{
   height: 50rem;
   background: url(../img/home/home-jumbotron.png);
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover;
+  .bg-img-format();
   display: flex;
   align-items: flex-end;
   @media @mobile{
@@ -88,7 +92,7 @@ nav {
     font-weight: bold;
     font-size: 6.4rem;
     line-height: 7.5rem;
-    color: #FFFFFF;
+    color: @whitish;
     margin: 6rem;
     @media @mobile{
       margin: 2rem;
