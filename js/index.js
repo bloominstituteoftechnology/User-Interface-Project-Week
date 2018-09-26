@@ -7,15 +7,21 @@ let navLinkTag = document.querySelector('.navLink');
 let navTag = document.querySelector('.nav');
 
 
-hamburgerTag.addEventListener('click', navClicked);
-hamburgerCloseTag.addEventListener('click', navClicked);
+hamburgerTag.addEventListener('click', navOpenClicked);
+hamburgerCloseTag.addEventListener('click', navCloseClicked);
 
 
 
-function navClicked() {
-    TweenMax.to('.nav', 3, {height : "100vh"});
+function navOpenClicked() {
+    TweenLite.to('.nav', 2, {height : "100vh"});
     setTimeout(navClassToggle, 2000);
+    // TweenLite.to('navLinkTag', 5, {opacity : "0.9"});
 }
+
+function navCloseClicked() {
+    navClassToggle();
+    TweenLite.to('.nav', 2, {height : "auto"});
+ }
 
 function navClassToggle() {
    
@@ -31,8 +37,7 @@ class Tab {
     this.dataset = element.dataset.tab;
 
     this.cardElement = document.querySelector(`.card[data-tab='${this.dataset}']`);
-    // this.itemElement = document.querySelector(`.tabs-item[data-tab='${this.dataset}']`);
-
+  
     this.card = new Card(this.cardElement);
    
     this.element.addEventListener('click', () => this.select());
@@ -53,11 +58,12 @@ class Card {
     select(){
         let cards =  document.querySelectorAll('.card');
         Array.from(cards).forEach( (card)=> card.classList.remove('appear'));
-      
-        
         this.element.classList.add('appear');
     }
 }
 
 let tabs = document.querySelectorAll('.tab');
+
 tabs = Array.from(tabs).map((tab) => new Tab(tab));
+
+
