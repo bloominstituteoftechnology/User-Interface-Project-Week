@@ -6,9 +6,8 @@ const nav = document.querySelector(".open-nav");
 
 openNav.addEventListener("click", () => {
   nav.style.display = "flex";
+  TweenMax.fromTo(nav, 0.3, { y: -800 }, { y: 0 });
 });
 closeNav.addEventListener("click", () => {
-  nav.style.display = "none";
+  TweenMax.fromTo(nav, 0.3, { y: 0 }, { y: -1000 });
 });
-
-// tab component

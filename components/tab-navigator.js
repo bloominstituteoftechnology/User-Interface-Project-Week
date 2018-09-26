@@ -29,5 +29,4 @@ class TabContent {
 
 let tabs = document.querySelectorAll(".menu-button");
 tabs = Array.from(tabs).map(props => new TabButton(props));
-console.log(tabs);
 tabs[1].select();
