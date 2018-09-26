@@ -6,6 +6,7 @@ class Hamburger {
         this.middle = this.element.querySelector('.middleBar');
         this.bottom = this.element.querySelector('.bottomBar');
         this.modal = document.querySelector('.modal');
+        this.fixedHeader = document.querySelector('.fixed-header');
 
         this.element.addEventListener('click', () => this.clickFunction());
     }
@@ -16,12 +17,14 @@ class Hamburger {
             this.middle.classList.toggle('change');
             this.bottom.classList.toggle('change');
             this.modal.style.display = 'none';
+            this.fixedHeader.classList.toggle('modalActive');
             this.active = false;
         } else {
             this.top.classList.toggle('change');
             this.middle.classList.toggle('change');
             this.bottom.classList.toggle('change');
             this.modal.style.display = 'flex';
+            this.fixedHeader.classList.toggle('modalActive');
             this.active = true;
         }
     }

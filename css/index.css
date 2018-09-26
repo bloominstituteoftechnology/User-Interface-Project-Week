@@ -142,14 +142,16 @@ html {
   font-size: 62.5%;
 }
 body {
+  font-weight: normal;
   font-size: 1.6rem;
+  line-height: 24px;
+  color: #222222;
 }
 p {
-  line-height: 24px;
-  margin: 30px 0 35px;
+  margin: 30px 0;
 }
 .modal {
-  background: rgba(130, 130, 130, 0.9);
+  background: rgba(141, 153, 163, 0.9);
   height: 100vh;
   width: 100vw;
   display: none;
@@ -172,7 +174,7 @@ p {
 }
 .fixed-header {
   color: #FFFFFF;
-  background-color: rgba(130, 130, 130, 0.9);
+  background-color: rgba(141, 153, 163, 0.9);
   width: 100%;
   height: 50px;
   position: fixed;
@@ -187,13 +189,19 @@ p {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 0 85px;
+}
+@media (max-width: 500px) {
+  .fixed-header .fixed-header-container {
+    padding: 0 15px;
+  }
 }
 .fixed-header .fixed-header-container a {
-  font-size: 2.4rem;
   font-weight: normal;
-  text-decoration: none;
+  font-size: 2.4rem;
+  line-height: 24px;
   color: #FFFFFF;
+  text-decoration: none;
 }
 .fixed-header .fixed-header-container .fixed-header-hamburger {
   cursor: pointer;
@@ -217,6 +225,9 @@ p {
 .fixed-header .fixed-header-container .fixed-header-hamburger .change.bottomBar {
   transform: translateY(-9px) rotate(45deg);
 }
+.modalActive {
+  background-color: rgba(141, 153, 163, 0);
+}
 .page-container {
   width: 100%;
   max-width: 1024px;
@@ -228,6 +239,7 @@ p {
 .page-container h2 {
   font-weight: bold;
   font-size: 2.8rem;
+  line-height: 28px;
   color: #222222;
   width: 100%;
 }
@@ -241,28 +253,27 @@ p {
 }
 @media (max-width: 500px) {
   .page-container .page-header img {
-    max-width: 500px;
-    height: auto;
-    overflow: hidden;
     padding-top: 50px;
   }
 }
 .page-container .page-header h2 {
   position: absolute;
-  bottom: 8.5%;
+  bottom: 8%;
   left: 8%;
   z-index: 1;
   letter-spacing: 0.25px;
+  font-weight: bold;
   font-size: 6.4rem;
   line-height: 75px;
   color: #FFFFFF;
-  font-weight: bold;
 }
 @media (max-width: 500px) {
   .page-container .page-header h2 {
+    font-weight: bold;
     font-size: 4.8rem;
     line-height: 48px;
-    font-weight: normal;
+    color: #FFFFFF;
+    left: 15px;
   }
 }
 .page-container .content-section {
@@ -278,6 +289,12 @@ p {
     padding: 0;
   }
 }
+@media (max-width: 500px) {
+  .page-container .content-section .mobile-view {
+    margin-top: 30px;
+    padding: 0 0 0 15px;
+  }
+}
 .page-container .content-section .content-img {
   width: 48%;
 }
@@ -285,7 +302,7 @@ p {
   .page-container .content-section .content-img {
     order: -1;
     width: 100%;
-    padding: 15px;
+    padding: 30px 15px 15px;
   }
 }
 .page-container .content-section .content-text {
@@ -314,7 +331,12 @@ p {
   position: relative;
   width: 100%;
   height: auto;
-  margin-top: 47px;
+  margin: 50px 0 80px;
+}
+@media (max-width: 500px) {
+  .page-container .content-section .the-villas {
+    margin-bottom: 40px;
+  }
 }
 .page-container .content-section .the-villas::after {
   content: 'THE VILLAS';
@@ -337,7 +359,12 @@ p {
 }
 .page-container .content-section .outskirts {
   position: relative;
-  margin: 43px 0 88px;
+  margin: 0 0 80px;
+}
+@media (max-width: 500px) {
+  .page-container .content-section .outskirts {
+    margin-bottom: 40px;
+  }
 }
 .page-container .content-section .outskirts::after {
   content: 'OUTSKIRTS';
@@ -360,7 +387,12 @@ p {
 }
 .page-container .content-section .the-blocks {
   position: relative;
-  margin: 43px 0 88px;
+  margin: 0 0 80px;
+}
+@media (max-width: 500px) {
+  .page-container .content-section .the-blocks {
+    margin-bottom: 40px;
+  }
 }
 .page-container .content-section .the-blocks::after {
   content: 'THE BLOCKS';
@@ -399,29 +431,30 @@ footer {
   height: 250px;
   background: #828282;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   font-size: 1.4rem;
   line-height: 26px;
-  padding: 50px;
+  padding: 50px 0 25px;
   color: #FFFFFF;
   font-weight: normal;
-  margin: 0 auto;
+  margin: 50px auto 0px;
 }
 @media (max-width: 500px) {
   footer {
     height: auto;
+    padding: 50px 15px 25px;
   }
 }
 footer .footer-content {
   width: 100%;
   max-width: 1024px;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0 5%;
+  padding: 0 85px;
 }
 @media (max-width: 500px) {
   footer .footer-content {
@@ -442,7 +475,7 @@ footer .footer-content .footer-input {
 }
 @media (max-width: 500px) {
   footer .footer-content .footer-input {
-    width: 90%;
+    width: 100%;
   }
 }
 footer .footer-content .footer-input input[type=email] {
@@ -453,7 +486,7 @@ footer .footer-content .footer-input input[type=email] {
   padding: 12px 0 12px 8px;
   border-radius: 5px;
   border: none;
-  margin: 15px 0 2px 0;
+  margin: 15px 0 5px;
 }
 footer .footer-content .location {
   width: 22.22%;
@@ -461,20 +494,22 @@ footer .footer-content .location {
 }
 @media (max-width: 500px) {
   footer .footer-content .location {
-    width: 90%;
+    width: 100%;
     padding: 0;
-    margin-bottom: 10px;
+    margin: 15px 0;
   }
 }
 footer .footer-content p {
   font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
 }
-footer h4 {
+footer .copyright {
   width: 100%;
   font-size: 1.2rem;
   display: block;
   text-align: center;
-  margin: 5px 0;
+  padding: 5px 0 0;
 }
 .tab-container {
   width: 100%;
@@ -488,11 +523,17 @@ footer h4 {
   height: 45px;
   text-align: center;
   font-size: 1.6rem;
+  outline: none;
   margin: 0;
+}
+.tab-container .tab-button:hover {
+  background: #222222;
+  color: #FFFFFF;
 }
 .tab-container .active {
   display: "flex";
-  background: blue;
+  background: #5E9Fb9;
+  color: #FFFFFF;
 }
 .tab-header {
   width: 100%;
