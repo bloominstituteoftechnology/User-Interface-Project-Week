@@ -46,15 +46,17 @@ let links = document.querySelectorAll('.category');
 
 links = Array.from(links).map(link => new TabLink(link));
 
-links[0].selectLink();
-
-// btn1 = document.querySelector('.btn1');
-// btn2 = document.querySelector('.btn2');
-// btn3 = document.querySelector('.btn3');
-// btn4 = document.querySelector('.btn4');
+//links[0].selectLink();
 
 
-// btn1.addEventListener('click', () => links[0].selectLink());
-// btn2.addEventListener('click', () => links[1].selectLink());
-// btn3.addEventListener('click', () => links[2].selectLink());
-// btn4.addEventListener('click', () => links[3].selectLink());
+
+const burger = document.querySelector('#burger');
+const close = document.querySelector('#close');
+const modal = document.querySelector('.main-nav');
+
+burger.addEventListener('click', () => {
+    modal.style.display = 'flex';
+})
+close.addEventListener('click', () => {
+    modal.style.display = 'none';
+})
