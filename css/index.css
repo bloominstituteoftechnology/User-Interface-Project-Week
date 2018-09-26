@@ -150,6 +150,17 @@ html {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
+.visible-mobile {
+  display: none !important;
+}
+@media (max-width: 500px) {
+  .visible-mobile .visible-mobile {
+    display: inline;
+  }
+  .visible-mobile .hidden-mobile {
+    display: none !important;
+  }
+}
 .home .main-navigation {
   font-weight: 700;
   font-size: 2.8rem;
@@ -158,7 +169,12 @@ html {
   display: flex;
   justify-content: space-between;
   background: grey;
-  padding: 10px 10px;
+  padding: 15px 7%;
+}
+@media (max-width: 500px) {
+  .home .main-navigation {
+    padding: 15px 3.5%;
+  }
 }
 .home .main-navigation .menu-button {
   position: relative;
@@ -182,6 +198,13 @@ html {
   left: 7%;
   color: #FFFFFF;
 }
+@media (max-width: 500px) {
+  .home .header-img .img-text {
+    font-size: 4.8rem;
+    line-height: 6.5rem;
+    left: 3.5%;
+  }
+}
 .upper-content {
   display: flex;
   flex-direction: row;
@@ -193,44 +216,40 @@ html {
 @media (max-width: 500px) {
   .upper-content {
     flex-direction: column-reverse;
-    width: 100%;
+    justify-content: center;
     padding: 0;
-    margin: 0;
+    margin: 3.5%;
   }
 }
-.upper-content .inverse-content {
+.upper-content .img-content {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  width: 48%;
 }
 @media (max-width: 500px) {
-  .upper-content .inverse-content {
-    flex-direction: column;
+  .upper-content .img-content {
+    justify-content: center;
+    width: 100%;
   }
 }
 .upper-content .text-content {
   display: flex;
-  width: 48%;
   flex-direction: column;
+  flex-wrap: wrap;
+  width: 48%;
+}
+@media (max-width: 500px) {
+  .upper-content .text-content {
+    width: 100%;
+    padding-top: 20px;
+  }
 }
 .upper-content .text-content h2 {
   font-weight: 700;
   font-size: 2.8rem;
   color: #222222;
   padding-bottom: 20px;
-}
-@media (max-width: 500px) {
-  .upper-content .text-content {
-    width: 100%;
-  }
-}
-.upper-content .img-content {
-  display: flex;
-  width: 48%;
-}
-@media (max-width: 500px) {
-  .upper-content .img-content {
-    width: 100%;
-  }
 }
 .upper-content button {
   background: white;
@@ -242,6 +261,16 @@ html {
 @media (max-width: 500px) {
   .upper-content button {
     width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+.inverse-content {
+  display: flex;
+}
+@media (max-width: 500px) {
+  .inverse-content {
+    flex-direction: column;
   }
 }
 .lower-section {
@@ -259,9 +288,19 @@ html {
   padding: 0px;
   margin: 0px;
 }
+@media (max-width: 500px) {
+  .lower-section .section-title h2 {
+    font-size: 2.8rem;
+  }
+}
 .lower-section .lower-img {
   position: relative;
   margin: 50px;
+}
+@media (max-width: 500px) {
+  .lower-section .lower-img {
+    margin: 25px;
+  }
 }
 .lower-section .boxed-left {
   font-weight: 700;
@@ -276,6 +315,13 @@ html {
   z-index: 2;
   right: 600px;
 }
+@media (max-width: 500px) {
+  .lower-section .boxed-left {
+    right: 0px;
+    left: 35%;
+    bottom: -40px;
+  }
+}
 .lower-section .boxed-right {
   font-weight: 700;
   font-size: 2.8rem;
@@ -289,6 +335,12 @@ html {
   z-index: 2;
   left: 600px;
 }
+@media (max-width: 500px) {
+  .lower-section .boxed-right {
+    left: 35%;
+    bottom: -40px;
+  }
+}
 .lower-section h2 {
   font-weight: 700;
   font-size: 2.8rem;
@@ -298,7 +350,16 @@ html {
   padding: 20px;
 }
 .lower-section .text-content {
+  display: flex;
+  flex-direction: column;
   width: 50%;
+}
+@media (max-width: 500px) {
+  .lower-section .text-content {
+    width: 100%;
+    padding: 10% 3.5%;
+    font-weight: 700;
+  }
 }
 footer {
   display: flex;
@@ -313,21 +374,43 @@ footer {
   line-height: 2.6rem;
   color: #FFFFFF;
 }
+@media (max-width: 500px) {
+  footer {
+    flex-direction: column;
+    padding: 3.5%;
+  }
+}
 footer p:first-of-type {
   font-weight: 700;
+}
+@media (max-width: 500px) {
+  footer p:first-of-type {
+    font-size: 2rem;
+  }
 }
 footer input {
   width: 100%;
   height: 30px;
   margin: 5px 0px;
 }
+footer .address {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .copyright {
   text-align: center;
   background-color: #828282;
+  padding-bottom: 20px;
   font-size: 2rem;
   line-height: 2.4rem;
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 2.6rem;
   color: #FFFFFF;
+}
+@media (max-width: 500px) {
+  .copyright {
+    text-align: left;
+    padding: 3.5%;
+  }
 }
