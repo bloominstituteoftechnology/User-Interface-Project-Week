@@ -4,7 +4,6 @@ let heroCopy = document.querySelector('.hero-copy');
 TweenMax.from(bkgd, 1, {autoAlpha:0, y:-100, ease: Circ.easeOut,});
 TweenMax.from(heroCopy, 1, {autoAlpha:0, y:200, ease: Circ.easeOut,});
 
-
 // Navigation JS -----------------------------------------
 let dropdown = document.querySelector(".dropdown-button");
 let content = document.querySelector(".dropdown-content");
