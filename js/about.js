@@ -77,12 +77,12 @@ offset: 200,
 
 let scene4 = new ScrollMagic.Scene({
 triggerElement: '#sscard',
-offset: 400,
+offset: 200,
 }).setTween(tween4);
 
 let scene5 = new ScrollMagic.Scene({
 triggerElement: '#jonespic',
-offset: 200,
+offset: 100,
 }).setTween(tween5);
 
 let scene6 = new ScrollMagic.Scene({
