@@ -66,3 +66,22 @@ let links = document.querySelectorAll(".tab-link");
 links = Array.from(links).map(link => new TabLink(link));
 
 links[0].select();
+
+//added function for Submit button on contact page. select and radio forms are pre-selected so they cannot be empty,
+//but if email or text forms are left empty or unaltered, alert message will be to fill out rest of forms. otherwise, thanks for contacting us alert
+function clickAlert() {
+  if (true) {
+    let email = document.forms["email"]["email"].value;
+    let text = document.forms["text"]["text"].value;
+
+    if (email != "Enter email" && email != "" && text != "") {
+      alert(
+        "Thank you for reaching out to us, we will be contacting you soon!"
+      );
+    } else {
+      alert(
+        "Some of the forms are incomplete. Please complete all forms before hitting submit."
+      );
+    }
+  }
+}
