@@ -1,8 +1,8 @@
 // Page Load Effect ----------------------------------------
 let bkgd = document.querySelector('.hero');
 let heroCopy = document.querySelector('.hero-copy');
-TweenMax.from(bkgd, 1, {autoAlpha:0, y:-100, ease: Circ.easeOut,});
-TweenMax.from(heroCopy, 1, {autoAlpha:0, y:200, ease: Circ.easeOut,});
+TweenMax.from(bkgd, 1, {autoAlpha:0, y:-200, ease: Circ.easeOut,});
+TweenMax.from(heroCopy, 1, {autoAlpha:0, y:300, ease: Circ.easeOut,});
 
 // Navigation JS -----------------------------------------
 let dropdown = document.querySelector(".dropdown-button");
