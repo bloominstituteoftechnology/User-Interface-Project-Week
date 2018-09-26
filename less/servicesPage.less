@@ -1,12 +1,21 @@
 .servicesHeader {
-  max-width: 100%;
-  height: 200px;
-  background-image: url("../img/services/services-jumbotron.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  h1 {
-    padding: 100px 0 0 5%;
+  .servicesImage {
+    max-width: 100%;
+    height: 200px;
+    background-image: url("../img/services/services-jumbotron.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .servicesTitle {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+    h1 {
+      position: absolute;
+      top: 100px;
+      color: white;
+    }
   }
 }
 
@@ -16,54 +25,78 @@
   }
 
   .tabs {
-    .tabLinks {
-      .flex(no-wrap, row, space-between, center);
+    width: 100%;
+    .tabItems {
+      margin-bottom: 80px;
+      //   width: 100%;
+      //   height: 300px;
+      //   display: flex;
+      //   justify-content: center;
+      //   padding-top: 60px;
+    }
+    .tabItem {
+      display: none;
 
-      p {
-        margin: 0;
+      width: 100%;
+      h2 {
+        margin-bottom: 20px;
       }
+      .tabContent {
+        .flex(no-wrap, row, space-between, center);
 
-      .tabLink {
-        background: white;
-        padding: 10px 5%;
-        border: 1px solid #222222;
-        font-weight: bold;
+        .tabText {
+          .flex(wrap, column, space-between, flex-start);
+          width: 44%;
+          height: 275px;
 
-        &:hover {
-          background: black;
-          color: white;
-          transition: 2s all;
+          p {
+            margin: 0;
+          }
+        }
+
+        .tabImage {
+          width: 45.3%;
+          height: 275px;
         }
       }
     }
+    .hidden {
+      display: none;
+      //   .tabs-item-title {
+      //     font-size: 24px;
+      //     font-weight: bold;
+      //     padding-bottom: 10px;
+      //   }
+    }
+    .tabItemSelected {
+      display: block;
+    }
 
-    .tabItems {
+    .tabLinks {
+      .flex(no-wrap, row, space-between, center);
+    }
 
-      .tabItem {
-        h2 {
-          margin-bottom: 20px;
-        }
-        .tabContent {
-          .flex(no-wrap, row, space-between, center);
-
-          .tabText {
-            .flex(wrap, column, space-between, flex-start);
-            width: 44%;
-            height: 275px;
-
-            p {
-              margin: 0;
-            }
-          }
-
-          .tabImage {
-            width: 45.3%;
-            height: 275px;
-          }
-        }
+    .tabLink {
+      //=========================================//
+      margin-top: 0;
+      background: white;
+      padding: 10px 5%;
+      border: 1px solid #222222;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover {
+        background: #5e9fb9;
+        color: #fff;
+        transition: 0.7s all;
       }
-      .hidden {
-        display: none;
+    }
+    .tabLinkSelected {
+      z-index: 1; //=========================================//
+      background: #5e9fb9;
+      color: #fff;
+      &:hover {
+        background: #5e9fb9;
+        color: #fff;
       }
     }
   }

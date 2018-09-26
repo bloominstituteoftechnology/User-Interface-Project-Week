@@ -53,4 +53,7 @@ links = Array.from(links).map(tab => {
     new TabLink(tab)
 })
 
-links[0].select();
+// console.log(links)
+// console.log(links[1]);
+
+// links[1].select(); //=========================================//
