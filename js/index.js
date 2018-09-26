@@ -45,9 +45,9 @@ class TabLink {
     tabs.forEach( tab => {tab.classList.remove('active-tab');
   });
     let cards = document.querySelectorAll('.card');
-    cards.forEach( card => card.style.display = 'none');
+    cards.forEach(card => card.style.display = 'none');
     this.element.classList.add('active-tab');
-    this.cards.forEach(card => card.selectCard());
+    this.cards.forEach( card => card.selectCard());
     }
   }
 
@@ -57,11 +57,13 @@ class TabCard {
     this.element = element;
   }
   selectCard(){
-    this.element.style = 'display: block;';
+    this.element.style= 'display: block;';
   }
 
 }
 
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map( tab => new TabLink(tab));
+
+tabs[0].selectTab();
 
