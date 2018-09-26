@@ -42,7 +42,6 @@ class Link {
             this.tabs.updateActive(this)
             this.select()
         })
-        console.log(this.element)
     }
     select() {
         this.element.classList.add('tab-selected')
@@ -59,7 +58,6 @@ class TabsCard {
     }
     select() {
         this.element.classList.add('card-selected')
-        console.log(this.element)
     }
     deselect() {
         this.element.classList.remove('card-selected')
@@ -68,4 +66,3 @@ class TabsCard {
 
 let tabs = document.querySelectorAll('.tabs');
 tabs = Array.from(tabs).map(domElement => new TabLink(domElement));
-console.log(tabs);
