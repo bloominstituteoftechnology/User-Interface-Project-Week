@@ -7,12 +7,25 @@
     bottom: 13px;
   }
 
+  @media @phone {
+  	.jumbotron-overlay {
+  		left: 15px;
+    	bottom: 17px;
+  	}
+  }
+
 
 	.page-wrapper {
 		margin: 0 8.7%;
 
 		> * {
 			margin: 30px 0;
+		}
+
+		@media @phone {
+			> * {
+				margin: 0;
+			}
 		}
 
 		.intro-section{
@@ -36,10 +49,32 @@
 		    text-align: center;
 			}
 
+			.tab:hover {
+				background: #222222;
+				color: white;
+			}
+
 			.active-tab {
 				background: #5E9FB9;
 				color: white;
 			}
+		}
+
+		@media @phone {
+			.tabs {
+				flex-direction: column;
+
+				.tab {
+					width: 100%;
+					margin-bottom: 22px;
+					padding: 14px;
+				}
+
+				.active-tab {
+					border: 1px solid transparent;
+				}
+			}
+
 		}
 
 		.content-container {
@@ -51,6 +86,12 @@
 
 			> * {
 				width: 50%;
+			}
+
+			@media @phone {
+				> * {
+					width: 100%;
+				}
 			}
 
 			h3 {
@@ -69,6 +110,12 @@
     		object-fit: contain;
 			}
 
+			@media @phone {
+				img {
+					margin: 0;
+				}
+			}
+
 			.text-content {
 				margin-right: 30px;
 			}
@@ -78,7 +125,16 @@
 			}
 		}
 
+		@media @phone {
+			.content {
+				flex-direction: column;
+			}
+		}
+	}
 
-
+	@media @phone {
+		.page-wrapper {
+			margin: -26px 1% 0;
+		}
 	}
 }
