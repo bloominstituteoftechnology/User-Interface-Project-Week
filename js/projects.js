@@ -44,12 +44,6 @@ imgCarousel.pics.forEach(item => item.visibility = 'hidden');
 imgCarousel.pics[0].style.visibility = 'visible';
 
 
-
-
-
-
-
-
 // Navigation JS -----------------------------------------
 let dropdown = document.querySelector(".dropdown-button");
 let content = document.querySelector(".dropdown-content");
