@@ -6,10 +6,22 @@
 class TabLink {
 
     constructor(link){
-       // This link will combined all links on the page
-       this.link = link;
-      
-    }
+        // This link will combined all links on the page
+        this.link = link;
+       
+        //this data holds the dataset matches
+         this.data = this.link.dataset.tab;
+        // Find the dataset match with item content and link tabs
+         this.itemContent = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
+    
+         //Create a new content for each tab selected
+         this.tabItem = new TabItem(this.itemContent);
+    
+         // Each tab thats click show the matched content.
+         this.link.addEventListener ('click', () => {
+             this.active()
+           
+         });
 }
  // Created Class for each content to show 
 class TabItem {
