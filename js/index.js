@@ -38,10 +38,12 @@ class TabItem {
     const items = document.querySelectorAll('.tabs-item');
 
     items.forEach(item => {
-      item.classList.remove('servicesButtons__btn--selected');
+      // item.classList.remove('servicesButtons__btn--selected');
+      item.classList.add('servicesFocusHide');
     })
 
-    this.element.classList.add('servicesButtons__btn--selected');
+    // this.element.classList.add('servicesButtons__btn--selected');
+    this.element.classList.remove('servicesFocusHide');
   }
 }
 
@@ -56,5 +58,5 @@ let links = document.querySelectorAll('.servicesButtons__btn');
 // map domtokens into an array
 links = Array.from(links).map(link => new TabLink(link));
 
-// links[0].select();
+links[0].select();
 
