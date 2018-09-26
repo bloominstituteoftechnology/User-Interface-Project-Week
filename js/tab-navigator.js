@@ -4,6 +4,10 @@ class TabNavigator {
     this.tabs = Array.from(document.querySelectorAll('.tab')).map(
       tab => new Tab(tab)
     );
+    this.imgs = Array.from(document.querySelectorAll('.img')).map(
+      img => new Img(img)
+    );
+    console.log(this.imgs);
   }
 }
 
@@ -26,6 +30,26 @@ class Tab {
     // this.tab.classList.remove('tab-active');
     let tabs = document.querySelectorAll('.tab');
     tabs.forEach(tab => tab.classList.remove('tab-active'));
+  }
+}
+
+class Img extends Tab {
+  constructor(img) {
+    super(img);
+    this.img = img;
+    // Buttons
+    this.rightButton = document.querySelector('.right-button');
+    this.leftButton = document.querySelector('.left-button');
+
+    // Button Event Listeners
+    this.rightButton.addEventListener('click', () => this.imgSelect());
+    this.leftButton.addEventListener('click', () => this.imgSelect());
+  }
+
+  imgSelect() {
+    if (this.img.classList.contains('current-img')) {
+      this.currentCard.select();
+    }
   }
 }
 
