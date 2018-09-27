@@ -87,6 +87,8 @@ video {
   padding: 0;
   border: 0;
   outline: 0;
+  font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -131,113 +133,270 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.container {
-  padding: 0 6.5rem;
+/* Your Code Goes Here */
+.floatRight {
+  float: right;
 }
-.cta {
-  font-family: 'Roboto';
-  background-image: url(../img/home/home-jumbotron.png);
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  height: 90vh;
+.floatLeft {
+  float: left;
 }
-.cta__headline {
-  display: flex;
-  height: 90vh;
-}
-.cta__headline--text {
-  font-family: 'Roboto';
-  align-self: flex-end;
-  color: #fff;
-  font-size: 64px;
-  font-weight: bold;
-  line-height: 7.5rem;
-}
-.main__box {
+.nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  font-family: 'Roboto', 'Arial', 'sans-serif';
-  padding: 3rem 0;
+  justify-content: space-between;
+  background: #9AA3B2;
+  font-family: 'Roboto';
+  padding: 2rem 10rem;
 }
-.main__textBox {
+.nav__logo {
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: #fff;
+}
+.nav__hamburger:hover {
+  cursor: pointer;
+}
+.expandedNav {
+  display: none;
+  height: 100vw;
+  width: 100vw;
+  background-color: rgba(154, 163, 178, 0.92);
+  z-index: 999;
+  position: fixed;
+}
+.expandedNav__links {
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
 }
-.main__imgBox {
-  margin: 0 2rem;
-}
-.mainNav {
-  background-color: #98A4AF;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 5rem;
-  font-family: 'Roboto', 'Arial', 'sans-serif';
-  font-size: 2.4rem;
-}
-.mainNav__companyLogo {
+.expandedNav__links--link {
   font-weight: bold;
-  font-size: 2.4rem;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
   color: #fff;
+  text-decoration: none;
 }
-.mainNav__navItems {
-  visibility: collapse;
-}
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #222222;
-  height: 3rem;
-  width: 10rem;
-  margin-top: 20px;
-}
-.btn__txt {
-  font-size: 20px;
+.expandedNav__links--link:hover {
   color: #222222;
 }
-p {
+.expand {
+  display: block;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fixedNav {
+  background-color: rgba(154, 163, 178, 0.92);
+  position: fixed;
+}
+.home {
+  height: 70vh;
+  background-image: url(/img/home/home-jumbotron.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home__textBox {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+.home__textBox--text {
+  font-size: 7.4rem;
+  font-weight: bold;
+  line-height: 7.5rem;
+  padding-left: 5rem;
+  padding-bottom: 7rem;
+  color: #fff;
+}
+.features__feature {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8rem;
+  border: 5px solid red;
+  justify-content: center;
+}
+.features__feature--imageBox--image {
+  border: 2px solid blue;
+  width: 100%;
+}
+.features__feature--textBox {
+  align-self: center;
+  width: 48%;
+}
+.features__feature--headline {
+  font-size: 2.8rem;
+  font-family: 'Roboto';
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.features__feature--text {
   font-size: 1.6rem;
   line-height: 2.4rem;
-}
-h3 {
-  font-size: 2.8rem;
-  font-weight: bold;
-}
-.projects {
   font-family: 'Roboto';
-  justify-self: center;
 }
-.projects__project--img {
-  width: 100%;
+.features__feature--btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  border: 1px solid #222222;
+  height: 4.5rem;
+  width: 14rem;
+}
+.recent {
   margin-top: 10rem;
 }
-.projects__project--name {
+.recent__headline {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 6rem;
+}
+.recent__project {
+  margin: 8rem 0;
+}
+.recent__project--img {
+  width: 100%;
+}
+.recent__project--textBox {
+  margin-top: 8.5rem;
+}
+.recent__project--text {
+  font-family: 'Roboto';
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  padding: 1.5rem 20rem;
+}
+.recent__project--titleBox {
+  background-color: #D8D8D8;
+  height: 10rem;
+  width: 32rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
-  font-size: 1.7rem;
-  height: 5rem;
-  width: 10rem;
-  background-color: #D8D8D8;
+  position: relative;
+  bottom: 6rem;
   z-index: 100;
 }
-h1 {
-  font-size: 6.4rem;
+.recent__project--titleBox--title {
+  font-size: 2.5rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+.footer {
+  padding: 5rem 2rem;
+  background-color: #828282;
+  display: flex;
+}
+.footer__header {
+  color: #fff;
+  font-family: 'Roboto';
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.footer__letsTalk--input {
+  margin-top: 1rem;
+  height: 1.5rem;
+  width: 27rem;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+}
+.footer__letsTalk--neverShare {
+  margin-top: 1rem;
+  color: #fff;
+  font-family: 'Roboto';
+  font-size: 1.3rem;
+}
+.footer__city {
+  padding: 0 4rem;
+  color: #fff;
+  font-family: 'Roboto';
+  font-size: 1.3rem;
+  line-height: 2;
+}
+.footer__copyright {
+  display: flex;
+  justify-content: center;
+  background-color: #828282;
+}
+.footer__copyright--text {
+  font-size: 1.2rem;
+  padding: 1rem;
+  color: #fff;
+}
+.servicesHeader {
+  background-image: url(/img/services/services-jumbotron.png);
+  height: 25vh;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  font-family: 'Roboto';
+  font-size: 7.4rem;
+  font-weight: bold;
   line-height: 7.5rem;
-  color: red;
+  padding-left: 5rem;
+  padding-bottom: 6rem;
 }
-h2 {
-  font-size: 32px;
+.servicesIntro__text {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-family: 'Roboto';
 }
-h3 {
-  font-size: 28px;
+.servicesButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
 }
-p {
-  font-size: 16px;
-  font-weight: 400;
+.servicesButtons__btn {
+  justify-content: center;
+  align-content: center;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  border: 1px solid #222222;
+  height: 4.5rem;
+  width: 18.5rem;
+  font-weight: bold;
+}
+.servicesButtons__btn--selected {
+  background-color: #5E9FB9;
+  color: #fff;
+}
+.servicesButtons__btn:focus {
+  outline: none;
+}
+.servicesFocus {
+  display: flex;
+}
+.servicesFocus__header {
+  font-size: 2.8rem;
+  font-family: 'Roboto';
+  font-weight: bold;
+  display: inline;
+}
+.servicesFocus__text--text {
+  margin-top: 2rem;
+  margin-right: 2rem;
+  font-family: 'Roboto';
+  font-size: 1.6rem;
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+.servicesFocusHide {
+  display: none;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Roboto';
+}
+.container {
+  padding: 6.5rem;
 }
