@@ -10,24 +10,26 @@
 // listen to hamburger for click
 const hamburger = document.querySelector('.hamburger');
 const modal = document.querySelector('.modal');
+const closeBtn = document.querySelector('.close-button');
+
+
 modal.style.display = 'none';
+closeBtn.style.display = 'none';
 
-let isOn = false;
+hamburger.addEventListener('click', () => modalToggleOpen());
+closeBtn.addEventListener('click', () => modalToggleClosed());
 
-hamburger.addEventListener('click', () => modalToggle());
-
-function modalToggle() {
-  // toggles display mode of modal div
-  if (!isOn) {
-    modal.style.display = 'block';
-    isOn = true;
-  }
-  if (isOn) {
-    modal.style.display = 'none';
-    isOn = false;
-  }
-console.log(isOn);
+function modalToggleOpen() {
+  modal.style.display = 'block';
+  hamburger.style.display = 'none';
+  closeBtn.style.display = 'block';
 };
+
+function modalToggleClosed() {
+  modal.style.display = 'none';
+  hamburger.style.display = 'block';
+  closeBtn.style.display = 'none';
+}
 
 
 
