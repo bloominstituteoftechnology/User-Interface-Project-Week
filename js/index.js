@@ -89,25 +89,80 @@ let tabContent = document.querySelectorAll(".content");
 
 
 
+//PROJECTS CAROUSEL
 
 
+class projectsTab {
+    constructor(element){
 
-/* const imgSwap = (img, src) => {
+        this.element = element;
+        console.log(this.element);
+        this.name = element.name;
+        this.data = element.dataset.ptab;
+        this.content = document.querySelector(`.p-content[data-ptab="${this.data}"]`);
+        this.pTabContent = new projectContent(this.content);
+        
 
 
+        this.element.addEventListener('click', () => { this.select()}); 
+
+    }
+
+    select(){
+        const tabs = document.querySelectorAll('.p-tab');
+        tabs.forEach( function(item){
+            item.classList.remove('tab-selected');
+        });
+        this.element.classList.add("tab-selected");
+
+        this.pTabContent.select();
+    }
 }
- */
+
+//TAB CONTENT COMPONENT
+class projectContent {
+    constructor(content){
+
+        this.content = content;
+        console.log(this.content);
+        this.data = this.content.dataset.ptab;
+        this.image = document.querySelector(`.p-img[data-ptab="${this.data}"]`);
+        
+        
+
+    }
+
+    select(){
+        let allTabContent = document.querySelectorAll(".p-content");
+        let allImgs = document.querySelectorAll(".p-img");
+        
+        allTabContent.forEach( item => 
+           item.classList.remove('shown'));
+        
+        allImgs.forEach( item => 
+            item.classList.remove('shown'));
+
+        this.content.classList.add('shown');
+        this.image.classList.add('shown');
+        TweenMax.from(this.image, .5, {scale: .1, opacity: 0}); 
+
+    }
+}
+
+let pTabs = document.querySelectorAll(".p-tab");
+
+pTabs = Array.from(pTabs).map((item) => new projectsTab(item));
+
+pTabs[0].select();
+
+
+//PROJECTS CAROUSEL END
 
 
 
 
 
 
-console.log(tabs);
-
-/* console.log(tabContent[0].children[0].innerText);
-
-console.log(tabs[0]); */
 
 //INTRO ANIMATIONS
 let intro = document.querySelector('.intro-bg');
