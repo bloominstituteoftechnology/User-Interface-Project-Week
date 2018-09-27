@@ -166,24 +166,37 @@ p {
 }
 .container {
   max-width: 1024px;
-  width: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
 header {
   display: flex;
+  max-width: 1024px;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
   background-color: #98A4AF;
-  padding: 3% 6%;
+  padding: 1% 6%;
   justify-content: space-between;
 }
 header .logo {
   color: #FFF;
   font-size: 20px;
 }
+@media (max-width:500px) {
+  header .logo {
+    font-size: 3rem;
+  }
+}
+@media (max-width:500px) {
+  header {
+    padding: 5% 6%;
+  }
+}
 .display {
   display: none;
 }
-.display .overlay {
+.overlay {
   display: flex;
   align-items: center;
   height: 100vh;
@@ -195,7 +208,7 @@ header .logo {
   background: #828282;
   opacity: 0.8;
 }
-.display .overlay a {
+.overlay a {
   display: flex;
   justify-content: center;
   text-decoration: none;
@@ -205,16 +218,16 @@ header .logo {
   padding: 1%;
   transition: 0.5s;
 }
-.display .overlay a:hover {
+.overlay a:hover {
   color: black;
 }
-.display .overlay .close-button {
+.overlay .close-button {
   position: absolute;
   top: 4.5%;
   right: 5%;
   cursor: pointer;
 }
-.display .overlay .nav-content {
+.overlay .nav-content {
   position: relative;
   width: 100%;
 }
@@ -550,24 +563,48 @@ footer .copyright {
   padding: 5% 6%;
 }
 .services-container .main-section .tab-navigator {
+  width: 100%;
+}
+.services-container .main-section .tab-navigator .tabs {
   display: flex;
   justify-content: space-between;
-  padding: 5% 0;
+  padding-top: 6%;
 }
 .services-container .main-section .tab-navigator .tab {
+  padding: 15px 20px;
+  font-size: 24px;
   border: 1px solid black;
-  padding: 2% 3%;
-  font-size: 1.6rem;
-  font-weight: bold;
+  color: black;
+  cursor: pointer;
 }
-.services-container .main-section .tab-navigator .tab:active {
-  background-color: #5E9FB9;
-  color: white;
+.services-container .main-section .tab-navigator .tab-info {
+  display: none;
+  width: 100%;
+  padding-top: 6%;
 }
-.services-container .main-section .tab-info {
+.services-container .main-section .tab-navigator .tab-info-item {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
 }
-.services-container .main-section .tab-info .tab-text {
+.services-container .main-section .tab-navigator .tab-info-item .tabs-info-description {
   width: 50%;
+  margin: 0;
+  flex-direction: column;
+}
+.services-container .main-section .tab-navigator .tab-info-item .tabs-info-description .tab-info-title {
+  font-size: 3rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.services-container .main-section .tab-navigator .tab-info-item .tab-image {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+}
+.services-container .main-section .tab-navigator .tabs-item-selected {
+  display: flex;
+}
+.services-container .main-section .tab-navigator .tabs-link-selected {
+  background: #48A0BC;
+  color: white;
 }
