@@ -92,8 +92,9 @@ class Card {
 
     select(){
         let cards =  document.querySelectorAll('.card');
-        Array.from(cards).forEach( (card)=> card.classList.add('disappear'));
-        this.element.classList.remove('disappear');
+        Array.from(cards).forEach((card) => TweenLite.to(card, 0, {left:"-100%"}));
+        TweenLite.to(this.element, 0, {left:"5%"})
+       
     }
 }
 
@@ -105,40 +106,21 @@ class Carousel {
         this.currentCard = 0;
         this.cards = this.element.querySelectorAll('.card');
         this.maxCardNum = this.cards.length;
-        
-        this.init();
+        this.cards[this.currentCard].style.left = "5%";
      }
 
-    init(){
-    //    for (let i = 0; i < this.maxCardNum; i++){
-    //     TweenLite.set(this.cards[i], {left: "-100%"});
-    //    }
-    TweenLite.fromTo(this.cards[newNum], 2, {x :-1000}, {x:0} );
-
-        this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
-        this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
-        slideCard(this, 0, -1, 0);
-    }
-
- 
      rightClicked() {
         let newNum = this.currentCard + 1;
         if (newNum == this.maxCardNum )
-            newNum = 0;
-        
-       
-        this.cards[newNum].classList.remove('disappear')
-        // TweenLite.fromTo(this.cards[this.currentCard], 2, {x :0}, {x:1000} );
-        TweenLite.fromTo(this.cards[newNum], 2, {x :-1000}, {x:0} );
-        this.cards[this.currentCard].classList.add('disappear');
-        //  setTimeout(this.test1,2000);
-        //  setTimeout((console.log("RIght Clickede")), 3000);
-         this.currentCard = newNum;  
+            newNum = 0; 
+    
+        TweenLite.fromTo(this.cards[this.currentCard], 2,  {left :"5%"}, {left:"100%"} );
+        TweenLite.fromTo(this.cards[newNum], 2, {left :"-100%"}, {left:"5%"} );
+    
+        this.currentCard = newNum;  
 
         tabs[this.currentCard].select();
       }
-
-    
 
     leftClicked(){
         let newNum = this.currentCard - 1;
@@ -146,49 +128,59 @@ class Carousel {
             newNum = this.maxCardNum - 1;
  
             this.cards[newNum].classList.remove('disappear')
-            TweenLite.fromTo(this.cards[newNum], 3, {x :1000}, {x:0} );
-        
-            setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
-      
+            TweenLite.fromTo(this.cards[this.currentCard], 2,  {left :"5%"}, {left:"-100%"} );
+            TweenLite.fromTo(this.cards[newNum], 2, {left :"100%"}, {left:"5%"} );
+          
         this.currentCard = newNum;   
         tabs[this.currentCard].select();
       }
+
+      initiate() {
+        //    for (let i = 0; i < this.maxCardNum; i++){
+        //     TweenLite.set(this.cards[i], {left: "-100%"});
+        //    }
+        // TweenLite.fromTo(this.cards[newNum], 2, {x :-1000}, {x:0} );
+        // TweenLite.set(this.cards[newNum], {left: "-100%"});
+            this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
+            this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
+            // slideCard(this, 0, -1, 0);
+        }
 }
 
-function slideCard(carousel, NextCard, prevCard,direction){
+// function slideCard(carousel, NextCard, prevCard,direction){
 
 
-    var direction = "next";
-		if (_direction != null) {
-			direction = _direction;
-		}
-		if (direction == "next") {
-			TweenMax.to($prevSlide, time, {
-				left: "-100%"
-			});
-			TweenMax.fromTo($currentSlide, time, {
-				left: "100%"
-			}, {
-				left: "0"
-			});
-		} else {
-			TweenMax.to($prevSlide, time, {
-				left: "100%"
-			});
-			TweenMax.fromTo($currentSlide, time, {
-				left: "-100%"
-			}, {
-				left: "0"
-			});
-		}
+//     var direction = "next";
+// 		if (_direction != null) {
+// 			direction = _direction;
+// 		}
+// 		if (direction == "next") {
+// 			TweenMax.to($prevSlide, time, {
+// 				left: "-100%"
+// 			});
+// 			TweenMax.fromTo($currentSlide, time, {
+// 				left: "100%"
+// 			}, {
+// 				left: "0"
+// 			});
+// 		} else {
+// 			TweenMax.to($prevSlide, time, {
+// 				left: "100%"
+// 			});
+// 			TweenMax.fromTo($currentSlide, time, {
+// 				left: "-100%"
+// 			}, {
+// 				left: "0"
+// 			});
+// 		}
 
-	}
+// 	}
 
 
 
 let carousel = document.querySelector('.cards-container');
 carousel = new Carousel(carousel);
-
+carousel.initiate();
 
 
 let tabs = document.querySelectorAll('.tab');
