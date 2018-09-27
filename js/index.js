@@ -4,10 +4,20 @@ let menu = document.querySelector('.hamburger');
 menu.addEventListener('click', () => {
   document.querySelector('.main-nav').classList.toggle('toggle');
   document.querySelector('.dropdown-content').classList.toggle('dropShow');
+
+  let img = document.querySelector('img');
+
+if(img.src === 'http://127.0.0.1:5500/img/nav-hamburger.png') {
+  img.src = 'img/nav-hamburger-close.png'
+} else {
+  img.src = 'img/nav-hamburger.png'
+}
+
+
 });
 
 
-
+///Tabs
 class TabLink {
   constructor(element) {
     this.element = element;
