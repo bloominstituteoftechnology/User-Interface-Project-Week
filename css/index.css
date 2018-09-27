@@ -1,1 +1,504 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 62.5%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 62.5%;
+}
+/* Your Code Goes Here */
+nav {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #9ba6af;
+}
+nav .nav-container {
+  padding: 1.3rem 0;
+  width: 83.4%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav .nav-container #menu-button {
+  margin-top: 0.15rem;
+  height: 90%;
+}
+nav .logo {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu {
+  display: none;
+}
+.menu a {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: black;
+}
+.nav-expanded {
+  justify-content: space-between;
+  background-color: rgba(155, 166, 175, 0.8);
+}
+.menu-show {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 59px;
+  padding: 108px 0;
+  padding-left: 5px;
+}
+.jumbotron {
+  position: relative;
+  width: 100%;
+}
+.jumbotron h1 {
+  position: absolute;
+  bottom: 8%;
+  left: 8%;
+  letter-spacing: 0.05rem;
+  line-height: 7.5rem;
+  color: #ffffff;
+  font-size: 6.4rem;
+  font-weight: bold;
+  width: 30%;
+}
+.jumbotron img {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+h2 {
+  padding-bottom: 1rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+.info {
+  margin: 52px auto;
+  max-width: 855px;
+}
+.info section {
+  display: flex;
+  margin-bottom: 9.9rem;
+  color: #222222;
+}
+.info section .info-text {
+  margin-top: 5rem;
+}
+.info section .info-text h2 {
+  padding-bottom: 1rem;
+}
+.info section .info-text p {
+  line-height: 24px;
+  width: 95%;
+  margin-top: 10px;
+  font-size: 1.6rem;
+}
+.info section .info-text .btn {
+  border: 1px solid black;
+  /* margin-left: 0.3rem; */
+  margin-top: 2.6rem;
+  height: 4.7rem;
+  display: flex;
+  width: 13.6rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+.info section img {
+  max-width: 410px;
+}
+@media (max-width: 500px) {
+  .info section {
+    max-width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .info section .info-text {
+    order: 1;
+    margin: 4rem auto 0 auto;
+  }
+  .info section .info-text .btn {
+    margin: 2.6rem auto;
+    width: 95%;
+  }
+  .info section picture {
+    display: flex;
+    justify-content: center;
+  }
+  .info section picture source {
+    object-fit: contain;
+  }
+  .info section picture img {
+    object-fit: contain;
+  }
+}
+.info .reverse {
+  flex-direction: column;
+}
+.info .reverse .info-text {
+  margin: 4rem auto 0 auto;
+}
+@media (min-width: 500px) {
+  .info .reverse {
+    flex-direction: row-reverse;
+  }
+  .info .reverse .info-text {
+    margin-left: 3rem;
+    margin-top: 4rem;
+  }
+}
+.recent-projects {
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 2rem;
+  max-width: 854px;
+}
+.recent-projects h2 {
+  margin-bottom: 3.6rem;
+  text-align: left;
+}
+.recent-projects .project {
+  margin-bottom: 10.15rem;
+}
+.recent-projects .project .heading {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 9rem;
+}
+.recent-projects .project .heading img {
+  max-width: 100%;
+}
+.recent-projects .project .heading h3 {
+  display: flex;
+  font-weight: 100;
+  border: 1px solid white;
+  background-color: #CFCFCF;
+  width: 37%;
+  position: absolute;
+  text-align: center;
+  /* padding: 4.2rem 0; */
+  bottom: -41px;
+  font-size: 2.4rem;
+  letter-spacing: 0.78rem;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 15px; */
+  padding-left: 8px;
+  height: 9.6rem;
+}
+@media (max-width: 500px) {
+  .recent-projects .project .heading h3 {
+    width: 95%;
+  }
+}
+.recent-projects .project p {
+  max-width: 450px;
+  margin: 2rem auto;
+  margin-bottom: 2.4rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+@media (max-width: 500px) {
+  .recent-projects .project p {
+    max-width: 95%;
+  }
+}
+.recent-projects :nth-child(odd) section .heading {
+  justify-content: flex-start;
+}
+.Services .jumbotron h1 {
+  bottom: 18px;
+  left: 85px;
+}
+.Services .info {
+  max-width: 852px;
+  margin: 52px auto 40px auto;
+}
+.Services .info p {
+  line-height: 26px;
+  margin-top: 10px;
+  font-size: 1.6rem;
+}
+.tabs {
+  margin: 0 auto 114px auto;
+  max-width: 854px;
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  margin-top: 54px;
+}
+.tabs .tabs-item {
+  display: none;
+  width: 100%;
+}
+.tabs .tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs .tabs-item .tabs-item-description {
+  display: flex;
+  justify-content: space-between;
+}
+.tabs .tabs-item .tabs-item-description .text {
+  padding-top: 0.6rem;
+  width: 49%;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+.tabs .tabs-item-selected {
+  display: block;
+}
+.tabs .tabs-links {
+  display: flex;
+  justify-content: space-between;
+}
+.tabs .tabs-link {
+  width: 186px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tabs .tabs-link:hover {
+  color: white;
+  background-color: #222222;
+}
+.tabs .tabs-link-selected {
+  z-index: 2;
+  border-right: 1px solid #222222;
+  background-color: #5E9FB9;
+  color: white;
+}
+.tabs .tabs-link-selected:hover {
+  color: white;
+}
+.footer-container {
+  width: 100%;
+  margin-top: -1px;
+  background-color: #CFCFCF;
+}
+.footer-container footer {
+  margin: 0 auto;
+  max-width: 856px;
+}
+.footer-container footer .contact {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .footer-container footer .contact {
+    margin: 0 auto;
+    flex-direction: column;
+    max-width: 95%;
+  }
+}
+.footer-container footer .contact h4 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #ffffff;
+}
+.footer-container footer .contact .email-form {
+  width: 282px;
+  max-width: 100%;
+  margin-top: 6rem;
+}
+@media (max-width: 500px) {
+  .footer-container footer .contact .email-form {
+    width: 95%;
+  }
+}
+.footer-container footer .contact .email-form #email-input {
+  width: 278px;
+  max-width: 100%;
+  background-color: white;
+  margin-top: 1.6rem;
+  margin-left: 0.2rem;
+  height: 4.1rem;
+  border-radius: 4px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .footer-container footer .contact .email-form #email-input {
+    width: 95%;
+  }
+}
+.footer-container footer .contact .email-form #email-input .input-text {
+  color: black;
+  font-size: 1.6rem;
+  padding-left: 0.7rem;
+}
+.footer-container footer .contact .email-form h5 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: white;
+}
+.footer-container footer .contact address {
+  margin-top: 6rem;
+  line-height: 2rem;
+  font-style: normal;
+}
+.footer-container footer .contact address div {
+  margin: 0.8rem 0;
+  font-size: 1.4rem;
+}
+.footer-container footer .copyright {
+  text-align: center;
+  margin-top: 2.2rem;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=index.css.map */
