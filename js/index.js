@@ -44,11 +44,7 @@
     
     // }
     
-    // // Create a reference to all ".tab" classes
     // let tabs = document.querySelectorAll('.tab');
-    // // console.log tabs to make sure you are receiving the correct elements before you proceed.
-    
-    // // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
     // tabs = Array.from(tabs).map(tab => new TabLink(tab))
     
     // //Once you are complete, call the .selectTab method on the first tab
@@ -65,10 +61,10 @@ class Tab {
     }
 
     tabClick() {
-        let cards = document.querySelectorAll('.card');
-        cards.forEach((card) => card.style.display = 'none');
         this.tabCard.toggleContent();
-        this.tab.style.background = '#5E9FB9';
+        let tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => tab.classList.remove('tabSelected'));
+        this.tab.classList.toggle('tabSelected');
     }
 }
 
@@ -78,36 +74,20 @@ class Card {
     }
 
     toggleContent() {
+        let cards = document.querySelectorAll('.card');
+        cards.forEach(card => card.classList.remove('showCard'));
         this.tabCard.classList.toggle('showCard');
     }
 }
   
-//   let links = document.querySelectorAll('.link');
-//   links = Array.from(links).map( link => new TabLink(link));
+
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map( tab => new Tab(tab));
+tabs[0].tabClick();
 
 
+// ********************** nav menu ******************************
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// functionality for nav menu to open and close
 // i know, i know, this is an ugly function. i was in a time crunch.
 const navBurger = document.querySelector('.nav-burger');
 const dropdownNav = document.querySelector('.dropdown-nav');
