@@ -1,14 +1,24 @@
 .container {
     max-width: @maxWidth;
     margin: 0 auto;
+
+    
     .architects{
         .flexing-boxes(row, wrap, space-between);
         align-items: center;
+
+        @media(max-width: @mobileBreak450){
+            .flexing-boxes(column-reverse);
+        }
     }
     
     .futuristic{
         .flexing-boxes(row-reverse, wrap, space-between);
         align-items: center;
+
+        @media(max-width: @mobileBreak450){
+            .flexing-boxes(column-reverse);
+        }
     }
 
     .homepage-top-content{
@@ -23,6 +33,11 @@
                 margin: 20px 0; 
                 .generalFonts;
             }
+            @media(max-width: @mobileBreak450){
+                max-width: @mobileMaxWidth;
+                width: @100perWidth;
+                margin: 0px auto;
+            }
         }
 
         .content-img-box{
@@ -31,12 +46,30 @@
             .company-desktop-img {
                 width: @100perWidth;
             }
+
+            @media(max-width: @mobileBreak450){
+
+                max-width: @mobileMaxWidth;
+                width: @100perWidth;
+
+                .dsk-mobile{
+                    display: none;
+                }
+            }
         }
         
         .content-btn{
             border: 1px solid @btnBorderColor;
             background-color: @white;
             padding: 2% 6%;
+
+            @media(max-width: @mobileBreak450){
+
+                max-width: @mobileMaxWidth;
+                width: @100perWidth;
+                padding: 3% 6%;
+                .generalFonts(1.3rem);
+            }
         }
     }
 
@@ -71,6 +104,10 @@
             .properties-lg-img{
                 width: @100perWidth;
             }
+
+            .dsk-mobile{
+                display: none;
+            }
         }
 
         p{
@@ -84,10 +121,23 @@
         width: @100perWidth;
         margin: 0;
         .generalFonts(@homeSubFontSize, @homepageSubHeaders, @fontBold);
+
+        @media(max-width: @mobileBreak450){
+            max-width: @mobileMaxWidth;
+            padding: 0;
+            margin: 20px 0;
+            .generalFonts(@homeSubMobileFont, @homepageSubHeaders, @fontBold);
+        }
+        
     }
 
     .mobile-images{
         display: none;
+
+        @media(max-width: @mobileBreak450){
+            width: 100%;
+            display:block;
+        }
     }
 
 }
