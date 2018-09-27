@@ -33,6 +33,22 @@
 }
 
 .about {
+  .story-info {
+    .bottom-space(50px);
+
+    h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      letter-spacing: 6px;
+      color: @black;
+    }
+
+    p {
+      text-align: justify;
+      word-break: break-all;
+    }
+  }
+
   .carousel {
     width: 100%;
 
@@ -53,8 +69,68 @@
       .custom-layout(flex-end);
 
       div {
+        .custom-layout(flex-end, flex-start);
         cursor: pointer;
+
+        img {
+          width: 65%;
+          height: auto;
+
+          &:hover {
+            filter: invert(50%);
+          }
+        }
+      } //.div
+    }
+  } // .carousel
+
+  .team {
+    margin: 60px 0;
+
+    h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      letter-spacing: 6px;
+      color: @black;
+      .bottom-space(50px);
+    }
+
+    .team-members {
+      width: 100%;
+      .custom-layout(space-between);
+
+      @media @mobile {
+        flex-wrap: wrap;
+      }
+
+      .member {
+        background-color: rgba(216, 216, 216, 0.23);
+        margin: 0 1%;
+        padding-top: 55px;
+        padding-bottom: 20px;
+        border-radius: 5px;
+        .custom-layout(center, center);
+        flex-direction: column;
+
+        @media @mobile {
+          .bottom-space();
+        }
+
+        img {
+          border-radius: 50%;
+          width: 60%;
+          .bottom-space();
+        }
+
+        .bio {
+          text-align: center;
+
+          h3 {
+            font-weight: bold;
+            line-height: 30px;
+          }
+        }
       }
     }
-  }
+  } // .team
 }
