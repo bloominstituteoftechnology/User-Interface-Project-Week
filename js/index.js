@@ -27,7 +27,7 @@ class TabLink {
     }
 }
 
-let tabLinks = document.querySelectorAll('.tab-links > .tab-link');
+let tabLinks = document.querySelectorAll('.tab-link');
 
 if (tabLinks.length > 0){
     tabLinks = Array.from(tabLinks).map(n => new TabLink(n));
