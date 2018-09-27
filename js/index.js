@@ -67,4 +67,3 @@ let scene5 = new ScrollMagic.Scene({
 
 
 controller.addScene([scene1, scene2, scene3, scene4, scene5, scene6]);
-
