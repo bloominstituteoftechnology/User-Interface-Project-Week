@@ -11,9 +11,9 @@ navigationMenu.addEventListener('click', () => {
   navList.classList.toggle('navigation__list--expanded');
   // navItems.forEach(item => item.classList.toggle('navigation__text--expanded'));
   if (navigation.classList.contains('navigation--expanded')) {
-    TweenMax.to(navigation, 0.25, {
+    TweenMax.to(navigation, 0.15, {
       height: '100vh',
-      ease: Power0.easeOut
+      ease: Power4.easeOut
     });
     TweenMax.to(navItems, 0.25, {
       opacity: 1,
@@ -21,7 +21,7 @@ navigationMenu.addEventListener('click', () => {
       delay: 0.5
     });
   } else {
-    TweenMax.to(navigation, 0.25, {
+    TweenMax.to(navigation, 0.1, {
       height: '5rem',
       ease: Power0.easeOut
     });

@@ -51,7 +51,7 @@ class Carousel {
         TweenMax.to(this.slider, 0, {
           x: '-100%'
         });
-        TweenMax.to(this.slider, 0.75, {
+        TweenMax.to(this.slider, 0.5, {
           x: '0%',
           ease: Power1.easeInOut
         });
@@ -61,21 +61,12 @@ class Carousel {
           img.classList.remove('current-img');
           nextImg = this.carouselImages[0];
           nextImg.classList.add('current-img');
-        }, 750);
+        }, 500);
       }
     });
   }
 }
 
-//If You've gotten this far, you're on your own! Although we will give you some hints:
-// 1. You will need to grab a reference to the carousel, and in it grab the laft and right buttons
 let carousels = Array.from(document.querySelectorAll('.carousel')).map(
   carousel => new Carousel(carousel)
 );
-
-// 3. Create a current index
-// let currentIndex = carouselImages[0];
-// currentIndex.style.display = 'block';
-
-// 5. Think of how you would animate this compoennt. Make the cards slide in and out, or fade. It's up to you!
-// 6. Have fun!

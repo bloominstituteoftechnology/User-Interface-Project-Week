@@ -44,12 +44,14 @@
   .cards {
     .card {
       display: none;
+      opacity: 0;
       align-items: center;
       flex-wrap: wrap;
 
       &__content {
         width: 48%;
         margin-right: 4%;
+        animation: slideinleft 500ms ease-in-out forwards;
 
         @media @tablet {
           font-size: 1.5rem;
@@ -68,6 +70,7 @@
           margin-right: 0%;
           margin-left: 4%;
           order: 2;
+          animation: slidein 500ms ease-in-out forwards;
 
           @media @phone {
             order: -1;
@@ -95,6 +98,7 @@
 
       &__img {
         width: 48%;
+        animation: slidein 500ms ease-in-out forwards;
         @media @phone {
           width: 100%;
           margin-right: 0%;
@@ -102,11 +106,46 @@
         img {
           width: 100%;
         }
+
+        &--alt {
+          animation: slideinleft 500ms ease-in-out forwards;
+        }
       }
     }
 
     .card-active {
       display: flex !important;
+      animation: fadein 800ms ease-in-out forwards;
     }
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(1000px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideinleft {
+  0% {
+    transform: translateX(-1000px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
