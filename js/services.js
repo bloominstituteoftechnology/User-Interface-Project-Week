@@ -16,6 +16,14 @@ class Tablinks{
         })
         this.element.classList.add('selected-button');
         this.tabContent.select();
+        TweenMax.from('.tabs-text',1.5,{
+            x:-500,
+            opacity:0,
+        });  
+        TweenMax.from('.tabs-image',1.5,{
+            x:500,
+            opacity:0,
+        });
     }
 }
 

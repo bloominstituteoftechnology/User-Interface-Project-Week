@@ -9,7 +9,6 @@ hamburger.addEventListener('click', () => {
        hamburger.src = "../img/nav-hamburger-close.png";
        imagetracker = 2;
        header.style.height = "100vh";
-       header.style.opacity = "0.8";
        dropdown.classList.add('dropdown-toggle');
    } else {
        hamburger.src = "../img/nav-hamburger.png";
@@ -18,6 +17,10 @@ hamburger.addEventListener('click', () => {
        header.style.opacity = "1";
        dropdown.classList.remove('dropdown-toggle');
    }
+   TweenMax.from('.dropdown', 1 , {
+       opacity:1,
+       y:100,
+   })
 })
 
 // JS goes here
