@@ -65,7 +65,7 @@ let scene4 = new ScrollMagic.Scene({
     triggerElement: "#trigger-element4",
     //  reverse: false,
 })
-    .setTween(TweenMax.staggerFrom(('div.middle-third'), 1, { cycle: { y: [50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
+    .setTween(TweenMax.staggerFrom(('div.middle-third'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 
@@ -73,5 +73,5 @@ let scene5 = new ScrollMagic.Scene({
     triggerElement: "#trigger-element5",
     // reverse: false,
 })
-    .setTween(TweenMax.staggerFrom(('div.bottom-third'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
+    .setTween(TweenMax.staggerFrom(('div.bottom-third'), 1, { cycle: { y: [50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);

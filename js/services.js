@@ -25,6 +25,12 @@ class TabItem {
         const items = document.querySelectorAll('.tab-item')
         Array.from(items).forEach(cb => cb.classList.remove('tab-item-selected'))
         this.element.classList.add('tab-item-selected')
+        TweenMax.staggerFrom('div.text p', 1, {
+            cycle: {
+                x: [100, -100],
+            }, autoAlpha: 0, ease: Power2.easeInOut
+        }, 0.1);
+        TweenMax.from('div.tab-item img', 1, {opacity: 0});
     }
 }
 
