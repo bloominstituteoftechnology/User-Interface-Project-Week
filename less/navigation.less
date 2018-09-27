@@ -1,0 +1,108 @@
+header {
+  .flex(row, space-between);
+  background: @nav-blue;
+  padding: 12px 8%;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  max-width: 1024px;
+  z-index: 2;
+
+  @media screen {
+    padding: 12px 4.5%;
+    letter-spacing: 2.5px;
+  }
+  .logo {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: @white;
+    margin: 1px 0 0 27px;
+    cursor: pointer;
+    letter-spacing: 0px;
+
+    @media @phone {
+      margin-left: 0;
+    }
+
+    a {
+      color: @white;
+      text-decoration: none;
+
+      &:hover {
+        color: @dark-gray;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  // Menu Button
+  .hamburger {
+    margin: 3px 26px 0 0;
+    height: 21px;
+    cursor: pointer;
+
+    @media @phone {
+      margin-right: 0;
+    }
+  }
+
+  .hamburger-close {
+    display: none;
+    height: 25px;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+.expanded {
+  z-index: 2;
+  background-color: @nav-blue;
+  height: 100vh;
+  width: 100vw;
+  padding: 22px 6.5%;
+  position: fixed;
+  opacity: 0.95;
+
+  .hamburger {
+    display: none;
+  }
+
+  .hamburger-close {
+    display: inline-block;
+    opacity: 1;
+  }
+
+  nav {
+    display: block;
+    position: absolute;
+    top: 18%;
+    letter-spacing: 0px;
+    // padding: 0px 32.5%;
+    padding: 0px 30%;
+    opacity: 1;
+
+    @media @phone {
+      padding: 0 25%;
+    }
+
+    @media (max-width: 350px) {
+      padding: 0 15%;
+    }
+
+    a {
+      color: @white;
+      text-decoration: none;
+      font-size: 4.8rem;
+      font-weight: bold;
+      line-height: 85px;
+      opacity: 1;
+
+      &:hover {
+        color: @dark-gray;
+      }
+    }
+  }
+}
