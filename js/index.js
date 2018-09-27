@@ -79,12 +79,14 @@ class TabLink {
         // Deselect the current selected tab, if any
         this.parent.deselectCurrent();
 
-        // Select this tab and its content-child
-        this.element.classList.add("selected-tab");
-        this.content.select();
+        function finishSelecting(target) {
+            target.element.classList.add("selected-tab");
+            target.content.select();
+            target.parent.redefineSelectedTab(target);
+        }
 
-        // Report to the controller that this tab is now selected
-        this.parent.redefineSelectedTab(this);
+        // Select this tab and its content-child
+        setTimeout(finishSelecting(this), 1050);
     }
 
     deselect() {
@@ -102,10 +104,27 @@ class TabContent {
 
     select() {
         this.element.classList.add("selected-tab-content");
+        TweenLite.fromTo(this.element, 1, {
+                x: 700, 
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1
+        });
     }
 
     deselect() {
-        this.element.classList.remove("selected-tab-content");
+        TweenLite.fromTo(this.element, 1, {
+                x: 0,
+                opacity: 1
+            }, {
+            x: -700,
+            opacity: 0,
+            onComplete: function() {
+                this.element.classList.remove("selected-tab-content");
+            }
+        })
+        // this.element.classList.remove("selected-tab-content");
     }
 }
 
