@@ -1,6 +1,5 @@
 //Menu Toggle
 const toggleMenu = () => {
-    console.log('menu',menu);
     menu.classList.add('open-menu');
     xButton.classList.add('show-x-button');
     menuButton.classList.add('hide-menu-button');
@@ -38,6 +37,9 @@ class TabLink {
     this.cards = document.querySelectorAll(`.card[data-tab='${this.tabData}']`);
     this.cards = Array.from(this.cards).map( card => new TabCard(card));
     this.element.addEventListener('click', () => {this.selectTab() });
+    window.addEventListener("load", function(event) {
+      tabs[0].selectTab();
+    });
   }
 
   selectTab(){
@@ -65,5 +67,52 @@ class TabCard {
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map( tab => new TabLink(tab));
 
-tabs[0].selectTab();
+//Select tabNavigator initial loading tab
+
+
+//Carousel
+
+class Carousel {
+  constructor(element){
+      this.element = element;
+      this.rightButton = element.querySelector('.right');
+      this.leftButton = element.querySelector('.left');
+      this.currentIndex = 0;
+      this.images = element.querySelectorAll('img');
+      this.images[0].style = 'display: flex';
+      this.leftButton.addEventListener('click', () => {this.scrollLeft()})
+      this.rightButton.addEventListener('click', () => { this.scrollRight() })
+  }
+
+  scrollLeft(){
+      this.images[this.currentIndex].style = 'display: none';
+      if(this.currentIndex === 0){
+          this.currentIndex = this.images.length - 1
+      } else {
+          this.currentIndex = this.currentIndex - 1
+      }
+      this.images[this.currentIndex].style = 'display: flex';
+  }
+
+  scrollRight(){
+      this.images[this.currentIndex].style = 'display: none';
+      if (this.currentIndex === this.images.length - 1) {
+          this.currentIndex = 0
+      } else {
+          this.currentIndex = this.currentIndex + 1
+      }
+      this.images[this.currentIndex].style = 'display: flex';
+  }
+}
+
+let carousel = document.querySelector('.carousel');
+carousel = new Carousel(carousel);
+
+//Submit button
+
+// let submitButton = document.querySelector('.submit');
+// submitButton.addEventListener('click', (e) => {
+//   alert('Thanks for your input! We will be in touch.')
+//   e.preventDefault();
+// });
 
