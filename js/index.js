@@ -51,3 +51,33 @@ class TabContent {
 
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(tab => new Tab(tab));
+
+// Carousel
+
+class Carousel {
+    constructor(element){
+        this.element = element;
+        this.left = document.querySelector('.left');
+        this.right = document.querySelector('.right');
+
+        this.left.addEventListener('click', () => {this.decrement()});
+        this.right.addEventListener('click', () => {this.increment()});
+
+        this.imgs = Array.from(this.element.querySelectorAll('img'));
+        this.currentIndex = -1;
+        this.increment();
+    }
+   increment() {
+       this.currentIndex === 3 ? this.currentIndex = 0 : this.currentIndex += 1;
+       this.imgs.forEach(img => { img.classList.add('hidden') });
+       this.imgs[this.currentIndex].classList.remove('hidden');
+   }
+   decrement() {
+        this.currentIndex === 0 ? this.currentIndex = 3 : this.currentIndex -= 1;
+        this.imgs.forEach(img => { img.classList.add('hidden') });
+        this.imgs[this.currentIndex].classList.remove('hidden');
+    }
+}
+
+let carousel = document.querySelector('.carousel');
+carousel = new Carousel(carousel);
