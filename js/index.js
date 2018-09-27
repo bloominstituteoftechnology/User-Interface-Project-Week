@@ -13,8 +13,8 @@ if(img.src === 'http://127.0.0.1:5500/img/nav-hamburger.png') {
   img.src = 'img/nav-hamburger.png'
 }
 
-
 });
+
 
 
 ///Tabs
