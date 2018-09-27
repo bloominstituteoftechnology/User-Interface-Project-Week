@@ -79,6 +79,7 @@ menuBtn.addEventListener("click", event => {
 // });
 
 // Tab Nav Constructor
+
 class TabLink {
   constructor(tab) {
     this.tab = tab;
@@ -116,7 +117,7 @@ class Card {
 
 let tabs = document.querySelectorAll(".tab");
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
-
+console.log(tabs);
 tabs[1].selectTab();
 
 // const tweenMenu = TweenMax.fromTo(
@@ -137,6 +138,7 @@ let leftButton = carousel.firstElementChild;
 let rightButton = carousel.lastElementChild;
 let images = carousel.querySelectorAll(".slide");
 let index = 0;
+console.log(images);
 
 // window.addEventListener("load", () => {
 //   TweenMax.from(".slide__text", 1, { autoAlpha: 0 });
@@ -144,10 +146,20 @@ let index = 0;
 
 images[index].style.display = "block";
 rightButton.addEventListener("click", () => {
+  console.log("right button clicked!");
   if (index === 3) {
-    index = 0;
+    index = -1;
   }
   images.forEach(image => (image.style.display = "none"));
   images[++index].style.display = "block";
+  TweenMax.from(images[index], 1, { opacity: 0 });
+});
+leftButton.addEventListener("click", () => {
+  console.log("right button clicked!");
+  if (index === 0) {
+    index = 4;
+  }
+  images.forEach(image => (image.style.display = "none"));
+  images[--index].style.display = "block";
   TweenMax.from(images[index], 1, { opacity: 0 });
 });
