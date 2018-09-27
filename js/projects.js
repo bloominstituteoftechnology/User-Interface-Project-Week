@@ -35,11 +35,18 @@ class Carousel {
     this.updateFlexOrder(imagesArr);
     this.images[1].classList.add("active");
     let allContent = document.querySelectorAll('.description');
-    allContent.forEach(item =>
-    item.classList.remove('active-project'));
+    allContent.forEach(item => {
+      item.classList.remove('active-project');
+      item.classList.remove('animated');
+      item.classList.remove('flipInX');
+    }
+    );
+
     let data = this.images[1].dataset.project;
     let content = document.querySelector(`.description[data-project='${data}']`);
     content.classList.add('active-project');
+    content.classList.add('animated');
+    content.classList.add('flipInX');
   };
 
   //does the opposite of changeLeft - shifts the first item out of the array and pushes it onto the end of the array before calling updateFlexOrder. Current image is still index 1.
@@ -57,14 +64,14 @@ class Carousel {
     allContent.forEach(item =>{
     item.classList.remove('active-project');
     item.classList.remove('animated');
-    item.classList.remove('fadeIn');
+    item.classList.remove('flipInX');
     }
     );
     let data = this.images[1].dataset.project;
     let content = document.querySelector(`.description[data-project='${data}']`);
     content.classList.add('active-project');
     content.classList.add('animated');
-    content.classList.add('fadeIn');
+    content.classList.add('flipInX');
   }
 }; //end class
 
