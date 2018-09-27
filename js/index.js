@@ -2,14 +2,17 @@
 const open = document.querySelector(".open-button");
 const close = document.querySelector(".close-button");
 const display = document.querySelector(".display");
+const logo = document.querySelector(".logo-display");
 open.addEventListener("click", () => {
     display.style.display = "block";
     open.style.display = "none";
+    logo.style.display = "none";
 
 });
 close.addEventListener("click", () => {
     display.style.display = "none";
     open.style.display = "block";
+    logo.style.display = "block";
 });
 
 class TabLink {
