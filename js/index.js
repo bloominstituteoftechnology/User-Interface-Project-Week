@@ -30,29 +30,39 @@ window.addEventListener("load", () => {
 // Menu Button
 const menuBtn = document.querySelector(".menu-btn");
 const header = document.querySelector("header");
-const expand = function() {
-  TweenMax.from(".expanded", 0.3, { y: -800, opacity: 0 });
-};
+// const expand = function() {
+//   TweenMax.from(".expanded", 0.3, { y: -800, opacity: 0 });
+// };
 
-// let menu = new TimelineMax();
-// menu.reversed(true);
-// menu({ paused: true, reversed: true });
+let menu = new TimelineMax({ paused: true, reversed: true });
+console.log(menu);
 
-// menu
-//   .from(".expanded", 0.3, { y: -800, opacity: 0 })
-//   .from(".nav", 0.5, { autoAlpha: 0 });
+// menu.to(".expanded", 0.3, { height: "100vh", opacity: 1 });
 
-// function menuToggle() {
-//   // menu.reversed() ? menu.play() : menu.reverse();
-//   menu.reversed(!menu.reversed());
-// }
+console.log(menu.reversed());
+function menuToggle() {
+  menu.reversed() ? menu.play() : menu.reverse();
+  // menu.reversed(!menu.reversed());
+}
+
+// menuBtn.addEventListener("click", menuToggle());
 
 menuBtn.addEventListener("click", event => {
   event.stopPropagation();
   header.classList.toggle("expanded");
-  expand();
-  expand.reversed(true);
-  console.log(expand.reversed());
+  TweenMax.from(".expanded", 0.3, { y: -800, opacity: 0 });
+
+  // // Attempt 50ish
+  //   if (menu.reversed() === true) {
+  //     menu.from(".expanded", 0.3, { y: -800, opacity: 0 });
+  //   } else {
+  //     menu.from(".expanded", 0.3, { y: -800, opacity: 0 }).reverse();
+  //   }
+  //   menu.from(".expanded", 0.3, { y: -800, opacity: 0 });
+
+  // expand();
+  // expand.reversed(true);
+  // console.log(expand.reversed());
   // TweenMax.from("nav", 0.5, {
   //   autoAlpha: 0,
   //   delay: 0.3

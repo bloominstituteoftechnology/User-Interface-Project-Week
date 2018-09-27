@@ -24,7 +24,7 @@ rightButton.addEventListener("click", () => {
   images.forEach(image => (image.style.display = "none"));
   images[++index].style.display = "block";
   //   TweenMax.from(images[index], 1, { opacity: 0 });
-  tl.from(images[index], 1, { opacity: 0 }).from(
+  tl.from(images[index], 1.4, { opacity: 0 }).from(
     ".slide__text",
     0.8,
     {
@@ -41,7 +41,7 @@ leftButton.addEventListener("click", () => {
   images.forEach(image => (image.style.display = "none"));
   images[--index].style.display = "block";
   //   TweenMax.from(images[index], 1, { opacity: 0 });
-  tl.from(images[index], 1, { opacity: 0 }).from(
+  tl.from(images[index], 1.4, { opacity: 0 }).from(
     ".slide__text",
     0.8,
     {
