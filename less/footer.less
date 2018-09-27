@@ -1,59 +1,89 @@
 .footer{
     width: @100perWidth;
-    height: 300px;
+    height: 35vh;
     margin-top: 100px;
     background-color: @footerColor;
-    .flexing-boxes(row, wrap, center);
-    align-items: center;
     .generalFonts(@footerFontSize, @footerFontColor, @fontReg, @footerLineHeight);
-    
 
+    @media(max-width: @mobileBreak450){
+        height: 90vh;
+    }
+    
     .footer-content{
         max-width: @contentMaxWidth;
         width: @100perWidth;
-        margin: 0 auto;
-        display: flex;
-        .flexing-boxes(columns, nowrap, space-evenly);
+        margin: 50px auto;
+        .flexing-boxes(row, wrap, space-between);
+        align-content: center;
+
+        @media(max-width: @mobileBreak450){
+            max-width: @mobileMaxWidth;
+            .flexing-boxes(row, wrap);
+        }
+
+        .home-sub-heading{
+            margin: 50px 0 20px 0;
+            .generalFonts(@footerHeadingSize, @footerFontColor, @fontBold, @footerHeaderLH);
+
+            @media(max-width: @mobileBreak450){
+                max-width: @mobileMaxWidth;
+                .flexing-boxes(row, wrap);
+            }
+    
+        }
+
+        .address-heading{
+            margin: 50px  0 20px 0;
+            .generalFonts(@footerHeadingSize, @footerFontColor, @fontBold, @footerHeaderLH);
+            @media(max-width: @mobileBreak450){
+                margin: 20px 0;
+            }
+            
+        }
 
         .footer-email{
-            width: @100perWidth;
-            margin-right: 10px;
+            width: 30%;
+            @media(max-width: @mobileBreak450){
+                width: @100perWidth;
+            }
 
             .footer-input-email{
                 width: @100perWidth;
-                padding: 4%;
-                margin: 10px 0;
+                padding: 5px; 
                 border-radius: 5px;
             }
 
-            .disclosure{
-                font-size: .75rem;
+            .footer-input-email[placeholder]{
+                .generalFonts(@fontSizeReg);
             }
-        }
 
-        h3{
-            margin: 20px 0;
-            .generalFonts(@footerHeadingSize, @footerFontColor, @fontReg, @footerHeaderLH);
+            .disclosure{
+                margin: 10px 0;
+                .generalFonts(.8rem, @footerFontColor);
+            }
         }
 
         .address-content{
-            width: 80%;
-            margin: 0;
-            .flexing-boxes(row, nowrap, space-evenly);
-            
-            .address{
-                width: 70%;
-                margin-left: 90px;
-                padding: 0;
-            }
+            width: 20%;
+            margin-left: 3%;
+           
+            @media(max-width: @mobileBreak450){
+                width: 100%;
+                margin: 0;
+            }  
         }
     }
 
     .copyright{
-        max-width: @maxWidth;
+        max-width: @contentMaxWidth;
         width: @100perWidth;
-        margin-top: 40px;
+        margin: 0 auto;
         text-align: center;
+
+        @media(max-width: @mobileBreak450){
+            max-width: @mobileMaxWidth;
+            text-align: left;
+        }
     }
     
 }
