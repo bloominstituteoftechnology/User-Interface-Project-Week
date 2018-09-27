@@ -7,16 +7,34 @@ const closeNav = document.querySelector(".close-nav");
 const navContent = document.querySelector(".open-nav");
 
 function toggleNav() {
-    navContent.classList.toggle("hidden");
 
     if (navContent.classList.contains("hidden")) {
-        navHamburger.style.display = "block";
-        closeNav.style.display = "none";
-        sessionStorage.setItem("openNav", "false");
-    } else {
         navHamburger.style.display = "none";
         closeNav.style.display = "block";
         sessionStorage.setItem("openNav", "true");
+        navContent.classList.toggle("hidden");
+        TweenLite.fromTo(navContent, 1.5,
+            {
+                opacity: 0
+            }, {
+                opacity: 0.97
+            }
+        );
+    } else {
+        navHamburger.style.display = "block";
+        closeNav.style.display = "none";
+        sessionStorage.setItem("openNav", "false");
+        TweenLite.fromTo(navContent, 1.5,
+            {
+                opacity: 0.97
+            }, {
+                opacity: 0,
+                onComplete: function() {
+                    navContent.classList.toggle("hidden");            
+                }
+            }
+        );
+        // navContent.classList.toggle("hidden");
     }
 }
 
@@ -38,13 +56,15 @@ class Tabs {
     constructor(element) {
         this.element = element;
 
-        // Gather all tab links into a child item
-        this.links = this.element.querySelectorAll(".tab-link");
-        this.links = Array.from(this.links).map( link => new TabLink(link, this) );
-        
-        // Select the first tab by default
-        if (this.links) { // (In case there are no tabs on the page)
-            this.links[0].select();
+        if (this.element) {
+            // Gather all tab links into a child item
+            this.links = this.element.querySelectorAll(".tab-link");
+            this.links = Array.from(this.links).map( link => new TabLink(link, this) );
+            
+            // Select the first tab by default
+            if (this.links) { // (In case there are no tabs on the page)
+                this.links[0].select();
+            }
         }
     }
 
