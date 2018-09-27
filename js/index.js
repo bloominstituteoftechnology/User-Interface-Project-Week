@@ -90,9 +90,13 @@ class Card {
         this.element = element;
     }
 
+    // display correct card when a tab is clicked
     select(){
         let cards =  document.querySelectorAll('.card');
+     // move all cards left -100% so they won't be displayed
         Array.from(cards).forEach((card) => TweenLite.to(card, 0, {left:"-100%"}));
+    
+        // display correct card
         TweenLite.to(this.element, 0, {left:"5%"})
        
     }
@@ -107,15 +111,17 @@ class Carousel {
         this.cards = this.element.querySelectorAll('.card');
         this.maxCardNum = this.cards.length;
         this.cards[this.currentCard].style.left = "5%";
+        this.initiate();
      }
 
      rightClicked() {
         let newNum = this.currentCard + 1;
         if (newNum == this.maxCardNum )
             newNum = 0; 
-    
-        TweenLite.fromTo(this.cards[this.currentCard], 2,  {left :"5%"}, {left:"100%"} );
-        TweenLite.fromTo(this.cards[newNum], 2, {left :"-100%"}, {left:"5%"} );
+  
+        // slide current card to right and slide new card in from left
+        TweenLite.fromTo(this.cards[this.currentCard], 1.3,  {left :"5%"}, {left:"100%"} );
+        TweenLite.fromTo(this.cards[newNum], 1.3, {left :"-100%"}, {left:"5%"} );
     
         this.currentCard = newNum;  
 
@@ -128,63 +134,26 @@ class Carousel {
             newNum = this.maxCardNum - 1;
  
             this.cards[newNum].classList.remove('disappear')
-            TweenLite.fromTo(this.cards[this.currentCard], 2,  {left :"5%"}, {left:"-100%"} );
-            TweenLite.fromTo(this.cards[newNum], 2, {left :"100%"}, {left:"5%"} );
+            TweenLite.fromTo(this.cards[this.currentCard], 1.3,  {left :"5%"}, {left:"-100%"} );
+            TweenLite.fromTo(this.cards[newNum], 1.3, {left :"100%"}, {left:"5%"} );
           
         this.currentCard = newNum;   
         tabs[this.currentCard].select();
       }
 
       initiate() {
-        //    for (let i = 0; i < this.maxCardNum; i++){
-        //     TweenLite.set(this.cards[i], {left: "-100%"});
-        //    }
-        // TweenLite.fromTo(this.cards[newNum], 2, {x :-1000}, {x:0} );
-        // TweenLite.set(this.cards[newNum], {left: "-100%"});
             this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
             this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
-            // slideCard(this, 0, -1, 0);
         }
 }
-
-// function slideCard(carousel, NextCard, prevCard,direction){
-
-
-//     var direction = "next";
-// 		if (_direction != null) {
-// 			direction = _direction;
-// 		}
-// 		if (direction == "next") {
-// 			TweenMax.to($prevSlide, time, {
-// 				left: "-100%"
-// 			});
-// 			TweenMax.fromTo($currentSlide, time, {
-// 				left: "100%"
-// 			}, {
-// 				left: "0"
-// 			});
-// 		} else {
-// 			TweenMax.to($prevSlide, time, {
-// 				left: "100%"
-// 			});
-// 			TweenMax.fromTo($currentSlide, time, {
-// 				left: "-100%"
-// 			}, {
-// 				left: "0"
-// 			});
-// 		}
-
-// 	}
-
 
 
 let carousel = document.querySelector('.cards-container');
 carousel = new Carousel(carousel);
-carousel.initiate();
+
 
 
 let tabs = document.querySelectorAll('.tab');
-
 tabs = Array.from(tabs).map((tab) => new Tab(tab));
 
 
