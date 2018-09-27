@@ -21,17 +21,17 @@ const blocks = document.querySelector('.blocks');
 
 const checkImages = function() {
     if (window.screen.availWidth > 500) {
-      imgOne.src = "./img/home/home-img-1.png";
-      imgTwo.src = "./img/home/home-img-2.png";
-      villas.src = "./img/home/home-villas-img.png";
-      outskirts.src = "./img/home/home-outskirts-img.png";
-      blocks.src = "./img/home/home-the-blocks-img.png";
+      imgOne.src = "../img/home/home-img-1.png";
+      imgTwo.src = "../img/home/home-img-2.png";
+      villas.src = "../img/home/home-villas-img.png";
+      outskirts.src = "../img/home/home-outskirts-img.png";
+      blocks.src = "../img/home/home-the-blocks-img.png";
     } else {
-      imgOne.src = "./img/home/home-mobile-img-1.png";
-      imgTwo.src = "./img/home/home-mobile-img-2.png";
-      villas.src = "./img/home/home-mobile-villas-img.png";
-      outskirts.src = "./img/home/home-mobile-outskirts-img.png";
-      blocks.src = "./img/home/home-mobile-the-blocks-img.png";
+      imgOne.src = "../img/home/home-mobile-img-1.png";
+      imgTwo.src = "../img/home/home-mobile-img-2.png";
+      villas.src = "../img/home/home-mobile-villas-img.png";
+      outskirts.src = "../img/home/home-mobile-outskirts-img.png";
+      blocks.src = "../img/home/home-mobile-the-blocks-img.png";
     }
 }
 
