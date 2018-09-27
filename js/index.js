@@ -75,7 +75,9 @@ tabs = Array.from(tabs).map( tab => new TabLink(tab));
 class Carousel {
   constructor(element){
       this.element = element;
+      console.log('ement',element);
       this.rightButton = element.querySelector('.right');
+      console.log('right',this.rightButton);
       this.leftButton = element.querySelector('.left');
       this.currentIndex = 0;
       this.images = element.querySelectorAll('img');
