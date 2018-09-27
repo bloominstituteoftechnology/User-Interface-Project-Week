@@ -30,42 +30,46 @@ const closeNav = () => {
 
 let controller = new ScrollMagic.Controller();
 
-let tween = TweenMax.staggerFrom(('div.left-text'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1);
-
 let scene1 = new ScrollMagic.Scene({
-    triggerElement: "#trigger-element1"
+    triggerElement: "#trigger-element1",
+    reverse: false,
 })
-    .setTween(tween)
+    .setTween(TweenMax.staggerFrom(('div.left-text'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 let scene2 = new ScrollMagic.Scene({
-    triggerElement: "#trigger-element2"
+    triggerElement: "#trigger-element2",
+    // reverse: false,
 })
     .setTween(TweenMax.staggerFrom(('div.right-text'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 let scene6 = new ScrollMagic.Scene({
-    triggerElement: "#trigger-element6"
+    triggerElement: "#trigger-element6",
+    //  reverse: false,
 })
     .setTween(TweenMax.staggerFrom(('section.bottom-content .top-h2'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 let scene3 = new ScrollMagic.Scene({
-    triggerElement: "#trigger-element3"
+    triggerElement: "#trigger-element3",
+    //  reverse: false,
 })
     .setTween(TweenMax.staggerFrom(('div.top-third'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 
 let scene4 = new ScrollMagic.Scene({
-    triggerElement: "#trigger-element4"
+    triggerElement: "#trigger-element4",
+    //  reverse: false,
 })
     .setTween(TweenMax.staggerFrom(('div.middle-third'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 
 let scene5 = new ScrollMagic.Scene({
-    triggerElement: "#trigger-element5"
+    triggerElement: "#trigger-element5",
+    // reverse: false,
 })
     .setTween(TweenMax.staggerFrom(('div.bottom-third'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
