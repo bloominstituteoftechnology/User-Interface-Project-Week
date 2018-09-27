@@ -1,1 +1,631 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: Roboto, Arial, sans-serif;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+.menuContent {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+.menuContent .menuClose {
+  display: flex;
+  background-color: #99a4af;
+  width: 100%;
+  padding: 1% 9%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .menuContent .menuClose {
+    padding: 3% 9%;
+  }
+}
+.menuContent h1 {
+  color: white;
+  font-size: 2rem;
+}
+@media (max-width: 500px) {
+  .menuContent h1 {
+    font-size: 3rem;
+  }
+}
+.menuButton {
+  cursor: pointer;
+  object-fit: contain;
+}
+.otherMenuButton {
+  content: url("https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/nav-hamburger-close.png");
+}
+.menuHidden {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.9;
+  line-height: 2;
+  justify-content: center;
+}
+.menuOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  background-color: #99a4af;
+}
+.menuOptions .menuLink {
+  width: 10%;
+  text-align: center;
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+}
+.menuOptions .menuLink:hover {
+  color: #504545;
+}
+.homePageContent .homeText {
+  background-image: url("https://raw.githubusercontent.com/LambdaSchool/User-Interface-Project-Week/master/img/home/home-jumbotron.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  font-size: 5rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: white;
+  padding: 23% 0% 7% 8%;
+}
+@media (max-width: 500px) {
+  .homePageContent .homeText {
+    line-height: 1.25;
+    padding: 14% 0% 9% 6%;
+  }
+}
+.upperContent {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  .upperContent p {
+    font-size: 2.2rem;
+  }
+}
+.upperContent .sjArch {
+  display: flex;
+}
+@media (max-width: 500px) {
+  .upperContent .sjArch {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.upperContent .sjArch .sjArchContent {
+  flex-direction: column;
+  justify-content: center;
+  padding: 6% 0%;
+  margin-right: 3%;
+}
+@media (max-width: 500px) {
+  .upperContent .sjArch .sjArchContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.25;
+    padding: 4%;
+    margin-top: -10%;
+  }
+}
+.upperContent .sjArch .sjArchContent h3 {
+  font-weight: bold;
+  margin: 8% 0%;
+  font-size: 2rem;
+}
+@media (max-width: 500px) {
+  .upperContent .sjArch .sjArchContent h3 {
+    font-size: 3rem;
+  }
+}
+.upperContent .sjArch .button {
+  border: 1px solid black;
+  max-width: 43%;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6% 0%;
+}
+@media (max-width: 500px) {
+  .upperContent .sjArch .button {
+    width: 90%;
+    max-width: 105%;
+  }
+}
+.upperContent .archIMG {
+  padding: 4% 0%;
+}
+@media (max-width: 500px) {
+  .upperContent .archIMG {
+    padding: 5%;
+    content: url("https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/home/home-mobile-img-1.png");
+  }
+}
+.futureDesign {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .futureDesign {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.futureDesign .futureContent {
+  flex-direction: column;
+  justify-content: center;
+  order: 1;
+  margin-left: 3%;
+  padding: 6% 0%;
+}
+@media (max-width: 500px) {
+  .futureDesign .futureContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.25;
+    padding: 4%;
+    margin-top: -10%;
+  }
+}
+.futureDesign .futureContent h3 {
+  font-weight: bold;
+  margin: 8% 0%;
+  font-size: 2rem;
+}
+@media (max-width: 500px) {
+  .futureDesign .futureContent h3 {
+    font-size: 3rem;
+  }
+}
+.futureDesign .button {
+  border: 1px solid black;
+  max-width: 43%;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6% 0%;
+}
+@media (max-width: 500px) {
+  .futureDesign .button {
+    width: 90%;
+    max-width: 105%;
+  }
+}
+.futureDesign .button .futureIMG {
+  padding: 4% 0%;
+}
+@media (max-width: 500px) {
+  .futureDesign .button .futureIMG {
+    padding: 5%;
+    content: url("https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/home/home-mobile-img-2.png");
+  }
+}
+.middleContent {
+  display: flex;
+  flex-direction: column;
+}
+.middleContent h4 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 5% 0%;
+}
+@media (max-width: 500px) {
+  .middleContent h4 {
+    font-size: 3rem;
+  }
+}
+.middleContent p {
+  margin: 6% 30%;
+}
+@media (max-width: 500px) {
+  .middleContent p {
+    font-size: 2.2rem;
+    margin: 6% 7%;
+  }
+}
+.middleContent .villas h5 {
+  background-color: #d8d8d8;
+  padding: 3%;
+  margin-left: 70%;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 5px;
+  position: relative;
+  z-index: 5;
+  margin-top: -5%;
+}
+@media (max-width: 500px) {
+  .middleContent .villas h5 {
+    margin: -5% 5% 0% 5%;
+    padding: 7%;
+    font-size: 3rem;
+    font-weight: normal;
+  }
+}
+.middleContent .villas .villasIMG {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 500px) {
+  .middleContent .villas .villasIMG {
+    content: url("https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/home/home-mobile-villas-img.png");
+  }
+}
+.middleContent .outskirts h5 {
+  background-color: #d8d8d8;
+  padding: 3%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 5px;
+  position: relative;
+  z-index: 5;
+  margin-top: -5%;
+}
+@media (max-width: 500px) {
+  .middleContent .outskirts h5 {
+    margin: -5% 5% 0% 5%;
+    padding: 7%;
+    width: 90%;
+    font-size: 3rem;
+    font-weight: normal;
+  }
+}
+.middleContent .outskirts .outskirtsIMG {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 500px) {
+  .middleContent .outskirts .outskirtsIMG {
+    content: url("https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/home/home-mobile-outskirts-img.png");
+  }
+}
+.middleContent .blocks h5 {
+  background-color: #d8d8d8;
+  padding: 3%;
+  margin-left: 70%;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 5px;
+  position: relative;
+  z-index: 5;
+  margin-top: -5%;
+}
+@media (max-width: 500px) {
+  .middleContent .blocks h5 {
+    margin: -5% 5% 0% 5%;
+    padding: 7%;
+    font-size: 3rem;
+    font-weight: normal;
+  }
+}
+.middleContent .blocks .blocksIMG {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 500px) {
+  .middleContent .blocks .blocksIMG {
+    content: url("https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/home/home-mobile-the-blocks-img.png");
+  }
+}
+.footerContent {
+  background-color: #828282;
+  display: flex;
+  padding: 4% 0% 2% 7%;
+  justify-content: space-evenly;
+}
+@media (max-width: 500px) {
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.footerContent .email {
+  color: #FEFEFE;
+  font-size: 1.6rem;
+  width: 30%;
+}
+@media (max-width: 500px) {
+  .footerContent .email {
+    width: 92%;
+  }
+}
+.footerContent .email h6 {
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .footerContent .email h6 {
+    font-size: 2.2rem;
+  }
+}
+.footerContent .email p {
+  font-size: 1.2rem;
+}
+.footerContent .email .emailBox {
+  background-color: #FFFFFF;
+  color: #B8B8B8;
+  padding: 3%;
+  font-size: 1.6rem;
+  margin: 5% 0% 4% 0%;
+  border-radius: 4px;
+}
+.footerContent .locations {
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: space-evenly;
+  width: 68%;
+}
+@media (max-width: 500px) {
+  .footerContent .locations {
+    flex-direction: column;
+    margin: 4% 0%;
+    font-size: 1.6rem;
+  }
+}
+.footerContent .locations h6 {
+  color: #FEFEFE;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.footerContent .locations p {
+  color: #CACACA;
+}
+.footerContent .locations .newYork {
+  line-height: 1.5;
+  margin: 1%;
+}
+.footerContent .locations .florida {
+  line-height: 1.5;
+  margin: 1%;
+}
+@media (max-width: 500px) {
+  .footerContent .locations .florida {
+    margin: 7% 0%;
+  }
+}
+.footerContent .locations .cali {
+  line-height: 1.5;
+  margin: 1%;
+}
+.copyright {
+  color: #DCDCDC;
+  background-color: #828282;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 1.2rem;
+}
+@media (max-width: 500px) {
+  .copyright {
+    justify-content: flex-start;
+    padding-left: 7%;
+  }
+}
+.servicesHeader {
+  background-image: url("https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/services/services-jumbotron.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  padding: 16% 0% 8% 9%;
+}
+.servicesHeader h1 {
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+}
+.serviceParagraph {
+  line-height: 1.3;
+  margin-bottom: 4%;
+}
+.tabsContainer {
+  width: 100%;
+}
+.tabsContainer .tabButtons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  justify-content: space-between;
+}
+.tabsContainer .tabButtons .tabButton {
+  border: solid black 1px;
+  padding: 1% 2%;
+  margin-bottom: 3%;
+  font-weight: bold;
+  cursor: pointer;
+}
+.tabsContainer .tabButtons .tabButtonhover {
+  background-color: #5e9fb9;
+  color: white;
+}
+.tabsContainer .tabButtons .tabButtonSelected {
+  border: solid black 1px;
+  padding: 1% 2%;
+  margin-bottom: 3%;
+  font-weight: bold;
+  background-color: #5e9fb9;
+}
+.tabsContainer .tabContents .tabContent {
+  display: none;
+  align-items: flex-end;
+  margin-bottom: 10%;
+}
+.tabsContainer .tabContents .tabContent .tabRightText {
+  display: flex;
+  flex-direction: column;
+  padding: 3% -1% 0% 1%;
+}
+.tabsContainer .tabContents .tabContent .tabRightText .tabTitle {
+  font-weight: bold;
+  margin: 8% 0%;
+  font-size: 2rem;
+}
+.tabsContainer .tabContents .tabContent .tabRightText p {
+  line-height: 1.3;
+  width: 100%;
+}
+.tabsContainer .tabContents .tabContent .tabRightText .tabIMG {
+  width: 45%;
+}
+.tabsContainer .tabContents .tabContentSelected {
+  display: flex;
+}
