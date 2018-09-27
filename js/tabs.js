@@ -12,6 +12,10 @@ class Tab{
        
         this.tabItem = new TabContent(this.dataItem);
 
+        if(this.tabElement.dataset.tab == 1){
+            this.tabElement.classList.add("tabs-btn-active");
+        }
+
         this.tabElement.addEventListener("click", () =>{
             this.selectTab();
         });
@@ -21,9 +25,11 @@ class Tab{
         const tabBtns = document.querySelectorAll(".tabs-btn");
         tabBtns.forEach(link => {
             link.classList.remove("tabs-btn-selected");
+            link.classList.remove("tabs-btn-active");
         })
 
         this.tabElement.classList.add("tabs-btn-selected");
+        this.tabElement.classList.add("tabs-btn-active");
         this.tabItem.selectTabItem();
     }
 }
