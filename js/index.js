@@ -3,24 +3,27 @@
 
 //MENU
 class Menu {
-    constructor(element) {
-        this.element = element;
-        this.button = document.querySelector('.menu-button');
-        this.menu = document.querySelector('.menu');
-        this.button.addEventListener('click', () => {this.toggleMenu()});  //this.element? pass in argument?
+    constructor(openButton, closeButton, content) {
+        this.openButton = openButton
+        this.closeButton = closeButton
+        this.menu = content
+
+        this.openButton.addEventListener('click', () => {this.toggleMenu()});  //this.element? pass in argument?
+        this.closeButton.addEventListener('click', () => {this.toggleMenu()});
     }
     toggleMenu () {
         //console.log('before', menu.classList)
-        this.menu.classList.toggle('menu-open');  //am i naming this or need to refer to something?  need this.?
+        this.menu.classList.toggle('menu-overlay');
+        this.closeButton.classList.toggle('menu-open');  //am i naming this or need to refer to something?  need this.?
+        this.openButton.classList.toggle('hide');
         //console.log('after', menu.classList)
     }
 }
 
-let menuSelector = document.querySelectorAll('.menu');  
-console.log(menuSelector);
-let menuButton = document.querySelectorAll('.menu-button');
-menuSelector = Array.from(menuSelector).map( menu => new Menu(menu));  //map menuSelector???
-
+    let menuOpenButton = document.querySelector('.menu-button');
+    let menuCloseButton = document.querySelector('.close-button');
+    let menuContent = document.querySelector('.menu-content');  
+    let menu = new Menu(menuOpenButton, menuCloseButton, menuContent);
 
 
 //TABS
@@ -38,20 +41,24 @@ class TabLink {
         console.log(element);
         this.element = element;
         this.tabData = this.element.dataset.tab;
-        this.cards = document.querySelectorAll(`.tab-card`);
-        this.cards = Array.from(this.cards).map( card => new TabCard(card));
+        this.tabCards = document.querySelectorAll(`.tab-card`);
+        this.cards = Array.from(this.tabCards).map(card => new TabCard(card));
         this.element.addEventListener('click', () => {this.selectTab()});
     }
 
     selectTab() {
-        let tabs = document.querySelectorAll('.tab');  //dont need declaration 'let'? can reuse tabs from below?
+        let tabs = document.querySelectorAll('.tab');  //can reuse tabs from below?
         tabs.forEach( tab => {
             tab.classList.remove('active-tab');
         })
-        let cards = document.querySelectorAll('.tab-card');
-        cards.forEach(card => card.style.display = 'none');
         this.element.classList.add('active-tab');
-        this.cards.forEach( card => card.selectCard());
+
+        this.tabCards.forEach(card => card.style.display = 'none');
+        this.cards.forEach(card => {
+            if (card.element.dataset.tab === this.tabData) {
+                card.selectCard()
+            }
+        });
     }
 }
 
