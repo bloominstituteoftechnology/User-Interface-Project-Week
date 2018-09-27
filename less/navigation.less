@@ -1,0 +1,102 @@
+/* navigation*/
+
+.menuHeader {
+  @media @phone {
+    .stackContent;
+    .mobileZHeaderText;
+    left: 0;
+  }
+  width: 1024px;
+  height: 75px;
+  background-color: @navigation-bg;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 5;
+  z-index: 4;
+  .logo {
+      font-weight: bold;
+      font-size: 2.4rem;
+      color: white;
+      width: 100%;
+      margin-left: 70px;
+  }
+
+}
+
+.menu-button {
+    position: absolute;
+    right: 88px;
+    cursor: pointer;
+    z-index: 6;
+  }
+  
+  .menu {
+    @media @phone {
+      .stackContent;
+      .mobileZHeaderText;
+      display:none;
+    }
+    display: none;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
+    background-color:@navigation-bg;
+    border-left: none;
+    border-bottom: none;
+    z-index: 5; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  }
+  
+  .menu ul li {
+    list-style-type: none;
+    font-size: 32px;
+    padding: 30px 0;
+    text-align: center;
+
+  }
+  
+  .menu--open {
+    @media @phone {
+      .stackContent;
+      .mobileZHeaderText;
+      left: 0;
+      overflow: hidden;
+    }
+    display: block;
+    overflow: hidden;
+    padding-top: 15px;
+    opacity: .95;
+      ul li {
+        a{
+        text-align: left;
+        text-decoration:none;
+        font-weight: bold;
+        font-size: 4.8rem;
+        line-height: 8.5rem;
+        color: @accent-font;
+          &:hover {
+            color: @main-font;
+          }
+          }
+      }
+  }
+
+  .menuHeaderExpanded {
+    display: block;
+    width: 100%;
+    left:0px;
+    padding-top:15px;
+    opacity: .95;
+  }
+ 
+  .menuButtonExpanded {
+    display: none;
+    position: absolute;
+    right: 88px;
+    cursor: pointer;
+    z-index: 6;
+  }
