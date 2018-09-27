@@ -12,11 +12,11 @@ const openNav = () => {
     hamburger.src = "img/nav-hamburger-close.png";
     open = true;
 
-    TweenMax.staggerFrom('div.hidden li', 1, {
+    TweenMax.staggerFrom('div.hidden li', 2, {
         cycle: {
-            y: [-50],
+            y: [100, -100],
         }, autoAlpha: 0, ease: Power2.easeInOut
-    }, 0.1);
+    }, 0.2);
     navbar.style.display = 'block';
 };
 
@@ -27,6 +27,8 @@ const closeNav = () => {
 }
 
 // animations
+
+TweenMax.from('html', 3, {opacity: 0});
 
 let controller = new ScrollMagic.Controller();
 
@@ -41,7 +43,7 @@ let scene2 = new ScrollMagic.Scene({
     triggerElement: "#trigger-element2",
     // reverse: false,
 })
-    .setTween(TweenMax.staggerFrom(('div.right-text'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
+    .setTween(TweenMax.staggerFrom(('div.right-text'), 1, { cycle: { y: [50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 let scene6 = new ScrollMagic.Scene({
@@ -55,7 +57,7 @@ let scene3 = new ScrollMagic.Scene({
     triggerElement: "#trigger-element3",
     //  reverse: false,
 })
-    .setTween(TweenMax.staggerFrom(('div.top-third'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
+    .setTween(TweenMax.staggerFrom(('div.top-third'), 1, { cycle: { y: [50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 
@@ -63,7 +65,7 @@ let scene4 = new ScrollMagic.Scene({
     triggerElement: "#trigger-element4",
     //  reverse: false,
 })
-    .setTween(TweenMax.staggerFrom(('div.middle-third'), 1, { cycle: { y: [-50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
+    .setTween(TweenMax.staggerFrom(('div.middle-third'), 1, { cycle: { y: [50] }, autoAlpha: 0, ease: Power2.easeInOut }, 0.1))
     .addTo(controller);
 
 
