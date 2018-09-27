@@ -18,7 +18,7 @@
 	      width : 46%;
 	      height : 60px;
 	      color : white;
-	      background-color : #D8D8D8;
+	      background-color : #A1A8A9;
 	      display : flex;
 	      justify-content : space-between;
 	      align-items : center;
@@ -32,8 +32,9 @@
 
 	      h1 {
 	        margin : 0;
-	        font-size : 1.3rpm;
-	        font-weight : bold;
+	        .font-header(1.3rpm, bold);
+	        //font-size : 1.3rpm;
+	        //font-weight : bold;
 	        margin : 3px 0 3px 25px;
 	      }
 	      
@@ -45,11 +46,6 @@
 	      }
     }
 
-    .header-image {
-        @media @phone {
-             width : 100%; //+++++++++++++++Not accepting changes at media query +++++++++.
-        }       
-    }
     
     .menu {
           border : 1px solid black;
@@ -104,21 +100,18 @@
 		  position: relative;
 		  color: white;
 
-		  @media @phone {
-		             width : 100%; //+++++++++++++++Not accepting changes at media query +++++++++.
-		  }
-
 		  h1 {
 		    color : white;
-		    font-size : 5rpm;
-		    font-weight : bold;
+		    //font-size : 5rpm;
+		    //font-weight : bold;
+		    .font-header(5rpm, bold);
 		    position: absolute;
 		    bottom: 30px;
 		    left: 70px;
 		    line-height: 1.3;
 
 		    @media @phone {
-		          font-size : 30px; 
+		          .font-header(9rpm, bold);
 		          bottom: 20px;
 		          left: 40px;
 		    }
@@ -131,8 +124,17 @@
     	display : flex;
     	justify-content : space-around;
 
+    	@media @phone {
+    		display : block;
+    		margin : 15px;
+    	}
+
     	h2 {
     		.font-header(20px, bold);
+    		@media @phone {
+    				margin : 30px 0;
+    				font-size : 26px;
+    		}
     	}
 
     	.form-d {
@@ -142,6 +144,10 @@
 			    padding : 5px;
 			    margin-top : 5px;
 			    margin-bottom : 10px;
+			    border-radius: 6px;
+			    @media @phone {
+			    	padding : 10px;
+			    }
 			  }
 
 			  input[type = number] {
@@ -149,6 +155,11 @@
 			    padding : 5px;
 			    margin-top : 5px;
 			    margin-bottom : 10px;
+			    border-radius: 6px;
+			    @media @phone {
+			    	padding : 10px;
+			    	margin-bottom : 18px;
+			    }
 			   }
 			  
 			  input[type = submit] {
@@ -156,21 +167,30 @@
 			    padding : 5px;
 			    margin-top : 5px;
 			    margin-bottom : 10px;
+			    @media @phone {
+			    	padding : 10px;
+			    	width : 100%;
+			    	font-size : 18px;
+			    }
 			  }
 
-			  
-			  
 			  textarea {
 			    width: 100%;
 			    height: 150px;
 			    padding: 12px 20px;
 			    box-sizing: border-box;
 			    border: 2px solid #ccc;
-			    border-radius: 4px;
+			    border-radius: 6px;
 			    background-color: #f8f8f8;
 			    font-size: 16px;
 			    resize: none;
 			    margin-top : 6px;
+			}
+			label {
+				@media @phone {
+					font-size : 18px;
+					padding-botton : 10px;
+				}
 			}
 		}
 
@@ -179,13 +199,21 @@
             
             h5 {
                 font-size : 18px;
-                font-weight : bold;              
+                font-weight : bold;
+
+                @media @phone {
+                	font-size : 20px;
+                }  
             }
             
             ul {
                 li {
                   list-style : none;
                   line-height: 1.6;
+
+                  @media @phone {
+                	font-size : 18px;
+                  } 
                 }
             }
        }
