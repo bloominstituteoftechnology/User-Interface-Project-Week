@@ -78,7 +78,8 @@ html {
 
 h2 {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
+  margin-left: 0;
 }
 
 
@@ -100,6 +101,8 @@ h2 {
   z-index: 3;
   position: relative;
 
+ 
+
   .img {
     .flex(flex-end,flex-end,row);
     width: 100%;
@@ -120,7 +123,8 @@ h2 {
 }
 
 .container {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.7;
   max-width: 1024px;
   .flex(center, center, column);
   margin: 0 auto;
@@ -130,6 +134,7 @@ h2 {
   .nav-container {
     .flex(space-between, center, row);
     width: 1024px;
+    height: 50px;
     padding: 10px 0;
     font-size: 2.4rem;
     font-weight: bold;
@@ -146,6 +151,10 @@ h2 {
     a {
       margin-right: 7%;
     }
+
+    @media @phone {
+      width: 100%;
+    }
     
   }
 
@@ -155,26 +164,43 @@ h2 {
     position: relative;
     //border: 2px solid blue;
 
-    div {
+    img {
+      @media @phone {
+        content:url("../img/home/home-mobile-jumbotron.png");
+      }
+
+      width: 100%;
+    }
+
+    div.home {
       position: absolute;
-      left: 60px;
-      top: 380px;
+      left: 85px;
+      bottom: 20px;
       z-index: 100;
 
       p {
-        font-size: 5.5rem;
+        font-size: 6.4rem;
+        line-height: 7.5rem;
         font-weight: 700;
         color: #FFFFFF;
       }
+
+      @media @phone {
+        left: 50px;
+        bottom: 20px;
+      }
     }
+
+    
   }
   div.main-content {
 
     article.more-info1 {
       .flex(center,center,row);
+      margin-top: 25px;
 
       section.left {
-        width: 43%;
+        width: 40%;
         margin-right: 3%;
         //border: 2px solid red;
        
@@ -191,26 +217,49 @@ h2 {
         }
         a {
           .btn;
+
+          @media @phone {
+            width: 100%;
+          }
+        }
+
+        @media @phone {
+          width: 80%;;
         }
       }
       img.right {
-        width: 43%;
+        width: 40%;
         margin-top: 35px;
         //border: 2px solid blue;
+
+        @media @phone {
+          content:url("../img/home/home-mobile-img-1.png");
+          width: 80%;;
+        }
+      }
+
+      @media @phone {
+        .flex(center,center,column-reverse);
       }
     }
 
     article.more-info2 {
       .flex(center,center,row);
+      margin-top: 25px;
 
       img.left {
-        width: 43%;
+        width: 40%;
         //border: 2px solid red;
         margin-top: 80px;
+
+        @media @phone {
+          content:url("../img/home/home-mobile-img-2.png");
+          width: 80%;;
+        }
        
       }
       section.right {
-        width: 43%;
+        width: 40%;
         margin-top: 35px;
         margin-left: 25px;
         //border: 2px solid blue;
@@ -226,7 +275,19 @@ h2 {
         }
         a {
           .btn;
+          
+          @media @phone {
+            width: 100%;
+          }
         }
+
+        @media @phone {
+          width: 80%;;
+        }
+      }
+
+      @media @phone {
+        .flex(center,center,column);
       }
     }
     

@@ -46,7 +46,7 @@ let links = document.querySelectorAll('.category');
 
 links = Array.from(links).map(link => new TabLink(link));
 
-//links[0].selectLink();
+
 
 
 
@@ -60,3 +60,5 @@ burger.addEventListener('click', () => {
 close.addEventListener('click', () => {
     modal.style.display = 'none';
 })
+
+links[0].selectLink();
