@@ -22,9 +22,8 @@ class Tab{
 
     selectTab(){
         const tabBtns = document.querySelectorAll(".tabs-btn");
-        
         tabBtns.forEach(link => {
-          link.classList.remove("tabs-btn-selected");
+            link.classList.remove("tabs-btn-selected");
         })
 
         this.tabElement.classList.add("tabs-btn-selected");
@@ -36,6 +35,10 @@ class Tab{
 class TabContent{
     constructor(element){
         this.element = element;
+
+        if(this.element.dataset.tab == 1){
+            this.element.classList.add("tabs-item-selected");
+        }
     }
 
     selectTabItem(){
@@ -46,7 +49,6 @@ class TabContent{
         })
 
         this.element.classList.add("tabs-item-selected");
-        console.log(this.element);
     }
 }
 
