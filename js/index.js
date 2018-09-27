@@ -69,7 +69,8 @@ class Info {
 
 clickMethod() {
     let items = document.querySelectorAll('.info-container');
-
+    // let infoIMG = document.querySelector(".info-img");
+    TweenLite.from(".info-img", 1, {x:200, rotation:180, scale:0, ease:Back.easeOut, delay:.5});
     Array.from(items).forEach(item => {
         item.classList.remove('display');
     })
