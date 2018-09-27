@@ -8,15 +8,13 @@ class Menu {
         this.closeButton = closeButton
         this.menu = content
 
-        this.openButton.addEventListener('click', () => {this.toggleMenu()});  //this.element? pass in argument?
+        this.openButton.addEventListener('click', () => {this.toggleMenu()}); 
         this.closeButton.addEventListener('click', () => {this.toggleMenu()});
     }
     toggleMenu () {
-        //console.log('before', menu.classList)
         this.menu.classList.toggle('menu-overlay');
-        this.closeButton.classList.toggle('menu-open');  //am i naming this or need to refer to something?  need this.?
+        this.closeButton.classList.toggle('menu-open'); 
         this.openButton.classList.toggle('hide');
-        //console.log('after', menu.classList)
     }
 }
 
@@ -47,7 +45,7 @@ class TabLink {
     }
 
     selectTab() {
-        let tabs = document.querySelectorAll('.tab');  //can reuse tabs from below?
+        let tabs = document.querySelectorAll('.tab'); 
         tabs.forEach( tab => {
             tab.classList.remove('active-tab');
         })
