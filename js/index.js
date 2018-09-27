@@ -1,10 +1,12 @@
 // JS goes here
 let btn = document.querySelector('.nav-button');
 let navItems = document.querySelector('.nav-items');
+let carouselHeader = document.querySelector('.carousel-header');
 
 btn.addEventListener('click', () => navToggle());
 
 const navToggle =() =>{
+    carouselHeader.classList.toggle('nav-up');
     navItems.classList.toggle('active');
     if (navItems.classList.contains('active')){
     btn.src = 'img/nav-hamburger-close.png';
