@@ -16,7 +16,7 @@ function expandNavBar() {
   else {
     // navBar.classList.add('fullscreen-nav');
     TweenMax.to(navBar, 0.3, { ease: Power4.easeIn, width: '100vw', height: '100vh' });
-    links.forEach(i => TweenMax.to(i, 0.51, {delay: 0.4, ease: Bounce.easeInOut, opacity: 0.9}));
+    links.forEach(i => TweenMax.to(i, 0.41, {delay: 0.34, ease: Bounce.easeInOut, opacity: 0.9}));
     navButton.src = 'img/nav-hamburger-close.png';
     expanded = true;
   }
