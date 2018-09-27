@@ -1,6 +1,30 @@
 .width-100 {
   width: 100%;
 }
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slidein {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideinleft {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -429,30 +453,6 @@ body {
   display: flex !important;
   animation: fadein 800ms ease-in-out forwards;
 }
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes slidein {
-  0% {
-    transform: translateX(1000px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideinleft {
-  0% {
-    transform: translateX(-1000px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 .home-page .jumbotron {
   height: 100vh;
   width: 100%;
@@ -515,6 +515,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  opacity: 0;
 }
 @media (max-width: 600px) {
   .home-page .cta__content {
@@ -530,6 +531,9 @@ body {
   .home-page .cta__content--inverse {
     margin-left: 0;
   }
+}
+.home-page .cta__img {
+  opacity: 0;
 }
 @media (max-width: 600px) {
   .home-page .cta__img {
@@ -638,6 +642,14 @@ body {
 }
 .home-page .projects .project__content p:first-child {
   margin-bottom: 3rem;
+}
+.slide-in-left {
+  animation: slideinleft 500ms ease-in-out forwards;
+  animation: fadein 500ms ease-in-out forwards;
+}
+.slide-in-right {
+  animation: slidein 500ms ease-in-out forwards;
+  animation: fadein 500ms ease-in-out forwards;
 }
 .about-page .jumbotron {
   background: url('../img/about/about-jumbotron.png');

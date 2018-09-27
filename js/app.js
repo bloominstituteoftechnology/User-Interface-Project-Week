@@ -5,7 +5,8 @@ const cardText = [
 
 Vue.component('tab', {
   props: ['tab'],
-  template: '<div class="tab">{{tab.name}}</div>'
+
+  template: '<div class="tab" >{{tab.name}}</div>'
 });
 
 Vue.component('card', {
@@ -58,5 +59,19 @@ const app = new Vue({
         img: `img/services/services-tab-sustainablity-img.png`
       }
     ]
+  },
+  methods: {
+    is_active: function() {
+      this.tabs.forEach(tab => {
+        if (tab.id === 1) {
+          return true;
+        }
+      });
+    },
+    active: function() {
+      return {
+        'tab-active': this.is_active
+      };
+    }
   }
 });

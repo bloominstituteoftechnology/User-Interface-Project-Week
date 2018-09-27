@@ -62,3 +62,41 @@ window.addEventListener('resize', () => {
 //   const scrolled = window.scrollY + window.innerHeight;
 //   console.log(scrolled);
 // });
+
+function debounce(func, wait = 20, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this,
+      args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+const ctas = document.querySelectorAll('.cta');
+
+function checkSlide(e) {
+  ctas.forEach(cta => {
+    // halfway through cta
+    const slideInAt = window.scrollY + window.innerHeight;
+    // bottom of cta
+    const ctaBottom = cta.offsetTop;
+    const isHalfShown = slideInAt > cta.offsetTop;
+    const isNotScrolledPast = window.scrollY < ctaBottom;
+    if (isHalfShown && isNotScrolledPast) {
+      cta.firstElementChild.classList.add('slide-in-left');
+      cta.lastElementChild.classList.add('slide-in-right');
+    } else {
+      cta.firstElementChild.classList.remove('slide-in-left');
+      cta.lastElementChild.classList.remove('slide-in-right');
+    }
+  });
+}
+
+window.addEventListener('scroll', debounce(checkSlide));
