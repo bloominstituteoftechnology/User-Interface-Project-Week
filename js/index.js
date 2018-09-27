@@ -1,5 +1,31 @@
 // JS goes here
+class Tabnav {
+    constructor(element) {
+        this.element = element;
+        this.data = this.element.dataset.tab;
 
+        this.tabItem = document.querySelector(`.tabItem[data-tab='${this.data}']`);
+        
+
+        console.log(this.tabItem);
+    }
+}
+
+class TabItem {
+    constructor(element) {
+        this.element = element;
+    }
+
+    // select() {
+    //     const tabsItem = document.querySelectorAll()
+    // }
+}
+
+
+
+let tabs = document.querySelectorAll(".tab");
+
+Array.from(tabs).map(tab => new Tabnav(tab));
 
 // nav expanded javascript
 const hamburger = document.querySelector('.burgerMenu img');
@@ -39,4 +65,3 @@ const checkImages = function() {
     }
 }
 window.onresize = checkImages;
-
