@@ -16,7 +16,7 @@ openNav.addEventListener("click", () => {
   });
 });
 closeNav.addEventListener("click", () => {
-  TweenMax.fromTo(nav, 0.5, { y: 0 }, { y: -900 });
+  TweenMax.fromTo(nav, 0.5, { y: 0 }, { y: -1200 });
   TweenMax.to(openNav, 0.5, {
     scale: 1,
     rotation: 0
@@ -25,7 +25,7 @@ closeNav.addEventListener("click", () => {
 });
 
 home.addEventListener("click", () => {
-  TweenMax.fromTo(nav, 0.5, { y: 0 }, { y: -1000 });
+  TweenMax.fromTo(nav, 0.5, { y: 0 }, { y: -1200 });
   console.log("clicked");
 });
 
