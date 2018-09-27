@@ -1,3 +1,13 @@
+
+
+// TweenMax.to(".topSection1text", 1, {
+//     x: 300,
+//     ease:Power2.easeInOut
+// });
+
+
+
+
 class Dropdown {
     constructor(element) {
         this.element = element;

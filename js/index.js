@@ -1,6 +1,6 @@
 let selectBackground = document.querySelectorAll('.backgroundChange')
 
-
+//tablinks
 class TabLink {
     constructor(link) {
         this.link = link;
@@ -25,24 +25,10 @@ class Content {
         this.tabContent.classList.add('change');
     }
 }
-
-
+//colors
 
 
 links = Array.from(selectBackground).map( link => new TabLink(link));
 links[0].linkClick();
 
 
-//color switch function for tabs
-// let newColor = document.querySelector('.backgroundChange').style.background = "#FFF"
-
-
-// function changeColor() {
-//     if (newColor == "document.querySelector('.backgroundChange').style.background = '#FFF'") {
-//         document.querySelector('.backgroundChange').style.background = "#5E9FB9"
-//         newColor = document.querySelector('.backgroundChange').style.background = "#5E9FB9"
-//     } else if ( newColor == "document.querySelector('.backgroundChange').style.background = '#5E9FB9'") {
-//         document.querySelector('.backgroundChange').style.backgroundr = "#222222"
-//         newColor = document.querySelector('.backgroundChange').style.background = "#222222"
-//     }
-// }
