@@ -9,11 +9,11 @@ document.querySelector('.nav-button').addEventListener('click', () => {
 
     if (menu.classList.contains('hidden')) {
         menu.classList.remove('hidden');
-        TweenMax.fromTo('.menu', 0.8, {height: '1px'}, {height: '100vh'});
-        TweenMax.fromTo('.menu-link', 0.8, {opacity: 0}, {opacity: 1});
+        TweenMax.fromTo('.menu', 0.5, {height: '1px'}, {height: '100vh'});
+        TweenMax.fromTo('.menu-link', 0.5, {opacity: 0}, {opacity: 1});
     } else {
-        TweenMax.fromTo('.menu', 0.8, {height: '100vh'}, {height: '1px', onComplete: hideMenu});
-        TweenMax.fromTo('.menu-link', 0.8, {opacity: 1}, {opacity: 0});
+        TweenMax.fromTo('.menu', 0.5, {height: '100vh'}, {height: '1px', onComplete: hideMenu});
+        TweenMax.fromTo('.menu-link', 0.3, {opacity: 1}, {opacity: 0});
     }
 });
 
