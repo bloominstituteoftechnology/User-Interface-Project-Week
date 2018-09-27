@@ -13,8 +13,8 @@ fullScreenNav = document.querySelector('nav');
 hamburgerMenu = document.querySelector('.hamburger-menu');
 navigationBar = document.querySelector('.navigation');
 nav = document.querySelector('nav');
-function changeImage() {
-    console.log(hamburgerMenu.src);
+function changeImage() {//Changes hamburger menu img to the close img
+    
     //Don't judge me to hard on this
     if (hamburgerMenu.src.includes('close')) {
         hamburgerMenu.src = "img/nav-hamburger.png";
