@@ -1,0 +1,115 @@
+.main-content {
+    width: 83%;
+    margin: auto;
+    @media @phone {
+        width: 100%;
+    }
+    .main-info {
+        .flex(space-between, center, row);
+        margin-top: 50px;
+        @media @phone {
+            .flex(space-between, center, column-reverse);
+            margin: 25px auto 0;
+            width: 90%;
+        }
+        .text {
+            .flex(center, flex-start, column);
+            width: 49%;
+            line-height: 2.4rem;
+            @media @phone {
+                width: 100%
+            }
+            h2 {
+                .h2();
+                @media @phone {
+                    margin-top: 30px;
+                }
+            }
+            p {
+                margin: 20px 0;
+            }
+            .button {
+                .btn();
+            }
+        }
+        .home-desktop {
+            width: 49%;
+            @media @phone {
+                display: none;                
+            }
+        }
+        .home-mobile {
+            display: none;
+            @media @phone {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .reverse {
+        .flex(space-between, center, row-reverse);
+        margin: 90px 0; 
+        @media @phone {
+            .flex(space-between, center, column-reverse);
+            margin: 45px auto 50px;
+        }
+    }
+    .recent-projects {
+        h2 {
+            .h2();
+            margin-bottom: 45px;
+            padding-top: 10px;
+            @media @phone {
+                margin: 0 auto 25px;
+                width: 90%;
+            }
+        }
+        .project-head {
+            position: relative;
+            .project-desktop {
+                width: 100%;
+                z-index: 0;
+                @media @phone {
+                    display: none;
+                }
+            }
+            .project-mobile {
+                display: none;
+                @media @phone {
+                    display: inline;
+                    width: 100%;
+                    z-index: 0;
+                }
+            }
+            .project-right {
+                .project();
+                right: 0;
+                @media @phone {
+                    .projectMobile();
+                }
+            }
+            .project-left {
+                .project();
+                left: 0;
+                padding: 35px 65px;
+                @media @phone {
+                    .projectMobile();
+                }
+            }
+        }
+        p {
+            margin: 90px auto;
+            width: 50%;
+            font-size: 1.8rem;
+            @media @tablet {
+                width: 75%;
+                margin: 90px auto 45px;
+            }
+            @media @phone {
+                width: 90%;
+                margin: 100px auto 45px;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
