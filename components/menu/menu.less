@@ -4,59 +4,86 @@
   height: 50px;
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 8.4rem;
+  color: @SJ-color-white;
 
   @media @mobile {
     height: 80px;
   }
 
-  .header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 8.4rem;
-    color: @SJ-color-white;
+  h3 { // S&J
+    font-weight: bold;
+    font-size: 2.4rem;
 
     @media @mobile {
-      padding: 20px;
+      font-size: 3.75rem;
+    }
+  } //
+
+  .dropdown {
+    // width: 100%;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // padding: 14px 8.4rem;
+    // color: @SJ-color-white;
+
+    @media @mobile {
+        padding: 20px;
     }
 
-    h3 {
-      font-weight: bold;
-      font-size: 2.4rem;
+    .menu-button { // hamburger img
+        cursor: pointer;
+        // position: absolute;
+        // right: 85px;
 
-      @media @mobile {
-        font-size: 3.75rem;
-      }
-    } //
-
-    img {
-
-      @media @mobile {
-        height: 35px;
-        width: auto;
-      }
+          @media @mobile {
+            height: 35px;
+            width: auto;
+          }
     } // img hambuger
 
+    .hidden-menu-content { // menu
+      color: @SJ-nav-color;
+      display: none;
+      // width: 100%;
+      // height: 600px;
 
-  }
+      position: fixed;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      // height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
+      background-color: @SJ-nav-background;
+      border-left: none;
+      border-bottom: none;
+      z-index: 12; /* This set the layer level of the element, it has precendence over initial level of 1*/
+      height: 550px;
+      padding-top: 100px;
+    } // hidden-menu-content
 
-  .menu {
-    color: @SJ-nav-color;
+    .hidden-link { // ul li
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      color: @SJ-nav-color;
+      text-decoration: none;
+      font-size: 5rem;
+      padding-top: 30px;
+      line-height: 6rem;
+    } // hidden-link
+    .hidden-menu-content--open {
+      display: block
+    }
 
-    li {
-      list-style-type: none;
-
-      a {
-        display: none;
-        color: @SJ-nav-color;
-        text-decoration: none;
-      }
-
-    } //li
-  } // menu
+  } // header
 } // .main-navigation
+
+
 
 
 
