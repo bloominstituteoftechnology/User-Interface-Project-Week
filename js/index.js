@@ -1,6 +1,9 @@
 // JS goes here
 
 //Navigation for home-page
+
+
+
 const burgerBtn = document.querySelector(".burger");
 const openedBurger = document.querySelector(".opened-nav")
 let navPage = document.querySelector(".open-nav");
@@ -22,6 +25,14 @@ openedBurger.addEventListener("click", ()=> {
     
     
 })
+
+TweenLite.from(".jumbotron", 1, {opacity:0});
+TweenLite.from(".animation1", 1, {x:-200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
+TweenLite.from(".animation2", 1, {x:200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
+TweenLite.from(".animation3", 1, {x:-200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
+
+
+
 
 
 // Service page button functionality
@@ -67,16 +78,6 @@ clickMethod() {
 
 }
 
-TweenLite.from(".jumbotron", 1, {opacity:0});
-TweenLite.from(".animation1", 1, {x:-200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
-TweenLite.from(".animation2", 1, {x:200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
-TweenLite.from(".animation3", 1, {x:-200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
-
-
-
-
-
-
 
 
 
@@ -84,4 +85,5 @@ TweenLite.from(".animation3", 1, {x:-200, rotation:0, scale:0, ease: Back.easeOu
 let serviceBtn = document.querySelectorAll(".buttonss");
 
 serviceBtn = Array.from(serviceBtn).map(buttonElements => new Button(buttonElements))
-serviceBtn[1].clickMethod();
+serviceBtn[0].clickMethod();
+
