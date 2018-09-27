@@ -1,3 +1,56 @@
+//exploring stop scroll (opacity issue)
+let hamIcon = document.getElementById('#burger');
+var iconToggle = new TimelineMax({paused:true, reversed:true});
+iconToggle
+  .to(' .top', .2, {y:'-9px', transformOrigin: '50% 50%'}, 'burg')
+  .to(' .bot', .2, {y:'9px', transformOrigin: '50% 50%'}, 'burg')
+  .to(' .mid', .2, {scale:0.1, transformOrigin: '50% 50%'}, 'burg')
+  .add('rotate')
+  .to(' .top', .2, {y:'5'}, 'rotate')
+  .to(' .bot', .2, {y:'-5'}, 'rotate')
+  .to(' .top', .2, {rotationZ:45, transformOrigin: '50% 50%'}, 'rotate')
+  .to(' .bot', .2, {rotationZ:-45, transformOrigin: '50% 50%'}, 'rotate')
+
+//menu animation
+let menuOpen = new TimelineMax({paused:true, reversed:true});
+let links=document.querySelectorAll('.nav-link');
+
+TweenMax.set("#menu", {
+      height: '0vh',
+
+  });
+
+menuOpen
+  .to("#menu", 1.5, {
+  height: "100vh",
+  opacity: '.95',
+  ease:Power1.easeInOut
+  })
+  .staggerFrom(links, .25, {
+    y: '-30',
+    ease: Power1.easeOut, }, .2);
+  // });
+
+
+//event listener for both animations
+let nav = document.querySelector('nav div');
+let navButton = document.querySelector('.nav-hamburger');
+
+
+navButton.addEventListener('click', function(){
+  iconToggle.reversed() ? iconToggle.restart() : iconToggle.reverse();
+  if (menuOpen.reversed() ) {
+    menuOpen.restart();
+    document.body.style.overflow = 'hidden';
+  }
+  else {
+    menuOpen.reverse();
+    document.body.style.overflow = 'unset';
+  }
+
+});
+
+
 //
 // let nav = document.querySelector('nav div');
 // let navButton = document.querySelector('.nav-hamburger');
@@ -68,57 +121,6 @@
 //   menuOpen.reversed() ? menuOpen.restart() : menuOpen.reverse();
 //   iconToggle.reversed() ? iconToggle.restart() : iconToggle.reverse();
 // });
-//exploring stop scroll (opacity issue)
-let hamIcon = document.getElementById('#burger');
-var iconToggle = new TimelineMax({paused:true, reversed:true});
-iconToggle
-  .to(' .top', .2, {y:'-9px', transformOrigin: '50% 50%'}, 'burg')
-  .to(' .bot', .2, {y:'9px', transformOrigin: '50% 50%'}, 'burg')
-  .to(' .mid', .2, {scale:0.1, transformOrigin: '50% 50%'}, 'burg')
-  .add('rotate')
-  .to(' .top', .2, {y:'5'}, 'rotate')
-  .to(' .bot', .2, {y:'-5'}, 'rotate')
-  .to(' .top', .2, {rotationZ:45, transformOrigin: '50% 50%'}, 'rotate')
-  .to(' .bot', .2, {rotationZ:-45, transformOrigin: '50% 50%'}, 'rotate')
-
-//menu animation
-let menuOpen = new TimelineMax({paused:true, reversed:true});
-let links=document.querySelectorAll('.nav-link');
-
-TweenMax.set("#menu", {
-      height: '0vh',
-
-  });
-
-menuOpen
-  .to("#menu", 1.5, {
-  height: "100vh",
-  opacity: '.95',
-  ease:Power1.easeInOut
-  })
-  .staggerFrom(links, .25, {
-    y: '-30',
-    ease: Power1.easeOut, }, .2);
-  // });
-
-
-//event listener for both animations
-let nav = document.querySelector('nav div');
-let navButton = document.querySelector('.nav-hamburger');
-
-
-navButton.addEventListener('click', function(){
-  iconToggle.reversed() ? iconToggle.restart() : iconToggle.reverse();
-  if (menuOpen.reversed() ) {
-    menuOpen.restart();
-    document.body.style.overflow = 'hidden';
-  }
-  else {
-    menuOpen.reverse();
-    document.body.style.overflow = 'unset';
-  }
-
-});
 
 // function close(){
 //
