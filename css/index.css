@@ -141,16 +141,20 @@ table {
   float: left;
 }
 .nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: #9AA3B2;
+  background: #98A4AF;
   padding: 2rem 10rem;
+  z-index: 200;
 }
 .nav__logo {
   font-weight: 600;
   font-size: 2.4rem;
   color: #fff;
+}
+.nav__hamburger {
+  position: absolute;
+  right: 10.5%;
+  top: 2.9%;
+  cursor: pointer;
 }
 .nav__hamburger:hover {
   cursor: pointer;
@@ -182,16 +186,21 @@ table {
 .expandedNav__links--link:hover {
   color: #222222;
 }
+.expandedNav__hamburgerClosed {
+  position: absolute;
+  right: 10.5%;
+  top: 2.9%;
+  cursor: pointer;
+}
 .expand {
-  display: block;
+  display: inline-block;
   height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .fixedNav {
-  background-color: rgba(154, 163, 178, 0.92);
-  position: fixed;
+  display: none;
 }
 .home {
   height: 70vh;
@@ -214,18 +223,20 @@ table {
 }
 .features__feature {
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   margin-bottom: 8rem;
-  border: 5px solid red;
-  justify-content: center;
+}
+.features__feature--imageBox {
+  align-self: center;
 }
 .features__feature--imageBox--image {
-  border: 2px solid blue;
   width: 100%;
 }
 .features__feature--textBox {
   align-self: center;
   width: 48%;
+  margin: 0 2rem;
 }
 .features__feature--headline {
   font-size: 2.8rem;
