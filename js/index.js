@@ -110,11 +110,14 @@ class Carousel {
      }
 
     init(){
-       for (let i = 0; i < this.maxCardNum; i++)
-        TweenLite.set(this.cards[i], {left: "-100%"});
+    //    for (let i = 0; i < this.maxCardNum; i++){
+    //     TweenLite.set(this.cards[i], {left: "-100%"});
+    //    }
+    TweenLite.fromTo(this.cards[newNum], 2, {x :-1000}, {x:0} );
+
         this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
         this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
-        gotoSlide(0, 0);
+        slideCard(this, 0, -1, 0);
     }
 
  
@@ -152,9 +155,35 @@ class Carousel {
       }
 }
 
-function gotoSlide(NextCard, prevCard,direction){
-    
-}
+function slideCard(carousel, NextCard, prevCard,direction){
+
+
+    var direction = "next";
+		if (_direction != null) {
+			direction = _direction;
+		}
+		if (direction == "next") {
+			TweenMax.to($prevSlide, time, {
+				left: "-100%"
+			});
+			TweenMax.fromTo($currentSlide, time, {
+				left: "100%"
+			}, {
+				left: "0"
+			});
+		} else {
+			TweenMax.to($prevSlide, time, {
+				left: "100%"
+			});
+			TweenMax.fromTo($currentSlide, time, {
+				left: "-100%"
+			}, {
+				left: "0"
+			});
+		}
+
+	}
+
 
 
 let carousel = document.querySelector('.cards-container');
