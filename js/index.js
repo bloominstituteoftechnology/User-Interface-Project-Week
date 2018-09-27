@@ -1,56 +1,6 @@
 // JS goes here
 
-// functionality for tab menu
-//class TabLink {
-    // constructor(element){
-    //     this.element = element;
-    //     this.tabData = this.element.dataset.tab; 
-    //     // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
-    //     this.cards = Array.from(this.cards).map( card => new TabCard(card));
-    //     // Add a click event that invokes selectTab
-    //     this.element.addEventListener('click', () => {this.selectTab()});
-    //   }
-    
-    //   selectTab(){
-    //     // Select all elements with the .tab class on them
-    //     const tabs = document.querySelectorAll(".tab");
-    //     // Iterate through the NodeList removing the .active-tab class from each element
-    //     tabs.forEach( tab => {
-    //       tab.classList.remove("active-tab");
-    //     })
-    
-    //     // Select all of the elements with the .card class on them
-    //     const cards = document.querySelectorAll('.card');
-    //     // Iterate through the NodeList setting the display style each one to 'none'
-    //     cards.forEach(card => card.style.display = 'none');
-    
-    
-    //     // Add a class of ".active-tab" to this.element
-    //     this.element.classList.add("active-tab");
-    //     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    //     this.cards.forEach(card => card.selectCard());
-    //   }
-    // }
-    
-    // class TabCard {
-    //   constructor(element){
-    //     // Assign this.element to the passed in element.
-    //     this.element = element;
-    //   }
-    //   selectCard(){
-    //     // Update the style of this.element to display = "flex"
-    //     this.element.style.display = "flex";
-    //   }
-    
-    // }
-    
-    // let tabs = document.querySelectorAll('.tab');
-    // tabs = Array.from(tabs).map(tab => new TabLink(tab))
-    
-    // //Once you are complete, call the .selectTab method on the first tab
-    // // tabs[0].selectTab()
-
-
+// ************************ tab navigator *************************
 class Tab {
     constructor(tab) {
         this.tab = tab;
@@ -79,16 +29,19 @@ class Card {
         this.tabCard.classList.toggle('showCard');
     }
 }
-  
 
-let tabs = document.querySelectorAll('.tab');
-tabs = Array.from(tabs).map( tab => new Tab(tab));
-tabs[0].tabClick();
+// only run this code on Services.html in order to avoid error when '.tab' can't be found
+let activePg = document.querySelector('title').innerText;
+if (activePg === 'Services') {
+    let tabs = document.querySelectorAll('.tab');
+    tabs = Array.from(tabs).map( tab => new Tab(tab));
+    tabs[0].tabClick();
+}
 
 
 // ********************** nav menu ******************************
 
-// i know, i know, this is an ugly function. i was in a time crunch.
+// i would refactor this 
 const navBurger = document.querySelector('.nav-burger');
 const dropdownNav = document.querySelector('.dropdown-nav');
 const navBar = document.querySelector('nav');
