@@ -1,0 +1,103 @@
+.footer{
+    width: @100perWidth;
+    height: 35vh;
+    margin-top: 100px;
+    background-color: @footerColor;
+    .generalFonts(@footerFontSize, @footerFontColor, @fontReg, @footerLineHeight);
+
+    @media(max-width: @mobileBreak800) and (min-width: @mobileBreakMin600){
+         height: 100%;
+    }
+
+    @media(max-width: @mobileBreak450){
+        height: 100%;
+    }
+
+    
+    
+    .footer-content{
+        max-width: @contentMaxWidth;
+        width: @100perWidth;
+        margin: 50px auto;
+        .flexing-boxes(row, wrap, space-between);
+        align-content: center;
+
+        @media(max-width: @mobileBreak800) and (min-width: @mobileBreakMin600){
+            max-width : @mobileBreak800min; 
+            width: 100%;
+            .flexing-boxes(row, wrap);
+        }
+
+        @media(max-width: @mobileBreak450){
+            max-width: @mobileMaxWidth;
+            .flexing-boxes(row, wrap);
+        }
+
+        .home-sub-heading{
+            margin: 50px 0 20px 0;
+            .generalFonts(@footerHeadingSize, @footerFontColor, @fontBold, @footerHeaderLH);
+
+            @media(max-width: @mobileBreak450){
+                max-width: @mobileMaxWidth;
+                .flexing-boxes(row, wrap);
+            }
+    
+        }
+
+        .address-heading{
+            margin: 50px  0 20px 0;
+            .generalFonts(@footerHeadingSize, @footerFontColor, @fontBold, @footerHeaderLH);
+            
+            @media(max-width: @mobileBreak450){
+                margin: 20px 0;
+            }
+            
+        }
+
+        .footer-email{
+            width: 30%;
+            
+            @media(max-width: @mobileBreak450){
+                width: @100perWidth;
+            }
+
+            .footer-input-email{
+                width: @100perWidth;
+                padding: 5px; 
+                border-radius: 5px;
+            }
+
+            .footer-input-email[placeholder]{
+                .generalFonts(@fontSizeReg);
+            }
+
+            .disclosure{
+                margin: 10px 0;
+                .generalFonts(.8rem, @footerFontColor);
+            }
+        }
+
+        .address-content{
+            width: 20%;
+            margin-left: 3%;
+           
+            @media(max-width: @mobileBreak450){
+                width: 100%;
+                margin: 0;
+            }  
+        }
+    }
+
+    .copyright{
+        max-width: @contentMaxWidth;
+        width: @100perWidth;
+        margin: 0 auto;
+        text-align: center;
+
+        @media(max-width: @mobileBreak450){
+            max-width: @mobileMaxWidth;
+            text-align: left;
+        }
+    }
+    
+}

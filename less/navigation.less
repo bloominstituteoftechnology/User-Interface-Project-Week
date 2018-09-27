@@ -1,0 +1,97 @@
+
+
+.navigation{
+    top: 0;
+    position: fixed;
+    width: @100perWidth;
+    height: 65px;
+    background-color: @navBackgroundColor;
+    z-index: 3;
+
+    .nav-container {
+        max-width : @contentMaxWidth;
+        width: @100perWidth;
+        margin: 15px auto;
+        padding: 5px 0; 
+        display: flex;
+        align-items: center;
+
+       
+        @media(max-width: @mobileBreak800) and (min-width: @mobileBreakMin600){
+                max-width : @mobileBreak800min;    
+        }
+
+        @media(max-width: @mobileBreak450){
+            max-width: @mobileMaxWidth;
+
+        }
+
+
+        .nav-logo{
+            width: 50%;
+            
+            .logo-link{
+                text-decoration: none;
+                .generalFonts(@fontSize24px, @logoColor, @fontBold);
+            }
+        }
+    
+        .nav-hamburger{
+            width: 50%;
+            text-align: right;
+            cursor: pointer;
+        }
+        
+    }
+
+    .menu{
+        display: none;
+        position: absolute;
+        top:  65px;
+        width: @100perWidth;
+        height: 100vh;
+        padding: 10% 0 25% 0;
+        background-color: @navBackgroundColor;
+        color: #fff;
+        cursor: pointer;
+        z-index: 2;
+        opacity: .97;
+       
+
+        ul{
+            max-width: @contentMaxWidth;
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+    
+            li {
+                margin: 0px auto;
+                width: @100perWidth;
+    
+                a {
+                    text-decoration: none;
+                    .generalFonts(
+                        @navFontSize, 
+                        @navLinksColor, 
+                        @fontBold, 
+                        @navLineHeight);
+                    
+                    &:hover{
+                        color: #222222;
+                    }
+                }
+            }
+        }
+       
+    }
+    
+    .menu-open{ 
+        display: block;
+    }
+    
+    .body-modal-open{
+        overflow: hidden;
+    }
+}
+
