@@ -5,20 +5,23 @@
   width: 100%;
   h1 {
     position: absolute;
-    bottom: 48px;
+    bottom: 8%;
+    left: 8%;
     letter-spacing: 0.05rem;
     line-height: @jumbotron-headers-line-height;
     color: @jumbotron-headers-color;
     font-size: @jumbotron-headers-font-size;
     font-weight: @jumbotron-headers-font-weight;
-    width: 100px;
-    left: 83px;
+    width: 30%;
   }
   img {
     display: block;
     width: 100%;
     height: auto;
     z-index: -1;
+  }
+  @media @phone {
+    
   }
 }
 
@@ -36,12 +39,7 @@ h2 {
     margin-bottom: 9.9rem;
     // margin: 3.5rem 0;
     color: @sub-headers-color;
-    @media @phone {
-      flex-direction: column;
-      .info-text {
-        order: 1;
-      }
-    }
+
     .info-text {
       margin-top: 5rem;
       h2 {
@@ -68,16 +66,52 @@ h2 {
     img {
       max-width: 410px;
     }
+    @media @phone {
+      max-width: 95%;
+      margin: 0 auto;
+      flex-direction: column;
+      .info-text {
+        order: 1;
+        margin: 4rem auto 0 auto;
+        .btn {
+          margin: 2.6rem auto;
+          width: 95%;
+        }
+      }
+      picture {
+        display: flex;
+        justify-content: center;
+        source {
+          // margin: 0 auto;
+          object-fit: contain;
+        }
+        img {
+          // margin: 0 auto;
+          object-fit: contain;
+        }
+      }
+    }
   }
-  :nth-child(even) {
-    flex-direction: row-reverse;
-    .info-text {
-      margin-left: 3rem;
-      margin-top: 4rem;
+  // &:nth-child(even) {
+
+  // }
+  .reverse {
+    // @media @phone {
+      flex-direction: column;
+      .info-text {
+        margin: 4rem auto 0 auto;
+      }
+    // }
+    @media (min-width: 500px) {
+      flex-direction: row-reverse;
+  
+      .info-text {
+        margin-left: 3rem;
+        margin-top: 4rem;
+      }
     }
   }
 }
-
 .recent-projects {
   margin: 0 auto;
   width: 100%;
