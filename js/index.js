@@ -153,7 +153,7 @@ let pTabs = document.querySelectorAll(".p-tab");
 
 pTabs = Array.from(pTabs).map((item) => new projectsTab(item));
 
-pTabs[0].select();
+
 
 
 //PROJECTS CAROUSEL END
