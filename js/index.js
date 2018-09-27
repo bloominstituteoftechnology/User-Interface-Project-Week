@@ -90,11 +90,27 @@ function checkSlide(e) {
     const isHalfShown = slideInAt > cta.offsetTop;
     const isNotScrolledPast = window.scrollY < ctaBottom;
     if (isHalfShown && isNotScrolledPast) {
-      cta.firstElementChild.classList.add('slide-in-left');
-      cta.lastElementChild.classList.add('slide-in-right');
+      // cta.firstElementChild.classList.add('slide-in-left');
+      TweenMax.to(cta.firstElementChild, 0.5, {
+        x: 0,
+        opacity: 1
+      });
+      // cta.lastElementChild.classList.add('slide-in-right');
+      TweenMax.to(cta.lastElementChild, 0.5, {
+        x: 0,
+        opacity: 1
+      });
     } else {
-      cta.firstElementChild.classList.remove('slide-in-left');
-      cta.lastElementChild.classList.remove('slide-in-right');
+      // cta.firstElementChild.classList.remove('slide-in-left');
+      TweenMax.to(cta.firstElementChild, 0.5, {
+        x: -300,
+        opacity: 0
+      });
+      // cta.lastElementChild.classList.remove('slide-in-right');
+      TweenMax.to(cta.lastElementChild, 0.5, {
+        x: 300,
+        opacity: 0
+      });
     }
   });
 }
