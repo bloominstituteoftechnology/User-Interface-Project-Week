@@ -7,14 +7,16 @@ let expanded = false;
 
 function expandNavBar() {
   if (expanded === true) {
-    TweenMax.to(navBar, 0.3, { width: '0vw', height: '0vh' });
+    TweenMax.to(navBar, 0.5, { ease: Power4.easeInOut, width: '0vw', height: '0vh' });
+    links.forEach(i => TweenMax.to(i, 0.1, {ease: Bounce.easeInOut, opacity: 0}));
     navButton.src = 'img/nav-hamburger.png';
     expanded = false;
   }
 
   else {
     // navBar.classList.add('fullscreen-nav');
-    TweenMax.to(navBar, 0.3, { width: '100vw', height: '100vh' });
+    TweenMax.to(navBar, 0.3, { ease: Power4.easeIn, width: '100vw', height: '100vh' });
+    links.forEach(i => TweenMax.to(i, 0.51, {delay: 0.4, ease: Bounce.easeInOut, opacity: 0.9}));
     navButton.src = 'img/nav-hamburger-close.png';
     expanded = true;
   }
