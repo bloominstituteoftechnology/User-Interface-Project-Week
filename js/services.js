@@ -25,6 +25,7 @@ class Tab {
     this.element.classList.add('tab-item-selected');
 
     this.tabItem.select();
+
   }
 }
 
