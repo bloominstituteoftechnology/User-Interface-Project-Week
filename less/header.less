@@ -1,13 +1,13 @@
 
-.headerWrapper {
-  background: @navBG;
-  position: sticky;
-  top: 0;
-  z-index: 4;
+
+ 
   .main-nav-header {
-    
+    background: @navBG;
+    position: sticky;
+    top: 0;
+    z-index: 4;
     display: flex;
-    padding: 12px 5%;
+    height: 47px;
     justify-content: space-between;
     align-items: center;
     z-index: 4;
@@ -27,54 +27,59 @@
       color: #fff;
       cursor: pointer;
       z-index: 5;
+      position: fixed;
+      top: 10px;
+      left: 67px;
     }
   
     .nav-hamburger {
       background: @navBG;
       cursor: pointer;
+      position: fixed;
+      top: 10px;
+      right: 67px;
     }
 
     .nav-dropdown {
-      display: none;
+      display: flex;
+      // visibility: hidden;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       background: @navBG;
       position: fixed;
       width: 100vw;
-      height: 100vh;
+      height: 0vh;
       z-index: 2;
       left: 0;
-      top: 48px;
+      top: 0;
+      font-size: 5rem;
+      font-family: @font-style;
+      font-weight: bold;
+      margin-top: 35px;
+      z-index: 3;
+      overflow: hidden;
   
-      .navContainer {
-        display: flex;
-        flex-direction: column;
-        margin-top: 100px;
-  
-        .nav-dropDown-item {
-          font-size: 5rem;
-          font-family: @font-style;
+        a {
+          text-decoration: none;
           color: white;
-          font-weight: bold;
-          margin-top: 35px;
-          z-index: 3;
-  
+          position: relative;
+          padding: 20px;
+          height: 50vh;
+        
           &:hover {
             color: black;
           }
         }
-  
-        a {
-          text-decoration: none;
-        }
-      } // End Nav Links Container
+
+ 
     } // End nav dropdown
 
   
-
   .nav-hidden {
-    display: flex;
+    visibility: visible;
   }
+  
 
   .nav-hamburger-hidden {
     display: none;
@@ -82,6 +87,8 @@
 
   .nav-hamburger-visible {
     display: flex;
+    
+
   }
 
   .nav-hamburger-X {
@@ -91,9 +98,13 @@
   .nav-hamburger-X-visible {
     display: flex;
     cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 67px;
   }
+
 
   
 } // End nav header
 
-} // End headerWrapper
+
