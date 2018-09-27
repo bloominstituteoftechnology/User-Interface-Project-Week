@@ -24,6 +24,8 @@ hamburgerButton.addEventListener('click', () => {
 });
 
 
+
+
 //TABS FUNCTIONALITY
 
 // class TabSet {
@@ -128,8 +130,3 @@ container.addEventListener('click', () => {
     outskirtsText.style.display ='none';
     theBlocksText.style.display ='none';
 });
-
-
-const submittingButton = document.querySelector('#submit-id');
-
-console.log(submittingButton);
