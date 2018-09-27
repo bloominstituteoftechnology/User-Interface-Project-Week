@@ -19,12 +19,12 @@ class Tab {
     const tabs = document.querySelectorAll('.tab');
 
     Array.from(tabs).forEach(function(tab){
-      tab.classList.remove('tab-item-selected');
+      tab.classList.remove('tab-link-selected');
     });
-
-    this.element.classList.add('tab-item-selected');
-
+    
+    this.element.classList.add('tab-link-selected');
     this.tabItem.select();
+
 
   }
 }
