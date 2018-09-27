@@ -18,7 +18,6 @@ menuButton.addEventListener("click", () => {
     TweenMax.to(".nav-link", 0.5, { lineHeight: "8.5rem" });
   } else {
     event.currentTarget.src = closedURL;
-    // menuNav.style.display = "none";
     TweenMax.to(".nav", 1, { height: "0vh" });
     TweenMax.to(".nav", 0.8, { display: "none" });
     TweenMax.to(".nav-link", 1, { fontSize: "0rem" });
