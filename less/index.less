@@ -58,3 +58,463 @@ table{
 }
 
 /* Your Code Goes Here */
+
+@import './variables.less';
+@import './mixins.less';
+@import './navigation.less';
+@import './footer.less';
+@import './services.less';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Roboto, Arial, sans-serif;
+  color: #222222;
+  line-height: 2.4rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-left: 0;
+}
+
+
+.show {
+  display: flex;
+}
+
+
+.main-nav {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(154,165,176,0.8);  // #9AA5B0;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  position: fixed;
+  overflow: auto;
+  
+  .modal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+ 
+  
+  z-index: 3;
+  position: relative;
+  }
+
+ 
+
+  .img {
+    .flex(flex-end,flex-start,row);
+    margin-top: 10px;
+    width: 46%;
+    //height:200px;
+    //border: 2px solid blue;
+    position: relative;
+     
+    img {
+      position: absolute;
+      top: 5px;
+      right: 20px;
+
+      @media @phone {
+
+      }
+     }
+  }
+
+
+  .links{
+    margin-top: 200px;
+
+    a {
+      font-weight: bold;
+      font-size: 4.8rem;
+      line-height: 85px;
+      text-decoration: none;
+      color: #FFFFFF;
+  
+      &:hover {
+        color: #504545;
+      }
+    }
+  }
+  
+
+}
+
+.container {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  max-width: 1024px;
+  .flex(center, center, column);
+  margin: 0 auto;
+  position: relative;
+  //border: 2px solid black;
+
+  @media @phone {
+    max-width: 500px;
+    //border: 2px solid red;
+  }
+
+  .nav-container {
+    .flex(space-between, center, row);
+    width: 1024px;
+    height: 50px;
+    padding: 10px 0;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #9AA5B0;
+    position: fixed;
+    top: 0px;
+    z-index: 20;
+
+    
+
+    P {
+      margin-left: 7%;
+    }
+
+    a {
+      margin-right: 7%;
+    }
+
+    @media @phone {
+      max-width: 500px;
+    }
+    
+  }
+
+  header {
+    .flex(center, center, row);
+    width: 100%;
+    position: relative;
+    //border: 2px solid blue;
+
+    img {
+      @media @phone {
+        content:url("../img/home/home-mobile-jumbotron.png");
+      }
+
+      width: 100%;
+    }
+
+    div.home {
+      position: absolute;
+      left: 85px;
+      bottom: 20px;
+      z-index: 100;
+
+      p {
+        font-size: 6.4rem;
+        line-height: 7.5rem;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+
+      @media @phone {
+        left: 45px;
+        bottom: 20px;
+      }
+    }
+
+    
+  }
+  div.main-content {
+    width: 100%;
+
+    article.more-info1 {
+      .flex(center,center,row);
+      margin-top: 25px;
+
+      section.left {
+        width: 40%;
+        margin-right: 3%;
+        //border: 2px solid red;
+       
+
+        h2 {
+          margin-top: 30px;
+          margin-bottom: 15px;
+          margin-left: 20px;
+        }
+        P {
+          margin-bottom: 50px;
+          
+
+        }
+        a {
+          .btn;
+
+          @media @phone {
+            width: 100%;
+          }
+        }
+
+         @media @phone {
+           width: 90%;
+         }
+      }
+      img.right {
+        width: 40%;
+        margin-top: 35px;
+        //border: 2px solid blue;
+
+        @media @phone {
+          content:url("../img/home/home-mobile-img-1.png");
+          width: 90%;
+        }
+      }
+
+      @media @phone {
+        .flex(center,center,column-reverse);
+      }
+    }
+
+    article.more-info2 {
+      .flex(center,center,row);
+      margin-top: 25px;
+
+      img.left {
+        width: 40%;
+        //border: 2px solid red;
+        margin-top: 80px;
+
+        @media @phone {
+          content:url("../img/home/home-mobile-img-2.png");
+          width: 90%;
+        }
+       
+      }
+      section.right {
+        width: 40%;
+        margin-top: 35px;
+        margin-left: 25px;
+        //border: 2px solid blue;
+
+        h2 {
+          margin-top: 30px;
+          margin-bottom: 15px;
+          margin-left: 0;
+        }
+        P {
+          margin-bottom: 50px;
+
+        }
+        a {
+          .btn;
+
+          @media @phone {
+            width: 100%;
+          }
+        }
+
+        @media @phone {
+          width: 90%;;
+        }
+      }
+
+      @media @phone {
+        .flex(center,center,column);
+      }
+    }
+    
+    h2 {
+      width: 90%;
+      margin: 40px auto 0 auto;
+    }
+
+    article.content {
+      .flex(center,center,column);
+      width: 90%;
+      margin: 0 auto;
+      font-size: 1.6rem;
+      line-height: 1.5;
+
+      @media @phone {
+        width: 100%;
+      }
+    }
+
+    article.c1 {
+     // border: 2px solid green;
+     
+      div.banner {
+        position: relative;
+        //border: 1px solid blue;
+        width: 100%;
+
+        img {
+          width: 100%;
+          margin-top: 40px;
+
+          @media @phone {
+            content:url("../img/home/home-mobile-villas-img.png");
+            width: 100%;
+            //border: 1px solid red;
+          }
+        }
+        div.over {
+          background: #D8D8D8;
+          .flex(center,center,row);
+          font-size: 2.5rem;
+          letter-spacing: 9px;
+          // display: inline-block;
+          position: absolute;
+          left: 580px;
+          top: 250px;
+          width: 38%;
+          height: 100px;
+          border: 1px solid #FFFFFF;
+
+          @media @phone {
+            width: 75%;
+            height: 100px;
+            left: 60px;
+            top: 310px;
+          }
+        }
+      }
+      div.content {
+        margin: 60px auto;
+
+        @media @phone {
+          margin-top: 80px;
+          width: 100%;
+        }
+        p {
+          margin: 20px auto;
+          width: 80%;
+
+        }
+      }
+      
+      
+      
+    }
+
+    article.c2 {
+
+      div.banner {
+        position: relative;
+        width: 100%;
+
+        img {
+          width: 100%;
+          margin-top: 40px;
+
+          @media @phone {
+            content:url("../img/home/home-mobile-outskirts-img.png");
+            width: 100%;
+          }
+        }
+        div.over {
+          background: #D8D8D8;
+          .flex(center,center,row);
+          font-size: 2.5rem;
+          letter-spacing: 9px;
+          // display: inline-block;
+          position: absolute;
+          left: 0px;
+          top: 210px;
+          width: 38%;
+          height: 100px;
+          border: 1px solid #FFFFFF;
+
+          @media @phone {
+            width: 75%;
+            height: 100px;
+            left: 60px;
+            top: 310px;
+          }
+        }
+      }
+      div.content {
+        margin: 60px auto;
+        width: 100%;
+        p {
+          margin: 20px;
+          width: 100%;
+        }
+
+        @media @phone {
+          margin-top: 80px;
+          width: 90%;
+        }
+
+      }
+    }
+
+    article.c3 {
+      //border: 2px solid blue;
+      
+      div.banner {
+        position: relative;
+        width: 100%;
+
+        img {
+          width: 100%;
+          margin-top: 40px;
+
+          @media @phone {
+            content:url("../img/home/home-mobile-the-blocks-img.png");
+            width: 100%;
+          }
+        }
+        div.over {
+          background: #D8D8D8;
+          .flex(center,center,row);
+          font-size: 2.5rem;
+          letter-spacing: 9px;
+          // display: inline-block;
+          position: absolute;
+          left: 580px;
+          top: 250px;
+          width: 38%;
+          height: 100px;
+          border: 1px solid #FFFFFF;
+
+          @media @phone {
+            width: 75%;
+            height: 100px;
+            left: 60px;
+            top: 310px;
+          }
+        }
+      }
+     
+     
+      div.content {
+        margin: 60px auto;
+       // border: 1px solid blue;
+        p {
+          margin: 20px auto;
+         // border: 1px solid red;
+          width: 90%;
+        }
+      }
+      
+    }
+    
+  }
+}
+
+
+
+// #c3img {
+//   @media @phone {
+//     content:url("../img/home/home-mobile-the-blocks-img.png");
+//     width: 100%;
+//   }
+// }
