@@ -90,17 +90,7 @@ let tabContent = document.querySelectorAll(".content");
 
 
 
-//IMAGE SWAPS 
-/* background-image: url("/img/home/home-the-blocks-img.png");
-            background-image: url("/img/home/home-mobile-villas-img.png");
-            background-image: url("/img/home/home-mobile-outskirts-img.png"); */
 
-let outskirts = document.querySelector('.outskirts');
-let outskirtsSrc = '/img/home/home-mobile-outskirts-img.png';
-let villasSrc = '/img/home/home-mobile-villas-img.png';
-let blocksSrc = '/img/home/home-the-blocks-img.png';
-
-outskirts.addEventListener();
 
 /* const imgSwap = (img, src) => {
 
@@ -118,5 +108,27 @@ console.log(tabs);
 /* console.log(tabContent[0].children[0].innerText);
 
 console.log(tabs[0]); */
+
+//INTRO ANIMATIONS
+let intro = document.querySelector('.intro-bg');
+let s = document.querySelector('.letter1');
+let and = document.querySelector('.letter2');
+let j = document.querySelector('.letter3');
+let building = document.querySelector('.building');
+let designing = document.querySelector('.designing');
+let future = document.querySelector('.future');
+
+const endIntro = () => {
+    intro.style.display = "none";
+}
+
+TweenMax.from(j, 1, {x: 300, opacity: 0, ease: Back.easeInOut.config(1.7), delay: 1.5});
+TweenMax.from(s, 1, {x: -300, opacity: 0, ease: Back.easeInOut.config(1.7), delay: 2});
+TweenMax.from(and, 1, {scale: .2, opacity: 0, ease: Power0.easeNone, delay: 3});
+TweenMax.from(building, 1, {scale: .2, opacity: 0, ease: Power0.easeNone, delay: 3});
+TweenMax.from(designing, .8, {x: 800, opacity: 0, ease: Back.easeInOut.config(1.7), delay: 3.2});
+TweenMax.from(future, .8, {x: -800, opacity: 0, ease: Back.easeInOut.config(1.7), delay: 3.2});
+TweenMax.from(building, .5, {rotation: 720, ease: Power0.easeNone, delay: 4});
+TweenMax.to(building, .5, {scale: 50, x: 1000, ease: Power0.easeNone, delay: 4.5, onComplete: endIntro});
 
 
