@@ -5,7 +5,6 @@ const toggleMenu = () => {
 }
 
 const dropdown = document.querySelector('.dropdown-content');
-
 const button = document.querySelector('.dropdown-button');
 
 button.addEventListener('click', () => {
@@ -14,3 +13,4 @@ button.addEventListener('click', () => {
 
 let dropdowns = document.querySelectorAll('.dropdown');
 dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
+

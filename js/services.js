@@ -25,13 +25,6 @@ class Tab {
     this.element.classList.add('tab-item-selected');
 
     this.tabItem.select();
-    // const tabitems = document.querySelectorAll('.tab-item')
-    // tabitems.forEach(function(tabitem){
-    //   tabitem.style.display = "none"
-    // })
-    // console.log(tabitems)   
-
-    // this.tabitems.forEach(tabitem => tabitem.selectItem());
   }
 }
 
