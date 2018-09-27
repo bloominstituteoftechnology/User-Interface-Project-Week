@@ -1,0 +1,178 @@
+.home-page {
+  .jumbotron {
+    height: 100vh;
+    width: 100%;
+    // height: 598px; match exact height for pixel perfect design
+    background: url('../img/home/home-jumbotron.png');
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: flex-end;
+
+    @media @phone {
+      background: url('../img/home/home-mobile-jumbotron.png');
+      height: 260px;
+      background-size: 100% 100%;
+    }
+
+    &__heading {
+      font-weight: 700;
+      font-size: 6.4rem;
+      line-height: 7.5rem;
+      color: @color-white;
+      padding-bottom: 5rem;
+      @media @tablet {
+        width: 90%;
+        margin: 0 auto;
+      }
+      @media @phone {
+        padding-bottom: 3rem;
+        line-height: 4rem;
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .cta {
+    margin: 5rem 0 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    @media @tablet {
+      margin: 5rem auto;
+      width: 90%;
+    }
+    &__content,
+    &__img {
+      width: 48%;
+
+      @media @phone {
+        width: 100%;
+      }
+    }
+
+    &__content {
+      margin-right: 4%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateX(-300px);
+      opacity: 0;
+
+      @media @phone {
+        order: 1;
+        margin-right: 0;
+      }
+
+      &--inverse {
+        margin-right: 0;
+        margin-left: 4%;
+        transform: translateX(300px);
+        @media @phone {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &__img {
+      transform: translateX(300px);
+      opacity: 0;
+      &--inverse {
+        transform: translateX(-300px);
+      }
+      @media @phone {
+        order: 0;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    &__heading {
+      .sub-heading(2.4rem);
+    }
+
+    & p {
+      margin: 3rem 0;
+    }
+
+    .btn {
+      .btn-creator(@main-bg, @main-color, 33%, 1px solid @main-color);
+      @media @tablet {
+        width: 100%;
+      }
+    }
+  }
+
+  .projects {
+    // margin-top: 10rem;
+    &__heading {
+      .sub-heading(2.4rem);
+      margin-bottom: 5rem;
+
+      @media @tablet {
+        width: 90%;
+        margin: 0 auto 3rem;
+      }
+    }
+
+    .project {
+      margin-bottom: 10rem;
+
+      @media @phone {
+        margin-bottom: 5rem;
+      }
+
+      &__img {
+        margin-bottom: 8.5rem;
+        position: relative;
+
+        @media @phone {
+          margin-bottom: 10.5rem;
+        }
+
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+
+      &__heading {
+        .center();
+        font-weight: 400;
+        font-size: 2.4rem;
+        letter-spacing: 8px;
+        background: @grey-square;
+        text-transform: uppercase;
+        position: absolute;
+        height: 95px;
+        width: 317px;
+        left: 63%;
+        top: 75%;
+        @media @phone {
+          top: 87%;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          width: 290px;
+        }
+        &--inverse {
+          left: 0;
+        }
+      }
+
+      &__content {
+        width: 50%;
+        margin: 0 auto;
+        font-size: 1.8rem;
+
+        @media @phone {
+          width: 90%;
+        }
+
+        p:first-child {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}

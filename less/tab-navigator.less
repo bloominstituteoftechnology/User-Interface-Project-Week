@@ -1,0 +1,122 @@
+.tab-navigator {
+  width: 100%;
+  margin-bottom: 10rem;
+  @media @tablet {
+    width: 90%;
+    margin: 0 auto 5rem;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+
+    @media @phone {
+      flex-direction: column;
+    }
+
+    .tab {
+      .btn-creator(@main-bg, @main-color, 20.5%, 1px solid @main-color);
+      font-weight: bold;
+      font-size: 1.8rem;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      @media @tablet {
+        font-size: 1.6rem;
+      }
+      @media @phone {
+        width: 100%;
+        font-size: 2rem;
+        padding: 10px;
+        &:not(:last-child) {
+          margin-bottom: 2.5rem;
+        }
+      }
+    }
+
+    .tab-active {
+      background: @tab-selected-bg;
+      color: @main-bg;
+    }
+  }
+
+  .cards {
+    .card {
+      display: none;
+      opacity: 0;
+      align-items: center;
+      flex-wrap: wrap;
+
+      &__content {
+        width: 48%;
+        margin-right: 4%;
+        animation: slideinleft 500ms ease-in-out forwards;
+
+        @media @tablet {
+          font-size: 1.5rem;
+        }
+
+        @media @phone {
+          width: 100%;
+          margin-right: 0%;
+          margin-bottom: 5rem;
+        }
+        p:first-of-type {
+          margin-bottom: 3.5rem;
+        }
+
+        &--alt {
+          margin-right: 0%;
+          margin-left: 4%;
+          order: 2;
+          animation: slidein 500ms ease-in-out forwards;
+
+          @media @phone {
+            order: -1;
+            margin-left: 0;
+          }
+        }
+      }
+
+      &__header {
+        .sub-heading();
+        margin-bottom: 2rem;
+        @media @phone {
+          font-size: 2.4rem;
+        }
+        &--alt {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &__sub-header {
+        margin-bottom: 3rem;
+        font-size: 1.4rem;
+        font-style: italic;
+      }
+
+      &__img {
+        width: 48%;
+        animation: slidein 500ms ease-in-out forwards;
+        @media @phone {
+          width: 100%;
+          margin-right: 0%;
+        }
+        img {
+          width: 100%;
+          display: block;
+        }
+
+        &--alt {
+          animation: slideinleft 500ms ease-in-out forwards;
+        }
+      }
+    }
+
+    .card-active {
+      display: flex !important;
+      animation: fadein 800ms ease-in-out forwards;
+    }
+  }
+}
