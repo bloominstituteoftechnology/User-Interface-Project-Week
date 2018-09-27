@@ -9,7 +9,7 @@ hamburger.addEventListener('click', () => {
     nav.classList.add('expanded');
     nav.classList.add('drop-down')
     nav.style.flexDirection = 'column-reverse';
-    nav.style.opacity = '50%';
+    
    
     
 })
