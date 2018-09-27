@@ -573,8 +573,18 @@ p {
 }
 .about .carousel .images .show-img {
   display: block;
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .about .carousel .controls {
+  margin-top: 3px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -590,7 +600,16 @@ p {
   height: auto;
 }
 .about .carousel .controls div img:hover {
-  filter: invert(50%);
+  filter: invert(80%);
+  animation: fadeInvert 0.5s;
+}
+@keyframes fadeInvert {
+  from {
+    filter: invert(0%);
+  }
+  to {
+    filter: invert(80%);
+  }
 }
 .about .team {
   margin: 60px 0;
@@ -632,7 +651,12 @@ p {
 .about .team .team-members .member img {
   border-radius: 50%;
   width: 60%;
+  filter: grayscale(80%);
+  transition: filter 0.5s ease-out;
   margin-bottom: 20px;
+}
+.about .team .team-members .member img:hover {
+  filter: grayscale(0);
 }
 .about .team .team-members .member .bio {
   text-align: center;
