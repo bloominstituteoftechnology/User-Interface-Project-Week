@@ -1,0 +1,109 @@
+.center () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo () {
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: @nav;
+}
+
+.nav-text-expanded () {
+    font-weight: bold;
+    font-size: 4.8rem;
+    line-height: 8.5rem;
+    color: @nav-expanded;
+    a {
+        color: @nav-expanded;
+        text-decoration: none;
+        &:hover {
+            color: @nav-expanded-hover;
+        }
+    }
+}
+
+.sub-headers () {
+    font-weight: bold;
+    font-size: 2.8rem;
+    color: @sub-header;
+}
+
+.project-titles () {
+    .center;
+    height: 95px;
+    width: 315px;
+    font-size: 2rem;
+    font-weight: lighter;
+    letter-spacing: 0.7rem;
+    background-color: @project-title-bg;
+    border: solid 1px white;
+}
+
+.footer-headers () {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: @footer;
+}
+
+.footer-text () {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    color: @footer;
+    font-weight: 200;
+}
+
+#buttons {
+    .hover {
+        background: @tab-hover-bg;
+        color: @tab-hover;
+    }
+    .btn-main () {
+        .center;
+        border: solid 2px @button-border;
+        width: 140px;
+        height: 50px;
+        cursor: pointer;
+        &:hover {
+            #buttons.hover;
+        }
+    }
+    .tabs () {
+        .center;
+        border: solid 1px @button-border;
+        width: 180px;
+        height: 50px;
+        cursor: pointer;
+        &:hover {
+            #buttons.hover;
+        }
+    }
+}
+
+.jumbotron-mixin (@image-address, @height) {
+    .center;
+    height: @height;
+    padding-top: 19%;
+    background: @image-address;
+    background-size: cover;
+    background-repeat: no-repeat;
+    img {
+        width: 100%;
+    }
+    .jtron-header {
+        max-width: 894px;
+        width: 100%;
+        z-index: 10;
+        font-weight: bold;
+        font-size: 6.4rem;
+        line-height: 7.5rem;
+        color: @jumbotron-header;
+
+        @media @mobile {
+            padding: 0 20px;
+            font-size: 5rem;
+            line-height: 6.5rem;
+        }
+    }
+}
