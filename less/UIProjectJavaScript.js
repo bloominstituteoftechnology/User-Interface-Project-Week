@@ -60,8 +60,7 @@ class Dropdown {
 
   toggleContent(event) {
     this.content.classList.toggle("menuOptions");
-
-    let navImage = document.querySelector(".menuButton");
+    this.menuButton.classList.toggle("otherMenuButton");
   }
 }
 
@@ -70,18 +69,3 @@ dropdownMenu = Array.from(dropdownMenu).map(dropdown => new Dropdown(dropdown));
 
 let closedNav = document.querySelector(".menuContent");
 let navImage = document.querySelector(".menuButton");
-
-//if menuObjects is on.. show the x
-//if menuHidden is on.. show the burger
-
-function toggleMenuButton() {
-  if (dropdownMenu.classList.contains("menuObjects")) {
-    menuButton.src =
-      "https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/nav-hamburger-close.png";
-  } else {
-    menuButton.src =
-      "https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/nav-hamburger.png";
-  }
-}
-
-navImage.addEventListener("click", toggleMenuButton);
