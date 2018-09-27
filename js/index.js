@@ -48,17 +48,24 @@ navMenu = Array.from(navMenu).map(menu => new Hamburger(menu));
 
 const hamburgerButton = document.querySelector('.span');
 const navigation = document.querySelector('.menu-button');
+const overflows = document.querySelector('.overflow');
 let count = 0;
 hamburgerButton.addEventListener('click', () => {
     if (count%2 === 0) {
         navigation.classList.add('show');
         navigation.classList.remove('hide');
-        hamburgerButton.src = "img/nav-hamburger-close.png";  
+        overflows.classList.add('overflow'); 
+        overflows.style = 'overflow :hidden';
+        hamburgerButton.src = "img/nav-hamburger-close.png"; 
+        
         return count++;
     } else {
         navigation.classList.remove('show');
-        navigation.classList.add('hide');        
+        navigation.classList.add('hide');   
+        overflows.classList.remove('overflow');
+        overflows.style = 'overflow: scroll';
         hamburgerButton.src = "img/nav-hamburger.png";  
+        
         return count++;
     }
 });
