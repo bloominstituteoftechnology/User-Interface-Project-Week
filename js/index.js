@@ -44,3 +44,29 @@ function clickAlert() {
     }
   }
 }
+
+//added in this function just for fun. window event listener watches keydowns and puts their character codes
+//into a string, if the string contains the charcodes for the Konami Code (up up down down left right left right B A), a hidden raptor appears before vanishing back to his start point
+let konamiString = "";
+function showRaptor() {
+  //made the initial opacity 0 since sometimes the image flashes into view on page load otherwise
+  //initial position is 49vw to the right (its width) and bottom:0
+  TweenMax.to(".hidden-raptor", 0.001, { opacity: "1" });
+  TweenMax.to(".hidden-raptor", 0.2, { right: "0vw" });
+  TweenMax.to(".hidden-raptor", 3, { delay: 1, bottom: "-70vw" });
+  TweenMax.to(".hidden-raptor", 1, { delay: 3, right: "-49vw" });
+  TweenMax.to(".hidden-raptor", 1, { delay: 3, bottom: "0" });
+  TweenMax.to(".hidden-raptor", 0.001, { delay: 3, opacity: 0 });
+}
+
+function konami(e) {
+  konamiString += String.fromCharCode(e.keyCode);
+  if (konamiString.includes("&&((%'%'BA")) {
+    showRaptor();
+    konamiString = "";
+  }
+}
+
+window.addEventListener("keydown", e => {
+  konami(e);
+});
