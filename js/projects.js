@@ -1,3 +1,5 @@
+// https://pastebin.com/sbXkfPTM
+
 class Carousel {
     constructor(element){
         this.element = element;
@@ -23,8 +25,8 @@ class Carousel {
         });
         captions.forEach(item => item.style.visibility="hidden");
         
-        this.pics[this.i].style.visibility = 'visible';
-        captions[this.i].style.visibility = 'visible';
+        TweenMax.from(this.pics[this.i], .8, {autoAlpha: 0, x: -150, ease: Circ.easeOut,});
+        TweenMax.from(captions[this.i], .6, {delay: .2, autoAlpha: 0, x: -70});
     };
 
     goRight(){
@@ -40,8 +42,8 @@ class Carousel {
         });
         captions.forEach(item => item.style.visibility="hidden");
         
-        this.pics[this.i].style.visibility = 'visible';
-        captions[this.i].style.visibility = 'visible';
+        TweenMax.from(this.pics[this.i], .8, {autoAlpha: 0, x: 150, ease: Circ.easeOut,});
+        TweenMax.from(captions[this.i], .6, {delay: .2, autoAlpha: 0, x: 70});
     };
 }
 
