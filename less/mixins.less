@@ -1,0 +1,55 @@
+.center() {
+  margin: 0 auto;
+}
+
+.bottom-space(@space: 20px) {
+  margin-bottom: @space;
+}
+
+.sub-heading-style() {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: @sub-heading;
+}
+
+.custom-layout(@justify: flex-start, @align: flex-start) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.fadeBackground(@duration, @color) {
+  animation: fadeBackground @duration;
+
+  @keyframes fadeBackground {
+    from { background-color: transparent; }
+    to { background-color: @color; }
+  }
+}
+
+.fadeColor(@duration, @fromColor, @toColor) {
+  animation: fadeColor @duration;
+
+  @keyframes fadeColor {
+    from { color: @fromColor; }
+    to { color: @toColor; }
+  }
+}
+
+.fadeInvert(@duration, @amount) {
+  animation: fadeInvert @duration;
+
+  @keyframes fadeInvert {
+    from { filter: invert(0%); }
+    to { filter: invert(@amount); }
+  }
+}
+
+.fadeIn(@duration) {
+  animation: fadeIn @duration;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}

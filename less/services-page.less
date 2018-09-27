@@ -1,0 +1,140 @@
+.services-jumbotron {
+  width: 100%;
+  height: auto;
+  background-image: url('../img/services/services-jumbotron.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .bottom-space(45px);
+
+  @media @mobile {
+    background-image: url('../img/services/services-mobile-jumbotron.png');
+  }
+
+  header {
+    max-width: 850px;
+    width: 90%;
+    height: 40vh;
+    .custom-layout(flex-start, flex-end);
+    .center();
+
+    h1 {
+      padding-bottom: 50px;
+      font-size: 6.4rem;
+      font-weight: bold;
+      line-height: 75px;
+      color: @heading;
+
+      @media @tablet {
+        padding-bottom: 13px;
+      }
+    }
+  }
+}
+
+.services {
+  .services-info {
+    @media @mobile {
+      text-align: justify;
+      word-break: break-all;
+    }
+  }
+
+  .tabs {
+    width: 100%;
+    .custom-layout(space-between, center);
+
+    @media @mobile {
+      flex-wrap: wrap;
+    }
+
+    .tab-link {
+      width: 20%;
+      border: 1px solid @border;
+      padding: 12px 0;
+      text-align: center;
+      cursor: pointer;
+
+      @media @tablet {
+        width: 22%;
+        padding: 15px 0;
+      }
+
+      @media @mobile {
+        width: 100%;
+        padding: 20px 0;
+        font-size: 2rem;
+        font-weight: bold;
+        .bottom-space();
+      }
+
+      &:hover {
+        color: @white;
+        background-color: @btn-hover-bg;
+        .fadeBackground(0.5s, @btn-hover-bg);
+      }
+    }
+
+    .tab-link-selected {
+      color: @white;
+      background-color: @btn-hover-bg;
+    }
+  } // .tabs
+
+  .tab-content-container {
+    .custom-layout(space-between, center);
+
+    .tab-content {
+      padding: 40px 0;
+      display: none;
+
+      .col-2 {
+        .custom-layout(space-between, center);
+
+        @media @mobile {
+          flex-wrap: wrap;
+
+          .img-desktop {
+            display: none;
+          }
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .img-mobile {
+          display: none;
+
+          @media @mobile {
+            display: block;
+          }
+        }
+
+        h2 {
+          .sub-heading-style();
+        }
+
+        .tab-content-text {
+          width: 50%;
+
+          @media @tablet {
+            width: 38%;
+            text-align: justify;
+            word-break: break-all;
+          }
+
+          @media @mobile {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .tab-content-selected {
+      display: block;
+    }
+  } // .tab-content-container
+} //.services
+
+

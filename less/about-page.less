@@ -1,0 +1,155 @@
+.contact-jumbotron {
+  width: 100%;
+  height: auto;
+  background-image: url('../img/about/contact-jumbotron.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .bottom-space(45px);
+
+  // @media @mobile {
+  //   background-image: url('../img/services/services-mobile-jumbotron.png');
+  // }
+
+  header {
+    max-width: 850px;
+    width: 90%;
+    height: 40vh;
+    .custom-layout(flex-start, flex-end);
+    .center();
+
+    h1 {
+      padding-bottom: 50px;
+      font-size: 6.4rem;
+      font-weight: bold;
+      line-height: 75px;
+      color: @heading;
+
+      @media @tablet {
+        padding-bottom: 13px;
+      }
+    }
+  }
+}
+
+.about {
+  .story-info {
+    .bottom-space(50px);
+
+    h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      letter-spacing: 6px;
+      color: @black;
+    }
+
+    p {
+      text-align: justify;
+      word-break: break-all;
+    }
+  }
+
+  .carousel {
+    width: 100%;
+
+    .images {
+      .custom-layout(flex-start);
+
+      img {
+        width: 100%;
+        display: none;
+      }
+
+      .show-img {
+        display: block;
+        .fadeIn(1s);
+      }
+    }
+
+    .controls {
+      margin-top: 3px;
+      .custom-layout(flex-end);
+
+      div {
+        .custom-layout(flex-end, flex-start);
+        cursor: pointer;
+
+        img {
+          width: 65%;
+          height: auto;
+
+          &:hover {
+            filter: invert(80%);
+            .fadeInvert(0.5s, 80%);
+          }
+        }
+      } //.div
+    }
+  } // .carousel
+
+  .team {
+    margin: 60px 0;
+
+    h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      letter-spacing: 6px;
+      color: @black;
+      .bottom-space(50px);
+    }
+
+    .team-members {
+      width: 100%;
+      .custom-layout(space-between);
+
+      @media @mobile {
+        flex-wrap: wrap;
+      }
+
+      .member {
+        background-color: rgba(216, 216, 216, 0.23);
+        margin: 0 1%;
+        padding-top: 55px;
+        padding-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: none;
+        .custom-layout(center, center);
+        flex-direction: column;
+        transition: box-shadow 0.5s ease-out;
+
+        @media @mobile {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        &:hover {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        @media @mobile {
+          .bottom-space();
+        }
+
+        img {
+          border-radius: 50%;
+          width: 60%;
+          filter: grayscale(0);
+          transition: filter 0.5s ease-out;
+          .bottom-space();
+
+          &:hover {
+            filter: grayscale(80%);
+          }
+        }
+
+        .bio {
+          text-align: center;
+
+          h3 {
+            font-weight: bold;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  } // .team
+}
