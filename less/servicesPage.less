@@ -1,10 +1,13 @@
 .servicesHeader {
   .servicesImage {
     max-width: 100%;
-    height: 200px;
+    height: 25vh;
     background-image: url("../img/services/services-jumbotron.png");
     background-repeat: no-repeat;
     background-size: cover;
+    @media @phone {
+     height: 35vh;     
+    }
   }
   
   .servicesTitle {
@@ -13,8 +16,11 @@
     padding: 0 5%;
     h1 {
       position: absolute;
-      top: 100px;
+      top: 140px;
       color: white;
+      @media @phone {
+        top: 240px;
+      }
     }
   }
 }
@@ -22,58 +28,81 @@
 .services {
   p {
     margin: 50px 0;
+    @media @phone {
+     line-height: 4rem;    
+     margin: 30px 0 15px;
+    }
   }
 
   .tabs {
     width: 100%;
     .tabItems {
-      margin-bottom: 80px;
-      //   width: 100%;
-      //   height: 300px;
-      //   display: flex;
-      //   justify-content: center;
-      //   padding-top: 60px;
+      margin-bottom: 60px;
     }
     .tabItem {
       display: none;
 
       width: 100%;
       h2 {
-        margin-bottom: 20px;
+        margin: 10px 0 20px;
+        @media @phone {
+          margin: 30px 0 0;
+        }
       }
       .tabContent {
         .flex(no-wrap, row, space-between, center);
+        @media @phone {
+          .flex(wrap, row, space-between, flex-start);
+          width: 100%;
+                }
+        
 
         .tabText {
           .flex(wrap, column, space-between, flex-start);
           width: 44%;
           height: 275px;
+          @media @phone {
+          .flex(no-wrap, row, center, center);
+          width: 100%;
+          }
 
           p {
             margin: 0;
+            @media @phone {
+          margin-top: 20px;
+            }
           }
         }
 
         .tabImage {
           width: 45.3%;
           height: 275px;
+          @media @phone {
+            width: 100%;
+          margin: 190px 0 0;
+
+          img {
+            @media @phone {
+              width: 100%;
+            }
+          }
+          }
         }
       }
     }
     .hidden {
       display: none;
-      //   .tabs-item-title {
-      //     font-size: 24px;
-      //     font-weight: bold;
-      //     padding-bottom: 10px;
-      //   }
+
     }
     .tabItemSelected {
       display: block;
     }
 
     .tabLinks {
-      .flex(no-wrap, row, space-between, center);
+      .flex(wrap, row, space-between, center);
+      @media @phone {
+          .flex(no-wrap, column, center, center);
+      }
     }
 
     .tabLink {
@@ -89,6 +118,14 @@
         color: #fff;
         transition: 0.7s all;
       }
+      @media @phone {
+       width: 100%;
+       padding: 10px 2%;
+       font-size: 2rem;
+       text-align: center;
+       margin: 20px 0;
+      }
+      
     }
     .tabLinkSelected {
       z-index: 1; //=========================================//
