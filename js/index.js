@@ -7,7 +7,10 @@ const nav = document.querySelector(".open-nav");
 openNav.addEventListener("click", () => {
   nav.style.display = "flex";
   TweenMax.fromTo(nav, 0.3, { y: -800 }, { y: 0 });
+  console.log("hello");
 });
 closeNav.addEventListener("click", () => {
   TweenMax.fromTo(nav, 0.3, { y: 0 }, { y: -1000 });
 });
+
+console.log("hello");
