@@ -1,0 +1,101 @@
+.carousel {
+  .primer {
+    h3 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+  }
+  .carousel-box {
+    width: 85%;
+    margin: 0 auto 40px;
+    .move-left{
+        transform: translateX(-2000px);
+        transition: all .5s;
+    }
+    .move-right{
+        transform: translateX(2000px);
+        transition: all .5s;
+    }
+    .carousel-header {
+        max-width: 640px;
+        position: relative;
+        margin: 0 auto;
+      .arrow {
+        position: absolute;
+        font-size: 3rem;
+        border: 1px solid @buttonBorder;
+        border-radius: 50%;
+        padding: 0 6px;
+        color: @colorDefault;
+        cursor: pointer;
+        top: .2rem;
+        @media @mobile{
+            font-size: 2rem;
+            border-radius: initial;
+            padding: 22px 3px;
+            top: -10;
+        }
+        &:hover {
+            color: @tabHover;
+            background: @tabHoverBG;
+        }
+      }
+      .right {
+        right: -17px;
+      }
+      .left {
+        left: -17px;
+      }
+      .carousel-text {
+        display: none;
+        transition: all .5;
+      }
+      .active-text {
+        .flex(row, space-around, center);
+        width: 97%;
+        margin: 0 auto 20px;
+        @media @tablet{
+            flex-direction: column;
+        }
+        h3 {
+          font-size: 3.4rem;
+          @media @tablet{
+              font-size: 3rem;
+              margin-bottom: 10px;
+          }
+          @media @mobile{
+              font-size: 2rem;
+          }
+        }
+        h4 {
+          font-size: 1.8rem;
+          font-style: italic;
+          font-weight: 400;
+          transform: scaleY(1.1);
+          letter-spacing: .1rem;
+          color: @headerBG;
+          @media @mobile{
+              font-size: 1.6rem;
+          }
+        }
+      }
+    }
+    .nav-up{
+        z-index: -1;
+    }
+    .carousel-images{
+        max-width: 650px;
+        margin: 0 auto;
+        .carousel-img{
+            display:none;
+            
+        }
+        .active-img{
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: all .5;
+        }
+    }
+  }
+}
