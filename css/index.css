@@ -638,10 +638,20 @@ p {
   padding-top: 55px;
   padding-bottom: 20px;
   border-radius: 5px;
+  box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: box-shadow 0.5s ease-out;
+}
+@media (max-width: 500px) {
+  .about .team .team-members .member {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+.about .team .team-members .member:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media (max-width: 500px) {
   .about .team .team-members .member {
@@ -651,12 +661,12 @@ p {
 .about .team .team-members .member img {
   border-radius: 50%;
   width: 60%;
-  filter: grayscale(80%);
+  filter: grayscale(0);
   transition: filter 0.5s ease-out;
   margin-bottom: 20px;
 }
 .about .team .team-members .member img:hover {
-  filter: grayscale(0);
+  filter: grayscale(80%);
 }
 .about .team .team-members .member .bio {
   text-align: center;

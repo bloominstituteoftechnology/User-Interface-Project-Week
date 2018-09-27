@@ -112,8 +112,18 @@
         padding-top: 55px;
         padding-bottom: 20px;
         border-radius: 5px;
+        box-shadow: none;
         .custom-layout(center, center);
         flex-direction: column;
+        transition: box-shadow 0.5s ease-out;
+
+        @media @mobile {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        &:hover {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
 
         @media @mobile {
           .bottom-space();
@@ -122,12 +132,12 @@
         img {
           border-radius: 50%;
           width: 60%;
-          filter: grayscale(80%);
+          filter: grayscale(0);
           transition: filter 0.5s ease-out;
           .bottom-space();
 
           &:hover {
-            filter: grayscale(0);
+            filter: grayscale(80%);
           }
         }
 
