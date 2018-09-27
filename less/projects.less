@@ -1,0 +1,239 @@
+.projects-header {
+  height: 248px;
+
+  .jumbotron {
+    display: flex;
+    // max-width: 1024px;
+    // width: 100%;
+    width: 100%;
+    height: 248px;
+    background: url("../img/projects/projects-jumbotron.png") no-repeat center top fixed;
+    background-size: contain;
+    margin: 0 auto;
+
+      @media (max-width: 1000px){
+        background-size: auto;
+      }
+    @media @phone {
+      background: url("../img/projects/projects-mobile-jumbotron.png") no-repeat center top fixed;
+      background-size: contain;
+      height: 260px;
+    }
+
+    h1 {
+      max-width: 1024px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1.8% 8%;
+      align-self: flex-end;
+      color: @general-white;
+      @media @phone {
+        width: 90%;
+        font-size: 3.6rem;
+        line-height: 1.2;
+        padding: 6.5% 5%;
+      }
+    }
+  }
+}
+//end header
+
+.projects {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+
+  .carousel {
+    width: 640px;
+    .flex(center, center);
+    height: 426px;
+    position: relative;
+    // overflow: hidden;
+    margin: 5% auto 0;
+    background-color: #384869;
+
+
+    @media (max-width: 800px){
+      width: 600px;
+    }
+    @media @phone {
+      width: 300px;
+      height: 213px;
+      margin: 10% auto 0;
+    }
+
+    .left-button,
+    .right-button {
+      .flex(center);
+      color: @general-white;
+      background-color: #384869;
+      font-size: 3rem;
+      // border-radius: 50%;
+      position: absolute;
+      width: 50px;
+      height: 426px;
+      cursor: pointer;
+
+
+      &:hover {
+        color: #384869;
+        background-color: #B7D0F7;
+        border: 2px solid #384869;
+
+        h3 {
+          color: #384869;
+        }
+      }
+
+      h3 {
+        color:  #B7D0F7;
+        top: 50%;
+        justify-content: center;
+        padding-top: 200px;
+
+        @media @phone {
+          padding-top: 100px;
+        }
+      }
+      @media @phone {
+        width: 35px;
+        height: 213px;
+      }
+    }
+
+    .left-button {
+      top: 50%;
+      left: -50px;
+      border-radius: 5px 0 0 5px;
+
+      transform: translate(0, -50%);
+
+      @media @phone {
+        left: -30px;
+      }
+    }
+
+    .right-button {
+      top: 50%;
+      right: -50px;
+      border-radius: 0 5px 5px 0;
+
+      transform: translate(0, -50%);
+
+      @media @phone {
+        right: -30px;
+      }
+    }
+
+    .one {
+      background: url("../img/projects/projects-img1.png") no-repeat center center;
+      width: 640px;
+      height: 426px;
+      @media @phone {
+        background: url("../img/projects/projects-mobile-img1.png") no-repeat center center;
+        width: 320px;
+        height: 213px;
+      }
+    }
+
+    .two {
+      background: url("../img/projects/projects-img2.png") no-repeat center center;
+      width: 640px;
+      height: 426px;
+      @media @phone {
+        background: url("../img/projects/projects-mobile-img2.png") no-repeat center center;
+        width: 320px;
+        height: 213px;
+      }
+    }
+
+    .three {
+      background: url("../img/projects/projects-img3.png") no-repeat center center;
+      width: 640px;
+      height: 426px;
+      @media @phone {
+        background: url("../img/projects/projects-mobile-img3.png") no-repeat center center;
+        width: 320px;
+        height: 213px;
+      }
+    }
+
+    .four {
+      background: url("../img/projects/projects-img4.png") no-repeat center center;
+      width: 640px;
+      height: 426px;
+      @media @phone {
+        background: url("../img/projects/projects-mobile-img4.png") no-repeat center center;
+        width: 320px;
+        height: 213px;
+      }
+    }
+
+    .carousel-image {
+      width: 0;
+      height: 100%;
+      transition: all 1s linear;
+    }
+
+    .active {
+      display: block;
+      width: 100%;
+    }
+  }
+  //end Carousel
+
+  .image-descriptions {
+    width: 640px;
+    margin: 1% auto;
+    height: 235px;
+    overflow: hidden;
+    background-color: @general-white;
+    padding: 5%;
+    border-radius: 0 0 5px 5px;
+    border: 3px solid @general-black;
+
+
+    @media @phone {
+      width: 90%;
+      margin: 6% auto;
+    }
+    .description {
+
+      display: none;
+      opacity: 0;
+
+
+      h3 {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 3%;
+      }
+
+      p{
+        width: 100%;
+        text-align: center;
+        padding-bottom: 2%;
+      }
+
+    }
+
+    .animated {
+      animation-duration: 2s;
+    }
+
+    .active-project {
+      display: block;
+      opacity: 1;
+      // animation: fadein 2s linear;
+
+
+    }
+  }
+}
+
+ @keyframes fadein {
+      0% { opacity: 0 }
+      20% { opacity: 0.2}
+      50% { opacity: 0.6 }
+      100% { opacity: 1 }
+    }

@@ -4,7 +4,7 @@ You are to treat this week as if you are working as a front end developer at a w
 This week you will be building a website for an architectural firm named Smith and Jones Architects.  Smith and Jones have requested a minimum viable product to deliver to their board of directors by the end of the week.  The requirements are listed below under **MVP Features**.  Smith and Jones also have a wish list of extra features they would love to showcase to the board if you can get them done.  You will demonstrate your work to the agency owner Thursday afternoon.  
 
 You will use Trello to report your progress on the MVP and any extra features you accomplish to your project managers every day during standup. This project is meant to be worked on by yourself.  Do not pair program this week as this challenge is meant to show you where you can improve and what you have learned on your own.
-
+ 
 ## Pro Tips For This Week:
 - Use past solutions from the previous weeks to accomplish harder tasks
 - Commit every time you accomplish any new functionality or layout. Get in the habit of frequent commits so you have a record of your work.  Push up your commits every day to showcase your progress to your PM
