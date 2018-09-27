@@ -1,20 +1,20 @@
 // JS goes here
 
 //index navigation js
-// const toggleMenu = () => {
-//   dropdown.classList.toggle('dropdown-open');
-// }
+const toggleMenu = () => {
+  dropdown.classList.toggle('dropdown-open');
+}
 
-// const dropdown = document.querySelector('.dropdown-content');
+const dropdown = document.querySelector('.dropdown-content');
 
-// const button = document.querySelector('.dropdown-button');
+const button = document.querySelector('.dropdown-button');
 
-// button.addEventListener('click', () => {
-//   return toggleMenu(dropdown);
-// });
+button.addEventListener('click', () => {
+  return toggleMenu(dropdown);
+});
 
-// let dropdowns = document.querySelectorAll('.dropdown');
-// dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
+let dropdowns = document.querySelectorAll('.dropdown');
+dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
 
 //services
 
