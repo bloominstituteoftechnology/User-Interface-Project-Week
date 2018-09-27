@@ -15,6 +15,7 @@ class TabLink {
         });
     
         this.element.classList.add('tab-selected')
+        
         this.tabContent.selectContent();
     }
 }
@@ -26,9 +27,12 @@ class TabContent {
     selectContent() {
         let tabGrabber = document.querySelectorAll('.tab-content')
         tabGrabber = Array.from(tabGrabber).forEach( item => {
+            TweenMax.fromTo('.tab-content-selected', 1, {opacity: 1}, {opacity:0})
             item.classList.remove('tab-content-selected')
+        
         });
         this.element.classList.add('tab-content-selected');
+        TweenMax.fromTo('.tab-content-selected', 1, {opacity: 0}, {opacity:1})
     }
 }
 
