@@ -54,11 +54,17 @@ class Carousel {
 
     this.images[1].classList.add("active");
     let allContent = document.querySelectorAll('.description');
-    allContent.forEach(item =>
-    item.classList.remove('active-project'));
+    allContent.forEach(item =>{
+    item.classList.remove('active-project');
+    item.classList.remove('animated');
+    item.classList.remove('fadeIn');
+    }
+    );
     let data = this.images[1].dataset.project;
     let content = document.querySelector(`.description[data-project='${data}']`);
     content.classList.add('active-project');
+    content.classList.add('animated');
+    content.classList.add('fadeIn');
   }
 }; //end class
 

@@ -180,8 +180,8 @@ p {
   background: #9FA9B3;
   position: fixed;
   top: 0;
-  z-index: 10;
-  min-height: 50px;
+  z-index: 1;
+  height: 50px;
 }
 .full-width-nav .main-navigation {
   display: flex;
@@ -192,6 +192,7 @@ p {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  position: relative;
 }
 .full-width-nav .main-navigation .logo {
   color: #FFFFFF;
@@ -225,45 +226,21 @@ p {
   align-self: flex-end;
   width: 100%;
 }
-.full-width-nav .main-navigation nav .dropdown {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 1vh;
-  visibility: hidden;
-}
-@media (max-width:400px) {
-  .full-width-nav .main-navigation nav .dropdown {
-    flex-direction: column-reverse;
-  }
-}
-.full-width-nav .main-navigation nav .dropdown .nav-link {
-  text-decoration: none;
-  font-size: 5rem;
-  font-weight: 700;
-  height: 10%;
-  margin: 2%;
-  color: #FFFFFF;
-  z-index: 11;
-  opacity: 1;
-  text-align: center;
-}
-.full-width-nav .main-navigation nav .dropdown .nav-link:hover {
-  color: #504545;
-}
-@media (max-width:400px) {
-  .full-width-nav .main-navigation nav .dropdown .nav-link {
-    padding: 1%;
-  }
-}
 .full-width-nav .dropped {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
+  height: 0vh;
+  background: #9FA9B3;
+  opacity: 0.99;
+  overflow: hidden;
+}
+@media (max-width:400px) {
+  .full-width-nav .dropped {
+    flex-direction: column-reverse;
+  }
 }
 .full-width-nav .dropped .nav-link {
   text-decoration: none;
@@ -272,7 +249,6 @@ p {
   height: 10%;
   margin: 2%;
   color: #FFFFFF;
-  z-index: 11;
   opacity: 1;
   text-align: center;
 }
@@ -478,9 +454,10 @@ footer .container .copyright {
 .home .cta .top-content .blueprint {
   background: url("../img/home/home-img-1.png");
   background-repeat: no-repeat;
-  width: 48%;
+  width: 47%;
   height: 275px;
   order: 1;
+  border-radius: 5px;
 }
 @media (max-width:400px) {
   .home .cta .top-content .blueprint {
@@ -495,8 +472,9 @@ footer .container .copyright {
 .home .cta .top-content .designs-img {
   background: url("../img/home/home-img-2.png");
   background-repeat: no-repeat;
-  width: 51%;
+  width: 47%;
   height: 275px;
+  border-radius: 5px;
 }
 @media (max-width:400px) {
   .home .cta .top-content .designs-img {
@@ -1418,10 +1396,12 @@ footer .container .copyright {
   text-align: center;
   padding-bottom: 2%;
 }
+.projects .image-descriptions .animated {
+  animation-duration: 2s;
+}
 .projects .image-descriptions .active-project {
   display: block;
   opacity: 1;
-  animation: fadein 2s linear;
 }
 @keyframes fadein {
   0% {

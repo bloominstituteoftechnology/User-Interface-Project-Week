@@ -23,9 +23,17 @@ class TabContent {
   }
   select() {
     const allContent = document.querySelectorAll('.tab-content');
-    Array.from(allContent).forEach(item =>
-    item.classList.remove('active-content'));
+    Array.from(allContent).forEach(item =>{
+      item.classList.remove('active-content');
+      item.classList.remove('animated');
+      item.classList.remove('bounceInUp');
+    }
+    );
+
     this.element.classList.add('active-content');
+    this.element.classList.add('animated');
+    this.element.classList.add('bounceInUp');
+
   }
 }
 
