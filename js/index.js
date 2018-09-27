@@ -1,8 +1,32 @@
 // JS goes here
+// tl = new TimeLineMax();
 window.addEventListener("load", () => {
-  TweenLite.from("h1", 2, { opacity: 0, x: 200 });
-  TweenLite.from(".home__img1--destkop", 1, { opacity: 0, delay: 2 });
-  TweenLite.from(".about__text", 1.5, { opacity: 0, delay: 2 });
+  TweenMax.staggerFrom(
+    "h1",
+    1.3,
+    { autoAlpha: 0, x: 100, ease: Back.easeOut.config(1.1) },
+    0.3
+  );
+  TweenMax.from(".home__img1--destkop", 0.6, {
+    y: 30,
+    opacity: 0,
+    delay: 0.9
+  });
+  TweenMax.from(".home__img2--desktop", 0.6, { y: 30, opacity: 0, delay: 1 });
+  //==== Tablet & Mobile ====
+  TweenMax.from(".home__img1--mobile", 1, {
+    y: 30,
+    opacity: 0,
+    ease: Back.easeOut.config(1.2),
+    delay: 0.8
+  });
+  TweenMax.from(".home__img2--mobile", 1, {
+    y: 30,
+    opacity: 0,
+    ease: Back.easeOut.config(1.2),
+    delay: 1
+  });
+  TweenMax.staggerFrom(".about__text", 1, { y: 20, opacity: 0 }, 0.4);
 });
 
 // Menu Button
@@ -11,8 +35,9 @@ const header = document.querySelector("header");
 
 menuBtn.addEventListener("click", function(event) {
   event.stopPropagation();
+  // TweenMax.to("header", 6, { x: 400, scale: 0 });
   header.classList.toggle("expanded");
-  TweenMax.from(".expanded", 0.3, { scale: 0, x: 510, y: -515 });
+  TweenMax.from(".expanded", 0.3, { scale: 0, x: 510, y: -700 });
 });
 
 // Tab Nav Constructor
