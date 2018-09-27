@@ -1,6 +1,5 @@
 // JS goes here
 
-
 class Open {
     constructor(element) {
         this.element = element;
@@ -25,6 +24,7 @@ class Open {
         document.querySelector('.nav').classList.toggle('nav-close');
         document.querySelector('.hamburger-off').classList.toggle('hamburger');
         document.querySelector('.x').classList.toggle('x-none');
+        TweenMax.from('.nav', .5, {opacity:0, y: -1000});
         }
     }
 
@@ -78,6 +78,7 @@ class TabLink {
       items.forEach((item) => { item.classList.remove("tabs-item-selected"); });
    
       this.element.classList.add("tabs-item-selected");
+      TweenMax.from(this.element, .8, {opacity: 0, scale:0, ease:Expo.easeOut, x: -600});
     }
   }
   
@@ -89,3 +90,13 @@ class TabLink {
   
  
   links[0].select();
+
+
+
+
+
+
+
+
+
+
