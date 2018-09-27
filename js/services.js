@@ -55,3 +55,5 @@ let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(element => {
   return new Tab(element)
 });
+
+tabs[0].select()
