@@ -1,10 +1,7 @@
 //Corey Gumbs
 //9/26/2018
 
-
 ////Tabs Component
-
-
 class Tab{
     constructor(tabElement){
         this.tabElement = tabElement;
@@ -30,8 +27,6 @@ class Tab{
         this.tabItem.selectTabItem();
     }
 }
-
-
 class TabContent{
     constructor(element){
         this.element = element;
@@ -56,6 +51,3 @@ class TabContent{
 let tabBtns  = document.querySelectorAll(".tabs-btn");
 
 tabBtns = Array.from(tabBtns).map(tab => new Tab(tab));
-
-//console.log(tabBtns);
-
