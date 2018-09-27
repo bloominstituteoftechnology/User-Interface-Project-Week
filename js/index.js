@@ -13,9 +13,8 @@ class TabLink {
     constructor(element) {
         this.element = element;
         this.data = this.element.dataset.tab;
-        this.item = document.querySelector(`.tabItem[data-tab="${this.data}"]`);
-        this.tabItem = new TabItem(this.item);
-
+        this.items = document.querySelectorAll(`.h[data-tab="${this.data}"]`);
+        this.tabItems = Array.from(this.items).map (item => new TabItem(item));
         this.element.addEventListener('click', () => {
             this.select();
         });
@@ -23,14 +22,16 @@ class TabLink {
     };
 
     select() {
-        const links = document.querySelectorAll('tabLink')
-        links.forEach(link=> {
+        const links = document.querySelectorAll('.tabLink')
+        links.forEach( link => {
             link.classList.remove("selectTab")
         })
 
         this.element.classList.add('selectTab')
-        this.tabItem.select();
-    }
+        this.tabItems.forEach(item => {
+            item.select();
+    })
+}
 }
 
 class TabItem {
@@ -39,9 +40,11 @@ class TabItem {
     }
   
     select() {
-      const items = document.querySelectorAll('.tabItem');
+      const items = document.querySelectorAll('.h');
       items.forEach( item => {
-        item.classList.remove('selectItem');
+          if (this.element.nodeName === item.nodeName) {
+            item.classList.remove('selectItem');
+          }
       })
       this.element.classList.add('selectItem');
     }
@@ -50,3 +53,4 @@ class TabItem {
 let links = document.querySelectorAll(".tabLink") 
 
 links = Array.from(links).map( link => new TabLink(link));
+links[0].select()
