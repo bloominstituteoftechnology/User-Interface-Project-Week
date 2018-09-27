@@ -90,39 +90,40 @@ class Card {
         this.element = element;
     }
 
+    // display correct card when a tab is clicked
     select(){
         let cards =  document.querySelectorAll('.card');
-        Array.from(cards).forEach( (card)=> card.classList.add('disappear'));
-        this.element.classList.remove('disappear');
+     // move all cards left -100% so they won't be displayed
+        Array.from(cards).forEach((card) => TweenLite.to(card, 0, {left:"-100%"}));
+    
+        // display correct card
+        TweenLite.to(this.element, 0, {left:"5%"})
+       
     }
 }
 
 
 // Carousel JS.  make cards rotate
-let Carousel = class {
+class Carousel {
     constructor(element){
         this.element = element;
         this.currentCard = 0;
         this.cards = this.element.querySelectorAll('.card');
         this.maxCardNum = this.cards.length;
-             
-        this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
-        this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
-    }
+        this.cards[this.currentCard].style.left = "5%";
+        this.initiate();
+     }
 
      rightClicked() {
         let newNum = this.currentCard + 1;
         if (newNum == this.maxCardNum )
-            newNum = 0;
-        
-       
-        this.cards[newNum].classList.remove('disappear')
-        // TweenLite.fromTo(this.cards[this.currentCard], 2, {x :0}, {x:1000} );
-        TweenLite.fromTo(this.cards[newNum], 2, {x :-1000}, {x:0} );
+            newNum = 0; 
+  
+        // slide current card to right and slide new card in from left
+        TweenLite.fromTo(this.cards[this.currentCard], 1.3,  {left :"5%"}, {left:"100%"} );
+        TweenLite.fromTo(this.cards[newNum], 1.3, {left :"-100%"}, {left:"5%"} );
     
-         setTimeout((this.cards[this.currentCard].classList.add('disappear')),3000);
-        //  setTimeout((console.log("RIght Clickede")), 3000);
-         this.currentCard = newNum;  
+        this.currentCard = newNum;  
 
         tabs[this.currentCard].select();
       }
@@ -133,14 +134,19 @@ let Carousel = class {
             newNum = this.maxCardNum - 1;
  
             this.cards[newNum].classList.remove('disappear')
-            TweenLite.fromTo(this.cards[newNum], 3, {x :1000}, {x:0} );
-        
-            setTimeout(this.cards[this.currentCard].classList.add('disappear'),3000);
-      
+            TweenLite.fromTo(this.cards[this.currentCard], 1.3,  {left :"5%"}, {left:"-100%"} );
+            TweenLite.fromTo(this.cards[newNum], 1.3, {left :"100%"}, {left:"5%"} );
+          
         this.currentCard = newNum;   
         tabs[this.currentCard].select();
       }
+
+      initiate() {
+            this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
+            this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
+        }
 }
+
 
 let carousel = document.querySelector('.cards-container');
 carousel = new Carousel(carousel);
@@ -148,7 +154,6 @@ carousel = new Carousel(carousel);
 
 
 let tabs = document.querySelectorAll('.tab');
-
 tabs = Array.from(tabs).map((tab) => new Tab(tab));
 
 
