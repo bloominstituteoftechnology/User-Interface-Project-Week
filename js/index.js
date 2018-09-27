@@ -29,5 +29,8 @@ hamburgerClosed.addEventListener('click', () => {
   hamburger.src = './img/nav-hamburger.png'
 });
 
+    AOS.init();
+  
+
 
 
