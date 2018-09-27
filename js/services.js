@@ -41,9 +41,5 @@ class TabContent {
         this.element.style.display = "";
     }
 }
-
-
-
-
 let tablinks = document.querySelectorAll('.button');
 tablinks = Array.from(tablinks).map( (item,index) => new Tablinks(item,index));
