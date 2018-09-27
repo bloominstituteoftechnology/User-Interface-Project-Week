@@ -134,34 +134,109 @@ table {
   border-spacing: 0;
 }
 /* Your Code Goes Here */
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 24px;
+}
 .container {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
 }
-/*.menu{
-  background: url(../img/home/home-jumbotron.png);
-  background-size: cover;
-}
-.picture{
-  img{
-    //width: 100%;
-  }
-}*/
 .menu header .top-bar {
-  position: absolute;
+  position: fixed;
   display: flex;
   width: 100%;
+  justify-content: space-between;
+  background-color: #B0C4DE;
+  padding: 10px 0;
+  z-index: 2;
 }
-.menu header .picture img {
+.menu header .top-bar h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: white;
+  margin: 5px 7.5%;
+}
+.menu header .top-bar .non-expanded {
+  margin: 5px 7.5%;
+  cursor: pointer;
+}
+.menu header .top-bar .expanded {
+  display: none;
+}
+.menu header .nav {
+  display: none;
+  position: absolute;
+  top: 54px;
+  width: 100%;
+  padding: 145px 0;
+  background-color: #B0C4DE;
+  z-index: 2;
+}
+.menu header .nav nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.menu header .nav nav a {
+  font-size: 4.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 85px;
+  color: white;
+}
+.menu header .nav nav a:hover {
+  color: #222222;
+}
+.menu header .service {
+  padding: 50px 0;
+}
+.menu header .nav-open {
+  display: block;
+}
+.menu header .jumbo img {
   width: 100%;
 }
-.menu header .picture h1 {
+.menu header .jumbo .jumbo-text {
+  display: flex;
   position: absolute;
-  top: 50%;
+  top: 300px;
+  margin: 0 7.5%;
+}
+.menu header .jumbo .jumbo-text h1 {
+  text-align: left;
+  font-size: 6.4rem;
+  font-weight: bold;
+  line-height: 75px;
+  color: white;
+}
+.menu header .jumbo .services {
+  top: 150px;
+}
+.home h2 {
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+.home button {
+  max-width: 33%;
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid black;
 }
 .home .content-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 7.5%;
 }
@@ -169,7 +244,13 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 410px;
+  width: 48%;
+}
+.home .content-section .img-content {
+  width: 48%;
+}
+.home .content-section .img-content img {
+  width: 100%;
 }
 .home .inverse-content {
   flex-direction: row-reverse;
@@ -180,6 +261,107 @@ table {
   margin: 7.5%;
 }
 .home .recent-projects p {
-  margin: 0 auto;
-  width: 50%;
+  margin: 20px auto;
+  width: 45%;
+}
+.home .recent-projects img {
+  margin: 20px 0;
+  width: 100%;
+}
+.home .recent-projects .project .header {
+  display: flex;
+  position: relative;
+  top: -70px;
+}
+.home .recent-projects .project .header h3 {
+  letter-spacing: 8px;
+  padding: 25px 50px;
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  font-size: 2.8rem;
+}
+.home .recent-projects .one .header {
+  justify-content: flex-end;
+}
+.home .recent-projects .three .header {
+  justify-content: flex-end;
+}
+.bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: grey;
+  position: fixed;
+}
+.services .intro p {
+  margin: 7.5%;
+}
+.services .tabs .tabs-items {
+  margin: 7.5%;
+}
+.services .tabs .tabs-item {
+  display: none;
+}
+.services .tabs .tabs-item .tabs-item-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin: 30px 0;
+}
+.services .tabs .tabs-item .tabs-item-description {
+  display: flex;
+  justify-content: space-between;
+}
+.services .tabs .tabs-item .tabs-item-description .text {
+  width: 48%;
+}
+.services .tabs .tabs-item .tabs-item-description .img {
+  width: 48%;
+}
+.services .tabs .tabs-item .tabs-item-description .img img {
+  width: 100%;
+}
+.services .tabs .tabs-item-selected {
+  display: block;
+}
+.services .tabs .tabs-links {
+  margin: 7.5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.services .tabs .tabs-links .tabs-link {
+  border: 1px solid black;
+  padding: 15px;
+}
+.services .tabs .tabs-links .tabs-link:hover {
+  color: white;
+  background-color: #222222;
+}
+.services .tabs .tabs-link-selected {
+  z-index: 2;
+  background-color: #5E9FB9;
+  color: white;
+  z-index: -1;
+}
+.footer {
+  background-color: #828282;
+}
+.footer h2 {
+  font-size: 2rem;
+  line-height: 24px;
+  color: white;
+}
+.footer p {
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: white;
+}
+.footer .contact {
+  padding-top: 75px;
+  display: flex;
+  justify-content: space-between;
+  margin: 7.5%;
+}
+.footer .copyright {
+  text-align: center;
 }
