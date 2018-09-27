@@ -19,9 +19,10 @@
         top:50%;
         padding:5% 6%;
         h3{
-            line-height: 6.5rem;
-            font-size: 6rem;
-            font-weight: bold;
+            line-height: @jumbo-line-height;
+            font-size: @jumbo-font-size;
+            font-weight: @jumbo-font-weight;
+            color: @jumbo-color;  
             @media @phone{
                 font-size: 5rem;
             }
@@ -60,21 +61,20 @@
                 width:100%;
             }
             h3{
+                .sub-header-text();
                 padding-bottom: 5%;
-                color:black;
-                font-weight: bold;
                 @media @phone{
                     padding-top: 5%;
                     font-size:3.5rem;
                 }  
             }
-            p{
-                line-height: 30px;
-            }
+            // p{
+            //     line-height: 30px;
+            // }
 
             .button{
                 margin-top:5%;
-                border:1px solid black;
+                border:1px solid @button-borders;
                 width:30%;
                 text-align: center;
                 padding: 2.5% 0;
@@ -118,11 +118,10 @@
             padding:0;
         } 
     h3{
-        color:black;
+        .sub-header-text();
         margin-top:10%;
         margin-bottom:5%;
         margin-left:5%;
-        font-weight: bold;
     }
     .project{
         &-intro{
@@ -133,7 +132,7 @@
             .right{  
                 display: flex;
                 align-items: center;
-                background: #D8D8D8;
+                background: @gray-square;
                 height: 95px;
                 width: 320px;
                 font-size:2rem;
@@ -152,7 +151,7 @@
             .left{
                 display: flex;
                 align-items: center;
-                background: #D8D8D8;
+                background: @gray-square;
                 height: 95px;
                 width: 320px;
                 font-size:2rem;
@@ -181,10 +180,10 @@
                 margin:0 auto;
                 padding:25% 8% 0;
             }
-            p{
-                line-height:30px;
-                font-size: 2rem;
-            }  
+            // p{
+            //     line-height:30px;
+            //     font-size: 2rem;
+            // }  
         }
         &-desktop{
             @media @phone{
@@ -207,11 +206,11 @@
     color:black;
     overflow: hidden;
     h3{
-        color:black;
+        .sub-header-text();
     }
-    p{
-        line-height: 30px;
-    }
+    // p{
+    //     line-height: 30px;
+    // }
     .banner{
         position: relative;
         &-dektop{
@@ -245,6 +244,11 @@
             border: 1px solid black;
             color: black;
             cursor: pointer;
+            &:hover{
+                background-color:@tab-hover-bg;
+                color:@tab-hover-color;
+                transition:0.2s;
+            }
         }
         .tab-info{
             display: none; 
@@ -276,7 +280,7 @@
             display: flex;
         }
         .tabs-link-selected{
-                background: #48A0BC;
+                background: @tab-selected-bg;
                 color: white;
             }
         }
