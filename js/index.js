@@ -110,7 +110,7 @@ class Card {
     const cards = document.querySelectorAll(".tab__content");
     Array.from(cards).forEach(card => card.classList.remove("active"));
     this.card.classList.add("active");
-    TweenMax.from(`${this.card}`, 1, { opacity: 0 });
+    TweenMax.from(cards, 0.6, { opacity: 0 });
   }
 }
 
