@@ -68,3 +68,14 @@ function getDegrees(property) {
   newArr = newArr.join("");
   return newArr;
 }
+
+const ham = document.querySelector("#hamburger");
+
+const aTags = document.querySelectorAll(".nav a");
+TweenMax.from(aTags[0], 5, {opacity: .1});
+
+ham.addEventListener("click", () => {
+  for (let i = 0; i < aTags.length; i++) {
+    TweenMax.to(aTags[i], 5, {color: "black"});
+  }
+});
