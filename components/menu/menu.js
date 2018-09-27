@@ -12,7 +12,7 @@ class Dropdown {
 
   toggleContent(event) {
     this.content.classList.toggle("hidden-menu-content--open");
-    // this.button.classList.toggle("");
+    this.button.classList.toggle("menu-button-x");
   }
 }
 
