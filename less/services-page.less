@@ -3,14 +3,22 @@
     flex-direction: column;
     width: 100%;
 
-    img {
+    .desktop-img {
         width: 100%;
         height: 250px;
 
         @media @phone {
-          height: 320px; 
+          display: none;
         }
     
+    }
+
+    .mobile-img {
+        display: none;
+        @media @phone {
+            display: flex;
+            height: 390px;
+        }
     }
 
     h1 {
@@ -25,7 +33,7 @@
         z-index: 0;
 
         @media @phone {
-            top: 18%;
+            top: 48%;
             left:5%;
             font-size: 5rem;
 
@@ -33,12 +41,20 @@
     }
 }
 
+.service-content{
+    @media @phone {
+        font-size: 2.4rem;
+        line-height: 38px;
+    }
+}
 .services-content-container {
     padding:  50px 75px;
     width: 1024px;
 
     @media @phone {
         width: 100%;
+        padding: 50px 25px;
+
     }
 }
 
@@ -47,6 +63,13 @@
     flex-direction: row;
     justify-content: space-between;
     padding-top: 50px;
+
+    @media @phone {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        
+    }
 
     .tab{
         display: flex;
@@ -58,9 +81,17 @@
         font-weight:bold;
         border: 1px solid black;
         &:hover {
-            background-color: #5e9fb9;
+            background-color: #9baaaf;
             color: white;
             cursor: pointer;
+        }
+
+        @media @phone {
+            margin: 13px 0px;
+            padding: 25px 20px;
+            width: 100%;
+            font-size: 3rem;
+
         }
     }
 }
@@ -77,28 +108,38 @@
 
 .card {
     display: none;
-    // flex-direction: row;
-    // justify-content: space-between;
-    // width: 100%;
-
+    
     .card-text-holder {
         width: 50%;
+
+        @media @phone {
+            width: 100%;
+        }
       
         .headline {
             font-size: 2.6rem;
             font-weight: bold;
             line-height: 46px;
+            @media @phone {
+                font-size: 3.5rem;
+                
+            }
             
         }
         p{
-            
             padding-top: 15px;
+            @media @phone {
+                font-size: 2.4rem;
+                line-height: 38px;
+            }
         }
     }
 
    
     .img-container {
-
+        @media @phone {
+        width: 100%;
+        }
         .desktop-img {
             display: flex;
             width:100%;
@@ -112,9 +153,10 @@
         .mobile-img {
             display: none;
             @media @phone {
-                display: block;
+                display: flex;
                 width: 100%;
                 height: auto;
+                padding-top: 40px;
 
             }
         }
@@ -126,6 +168,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    @media @phone {
+        flex-direction: column;
+    }
 }
 
 
