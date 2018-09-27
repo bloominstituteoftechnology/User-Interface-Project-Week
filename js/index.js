@@ -94,7 +94,7 @@ hamburgerButton.addEventListener('click', () => {
 }
  let links = document.querySelectorAll('.tabs-link');
 links = Array.from(links).map(link => new TabLink(link));
-// links[0].select();
+select(links[0]);
 
 // Homepage javascript changes
 
