@@ -8,7 +8,7 @@ class TabLink {
         this.card = new TabContent(this.card);
         this.element.addEventListener('click', () => {
             this.selectLink();
-            this.preventDefault();
+            this.preventDefault;
         });
         
     }
@@ -55,10 +55,24 @@ const close = document.querySelector('#close');
 const modal = document.querySelector('.main-nav');
 
 burger.addEventListener('click', () => {
-    modal.style.display = 'flex';
+    if (modal.style.display === 'none') {
+        modal.style.display = 'flex';
+        burger.src ='img/nav-hamburger-close.png';
+    } else { 
+        modal.style.display = 'none';
+        burger.src ='img/nav-hamburger.png';
+    }
+    burger.preventDefault;
 })
+
+// burger.addEventListener('click', () => {
+    
+// })
+
 close.addEventListener('click', () => {
     modal.style.display = 'none';
 })
 
 links[0].selectLink();
+
+
