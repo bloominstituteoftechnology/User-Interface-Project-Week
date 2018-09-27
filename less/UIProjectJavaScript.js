@@ -60,8 +60,25 @@ class Dropdown {
 
   toggleContent(event) {
     this.content.classList.toggle("menuOptions");
+
+    let navImage = document.querySelector(".menuButton");
   }
 }
 
 let dropdownMenu = document.querySelectorAll(".menuContent");
 dropdownMenu = Array.from(dropdownMenu).map(dropdown => new Dropdown(dropdown));
+
+let closedNav = document.querySelector(".menuOptions");
+let navImage = document.querySelector(".menuButton");
+
+function changeMenuButton() {
+  if (closedNav.classList.contains("menuHidden")) {
+    navImage.src =
+      "https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/nav-hamburger.png";
+  } else {
+    navImage.src =
+      "https://raw.githubusercontent.com/GannonDetroit/User-Interface-Project-Week/master/img/nav-hamburger-close.png";
+  }
+}
+
+navImage.addEventListener("click", changeMenuButton);
