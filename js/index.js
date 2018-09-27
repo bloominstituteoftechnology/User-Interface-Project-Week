@@ -7,9 +7,12 @@ let navPage = document.querySelector(".open-nav");
 let mainPage = document.querySelector(".main-nav");
 
 burgerBtn.addEventListener("click", ()=> {
+    
     navPage.classList.toggle("display-toggle");
     navPage.classList.toggle("fade-in");
     mainPage.style.display = "none";
+    TweenMax.staggerFrom("a", .5, {opacity:0, scale:.5}, .5);
+    
 })
 
 openedBurger.addEventListener("click", ()=> {
@@ -64,14 +67,10 @@ clickMethod() {
 
 }
 
-
-
-
-
-
-
-
-
+TweenLite.from(".jumbotron", 1, {opacity:0});
+TweenLite.from(".animation1", 1, {x:-200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
+TweenLite.from(".animation2", 1, {x:200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
+TweenLite.from(".animation3", 1, {x:-200, rotation:0, scale:0, ease: Back.easeOut, delay:.5});
 
 
 
