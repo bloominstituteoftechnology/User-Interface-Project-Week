@@ -46,12 +46,13 @@ header .header {
   left: 0px;
   width: 100%;
   height: 600px;
+  z-index: 0;
 }
 header .header h1 {
   position: relative;
   top: 310px;
   left: 97px;
-  z-index: 4;
+  z-index: 2;
 }
 @media (max-width: 500px) {
   header .header h1 {
@@ -67,7 +68,7 @@ header .header img {
   position: relative;
   top: -227px;
   left: 0px;
-  z-index: 3;
+  z-index: 1;
   width: 100%;
 }
 @media (max-width: 500px) {
@@ -674,16 +675,31 @@ header {
     }
 }*/
 .menuHeader {
-  width: 100%;
+  width: 1024px;
   height: 75px;
   background-color: #828282;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 4;
+}
+@media (max-width: 500px) {
+  .menuHeader {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1%;
+    padding: 1%;
+    position: relative;
+    top: -22px;
+    left: 37px;
+    z-index: 4;
+    padding: 0;
+    margin: 0;
+  }
 }
 .menuHeader .logo {
   font-weight: bold;
@@ -691,27 +707,41 @@ header {
   color: white;
   width: 100%;
   margin-left: 70px;
-  text-align: left;
 }
 .menu-button {
   position: absolute;
   right: 88px;
   cursor: pointer;
+  z-index: 6;
 }
 .menu {
   display: none;
-  position: relative;
-  top: 75px;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #828282;
-  border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
-  z-index: 2;
+  z-index: 5;
   /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+@media (max-width: 500px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1%;
+    padding: 1%;
+    position: relative;
+    top: -22px;
+    left: 37px;
+    z-index: 4;
+    padding: 0;
+    margin: 0;
+  }
 }
 .menu ul li {
   list-style-type: none;
@@ -721,6 +751,30 @@ header {
 }
 .menu--open {
   display: block;
+  padding-top: 15px;
+}
+.menu-buttonExpanded {
+  display: none;
+}
+.logoExpanded {
+  display: none;
+}
+.menu-buttonExpandedOpen {
+  display: inline;
+  position: absolute;
+  right: 88px;
+  cursor: pointer;
+  z-index: 7;
+}
+.logoExpandedOpen {
+  display: inline;
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: white;
+  width: 100%;
+  margin-left: 70px;
+  position: fixed;
+  z-index: 6;
 }
 header .headerServices {
   position: relative;
@@ -728,12 +782,13 @@ header .headerServices {
   left: 0px;
   width: 100%;
   height: 300px;
+  z-index: 0;
 }
 header .headerServices h1 {
   position: relative;
   top: 140px;
   left: 8%;
-  z-index: 4;
+  z-index: 2;
 }
 @media (max-width: 500px) {
   header .headerServices h1 {
@@ -749,7 +804,7 @@ header .headerServices img {
   position: relative;
   top: -77px;
   left: 0px;
-  z-index: 3;
+  z-index: 1;
   width: 100%;
 }
 @media (max-width: 500px) {
@@ -765,7 +820,7 @@ header .headerServices img {
 header p {
   margin-left: 50px;
 }
-.tabSection {
+.tabLinkList {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -774,7 +829,7 @@ header p {
   margin-top: 20px;
   margin-bottom: 50px;
 }
-.tabSection .individualTab {
+.tabLinkList .tabLink {
   width: 188px;
   background-color: #FFFFFF;
   border: 1px solid #222222;
@@ -788,87 +843,49 @@ header p {
   margin: 4px 2px;
   cursor: pointer;
 }
-.tabTitle {
+.individualTabTitle {
   width: 100%;
   text-align: left;
   margin-left: 100px;
 }
-.overviewServices {
+.individualTab {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 10px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+@media (max-width: 500px) {
+  .individualTab {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1%;
+    padding: 1%;
+  }
+}
+.individualTab div {
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.individualTab div p {
+  line-height: 2.6rem;
+  width: 90%;
+}
+.individualTab div img {
+  margin-left: 10px;
+  width: 80%;
+}
+.individualTab div .tabTextContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 5%;
   padding: 5%;
   width: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-@media (max-width: 500px) {
-  .overviewServices {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 1%;
-    padding: 1%;
-  }
-}
-.overviewServices .featureServices {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  margin: 10px;
-  margin-top: 40px;
-}
-@media (max-width: 500px) {
-  .overviewServices .featureServices {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 1%;
-    padding: 1%;
-  }
-}
-.overviewServices .featureServices div {
-  width: 100%;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.overviewServices .featureServices div img {
-  width: 100%;
-}
-.overviewServices .featureReverseServices {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  margin: 10px;
-  margin-left: 100px;
-  margin-bottom: 40px;
-}
-@media (max-width: 500px) {
-  .overviewServices .featureReverseServices {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 1%;
-    padding: 1%;
-  }
-}
-.overviewServices .featureReverseServices div {
-  width: 100%;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.overviewServices .featureReverseServices div p {
-  line-height: 2.6rem;
-  width: 90%;
-}
-.overviewServices .featureReverseServices div img {
-  margin-left: 10px;
-  width: 80%;
 }
