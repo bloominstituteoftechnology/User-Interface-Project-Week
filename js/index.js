@@ -62,17 +62,15 @@ burger.addEventListener('click', () => {
         modal.style.display = 'none';
         burger.src ='img/nav-hamburger.png';
     }
-    burger.preventDefault;
+   
 })
 
-// burger.addEventListener('click', () => {
-    
-// })
 
-close.addEventListener('click', () => {
-    modal.style.display = 'none';
-})
 
-links[0].selectLink();
+
+
+    links[0].selectLink();
+
+
 
 
