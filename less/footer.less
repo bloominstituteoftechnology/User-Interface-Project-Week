@@ -5,8 +5,12 @@
     background-color: @footerColor;
     .generalFonts(@footerFontSize, @footerFontColor, @fontReg, @footerLineHeight);
 
+    @media(max-width: @mobileBreak800) and (min-width: @mobileBreakMin600){
+         height: 100%;
+    }
+
     @media(max-width: @mobileBreak450){
-        height: 90vh;
+        height: 100%;
     }
     
     .footer-content{
@@ -15,6 +19,12 @@
         margin: 50px auto;
         .flexing-boxes(row, wrap, space-between);
         align-content: center;
+
+        @media(max-width: @mobileBreak800) and (min-width: @mobileBreakMin600){
+            max-width : @mobileBreak800min; 
+            width: 100%;
+            .flexing-boxes(row, wrap);
+        }
 
         @media(max-width: @mobileBreak450){
             max-width: @mobileMaxWidth;
@@ -43,6 +53,7 @@
 
         .footer-email{
             width: 30%;
+            
             @media(max-width: @mobileBreak450){
                 width: @100perWidth;
             }
