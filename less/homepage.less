@@ -1,0 +1,187 @@
+
+
+/*== Home Page (index.html) ====================================================*/
+
+.container.home {
+    display: flex;
+    flex-direction: column;
+}
+
+/*-- "Jumbotron" (Splash) ----------------------*/
+.jumbotron.home {
+    height: 60rem;
+    background-image: url('/img/home/home-jumbotron.png');
+    @media @mobile {
+        height: 26rem;
+        background-image: url('/img/home/home-mobile-jumbotron.png');
+    }
+    h1 {
+        margin-bottom: 5rem;
+    }
+}
+
+/*-- About -------------------------------------*/
+.about {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.about-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @media @mobile {
+        flex-direction: column;
+        .button {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    & > * {
+        width: 48%;
+        margin: 5rem 0;
+        @media @mobile {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    .img-header {
+        width: 41rem;
+        height: 27.5rem;
+        @media @tablet {
+            width: 29rem;
+            height: 27.5rem;
+        }
+        @media @mobile {
+            margin: 3rem 0;
+        }
+    }
+    &:nth-child(1){
+        .img-header {
+            background-image: url('/img/home/home-img-1.png');
+            @media @tablet {
+                background-image: url('/img/home/home-mobile-img-1.png');
+            }
+        }
+    }
+    &:nth-child(2){
+        .img-header {
+            background-image: url('/img/home/home-img-2.png');
+            @media @tablet {
+                background-image: url('/img/home/home-mobile-img-2.png');
+            }
+        }
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        p {
+            margin: 2rem 0;
+        }
+        @media @tablet {
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+        @media @mobile {
+            margin-right: unset;
+            margin-left: unset;
+        }
+    }
+    &:nth-child(1) {
+        flex-direction: row-reverse;
+        @media @mobile {
+            flex-direction: column;   
+        }
+    }
+}
+
+/*-- Projects ----------------------------------*/
+.projects {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    h2 {
+        margin: 5rem 0;
+        @media @mobile {
+            margin: 4rem 0 2rem 0;
+        }
+    }
+}
+.project {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 9.6rem;
+    @media @mobile {
+        margin-bottom: 2rem;
+        max-width: 29rem;
+    }
+    h3 {
+        vertical-align: middle;
+        text-align: center;
+        letter-spacing: 0.3em;
+        font-size: 2.5rem;
+        line-height: 9.6rem;
+        text-transform: uppercase;
+        width: 31.6rem;
+        height: 9.6rem;
+        background: @color-light-grey;
+        position: relative;
+        top: -5.75rem;
+        border: solid @color-white 1px;
+        @media @mobile {
+            width: 29rem;
+            top: -1rem;
+            border: unset;
+            align-self: center;
+        }
+    }
+    &:nth-child(even) {
+        h3 {
+            align-self: flex-end;
+            @media @mobile {
+                align-self: center;
+            }
+        }
+    }
+    p {
+        max-width: 42.5rem;
+        align-self: center;
+        margin-bottom: 2rem;
+        @media @mobile {
+            max-width: 100%;
+        }
+    }
+    .img-header {
+        width: 100%;
+        height: 23rem;
+        background-size: cover;
+        background-position: bottom;
+        @media @mobile {
+            height: 20rem;
+            width: 32rem;
+            position: relative;
+            left: -1.5rem;
+        }
+        &.villas {
+            background-image: url('/img/home/home-villas-img.png');
+            @media @mobile {
+                background-image: url('/img/home/home-mobile-villas-img.png');
+            }
+        }
+        &.outskirts {
+            background-image: url('/img/home/home-outskirts-img.png');
+            @media @mobile {
+                background-image: url('/img/home/home-mobile-outskirts-img.png');
+            }
+        }
+        &.the-blocks {
+            background-image: url('/img/home/home-the-blocks-img.png');
+            @media @mobile {
+                background-image: url('/img/home/home-mobile-the-blocks-img.png');
+            }
+        }
+    }
+}

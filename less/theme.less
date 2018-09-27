@@ -1,0 +1,235 @@
+
+
+/*== Media Queries ===========================================================*/
+
+@mobile: ~"(max-width: 500px)";
+@tablet: ~"(max-width: 875px)";
+
+
+/*== Basic Theming - Colors, Fonts ===========================================*/
+
+/*-- Base Color Definitions --------------------*/
+@color-white: #ffffff;
+@color-dark-grey: #222222;
+@color-grey: #828282;
+@color-cold-grey: #9ba5af;
+@color-light-grey: #D8D8D8;
+@color-dark-purple: #1a1326;
+@color-teal: #5E9FB9;
+
+
+/*-- Color Role Assignments --------------------*/
+
+@main-bg-color: @color-white;
+@main-text-color: @color-dark-grey;
+@main-font: Roboto, Arial, sans-serif;
+@subheading-color: @color-dark-grey;
+@header-bg-color: @color-cold-grey;
+@footer-bg-color: @color-grey;
+@footer-text-color: @color-white;
+@button-border-color: @color-dark-grey;
+@button-text-color: @color-dark-purple;
+@button-bg-color: @color-white;
+@tab-select-bg: @color-teal;
+@tab-select-fg: @color-white;
+@tab-hover-bg: @color-dark-grey;
+@tab-hover-fg: @color-white;
+
+
+/*-- Global Color & Font Theming ---------------*/
+body {
+    background-color: @main-bg-color;
+    color: @main-text-color;
+    font-family: @main-font;
+    line-height: 2.4rem;
+}
+body > header {
+    background-color: fadeout(@header-bg-color, 10%);
+}
+body > footer {
+    background-color: @footer-bg-color;
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    Color: @footer-text-color;
+}
+h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: @subheading-color;
+    @media @mobile {
+        font-size: 2.4rem;
+        width: 29rem;
+        align-self: center;
+    }
+}
+
+/*== Theme Mixins ============================================================*/
+
+.button-maker () {
+    color: @button-text-color;
+    border: solid 1px @button-border-color;
+    background: @button-bg-color;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    &:hover {
+        color: @button-bg-color;
+        background: @button-text-color;
+    }
+    &:active {
+        color: @button-bg-color;
+        background: tint(@button-text-color);
+    }
+}
+.button {
+    .button-maker();
+}
+
+
+/*== Main Layout Spacing - Headers, Footers, Content =========================*/
+
+/*-- Z Layering --------------------------------*/
+@z-index-header: 10;
+@z-index-pop: 5;
+
+/*-- Main Page Spacing -------------------------*/
+.content-spacer {
+    width: 85rem;
+    margin: 0 auto;
+    @media @tablet {
+        width: unset;
+        margin: 0 2rem;
+    }
+    @media @mobile {
+        width: 29rem;
+        margin: 0 auto;
+    }
+}
+.container {
+    .content-spacer;
+}
+
+/*-- Main Header -------------------------------*/
+body > header {
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    .wordmark {
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: @color-white;
+    }
+}
+
+/*-- Main Footer -------------------------------*/
+footer .content-spacer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 6.5rem;
+    width: 100%;
+    @media @tablet {
+        justify-content: space-evenly;
+    }
+    @media @mobile {
+        margin-top: 2rem;
+        width: 29rem;
+        flex-direction: column;
+    }
+    h4 {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        color: @color-white;
+        margin-bottom: 1rem;
+    }
+    input {
+        width: 28rem;
+        height: 4rem;
+        font-size: 1.6rem;
+        display: block;
+    }
+    div {
+        min-width: 14rem;
+        @media @mobile {
+            margin-top: 2rem;
+        }
+        &:nth-child(1){
+            @media @tablet {
+                width: 100%;
+                margin-bottom: 4rem;
+                display: flex;
+                justify-content: center;
+                form {
+                    width: 28rem;
+                }
+            }
+        }
+    }
+}
+.notice {
+    display: block;
+    font-size: 1.2rem;
+}
+.copyright {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    @media @mobile {
+        align-self: center;
+    }
+}
+
+
+/*== "Jumbotron" (Large Splash Section) ======================================*/
+
+.jumbotron {
+    width: 100%;
+    max-width: 102.4rem;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 25rem;
+    @media @mobile {
+        height: 26rem;
+    }
+    h1 {
+        color: @color-white;
+        width: 100%;
+        font-weight: bold;
+        font-size: 6.4rem;
+        line-height: 7.5rem;
+        margin-bottom: 2rem;
+        display: block;
+        @media @mobile {
+            font-size: 3.6rem;
+            line-height: 4.1rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
+/*
+Style Guide
+
+Page Specific
+
+Sub Headers
+
+    Font Weight: Bold
+    Font Size: 28px
+    Color: #222222
+
+Footer Headings
+
+Navigation Logo
+
+Navigation Text (Expanded)
+
+    */
