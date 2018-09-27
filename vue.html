@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/debug.css">
   <link rel="stylesheet" href="css/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
   <title>Document</title>
 </head>
 
@@ -19,43 +21,19 @@
         <div class="tab-navigator">
           <div class="tabs">
 
-            <tab></tab>
-            <tab></tab>
-            <tab></tab>
-            <tab></tab>
+            <tab v-for="item in tabs" v-bind:tab="item" v-bind:key="item.id" :data-tab="item.id"></tab>
+
 
           </div>
           <div class="cards">
-            <div class="card card-active" data-tab="1">
-              <div class="card__content">
-                <h3 class="card__header">Pre-Construction</h3>
-                <p>Completely synergize resource taxing relationships via premier niche markets. Professionally
-                  cultivate
-                  one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer
-                  service
-                  for
-                  state of the art customer service.</p>
-                <p>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively
-                  coordinate
-                  proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable
-                  customer
-                  service through sustainable potentialities.</p>
-              </div>
-              <div class="card__img">
-                <picture>
-                  <source media="(max-width: 500px)" srcset="img/services/services-tab-mobile-pre-construction-img.png">
-                  <img src="img/services/services-tab-pre-construction-img.png" alt="Pre-Construction">
-                </picture>
-              </div>
-            </div>
+            <card v-for="item in cards" v-bind:card="item" v-bind:key="item.id" :data-tab="item.id">
+            </card>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/app.js"></script>
 </body>
 
