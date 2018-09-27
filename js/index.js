@@ -130,6 +130,6 @@ container.addEventListener('click', () => {
 });
 
 
-const submitButton = document.querySelector('.submit');
+const submittingButton = document.querySelector('#submit-id');
 
-console.log (submitButton);
+console.log(submittingButton);
