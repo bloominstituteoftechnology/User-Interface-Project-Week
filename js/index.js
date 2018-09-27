@@ -1,5 +1,5 @@
-// expanding nav menu functionality. doesn't specify home-page or services since it needs
-//to function similarly on both
+// expanding nav menu functionality. doesn't specify which page since it needs
+//to function similarly on all
 const menuButton = document.querySelector(".menu .button-img img");
 
 const closedURL =
@@ -26,13 +26,12 @@ menuButton.addEventListener("click", () => {
   }
 });
 
-//for contact.html: added function for Submit button on page. select and radio forms are pre-selected so they cannot be empty,
-//but if email or text forms are left empty or unaltered, alert message will be to fill out rest of forms. otherwise, thanks for contacting us alert
+//for contact.html: added function for submit button on contact page. select and radio forms are pre-selected so they cannot be empty,
+//but if email or text forms are left empty or unaltered, alert message will be to fill out rest of forms. otherwise, 'thanks for contacting us' alert
 function clickAlert() {
   if (true) {
     let email = document.forms["email"]["email"].value;
     let text = document.forms["text"]["text"].value;
-
     if (email != "Enter email" && email != "" && text != "") {
       alert(
         "Thank you for reaching out to us, we will be contacting you soon!"
