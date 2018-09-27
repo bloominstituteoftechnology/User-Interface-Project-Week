@@ -21,10 +21,9 @@ class Tab {
     Array.from(tabs).forEach(function(tab){
       tab.classList.remove('tab-link-selected');
     });
-    
+
     this.element.classList.add('tab-link-selected');
     this.tabItem.select();
-
 
   }
 }
