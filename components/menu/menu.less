@@ -25,7 +25,7 @@
     }
   } //h3
 
-  .dropdown {
+  .dropdown { // holds button & all hidden links
 
 
     @media @mobile {
@@ -43,11 +43,28 @@
           }
     } // img hambuger
 
-    .menu-button-x {
+    .menu-button-x { // hides hamburger btn
       display: none;
     }
 
-    .hidden-menu-content { // menu
+      .button-X {
+        display: none;
+      }
+
+      .button-X-show {
+        display: block;
+        font-size: 2.4rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        @media @mobile {
+          font-size: 3.75rem;
+        }
+      }
+
+
+
+    .hidden-menu-content { // div holding all a links
       color: @SJ-nav-color;
       display: none;
       position: fixed;
@@ -62,9 +79,11 @@
       z-index: 12; 
       height: 550px;
       padding-top: 100px;
+
+
     } // hidden-menu-content
 
-    .hidden-link { 
+    .hidden-link {  // a links
       display: flex;
       flex-direction: column; 
       align-items: center;
@@ -73,12 +92,21 @@
       font-size: 5rem;
       padding-top: 30px;
       line-height: 6rem;
+
+      &:hover {
+        color: black;
+      }
+
     } // hidden-link
-    .hidden-menu-content--open {
+
+
+
+
+    .hidden-menu-content--open { // 
       display: block
     }
 
-  } // header
+  } // header dropdown
 } // .main-navigation
 
 
