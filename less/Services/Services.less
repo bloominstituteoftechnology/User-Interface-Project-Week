@@ -1,0 +1,115 @@
+.services-container {
+    .width-100;
+    @media @mobile {
+        cursor: crosshair;
+    }
+    .services-jumbotron {
+        background-image: url(../img/services/services-jumbotron.png);
+        height: 600px;
+        .jumbo;
+        .width-100;
+        .flex(none, flex-end, none);
+        @media @mobile {
+            background-image: url(../img/services/services-mobile-jumbotron.png);
+            height: 260px;
+            .jumbo;
+        }
+        .header {
+            line-height: 85px;
+            padding: 50px;
+            margin-left: 15px;
+            .font(@size: 6.4rem, @weight: bold, @height: 84px);
+            @media @mobile {
+                .font(@size: 5.3rem, @weight: bold);
+                margin: 0;
+                padding: 20px;
+            }
+        }
+    }
+    .services-content {
+        .flex(center, center, none);
+        p {
+            margin-top: 70px;
+            font-size: 2rem;
+            width: 97%;
+            line-height: 34px;
+            margin-bottom: 50px;
+        }
+    }
+    .tabs {
+        .width-100;
+        display: flex;
+        justify-content: space-evenly;
+        @media @mobile {
+            flex-direction: column;
+        }
+        .tab-link {
+            padding: 15px 45px;
+            border: 1px solid @tab-hover-bg-color;
+            font-size: 1.6rem;
+            font-weight: bold;
+            cursor: pointer;
+            @media @mobile {
+                margin: 20px;
+                text-align: center;
+            }
+            &:hover {
+                background-color: @tab-hover-bg-color;
+                color: @tab-hover-font-color;
+                @media @mobile {
+                    background-color: @tab-active-bg-color;
+                    color: black;
+                }
+            }
+        }
+        margin-bottom:100px;
+    }
+    .tab-link-selected {
+        background-color: @tab-active-bg-color;
+        cursor: crosshair;
+    }
+    .tabs-items {
+        .width-100;
+        .tabs-item {
+            margin-top: 20px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: scaleUp .7s ease both;
+            @media @mobile {
+                width: 100%;
+                flex-direction: column;
+                margin: 0 auto;
+            }
+        }
+        img {
+            @media @mobile {
+                width: 95%;
+            }
+        }
+        .tabs-item-selected {
+            display: flex;
+        }
+        .tabs-item-title {
+            h2 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 20px;
+                @media @mobile {
+                    font-size: 1.7rem;
+                    text-align: center;
+                }
+            }
+        }
+        .tabs-item-description {
+            width: 50%;
+            padding: 20px;
+            line-height: 28px;
+            font-size: 1.6rem;
+            @media @mobile {
+                width: 100%;
+            }
+        }
+        margin-bottom:150px;
+    }
+}

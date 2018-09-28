@@ -1,0 +1,93 @@
+// The main navigation for all pages
+.menu {
+    .width-100;
+    position: fixed;
+    background-color: @lambda-color-home-bg;
+    height: 40px;
+    z-index: 1;
+    .flex-wrap(@jc: space-between, @ai: none, @fw: wrap);
+    @media @mobile {
+        .width-100;
+    }
+}
+
+.menu h1 {
+    padding: 20px;
+    margin-left: 30px;
+    .font(@size: 2.4rem, @weight: 500, @height: 5px);
+    @media @mobile {
+        .font(@size: 2rem, @weight: 500, @height: 5px);
+    }
+}
+
+//CSS Style designed Hamburger
+.hamburger {
+    margin: 5px;
+    cursor: pointer;
+    .bar1,
+    .bar2,
+    .bar3 {
+        margin: 5px 30px;
+        width: 35px;
+        height: 4px;
+        background-color: @lambda-color-white;
+        border-radius: 2px;
+        transition: 0.4s;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// Basic Navigation items
+nav {
+    margin-top: 85px;
+    display: none; // display: flex;
+    flex-direction: column;
+    a {
+        line-height: 84px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 3.2rem;
+        color: white;
+        @media @mobile {
+            font-size: 2.2rem;
+        }
+        &:hover {
+            color: rgb(51, 42, 38);
+            font-weight: bold;
+            font-size: 3.2rem;
+            @media @mobile {
+                font-size: 2.2rem;
+                font-weight: bold;
+            }
+        }
+        .services&:target {
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+    }
+}
+
+// When menu becomes active
+.menu--active {
+    height: 100%;
+    position: fixed;
+    opacity: 0.9;
+    overflow: hidden;
+    .transition(height 200ms ease-in);
+    nav {
+        display: flex;
+    }
+    .bar1 {
+        -webkit-transform: rotate(-38deg) translate(0px, 9px);
+        transform: rotate(-38deg) translate(0px, 9px);
+    }
+    .bar2 {
+        opacity: 0;
+    }
+    .bar3 {
+        -webkit-transform: rotate(41deg) translate(-2px, -12px);
+        transform: rotate(41deg) translate(-2px, -12px);
+    }
+}
