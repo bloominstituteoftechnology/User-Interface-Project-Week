@@ -29,12 +29,4 @@ home.addEventListener("click", () => {
   console.log("clicked");
 });
 
-animateProjects.addEventListener("mouseenter", () => {
-  TweenLite.to(animateDiv, 3, { ease: SlowMo.ease.config(0.7, 0.7, false), x: -404 });
-});
-
-animateProjects.addEventListener("mouseleave", () => {
-  TweenLite.from(animateDiv, 1, { ease: Elastic.easeOut.config(1, 0.3), y: -50 });
-});
-
 ScrollReveal().reveal(".architect, .designs, .project-1, .project-2, .project-3", { delay: 300 });
