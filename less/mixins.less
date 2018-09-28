@@ -1,0 +1,77 @@
+.button-styling() {
+    border: 1px solid @darkgrey;
+    color: @darkgrey;
+    font-size: 1.6rem;
+    padding: 13px 27px;
+    text-align: center;
+    &:hover {
+        border: 1px solid @darkgrey;
+        color: @white;
+    }
+}
+
+.flex(@fd, @wr, @jc, @ai) {
+    display: flex;
+    flex-direction: @fd;
+    flex-wrap: @wr;
+    justify-content: @jc;
+    align-items: @ai;
+}
+
+.text-styling(@weight, @size, @color) {
+    font-weight: @weight;
+    font-size: @size;
+    color: @color;
+}
+
+.link-styling(@weight, @size, @color, @hover) {
+    font-weight: @weight;
+    font-size: @size;
+    color: @color;
+    &:hover {
+        color: @hover;
+    }
+}
+
+// From Hover.CSS by Ian Lunn
+/* Radial Out */
+.hvr-radial-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    //background: #e1e1e1;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .hvr-radial-out:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: @darkgrey;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-radial-out:hover, {
+    color: @white;
+  }
+  .hvr-radial-out:hover:before, {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
