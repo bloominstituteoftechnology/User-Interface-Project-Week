@@ -13,4 +13,5 @@ button.addEventListener('click', () => {
 
 let dropdowns = document.querySelectorAll('.dropdown');
 dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
+let open = document.getElementById('open');
 
