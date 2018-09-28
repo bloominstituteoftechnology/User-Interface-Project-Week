@@ -9,9 +9,6 @@ extendedNavModal.style.display = "none";
 characterToggler.style.display = "relative";
 
 
-
-
-
 hamburgerMenu.addEventListener('click', () => {
     if (extendedNavModal.style.display === "none") {
         extendedNavModal.style.display = "block";
