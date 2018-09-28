@@ -1,74 +1,146 @@
-// @import "variables";
-// @import "mixins";
-@import "./reset.less";
-@import "./global.less";
-@import "./banner.less";
-// @import "footer";
-// @import "home-page";
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
 
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  font:inherit;
+  vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+  display:block;
+}
+body{
+  line-height:1;
+}
+ol,ul{
+  list-style:none;
+}
+blockquote,q{
+  quotes:none;
+}
+blockquote:before,blockquote:after,
+q:before,q:after{
+  content:’’;
+  content:none;
+}
+ins{
+  text-decoration:none;
+}
+del{
+  text-decoration:line-through;
+}
 
+table{
+  border-collapse:collapse;
+  border-spacing:0;
+}
 
 /* Your Code Goes Here */
+body {
+  width: 100%;
+}
 
-//// banner
-// .banner {
-//   background-image: url("./img/home/home-jumbotron.png");
-//   background-repeat: no-repeat;
-//   background-position: top center;
-//   height: 600px;
-//   display: flex;
-//   flex-direction: column;
-//   @media (max-width: 450px) {
-//     background-image: url("./img/home/home-mobile-jumbotron.png");
-//     background-size: 320px 256px;
-//     background-position: 49% 11%;
-//     height: 290px;
-//   }
-//   .menuBar {
-//     background-color: #828282;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center;
-//     .menuItemContainer {
-//         width: 80%;
-//         display: flex;
-//         justify-content: space-between;
-//         @media (max-width: 450px) {
-//           width: 83%;
-//         }
-//         h1 {
-//           font-family: Roboto, Arial, sans-serif;
-//           font-weight: bold;
-//           font-size: 24px;
-//           color: #FFFFFF;
-//           padding-left: 8%;
-//           padding-top: 12px;
-//           padding-bottom: 12px;
-//         }
-//         .menu {
-//           display: none
-//         }
-//         .menu-button {
-//           margin-top: 15px;
-//           margin-right: 8%;
-//           height: 45%;
-//         }
-//     } 
-//   } 
-//     h2 {
-//     font-family: Roboto, Arial,sans-serif;
-//     font-weight: bold;
-//     font-size: 64px;
-//     line-height: 75px;
-//     color: #FFFFFF;
-//     margin: 280px 0px 30px 16%;
-//     @media (max-width: 450px) {
-//       font-size: 36px;
-//       line-height: 42px;
-//       margin: 60px 0px 30px 16%;
-//     }
-//   }
-// }
+// banner
+.banner {
+  background-image: url("../img/home/home-jumbotron.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 450px) {
+    background-image: url("../img/home/home-mobile-jumbotron.png");
+    background-size: 320px 256px;
+    background-position: 49% 11%;
+    height: 290px;
+  }
+  .menuBar {
+    background-color: #828282;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .menuItemContainer {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 450px) {
+          width: 83%;
+        }
+        h1 {
+          font-family: Roboto, Arial, sans-serif;
+          font-weight: bold;
+          font-size: 24px;
+          color: #FFFFFF;
+          padding-left: 8%;
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+        .menu {
+          display: none;
+          position: fixed;
+          top: 75px;
+          left: 0;
+          width: 350px;
+          height: 100vh; /* This give the height 100% of the        screen or, '100% of View Height' */
+          background-color: #81C784;
+          border: 1px solid #004D40;
+          border-left: none;
+          border-bottom: none;
+          z-index: 2; /* This set the layer level of the element,         it has precendence over initial level of 1*/
+          ul li{
+            list-style-type: none;
+            font-size: 32px;
+            padding: 30px 0;
+            text-align: center;
+          }
+          
+        }
+        .menu--open {
+            display: block;
+         }
+        .menu-button {
+          margin-top: 15px;
+          margin-right: 8%;
+          height: 45%;
+        }
+    } 
+  } 
+    h2 {
+    font-family: Roboto, Arial,sans-serif;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 75px;
+    color: #FFFFFF;
+    margin: 280px 0px 30px 16%;
+    @media (max-width: 450px) {
+      font-size: 36px;
+      line-height: 42px;
+      margin: 60px 0px 30px 16%;
+    }
+  }
+}
 
 //// link box container things
 
@@ -239,7 +311,7 @@
     .project {
       .projectHeadersRightTop {
         margin-top: 44px;  
-        background-image: url("./img/home/home-villas-img.png");
+        background-image: url("../img/home/home-villas-img.png");
         height: 270px;
         background-repeat: no-repeat;
         display: flex;
@@ -248,7 +320,7 @@
         justify-content: flex-end;
         width: 85%;
         @media (max-width: 450px) {
-          background-image: url("./img/home/home-mobile-villas-img.png");
+          background-image: url("../img/home/home-mobile-villas-img.png");
           width: 100%;
           margin-top: 26px;
           margin-left: 0%;
@@ -270,8 +342,7 @@
     }
     .project2 {  
       .projectHeadersLeft {
-        margin-top: 44px;  
-        background-image: url ("./img/home/home-outskirts-img.png");
+        margin-top: 44px;background-image: url("../img/home/home-outskirts-img.png");
         height: 270px;
         background-repeat: no-repeat;
         display: flex;
@@ -279,7 +350,7 @@
         align-content: flex-end;
         justify-content: flex-end;
         @media (max-width: 450px) {
-          background-image: url ("./img/home/home-mobile-outskirts-img.png");
+          background-image: url("../img/home/home-mobile-outskirts-img.png");
           margin-top: 0px;
           }
         h4 {
@@ -299,7 +370,7 @@
     .project3 {    
       .projectHeadersRightBottom {
         margin-top: 36px;  
-        background-image: url ("./img/home/home-the-blocks-img.png");
+        background-image: url("../img/home/home-the-blocks-img.png");
         height: 270px;
         background-repeat: no-repeat;
         display: flex;
@@ -308,7 +379,7 @@
         justify-content: flex-end;
         width: 85%;
         @media (max-width: 450px) {
-          background-image: url ("./img/home/home-mobile-the-blocks-img.png");
+          background-image: url("../img/home/home-mobile-the-blocks-img.png");
           margin-top: 4px;
           width: 100%;
         }
