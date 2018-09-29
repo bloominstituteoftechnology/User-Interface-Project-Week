@@ -1,10 +1,26 @@
 @import "reset" ;
 @import "expandedNav";
+@import "variables";
 
 /* Your Code Goes Here */
 
 .root-container {
-  border: 1px solid red; 
+  
+  border: 1px solid purple; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1024px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  justify-items: center; 
+
+  h2 {
+    @media @mobile {
+    width: 80%; 
+    max-width: 350px; 
+    }
+  }
 }
 
 body {
@@ -69,16 +85,39 @@ body {
   font-size: 64px; 
   line-height: 75px; 
   z-index: 1; 
+
+  @media @mobile {
+    height: 210px;
+    padding: 30px 5%
+  }
+
+  @media @mobile {
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+  }
 }
 
 
 
 .cta-wrapper {
   display: flex;
-  align-items: center; 
-  padding-top:88px;
-  margin-top:135px;
-  margin-bottom:-16%;
+  // align-items: center; 
+  // padding-top:88px;
+  // margin-top:135px;
+  // margin-bottom:-16%;
+  max-width: 100%; 
+  flex-direction: row;
+  justify-items: flex-start; 
+  margin-top: 24%;  
+}
+
+.body-container > .cta-wrapper-2  {
+  display: flex; 
+  justify-content: flex-start;
+  border: 1px solid blue;
+  width: 100%; 
+  flex-direction: row;
+  margin-top: 2%;
 }
 
 .cta-copy {
@@ -86,6 +125,8 @@ body {
   display: flex ;
   flex-direction: column; 
   margin-right: 60px;
+  justify-items: flex-start;
+  margin-top: -2%; 
 }
 
 .cta-copy .cta-copy-header {
@@ -104,13 +145,26 @@ body {
   margin-left:98px;
   font-size: 16px; 
   line-height: 24px;
-  margin-bottom: -27px; 
+  margin-bottom: -9px; 
 
 }
 
 .cta-image {
   width: 50%;
-  margin-left: 46px;
+  // margin-left: 46px;
+  margin-left: 4%; 
+}
+
+.cta-copy {
+  // @media @mobile {
+  //   width: 94%;
+  // }
+
+  @media @mobile {
+    width: 94%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
 }
 
 .button {
@@ -123,20 +177,28 @@ body {
   margin-top:51px;
   margin-left:107px;
   font-size: 16px; 
+
+  @media @mobile {
+    width: 94%;
+  }
 }
 
 .showcase-wrapper {
   display: flex;
   flex-direction: column;
-  margin-top: 259px;
-  max-width: 100%; 
+  // margin-top: 9%;
+  width: 100%; 
+  margin: 0 auto;
+  margin-top: 9%;  
 }
 
 .showcase-wrapper-header {
-  width: 200px;
-  height: 56px;
   font-size: 28px;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 4%; 
 }
+
 .showcase-img-tv {
   justify-content: center;
   justify-items: center;   
@@ -215,11 +277,15 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px; 
   margin-bottom: 3%;
-  margin-right: 175px;
-  margin-left: 244px;
-  max-width: 39%;
+  margin-right: -14%;
+  margin-left: 0;
+  max-width: 100%;
   line-height: 26px; 
-}
+  display: flex;
+  justify-content: center;
+  padding-left: 23%; 
+  padding-right: 38%;
+  margin-right: -14%; 
 
 .showcase-copy-content-o {
   color: black;
