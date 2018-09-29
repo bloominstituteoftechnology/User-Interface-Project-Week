@@ -178,13 +178,45 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-.banner .menuBar .menuItemContainer .menu-button {
-  margin-top: 15px;
-  margin-right: 8%;
-  height: 45%;
+.banner .menuBar .menuItemContainer .hamburgerIcon {
+  margin-top: 24px;
+  margin-right: 6%;
+  height: 4px;
+  width: 30px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: all ease 0.5s;
 }
-.banner .menuBar .menuItemContainer .menu-button--clicked {
-  opacity: 0;
+.banner .menuBar .menuItemContainer .hamburgerIcon::before,
+.banner .menuBar .menuItemContainer .hamburgerIcon::after {
+  content: "";
+  position: absolute;
+  height: inherit;
+  border-radius: inherit;
+  background-color: #FFFFFF;
+  width: 30px;
+}
+.banner .menuBar .menuItemContainer .hamburgerIcon::before {
+  top: -8px;
+  left: 0;
+  transform-origin: center center;
+}
+.banner .menuBar .menuItemContainer .hamburgerIcon::after {
+  bottom: -8px;
+  right: 0;
+  transform-origin: center center;
+}
+.banner .menuBar .menuItemContainer .burgerClicked {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.banner .menuBar .menuItemContainer .burgerClicked::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+.banner .menuBar .menuItemContainer .burgerClicked::after {
+  bottom: 0;
+  transform: rotate(90deg);
 }
 .banner .menu {
   display: none;
