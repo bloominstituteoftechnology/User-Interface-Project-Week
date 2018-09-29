@@ -13,7 +13,6 @@ const toggleMenu = (event) => {
   
   // create a reference to the ".menu-button" class
   
-  // let menuButton = document.querySelector(".menu-button");
   let menuButton = document.querySelector(".hamburgerIcon");
   
   // Using your menuButton reference, add a click handler that calls toggleMenu
