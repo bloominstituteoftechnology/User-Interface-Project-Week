@@ -177,7 +177,7 @@ const endIntro = () => {
     intro.style.display = "none";
 }
 
-TweenMax.from(j, 1, {x: 300, opacity: 0, ease: Back.easeInOut.config(1.7), delay: 1.5});
+/* TweenMax.from(j, 1, {x: 300, opacity: 0, ease: Back.easeInOut.config(1.7), delay: 1.5});
 TweenMax.from(s, 1, {x: -300, opacity: 0, ease: Back.easeInOut.config(1.7), delay: 2});
 TweenMax.from(and, 1, {scale: .2, opacity: 0, ease: Power0.easeNone, delay: 3});
 TweenMax.from(building, 1, {scale: .2, opacity: 0, ease: Power0.easeNone, delay: 3});
@@ -186,4 +186,4 @@ TweenMax.from(future, .8, {x: -800, opacity: 0, ease: Back.easeInOut.config(1.7)
 TweenMax.from(building, .5, {rotation: 720, ease: Power0.easeNone, delay: 4});
 TweenMax.to(building, .5, {scale: 50, x: 1000, ease: Power0.easeNone, delay: 4.5, onComplete: endIntro});
 
-
+ */
