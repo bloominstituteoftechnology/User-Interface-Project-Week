@@ -4,6 +4,7 @@ const toggleMenu = (event) => {
     // Toggle the "menu--open" class on menu reference. 
     console.log("toggleMenu was called");
     menu.classList.toggle("menu--open");
+    menuButton.classList.toggle("menu-Button--clicked")
   }
   
   // Start Here: Create a reference to the ".menu" class
