@@ -3,7 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 let hamburgerMenu = document.querySelector('.hamburger-menu-icon-closed');
-let extendedNavModal = document.querySelector('.menu__expanded');
+let extendedNavModal = document.querySelector('.menu-expanded');
 let characterToggler = document.querySelector('.character');
 extendedNavModal.style.display = "none";
 characterToggler.style.display = "relative";
