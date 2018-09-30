@@ -72,6 +72,10 @@ const toggleMenu = (event) => {
           cards.forEach( card => card.style.display = "none")
           // // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
           // this.cards.forEach( card => card.selectCard());
+          this.tabData = this.tabLinkElement.dataset.tab;
+          this.card = document.querySelector(`.card[data-tab='${this.tabData}']`);
+          console.log(this.card);
+          this.card.style.display = "";
       }
     }
 
