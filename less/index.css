@@ -144,7 +144,6 @@ body {
   height: 600px;
   display: flex;
   flex-direction: column;
-  font-family: Roboto, Arial, sans-serif;
 }
 @media (max-width: 450px) {
   .banner {
@@ -157,7 +156,7 @@ body {
 .banner .menuBar {
   background-color: #828282;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
   justify-content: center;
 }
 .banner .menuBar .menuItemContainer {
@@ -171,6 +170,7 @@ body {
   }
 }
 .banner .menuBar .menuItemContainer h1 {
+  font-family: Roboto, Arial, sans-serif;
   font-weight: bold;
   font-size: 24px;
   color: #FFFFFF;
@@ -178,82 +178,34 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
 }
-.banner .menuBar .menuItemContainer .hamburgerIcon {
-  margin-top: 24px;
-  margin-right: 6%;
-  height: 4px;
-  width: 30px;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  transform: translate(-50%, -50%) rotate(0deg);
-  transition: all ease 0.5s;
-}
-.banner .menuBar .menuItemContainer .hamburgerIcon::before,
-.banner .menuBar .menuItemContainer .hamburgerIcon::after {
-  content: "";
-  position: absolute;
-  height: inherit;
-  border-radius: inherit;
-  background-color: #FFFFFF;
-  width: 30px;
-}
-.banner .menuBar .menuItemContainer .hamburgerIcon::before {
-  top: -8px;
-  left: 0;
-  transform-origin: center center;
-}
-.banner .menuBar .menuItemContainer .hamburgerIcon::after {
-  bottom: -8px;
-  right: 0;
-  transform-origin: center center;
-}
-.banner .menuBar .menuItemContainer .burgerClicked {
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-.banner .menuBar .menuItemContainer .burgerClicked::before {
-  top: 0;
-  transform: rotate(90deg);
-}
-.banner .menuBar .menuItemContainer .burgerClicked::after {
-  bottom: 0;
-  transform: rotate(90deg);
-}
-.banner .menu {
+.banner .menuBar .menuItemContainer .menu {
   display: none;
-  width: 100%;
-  height: 550px;
-  background-color: rgba(130, 130, 130, 0.9);
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  /* This give the height 100% of the        screen or, '100% of View Height' */
+  background-color: #81C784;
+  border: 1px solid #004D40;
+  border-left: none;
+  border-bottom: none;
   z-index: 2;
+  /* This set the layer level of the element,         it has precendence over initial level of 1*/
 }
-@media (max-width: 450px) {
-  .banner .menu {
-    height: 440px;
-  }
-}
-.banner .menu ul {
-  margin-left: 43.5%;
-  margin-top: 110px;
-  cursor: pointer;
-}
-@media (max-width: 450px) {
-  .banner .menu ul {
-    margin-left: 30%;
-  }
-}
-.banner .menu ul li {
-  font-weight: bold;
-  line-height: 85px;
+.banner .menuBar .menuItemContainer .menu ul li {
   list-style-type: none;
-  font-size: 48px;
-  padding: 0 0;
-  color: #FFFFFF;
+  font-size: 32px;
+  padding: 30px 0;
+  text-align: center;
 }
-.banner .menu ul li:hover {
-  color: hsl(0, 0%, 13%);
+.banner .menuBar .menuItemContainer .menu--open {
+  display: block;
 }
-.banner .menu--open {
-  display: flex;
+.banner .menuBar .menuItemContainer .menu-button {
+  margin-top: 15px;
+  margin-right: 8%;
+  height: 45%;
 }
 .banner h2 {
   font-family: Roboto, Arial, sans-serif;
@@ -346,10 +298,6 @@ body {
     margin-top: 24px;
     padding: 13px 102px;
   }
-}
-.linkBoxContainer .linkBoxImageRight .infoButton button:hover {
-  background: gray;
-  color: white;
 }
 .linkBoxContainer .linkBoxImageRight .desktopImage1 {
   margin-top: 6px;
@@ -448,10 +396,6 @@ body {
     margin-top: 24px;
   }
 }
-.linkBoxContainer .linkBoxImageLeft .infoButton button:hover {
-  background: gray;
-  color: white;
-}
 .recentProjects {
   margin-top: 98px;
   margin-left: 4px;
@@ -476,7 +420,7 @@ body {
   }
 }
 .recentProjects .project .projectHeadersRightTop {
-  margin-top: 48px;
+  margin-top: 44px;
   background-image: url("../img/home/home-villas-img.png");
   height: 270px;
   background-repeat: no-repeat;
@@ -484,14 +428,14 @@ body {
   flex-direction: column;
   align-content: flex-end;
   justify-content: flex-end;
-  width: 87%;
+  width: 85%;
 }
 @media (max-width: 450px) {
   .recentProjects .project .projectHeadersRightTop {
     background-image: url("../img/home/home-mobile-villas-img.png");
     width: 100%;
     margin-top: 26px;
-    margin-left: 1%;
+    margin-left: 0%;
   }
 }
 .recentProjects .project .projectHeadersRightTop h4 {
@@ -507,11 +451,10 @@ body {
     padding: 35px 40px;
     align-self: flex-start;
     margin-left: 3%;
-    margin-bottom: -12px;
   }
 }
 .recentProjects .project2 .projectHeadersLeft {
-  margin-top: 38px;
+  margin-top: 44px;
   background-image: url("../img/home/home-outskirts-img.png");
   height: 270px;
   background-repeat: no-repeat;
@@ -541,7 +484,7 @@ body {
   }
 }
 .recentProjects .project3 .projectHeadersRightBottom {
-  margin-top: 42px;
+  margin-top: 36px;
   background-image: url("../img/home/home-the-blocks-img.png");
   height: 270px;
   background-repeat: no-repeat;
@@ -549,6 +492,7 @@ body {
   flex-direction: column;
   align-content: flex-end;
   justify-content: flex-end;
+  width: 85%;
 }
 @media (max-width: 450px) {
   .recentProjects .project3 .projectHeadersRightBottom {
@@ -563,20 +507,18 @@ body {
   font-size: 24px;
   font-weight: regular;
   letter-spacing: 8px;
-  padding: 38px 50px 32px 52px;
-  margin-right: 13%;
+  padding: 35px 60px 35px 60px;
 }
 @media (max-width: 450px) {
   .recentProjects .project3 .projectHeadersRightBottom h4 {
     align-self: flex-start;
-    margin-left: 3%;
-    padding: 35px 36px;
-    margin-bottom: -18px;
+    margin-left: 0%;
+    padding: 30px 0px;
   }
 }
 .recentProjects .projectParagraphs {
   margin-top: 54px;
-  margin-left: 20.5%;
+  margin-left: 204px;
   width: 45%;
   margin-bottom: 56px;
 }
@@ -597,77 +539,43 @@ body {
 .contactFooter {
   margin-top: 44px;
   width: 100%;
-  padding-top: 60px;
+  height: 250px;
   background-color: #828282;
   display: flex;
   flex-direction: column;
   font-family: Roboto, Arial, sans-serif;
   color: #FFFFFF;
 }
-@media (max-width: 450px) {
-  .contactFooter {
-    margin-top: 39px;
-    padding-top: 0px;
-  }
-}
 .contactFooter .contactInfo {
   display: flex;
   flex-direction: row;
-  width: 67%;
+  width: 855px;
   margin: auto;
   margin-bottom: 35px;
   justify-content: space-between;
 }
-@media (max-width: 450px) {
-  .contactFooter .contactInfo {
-    flex-direction: column;
-  }
-}
 .contactFooter .contactInfo .footerAddress2 {
-  margin-left: 3%;
-}
-@media (max-width: 450px) {
-  .contactFooter .contactInfo .footerAddress2 {
-    margin-left: 0%;
-  }
+  margin-left: 15px;
 }
 .contactFooter .contactInfo .footerAddress3 {
-  margin-left: 4%;
-}
-@media (max-width: 450px) {
-  .contactFooter .contactInfo .footerAddress3 {
-    margin-left: 0%;
-  }
+  margin-left: 20px;
 }
 .contactFooter h4 {
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
-  margin-bottom: 10px;
-}
-@media (max-width: 450px) {
-  .contactFooter h4 {
-    margin-top: 20px;
-  }
+  margin-bottom: 15px;
 }
 .contactFooter h5 {
   font-size: 12px;
   margin-top: 12px;
-  letter-spacing: 0.6px;
+  letter-spacing: .6px;
 }
 .contactFooter input {
   height: 35px;
   font-size: 16px;
-  padding-left: 2%;
+  padding-left: 3%;
   border-radius: 5px;
-  margin-bottom: 4px;
-}
-@media (max-width: 450px) {
-  .contactFooter input {
-    margin-top: 8px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
 }
 .contactFooter p {
   line-height: 24px;
@@ -679,195 +587,4 @@ body {
   margin-bottom: 10px;
   font-weight: regular;
   font-size: 12px;
-}
-.servicesBanner {
-  background-image: url("../img/services/services-jumbotron.png");
-  background-repeat: no-repeat;
-  background-position: top center;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  font-family: Roboto, Arial, sans-serif;
-}
-@media (max-width: 450px) {
-  .servicesBanner {
-    background-image: url("../img/services/services-mobile-jumbotron.png");
-    background-size: 320px 256px;
-    background-position: 49% 11%;
-    height: 290px;
-  }
-}
-.servicesBanner .menuBar {
-  background-color: #828282;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-.servicesBanner .menuBar .menuItemContainer {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-}
-@media (max-width: 450px) {
-  .servicesBanner .menuBar .menuItemContainer {
-    width: 83%;
-  }
-}
-.servicesBanner .menuBar .menuItemContainer h1 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #FFFFFF;
-  padding-left: 8%;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-.servicesBanner .menuBar .menuItemContainer .hamburgerIcon {
-  margin-top: 24px;
-  margin-right: 6%;
-  height: 4px;
-  width: 30px;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-  cursor: pointer;
-  transform: translate(-50%, -50%) rotate(0deg);
-  transition: all ease 0.5s;
-}
-.servicesBanner .menuBar .menuItemContainer .hamburgerIcon::before,
-.servicesBanner .menuBar .menuItemContainer .hamburgerIcon::after {
-  content: "";
-  position: absolute;
-  height: inherit;
-  border-radius: inherit;
-  background-color: #FFFFFF;
-  width: 30px;
-}
-.servicesBanner .menuBar .menuItemContainer .hamburgerIcon::before {
-  top: -8px;
-  left: 0;
-  transform-origin: center center;
-}
-.servicesBanner .menuBar .menuItemContainer .hamburgerIcon::after {
-  bottom: -8px;
-  right: 0;
-  transform-origin: center center;
-}
-.servicesBanner .menuBar .menuItemContainer .burgerClicked {
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-.servicesBanner .menuBar .menuItemContainer .burgerClicked::before {
-  top: 0;
-  transform: rotate(90deg);
-}
-.servicesBanner .menuBar .menuItemContainer .burgerClicked::after {
-  bottom: 0;
-  transform: rotate(90deg);
-}
-.servicesBanner .menu {
-  display: none;
-  width: 100%;
-  height: 550px;
-  background-color: rgba(130, 130, 130, 0.9);
-  z-index: 2;
-}
-@media (max-width: 450px) {
-  .servicesBanner .menu {
-    height: 440px;
-  }
-}
-.servicesBanner .menu ul {
-  margin-left: 43.5%;
-  margin-top: 110px;
-  cursor: pointer;
-}
-@media (max-width: 450px) {
-  .servicesBanner .menu ul {
-    margin-left: 30%;
-  }
-}
-.servicesBanner .menu ul li {
-  font-weight: bold;
-  line-height: 85px;
-  list-style-type: none;
-  font-size: 48px;
-  padding: 0 0;
-  color: #FFFFFF;
-}
-.servicesBanner .menu ul li:hover {
-  color: hsl(0, 0%, 13%);
-}
-.servicesBanner .menu--open {
-  display: flex;
-}
-.servicesBanner h2 {
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 64px;
-  line-height: 75px;
-  color: #FFFFFF;
-  margin: 110px 0px 0px 16%;
-}
-@media (max-width: 450px) {
-  .servicesBanner h2 {
-    font-size: 36px;
-    line-height: 42px;
-    margin: 60px 0px 30px 16%;
-  }
-}
-.tabNavContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 51px 16%;
-  font-family: Roboto, Arial, sans-serif;
-}
-.tabNavContainer .tabNavHeading {
-  line-height: 26px;
-  letter-spacing: 1.6;
-  margin-bottom: 40px;
-}
-.tabNavContainer .tabs {
-  display: flex;
-  margin-bottom: 53px;
-}
-.tabNavContainer .tabs .topics {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.tabNavContainer .tabs .topics .tab {
-  border: 1px solid black;
-  background-color: #FFFFFF;
-  padding: 15px 12px;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-.tabNavContainer .tabs .topics .tab:hover {
-  text-decoration: underline;
-}
-.tabNavContainer .tabs .topics .active-tab {
-  background-color: #5E9FB9;
-}
-.tabNavContainer .card {
-  display: flex;
-  flex-direction: column;
-}
-.tabNavContainer .card h3 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-.tabNavContainer .card .cardContent {
-  display: flex;
-}
-.tabNavContainer .card .cardContent .cardParagraphs {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 12px 0;
-}
-.tabNavContainer .card .cardContent .cardParagraphs p {
-  line-height: 24px;
 }
