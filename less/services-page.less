@@ -1,0 +1,203 @@
+// services-page.less
+body {
+    background-color: @white;
+}
+
+// .services-container
+.services-container {
+    @media @phone {
+        // border: 1px solid red;
+    }
+    .pages-container();
+
+    header {
+        .header-navigation();
+        
+        .logo {
+            .logo-mixin();
+        }
+        .hamburger {
+            .hamburger-mixin();
+        }
+        // see menu.less
+    }
+    
+    footer {
+        background-color: @footercolor;
+        height: 220px;
+        .flex-row-center();
+
+        @media @phone {
+            .flex-column-around();
+            height: 950px;
+        }
+
+
+        .footer-contact {
+            .footer-contact-mixin();
+            input[type="text"]{
+                width: 220px;
+                height: 30px;
+            }
+            @media @phone {
+                .footer-contact-mobile-mixin();
+                input[type="text"]{
+                    width: 90%;
+                    height: 70px;
+                    margin-left: 10px;
+                    border-radius: 8px;
+                }
+            }
+        }//.footer-contact
+        .footer {
+            .footer-mixin();
+            @media @phone {
+                .footer-mobile-mixin();
+            }
+        }
+    }// header & footer
+
+    .copyright {
+        .copyright-mixin();
+        @media @phone {
+            text-align: left;
+            padding-left: 20px;
+        }
+    }//.copyright
+
+}// .services-container
+
+
+// .services-jumbo
+.services-jumbo {
+    position: relative;
+
+    .services-jumbo-text {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+        padding-left: 30px;
+        @media @phone {
+            padding-left: 10px;
+        }
+    }
+    .services-jumbo-photo {
+        display: block;
+        width: 100%;
+        max-width: 800px;
+        @media @phone {
+            display: none;
+        }
+    }
+
+    .services-jumbo-photo.mobile {
+        display: none;
+        @media @phone {
+            display: block;
+        }
+    }
+}//.services-jumbo
+
+// .services-main-content
+.services-main-content {
+    margin-top: 30px;
+    @media @phone {
+        height: 1300px;
+    }
+
+    .services-text {
+        // border: 1px solid red;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .services-tabs {
+        // border: 1px solid blue;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        width: 85%;
+        height: 450px;
+        margin: 0 auto;
+
+        .tabs-links {
+            .flex-row-between(); 
+            @media @phone {
+                height: 300px;
+                .flex-column-around();
+            }
+        }
+
+        .tabs-items {
+            padding-top: 30px;
+            margin-top: 30px;
+            // border: 5px solid orange;
+            height: 350px;
+            @media @phone {
+                height: 700px;
+            }
+        } //.tabs-items
+
+        .tabs-item {
+            display: none;
+        }
+
+        .tabs-item-selected {
+            display: flex;
+            justify-content: space-between;
+            @media @phone {
+                flex-direction: column;
+            }
+        }
+
+        .tabs-item-description {
+            width: 45%;
+            @media @phone {
+                width: 100%;
+                .tabs-item-title {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .pre-construction-photo {
+            .services-photo-desktop();
+        }
+
+        .construction-photo {
+            .services-photo-desktop();
+        }
+
+        .design-build-photo {
+            .services-photo-desktop();
+        }
+
+        .sustainability-photo {
+            .services-photo-desktop();
+        }
+
+    }//.services-tabs
+} // .services-main-content
+
+
+
+
+//tabs button
+.tabs-link {
+    .services-button();
+    h4 {
+       font-size: 1.4rem;
+       font-weight: bold;
+       @media @phone {
+           font-size: 2rem;
+       }
+    }
+}
+
+.tabs-link:hover {
+    background-color: @black;
+    color: @white;
+}
+
+.tabs-link:active {
+    background-color: #5E9FB9;
+}
