@@ -3,11 +3,11 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     let hamburgerMenu = document.querySelector('.hamburger-menu-icon-closed');
     let extendedNavModal = document.querySelector('.menu-expanded');
+
     extendedNavModal.style.display = "none";
     
     
-    
-    
+
     
     
     hamburgerMenu.addEventListener('click', () => {
@@ -23,3 +23,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         console.log("It works")
     
     })
+
+    function toggle_visibility() {
+        let heroImgCopy = document.querySelector('#bar');
+        if(heroImgCopy.style.display === 'none') {
+            heroImgCopy.style.display = 'block';
+            console.log("Hero copy is gone!")
+    } else
+        heroImgCopy.style.display = 'none';
+        console.log("Epic Fail")
+}
