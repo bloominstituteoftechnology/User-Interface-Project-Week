@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     class TabLink {
         constructor(element) {
           this.element = element;
-          this.data = this.element.dataset.number;
-          this.itemElement = document.querySelector(`.tc-text-title[data-number="${this.data}"]`);
+          this.data = this.element.dataset.num;
+          this.itemElement = document.querySelector(`.tabs-btn[data-num="${this.data}"]`);
           this.tabItem = new TabElement (this.itemElement);
-          this.itemImg = document.querySelector(`.tc-img[data-number="${this.data}"]`);
+          this.itemImg = document.querySelector(`.tc-img[data-num="${this.data}"]`);
           this.tabImg = new TabImage(this.itemImg);
           this.element.addEventListener('click', () => {
             this.select();
@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         select() {
           const links = document.querySelectorAll('.tabs-btn');
           Array.from(links).forEach((link) => {
-            link.classList.remove('selected-tab');
+            link.classList.remove('selected-btn');
           });
       
-          this.element.classList.toggle('selected-tab');
+          this.element.classList.toggle('selected-btn');
           this.tabItem.select();
           this.tabImg.select();
         }
@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           this.element.classList.toggle("tc-title-selected");
         }
       }
+
 
       class TabImage {
         constructor(element) {
