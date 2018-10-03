@@ -32,11 +32,21 @@
         margin: auto;
         max-width: 855px;
         padding-top: 5%;
+        @media @mobile {
+            max-width: 599px;
+            flex-direction: column;
+        }
         .highlight-text {
             width: 50%;
-            padding: 2%; // margin: 2%;
+            padding: 2%;
+            @media @mobile {
+                width: 100%;
+                padding: 0;
+                max-width: 410px;
+            }
             h2 {
                 font-size: 2.4rem;
+                @media @mobile {}
             }
             p {
                 font-size: 1.7rem;
@@ -47,17 +57,40 @@
             button {
                 padding: 4%;
                 margin-top: 4%;
+                @media @mobile {
+                    width: 100%;
+                    background-color: @bodybackground;
+                    font-size: 1.8rem;
+                    border: 1px solid @generaltext;
+                    font-weight: 100;
+                }
             }
         }
         .highlight-image {
             width: 50%;
             padding: 2%;
+            @media @mobile {
+                width: 100%;
+                padding: 0;
+                padding-top: 10%;
+            }
             img {
                 max-width: 100%;
                 height: auto;
             }
+        } 
+    }
+
+    //flip image and text for mobile
+    .flip {
+        @media @mobile {
+            display: flex;
+            flex-direction: column-reverse;
+            order: -1;
         }
-    } //Recent Projects Section
+    }
+    
+    //Recent Projects Section
     .recent-projects {
         display: flex;
         flex-direction: column;
@@ -67,6 +100,9 @@
         h2 {
             font-size: 2.4rem;
             padding-bottom: 4%;
+            @media @mobile{
+                padding-left: 4%;
+            }
         }
         .project {
             display: flex;
@@ -77,8 +113,7 @@
             .project-image {
                 position: relative;
                 display: flex;
-                height: auto;
-                // max-width: 100%;
+                height: auto; // max-width: 100%;
                 img {
                     max-width: 100%;
                     height: auto;
@@ -87,6 +122,11 @@
                     position: absolute;
                     right: 0%;
                     bottom: -10%;
+                    @media @mobile {
+                        width: 90%;
+                        bottom: -50%;
+                        justify-content: center;
+                    }
                 }
                 .project-image-text-left {
                     position: absolute;
@@ -116,3 +156,4 @@
         }
     }
 }
+
