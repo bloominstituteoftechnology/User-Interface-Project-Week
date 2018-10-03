@@ -7,6 +7,8 @@ class Dropdown {
       this.button = this.element.querySelector('.hamburger');
       
       this.content = this.element.querySelector('.navigation');
+
+      this.exit = this.element.querySelector('.exit');
       
       this.button.addEventListener('click', () => { this.toggleContent()
   
@@ -16,6 +18,8 @@ class Dropdown {
     toggleContent() {
       
       this.content.classList.toggle('dropdown-hidden');
+      this.button.classList.toggle('.hamburger-hidden');
+      this.exit.classList.toggle('.exit');
     }
   }
   
