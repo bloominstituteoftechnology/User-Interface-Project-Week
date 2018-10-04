@@ -77,5 +77,11 @@ links[0].selectCard();
 // END OF TAB CONTENT
 
 
+fromButton.addEventListener('click', () => {
+    TweenMax.from(fromElement, 1, {
+      x: -100
+    });
+  });
+
 
 
