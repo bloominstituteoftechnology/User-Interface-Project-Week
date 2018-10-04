@@ -1,3 +1,6 @@
+
+// TAB CONTENT 
+
 class TabLink {
     constructor(link) {
         this.link = link;
@@ -13,7 +16,6 @@ class TabLink {
         this.link.addEventListener('click', () => {
             this.selectCard()
         });
-
     }
     selectCard() {
         const link = document.querySelectorAll('.link')
@@ -42,3 +44,25 @@ let links = document.querySelectorAll('.link');
 links = Array.from(links).map(link => new TabLink(link));
 
 links[0].selectCard();
+
+// END OF TAB CONTENT
+
+
+
+// NAVIGATION CONTENT
+
+
+class Dropdown {
+    constructor(element) {
+      this.element = element;
+      this.button = this.element.querySelector('.hamburger');
+      this.content = this.element.querySelector('.nav');
+
+      this.button.addEventListener('click', () => { this.toggleContent()})
+    }
+    toggleContent() {
+      this.content.classList.toggle('dropdown-hidden');
+    }
+  }
+  let dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
