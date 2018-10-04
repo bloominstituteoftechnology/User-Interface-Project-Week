@@ -8,18 +8,27 @@ class Dropdown {
       
       this.content = this.element.querySelector('.navigation');
 
-      this.exit = this.element.querySelector('.exit');
+      // this.exit = this.element.querySelector('.exit');
       
       this.button.addEventListener('click', () => { this.toggleContent()
   
+      // this.exit.addEventListener('click', () => { this.toggleContent()
+      if (this.button == '/img/nav-hamburger-close.png'){
+        this.button = '/img/nav-hamburger.png';
+      }
+      else {
+        this.button = '/img/nav-hamburger-close.png';
+      }
       })
     }
+  
+   
   
     toggleContent() {
       
       this.content.classList.toggle('dropdown-hidden');
-      this.button.classList.toggle('.hamburger-hidden');
-      this.exit.classList.toggle('.exit');
+      // this.button.classList.toggle('.hamburger-hidden');
+      // this.exit.classList.toggle('.exit-shown');
     }
   }
   
@@ -80,3 +89,18 @@ class TabLink {
   links = Array.from(links).map( link => new TabLink(link));
   
   links[0].select();
+
+  let newsrc = '/img/nav-hamburger-close.png';
+
+  function changeImg(){
+    if ( newsrc == '/img/nav-hamburger-close.png') {
+      document.images["pic"].alt = "X";
+      newsrc  = "earth.jpg";
+    }
+    else {
+      document.images["pic"].src = "/img/nav-hamburger.png";
+      document.images["pic"].alt = "Hamburger";
+      newsrc  = "/img/nav-hamburger-close.png";
+    }
+
+  } 
