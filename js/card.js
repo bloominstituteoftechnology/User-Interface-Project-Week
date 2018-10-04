@@ -11,8 +11,7 @@ class CardLink {
   
     select() {
       const links = document.querySelectorAll('.service-item');
-      console.log(links);
-      links.forEach( link => {
+        links.forEach( link => {
         link.classList.remove('service-item-selected')
       });
       this.element.classList.add('service-item-selected');
