@@ -8,7 +8,7 @@ class TabLink {
       this.cards = document.querySelector('.content');
     } else {
       // content by dataset numbers
-      this.cards = document.querySelectorAll(`content[data-tab="${this.linkData}"]`);
+      this.cards = document.querySelectorAll(`.content[data-tab="${this.linkData}"]`);
     }
 
     this.cards = Array.from(this.cards).map(cards => new TabCard(cards));
