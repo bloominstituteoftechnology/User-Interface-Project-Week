@@ -4,19 +4,19 @@ class CardLink {
       this.element = element;
       this.data = this.element.dataset.tab;
       this.item = document.querySelector(`.card[data-tab="${this.data}"]`);
-      this.tabItem = new Card(this.item);
+      this.cardItem = new Card(this.item);
       this.element.addEventListener('click', () => {this.select()
       });
     };
   
     select() {
       const links = document.querySelectorAll('.service-item');
-      console.log("links");
+      console.log(links);
       links.forEach( link => {
         link.classList.remove('service-item-selected')
       });
       this.element.classList.add('service-item-selected');
-      this.tabItem.select();
+      this.cardItem.select();
     }
   }
   
@@ -33,7 +33,8 @@ class CardLink {
       this.element.classList.add('card-item-selected');
     }
   }
+
   let links = document.querySelectorAll('.service-item');
   links = Array.from(links).map( link => new CardLink(link));
-  // DO THIS LAST: Once you have created an array of TabLink instances. call select() on the first item in the array
-  //links[0].select
+  
+  links[0].select()
