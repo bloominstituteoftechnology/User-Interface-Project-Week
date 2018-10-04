@@ -1,4 +1,29 @@
 
+// NAV CONTENT
+
+
+class Dropdown {
+    constructor(element) {
+      this.element = element;
+      this.button = this.element.querySelector('.hamburger');
+      this.content = this.element.querySelector('.nav');
+      
+      this.button.addEventListener('click', () => { this.toggleContent()})
+    }
+    toggleContent() {
+      this.content.classList.toggle('dropdown-hidden');
+    }
+  }
+  let dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
+
+
+// END OF NAV CONTENT 
+
+
+
+
+
 // TAB CONTENT 
 
 class TabLink {
@@ -49,20 +74,4 @@ links[0].selectCard();
 
 
 
-// NAVIGATION CONTENT
 
-
-class Dropdown {
-    constructor(element) {
-      this.element = element;
-      this.button = this.element.querySelector('.hamburger');
-      this.content = this.element.querySelector('.nav');
-
-      this.button.addEventListener('click', () => { this.toggleContent()})
-    }
-    toggleContent() {
-      this.content.classList.toggle('dropdown-hidden');
-    }
-  }
-  let dropdowns = document.querySelectorAll('.dropdown');
-  dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
