@@ -1,25 +1,37 @@
-
 // NAV CONTENT
 
 
 class Dropdown {
     constructor(element) {
-      this.element = element;
-      this.button = this.element.querySelector('.hamburger');
-      this.content = this.element.querySelector('.nav');
-      
-      
-      this.button.addEventListener('click', () => { this.toggleContent()})
+        this.element = element;
+        this.button = this.element.querySelector('.hamburger');
+        this.content = this.element.querySelector('.nav');
+        this.exit = this.element.querySelector('.hamburger-exit');
+
+
+        this.button.addEventListener('click', () => {
+            this.toggleContent()
+        })
+        this.exit.addEventListener('click', () => {
+            this.toggleContent()
+        })
     }
     toggleContent() {
-      this.content.classList.toggle('dropdown-hidden');
-      this.button.classList.toggle('hamburger-hidden');
-      
+        this.content.classList.toggle('dropdown-hidden');
+        this.button.classList.toggle('dropdown-hidden');
+        this.exit.classList.toggle('hamburger-exit');
+       
+
+
+
+
+
+
 
     }
-  }
-  let dropdowns = document.querySelectorAll('.dropdown');
-  dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
+}
+let dropdowns = document.querySelectorAll('.dropdown');
+dropdowns = Array.from(dropdowns).map(dropdown => new Dropdown(dropdown));
 
 
 // END OF NAV CONTENT 
@@ -75,13 +87,3 @@ links = Array.from(links).map(link => new TabLink(link));
 links[0].selectCard();
 
 // END OF TAB CONTENT
-
-
-fromButton.addEventListener('click', () => {
-    TweenMax.from(fromElement, 1, {
-      x: -100
-    });
-  });
-
-
-
