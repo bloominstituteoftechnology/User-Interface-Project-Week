@@ -20,7 +20,7 @@ class Dropdown {
         this.content.classList.toggle('dropdown-hidden');
         this.button.classList.toggle('dropdown-hidden');
         this.exit.classList.toggle('hamburger-exit');
-       
+
 
 
 
