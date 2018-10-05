@@ -8,27 +8,23 @@ class Dropdown {
       
       this.content = this.element.querySelector('.navigation');
 
-      // this.exit = this.element.querySelector('.exit');
+      this.close = this.element.querySelector('.hamburger-close');
       
-      this.button.addEventListener('click', () => { this.toggleContent()
-  
-      // this.exit.addEventListener('click', () => { this.toggleContent()
-      if (this.button == '/img/nav-hamburger-close.png'){
-        this.button = '/img/nav-hamburger.png';
-      }
-      else {
-        this.button = '/img/nav-hamburger-close.png';
-      }
+      this.button.addEventListener('click', () => { this.toggleContent();
       })
+      this.close.addEventListener('click', () => {this.toggleContent();
+      
+    })
     }
-  
-   
-  
+    // toggleButtons(){
+    //   this.close.classList.toggle('hamburger-close');
+    //   this.button.classList.toggle('dropdown-hidden');
+    // }
     toggleContent() {
       
       this.content.classList.toggle('dropdown-hidden');
-      // this.button.classList.toggle('.hamburger-hidden');
-      // this.exit.classList.toggle('.exit-shown');
+      this.button.classList.toggle('dropdown-hidden');
+      this.close.classList.toggle('hamburger-close');
     }
   }
   
@@ -90,17 +86,17 @@ class TabLink {
   
   links[0].select();
 
-  let newsrc = '/img/nav-hamburger-close.png';
+  // let newsrc = '/img/nav-hamburger-close.png';
 
-  function changeImg(){
-    if ( newsrc == '/img/nav-hamburger-close.png') {
-      document.images["pic"].alt = "X";
-      newsrc  = "earth.jpg";
-    }
-    else {
-      document.images["pic"].src = "/img/nav-hamburger.png";
-      document.images["pic"].alt = "Hamburger";
-      newsrc  = "/img/nav-hamburger-close.png";
-    }
+  // function changeImg(){
+  //   if ( newsrc == '/img/nav-hamburger-close.png') {
+  //     document.images["pic"].alt = "X";
+  //     newsrc  = "earth.jpg";
+  //   }
+  //   else {
+  //     document.images["pic"].src = "/img/nav-hamburger.png";
+  //     document.images["pic"].alt = "Hamburger";
+  //     newsrc  = "/img/nav-hamburger-close.png";
+  //   }
 
-  } 
+  // } 
