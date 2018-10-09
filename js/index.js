@@ -10,7 +10,7 @@ function closeNav(){
 }
 
 // Service Tabs
-function opentab(evt, tablinks) {
+function opentab(evt, id) {
     
     var i, tabcontent, tablinks;
 
@@ -24,6 +24,6 @@ function opentab(evt, tablinks) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    document.getElementById(Id).style.display = "block";
-    evt.currentTarget.className += " active";
+    document.getElementById(id).style.display = "block";
+    evt.currentTarget.className = " active";
 }
