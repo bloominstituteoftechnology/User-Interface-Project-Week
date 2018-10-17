@@ -11,7 +11,7 @@ class ButtonServices {
 
         // sample logging
         console.log(this.data);
-        
+
         this.item = document.querySelector(`.bottom-services-content[data-buttonitem="${this.data}"]`);
         this.buttonServicesItem = new ButtonServicesItem(this.item);
         this.element.addEventListener('click', () => {
@@ -35,9 +35,9 @@ class ButtonServicesItem {
     select() {
         const buttons = document.querySelectorAll('.bottom-services-content');
         buttons.forEach(button => {
-            button.classList.remove('select');
+            button.classList.remove('select-services');
         })
-        this.element.classList.add('select');
+        this.element.classList.add('select-services');
     }
 }
 
