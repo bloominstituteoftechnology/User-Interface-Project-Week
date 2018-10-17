@@ -36,8 +36,10 @@ class ButtonServicesItem {
         const buttons = document.querySelectorAll('.bottom-services-content');
         buttons.forEach(button => {
             button.classList.remove('select-services');
+            button.classList.add('hidden');
         })
         this.element.classList.add('select-services');
+        this.element.classList.remove('hidden');
     }
 }
 
