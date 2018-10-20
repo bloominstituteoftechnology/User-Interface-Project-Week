@@ -1,5 +1,3 @@
-// JS goes here
-
 // Services Buttons
 class ButtonServices {
     constructor(element) {
