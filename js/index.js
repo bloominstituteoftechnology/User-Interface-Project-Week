@@ -1,3 +1,31 @@
+class TopMenu {
+    constructor(element) {
+        this.element = element;
+        this.topMenu = this.element.querySelector('.tm-item');
+        this.btnopen = this.element.querySelector('.menu-btn-open');
+        this.btnclose = this.element.querySelector('.menu-btn-close');
+
+        // console.log(this.topMenu);
+        console.log(this.btnopen);
+
+
+        this.btnopen.addEventListener('click', (event) => { this.topMenuShow(event) });
+        this.btnclose.addEventListener('click', (event) => { this.topMenuHide(event) });
+        
+    }
+
+    topMenuShow(event) {
+        this.topMenu.classList.remove('tm-hidden');
+    }
+
+    topMenuHide(event) {
+        this.topMenu.classList.add('tm-hidden');
+    }
+}
+
+let topMenuItem = document.querySelectorAll('.container');
+topMenuItem = Array.from(topMenuItem).map(item => new TopMenu(item));
+
 // Services Buttons
 class ButtonServices {
     constructor(element) {
