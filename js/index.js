@@ -20,7 +20,6 @@ class TopMenu {
 let topMenuItem = document.querySelectorAll('.container');
 topMenuItem = Array.from(topMenuItem).map(item => new TopMenu(item));
 
-// Services Buttons
 class ButtonServices {
     constructor(element) {
         this.element = element;
