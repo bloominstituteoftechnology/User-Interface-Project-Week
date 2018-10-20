@@ -4,14 +4,8 @@ class TopMenu {
         this.topMenu = this.element.querySelector('.tm-item');
         this.btnopen = this.element.querySelector('.menu-btn-open');
         this.btnclose = this.element.querySelector('.menu-btn-close');
-
-        // console.log(this.topMenu);
-        console.log(this.btnopen);
-
-
         this.btnopen.addEventListener('click', (event) => { this.topMenuShow(event) });
         this.btnclose.addEventListener('click', (event) => { this.topMenuHide(event) });
-        
     }
 
     topMenuShow(event) {
