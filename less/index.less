@@ -58,3 +58,250 @@ table{
 }
 
 /* Your Code Goes Here */
+//Colors
+
+@navbar: #98A4AF;
+@title: #D8D8D8;
+@footer: #828282;
+//Custom Mixins
+
+.custom-layout(@direction: row, @content: space-between, @align: center) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @content;
+    align-items: @align;
+}
+
+.button-maker(@background, @main) {
+    background-color: @background;
+    color: @main;
+    font-size: 1rem;
+    text-align: center;
+    padding: 3.5% 0%;
+    cursor: pointer;
+    border:1px solid black;
+    font-family: "Roboto", sans-serif;
+    width: 32.5%;
+}
+
+//Global Styles
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
+    padding-bottom: 2%;
+}
+
+p {
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    .custom-layout(row, space-between, center);
+    width: 100%;
+    background-color: @navbar;
+    position: fixed;
+    align-items: center;
+    z-index: 2;
+    .nav-container {
+        .custom-layout(row, space-between, center);
+        padding: 1.25% 0;
+        width: 83.5%;
+        margin: 0 auto;
+        h2 {
+            font-size: 1.5rem;
+            font-family: "Roboto", sans-serif;
+            color: white;
+            font-weight: bold;
+            padding-bottom: 0;
+        }
+        nav {
+            display: none;
+        }
+        img {
+            cursor: pointer;
+        }
+    }
+}
+
+.home-content {
+    .main-img {
+        width: 100%;
+        position: relative;
+        h1 {
+            position: absolute;
+            bottom: 8.5%;
+            left: 8%;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            line-height: 1.175;
+            font-family: "Roboto", sans-serif;
+        }
+    }
+    .home-container {
+        // .custom-layout(column, space-between, center);
+        width: 83.5%;
+        margin: 0 auto;
+        
+        .architects {
+            .custom-layout(row, space-between, center);
+            margin-bottom: 11%;
+            margin-top: 5.75%;
+
+            .architects-text {
+                .custom-layout(column, space-between, flex-start);
+                padding-top: 1%;
+                width: 49%;
+                h2 {
+                    padding-bottom: 5%;
+                }
+                p {
+                    margin-bottom: 6%;
+                }
+                .button {
+                    .button-maker(white, black);
+                    line-height: 1;
+                    &:hover {
+                        background-color:black;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .design {
+            .custom-layout(row-reverse, space-between, center);
+            margin-bottom: 11.5%;
+            .design-text {
+                .custom-layout(column, space-between, flex-start);
+                padding-left: 3.5%;
+                h2 {
+                    padding-bottom: 5%;
+                }
+                p {
+                    margin-bottom: 6%;
+                }
+                .button {
+                    .button-maker(white, black);
+                    line-height: 1;
+                    &:hover {
+                        background-color:black;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .recent {
+            h2 {
+                padding-bottom: 5.5%;
+            }
+            .villa {
+                padding-bottom: 2.5%;
+                .villa-container {
+                    position: relative;
+                    margin-bottom: 10%;
+                    .title {
+                        font-size: 1.6rem;
+                        background-color: @title;
+                        position: absolute;
+                        bottom: -14%;
+                        right: 0%;
+                        width: 37%;
+                        padding: 4% 0;
+                        text-align: center;
+                        letter-spacing: 6px;
+                        padding-left: 1%;
+                    }
+                }
+                p {
+                    width: 50%;
+                    line-height: 1.4;
+                    margin: 0 auto;
+
+                }
+            }
+            .outskirts {
+                padding-bottom: 2.5%;
+                .outskirts-container {
+                    position: relative;
+                    .title {
+                        font-size: 1.5rem;
+                        background-color: @title;
+                        position: absolute;
+                        bottom: -10%;
+                        left: 0%;
+                        width: 20%;
+                        padding: 2% 4%;
+                        text-align: center;
+                        letter-spacing: 1%;
+                    }
+                }
+                p {
+                    width: 40%;
+                    padding: 2% 0;
+                    margin: 0 auto;
+                }
+            }
+            .blocks {
+                padding-bottom: 2.5%;
+                h3 {
+                    font-size: 1.5rem;
+                }
+                p {
+                    width: 40%;
+                    padding: 2% 0;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+footer {
+    background-color: @footer;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .footer-content {
+        .custom-layout(row, space-around, center);
+        width: 82.5%;
+        padding: 4% 0;
+        .email {
+            .custom-layout(column, space-between, flex-start);
+            input[type='text'] {
+                width: 100%;
+                line-height: 2;
+                border-radius: 2px;
+                font-size: 0.9rem;
+            }
+            .footnote {
+                font-size: 0.85rem;
+            }
+        }
+        .locations {
+            .custom-layout(row, space-between, flex-start);
+            width: 50%;
+            align-items: center;
+            address {
+                font-size: .75rem;
+                padding: 5% 0;
+            }
+        }
+    }
+    .copyright {
+        font-size: 0.75rem;
+        padding-bottom: 1%;
+    }
+}
+
+
