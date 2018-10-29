@@ -8,7 +8,7 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Color: #222222
 - Font Family: Roboto, Arial, sans-serif
 
-## Page Specific
+## Page Specific  
 
 ### Home Page
 - Recent Projects Gray Square: #D8D8D8
