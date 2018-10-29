@@ -3,16 +3,35 @@
     font-size: @jumbo-font-size;
     line-height: @jumbo-line-height;
     color: @jumbo-text-color;
-    img{
+    .jumbo-pic{
         width: 100%;
         height: auto;
         z-index: 0;
+        @media @phone{
+            display: none;
+        }
+    }
+    .mobile-jumbo-pic{
+        display: none;
+        @media @phone{
+            display: block;
+            width: 100%;
+            height: auto;
+            z-index: 0;
+        }
     }
     div{
         position: absolute;
         top: 90%;
         left: 20%;
         transform: translate(-50%,-50%);
+    }
+    @media @phone{
+        font-size: 2.4rem;
+        line-height: 3rem;
+        div{
+            top:27%;
+        }
     }
 }  
 .content{
@@ -22,16 +41,28 @@
         display: flex;
         justify-content: space-between;
         padding: 30px 0px;
+        @media @phone{
+                display: flex;
+                flex-direction: column-reverse;
+                width: 100%;
+         }
         .top-text{
             width: 48%;
+            @media @phone{
+                width: 100%;
+            }
         }
-        
+
         .sub-heading{
             padding-top: 50px;
             font-weight: @sub-head-font-weight;
             font-size: @sub-head-font-size;
             color: @sub-head-text-color;
+            @media @phone{
+                font-size: 2.4rem;
             }
+            }
+
         p{
             padding: 20px 0px 30px 0px;
         }
@@ -41,12 +72,32 @@
             background-color: @background-color;
             border: 1px solid black;
             cursor: pointer;
+            @media @phone{
+                width: 100%;
+                height: 50px;
+            }
         }
-        img{
+        .home-img{
             width: 48%;
             height: auto;
+            @media @phone{
+                display:none;
+            }
+        }
+        .home-mobile-img{
+            display: none;
+            @media @phone{
+                display: block;
+                width: 100%;
+            }
         }
     }
+        .bottom-content{
+        @media @phone{
+             display: flex;
+            flex-direction: column;
+        }
+        }
     
     .middle-content{
         .sub-heading{
@@ -63,6 +114,12 @@
             transform: translate(0,-60%);
             right: 10%;
             letter-spacing: 3px;
+            @media @phone{
+                width: 300px;
+                height: 50px;
+                right: 13%;
+                font-size: 2.8rem;
+            }
         }
         .middle-gray-box{
             left: 10%;
@@ -70,6 +127,18 @@
         .middle-img{
             width: 100%;
             padding-top: 40px;
+            @media @phone{
+                display: none;
+            }
+        }
+        .mobile-middle-img{
+            display: none;
+            @media @phone{
+                display: block;
+                width: 100%;
+                height: auto;
+                z-index: 0;
+            }
         }
         .middle-text-content{
             padding-top: 100px;
