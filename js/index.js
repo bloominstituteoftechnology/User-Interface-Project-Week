@@ -7,7 +7,7 @@ const toggleMenu = () => {
 
     menuButton.style.display = 'none';
     menuButtonClose.style.display = 'inline';
-    console.log('clicked');
+    // console.log('clicked');
 
   }
 
@@ -17,7 +17,7 @@ const toggleMenu = () => {
     menuButtonClose.style.display = 'none';
     menuButton.style.display = 'inline';
 
-    console.log('clicked-close');
+    // console.log('clicked-close');
   }
 
 
@@ -29,9 +29,9 @@ const toggleMenu = () => {
   const menuButton = document.querySelector('.menu-button');
   const menuButtonClose = document.querySelector('.menu-close-button');
 
-  console.log(menuButton);
-  console.log(menu);
-  console.log(menuButtonClose);
+  // console.log(menuButton);
+  // console.log(menu);
+  // console.log(menuButtonClose);
   
   // Using your menuButton reference, add a click handler that calls toggleMenu
   
