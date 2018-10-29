@@ -1,18 +1,18 @@
 * {
-    // font-family: "Roboto", sans-serif;
     box-sizing: border-box;
+    font-size: 62.5%;
 }
 
 h2 {
     font-weight: bold;
     font-size: 1.5rem;
-    font-family: "Roboto", sans-serif;
+    font-family: @font, sans-serif;
     padding-bottom: 2%;
 }
 
 p {
     line-height: 1.5;
-    font-family: "Roboto", sans-serif;
+    font-family: @font, sans-serif;
 }
 
 header {
@@ -29,9 +29,7 @@ header {
         margin: 0 auto;
         h2 {
             font-size: 1.5rem;
-            // font-family: "Roboto", sans-serif;
             color: white;
-            // font-weight: bold;
             padding-bottom: 0;
         }
         nav {
@@ -52,33 +50,49 @@ footer {
     justify-content: center;
     align-items: center;
     .footer-content {
-        .custom-layout(row, space-around, center);
-        width: 82.5%;
-        padding: 4% 0;
+        .custom-layout(row, space-between, center);
+        width: 83.5%;
+        padding-top: 6.5%;
         .email {
             .custom-layout(column, space-between, flex-start);
+            width: 33%;
+            h2 {
+                font-size: 1.25rem;
+                padding-bottom: 6.25%;
+                line-height: 1.1;
+            }
             input[type='text'] {
                 width: 100%;
-                line-height: 2;
-                border-radius: 2px;
-                font-size: 0.9rem;
+                border-radius: 4px;
+                font-size: 1rem;
+                padding: 3% 0;
+                padding-left: 4px;
             }
             .footnote {
-                font-size: 0.85rem;
+                font-size: 0.815rem;
+                padding-top: 2%;
             }
         }
         .locations {
             .custom-layout(row, space-between, flex-start);
-            width: 50%;
-            align-items: center;
+            width: 61%;
+            align-items: flex-start;
+            .state {
+                .custom-layout(column, space-between, flex-start);
+                width: 27%;
+                h3 {
+                    font-size: 1.35rem;
+                }
+            }
             address {
-                font-size: .75rem;
-                padding: 5% 0;
+                font-size: .95rem;
+                padding: 3.75% 0;
             }
         }
     }
     .copyright {
         font-size: 0.75rem;
         padding-bottom: 1%;
+        padding-top: 3%;
     }
 }
