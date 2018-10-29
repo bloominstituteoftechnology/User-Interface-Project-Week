@@ -27,7 +27,7 @@ You will use Trello to report your progress on the MVP and any extra features yo
 
 ## MVP Features:
 These MVP features represent the fundamental knowledge you should have obtained throughout the last 4 weeks.  If you cannot accomplish all of the MVP tasks listed here, you may be a candidate for the mastery based program.
-* [ ] Build layout **HTML/LESS**: [Home page desktop design](/DesignFiles/Home/home-desktop.png)
+* [X] Build layout **HTML/LESS**: [Home page desktop design](/DesignFiles/Home/home-desktop.png)
 * [ ] Build layout **HTML/LESS**: [Home page mobile design](/DesignFiles/Home/home-mobile.png)
 * [ ] Build layout **HTML/LESS**: [Services page **desktop design only**](/DesignFiles/Services/services-desktop.png)
 * [ ] Build layout **HTML/LESS/JavaScript**: [Navigation system design](DesignFiles/Navigation)
