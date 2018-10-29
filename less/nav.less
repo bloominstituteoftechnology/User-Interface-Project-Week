@@ -1,0 +1,64 @@
+.header-wrapper {
+  background: @header-background;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  header {
+    max-width: 1036px;
+    padding: 10px 85px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      z-index: 1000;
+    }
+    .expanded {
+      z-index: 1000;
+    }
+    .expanded,
+    .non-expanded {
+      cursor: pointer;
+    }
+    .menu-modal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      opacity: 0.95;
+      background: grey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      .links-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+      a {
+        color: white;
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 25px;
+        text-decoration: none;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+    // this class toggles the menu modal
+    .modal-hidden {
+      display: none;
+    }
+  }
+  @media @tablet {
+    header {
+      padding: 10px;
+    }
+  }
+}
