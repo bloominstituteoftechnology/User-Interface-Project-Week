@@ -61,7 +61,7 @@ table{
 
 /*Mobile*/
 
-@mobile: ~"(max-width: 500px)";
+@mobile: ~"(max-width: 320px)";
 
 * {
   box-sizing: border-box;
@@ -92,9 +92,9 @@ p {
 	margin: 0 auto;
   max-width: 1024px;
   
-  @media @mobile {
+  // @media @mobile {
 
-  }
+  // }
   
   .eye-grabber {
     position: relative;
@@ -103,11 +103,26 @@ p {
     max-width: 1024px;
 
     @media @mobile {
-
+      background: url('img/home/home-mobile-jumbotron.png');
+      width: 100%;
     }
 
-    img {
+    .jumbo-desktop {
       width: 100%;
+
+      @media @mobile {
+        display: none;
+      }
+    }
+
+    .jumbo-mobile {
+      display: none;
+
+      @media @mobile {
+        display: inline-block;
+        margin: 0 auto;
+        width: 100%;
+      }
     }
 
     h1 {
@@ -122,8 +137,8 @@ p {
       font-family: 'Roboto', sans-serif;
 
       @media @mobile {
-        // font-size: 1.6rem;
-        // line-height: 1.8rem;
+        font-size: 3.7rem;
+        line-height: 4.8rem;
         bottom: 4%;
         left: 3%;
       }
@@ -135,13 +150,17 @@ p {
     flex-direction: column;
     justify-content: center;
     width: 90%;
-    margin: 20px auto 0;
+    margin: 20px auto;
+
+    @media @mobile {
+      width: 100%;
+    }
 
     .box1 {
       width: 100%;
       display: flex;
       justify-content: space-around;
-      padding: 20px 0;
+      padding: 20px auto;
       margin-top: 20px;
 
       @media @mobile {
@@ -178,12 +197,21 @@ p {
   
       }
   
-      img {
+      .img1-desktop {
         height: 25%;
         width: 45%;
 
         @media @mobile {
-          width: 100%;
+          display: none;
+        }
+      }
+
+      .img1-mobile {
+        display: none;
+
+        @media @mobile {
+          display: block;
+          margin: 0 auto;
         }
       }
   
@@ -229,20 +257,26 @@ p {
         }
       }
   
-      img {
+      .img2-desktop {
         height: 25%;
         width: 45%;
   
         @media @mobile {
-          width: 100%;
+          display: none;
+        }
+      }
+
+      .img2-mobile {
+        display: none;
+
+        @media @mobile {
+          display: block;
+          margin: 0 auto;
         }
       }
     }
     
   } // introduction
-
-
-  
 
   .recent-projects {
 
@@ -250,14 +284,32 @@ p {
     margin: 30px auto;
     padding-top: 30px;
 
+    @media @mobile {
+      width: 100%;
+      margin: 15px auto;
+      padding-top: 15px;
+      
+      h2 {
+        padding-left: 10px;
+      }
+    }
+
     .projects-text {
       margin: 50px 25%;
       display: flex;
       flex-direction: column;
       padding-top: 20px;
+
+      @media @mobile {
+        margin: 50px 10%;
+      }
   
       p {
         padding: 20px 0;
+
+        @media @mobile {
+          padding: 10px 0;
+        }
       }
     }
 
@@ -266,8 +318,20 @@ p {
       position: relative;
       margin-top: 5%;
 
-      img {
+      .villas-desktop {
         width: 100%;
+
+        @media @mobile {
+          display: none;
+        }
+      }
+
+      .villas-mobile {
+        display: none;
+
+        @media @mobile {
+          display: block;
+        }
       }
 
       div {
@@ -281,10 +345,17 @@ p {
         text-align: center;
         height: 80px;
 
+        @media @mobile {
+          width: 90%;
+          bottom: -30%;
+          right: 15px;
+          padding: 8%;
+        }
+
         h3 {
           background-color: inherit;
           font-size: 2.8rem;
-          font-weight: bold;
+          letter-spacing: .25rem;
         }
 
       }
@@ -296,8 +367,20 @@ p {
       margin-top: 5%;
       padding-top: 7%;
 
-      img {
+      .outskirts-desktop {
         width: 100%;
+
+        @media @mobile {
+          display: none;
+        }
+      }
+
+      .outskirts-mobiles {
+        display: none;
+
+        @media @mobile {
+          display: block;
+        }
       }
 
       div {
@@ -311,10 +394,17 @@ p {
         text-align: center;
         height: 80px;
 
+        @media @mobile {
+          width: 90%;
+          bottom: -30%;
+          left: 15px;
+          padding: 8%;
+        }
+
         h3 {
           background-color: inherit;
           font-size: 2.8rem;
-          font-weight: bold;
+          letter-spacing: .25rem;
         }
       }
   
@@ -326,8 +416,20 @@ p {
       margin-top: 5%;
       padding-top: 7%;
 
-      img {
+      .blocks-desktop {
         width: 100%;
+
+        @media @mobile {
+          display: none;
+        }
+      }
+
+      .blocks-mobile {
+        display: none;
+
+        @media @mobile {
+          display: block;
+        }
       }
 
       div {
@@ -340,17 +442,23 @@ p {
         width: 38%;
         text-align: center;
         height: 80px;
+        
+        @media @mobile {
+          width: 90%;
+          bottom: -30%;
+          right: 15px;
+          padding: 8%;
+        }
 
         h3 {
           background-color: inherit;
           font-size: 2.8rem;
-          font-weight: bold;
+          letter-spacing: .25rem;
         }
       }
     }
   } // recent projects section
 
-  
   footer {
     background-color: #828282;
     display: flex;
@@ -362,14 +470,26 @@ p {
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
 
+    @media @mobile {
+      flex-direction: column;
+    }
+
     div {
       background-color: inherit;
       color: #ffffff;
       font-family: 'Roboto', sans-serif;
       padding: 0 2%;
 
+      @media @mobile {
+        padding: 5% 0;
+      }
+
       form {
         margin-top: 3%;
+
+        @media @mobile {
+          margin: 3% 0;
+        }
       }
     }
 
