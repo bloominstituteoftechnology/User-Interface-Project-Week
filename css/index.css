@@ -1,3 +1,7 @@
+/* Your Code Goes Here */
+* {
+  box-sizing: border-box;
+}
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -133,16 +137,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Your Code Goes Here */
-* {
-  box-sizing: border-box;
-}
 .container {
   background-color: #FFFFFF;
   color: #222222;
   Font-family: 'Roboto', Arial, sans-serif;
   max-width: 1024px;
   margin: 0 auto;
+  width: 100%;
 }
 .container p {
   font-size: 16px;
@@ -153,9 +154,17 @@ table {
   font-size: 24px;
   font-weight: bold;
 }
+@media (max-width: 320px) {
+  .container header {
+    padding-top: 50px;
+  }
+  .container header h1 {
+    display: none;
+  }
+}
 .container footer {
   background-color: #828282;
-  padding: 0 85px;
+  padding: 0 8.301%;
   padding-top: 60px;
   margin-top: 40px;
 }
@@ -209,7 +218,7 @@ table {
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  padding: 0 85px;
+  padding: 0 8.301%;
   padding: 13px 85px;
   position: fixed;
   width: 100%;
@@ -223,29 +232,54 @@ table {
 .navigator nav a {
   display: none;
 }
+.home header {
+  position: relative;
+}
 .home header h1 {
+  bottom: 52px;
   z-index: 1;
   position: absolute;
-  padding: 0 85px;
-  top: 320px;
+  padding: 0 82px;
   color: #ffffff;
   font-size: 64px;
   font-weight: bold;
   line-height: 75px;
 }
+@media (max-width: 320) {
+  .home header h1 {
+    top: 0;
+  }
+}
+.home header .background {
+  width: 100%;
+}
 .home button {
   border: 1px solid #222222;
   background-color: #ffffff;
-  padding: 15px 25px;
+  padding: 13px 27px;
   font-size: 16px;
+  margin: 0px 0;
 }
 .home .topics {
-  padding: 0 85px;
+  padding: 0 8.301%;
+}
+@media (max-width: 320px) {
+  .home .topics {
+    padding: 0 10px;
+  }
 }
 .home .topics .content {
   margin: 29px 0;
   padding: 20px 0;
   display: flex;
+}
+@media (max-width: 320px) {
+  .home .topics .content {
+    flex-direction: column;
+  }
+  .home .topics .content img {
+    order: -1;
+  }
 }
 .home .topics .content .text-content {
   display: flex;
@@ -254,12 +288,22 @@ table {
   align-items: flex-start;
   padding-right: 20px;
 }
+.home .topics .content .text-content h3 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
 .home .topics .content .text-content p {
-  margin-top: 25px;
+  margin-top: 0px;
+  padding-top: 23px;
   margin-bottom: 25px;
 }
 .home .topics .content .text-content img {
   margin-top: 50px;
+}
+@media (max-width: 320px) {
+  .home .topics .content .text-content {
+    padding-right: 0px;
+  }
 }
 .home .topics .content:last-child {
   margin: 59px 0;
@@ -272,9 +316,14 @@ table {
   padding-right: 30px;
 }
 .home .projects {
-  padding: 0 85px;
+  padding: 0 8.301%;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 320px) {
+  .home .projects {
+    padding: 10px;
+  }
 }
 .home .projects h3 {
   font-size: 24px;
@@ -288,6 +337,9 @@ table {
   justify-content: center;
   margin-top: 37px;
   margin-bottom: 37px;
+}
+.home .projects .content img {
+  width: 100%;
 }
 .home .projects .content h3 {
   background-color: #D8D8D8;
@@ -310,4 +362,5 @@ table {
   margin-bottom: 25px;
   max-width: 450px;
   letter-spacing: 1px;
+  width: 100%;
 }
