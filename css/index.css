@@ -159,6 +159,7 @@ p {
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1.6rem;
 }
 .container * {
   font-family: 'Roboto', arial, sans-serif;
@@ -195,17 +196,86 @@ p {
 }
 @media (min-width: 1024px) {
   .container.services {
-    grid-template-rows: auto 5.3rem 53.7rem 9.7rem auto;
+    grid-template-rows: auto 5.5rem 53.7rem 9.7rem auto;
   }
 }
 .container.services .jumbotron {
   grid-row-start: 1;
 }
 .container.services main {
+  display: grid;
   grid-row-start: 3;
+  grid-template-rows: 11.5rem auto;
+  grid-template-columns: 8.3% auto 8%;
+}
+.container.services main > p {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  line-height: 2.4rem;
+}
+.container.services main .services-tabs {
+  grid-row-start: 2;
+  grid-column-start: 2;
 }
 .container.services footer {
   grid-row-start: 5;
+}
+.services-tabs {
+  display: grid;
+  grid-column-gap: 4.4%;
+  grid-auto-columns: 21.64%;
+  grid-template-rows: 5rem 5.3rem auto;
+}
+.services-tabs button {
+  background-color: white;
+  font-size: 1.6rem;
+  width: 100%;
+  border: solid black 1px;
+  text-decoration: none;
+  height: 46px;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .services-tabs button {
+    width: 100%;
+    height: 50px;
+  }
+}
+.services-tabs button:hover {
+  background-color: #222;
+  color: #fff;
+}
+.services-tabs button.active {
+  background-color: #5e9fb9;
+  color: #fff;
+}
+.services-tabs button {
+  grid-row-start: 1;
+  font-size: 2.1rem;
+}
+.services-tabs div {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+}
+.services-tabs div:not(.active) {
+  display: none;
+}
+.services-tabs div.active {
+  display: grid;
+}
+.services-tabs div h2 {
+  grid-column-start: 1;
+  list-style: none;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+.services-tabs div p {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+.services-tabs div img {
+  grid-column-start: 2;
 }
 .navbar {
   grid-template-rows: 10px 30px 11px;
@@ -353,26 +423,33 @@ p {
   background-color: white;
   font-size: 1.6rem;
   width: 100%;
-  grid-row-start: 3;
   border: solid black 1px;
   text-decoration: none;
   height: 46px;
-  align-self: end;
   cursor: pointer;
 }
 @media (min-width: 1024px) {
   .home .details section .details-text button {
     width: 31.3%;
     height: 46px;
-    align-self: center;
   }
 }
 .home .details section .details-text button:hover {
   background-color: #222;
   color: #fff;
 }
-.home .details section .details-text button:active {
+.home .details section .details-text button.active {
   background-color: #5e9fb9;
+  color: #fff;
+}
+.home .details section .details-text button {
+  grid-row-start: 3;
+  align-self: end;
+}
+@media (min-width: 1024px) {
+  .home .details section .details-text button {
+    align-self: center;
+  }
 }
 .home .details section img {
   grid-column-start: 2;
