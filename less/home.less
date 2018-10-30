@@ -17,10 +17,14 @@
       font-size: 64px;
       font-weight: bold;
       line-height: 75px;
-  
-      @media (max-width: 320) {
-        top: 0;
+
+      @media (max-width: 320px) {
+        bottom: 25px;
+        padding: 0px 20px;
+        font-size: 35px;
+        line-height: 40px;
       }
+      
     }
   }
 }
@@ -30,15 +34,34 @@
 
   .topics {
     padding: @containerPadding;
-    //
+
+    @media (max-width: 320px) {
+      padding: 0;
+      margin-top: 35px;
+    }
+
 
     .content {
       margin: 0px 0;
       padding: 0px 0;
       display: flex;
 
+      @media (max-width: 320px) {
+        flex-direction: column;
+        padding: 0 10px;
+        
+        .text-content {
+          margin-top: 40px;
+          order: 1;
+        }
+      }
+
       h3 {
         margin-top: 62px;
+
+        @media (max-width: 320px){
+          margin-top: 0;
+        }
       }
 
       p {
@@ -67,6 +90,9 @@
         padding-right: 20px;
 
         @media (max-width: 320px) {
+          padding: 0;
+          // /margin-top: 40px;
+
           button {
             width: 100%;
             max-width: 100%;
@@ -81,6 +107,9 @@
 
         h3 {
           margin-top: 40px;
+          @media (max-width: 320px){
+            margin-top: 0;
+          }
         }
 
         p {
@@ -120,10 +149,19 @@
     display: flex;
     flex-direction: column;
 
+    @media (max-width: 320px) {
+      padding: 0;
+      margin-top: -25px;
+    }
+
     h2 {
       font-size: 24px;
       font-weight: bold;
       padding: 20px 0 8px;
+
+      @media (max-width: 320px) {
+        margin-left: 10px;
+      }
     }
 
     .overlay {
@@ -159,6 +197,11 @@
 
     .text-content{
       margin: 92px auto 0;
+
+      @media (max-width: 320px) {
+        padding: 0 10px;
+        margin: 110px auto 0;
+      }
     }
 
     .content-project {
@@ -169,11 +212,24 @@
       margin-top: 37px;
       margin-bottom: 39px;
       
-
+      @media (max-width: 320px) {
+        margin-bottom: 0;
+        margin-top: 25px;
+      }
     }
 
     .left-overlay {
       left: 0;
+    }
+
+    @media (max-width: 320px) {
+      .overlay {
+        bottom: -80px;
+        left: 10px;
+        right: 0;
+        width: 94%;
+
+      }
     }
   }
 }
@@ -276,34 +332,51 @@
   // }
 
 
-  // @media (max-width: 320px) {
-  //   .desktop-img {
-  //     display: none;
-  //   }
+@media (max-width: 320px) {
+  .desktop-img {
+    display: none;
+  }
 
-  //   .home {
-  //     .mobile-img {
-  //       display: inline-block ;
-  //       width: 100%;
-  //     }
+  .home {
 
-  //     .content {
-        
-  //       .header {
-  //         align-items: center;
-  //         justify-content: center;
-  //         margin-bottom: 100px;
 
-  //         h3 {
-  //           margin-right: 0;
-  //           margin: 0 10px;
-  //           position: absolute;
-  //           top: 175px;
-  //           max-width: 100%;
 
-  //         }
-  //       }
-  //     }
-  //   }
+    .mobile-img {
+      display: inline-block ;
+      width: 100%;
+    }
+
+    .content {
+
+       
+      .header {
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 100px;
+
+        h3 {
+          margin-right: 0;
+          margin: 0 10px;
+          position: absolute;
+          top: 175px;
+          max-width: 100%;
+
+        }
+      }
+    }
+  }    
+}
+
+// @media @mobile{
     
-  // }
+//   .desktop-img {
+//     display: none;
+//   }
+
+//   .home {
+
+//     .mobile-img {
+//       display: inline-block;
+//     }
+//   }
+// }
