@@ -10,30 +10,50 @@
     line-height: 7.5rem;
     font-weight: bold;
     color: @jumbotron-header-color;
+    @media @mobile{
+        bottom: 2.5rem;
+        left: 1.5rem;
+        font-size: 3.6rem;
+        line-height: 4.1rem;
+    }
+  }
+  .mobile-jumbotron{
+      display:none;
   }
   @media @mobile{
-     img{
-        background-image: url('../img/home/home-mobile-jumbotron.png');
-     }
-     h2{
-        left: 2rem;
-        bottom: 2rem;
-        line-height:3.2rem;
-        font-size:3rem;
-     }
+    .mobile-jumbotron{
+        display:block;
+    }
+    .desktop-jumbotron{
+        display:none;
+    }
   }
 }
+
 // main content
 .main-content{
     margin-top: -4.6rem;
+    .mobile-img{
+        display:none;
+    }
+    @media @mobile{
+        padding: 0 2rem;
+        .mobile-img{
+            display:block;
+        }
+        .mainContent__imgContent{
+            display:none;
+        }
+    }
 }
 .top-content,.bottom-content {
-    // .box();
-    margin: 9.2rem 0;
+    margin: 9.2rem auto;
     .spacebetween();
+    @media @mobile{
+      flex-direction:column-reverse;
+    }
     .text-content,.img-content {
         max-width: 49%;
-        // .box();
     }
     .text-content {
         .flexcolumn();
