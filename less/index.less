@@ -68,10 +68,10 @@ html{
   margin: 0 auto;
   border: 1px solid @grey;
   font-family: Roboto, Arial, sans-serif;
-  background-image: url("../img/home/home-jumbotron.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  @media @mobile{
+    border: 1px solid blue;
+    width: 99%;
+  }
 }
 //Fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
@@ -88,36 +88,90 @@ p{
   padding-top: 1.7rem;
   padding-bottom: 1.7rem;
   line-height: 1.9rem;
+  text-decoration: none;
+  @media @mobile{
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
 }
 
 h3{
   font-size: 1.7rem;
+  @media @mobile{
+    font-size: 3rem;
+    text-align: left;
+  }
 }
 
-h1{
-  font-weight: strong;
-  font-size: 4rem;
-  line-height: 5rem;
-  color: @white;
-  border: 1px solid black;
-  padding-top: 25rem;
-  padding-left: 5rem;
-  padding-bottom: 2.85rem;
-}
+.top-content-container{
+  position: relative;
+  width: 100%;
 
+  img{
+    width: 100%;
+  }
+
+  .top-content-h1 {
+    position: absolute;
+    bottom: 6rem;
+    left: 5rem;
+
+    display: flex;
+
+    font-weight: strong;
+    font-size: 5rem;
+    line-height: 6rem;
+    letter-spacing: 0.2rem;
+
+    color: @white;
+    @media @mobile{
+      bottom: 3rem;
+      left: 2rem;
+    }
+  }
+}
 .row-one{
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
   margin: 5rem 5%;
   height: 23rem;
+  @media @mobile{
+    flex-flow: column-reverse nowrap;
+    align-items: center;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    border: 1px solid red;
+  }
 }
   .row-one .text{
     padding-top: 4rem;
     width: 45%;
+    @media @mobile{
+      width: 90%;
+      display: flex;
+      flex-flow: column nowrap;
+    }
+  }
+  .row-one button{
+    width: 13rem;
+    height: 4rem;
+    color: black;
+    background-color: white;
+    @media @mobile{
+      width: 100%;
+      margin-bottom: 2rem;
+      height: 6rem;
+      font-size: 2rem;
+    }
   }
   .row-one img{
     width: 45%;
+    @media @mobile{
+      margin-top: 4rem;
+      width: 90%;
+    }
   }
 
 .row-two{
@@ -125,14 +179,44 @@ h1{
   justify-content: space-evenly;
   margin: 6rem 5%;
   height: 23rem;
-}
-  .row-two img{
-    width: 45%;
+  @media @mobile{
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    border: 1px solid red;
   }
-  .row-two .text{
+  img{
+    width: 45%;
+    @media @mobile{
+      margin-top: 4rem;
+      width: 90%;
+    }
+  }
+  .text{
     padding-top: 4rem;
     width: 45%;
+    @media @mobile{
+      width: 90%;
+      display: flex;
+      flex-flow: column nowrap;
+    }
   }
+  button{
+    width: 13rem;
+    height: 4rem;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    @media @mobile{
+      width: 100%;
+      margin-bottom: 2rem;
+      height: 6rem;
+      font-size: 2rem;
+    }
+  }
+}
 
 .recent-projects-title{
   margin-bottom: 3rem;
