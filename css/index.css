@@ -2,24 +2,8 @@
   position: abosolute;
   cursor: pointer;
 }
-.menu-open {
-  right: 99px;
-  max-width: 1024px;
-  position: fixed;
-  opacity: 0.95;
-  margin: 0 auto;
-  top: 55px;
-  height: 100vh;
-  width: 100%;
-  background-color: #98A4AD;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.menu-hamburger {
-  display: none;
+.toggle-menu {
+  display: block;
 }
 /*------------------------------------*\
 RESET
@@ -221,7 +205,7 @@ img {
   max-width: 1024px;
   margin: 0 auto;
 }
-.container header {
+.container .header-one {
   background-color: #98A4AD;
   height: 50px;
   padding: 0 8%;
@@ -230,6 +214,32 @@ img {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+}
+.container .header-two {
+  background-color: #98A4AD;
+  height: 100vw;
+  width: 100vw;
+  position: fixed;
+  right: 0;
+  opacity: 0.95;
+  padding: 0 8%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+}
+.container .header-two .top-bar {
+  width: 100%;
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.container .header-two .menu {
+  margin-bottom: 30%;
 }
 @media (max-width: 800px) {
   .container {
@@ -246,14 +256,16 @@ img {
     flex-direction: row;
   }
 }
-header nav {
+.header-one nav,
+.header-two nav {
   display: flex;
   justify-content: none;
   align-items: none;
   flex-direction: column;
   margin-bottom: 10%;
 }
-header nav a {
+.header-one nav a,
+.header-two nav a {
   text-decoration: none;
   color: white;
   font-size: 3rem;
