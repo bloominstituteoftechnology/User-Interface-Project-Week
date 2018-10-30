@@ -61,74 +61,102 @@ table{
 * {
   box-sizing: border-box;
 }
-html {
+
+html, body {
   font-family: "Roboto", Arial, sans-serif;
-  // background: rgb(220, 220, 220);
   background: #FFFFFF;
   color:#222222;
-}
-
-body {
-  max-width: 1028px;
-  padding:1px;
-  border:1px solid black;
+  max-width: 1024px;
   margin: 0 auto;
 }
-
 header {
-  height: 50px;
   width:100%;
-  background:#828282;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-}
-
-.logo {
-  display: inline;
-  background: #828282;
-  font-weight: bold;
-  font-size: 24px;
-  color: #FFFFFF;
-}
-
-.jumbotron {
-  height: 598px;
   position: relative;
-  img {
-    position: absolute;
-    z-index: 0;
-    top:0px;
-    left:0px;
-  }
-  .motto {
+  nav {
     position: absolute;
     z-index: 1;
-    bottom:0px;
-    height: 46%;
-    width: 52%;
-    border:1px solid red;
-    display:flex;
-    justify-content: flex-end;
-    p {
-      display: inline-block;
-      font-weight: Bold;
-      font-size: 64px;
-      line-height: 75px;
+    height: 50px;
+    width:100%;
+    background:#828282;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      display: block;
+      padding-left: 5%;
+      background: #828282;
+      font-weight: bold;
+      font-size: 24px;
       color: #FFFFFF;
     }
+    
+    img {
+      background:#828282;
+      padding-right: 5%;
+    }
   }
-}
 
-a{
-  background:#828282;
-  text-decoration: none;
-}
-
-nav {
-  background:#828282;
-  img {
-    background:#828282;
+  .links {
+    position: absolute;
+    z-index: 1;
+    top:50px;
+    width:100%;
+    height: 0%;
+    transition: height 0.5s;
+    a {
+      display: none;
+    }
+    &.links-toggle {
+      height: 100%;
+      transition: height 0.5s;
+      background:#828282;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      a {
+        display: block;
+        text-decoration: none;
+        color:#FFFFFF;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 85px;
+        &:hover{
+          color: #222222;
+        }
+      }
+    }
+  }
+  
+  .jumbotron {
+    top: 50px;
+    position: relative;
+    z-index: 0;
+    img {
+      position: relative;
+      top:0px;
+      left:0px;
+    }
+    .motto {
+      position: absolute;
+      z-index: 1;
+      bottom:0px;
+      height: 46%;
+      width: 52%;
+      display:flex;
+      justify-content: flex-end;
+      p {
+        padding-left:16%;
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 75px;
+        color: #FFFFFF;
+      }
+    }
   }
 }
 
@@ -141,106 +169,168 @@ nav {
   align-items: center;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h2 {
-    font-weight: bold;
-    font-size: 28px;
-    color: #222222;
-    }
-}
-
 .half {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin:0 auto;
-  width:83%;
-  margin-top: 5%;
+  margin:7% auto 0;
+  width:84%;
 }
 
 .half-content {
   width: 50%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &.right-text {
+    padding-left:0%;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 28px;
+    color: #222222;
+  }
   p{
-    width:90%;
+    line-height: 24px;
+    margin-top: 5%;
+    width:100%;
+  }
+  .button {
+    margin-top: 5%;
   }
 }
 
+.recent-projects {
+  margin: 5% auto;
+  padding-left: 8%;
+  font-weight: bold;
+  font-size: 28px;
+  color: #222222;
+  }
+
 .projects {
   margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  
+
   .project-wrapper{
     position: relative;
-    width:100%;
-    height: auto;
+    // width:100%;
+    margin:0 auto;
+    align-items: center;
     img {
-      position:absolute;
+      // position:absolute;
       z-index: 0;
     }
     .project-block {
       z-index: 1;
       position: absolute;
+      bottom:-37px;
       height: 95px;
       width: 315px;
-      background:#828282;
+      background: rgb(215,215,215);
       display: flex;
       justify-content: center;
       align-items: center;
-      .right {
-  
+      &.right {
+        right:0px;
       }
-      .left {
-  
+      h3{
+        font-size: 24px;
+        letter-spacing: 8px;
       }
+    }
+  }
+  .text {
+    margin:8% auto 0%;
+    width:42%;
+    p {
+      display: block;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      width:420px;
     }
   }
 }
 
 footer {
+  margin-top:5%;
   height: 250px;
+  width:100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-content: flex-end;
   flex-wrap: wrap;
   background:#828282;
   padding-bottom:20px;
-  h2,h3,h4 {
-    background:#828282;
+  color: #FFFFFF;
+}
+form {
+  input {
+    width:90%;
+    height: 35px;
+    border-radius: 7px;
+    font-size:18px;
+    color:lightgrey;
+    padding-left:10px;
   }
 }
-form input {
-  width:100%;
-}
+
 
 .quick-contact {
   display:flex;
   flex-direction: column;
   justify-content: space-between;
   background:#828282;
+  h2 {
+    // background:#828282;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+  }
+  h4 {
+    font-weight: normal;
+    font-size: 10px;
+    // background:#828282;
+  }
 }
 
 .locations {
   width:145px;
   background:#828282;
+  h2 {
+    background:#828282;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+  }
+  p{
+    font-weight: normal;
+    font-size: 14px;
+    // line-height: 26px;
+    line-height: 28px;
+  }
 }
 
 .copyright {
   display: flex;
   justify-content: center;
   background:#828282;
+  margin-top: 3%;
   width:100%;
   h4 {
+    font-weight: normal;
+    font-size: 10px;
     background:#828282;
   }
 }
 
-p{ 
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
-  width:450px;
-}
 // Font Weight: Regular
 // Font Size: 16px
 // Line Height: 24px
@@ -249,6 +339,7 @@ p{
 // Background: #FFFFFF
 // Color: #222222
 // Font Family: Roboto, Arial, sans-serif
+
 // Page Specific
 // Home Page
 // Recent Projects Gray Square: #D8D8D8
