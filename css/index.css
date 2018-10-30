@@ -156,7 +156,7 @@ p {
 .desktop {
   display: block;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .desktop {
     display: none;
   }
@@ -168,25 +168,66 @@ p {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
   background: #98a4af;
   margin: 0;
   padding: 1% 5%;
+  opacity: 0.9;
+}
+@media (max-width: 800px) {
+  .nav-bar {
+    opacity: 1;
+  }
 }
 .nav-bar h2 {
   font-weight: bold;
   font-size: 2.4rem;
   color: #ffffff;
 }
+.nav-bar nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 25%;
+  align-self: center;
+  display: none;
+}
+@media (max-width: 800px) {
+  .nav-bar nav {
+    width: 40%;
+  }
+}
 .nav-bar nav a {
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 8.5rem;
   color: #ffffff;
-  display: none;
+  position: relative;
+  text-decoration: none;
+  text-align: right;
+  left: 25%;
 }
 .nav-bar nav ahover {
   color: #222222;
+}
+@media (max-width: 800px) {
+  .nav-bar nav a {
+    left: 0%;
+  }
+}
+.nav-bar nav a:hover {
+  color: #504545;
+}
+.nav-bar nav a:active {
+  color: #504545;
+}
+.nav-bar .open {
+  display: none;
 }
 footer {
   display: flex;
@@ -203,7 +244,7 @@ footer {
   padding: 5% 2% 0.5%;
   background: #828282;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   footer {
     display: flex;
     flex-flow: column wrap;
@@ -227,7 +268,7 @@ footer address h2 {
   line-height: 2.4rem;
   color: #ffffff;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   footer address {
     margin: 0 0 5%;
     padding: 1%;
@@ -243,7 +284,7 @@ footer .left {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   footer .left {
     margin: 0 0 5%;
     padding: 1%;
@@ -261,7 +302,7 @@ footer .left input {
   font-size: 1.6rem;
   border: none;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   footer .left input {
     width: 100%;
     height: auto;
@@ -280,7 +321,7 @@ footer .left h2 {
   margin: 0;
   padding: 0 12.5%;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   footer .left h2 {
     margin: 0;
     padding: 0;
@@ -291,7 +332,7 @@ footer .left .second {
   padding: 0 12.5%;
   text-align: left;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   footer .left .second {
     margin: 0 0 2%;
     padding: 0;
@@ -304,7 +345,7 @@ footer .left h4 {
   margin: 0;
   padding: 0 12.5%;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   footer .left h4 {
     margin: 0;
     padding: 0;
@@ -316,7 +357,7 @@ footer h5 {
   padding: 0;
   font-size: 1rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   footer h5 {
     margin: 2.5% 0 0;
     padding: 0;
@@ -342,7 +383,7 @@ footer h5 {
   margin: 0;
   padding: 5%;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .upper .headers {
     font-size: 5rem;
     line-height: 6.5rem;
@@ -370,7 +411,7 @@ footer h5 {
   justify-content: center;
   align-items: space-between;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-top {
     margin: 10% 5%;
     padding: 0;
@@ -379,7 +420,7 @@ footer h5 {
 .container .main-top img {
   width: 40%;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-top img {
     width: 100%;
     margin: 5% 0 5%;
@@ -405,7 +446,7 @@ footer h5 {
 .container .main-top button:hover a {
   color: #ffffff;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-top button {
     width: 100%;
     margin: 5% 0 0;
@@ -420,7 +461,7 @@ footer h5 {
   margin: 0 0 5%;
   padding: 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-top .top-section {
     display: flex;
     flex-flow: column nowrap;
@@ -430,7 +471,7 @@ footer h5 {
     padding: 0;
   }
 }
-@media (max-width: 500px) and (max-width: 500px) {
+@media (max-width: 800px) and (max-width: 800px) {
   .container .main-top .top-section img {
     order: -1;
   }
@@ -443,7 +484,7 @@ footer h5 {
   margin: 5% 0 0;
   padding: 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-top .bottom-section {
     display: flex;
     flex-flow: column nowrap;
@@ -457,7 +498,7 @@ footer h5 {
   width: 40%;
   height: auto;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-top .content {
     width: 100%;
   }
@@ -470,7 +511,7 @@ footer h5 {
   justify-content: center;
   align-items: space-around;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-bottom {
     margin: 0 5%;
     padding: 0;
@@ -480,7 +521,7 @@ footer h5 {
   width: 45%;
   align-self: center;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-bottom p {
     width: 100%;
   }
@@ -492,7 +533,7 @@ footer h5 {
   justify-content: center;
   align-items: space-between;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .main-bottom {
     display: flex;
     flex-flow: column nowrap;
@@ -504,7 +545,7 @@ footer h5 {
   margin: 5% 0 2.5%;
   padding: 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .top {
     margin-bottom: 15%;
   }
@@ -516,7 +557,7 @@ footer h5 {
   width: 100%;
   height: auto;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .top img {
     width: 110.99%;
     right: 5%;
@@ -534,7 +575,7 @@ footer h5 {
   right: 0;
   bottom: 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .container .top h3 {
     bottom: -20%;
     left: 0%;

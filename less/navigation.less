@@ -1,14 +1,45 @@
 .nav-bar {
-  .flex-box(row nowrap, space-between, center);
+  .flex-box(row nowrap, space-between, flex-start);
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
   background: @nav-background;
   .margin-padding(0, 1% 5%);
+  opacity: 0.9;
+  @media @mobile {
+    opacity: 1;
+  }
   h2 {
     .nav-logo();
   }
   nav {
+    .flex-box(column wrap, flex-end, center);
+    width: 25%;
+    @media @mobile {
+      width: 40%;
+    }
+    align-self: center;
+    display: none;
+
     a {
       .nav-text();
-      display: none;
+      position: relative;
+      text-decoration: none;
+      text-align: right;
+      left: 25%;
+      @media @mobile {
+        left: 0%;
+      }
+      &:hover {
+        color: #504545;
+      }
+      &:active {
+        color: #504545;
+      }
     }
+  }
+  .open {
+    display: none;
   }
 }
