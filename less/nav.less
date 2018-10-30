@@ -1,30 +1,68 @@
-.nav {
-    background-color: @nav-bg;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-    
-    .nav-bar{
-        .custom-layout(space-between, center);
-        width: 83%;
-        margin: 0 auto;
-        height: 50px;
+.navigation {
+  background-color: @nav-bg;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 
-        @media @tablet {
-            width: 90%;
-        }
+  .navigation-bar {
+    .custom-layout(space-between, center);
+    width: 83%;
+    margin: 0 auto;
+    height: 50px;
 
-        .nav-title {
-            color: white;
-            font-size: 2.4rem;
-            font-weight: 400;
-            cursor: pointer;
-        }   
-
-        .nav-hamburger {
-            cursor: pointer;
-        }
+    @media @tablet {
+      width: 90%;
     }
-    
+
+    a {
+      text-decoration: none;
+
+      .navigation-title {
+        color: white;
+        font-size: 2.4rem;
+        font-weight: 400;
+        cursor: pointer;
+      }
+    }
+
+    .navigation-hamburger,
+    .navigation-close {
+      cursor: pointer;
+    }
+  }
+
+  .navigation-links {
+    display: none;
+  }
+
+  .btn-toggle {
+    display: none;
+  }
+
+  .navigation-links-selected {
+    opacity: 0.95;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: @nav-bg;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 35%;
+
+    .navigation-link {
+      color: white;
+      font-size: 6.4rem;
+      line-height: 75px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 2rem;
+    }
+
+    .link-selected {
+      color: @scorpion;
+    }
+  }
 }

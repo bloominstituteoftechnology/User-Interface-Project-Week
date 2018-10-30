@@ -174,14 +174,14 @@ footer address {
   font-size: 1.4rem;
   line-height: 1.8;
 }
-.nav {
+.navigation {
   background-color: #9AA5B0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
 }
-.nav .nav-bar {
+.navigation .navigation-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -190,18 +190,51 @@ footer address {
   height: 50px;
 }
 @media (max-width: 800px) {
-  .nav .nav-bar {
+  .navigation .navigation-bar {
     width: 90%;
   }
 }
-.nav .nav-bar .nav-title {
+.navigation .navigation-bar a {
+  text-decoration: none;
+}
+.navigation .navigation-bar a .navigation-title {
   color: white;
   font-size: 2.4rem;
   font-weight: 400;
   cursor: pointer;
 }
-.nav .nav-bar .nav-hamburger {
+.navigation .navigation-bar .navigation-hamburger,
+.navigation .navigation-bar .navigation-close {
   cursor: pointer;
+}
+.navigation .navigation-links {
+  display: none;
+}
+.navigation .btn-toggle {
+  display: none;
+}
+.navigation .navigation-links-selected {
+  opacity: 0.95;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #9AA5B0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 35%;
+}
+.navigation .navigation-links-selected .navigation-link {
+  color: white;
+  font-size: 6.4rem;
+  line-height: 75px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+.navigation .navigation-links-selected .link-selected {
+  color: #5e5758;
 }
 .footer {
   display: flex;
@@ -379,38 +412,45 @@ footer address {
   align-items: center;
   width: 100%;
 }
-.services-container .services-content .services .boxes .services-box {
+.services-container .services-content .services .boxes .services-tab {
   border: 1px solid #222222;
-  padding: 1rem;
-  width: 20rem;
+  padding: 1rem 2.5rem;
+  white-space: nowrap;
   text-align: center;
   cursor: pointer;
 }
-.services-container .services-content .services .boxes .services-box:hover {
+.services-container .services-content .services .boxes .services-tab:hover {
+  background-color: #5E9FB9;
+  color: white;
+}
+.services-container .services-content .services .boxes .services-tab-selected {
   background-color: #5E9FB9;
   color: white;
 }
 .services-container .services-content .services .content {
-  margin: 25px 0;
+  display: none;
+}
+.services-container .services-content .services .content-selected {
+  margin: 5rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.services-container .services-content .services .content img {
+.services-container .services-content .services .content-selected img {
   width: 100%;
   height: auto;
 }
-.services-container .services-content .services .content .text-content {
+.services-container .services-content .services .content-selected .text-content {
   display: flex;
   flex-direction: column;
   width: 48%;
 }
-.services-container .services-content .services .content .text-content h2 {
+.services-container .services-content .services .content-selected .text-content h2 {
   margin-bottom: 20px;
 }
-.services-container .services-content .services .content .text-content p {
+.services-container .services-content .services .content-selected .text-content p {
   margin-bottom: 20px;
 }
-.services-container .services-content .services .content .img-content {
+.services-container .services-content .services .content-selected .img-content {
   width: 48%;
 }
