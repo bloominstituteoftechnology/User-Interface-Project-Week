@@ -142,6 +142,9 @@ table {
 @nav-bg: #99a4af;
 @font-color: #222222;
 
+// Breakpoints
+@desktop: ~"(min-width: 500px)";
+
 // Mixins
 .flexIt(@direction: row, @justify, @align) {
   display: flex;
@@ -238,7 +241,7 @@ header {
   .mobile-jumbo {
     width: 100%;
 
-    @media (min-width: 500px) {
+    @media @desktop {
       display: none;
     }
   }
@@ -246,8 +249,42 @@ header {
   .desktop-jumbo {
     width: 100%;
     display: none;
-    @media (min-width: 500px) {
+    @media @desktop {
       display: inline-block;
+    }
+  }
+}
+
+#main-content {
+  padding: 0 5%;
+
+  // Breakpoints
+
+  // Children
+  #about,
+  #design {
+    width: 100%;
+    .flexIt(column, center, center);
+    // Breakpoints
+
+    //children
+    .mobile-img {
+      width: 100%;
+      order: -10;
+
+      // Breakpoint
+      @media @desktop {
+        display: none;
+      }
+    }
+
+    .desktop-img {
+      display: none;
+
+      // Breakpoint
+      @media @desktop {
+        display: inline-block;
+      }
     }
   }
 }
