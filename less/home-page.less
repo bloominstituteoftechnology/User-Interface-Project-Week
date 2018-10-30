@@ -1,5 +1,5 @@
 
-    .jumbotron {
+    .jumbo-div {
         position: relative;
         height: 550px;
         overflow: hidden;
@@ -150,9 +150,9 @@
     // TABLET VERSION
 
     @media @tablet {
-        .jumbotron {
+        .jumbo-div {
             position: relative;
-            height: 550px;
+            height: auto;
             overflow: hidden;
             .flex(@jc: none, @ai: center, @dir: row);
             .text-block {
@@ -165,6 +165,7 @@
                     color: white;
                     letter-spacing: .01rem;
                     line-height: 7.5rem;
+                    padding-bottom: 12%;
                 }
             }//text block
         }//jumbotron
@@ -301,30 +302,31 @@
 
     @media @mobile {
         .jumbotron {
-            position: relative;
-            height: 210px;
-            margin-bottom: 4%;
-            .flex(@jc: none, @ai: flex-end, @dir: row);
-            .text-block {
-                position: absolute;
-                font-size: 8rem;
-                margin-left: 4%;
-                margin-top: 0%;
-                padding-bottom: 6%;
+            height: auto;
+            .jumbo-div {
+                .flex(@jc: none, @ai: flex-end, @dir: row);
+                .text-block {
+                    font-size: 8rem;
+                    margin-left: 4%;
+                    margin-top: 0%;
+                    padding-bottom: 6%;
                 
                 h1 {
                     font-size: 44%;
                     color: white;
                     letter-spacing: .00rem;
                     line-height: 4.5rem;
+                    padding-bottom: 0%;
                 }
+                .jumbo-img {
+                    display: none;
+                }
+                .jumbo-img-mobile {
+                    display: block;
+                }
+            }
+
             }//text block
-            .jumbo-img {
-                display: none;
-            }
-            .jumbo-img-mobile {
-                display: block;
-            }
         }//jumbotron
         
         .page-content {
