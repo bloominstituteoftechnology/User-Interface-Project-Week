@@ -13,7 +13,7 @@ class TabLink {
 
       // Using the Item element, create a new instance of the TabItem class
       this.tabItem = new TabItem(this.itemElement);
-      console.log("new instance of this.tabItem", this.tabItem);
+    //   console.log("new instance of this.tabItem", this.tabItem);
       
       // Add a click event listener on this instance, calling the select method on click
       this.element.addEventListener('click', () => {this.select()});
@@ -22,6 +22,7 @@ class TabLink {
     select() {
       // Get all of the elements with the tabs-link class
       const links = document.querySelectorAll('.tabs-link');
+    //   console.log("links", links);
   
       // Using a loop or the forEach method remove the 'tabs-link-selected' 
       // class from all of the links
@@ -44,7 +45,8 @@ class TabLink {
     select() {
       // Select all ".tabs-item" elements from the DOM
       const myItems = document.querySelectorAll('.tabs-item');
-      console.log(myItems);
+    //   console.log("my items", myItems);
+    
       // Remove the class "tabs-item-selected" from each element
       Array.from(myItems).forEach(function(myItems) {myItems.classList.remove("tabs-item-selected")});
   
