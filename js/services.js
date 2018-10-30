@@ -30,12 +30,6 @@ class TabContent {
     }
 }
 
-
-
-
-
-
-
 let tabs = document.querySelectorAll('.services-tab');
 
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
