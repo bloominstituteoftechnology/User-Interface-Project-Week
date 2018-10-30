@@ -140,6 +140,7 @@ table {
 html,
 body {
   font-family: "Roboto", Arial, sans-serif;
+  font-size: 62.5%;
   background: #FFFFFF;
   color: #222222;
   max-width: 1024px;
@@ -171,22 +172,28 @@ header nav .logo {
   font-size: 24px;
   color: #FFFFFF;
 }
-header nav img {
+header nav .hamburger-wrapper {
+  width: 10%;
+}
+header nav .hamburger-wrapper img {
   background: #828282;
-  padding-right: 5%;
 }
 header .links {
+  height: 0%;
+  transition: height 1s;
   position: absolute;
   z-index: 1;
   top: 50px;
   width: 100%;
-  height: 0%;
-  transition: height 0.5s;
 }
 header .links a {
   display: none;
 }
-header .links.links-toggle {
+header .links-toggle {
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  width: 100%;
   height: 100%;
   transition: height 0.5s;
   background: #828282;
@@ -195,7 +202,7 @@ header .links.links-toggle {
   align-items: center;
   justify-content: center;
 }
-header .links.links-toggle a {
+header .links-toggle a {
   display: block;
   text-decoration: none;
   color: #FFFFFF;
@@ -203,15 +210,17 @@ header .links.links-toggle a {
   font-size: 48px;
   line-height: 85px;
 }
-header .links.links-toggle a:hover {
+header .links-toggle a:hover {
   color: #222222;
 }
 header .jumbotron {
   top: 50px;
   position: relative;
   z-index: 0;
+  width: 100%;
 }
 header .jumbotron img {
+  width: 100%;
   position: relative;
   top: 0px;
   left: 0px;
@@ -228,9 +237,14 @@ header .jumbotron .motto {
 header .jumbotron .motto p {
   padding-left: 16%;
   font-weight: bold;
-  font-size: 64px;
-  line-height: 75px;
+  font-size: 6.4rem;
+  line-height: 118%;
   color: #FFFFFF;
+}
+@media (max-width: 1024px) {
+  header .jumbotron .motto p {
+    font-size: 6.4vw;
+  }
 }
 .button {
   border: 1px solid #222222;
@@ -247,6 +261,32 @@ header .jumbotron .motto p {
   margin: 7% auto 0;
   width: 84%;
 }
+.half.half-top {
+  flex-direction: row;
+}
+.half .image-wrapper {
+  width: 50%;
+}
+.half .image-wrapper img {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .half {
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+    margin: 15% auto;
+  }
+  .half.half-top {
+    flex-direction: column-reverse;
+  }
+  .half .image-wrapper {
+    width: 100%;
+  }
+  .half .image-wrapper img {
+    width: 100%;
+  }
+}
 .half-content {
   width: 50%;
   display: flex;
@@ -262,12 +302,23 @@ header .jumbotron .motto p {
   color: #222222;
 }
 .half-content p {
+  font-size: 1.6rem;
   line-height: 24px;
   margin-top: 5%;
   width: 100%;
 }
 .half-content .button {
   margin-top: 5%;
+}
+@media (max-width: 500px) {
+  .half-content {
+    width: 100%;
+    align-items: center;
+  }
+  .half-content .button {
+    width: 100%;
+    font-size: 1.6rem;
+  }
 }
 .recent-projects {
   margin: 5% auto;
@@ -277,6 +328,7 @@ header .jumbotron .motto p {
   color: #222222;
 }
 .projects {
+  width: 100%;
   margin-top: 5%;
   display: flex;
   flex-direction: column;
@@ -285,10 +337,11 @@ header .jumbotron .motto p {
 }
 .projects .project-wrapper {
   position: relative;
+  width: 100%;
   margin: 0 auto;
-  align-items: center;
 }
 .projects .project-wrapper img {
+  width: 100%;
   z-index: 0;
 }
 .projects .project-wrapper .project-block {
@@ -320,9 +373,32 @@ header .jumbotron .motto p {
   line-height: 24px;
   width: 420px;
 }
+@media (max-width: 500px) {
+  .projects {
+    width: 95%;
+  }
+  .projects .project-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects .project-wrapper .project-block {
+    bottom: -80px;
+  }
+  .projects .project-wrapper .project-block.right {
+    right: auto;
+  }
+  .projects .text {
+    margin: 35% 0 10%;
+    width: 95%;
+  }
+  .projects .text p {
+    width: 100%;
+  }
+}
 footer {
   margin-top: 5%;
-  height: 250px;
+  min-height: 250px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -383,4 +459,26 @@ form input {
   font-weight: normal;
   font-size: 10px;
   background: #828282;
+}
+@media (max-width: 500px) {
+  .quick-contact {
+    margin-top: 2%;
+  }
+  .quick-contact h4 {
+    margin-top: 5%;
+  }
+  form {
+    margin-top: 3%;
+  }
+  .locations {
+    width: 95%;
+  }
+  .locations h2 {
+    margin-top: 5%;
+    margin-bottom: 1%;
+  }
+  .copyright {
+    width: 95%;
+    justify-content: flex-start;
+  }
 }
