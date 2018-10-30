@@ -17,37 +17,51 @@ p {
 
 
 .header-img {
-    width: 100%;
+    max-width: 100%;
 }
 
 
 
 .jumbotron-text {
+
+  
     position: absolute;
     z-index: 1;
     bottom: 80px;
-    left: 75px;
+    left: 50px;
     color: @header-font-color;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     line-height: 75px;
+    @media @phone{
+        font-size: 2.9rem;
+        bottom: 30px;
+        left:30px;
+    }
 
 }
 
 .article {
+    @media @phone {
+        max-width: 90%;
+        flex-direction: column;
+    }
     margin: 40px auto;
     display: flex;
     flex-direction: row-reverse;
     //border: 1px solid red;
     justify-content: space-between;
-    width: 80%;
-
+    max-width: 80%;
+   
     .article-img {
-        max-width:50%;
+        @media @phone {
+            display:none;
+        }
+        max-width:49%;
         //border: 1px solid blue;
     }
     .article-box {
-        max-width: 50%;
+        max-width: 49%;
         //border: 1px solid red;
         align-self: center;
 
@@ -60,12 +74,18 @@ p {
 
         }
     }
+   
     
     
 }
 .shiftDirection {
     flex-direction: row;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 40px auto;
+
 }
+
 
 .recent-proj {
     margin: 40px auto;
@@ -113,7 +133,7 @@ p {
             //border: 1px dotted red;
             margin: 100px auto;
             
-            width: 42%;
+            max-width: 42%;
             p {
                 margin: 20px auto;
                 //border: 1px solid red;
