@@ -24,10 +24,55 @@ body {
             }
             .burger-button {
                 margin-right: 8%;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+                img {
+                    display: none;
+                }
+                .current-btn {
+                    display: block;
+                }
+            }
+            
+        }
+        .expanding-menu {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: @navBG;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            div {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 50px;
+
+                a {
+                    color: @navLogo;
+                    text-decoration: none;
+                    line-height: 10vw;
+                    font-size: 7vw;
+                    font-weight: bold;
+
+                    @media @mobile {
+                        font-size: 15vw;
+                        line-height: 25vw;
+                    }
+
+                    &:hover {
+                        color: @generalColor;
+                    }
+                }
+
             }
         }
 
-        .expanding-menu {
+        .hidden {
             display: none;
         }
 
