@@ -21,3 +21,44 @@ hamburger.addEventListener('click', () => {
     hamburger.src="img/nav-hamburger.png";
   }
 })
+
+
+// ***************************************
+// ******* SERVICES TAB COMPONENT ********
+// ***************************************
+
+class TabToggle {
+  constructor(element) {
+    this.element = element;
+    this.data = this.element.dataset.tab;
+    this.itemElement = document.querySelector(`.services__tabs-card[data-tab='${this.data}']`);
+    console.log(document.querySelector(`.services__tabs-card[data-tab=''`));
+    this.tabCard = new TabCard(this.itemElement);
+    this.element.addEventListener('click', () => {this.select()})
+  }
+  select(){
+    const toggleTabs = document.querySelectorAll('.services__tabs-tab');
+    toggleTabs.forEach( tab => tab.classList.remove('active-tab'));
+    this.element.classList.add('active-tab');
+    this.tabCard.select();
+    console.log(this.tabCard);
+    // this.toggleTabs
+  }
+}
+
+class TabCard {
+  constructor(element) {
+    this.element = element;
+  }
+  select() {
+    let tabCards = document.querySelectorAll('.services__tabs-card');
+    
+    tabCards.forEach(card => card.classList.remove('active-card'));
+    this.element.classList.add('active-card');
+  }
+}
+
+
+
+let tabs = document.querySelectorAll('.services__tabs-tab');
+tabs = Array.from(tabs).map(tab => new TabToggle(tab));
