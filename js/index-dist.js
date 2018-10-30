@@ -1,0 +1,1 @@
+"use strict";var openClose=document.querySelectorAll(".navbar img"),nav=document.querySelector("nav");openClose.forEach(function(e){return e.addEventListener("click",function(){return nav.classList.toggle("active")})});

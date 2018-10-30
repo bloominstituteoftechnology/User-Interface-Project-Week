@@ -6,7 +6,7 @@
     position: absolute;
     background-color: #828282;
     display: grid;
-    z-index: 1;
+    z-index: 4;
     max-width: 1024px;
     width: 100%;
     @media @desktop {
@@ -24,6 +24,36 @@
     }
     nav {
         display: none;
+        opacity: 0.9;
+        z-index: -1;
+        a {
+            font-size: 4.8rem;
+            line-height: 8.5rem;
+            color: white;
+            text-decoration: none;
+            &.current {
+                color: black;
+            }
+        }
+        &.active {
+            grid-auto-rows: 14.5%;
+            grid-row: 10rem;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: #828282;
+            & + img.hamburger {
+                display: none;
+            }
+        }
+        &:not(.active) {
+            & ~ img.close {
+                display: none;
+            }
+        }
     }
     img {
         margin-top: 5px;
@@ -31,7 +61,6 @@
         grid-row-start: 2;
         justify-self: end;
         align-self: center;
-        @media @desktop {
-        }
+        cursor: pointer;
     }
 }

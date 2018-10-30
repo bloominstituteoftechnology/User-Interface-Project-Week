@@ -1,1 +1,1 @@
-// JS goes here
+//@prepros-append ../components/navbar/navbar.js
