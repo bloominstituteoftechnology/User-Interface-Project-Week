@@ -1,9 +1,14 @@
 .service {
+  .flex(column, center, center);
+  @media @mobile {
+    width: 90%;
+  }
   p {
     margin: 4.4rem 0;
   }
   .tabs-links {
     .flex(row, space-between, center);
+    .mobile-column();
     width: 100%;
 
     .tabs-link {
@@ -14,6 +19,10 @@
       border: 1px solid @clr-button-bor;
       font-size: 2rem;
       font-weight: bold;
+      @media @mobile {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
 
       &:hover {
         background-color: @clr-bg-tab-hover;
@@ -38,6 +47,8 @@
       .content {
         padding: 1.2rem 0;
         .flex();
+        .mobile-column();
+        .img100();
         p {
           margin: 3rem 0rem;
         }
