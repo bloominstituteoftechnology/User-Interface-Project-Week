@@ -1,3 +1,7 @@
+// email
+const logIn = document.querySelector('.footer-all .login');
+
+// Tabs
 class TabLink {
     constructor(element) {
       this.element = element;
@@ -53,3 +57,24 @@ class TabLink {
   links = Array.from(links).map( link => new TabLink(link));
 
   links[0].select()
+
+//   DropDown
+class Dropdown {
+    constructor(element) {
+
+      this.element = element;
+      
+      this.button = this.element.querySelector('.dropdown-button')
+
+      this.content = this.element.querySelector('.dropdown-content');
+    
+      this.button.addEventListener('click', () => { this.toggleContent() })
+    
+    }
+  
+    toggleContent() {
+      this.content.classList.toggle('dropdown-hidden');
+    }
+  }
+  let dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns = Array.from(dropdowns).map( dropdown => new Dropdown(dropdown));
