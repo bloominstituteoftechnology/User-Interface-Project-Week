@@ -2,14 +2,11 @@
   class Tabs {
     constructor(tabLinks) {
       this.element = tabLinks;
-
       this.links = Array.from(
         this.element.querySelectorAll('.tabs-link')
         ).map( link => new TabLink(link));
-
       this.selectedLink = this.links[0];
       this.selectedLink.select();
-
       this.links.forEach( link => {
         link.element.addEventListener('click', () => {
           this.selectedLink.deselect();
@@ -33,7 +30,6 @@
       // Using the Item element, create a new instance of the TabItem class
       this.tabItem = new TabItem(this.itemElement);
     };
-
     select() {
       // Add a class named "tabs-link-selected" to this link
       this.element.classList.add('tabs-link-selected');
@@ -41,7 +37,6 @@
       // Call the select method on the item associated with this link
       this.tabItem.select();
     }
-
     deselect() {
       this.element.classList.remove('tabs-link-selected');
       this.tabItem.deselect();
@@ -52,11 +47,9 @@
     constructor(element) {
       this.element = element;
     }
-
     select() {
       this.element.classList.remove('hidden'); 
     }
-
     deselect() {
       this.element.classList.add('hidden');
     }
