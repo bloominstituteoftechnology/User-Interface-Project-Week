@@ -1,6 +1,7 @@
 const hamburger = document.querySelector('#hamburger');
 const closeButton = document.querySelector('#navigation-close');
 const navLinks = document.querySelector('.navigation-links');
+const navPages = document.querySelectorAll('.navigation-link');
 
 hamburger.addEventListener("click", function(event) {
     console.log('BUTTON CLICKED');
