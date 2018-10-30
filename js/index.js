@@ -1,4 +1,6 @@
 // JS goes here
+
+// =======================   Service Page Tabs and Content
 class TabButton {
     constructor(tabButton) {
         this.tabButton = tabButton;
@@ -43,4 +45,53 @@ class TabContent {
 let tabButtons = document.querySelectorAll('.tab-link');
 tabButtons = Array.from(tabButtons).map( tabButton => new TabButton(tabButton));
 
-tabButtons[0].select();
+// tabButtons[0].select();
+
+
+// ============================ Navigation
+
+class NavOpen {
+    constructor(navLink) {
+        this.navLinkO = navLink;
+        this.navOpen = document.querySelector('.navHamburger');
+        this.navClose = document.querySelector('.navCloseImage');
+        // this.navLinkContainer = document.querySelector('.nav-links');
+
+        this.navLinkO.addEventListener('click', () => this.openMenu());
+    }
+    // methods
+    openMenu() {
+        this.navOpen.classList.toggle('navMenuOpenSelected');
+        this.navClose.classList.toggle('navMenuOpenSelected');
+
+        navLinksContainer.classList.toggle('navLinksShow');
+        console.log('menu opened');
+    }
+}
+
+class NavClose {
+    constructor(navLink) {
+        this.navLinkC = navLink;
+        this.navOpen = document.querySelector('.navHamburger');
+        this.navClose = document.querySelector('.navCloseImage');
+        // this.navLinkContainer = document.querySelector('.nav-links');
+
+        this.navLinkC.addEventListener('click', () => this.closeMenu());
+    }
+    // methods
+    closeMenu() {
+        this.navOpen.classList.toggle('navMenuOpenSelected');
+        this.navClose.classList.toggle('navMenuOpenSelected');
+
+        navLinksContainer.classList.toggle('navLinksShow');
+        console.log('menu closed');
+    }
+}
+
+
+let navMenuOpen = document.querySelector('.navHamburger');
+let navMenuClose = document.querySelector('.navCloseImage');
+let navLinksContainer = document.querySelector('.nav-links');
+
+navMenuOpen = new NavOpen(navMenuOpen);
+navMenuClose = new NavClose(navMenuClose);
