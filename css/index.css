@@ -337,8 +337,139 @@ table {
 .tabs .tabs-item-selected {
   display: block;
 }
-.form {
-  width: 50%;
+.contact-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  font-family: Roboto, Arial, sans-serif;
+  line-height: 24px;
+  padding-bottom: 20px;
+}
+.form-and-www {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.form-and-www .form {
+  width: 48%;
+}
+.form-and-www .form #fancy-radio {
+  float: left;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+.form-and-www .form #fancy-radio label.radio {
+  float: left;
+  width: auto;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+  cursor: pointer;
+  position: relative;
+  clear: both;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+.form-and-www .form #fancy-radio label.radio:before {
+  content: '';
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 4px 5px 0 0;
+  background-color: white;
+  border: 0.5px solid silver;
+  border-radius: 100%;
+  font-size: 22px;
+  text-indent: 40px;
+}
+.form-and-www .form #fancy-radio label.radio:after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 100%;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  opacity: 0;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+}
+.form-and-www .form #fancy-radio label.radio.selected:after {
+  width: 15.5px;
+  height: 15.5px;
+  top: 7px;
+  left: 7px;
+  opacity: 1;
+}
+.form-and-www .form #fancy-radio label.radio:hover {
+  text-indent: 5px;
+}
+.form-and-www .where-we-work {
+  width: 100%;
+  width: 48%;
+}
+.form-and-www .where-we-work h1 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.form-and-www .where-we-work .addresses {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 26px;
+  flex-direction: column;
+  width: 100%;
+}
+.form-and-www .where-we-work .addresses h4 {
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .form-and-www .where-we-work .addresses h4 {
+    font-size: 1.4rem;
+  }
+}
+.form-and-www .where-we-work .addresses .address {
+  width: 35%;
+  margin: 3% 0%;
+}
+@media (max-width: 500px) {
+  .form-and-www .where-we-work .addresses .address {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 10px 0px;
+    line-height: 30px;
+  }
+}
+.form-and-www .where-we-work .addresses .address ul li {
+  font-size: 1rem;
+}
+@media (max-width: 500px) {
+  .form-and-www .where-we-work .addresses .address ul li {
+    font-size: 1.2rem;
+  }
+}
+.contact-header-img {
+  object-fit: cover;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .contact-header-img {
+    display: none;
+  }
+}
+.contact-header-img-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .contact-header-img-mobile {
+    display: inline;
+    object-fit: cover;
+    width: 100%;
+  }
 }
 /* Style inputs with type="text", select elements and textareas */
 input[type=text],
@@ -399,7 +530,40 @@ input[type=submit]:hover {
   color: #C0C0C0;
   margin-bottom: 16px;
 }
-/* Add a background color and some padding around the form */
+/* Customize the label (the container) */
+.radio-button {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default radio button */
+.radio-button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+.myRadio {
+  margin-bottom: 20px;
+}
 * {
   box-sizing: border-box;
 }

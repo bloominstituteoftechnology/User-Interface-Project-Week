@@ -39,23 +39,3 @@ const toggleMenu = () => {
   menuButtonClose.addEventListener('click', toggleMenuClose);
 
 
-
-
-//   // -------
-
-
-// class ButtonClass {
-//   constructor(element) {
-//     this.element = element;
-//     this.element.addEventListener('click', () => {this.select()});
-//   }
-//   select() {
-//     this.element.classList.add('menu--open');
-//   }
-// }
-
-
-// let myButtons = document.querySelectorAll('.menu-buttons');
-// console.log(myButtons);
-// myButtons = Array.from(myButtons).map(btn => new ButtonClass(btn))
-// console.log(myButtons);
