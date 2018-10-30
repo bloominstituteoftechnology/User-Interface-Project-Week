@@ -153,9 +153,10 @@ body {
 }
 .header {
   padding: 1.15rem 2rem;
-  Background: #828282;
+  background: #828282;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   position: fixed;
   width: 102.5rem;
   top: 0px;
@@ -166,10 +167,15 @@ body {
     width: 100%;
   }
 }
+.header .connav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
 .header__brand--title {
   font-weight: bold;
   font-size: 2.4rem;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 .header__brand--wrapper {
@@ -186,6 +192,32 @@ body {
 @media (max-width: 600px) {
   .header__hamburger--wrapper {
     padding-right: 0.5rem;
+  }
+}
+.header .nav {
+  margin-bottom: 33vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 33vh;
+}
+.header .nav a {
+  font-weight: bold;
+  font-size: 4rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.header .nav-off {
+  display: none;
+}
+.header-open {
+  height: 100vh;
+  width: 102.5rem;
+}
+@media (max-width: 1000px) {
+  .header-open {
+    width: 100vw;
   }
 }
 .caption__container {
