@@ -1,9 +1,9 @@
 .home {
 
-    header {
-      position: relative;
+  header {
+    position: relative;
   
-      h1 {
+    h1 {
         
         bottom: 52px;
   
@@ -18,22 +18,26 @@
         @media (max-width: 320) {
           top: 0;
         }
-      }
-  
-      .background {
-        width: 100%;
-      }
     }
   
-    button {
+    .background {
+      width: 100%;
+    }
+  }
+
+  .mobile-img {
+    display: none;
+  }
+  
+  button {
       border: 1px solid #222222;
       background-color: #ffffff;
       padding: 13px 27px;
       font-size: 16px;
       margin: 0px 0;
-    }
+  }
   
-    .topics {
+  .topics {
       
       padding: @containerPadding;
   
@@ -124,15 +128,15 @@
           }
       }
       }
-    }
+  }
   
-    .projects {
+  .projects {
       padding: @containerPadding;
       display: flex;
       flex-direction: column;
   
       @media (max-width: 320px) {
-        padding: 10px;
+        padding: 0;
       }
   
       h3 {
@@ -150,10 +154,14 @@
         justify-content: center;
         margin-top: 37px;
         margin-bottom: 37px;
-  
-        img {
-          width: 100%;
+
+        @media (max-width: 320px) {
+          padding: 10px;
         }
+  
+        // img {
+        //   width: 100%;
+        // }
         // how to select the second child?
         h3 {
           background-color: #D8D8D8;
@@ -182,8 +190,9 @@
           align-items: center;
 
           h3 {
-            border: 1px solid red;
-            top: -10px;
+            top: -60px;
+            width: 100%;
+            padding: 35px 0;
           }
         }
 
@@ -197,5 +206,19 @@
         letter-spacing: 1px;
         width: 100%;
       } 
+  }
+}
+
+  @media (max-width: 320px) {
+    .desktop-img {
+      display: none;
     }
+
+    .home {
+      .mobile-img {
+        display: inline-block ;
+        width: 100%;
+      }
+    }
+    
   }
