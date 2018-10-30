@@ -1,21 +1,16 @@
-// class Menu {
-//   constructor(element) {
-    
-//     // Assign this.element to the dropdown element
-//     this.element = element;
-    
-//     this.button = this.element.querySelector('.dropdown-button');
-//     this.content = this.element.querySelector('.dropdown-content');
-    
-//     this.button.addEventListener('click', () => {this.toggleContent()
-//     });
-//   }
-
-//   toggleContent() {
-//     this.content.classList.toggle('dropdown-hidden');
-//   }
-// }
-
-// // Nothing to do here, just study what the code is doing and move on to the Dropdown class
-// let menu = document.querySelectorAll('.menu');
-// menus = Array.from(menus).map( menus => new Menu(menus));
+const toggleMenu = () => {
+    // Toggle the "menu--open" class on your menu reference. 
+    menu.classList.toggle('menu');
+    console.log("should have worked");
+  }
+  
+  
+  
+  // Start Here: Create a reference to the ".menu" class
+  const menu = document.querySelector('.menu');
+  // create a reference to the ".menu-button" class
+  const menuButton = document.querySelector('.menu-button');
+  // Using your menuButton reference, add a click handler that calls toggleMenu
+  menuButton.addEventListener('click', event => toggleMenu(event));
+  
+  
