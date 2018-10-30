@@ -91,7 +91,7 @@ class NavClose {
 
 let navMenuOpen = document.querySelector('.navHamburger');
 let navMenuClose = document.querySelector('.navCloseImage');
-let navLinksContainer = document.querySelector('.nav-links');
+let navLinksContainer = document.querySelector('.navShow');
 
 navMenuOpen = new NavOpen(navMenuOpen);
 navMenuClose = new NavClose(navMenuClose);
