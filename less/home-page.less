@@ -44,6 +44,7 @@ body {
             margin: 50px 0;
             @media @mobile {
                 flex-direction: column;
+                width: 90%;
             }
 
             .text {
@@ -52,6 +53,7 @@ body {
                 margin: 0 15px;
                 @media @mobile {
                     order: 2;
+                    width: 100%;
                 }
 
                 h2 {
@@ -71,24 +73,38 @@ body {
                     line-height: 2.4rem; 
                     padding: 10px 20px;
                     margin-bottom: 15px;
+                    @media @mobile {
+                        width: 100%;
+                    }
                 }
             }
             .image {
-                // width: 45%;
-                // padding: 0 20px;
                 margin: 0 15px;
-                // max-width: 40%;
-
+                
+                @media @mobile {
+                    width: 100%;
+                    margin: 0;
+                    img {
+                        width: 100%;
+                    }
+                }
             }
+
         }
 
         .recent-projects {
             width: 85%;
             margin: 50px 0;
+            @media @mobile {
+                width: 100%;
+            }
 
             h1 {
                 font-size: 2.4rem;
                 font-weight: bold;
+                @media @mobile {
+                    padding-left: 30px;
+                }
             }
 
             .project {
@@ -98,37 +114,76 @@ body {
                 justify-content: center;
                 align-items: center;
                 margin-bottom: 50px;
+                max-width: 100%;
+                @media @mobile {
+                    width: 100%;
+                }
 
-                img {
+                picture {
                     max-width: 100%;
-                    margin: 50px 0;
+                    margin: 30px 0 70px;
+                    @media @mobile {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    img {
+                        max-width: 100%;
+                    }
                 }
 
                 h2 {
                     font-size: 2.6rem;
-                    padding: 35px 0;
-                    width: 37%;
+                    width: 320px;
                     background-color: @projectBG;
-                    display: inline-block;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     letter-spacing: 8px;
                     border: 1px solid white;
                     position: absolute;
-                    top: 230px;
-                    display: flex;
-                    justify-content: center;
+                    // top: 230px;
+                    height: 100vw*(100/1024);
+                    top: 85vw/(855/230);
+                    @media @large {
+                        top: 230px;
+                        height: 100px;
+                    }
+
+                    @media @mobile {
+                        width: 90%;
+                        top: 100vw/(32/20);
+                        height: 100px;
+                    }
                 }
 
                 .right-h2 {
-                    right: 5px;
+                    right: 0px;
+                    @media @mobile {
+                        right: 5%;
+                    }
+                    @media @large {
+                        right: 5px;
+                    }
                 }
                 .left-h2 {
-                    left: 5px;
+                    left: 0px;
+                    @media @mobile {
+                        left: 5%;
+                    }
+                    @media @large {
+                        left: 5px;
+                    }
                 }
                 p {
                     width: 50%;
                     font-size: 1.8rem;
                     line-height: 2.4rem; 
                     margin-top: 30px;
+                    @media @mobile {
+                        width: 90%;
+                    }
                 }
             }
 
