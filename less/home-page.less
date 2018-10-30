@@ -80,7 +80,11 @@ body {
             }
             .image {
                 margin: 0 15px;
+                max-width: 50%;
                 
+                img {
+                    max-width: 100%;
+                }
                 @media @mobile {
                     width: 100%;
                     margin: 0;
@@ -122,6 +126,7 @@ body {
                 picture {
                     max-width: 100%;
                     margin: 30px 0 70px;
+                    position: relative;
                     @media @mobile {
                         width: 100%;
                         img {
@@ -131,51 +136,43 @@ body {
                     img {
                         max-width: 100%;
                     }
+                    h2 {
+                        font-size: 2.6rem;
+                        width: 320px;
+                        background-color: @projectBG;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        letter-spacing: 8px;
+                        border: 1px solid white;
+                        position: absolute;
+                        height: 100vw*(100/1024);
+                        position: absolute;
+                        bottom: -40px;
+                        @media @large {
+                            height: 100px;
+                        }
+    
+                        @media @mobile {
+                            height: 100px;
+                            width: 90%;
+                            bottom: -80px;
+                        }
+                    }
+                    .right-h2 {
+                        right: 0px;
+                        @media @mobile {
+                            right: 5%;
+                        }
+                    }
+                    .left-h2 {
+                        @media @mobile {
+                            left: 5%;
+                        }
+                    }
                 }
 
-                h2 {
-                    font-size: 2.6rem;
-                    width: 320px;
-                    background-color: @projectBG;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    letter-spacing: 8px;
-                    border: 1px solid white;
-                    position: absolute;
-                    // top: 230px;
-                    height: 100vw*(100/1024);
-                    top: 85vw/(855/230);
-                    @media @large {
-                        top: 230px;
-                        height: 100px;
-                    }
 
-                    @media @mobile {
-                        width: 90%;
-                        top: 100vw/(32/20);
-                        height: 100px;
-                    }
-                }
-
-                .right-h2 {
-                    right: 0px;
-                    @media @mobile {
-                        right: 5%;
-                    }
-                    @media @large {
-                        right: 5px;
-                    }
-                }
-                .left-h2 {
-                    left: 0px;
-                    @media @mobile {
-                        left: 5%;
-                    }
-                    @media @large {
-                        left: 5px;
-                    }
-                }
                 p {
                     width: 50%;
                     font-size: 1.8rem;
