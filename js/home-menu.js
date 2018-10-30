@@ -7,7 +7,6 @@ const toggleMenu = (navBarItems) => {
   navHeaderButtonOpen.classList.toggle('hide');
   navHeaderButtonClose.classList.toggle('hide');
   navBarItems.classList.toggle('invisible');
-  homeJumbotronTitles.forEach(title => title.classList.toggle('nav-items-faded-text'))
 }
 
 navHeaderButtonOpen.addEventListener('click', () => toggleMenu(navBarItems));
