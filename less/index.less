@@ -74,13 +74,13 @@ html {
 
 body {
   margin: 0 auto;
-  // width: 1024px;
   background-color: @main-bg;
   color: @main-color;
 }
 
 .home {
   max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -103,7 +103,15 @@ h4 {
 
     .jumbotron {
       .flex();
-      width: 100%;
+      height: auto;
+      max-width: 100%;
+      position: relative;
+
+      @media @phone {
+        max-width: 100%;
+        height: auto;
+      }
+      
 
       .jumbotron-img {
 
@@ -115,14 +123,23 @@ h4 {
         font-weight: 700;
         line-height: 75px;
         position: absolute;
-        top: 325px;
-        left: 523px;
+        top: 320px;
+        left: 80px;
+
+        @media @phone {
+          font-size: @jumbotron-phone-font-size;
+          line-height: 36px;
+        }
       }
     }
     .home-mid {
       .flex();
       .center();
       margin-top: 50px;
+
+      @media @phone {
+        flex-direction: column;
+      }
 
       .home-mid-content{
         .flex();
@@ -141,36 +158,80 @@ h4 {
         img {
 
         }
+
+        @media @phone {
+          .flex();
+          .center();
+          margin: 20px auto;
+          width: 100%;
+          flex-direction: column-reverse;
+        }
       }
 
-      .s-and-j {
-        width: 50%;
-        padding-top: 10px;
+      .mid-top {
+        .flex();
 
-        .btn {
-          .button();
-          padding: 14px 27px;
-          margin: 20px 0;
-        }
+        .s-and-j {
+          width: 50%;
+          padding-top: 10px;
 
+          .btn {
+            .button();
+            padding: 14px 27px;
+            margin: 20px 0;
+          }
+
+          @media @phone {
+            width: 100%;
+            flex-direction: column-reverse;
+
+            .btn {
+              width: 100%;
+            }
+          }
+
+      }
+      
+      }
+
+      .mid-bottom {
+        .flex();
+
+        .futuristic {
+          width: 50%;
+          padding-left: 1.5%;
+
+          .btn {
+            .button();
+            padding: 14px 20px;
+            margin: 20px 0;
+          }
+
+          @media @phone {
+            width: 100%;
+            flex-direction: column-reverse;
+            
+            img {
+            }
+
+            .btn {
+              width: 100%;
+            }
+          }
+        }  
       }
   
-      .futuristic {
-        width: 50%;
-        padding-left: 1.5%;
-
-        .btn {
-          .button();
-          padding: 14px 20px;
-          margin: 20px 0;
-        }
-      }      
+          
     }
 
     .recent-projects {
       .flex();
       // .center();
       padding: 1px 5.3rem;
+
+      @media @phone {
+        padding: 0;
+      }
 
       .home-bottom {
 
@@ -180,7 +241,13 @@ h4 {
 
           img {
             .center();
+            max-width: 100%;
+            height: auto;
             margin: 40px 0 90px;
+
+            @media @phone {
+              margin: 0;
+            }
           }
     
           .recent-projects-label {
@@ -195,6 +262,12 @@ h4 {
             font-size: 28px;
             letter-spacing: .5rem;
             text-transform: uppercase;
+
+            @media @phone {
+              position: relative;
+              width: 90%;
+              margin: 0 auto;
+            }
           }
 
           .left-side {
@@ -210,6 +283,15 @@ h4 {
       p {
         margin: 5px auto 60px;
         letter-spacing: 0.1rem;
+
+        @media @phone {
+          margin-bottom: 20px;
+        }
+      }
+
+      @media @phone {
+        width: 90%;
+        margin: 15px auto 10px;
       }
     } 
       }
