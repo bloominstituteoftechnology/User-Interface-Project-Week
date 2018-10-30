@@ -7,17 +7,28 @@ const toggleMenu = () => {
 
     menuButton.style.display = 'none';
     menuButtonClose.style.display = 'inline';
-    // console.log('clicked');
+    console.log('clicked');
+
+    TweenMax.from(menu, 1, {
+      opacity: 0,
+    });
+
 
   }
 
   const toggleMenuClose = () => {
+    
     menu.classList.remove('menu--open');
 
     menuButtonClose.style.display = 'none';
     menuButton.style.display = 'inline';
+    console.log('close clicked');
 
-    // console.log('clicked-close');
+    TweenMax.from('.container', 2, {
+      opacity: 0.5,
+      // x: 100,
+    });
+
   }
 
 
@@ -38,4 +49,14 @@ const toggleMenu = () => {
   menuButton.addEventListener('click', toggleMenu);
   menuButtonClose.addEventListener('click', toggleMenuClose);
 
+// Animations
 
+const homeTitle = document.querySelector('.header ul');
+console.log(homeTitle);
+
+window.addEventListener("load", () => {
+  TweenMax.to(homeTitle, 1, {
+      x:15,
+      y:-15,
+  });
+})
