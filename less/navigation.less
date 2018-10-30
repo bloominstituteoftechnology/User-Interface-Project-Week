@@ -1,20 +1,42 @@
 .header {
   .navbar {
-    display: none;
-  }
-  .flex(row, space-between, center);
-  padding: 1.3rem 8.2rem;
-  font-size: 2.4rem;
-  font-weight: 600;
-  @media @mobile {
-    font-weight: 500;
-    padding: 1.3rem 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: @clr-bg-navbar;
+    opacity: .95;
+    .flex(column, center, center);
+    z-index: -1;
+    font-size: 8rem;
+    line-height: 10rem;
+    font-weight: bold;
   }
 
-  position: sticky;
-  margin-bottom: -5rem;
+  .display__toggle {
+    display: none;
+  }
+
+  .header--hamburger {
+    .close {
+      display: none;
+    }
+  }
   z-index: 10;
-  max-width: 102.2rem;
+  .header--top {
+    .flex(row, space-between, center);
+    padding: 1.3rem 8.2rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    @media @mobile {
+      font-weight: 500;
+      padding: 1.3rem 2rem;
+    }
+  }
+
+  position: absolute;
+  z-index: 10;
   width: 100%;
   color: @clr-navbar;
   background-color: @clr-bg-navbar;
