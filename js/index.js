@@ -5,6 +5,7 @@ class TabButton {
         this.dataTab = this.tabButton.dataset.tabbtn;
 
         this.itemTab = document.querySelector(`.tab-content[data-tabcont="${this.dataTab}"]`);
+        this.contentTab = new TabContent(this.itemTab);
 
         this.tabButton.addEventListener('click', () => this.select());
 
@@ -14,11 +15,11 @@ class TabButton {
         const tabs = document.querySelectorAll('.tab-link');
 
         Array.from(tabs).forEach( tab => {
-            tab.classList.remove('tab-selected');
+            tab.classList.remove('tabLink-selected');
         });
 
-        this.tabButton.classList.toggle('tab-selected');
-        console.log(this.tabButton);
+        this.tabButton.classList.toggle('tabLink-selected');
+        this.contentTab.select();
     }
 }
 
@@ -26,21 +27,20 @@ class TabButton {
 class TabContent {
     constructor(tabContent) {
         this.tabContent = tabContent;
-        // console.log(this.tabContent);
-
-        this.dataContent = this.tabContent.dataset.tabcont;
-        // console.log(this.dataContent);
     }
     // methods
+    select() {
+        const contents = document.querySelectorAll('.tab-content');
+
+        Array.from(contents).forEach( content => {
+            content.classList.add('tabContent-selected');
+        });
+
+        this.tabContent.classList.toggle('tabContent-selected');
+    }
 }
-
-
 
 let tabButtons = document.querySelectorAll('.tab-link');
 tabButtons = Array.from(tabButtons).map( tabButton => new TabButton(tabButton));
 
-
-let tabsContents = document.querySelectorAll('.tab-content');
-tabsContents = Array.from(tabsContents).map( tabContent => new TabContent(tabContent));
-
-// console.log(tabsContents);
+tabButtons[0].select();
