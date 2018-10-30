@@ -2,7 +2,7 @@ const toggleNav = () => {
     nav.classList.toggle('menu-showing');
     if (nav.classList.contains('menu-showing')) {
         navButton.src = "./img/nav-hamburger-close.png";
-        navContainer.style.paddingTop = '2.2%';
+        navContainer.style.paddingTop = '2.25%';
         navContainer.style.paddingBottom = '0';
     } else {
         navButton.src="./img/nav-hamburger.png";
