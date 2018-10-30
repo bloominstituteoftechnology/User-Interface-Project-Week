@@ -282,13 +282,16 @@ table{
 
 // Home Page Styling - End
 
+
+
+
+
 // Service Page - Start
 
 .main-content {
   .flex(space-between, center, row);
   flex-wrap: wrap;
   padding: 0 83px 30px;
-  border: 1px solid red;
 
   .intro {
     padding: 0 0 30px;
@@ -299,6 +302,11 @@ table{
     width: 100%;
     padding: 18px 0;
 
+    .selected {
+      background: #5E9FB9;
+      color: #fff;
+    }
+
     .btn {
       width: 186px;
       text-align: center;
@@ -307,6 +315,12 @@ table{
       padding: 12px;
       background: #fff;
       color: #222;
+      cursor: pointer;
+
+      &:hover {
+        background: #222;
+        color: #fff;
+      }
       
       @media @mobile {
         width: 100%;
@@ -318,16 +332,46 @@ table{
       font-weight: bold;
       font-size: 1.8rem;
     }
+
+    .selected {
+      background: #5E9FB9;
+      color: #fff;
+    }
   }
 
   .tab-content {
-    .flex(space-between, center, row);
+    .flex(flex-start, flex-start, row);
     flex-wrap: wrap;
+    margin: 35px 0 75px;
 
     h4 {
       font-weight: bold;
-      font-size: 1.8rem;
+      font-size: 2.4rem;
       width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .services-content {
+      .flex(flex-start, flex-start, row);
+      margin-top: 30px;
+
+      p {
+        width: 50%;
+      }
+  
+      .img-container {
+        .flex(flex-end, flex-start, row);
+        width: 50%;
+      }
+    }
+    
+
+    .pre-construction, .construction, .design, .sustainability {
+      display: none;
+    }
+
+    .selected {
+      display: block;
     }
   }
 }
