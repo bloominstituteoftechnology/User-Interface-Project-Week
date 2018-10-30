@@ -95,11 +95,27 @@
         padding: 1.5rem 3.75rem;
         border: 1px solid @primary; 
         display: inline-block;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+          background: @primary;
+          color: @white;
+          transform: scale(1.15);
+        }
+
+        &:active {
+          transform: scale(1.1);
+        }
 
         @media @xsmall {
           display: block;
           text-align: center;
           margin: 1rem auto;
+
+          &:hover {
+            transform: none;
+          }
         }
 
         &--small {
@@ -108,11 +124,27 @@
           padding: 1.5rem 2rem;
           margin-top: 1rem;
           display: inline-block;
+          cursor: pointer;
+          transition: all .5s ease-in-out;
+
+        &:hover {
+          background: @primary;
+          color: @white;
+          transform: scale(1.15);
+        }
+
+        &:active {
+          transform: scale(1.1);
+        }
 
           @media @xsmall {
             display: block;
             text-align: center;
             margin: 1rem auto .5rem;
+
+            &:hover {
+              transform: none;
+            }
           }
         }
       }
@@ -175,7 +207,9 @@
         } 
       }
 
-      &-heading--left {
+      &-heading--left {@media @xsmall {
+        padding-top: 12rem;
+      }
         font-size: 2.5rem;
         position: absolute;
         left: 0;

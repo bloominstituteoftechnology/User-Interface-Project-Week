@@ -149,9 +149,18 @@ body {
   background: #ffffff;
   margin: 0 auto;
 }
+.container .header-spacer {
+  width: 100%;
+  height: 43px;
+  background-color: red;
+}
 .header {
   padding: 1rem 9rem;
   background: #99a4af;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  max-width: 1024px;
 }
 @media (max-width: 500px) {
   .header {
@@ -173,6 +182,9 @@ body {
 }
 .header__nav-links__link {
   display: none;
+}
+.header__nav-links__hamburger {
+  cursor: pointer;
 }
 .footer {
   background: #828282;
@@ -368,12 +380,25 @@ body {
   padding: 1.5rem 3.75rem;
   border: 1px solid #222222;
   display: inline-block;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.home__main__card__btn:hover {
+  background: #222222;
+  color: #ffffff;
+  transform: scale(1.15);
+}
+.home__main__card__btn:active {
+  transform: scale(1.1);
 }
 @media (max-width: 500px) {
   .home__main__card__btn {
     display: block;
     text-align: center;
     margin: 1rem auto;
+  }
+  .home__main__card__btn:hover {
+    transform: none;
   }
 }
 .home__main__card__btn--small {
@@ -382,12 +407,25 @@ body {
   padding: 1.5rem 2rem;
   margin-top: 1rem;
   display: inline-block;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.home__main__card__btn--small:hover {
+  background: #222222;
+  color: #ffffff;
+  transform: scale(1.15);
+}
+.home__main__card__btn--small:active {
+  transform: scale(1.1);
 }
 @media (max-width: 500px) {
   .home__main__card__btn--small {
     display: block;
     text-align: center;
     margin: 1rem auto .5rem;
+  }
+  .home__main__card__btn--small:hover {
+    transform: none;
   }
 }
 .home__main-img {
@@ -447,6 +485,11 @@ body {
   letter-spacing: .75rem;
   padding: 3rem 6rem;
   background: #d8d8d8;
+}
+@media (max-width: 500px) {
+  .home__recent-projects__card-heading--left {
+    padding-top: 12rem;
+  }
 }
 @media (max-width: 500px) {
   .home__recent-projects__card-heading--left {
