@@ -137,8 +137,10 @@ table {
 .topbar {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: fixed;
-  max-width: 1024px;
   width: 100%;
   justify-content: space-between;
   padding: 12px 4.5%;
@@ -146,16 +148,62 @@ table {
   color: #ffffff;
   z-index: 1;
 }
+.topbar .expanded {
+  display: none;
+}
+.topbar a {
+  text-decoration: none;
+}
 .topbar .logo {
   font-size: 24px;
   font-weight: 700;
+  color: #ffffff;
 }
-.topbar nav .nav-link {
+.topbar .logo:hover {
+  color: #222222;
+}
+.topbar .hamburger {
+  cursor: pointer;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  line-height: 85px;
+  background-color: rgba(153, 164, 175, 0.9);
   display: none;
+}
+nav .close {
+  position: absolute;
+  top: 23px;
+  right: 86px;
+  cursor: pointer;
+}
+nav .nav-link {
+  font-size: 48px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+nav .nav-link:hover {
+  color: #222222;
+}
+nav .retracted {
+  display: block;
 }
 footer {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
   justify-content: space-between;
   background-color: #828282;
   color: #ffffff;
@@ -208,9 +256,12 @@ html {
 }
 body {
   margin: 0 auto;
-  max-width: 1024px;
   background-color: #ffffff;
   color: #222222;
+}
+.home {
+  max-width: 1024px;
+  margin: 0 auto;
 }
 h3 {
   font-size: 24px;
@@ -227,7 +278,6 @@ h4 {
 .container .home {
   display: flex;
   flex-wrap: wrap;
-  line-height: 24px;
 }
 .container .home .jumbotron {
   display: flex;
@@ -277,6 +327,10 @@ h4 {
   padding: 11px 27px;
   margin: 25px 0;
 }
+.container .home .home-mid .s-and-j .btn:hover {
+  background-color: #222222;
+  color: #ffffff;
+}
 .container .home .home-mid .futuristic {
   width: 50%;
   padding-left: 1.5%;
@@ -289,6 +343,10 @@ h4 {
   text-decoration: none;
   padding: 11px 20px;
   margin: 25px 0;
+}
+.container .home .home-mid .futuristic .btn:hover {
+  background-color: #222222;
+  color: #ffffff;
 }
 .container .home .recent-projects {
   display: flex;

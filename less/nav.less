@@ -1,7 +1,9 @@
 .topbar {
     .flex();
+    .center();
     position: fixed;
-    max-width: 1024px;
+    // margin: 0 auto;
+    // max-width: 1024px;
     width: 100%;
     justify-content: space-between;
     padding: 12px 4.5%;
@@ -9,20 +11,64 @@
     color: @nav-color;
     z-index: 1;
 
+    .expanded {
+        display: none;
+    }
+
+    
+    a {
+    text-decoration: none;
+    }
+
     .logo {
-    font-size: @nav-logo-font-size;
-    font-weight: 700;
+        font-size: @nav-logo-font-size;
+        font-weight: 700;
+        color: @nav-color;
+        // cursor: pointer;
+    
+        &:hover {
+            color: @nav-hover-color;
+        }
+    }
+
+    .hamburger {
+        cursor: pointer;
     }
     
+}
+nav {
+    .flex();
+    .center();
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    line-height: 85px;
+    background-color: @nav-exp-bg-color;
+    display: none;
 
-    nav {
+    .close {
+        position: absolute;
+        top: 23px;
+        right: 86px;
+        cursor: pointer;
+    }
 
-        .hamburger {
+    .nav-link {
+        font-size: @nav-exp-font-size;
+        color: @nav-color;
+        font-weight: 700;
+        text-decoration: none;
 
+        &:hover {
+            color: @nav-hover-color;
         }
+    }
 
-        .nav-link {
-            display: none;
-        }
+    .retracted {
+        display: block;    
     }
 }
