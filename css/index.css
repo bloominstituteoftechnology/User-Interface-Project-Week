@@ -143,27 +143,38 @@ table {
   border-spacing: 0;
 }
 /* Your Code Goes Here */
-header {
+nav {
+  display: flex;
+  justify-content: center;
+}
+.nav-container {
+  background-color: #99A4AF;
+  max-width: 1024px;
   position: fixed;
+  margin: 0 auto;
   width: 100%;
   z-index: 10;
-  background-color: #99A4AF;
   display: flex;
   padding: 14px 8%;
 }
-header .logo {
+@media (max-width: 500px) {
+  .nav-container {
+    position: static;
+  }
+}
+.nav-container .logo {
   display: flex;
   width: 50%;
   justify-content: flex-start;
 }
-header .logo a {
+.nav-container .logo a {
   font-weight: bold;
   font-size: 24px;
   text-decoration: none;
   color: #FFFFFF;
   font-family: Roboto, Arial, sans-serif;
 }
-header .menuBtn {
+.nav-container .menuBtn {
   display: flex;
   width: 50%;
   justify-content: flex-end;
@@ -189,11 +200,25 @@ header .menuBtn {
   color: #FFFFFF;
   font-family: Roboto, Arial, sans-serif;
   position: absolute;
-  bottom: 51px;
-  left: 82px;
+  bottom: 8%;
+  left: 8%;
+}
+@media (max-width: 500px) {
+  .jumbotron .top-banner-header {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+.jumbotron .jumbotron-image {
+  width: 100%;
 }
 .main {
   margin: 0 8.3%;
+}
+@media (max-width: 500px) {
+  .main {
+    margin: 0 0%;
+  }
 }
 .main p {
   padding: 0 0 27px 0;
@@ -210,43 +235,101 @@ header .menuBtn {
   padding: 13px 0;
   font-size: 16px;
 }
+@media (max-width: 500px) {
+  .learnBtn {
+    width: 100%;
+  }
+}
 .about-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 50px 0 0 0;
 }
+@media (max-width: 500px) {
+  .about-section {
+    flex-direction: column-reverse;
+    margin: 0 4%;
+  }
+}
 .about-section .about-section-text {
-  padding: 50px 0 0 0;
+  padding: 7px 0 0 0;
 }
 .about-section div {
   width: 48%;
 }
+@media (max-width: 500px) {
+  .about-section div {
+    width: 100%;
+  }
+}
+.about-section img {
+  width: 100%;
+}
 .futuristic-designs {
-  padding: 96px 0 0 0;
   display: flex;
   justify-content: space-between;
+  padding: 96px 0 0 0;
+}
+@media (max-width: 500px) {
+  .futuristic-designs {
+    display: block;
+    padding: 40px 0 0 0;
+    margin: 0 4%;
+  }
+}
+.futuristic-designs img {
+  width: 100%;
+}
+.futuristic-designs .futuristic-designs-text {
+  padding: 40px 0 0 0;
 }
 .futuristic-designs div {
   width: 48%;
 }
-.futuristic-designs .futuristic-designs-text {
-  padding: 42px 0 0 0;
+@media (max-width: 500px) {
+  .futuristic-designs div {
+    width: 100%;
+  }
 }
 .recent-projects {
   padding: 97px 0 0 0;
+}
+@media (max-width: 500px) {
+  .recent-projects h2 {
+    margin: 0 4%;
+  }
+}
+@media (max-width: 500px) {
+  .recent-projects {
+    padding: 50px 0 0 0;
+  }
 }
 .recent-projects p {
   padding: 0 24%;
   font-size: 18px;
 }
+@media (max-width: 500px) {
+  .recent-projects p {
+    padding: 0 2%;
+  }
+}
 .recent-projects .recent-projects-header {
   position: relative;
   padding: 26px 0 85px 0;
 }
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .recent-projects .recent-projects-header img {
   width: 100%;
 }
-.recent-projects .recent-projects-header .the-villas-heading {
+.recent-projects .recent-projects-header .the-villas-box {
   position: absolute;
   bottom: 45px;
   right: 0px;
@@ -256,10 +339,42 @@ header .menuBtn {
   font-size: 25px;
   letter-spacing: 7px;
 }
-.recent-projects .recent-projects-header .outskirts-image {
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .the-villas-box {
+    right: unset;
+  }
+}
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .villas-desktop {
+    display: none;
+  }
+}
+.recent-projects .recent-projects-header .villas-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .villas-mobile {
+    display: block;
+  }
+}
+.recent-projects .recent-projects-header .outskirts-desktop {
   padding: 85px 0 0 0;
 }
-.recent-projects .recent-projects-header .outskirts-heading {
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .outskirts-desktop {
+    display: none;
+  }
+}
+.recent-projects .recent-projects-header .outskirts-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .outskirts-mobile {
+    display: block;
+    padding: 0 0 0 0;
+  }
+}
+.recent-projects .recent-projects-header .outskirts-box {
   position: absolute;
   bottom: 45px;
   left: 0px;
@@ -269,10 +384,28 @@ header .menuBtn {
   font-size: 25px;
   letter-spacing: 7px;
 }
-.recent-projects .recent-projects-header .the-blocks-image {
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .outskirts-box {
+    left: unset;
+  }
+}
+.recent-projects .recent-projects-header .the-blocks-desktop {
   padding: 85px 0 0 0;
 }
-.recent-projects .recent-projects-header .the-blocks-heading {
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .the-blocks-desktop {
+    display: none;
+  }
+}
+.recent-projects .recent-projects-header .the-blocks-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .the-blocks-mobile {
+    display: block;
+  }
+}
+.recent-projects .recent-projects-header .the-blocks-box {
   position: absolute;
   bottom: 45px;
   right: 0px;
@@ -282,23 +415,51 @@ header .menuBtn {
   font-size: 25px;
   letter-spacing: 7px;
 }
+@media (max-width: 500px) {
+  .recent-projects .recent-projects-header .the-blocks-box {
+    right: unset;
+  }
+}
 footer {
   color: #FFFFFF;
   font-size: 14px;
   line-height: 26px;
   background-color: #828282;
   margin: 111px 0 0 0;
-  padding: 62px 85px;
+  padding: 62px 85px 0px 85px;
+}
+@media (max-width: 500px) {
+  footer {
+    margin: 80px 0 0 0;
+    padding: 30px 2% 0 2%;
+  }
 }
 footer form input {
   font-size: 16px;
   width: 100%;
   line-height: 32px;
+  border-radius: 10px;
+}
+@media (max-width: 500px) {
+  footer form input {
+    line-height: 50px;
+    font-size: 20px;
+  }
 }
 footer .footer-info {
   display: flex;
   justify-content: space-between;
   padding: 0 0 30px 0;
+}
+@media (max-width: 500px) {
+  footer .footer-info {
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  footer .footer-info div {
+    padding: 0 0 25px 0;
+  }
 }
 footer .footer-info .request-email {
   padding-right: 20px;
@@ -314,4 +475,11 @@ footer .footer-info h3 {
 footer .copyright {
   text-align: center;
   font-size: 12px;
+}
+@media (max-width: 500px) {
+  footer .copyright {
+    text-align: unset;
+    padding: 0 0 30px 0;
+    font-size: 16px;
+  }
 }
