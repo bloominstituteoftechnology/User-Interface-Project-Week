@@ -1,6 +1,5 @@
 // JS goes here
 
-
 // ***************************************
 // *********NAVIGATION BACKDROP***********
 // ***************************************
@@ -8,7 +7,6 @@
 const hamburger = document.querySelector('img.header__nav-links__hamburger');
 const navBackdrop = document.querySelector(".nav-backdrop");
 const navContainer = document.querySelector('.nav-link-container');
-
 
 hamburger.addEventListener('click', () => {
   if(!navBackdrop.classList.contains('active') && !navContainer.classList.contains('open')) {
@@ -21,7 +19,6 @@ hamburger.addEventListener('click', () => {
     hamburger.src="img/nav-hamburger.png";
   }
 })
-
 
 // ***************************************
 // ******* SERVICES TAB COMPONENT ********
