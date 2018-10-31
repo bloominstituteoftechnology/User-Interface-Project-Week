@@ -37,6 +37,7 @@ class Tabs {
     document.querySelectorAll('.tab').forEach(tab => {
       tab.classList.remove('tab-selected');
     })
+    this.tabItem.select();
     this.element.classList.toggle('tab-selected');
   }
 }
@@ -46,6 +47,7 @@ class Tab {
     this.tab = tab; 
   }
   select() {
+    console.log('here')
     document.querySelectorAll('.content').forEach(tab => {
       tab.classList.add('hidden-tab-content');
       tab.classList.remove('display-tab-content');
