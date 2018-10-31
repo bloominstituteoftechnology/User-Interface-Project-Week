@@ -1,20 +1,13 @@
 const toggleMenu = () => {
     menu.classList.toggle('menu--open');
+    TweenMax.to('.menu', 2, {right:100, opacity: .9, ease:Power2.easeOut});
+    // TweenLite.to('.menu', 2.5, { ease: Bounce.easeInOut, y: 30 });
     // menu.classList.toggle('menu');
 }
 
 const toggleMenuOff = () => {
     menu.classList.toggle('menu--closed');
 }
-
-// const hoverEffect = () => {
-//     menuItems.currentTarget.style.color = 'black';
-// }
-
-//  const menuButtonClosed = document.addEventListener('click', () => {
-//     menu.classList.toggle('menu--closed');    
-// })
-
 
 
 const menu = document.querySelector('.menu');
