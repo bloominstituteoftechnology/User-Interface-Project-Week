@@ -1,0 +1,140 @@
+.home {
+    .recent-projects {
+        grid-template-rows: 4.8rem 78rem 0.6rem 78rem 0.8rem 78rem auto;
+        display: grid;
+        @media @desktop {
+            grid-template-rows: auto 2.2% 700px 10px 700px 8px 700px;
+            width: 100%;
+            max-width: 1024px;
+        }
+        h3 {
+            font-size: 2.4rem;
+            font-weight: bold;
+            margin-left: 5%;
+            @media @desktop {
+                align-self: end;
+                grid-row-start: 1;
+                margin-left: 8.3%;
+            }
+        }
+        section:nth-child(2) {
+            grid-row-start: 2;
+            @media @desktop {
+                grid-row-start: 3;
+            }
+        }
+        section:nth-child(3) {
+            grid-row-start: 4;
+            @media @desktop {
+                grid-row-start: 5;
+            }
+        }
+        section:nth-child(4) {
+            grid-row-start: 6;
+            @media @desktop {
+                grid-row-start: 7;
+            }
+        }
+        .project-item {
+            display: grid;
+            max-width: 1024px;
+            grid-template-rows: 18.6rem 9.9rem 2.7rem 19rem 24rem;
+            grid-template-columns: 4.9% 91% auto;
+            img {
+                justify-self: center;
+                &.desktop-img {
+                    display: none;
+                }
+                &.mobile-img {
+                    display: block;
+                }
+                grid-row-start: 1;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                @media @desktop {
+                    grid-row-end: 4;
+                    grid-column-start: 2;
+                    grid-column-end: 6;
+                    z-index: 1;
+                    width: 100%;
+                    height: auto;
+                    &.mobile-img {
+                        display: none;
+                    }
+                    &.desktop-img {
+                        display: block;
+                    }
+                }
+            }
+            h2 {
+                font-size: 23px;
+                letter-spacing: 0.85rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2;
+                background-color: rgb(216, 216, 216);
+                border: 1px white solid;
+                align-self: stretch;
+                justify-self: stretch;
+                grid-column-start: 2;
+                grid-row-start: 2;
+            }
+            p {
+                font-size: 1.79rem;
+                word-spacing: 0.01rem;
+                letter-spacing: 0.003rem;
+                line-height: 2.41rem;
+                @media @desktop {
+                    line-height: 2.36rem;
+                }
+                &:nth-child(4) {
+                    grid-row-start: 4;
+                    grid-column-start: 2;
+                    align-self: end;
+                    @media @desktop {
+                        grid-column-start: 3;
+                        grid-column-end: 5;
+                    }
+                }
+                &:nth-child(5) {
+                    grid-column-start: 2;
+                    grid-row-start: 5;
+                    align-self: end;
+                    @media @desktop {
+                        grid-column-start: 3;
+                        grid-column-end: 5;
+                    }
+                }
+            }
+        }
+        .project-item.flow-right {
+            @media @desktop {
+                grid-template-columns: 8.3% 19.7% 32.8% 10.6% 20.1% auto;
+                grid-template-rows: 175px 55px 40px 170px 167px;
+            }
+            h2 {
+                @media @desktop {
+                    grid-row-start: 2;
+                    grid-row-end: 4;
+                    grid-column-start: 4;
+                    grid-column-end: 6;
+                }
+            }
+        }
+        .project-item.flow-left {
+            @media @desktop {
+                grid-template-columns: 8.3% 19.7% 11.2% 32.2% 20.3% auto;
+                grid-template-rows: 174px 55px 39px 171px 168px;
+            }
+            h2 {
+                @media @desktop {
+                    grid-row-start: 2;
+                    grid-row-end: 4;
+                    grid-column-start: 2;
+                    grid-column-end: 4;
+                }
+            }
+        }
+    }
+}

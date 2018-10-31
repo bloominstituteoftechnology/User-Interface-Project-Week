@@ -1,0 +1,75 @@
+// main: ../../less/index.less
+
+.navbar {
+    opacity: 0.9;
+    grid-template-rows: 10px 30px 11px;
+    grid-template-columns: 5% auto auto 5.1%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #828282;
+    display: grid;
+    z-index: 4;
+    width: 100%;
+    @media @desktop {
+        grid-template-columns: 8.2% auto auto 8.2%;
+    }
+    h3 {
+        font-weight: bold;
+        color: #fff;
+        grid-column-start: 2;
+        grid-row-start: 2;
+        align-self: center;
+        font-size: 2.4rem;
+        @media @desktop {
+        }
+    }
+    nav {
+        transform: translateY(-100vh);
+        opacity: 0.9;
+        z-index: -1;
+        float: left;
+        position: fixed;
+        right: 0;
+        grid-auto-rows: 14.5%;
+        height: 100vh;
+        width: 100vw;
+        grid-row: 10rem;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color: #828282;
+        transition: transform 500ms ease-in-out;
+        a {
+            font-size: 4.8rem;
+            line-height: 8.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            &.current {
+                color: black;
+            }
+        }
+        &.active {
+            transform: translateY(0);
+            transition: transform 500ms ease-in-out;
+            & + img.hamburger {
+                display: none;
+            }
+        }
+        &:not(.active) {
+            & ~ img.close {
+                display: none;
+            }
+        }
+    }
+    img {
+        margin-top: 5px;
+        grid-column-start: 3;
+        grid-row-start: 2;
+        justify-self: end;
+        align-self: center;
+        cursor: pointer;
+    }
+}
