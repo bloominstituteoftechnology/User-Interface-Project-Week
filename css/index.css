@@ -195,13 +195,13 @@ p {
   flex-flow: column wrap;
   justify-content: flex-end;
   align-items: center;
-  width: 25%;
   align-self: center;
+  width: 20%;
   display: none;
 }
 @media (max-width: 800px) {
   .nav-bar nav {
-    width: 40%;
+    width: 33%;
   }
 }
 .nav-bar nav a {
@@ -209,10 +209,7 @@ p {
   font-size: 4.8rem;
   line-height: 8.5rem;
   color: #ffffff;
-  position: relative;
   text-decoration: none;
-  text-align: right;
-  left: 25%;
 }
 .nav-bar nav ahover {
   color: #222222;
@@ -243,7 +240,7 @@ footer {
   line-height: 2.6rem;
   color: #ffffff;
   margin: 0;
-  padding: 5% 2% 0.5%;
+  padding: 5% 10% 0.5%;
   background: #828282;
 }
 @media (max-width: 800px) {
@@ -256,22 +253,30 @@ footer {
     padding: 5%;
   }
 }
-footer address {
-  width: 25%;
+footer .address {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 75%;
+  height: auto;
+}
+footer .address address {
+  width: 30%;
   height: auto;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
   align-items: flex-start;
 }
-footer address h2 {
+footer .address address h2 {
   font-weight: bold;
   font-size: 2rem;
   line-height: 2.4rem;
   color: #ffffff;
 }
 @media (max-width: 800px) {
-  footer address {
+  footer .address address {
     margin: 0 0 5%;
     padding: 1%;
     width: 100%;
@@ -279,12 +284,15 @@ footer address h2 {
   }
 }
 footer .left {
+  position: relative;
   width: 25%;
   height: auto;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
 }
 @media (max-width: 800px) {
   footer .left {
@@ -321,7 +329,7 @@ footer .left h2 {
   line-height: 2.4rem;
   color: #ffffff;
   margin: 0;
-  padding: 0 12.5%;
+  padding: 0;
 }
 @media (max-width: 800px) {
   footer .left h2 {
@@ -331,7 +339,7 @@ footer .left h2 {
 }
 footer .left .second {
   margin: 1% 0 5%;
-  padding: 0 12.5%;
+  padding: 0;
   text-align: left;
 }
 @media (max-width: 800px) {
@@ -345,7 +353,7 @@ footer .left h4 {
   width: 100%;
   height: auto;
   margin: 0;
-  padding: 0 12.5%;
+  padding: 0;
 }
 @media (max-width: 800px) {
   footer .left h4 {
@@ -451,7 +459,7 @@ footer h5 {
   text-decoration: none;
 }
 .home .main-top button:hover {
-  background: #222222;
+  background: #5e9fb9;
 }
 .home .main-top button:hover a {
   color: #ffffff;
@@ -636,6 +644,8 @@ footer h5 {
 @media (max-width: 800px) {
   .top-area h1 {
     left: 5%;
+    font-size: 5rem;
+    bottom: 5%;
   }
 }
 .top-area img {
@@ -661,33 +671,47 @@ footer h5 {
   text-align: justify;
 }
 .services .tab-buttons {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.services .tab-buttons button {
-  box-sizing: border-box;
-  background: #ffffff;
-  border: 1px black solid;
-  text-decoration: none;
   margin: 5% 0;
-  padding: 1% 0;
-  font-weight: bold;
-  font-size: 2.2rem;
-  color: #222222;
-  width: 22%;
-  height: auto;
-}
-.services .tab-buttons button:hover {
-  background: #5e9fb9;
-  color: #ffffff;
-}
-.services .tabs-content {
+  padding: 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 800px) {
+  .services .tab-buttons {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 15% 0;
+    padding: 6% 0;
+  }
+}
+.services .tab-buttons .button {
+  background: #ffffff;
+  border: 1px black solid;
+  text-decoration: none;
+  margin: 0;
+  padding: 2% 0;
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: #222222;
+  width: 22.5%;
+  height: auto;
+}
+.services .tab-buttons .button:hover {
+  background: #5e9fb9;
+  color: #ffffff;
+}
+@media (max-width: 800px) {
+  .services .tab-buttons .button {
+    width: 100%;
+    height: auto;
+    margin: 2.5% 0;
+    padding: 5%;
+    line-height: 0.1;
+  }
 }
 .services .tabs-content .tab {
   display: flex;
@@ -711,9 +735,23 @@ footer h5 {
   align-items: space-between;
   width: 100%;
 }
+@media (max-width: 800px) {
+  .services .tabs-content .tab .tab-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: space-between;
+  }
+}
 .services .tabs-content .tab .tab-content img {
   width: 47.5%;
   height: auto;
+}
+@media (max-width: 800px) {
+  .services .tabs-content .tab .tab-content img {
+    width: 100%;
+    height: auto;
+  }
 }
 .services .tabs-content .tab .tab-content .text-content {
   width: 47.5%;
@@ -722,4 +760,18 @@ footer h5 {
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 800px) {
+  .services .tabs-content .tab .tab-content .text-content {
+    width: 100%;
+    height: auto;
+  }
+  .services .tabs-content .tab .tab-content .text-content p {
+    margin: 2.5% 0;
+    padding: 0;
+    text-align: justify;
+  }
+}
+.services .tabs-content .first-tab {
+  display: block;
 }
