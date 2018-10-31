@@ -7,6 +7,7 @@ let buttonImgs = navButton.querySelectorAll('img');
 const aTags = Array.from(menu.querySelectorAll('a'));
 const footer = document.querySelector('footer');
 const body = document.querySelector('body');
+const scrollBoxs = Array.from(document.querySelectorAll('.onScroll'));
 
 //Navigation Button----------------------------------------------------
 navButton.addEventListener('click',()=>{
@@ -83,7 +84,7 @@ tabs = Array.from(tabs).map(tab => new Tab(tab));
 
 // scrolling event setup------------------------------------------------------
 
-const scrollBoxs = Array.from(document.querySelectorAll('.onScroll'));
+
 
 window.addEventListener('scroll',(event)=>{
   let windowHeight = document.documentElement.clientHeight;
@@ -126,6 +127,15 @@ window.addEventListener('resize',(event)=>{
         let difference = windowHeight - body.getBoundingClientRect().bottom;
         footer.style.paddingBottom = `${difference+20}px`;
     }
+    scrollBoxs.forEach(item => {
+        item.style.opacity = 0;
+      if(item.getBoundingClientRect().top < windowHeight-100 && item.getBoundingClientRect().bottom > 0){
+        TweenMax.to(item, 2, {opacity: 1});
+      }
+      else{
+        item.style.opacity = 0;
+      }
+    })
 });
 
 
