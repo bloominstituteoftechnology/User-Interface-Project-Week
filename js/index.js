@@ -41,7 +41,6 @@ hamburger.addEventListener("click", function() {
       hamburger.classList.add('burger');
     }
 });
-console.log('contected');
 
 home.addEventListener("click", function(e) {
   t1.reversed(!t1.reversed());
@@ -65,7 +64,6 @@ contact.addEventListener("click", function(e) {
     document.location.href = "contact.html";
   }, 1800);
 })
-
 
 // ***************************************
 // ******* SERVICES TAB COMPONENT ********
