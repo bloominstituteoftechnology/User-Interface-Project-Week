@@ -17,7 +17,6 @@ class TabLink {
     const links = document.querySelectorAll('.tab-button');
     // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
     Array.from(links).forEach( link => {
-
       link.classList.remove('tab-button-selected');
     });
 
@@ -38,7 +37,7 @@ class TabItem {
     // Select all ".tabs-item" elements from the DOM
     const items = document.querySelectorAll('.content');
     Array.from(items).forEach( item => {
-      console.log('content-selected?');
+
       item.classList.remove('content-selected');
     });
     // Remove the class "content-selected" from each element
