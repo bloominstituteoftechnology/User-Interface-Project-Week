@@ -24,7 +24,7 @@ class Carousel {
     this.btnLeft.addEventListener('mouseup', () => this.stop());
     this.btnLeft.addEventListener('mouseleave', () => this.stop());
 
-    this.btnLeft.style.zIndex = 100;
+    this.btnLeft.style.zIndex = 2;
   }
 
   start(cb) {
