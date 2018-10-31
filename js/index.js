@@ -59,6 +59,7 @@ const toggleMenu = () => {
 
 // Animations
 
+// Title animation
 const homeTitle = document.querySelector('.header ul');
 console.log(homeTitle);
 
@@ -68,3 +69,45 @@ window.addEventListener("load", () => {
       y:-15,
   });
 })
+
+// Button Animation
+
+const button = document.querySelector('.btn'),
+    background = document.querySelector('.backgroundHover'),
+    firstWord = document.querySelectorAll('.btn span'),
+    secondWord = document.querySelectorAll('.btn i');
+
+const tl = new TimelineMax({paused: true});
+tl.staggerTo(firstWord, 1, {color: "rgb(55,178,230)", rotationX: 360, ease: Expo.easeOut}, 0.03, "#start");
+tl.staggerTo(secondWord, 1, {color: "rgb(55,178,230)", rotationX: 360, ease: Expo.easeOut}, 0.03, "#start");
+tl.to(button, 0.3, {"border-color": "rgb(255,255,255,0)", ease: Quad.easeOut}, "#start");
+tl.from(background, 0.25, {scaleX: "0%", transformOrigin: "left center", ease: Quad.easeInOut}, "#start");
+
+button.addEventListener("mouseenter", function(){
+  tl.play();
+});
+
+button.addEventListener("mouseleave", function(){
+  tl.reverse();
+});
+
+
+
+const button2 = document.querySelector('.btn2'),
+    background2 = document.querySelector('.backgroundHover2'),
+    firstWord2 = document.querySelectorAll('.btn2 span'),
+    secondWord2 = document.querySelectorAll('.btn2 i');
+
+const tl2 = new TimelineMax({paused: true});
+tl2.staggerTo(firstWord2, 1, {color: "rgb(55,178,230)", rotationX: 360, ease: Expo.easeOut}, 0.03, "#start");
+tl2.staggerTo(secondWord2, 1, {color: "rgb(55,178,230)", rotationX: 360, ease: Expo.easeOut}, 0.03, "#start");
+tl2.to(button2, 0.3, {"border-color": "rgb(255,255,255,0)", ease: Quad.easeOut}, "#start");
+tl2.from(background2, 0.25, {scaleX: "0%", transformOrigin: "left center", ease: Quad.easeInOut}, "#start");
+
+button2.addEventListener("mouseenter", function(){
+  tl2.play();
+});
+
+button2.addEventListener("mouseleave", function(){
+  tl2.reverse();
+});
