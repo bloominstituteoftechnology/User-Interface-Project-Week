@@ -62,20 +62,20 @@ closeButton.addEventListener('click', event => {
 
 });
 
-navPages.addEventListener('click', event => {
-    // TweenMax.to('.navigation-link', 2 , {
-    //     opacity: 0,
-    //     ease: Power1.easeOut,
-    //     x: -100
-    // });
+// navPages.addEventListener('click', event => {
+//     // TweenMax.to('.navigation-link', 2 , {
+//     //     opacity: 0,
+//     //     ease: Power1.easeOut,
+//     //     x: -100
+//     // });
 
-    // TweenMax.to('.navigation-links', 3, {
-    //     opacity: 0,
-    //     ease: Power3.easeOut,
-    //     top: -1000,
-    // });
+//     // TweenMax.to('.navigation-links', 3, {
+//     //     opacity: 0,
+//     //     ease: Power3.easeOut,
+//     //     top: -1000,
+//     // });
     
-    $(window).on('animsition.inStart', function(){
-        TweenMax.to(".overlay", 1.2, {y:'-100%', ease:Power4.easeInOut});
-    })
-});
+//     $(window).on('animsition.inStart', function(){
+//         TweenMax.to(".overlay", 1.2, {y:'-100%', ease:Power4.easeInOut});
+//     })
+// });
