@@ -5,6 +5,7 @@ class TabLink {
         this.itemElement = document.querySelector(`.tab-content[data-tab='${this.data}']`);
         this.tabItem = new TabItem(this.itemElement);
         this.element.addEventListener('click', () => this.select());
+        console.log(this.element);
     }
 
     select() {
@@ -17,6 +18,7 @@ class TabLink {
         this.element.classList.toggle('tab-selected');
 
         this.tabItem.select();
+        console.log(this.tabItem);
     }
 
 }
@@ -33,7 +35,7 @@ class TabItem {
         });
 
         this.tabContent.classList.toggle('tab-selected');
-        console.log(this.element);
+        console.log(this.tabContent);
     }
 
 }
