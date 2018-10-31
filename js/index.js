@@ -1,5 +1,9 @@
 // index.js - JS for index.html
 
+const headerImg = document.querySelector('#jumbotron');
+const h1 = document.querySelector('h1');
+const firstLinkImg = document.querySelector('.link-img');
+
 let windowResize = () => {
 
   if (window.innerWidth <= 800) {
@@ -29,3 +33,10 @@ let windowResize = () => {
 window.addEventListener('resize', windowResize);
 
 windowResize();
+
+TweenMax.fromTo(headerImg, 1, {opacity: 0, yPercent: -100}, {opacity: 1, yPercent: 0, onComplete: () => {
+  TweenMax.fromTo(h1, 1.5, {opacity: 0, xPercent: -150}, {opacity: 1, xPercent: 0, onComplete: () => {
+    firstLinkImg.classList.remove('scroll-hide');
+    TweenMax.fromTo(firstLinkImg, 1, {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0});
+  }});
+}});
