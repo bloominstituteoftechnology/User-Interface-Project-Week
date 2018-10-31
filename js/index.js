@@ -46,21 +46,19 @@ class Card {
         this.element.classList.add('card-selected');
     }
 }
-let tab = document.querySelectorAll('.tab');
-tab = Array.from(tab).map(item => new Tab(item));
-tab[1].select();
-
 window.addEventListener('keypress', () => {
     if (event.key = 'Enter') {
         alert('Thank you! You should receive an email in your inbox shortly.')
     }
 })
 
+let tab = document.querySelectorAll('.tab');
+tab = Array.from(tab).map(item => new Tab(item));
+tab[1].select();
 
-
-let title = document.querySelector('.nav-container h2');
-console.log(title);
-title.addEventListener('mouseover', () => {
-    event.target.style.scale = '2';
-})
+// let title = document.querySelector('.nav-container h2');
+// console.log(title);
+// title.addEventListener('mouseover', () => {
+//     event.target.style.scale = '2';
+// })
 
