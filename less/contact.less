@@ -1,17 +1,36 @@
 .contact-content {
     font-family: @font, Arial, sans-serif;
+    @media @mobile {
+        img {
+            display: none;
+        }
+        .hidden {
+            display: block;
+        }
+    }
     .contact-img {
         width: 100%;
         position: relative;
+
+        @media @mobile {
+            width: 100%;
+            margin-bottom: 5%;
+        }
         .jumbo {
             position: absolute;
             bottom: 8.25%;
             left: 8.25%;
             color: #FFFFFF;
-            font-size: 64px;
+            font-size: 4rem;
             font-weight: bold;
-            line-height: 75px;
-            // z-index: 2;
+            line-height: 4.6875rem;
+            
+            @media @mobile {
+                font-size: 2.25rem;
+                line-height: 2.65rem;
+                bottom: 9%;
+                left: 5%;
+            }
         }
     }
     .contact-container {
@@ -22,9 +41,18 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        @media @mobile {
+            flex-direction: column;
+            width: 91%;
+        }
         .left-column {
             .custom-layout(column, space-between, flex-start);
             width: 48.5%;
+
+            @media @mobile {
+                width: 100%;
+            }
             .sub-header {
                 padding-top: 5%;
                 padding-bottom: 5%;
@@ -97,6 +125,10 @@
             width: 33%;
             padding-top: 4%;
             .custom-layout(column, flex-start, flex-start);
+
+            @media @mobile {
+                width: 100%;
+            }
             h3 {
                 padding-bottom: 14%;
             }
