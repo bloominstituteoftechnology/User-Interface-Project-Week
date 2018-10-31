@@ -51,5 +51,3 @@ class TabCard {
 let tabs = document.querySelectorAll('.tab');
 
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
-
-console.log(tabs);
