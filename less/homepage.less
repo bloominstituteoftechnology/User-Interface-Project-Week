@@ -7,11 +7,13 @@
   .headers {
     .jumbotron-headers();
     position: absolute;
-    bottom: 0;
-    .margin-padding(0, 5%);
+    bottom: 5%;
+    left: 10%;
+    font-size: 5.2rem;
     @media @mobile {
       font-size: 5rem;
       line-height: 6.5rem;
+      left: 5%;
     }
   }
 }
@@ -19,7 +21,10 @@
   .flex-box(column wrap, center, space-between);
   max-width: 1250px;
   width: 100%;
-  margin: 0 auto;
+  .margin-padding(0 auto 10%, 0 10%);
+  @media @mobile {
+    .margin-padding(0 auto 10%, 0);
+  }
   h2 {
     .sub-headers();
   }
@@ -29,16 +34,19 @@
     @media @mobile {
       .margin-padding(10% 5%, 0);
     }
+
     img {
-      width: 40%;
+      width: 47.5%;
       @media @mobile {
         width: 100%;
         .margin-padding(5% 0 5%, 0);
       }
     }
+
     p {
       text-align: justify;
     }
+
     button {
       background: @white;
       border: 1px black solid;
@@ -59,6 +67,16 @@
         .margin-padding(5% 0 0, 2.5% 5%);
       }
     }
+
+    .content {
+        .width-height(47.5%, auto);
+        @media @mobile {
+          width: 100%;
+        }
+        h2 {
+          .margin-padding(0 0 5%, 0);
+        }
+      }    
     .top-section {
       .flex-box(row nowrap, space-between, center);
       .margin-padding(0 0 5%, 0);
@@ -75,15 +93,10 @@
     .bottom-section {
       .flex-box(row nowrap, space-between, center);
       .margin-padding(5% 0 0, 0);
+
       @media @mobile {
         .flex-box(column nowrap, space-around, center);
         .margin-padding(0, 0);
-      }
-    }
-    .content {
-      .width-height(40%, auto);
-      @media @mobile {
-        width: 100%;
       }
     }
   }
@@ -96,7 +109,7 @@
     }
 
     p {
-      width: 45%;
+      width: 50%;
       align-self: center;
       @media @mobile {
         width: 100%;
