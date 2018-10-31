@@ -469,9 +469,22 @@ header {
     .flexIt(column, center, center);
     margin: 5% 0 15%;
 
+    @media @desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+    }
+
     // Children
     .text-content {
       margin: 4% 0;
+
+      // Breakpoint
+      @media @desktop {
+        max-width: 400px;
+        margin: 0;
+      }
 
       // Children
       h2 {
@@ -481,14 +494,23 @@ header {
       }
       p {
         margin: 2% 0;
+        font-size: 1rem;
       }
     }
     .mobile-img {
       width: 100%;
+
+      @media @desktop {
+        display: none;
+      }
     }
 
     .desktop-img {
       display: none;
+
+      @media @desktop {
+        display: inline-block;
+      }
     }
   }
 
