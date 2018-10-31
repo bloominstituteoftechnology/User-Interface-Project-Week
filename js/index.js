@@ -1,6 +1,6 @@
 // JS goes here
 
-//Navigation Button
+//Navigation Button----------------------------------------------------
 const navButton = document.querySelector('.burger-button');
 const menu = document.querySelector('.expanding-menu');
 let buttonImgs = navButton.querySelectorAll('img');
@@ -32,8 +32,9 @@ navButton.addEventListener('click',()=>{
         }});
     }
 });
+//End of Nav Button-----------------------------------------------------
 
-//End of Nav Button
+//Tab setup-----------------------------------------------------------
 class Tab {
     constructor(element){
         this.element = element;
@@ -54,13 +55,55 @@ class Tab {
 class TabContent {
     constructor(banana){
         this.element = banana;
+        this.children = this.element.children;
     }
     select () {
         let contentList = document.querySelectorAll('.tab-content');
-        Array.from(contentList).forEach(content=>content.classList.remove('selected-content'));
+        Array.from(contentList).forEach(content=>{
+            content.classList.remove('selected-content');
+            Array.from(content.children).forEach(child => {
+                child.style.opacity = 0;
+            })
+        });
         this.element.classList.add('selected-content');
+        Array.from(this.children).forEach( child => {
+            TweenMax.to(child, 2, {opacity: 1});
+        });
+        // TweenMax.to(this.element, 2, {opacity: 1});
     }
 }
 
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map(tab => new Tab(tab));
+//end tab setup--------------------------------------------------------------
+
+
+// scrolling event setup------------------------------------------------------
+
+const scrollBoxs = Array.from(document.querySelectorAll('.onScroll'));
+
+window.addEventListener('scroll',(event)=>{
+  let windowHeight = document.documentElement.clientHeight;
+  scrollBoxs.forEach(item => {
+    if(item.getBoundingClientRect().top < windowHeight-100 && item.getBoundingClientRect().bottom > 0){
+      TweenMax.to(item, 2, {opacity: 1});
+    }
+    else{
+      item.style.opacity = 0;
+    }
+})});
+//scroll event end-------------------------------------------------------------
+//do the same thing as scroll event but on loading of page---------------------
+window.addEventListener('load', (event)=>{
+    let windowHeight = document.documentElement.clientHeight;
+    console.log('im loaded');
+    scrollBoxs.forEach(item => {
+        item.style.opacity = 0;
+      if(item.getBoundingClientRect().top < windowHeight-100 && item.getBoundingClientRect().bottom > 0){
+        TweenMax.to(item, 2, {opacity: 1});
+      }
+      else{
+        item.style.opacity = 0;
+      }
+})});
+//end load event---------------------------------------------------------------
