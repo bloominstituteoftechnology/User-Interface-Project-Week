@@ -147,6 +147,8 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 2.4rem;
+  padding: 0;
+  margin: 0;
 }
 @media (max-width: 500px) {
   body {
@@ -154,6 +156,11 @@ body {
   }
 }
 .container {
+  overflow: hidden;
+  position: relative;
+  max-width: 102.2rem;
+  width: 100%;
+  padding: 0;
   margin: 0 auto;
 }
 .main {
@@ -163,6 +170,7 @@ body {
 @media (max-width: 500px) {
   .main {
     width: 100%;
+    margin: 0;
   }
 }
 h1,
@@ -175,10 +183,12 @@ p {
 }
 .header {
   position: absolute;
-  z-index: 10;
+  top: 0;
+  left: 0;
   width: 100%;
   color: #FFFFFF;
   background-color: #99A4AF;
+  z-index: 10;
 }
 .header a {
   text-decoration: none;
@@ -187,7 +197,7 @@ p {
 .header .navbar {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100vh;
   background-color: #99A4AF;
@@ -197,9 +207,22 @@ p {
   justify-content: center;
   align-items: center;
   z-index: -1;
-  font-size: 8rem;
-  line-height: 10rem;
   font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+}
+@media (max-width: 800px) {
+  .header .navbar {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+}
+@media (max-width: 500px) {
+  .header .navbar {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    left: 2rem;
+  }
 }
 .header .navbar .menu--item:hover {
   color: black;
@@ -226,8 +249,9 @@ p {
   }
 }
 .jumbotron {
-  width: 100%;
+  max-width: 100%;
   overflow: hidden;
+  object-fit: cover;
   max-height: 100vh;
   position: relative;
 }
@@ -251,9 +275,16 @@ p {
   bottom: 5.6rem;
   left: 8%;
   font-weight: bold;
+  color: #FFFFFF;
   font-size: 6.4rem;
   line-height: 7.5rem;
-  color: #FFFFFF;
+}
+@media (max-width: 800px) {
+  .jumbotron .jumbotron--text,
+  .jumbotron .jumbotron--text {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
 }
 @media (max-width: 500px) {
   .jumbotron .jumbotron--text,
@@ -363,8 +394,18 @@ p {
     flex-direction: column;
   }
 }
+@media (max-width: 800px) {
+  .cta .cta--item {
+    flex-direction: column;
+  }
+}
 .cta .cta--item img {
   width: 100%;
+}
+@media (max-width: 800px) {
+  .cta .cta--item {
+    padding-bottom: 5rem;
+  }
 }
 @media (max-width: 500px) {
   .cta .cta--item {
@@ -382,6 +423,11 @@ p {
 .cta .cta--item .cta--intro--text {
   margin-top: 2.2rem;
   margin-left: 3rem;
+}
+@media (max-width: 800px) {
+  .cta .cta--item .cta--item--text {
+    margin: 0;
+  }
 }
 @media (max-width: 500px) {
   .cta .cta--item .cta--item--text {
@@ -427,6 +473,11 @@ p {
 .cta .cta--header img {
   order: 1;
 }
+@media (max-width: 800px) {
+  .cta .cta--header img {
+    order: -1;
+  }
+}
 @media (max-width: 500px) {
   .cta .cta--header img {
     order: -1;
@@ -434,6 +485,11 @@ p {
 }
 .project {
   width: 100%;
+}
+@media (max-width: 800px) {
+  .project h2 {
+    padding: 0 2rem;
+  }
 }
 @media (max-width: 500px) {
   .project h2 {
@@ -476,6 +532,11 @@ p {
   height: 9rem;
   transform: translateY(30%);
 }
+@media (max-width: 800px) {
+  .project .project--item .project--item--img .project--img--title {
+    height: 6rem;
+  }
+}
 @media (max-width: 500px) {
   .project .project--item .project--item--img .project--img--title {
     left: 50%;
@@ -501,6 +562,12 @@ p {
   margin: 8.2rem 0 10rem 0;
   padding: 0 20.5rem;
   letter-spacing: 0.85px;
+}
+@media (max-width: 800px) {
+  .project .project--item .project--item--text {
+    padding: 0 2rem;
+    margin-bottom: 5rem;
+  }
 }
 @media (max-width: 500px) {
   .project .project--item .project--item--text {
