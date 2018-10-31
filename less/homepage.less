@@ -35,8 +35,10 @@ p {
     line-height: 75px;
     @media @phone{
         font-size: 2.9rem;
+        font-weight: 500;
         bottom: 30px;
         left:30px;
+        line-height:60px;
     }
 
 }
@@ -52,7 +54,10 @@ p {
     //border: 1px solid red;
     justify-content: space-between;
     max-width: 80%;
-   
+    
+
+
+
     .article-img {
         @media @phone {
             display:none;
@@ -60,15 +65,30 @@ p {
         max-width:49%;
         //border: 1px solid blue;
     }
+    .article-mobile-img {
+        display:none;
+        @media @phone {
+            display:block;
+            width: 100%;
+        }
+    }
     .article-box {
+        @media @phone {
+            max-width: 100%;
+            border: 1px solid red;
+
+            
+            
+        }
         max-width: 49%;
         //border: 1px solid red;
         align-self: center;
 
-        // h2 {
-        //     margin: 20px 0;
-        // }
+       
         .btn {
+            @media @phone {
+                .sexy-btn(100%, 60px, white, @main-articles-font-color, 1rem);
+            }
             .sexy-btn(170px, 60px, white, @main-articles-font-color, 0.8rem);
           
 
@@ -79,6 +99,10 @@ p {
     
 }
 .shiftDirection {
+    @media @phone {
+        max-width: 90%;
+        flex-direction: column;
+    }
     flex-direction: row;
     justify-content: space-between;
     max-width: 80%;
@@ -93,8 +117,15 @@ p {
     // flex-direction: column;
     //border: 1px solid red;
     // justify-content: space-between;
-    width: 80%;
+    max-width: 80%;
+    @media @phone {
+        max-width: 100%;
+        border: 1px solid red;
 
+        h2 {
+            margin-left: 20px;
+        }
+    }
 
     .projects {
         .projects-header {
@@ -104,7 +135,17 @@ p {
 
             .projects-img {
                 max-width: 100%;
+                @media @phone {
+                    display: none;
+                }
                 
+            }
+            .projects-mobile-img {
+                display:none;
+                @media @phone {
+                    display:block;
+                    width: 100%;
+                }
             }
             .projects-overlay {
                 
@@ -122,8 +163,24 @@ p {
                 right: 0;
                 bottom: -50px;
                 border: 1px solid white;
+                @media @phone{
+                width: 90%;
+                height: 150px;
+                left:0;
+                right:0;
+                margin: auto;
+                bottom: -100px;
+                }
             }
             .switch {
+                @media @phone {
+                width: 90%;
+                height: 150px;
+                left:0;
+                right:0;
+                margin: auto;
+                bottom: -100px;
+                }
                 position: absolute;
                 bottom: -45px;
                 left: 0;
@@ -132,9 +189,16 @@ p {
         .projects-text {
             //border: 1px dotted red;
             margin: 100px auto;
-            
             max-width: 42%;
+            @media @phone {
+                margin: 150px auto;
+                max-width: 90%;
+                //border: 1px solid red;
+            }
             p {
+                @media @phone {
+                    font-size: 1.6rem;
+                }
                 margin: 20px auto;
                 //border: 1px solid red;
                 font-size: 0.8rem;
