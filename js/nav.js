@@ -11,17 +11,22 @@ hamburger.addEventListener("click", event => {
     hamburger.classList.toggle('btn-toggle');
     closeButton.classList.toggle('btn-toggle');
 
-    TweenMax.to('.link-one', 1.3, {
+    TweenMax.to('.link-one', 1, {
         opacity: 1,
         ease: Power4.easeOut,
         x: 100
     });
-    TweenMax.to('.link-two', 1.6, {
+    TweenMax.to('.link-two', 1.3, {
         opacity: 1,
         ease: Power4.easeOut,
         x: 100
     });
-    TweenMax.to('.link-three', 1.9, {
+    TweenMax.to('.link-three', 1.6, {
+        opacity: 1,
+        ease: Power4.easeOut,
+        x: 100
+    });
+    TweenMax.to('.link-four', 1.9, {
         opacity: 1,
         ease: Power4.easeOut,
         x: 100
@@ -30,7 +35,7 @@ hamburger.addEventListener("click", event => {
     TweenMax.to('.navigation-links-selected', 1, {
         opacity: 0.95,
         ease: Power1.easeOut,
-        top: "8%"
+        top: "7%"
     });
 
     
@@ -55,4 +60,22 @@ closeButton.addEventListener('click', event => {
         top: -1000,
     });
 
+});
+
+navPages.addEventListener('click', event => {
+    // TweenMax.to('.navigation-link', 2 , {
+    //     opacity: 0,
+    //     ease: Power1.easeOut,
+    //     x: -100
+    // });
+
+    // TweenMax.to('.navigation-links', 3, {
+    //     opacity: 0,
+    //     ease: Power3.easeOut,
+    //     top: -1000,
+    // });
+    
+    $(window).on('animsition.inStart', function(){
+        TweenMax.to(".overlay", 1.2, {y:'-100%', ease:Power4.easeInOut});
+    })
 });
