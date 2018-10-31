@@ -41,13 +41,14 @@ hamburger.addEventListener("click", function() {
       hamburger.classList.add('burger');
     }
 });
+console.log('contected');
 
 home.addEventListener("click", function(e) {
   t1.reversed(!t1.reversed());
   e.preventDefault();
   setTimeout(() => {
     document.location.href = "index.html";
-  }, 1500);
+  }, 1800);
 
 })
 services.addEventListener("click", function(e) {
@@ -55,14 +56,14 @@ services.addEventListener("click", function(e) {
   e.preventDefault();
   setTimeout(() => {
     document.location.href = "services.html";
-  }, 1500);
+  }, 1800);
 })
 contact.addEventListener("click", function(e) {
   t1.reversed(!t1.reversed());
   e.preventDefault();
   setTimeout(() => {
     document.location.href = "contact.html";
-  }, 1500);
+  }, 1800);
 })
 
 
