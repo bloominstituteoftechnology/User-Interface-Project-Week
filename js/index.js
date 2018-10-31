@@ -70,6 +70,9 @@ class TabItem {
       
       // assign the reference to the ".dropdown-content" class found in the dropdown element
       this.content = this.element.querySelector('.dropdown-content');
+
+      this.close = this.element.querySelector('.close-nav');
+      this.open = this.element.querySelector('.open-nav');
       
       // Add a click handler to the button reference and call the toggleContent method.
       this.button.addEventListener('click', () => {
@@ -81,6 +84,8 @@ class TabItem {
       
       // Toggle the ".dropdown-hidden" class off and on
       this.content.classList.toggle('dropdown-hidden');
+      this.close.classList.toggle('dropdown-hidden');
+      this.open.classList.toggle('dropdown-hidden');
     }
   }
 
