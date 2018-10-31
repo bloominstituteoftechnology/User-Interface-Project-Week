@@ -1,6 +1,6 @@
 // JS goes here
 
-// ************************ tab navigator *************************
+// "Tab"
 class Tab {
     constructor(tab) {
         this.tab = tab;
@@ -30,7 +30,7 @@ class Card {
     }
 }
 
-// only run this code on Services.html in order to avoid error when '.tab' can't be found
+
 let activePg = document.querySelector('title').innerText;
 if (activePg === 'Services') {
     let tabs = document.querySelectorAll('.tab');
@@ -39,18 +39,18 @@ if (activePg === 'Services') {
 }
 
 
-// ********************** nav menu ******************************
+// "Nav Bar"
 
-// i would refactor this 
+
 const navBurger = document.querySelector('.nav-burger');
 const dropdownNav = document.querySelector('.dropdown-nav');
 const navBar = document.querySelector('nav');
 const fixedNav = document.querySelector('.fixed-nav');
 
 navBurger.addEventListener('click', () => {
-    // menu-open should be menu-closed. got it backwards. whoops
+    
     if (navBurger.classList.contains('menu-open')) {
-        // expand
+        // -- this is for the exand view
         navBurger.classList.remove('menu-open');
         navBurger.src = '/img/nav-hamburger-close.png';
         dropdownNav.style.display = 'flex';
@@ -58,7 +58,7 @@ navBurger.addEventListener('click', () => {
         navBar.style.display = 'block';
         fixedNav.style['justify-content'] = 'space-around';
     } else {
-        // hide menu
+        //  -- this hides the menu
         navBurger.classList.add('menu-open');
         navBurger.src = '/img/nav-hamburger.png';
         dropdownNav.style.display = 'none';
