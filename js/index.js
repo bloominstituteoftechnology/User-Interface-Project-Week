@@ -37,16 +37,19 @@ class Card {
 
 hamburger.addEventListener('click', (e) => {
     menuExpanded.classList.toggle('menu-open');
-    console.log(menuExpanded);
+
 });
 hamburgerClose.addEventListener('click',(e) => {
     e.stopPropagation();
     menuExpanded.classList.toggle('menu-open');
-    console.log(menuExpanded);
+    // console.log(menuExpanded);
 });
 
 // services
 let tabs = document.querySelectorAll('.tablink');
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
-tabs[1].select();
+let title = document.title;
+if(title === 'Services'){
+    tabs[1].select();
+}
