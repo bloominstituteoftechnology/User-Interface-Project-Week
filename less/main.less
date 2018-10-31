@@ -24,7 +24,7 @@
       left: 1.5rem;
     }
   }
-  .services {
+  .services-text {
     bottom: 2rem;
   }
 }
@@ -139,12 +139,26 @@
 }
 
 .services {
+  max-width: 895px;
   line-height: 1.65;
+  padding: 0 2rem;
+  @media (max-width: 650px) {
+    padding: 0 1.5rem;
+    max-width: 320px;
+    margin-bottom: 7.5rem;
+  }
   .intro {
     margin-top: 5rem;
+    @media (max-width: 650px) {
+      margin-top: 3rem;
+    }
   }
   .tabs {
     margin-top: 4.2rem;
+    margin-bottom: 9rem;
+    @media (max-width: 650px) {
+      margin-top: 2.8rem;
+    }
     .tab-links {
       .flex(row, space-between, center);
       .tab-link {
@@ -155,11 +169,30 @@
         font-weight: 700;
         text-align: center;
       }
+      @media (max-width: 800px) {
+        .flex(column, center, center);
+        .tab-link {
+          width: 100%;
+          margin: 1rem;
+        }
+      }
+    }
+    .clicked {
+      background-color: #5E9FB9;
+      color: #000;
+    }
+    .hover {
+      background-color: #222222;
+      color: #FFF;
     }
     .tab-contents {
       .tab-content {
         .flex(row, space-between, center);
         margin-top: 6.5rem;
+        @media (max-width: 800px) {
+          .flex(column, space-between, center);
+          margin-top: 5rem;
+        }
         .text {
           h2 {
             line-height: 0;
@@ -169,11 +202,21 @@
           p {
             padding: 0.3rem 0;
             margin-top: 2.1rem;
+            @media (max-width: 650px) {
+              padding: 0;
+              margin-top: 3.1rem;
+            }
           }
         }
         img {
           padding-left: 3rem;
+          @media (max-width: 800px) {
+            padding: 2rem 0;
+          }
         }
+      }
+      .hide {
+        display: none;
       }
     }
   }
@@ -218,9 +261,12 @@
       }
     }
     .office {
-      padding: 0.5rem 4rem;
+      padding: 0.5rem;
       font-size: 1.4rem;
       line-height: 2;
+      @media (max-width: 650px) {
+        padding-left: 3rem;
+      }
       h3 {
         font-size: 2rem;
         font-weight: 700;
