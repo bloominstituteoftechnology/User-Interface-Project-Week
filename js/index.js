@@ -1,3 +1,5 @@
+//home page
+
 let hamImages = document.querySelectorAll(".hamburger img");
 let expanded = document.querySelector('.hamburger-expanded');
 hamImages.forEach(x => {
@@ -11,3 +13,6 @@ hamImages.forEach(x => {
         hamImages[1].style.cursor = 'pointer';
     })
 });
+
+
+//services page
