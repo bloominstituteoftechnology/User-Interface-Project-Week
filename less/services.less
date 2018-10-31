@@ -3,7 +3,17 @@
         .services-jumbo-img{
             width: 100%;
             position: relative;
+            @media @phone{
+                display: none;
+            }
         }    
+        .services-mobile-jumbo{
+            display: none;
+            @media @phone{
+                display: block;
+                width: 100%;
+            }
+        }
         h1{
             font-weight: @jumbo-font-weight;
             font-size: @jumbo-font-size;
@@ -14,7 +24,7 @@
             left: 0;
             right: 0;
             margin-top: -110px;
-            margin-left: 90px;
+            margin-left: 10%;
         }
     }
   
@@ -22,6 +32,10 @@
         width: 80%;
         margin: 40px 10% 40px 10%;
         font-size: 1.8rem;
+        @media @tablet{
+            width: 100%;
+            margin: 40px 0%;
+        }
     }
     .tabs-item{
         display:none;
@@ -33,6 +47,7 @@
             font-size: @nav-font-size;
         }
     }
+
     .tabs-selected{
         display: flex;
         justify-content: space-between;
@@ -40,16 +55,40 @@
         margin-left: 10%;
         margin-bottom: 40px;
         margin-top: 20px;
-     
+        height: 300px;
+        @media @tablet{
+            display: block;
+            width: 100%;
+            margin-left: 0%;
+        }
         div{
+            display:flex;
+            flex-direction: column;
+            align-content: space-between;
             width: 48%;
+            justify-content: space-between;
+            @media @tablet{
+                width: 100%;
+            }
             .first-p{
                 margin-bottom: 20px;
             }
         }
         img{
             width: 45%;
-            height: 45%;
+            @media @tablet{
+                width: 60%;
+                margin-top: 20px;
+                margin-left: 20%;
+            }
+            @media @phone{
+                width: 100%;
+                margin: 20px 0;
+                
+            }
+        }
+        @media @tablet{
+            height: auto;
         }
     }
 
@@ -62,6 +101,13 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 60px;
+        flex-wrap: wrap;
+        @media @tablet{
+            width: 100%;
+            flex-direction: row;
+            margin-left: 0;
+            justify-content: space-around;
+        }
          .btns{
         border: 1px solid black;
         height: 35px;
@@ -69,18 +115,33 @@
         width: 17%;
         background-color: white;
         font-weight: @jumbo-font-weight;
-    
-        
+        @media @tablet{
+            width: 40%;
+            margin-bottom: 20px;
+        }
+        @media @phone{
+            width: 100%;
+            margin: 7px 0px;
+        }
         }
         .btn-selected{
             background: @tab-selected-color;
             color: @background-color;
         }
-        .btns:hover{
-            background-color: @tab-hover-background;
-            color: @tab-hover-color;
-        }
+      
 
     }
-
+        .mobile-imgs{
+        display: none;
+        
+        @media @phone{
+            display: flex;
+            width: 100%;
+        }
+    }
+    .desktop-imgs{
+        @media @phone{
+            display: none;
+        }
+    }
 }
