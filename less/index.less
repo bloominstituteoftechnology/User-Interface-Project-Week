@@ -119,7 +119,7 @@ p {
         font-size: 20px;
         font-weight: bold;
         background-color: #828282;
-        position: fixed;
+        position: absolute;
         right: 10%;
         top: 5px;
         // &:hover {
@@ -233,8 +233,29 @@ p {
       color: #FFFFFF;
       background: inherit;
       font-family: 'Roboto', sans-serif;
+
+      @media @mobile {
+        font-size: 3.7rem;
+        line-height: 4.8rem;
+        bottom: 2%;
+        left: 4%;
+    }
+    
+  }
+
+  .services-desktop {
+    @media @mobile {
+      display: none;
     }
   }
+
+  .services-mobile {
+    display: none;
+    @media @mobile {
+      display: block;
+    }
+  }
+}
 
   .introduction {
     display: flex;
@@ -381,6 +402,10 @@ p {
   .services-tabs {
     width: 85%;
     margin: 0 auto;
+
+    @media @mobile {
+      width: 100%;
+    }
     .tabs-items {
       width: 100%;
       height: auto;
@@ -392,15 +417,76 @@ p {
     .tabs-item {
       display: none;
       width: 100%;
+
+      @media @mobile {
+        flex-direction: column;
+      }
       .tabs-item-title {
         font-size: 24px;
         font-weight: bold;
         padding-bottom: 20px;
+        @media @mobile {
+          width: 90%;
+          margin: 0 auto;
+        }
       }
 
       .pre-construction-desktop {
         width: 50%;
+        @media @mobile {
+          display: none;
+        }
       }
+      .pre-construction-mobile {
+        display: none;
+        @media @mobile {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .construction-desktop {
+        width: 50%;
+        @media @mobile {
+          display: none;
+        }
+      }
+      .construction-mobile {
+        display: none;
+        @media @mobile {
+          display: block;
+          margin: 0 auto;
+        }
+      
+      }
+      .design-desktop {
+        width: 50%;
+        @media @mobile {
+          display: none;
+        }
+      }
+      .design-mobile {
+        display: none;
+        @media @mobile {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .sustainability-desktop {
+        width: 50%;
+        @media @mobile {
+          display: none;
+        }
+      }
+      .sustainability-mobile {
+        display: none;
+        @media @mobile {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      
+
+
     }
     .tabs-item-selected {
       display: flex;
@@ -409,12 +495,22 @@ p {
 
     .tabs-item-description {
       width: 90%;
+      @media @mobile {
+        margin: 0 auto;
+        padding-bottom: 30px;
+      }
     }
 
     .tabs-links {
       display: flex;
       background-color: #FFFFFF;
       justify-content: space-between;
+      @media @mobile {
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+
+      }
     }
   
     .tabs-link {
@@ -426,10 +522,12 @@ p {
       &:hover {
         background-color: #5E9FB9;
       }
+      @media @mobile {
+        margin: 3% 0;
+      }
     }
     .tabs-link-selected {
       z-index: 2;
-      // border-right: 1px solid @lambda-red;
       background-color: #5E9FB9;
       color: black;
       &:hover {
