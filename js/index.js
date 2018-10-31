@@ -1,5 +1,6 @@
 // JS goes here
 
+<<<<<<< HEAD
 // "Tab"
 class Tab {
     constructor(tab) {
@@ -52,12 +53,27 @@ navBurger.addEventListener('click', () => {
     if (navBurger.classList.contains('menu-open')) {
         // -- this is for the exand view
         navBurger.classList.remove('menu-open');
+=======
+// navbar menu
+
+const navBurger = document.querySelector('.navBurger');
+const dropdownNav = document.querySelector('.dropdownNav');
+const nav = document.querySelector('nav');
+const navBar = document.querySelector('.navBar');
+
+navBurger.addEventListener('click', () => {
+    // menu-open should be menu-closed. got it backwards. whoops
+    if (navBurger.classList.contains('navOpen')) {
+        // expand
+        navBurger.classList.remove('navOpen');
+>>>>>>> c89449366ef30e0a5e1f47e9cf098dd9cf32c3ff
         navBurger.src = '/img/nav-hamburger-close.png';
         dropdownNav.style.display = 'flex';
         dropdownNav.style['flex-direction'] = 'column';
         navBar.style.display = 'block';
         fixedNav.style['justify-content'] = 'space-around';
     } else {
+<<<<<<< HEAD
         //  -- this hides the menu
         navBurger.classList.add('menu-open');
         navBurger.src = '/img/nav-hamburger.png';
@@ -67,3 +83,11 @@ navBurger.addEventListener('click', () => {
 
 
 
+=======
+        // hide menu
+        navBurger.classList.add('navOpen');
+        navBurger.src = '/img/nav-hamburger.png';
+        dropdownNav.style.display = 'none';
+    }
+});
+>>>>>>> c89449366ef30e0a5e1f47e9cf098dd9cf32c3ff
