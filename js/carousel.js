@@ -13,7 +13,12 @@ class Carousel {
 
     this.clickable = false;
 
+  }
+
+  init() {
+
     this.images[0].moveIn('forwards');
+
     setTimeout(() => this.clickable = true, 2000);
 
     this.nextButton.addEventListener('click', () => this.nextImage());
@@ -134,5 +139,3 @@ class CarouselImg {
   }
 
 }
-
-let carousel = new Carousel(document.querySelector('.carousel'));
