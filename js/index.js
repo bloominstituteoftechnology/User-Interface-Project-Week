@@ -25,8 +25,18 @@ t1.staggerFrom(".menu ul li", .5, {marginLeft: "-50rem", opacity: 0, ease:Expo.e
 
 t1.reverse();
 hamburger.addEventListener("click", function() {
-  console.log(t1);
     t1.reversed(!t1.reversed());
+    console.log(hamburger);
+    if(hamburger.classList.contains('burger')) {
+      hamburger.src = "img/nav-hamburger-close.png";
+      hamburger.classList.remove('burger');
+      hamburger.classList.add('closed');
+    } else if (hamburger.classList.contains('closed')) {
+      hamburger.src = "img/nav-hamburger.png";
+      hamburger.classList.remove('closed');
+      hamburger.classList.add('burger');
+      console.log('elseIf', hamburger);
+    }
 });
 navAnchors.addEventListener("click", function() {
   t1.reversed(!t1.reversed())
