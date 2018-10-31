@@ -14,17 +14,17 @@ hamburger.addEventListener("click", event => {
     TweenMax.to('.link-one', 1.3, {
         opacity: 1,
         ease: Power4.easeOut,
-        x: 50
+        x: 100
     });
     TweenMax.to('.link-two', 1.6, {
         opacity: 1,
         ease: Power4.easeOut,
-        x: 50
+        x: 100
     });
     TweenMax.to('.link-three', 1.9, {
         opacity: 1,
         ease: Power4.easeOut,
-        x: 50
+        x: 100
     });
 
     TweenMax.to('.navigation-links-selected', 1, {
@@ -39,18 +39,20 @@ hamburger.addEventListener("click", event => {
 closeButton.addEventListener('click', event => {
     event.stopPropagation();
     navLinks.classList.remove('navigation-links-selected');
+    navLinks.classList.add('testing');
     hamburger.classList.toggle('btn-toggle');
     closeButton.classList.toggle('btn-toggle');
 
-    TweenMax.to('.navigation-link', 3, {
+    TweenMax.to('.navigation-link', 2 , {
         opacity: 0,
-        x: -50
+        ease: Power1.easeOut,
+        x: -100
     });
 
     TweenMax.to('.navigation-links', 3, {
         opacity: 0,
-        ease: Power1.easeOut,
-        top: "-100%"
+        ease: Power3.easeOut,
+        top: -1000,
     });
 
 });
