@@ -33,18 +33,50 @@
 		<div class="contact-content">
 			<div class="contact-form">
 				<h2 class="contact-form__title">Get In Touch</h2>
-				<div class="contact-form__form">
-					<h3 class="contact-form__form--email-title">Email Address</h3>
-					<p class="contact-form__form--email-enter">Enter Email</p>
-					<p class="contact-form__form--email-disclaimer">We'll never share your email with anyone else.</p>
-					<h3 class="contact-form__form--buildings-title">How many buildings do you need planned?</h3>
-					<p class="contact-form__form--buildings-select">1-5</p>
-					<h3 class="contact-form__form--overview-title">Provide a brief overview of your project needs:</h3>
-					<p class="contact-form__form--background-radio">I am a small business</p>
-					<p class="contact-form__form--background-radio">I am a residential owner</p>
-					<p class="contact-form__form--background-radio">I am a corporation</p>
-					<button class="contact-form__form--submit">Submit</button>
-				</div>
+				<form action="/my-handling-form-page" method="post" class="contact-form__form">
+					<label for="email_address" class="contact-form__form--email-title">
+						Email Address
+					</label>
+					<input type="text" name="email_address" value="Enter Email" class="contact-form__form--email-enter">
+					<p class="contact-form__form--email-disclaimer">
+						We'll never share your email with anyone else.
+					</p>
+					
+					<label for="building_count" class="contact-form__form--buildings-title">
+						How many buildings do you need planned?
+					</label>
+					<select name="building_count" class="contact-form__form--buildings-select">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+
+					<label for="msg" class="contact-form__form--overview-title">Provide a brief overview of your project needs:</label>
+					<textarea id="msg" name="user_message" class="contact-form__form--overview-enter"></textarea>
+					
+					<ul>
+						<li>
+							<input type="radio" checked name="ID" value="sb" class="contact-form__form--background-radio">
+							<label for="sb" class="contact-form__form--background-text">I am a small business</label>
+						</li>
+						<li>
+							<input type="radio" name="ID" value="res" class="contact-form__form--background-radio">
+							<label for="res" class="contact-form__form--background-text">I am a residential owner</label>
+						</li>
+						<li>
+							<input type="radio" name="ID" value="corp" class="contact-form__form--background-radio">
+							<label for="corp" class="contact-form__form--background-text">I am a corporation</label>
+						</li>
+					</ul>
+					
+					<button class="contact-form__form--submit" type="submit">
+						Submit
+					</button>
+					
+				</form>
+				
 			</div>
 
 			<div class="contact-location">
