@@ -42,15 +42,13 @@ class Carousel {
   slideRight() {
     const nextIndex = (this.index + 1) % this.images.length;
     this.slideOut(nextIndex);
-    this.texts[this.index].style.display = 'none';
-    this.texts[nextIndex].style.display = 'block';
+    this.fadeInOut(nextIndex);
   }
 
   slideLeft() {
     const nextIndex = this.index === 0 ? this.images.length-1 : this.index-1;
     this.slideIn(nextIndex);
-    this.texts[this.index].style.display = 'none';
-    this.texts[nextIndex].style.display = 'block';
+    this.fadeInOut(nextIndex);
   }
 
   slideOut(nextIndex) {
@@ -74,14 +72,12 @@ class Carousel {
   }
 
   fadeInOut(nextIndex) {
-    TweenLite.to(this.images[this.index], .4, {autoAlpha: '0', onComplete: () => {
-      this.images[this.index].style.display = 'none';
-      this.images[nextIndex].style.display = 'block';
+    TweenLite.to(this.texts[this.index], .4, {autoAlpha: '0', onComplete: () => {
+      this.texts[this.index].style.display = 'none';
+      this.texts[nextIndex].style.display = 'block';
     }});
 
-    TweenLite.fromTo(this.images[nextIndex], .4, {autoAlpha: 0}, {autoAlpha: 1, onComplete: () => {
-      this.index = nextIndex;
-    }, delay: .4});
+    TweenLite.fromTo(this.texts[nextIndex], .4, {autoAlpha: 0}, {autoAlpha: 1, delay: .4});
   }
 }
 

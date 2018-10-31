@@ -1,3 +1,5 @@
+AOS.init();
+
 (function() {
   const header = document.querySelector('.header'); 
   const openBurger = document.querySelector('.header--hamburger .burger');
@@ -39,5 +41,3 @@
     }});
   }
 })();
-
-AOS.init();

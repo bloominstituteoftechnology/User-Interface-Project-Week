@@ -49,6 +49,8 @@
     }
     select() {
       this.element.classList.remove('hidden'); 
+      this.element.style.opacity = 0;
+      TweenLite.to(this.element, 2, {autoAlpha: 1, ease:Power1.easeOut});
     }
     deselect() {
       this.element.classList.add('hidden');
