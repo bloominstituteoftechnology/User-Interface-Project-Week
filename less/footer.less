@@ -19,6 +19,9 @@ body {
             margin: 0 auto;
             display: flex;
             justify-content: space-around;
+            @media @tablet {
+                flex-wrap: wrap;
+            }
             @media @mobile {
                 flex-direction: column;
                 align-items: flex-start;
@@ -44,14 +47,17 @@ body {
                 }
 
                 input {
-                    width: 260px;
+                    width: 80%;
                     font-size: 1.6rem;
-                    color: @footerBG;
+                    
                     padding: 10px;
                     border-radius: 5px;
                     @media @mobile {
                         width: 90%;
                         padding: 15px 10px;
+                    }
+                    &::placeholder {
+                        color: @footerBG;
                     }
                 }
                 p {
