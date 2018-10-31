@@ -35,4 +35,6 @@
       TweenLite.to(openBurger, 1, {autoAlpha: 1});
     }});
   }
-})()
+})();
+
+AOS.init();
