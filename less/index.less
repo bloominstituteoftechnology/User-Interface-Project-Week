@@ -523,7 +523,7 @@ header {
 footer {
   background: #828282;
   color: white;
-  padding: 5% 0;
+  padding: 5% 0 0;
 
   // Breakpoints
 
@@ -532,6 +532,13 @@ footer {
   #copyright {
     width: 90%;
     margin: 0 auto;
+    .flexIt(column, center, flex-start);
+
+    @media @desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
 
     // Children
     h2 {
@@ -540,6 +547,11 @@ footer {
     }
 
     .form {
+      width: 100%;
+
+      @media @desktop {
+        width: 40%;
+      }
       // Children
       input {
         width: 97%;
@@ -556,9 +568,29 @@ footer {
     #cities {
       .flexIt(column, center, flex-start);
 
+      @media @desktop {
+        width: 55%;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
       .city {
         margin: 2% 0;
+
+        @media @desktop {
+          margin: 0;
+        }
       }
     }
+  }
+
+  #disclaimer {
+    width: 100%;
+    text-align: center;
+  }
+
+  #copyright {
+    margin-top: 4%;
+    .flexIt(row, center, center);
   }
 }

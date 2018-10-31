@@ -482,17 +482,40 @@ header .nav-container nav a:hover {
 footer {
   background: #828282;
   color: white;
-  padding: 5% 0;
+  padding: 5% 0 0;
 }
 footer #contact,
 footer #copyright {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (min-width: 500px) {
+  footer #contact,
+  footer #copyright {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 footer #contact h2,
 footer #copyright h2 {
   font-size: 1.5rem;
   font-weight: bold;
+}
+footer #contact .form,
+footer #copyright .form {
+  width: 100%;
+}
+@media (min-width: 500px) {
+  footer #contact .form,
+  footer #copyright .form {
+    width: 40%;
+  }
 }
 footer #contact .form input,
 footer #copyright .form input {
@@ -513,7 +536,33 @@ footer #copyright #cities {
   justify-content: center;
   align-items: flex-start;
 }
+@media (min-width: 500px) {
+  footer #contact #cities,
+  footer #copyright #cities {
+    width: 55%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 footer #contact #cities .city,
 footer #copyright #cities .city {
   margin: 2% 0;
+}
+@media (min-width: 500px) {
+  footer #contact #cities .city,
+  footer #copyright #cities .city {
+    margin: 0;
+  }
+}
+footer #disclaimer {
+  width: 100%;
+  text-align: center;
+}
+footer #copyright {
+  margin-top: 4%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
