@@ -70,6 +70,12 @@ table{
 
 // Info Content Section
 
+.container {
+  @media @mobile {
+    max-width: 320px;
+  }
+}
+
 .info-content {
   .flex;
   flex-wrap: wrap;
@@ -261,25 +267,6 @@ table{
   }
 }
 
-// Ressponsive Images
-
-.desktop-img {
-  display: block;
-
-  @media @mobile {
-    display: none;
-  }
-}
-
-.mobile-img {
-  display: none;
-
-  @media @mobile {
-    display: block;
-    width: 100%;
-  }
-}
-
 // Home Page Styling - End
 
 
@@ -293,6 +280,10 @@ table{
   flex-wrap: wrap;
   padding: 0 83px 30px;
 
+  @media @mobile {
+    padding: 0 20px 0px;
+  }
+
   .intro {
     padding: 0 0 30px;
   }
@@ -301,6 +292,11 @@ table{
     .flex(space-between, center, row);
     width: 100%;
     padding: 18px 0;
+
+    @media @mobile {
+      .center-v;
+      padding: 10px 0 0;
+    }
 
     .btn {
       width: 186px;
@@ -323,14 +319,28 @@ table{
       }
     }
 
+    .tab {
+      @media @mobile {
+        margin-bottom: 20px;
+      }
+    }
+
     p {
       font-weight: bold;
       font-size: 1.8rem;
+
+      @media @mobile {
+        font-size: 2rem;
+      }
     }
 
     .selected {
       background: #5E9FB9;
       color: #fff;
+
+      @media @mobile {
+        border: 1px solid lightgray;
+      }
     }
   }
 
@@ -339,24 +349,46 @@ table{
     flex-wrap: wrap;
     margin: 35px 0 75px;
 
+    @media @mobile {
+      margin: 25px auto 50px;
+    }
+
     h4 {
       font-weight: bold;
       font-size: 2.4rem;
       width: 100%;
       margin-bottom: 10px;
+
+      @media @mobile {
+        margin-top: 0;
+      }
     }
 
     .services-content {
       .flex(flex-start, flex-start, row);
       margin-top: 30px;
 
+      @media @mobile {
+        .flex(flex-start, flex-start, column);
+        width: 100%;
+        margin-top: 20px;
+      }
+
       p {
         width: 50%;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
   
       .img-container {
         .flex(flex-end, flex-start, row);
         width: 50%;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
     }
     
@@ -372,3 +404,21 @@ table{
 }
 
 
+// Ressponsive Images
+
+.desktop-img {
+  display: block;
+
+  @media @mobile {
+    display: none;
+  }
+}
+
+.mobile-img {
+  display: none;
+
+  @media @mobile {
+    display: block;
+    width: 100%;
+  }
+}

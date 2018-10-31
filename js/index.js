@@ -29,18 +29,27 @@ class Tablink {
     constructor(ele) {
         this.element = ele;
         this.tabData = this.element.dataset.tab;
-        const mq = window.matchMedia( "(min-width: 320px)" );
-        this.content = document.querySelectorAll(`.desktop-tab[data-tab='${this.tabData}']`);
+        const mql = window.matchMedia("(min-width: 320px)");
+        if (mql.matches) {
+            this.content = document.querySelectorAll(`.desktop-tab[data-tab='${this.tabData}']`);
+        } else {
+            this.content = document.querySelectorAll(`.mobile-tab[data-tab='${this.tabData}']`);
+        }
         this.content = Array.from(this.content).map( item => new TabContent(item));
         this.element.addEventListener('click', () => this.selectTab() );
     }
 
     selectTab() {
-        let content = document.querySelectorAll('.desktop-tab');
+        const mql = window.matchMedia("(min-width: 320px)");
+        let content;
+        if (mql.matches) {
+            content = document.querySelectorAll('.desktop-tab');
+        } else {
+            content = document.querySelectorAll('.mobile-tab');
+        }
         content.forEach( item => item.classList.remove('selected') );
         let tabs = document.querySelectorAll('.tab');
         tabs.forEach( item => item.classList.remove('selected') );
-        this.element.classList.add('selected');
         this.content.forEach(item => item.selectContent());
     }
 }
@@ -56,6 +65,5 @@ class TabContent {
 
 
 let tabs = document.querySelectorAll('.tab');
-
 tabs = Array.from(tabs).map( tab => new Tablink(tab));
 
