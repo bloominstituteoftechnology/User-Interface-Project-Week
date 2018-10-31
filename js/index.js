@@ -26,7 +26,7 @@ class TabItem {
         this.tabContent = tabContent;
     }
     select() {
-        let items = document.querySelectorAll('.tab-content');
+        let items = document.querySelectorAll('.service-description');
 
         Array.from(items).forEach(item => {
             item.classList.add('tab-selected');
@@ -39,6 +39,6 @@ class TabItem {
 }
 
 
-let tlinks = document.querySelectorAll('.tabs');
+let tlinks = document.querySelectorAll('.tab');
 console.log(tlinks);
 tlinks = Array.from(tlinks).map(tlink => new TabLink(tlink));
