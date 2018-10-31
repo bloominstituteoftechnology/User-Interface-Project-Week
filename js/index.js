@@ -24,10 +24,18 @@ const toggleMenu = () => {
     menuButton.style.display = 'inline';
     console.log('close clicked');
 
-    TweenMax.from('.container', 2, {
-      opacity: 0.5,
-      // x: 100,
-    });
+    // TweenMax.from('.container', 2, {
+    //   opacity: 0.5,
+    //   // x: 100,
+    // });
+
+    // TweenMax.from(menu, 2, {
+    //   // opacity: 1,
+    //   x: 100, 
+    //   y: 350, 
+    //   rotationX:360, 
+    //   ease: SlowMo.ease.config(0.7, 0.7, false),
+    // });
 
   }
 
