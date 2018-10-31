@@ -23,31 +23,35 @@
         }
     }
     nav {
-        display: none;
+        transform: translateY(-100vh);
         opacity: 0.9;
         z-index: -1;
         float: left;
-        width: 100vw;
-        height: 100vh;
         position: fixed;
-        left: 0;
+        right: 0;
+        grid-auto-rows: 14.5%;
+        height: 100vh;
+        width: 100vw;
+        grid-row: 10rem;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color: #828282;
+        transition: transform 500ms ease-in-out;
         a {
             font-size: 4.8rem;
             line-height: 8.5rem;
             color: white;
             text-decoration: none;
+            font-weight: bold;
             &.current {
                 color: black;
             }
         }
         &.active {
-            grid-auto-rows: 14.5%;
-            grid-row: 10rem;
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            background-color: #828282;
+            transform: translateY(0);
+            transition: transform 500ms ease-in-out;
             & + img.hamburger {
                 display: none;
             }
