@@ -71,4 +71,6 @@ thisPageLink.addEventListener('click', () => {
 
   }});
 
+  navState = false;
+
 });
