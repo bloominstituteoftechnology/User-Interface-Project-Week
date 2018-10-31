@@ -5,7 +5,6 @@
 // ***************************************
 
 const hamburger = document.querySelector('img.header__nav-links__hamburger');
-// const navAnchors = document.querySelector('a');
 const homeNav = document.querySelector('#home');
 const servicesNav = document.querySelector('#services');
 const contactNav = document.querySelector('#contact');
@@ -23,7 +22,11 @@ t1.to(".menu", 1, {
     position: "fixed"
 });
 
-t1.staggerFrom(".menu ul li", .5, {marginLeft: "-50rem", opacity: 0, ease:Expo.easeOut}, 0.3);
+t1.staggerFrom(".menu ul li", .5, {
+    marginLeft: "-50rem",
+    opacity: 0,
+    ease:Expo.easeOut
+  }, 0.3);
 
 t1.reverse();
 hamburger.addEventListener("click", function() {
@@ -38,18 +41,28 @@ hamburger.addEventListener("click", function() {
       hamburger.classList.add('burger');
     }
 });
-// navAnchors.addEventListener("click", function() {
-//   t1.reversed(!t1.reversed())
-// })
 
-home.addEventListener("click", function() {
-  t1.reversed(!t1.reversed())
+home.addEventListener("click", function(e) {
+  t1.reversed(!t1.reversed());
+  e.preventDefault();
+  setTimeout(() => {
+    document.location.href = "index.html";
+  }, 1500);
+
 })
-services.addEventListener("click", function() {
-  t1.reversed(!t1.reversed())
+services.addEventListener("click", function(e) {
+  t1.reversed(!t1.reversed());
+  e.preventDefault();
+  setTimeout(() => {
+    document.location.href = "services.html";
+  }, 1500);
 })
-contact.addEventListener("click", function() {
-  t1.reversed(!t1.reversed())
+contact.addEventListener("click", function(e) {
+  t1.reversed(!t1.reversed());
+  e.preventDefault();
+  setTimeout(() => {
+    document.location.href = "contact.html";
+  }, 1500);
 })
 
 
