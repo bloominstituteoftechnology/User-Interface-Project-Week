@@ -1,11 +1,14 @@
 // JS goes here
 
-//Navigation Button----------------------------------------------------
+
 const navButton = document.querySelector('.burger-button');
 const menu = document.querySelector('.expanding-menu');
 let buttonImgs = navButton.querySelectorAll('img');
 const aTags = Array.from(menu.querySelectorAll('a'));
+const footer = document.querySelector('footer');
+const body = document.querySelector('body');
 
+//Navigation Button----------------------------------------------------
 navButton.addEventListener('click',()=>{
     // menu.classList.toggle('hidden');
     buttonImgs[0].classList.toggle('current-btn');
@@ -25,7 +28,7 @@ navButton.addEventListener('click',()=>{
 
     else{
         menu.classList.toggle('hidden');
-        TweenMax.from(menu,0.6,{height: 0, ease: Bounce.easeOut, onComplete: () => {
+        TweenMax.from(menu,0.6,{height: 0, ease: Power2.easeOut, onComplete: () => {
             menu.removeAttribute('style');
             buttonImgs[0].classList.remove('current-btn');
             buttonImgs[1].classList.add('current-btn');           
@@ -93,10 +96,10 @@ window.addEventListener('scroll',(event)=>{
     }
 })});
 //scroll event end-------------------------------------------------------------
+
 //do the same thing as scroll event but on loading of page---------------------
 window.addEventListener('load', (event)=>{
     let windowHeight = document.documentElement.clientHeight;
-    console.log('im loaded');
     scrollBoxs.forEach(item => {
         item.style.opacity = 0;
       if(item.getBoundingClientRect().top < windowHeight-100 && item.getBoundingClientRect().bottom > 0){
@@ -105,5 +108,25 @@ window.addEventListener('load', (event)=>{
       else{
         item.style.opacity = 0;
       }
-})});
+    })
+    // get rid of 'empty' page below footer if window height > page height
+    if (body.getBoundingClientRect().bottom < windowHeight){
+        let difference = windowHeight - body.getBoundingClientRect().bottom;
+        footer.style.paddingBottom = `${difference+20}px`;
+    }
+
+});
 //end load event---------------------------------------------------------------
+
+// recalculate the footer bottom when window resized
+window.addEventListener('resize',(event)=>{
+    let windowHeight = document.documentElement.clientHeight;
+    footer.removeAttribute('style');
+    if (body.getBoundingClientRect().bottom < windowHeight){
+        let difference = windowHeight - body.getBoundingClientRect().bottom;
+        footer.style.paddingBottom = `${difference+20}px`;
+    }
+});
+
+
+
