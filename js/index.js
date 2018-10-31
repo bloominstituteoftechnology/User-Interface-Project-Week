@@ -74,6 +74,7 @@ let content;
     }
 content[0].classList.add('selected');
 content[4].classList.add('selected');
+
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map( tab => new Tablink(tab));
-console.log(tabs[0]);
+
