@@ -51,3 +51,29 @@ class TabCard {
 let tabs = document.querySelectorAll('.tab');
 
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
+
+
+
+// Navigation
+const navOpen = document.querySelector('#nav-open');
+
+const navClose = document.querySelector('#nav-close');
+
+const nav = document.querySelector('nav');
+
+
+console.log(navClose);
+
+navOpen.addEventListener('click', () => {
+    console.log(nav);
+    nav.classList.remove('hide-nav');
+    navOpen.classList.add('hide-nav');
+    navClose.classList.remove('hide-nav');
+});
+
+navClose.addEventListener('click', () => {
+    console.log(nav);
+    nav.classList.add('hide-nav');
+    navOpen.classList.remove('hide-nav');
+    navClose.classList.add('hide-nav');
+});
