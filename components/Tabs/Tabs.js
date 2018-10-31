@@ -21,8 +21,8 @@ class TabLink {
     const allLinks = document.querySelectorAll(".tabs-link");
     Array.from(allLinks).forEach( link => {link.classList.remove('tabs-link-selected')});
     this.link.classList.add('tabs-link-selected');
-    console.log(this.link)
     this.tabContent.selectGuts();
+    this.tabContent.bounceIn();
   }
 }
 
@@ -36,7 +36,12 @@ class TabContent {
     let allGuts = document.querySelectorAll(".tab-item");
     allGuts.forEach( link => {link.classList.add('tabs-item-selected')});
     this.tabGuts.classList.remove('tabs-item-selected');
-    console.log(this.tabGuts);
+    }
+    bounceIn() {
+      const timeLine = new TimelineMax();
+      timeLine.from(".tab-item", 1, {scale: 0, ease:Bounce.easeOut});
+      
+    
   }
 }
 
