@@ -5,15 +5,23 @@ const exit = document.querySelector('.exit');
 const nav = document.querySelector('nav');
 
 ham.addEventListener('click', () => {
-  nav.classList.toggle('nav-hidden');
-  nav.classList.toggle('nav-expanded');
+  TweenMax.to(nav,1,{onStart:navAction, height: '95vh', opacity: '0.9'});
+  function navAction() {
+    nav.classList.toggle('nav-hidden');
+    nav.classList.toggle('nav-expanded');
+  }
+  
   ham.classList.toggle('icon-display');
   exit.classList.toggle('icon-display');
 })
 
 exit.addEventListener('click', () => {
-  nav.classList.toggle('nav-hidden');
-  nav.classList.toggle('nav-expanded');
+  TweenMax.to(nav,1,{height: '0vh', opacity: '0.0', onComplete:navAction});
+  function navAction() {
+    nav.classList.toggle('nav-hidden');
+    nav.classList.toggle('nav-expanded');
+  }
+  
   ham.classList.toggle('icon-display');
   exit.classList.toggle('icon-display');
 })
