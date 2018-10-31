@@ -16,7 +16,7 @@ navButton.addEventListener('click',()=>{
     buttonImgs[1].classList.toggle('current-btn');
 
     if(!menu.classList.contains('hidden')){
-        setTimeout(()=>aTags.forEach(tag => tag.style.display = 'none'),300);
+        setTimeout(()=>aTags.forEach(tag => tag.style.display = 'none'),200);
 
         TweenMax.to(menu,0.6,{height: 0, onComplete: ()=> {
             menu.removeAttribute('style');
