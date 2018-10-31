@@ -1,3 +1,8 @@
+ScrollReveal().reveal('.jumbo');
+ScrollReveal().reveal('.content');
+ScrollReveal().reveal('.project')
+ScrollReveal().reveal('footer');
+
 const toggleNav = () => {
     nav.classList.toggle('menu-showing');
     if (nav.classList.contains('menu-showing')) {
@@ -44,4 +49,18 @@ class Card {
 let tab = document.querySelectorAll('.tab');
 tab = Array.from(tab).map(item => new Tab(item));
 tab[1].select();
+
+window.addEventListener('keypress', () => {
+    if (event.key = 'Enter') {
+        alert('Thank you! You should receive an email in your inbox shortly.')
+    }
+})
+
+
+
+let title = document.querySelector('.nav-container h2');
+console.log(title);
+title.addEventListener('mouseover', () => {
+    event.target.style.scale = '2';
+})
 
