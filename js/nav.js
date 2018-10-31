@@ -3,7 +3,6 @@ const closeButton = document.querySelector('#navigation-close');
 const navLinks = document.querySelector('.navigation-links');
 const navPages = document.querySelectorAll('.navigation-link');
 const navigation = document.querySelector('.navigation-links-selected');
-var t1 = new TimelineMax({paused: true});
 
 hamburger.addEventListener("click", event => {
     event.stopPropagation();
@@ -27,6 +26,11 @@ hamburger.addEventListener("click", event => {
         x: 100
     });
     TweenMax.to('.link-four', 1.9, {
+        opacity: 1,
+        ease: Power4.easeOut,
+        x: 100
+    });
+    TweenMax.to('.link-five', 2.2, {
         opacity: 1,
         ease: Power4.easeOut,
         x: 100
