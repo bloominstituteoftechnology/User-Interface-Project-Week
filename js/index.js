@@ -7,19 +7,15 @@ const nav = document.querySelector('nav');
 ham.addEventListener('click', () => {
   nav.classList.toggle('nav-hidden');
   nav.classList.toggle('nav-expanded');
-  ham.classList.toggle('ham');
-  ham.classList.toggle('exit');
-  exit.classList.toggle('ham');
-  exit.classList.toggle('exit');
+  ham.classList.toggle('icon-display');
+  exit.classList.toggle('icon-display');
 })
 
 exit.addEventListener('click', () => {
   nav.classList.toggle('nav-hidden');
   nav.classList.toggle('nav-expanded');
-  ham.classList.toggle('ham');
-  ham.classList.toggle('exit');
-  exit.classList.toggle('ham');
-  exit.classList.toggle('exit');
+  ham.classList.toggle('icon-display');
+  exit.classList.toggle('icon-display');
 })
 
 class Tabs {
