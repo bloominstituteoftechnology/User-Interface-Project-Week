@@ -8,15 +8,40 @@ class TabLink {
 
         this.card = new TabCard(this.cardElement);
 
-        console.log(this.card);
+        this.tab.addEventListener('click', () => this.handleClick());
     }
 
     // Methods
+    handleClick() {
+        console.log('click works');
+
+        const tabs = document.querySelectorAll('.tab');
+
+        tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => card.style.display = 'none');
+
+        this.tab.classList.toggle('active-tab');
+
+        this.card.show();
+
+
+    }
 }
 
 class TabCard {
     constructor(card) {
         this.card = card;
+    }
+
+    show() {
+        this.card.style.display = 'flex';
+    }
+
+    hide() {
+        this.card.style.display = 'none';
     }
 }
 
