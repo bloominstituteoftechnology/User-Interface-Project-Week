@@ -6,7 +6,7 @@ class TabLink {
         this.tabItem = new TabItem(this.itemElement);
 
         this.element.addEventListener('click', () => this.select());
-        console.log(this.element);
+        // console.log(this.element);
     }
 
     select() {
@@ -20,11 +20,11 @@ class TabLink {
         console.log(this.element);
 
         this.tabItem.select();
-        console.log(this.tabItem);
+        // console.log(this.tabItem);
     }
 
     linkClick() {
-        this.tabContent.toggleContent();
+        this.itemElement.toggleContent();
     }
 
 }
@@ -42,6 +42,7 @@ class TabItem {
     }
     toggleContent() {
         this.tabContent.classList.toggle('change');
+        console.log(this.tabContent);
     }
 
 }
