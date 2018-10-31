@@ -2,6 +2,10 @@
 .cta {
   position: relative;
   width: 100%;
+  margin-bottom:6.6rem;
+  @media @mobile {
+    margin-bottom:2rem;
+  }
   h2 {
     position: absolute;
     bottom: 5.6rem;
@@ -33,6 +37,9 @@
 // main content
 .main-content{
     margin-top: -4.6rem;
+    @media @mobile{
+        margin-top:0;
+    }
     .mobile-img{
         display:none;
     }
@@ -47,20 +54,32 @@
     }
 }
 .top-content,.bottom-content {
-    margin: 9.2rem auto;
-    .spacebetween();
+    margin: 6.5rem auto;
     @media @mobile{
-      flex-direction:column-reverse;
+        margin:0 auto;
     }
+    .spacebetween();
+            @media @mobile{
+              flex-direction:column-reverse;
+            }
     .text-content,.img-content {
         max-width: 49%;
+        @media @mobile{
+            max-width:100%;
+        }
+        margin:2rem 0;
     }
     .text-content {
         .flexcolumn();
         justify-content: center;
+
         button {
         .custom-btn(@white, @black);
         margin-top: 1rem;
+        @media @mobile{
+            width:100%;
+
+        }
         }
         h2 {
         font-size: 2.4rem;
@@ -77,19 +96,27 @@
         button{
             margin-bottom:1rem;
         }
+        @media @mobile{
+            order:0;
+        }
     }
-
 }
-
 // project content
 .projects-header{
     font-size: 2.4rem;
     font-weight:bold;
     margin-bottom:4.6rem;
+    @media @mobile{
+        margin-left:2rem;
+    }
 }
 .projects{
     margin-top:4rem;
     margin-bottom:10rem;
+    @media @mobile{
+        margin-bottom:0;
+    }
+
     .header-img{
         position:relative;
         h2{
@@ -97,6 +124,12 @@
             align-items:center;
             .subheader();
             text-transform:uppercase;
+            @media @mobile{
+                left:0;
+                right:0;
+                margin:auto;
+                width:90%;
+            }
         }
         .subheader-outskirts{
             left:0;
@@ -106,6 +139,10 @@
         font-size:1.8rem;
         max-width:450px;
         margin:8.8rem auto 0 auto;
+        @media @mobile{
+            padding:0 2rem;
+            margin:6.8rem auto;
+        }
     }
 
 }
@@ -118,6 +155,13 @@ footer.contact{
     color:@footer-text;
     .spacebetween();
     flex-wrap:wrap;
+    @media @mobile{
+        .flexcolumn();
+        section.contact__location{
+            margin-top:2rem;
+            .box();
+        }
+    }
     h3{
         font-size:2rem;
     }
@@ -138,5 +182,11 @@ footer.contact{
         flex-basis:100%;
         text-align:center;
         font-size:1.2rem;
+        @media @mobile{
+            text-align:left;
+        }
+    }
+    @media @mobile{
+        padding:2rem;
     }
 }
