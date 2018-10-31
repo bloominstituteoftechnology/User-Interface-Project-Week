@@ -4,13 +4,16 @@ class TabLink {
     this.link = link;
 
     this.tabLink = this.link.dataset.tab;
-    console.log(this.tabLink);
-    this.tabContent = document.querySelector(`.tabs-item[data-tab='${this.tabLink}']`);
+    // console.log(this.tabLink);
+    this.tabContent = document.querySelector(`.tab-item[data-tab='${this.tabLink}']`);
     
-    this.link.addEventListener('click', () => {this.select()});
-
-    this.tabContent = new TabGuts(this.tabContent);
-
+    this.link.addEventListener('click', () => {
+      this.select();
+    });
+    
+    this.tabContent = new TabContent(this.tabContent);
+    
+    
     
   };
    
@@ -18,21 +21,22 @@ class TabLink {
     const allLinks = document.querySelectorAll(".tabs-link");
     Array.from(allLinks).forEach( link => {link.classList.remove('tabs-link-selected')});
     this.link.classList.add('tabs-link-selected');
+    console.log(this.link)
     this.tabContent.selectGuts();
   }
 }
 
 
-class TabGuts {
+class TabContent {
   constructor(tabGuts) {
     this.tabGuts = tabGuts;
     // console.log(this.tabGuts);
   }
   selectGuts() {
-    let allGuts = document.querySelectorAll(".tabs-item");
-    allGuts.forEach( link => {link.classList.remove('tabs-item-selected')});
-    this.tabGuts.classList.add('tabs-item-selected');
-    
+    let allGuts = document.querySelectorAll(".tab-item");
+    allGuts.forEach( link => {link.classList.add('tabs-item-selected')});
+    this.tabGuts.classList.remove('tabs-item-selected');
+    console.log(this.tabGuts);
   }
 }
 
@@ -44,4 +48,4 @@ links = Array.from(links).map( link => new TabLink(link));
 
 // DO THIS LAST: Once you have created an array of TabLink instances. call select() on the first item in the array
 
-console.log(links[0].select());
+// console.log(links[0].select());
