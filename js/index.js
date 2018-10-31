@@ -5,9 +5,11 @@
 // ***************************************
 
 const hamburger = document.querySelector('img.header__nav-links__hamburger');
-const navBackdrop = document.querySelector(".nav-backdrop");
-const navContainer = document.querySelector('.nav-link-container');
-const navAnchors = document.querySelector('a');
+// const navAnchors = document.querySelector('a');
+const homeNav = document.querySelector('#home');
+const servicesNav = document.querySelector('#services');
+const contactNav = document.querySelector('#contact');
+
 
 var t1 = new TimelineMax({paused: true});
 
@@ -26,7 +28,6 @@ t1.staggerFrom(".menu ul li", .5, {marginLeft: "-50rem", opacity: 0, ease:Expo.e
 t1.reverse();
 hamburger.addEventListener("click", function() {
     t1.reversed(!t1.reversed());
-    console.log(hamburger);
     if(hamburger.classList.contains('burger')) {
       hamburger.src = "img/nav-hamburger-close.png";
       hamburger.classList.remove('burger');
@@ -35,12 +36,22 @@ hamburger.addEventListener("click", function() {
       hamburger.src = "img/nav-hamburger.png";
       hamburger.classList.remove('closed');
       hamburger.classList.add('burger');
-      console.log('elseIf', hamburger);
     }
 });
-navAnchors.addEventListener("click", function() {
+// navAnchors.addEventListener("click", function() {
+//   t1.reversed(!t1.reversed())
+// })
+
+home.addEventListener("click", function() {
   t1.reversed(!t1.reversed())
 })
+services.addEventListener("click", function() {
+  t1.reversed(!t1.reversed())
+})
+contact.addEventListener("click", function() {
+  t1.reversed(!t1.reversed())
+})
+
 
 // ***************************************
 // ******* SERVICES TAB COMPONENT ********
