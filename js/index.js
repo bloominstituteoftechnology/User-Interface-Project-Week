@@ -63,12 +63,12 @@ const toggleMenu = () => {
 const homeTitle = document.querySelector('.header ul');
 console.log(homeTitle);
 
-window.addEventListener("load", () => {
-  TweenMax.to(homeTitle, 1, {
-      x:15,
-      y:-15,
-  });
-})
+// window.addEventListener("load", () => {
+//   TweenMax.to(homeTitle, 1, {
+//       x:15,
+//       y:-15,
+//   });
+// })
 
 // Button Animation
 
