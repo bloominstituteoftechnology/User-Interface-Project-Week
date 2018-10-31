@@ -35,9 +35,7 @@ html {
   box-sizing: border-box;
   font-family: Roboto, Arial, sans-serif;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+
 body{
   line-height:1;
 }
@@ -65,11 +63,19 @@ table{
 }
 
 /* Your Code Goes Here */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
 
 // Imports
 @import 'variables.less';
 @import 'navigation.less';
 @import 'services.less';
+@import 'footer.less';
 
 
 
@@ -81,19 +87,18 @@ table{
   p {
     color:#222222;
     line-height: 25px;
-    font-size: 16px;
+    font-size: 1.6rem;
   }
-}
+} // .container
 
 .jumbotron {
   width: 100%;
   padding: 0 0 0 0;
   position: relative;
 
-
   .top-banner-header {
     font-weight: bold;
-    font-size: 64px;
+    font-size: 6.4rem;
     line-height: 75px;
     color: #FFFFFF;
     font-family: Roboto, Arial, sans-serif;
@@ -101,15 +106,25 @@ table{
     bottom: 8%;
     left: 8%;
     @media @mobile {
-      font-size: 40px;
+      font-size: 4rem;
       line-height: 40px;
     }
-  }
+  } // .top-banner-header
 
-  .jumbotron-image {
+  .jumbotron-image-desktop {
     width: 100%;
+    @media @mobile {
+      display: none;
+    }
   }
-}
+  .jumbotron-image-mobile {
+    width: 100%;
+    display: none;
+    @media @mobile {
+      display: unset;
+    }
+  }
+} // .jumboron
 
 .main {
   margin: 0 8.3%;
@@ -120,25 +135,26 @@ table{
   p {
     padding: 0 0 27px 0;
   }
+
   h2 {
     padding: 0 0 20px 0;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 2.4rem;
     color: #222222;
   }
-}
+} // .main
 
 .learnBtn {
   border: 1px solid #222222;
   width: 135px;
   padding: 13px 0;
-  font-size: 16px;
+  font-size: 1.6rem;
   @media @mobile {
     width: 100%;
   }
 }
 
-.about-section {
+.architects {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -148,7 +164,7 @@ table{
     margin: 0 4%;
   }
 
-  .about-section-text {
+  .architects-text {
     padding: 7px 0 0 0;
   }
 
@@ -162,7 +178,7 @@ table{
     width: 100%;
 
   }
-}
+} // .architects
 
 .futuristic-designs {
   display: flex;
@@ -189,7 +205,7 @@ table{
       width: 100%;
     }
   }
-}
+} // .futuristic-designs
 
 
 .recent-projects {
@@ -204,14 +220,15 @@ table{
   }
 
   p {
-    padding: 0 24%;
-    font-size: 18px;
+    margin: 0 23.6%;
+    line-height: 24px;
+    font-size: 1.8rem;
     @media @mobile {
-      padding: 0 2%;
+      margin: 0 2%;
     }
   }
   .project {
-    padding: 0 0 72px 0;
+    padding: 0 0 44px 0;
     .recent-projects-header {
       position: relative;
       padding: 26px 0 85px 0;
@@ -228,18 +245,20 @@ table{
         position: absolute;
         bottom: 45px;
         right: 0px;
-        padding: 36px 55px;
+        padding: 35px 55px;
         background-color: #D8D8D8;
         border: 1px solid white;
-        font-size: 25px;
+        font-size: 2.5rem;
         letter-spacing: 7px;
         @media @mobile {
           right: unset;
+          bottom: 17px
         }
       }
       .outskirts {
         right: unset;
         left: 0px;
+        padding: 35px 60px;
         @media @mobile {
           left: unset;
         }
@@ -255,66 +274,6 @@ table{
         display: block;
         }
       }
-  }
-  }
-}
-
-
-footer {
-  color: #FFFFFF;
-  font-size: 14px;
-  line-height: 26px;
-  background-color: #828282;
-  margin: 0 0 0 0;
-  padding: 62px 85px 0px 85px;
-  @media @mobile {
-    margin: 80px 0 0 0;
-    padding: 30px 2% 0 2%;
-  }
-  
-  form input{
-    font-size: 16px;
-    width: 100%;
-    line-height: 32px;
-    border-radius: 10px;
-    @media @mobile {
-      line-height: 50px;
-      font-size: 20px;
-    }
-  }
-
-  .footer-info {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0 30px 0;
-    @media @mobile {
-      display: block;
-    }
-    div {
-      @media @mobile {
-        padding: 0 0 25px 0;
-      }
-    }
-
-    .request-email {
-      h3 {
-        padding-bottom: 16px;
-      }
-    }
-
-    h3 {
-      font-size: 20px;
-      line-height: 24px;
-      font-weight: bold;
-    }
-  }
-  .copyright {
-    text-align: center;
-    font-size: 12px;
-    @media @mobile {
-      text-align: unset;
-      padding: 0 0 30px 0;
-      font-size: 16px;
-    }
-  }
-}
+    } // .recent-projects-header
+  } // .project
+} // .recent-projects
