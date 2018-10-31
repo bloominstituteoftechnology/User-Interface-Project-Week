@@ -39,10 +39,6 @@ class TabCard {
     show() {
         this.card.style.display = 'flex';
     }
-
-    hide() {
-        this.card.style.display = 'none';
-    }
 }
 
 
@@ -55,25 +51,27 @@ tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
 
 // Navigation
+// DOM References
 const navOpen = document.querySelector('#nav-open');
 
 const navClose = document.querySelector('#nav-close');
 
 const nav = document.querySelector('nav');
 
-
-console.log(navClose);
-
-navOpen.addEventListener('click', () => {
-    console.log(nav);
-    nav.classList.remove('hide-nav');
-    navOpen.classList.add('hide-nav');
-    navClose.classList.remove('hide-nav');
-});
-
-navClose.addEventListener('click', () => {
-    console.log(nav);
-    nav.classList.add('hide-nav');
+// Callback Methods
+const hideMenu = () => {
     navOpen.classList.remove('hide-nav');
+    nav.classList.add('hide-nav');
     navClose.classList.add('hide-nav');
-});
+}
+
+const showMenu = () => {
+    nav.classList.remove('hide-nav');
+    navClose.classList.remove('hide-nav');
+    navOpen.classList.add('hide-nav');
+}
+
+// Event Listeners
+navOpen.addEventListener('click', showMenu);
+
+navClose.addEventListener('click', hideMenu);
