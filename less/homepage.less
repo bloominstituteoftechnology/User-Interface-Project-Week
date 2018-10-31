@@ -6,41 +6,92 @@
 .jumboSec {
     max-width: 1024px;
     width: 100%;
+    height: 600px;
     position: relative;
     margin: 0 0 45px 0;
     #jumbotron {
         width: 100%;
-        max-width: 1500px;
+        max-width: 1024px;
         max-height: auto;
         height: auto;
-        @media @phone {
+        position: relative;
+        @media @XTheDTop {
+            display: none;
             display: none;
             .centerAll();
             justify-content: space-between;
+            display: none;
         }
     }
     #jumboText {
         color: white;
         z-index: 1.25; //z-index: 2;
         line-height: 1.25;
-        font-size: 65px;
-        position: relative; // top: -250px;
+        font-size: 20px; // top: -250px;
         left: 50px;
         bottom: 30px;
         position: absolute;
-        @media @phone {
+        @media @XTheDTop {
             display: none;
         }
     } // padding-bottom: 2rem;
+    #jumboTronM {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: none;
+        @media @phone {
+            display: block;
+        }
+        @media @Xphone {
+            display: none;
+        }
+    }
+    #jumboTextM {
+        color: white;
+        z-index: 1.25; //z-index: 2;
+        line-height: 1.25;
+        position: absolute;
+        left: 8%;
+        bottom: 15px;
+        @media @Xphone {
+            display: none;
+        }
+        @media @phone {
+            display: block;
+        }
+    }
 }
 
 // ********************************************************
-body .mediaMoble {
-    display: none;
+// body .mediaMoble {
+//     display: none;
+// }
+.mediaMoble1 {
+    width: 100%;
+    margin-left: 10%;
+    @media @phone {
+        display: block;
+    }
+    @media @Xphone {
+        display: none;
+    }
+}
+
+.mediaMoble2 {
+    width: 100%;
+    margin-left: 5%;
+    position: relative;
+    @media @phone {
+        display: block;
+    }
+    @media @Xphone {
+        display: none;
+    }
 }
 
 .content-section {
-    margin-left: 9%;
+    margin-left: 2.5%;
     width: 100%;
     max-width: 1500px;
     width margin: 25px 0;
@@ -55,16 +106,21 @@ body .mediaMoble {
         justify-content: space-around;
     }
     .text-content {
-        width: 50%; // padding-right: 1%;
+        width: 38%; // padding-right: 1%;
+        margin-top: 20px;
         @media @phone {
             width: 98%;
             padding: 0 3%;
         }
     }
     .img-content {
-        width: 98%; // padding-left: 1%;
+        width: 100%; // padding-left: 1%;
+        line-height: 2.5;
         @media @phone {
             width: 97%; // padding: 0 %;
+        }
+        @media @XTheDTop {
+            display: none;
         }
     }
 }
@@ -81,8 +137,7 @@ body .mediaMoble {
     }
     .text-content {
         padding-left: 1%;
-        padding-right: 0;
-        order: -1;
+        padding-right: 0; // order: -1;
         @media @phone {
             width: 95%; // padding: 0 3%;
         }
@@ -93,6 +148,9 @@ body .mediaMoble {
         @media @phone {
             width: 98%;
             padding: 0 1% 0 2%;
+        }
+        @media @XTheDTop {
+            display: none;
         }
     }
 }
@@ -119,43 +177,87 @@ body .mediaMoble {
     .lineUp();
     .colP {
         max-width: 1024px;
-        width: 1024%;
+        width: 100%;
         height: auto;
+        position: relative;
+        @media @XTheDTop {
+            display: none;
+        }
         .overlayText {
             background-color: #D8D8D8;
             color: black;
             font-size: 2rem;
             padding: 2.5rem 3rem;
-            z-index: 2;
+            z-index: 1.25;
             display: inline;
+            letter-spacing: .5rem;
+            text-transform: uppercase;
+            @media @phone {
+                max-width: 90%;
+                position: absolute;
+                width: 90%;
+                bottom: -50px;
+                right: 4.5%;
+                text-align: center
+            }
         }
         .overlayTextB {
             background-color: #D8D8D8;
             color: black;
             font-size: 2rem;
             padding: 2.5rem 3rem;
-            z-index: 2;
-            display: inline;
-            margin-left: 77.5%;
+            z-index: 1.25;
+            display: inline; // margin-left: 77.5%;
+            letter-spacing: .5rem;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: -20px;
+            right: 2px;
+            width: 250px;
+            @media @phone {
+                max-width: 90%;
+                width: 90%;
+                position: absolute;
+                bottom: -50px;
+                right: 4.5%;
+                text-align: center
+            }
         }
         .overlayTextC {
             background-color: #D8D8D8;
             color: black;
             font-size: 2rem;
             padding: 2.5rem 3.3rem 2.5rem 3.0rem;
-            z-index: 2;
+            z-index: 1.25;
             display: inline; // bottom: 5%;
-            // margin-left: 76.5%; 
+            // right: 0%;
+            left: 0%; // margin-left: 76.5%; 
             margin-inline-end: 2%;
             @media @tablet {}
+            letter-spacing: .5rem;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: -20px;
+            width: 260px;
+            @media @phone {
+                max-width: 90%;
+                position: absolute;
+                width: 90%;
+                bottom: -50px;
+                right: 4.5%;
+                text-align: center
+            }
         }
     }
     .colL {
-        padding-top: 7rem;
-        padding-bottom: 7rem;
+        padding-top: 9rem;
+        padding-bottom: 9rem;
         display: inline;
         max-width: 59%;
         z-index: 1;
+        @media @phone {
+            max-width: 98%;
+        }
     }
 }
 
