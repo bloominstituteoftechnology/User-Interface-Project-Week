@@ -32,13 +32,12 @@ class TabLink {
     }
 
     select() {
-    
-    let links = document.querySelectorAll(".tab-link");
-    Array.from(links).forEach(element => {
-        element.classList.remove("tab-link-selected");
-    });
-    this.element.classList.add("tab-link-selected");
-    this.tabContent.select();
+        let links = document.querySelectorAll(".tab-link");
+        Array.from(links).forEach(element => 
+            element.classList.remove("tab-link-selected")
+        );
+        this.element.classList.add("tab-link-selected");
+        this.tabContent.select();
     }
 }
 
@@ -49,14 +48,13 @@ class TabContent {
 
     select() {
         this.element.classList.toggle("tab-content-selected");
-
-        let allTabs = document.querySelectorAll(".tab-item");
+        let allTabs = document.querySelectorAll(".tab-content");
         // TweenMax.from(".tabs-item", 0.25, {opacity:0, x:50, ease:Power0.easeNone});
-    
-        Array.from(allTabs).forEach(element => {
-        element.classList.remove("tab-content-selected");
-        });
-        this.element.classList.add("tabs-content-selected");
+        Array.from(allTabs).forEach(element => 
+            element.classList.remove("tab-content-selected")
+        );
+        this.element.classList.add("tab-content-selected");
+        console.log(this.element.classList);
     }
 }
 
