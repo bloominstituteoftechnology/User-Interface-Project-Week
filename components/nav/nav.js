@@ -4,12 +4,14 @@ const navClose = document.querySelector('.close');
 const nav = document.querySelector('nav');
 let navLinks = document.querySelectorAll('.nav-link');
 const topBar = document.querySelector('.topbar');
+const logo = document.querySelector('.logo');
 
 navBtn.forEach( (item) => {
-    item.addEventListener('click', () => {
-        nav.classList.toggle('nav-display-toggle');
-        navOpen.classList.toggle('display-toggle');
+item.addEventListener('click', () => {                                navOpen.classList.toggle('display-toggle');
+        nav.classList.toggle('nav-display-toggle'); 
         navClose.classList.toggle('display-toggle');
+        // logo.classList.toggle('display-toggle');
+        navLinks.forEach( (link) => link.classList.toggle('display-toggle'));
     })
 })
 
