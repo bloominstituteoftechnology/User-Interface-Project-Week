@@ -8,12 +8,18 @@ const navCloseBtn =  document.querySelector('#nav-close');
 
 hamburger.addEventListener('click', function() {
     headerWrapper.classList.add('nav-hidden');
-    navExpanded.classList.add('nav-open');
+    //navExpanded.classList.add('nav-open');
+
+    TweenLite.to(navExpanded, 1, {css:{className:"nav-open"}, ease:Power2.easeOut});
+
+     
+
 });
 
 navCloseBtn.addEventListener('click', function(){
     navExpanded.classList.remove('nav-open');
     headerWrapper.classList.remove('nav-hidden');
+
 })
 
 
