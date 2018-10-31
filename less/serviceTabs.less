@@ -7,6 +7,10 @@
     .tabs {
         .center();
 
+        @media @mobile {
+            flex-direction: column;
+        }
+
         .tab-link {
             width: 185px;
             padding: 15px 0;
@@ -18,6 +22,11 @@
             &:hover {
                 cursor: pointer;
             } // hover
+
+            @media @mobile {
+                width: 100%;
+                margin-bottom: 5%;
+            }
         } // tab-link
     } // tabs
 
@@ -33,8 +42,16 @@
 
             .center(flex, space-between, flex-start);
 
+            @media @mobile {
+                flex-direction: column;
+            }
+
             .tab-text {
                 width: 50%;
+
+                @media @mobile {
+                    width: 100%;
+                }
 
                 p {
                     line-height: 26px;
@@ -42,9 +59,22 @@
                 } // p
             } // tab text
 
-            img {
+            .desktop-img {
                 width:  47%;
-            } //img
+
+                @media @mobile {
+                    display: none;
+                }
+            } //desktop img
+
+            .mobile-img {
+                display: none;
+
+                @media @mobile {
+                    display: block;
+                    width: 100%;
+                }
+            }
         } // tab item
     } // tabs items
 } // tab selector container
