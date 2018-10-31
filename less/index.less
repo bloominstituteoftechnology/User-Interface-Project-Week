@@ -69,7 +69,6 @@ html{
   border: 1px solid @grey;
   font-family: Roboto, Arial, sans-serif;
   @media @mobile{
-    border: 1px solid blue;
     width: 99%;
   }
 }
@@ -83,6 +82,9 @@ html{
 //Navigation
 @import 'navigation.less';
 
+//Services Page
+@import 'services.less';
+
 p{
   font-size: 1.3rem;
   padding-top: 1.7rem;
@@ -90,7 +92,7 @@ p{
   line-height: 1.9rem;
   text-decoration: none;
   @media @mobile{
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     line-height: 3rem;
   }
 }
@@ -107,7 +109,11 @@ h3{
   position: relative;
   width: 100%;
 
-  img{
+  .jumbotron-mobile{
+    display: none;
+  }
+
+  .jumbotron{
     width: 100%;
   }
 
@@ -142,7 +148,6 @@ h3{
     margin: 0 auto;
     height: auto;
     width: 100%;
-    border: 1px solid red;
   }
 }
   .row-one .text{
@@ -166,7 +171,7 @@ h3{
       font-size: 2rem;
     }
   }
-  .row-one img{
+  .row-one .home-one{
     width: 45%;
     @media @mobile{
       margin-top: 4rem;
@@ -185,7 +190,6 @@ h3{
     margin: 0 auto;
     height: auto;
     width: 100%;
-    border: 1px solid red;
   }
   img{
     width: 45%;
@@ -221,6 +225,9 @@ h3{
 .recent-projects-title{
   margin-bottom: 3rem;
   margin-left: 5%;
+  @media @mobile{
+    margin-top: 4rem;
+  }
 }
 
 .villas-container{
@@ -228,8 +235,23 @@ h3{
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  @media @mobile{
+    width: 100%;
+    height: 23rem;
+  }
+  .villas-mobile-img{
+    display:none;
+    @media @mobile{
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
   .villas-img{
     width: 100%;
+    @media @mobile{
+      display: none;
+    }
   }
   .villas-caption{
     background-color: @boxGrey;
@@ -245,6 +267,16 @@ h3{
     position: absolute;
     bottom: -2rem;
     right: 0;
+    @media @mobile{
+      position: absolute;
+      bottom: -6.5rem;
+      width: 90%;
+      left: 5%;
+      height: 12rem;
+      font-size: 3.2rem;
+      text-decoration: none;
+      letter-spacing: 1rem;
+    }
   }
 }
   .villas-content{
@@ -256,6 +288,10 @@ h3{
     width: 50%;
     margin: 5rem 20% 8rem;
     padding: 0 3rem;
+    @media @mobile{
+      width: 90%;
+      margin: 7rem auto;
+    }
   }
 
   .outskirts-container{
@@ -264,8 +300,19 @@ h3{
     margin-left: auto;
     margin-right: auto;
 
+    .outskirts-mobile-img{
+      display:none;
+      @media @mobile{
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
     .outskirts-img{
       width: 100%;
+      @media @mobile{
+        display: none;
+      }
     }
 
     .outskirts-caption{
@@ -282,6 +329,16 @@ h3{
       position: absolute;
       bottom: -2rem;
       left: 0;
+      @media @mobile{
+        position: absolute;
+        bottom: -6.5rem;
+        width: 90%;
+        left: 5%;
+        height: 12rem;
+        font-size: 3.2rem;
+        text-decoration: none;
+        letter-spacing: 1rem;
+      }
     }
   }
     .outskirts-content{
@@ -293,6 +350,10 @@ h3{
       width: 50%;
       margin: 5rem 20% 8rem;
       padding: 0 3rem;
+      @media @mobile{
+        width: 90%;
+        margin: 7rem auto;
+      }
     }
 
   .blocks-container{
@@ -301,8 +362,19 @@ h3{
     margin-left: auto;
     margin-right: auto;
 
+    .blocks-mobile-img{
+      display:none;
+      @media @mobile{
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
     .blocks-img{
       width: 100%;
+      @media @mobile{
+        display: none;
+      }
     }
 
     .blocks-caption{
@@ -319,6 +391,16 @@ h3{
       position: absolute;
       bottom: -2rem;
       right: 0;
+      @media @mobile{
+        position: absolute;
+        bottom: -6.5rem;
+        width: 90%;
+        left: 5%;
+        height: 12rem;
+        font-size: 3.2rem;
+        text-decoration: none;
+        letter-spacing: 1rem;
+      }
     }
   }
     .blocks-content{
@@ -330,6 +412,10 @@ h3{
       width: 50%;
       margin: 5rem 20% 8rem;
       padding: 0 3rem;
+      @media @mobile{
+        width: 90%;
+        margin: 7rem auto;
+      }
     }
 
   .footer-container{
@@ -338,22 +424,50 @@ h3{
     background-color: @grey;
     color: white;
     padding-top: 4rem;
+    @media @mobile{
+      height: 100%;
+    }
 
     .footer-content{
       display: flex;
       justify-content: space-evenly;
+      @media @mobile{
+        flex-flow: column nowrap;
+        text-align: left;
+        font-size: 2rem;
+        padding-left: 2rem;
+      }
       h5{
         font-size: 1.3rem;
+        @media @mobile{
+          font-size: 2.5rem;
+        }
       }
       input{
         margin-top: 0.5rem;
+        @media @mobile{
+          margin-top: 1.5rem;
+          width: 85%;
+          height: 4rem;
+          border-radius: 5%;
+        }
       }
       p{
         font-size: 1rem;
         text-decoration: none;
+        @media @mobile{
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
       }
     }
     footer{
       text-align: center;
+        @media @mobile{
+          font-size: 1.5rem;
+          text-align: left;
+          padding-left: 2rem;
+          padding-bottom: 1rem;
+        }
     }
   }
