@@ -1,3 +1,4 @@
+
 .services {
     max-width: 1024px;
     width: 100%;
@@ -13,6 +14,11 @@
         .top-text {
             margin: 50px 24px 45px;
             line-height: 1.6rem;
+
+            @media @phone {
+                margin: 30px 0 26px;
+                line-height: 1.65rem;
+            }
         }
 
         .tabs {
@@ -25,7 +31,6 @@
                 .flex();
                 justify-content: space-around;
                 width: 100%;
-                // background-color: @lambda-red;
             }
         
             .tab-link {
@@ -35,13 +40,19 @@
                 font-weight: bold;
                 text-align: center;
                 border: 1px solid @main-color;
-                // background-color: @lambda-red;
-                
-                // color: @white;
                 cursor: pointer;
+
                 &:hover {
                     background-color: @tab-hover-bg;
                     color: @tab-hover-color;
+                }
+
+                @media @phone {
+                    .center();
+                    width: 100%;
+                    margin: 10px 0;
+                    padding: 14px 10px;
+                    font-size: 20px;
                 }
 
                 
@@ -54,10 +65,6 @@
         
             .tab-contents {
                 width: 100%;
-                // height: 400px;
-                // display: flex;
-                // justify-content: center;
-                // padding: 60px 20px 0;
             }
             .tab-container {
             .flex();
@@ -69,7 +76,7 @@
                 
                 .tab-content-text {
                     width: 48%;
-                    padding-top: 30px;
+                    margin-top: 30px;
 
                     h2 {
                         font-size: 24px;
@@ -80,12 +87,28 @@
                     p {
                         margin-bottom: 30px;
                         line-height: 1.6rem;
+
+                        @media @phone {
+                            line-height: 1.65rem;
+                        }
+                    }
+
+                    @media @phone {
+                        width: 100%;
+                        margin-top: 19px;
                     }
                 }
 
                 .tab-content-img {
                     width: 45%;
                     padding-top: 32px;
+
+                    @media @phone {
+                        width: 100%;
+                        height: 300px;
+                        object-fit: cover;
+                        padding-top: 0;
+                    }
                 }
             }
             
@@ -94,6 +117,10 @@
                 .center();
                 justify-content: space-evenly;
                 padding: 21px 0px 53px 5px;
+
+                @media @phone {
+                    padding: 21px 0 0 5px;
+                }
             }
         
             
