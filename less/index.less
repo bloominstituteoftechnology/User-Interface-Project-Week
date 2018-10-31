@@ -361,25 +361,60 @@ header {
         letter-spacing: 0.25rem;
         height: 100px;
         width: 300px;
-        margin: 0 auto;
         background-color: #d8d8d8;
         .flexIt(row, center, center);
         position: absolute;
+
+        // Breakpoint
+      }
+
+      .left {
         left: 15%;
         bottom: -30px;
+        @media @desktop {
+          left: 0;
+        }
+      }
+      .right {
+        right: 15%;
+        bottom: -30px;
+        @media @desktop {
+          left: none;
+          right: 0;
+        }
       }
 
       .mobile-img {
         width: 100%;
+
+        @media @desktop {
+          display: none;
+        }
       }
 
       .desktop-img {
         display: none;
+
+        @media @desktop {
+          display: inline-block;
+          width: 100%;
+        }
       }
     }
 
     .text-content {
-      margin-top: 30px;
+      margin-top: 40px;
+
+      // Breakpoints
+      @media @desktop {
+        width: 50%;
+        margin: 40px auto;
+      }
+
+      // Children
+      p {
+        padding: 2% 0;
+      }
     }
   }
 }
