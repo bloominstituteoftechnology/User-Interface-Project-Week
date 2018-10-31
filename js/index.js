@@ -8,9 +8,9 @@ const navCloseBtn =  document.querySelector('#nav-close');
 
 hamburger.addEventListener('click', function() {
     headerWrapper.classList.add('nav-hidden');
-    //navExpanded.classList.add('nav-open');
+    navExpanded.classList.add('nav-open');
 
-    TweenLite.to(navExpanded, 1, {css:{className:"nav-open"}, ease:Power2.easeOut});
+    //TweenLite.to(navExpanded, .7, {css:{className:"nav-open"}, ease:Power2.easeOut});
 
      
 
@@ -48,9 +48,15 @@ class TabLink {
   
       // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
       Array.from(links).forEach(link => link.classList.remove('tab-link-selected'));
-  
+      Array.from(links).forEach(link => link.classList.remove('tab-link-selected-autumn')); 
+
       // Add a class named "tabs-link-selected" to this link
-      this.element.classList.add('tab-link-selected');
+      if(this.element.classList.contains('autumn')){
+        this.element.classList.add('tab-link-selected-autumn');
+      }else {
+        this.element.classList.add('tab-link-selected');
+      }
+
       
       // Call the select method on the item associated with this link
         this.tabItem.select();
