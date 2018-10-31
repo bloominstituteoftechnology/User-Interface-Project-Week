@@ -4,7 +4,6 @@ let secondAboutImg = document.querySelector('.about-bottom-left');
 let villas = document.querySelector('.villa-img');
 let outskirts = document.querySelector('.outskirts-img');
 let blocks = document.querySelector('.blocks-img');
-//const breakpoint = window.matchMedia('(max-width:')
 
 if (window.matchMedia('(max-width: 500px)').matches) {
     jumbo.src = 'img/home/home-mobile-jumbotron.png';
