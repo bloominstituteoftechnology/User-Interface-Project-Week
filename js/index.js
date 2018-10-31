@@ -28,11 +28,9 @@ class Tabs {
     this.data = this.element.dataset.tab;
     this.tabItem = new Tab(document.querySelector(`.content[data-tab='${this.data}']`));
     this.element.addEventListener('click', () => {this.toggle()});
-    console.log(this.data);
   }
 
   toggle() {
-    console.log(this.tabItem.select());
     this.tabSelect();
   }
   tabSelect() {
@@ -46,7 +44,6 @@ class Tabs {
 class Tab {
   constructor(tab) {
     this.tab = tab; 
-    console.log(tab);
   }
   select() {
     document.querySelectorAll('.content').forEach(tab => {
@@ -54,7 +51,6 @@ class Tab {
       tab.classList.remove('display-tab-content');
     })
     this.tab.classList.add('display-tab-content');
-    console.log('this was clicked')
   }
 }
 
