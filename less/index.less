@@ -161,7 +161,6 @@ body {
   font-family: Roboto, Arial, sans-serif;
   max-width: 1024px;
   margin: 50px auto 0;
-  font-size: 1.6rem;
   line-height: 2.4rem;
 }
 
@@ -257,34 +256,74 @@ header {
 
 #main-content {
   padding: 0 5%;
+}
 
+// Home Page
+#about,
+#design {
+  width: 100%;
+  .flexIt(column, center, center);
+  margin: 5% 0;
   // Breakpoints
+  @media @desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  // Children
-  #about,
-  #design {
-    width: 100%;
-    .flexIt(column, center, center);
-    // Breakpoints
-
-    //children
-    .mobile-img {
-      width: 100%;
-      order: -10;
-
-      // Breakpoint
-      @media @desktop {
-        display: none;
-      }
+  //children
+  .text-content {
+    // Breakpoint
+    @media @desktop {
+      max-width: 410px;
+      width: 45%;
+      padding: 2% 0;
     }
 
-    .desktop-img {
-      display: none;
+    // Children
+    h2 {
+      font-size: 1.75rem;
+      color: #222222;
+      font-weight: bold;
+      margin: 4% 0;
+    }
+  }
+  .mobile-img {
+    width: 100%;
+    order: -10;
 
-      // Breakpoint
-      @media @desktop {
-        display: inline-block;
-      }
+    // Breakpoint
+    @media @desktop {
+      display: none;
+    }
+  }
+
+  .desktop-img {
+    display: none;
+
+    // Breakpoint
+    @media @desktop {
+      display: inline-block;
+    }
+  }
+
+  button {
+    border: 1px solid #222222;
+    width: 100%;
+    padding: 4%;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 4% 0;
+    &:hover {
+      background: #222222;
+      color: white;
+      font-weight: bold;
+    }
+
+    // Breakpoint
+    @media @desktop {
+      width: 40%;
     }
   }
 }
