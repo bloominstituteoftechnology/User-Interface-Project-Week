@@ -68,6 +68,7 @@ html{
   margin: 0 auto;
   border: 1px solid @grey;
   font-family: Roboto, Arial, sans-serif;
+  position: relative;
   @media @mobile{
     width: 99%;
   }
@@ -84,6 +85,33 @@ html{
 
 //Services Page
 @import 'services.less';
+
+.menu{
+  height: 1000px;
+  width: 100%;
+  background-color: @grey;
+  opacity: 0.98;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  .menu-items{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 19rem auto;
+    a{
+      font-size: 8rem;
+      color: white;
+      text-decoration: none;
+      margin: 4rem auto;
+    }
+  }
+}
+.menu-selected{
+  display: block;
+}
 
 p{
   font-size: 1.3rem;
@@ -420,7 +448,7 @@ h3{
 
   .footer-container{
     width: 100%;
-    height: 15rem;
+    height: 17rem;
     background-color: @grey;
     color: white;
     padding-top: 4rem;
@@ -431,6 +459,7 @@ h3{
     .footer-content{
       display: flex;
       justify-content: space-evenly;
+      padding-bottom: 1rem;
       @media @mobile{
         flex-flow: column nowrap;
         text-align: left;
@@ -463,6 +492,7 @@ h3{
     }
     footer{
       text-align: center;
+      bottom: 0.5rem;
         @media @mobile{
           font-size: 1.5rem;
           text-align: left;
