@@ -118,3 +118,40 @@ let tabs = document.querySelectorAll('.services__tabs-tab');
 tabs = Array.from(tabs).map(tab => new TabToggle(tab));
 
 
+// ========================================================================
+//  SCROLLMAGIC EFFECTS
+// ========================================================================
+
+const homeImage1 = document.querySelector('.shomeImage1');
+const homeImage2 = document.querySelector('.shomeImage1');
+console.log(homeImage1);
+
+
+
+// init controller
+const controller = new ScrollMagic.Controller();
+
+// create a scene
+const myScene = new ScrollMagic.Scene({
+  triggerElement: '.home__main__container',
+        duration: "100%",    // the scene should last for a scroll distance of 100px
+        offset: -100    // start this scene after scrolling for 50px
+    })
+    .setClassToggle("#homeImage1", 'activeImg') // pins the element for the the scene's duration
+    .addTo(controller); // assign the scene to the controller
+    
+    const myScene2 = new ScrollMagic.Scene({
+      triggerElement: '.home__main__card__btn',
+      duration: "100%",    // the scene should last for a scroll distance of 100px
+      offset: -100    // start this scene after scrolling for 50px
+    })
+    .setClassToggle("#homeImage2", 'activeImg')
+    .addTo(controller);
+
+    const myScene3 = new ScrollMagic.Scene({
+      triggerElement: '.home__recent-projects__heading',
+      duration: "1900",    // the scene should last for a scroll distance of 100px
+      // offset: 500    // start this scene after scrolling for 50px
+    })
+    .setClassToggle(".home__recent-projects__card", 'activeProject')
+    .addTo(controller);
