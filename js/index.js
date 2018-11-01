@@ -1,8 +1,8 @@
 // JS goes here
 
-// ***************************************
-// *********NAVIGATION BACKDROP***********
-// ***************************************
+// ===================================================================
+// NAVIGATION BACKDROP
+// ===================================================================
 
 const hamburger = document.querySelector('img.header__nav-links__hamburger');
 const homeNav = document.querySelector('#home');
@@ -80,12 +80,10 @@ contact.addEventListener("click", function(e) {
 setTimeout(() => {
   fadeIn.style.opacity = "0";
 }, 200);
-// document.onload = () => {
-// }
 
-// ***************************************
-// ******* SERVICES TAB COMPONENT ********
-// ***************************************
+// ===================================================================
+// SERVICES TAB COMPONENT
+// ===================================================================
 
 class TabToggle {
   constructor(element) {
@@ -111,13 +109,14 @@ class TabCard {
     let tabCards = document.querySelectorAll('.services__tabs-card');
     tabCards.forEach(card => card.classList.remove('active-card'));
     this.element.classList.add('active-card');
+    console.log(this.element.children[0]);
+    this.element.children[0].style.transform = 'translateX(0)';
+    this.element.children[0].style.opacity = '1';
   }
 }
 
 let tabs = document.querySelectorAll('.services__tabs-tab');
-// tabs = Array.from(tabs).map(tab => new TabToggle(tab));
 tabs = Array.from(tabs, (tab => new TabToggle(tab)));
-
 
 // ========================================================================
 //  SCROLLMAGIC EFFECTS
@@ -125,34 +124,63 @@ tabs = Array.from(tabs, (tab => new TabToggle(tab)));
 
 const homeImage1 = document.querySelector('.shomeImage1');
 const homeImage2 = document.querySelector('.shomeImage1');
-console.log(homeImage1);
+const tabsContainer = document.querySelector('.services__tabs');
+const activeTabComponentText = document.querySelector('.services__tabs-card.active-card > .services__tabs-card__text-content-container');
+const activeTabComponentImg = document.querySelector('.services__tabs-card.active-card > .tab-card-img');
+const activeCard = document.querySelector('.services__tabs-card.active-card');
+const servicesTabContainer = document.querySelector('#tabComponent');
+
+if(document.baseURI === 'http://127.0.0.1:5500/services.html') {
+
+  // set fadeins on tab component elements
+  activeTabComponentImg.addEventListener('load', () => {
+    setTimeout(() => {
+      
+      activeTabComponentImg.style.opacity = '1';
+      activeTabComponentImg.style.transform = 'translateX(0)';
+      activeTabComponentText.style.transform = 'translateX(0)';
+      activeTabComponentText.style.opacity = '1';
+    }, 500);
+  })
+  
+  
+  // fadein tab component div on load
+  setTimeout(() => {
+    tabsContainer.style.opacity = "1";
+  }, 750);
+
+}
 
 
-
-// init controller
+// Init controller
 const controller = new ScrollMagic.Controller();
 
-// create a scene
+// home page main section images fading in and transitioning from sides
 const myScene = new ScrollMagic.Scene({
   triggerElement: '.home__main__container',
-        duration: "100%",    // the scene should last for a scroll distance of 100px
-        offset: -100    // start this scene after scrolling for 50px
-    })
-    .setClassToggle("#homeImage1", 'activeImg') // pins the element for the the scene's duration
-    .addTo(controller); // assign the scene to the controller
-    
-    const myScene2 = new ScrollMagic.Scene({
-      triggerElement: '.home__main__card__btn',
-      duration: "100%",    // the scene should last for a scroll distance of 100px
-      offset: -100    // start this scene after scrolling for 50px
-    })
-    .setClassToggle("#homeImage2", 'activeImg')
-    .addTo(controller);
+  duration: "100%",
+  offset: -100
+})
+.setClassToggle("#homeImage1", 'activeImg')
+.addTo(controller);
 
-    const myScene3 = new ScrollMagic.Scene({
-      triggerElement: '.home__recent-projects__heading',
-      duration: "1900",    // the scene should last for a scroll distance of 100px
-      // offset: 500    // start this scene after scrolling for 50px
-    })
-    .setClassToggle(".home__recent-projects__card", 'activeProject')
-    .addTo(controller);
+const myScene2 = new ScrollMagic.Scene({
+  triggerElement: '.home__main__card__btn',
+  duration: "100%",
+  offset: -100
+})
+.setClassToggle("#homeImage2", 'activeImg')
+.addTo(controller);
+
+// recent projects section having fade in and fade out on entering and leaving viewport
+const myScene3 = new ScrollMagic.Scene({
+  triggerElement: '.home__recent-projects__heading',
+  duration: "1900",
+})
+.setClassToggle(".home__recent-projects__card", 'activeProject')
+.addTo(controller);
+
+// ===============playing around with pins to make a fixed parallax type effect but not liking the results so on to next thing
+// const fixedHero = new ScrollMagic.Scene({triggerElement: "#homeImage1", duration: 100, pushFollowers: false})
+//     .setPin("#hero")
+//     .addTo(controller);
