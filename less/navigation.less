@@ -1,0 +1,46 @@
+.nav-bar {
+   cursor: pointer;
+  .flex-box(row nowrap, space-between, flex-start);
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  background: @nav-background;
+  .margin-padding(0, 1% 10%);
+  opacity: 0.9;
+  @media @mobile {
+    opacity: 1;
+    .margin-padding(0, 1% 5%);
+  }
+  h2 {
+    .nav-logo();
+  }
+  nav {
+    .flex-box(column wrap, flex-end, center);
+    align-self: center;
+    width: 20%;
+    @media @mobile {
+      width: 33%;
+    }
+    
+    display: none;
+
+    a {
+      .nav-text();
+      text-decoration: none;
+
+      @media @mobile {
+        left: 0%;
+      }
+      &:hover {
+        color: #504545;
+      }
+      &:active {
+        color: #504545;
+      }
+    }
+  }
+  .open {
+    display: none;
+  }
+}

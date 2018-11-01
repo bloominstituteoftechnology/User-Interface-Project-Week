@@ -20,7 +20,7 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Tab Hover color: #FFF;
 
 ## Footer 
-Background: #828282
+- Background: #828282
 
 ### General Text
 - Font Weight: Regular
