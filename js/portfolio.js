@@ -7,7 +7,7 @@ function imageGrow(arr) {
             TweenMax.to(arr[i], 2, {
                 scale: 1.05,
             });
-        });    
+        });
     }
 }
 
@@ -17,7 +17,7 @@ function imageShrink(arr) {
             TweenMax.to(arr[i], 1, {
                 scale: 1.0,
             });
-        });    
+        });
     }
 }
 

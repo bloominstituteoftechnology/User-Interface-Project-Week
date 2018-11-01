@@ -1,4 +1,3 @@
-// JS goes here
 let images = document.querySelectorAll(".section-img");
 images = Array.from(images);
 console.log(images);
