@@ -163,6 +163,7 @@ body {
 .head-wrap {
   background-image: url(../../img/home/home-jumbotron.png);
   background-size: cover;
+  background-position: center;
   width: 100%;
   height: 740px;
 }
@@ -175,6 +176,7 @@ body {
   background-image: url(../../img/services/services-jumbotron.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   width: 100%;
   height: 400px;
 }
@@ -202,7 +204,8 @@ body {
 }
 .container {
   background-color: #828282;
-  width: 900px;
+  max-width: 900px;
+  width: 75%;
   margin: 0 auto;
   background-color: white;
   border-radius: 8px;
@@ -240,8 +243,39 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
-.naviCons {
+.nav {
+  z-index: 10;
+  top: 0;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.nav .naviCons {
   cursor: pointer;
+  max-width: 1024px;
+}
+@media (max-width: 500px) {
+  .nav .naviCons {
+    display: none;
+  }
+}
+.nav .naviCons .close-nav {
+  display: none;
+}
+@media (max-width: 500px) {
+  .nav .naviCons .close-nav {
+    display: block;
+  }
+}
+.nav a {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 85px;
+  color: #fff;
+  text-decoration: none;
+}
+.navShow {
+  display: none;
+  z-index: 5;
 }
 .showcase {
   font-weight: bold;
@@ -279,7 +313,7 @@ body {
 }
 footer {
   background-color: #828282;
-  height: 300px;
+  height: 200px;
 }
 footer .content {
   display: flex;
@@ -349,8 +383,6 @@ footer .locations {
   justify-content: space-between;
   align-items: center;
   width: 62%;
-  margin-left: 5%;
-  margin-right: 7%;
 }
 footer p {
   text-align: center;
@@ -471,7 +503,7 @@ footer p {
   align-items: center;
   color: #222222;
   font-weight: bold;
-  font-size: 2.8rem;
+  font-size: 1.6rem;
 }
 .tabs .tab {
   padding: 20px 40px;
@@ -487,9 +519,14 @@ footer p {
 .tab-content {
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   margin-top: 20px;
+}
+.tab-content h1 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
 }
 @media (max-width: 500px) {
   .tab-content {
