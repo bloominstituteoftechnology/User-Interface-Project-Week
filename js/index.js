@@ -68,6 +68,7 @@ class TabItem {
       this.content.classList.toggle('dropdown-hidden');
       this.close.classList.toggle('dropdown-hidden');
       this.open.classList.toggle('dropdown-hidden');
+    
     }
   }
 

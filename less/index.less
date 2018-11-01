@@ -63,11 +63,80 @@ table{
 
 @mobile: ~"(max-width: 320px)";
 
+/*Variables*/
+
+@background: #FFFFFF;
+@fontcolor: #222222;
+@fontfamily: 'Roboto', Arial, sans-serif;
+
+@graysquare: #D8D8D8;
+@selected: #5E9FB9;
+@footer: #828282;
+
+/*Mixins*/
+.general-text() {
+  font-weight: regular;
+  font-size: 1.6rem;
+  line-height: 24px;
+  font-family: @fontfamily;
+};
+
+.jumbotron-header() {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  color: @background;
+  font-family: @fontfamily;
+}
+
+.sub-headers() {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: @fontcolor;
+  font-family: @fontfamily;
+}
+
+.footer-heading() {
+  font-weight: regular;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: @background;
+  font-family: @fontfamily;
+}
+
+.footer-text() {
+  font-weight: regular;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: @background;
+  font-family: @fontfamily;
+}
+
+.nav-logo() {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: @background;
+  font-family: @fontfamily;
+}
+
+.nav-text() {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  color: @background;
+  &:hover {
+    color: @fontcolor;
+  }
+  font-family: @fontfamily;
+}
+
+
+
 * {
   box-sizing: border-box;
-  background-color: #FFFFFF;
-  color: #222222;
-  font-family: 'Roboto', sans-serif;
+  background-color: @background;
+  color: @fontcolor;
+  font-family: @fontfamily;
 }
 
 html {
@@ -76,36 +145,28 @@ html {
 
 
 h2 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  .sub-headers();
 }
 
 p {
-  font-weight: regular;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  font-family: 'Roboto', sans-serif;
+  .general-text();
 }
 
 .container {
 	margin: 0 auto;
-  max-width: 1024px;
+  max-width: 2560px;
 
   .nav-bar {
     display: flex;
     justify-content: space-between;
-    background-color: #828282;
-    align-content: center;
+    background-color: @footer;
     padding: 8px 0 5px 0;
     position: relative;
 
     .company-name {
       background-color: inherit;
       margin-left: 8%;
-      font-weight: bold;
-      font-size: 2.4rem;
-      color: #ffffff;
+      .nav-logo();
     }
 
     .dropdown {
@@ -114,26 +175,20 @@ p {
       margin-right: 5%;
       
       .dropdown-button {
-        // padding: 15px;
-        border: 3px solid #828282;
-        color: #ffffff;
-        font-size: 20px;
-        font-weight: bold;
-        background-color: #828282;
+        border: 3px solid @footer;
+        background-color: @footer;
         position: absolute;
         right: 10%;
         top: 5px;
-        // &:hover {
-        // }
 
         img {
-          background-color: #828282;
+          background-color: @footer;
         }
       }
       .dropdown-content {
         width: 100vw;
         height: 100vh;
-        background-color: #828282;
+        background-color: @footer;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -143,25 +198,17 @@ p {
         top: 0;
         z-index: 1;
         opacity: .9;
-        @media @mobile {
-          width: 75vw;
-        }
       }
 
       .dropdown-link {
         width: 100%;
         text-align: center;
         padding: 15px 0;
-        font-size: 4.8rem;
         text-decoration: none;
         z-index: 1;
         background-color: inherit;
-        color: #FFFFFF;
-        font-weight: bold;
         padding-right: 15%;
-        &:hover {
-          color: #222222;
-        }
+        .nav-text();
         @media @mobile {
           line-height: 5.9rem;
           padding-right: 20%;
@@ -178,6 +225,7 @@ p {
     // why did this background image not show up unless the original image was loaded into the html?
     background: url('img/home/home-jumbotron.png');
     max-width: 1024px;
+    margin: 0 auto;
 
     @media @mobile {
       background: url('img/home/home-mobile-jumbotron.png');
@@ -197,21 +245,16 @@ p {
 
       @media @mobile {
         display: inline-block;
-        margin: 0 auto;
         width: 100%;
       }
     }
 
     h1 {
-      font-size: 6.4rem;
-      line-height: 7.5rem;
-      font-weight: bold;
+      .jumbotron-header();
       position: absolute;
       bottom: 10%;
       left: 10%;
-      color: #FFFFFF;
       background: inherit;
-      font-family: 'Roboto', sans-serif;
 
       @media @mobile {
         font-size: 3.7rem;
@@ -226,17 +269,14 @@ p {
     position: relative;
     background: url('img/services/services-jumbotron.png');
     max-width: 1024px;
+    margin: 0 auto;
 
     h1 {
-      font-size: 6.4rem;
-      line-height: 7.5rem;
-      font-weight: bold;
       position: absolute;
       bottom: 10%;
       left: 10%;
-      color: #FFFFFF;
       background: inherit;
-      font-family: 'Roboto', sans-serif;
+      .jumbotron-header();
 
       @media @mobile {
         font-size: 3.7rem;
@@ -301,7 +341,7 @@ p {
   
         .button {
           padding: 4%;
-          border: 1px solid  #222222;
+          border: 1px solid  @fontcolor;
           text-align: center;
           margin: 2% 0;
           font-size: 1.6rem;
@@ -362,7 +402,7 @@ p {
   
         .button {
           padding: 4%;
-          border: 1px solid  #222222;
+          border: 1px solid  @fontcolor;
           text-align: center;
           margin: 2% 0;
           font-size: 1.6rem;
@@ -506,7 +546,7 @@ p {
 
     .tabs-links {
       display: flex;
-      background-color: #FFFFFF;
+      background-color: @background;
       justify-content: space-between;
       @media @mobile {
         flex-direction: column;
@@ -518,12 +558,12 @@ p {
   
     .tabs-link {
       padding: 20px 25px;
-      font-size: 24px;
-      background-color: #ffffff;
-      border: 1px solid #222222;
+      font-size: 2.4rem;
+      background-color: @background;
+      border: 1px solid @fontcolor;
       cursor: pointer;
       &:hover {
-        background-color: #5E9FB9;
+        background-color: @selected;
       }
       @media @mobile {
         margin: 3% 0;
@@ -531,10 +571,10 @@ p {
     }
     .tabs-link-selected {
       z-index: 2;
-      background-color: #5E9FB9;
-      color: black;
+      background-color: @selected;
+      color: @fontcolor;
       &:hover {
-        background-color: #FFF;
+        background-color: @background;
       }
     }
   }
@@ -596,7 +636,7 @@ p {
       }
 
       div {
-        background-color: #D8D8D8;
+        background-color: @graysquare;
         font-size: 2.8rem;
         position: absolute;
         bottom: -10%;
@@ -645,7 +685,7 @@ p {
       }
 
       div {
-        background-color: #D8D8D8;
+        background-color: @graysquare;
         font-size: 2.8rem;
         position: absolute;
         bottom: -10%;
@@ -694,7 +734,7 @@ p {
       }
 
       div {
-        background-color: #D8D8D8;
+        background-color: @graysquare;
         font-size: 2.8rem;
         position: absolute;
         bottom: -10%;
@@ -722,7 +762,7 @@ p {
 
   .contact-content{
     display: flex;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
     justify-content: space-around;
 
@@ -754,9 +794,7 @@ p {
       select {
         width: 100%;
         margin-bottom: 2%;
-        @media @mobile {
-          height: 30px;
-        }
+        height: 30px;
       }
 
       button {
@@ -774,10 +812,7 @@ p {
         width: 100%;
         border: 1px solid lightgray;
         border-radius: 4px;
-
-        @media @mobile {
-          height: 30px;
-        }
+        height: 30px;
       }
 
       .radio-text {
@@ -806,17 +841,15 @@ p {
   }
 
   footer {
-    background-color: #828282;
+    background-color: @footer;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 5%;
-    font-size: 14px;
-    line-height: 26px;
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    .footer-text();
     margin-top: 5%;
     height: auto;
+    position: relative;
 
     @media @mobile {
       flex-direction: column;
@@ -824,8 +857,8 @@ p {
 
     div {
       background-color: inherit;
-      color: #ffffff;
-      font-family: 'Roboto', sans-serif;
+      color: @background;
+      font-family: @fontfamily;
       padding: 0 2%;
 
       @media @mobile {
@@ -841,12 +874,17 @@ p {
       }
     }
 
+    .copyright {
+      position: absolute;
+      bottom: 0;
+      right: 50;
+      padding-bottom: 30px;
+
+    }
+
     h4 {
-      font-size: 20px;
-      line-height: 24px;
+      .footer-heading();
       background-color: inherit;
-      color: #FFFFFF;
-      font-family: 'Roboto', sans-serif;
     }
   } // end of footer
 
