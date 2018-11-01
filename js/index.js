@@ -2,9 +2,7 @@
 
 
 const toggleMenu = () => {
-    // Toggle the "menu--open" class on your menu reference. 
     menu.classList.add('menu--open');
-
     menuButton.style.display = 'none';
     menuButtonClose.style.display = 'inline';
     console.log('clicked');
@@ -26,16 +24,6 @@ const toggleMenu = () => {
       }
     });
     console.log('close clicked');
-
-
-    // TweenMax.from(menu, 2, {
-    //   // opacity: 1,
-    //   x: 100, 
-    //   y: 350, 
-    //   rotationX:360, 
-    //   ease: SlowMo.ease.config(0.7, 0.7, false),
-    // });
-
   }
 
 
