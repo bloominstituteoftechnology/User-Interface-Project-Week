@@ -1,7 +1,7 @@
 // JS goes here
 
 // ===================================================================
-// NAVIGATION BACKDROP
+// NAVIGATION AND BACKDROP
 // ===================================================================
 
 const hamburger = document.querySelector('img.header__nav-links__hamburger');
@@ -119,17 +119,14 @@ let tabs = document.querySelectorAll('.services__tabs-tab');
 tabs = Array.from(tabs, (tab => new TabToggle(tab)));
 
 // ========================================================================
-//  SCROLLMAGIC EFFECTS
+//  SERVICES PAGE EFFECTS
 // ========================================================================
 
-const homeImage1 = document.querySelector('.shomeImage1');
-const homeImage2 = document.querySelector('.shomeImage1');
 const tabsContainer = document.querySelector('.services__tabs');
 const activeTabComponentText = document.querySelector('.services__tabs-card.active-card > .services__tabs-card__text-content-container');
 const activeTabComponentImg = document.querySelector('.services__tabs-card.active-card > .tab-card-img');
-const activeCard = document.querySelector('.services__tabs-card.active-card');
-const servicesTabContainer = document.querySelector('#tabComponent');
 
+// if on the services page -- load the following conditional
 if(document.baseURI === 'http://127.0.0.1:5500/services.html' || document.baseURI ===  'https://wcolts2000.github.io/User-Interface-Project-Week/services.html') {
 
   // set fadeins on tab component elements
@@ -143,14 +140,15 @@ if(document.baseURI === 'http://127.0.0.1:5500/services.html' || document.baseUR
     }, 500);
   })
   
-  
   // fadein tab component div on load
   setTimeout(() => {
     tabsContainer.style.opacity = "1";
   }, 750);
-
 }
 
+// ========================================================================
+//  SCROLLMAGIC EFFECTS
+// ========================================================================
 
 // Init controller
 const controller = new ScrollMagic.Controller();
@@ -180,7 +178,13 @@ const myScene3 = new ScrollMagic.Scene({
 .setClassToggle(".home__recent-projects__card", 'activeProject')
 .addTo(controller);
 
-// ===============playing around with pins to make a fixed parallax type effect but not liking the results so on to next thing
+// ===============playing around with pins to make a fixed parallax type effect on home page but not liking the results so on to next thing
 // const fixedHero = new ScrollMagic.Scene({triggerElement: "#homeImage1", duration: 100, pushFollowers: false})
 //     .setPin("#hero")
 //     .addTo(controller);
+
+
+// ========================================================================
+//  CONTACT PAGE EFFECTS
+// ========================================================================
+
