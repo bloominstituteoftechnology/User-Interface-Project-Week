@@ -1,6 +1,7 @@
 footer {
   background-color: @background;
   height: 200px;
+  flex-shrink: 0;
   // max-width: 1024px;
   // display: flex;
   // justify-content: space-evenly;
@@ -63,17 +64,34 @@ footer {
     margin: 20px;
   }
 
-  .email-form {
+  .contact-email {
     width: 38%;
 
     input {
+      cursor: pointer;
       background-color: #fff;
       border-radius: 5px;
       font-size: 15px;
       padding: 0 10px;
       width: 250px;
-      height: 45px;
+      height: 35px;
       margin: 10px 0 0 0;
+
+      input:invalid:not(:focus) {
+        outline: 1px solid #f00;
+      }
+    }
+  }
+
+  .submit {
+    cursor: pointer;
+    width: 6rem;
+    height: 3.5rem;
+    background-color: @background;
+    color: @color;
+
+    &:hover {
+      background-color: @tab-selected-bg;
     }
   }
 

@@ -58,43 +58,55 @@ tlinks[0].select();
 
 
 /* Navigation */
-// class OpenNav {
-//     constructor(link) {
-//         this.navLink = link;
-//         this.openLink = document.querySelector('open-nav');
-//         this.closeLink = document.querySelector('close-nav');
+class OpenNav {
+    constructor(link) {
+        this.navLink = link;
+        this.openLink = document.querySelector('open-nav');
+        this.closeLink = document.querySelector('close-nav');
 
-//         this.navLink.addEventListener('click', () => this.open());
-//     }
+        this.navLink.addEventListener('click', () => this.open());
+        console.log(this.navLink);
+    }
 
-//     open() {
-//         this.openLink.classList.toggle('nav-selected');
-//         this.closeLink.classList.toggle('nav-selected');
+    open() {
+        this.openLink.classList.toggle('nav-selected');
+        this.closeLink.classList.toggle('nav-selected');
 
-//         navLinks.classList.toggle('navShow');
-//     }
-// }
+        navLink.classList.toggle('navShow');
+    }
+}
 
-// class NavClose {
-//     constructor(link) {
-//         this.linkClose = link;
-//         this.openLink = document.querySelector('open-nav');
-//         this.closeLink = document.querySelector('close-nav');
+class NavClose {
+    constructor(link) {
+        this.linkClose = link;
+        this.openLink = document.querySelector('open-nav');
+        this.closeLink = document.querySelector('close-nav');
 
-//         this.linkClose.addEventListener('click', () => this.closeNav());
-//     }
+        this.linkClose.addEventListener('click', () => this.closeNav());
+        console.log(this.linkClose);
+    }
 
-//     closeNav() {
-//         this.openLink.classList.toggle('nav-selected');
-//         this.closeLink.classList.toggle('nav-selected');
+    closeNav() {
+        this.openLink.classList.toggle('nav-selected');
+        this.closeLink.classList.toggle('nav-selected');
 
-//         navLinks.classList.toggle('navShow');
-//     }
-// }
+        navLinks.classList.toggle('navShow');
+    }
+}
 
-// let navOpen = document.querySelector('.open-nav');
-// let navClose = document.querySelector('close-nav');
-// let navLinks = document.querySelector('nav-link');
+let navOpen = document.querySelector('.open-nav');
+let navClose = document.querySelector('close-nav');
+let navLinks = document.querySelector('nav-link');
 
-// navOpen = new OpenNav(navOpen);
-// navClose = new NavClose(navClose);
+navOpen = new OpenNav(navOpen);
+navClose = new NavClose(navClose);
+
+let email = document.querySelector(".email");
+
+email.addEventListener("input", () => {
+    if (email.validity.typeMismatch) {
+        email.setCustomValidity("I expect an e-mail, darling!");
+    } else {
+        email.setCustomValidity("");
+    }
+});
