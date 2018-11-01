@@ -87,23 +87,23 @@ class Carousel {
         this.rightBtn.addEventListener('click', () => this.rightImage());
     }
     leftImage(){
-        // TweenMax.fromTo(this.images[this.currentIndex], 1, {opacity : 1},{opacity:0});
+        TweenMax.fromTo(this.images[this.currentIndex], 1, {opacity : 1},{opacity:0});
         if(this.currentIndex < 1)
             this.currentIndex = this.images.length ;
         this.currentIndex--;
         this.images.forEach((img) => img.style.display = "none");
         this.images[this.currentIndex].style.display = "block";
-        // TweenMax.fromTo(this.images[this.currentIndex], 2, {opacity : 0},{opacity:1});
+        TweenMax.fromTo(this.images[this.currentIndex], 2, {opacity : 0},{opacity:1});
         
     }
     rightImage(){
-        // TweenMax.fromTo(this.images[this.currentIndex], 1, {opacity : 1},{opacity:0});
+        TweenMax.fromTo(this.images[this.currentIndex], 1, {opacity : 1},{opacity:0});
         if(this.currentIndex >= this.images.length -1)
             this.currentIndex = -1;
         this.currentIndex++;
         this.images.forEach((img) => img.style.display = "none");
         this.images[this.currentIndex].style.display = "block";
-        // TweenMax.fromTo(this.images[this.currentIndex], 2, {opacity : 0},{opacity:1});
+        TweenMax.fromTo(this.images[this.currentIndex], 2, {opacity : 0},{opacity:1});
         
     }
 
