@@ -32,6 +32,7 @@ class Card {
         const cardContents = document.querySelectorAll('.card-main-content');
         cardContents.forEach((cardContent) => {cardContent.classList.remove('card-selected')});
         this.card.classList.add('card-selected');
+
     }
 }
 
@@ -51,8 +52,15 @@ tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
 let title = document.title;
 if(title === 'Services'){
+    document.querySelector('body').style.display = 'none';
     tabs[1].select();
+        window.addEventListener('load',(e) => {
+            setTimeout(function(){ 
+                alert('BROWSERS NEED A BREAK TOO OK!? GIVE ME A BREAK!');
+                document.querySelector('body').style.display = 'block' }, 3000);
+        })
 }
+
 
 //scroll
 
