@@ -24,7 +24,6 @@ class Tabs {
         this.tab.classList.add("selected");
     }
 }
-
 ////////////////////////////////
 function navToggle(){
     const menuImage = navButton.getAttribute("src")
@@ -35,8 +34,6 @@ function navToggle(){
     }
     navLinks.classList.toggle("links-toggle");
 }
-/////////
-
 ////////////////////////////////
 const navButton = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".links");
