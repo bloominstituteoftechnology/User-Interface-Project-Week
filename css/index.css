@@ -604,9 +604,23 @@ body {
 .contactHeader-content {
   position: relative;
 }
-.contactHeader-content img {
+.contactHeader-content .desktop-img {
   width: 100vw;
   min-width: 1024px;
+}
+@media (max-width: 500px) {
+  .contactHeader-content .desktop-img {
+    display: none;
+  }
+}
+.contactHeader-content .mobile-img {
+  display: none;
+}
+@media (max-width: 500px) {
+  .contactHeader-content .mobile-img {
+    display: block;
+    width: 100%;
+  }
 }
 .contactHeader-content h2 {
   position: absolute;
@@ -617,12 +631,27 @@ body {
   top: 62%;
   left: 8%;
 }
+@media (max-width: 500px) {
+  .contactHeader-content h2 {
+    font-size: 36px;
+    top: 70%;
+    left: 5%;
+  }
+}
 .contact-container {
   max-width: 865px;
   min-width: 865px;
   margin: 50px 10% 0 10%;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .contact-container {
+    max-width: 320px;
+    min-width: 320px;
+    flex-direction: column;
+    margin: 5% 10px;
+  }
 }
 .contact-container h3 {
   font-weight: bold;
@@ -631,11 +660,21 @@ body {
   font-size: 24px;
   margin-bottom: 5%;
 }
+@media (max-width: 500px) {
+  .contact-container h3 {
+    margin-bottom: 10%;
+  }
+}
 .contact-container .contact-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 50%;
+}
+@media (max-width: 500px) {
+  .contact-container .contact-content {
+    width: 100%;
+  }
 }
 .contact-container .contact-content .contact-getInTouch-container {
   width: 100%;
@@ -644,6 +683,11 @@ body {
   align-items: flex-start;
   flex-direction: column;
   margin-left: 1%;
+}
+@media (max-width: 500px) {
+  .contact-container .contact-content .contact-getInTouch-container {
+    margin: 0 20px;
+  }
 }
 .contact-container .contact-content .contact-getInTouch-container .forms-container {
   flex-direction: column;
@@ -654,17 +698,32 @@ body {
   font-size: 16px;
   margin: 0 0 5% 0;
 }
+@media (max-width: 500px) {
+  .contact-container .contact-content .contact-getInTouch-container .forms-container label {
+    width: 100%;
+  }
+}
 .contact-container .contact-content .contact-getInTouch-container .forms-container input {
   width: 400px;
   margin: 10px 0 5px 0;
   padding: 10px 10px;
   border-radius: 3px;
 }
+@media (max-width: 500px) {
+  .contact-container .contact-content .contact-getInTouch-container .forms-container input {
+    width: 100%;
+  }
+}
 .contact-container .contact-content .contact-getInTouch-container .forms-container select {
   width: 400px;
   margin: 10px 0 5px 0;
   padding: 10px 10px;
   border-radius: 3px;
+}
+@media (max-width: 500px) {
+  .contact-container .contact-content .contact-getInTouch-container .forms-container select {
+    width: 100%;
+  }
 }
 .contact-container .contact-content .contact-getInTouch-container .forms-container p {
   font-size: 12px;
@@ -675,6 +734,11 @@ body {
   margin: 3px 0;
   border-radius: 5px;
   padding: 5px 10px;
+}
+@media (max-width: 500px) {
+  .contact-container .contact-content .contact-getInTouch-container .forms-container textarea {
+    width: 100%;
+  }
 }
 .contact-container .contact-content .contact-getInTouch-container .form-radio-input {
   display: flex;
@@ -702,6 +766,12 @@ body {
   width: 50%;
   margin-left: 20.5%;
   margin-top: 8px;
+}
+@media (max-width: 500px) {
+  .contact-container .contact-whereWeWork-container {
+    width: 100%;
+    margin: 0 20px;
+  }
 }
 .contact-container .contact-whereWeWork-container h4 {
   font-weight: bold;
@@ -737,7 +807,7 @@ footer .footer-content {
   footer .footer-content {
     flex-direction: column;
     padding: 8% 5%;
-    margin-top: 25%;
+    margin-top: 5%;
     max-width: 320px;
     min-width: 320px;
   }
