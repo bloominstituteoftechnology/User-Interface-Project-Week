@@ -23,6 +23,13 @@ navBtn.forEach( (item) => {
     })
 })
 
+window.addEventListener('scroll', () => {
+    if (window.scrollY >= 499 && window.scrollY < 500) {
+    console.log('Passed 499');
+    }
+})
+
+
 TweenLite.from('#jumbo-line1', 0.8, {
     opacity: 0,
     ease: Power1.easeInOut,
