@@ -36,13 +36,12 @@ class Card {
 }
 
 hamburger.addEventListener('click', (e) => {
-    menuExpanded.classList.toggle('menu-open');
-
+    menuExpanded.classList.add('menu-open');
+    TweenMax.to('.menu-expanded', .5, {opacity: 0.98 ,ease:Power4.easeOut});
 });
 hamburgerClose.addEventListener('click',(e) => {
     e.stopPropagation();
-    menuExpanded.classList.toggle('menu-open');
-    // console.log(menuExpanded);
+    TweenMax.to('.menu-expanded', .5, {opacity: 0 ,ease:Power4.easeOut, onComplete: () => menuExpanded.classList.remove('menu-open')})
 });
 
 // services
@@ -53,3 +52,7 @@ let title = document.title;
 if(title === 'Services'){
     tabs[1].select();
 }
+
+//scroll
+
+
