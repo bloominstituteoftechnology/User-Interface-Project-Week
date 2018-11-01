@@ -12,4 +12,6 @@ hamburger.addEventListener('click', () => {
         } else {
             hamburger.src = 'img/nav-hamburger-close.png';
         }
+
+
 })
