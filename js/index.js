@@ -2,12 +2,12 @@ class TabLink {
     constructor(element) {
         this.element = element;
         this.data = this.element.dataset.tab;
-        this.itemElement = document.querySelector(`.tab-content[data-tab='${this.data}']`);
+        this.itemElement = document.querySelector(`.service-description[data-tab='${this.data}']`);
         this.tabItem = new TabItem(this.itemElement);
 
         this.element.addEventListener('click', () => this.select());
 
-        // console.log(this.element);
+        console.log(this.element);
     }
 
     select() {
@@ -23,7 +23,7 @@ class TabLink {
         console.log(this.element);
 
         this.tabItem.select();
-        // console.log(this.tabItem);
+        console.log(this.tabItem);
     }
 
     linkClick() {
@@ -35,24 +35,26 @@ class TabLink {
 class TabItem {
     constructor(tabContent) {
         this.tabContent = tabContent;
+        console.log(tabContent);
     }
     select() {
-        let items = document.querySelectorAll('.service-description');
-        console.log(items);
+        let items = document.querySelectorAll('.tab-content');
+        // console.log(items);
 
         Array.from(items).forEach(item => item.classList.add('tab-selected'));
     }
     toggleContent() {
         this.tabContent.classList.toggle('change');
-        console.log(this.tabContent);
+        // console.log(this.tabContent);
     }
 
 }
 
 
 let tlinks = document.querySelectorAll('.tab');
-console.log(tlinks);
+// console.log(tlinks);
 tlinks = Array.from(tlinks).map(tlink => new TabLink(tlink));
+tlinks[0].select();
 
 
 /* Navigation */
