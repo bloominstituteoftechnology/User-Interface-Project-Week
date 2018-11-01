@@ -6,7 +6,21 @@
 .services {
   header {
     position: relative;
+    img {
+      width: 100%;
+    }
+    @media (max-width: 500px) {
+      .mobile-img {
+        display: block;
+      }
+
+      .banner {
+        display: none;
+      }
+    }
   }
+
+  
 
   h1 {
     position: absolute;
@@ -17,7 +31,15 @@
     font-size: 64px;
     font-weight: bold;
     line-height: 75px;
+
+    @media (max-width: 500px) {
+      padding: 0 10px;
+      line-height: 40px;
+      font-size: 30px;
+    }
   }
+
+  
 }
 
 // body of services
@@ -31,9 +53,20 @@
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 900px) {
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
     .tab-selected {
       background-color: #5E9FB9;
       color: #fff;
+
+      
     }
 
     button {
@@ -52,12 +85,25 @@
         color: #FFF;
       }
 
+      @media (max-width: 900px) {
+        width: 50%;
+      }
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+      
+      
     }
   }
 
   .tab-content {
     padding-top: 0px;
 
+    img {
+      width: 100%;
+    }
+    
     h2 {
       font-size: 22px;
       font-weight: bold;
@@ -73,6 +119,17 @@
       //border: 1px solid red;
       display: flex;
       align-items: center;
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 500px) {
+        .desktop-img {
+          display: hidden;
+        }
+      }
+
     }
   }
 }
@@ -80,11 +137,18 @@
 
 // hide some elemnts that don't need to be displayed atm.
 .services {
+  .mobile-img {
+    display: none;
+  }
+
   .hidden-tab-content {
     display: none;
   }
 
-  .hidden-mobile-tab-content {
+  .mobile-tab-content {
     display: none;
+  }
+  @media (max-width: 500px){
+    display: inline-block;
   }
 }
