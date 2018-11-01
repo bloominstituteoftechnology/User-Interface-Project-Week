@@ -1,34 +1,76 @@
-/*****************************************************
-********************* Nav-Header *********************
-******************************************************/
 .nav-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: @nav-header-background-color;
-  border: 1px solid @nav-border-color;
-  padding: 12px 84px 11px;
-
-  @media (max-width: ~'@{phoneViewSize}') {
-    padding: 13px 14px 11px;
-  }
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
 
   .nav-bar {
-    font-weight: bold;
-    font-size: 2.4rem;
-    h3 {
-      color: white;
+    background-color: @nav-header-background-color;
+    border: 1px solid @nav-border-color;
+
+    .nav-bar-items {
+      display: flex;
+      justify-content: space-between;
+      padding: 13px 85px 11px 85px;
+
+      @media (max-width: ~'@{phoneViewSize}') {
+        padding: 13px 14px 11px 15px;
+      }
+
+      h3 {
+        margin-top: -1px;
+        font-weight: bold;
+        font-size: 2.4rem;
+        color: white;
+      }
+
+      .nav-header-button-open {
+        margin-top: 1px;
+        height: 21px;
+        cursor: pointer;
+      }
+
+      .nav-header-button-close {
+        width: 33px;
+        height: 23px;
+        cursor: pointer;
+      }
+    } // container nav-bar-items
+  } // nav-bar
+
+  .nav-dropdown-container {
+    height: 548px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(
+      rgba(152,164,174, 0.9), 
+      rgba(152,164,174, 0.9)
+    );
+
+    @media (max-width: ~'@{phoneViewSize}') {
+      height: 393px;
+      padding-bottom: 46px;
+      padding-left: 6px;
     }
-  }
 
-  .nav-header-button-open {
-    margin-top: 1px;
-    height: 21px;
-    cursor: pointer;
-  }
+    .nav-dropdown-items {
+      display: flex;
+      flex-flow: column;
+      font-weight: bold;
+      font-size: 4.8rem;
+      line-height: 85px;
 
-  .nav-header-button-close {
-    width: 33px;
-    height: 24px;
-    cursor: pointer;
+      .items {
+        text-decoration: none;
+        Color: white;
+      }
+
+      .items:hover {
+        color: @nav-items-hover-color;
+      }
+    }
   }
 }

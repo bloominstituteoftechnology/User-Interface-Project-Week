@@ -1,18 +1,25 @@
 .services {
-  .nav-header {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    width: 1024px;
-  }
-}
-
-.services-page {
-  .services-jumbotron-img-container {
+  .services-jumbotron-Header {
     .services-jumbotron-img {
+      display: block;
       position: absolute;
       top: 0;
       z-index: 1;
+
+      @media (max-width: ~'@{phoneViewSize}') {
+        display: none;
+      }
+    }
+
+    .services-jumbotron-mobile-img {
+      display: none;
+
+      @media (max-width: ~'@{phoneViewSize}') {
+        display: block;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
     }
 
     h1 {
@@ -24,44 +31,6 @@
       font-size: 6.4rem;
     }
   } // services-jumbotron-img-container
-
-  .nav-bar-items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 49px;
-    width: 1024px;
-    height: 550px;
-    z-index: 3;
-    background-image: linear-gradient(
-      rgba(152,164,174, 0.9), 
-      rgba(152,164,174, 0.9)
-    );
-
-    @media (max-width: ~'@{phoneViewSize}') {
-      height: 393px;
-      padding-bottom: 46px;
-      padding-left: 6px;
-    }
-    
-    .nav-bar-items-center {
-      display: flex;
-      flex-flow: column;
-      font-weight: bold;
-      font-size: 4.8rem;
-      line-height: 85px;
-
-      .items {
-        text-decoration: none;
-        color: white;
-      }
-
-      .items:hover {
-        color: @nav-items-hover-color;
-      }
-    }
-  } // nav-bar-items
 
   .content {
     width: 83.6%;
