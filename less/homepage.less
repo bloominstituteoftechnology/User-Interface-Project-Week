@@ -213,73 +213,88 @@
         @media @XTheDTop {
             display: none;
         }
-        .overlayText {
-            background-color: #D8D8D8;
-            color: black;
-            font-size: 2rem;
-            padding: 2.5rem 3rem;
-            z-index: 1.25;
+        @media @phone {
+            display: none;
+        }
+            .overlayText {
+                background-color: #D8D8D8;
+                color: black;
+                font-size: 2rem;
+                padding: 2.5rem 3rem;
+                z-index: 1.25;
+                display: inline;
+                letter-spacing: .5rem;
+                text-transform: uppercase;
+                @media @phone {
+                    max-width: 90%;
+                    position: absolute;
+                    width: 90%;
+                    bottom: -50px;
+                    right: 4.5%;
+                    text-align: center
+                }
+            }
+            .overlayTextB {
+                background-color: #D8D8D8;
+                color: black;
+                font-size: 2rem;
+                padding: 2.5rem 3rem;
+                z-index: 1.25;
+                display: inline; // margin-left: 77.5%;
+                letter-spacing: .5rem;
+                text-transform: uppercase;
+                position: absolute;
+                bottom: -20px;
+                right: 2px;
+                width: 250px;
+                @media @phone {
+                    max-width: 90%;
+                    width: 90%;
+                    position: absolute;
+                    bottom: -50px;
+                    right: 4.5%;
+                    text-align: center
+                }
+            }
+            .overlayTextC {
+                background-color: #D8D8D8;
+                color: black;
+                font-size: 2rem;
+                padding: 2.5rem 3.3rem 2.5rem 3.0rem;
+                z-index: 1.25;
+                display: inline; // bottom: 5%;
+                // right: 0%;
+                left: 0%; // margin-left: 76.5%; 
+                margin-inline-end: 2%;
+                @media @tablet {}
+                letter-spacing: .5rem;
+                text-transform: uppercase;
+                position: absolute;
+                bottom: -20px;
+                width: 260px;
+                @media @phone {
+                    max-width: 90%;
+                    position: absolute;
+                    width: 90%;
+                    bottom: -50px;
+                    right: 4.5%;
+                    text-align: center
+                }
+            }
+        }
+        .colL {
+            padding-top: 9rem;
+            margin: 10px 1%;
+            padding-bottom: 9rem;
             display: inline;
-            letter-spacing: .5rem;
-            text-transform: uppercase;
+            max-width: 59%;
+            z-index: 1;
             @media @phone {
-                max-width: 90%;
-                position: absolute;
-                width: 90%;
-                bottom: -50px;
-                right: 4.5%;
-                text-align: center
-            }
-        }
-        .overlayTextB {
-            background-color: #D8D8D8;
-            color: black;
-            font-size: 2rem;
-            padding: 2.5rem 3rem;
-            z-index: 1.25;
-            display: inline; // margin-left: 77.5%;
-            letter-spacing: .5rem;
-            text-transform: uppercase;
-            position: absolute;
-            bottom: -20px;
-            right: 2px;
-            width: 250px;
-            @media @phone {
-                max-width: 90%;
-                width: 90%;
-                position: absolute;
-                bottom: -50px;
-                right: 4.5%;
-                text-align: center
-            }
-        }
-        .overlayTextC {
-            background-color: #D8D8D8;
-            color: black;
-            font-size: 2rem;
-            padding: 2.5rem 3.3rem 2.5rem 3.0rem;
-            z-index: 1.25;
-            display: inline; // bottom: 5%;
-            // right: 0%;
-            left: 0%; // margin-left: 76.5%; 
-            margin-inline-end: 2%;
-            @media @tablet {}
-            letter-spacing: .5rem;
-            text-transform: uppercase;
-            position: absolute;
-            bottom: -20px;
-            width: 260px;
-            @media @phone {
-                max-width: 90%;
-                position: absolute;
-                width: 90%;
-                bottom: -50px;
-                right: 4.5%;
-                text-align: center
+                max-width: 98%;
             }
         }
     }
-    .colL {
+    .secProject .colL {
         padding-top: 9rem;
         margin: 10px 1%;
         padding-bottom: 9rem;
@@ -290,36 +305,32 @@
             max-width: 98%;
         }
     }
-}
-
-body .btn {
-    margin: 15px 0; // font-size: 1.8rem;
-    width: 35%;
-    height: auto;
-    padding: 13px;
-    background: white;
-    color: black;
-    font-size: 1.6rem; // border-radius: 12px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    &:hover {
+    body .btn {
+        margin: 15px 0; // font-size: 1.8rem;
+        width: 35%;
+        height: auto;
+        padding: 13px;
+        background: white;
         color: black;
-        background: #D8D8D8
-    } // .customBtn();
+        font-size: 1.6rem; // border-radius: 12px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+            color: black;
+            background: #D8D8D8
+        } // .customBtn();
+        @media @phone {
+            width: 98%;
+        }
+    }
+    body .pb {
+        font-size: 1.2rem;
+    }
     @media @phone {
-        width: 98%;
+        body .mediaMoble {
+            display: block;
+        }
     }
-}
-
-body .pb {
-    font-size: 1.2rem;
-}
-
-@media @phone {
-    body .mediaMoble {
-        display: block;
-    }
-}
