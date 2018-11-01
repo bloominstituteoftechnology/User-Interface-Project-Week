@@ -1,0 +1,118 @@
+.navigation {
+  background-color: @nav-bg;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  height: 50px;
+
+  .navigation-bar {
+    .custom-layout(space-between, center);
+    width: 83%;
+    margin: 0 auto;
+    height: 50px;
+    max-width: 900px;
+
+    @media @tablet {
+      width: 90%;
+    }
+
+    a {
+      text-decoration: none;
+
+      .navigation-title {
+        color: white;
+        font-size: 2.4rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+          color: #e0e0e0;
+        }
+      }
+    }
+
+    .navigation-hamburger,
+    .navigation-close {
+      cursor: pointer;
+      z-index: 3;
+    }
+  }
+
+  .navigation-links {
+    // display: none;
+    top: -1000px;
+    opacity: 0;
+
+    .navigation-link {
+      opacity: 0;
+    }
+  }
+
+  .btn-toggle {
+    display: none;
+  }
+
+  .testing {
+    opacity: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: @nav-bg;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 35%;
+
+    .navigation-link {
+      color: white;
+      font-size: 6.4rem;
+      line-height: 75px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: all 0.5s;
+    }
+  }
+
+  .navigation-links-selected {
+    opacity: 0.95;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: @nav-bg;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 35%;
+
+    @media @mobile {
+      padding-left: 0%;
+    }
+
+    .navigation-link {
+      color: white;
+      font-size: 6.4rem;
+      line-height: 75px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: all 0.5s;
+
+      @media @mobile {
+        font-size: 4rem;
+      }
+
+      &:hover {
+        color: #e0e0e0;
+      }
+    }
+
+    .current {
+      color: @scorpion;
+    }
+  }
+}

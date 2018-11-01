@@ -1,1 +1,875 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #222222;
+}
+h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 2.8rem;
+}
+p,
+.btn,
+label {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.nav-hamburger {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: white;
+}
+footer h3 {
+  font-size: 2rem;
+  line-height: 2;
+}
+footer p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+address {
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.navigation {
+  background-color: #9aa5b0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  height: 50px;
+}
+.navigation .navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 83%;
+  margin: 0 auto;
+  height: 50px;
+  max-width: 900px;
+}
+@media (max-width: 800px) {
+  .navigation .navigation-bar {
+    width: 90%;
+  }
+}
+.navigation .navigation-bar a {
+  text-decoration: none;
+}
+.navigation .navigation-bar a .navigation-title {
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.navigation .navigation-bar a .navigation-title:hover {
+  color: #e0e0e0;
+}
+.navigation .navigation-bar .navigation-hamburger,
+.navigation .navigation-bar .navigation-close {
+  cursor: pointer;
+  z-index: 3;
+}
+.navigation .navigation-links {
+  top: -1000px;
+  opacity: 0;
+}
+.navigation .navigation-links .navigation-link {
+  opacity: 0;
+}
+.navigation .btn-toggle {
+  display: none;
+}
+.navigation .testing {
+  opacity: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #9aa5b0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 35%;
+}
+.navigation .testing .navigation-link {
+  color: white;
+  font-size: 6.4rem;
+  line-height: 75px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: all 0.5s;
+}
+.navigation .navigation-links-selected {
+  opacity: 0.95;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #9aa5b0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 35%;
+}
+@media (max-width: 600px) {
+  .navigation .navigation-links-selected {
+    padding-left: 0%;
+  }
+}
+.navigation .navigation-links-selected .navigation-link {
+  color: white;
+  font-size: 6.4rem;
+  line-height: 75px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: all 0.5s;
+}
+@media (max-width: 600px) {
+  .navigation .navigation-links-selected .navigation-link {
+    font-size: 4rem;
+  }
+}
+.navigation .navigation-links-selected .navigation-link:hover {
+  color: #e0e0e0;
+}
+.navigation .navigation-links-selected .current {
+  color: #5e5758;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #828282;
+  color: white;
+}
+.footer .top-row,
+.footer .bottom-row {
+  width: 83%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .footer .top-row,
+  .footer .bottom-row {
+    width: 90%;
+  }
+}
+.footer .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 0;
+}
+.footer .top-row input[type="email"] {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: #828282;
+  font-size: 1.6rem;
+}
+.footer .top-row input[type="email"]:focus {
+  outline: none;
+}
+@media (max-width: 600px) {
+  .footer .top-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+.footer .bottom-row {
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media (max-width: 600px) {
+  .footer .bottom-row {
+    text-align: left;
+  }
+}
+.home .intro {
+  margin-top: 50px;
+  height: 550px;
+  background-color: white;
+  background-image: url(../img/home/home-jumbotron.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: bottom;
+}
+.home h1 {
+  padding-top: 28rem;
+  padding-left: 8rem;
+  color: white;
+  font-size: 6.4rem;
+  line-height: 75px;
+  font-weight: bold;
+}
+@media (max-width: 800px) {
+  .home h1 {
+    padding-left: 3.9rem;
+  }
+}
+.home .content-container {
+  width: 83%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+@media (max-width: 800px) {
+  .home .content-container {
+    width: 100%;
+  }
+}
+.home .content-container .smith-jones-architects,
+.home .content-container .futuristic-designs {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .home .content-container .smith-jones-architects,
+  .home .content-container .futuristic-designs {
+    flex-direction: column-reverse;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+}
+.home .content-container .futuristic-designs {
+  margin-top: 100px;
+}
+@media (max-width: 600px) {
+  .home .content-container .futuristic-designs {
+    margin-top: 25px;
+  }
+}
+.home .content-container img {
+  width: 100%;
+  height: auto;
+}
+.home .content-container .img-content {
+  width: 48%;
+}
+@media (max-width: 600px) {
+  .home .content-container .img-content {
+    width: 100%;
+  }
+}
+.home .content-container .futuristic-designs {
+  flex-direction: row-reverse;
+}
+@media (max-width: 600px) {
+  .home .content-container .futuristic-designs {
+    flex-direction: column-reverse;
+  }
+}
+.home .content-container .text-content {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+@media (max-width: 600px) {
+  .home .content-container .text-content {
+    width: 100%;
+  }
+}
+.home .content-container .text-content h2 {
+  margin-bottom: 20px;
+}
+.home .content-container .text-content p {
+  margin-bottom: 20px;
+}
+.home .btn {
+  border: 1px solid #222222;
+  padding: 1rem;
+  width: 14rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.home .btn:hover {
+  background-color: #222222;
+  color: white;
+}
+@media (max-width: 600px) {
+  .home .btn {
+    padding: 1.5rem;
+    width: 100%;
+  }
+}
+.home .recent-projects {
+  margin-top: 100px;
+}
+@media (max-width: 600px) {
+  .home .recent-projects {
+    margin-top: 2rem;
+  }
+}
+.home .recent-projects h2 {
+  margin-bottom: 50px;
+}
+@media (max-width: 600px) {
+  .home .recent-projects h2 {
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+.home .recent-projects .box {
+  float: right;
+  position: relative;
+  z-index: 1;
+  margin-top: -50px;
+  background: #d8d8d8;
+  padding: 3rem 4rem;
+  width: 33rem;
+  text-align: center;
+  border: 1px solid white;
+}
+@media (max-width: 600px) {
+  .home .recent-projects .box {
+    float: none;
+    margin: 0 auto;
+    margin-top: -20px;
+  }
+}
+.home .recent-projects .box h3 {
+  letter-spacing: 5px;
+}
+.home .recent-projects .box-text {
+  width: 400px;
+  margin: 100px auto;
+}
+@media (max-width: 600px) {
+  .home .recent-projects .box-text {
+    width: 90%;
+    margin: 25px auto;
+  }
+}
+.home .recent-projects .box-text p:last-child {
+  margin-top: 20px;
+}
+.home .recent-projects #left-box {
+  float: left;
+}
+@media (max-width: 600px) {
+  .home .recent-projects #left-box {
+    float: none;
+    margin: 0 auto;
+    margin-top: -20px;
+  }
+}
+.services-container .intro {
+  margin-top: 50px;
+  height: 200px;
+  background-color: white;
+  background-image: url(../img/services/services-jumbotron.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: bottom;
+}
+.services-container .intro h1 {
+  padding-top: 10rem;
+  padding-left: 8rem;
+  color: white;
+  font-size: 6.4rem;
+  font-weight: bold;
+}
+@media (max-width: 800px) {
+  .services-container .intro h1 {
+    padding-left: 3.9rem;
+  }
+}
+.services-container .services-content {
+  width: 83%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.services-container .services-content .description p {
+  margin: 50px 0;
+}
+.services-container .services-content .services h3 {
+  font-size: 2rem;
+}
+.services-container .services-content .services .boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.services-container .services-content .services .boxes .services-tab {
+  border: 1px solid #222222;
+  padding: 1rem 2.5rem;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.services-container .services-content .services .boxes .services-tab:hover {
+  background-color: #5e9fb9;
+  color: white;
+}
+.services-container .services-content .services .boxes .services-tab-selected {
+  background-color: #5e9fb9;
+  color: white;
+}
+.services-container .services-content .services .content {
+  display: none;
+}
+.services-container .services-content .services .content-selected {
+  margin: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.services-container .services-content .services .content-selected img {
+  width: 100%;
+  height: auto;
+}
+.services-container .services-content .services .content-selected .text-content {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+.services-container .services-content .services .content-selected .text-content h2 {
+  margin-bottom: 20px;
+}
+.services-container .services-content .services .content-selected .text-content p {
+  margin-bottom: 20px;
+}
+.services-container .services-content .services .content-selected .img-content {
+  width: 48%;
+}
+.contact-container .intro {
+  margin-top: 50px;
+  height: 200px;
+  background-color: white;
+  background-image: url(../img/contact/contact-jumbotron.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: bottom;
+}
+.contact-container .intro h1 {
+  padding-top: 10rem;
+  padding-left: 8rem;
+  color: white;
+  font-size: 6.4rem;
+  font-weight: bold;
+}
+@media (max-width: 800px) {
+  .contact-container .intro h1 {
+    padding-left: 3.9rem;
+  }
+}
+.contact-container .main-content {
+  width: 90%;
+  max-width: 900px;
+  margin: 5rem auto;
+  display: flex;
+}
+.contact-container .main-content h2 {
+  margin-bottom: 3rem;
+}
+.contact-container .main-content .contact-section {
+  width: 60%;
+}
+.contact-container .main-content .contact-section .email,
+.contact-container .main-content .contact-section .buildings,
+.contact-container .main-content .contact-section .bio,
+.contact-container .main-content .contact-section .type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.contact-container .main-content .contact-section .radio {
+  display: flex;
+}
+.contact-container .main-content .contact-section .radio .radio-text {
+  padding-left: 1rem;
+}
+.contact-container .main-content .contact-section .email .email-address {
+  margin-bottom: 1rem;
+}
+.contact-container .main-content .contact-section .email p {
+  font-size: 1.2rem;
+  color: #828282;
+}
+.contact-container .main-content .contact-section input[type="text"],
+.contact-container .main-content .contact-section input[type="email"],
+.contact-container .main-content .contact-section input[type="number"],
+.contact-container .main-content .contact-section select[id="buildings"],
+.contact-container .main-content .contact-section textarea,
+.contact-container .main-content .contact-section select {
+  border: 1px solid #ddd;
+  color: #828282;
+  font-size: 1.6rem;
+  padding: 1rem;
+  width: 60%;
+  background-color: white;
+  color: #555555;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+}
+.contact-container .main-content .contact-section input[type="text"]:focus,
+.contact-container .main-content .contact-section input[type="email"]:focus,
+.contact-container .main-content .contact-section input[type="number"]:focus,
+.contact-container .main-content .contact-section select[id="buildings"]:focus,
+.contact-container .main-content .contact-section textarea:focus,
+.contact-container .main-content .contact-section select:focus {
+  outline: none;
+}
+.contact-container .main-content .contact-section textarea {
+  height: 15rem;
+}
+.contact-container .main-content .contact-section .btn {
+  border: 1px solid #222222;
+  padding: 1rem;
+  width: 14rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.contact-container .main-content .contact-section .btn:hover {
+  background-color: #222222;
+  color: white;
+}
+@media (max-width: 600px) {
+  .contact-container .main-content .contact-section .btn {
+    padding: 1.5rem;
+    width: 100%;
+  }
+}
+.contact-container .main-content .address-info {
+  width: 40%;
+}
+.contact-container .main-content .address-info h3 {
+  font-size: 2rem;
+  line-height: 2;
+  font-weight: bold;
+}
+.contact-container .main-content .address-info address {
+  line-height: 1.6;
+}
+.contact-container .main-content .address-info .address {
+  margin-bottom: 2rem;
+}
+.about-us-container .intro {
+  margin-top: 50px;
+  height: 200px;
+  background-color: white;
+  background-image: url(../img/services/services-jumbotron.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: bottom;
+}
+.about-us-container .intro h1 {
+  padding-top: 10rem;
+  padding-left: 8rem;
+  color: white;
+  font-size: 6.4rem;
+  font-weight: bold;
+}
+@media (max-width: 800px) {
+  .about-us-container .intro h1 {
+    padding-left: 3.9rem;
+  }
+}
+.about-us-content {
+  width: 83%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.about-us-content .description p {
+  margin: 50px 0;
+}
+.about-us-content .faqs {
+  margin-bottom: 7rem;
+}
+.about-us-content .faqs h2 {
+  margin-bottom: 3rem;
+}
+.about-us-content .faqs .faq {
+  margin: 3rem 5%;
+  padding: 20px 25px;
+  border: 1px solid #222222;
+  border-radius: 1rem;
+  background-color: white;
+  position: relative;
+  height: 8rem;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px 2px #828282;
+}
+.about-us-content .faqs .faq h3 {
+  margin: 1rem 0 1.5rem;
+}
+.about-us-content .faqs .faq p {
+  margin-bottom: 3rem;
+}
+.about-us-content .faqs .faq .expand-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
+.about-us-content .faqs .faq .expand-button:hover {
+  color: #828282;
+}
+.about-us-content .faqs .expand {
+  height: 100%;
+}
+.portfolio-container .intro {
+  margin-top: 50px;
+  height: 200px;
+  background-color: white;
+  background-image: url(../img/contact/contact-jumbotron.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: bottom;
+}
+.portfolio-container .intro h1 {
+  padding-top: 10rem;
+  padding-left: 8rem;
+  color: white;
+  font-size: 6.4rem;
+  font-weight: bold;
+}
+@media (max-width: 800px) {
+  .portfolio-container .intro h1 {
+    padding-left: 3.9rem;
+  }
+}
+.portfolio-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.portfolio-content h2 {
+  margin-bottom: 2rem;
+}
+.portfolio-content p {
+  margin-bottom: 2rem;
+}
+.portfolio-content .btn {
+  border: 1px solid #222222;
+  padding: 1rem;
+  width: 14rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.portfolio-content .btn:hover {
+  background-color: #222222;
+  color: white;
+}
+@media (max-width: 600px) {
+  .portfolio-content .btn {
+    padding: 1.5rem;
+    width: 100%;
+  }
+}
+.portfolio-content .info1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.portfolio-content .info2 {
+  grid-column: span 2;
+}
+.portfolio-content .info3 {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+.portfolio-content .figure1 {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+.portfolio-content .figure6 {
+  grid-column: span 2;
+}
+.portfolio-content .figure7 {
+  grid-column: span 3;
+}
+.portfolio-content .figure8 {
+  grid-column: span 2;
+}
+.portfolio-content .figure10 {
+  grid-column: span 3;
+}
+.portfolio-content .figure-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0.5rem;
+}
+.portfolio-content .info1,
+.portfolio-content .info2,
+.portfolio-content .info3 {
+  padding: 2rem;
+}

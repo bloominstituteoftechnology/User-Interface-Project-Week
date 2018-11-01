@@ -1,0 +1,51 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: @footer-bg;
+  color: white;
+
+  .top-row,
+  .bottom-row {
+    width: 83%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media @tablet {
+      width: 90%;
+    }
+  }
+
+  .top-row {
+    .custom-layout(space-between, center);
+    padding: 4rem 0;
+
+    input[type="email"] {
+      padding: 1rem;
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      color: @gray;
+      font-size: 1.6rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .bottom-row {
+    text-align: center;
+    margin-bottom: 10px;
+
+    @media @mobile {
+      text-align: left;
+    }
+  }
+}
