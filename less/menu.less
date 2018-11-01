@@ -50,6 +50,7 @@
     .flexcenter();
   }
   .links {
+    position:relative;
     .flexcolumn();
     justify-content: center;
     font-size: 5rem;
@@ -58,14 +59,26 @@
     a{
       text-decoration: none;
       color: @white;
-    }
-    a:hover {
-      color: @black;
-      cursor: pointer;
-    }
-    
+      &:hover{
+        color: @black;
+        cursor: pointer;
+      }
+
+    }    
   }
 }
 .menu-open{
   display:block;
+}
+@keyframes appear{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+.animated {
+  animation:appear .5s ease-out 0.5s;
+  animation-fill-mode: backwards;
 }
