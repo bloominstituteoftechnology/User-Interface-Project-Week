@@ -1,41 +1,45 @@
-const headerImg = document.querySelector('#jumbotron');
-const h1 = document.querySelector('h1');
-const getInTouch = document.querySelector('form');
-const workSection = document.querySelector('.work');
-const addresses = workSection.querySelectorAll('address');
+(() => {
+  
+  const headerImg = document.querySelector('#jumbotron');
+  const h1 = document.querySelector('h1');
+  const getInTouch = document.querySelector('form');
+  const workSection = document.querySelector('.work');
+  const addresses = workSection.querySelectorAll('address');
 
-let windowResize = () => {
+  let windowResize = () => {
 
-  if (window.innerWidth <= 800) {
+    if (window.innerWidth <= 800) {
 
-    document.querySelector('#jumbotron').src = "./img/contact/contact-mobile-jumbotron.png";
+      document.querySelector('#jumbotron').src = "./img/contact/contact-mobile-jumbotron.png";
+
+    }
+
+    else {
+
+      document.querySelector('#jumbotron').src = "./img/contact/contact-jumbotron.png";
+
+    }
 
   }
 
-  else {
+  window.addEventListener('resize', windowResize);
 
-    document.querySelector('#jumbotron').src = "./img/contact/contact-jumbotron.png";
+  windowResize();
 
-  }
+  TweenMax.fromTo(headerImg, 1, {opacity: 0, yPercent: -100}, {opacity: 1, yPercent: 0, onComplete: () => {
+    TweenMax.fromTo(h1, 1.5, {opacity: 0, xPercent: -150}, {opacity: 1, xPercent: 0, onComplete: () => {
+      TweenMax.fromTo(getInTouch, 1, {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0, onComplete: () => {
+        TweenMax.fromTo(workSection, 1, {opacity: 0, xPercent: 150}, {opacity: 1, xPercent: 0, onComplete: () => {
 
-}
+          for (let i = 0; i < addresses.length; i++) {
 
-window.addEventListener('resize', windowResize);
+            TweenMax.fromTo(addresses[i], 1, {opacity: 0, yPercent: 25}, {opacity: 1, yPercent: 0, delay: 0.5 * i});
 
-windowResize();
+          }
 
-TweenMax.fromTo(headerImg, 1, {opacity: 0, yPercent: -100}, {opacity: 1, yPercent: 0, onComplete: () => {
-  TweenMax.fromTo(h1, 1.5, {opacity: 0, xPercent: -150}, {opacity: 1, xPercent: 0, onComplete: () => {
-    TweenMax.fromTo(getInTouch, 1, {opacity: 0, yPercent: 20}, {opacity: 1, yPercent: 0, onComplete: () => {
-      TweenMax.fromTo(workSection, 1, {opacity: 0, xPercent: 150}, {opacity: 1, xPercent: 0, onComplete: () => {
-
-        for (let i = 0; i < addresses.length; i++) {
-
-          TweenMax.fromTo(addresses[i], 1, {opacity: 0, yPercent: 25}, {opacity: 1, yPercent: 0, delay: 0.5 * i});
-
-        }
-
+        }});
       }});
     }});
   }});
-}});
+
+})();

@@ -1,23 +1,27 @@
 // scroller.js - Function that shows items on scroller
 
-let scrollElements = Array.from(document.querySelectorAll('.scroll-hide'));
+(() => {
 
-const scrollFunction = () => {
+  let scrollElements = Array.from(document.querySelectorAll('.scroll-hide'));
 
-  scrollElements.forEach(element => {
+  const scrollFunction = () => {
 
-    if (element.offsetTop < window.pageYOffset + window.innerHeight - element.clientHeight / 3) {
+    scrollElements.forEach(element => {
 
-      TweenMax.to(element, 1, {opacity: 1});
-      scrollElements.splice(scrollElements.indexOf(element), 1);
+      if (element.offsetTop < window.pageYOffset + window.innerHeight - element.clientHeight / 3) {
 
-      if (scrollElements.length == 0)
-        window.removeEventListener('scroll', scrollFunction);
+        TweenMax.to(element, 1, {opacity: 1});
+        scrollElements.splice(scrollElements.indexOf(element), 1);
 
-    }
+        if (scrollElements.length == 0)
+          window.removeEventListener('scroll', scrollFunction);
 
-  });
+      }
 
-}
+    });
 
-window.addEventListener('scroll', scrollFunction);
+  }
+
+  window.addEventListener('scroll', scrollFunction);
+
+})();
