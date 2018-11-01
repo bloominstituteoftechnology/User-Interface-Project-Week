@@ -6,6 +6,7 @@ const nav = document.querySelector("nav");
 
 menu.addEventListener("click", function() {
   nav.classList.toggle("nav-toggle");
+  menu.classList.toggle("close-menu");
 });
 
 // function navigationToggle() {
