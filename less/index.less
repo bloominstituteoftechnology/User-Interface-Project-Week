@@ -243,77 +243,95 @@ body {
   }
 }
 
-#contact-form {
-  width: 100%;
+// Contact Page
+.contact-content {
+  .flexIt(column, flex-start, flex-start);
 
-  // Break Point
-
-  // Children
-  h2 {
-    font-size: 1.75rem;
-    font-weight: bold;
+  @media @desktop {
+    flex-direction: row;
+    justify-content: space-between;
   }
+  // Children
+  #contact-form {
+    width: 100%;
 
-  form {
+    // Break Point
+    @media @desktop {
+      width: 50%;
+    }
+
     // Children
-    #email-form,
-    #building-form,
-    #description-form,
-    #radio-form {
-      margin: 3% 0;
-    }
-    input[type="text"] {
-      width: 95%;
-    }
-    select {
-      width: 100%;
+    h2 {
+      font-size: 1.75rem;
+      font-weight: bold;
     }
 
-    input[type="textarea"] {
-      width: 95%;
-      height: 200px;
-    }
+    form {
+      margin-bottom: 10%;
+      // Children
+      #email-form,
+      #building-form,
+      #description-form,
+      #radio-form {
+        margin: 3% 0;
+      }
+      input[type="text"] {
+        width: 95%;
+      }
+      select {
+        width: 100%;
+      }
 
-    input,
-    select {
-      padding: 2%;
-    }
+      input[type="textarea"] {
+        width: 95%;
+        height: 200px;
+      }
 
-    button {
-      border: 1px solid #222222;
-      padding: 3%;
-      width: 100%;
-      background: transparent;
-      cursor: pointer;
+      input,
+      select {
+        padding: 2%;
+      }
 
-      // Hover
-      &:hover {
-        background: #222222;
-        color: #ffffff;
-        font-weight: bold;
+      button {
+        border: 1px solid #222222;
+        padding: 3%;
+        width: 100%;
+        background: transparent;
+        cursor: pointer;
+
+        // Hover
+        &:hover {
+          background: #222222;
+          color: #ffffff;
+          font-weight: bold;
+        }
       }
     }
   }
-}
 
-#locations {
-  width: 100%;
-  .flexIt(column, flex-start, flex-start);
-  margin-top: 10%;
+  #locations {
+    width: 100%;
+    .flexIt(column, flex-start, flex-start);
 
-  // Children
-  h2 {
-    font-size: 1.75rem;
-    font-weight: bold;
-  }
-
-  .location {
-    margin: 5% 0;
+    // Break Point
+    @media @desktop {
+      width: 30%;
+    }
 
     // Children
-    h3 {
-      font-size: 1.25rem;
+    h2 {
+      font-size: 1.75rem;
       font-weight: bold;
+    }
+
+    .location {
+      margin: 5% 0;
+
+      // Children
+      h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
     }
   }
 }
