@@ -4,11 +4,7 @@ let scrollElements = Array.from(document.querySelectorAll('.scroll-hide'));
 
 const scrollFunction = () => {
 
-  console.log(scrollElements.length);
-
   scrollElements.forEach(element => {
-
-    console.log(window.pageYOffset + window.innerHeight);
 
     if (element.offsetTop < window.pageYOffset + window.innerHeight - element.clientHeight / 3) {
 

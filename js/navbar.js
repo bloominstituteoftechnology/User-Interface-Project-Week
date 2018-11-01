@@ -5,8 +5,6 @@ const navItems = document.querySelector('.nav-items');
 const links = navItems.querySelectorAll('a');
 const thisPageLink = navItems.querySelector('a[href="#"]');
 
-console.log(thisPageLink);
-
 let navState = false;
 
 navButton.addEventListener('click', () => {
