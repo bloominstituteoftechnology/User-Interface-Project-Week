@@ -6,7 +6,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
 
-    @media @xsmall {
+    @media @tablet {
       background-image: url(../img/contact/contact-mobile-jumbotron.png);
     }
 
@@ -17,7 +17,7 @@
       padding: 12rem 0 2rem 8rem;
       font-weight: bold;
 
-      @media @xsmall {
+      @media @tablet {
         font-size: 3.5rem;
         padding: 15.5rem 0 2.5rem 1.5rem;
       }
@@ -31,9 +31,14 @@
       padding: 5rem 8.5rem;
       justify-content: space-between;
 
+      @media @tablet {
+        margin: 3.5rem 3rem;
+      }
+
       @media @xsmall {
         flex-direction: column;
         padding: 3.2rem 1.2rem;
+        margin: 0;
       }
     }
     
@@ -43,12 +48,12 @@
       opacity: 0;
       transform: translateX(-25rem);
 
-      @media @xsmall {
+      @media @tablet {
         width: 100%;
       }
 
       span.address {
-        @media @xsmall {
+        @media @tablet {
           display: none;
         }
       }
@@ -59,7 +64,7 @@
         letter-spacing: .75px;
         margin-bottom: 5rem;
 
-        @media @xsmall{
+        @media @tablet{
           margin-bottom: 5rem;
         }
       }
@@ -69,7 +74,7 @@
         font-size: 1.6rem;
         margin-bottom: .5rem;
 
-        @media @xsmall {
+        @media @tablet {
           line-height: 1.8;
         }
 
@@ -83,7 +88,7 @@
         color: @primary;
         background: @white;
 
-        @media @xsmall {
+        @media @tablet {
           margin-bottom: 1.2rem;
         }
       }
@@ -98,7 +103,7 @@
         &:placeholder-shown {
           padding: 1rem;
 
-          @media @xsmall {
+          @media @tablet {
             font-size: 1.4rem;
           }
         }
@@ -107,7 +112,7 @@
           padding: 1rem;
           margin-bottom: 4rem;
 
-          @media @xsmall {
+          @media @tablet {
             margin-bottom: 1rem;
           }
         }
@@ -117,7 +122,7 @@
         font-size: 1.3rem;
         padding: .75rem 0 4rem;
 
-        @media @xsmall {
+        @media @tablet {
           padding-bottom: 2rem;
         }
       }
@@ -137,7 +142,7 @@
           color: @white;
         }
 
-        @media @xsmall {
+        @media @tablet {
           display: block;
           width: 100%;
         }
@@ -153,10 +158,14 @@
       transition: all 1.5s ease-in-out;
       transform: translateX(25rem);
 
-      @media @xsmall{
+      @media @tablet{
         width: 100%;
-        padding-left: 1rem;
+        padding-left: 9rem;
         padding-top: 4rem;
+      }
+
+      @media @small {
+        padding-left: 2rem;
       }
 
       h2, h3 {
@@ -178,13 +187,13 @@
         padding-bottom: 4rem;
         line-height: 1.5;
 
-        @media @xsmall {
+        @media @tablet {
           line-height: 1.6;
         }
 
         &:last-of-type{
 
-          @media @xsmall {
+          @media @tablet {
             padding-bottom: 0;
           }
         }
@@ -197,7 +206,7 @@
 .radio-container {
   margin-bottom: 3.5rem;
 
-  @media @xsmall {
+  @media @tablet {
     margin-bottom: 1.5rem;
   }
 }
@@ -224,7 +233,7 @@
     left: 0;
     top: -.4rem; 
 
-    @media @xsmall {
+    @media @tablet {
       margin-top: .75rem;
     }
 
@@ -246,5 +255,30 @@
 
   &__radio-input:checked ~ &__radio-label &__radio-button::after {
       opacity: 1;
+  }
+}
+
+@media @xsmall {
+  .tabletContainer {
+    display: flex;
+
+    h3 {
+      // font-size: 2rem;
+    }
+
+    p {
+      // font-size: 1.4rem;
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+@media @small {
+  .tabletContainer {
+    display: block;
+
+    p {
+      margin-right: 1.5rem;
+    }
   }
 }
