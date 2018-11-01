@@ -17,9 +17,7 @@ class TabLink {
             tlink.classList.remove('tab-selected');
         });
 
-        // this.element.addEventListener('click', () => {
-        //     event.target.style.background = '#5e9fb9';
-        // });
+
 
         this.element.classList.toggle('tab-selected');
         console.log(this.element);
