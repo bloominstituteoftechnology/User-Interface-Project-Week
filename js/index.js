@@ -1,7 +1,7 @@
-ScrollReveal().reveal('.jumbo');
-ScrollReveal().reveal('.content');
-ScrollReveal().reveal('.project')
-ScrollReveal().reveal('footer');
+ScrollReveal().reveal('.jumbo', { delay: 750 });
+ScrollReveal().reveal('.content', {delay: 100});
+ScrollReveal().reveal('.project');
+// ScrollReveal().reveal('.main-img', { delay: 100 });
 
 const toggleNav = () => {
     nav.classList.toggle('menu-showing');
