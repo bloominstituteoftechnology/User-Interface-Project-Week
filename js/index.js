@@ -6,6 +6,8 @@ const toggleMenu = () => {
     menu.classList.toggle('open-menu');
     closeIcon.style.display = 'block';
     menuIcon.style.display = 'none';
+    TweenMax.from(header, 1, {opacity:0, left:4000});
+    TweenMax.staggerFrom(".nav-bar nav a", 1, {y:1000, delay:1}, 0.2);
 }
 
 const closeMenu = () => {
@@ -17,6 +19,7 @@ const closeMenu = () => {
 const menu = document.querySelector('nav');
 const closeIcon = document.querySelector('.expanded');
 const menuIcon = document.querySelector('.menu-icon');
+const header = document.querySelectorAll(".nav-bar nav");
 
 menuIcon.addEventListener('click', toggleMenu);
 closeIcon.addEventListener('click', closeMenu);
@@ -87,3 +90,6 @@ content[4].classList.add('selected');
 
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map( tab => new Tablink(tab));
+
+
+
