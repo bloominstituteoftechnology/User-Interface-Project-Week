@@ -12,6 +12,7 @@ Vue.component('post', {
 const vm =new Vue({
   el: '#posting',
   data: {
+    query: '',
     posts: [{ 
         id: 1, 
         title: 'How to Pick Shingle Colors',
@@ -41,6 +42,14 @@ const vm =new Vue({
         content: 'Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products.'
       }
     ]
+  },
+  computed: {
+    computedList: function() {
+      var vm = this
+      return this.posts.filter(function (item) {
+        return item.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1
+      })
+    }
   }
 });
 

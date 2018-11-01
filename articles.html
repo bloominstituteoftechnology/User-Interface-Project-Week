@@ -11,6 +11,7 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 </head>
 
 <body>
@@ -52,9 +53,12 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi nihil harum at rerum dolores vero quisquam placeat. Provident doloremque dolor numquam eos suscipit impedit consequatur minus? Doloremque harum aperiam minima!
       </p>
       <section id="posting">
+        <div class="search-box">
+          Search: <input v-model="query">
+        </div>
         <post
           class = "post"
-          v-for="post in posts"
+          v-for="post in computedList"
           v-bind:key="post.id"
           v-bind:title="post.title"
           v-bind:author="post.author"
