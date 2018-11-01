@@ -51,3 +51,41 @@ class TabItem {
 let tlinks = document.querySelectorAll('.tab');
 console.log(tlinks);
 tlinks = Array.from(tlinks).map(tlink => new TabLink(tlink));
+
+
+/* Navigation */
+class OpenNav {
+    constructor(link) {
+        this.link = link;
+        this.openLink = document.querySelector('open-nav');
+        this.closeLink = document.querySelector('close-nav');
+
+        this.link.addEventListener('click', () => this.open());
+    }
+
+    open() {
+        this.openLink.classList.toggle('nav-selected');
+        this.closeLink.classList.toggle('nav-selected');
+
+        navLinks.classList.toggle('navShow');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+let navOpen = document.querySelector('.open-nav');
+let navClose = document.querySelector('close-nav');
+let navLinks = document.querySelector('nav-link');
+
+navOpen = new OpenNav(navOpen);
+navClose = new NavClose(navClose);
