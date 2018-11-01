@@ -90,7 +90,9 @@ window.addEventListener('scroll',(event)=>{
   let windowHeight = document.documentElement.clientHeight;
   scrollBoxs.forEach(item => {
     if(item.getBoundingClientRect().top < windowHeight-100 && item.getBoundingClientRect().bottom > 0){
-      TweenMax.to(item, 2, {opacity: 1});
+      TweenMax.to(item, 2, {opacity: 1, onComplete: ()=> {
+          item.removeAttribute('style');
+      }});
     }
     else{
       item.style.opacity = 0;
@@ -104,7 +106,9 @@ window.addEventListener('load', (event)=>{
     scrollBoxs.forEach(item => {
         item.style.opacity = 0;
       if(item.getBoundingClientRect().top < windowHeight-100 && item.getBoundingClientRect().bottom > 0){
-        TweenMax.to(item, 2, {opacity: 1});
+        TweenMax.to(item, 2, {opacity: 1, onComplete:()=>{
+            item.removeAttribute('style');
+        }});
       }
       else{
         item.style.opacity = 0;
