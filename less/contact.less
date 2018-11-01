@@ -1,4 +1,8 @@
 .header {
+  img {
+    .width-height(100%, auto);
+  }
+
   position: relative;
   h1 {
     position: absolute;
@@ -16,10 +20,18 @@
 .contact {
   .flex-box(row nowrap, space-between, center);
   .margin-padding(0, 2.5% 10%);
+  @media @mobile {
+    .flex-box(column nowrap, space-between, flex-start);
+    .margin-padding(0, 2.5% 5%);
+  }
   .left {
     .flex-box(column nowrap, space-between, flex-start);
     .margin-padding(0, 2.5% 0);
     .width-height(50%, auto);
+    @media @mobile {
+      .width-height(100%, auto);
+      .margin-padding(0 0 5%, 2.5% 0);
+    }
     h2 {
       .sub-headers();
       .margin-padding(0, 2.5% 0 5%);
@@ -38,7 +50,7 @@
         border-radius: 3px;
         color: @armygreen;
         font-size: 1.6rem;
-        border: 1px @armygreen solid;
+        border: 1px rgb(169, 169, 169) solid;
       }
       h4 {
         font-size: 1rem;
@@ -50,13 +62,14 @@
       .width-height(100%, auto);
 
       select {
+        cursor: pointer;
         .width-height(100%, auto);
         .margin-padding(2.5% 0, 2.5%);
         border-radius: 3px;
         background: @white;
         color: @black;
         font-size: 1.6rem;
-        border: 1px @armygreen solid;
+        border: 1px rgb(169, 169, 169) solid;
       }
     }
     .overview-box {
@@ -71,19 +84,41 @@
       .margin-padding(5% 0, 0);
       .width-height(100%, auto);
       div {
+        .width-height(120%, auto);
         .flex-box(row nowrap, flex-start, center);
+        input {
+          position: absolute;
+          opacity: 0;
+          height: 0;
+          width: 0;
+        }
+        .custom-radio {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          background-color: @white;
+          border: 1px solid black;
+          border-radius: 50%;
+          border-color: rgb(169, 169, 169);
+        }
+        h3 {
+          .margin-padding(0 5%, 0);
+        }
       }
     }
     button {
+      cursor: pointer;
       background: @white;
       border: 1px black solid;
       color: @black;
       text-decoration: none;
       .margin-padding(0, 2.5% 0);
       .width-height(33%, auto);
+      @media @mobile {
+        .width-height(100%, auto);
+      }
       &:hover {
         background: #5e9fb9;
-        color: @white;
       }
     }
   }
@@ -91,12 +126,21 @@
     .flex-box(column nowrap, space-between, flex-start);
     .margin-padding(0, 0 0 2.5%);
     .width-height(30%, auto);
+    @media @mobile {
+      .width-height(100%, auto);
+    }
     h2 {
       .sub-headers();
       .margin-padding(0, 0 0 7%);
+      @media @mobile {
+        .margin-padding(0, 0 0 2.5%);
+      }
     }
     address {
       .margin-padding(5% 0, 3% 0 5%);
+      @media @mobile {
+        .margin-padding(2.5% 0, 0 0 2.5%);
+      }
       h2 {
         font-size: 1.8rem;
       }

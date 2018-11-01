@@ -24,20 +24,23 @@ console.log(openNav);
 closedNav.addEventListener('click', toggleMenuOn);
 openNav.addEventListener('click', toggleMenuOff);
 
-
 class Tab {
   constructor(element) {
     this.element = element;
     this.data = this.element.dataset.tab;
-    this.buttonElement = document.querySelector(`.button[data-tab='${this.data}']`);
+    this.buttonElement = document.querySelector(
+      `.button[data-tab='${this.data}']`
+    );
     this.tabElement = document.querySelector(`.tab[data-tab='${this.data}']`);
     this.tabContent = new TabContent(this.tabElement);
-    this.element.addEventListener('click', () => { this.click() })
-  };
+    this.element.addEventListener('click', () => {
+      this.click();
+    });
+  }
 
   click() {
     const tabs = document.querySelectorAll('.button');
-    Array.from(tabs).forEach((tab) => {
+    Array.from(tabs).forEach(tab => {
       tab.style.background = '#FFF';
       tab.style.color = '#222222';
     });
@@ -53,15 +56,24 @@ class TabContent {
   }
 
   select() {
-    const content = document.querySelectorAll('.tab')
-    Array.from(content).forEach((tab) => {
+    const content = document.querySelectorAll('.tab');
+    Array.from(content).forEach(tab => {
       tab.style.display = 'none';
     });
-    this.element.style.display = 'flex'; 
+    this.element.style.display = 'flex';
   }
-
 }
 
 let buttons = document.querySelectorAll('.button');
 
 buttons = Array.from(buttons).map(button => new Tab(button));
+
+let radioButtons = document.querySelectorAll('.custom-radio');
+
+radioButtons = Array.from(radioButtons);
+radioButtons.forEach(button => {
+  button.addEventListener('click', function radioButtonClick(event) {
+    radioButtons.forEach(button => (button.style.background = 'white'));
+    event.target.style.background = '#5e9fb9';
+  });
+});
