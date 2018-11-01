@@ -12,8 +12,6 @@ const toggleMenu = () => {
     TweenMax.from(menu, 1, {
       opacity: 0,
     });
-
-
   }
 
   const toggleMenuClose = () => {
@@ -26,7 +24,6 @@ const toggleMenu = () => {
 
     TweenMax.from('.container', 2, {
       opacity: 0.5,
-      // x: 100,
     });
 
     // TweenMax.from(menu, 2, {
@@ -62,13 +59,6 @@ const toggleMenu = () => {
 // Title animation
 const homeTitle = document.querySelector('.header ul');
 console.log(homeTitle);
-
-// window.addEventListener("load", () => {
-//   TweenMax.to(homeTitle, 1, {
-//       x:15,
-//       y:-15,
-//   });
-// })
 
 // Button Animation
 
@@ -115,40 +105,3 @@ button2.addEventListener("mouseleave", function(){
 
 const middleImages = document.querySelectorAll('.img');
 const topContent = document.querySelector('.top-content');
-// window.addEventListener('scroll', () => {
-//   TweenMax.to(middleImages, 1, {
-//     scrollTo:250
-//   });
-// })
-
-
-
-const t1 = new TimelineMax({paused: true});
-
-t1.to(".menu", 0.8, {
-     y: 6,
-     rotation: 45,
-     ease: Expo.easeInOut
-});
-t1.to(".menu ul li a", 0.8, {
-     y: -6,
-     rotation: -45,
-     ease: Expo.easeInOut,
-     delay: -0.8
-});
-
-t1.to(".menu", 2, {
-     top: "0%",
-     ease: Expo.easeInOut,
-     delay: -2
-});
-
-t1.staggerFrom(".menu ul li", 2, {x: -200, opacity: 1, ease:Expo.easeOut}, 0.3);
-
-t1.reverse();
-$(document).on("click", ".toggleMenu", function() {
-     t1.reversed(!t1.reversed());
-});
-$(document).on("click", "a", function() {
-     t1.reversed(!t1.reversed());
-});
