@@ -47,7 +47,7 @@ const vm =new Vue({
     computedList: function() {
       var vm = this
       return this.posts.filter(function (item) {
-        return item.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1
+        return item.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1 || item.author.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1
       })
     }
   },
