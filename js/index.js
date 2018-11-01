@@ -1,10 +1,13 @@
 function toggleMenuOn() {
+  TweenMax.from('.nav-bar', 1.5, { y: -500, ease: Bounce.easeOut });
   closedNav.style.display = 'none';
   openNav.style.display = 'block';
   navItems.style.display = 'block';
   nav.style.height = '100%';
 }
 function toggleMenuOff() {
+  TweenMax.from('.nav-bar', 0.3, { rotationX: -360, ease: Circ.easeOut });
+
   closedNav.style.display = 'block';
   openNav.style.display = 'none';
   navItems.style.display = 'none';
@@ -69,7 +72,6 @@ let buttons = document.querySelectorAll('.button');
 buttons = Array.from(buttons).map(button => new Tab(button));
 
 let radioButtons = document.querySelectorAll('.custom-radio');
-
 radioButtons = Array.from(radioButtons);
 radioButtons.forEach(button => {
   button.addEventListener('click', function radioButtonClick(event) {
