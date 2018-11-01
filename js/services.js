@@ -48,14 +48,22 @@ allTabs = Array.from(allTabs).map(tab => {
 
 let servicesJumbo = document.querySelector('.services-jumbo');
 let preconstruction = document.querySelector('.preconstruction-img');
-let  construction = document.querySelector('.construction-img');
+let construction = document.querySelector('.construction-img');
 let designBuild = document.querySelector('.design-build-img');
 let sustainability = document.querySelector('.sustainability-img');
 
-if (window.matchMedia('(max-width: 500px)').matches) {
-    servicesJumbo.src = 'img/services/services-mobile-jumbotron.png';
-    preconstruction.src = 'img/services/services-tab-mobile-pre-construction-img.png';
-    construction.src = 'img/services/services-tab-mobile-construction-img.png';
-    designBuild.src= 'img/services/services-tab-mobile-design-build-img.png';
-    sustainability.src = 'img/services/services-tab-mobile-sustainability-img.png';
-}
+window.addEventListener('resize', () => {
+    if (window.matchMedia('(max-width: 500px)').matches) {
+        servicesJumbo.src = 'img/services/services-mobile-jumbotron.png';
+        preconstruction.src = 'img/services/services-tab-mobile-pre-construction-img.png';
+        construction.src = 'img/services/services-tab-mobile-construction-img.png';
+        designBuild.src= 'img/services/services-tab-mobile-design-build-img.png';
+        sustainability.src = 'img/services/services-tab-mobile-sustainability-img.png';
+    } else {
+        servicesJumbo.src = 'img/services/services-jumbotron.png';
+        preconstruction.src = 'img/services/services-tab-pre-construction-img.png';
+        construction.src = 'img/services/services-tab-construction-img.png';
+        designBuild.src= 'img/services/services-tab-design-build-img.png';
+        sustainability.src = 'img/services/services-tab-sustainability-img.png';
+    }
+})
