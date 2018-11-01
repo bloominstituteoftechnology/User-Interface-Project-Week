@@ -12,13 +12,13 @@ class Question {
 
     expandFAQ() {
         if (this.currentState) {
-            TweenMax.to(this.element, 0.5, {
+            TweenMax.to(this.element, 1, {
                 css: { className: '-=expand' },
                 ease: Power4.easeOut,
             });
             this.button.textContent = "More Info:";
         } else {
-            TweenMax.to(this.element, 0.5, {
+            TweenMax.to(this.element, 1, {
                 css: { className: '+=expand' },
                 ease: Power4.easeOut,
             });
