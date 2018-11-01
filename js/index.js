@@ -105,8 +105,8 @@ let email = document.querySelector(".email");
 
 email.addEventListener("input", () => {
     if (email.validity.typeMismatch) {
-        email.setCustomValidity("I expect an e-mail, darling!");
+        email.setCustomValidity("Email is expected!");
     } else {
-        email.setCustomValidity("");
+        email.setCustomValidity("Thank you for submitting!");
     }
 });
