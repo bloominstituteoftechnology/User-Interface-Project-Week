@@ -56,11 +56,11 @@ tlinks = Array.from(tlinks).map(tlink => new TabLink(tlink));
 /* Navigation */
 class OpenNav {
     constructor(link) {
-        this.link = link;
+        this.navLink = link;
         this.openLink = document.querySelector('open-nav');
         this.closeLink = document.querySelector('close-nav');
 
-        this.link.addEventListener('click', () => this.open());
+        this.navLink.addEventListener('click', () => this.open());
     }
 
     open() {
@@ -71,6 +71,22 @@ class OpenNav {
     }
 }
 
+class NavClose {
+    constructor(link) {
+        this.linkClose = link;
+        this.openLink = document.querySelector('open-nav');
+        this.closeLink = document.querySelector('close-nav');
+
+        this.linkClose.addEventListener('click', () => this.closeNav());
+    }
+
+    closeNav() {
+        this.openLink.classList.toggle('nav-selected');
+        this.closeLink.classList.toggle('nav-selected');
+
+        navLinks.classListttttt.toggle('navShow');
+    }
+}
 
 
 
