@@ -32,6 +32,8 @@
 
     member.addEventListener('click', event => {
 
+      document.querySelector('html').scrollTop = document.querySelector('h2').offsetTop;
+
         if (!member.isActive) {
 
         members.forEach(other => {
