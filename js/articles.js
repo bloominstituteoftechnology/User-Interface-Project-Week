@@ -50,6 +50,32 @@ const vm =new Vue({
         return item.title.toLowerCase().indexOf(vm.query.toLowerCase()) !== -1
       })
     }
+  },
+  methods: {
+    beforeEnter: function (el) {
+      el.style.opacity = 0
+      el.style.width = 0
+    },
+    enter: function (el, done) {
+      var delay = el.dataset.index * 150
+      setTimeout(function () {
+        Velocity(
+          el,
+          { opacity: 1, width: '100%' },
+          { complete: done }
+        )
+      }, delay)
+    },
+    leave: function (el, done) {
+      var delay = el.dataset.index * 150
+      setTimeout(function () {
+        Velocity(
+          el,
+          { opacity: 0, width: '100%' },
+          { complete: done }
+        )
+      }, delay)
+    }
   }
 });
 

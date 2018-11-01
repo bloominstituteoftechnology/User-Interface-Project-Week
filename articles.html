@@ -11,7 +11,6 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 </head>
 
 <body>
@@ -56,15 +55,24 @@
         <div class="search-box">
           Search: <input v-model="query">
         </div>
-        <post
-          class = "post"
-          v-for="post in computedList"
-          v-bind:key="post.id"
-          v-bind:title="post.title"
-          v-bind:author="post.author"
-          v-bind:date="post.date"
-          v-bind:content="post.content"
-        ></post>
+        <transition-group
+          name="staggered-fade"
+          tag="div"
+          v-bind:css="false"
+          v-on:before-enter="beforeEnter"
+          v-on:enter="enter"
+          v-on:leave="leave"
+        >
+          <post
+            class = "post"
+            v-for="post in computedList"
+            v-bind:key="post.id"
+            v-bind:title="post.title"
+            v-bind:author="post.author"
+            v-bind:date="post.date"
+            v-bind:content="post.content"
+          ></post>
+        </transition-group>
       </section>
       <section id="new-post">
         <h3>Add A New Post</h3>
@@ -123,6 +131,7 @@
   
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 	<script src="js/index.js"></script>
   <script src="js/articles.js"></script>
 </body>
