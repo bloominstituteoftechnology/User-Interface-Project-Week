@@ -81,7 +81,13 @@
 
           TweenMax.to(member.parentNode.querySelector('img'), 1, {margin: '15px 0'});
 
-          if (window.innerWidth <= 800) {
+          if (window.innerWidth <= 800 && window.innerWidth > 500) {
+
+            TweenMax.to(member.parentNode, 1, {marginBottom: '100px'});
+
+          }
+
+          else if (window.innerWidth <= 500) {
 
             TweenMax.to(member.parentNode, 1, {marginBottom: '40px', width: '50%'});
 
