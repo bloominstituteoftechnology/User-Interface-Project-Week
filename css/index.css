@@ -1,1 +1,644 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Roboto";
+}
+.wrapper {
+  max-width: 1200px;
+  width: 85%;
+  margin: 0 auto;
+}
+.row {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+p {
+  font-size: 1.6rem;
+}
+h2 {
+  font-size: 2rem;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+header {
+  background-color: #99a4af;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  height: 5rem;
+}
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+header .header-container .brand {
+  color: white;
+  font-size: 2.6rem;
+  font-weight: bold;
+  position: absolute;
+  top: 1.2rem;
+  z-index: 100;
+}
+header .header-container .menu-toggle {
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  color: white;
+  z-index: 100;
+  cursor: pointer;
+}
+nav {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+nav a {
+  width: 100%;
+  text-align: center;
+  font-size: 6rem;
+  margin-bottom: 4rem;
+  color: white;
+}
+nav a:focus,
+nav a:hover {
+  color: grey;
+}
+.nav-toggle {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(153, 164, 175, 0.95);
+  z-index: 1;
+  position: relative;
+}
+.hamburger {
+  background-color: white;
+  margin: 0.5rem 0;
+  height: 0.4rem;
+  width: 3.7rem;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+.close-menu {
+  padding: 2rem;
+}
+.close-menu .hamburger {
+  position: absolute;
+  right: 0;
+}
+.close-menu .hamburger:first-child {
+  position: absolute;
+  top: 0.5rem;
+  transform: rotate(45deg);
+}
+.close-menu .hamburger:nth-child(2) {
+  display: none;
+}
+.close-menu .hamburger:nth-child(3) {
+  position: absolute;
+  top: 0.5rem;
+  transform: rotate(-45deg);
+}
+.cta-section {
+  background-image: url(../img/home/home-jumbotron.png);
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 120rem;
+  margin: 0 auto;
+  height: 55rem;
+  position: relative;
+}
+.cta-section .wrapper h1 {
+  position: absolute;
+  bottom: 4rem;
+  color: white;
+  font-size: 7rem;
+}
+.cta-section .wrapper h1 span {
+  display: block;
+}
+.main-section {
+  display: flex;
+  flex-direction: column;
+}
+.main-section .row .col-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5.5rem;
+}
+.main-section .row .text-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  margin-top: 2rem;
+}
+.main-section .row .text-article h2 {
+  font-size: 2.2;
+  text-transform: capitalize;
+  color: #010101;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+.main-section .row .text-article p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.main-section .row .text-article a {
+  color: #010101;
+  border: 1px solid #010101;
+  width: 15rem;
+  text-align: center;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  margin-top: 2rem;
+  padding: 1.6rem 2rem;
+}
+.main-section .row .text-article a:hover {
+  background: #343434;
+  color: white;
+  transition: 0.35s;
+}
+.main-section .row .text-article-reverse {
+  padding-left: 2.4rem;
+}
+.main-section .row .img-reverse {
+  order: -1;
+}
+@media (max-width: 700px) {
+  .main-section .col-2 {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main-section .col-2 .text-article {
+    align-items: center;
+    max-width: 100%;
+  }
+  .main-section .col-2 .text-article h2 {
+    text-align: center;
+  }
+  .main-section .col-2 .text-article h2,
+  .main-section .col-2 .text-article p,
+  .main-section .col-2 .text-article a {
+    width: 100%;
+  }
+  .main-section .col-2 .text-article .text-article-btn {
+    width: 100%;
+  }
+  .main-section .col-2 .img {
+    max-width: 100%;
+    width: 100%;
+    order: -1;
+  }
+  .main-section .col-2 .img img {
+    width: 100%;
+  }
+}
+.home-projects {
+  margin-top: 13rem;
+}
+.home-projects h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.home-projects .project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.home-projects .project .background-img {
+  height: 20rem;
+  background-size: cover;
+  margin: 5rem 0;
+}
+.home-projects .project .project-overlay {
+  position: absolute;
+  background: #d8d8d8;
+  width: 24rem;
+  padding: 2rem;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  right: 0;
+  top: 21rem;
+}
+.home-projects .project .reverse-overlay {
+  left: 0;
+}
+.home-projects .project p:first-child {
+  margin-top: 5rem;
+}
+.home-projects .project p {
+  font-size: 1.6rem;
+  margin: 1.5rem 0;
+  line-height: 2;
+  font-weight: 400;
+  width: 50%;
+  align-self: center;
+}
+.background-img-1 {
+  background-image: url(../img/home/home-villas-img.png);
+}
+.background-img-2 {
+  background-image: url(../img/home/home-outskirts-img.png);
+}
+.background-img-3 {
+  background-image: url(../img/home/home-the-blocks-img.png);
+}
+@media (max-width: 1000px) {
+  .home-projects {
+    margin-top: 5rem;
+  }
+  .home-projects h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  .home-projects .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: static;
+  }
+  .home-projects .project .background-img {
+    height: 25rem;
+    background-size: cover;
+    margin: 0;
+    width: 100%;
+  }
+  .home-projects .project .project-overlay {
+    position: static;
+    margin-top: -3rem;
+    background: #d8d8d8;
+    width: 24rem;
+    padding: 4rem;
+    text-align: center;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    align-self: center;
+    width: 90%;
+  }
+  .home-projects .project p {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    width: 90%;
+    align-self: center;
+  }
+  .wrapper.home-projects {
+    width: 100%;
+  }
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: darkgray;
+  color: white;
+  padding: 3rem;
+  margin-top: 5rem;
+}
+footer .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+footer article .footer-header {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  width: 100%;
+}
+footer article p {
+  margin-top: 1rem;
+}
+footer .input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer .input-section h3 {
+  text-align: start;
+}
+footer .input-section input {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+footer .input-section p {
+  text-align: start;
+}
+@media (max-width: 1000px) {
+  footer {
+    background: darkgray;
+    color: white;
+    margin-top: 5rem;
+    width: 100%;
+    padding: 0;
+  }
+  footer .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer article {
+    display: block;
+    max-width: 100%;
+  }
+  footer article .footer-header {
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    text-align: start;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+  footer article input {
+    width: 100%;
+    padding: 1.4rem;
+  }
+  footer article p {
+    text-align: start;
+    margin: 1rem 0;
+  }
+}
+footer .wrapper {
+  align-items: flex-start;
+}
+.cta-section-services {
+  background-image: url(../img/services/services-jumbotron.png);
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 120rem;
+  margin: 0 auto;
+  height: 20.2rem;
+  position: relative;
+}
+.cta-section-services .wrapper h1 {
+  position: absolute;
+  bottom: 2rem;
+  color: white;
+  font-size: 7rem;
+}
+.cta-section-services .wrapper h1 span {
+  display: block;
+}
+.services-container .main-p {
+  margin: 5.5rem 0;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+.services-container .services-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5.5rem;
+}
+.services-container .services-buttons .services-button-text {
+  border: 1px solid black;
+  color: black;
+  font-size: 2.2rem;
+  text-transform: capitalize;
+  padding: 1.2rem 3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.services-container .services-buttons .active-tab {
+  background-color: #619fb8;
+  color: white;
+}
+.services-button-output .services-text-output {
+  margin-right: 5rem;
+  width: 50%;
+}
+.services-button-output .services-text-output h2 {
+  font-weight: bold;
+}
+.services-button-output .services-text-output p {
+  margin: 2rem 0;
+  line-height: 1.5;
+}
+.services-button-output {
+  display: none;
+}
+.services-button-output:first-child {
+  display: flex;
+}
+@media (max-width: 1000px) {
+  .services-container {
+    max-width: 100%;
+  }
+  .services-container .main-p {
+    margin: 5.5rem 0;
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+  .services-container .services-buttons {
+    display: none;
+  }
+  .services-button-output .services-text-output {
+    margin: 3rem 0;
+    width: 100%;
+    text-align: start;
+  }
+  .services-button-output .services-text-output h2 {
+    font-weight: bold;
+  }
+  .services-button-output .services-text-output p {
+    margin: 2rem 0;
+    line-height: 1.5;
+  }
+  .services-button-output img {
+    width: 100%;
+  }
+  .services-button-output {
+    display: block;
+  }
+  .services-button-output:first-child {
+    display: block;
+  }
+}
+.cta-section-contact {
+  background-image: url(../img/contact/contact-jumbotron.png);
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 120rem;
+  margin: 0 auto;
+  height: 20.2rem;
+  position: relative;
+}
+.cta-section-contact .wrapper h1 {
+  position: absolute;
+  bottom: 2rem;
+  color: white;
+  font-size: 7rem;
+}
+.cta-section-contact .wrapper h1 span {
+  display: block;
+}
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+}
