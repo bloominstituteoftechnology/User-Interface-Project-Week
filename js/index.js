@@ -37,12 +37,13 @@ class Card {
 
 hamburger.addEventListener('click', (e) => {
     menuExpanded.classList.add('menu-open');
-    TweenMax.to('.menu-expanded', .5, {opacity: 0.98 ,ease:Power4.easeOut});
+    TweenMax.to(menuExpanded, .3, {opacity: 0.98 ,ease:Power4.easeOut});
 });
 hamburgerClose.addEventListener('click',(e) => {
     e.stopPropagation();
-    TweenMax.to('.menu-expanded', .5, {opacity: 0 ,ease:Power4.easeOut, onComplete: () => menuExpanded.classList.remove('menu-open')})
+    TweenMax.to(menuExpanded, .3, {opacity: 0 ,ease:Power4.easeOut, onComplete: () => menuExpanded.classList.remove('menu-open')});
 });
+
 
 // services
 let tabs = document.querySelectorAll('.tablink');
@@ -55,4 +56,7 @@ if(title === 'Services'){
 
 //scroll
 
-
+// const mainContent = document.querySelector('.main-content');
+// mainContent.addEventListener('scroll',(e) => {
+//     TweenMax.from(mainContent,2,{x:100, ease:Power2.easeOut});
+// })
