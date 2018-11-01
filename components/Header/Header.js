@@ -6,19 +6,46 @@ const navClose = document.querySelector('#nav-close');
 
 const nav = document.querySelector('nav');
 
+
+
 // Callback Methods
-const hideMenu = () => {
-    navOpen.classList.remove('hide-nav');
-    nav.classList.add('hide-nav');
-    navClose.classList.add('hide-nav');
+const showMenu = () => {
+    TweenMax.to(navOpen, .5, {
+        rotation: 180
+    });
+    nav.style.height = '100vh';
+    nav.classList.remove('hide-nav');
+    TweenMax.from(nav, 1, {
+        height: 0
+    });
+    setTimeout(() => {
+        navOpen.classList.add('hide-nav');
+        navClose.classList.remove('hide-nav');
+        navClose.style.cursor = 'pointer';
+
+    }, 500);
+
 }
 
-const showMenu = () => {
-    nav.classList.remove('hide-nav');
-    navClose.classList.remove('hide-nav');
-    navOpen.classList.add('hide-nav');
-    navClose.style.cursor = 'pointer';
+const hideMenu = () => {
+    navClose.classList.add('hide-nav');
+    navOpen.classList.remove('hide-nav');
+    TweenMax.to(navOpen, .5, {
+        rotation: 360
+    });
+
+    TweenMax.to('nav', 1, {
+        height: 0
+    });
+
+    setTimeout(() => {
+        nav.classList.add('hide-nav');
+
+    }, 500);
+
+
 }
+
 
 // Event Listeners
 navOpen.addEventListener('click', showMenu);
