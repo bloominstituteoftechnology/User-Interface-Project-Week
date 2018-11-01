@@ -1,0 +1,76 @@
+.navigation {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: @navBackground;
+    z-index: 100;
+    opacity: 0.97;
+
+    &-bar {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 14px 0;
+
+        .logo {
+            margin-left: 87px;
+            font-weight: Bold;
+            font-size: 2.4rem;
+            color: @navTextColor;
+
+            @media @mobile {
+                margin-left: 15px;
+            }//media query
+        }//logo
+
+        .hamburger-menu {
+            margin-right: 87px;
+
+            @media @mobile {
+                margin-right: 15px;
+            }//media query
+        }
+        
+    } //navigation-bar
+
+    &-links {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-bottom: 5.6rem;
+        transition: 0.2s all ease-in-out;
+
+        nav {
+            padding-bottom: 42px;
+            
+            a {
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+            font-size: 4.8rem;
+            line-height: 8.5rem;
+            color: @navTextColor;
+            text-decoration: none;
+            
+            &:hover {
+                color: @navHoverColor;
+                }//anchor on hover
+            }//anchor
+        }//nav
+    }//navigaiton-links
+
+    .links-hidden {
+        pointer-events: inherit;
+        transition: 0.2s all ease-in-out;
+        margin-top: -100vh;
+        //display: none;
+    }
+}//navigation
+
+// .max-height {
+//     height: 100vh;
+//     opacity: 0.97;
+// }
