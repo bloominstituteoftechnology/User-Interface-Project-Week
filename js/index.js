@@ -1,10 +1,23 @@
 // JS goes here
-const hamburger = document.querySelector(".menu-toggle");
+
+const menu = document.querySelector(".menu-toggle");
+const hamburger = document.querySelectorAll(".hamburger");
 const nav = document.querySelector("nav");
 
-hamburger.addEventListener("click", function() {
+menu.addEventListener("click", function() {
   nav.classList.toggle("nav-toggle");
 });
+
+// function navigationToggle() {
+//   const hamburger = document.querySelector(".menu-toggle");
+//   const nav = document.querySelector("nav");
+
+//   hamburger.addEventListener("click", function() {
+//     nav.classList.toggle("nav-toggle");
+//   });
+// }
+
+// navigationToggle();
 
 class TabLink {
   constructor(tabElement) {
