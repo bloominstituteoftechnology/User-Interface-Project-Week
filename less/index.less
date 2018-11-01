@@ -31,6 +31,11 @@ article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section{
   display:block;
 }
+html {
+  box-sizing: border-box;
+  font-family: Roboto, Arial, sans-serif;
+}
+
 body{
   line-height:1;
 }
@@ -58,3 +63,218 @@ table{
 }
 
 /* Your Code Goes Here */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+// Imports
+@import 'variables.less';
+@import 'navigation.less';
+@import 'services.less';
+@import 'footer.less';
+@import 'contact.less';
+
+
+
+// Home
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
+  p {
+    color:#222222;
+    line-height: 25px;
+    font-size: 1.6rem;
+  }
+} // .container
+
+.jumbotron {
+  width: 100%;
+  padding: 0 0 0 0;
+  position: relative;
+
+  .top-banner-header {
+    font-weight: bold;
+    font-size: 6.4rem;
+    line-height: 75px;
+    color: #FFFFFF;
+    font-family: Roboto, Arial, sans-serif;
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    @media @mobile {
+      font-size: 4rem;
+      line-height: 40px;
+    }
+  } // .top-banner-header
+
+  .jumbotron-image-desktop {
+    width: 100%;
+    @media @mobile {
+      display: none;
+    }
+  }
+  .jumbotron-image-mobile {
+    width: 100%;
+    display: none;
+    @media @mobile {
+      display: unset;
+    }
+  }
+} // .jumboron
+
+.main {
+  margin: 0 8.3%;
+  @media @mobile {
+    margin: 0 0%; 
+  }
+
+  p {
+    padding: 0 0 27px 0;
+  }
+
+  h2 {
+    padding: 0 0 20px 0;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #222222;
+  }
+} // .main
+
+.learnBtn {
+  border: 1px solid #222222;
+  width: 135px;
+  padding: 13px 0;
+  font-size: 1.6rem;
+  @media @mobile {
+    width: 100%;
+  }
+}
+
+.architects {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0 0 0;
+  @media @mobile {
+    flex-direction: column-reverse;
+    margin: 0 4%;
+  }
+
+  .architects-text {
+    padding: 7px 0 0 0;
+  }
+
+  div {
+    width: 48%;
+    @media @mobile {
+      width: 100%;
+    }
+  }
+  img {
+    width: 100%;
+
+  }
+} // .architects
+
+.futuristic-designs {
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+  padding: 96px 0 0 0;
+  @media @mobile {
+    display: block;
+    padding: 40px 0 0 0; 
+    margin: 0 4%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .futuristic-designs-text {
+    padding: 40px 0 0 0;
+  }
+
+  div {
+    width: 48%;
+    @media @mobile {
+      width: 100%;
+    }
+  }
+} // .futuristic-designs
+
+
+.recent-projects {
+  padding: 97px 0 30px 0;
+  h2 {
+    @media @mobile {
+      margin: 0 4%;
+    }
+  }
+  @media @mobile {
+    padding: 50px 0 0 0;
+  }
+
+  p {
+    margin: 0 23.6%;
+    line-height: 24px;
+    font-size: 1.8rem;
+    @media @mobile {
+      margin: 0 2%;
+    }
+  }
+  .project {
+    padding: 0 0 44px 0;
+    .recent-projects-header {
+      position: relative;
+      padding: 26px 0 85px 0;
+      @media @mobile {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      img {
+        width: 100%;
+      }
+      .project-name-overlay {
+        position: absolute;
+        bottom: 45px;
+        right: 0px;
+        padding: 35px 55px;
+        background-color: #D8D8D8;
+        border: 1px solid white;
+        font-size: 2.5rem;
+        letter-spacing: 7px;
+        @media @mobile {
+          right: unset;
+          bottom: 17px
+        }
+      }
+      .outskirts {
+        right: unset;
+        left: 0px;
+        padding: 35px 60px;
+        @media @mobile {
+          left: unset;
+        }
+      }
+      .projects-img-desktop {
+        @media @mobile {
+          display: none;
+        }
+      }
+      .projects-img-mobile {
+        display: none;
+        @media @mobile {
+        display: block;
+        }
+      }
+    } // .recent-projects-header
+  } // .project
+} // .recent-projects
