@@ -2,28 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Services</title>
+	<title>Projects</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/index.css">
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <style>
-        #img-slide-show {
-            opacity: 0;
-            transition: all 1.0s linear 0s;
-            margin-bottom: 50px;
-        }
 
-        .project-heading {
-            font-size: 5rem;
-            text-align: center;
-            font-weight: 700;
-            margin-bottom: 50px;
-        }
-    </style>
 </head>
 
 <body>
@@ -57,8 +43,21 @@
 
 		<section class="cta"><p class="cta-content__text-p">Services include: completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</p></section>
 
-        <div class="project-heading">Our projects</div>
+        <!-- <div class="project-heading">Our projects</div>
         <div id="img-slide-show"></div>
+        <div class="btn-container"><a href="#" class="cta-content__text-a cta-content__text-a__big">View Projects</a></div> -->
+
+
+        <div class="project-heading">Our projects</div>
+
+        <div id="img-slide-show">
+                <img src="img/projects/project1.jpg" alt="Building" class="slide showing">
+                <img src="img/projects/project2.jpg" alt="Building" class="slide">
+                <img src="img/projects/project3.jpg" alt="Building" class="slide">  
+        </div>
+            
+        <div class="btn-container"><a href="#" id="pause" class="cta-content__text-a cta-content__text-a__big">Pause</a></div>
+
 
 
 		<footer class="footer">
@@ -118,41 +117,43 @@
 	</div>
 
 
-<!-- *** NOTE *** Tab Navigator Content: I used the same text for each tab to make it easy, Note that the images and text do change on click but you can just use the same text for each tab element.  All the images should be in the img folder.
-
-  Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.  Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.
-
-
-
--->
 
     <script src="js/index.js"></script>
     <script>
         
   //Projects img slideshow
 
-        let imgSlideShow__i = 0;
-        const imgSlideShow__array = ['<img src="img/projects/project1.jpg" alt="Building">', 
-                                    '<img src="img/projects/project2.jpg" alt="Building">',
-                                    '<img src="img/projects/project3.jpg" alt="Building">'];
-        let imgSlideShow__elem = document.querySelector('#img-slide-show');
 
-        function imgSlideShowNext(){
-            imgSlideShow__i++;
-            imgSlideShow__elem.style.opacity = 0;
-            if(imgSlideShow__i > imgSlideShow__array.length - 1){
-                imgSlideShow__i = 0;
-            }
-            setTimeout('imgSlideShowSlide()', 1000);
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const slideInterval = setInterval(nextSlide,2000);
+
+        function nextSlide(){
+            slides[currentSlide].className = 'slide';
+            currentSlide = (currentSlide+1)%slides.length;
+            slides[currentSlide].className = 'slide showing';
         }
 
-        function imgSlideShowSlide(){
-            imgSlideShow__elem.innerHTML = imgSlideShow__array[imgSlideShow__i];
-            imgSlideShow__elem.style.opacity = 1;
-            setTimeout('imgSlideShowNext()', 2000);
+        let playing = true;
+        const pauseButton = document.getElementById('pause');
+
+        function pauseSlideshow(){
+            pauseButton.innerHTML = 'Play';
+            playing = false;
+            clearInterval(slideInterval);
         }
 
-        imgSlideShowSlide();
+        function playSlideshow(){
+            pauseButton.innerHTML = 'Pause';
+            playing = true;
+            slideInterval = setInterval(nextSlide,2000);
+        }
+
+        pauseButton.onclick = function(){
+            if(playing){ pauseSlideshow(); }
+            else{ playSlideshow(); }
+        };    
+
 
     </script>
 </body>
