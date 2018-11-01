@@ -15,16 +15,18 @@ const toggleMenu = () => {
   }
 
   const toggleMenuClose = () => {
-    
-    menu.classList.remove('menu--open');
+        
 
-    menuButtonClose.style.display = 'none';
-    menuButton.style.display = 'inline';
+    TweenMax.to(menu, 1, {
+      opacity: 0,
+      onComplete: () => {
+        menu.classList.remove('menu--open');
+        menuButtonClose.style.display = 'none';
+        menuButton.style.display = 'inline';
+      }
+    });
     console.log('close clicked');
 
-    TweenMax.from('.container', 2, {
-      opacity: 0.5,
-    });
 
     // TweenMax.from(menu, 2, {
     //   // opacity: 1,
