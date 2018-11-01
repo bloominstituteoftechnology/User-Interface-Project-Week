@@ -10,7 +10,7 @@
 .tabs {
   margin-top: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   color: @subheader-color;
   font-weight: @subheader-font-weight;
@@ -20,11 +20,14 @@
     padding: 20px 40px;
     background: lightgray;
     border: 1px solid black;
-
     cursor: pointer;
+  }
 
-    .tab:hover {
-      background: @tab-hover-bg;
+  .tab:hover {
+    background-color: @tab-hover-bg;
+    color: @tab-hover-color;
+
+    .tab::after {
       background-color: @tab-selected-bg;
       color: @tab-hover-color;
     }
@@ -48,34 +51,34 @@
     color: @subheader-color;
   }
 
-  @media @mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+  // @media @mobile {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   flex-direction: column;
+  // }
 
-  .desktop {
-    display: block;
+  // .desktop {
+  //   display: block;
 
-    @media @mobile {
-      display: none;
-    }
-  }
+  //   @media @mobile {
+  //     display: none;
+  //   }
+  // }
 
   .service-description {
     width: 50%;
     height: 50%;
     padding: 20px;
 
-    .change {
-      display: block;
-    }
-
     @media @mobile {
       width: 100%;
     }
 
     // display: none;
+  }
+
+  .change {
+    display: block;
   }
 }
