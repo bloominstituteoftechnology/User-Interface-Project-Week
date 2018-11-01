@@ -188,3 +188,14 @@ const myScene3 = new ScrollMagic.Scene({
 //  CONTACT PAGE EFFECTS
 // ========================================================================
 
+const contactFormLeft = document.querySelector('.contact__form-left');
+const contactFormRight = document.querySelector('.contact__form-right');
+
+// if on the services page -- load the following conditional
+if(document.baseURI === 'http://127.0.0.1:5500/contact.html' || document.baseURI ===  'https://wcolts2000.github.io/User-Interface-Project-Week/contact.html') {
+
+  contactFormLeft.style.opacity = "1";
+  contactFormLeft.style.transform = 'translateX(0)';
+  contactFormRight.style.transform = 'translateX(0)';
+  contactFormRight.style.opacity = '1';
+}
