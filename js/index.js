@@ -1,6 +1,5 @@
 let images = document.querySelectorAll(".section-img");
 images = Array.from(images);
-console.log(images);
 
 function mobileImages(arr) {
   let mediaQuery = window.matchMedia("(max-width: 600px)");
