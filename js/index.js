@@ -25,6 +25,7 @@ closeIcon.addEventListener('click', closeMenu);
 
 // Tabbed Content for the Services Page
 
+
 class Tablink {
     constructor(ele) {
         this.element = ele;
@@ -42,19 +43,27 @@ class Tablink {
 
     selectTab() {
         const mql = window.matchMedia("(min-width: 321px)");
+
+        let services = document.querySelectorAll('.services');
+        services.forEach( item => item.classList.remove('selected') );
+
         let content;
+
         if (mql.matches) {
             content = document.querySelectorAll('.desktop-tab');
         } else {
             content = document.querySelectorAll('.mobile-tab');
         }
+
         content.forEach( item => item.classList.remove('selected') );
         let tabs = document.querySelectorAll('.tab');
         tabs.forEach( item => item.classList.remove('selected') );
+
         this.element.classList.add('selected');
         this.content.forEach(item => item.selectContent());
     }
 }
+
 
 class TabContent {
     constructor(ele) {
@@ -64,6 +73,7 @@ class TabContent {
         this.element.classList.add('selected');
     }
 }
+
 
 const mql = window.matchMedia("(min-width: 321px)");
 let content;
@@ -77,4 +87,3 @@ content[4].classList.add('selected');
 
 let tabs = document.querySelectorAll('.tab');
 tabs = Array.from(tabs).map( tab => new Tablink(tab));
-
