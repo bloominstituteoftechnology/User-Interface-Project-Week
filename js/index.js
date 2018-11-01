@@ -23,12 +23,28 @@ navBtn.forEach( (item) => {
     })
 })
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= 499 && window.scrollY < 500) {
-    console.log('Passed 499');
-    }
-})
+function sectionWipe () { 
+    let controller = new ScrollMagic.Controller({
+        globalSceneOptions: {
+            triggerHook: 'onLeave'
+        }
+    });
 
+    // get all slides
+    let slides = document.querySelectorAll(".home-bottom");
+
+    // create scene for every slide
+    for (let i=0; i<slides.length; i++) {
+        new ScrollMagic.Scene({
+                triggerElement: slides[i]
+            })
+            .setPin(slides[i])
+            // .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+    }
+};
+
+sectionWipe();
 
 TweenLite.from('#jumbo-line1', 0.8, {
     opacity: 0,
