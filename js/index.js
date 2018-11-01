@@ -11,7 +11,7 @@ class TabLink {
     }
 
     select() {
-        const tlinks = document.querySelectorAll('.tabs');
+        const tlinks = document.querySelectorAll('.tab');
 
         Array.from(tlinks).forEach(tlink => {
             tlink.classList.remove('tab-selected');
