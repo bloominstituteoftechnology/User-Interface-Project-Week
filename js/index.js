@@ -4,16 +4,68 @@
 const hamburger = document.querySelector(".ham");
 const nav = document.querySelector(".nav");
 const header = document.querySelector(".header");
+
 hamburger.addEventListener("click", function() {
-  //   event.stopPropogation;
   nav.classList.toggle("nav-off");
   header.classList.toggle("header-open");
 
   if (nav.classList.contains("nav-off")) {
     hamburger.src = "../img/nav-hamburger.png";
+    TweenMax.to(header, 3, {
+      ease: Power2.easeOut,
+      height: "5rem"
+    });
+
+    TweenMax.fromTo(nav, 1, {
+      opacity: 100,
+      marginBottom: "33vh",
+      height: "33vh",
+      display: "flex",
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
+      alignItems: 'center'
+    },
+    {
+      ease: Expo.easeIn,
+      height: 0,
+      margin: 0,
+      opacity: 0
+    }
+    );
+
+
   } else {
     hamburger.src = "../img/nav-hamburger-close.png";
+    TweenMax.fromTo(
+      header,
+      3,
+      {
+        height: "5rem"
+      },
+      {
+        ease: Power2.easeOut,
+        height: "100vh"
+      }
+    );
+    TweenMax.fromTo(nav, 1, {
+      height: 0,
+      margin: 0,
+      opacity: 0
+    },
+    {
+      ease: Power4.easeOut,
+      opacity: 100,
+      marginBottom: "33vh",
+      height: "33vh",
+      display: "flex",
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
+      alignItems: 'center'
+    }
+    );
   }
+  console.log(nav.classList);
+  console.log(hamburger.src);
 });
 
 // Service Tab Selector
@@ -119,4 +171,3 @@ class TabCard {
 let tabs = document.querySelectorAll(".tabs-link");
 
 tabs = Array.from(tabs).map(item => new TabLink(item));
-
