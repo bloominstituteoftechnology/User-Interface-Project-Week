@@ -50,9 +50,8 @@ home.addEventListener("click", function(e) {
   }, 1500);
   e.preventDefault();
   setTimeout(() => {
-    document.location.href = "index.html";
+    document.location.href = "/";
   }, 2000);
-
 })
 
 services.addEventListener("click", function(e) {
