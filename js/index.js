@@ -130,7 +130,7 @@ const activeTabComponentImg = document.querySelector('.services__tabs-card.activ
 const activeCard = document.querySelector('.services__tabs-card.active-card');
 const servicesTabContainer = document.querySelector('#tabComponent');
 
-if(document.baseURI === 'http://127.0.0.1:5500/services.html') {
+if(document.baseURI === 'http://127.0.0.1:5500/services.html' || document.baseURI ===  'https://wcolts2000.github.io/User-Interface-Project-Week/services.html') {
 
   // set fadeins on tab component elements
   activeTabComponentImg.addEventListener('load', () => {
