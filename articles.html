@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Home</title>
+	<title>Articles</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container">
+  <div class="container">
 
     <!-- Header with navbar -->
     <header class="header">
@@ -39,79 +39,44 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron">
-      <img src="img/contact/contact-jumbotron.png" alt="#" class="jumbotron--img desktop">
-      <img src="img/contact/contact-mobile-jumbotron.png" alt="#" class="jumbotron--img mobile">
+      <img src="img/services/services-jumbotron.png" alt="#" class="jumbotron--img desktop">
+      <img src="img/services/services-mobile-jumbotron.png" alt="#" class="jumbotron--img mobile">
       <div class="jumbotron--text">
-        Contact Us
+        Articles
       </div>
     </section>
 
     <!-- Main Content -->
-    <main class="main contact">
-      <section class="contact--form">
-        <h2>Get In Touch</h2>
-        <form class="form">
-          <!-- Email input -->
-          <div class="input--email">
-            <label for="email">Email Address:</label>
-            <input class="form__input" type="text" name="email" placeholder="Enter Email">
-            <span>We'll never share your email with anyone else.</span>
-          </div>
-          <!-- Building input -->
-          <div class="input--building">
-            <label for="building">How many buildings do you need planned?</label>
-            <select class="form__input" name="building">
-              <option value="1" selected>1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
-          <!-- Special Instruction input -->
-          <div class="input--instruction">
-            <label for="instruction">Provide a brief overview of your project needs:</label>
-            <textarea class="form__input form__message" name="instruction" placeholder=""></textarea>
-          </div>
-          <!-- Business Types selections -->
-          <div class="input--business">
-            <div>
-              <input type="radio" name="biz-type" value="small" checked> I am a small business
-            </div>
-            <div>
-              <input type="radio" name="biz-type" value="residential"> I am a residential owner
-            </div>
-            <div>
-              <input type="radio" name="biz-type" value="corporation"> I am a corporation
-            </div>
-          </div>          
-          <!-- Submit button -->
-          <input class="form__input form__button" type="submit" value="Submit">
-        </form>
+    <main class="main articles">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi nihil harum at rerum dolores vero quisquam placeat. Provident doloremque dolor numquam eos suscipit impedit consequatur minus? Doloremque harum aperiam minima!
+      </p>
+      <section id="posting">
+        <post
+          class = "post"
+          v-for="post in posts"
+          v-bind:key="post.id"
+          v-bind:title="post.title"
+          v-bind:author="post.author"
+          v-bind:date="post.date"
+          v-bind:content="post.content"
+        ></post>
       </section>
-      <section class="offices">
-        <h2>Where We Work</h2>
-        <div class="address-item">
-          <h4>New York</h4>
-          123 Lane<br>
-          Suite 100<br>
-          Albany, NY 12345<br>
-          202 555 0144<br>
+      <section id="new-post">
+        <h3>Add A New Post</h3>
+        <div>
+          Title: 
+          <input type="text" v-model="title" placeholder="Enter the title of your post">
         </div>
-        <div class="address-item">
-          <h4>Florida</h4>
-          Ocean Drive<br>
-          Suite 201<br>
-          Orlando, FL 22345<br>
-          502 555 0144<br>
+        <div>
+          Author: 
+          <input type="text" v-model="author" placeholder="Enter the author of your post">
         </div>
-        <div class="address-item">
-          <h4>California</h4>
-          Mountain Street<br>
-          Suite 105<br>
-          San Diego, CA 22345<br>
-          702 555 0144<br>
+        <div>
+          Content: 
+          <textarea v-model="content" placeholder="Enter the content of your post"></textarea>
         </div>
+        <button v-on:click="submit">Add Post</button>
       </section>
     </main>
     <footer class="footer">
@@ -151,7 +116,10 @@
       </div>
     </footer>
   </div>
+  
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="js/index.js"></script>
+  <script src="js/articles.js"></script>
 </body>
 </html>
