@@ -115,7 +115,8 @@ class TabCard {
 }
 
 let tabs = document.querySelectorAll('.services__tabs-tab');
-tabs = Array.from(tabs).map(tab => new TabToggle(tab));
+// tabs = Array.from(tabs).map(tab => new TabToggle(tab));
+tabs = Array.from(tabs, (tab => new TabToggle(tab)));
 
 
 // ========================================================================
