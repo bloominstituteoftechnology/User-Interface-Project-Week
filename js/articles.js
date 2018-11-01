@@ -82,6 +82,7 @@ const vm =new Vue({
 const newV = new Vue({
   el: "#new-post",
   data: {
+    id: Date.now(),
     title: '',
     author: '',
     content: ''
@@ -90,6 +91,7 @@ const newV = new Vue({
     submit: function() {
       if (this.title && this.author && this.content) {
         vm.posts.unshift({
+          id: this.id,
           title: this.title,
           author: this.author,
           date: (new Date()).toLocaleDateString(),
