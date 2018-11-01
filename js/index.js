@@ -5,7 +5,7 @@ class Dropdown {
   
       this.button = this.element.querySelector(".dropdown-button");
   
-      this.content = this.element.querySelector(".dropdown-content");
+      this.content = document.querySelector(".dropdown-content");
   
       this.button.addEventListener("click", () => {
           console.log("clicked")
@@ -14,6 +14,7 @@ class Dropdown {
     }
   
     toggleContent() {
+      console.log(this.content)
         console.log(this.content.classList)
       this.content.classList.toggle("dropdown-hidden");
     }
