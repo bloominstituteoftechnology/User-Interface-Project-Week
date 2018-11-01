@@ -23,7 +23,7 @@ class Tabs {
         this.item = document.querySelector(`.tab-content[data-tab=${this.data}]`);
         this.tabContent = new TabContent(this.item);
         this.tab.addEventListener('click',() => this.select());
-console.log(this.item)
+
     };
     select(){
         const tabs = document.querySelectorAll('.tab');
@@ -58,3 +58,4 @@ class TabContent{
 
 let tabs = document.querySelectorAll('.tab');
 tabs= Array.from(tabs).map(tab=>new Tabs(tab));
+tabs[1].select();
