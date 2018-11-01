@@ -1,0 +1,151 @@
+.header-wrapper {
+    position: fixed;
+    z-index: 3;
+    max-width: 1024px;
+    width: 100%;
+
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color:  #909DA9;
+
+
+    .header__brand{
+        font-weight: 700;
+        font-size: 2.4rem;
+        color: #fff;
+        margin-left: 55px;
+
+        @media @phone {
+            font-size: 3.4rem;
+            margin-left: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+    }
+
+    .hamburger {
+        margin-right: 55px;
+
+        @media @phone {
+            margin-right: 20px;
+        }
+        &__line {
+            width: 26px;
+            height: 3px;
+            background-color: #fff;
+            display: block;
+            transition: all .3s;
+            cursor: pointer;
+
+            @media @phone {
+                width: 30px;
+                height: 4px; 
+                border-radius: 2px;
+            }
+            
+    
+            &:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+
+        }
+
+        &:hover {
+            
+            .hamburger__line {
+                background-color: darken(#fff, 10%);
+            }
+        }
+    }//hamburger
+
+
+}
+
+
+.nav {
+    
+    &-hidden {
+        display: none;
+    }
+
+    &-open {
+        display: block;
+        //background-color: rgba(#909DA9, .95);
+        background: linear-gradient(180deg, rgba(#909DA9, 1), rgba(#909DA9, .95));
+        position: fixed;
+        z-index: 4;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0; 
+    }
+
+    &-wrapper {
+        max-width: 1100px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &-expanded {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        &__brand {
+            font-weight: 700;
+            font-size: 3rem;
+            color: #fff;
+            margin-top: 20px;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    &__links {
+        //text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+
+        .nav__link {
+            margin-left: 9rem;
+            width: 30%;
+            font-size: 6rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 65px;
+            text-align: start;
+
+            @media @phone {
+                margin-left: 0;
+                width: 35%;
+                font-size: 5rem;
+            }
+
+            &:hover {
+                color: #332a1c;
+            }
+        }
+    }
+
+
+}
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Projects</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="header-wrapper">
+		<header class="header">
+				<div class="header__brand">
+					<a href="index.html">S&J</a>
+				</div>
+				
+				<div id="hamburger" class="hamburger">
+					<span class="hamburger__line"></span>
+					<span class="hamburger__line"></span>
+					<span class="hamburger__line"></span>
+				</div>
+		</header> 
+		</div>
+
+		<section class="jumbotron">
+			<div class="jumbotron-img">
+				<picture>
+					<source 
+					media="(min-width: 501px)"
+					srcset="img/aboutUs/aboutUs-jumbotron.jpg">
+					<img src="img/aboutUs/aboutUs-jumbotron.jpg" alt="Jumbotron">
+				</picture>
+				<h1 class="jumbotron-img__heading jumbotron-img__heading-bottom">Projects</h1>
+			</div>
+		</section>
+
+		<section class="cta"><p class="cta-content__text-p">Services include: completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</p></section>
+
+        <!-- <div class="project-heading">Our projects</div>
+        <div id="img-slide-show"></div>
+        <div class="btn-container"><a href="#" class="cta-content__text-a cta-content__text-a__big">View Projects</a></div> -->
+
+
+        <div class="project-heading">Our projects</div>
+
+        <div id="img-slide-show">
+                <img src="img/projects/project1.jpg" alt="Building" class="slide showing">
+                <img src="img/projects/project2.jpg" alt="Building" class="slide">
+                <img src="img/projects/project3.jpg" alt="Building" class="slide">  
+        </div>
+            
+        <div class="btn-container"><a href="#" id="pause" class="cta-content__text-a cta-content__text-a__big">Pause</a></div>
+
+
+
+		<footer class="footer">
+				<div class="footer-flex">
+					<div class="footer-flex-item">
+						<h3>Interested in starting a project?</h3><h3>Let’s talk:</h3>
+						<input type="email" placeholder="Enter email">
+						<p>We'll never share your email with anyone else.</p>
+					</div>
+		
+					<address class="footer-flex-item">
+						<h3 class="address-header">New York</h3>
+						123 Lane <br>
+						Suite 100 <br>
+						Albany, NY 12345 <br>
+						202 555 0144 <br>
+					</address>
+		
+					<address class="footer-flex-item">
+						<h3 class="address-header">Florida</h3>
+						Ocean Drive <br>
+						Suite 201 <br>
+						Orlando, FL 22345 <br>
+						502 555 0144 <br>
+					</address>
+		
+					<address class="footer-flex-item">
+						<h3 class="address-header">California</h3>
+						Mountain Street <br>
+						Suite 105 <br>
+						San Diego, CA 22345 <br>
+						702 555 0144 <br>
+					</address>
+				</div>
+				<div class="copyright">Copyright © 2018 Smith and Jones</div>
+			</footer>
+		
+		
+			<nav id="nav" class="nav nav-hidden">
+				<div class="nav-wrapper">
+					<div class="nav-expanded">
+						<div class="nav-expanded__brand">
+							<a href="services.html">S&J</a>
+						</div>
+						<i id="nav-close" class="fas fa-times nav__close nav-expanded__brand"></i>
+					</div>
+					<div class="nav__links">
+						<a class="nav__link" href="index.html">Home</a>
+						<a class="nav__link" href="services.html">Services</a>
+                        <a class="nav__link" href="contact.html">Contact</a>
+                        <a class="nav__link" href="aboutUs.html">About Us</a>
+                        <a class="nav__link" href="projects.html">Projects</a>
+					</div>
+				</div>
+			</nav>
+
+	</div>
+
+
+
+    <script src="js/index.js"></script>
+    <script>
+        
+  //Projects img slideshow
+
+
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        let slideInterval = setInterval(nextSlide,2000);
+
+        function nextSlide(){
+            slides[currentSlide].className = 'slide';
+            currentSlide = (currentSlide+1)%slides.length;
+            slides[currentSlide].className = 'slide showing';
+        }
+
+        let playing = true;
+        const pauseButton = document.getElementById('pause');
+
+        function pauseSlideshow(){
+            pauseButton.innerHTML = 'Play';
+            playing = false;
+            clearInterval(slideInterval);
+        }
+
+        function playSlideshow(){
+            pauseButton.innerHTML = 'Pause';
+            playing = true;
+            slideInterval = setInterval(nextSlide,2000);
+        }
+
+        pauseButton.onclick = function(event){
+            event.preventDefault();
+            if(playing){ pauseSlideshow(); }
+            else{ playSlideshow(); }
+        };    
+
+
+    </script>
+</body>
+</html>
