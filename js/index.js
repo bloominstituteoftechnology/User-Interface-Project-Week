@@ -56,7 +56,11 @@ if(title === 'Services'){
 
 //scroll
 
+// const contentArea = document.querySelector('.content-area');
+// window.addEventListener('load',(e) => {
+//     contentArea.style.opacity = '0';
+// })
 // const mainContent = document.querySelector('.main-content');
 // mainContent.addEventListener('scroll',(e) => {
-//     TweenMax.from(mainContent,2,{x:100, ease:Power2.easeOut});
-// })
+//     TweenMax.to(mainContent,2,{opacity:1,x:100, ease:Power2.easeOut});
+// });
