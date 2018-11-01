@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: #222222;
+    font-family: @font, Arial, sans-serif;
+}
+.sub-header {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-family: @font, Arial, sans-serif;
+}
+.hidden {
+    display: none;
+}
+p {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-family: @font, Arial, sans-serif;
+}
+header {
+    .custom-layout(column, space-between, center);
+    font-family: @font, Arial, sans-serif;
+    width: 100%;
+    background-color: @navbar;
+    position: fixed;
+    align-items: center;
+    z-index: 2;
+    opacity: 0.95;
+
+    @media @mobile {
+        opacity: 1;
+        width: 100%;
+    }
+    .nav-container {
+        .custom-layout(row, space-between, center);
+        padding: 1.25% 0;
+        width: 83.5%;
+        margin: 0 auto;
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+        img {
+            cursor: pointer;
+        }
+
+        @media @mobile {
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 4%;
+            padding-bottom: 4%;
+        }
+    }
+    nav {
+        display: none;
+    }
+    .menu-showing {
+        .custom-layout(column, flex-start, center);
+        width: 100vw;
+        height: 100vh;
+        padding-top: 12%;
+        margin: 0 auto;
+
+        @media @mobile {
+            padding-top: 20%;
+        }
+        a {
+            width: 18%;
+            font-size: 3rem;
+            line-height: 5.3125rem;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            &:hover {
+                color: @navHover;
+            }
+            @media @mobile {
+                width: 56%;
+            }
+        }
+    }
+}
+footer {
+    background-color: @footer;
+    font-family: @font, Arial, sans-serif;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media @mobile {
+        align-items: flex-start;
+    }
+    .footer-content {
+        .custom-layout(row, space-between, center);
+        width: 83.5%;
+        padding-top: 6%;
+
+        @media @mobile {
+            flex-direction: column;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .email {
+            .custom-layout(column, space-between, flex-start);
+            width: 33%;
+
+            @media @mobile {
+                width: 100%;
+                padding-bottom: 5%;
+            }
+            h3 {
+                font-size: 1.25rem;
+                font-weight: bold;
+                padding-bottom: 6.25%;
+                line-height: 1.5rem;
+                color: #FFFFFF;
+            }
+            input[type='text'] {
+                width: 100%;
+                border-radius: 4px;
+                font-size: 1rem;
+                padding: 3% 0;
+                padding-left: 4px;
+
+                @media @mobile {
+                    padding: 5% 0;
+                }
+            }
+            .footnote {
+                font-size: 0.815rem;
+                padding-top: 2%;
+                color: #FFFFFF;
+
+                @media @mobile {
+                    padding-top: 3%;
+                }
+            }
+        }
+        .locations {
+            .custom-layout(row, space-between, flex-start);
+            width: 61%;
+            align-items: flex-start;
+
+            @media @mobile {
+                flex-direction: column;
+                width: 100%;
+            }
+            .state {
+                .custom-layout(column, space-between, flex-start);
+                width: 27%;
+
+                @media @mobile {
+                    width: 100%;
+                    padding-bottom: 8%;
+                }
+                h3 {
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                    line-height: 1.5rem;
+                    color: #FFFFFF;
+                    @media @mobile {
+                        padding-bottom: 1%;
+                    }
+                }
+            }
+            address {
+                font-size: 0.875rem;
+                line-height: 1.625rem;
+                color: #FFFFFF;
+            }
+            .last {
+                padding-left: 2%;
+                @media @mobile {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .copyright {
+        font-size: 0.75rem;
+        padding-bottom: 1%;
+        padding-top: 3%;
+        color: #FFFFFF;
+
+        @media @mobile {
+            margin: 0 auto;
+            width: 90%;
+        }
+    }
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+.button {transition: all .5s ease-in-out;}
+.button:hover { transform: scaleY(1.35)}
