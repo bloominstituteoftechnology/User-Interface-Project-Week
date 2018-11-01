@@ -138,6 +138,14 @@ html {
   font-size: 62.5%;
 }
 /* Your Code Goes Here */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .container {
   font-size: 1.6rem;
   font-weight: normal;
@@ -475,6 +483,9 @@ html {
   margin-bottom: 40px;
   margin-top: 20px;
   height: 300px;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
 }
 @media (max-width: 1000px) {
   .container .tabs-selected {
@@ -573,9 +584,133 @@ html {
     display: none;
   }
 }
-.contact-content {
+.container .contact-jumbo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+  .container .contact-jumbo {
+    display: none;
+  }
+}
+.container .contact-mobile-jumbo {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container .contact-mobile-jumbo {
+    display: flex;
+    width: 100%;
+  }
+}
+.container .contact-content {
   display: flex;
   justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 20px;
+}
+@media (max-width: 500px) {
+  .container .contact-content {
+    display: block;
+    width: 100%;
+    margin-left: 0%;
+  }
+}
+.container .contact-content .left-content {
+  margin: 40px 0px;
+  width: 40%;
+}
+@media (max-width: 500px) {
+  .container .contact-content .left-content {
+    width: 100%;
+  }
+}
+.container .contact-content .left-content .email-input {
+  width: 100%;
+  height: 30px;
+  margin: 5px 0px 0px 0px;
+}
+.container .contact-content .left-content .needs-input {
+  width: 100%;
+  margin: 5px 0px;
+}
+.container .contact-content .left-content .buildings-input {
+  width: 100%;
+  height: 30px;
+  margin: 5px 0px;
+}
+.container .contact-content .left-content .left-content-header {
+  font-weight: bold;
+  font-size: 2rem;
+}
+@media (max-width: 500px) {
+  .container .contact-content .left-content .left-content-header {
+    margin-top: 60px;
+  }
+}
+.container .contact-content .left-content div {
+  margin: 35px 0px;
+}
+.container .contact-content .left-content div .email-header {
+  font-size: 1.6rem;
+}
+.container .contact-content .left-content div p {
+  font-size: 1.2rem;
+  opacity: 50%;
+  color: gray;
+}
+.container .contact-content .left-content .btn {
+  margin: 25px 0px;
+  height: 40px;
+  width: 130px;
+  padding-left: 43px;
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .container .contact-content .left-content .btn {
+    width: 100%;
+    padding-left: 5%;
+    height: 50px;
+  }
+}
+.container .contact-content .left-content .btn:hover {
+  background-color: black;
+  color: white;
+}
+.container .contact-content .right-content {
+  width: 30%;
+  margin: 40px 0px;
+}
+@media (max-width: 500px) {
+  .container .contact-content .right-content {
+    width: 100%;
+  }
+}
+.container .contact-content .right-content .right-content-header {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.container .contact-content .right-content .contact-div .contact-section {
+  margin: 35px 0px;
+}
+.container .contact-content .right-content .contact-div .contact-section h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.container .contact-h1 {
+  font-weight: Bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  color: #FFFFFF;
+  display: absolute;
+  left: 0;
+  bottom: 0;
+  margin-top: -110px;
+  margin-left: 10%;
 }
 footer {
   color: #FFFFFF;
@@ -656,7 +791,7 @@ footer .tablet-div {
   }
 }
 footer .tablet-div .footer-section-2 {
-  width: 20%;
+  width: 22%;
 }
 @media (max-width: 1000px) {
   footer .tablet-div .footer-section-2 {
