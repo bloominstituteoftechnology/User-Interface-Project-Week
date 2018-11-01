@@ -49,7 +49,7 @@ Extra features are not in order of importance, it's just a list of features the 
 [  ] * Build a custom carousel with your own components and use it throughout different pages on the site
 [  ] * Take a look at [Vue.js](https://vuejs.org/v2/guide/) and see if you could implement some simple JavaScript examples in your site from their tutorials
 [  ] * If you have experience with [React](https://reactjs.org/tutorial/tutorial.html), see if you could convert the site into a single page app instead of a multipage app by creating routes and components
-[  ] * Incorporate animations on scroll events so that when users scroll through the site, content animates in or out of view
-[  ] * Host your site on a domain you own
+[ x ] * Incorporate animations on scroll events so that when users scroll through the site, content animates in or out of view
+[ x ] * Host your site on a domain you own
 
 Remember: This is a self driven challenge, try to accomplish MVP as soon as you can and stretch as much as you can on extra features.  Have fun with this and remember to reach out to your project managers after the 20 minute rule.  Good luck!
