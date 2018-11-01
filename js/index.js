@@ -128,7 +128,7 @@ window.addEventListener('resize',(event)=>{
         footer.style.paddingBottom = `${difference+20}px`;
     }
     scrollBoxs.forEach(item => {
-        item.style.opacity = 0;
+        
       if(item.getBoundingClientRect().top < windowHeight-100 && item.getBoundingClientRect().bottom > 0){
         TweenMax.to(item, 2, {opacity: 1});
       }
