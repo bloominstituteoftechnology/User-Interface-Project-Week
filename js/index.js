@@ -8,7 +8,7 @@ const hamburger = document.querySelector('img.header__nav-links__hamburger');
 const homeNav = document.querySelector('#home');
 const servicesNav = document.querySelector('#services');
 const contactNav = document.querySelector('#contact');
-
+const fadeIn = document.querySelector('#fade-in');
 
 var t1 = new TimelineMax({paused: true});
 
@@ -29,6 +29,7 @@ t1.staggerFrom(".menu ul li", .5, {
   }, 0.3);
 
 t1.reverse();
+
 hamburger.addEventListener("click", function() {
     t1.reversed(!t1.reversed());
     if(hamburger.classList.contains('burger')) {
@@ -44,26 +45,43 @@ hamburger.addEventListener("click", function() {
 
 home.addEventListener("click", function(e) {
   t1.reversed(!t1.reversed());
+  setTimeout(() => {
+    fadeIn.style.opacity = 1;
+  }, 1500);
   e.preventDefault();
   setTimeout(() => {
     document.location.href = "index.html";
-  }, 1800);
+  }, 2000);
 
 })
+
 services.addEventListener("click", function(e) {
   t1.reversed(!t1.reversed());
+  setTimeout(() => {
+    fadeIn.style.opacity = 1;
+  }, 1500);
   e.preventDefault();
   setTimeout(() => {
     document.location.href = "services.html";
-  }, 1800);
+  }, 2000);
 })
+
 contact.addEventListener("click", function(e) {
   t1.reversed(!t1.reversed());
+  setTimeout(() => {
+    fadeIn.style.opacity = 1;
+  }, 1500);
   e.preventDefault();
   setTimeout(() => {
     document.location.href = "contact.html";
-  }, 1800);
+  }, 2000);
 })
+
+setTimeout(() => {
+  fadeIn.style.opacity = "0";
+}, 200);
+// document.onload = () => {
+// }
 
 // ***************************************
 // ******* SERVICES TAB COMPONENT ********
@@ -98,3 +116,5 @@ class TabCard {
 
 let tabs = document.querySelectorAll('.services__tabs-tab');
 tabs = Array.from(tabs).map(tab => new TabToggle(tab));
+
+
