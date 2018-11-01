@@ -84,20 +84,9 @@ class NavClose {
         this.openLink.classList.toggle('nav-selected');
         this.closeLink.classList.toggle('nav-selected');
 
-        navLinks.classListttttt.toggle('navShow');
+        navLinks.classList.toggle('navShow');
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 let navOpen = document.querySelector('.open-nav');
 let navClose = document.querySelector('close-nav');
