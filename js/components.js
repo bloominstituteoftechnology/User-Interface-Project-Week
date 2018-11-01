@@ -1,15 +1,13 @@
 class TabLink {
-    constructor(element) {
+    constructor(element) { 
       this.element = element;
       
-      // Get the custom data attribute on the Link
+      //STEP ONE: GET ALL DATA-TAB *tab-link also had data-tab attributes. it's referencing the links variable*
       this.data = this.element.dataset.tab; //this.data is holding everything with the data attribute data-tab
-      
-      // Using the custom data attribute get the associated Item element
+      //STEP TWO: SET UP THE MATCHING CARDS *.tabs-item holds our card. looks for matching card to tab
       this.itemElement = document.querySelector(`.tabs-item[data-tab='${this.data}']`);  //we are selecting items with the .tabs-item class and the data-tab  attribute and this.itemElement is holding it
-      
-      // Using the Item element, create a new instance of the TabItem class
-      this.tabItem = new TabItem(this.itemElement); // creating new TabItem class and holding it in this.tabItem
+      //STEP THREE: CREATES NEW VARIABLE WITH MATCHING TAB AND CARDS
+      this.tabItem = new TabItem(this.itemElement); 
       
       // Add a click event listener on this instance, calling the select method on click
           this.element.addEventListener('click', () => this.select())  //add event listener to every element
@@ -43,8 +41,7 @@ class TabLink {
   }
   
   
-  // START HERE: create a reference to the ".tabs-link" class
-
+//Step One: GET REFERENCES
   let links = document.querySelectorAll('.tabs-link');
-  // Following the code in the Dropdown file, iterate through the array you created above creating a new instance of the TabLink class for each item. 
+  //CREATE NEW CLASS CALLED TABLINK
   links = Array.from(links).map(link => new TabLink(link))
