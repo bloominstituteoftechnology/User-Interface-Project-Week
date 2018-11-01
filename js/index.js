@@ -6,60 +6,36 @@ const nav = document.querySelector('nav');
 let navLinks = document.querySelectorAll('.nav-link');
 const topBar = document.querySelector('.topbar');
 const logo = document.querySelector('.logo');
+const jumboH1 = document.querySelector('.jumbotron h1');
 
 // Nav expanding and retracting
 navBtn.forEach( (item) => {
-item.addEventListener('click', () => {                                navOpen.classList.toggle('display-toggle');
+    item.addEventListener('click', () => {
+        TweenLite.from(nav, .4, {
+            lineHeight: 0,
+            opacity: 0,
+            height: 0
+        })
         nav.classList.toggle('nav-display-toggle'); 
+        navOpen.classList.toggle('display-toggle');
         navClose.classList.toggle('display-toggle');
-        // logo.classList.toggle('display-toggle');
         navLinks.forEach( (link) => link.classList.toggle('display-toggle'));
     })
 })
 
-// Services Tabs
-class TabLink {
-    constructor(element) {
-        this.element = element;
-        this.data = this.element.dataset.tab;
-        this.itemElement = document.querySelector(
-        `.tab-content[data-tab='${this.data}']`
-        );
-        this.tabContent = new TabContent(this.itemElement);
-        this.element.addEventListener("click", () => {
-            this.select();
-        });
-    }
+TweenLite.from('#jumbo-line1', 0.8, {
+    opacity: 0,
+    ease: Power1.easeInOut,
+})
 
-    select() {
-        let links = document.querySelectorAll(".tab-link");
-        Array.from(links).forEach(element => 
-            element.classList.remove("tab-link-selected")
-        );
-        this.element.classList.add("tab-link-selected");
-        this.tabContent.select();
-    }
-}
+TweenLite.from('#jumbo-line2', 0.8, {
+    opacity: 0,
+    ease: Power1.easeInOut,
+    delay: 0.7
+})
 
-class TabContent {
-    constructor(element) {
-        this.element = element;
-    }
-
-    select() {
-        this.element.classList.toggle("tab-content-selected");
-        let allTabs = document.querySelectorAll(".tab-content");
-        // TweenMax.from(".tabs-item", 0.25, {opacity:0, x:50, ease:Power0.easeNone});
-        Array.from(allTabs).forEach(element => 
-            element.classList.remove("tab-content-selected")
-        );
-        this.element.classList.add("tab-content-selected");
-        console.log(this.element.classList);
-    }
-}
-
-
-let links = document.querySelectorAll(".tab-link");
-
-links = Array.from(links).map(link => new TabLink(link));
-links[0].select();
+TweenLite.from('#jumbo-line3', 0.8, {
+    opacity: 0,
+    ease: Power1.easeInOut,
+    delay: 1.4
+})
