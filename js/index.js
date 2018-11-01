@@ -47,7 +47,7 @@ class Card {
     }
 }
 window.addEventListener('keypress', () => {
-    if (event.key = 'Enter') {
+    if (event.key === 'Enter') {
         alert('Thank you! You should receive an email in your inbox shortly.')
     }
 })
