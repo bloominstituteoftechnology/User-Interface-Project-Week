@@ -148,6 +148,9 @@ body {
   flex-direction: column;
   overflow-x: hidden;
 }
+.body-content {
+  overflow-y: hidden;
+}
 .homePage-content {
   margin: 0 8% 0 8.5%;
 }
@@ -227,6 +230,26 @@ body {
 .navMenuOpenSelected {
   display: none;
 }
+@keyframes slideOut {
+  from {
+    width: 0vw;
+    height: 0vh;
+  }
+  to {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@keyframes slideIn {
+  from {
+    width: 100%;
+    height: 100vh;
+  }
+  to {
+    width: 0vw;
+    height: 0vh;
+  }
+}
 .navigation {
   position: fixed;
   z-index: 10;
@@ -288,6 +311,16 @@ body {
 .navLinksShow {
   display: none;
   z-index: 5;
+}
+.nav-Animate-Open {
+  display: block;
+  animation-duration: 1s;
+  animation-name: slideOut;
+}
+.nav-Animate-Close {
+  animation-duration: 2s;
+  animation-name: slideIn;
+  display: none;
 }
 .header-container {
   position: relative;

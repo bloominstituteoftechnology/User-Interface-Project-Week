@@ -65,6 +65,9 @@ class NavOpen {
         this.navClose.classList.toggle('navMenuOpenSelected');
 
         navLinksContainer.classList.toggle('navLinksShow');
+        siteBody.classList.toggle('body-content');
+        // navLinksContainer.classList.toggle('nav-Animate-Open');
+        
         console.log('menu opened');
     }
 }
@@ -84,6 +87,9 @@ class NavClose {
         this.navClose.classList.toggle('navMenuOpenSelected');
 
         navLinksContainer.classList.toggle('navLinksShow');
+        siteBody.classList.toggle('body-content');
+        // navLinksContainer.classList.toggle('nav-Animate-Open');
+        // navLinksContainer.classList.toggle('nav-Animate-Close');
         console.log('menu closed');
     }
 }
@@ -92,6 +98,7 @@ class NavClose {
 let navMenuOpen = document.querySelector('.navHamburger');
 let navMenuClose = document.querySelector('.navCloseImage');
 let navLinksContainer = document.querySelector('.navShow');
+let siteBody = document.querySelector('body');
 
 navMenuOpen = new NavOpen(navMenuOpen);
 navMenuClose = new NavClose(navMenuClose);
