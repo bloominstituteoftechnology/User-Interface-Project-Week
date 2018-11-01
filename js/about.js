@@ -1,3 +1,5 @@
+AOS.init();
+
 class Carousel {
   constructor(el) {
     // reference to DOM element
@@ -82,3 +84,47 @@ class Carousel {
 }
 
 let carousel = new Carousel(document.querySelector('.carousel-container'));
+
+////////////////
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    personnel: [{
+      name: 'Chief Tui',
+      job: 'president',
+      image: '../img/about/man.png',
+      message: 'Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
+    },
+    {
+      name: 'Moana Motunui',
+      job: 'CFO',
+      image: '../img/about/woman.png',
+      message: 'Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.'
+    },
+    {
+      name: 'Tamatoa',
+      job: 'HR and Internal Operations Manager',
+      image: '../img/about/man.png',
+      message: 'Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.'
+    },
+    {
+      name: 'Heihei',
+      job: 'Executive Sales Assistant',
+      image: '../img/about/man.png',
+      message: 'Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.'
+    },
+    {
+      name: 'Te Ka Tefiti',
+      job: 'Sales Manager',
+      image: '../img/about/woman.png',
+      message: 'Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.'
+    },
+    {
+      name: 'Maui',
+      job: 'Canvassing Team Supervisor',
+      image: '../img/about/man.png',
+      message: 'Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.'
+    }] 
+  }
+});
