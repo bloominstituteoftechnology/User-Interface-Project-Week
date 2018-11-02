@@ -142,35 +142,63 @@ body {
   font-family: "Roboto", Arial, sans-serif;
   width: 100%;
 }
-
-header {
-  display: flex;
-  justify-content: space-between;
-  background: #9aa5b0;
-  width: 100%;
-  height: 60px;
-  h4 {
-    display: flex;
-    justify-content: flex-start;
-    color: white;
-    align-items: center;
-    font-size: 1.5rem;
-    padding-left: 40px;
-  }
-  nav {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 75px;
-    padding-right: 40px;
-    a {
-      text-decoration: none;
-      color: white;
-      font-size: 1.5rem;
-    }
-  }
+.menu header .top-bar{
+position:fixed;
+display:flex;
+opacity:0.9;
+width: 100%;
+justify-content:space-between;
+background-color:#828282;
+padding:10px 0;
+z-index:2;
 }
-
+.menu header .top-bar h2{
+  font-size:2.4rem;
+  font-weight:bold;
+  color: white;
+  margin:5px 7.5%;
+}
+.menu header .top-bar .non-expanded{
+  margin: 5px 7.5%;
+  cursor:pointer;
+}
+.menu header .top-bar .expanded{
+  margin:5px 7.5%;
+  display:none;
+  cursor:pointer;
+}
+.menu header .nav{
+  display:none;
+  position: absolute;
+  opacity:0.9;
+  top:54px;
+  width:100%;
+  height:100%;
+  background-color:#828282;
+  z-index:2;
+}
+.menu header .nav nav{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.menu header .nav nav a{
+  font-size: 4.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  line-height:85px;
+  color:white;
+}
+.menu header .nav nav a:hover{
+  color:#222222;
+}
+.menu header .open{
+  display:block;
+}
+.menu header .close{
+  display:none;
+}
 .image-text {
   position: relative;
   max-height: 590px;
@@ -685,7 +713,7 @@ h1 {
       }
       h5 {
         width: 100%;
-        font-size: 1.7rem;
+        font-size: 26px;
       }
       p {
         padding-top: 25px;
@@ -709,6 +737,10 @@ h1 {
         display: flex;
         font-weight: bold;
         padding-bottom: 11px;
+      }
+      .copyright{
+        display:flex;
+        justify-content:center;
       }
     }
   }

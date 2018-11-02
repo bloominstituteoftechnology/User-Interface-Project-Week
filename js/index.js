@@ -1,4 +1,20 @@
 // JS goes here
+const toggleNavOpen = () =>{
+    nav.classList.toggle('open');
+    //open_button.classList.toggle('close');
+    closed_button.classList.toggle('open');
+}
+ const nav = document.querySelector('.nav');
+const open_button = document.querySelector('.non-expanded');
+const closed_button = document.querySelector('.expanded');
+open_button.addEventListener('click', toggleNavOpen);
+
+
+
+
+
+
+
 class TabLink {
     constructor(element) {
       this.element = element;
