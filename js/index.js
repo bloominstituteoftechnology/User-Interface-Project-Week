@@ -22,9 +22,9 @@ class TabLink {
         console.log(this.tabItem);
     }
 
-    // linkClick() {
-    //     this.itemElement.toggleContent();
-    // }
+    linkClick() {
+        this.tabItem.toggleContent();
+    }
 
 }
 
@@ -34,17 +34,17 @@ class TabItem {
         console.log(tabContent);
     }
     select() {
-            let items = document.querySelectorAll('.tab-content');
-            // console.log(items);
+        let items = document.querySelectorAll('.tab-content');
+        // console.log(items);
 
-            items.forEach(item => {
-                item.classList.add('tab-selected');
-            });
-        }
-        // toggleContent() {
-        //     this.tabContent.classList.toggle('change');
-        //     // console.log(this.tabContent);
-        // }
+        items.forEach(item => {
+            item.classList.add('tab-selected');
+        });
+    }
+    toggleContent() {
+        this.tabContent.classList.toggle('change');
+        // console.log(this.tabContent);
+    }
 
 }
 
@@ -56,48 +56,48 @@ tlinks[0].select();
 
 
 /* Navigation */
-class OpenNav {
-    constructor(link) {
-        this.navLink = link;
-        this.openLink = document.querySelector('open-nav');
-        this.closeLink = document.querySelector('close-nav');
+// class OpenNav {
+//     constructor(link) {
+//         this.navLink = link;
+//         this.openLink = document.querySelector('open-nav');
+//         this.closeLink = document.querySelector('close-nav');
 
-        this.navLink.addEventListener('click', () => this.open());
-        console.log(this.navLink);
-    }
+//         this.navLink.addEventListener('click', () => this.open());
+//         console.log(this.navLink);
+//     }
 
-    open() {
-        this.openLink.classList.toggle('nav-selected');
-        this.closeLink.classList.toggle('nav-selected');
+//     open() {
+//         this.openLink.classList.toggle('nav-selected');
+//         this.closeLink.classList.toggle('nav-selected');
 
-        navLink.classList.toggle('navShow');
-    }
-}
+//         navLink.classList.toggle('navShow');
+//     }
+// }
 
-class CloseNav {
-    constructor(link) {
-        this.linkClose = link;
-        this.openLink = document.querySelector('open-nav');
-        this.closeLink = document.querySelector('close-nav');
+// class CloseNav {
+//     constructor(link) {
+//         this.linkClose = link;
+//         this.openLink = document.querySelector('open-nav');
+//         this.closeLink = document.querySelector('close-nav');
 
-        this.linkClose.addEventListener('click', () => this.close());
-        console.log(this.linkClose);
-    }
+//         this.linkClose.addEventListener('click', () => this.close());
+//         console.log(this.linkClose);
+//     }
 
-    close() {
-        this.openLink.classList.toggle('nav-selected');
-        this.closeLink.classList.toggle('nav-selected');
+//     close() {
+//         this.openLink.classList.toggle('nav-selected');
+//         this.closeLink.classList.toggle('nav-selected');
 
-        navLinks.classList.toggle('navShow');
-    }
-}
+//         navLinks.classList.toggle('navShow');
+//     }
+// }
 
-let navOpen = document.querySelector('.open-nav');
-let navClose = document.querySelector('close-nav');
-let navLinks = document.querySelector('navShow');
+// let navOpen = document.querySelector('.open-nav');
+// let navClose = document.querySelector('close-nav');
+// let navLinks = document.querySelector('navShow');
 
-navOpen = new OpenNav(navOpen);
-navClose = new CloseNav(navClose);
+// navOpen = new OpenNav(navOpen);
+// navClose = new CloseNav(navClose);
 
 // let email = document.querySelector(".email");
 
