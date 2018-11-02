@@ -1,6 +1,6 @@
 // JS goes here
 
-
+//****** Services tab/card logic *******
 class TabLink {
   constructor(tabElement){
     // assign this.tabElement to the tabElement DOM reference
@@ -68,3 +68,32 @@ let tabs = document.querySelectorAll('.tab');
 
 // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.  After you finish this line of code, it's time to build out your TabLink class at the top of the page!
 tabs = Array.from(tabs).map(tab => new TabLink(tab));
+
+
+//******* menu animation and navigation logic ********
+const toggleMenu = () => {
+	// Toggle the "menu--open" class on your menu refence.
+	menu.classList.toggle('menu--open'); 
+	body.classList.toggle('body-no-scroll'); //disabling scrolling seemed interesting. not sure if better UX
+	mainNavigation.classList.toggle('main-nav-no-border');
+	menuButton.classList.toggle('menu-button-image');
+	console.log('toggle');
+}
+
+
+// Start Here: Create a reference to the ".menu" class
+const menu = document.querySelector('.menu');
+const body = document.querySelector('body');
+const mainNavigation = document.querySelector('.main-navigation');
+
+// create a reference to the ".menu-button" class
+const menuButton = document.querySelector('.menu-button');
+// Using your menuButton reference, add a click handler that calls toggleMenu
+menuButton.addEventListener('click', () => {
+	console.log('click');
+	//not sure if i should be using this here; since only 1 menu exists and we hard reference it i think not
+	toggleMenu();
+
+});
+
+

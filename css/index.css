@@ -188,44 +188,26 @@ h3 {
   flex-direction: row;
   padding: 0 10%;
   z-index: 1;
-  height: 100%;
-  /*
-  .nav-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    @media @mobile {
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-top: 10px;
-    }
-
-    .logo-heading {
-      @media @mobile {
-        font-size: 3rem;
-      }
-    }
-
-    .nav {
-      width: 350px;
-      display: flex;
-      justify-content: space-evenly;
-
-      @media @mobile {
-        width: 100%;
-        justify-content: space-around;
-      }
-      
-      
-      a {
-        font-size: 1.6rem;
-        color: @font-color;
-        text-decoration: none;
-      }
-    }
-  }*/
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.main-navigation .menu-button {
+  background-image: url("../img/nav-hamburger.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 23px;
+  width: 34px;
+}
+.main-navigation .menu-button-image {
+  background-image: url("../img/nav-hamburger-close.png");
+  height: 27px;
+  width: 26px;
+}
+.main-nav-no-border {
+  border-bottom: 0px;
 }
 footer {
   background: #828282;
@@ -328,9 +310,6 @@ footer .contact-us {
     justify-content: flex-start;
     font-size: 1.4rem;
   }
-}
-.menu {
-  display: none;
 }
 .home-page .jumbo {
   position: relative;
@@ -753,4 +732,54 @@ body .services-content .cards-container .card .services-card-image .sustainabili
 }
 body .services-content .cards-container .card.active-card {
   display: flex;
+}
+.body-no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+.menu {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #98A4AF;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+  -webkit-mask-image: -webkit-gradient(linear, right top, left bottom, from(#000000), to(rgba(0, 0, 0, 0.9)));
+  /*
+    note to self:
+    .parent {
+      .child {
+  
+      }
+    }
+    
+    IS NOT THE SAME AS
+    
+    .parent.property{
+
+    }
+     */
+}
+.menu ul {
+  padding-top: -10%;
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+.menu .menu-item.active {
+  color: black;
+}
+.menu--open {
+  display: flex;
+  padding-top: 20%;
+  justify-content: center;
 }
