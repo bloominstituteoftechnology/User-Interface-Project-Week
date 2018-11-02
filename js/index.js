@@ -52,7 +52,6 @@ tabs = Array.from(tabs).map(tab => new TabLink(tab));
 
 let title = document.title;
 if(title === 'Services'){
-    document.querySelector('body').style.display = 'none';
     tabs[1].select();
 }
 
