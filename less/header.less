@@ -1,0 +1,79 @@
+body {
+    header {
+        color: @navLogo;
+        background-color: @navBG;
+        position: fixed;
+        left:0;
+        top:0;
+        width: 100%;
+        z-index: 3;
+
+        .main-bar {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1{
+                font-size: 2.4rem;
+                font-weight: bold;
+    
+                padding: 13px;
+                margin-left: 7%;
+            }
+            .burger-button {
+                margin-right: 8%;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+                img {
+                    display: none;
+                }
+                .current-btn {
+                    display: block;
+                }
+            }   
+        }
+        .expanding-menu {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: @navBG;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 100px;
+
+                a {
+                    color: @navLogo;
+                    text-decoration: none;
+                    line-height: 8.2vw;
+                    font-size: 5vw;
+                    font-weight: bold;
+
+                    @media @tablet {
+                        font-size: 12vw;
+                        line-height: 20vw;
+                    }
+
+                    &:hover {
+                        color: @generalColor;
+                    }
+                }
+
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+    }
+}

@@ -1,0 +1,181 @@
+body {
+
+
+    .content {
+        color: @generalColor;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .split-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // padding: 25px;
+            margin: 50px 0;
+            @media @tablet {
+                flex-direction: column;
+                width: 90%;
+                margin: 40px 0 0;
+            }
+
+            .text {
+                width: 40%;
+                // padding: 15px;
+                margin: 0 15px;
+                @media @tablet {
+                    order: 2;
+                    width: 100%;
+                }
+
+                h2 {
+                    font-weight: bold;
+                    font-size: 2.4rem;
+                    padding: 20px 0;
+                }
+                p {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem; 
+                    margin-bottom: 25px;
+                }
+                button {
+                    border: 1px solid @generalColor;
+                    background: @generalBackground;
+                    font-size: 1.6rem;
+                    line-height: 2.4rem; 
+                    padding: 10px 20px;
+                    margin-bottom: 15px;
+                    @media @mobile {
+                        width: 100%;
+                    }
+                    &:hover {
+                        background-color: @tabHoverBG;
+                        color: @tabHoverColor;
+                        cursor: pointer;
+                        .opacity-animation(1s,infinite);
+                        border-radius: 10px;
+                    }
+                }
+            }
+            .image {
+                margin: 0 15px;
+                max-width: 50%;
+                @media @tablet {
+                    max-width: 100%;
+                }
+                
+                img {
+                    max-width: 100%;
+                }
+                @media @tablet {
+                    width: 100%;
+                    margin: 0;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+
+        .recent-projects {
+            width: 85%;
+            margin: 50px 0;
+            @media @mobile {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+                font-weight: bold;
+                padding-left: 10px;
+
+                @media @mobile {
+                    padding-left: 20px;
+                    margin: -15px 0;
+                }
+            }
+
+            .project {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 15px 0 70px;
+                max-width: 100%;
+                @media @mobile {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                picture {
+                    max-width: 100%;
+                    margin: 30px 0 70px;
+                    position: relative;
+                    @media @mobile {
+                        margin-bottom: 100px;
+                        width: 100%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    img {
+                        max-width: 100%;
+                    }
+                    h2 {
+                        font-size: 2.4rem;
+                        width: 315px;
+                        background-color: @projectBG;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        letter-spacing: 8px;
+                        border: 1px solid white;
+                        position: absolute;
+                        height: 95vw*(100/1024);
+                        position: absolute;
+                        bottom: -40px;
+                        @media @large {
+                            height: 95px;
+                        }
+    
+                        @media @mobile {
+                            height: 100px;
+                            width: 90%;
+                            bottom: -80px;
+                        }
+                    }
+                    .right-h2 {
+                        right: 0px;
+                        @media @mobile {
+                            right: 5%;
+                        }
+                    }
+                    .left-h2 {
+                        @media @mobile {
+                            left: 5%;
+                        }
+                    }
+                }
+
+
+                p {
+                    width: 51%;
+                    min-width: 350px;
+                    font-size: 1.8rem;
+                    line-height: 2.4rem; 
+                    margin-top: 20px;
+                    @media @mobile {
+                        min-width: 0;
+                        width: 85%;
+                        
+                    }
+                }
+            }
+
+        }
+        
+    }
+}
