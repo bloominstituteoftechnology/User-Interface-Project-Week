@@ -1,0 +1,115 @@
+.services {
+  .services-jumbotron-Header {
+    .services-jumbotron-img {
+      display: block;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+
+      @media (max-width: ~'@{phoneViewSize}') {
+        display: none;
+      }
+    }
+
+    .services-jumbotron-mobile-img {
+      display: none;
+
+      @media (max-width: ~'@{phoneViewSize}') {
+        display: block;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      margin: 163px 0 74px 85px;
+      font-weight: bold;
+      letter-spacing: 0.02px;
+      font-size: 6.4rem;
+    }
+  } // services-jumbotron-header
+
+  .content {
+    width: 83.6%;
+    margin: 0 auto;
+    padding-left: 2px;
+    margin-bottom: 92px;
+
+    p {
+      color: @services-content-p-color;
+      font-size: 1.6rem;
+      line-height: 26px;
+      letter-spacing: 0.01px;
+    }
+
+    .services-nav-tabs {
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: @services-content-tabs-text-color;
+        border: 1px solid black;
+        width: 185px;
+        height: 50px;
+        margin: 41px 0 52px 0;
+        font-size: 2.06rem;
+        cursor: pointer;
+
+        .text-unselectable();
+      }
+
+      div:hover {
+        background-color: @services-tab-hover-background-color;
+        color: white;
+      }
+
+      .tab-selected {
+        background-color: @services-tab-selected-background-color;
+        color: white;
+      }
+    }
+
+    article {
+      display: none;
+    }
+
+    .show {
+      display: flex;
+    }
+
+    .tab-article {
+      flex-direction: column;
+      h2 {
+        font-weight: bold;
+        font-size: 2.4rem;
+        margin-bottom: 13px;
+        width: 100%;
+      }
+      .details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .left-side {
+          flex-direction: column;
+          width: 49%;
+          margin-top: 1px;
+        }
+        
+        .right-side {
+          width: 46.8%;
+          .tab-image {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  } // content
+}
