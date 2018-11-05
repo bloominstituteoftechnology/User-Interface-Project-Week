@@ -7,7 +7,7 @@ class TabLink {
 
         this.element.addEventListener('click', () => this.select());
 
-        console.log(this.element);
+        // console.log(this.element);
     }
 
     select() {
@@ -16,10 +16,10 @@ class TabLink {
         tlinks.forEach(tlink => tlink.classList.remove('tab-selected'));
 
         this.element.classList.add('tab-selected');
-        console.log(this.element);
+        // console.log(this.element);
 
         this.tabItem.select();
-        console.log(this.tabItem);
+        // console.log(this.tabItem);
     }
 
     linkClick() {
@@ -35,7 +35,7 @@ class TabItem {
     }
     select() {
         let items = document.querySelectorAll('.tab-content');
-        // console.log(items);
+        console.log(items);
 
         items.forEach(item => {
             item.classList.add('tab-selected');
@@ -43,7 +43,7 @@ class TabItem {
     }
     toggleContent() {
         this.tabContent.classList.toggle('change');
-        // console.log(this.tabContent);
+        console.log(this.tabContent);
     }
 
 }
