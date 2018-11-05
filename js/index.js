@@ -2,16 +2,18 @@ class TabLink {
     constructor(element) {
         this.element = element;
         this.data = this.element.dataset.tab;
-        this.itemElement = document.querySelector(`.service-description[data-tab='${this.data}']`);
+        this.itemElement = document.querySelector(`.tab-content[data-tab='${this.data}']`);
         this.tabItem = new TabItem(this.itemElement);
 
-        this.element.addEventListener('click', () => this.select());
+        this.element.addEventListener('click', () => {
+            this.select()
+        });
 
         // console.log(this.element);
     }
 
     select() {
-        const tlinks = document.querySelectorAll('.tab');
+        const tlinks = document.querySelectorAll('.tabs');
 
         tlinks.forEach(tlink => tlink.classList.remove('tab-selected'));
 
@@ -31,25 +33,28 @@ class TabLink {
 class TabItem {
     constructor(tabContent) {
         this.tabContent = tabContent;
-        console.log(tabContent);
+        // console.log(tabContent);
     }
     select() {
         let items = document.querySelectorAll('.tab-content');
-        console.log(items);
+        // console.log(items);
 
         items.forEach(item => {
-            item.classList.add('tab-selected');
+            item.classList.remove('tab-selected');
         });
+
+        this.tabContent.classList.add('tab-selected');
+        console.log(this.tabContent);
     }
     toggleContent() {
-        this.tabContent.classList.toggle('change');
+        this.tabContent.toggle('change');
         console.log(this.tabContent);
     }
 
 }
 
 
-let tlinks = document.querySelectorAll('.tab');
+let tlinks = document.querySelectorAll('.tabs');
 // console.log(tlinks);
 tlinks = Array.from(tlinks).map(tlink => new TabLink(tlink));
 tlinks[0].select();
