@@ -1,0 +1,65 @@
+.projects {
+  @media @mobile {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  p {
+    margin-top: 1.5rem;
+  }
+}
+
+.carousel {
+  width: 100%;
+  object-fit: cover;
+  .flex(row, center, center);
+  height: 50rem;
+  @media @tablet {
+    height: 30rem;
+  }
+  @media @mobile {
+    height: 20rem;
+  }
+  position: relative;
+  overflow: hidden;
+  margin: 5rem auto;
+  border-radius: 5rem;
+  img {
+    border-radius: 5rem;
+  }
+  .left-button, .right-button {
+    .flex(row,center,center);
+    color: @clr-navbar;
+    background-color: @clr-general;
+    font-size: 4rem;
+    border-radius: 50%;
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    @media @mobile {
+      font-size: 2rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    cursor: pointer;
+    &:hover {
+      color: @clr-general;
+      background-color: @clr-navbar;
+      border: .2rem solid @clr-general;
+    }
+  }
+  .left-button {
+    top: 50%; 
+    left: 2.5rem;
+    transform: translate(0, -50%);
+  }
+  .right-button {
+    top: 50%; 
+    right: 2.5rem;
+    transform: translate(0, -50%);
+  }
+  img {
+    .width-100();
+    display: none;
+  }
+}
