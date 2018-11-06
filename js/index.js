@@ -54,3 +54,54 @@ class TabItem {
 let links = document.querySelectorAll('.tabs-link');
 links = Array.from(links).map(links => new TabLink(links));
 links[0].select();
+
+// carousel js
+
+class Carousel {
+    constructor(element) {
+        // assign this.element to the element reference
+        this.element = element;
+        let leftbutton = document.querySelector('.left-button');
+        this.leftbutton = leftbutton;
+        let rightbutton = document.querySelector('.right-button');
+        this.rightbutton = rightbutton;
+        let carouselImgs = document.querySelectorAll('.carousel img');
+        this.carouselImgs = carouselImgs;
+        let index = 0;
+        this.index = index;
+        this.leftbutton.addEventListener('click', (event) => {
+            // Call the select method you define below
+            this.CarouselScrollLeft(event);
+        });
+        this.rightbutton.addEventListener('click', (event) => {
+            // Call the select method you define below
+            this.CarouselScrollRight(event);
+        });
+    }
+    CarouselScrollLeft(event) {
+        if (this.index > 0) {
+            this.carouselImgs[this.index].style.display = 'none';
+            //decrement through index
+            this.index = this.index - 1;
+            this.carouselImgs[this.index].style.display = 'flex';
+        }
+        else {
+            this.carouselImgs[this.index].style.display = 'flex';
+        }
+
+    }
+    CarouselScrollRight(event) {
+        if (this.index < 3) {
+            this.carouselImgs[this.index].style.display = 'none';
+            //increment through index
+            this.index = this.index + 1;
+            this.carouselImgs[this.index].style.display = 'flex';
+        }
+        else {
+            this.carouselImgs[this.index].style.display = 'flex';
+        }
+    }
+}
+
+
+
