@@ -168,6 +168,7 @@ body {
   padding: 1rem 0;
   display: flex;
   z-index: 4;
+  position: relative;
 }
 @media (max-width: 500px) {
   .nav {
@@ -350,30 +351,45 @@ footer .copy {
   padding: 2% 0 2% 0;
 }
 .header {
-  background-image: url("../img/home/home-jumbotron.png");
-  padding-bottom: 37rem;
+  max-width: 1000px;
+}
+.header .heading-wrapper {
   position: relative;
-  z-index: 1;
+  z-index: 0;
+}
+.header .heading-wrapper .img-mobile {
+  display: none;
+  position: relative;
 }
 @media (max-width: 500px) {
-  .header {
-    max-width: 500px;
-    background-image: url("../img/home/home-mobile-jumbotron.png");
-    padding-bottom: 55%;
+  .header .heading-wrapper .img-mobile {
+    width: 100%;
+    display: block;
+    margin-top: -15%;
   }
 }
-.header .heading {
-  position: absolute;
-  z-index: 3;
-  padding-left: 5rem;
-  margin-top: 20rem;
-  display: end;
-  font-size: 64px;
-  line-height: 75px;
-  color: #ffffff;
+.header .heading-wrapper .img-desktop {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-top: -8%;
 }
 @media (max-width: 500px) {
-  .header .heading {
+  .header .heading-wrapper .img-desktop {
+    display: none;
+  }
+}
+.header .heading-wrapper .heading {
+  position: absolute;
+  z-index: 2;
+  padding-left: 5rem;
+  padding-top: 20%;
+  font-size: 64px;
+  line-height: 75px;
+  color: white;
+}
+@media (max-width: 500px) {
+  .header .heading-wrapper .heading {
     padding-left: 6%;
     margin-top: 5%;
     font-size: 2rem;
