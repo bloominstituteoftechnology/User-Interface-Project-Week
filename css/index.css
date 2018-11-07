@@ -290,33 +290,49 @@ h2 {
     width: 100%;
   }
 }
-.card {
+.card,
+.card1 {
+  display: flex;
+  justify-content: space-evenly;
   padding-top: 60px;
   padding-right: 5px;
   padding-left: 5px;
-  width: 49%;
+  width: 100%;
 }
 @media (max-width: 500px) {
-  .card {
+  .card,
+  .card1 {
+    flex-direction: column;
     width: 100%;
-    border: 3px solid red;
+    padding-top: 3%;
+    padding-bottom: 3%;
   }
 }
-.card h2 {
-  margin-bottom: 2.5rem;
-  margin-left: 1.4rem;
+.card .card-para,
+.card1 .card-para {
+  margin-right: 3%;
+  margin-bottom: 3%;
+  margin-left: 3%;
   padding-right: 1rem;
   padding-left: 1rem;
-  margin-right: 0.5rem;
+  width: 35%;
 }
-.card p {
-  margin-bottom: 2.5rem;
-  margin-left: 1.4rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin-right: 0.5rem;
+.card .card-para h2,
+.card1 .card-para h2,
+.card .card-para p,
+.card1 .card-para p {
+  margin-bottom: 3%;
 }
-.card button {
+@media (max-width: 500px) {
+  .card .card-para,
+  .card1 .card-para {
+    justify-content: center;
+    width: 100%;
+    height: 275px;
+  }
+}
+.card button,
+.card1 button {
   margin-bottom: 2.5rem;
   margin-left: 2rem;
   padding-right: 1rem;
@@ -332,24 +348,42 @@ h2 {
   text-align: center;
 }
 @media (max-width: 500px) {
+  .card button,
+  .card1 button {
+    padding: 1.5rem 11rem;
+  }
 }
-.card button:hover {
+.card button:hover,
+.card1 button:hover {
   background-color: #828282;
 }
 .card-img {
-  width: 100%;
+  width: auto;
   height: 275px;
+}
+@media (max-width: 500px) {
+  .card-img .card-img-mobile {
+    display: flex;
+    width: 100%;
+    padding-bottom: 3%;
+  }
+  .card-img .card-img {
+    display: none;
+  }
 }
 .card-img-mobile {
   display: none;
 }
+.card .card-img {
+  order: -1;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
 @media (max-width: 500px) {
-  .card-img-mobile {
-    display: flex;
-    width: 100%;
-  }
-  .card-img {
-    display: none;
+  .card1 .card-img {
+    order: -1;
+    margin-top: 2%;
+    margin-bottom: 3%;
   }
 }
 .recent-projects-div {
@@ -370,6 +404,11 @@ h2 {
   margin-top: 100px;
   font-size: 16px;
 }
+@media (max-width: 500px) {
+  .recent-projects-div .projects {
+    margin-top: 40px;
+  }
+}
 .recent-projects-div .projects p {
   margin-top: 50px;
   margin-bottom: 30px;
@@ -377,6 +416,13 @@ h2 {
   font-size: 16px;
   font-weight: regular;
   line-height: 24px;
+}
+@media (max-width: 500px) {
+  .recent-projects-div .projects p {
+    margin-top: 20%;
+    margin-bottom: 10%;
+    width: 75%;
+  }
 }
 .recent-projects-div .projects .project-header {
   width: 100%;
@@ -442,9 +488,15 @@ h2 {
 }
 @media (max-width: 500px) {
   .footer .email-field {
+    margin-bottom: 5%;
     margin-right: 5%;
     margin-left: 5%;
+    width: 100%;
   }
+}
+.footer .email-field input {
+  width: 100%;
+  height: 50%;
 }
 .footer .email-field h2 {
   padding-bottom: 2%;
@@ -460,15 +512,32 @@ h2 {
 }
 @media (max-width: 500px) {
   .footer .footer-para {
-    justify-content: space-evenly;
-    width: 28%;
-    margin-left: 1%;
-    margin-right: 31%;
-    margin-bottom: 2%;
+    align-content: center;
+    border: 3px solid gold;
+    margin-bottom: 5%;
+    width: 55%;
   }
 }
-.footer .copyright {
+@media (max-width: 500px) {
+  .footer .footer-para p {
+    border: 3px solid green;
+    padding: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .footer .footer-para h2 {
+    margin-bottom: 1rem;
+    border: 5px dashed red;
+  }
+}
+.copyright {
   position: absolute;
   bottom: 2%;
   left: 40%;
+}
+@media (max-width: 500px) {
+  .copyright {
+    left: 30%;
+    bottom: 1%;
+  }
 }
