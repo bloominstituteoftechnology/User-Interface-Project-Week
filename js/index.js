@@ -1,4 +1,31 @@
 // JS goes here
+class Dropdown {
+    constructor(element) {
+        
+        this.element = element;
+
+        // Get the element with the ".dropdown-button" 
+        this.button = this.element.querySelector('.dropdown-button');
+        // assign the reference to the ".dropdown-content" 
+        this.content = this.element.querySelector('.dropdown-content');
+        // Add a click handler to the button reference and call the toggleContent method.
+        this.button.addEventListener('click', () => {
+            this.toggleContent()
+        });
+    }
+
+    toggleContent() {
+
+        // Toggle the ".dropdown-hidden" class off and on
+        this.content.classList.toggle('dropdown-hidden');
+        // this.element.classList.toggle('dropdown-hidden');
+
+    }
+}
+
+// control starts here
+let dropdowns = document.querySelectorAll('.dropdown');
+dropdowns = Array.from(dropdowns).map(dropdown => new Dropdown(dropdown));
 
 //Services page
 
