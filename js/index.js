@@ -34,8 +34,8 @@ class Nav {
   }
   toggleContent() {
     this.content.classList.toggle('hidden');
-    this.button.classList.toggle('nav-close');
-    this.close.classList.toggle('nav-open');
+    this.button.classList.toggle('hidden');
+    this.close.classList.toggle('hidden');
   }
 }
 let links = document.querySelectorAll('.nav');
