@@ -4,19 +4,26 @@ class Dropdown {
         
         this.element = element;
 
-        // Get the element with the ".dropdown-button" 
+        // Get the element with the ".dropdown-button"
+        //this line works 
         this.button = this.element.querySelector('.dropdown-button');
+
         // assign the reference to the ".dropdown-content" 
+        //this line works
         this.content = this.element.querySelector('.dropdown-content');
+
         // assign reference to close hamburger-close
         this.close = this.element.querySelector('#close');
         //assign reference to open hamburger-open
-        this.open = this.element.querySelector('#open');
+        // this.open = this.element.querySelector('.dropdown-button');
         console.log(this.close);
 
 
         // Add a click handler to the button reference and call the toggleContent method.
         this.button.addEventListener('click', () => {
+            this.toggleContent()
+        });
+        this.close.addEventListener('click', () => {
             this.toggleContent()
         });
     }
@@ -25,12 +32,12 @@ class Dropdown {
 
         // Toggle the ".dropdown-hidden" class off and on
         this.content.classList.toggle('dropdown-hidden');
-        // this.element.classList.toggle('dropdown-hidden');
-
+        
+        //toggle for hamburger open
+        this.button.classList.toggle('dropdown-hidden');
         // toggle for x to close 
         this.close.classList.toggle('dropdown-hidden');
-        //toggle for hamburger open
-        this.open.classList.toggle('dropdown-hidden');
+        
     }
 }
 
