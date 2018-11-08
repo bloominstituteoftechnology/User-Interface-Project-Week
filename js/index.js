@@ -8,6 +8,13 @@ class Dropdown {
         this.button = this.element.querySelector('.dropdown-button');
         // assign the reference to the ".dropdown-content" 
         this.content = this.element.querySelector('.dropdown-content');
+        // assign reference to close hamburger-close
+        this.close = this.element.querySelector('#close');
+        //assign reference to open hamburger-open
+        this.open = this.element.querySelector('#open');
+        console.log(this.close);
+
+
         // Add a click handler to the button reference and call the toggleContent method.
         this.button.addEventListener('click', () => {
             this.toggleContent()
@@ -20,6 +27,10 @@ class Dropdown {
         this.content.classList.toggle('dropdown-hidden');
         // this.element.classList.toggle('dropdown-hidden');
 
+        // toggle for x to close 
+        this.close.classList.toggle('dropdown-hidden');
+        //toggle for hamburger open
+        this.open.classList.toggle('dropdown-hidden');
     }
 }
 
@@ -97,4 +108,4 @@ let links = document.querySelectorAll('.tabs-link');
 links = Array.from(links).map(tabsLinks => new TabLink(tabsLinks));
 
 // DO THIS LAST: Once you have created an array of TabLink instances. call select() on the first item in the array
-links[0].select();
+// links[0].select();
