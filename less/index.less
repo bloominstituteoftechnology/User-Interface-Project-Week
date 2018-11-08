@@ -128,7 +128,7 @@ h2{
   background-image: url(../img/home/home-jumbotron.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 1024px,cover;
   @media (max-width: 500px) {
     height: 260px;
     background-image: url(../img/home/home-mobile-jumbotron.png);
@@ -160,41 +160,54 @@ h2{
         
     }
 
-    nav{
-      position: absolute;
-      right: 0;
-      padding-top: 1%;
-      padding-left: 5%;
-      padding-right: 5%;
-      display: none;
-    }
-
-    .nav-button {
+    #hamburger {
       position: absolute;
       right: 10px;
-      padding-top: 1%;
+      padding-top: 2%;
       padding-bottom: 2%;
       padding-left: 5%;
       padding-right: 5%;
   
-      .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        padding-bottom: 2%;
-        padding-left: 5%;
-        padding-right: 5%;
-        background-color: white;
-        margin: 6px 0;
-        transition: 0.4s;
-        
-    }
+
     }
     @media (max-width: 500px) {
-      .nav-button {
+      #hamburger {
         margin-top:2% ;
         margin-bottom:2% ;
       }
     }
+  }
+
+  .nav-buttons{
+    position: absolute;
+    right: 0;
+    top: 60px;
+    padding-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color:#828282;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a{
+      text-decoration:none;
+      color:white;
+      line-height: 3em;
+      font-size: 48px;
+      font-weight: bold;
+      
+    }
+    a:hover{
+      color:#222222;
+    }
+  }
+
+  .hidden {
+    display: none;
   }
   .h1-div{
     position: absolute;
@@ -205,6 +218,11 @@ h2{
     font-size: 64px;
     line-height: 75px;
     color: #FFFFFF;
+
+  }
+
+  .hidden {
+    // display: none;
   }
   @media (max-width: 500px) {
     .h1-div {
@@ -219,6 +237,7 @@ h2{
 .home-center-div{
   width:100%;
   justify-content: center;
+  // margin-top: 40%;
   margin-right: 8%;
   margin-left: 8%;
   // padding-right: 15px;
@@ -238,8 +257,9 @@ h2{
 
 
 .card,.card1{
+  // border: 3px solid red;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-top: 60px;
   padding-right: 5px;
   padding-left: 5px;
