@@ -35,9 +35,7 @@ for(let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', buttonClick);
 }
 
-
-
-
+//Turn blue when selected
 const buttonsSelected = document.querySelectorAll('.tab-link');
 
 function buttonSelectedBlue(event){
