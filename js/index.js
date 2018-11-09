@@ -42,6 +42,8 @@ function buttonSelectedBlue(event){
   const dataBtn = event.target.dataset.tab;
   if (dataBtn===dataBtn){
     this.style.backgroundColor = "#5E9FB9";
+  } else {
+    this.style.backgroundColor ="white";
   }
 }
 
