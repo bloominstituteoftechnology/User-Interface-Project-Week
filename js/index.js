@@ -36,12 +36,46 @@ for(let i = 0; i < buttons.length; i++) {
 }
 
 // Turn blue when selected
-document.querySelectorAll('.tab-link').forEach(function(e) {
-  e.addEventListener('click', function() {
+// document.querySelectorAll('.tab-link').forEach(function(e) {
+//   e.addEventListener('click', function() {
 
-    this.classList.toggle('tab-link-selected')
-  })
-});
+//     this.classList.remove('tab-link-selected')
+//     // this.classList.add('tab-link-selected-a')
+//   })
+// });
+
+const buttons2 = document.querySelectorAll('.tab-link');
+const contents2 = document.querySelectorAll('.content');
+
+function buttonClick2(event) {
+  const dataBtn = event.target.dataset.tab;
+  
+  for(let i = 0; i < contents2.length; i++) {
+    const dataContent = contents2[i].dataset.tab;
+    
+    if(dataBtn === dataContent) {
+      buttons2[i].classList.remove('tab-link-selected');
+    } else {
+      buttons2[i].classList.add('tab-link-selected');
+    }
+  }
+}
+
+
+
+for(let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', buttonClick2);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 // class TabLink {
