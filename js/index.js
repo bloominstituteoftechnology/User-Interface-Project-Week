@@ -11,3 +11,25 @@ hamburger.addEventListener('click', function() {
   hamburgerClose.classList.toggle('hidden');
   hideH1.classList.toggle('hidden');
 })
+
+
+const buttons = document.querySelectorAll('.tab-link');
+const contents = document.querySelectorAll('.content');
+
+function buttonClick(event) {
+  const dataBtn = event.target.dataset.tab;
+  
+  for(let i = 0; i < contents.length; i++) {
+    const dataContent = contents[i].dataset.tab;
+    
+    if(dataBtn === dataContent) {
+      contents[i].classList.remove('hidden');
+    } else {
+      contents[i].classList.add('hidden');
+    }
+  }
+}
+
+for(let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', buttonClick);
+}
