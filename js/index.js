@@ -35,18 +35,30 @@ for(let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', buttonClick);
 }
 
-//Turn blue when selected
-const buttonsSelected = document.querySelectorAll('.tab-link');
+// Turn blue when selected
+document.querySelectorAll('.tab-link').forEach(function(e) {
+  e.addEventListener('click', function() {
 
-function buttonSelectedBlue(event){
-  const dataBtn = event.target.dataset.tab;
-  if (dataBtn===dataBtn){
-    this.style.backgroundColor = "#5E9FB9";
-  } else {
-    this.style.backgroundColor ="white";
-  }
-}
+    this.classList.toggle('tab-link-selected')
+  })
+});
 
-for(let i = 0; i < buttonsSelected.length; i++) {
-  buttonsSelected[i].addEventListener('click', buttonSelectedBlue);
-}
+
+// class TabLink {
+//   // Constructor
+//   constructor(tabLink){
+//     this.tabLink = tabLink;
+//     this.link = this.tabLink.querySelector('button');
+//     this.link.addEventListener('click', () => this.toggleTab(event)); 
+//     //this.heading.addEventListener('click', this.togglePanel.bind(this)); 
+//   }
+//   // Methods
+//   // toggleTab(event){
+//   //   //console.log(event.target);
+//   //   this.link.classList.toggle('tab-link-selected');
+//   // }
+// }
+// let tabLinks = document.querySelectorAll('.tab-link');
+// tabLinks = Array.from(tabLinks).map( tabLink => {
+//   return new TabLink(tabLink);
+// });
