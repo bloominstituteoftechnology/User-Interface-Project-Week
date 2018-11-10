@@ -40,3 +40,26 @@ class Nav {
 }
 let links = document.querySelectorAll('.nav');
 links = Array.from(links).map(link => new Nav(link));
+
+// Services Tab Component
+
+const buttons = document.querySelectorAll('.tab-link')
+const contents = document.querySelectorAll('.tabs-item')
+
+function buttonClick(event) {
+  const dataBtn = event.target.dataset.tab;
+
+  for(let i = 0; i < contents.length; i++) {
+    const dataContent = contents[i].dataset.tab;
+
+    if(dataBtn === dataContent) {
+      contents[i].classList.remove('hidden');
+    } else {
+      contents[i].classList.add('hidden');
+    }
+  }
+}
+
+for(let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', buttonClick);
+}
