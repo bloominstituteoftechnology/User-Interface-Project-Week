@@ -59,19 +59,23 @@ table{
 
 /* Your Code Goes Here */
 
+@phone: ~"(max-width: 600px)";
+
 html {
   background-color: #FFFFFF;
   color: #222222;
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
+  // font-size: 62.5%;
   line-height: 24px;
 }
 
 body {
   max-width: 1024px;
   width: 100%;
+  // display: flex;
+  // flex-wrap: wrap;
   // position: relative;
-  
   
 }
 
@@ -85,6 +89,7 @@ body {
   flex-direction: column;
   justify-content: center;
   position: fixed;
+  
 
   .nav-horz-center {
     display: flex;
@@ -111,15 +116,42 @@ body {
 
 .container {
   width: 100%;
+  // display: flex;
+  // flex-wrap: wrap;
   
   .home-header-content {
     height: 600px;
+    // height: 100%;
+    position: relative;
+    display: flex;
+    @media @phone {
+      height: 450px;
+      width: 100%;
+      // display: flex;
+      
+    }
     
     .header-img {
-      z-index: -1;
+      position: absolute;
+      // width: 100%;
+      z-index: 0;
+      top: 0px;
+      left: 0px;
+      @media @phone {
+        display: none;
+      }
+    }
+
+    .mobile-header-img {
+      display: none;
+      z-index: 0;
       position: absolute;
       top: 0px;
       left: 0px;
+      @media @phone {
+        width: 100%;
+        display: block;
+      }
     }
 
     .home-header-text {
@@ -130,6 +162,10 @@ body {
       left: 80px;
       top: 275px;
       color: #FFFFFF;
+      @media @phone {
+        left: 40px;
+        top: 155px;
+      }
     }
 
   }
@@ -143,6 +179,7 @@ body {
       position: absolute;
       top: 0px;
       left: 0px;
+      
     }
 
     .services-header-text {
@@ -167,6 +204,7 @@ body {
     
     .intro-section-container {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-evenly;
       margin-bottom: 90px;
       margin-top: 10px;
