@@ -62,7 +62,14 @@ table{
 @main-color: #222222;
 
 //Mixins
-
+.flex-row () {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    width: 47%;
+  }
+}
 
 //General Site Styles 
 html {
@@ -79,28 +86,59 @@ button {
   border: 1px solid @main-color;
   padding: 2rem 5rem;
 }
+.img-con {
+  max-width: 100%;
+  
+  img {
+    width: 100%;
+  }
+}
+// ************************************************
+// Home Page **************************************
+// ************************************************
 
-// Home Page 
+// Header *****************************************
 
+#banner {
+  position: relative;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+
+  .banner-img {
+    max-width: 100%;
+  }
+
+  .banner-text {
+    position: absolute;
+    bottom: 50px;
+    left: 9%;
+    font-weight: bold;
+    font-size: 6.4rem;
+    line-height: 7.5rem;
+    color: #ffffff;
+  }
+}
+// Main Content **********************************
 .home {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
-  .img-con {
-    width: 100%;
-    text-align: center;
-  }
-  #banner{
-    position: relative;
 
-    .banner-img {
-      max-width: 100%;
+  .main{
+    width: 85%;
+    margin: 0 auto;
+
+    #about {
+      .flex-row();
     }
-
-    .banner-text {
-      position: absolute;
-      bottom: 220px;
-      left: 15%;
+    #design {
+      .flex-row();
     }
   }
+}
+
+// Footer **********************************
+footer {
+  background: #828282;
 }
