@@ -1,7 +1,16 @@
 
 const toggleMenu = () => {
     // Toggle the "menu--open" class on your menu refence. 
-    menu.classList.toggle('menu--open');
+
+    
+    if  (menu.classList === 'menu-open') {
+        menuButton.setAttribute('src', './img/nav-hamburger-close.png');
+    }
+    else{
+        menu.classList.toggle('menu--open');
+        menuButton.setAttribute('src', './img/nav-hamburger.png');
+    }
+    console.log(menuButton.classList);
 }
 
 // Short notation for document
