@@ -2,8 +2,17 @@
 //**********************Navigation Open and Close**********************
 
 const navButton = document.querySelector('.navContainer__top-bar img');
+const menu = document.querySelector('.menu');
 
-navButton.addEventListener('click', () => document.querySelector('.menu').classList.toggle('open'));
+
+navButton.addEventListener('click', () => menu.classList.toggle('open'));
+navButton.addEventListener('click', function() {
+  if(menu.classList.contains('open')) {
+    navButton.style.content = "url('./img/nav-hamburger-close.png')";
+  } else {
+    navButton.style.content = "url('./img/nav-hamburger.png')";
+  }
+})
 
 
 //**********************SERVICES PAGE**********************
