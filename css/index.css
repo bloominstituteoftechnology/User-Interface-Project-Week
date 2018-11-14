@@ -158,20 +158,7 @@ table {
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
-html {
-  font-family: 'Roboto', sans-serif;
-}
-html .container {
-  width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-}
-html h2 {
-  font-weight: bold;
-  font-size: 28px;
-  color: #222222;
-}
+/* Media Query */
 .company-wrapper .box {
   width: 100%;
   display: flex;
@@ -231,12 +218,20 @@ html h2 {
   float: right;
 }
 .header-wrapper {
-  background: url(../img/home/home-jumbotron.png);
+  background: url('../img/home/home-jumbotron.png');
   background-repeat: no-repeat;
   min-height: 598px;
   background-size: cover;
   display: flex;
   flex-direction: column-reverse;
+}
+@media screen {
+  .header-wrapper {
+    background: url('../img/home/home-mobile-jumbotron.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 420px;
+  }
 }
 .header-wrapper img {
   width: 100%;
@@ -245,10 +240,21 @@ html h2 {
   color: #FFFFFF;
   font-size: 65px;
   font-weight: 600;
-  padding-bottom: 55px;
+}
+@media screen {
+  .header-wrapper h1 {
+    font-size: 60px;
+    padding-bottom: 45px;
+    padding-left: 15px;
+  }
 }
 .nav-wrapper {
   background-color: #9aa6b0;
+}
+@media screen {
+  .nav-wrapper {
+    width: 100%;
+  }
 }
 .nav-wrapper a {
   color: #FFFFFF;
@@ -256,16 +262,25 @@ html h2 {
 }
 .nav-wrapper .container {
   justify-content: space-between;
-  padding: 15px 0px;
+  padding: 15px;
   align-items: center;
+  width: 100%;
+}
+@media screen {
+  .nav-wrapper .container {
+    width: 100%;
+    padding: 15px 0px;
+  }
 }
 .nav-wrapper .container .brand a {
   font-size: 2.4rem;
   font-weight: 500;
+  padding-left: 15px;
 }
 .nav-wrapper .container .menu-button {
   cursor: pointer;
   width: 44px;
+  padding-right: 15px;
 }
 .nav-wrapper .menu {
   display: none;
@@ -330,4 +345,24 @@ html h2 {
   color: #FFFFFF;
   padding: 10px 0px;
   font-size: 14px;
+}
+html {
+  font-family: 'Roboto', sans-serif;
+}
+html .container {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+@media screen {
+  html .container {
+    max-width: 767px;
+    width: 100%;
+  }
+}
+html h2 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #222222;
 }
