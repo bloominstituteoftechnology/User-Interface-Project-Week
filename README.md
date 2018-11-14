@@ -1,15 +1,29 @@
 # User Interface Project Week
-You are to treat this week as if you are working as a front end developer at a web development agency. The instructor is the owner of the agency and is under pressure from the client to deliver the product, a custom marketing website, on time. The project managers are acting as your supervisors.  
+You are to treat this week as if you are working as a front end developer at
+ a web development agency. The instructor is the owner of the agency and is
+  under pressure from the client to deliver the product, a custom marketing website,
+   on time. The project managers are acting as your supervisors.
 
-This week you will be building a website for an architectural firm named Smith and Jones Architects.  Smith and Jones have requested a minimum viable product to deliver to their board of directors by the end of the week.  The requirements are listed below under **MVP Features**.  Smith and Jones also have a wish list of extra features they would love to showcase to the board if you can get them done.  You will demonstrate your work to the agency owner Thursday afternoon.  
+This week you will be building a website for an architectural firm named
+ Smith and Jones Architects.  Smith and Jones have requested a minimum viable product to
+ deliver to their board of directors by the end of the week.  The requirements are
+  listed below under **MVP Features**.  Smith and Jones also have a wish list of extra
+  features they would love to showcase to the board if you can get them done.
+    You will demonstrate your work to the agency owner Thursday afternoon.
 
-You will use Trello to report your progress on the MVP and any extra features you accomplish to your project managers every day during standup. This project is meant to be worked on by yourself.  Do not pair program this week as this challenge is meant to show you where you can improve and what you have learned on your own.
+You will use Trello to report your progress on the MVP and any extra features you
+accomplish to your project managers every day during standup. This project is meant to
+ be worked on by yourself.  Do not pair program this week as this challenge is meant
+  to show you where you can improve and what you have learned on your own.
 
 ## Pro Tips For This Week:
 - Use past solutions from the previous weeks to accomplish harder tasks
-- Commit every time you accomplish any new functionality or layout. Get in the habit of frequent commits so you have a record of your work.  Push up your commits every day to showcase your progress to your PM
+- Commit every time you accomplish any new functionality or layout.
+Get in the habit of frequent commits so you have a record of your work.
+Push up your commits every day to showcase your progress to your PM
 - After 20 minutes of being stuck on something, reach out to your PM
-- Don't overplan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction
+- Don't overplan, start coding as soon as you can and adjust accordingly.
+ Trello is there as a guide not as a distraction
 
 ## Trello Set Up:
 * [ ] Create a [Trello account](https://trello.com/)
@@ -20,13 +34,17 @@ You will use Trello to report your progress on the MVP and any extra features yo
 * [ ] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance
 
 ## Assets Provided:
-* [Style guide:](/DesignFiles/style-guide.md) This file will help you identify font sizes, colors, and font families across the site.
-* [Images for both desktop and mobile](/img).  Mobile images have been provided to match the design files.
+* [Style guide:](/DesignFiles/style-guide.md)
+This file will help you identify font sizes, colors, and font families across the site.
+* [Images for both desktop and mobile](/img).
+ Mobile images have been provided to match the design files.
 * Content has been provided on each page inside of comment tags
 * [Design Files](/DesignFiles) have been provided as guides for what the pages should look like on desktop and mobile.  Ignore tablet until you get MVP done.
 
 ## MVP Features:
-These MVP features represent the fundamental knowledge you should have obtained throughout the last 4 weeks.  If you cannot accomplish all of the MVP tasks listed here, you may be a candidate for the mastery based program.
+These MVP features represent the fundamental knowledge you should have obtained throughout
+ the last 4 weeks.  If you cannot accomplish all of the MVP tasks listed here, you may
+ be a candidate for the mastery based program.
 * [ ] Build layout **HTML/LESS**: [Home page desktop design](/DesignFiles/Home/home-desktop.png)
 * [ ] Build layout **HTML/LESS**: [Home page mobile design](/DesignFiles/Home/home-mobile.png)
 * [ ] Build layout **HTML/LESS**: [Services page **desktop design only**](/DesignFiles/Services/services-desktop.png)
