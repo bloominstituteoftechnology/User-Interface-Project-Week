@@ -65,6 +65,9 @@ class TabItem {
   }
 }
 
+links = document.querySelectorAll('.tabNav__tabs button')
+                .forEach(link => new TabLink(link));
+
 //**********************PROJECTS PAGE**********************
 //**********************Carousel Component*****************
 
