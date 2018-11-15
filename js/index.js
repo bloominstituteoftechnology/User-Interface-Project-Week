@@ -9,10 +9,10 @@ navButton.addEventListener('click', () => menu.classList.toggle('open'));
 navButton.addEventListener('click', function() {
   if(menu.classList.contains('open')) {
     navButton.style.content = "url('./img/nav-hamburger-close.png')";
-    TweenMax.fromTo(menu, .25, {css: {opacity: 0}}, {css:{opacity: 1}} )
+    TweenMax.fromTo(menu, .35, {css: {opacity: 0}}, {css:{opacity: 1}})
   } else {
+    TweenMax.fromTo(menu, .35, {css: {opacity: 1}}, {css:{opacity: 0}})
     navButton.style.content = "url('./img/nav-hamburger.png')";
-    TweenMax.fromTo(menu, .25, {css: {opacity: 1}}, {css:{opacity: 0}} )
   }
 })
 
@@ -69,6 +69,7 @@ class TabItem {
 
 links = document.querySelectorAll('.tabNav__tabs button')
                 .forEach(link => new TabLink(link));
+
 
 //**********************PROJECTS PAGE**********************
 //**********************Carousel Component*****************
