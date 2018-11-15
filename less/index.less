@@ -72,6 +72,13 @@ table{
     width: 47%;
   }
 }
+
+.flex-row-mobile() {
+  flex-direction: column;
+  div {
+    width: 100%;
+  }
+}
 .sub-heading() {
   font-weight: bold;
   font-size: 2.8rem;
@@ -104,7 +111,10 @@ button {
   border: 1px solid @main-color;
   padding: 1.4rem 2.5rem;
   font-size: 1.6rem;
-  
+  background: none;
+  @media @phone {
+    width: 100%;
+  }
 }
 .img-con {
   max-width: 100%;
@@ -114,6 +124,17 @@ button {
   }
 }
 
+img.desktop {
+  @media @phone {
+    display: none;
+  }
+}
+img.mobile {
+  display: none;
+  @media @phone {
+    display: block;
+  }
+}
 
 // ************************************************
 // Home Page **************************************
@@ -185,6 +206,9 @@ nav {
   width: 100%;
   margin:0 auto 5rem auto;
   padding-top: 5rem;
+  @media @phone {
+    margin-bottom: 3rem;
+  }
 
   .banner-img {
     max-width: 100%;
@@ -204,11 +228,6 @@ nav {
       } 
     }
   }
-}
-
-  img.desktop {
-    display: none;
-  }
   .banner-text {
     position: absolute;
     bottom: 50px;
@@ -217,8 +236,19 @@ nav {
     font-size: 6.4rem;
     line-height: 7.5rem;
     color: #ffffff;
-  
+    
+    @media @phone {
+      line-height: 1.2;
+      font-size: 3.5rem;
+      bottom: 25px;
+      left: 5%;
+    }
+  }
 }
+
+  
+
+  
 // Main Content **********************************
 .home {
   max-width: 1024px;
@@ -228,6 +258,9 @@ nav {
   .main {
     width: 85%;
     margin: 0 auto;
+    @media @phone {
+      width: 100%;
+    }
 
     section {
       margin-bottom: 10rem;
@@ -235,6 +268,9 @@ nav {
 
     .sub-heading {
       .sub-heading();
+      @media @phone {
+        font-size: 2.5rem;
+      }
     }
     
     .sec-text {
@@ -244,18 +280,41 @@ nav {
     }
     #about {
       .flex-row();
+      @media @phone {
+        .flex-row-mobile();
+        flex-direction: column-reverse;
+        width: 90%;
+        margin: 0 auto;
+        div {
+          padding-bottom: 3rem;
+        }
+      }
     }
     #design {
       .flex-row();
+      @media @phone {
+        .flex-row-mobile();
+        width: 90%;
+        margin: 0 auto;
+        div {
+          padding-bottom: 3rem;
+        }
+      }
     }
     #recent-projects {
       margin-bottom: 0;
 
       h2 {
         margin-bottom: 5rem;
+        @media @phone {
+          padding: 0 5%;
+        }
       }
       .project {
         padding-bottom: 8rem;
+        @media @phone {
+          padding-bottom: 5rem;
+        }
         
         .project-img {
           position: relative;
@@ -271,6 +330,12 @@ nav {
             letter-spacing: 0.5rem;
             bottom: -40px;
             right: 0;
+            @media @phone {
+              width: 90%;
+              left: 0;
+              margin: auto;
+              bottom: -8rem;
+            }
           }
 
           #title-outskirts {
@@ -282,6 +347,11 @@ nav {
           padding-top: 8rem;
           width: 50%;
           margin: 0 auto;
+
+          @media @phone {
+            width: 90%;
+            padding-top: 10rem;
+          }
         }
       }
 
@@ -295,12 +365,26 @@ footer {
   background: #828282;
   padding: 10rem 5rem 1rem 5rem;
 
+  @media @phone {
+    padding: 5rem 5% 1rem 5%;
+  }
+
   .footer-con {
     display: flex;
     justify-content: space-between;
     max-width: 870px;
     margin: 0 auto;
     width: 100%;
+
+    @media @phone {
+      flex-direction: column;
+    }
+    
+    .footer-col {
+      @media @phone {
+        padding: 1rem 0;
+      }
+    }
 
     input {
       width: 87%;
@@ -320,5 +404,8 @@ footer {
   #copyright {
     text-align: center;
     padding-top: 2rem;
+    @media @phone {
+      text-align: left;
+    }
   }
 }
