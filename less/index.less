@@ -64,6 +64,7 @@ table{
 
 * {
   box-sizing: border-box;
+  word-break: break-word;
 }
 
 body {
@@ -117,16 +118,13 @@ body {
   position: relative;
   width: 100%;
 
-  @media @phone {
-    margin-top: 50px;
-  }
-
-  img {
+  picture, img {
     width: 100%;
   }
   span {
     position: absolute;
-    top: 55%;
+    top: 87%;
+    transform: translateY(-100%);
     left: 10%;
     font-weight: bold;
     font-size: 64px;
@@ -136,7 +134,8 @@ body {
     @media @phone {
       font-size: 40px;
       line-height: normal;
-      top: 35%;
+      top: 90%;
+      transform: translateY(-100%);
       left: 5%;
     }
   }
@@ -153,9 +152,17 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    img, div {
+    picture, div {
       width: 48%;
       margin-top: 50px;
+
+      @media @phone {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+      }
 
       h2 {
         font-weight: bold;
@@ -171,8 +178,19 @@ body {
         background: transparent;
         border: 1px solid #222222;
         padding: 15px 5%;
+
+        @media @phone {
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+        }
       }
 
+    }
+    picture:nth-child(2), img:nth-child(2){
+      @media @phone {
+        order: -1;
+      }
     }
   }
   .mid-main {
@@ -190,8 +208,16 @@ body {
         position: relative;
         margin-bottom: 75px;
 
-        img {
+        @media @phone {
+          margin-bottom: 120px;
+        }
+
+        picture, img {
           width: 100%;
+
+          @media @phone {
+            .full-width-img;
+          }
         }
         p {
           position: absolute;
@@ -204,6 +230,13 @@ body {
           top: 100%;
           left: 100%;
           transform: translateX(-100%) translateY(-75%);
+
+          @media @phone {
+            width: 90%;
+            left: 50%;
+            top: 90%;
+            transform: translateX(-50%) translateY(0);
+          }
         }
 
       }
@@ -211,11 +244,20 @@ body {
         width: 50%;
         margin: 0 auto;
         margin-bottom: 20px;
+
+        @media @phone {
+          width: 90%;
+        }
       }
     }
     section:nth-child(3) div p {
       left: 0%;
       transform: translateX(0) translateY(-75%);
+
+      @media @phone {
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+      }
     }
   }
 }
@@ -233,6 +275,17 @@ footer {
     justify-content: space-evenly;
     margin-bottom: 20px;
 
+    @media @phone {
+      flex-direction: column;
+      margin: 0 5%;
+    }
+
+    div, address {
+      @media @phone {
+        margin-top: 20px;
+      }
+    }
+
     input {
       padding: 10px 5px;
       width: 100%;
@@ -249,6 +302,13 @@ footer {
       font-size: 14px;
       line-height: 26px;
       color: #FFFFFF;
+    }
+  }
+  .copyright {
+    margin-bottom: 5px;
+
+    @media @phone {
+      margin: 20px 5%;
     }
   }
 }
