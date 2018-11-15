@@ -5,9 +5,7 @@
   padding: 40px 40px 0 40px;
   
   .contacts {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    .flex(space-around, center);
 
     form {
       font-size: 1.4rem;
@@ -47,5 +45,17 @@
   footer {
     text-align: center;
     padding-top: 25px;
+  }
+
+  @media @phone {
+    height: auto;
+
+    .contacts {
+      .flex(space-between, flex-start, column);
+
+      .address {
+        padding-top: 20px;
+      }
+    }
   }
 }

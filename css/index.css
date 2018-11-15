@@ -177,6 +177,7 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: row;
 }
 .contact-container .contacts form {
   font-size: 1.4rem;
@@ -207,6 +208,20 @@ p {
   text-align: center;
   padding-top: 25px;
 }
+@media (max-width: 500px) {
+  .contact-container {
+    height: auto;
+  }
+  .contact-container .contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .contact-container .contacts .address {
+    padding-top: 20px;
+  }
+}
 .home-container {
   max-width: 885px;
   width: 100%;
@@ -215,17 +230,17 @@ p {
 .home-container .home-header {
   position: relative;
   width: 100%;
-  height: 518px;
+  height: auto;
 }
 .home-container .home-header h1 {
   position: absolute;
-  left: 40px;
-  bottom: 40px;
+  left: 2%;
+  bottom: 2%;
   z-index: 2;
 }
 .home-container .home-header img {
-  position: absolute;
-  max-width: 885px;
+  max-width: 100%;
+  height: auto;
   top: 0;
   z-index: -1;
 }
@@ -235,6 +250,8 @@ p {
 .home-container .home-about .about-container {
   display: flex;
   justify-content: space-between;
+  align-items: none;
+  flex-direction: row;
   margin-bottom: 40px;
 }
 .home-container .home-about .about-container .home-about-content {
@@ -248,6 +265,12 @@ p {
 .home-container .home-about .about-container .home-about-content button {
   margin-top: 20px;
 }
+.home-container .home-about .about-container .home-about-content button {
+  background: none;
+  width: 120px;
+  height: 36px;
+  border: 1px solid #000;
+}
 .home-container .home-projects {
   width: 100%;
   display: flex;
@@ -255,20 +278,29 @@ p {
 }
 .home-container .home-projects .home-project {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .home-container .home-projects .home-project .home-project-title {
-  width: 100%;
-  margin-left: 71.5%;
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: row;
+  width: 25%;
+  margin-left: 75%;
+  background: #d8d8d8;
+  margin-top: -40px;
+  z-index: 1000;
+  height: 64px;
 }
 .home-container .home-projects .home-project .home-project-title h2 {
-  display: inline-block;
-  background-color: #d8d8d8;
+  display: block;
   text-align: center;
   padding-top: 20px;
-  width: 25%;
-  height: 64px;
   text-transform: uppercase;
-  margin-top: -40px;
   font-family: 'Arial';
   letter-spacing: 3px;
 }
@@ -278,6 +310,64 @@ p {
 .home-container .home-projects .home-project .home-project-content p {
   padding: 20px 25% ;
 }
+.home-container .home-projects .home-project:nth-of-type(2) {
+  position: relative;
+}
 .home-container .home-projects .home-project:nth-of-type(2) .home-project-title {
+  position: relative;
   margin-left: 0;
+  left: -36%;
+}
+@media (max-width: 500px) {
+  .home-container {
+    max-width: 500px;
+  }
+  .home-container .home-header h1 {
+    font-size: 5rem;
+  }
+  .home-container .home-about .about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .home-container .home-about .about-container:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  .home-container .home-about .about-container .home-about-content button {
+    width: 100%;
+  }
+  .home-container .home-projects h3 {
+    padding: 10px;
+  }
+  .home-container .home-projects .home-project {
+    display: flex;
+    justify-content: center;
+    align-items: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .home-container .home-projects .home-project:nth-of-type(2) {
+    position: none;
+  }
+  .home-container .home-projects .home-project:nth-of-type(2) .home-project-title {
+    left: 0;
+  }
+  .home-container .home-projects .home-project .home-project-title {
+    margin-left: 0;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: none;
+    flex-direction: row;
+  }
+  .home-container .home-projects .home-project .home-project-title h2 {
+    width: 100%;
+  }
+  .home-container .home-projects .home-project .home-project-content p {
+    padding: 20px 5%;
+  }
 }
