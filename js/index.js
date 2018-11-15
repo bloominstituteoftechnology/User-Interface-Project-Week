@@ -4,15 +4,18 @@
 const navButton = document.querySelector('.navContainer__top-bar img');
 const menu = document.querySelector('.menu');
 
-
-navButton.addEventListener('click', () => menu.classList.toggle('open'));
 navButton.addEventListener('click', function() {
+
+  menu.classList.toggle('open')
+
   if(menu.classList.contains('open')) {
     navButton.style.content = "url('./img/nav-hamburger-close.png')";
     TweenMax.fromTo(menu, .35, {css: {opacity: 0}}, {css:{opacity: 1}})
+    menu.style.zIndex = 10000;
   } else {
     TweenMax.fromTo(menu, .35, {css: {opacity: 1}}, {css:{opacity: 0}})
     navButton.style.content = "url('./img/nav-hamburger.png')";
+    setTimeout(() => menu.style.zIndex = -10000, 5000);
   }
 })
 
@@ -80,7 +83,7 @@ const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
 
 //when next button is clicked move up one image
-next.addEventListener('click', function() {
+function nextSlide() {
   const currentSlide = document.querySelector('.show');
 
   //Use data tab count to find new slide
@@ -98,7 +101,9 @@ next.addEventListener('click', function() {
     currentSlide.classList.remove('show');
     newSlide.classList.add('show');
   }
-});
+}
+
+next.addEventListener('click', nextSlide);
 
 
 //when next button is clicked move up one image
