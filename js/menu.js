@@ -3,7 +3,7 @@ const toggleMenu = () => {
     // Toggle the "menu--open" class on your menu refence. 
 
     
-    if  (menu.classList === 'menu-open') {
+    if (menu.classList === 'menu-open') {
         menuButton.setAttribute('src', './img/nav-hamburger-close.png');
     }
     else{
