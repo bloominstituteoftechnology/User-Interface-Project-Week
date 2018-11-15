@@ -157,6 +157,9 @@ button {
 }
 nav {
   background: #98a4af;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 nav .container {
   max-width: 1024px;
@@ -179,6 +182,14 @@ nav .container #logo {
 nav .container #menu .menu-hidden {
   display: none;
 }
+nav .container #menu #menu-items {
+  position: absolute;
+  text-align: right;
+  max-width: 200rem;
+  background: pink;
+  width: 100%;
+  left: 0;
+}
 nav .container #menu #hamb .hamb-line {
   width: 3rem;
   height: 4px;
@@ -191,11 +202,31 @@ nav .container #menu #hamb .hamb-line {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto 5rem auto;
+  padding-top: 5rem;
 }
 #banner .banner-img {
   max-width: 100%;
 }
-#banner .banner-text {
+#banner .banner-img .desktop {
+  display: block;
+}
+@media (max-width: 500px) {
+  #banner .banner-img .desktop {
+    display: none;
+  }
+}
+#banner .banner-img .mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  #banner .banner-img .mobile {
+    display: block;
+  }
+}
+img.desktop {
+  display: none;
+}
+.banner-text {
   position: absolute;
   bottom: 50px;
   left: 9%;

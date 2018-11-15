@@ -60,6 +60,7 @@ table{
 /* Your Code Goes Here */
 //Variables
 @main-color: #222222;
+@phone: ~"(max-width: 500px)";
 
 
 //Mixins
@@ -112,6 +113,8 @@ button {
     width: 100%;
   }
 }
+
+
 // ************************************************
 // Home Page **************************************
 // ************************************************
@@ -119,12 +122,14 @@ button {
 // Navigation *************************************
 nav {
   background: #98a4af;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
   
   .container {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-
 
     .container-nav {
       width: 85%;
@@ -134,6 +139,7 @@ nav {
       margin: 0 auto;
       height: 5rem;
     }
+
     #logo {
       font-weight: 600;
       font-size: 2.4rem;
@@ -141,12 +147,19 @@ nav {
     }
 
     #menu {
-
-      
       .menu-hidden {
         display: none;
       }
   
+      #menu-items {
+        position: absolute;
+        text-align: right;
+        max-width: 200rem;
+        background: pink;
+        width: 100%;
+        left: 0;
+    }
+
       #hamb {
   
         .hamb-line {
@@ -170,12 +183,32 @@ nav {
   position: relative;
   max-width: 1024px;
   width: 100%;
-  margin: 0 auto 5rem auto;
+  margin:0 auto 5rem auto;
+  padding-top: 5rem;
 
   .banner-img {
     max-width: 100%;
-  }
 
+    .desktop {
+      display:block;
+      
+      @media @phone {
+        display:none;
+      }
+    }
+    .mobile {
+      display: none;
+
+      @media @phone {
+        display:block;
+      } 
+    }
+  }
+}
+
+  img.desktop {
+    display: none;
+  }
   .banner-text {
     position: absolute;
     bottom: 50px;
@@ -184,7 +217,7 @@ nav {
     font-size: 6.4rem;
     line-height: 7.5rem;
     color: #ffffff;
-  }
+  
 }
 // Main Content **********************************
 .home {
