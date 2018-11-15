@@ -65,67 +65,64 @@ table {
 }
 
 /*--------------------------------------------------------------------------*/
-@import "mixins.less";
-
-
-
 /* Your Code Goes Here */
+@import "mixins.less";
+@import "variables.less";
+
+//NAVBAR-----------------------------------------------------------------------
 .navbar {
-  display: flex;
-  justify-content: space-between;
   background-color: #99a4af;
   .centered-max-width(1000px);
+  .flex-justify-align(space-between, stretch);
 }
+
+
 
 
 .container {
   .centered-max-width(1000px);
-  .general-text;
-  .general-style;
-  
+  //gives some space between each section
   div {
-    margin-bottom:50px;
+    margin-bottom: 50px;
   }
-  
+  //Want all images to be 100% of width
   img {
     max-width: 100%;
   }
 
-
+  //INTRO------------------------------------------------------------------------
   .intro {
-    background-image: url("../img/home/home-jumbotron.png");
-    width: 100%;
-    height: 598px;
+    .intro-background-style;
     .jumbotron-text-style;
   }
 
+  //GRID------------------------------------------------------------------------
   .grid-container {
     .centered-max-width(855px);
     .grid-style;
-    button {
-      border:1px solid black;
-      background-color:white;
-      height:30px;
-    }
-    margin-bottom:150px;
-  }
-
-  
-  
-  
-  .projects-section {
-    .project-header {
-      font-size: 30px;
+    .services-header {
+      font-size: 20px;
       font-weight: bold;
     }
+    button {
+      .button-style;
+    }
+  }
+
+  //PROJECTS--------------------------------------------------------------------------
+
+  .projects-section {
     .centered-max-width(855px);
+    .project-header {
+      font-size: 20px;
+      font-weight: bold;
+    }
     .project-title {
       .sub-headers-style;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    
 
     .content {
       .centered-max-width(600px);
@@ -137,17 +134,21 @@ table {
 //FOR THE BACKGROUND IMAGES ---------------------------------------------
 
 .villa-header {
-  background-image: url("../img/home/home-villas-img.png");
-  height: 230px;
-
+  .sub-image("../img/home/home-villas-img.png");
+  .flex-justify-align(flex-end, flex-end)
 }
 
 .outskirts-header {
-  background-image: url("../img/home/home-outskirts-img.png");
-  height: 230px;
+  .sub-image("../img/home/home-outskirts-img.png");
+  .flex-justify-align(stretch, flex-end);
 }
 
 .blocks-header {
-  background-image: url("../img/home/home-the-blocks-img.png");
-  height: 230px;
+  .sub-image("../img/home/home-the-blocks-img.png");
+  .flex-justify-align(flex-end, flex-end);
+}
+
+footer {
+  display: flex;
+  .centered-max-width(1000px);
 }
