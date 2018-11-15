@@ -46,8 +46,9 @@ let links = document.querySelectorAll('.links').forEach(link => {
 
 let backgroundImage = document.querySelector('header');
 let title = document.querySelector('title');
+console.log(title);
 
-if ((title = 'Services')) {
+if (title.innerText == 'Services') {
   backgroundImage.style.background =
     "no-repeat url('img/services/services-jumbotron.png')";
   backgroundImage.style.height = '280px';
