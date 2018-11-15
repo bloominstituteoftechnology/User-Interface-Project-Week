@@ -152,6 +152,7 @@ html {
 html,
 body {
   font-family: 'Roboto', sans-serif;
+  height: 100%;
 }
 h3 {
   font-size: 2.5rem;
@@ -168,25 +169,72 @@ img {
   max-width: 100%;
   height: auto;
 }
+a {
+  text-decoration: none;
+}
 nav {
+  background-color: #98A4AF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav .navTop {
+  background-color: #98A4AF;
   position: fixed;
   top: 0;
   left: 23.1%;
-  background-color: #98A4AF;
   display: flex;
   justify-content: space-between;
   max-width: 1024px;
   width: 100%;
   padding: 13px 4.5%;
-  z-index: 2;
+  z-index: 1;
 }
-nav .logo {
+nav .navTop .logo {
   font-weight: bold;
   font-size: 2.4rem;
   color: #FFFFFF;
 }
-nav .links {
+nav .navTop .openBtn {
+  background-image: url("../img/nav-hamburger.png");
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 21px;
+}
+nav .navTop .closeBtn {
+  background-image: url("../img/nav-hamburger-close.png");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 25px;
+}
+nav .linksArea {
   display: none;
+}
+nav .linksShow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  background-color: #98A4AF;
+  top: 50px;
+  opacity: 0.9;
+}
+nav .linksShow .links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+}
+nav .linksShow .links a {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+  color: #FFFFFF;
+}
+nav .linksShow .links a:hover {
+  color: #222222;
 }
 .home .jumbotron {
   background-image: url('../img/home/home-jumbotron.png');
