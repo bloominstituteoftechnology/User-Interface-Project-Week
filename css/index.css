@@ -163,6 +163,9 @@ table {
   line-height: 26px;
   color: #FFFFFF;
 }
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
   font-family: 'Rototo', 'Arial', sans-serif;
@@ -178,6 +181,11 @@ p {
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 24px;
+}
+.content {
+  max-width: 854px;
+  width: 100%;
+  margin: 0 auto;
 }
 header {
   background: #828282;
@@ -197,6 +205,9 @@ header .nav-logo {
   max-width: 1024px;
   width: 100%;
   height: 100%;
+  flex-direction: column;
+  opacity: 0.8;
+  position: absolute;
   margin: 0 auto;
   font-weight: bold;
   font-size: 4.8rem;
@@ -210,8 +221,6 @@ header .nav-logo {
 }
 .site-navigation .links-open {
   display: flex;
-  flex-direction: column;
-  position: fixed;
 }
 footer {
   background: #828282;
@@ -238,10 +247,32 @@ footer .contacts {
 }
 .container .learn-more {
   display: flex;
-  width: 95%;
+  width: 100%;
+  margin: 40px 0;
+  justify-content: space-between;
 }
 .container .learn-more .text-container {
-  width: 50%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.container .learn-more .text-container button {
+  padding: 10px 15px;
+  border-color: #222222;
+  background-color: #FFFFFF;
+}
+.container .learn-more img {
+  width: 45%;
+}
+.container .designs img {
+  order: -1;
+}
+.container .recent-projects p {
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
 }
 .container .recent-projects h3 {
   width: 20%;
@@ -252,7 +283,8 @@ footer .contacts {
   position: relative;
 }
 .container .recent-projects .header-img {
-  width: 855px;
+  max-width: 855px;
+  width: 100%;
   height: 230px;
   margin: 0 auto;
 }
@@ -260,7 +292,7 @@ footer .contacts {
   background: url("../img/home/home-villas-img.png");
 }
 .container .recent-projects .the-villas .header-img h3 {
-  left: 75%;
+  left: 80%;
   top: 160px;
 }
 .container .recent-projects .outskirts .header-img {
