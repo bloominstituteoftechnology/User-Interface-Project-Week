@@ -9,8 +9,10 @@ navButton.addEventListener('click', () => menu.classList.toggle('open'));
 navButton.addEventListener('click', function() {
   if(menu.classList.contains('open')) {
     navButton.style.content = "url('./img/nav-hamburger-close.png')";
+    TweenMax.fromTo(menu, .25, {css: {opacity: 0}}, {css:{opacity: 1}} )
   } else {
     navButton.style.content = "url('./img/nav-hamburger.png')";
+    TweenMax.fromTo(menu, .25, {css: {opacity: 1}}, {css:{opacity: 0}} )
   }
 })
 
