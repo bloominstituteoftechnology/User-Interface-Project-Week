@@ -15,7 +15,7 @@ navButton.addEventListener('click', function() {
   } else {
     TweenMax.fromTo(menu, .35, {css: {opacity: 1}}, {css:{opacity: 0}})
     navButton.style.content = "url('./img/nav-hamburger.png')";
-    setTimeout(() => menu.style.zIndex = -10000, 5000);
+    setTimeout(() => menu.style.zIndex = -10000, 350);
   }
 })
 
@@ -81,6 +81,12 @@ links = document.querySelectorAll('.tabNav__tabs button')
 const boxList = document.querySelectorAll('.box');
 const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
+let autoSlide;
+
+
+function auto() { autoSlide = setInterval(nextSlide, 3000) };
+
+function stopSlide() { clearInterval(autoSlide) };
 
 //when next button is clicked move up one image
 function nextSlide() {
@@ -103,11 +109,16 @@ function nextSlide() {
   }
 }
 
+auto();
+
+next.addEventListener('click', stopSlide);
 next.addEventListener('click', nextSlide);
 
 
 //when next button is clicked move up one image
 prev.addEventListener('click', function() {
+  stopSlide();
+
   const currentSlide = document.querySelector('.show');
 
   //Use data tab count to find new slide
