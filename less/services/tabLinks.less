@@ -1,0 +1,41 @@
+@import './../assets/variables.less';
+
+.tabLinks {
+  width: 90%;
+  margin: 0px auto;
+  display: flex;
+  flex-flow: column nowrap;
+
+  @media @tablet {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .selected {
+    background-color: @mainColor;
+    color: @white;
+  }
+
+  button {
+    padding: 12px 0 12px 0;
+    margin-top: 12px;
+    background-color: @white;
+    border: 1px solid @footerGrey;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+      &:first-child { margin: 0; }
+      &:last-child { margin-bottom: 35px; }
+
+      &:hover {
+        background-color: @black;
+        color: @white;
+      }
+
+    @media @tablet {
+      width: 22%;
+      margin: 0;
+        &:last-child { margin: 0; }
+    }
+  }
+}
