@@ -144,6 +144,11 @@ table {
   width: 100%;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  .container {
+    max-width: 320px;
+  }
+}
 html {
   font-size: 62.5%;
   background-color: #FFFFFF;
@@ -182,13 +187,17 @@ nav .navTop {
   background-color: #98A4AF;
   position: fixed;
   top: 0;
-  left: 23.1%;
   display: flex;
   justify-content: space-between;
   max-width: 1024px;
   width: 100%;
   padding: 13px 4.5%;
   z-index: 1;
+}
+@media (max-width: 500px) {
+  nav .navTop {
+    max-width: 320px;
+  }
 }
 nav .navTop .logo {
   font-weight: bold;
@@ -236,22 +245,39 @@ nav .linksShow .links a {
 nav .linksShow .links a:hover {
   color: #222222;
 }
-.home .jumbotron {
+.jumbotron {
   background-image: url('../img/home/home-jumbotron.png');
   background-repeat: no-repeat, repeat;
   width: 100%;
-  height: 600px;
+  height: 598px;
   margin-bottom: 5px;
+  /*****************/
+  /* Mobile view */
+  /*****************/
 }
-.home .jumbotron .JumboText {
+.jumbotron .JumboText {
   padding-top: 325px;
   padding-left: 8%;
 }
-.home .jumbotron .jumbo {
+.jumbotron .jumbo {
   font-weight: bold;
   font-size: 6.4rem;
   line-height: 75px;
   color: #FFFFFF;
+}
+@media (max-width: 500px) {
+  .jumbotron {
+    background-image: url('../img/home/home-mobile-jumbotron.png');
+    height: 260px;
+  }
+  .jumbotron .JumboText {
+    padding-top: 110px;
+    padding-left: 5%;
+  }
+  .jumbotron .jumbo {
+    font-size: 3.7rem;
+    line-height: 42px;
+  }
 }
 .home article {
   max-width: 850px;
@@ -264,22 +290,32 @@ nav .linksShow .links a:hover {
   margin-bottom: 50px;
 }
 .home article .intro .introText {
-  width: 50%;
+  width: 100%;
   padding-top: 95px;
 }
 .home article .intro .introText2 {
-  width: 50%;
-  padding-top: 85px;
+  width: 100%;
+  padding-top: 89px;
   margin-left: 3.5%;
 }
-.home article .intro img {
-  padding-top: 48px;
+.home article .intro .image {
+  margin-top: 48px;
+  width: 100%;
+  height: 275px;
+  background-repeat: no-repeat;
+}
+.home article .intro .homeImg1 {
+  margin-left: 30px;
+  background-image: url('../img/home/home-img-1.png');
+}
+.home article .intro .homeImg2 {
+  background-image: url('../img/home/home-img-2.png');
 }
 .home article .intro .introBtn1 {
   border: 1px solid #222222;
   margin-top: 25px;
   width: 32.5%;
-  padding: 14px 6%;
+  padding: 15px 6%;
   font-size: 1.6rem;
 }
 .home article .intro .introBtn2 {
@@ -289,13 +325,71 @@ nav .linksShow .links a:hover {
   padding: 15px 4%;
   font-size: 1.6rem;
 }
+@media (max-width: 500px) {
+  .home article .intro {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .home article .intro .image {
+    order: -1;
+    margin-top: 30px;
+  }
+  .home article .intro .homeImg1 {
+    background-image: url('../img/home/home-mobile-img-1.png');
+    margin-left: 0;
+  }
+  .home article .intro .introText,
+  .home article .intro .introText2 {
+    padding-top: 28px;
+    margin-left: 0;
+  }
+  .home article .intro .introBtn1,
+  .home article .intro .introBtn2 {
+    width: 100%;
+    text-align: center;
+    padding: 15px 6%;
+    margin-top: 25px;
+  }
+  .home article .intro .homeImg2 {
+    background-image: url('../img/home/home-mobile-img-2.png');
+    margin-top: 45px;
+  }
+}
+@media (max-width: 500px) {
+  .home article .intro {
+    max-width: 287px;
+    margin: 0 auto;
+  }
+}
 .home article .projects {
   margin-top: 95px;
+}
+@media (max-width: 500px) {
+  .home article .projects {
+    max-width: 325px;
+  }
+  .home article .projects .projTitle {
+    margin-left: 4.5%;
+  }
 }
 .home article .projects .project {
   margin-top: 26px;
   margin-bottom: 100px;
   position: relative;
+}
+.home article .projects .project .proj {
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 230px;
+}
+.home article .projects .project .homeVillas {
+  background-image: url('../img/home/home-villas-img.png');
+}
+.home article .projects .project .homeOutskirts {
+  background-image: url('../img/home/home-outskirts-img.png');
+}
+.home article .projects .project .homeBlocks {
+  background-image: url('../img/home/home-the-blocks-img.png');
 }
 .home article .projects .project .projectDesc {
   margin: 90px auto;
@@ -328,6 +422,50 @@ nav .linksShow .links a:hover {
   font-size: 2.5rem;
   letter-spacing: 7.7px;
 }
+@media (max-width: 500px) {
+  .home article .projects .project {
+    margin-top: 6px;
+  }
+  .home article .projects .project .homeVillas {
+    background-image: url('../img/home/home-mobile-villas-img.png');
+    width: 100%;
+  }
+  .home article .projects .project .homeOutskirts {
+    background-image: url(../img/home/home-mobile-outskirts-img.png);
+  }
+  .home article .projects .project .homeBlocks {
+    background-image: url('../img/home/home-mobile-the-blocks-img.png');
+  }
+  .home article .projects .project .projectDesc {
+    margin: 77px 5% 0 5%;
+    width: 90%;
+  }
+  .home article .projects .project .btnRight {
+    top: 185px;
+    right: 4%;
+    padding: 35px 0;
+    text-align: center;
+    width: 290px;
+  }
+  .home article .projects .project .btnLeft {
+    top: 190px;
+    left: 4.5%;
+    padding: 35px 0;
+    text-align: center;
+    width: 290px;
+  }
+}
+@media (max-width: 500px) {
+  .home article .projects .project {
+    margin-bottom: 43px;
+  }
+}
+@media (max-width: 500px) {
+  .home article .projects {
+    margin-top: 50px;
+    max-width: 320px;
+  }
+}
 .home footer {
   background-color: #828282;
   color: #FFFFFF;
@@ -337,6 +475,13 @@ nav .linksShow .links a:hover {
   padding-bottom: 10px;
   font-size: 1.2rem;
   text-align: center;
+}
+@media (max-width: 500px) {
+  .home footer .copyright {
+    margin-top: 2px;
+    margin-left: 5%;
+    text-align: left;
+  }
 }
 .home footer .footer {
   display: flex;
@@ -355,7 +500,39 @@ nav .linksShow .links a:hover {
   width: 280px;
   font-size: 1.5rem;
   margin-top: 10px;
+  border-radius: 5px;
+}
+@media (max-width: 500px) {
+  .home footer .footer .email input {
+    padding: 14px 2.5%;
+    width: 285px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
 }
 .home footer .footer .email p:last-child {
   font-size: 1.3rem;
+}
+@media (max-width: 500px) {
+  .home footer .footer .email {
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 500px) {
+  .home footer .footer {
+    flex-direction: column;
+    margin-top: 85px;
+    padding-top: 24px;
+  }
+  .home footer .footer .address {
+    margin-bottom: 10px;
+    line-height: 24px;
+  }
+  .home footer .footer .address p {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+  .home footer .footer .address .heading {
+    font-size: 2rem;
+  }
 }
