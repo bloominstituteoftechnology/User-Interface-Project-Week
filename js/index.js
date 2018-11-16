@@ -37,8 +37,11 @@ class ContentItem {
       content.classList.add('hidden');
     });
     this.contentItem.classList.remove('hidden');
+    TweenLite.fromTo(this.contentItem, 1.7, {opacity: 0.3}, {opacity: 1});
   }
 }
+
+// navigation
 
 class Dropdown {
   constructor(menu) {
@@ -60,8 +63,10 @@ class Dropdown {
     menu.classList.toggle('show');
     if (menu.classList.contains('show')) {
       menuButton.src = 'img/nav-hamburger-close.png';
+      TweenLite.fromTo(menu, 1, {height: 0}, {height: '100vh'});
     } else {
       menuButton.src = 'img/nav-hamburger.png';
+      TweenLite.fromTo(menu, 1, {height: '100vh'}, {height: 40});
     }
   }
 }
