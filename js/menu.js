@@ -4,7 +4,7 @@ const toggleMenu = () => {
     if (menu.classList.value !== 'menu menu--open') {
         menu.classList.toggle('menu--open');
         menuButton.setAttribute('src', './img/nav-hamburger-close.png');
-        navWrapper.style.opacity = '0.96';
+        navWrapper.style.opacity = '0.97';
     }
     else if (menu.classList.value === 'menu menu--open') {
         menu.classList.toggle('menu--open');
@@ -25,7 +25,7 @@ menuButton.addEventListener('click', toggleMenu);
 window.addEventListener('scroll', function() {
     console.log(window.pageYOffset);
     if (window.pageYOffset > 60){
-        navWrapper.style.opacity = '0.96';
+        navWrapper.style.opacity = '0.97';
     }
     else if (window.pageYOffset < 60) {
         navWrapper.style.opacity = '1';
