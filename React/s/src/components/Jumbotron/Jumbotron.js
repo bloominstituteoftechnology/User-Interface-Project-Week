@@ -3,19 +3,41 @@ import React from 'react';
 const jumbotron = props => {
 
   const jumboHeaders = {
-    home: <h1>Integrity, <br /> Excellence, <br /> Progress.</h1>,
+    home: {
+      title: <h1>Integrity, <br /> Excellence, <br /> Progress.</h1>,
+      class: "home__jumbotron"
+    },
+
+    services: {
+      title: <h1>Services</h1>,
+      class: "services"
+    },
+
+    contact: {
+      title: <h1>Contact Us</h1>,
+      class: "contact"
+    }
   }
 
   let head;
-
-  if(props.size === 'large') {
-    head = jumboHeaders.home;
+  let classCurr;
+  console.log(props
+  )
+  if(props.page === 'home') {
+    head = jumboHeaders.home.title
+    classCurr = jumboHeaders.home.class
+  } else if (props.page === 'services') {
+    head = jumboHeaders.services.title
+    classCurr = jumboHeaders.services.class
+  } else {
+    head = jumboHeaders.contact.title
+    classCurr = jumboHeaders.contact.class
   }
 
 
   return (
     <header>
-			<div className="home__jumbotron">
+			<div className={ classCurr }>
         {head}
 			</div>
 		</header>

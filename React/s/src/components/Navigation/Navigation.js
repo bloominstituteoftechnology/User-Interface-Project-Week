@@ -6,19 +6,25 @@ class Navigation extends React.Component {
 
     state = {
       showMenu: false,
+
       toggleMenu: () => this.setState(prevState => { return {showMenu: !prevState.showMenu} }),
     }
 
+
+
   render() {
+
     let menu;
 
     if(this.state.showMenu) {
-      menu = <Menu show={this.state.showMenu}/>
+      menu = <Menu show={this.state.showMenu} toggle={ this.props.toggle }/>
     }
+
+
 
     return(
       <section className='navContainer'>
-        <Topbar show={ this.state.toggleMenu }/>
+        <Topbar show={ this.state.toggleMenu } />
         {menu}
       </section>
     );
