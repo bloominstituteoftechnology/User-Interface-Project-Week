@@ -40,13 +40,34 @@ class ContentItem {
   }
 }
 
+class Dropdown {
+  constructor(menu) {
+    this.menu = menu;
+    // console.log(this.menu);
+    this.button = this.menu.querySelector('.nav-button');
+    // console.log(this.button);
+    this.button.addEventListener('click', () => {
+      this.show();
+    });
+  }
+  show() {
+    const menu = this.menu;
+    const links = document.querySelectorAll('.navMenu');
+    links.forEach(link => {
+      link.classList.toggle('hidden');
+    });
+    menu.classList.toggle('show');
+  }
+}
+
 let links = document.querySelectorAll('.links').forEach(link => {
   return new Tab(link);
 });
 
 let backgroundImage = document.querySelector('header');
 let title = document.querySelector('title');
-console.log(title);
+let navMenu = document.querySelector('.navigation');
+new Dropdown(navMenu);
 
 if (title.innerText == 'Services') {
   backgroundImage.style.background =

@@ -55,9 +55,9 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 <!-- - Font Size: 24px -->
 <!-- - Color: #FFFFFF -->
 
-### Navigation Text (Expanded)
-- Font Weight: Bold
-- Font Size: 48px
-- Line Height: 85px
-- Color: #FFFFFF
-- Hover Color: #222222
+<!-- ### Navigation Text (Expanded) -->
+<!-- - Font Weight: Bold -->
+<!-- - Font Size: 48px -->
+<!-- - Line Height: 85px -->
+<!-- - Color: #FFFFFF -->
+<!-- - Hover Color: #222222 -->
