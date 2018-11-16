@@ -22,5 +22,18 @@ const menuButton = doc.querySelector('.menu-button');
 
 menuButton.addEventListener('click', toggleMenu);
   
+window.addEventListener('scroll', function() {
+    console.log(window.pageYOffset);
+    if (window.pageYOffset > 60){
+        navWrapper.style.opacity = '0.96';
+    }
+    else if (window.pageYOffset < 60) {
+        navWrapper.style.opacity = '1';
+
+    }
+    // const joe = document.querySelector('body').innerHTML = pageYOffset + 'px';
+    // console.log(joe);
+
+});
   
   
