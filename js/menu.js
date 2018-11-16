@@ -29,10 +29,7 @@ window.addEventListener('scroll', function() {
     }
     else if (window.pageYOffset < 60) {
         navWrapper.style.opacity = '1';
-
     }
-    // const joe = document.querySelector('body').innerHTML = pageYOffset + 'px';
-    // console.log(joe);
 
 });
   
