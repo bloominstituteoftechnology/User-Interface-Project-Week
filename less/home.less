@@ -1,11 +1,8 @@
 
 .home-page-content{
-//   display: flex;
   align-items: center;
-//   width: 100%;
 
     .home-page-middle-section{
-        // display: flex;
         flex-direction: row;
         width: 100%;
 
@@ -21,7 +18,6 @@
                 margin-top: 5%;
                 flex-direction: column;
                 align-items: center;
-                // border: 2px solid black;
                 padding: 20px 0;
             
                 p {
@@ -35,13 +31,9 @@
                 }
 
                 button {
-                    width: 27%;
-                    height: 15%;
+                    .btn-mixin(@btn-width, @btn-height, @btn-background, @btn-color, @btn-fontsize, @border-radius);
                     border: 1px solid black;
-                    border-radius: 3px;
                     margin-top: 15px;
-                    // padding: 10px;
-                    font-size: 1.5rem;
                 }
             }
             .img-content{
@@ -65,23 +57,38 @@
             flex-direction: column;
             justify-content: space-between;
 
-            .img-content{
-                display: flex;
-                width: 100%;
+ 
 
-                .lower-img{
+            .lower-img{
                     width: 100%;
-                }
             }
 
             .lower-section-headers{
-                display: flex;
+                position: absolute;
+                margin-top: -5%;
+                background: green;
+
+                .bannerh2{
+                flex-direction: row-reverse;
+                flex-wrap: nowrap;
+                padding: 15% 40%;
+                .banner-h2(@banner-background, @banner-color, @banner-fontsize, @banner-fontspacing);
+                }
             }
 
-            .lower-paragraphs{
-                width: 50%;
-                display: flex;
-                flex-direction: column;
+            .paragraph-box{
+                margin: 5% 0;
+                border: 1px solid black;
+
+                .lower-paragraphs{
+                    border: 1px solid black;
+                    // width: 50%;
+                    margin: 0 30%;
+                    padding: 3%;
+                    flex-direction: column;
+                    .center();
+                    font-size: 1.5rem;
+                }
             }
         }
     }
