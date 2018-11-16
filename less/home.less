@@ -1,10 +1,19 @@
 .container {
   width: 1024px;
   margin: auto;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 }
 .header {
   &__banner {
     position: relative;
+    &__img {
+      @media (max-width: 1024px) {
+        margin-top: 50px;
+        width: 100%;
+      }
+    }
     &__motto {
       color: @clr-white;
       font-size: 3.85rem;
@@ -12,21 +21,44 @@
       position: absolute;
       bottom: 3rem;
       left: 5.3rem;
+      @media (max-width: 786px) {
+        flex-direction: column;
+        align-items: center;
+        font-size: 9vw;
+        left: 5%;
+        bottom: 5%;
+      }
     }
   }
 }
 .about {
   padding: 0 4.3rem;
+  @media (max-width: 786px) {
+    padding: 0;
+  }
   .card {
     display: flex;
     flex-direction: row;
     align-content: center;
+    @media (max-width: 786px) {
+      flex-direction: column;
+      align-items: center;
+    }
     &--sm {
       margin: 3rem 0 6rem;
+      @media (max-width: 786px) {
+        margin: 2rem 0 3rem;
+      }
       .card__body {
         width: 50%;
         align-self: center;
         padding: 0 1rem;
+        @media (max-width: 786px) {
+          order: 1;
+        }
+        @media (max-width: 640px) {
+          width: 100%;
+        }
       }
       .card__title {
         font-size: 1.5rem;
@@ -45,6 +77,13 @@
       .card__img {
         padding: 0 1rem;
         width: 50%;
+        @media (max-width: 786px) {
+          order: 0;
+        }
+        @media (max-width: 640px) {
+          height: auto;
+          width: 100%;
+        }
       }
       &:nth-child(even) {
         .card__img {
@@ -56,8 +95,14 @@
 }
 .projects {
   padding: 0.5rem 5.3rem;
+  @media (max-width: 786px) {
+    padding: 0;
+  }
   &__title {
     font-size: 1.5rem;
+    @media (max-width: 786px) {
+      padding: 0 0.8rem;
+    }
   }
   .card {
     &--lg {
@@ -87,17 +132,28 @@
         width: 55.5%;
         align-self: center;
         padding: 0.8rem;
+        @media (max-width: 786px) {
+          width: 100%;
+        }
       }
     }
   }
   .card:nth-child(odd) {
     .card__building {
       left: 0;
+      @media (max-width: 786px) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
   .card:nth-child(even) {
     .card__building {
       right: 0;
+      @media (max-width: 786px) {
+        right: 50%;
+        transform: translateX(50%);
+      }
     }
   }
 }
