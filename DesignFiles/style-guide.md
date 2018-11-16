@@ -36,7 +36,7 @@ Background: #828282
 ### Sub Headers
 - Font Weight: Bold
 - Font Size: 28px
-- Color: #222222
+- Color: #222222 @sub-headers
    
 ### Footer Headings
 - Font Weight: Regular
