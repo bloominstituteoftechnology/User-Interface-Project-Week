@@ -152,7 +152,7 @@ table {
   color: #222222;
 }
 .footer-headings {
-  font-weight: normal;
+  font-weight: bold;
   font-size: 2rem;
   line-height: 24px;
   color: #FFFFFF;
@@ -162,6 +162,14 @@ table {
   font-size: 1.4rem;
   line-height: 26px;
   color: #FFFFFF;
+}
+.mobile-width {
+  max-width: 500px;
+  width: 100%;
+}
+.mobile-background-image {
+  background-repeat: no-repeat;
+  background-position: center;
 }
 * {
   box-sizing: border-box;
@@ -198,14 +206,27 @@ p {
   width: 100%;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  .content {
+    max-width: 500px;
+    width: 100%;
+  }
+}
 header {
   background: #828282;
   color: #FFFFFF;
-  padding: 14px 80px;
+  padding: 14px 8%;
   position: fixed;
+  top: 0;
   max-width: 1024px;
   width: 100%;
   z-index: 2;
+}
+@media (max-width: 500px) {
+  header {
+    max-width: 500px;
+    width: 100%;
+  }
 }
 header .main-nav-bar {
   display: flex;
@@ -216,20 +237,25 @@ header .nav-logo {
   font-size: 2.4rem;
   color: #FFFFFF;
 }
-.site-navigation .links {
+.site-navigation {
   max-width: 1024px;
   width: 100%;
-  height: 100%;
+}
+@mobile {
+  max-width: 500px;
+  width: 100%;
+}
+.site-navigation .links {
+  width: 100%;
+  height: 60vh;
   flex-direction: column;
-  opacity: 0.8;
-  position: absolute;
+  background: #828282;
   margin: 0 auto;
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 85px;
   color: #FFFFFF;
   display: none;
-  background: #828282;
 }
 .site-navigation .links:hover {
   color: #222222;
@@ -240,20 +266,27 @@ header .nav-logo {
 footer {
   background: #828282;
   padding: 20px 5%;
+  padding-bottom: 10px;
 }
 footer h2,
 footer h3 {
-  font-weight: normal;
+  font-weight: bold;
   font-size: 2rem;
   line-height: 24px;
   color: #FFFFFF;
 }
-footer p,
+footer p {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: #FFFFFF;
+}
 footer span {
   font-weight: normal;
   font-size: 1.4rem;
   line-height: 26px;
   color: #FFFFFF;
+  font-size: 1.2rem;
 }
 footer .copyright {
   display: block;
@@ -267,16 +300,42 @@ footer .contacts {
   margin-top: 30px;
   margin-bottom: 20px;
 }
+@media (max-width: 500px) {
+  footer .contacts {
+    flex-direction: column;
+  }
+}
 footer .contacts form {
   width: 40%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  footer .contacts form {
+    width: 100%;
+  }
 }
 footer .contacts form input {
   width: 75%;
 }
 footer .contacts address {
   width: 20%;
+}
+@media (max-width: 500px) {
+  footer .contacts address {
+    width: 100%;
+  }
+}
+.container {
+  max-width: 1024px;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .container {
+    max-width: 500px;
+    width: 100%;
+  }
 }
 .container h2 {
   font-weight: bold;
@@ -285,8 +344,21 @@ footer .contacts address {
 }
 .container .home-splash {
   background-image: url("../img/home/home-jumbotron.png");
+  max-width: 1024px;
   width: 100%;
   height: 598px;
+}
+@media (max-width: 500px) {
+  .container .home-splash {
+    background-image: url("../img/home/home-mobile-jumbotron.png");
+    max-width: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 275px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
 }
 .container .home-splash .jumbotron {
   font-family: 'Rototo', 'Arial', sans-serif;
@@ -298,11 +370,26 @@ footer .contacts address {
   top: 300px;
   left: 5%;
 }
+@media (max-width: 500px) {
+  .container .home-splash .jumbotron {
+    font-size: 3rem;
+    top: 100px;
+    line-height: normal;
+  }
+}
 .container .learn-more {
   display: flex;
   width: 100%;
   margin: 40px 0;
   justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .container .learn-more {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+    width: 95%;
+  }
 }
 .container .learn-more .text-container {
   width: 45%;
@@ -311,6 +398,12 @@ footer .contacts address {
   align-items: flex-start;
   justify-content: space-around;
 }
+@media (max-width: 500px) {
+  .container .learn-more .text-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
 .container .learn-more .text-container button {
   padding: 10px 15px;
   border-color: #222222;
@@ -318,6 +411,12 @@ footer .contacts address {
 }
 .container .learn-more img {
   width: 45%;
+}
+@media (max-width: 500px) {
+  .container .learn-more img {
+    width: 100%;
+    order: -1;
+  }
 }
 .container .designs img {
   order: -1;
@@ -336,29 +435,83 @@ footer .contacts address {
   text-align: center;
   position: relative;
 }
+@media (max-width: 500px) {
+  .container .recent-projects h3 {
+    width: 95%;
+  }
+}
 .container .recent-projects .header-img {
   max-width: 855px;
   width: 100%;
   height: 230px;
   margin: 30px auto;
 }
+@media (max-width: 500px) {
+  .container .recent-projects .header-img {
+    max-width: 500px;
+    width: 100%;
+    height: 200px;
+  }
+}
 .container .recent-projects .the-villas .header-img {
   background: url("../img/home/home-villas-img.png");
+}
+@media (max-width: 500px) {
+  .container .recent-projects .the-villas .header-img {
+    background: url("../img/home/home-mobile-villas-img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 80px;
+  }
 }
 .container .recent-projects .the-villas .header-img h3 {
   left: 70%;
   top: 170px;
 }
+@media (max-width: 500px) {
+  .container .recent-projects .the-villas .header-img h3 {
+    left: 2%;
+    top: 180px;
+  }
+}
 .container .recent-projects .outskirts .header-img {
   background: url("../img/home/home-outskirts-img.png");
+}
+@media (max-width: 500px) {
+  .container .recent-projects .outskirts .header-img {
+    background: url("../img/home/home-mobile-outskirts-img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 80px;
+  }
 }
 .container .recent-projects .outskirts .header-img h3 {
   top: 170px;
 }
+@media (max-width: 500px) {
+  .container .recent-projects .outskirts .header-img h3 {
+    left: 2%;
+    top: 180px;
+  }
+}
 .container .recent-projects .the-blocks .header-img {
   background: url("../img/home/home-the-blocks-img.png");
 }
+@media (max-width: 500px) {
+  .container .recent-projects .the-blocks .header-img {
+    background: url("../img/home/home-mobile-the-blocks-img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 80px;
+  }
+}
 .container .recent-projects .the-blocks .header-img h3 {
-  left: 70%;
+  left: 70.26%;
   top: 170px;
+}
+@media (max-width: 500px) {
+  .container .recent-projects .the-blocks .header-img h3 {
+    left: 2%;
+    top: 180px;
+  }
 }
