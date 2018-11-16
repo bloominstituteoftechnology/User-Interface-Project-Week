@@ -67,20 +67,20 @@ table {
 /*--------------------------------------------------------------------------*/
 /* Your Code Goes Here */
 @import "mixins.less";
-@import "variables.less";
+//@import "variables.less";
 
 //NAVBAR-----------------------------------------------------------------------
 .navbar {
-  background-color: #99a4af;
-  .centered-max-width(1000px);
+  .general-style;
+  .centered-max-width(950px);
   .flex-justify-align(space-between, stretch);
+  background-color: #99a4af;
+  color:white;
 }
 
-
-
-
 .container {
-  .centered-max-width(1000px);
+  .general-style;
+  .centered-max-width(950px);
   //gives some space between each section
   div {
     margin-bottom: 50px;
@@ -94,15 +94,19 @@ table {
   .intro {
     .intro-background-style;
     .jumbotron-text-style;
+    .intro-text {
+      margin-bottom: 7.25%;
+      margin-left: 7.25%;
+    }
   }
 
   //GRID------------------------------------------------------------------------
   .grid-container {
     .centered-max-width(855px);
     .grid-style;
+    margin-bottom: 100px;
     .services-header {
-      font-size: 20px;
-      font-weight: bold;
+      .sub-header-text;
     }
     button {
       .button-style;
@@ -114,20 +118,40 @@ table {
   .projects-section {
     .centered-max-width(855px);
     .project-header {
-      font-size: 20px;
       font-weight: bold;
     }
     .project-title {
-      .sub-headers-style;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      .project-title-style;
+      border: black solid 1px;
+      //This centers the header in the grey box
+      .flex-justify-align(center, center);
     }
 
     .content {
-      .centered-max-width(600px);
+      .centered-max-width(500px);
     }
+  }
+}
 
+//FOOTER-------------------------------------------------
+footer {
+  padding: 30px 0;
+  .general-style;
+  .centered-max-width(950px);
+  background-color:#828282;
+  color:white;
+  .footer-container{
+    .flex-justify-align(space-between,stretch);
+    .centered-max-width(855px);
+    .footer-header{
+      .footer-header-style;
+    }
+    .footer-text {
+      .footer-text-style;
+    }
+  }
+  .copyright {
+    text-align:center;
   }
 }
 
@@ -135,7 +159,7 @@ table {
 
 .villa-header {
   .sub-image("../img/home/home-villas-img.png");
-  .flex-justify-align(flex-end, flex-end)
+  .flex-justify-align(flex-end, flex-end);
 }
 
 .outskirts-header {
@@ -148,7 +172,5 @@ table {
   .flex-justify-align(flex-end, flex-end);
 }
 
-footer {
-  display: flex;
-  .centered-max-width(1000px);
-}
+
+
