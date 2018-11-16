@@ -1,14 +1,16 @@
 // JS goes here
 
-const navBar = document.querySelector('.extra');
+const exit = document.querySelector('.exit');
 const hamBurger = document.querySelector('.hamburger');
-const closeMenu = document.querySelector('.close-menu');
-
-
+const expandedMenu = document.querySelector('.expanded-menu');
 hamBurger.addEventListener('click', function(){
-  navBar.classList.toggle("expanded");
+  exit.classList.toggle("close");
+  hamBurger.classList.toggle("close");
+  expandedMenu.classList.toggle("block");
 })
 
-closeMenu.addEventListener('click', function(){
-  navBar.classList.toggle("expanded");
+exit.addEventListener('click', function(){
+  exit.classList.toggle("close");
+  hamBurger.classList.toggle("close");
+  expandedMenu.classList.toggle("block");
 })
