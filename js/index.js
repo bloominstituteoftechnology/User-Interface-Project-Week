@@ -52,11 +52,17 @@ class Dropdown {
   }
   show() {
     const menu = this.menu;
+    const menuButton = document.querySelector('.nav-button');
     const links = document.querySelectorAll('.navMenu');
     links.forEach(link => {
       link.classList.toggle('hidden');
     });
     menu.classList.toggle('show');
+    if (menu.classList.contains('show')) {
+      menuButton.src = 'img/nav-hamburger-close.png';
+    } else {
+      menuButton.src = 'img/nav-hamburger.png';
+    }
   }
 }
 
