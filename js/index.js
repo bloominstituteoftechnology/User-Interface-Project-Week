@@ -84,7 +84,7 @@ const prev = document.querySelector('.prev');
 let autoSlide;
 
 
-function auto() { autoSlide = setInterval(nextSlide, 3000) };
+function auto() { autoSlide = setInterval(nextSlide, 2000) };
 
 function stopSlide() { clearInterval(autoSlide) };
 
@@ -99,13 +99,23 @@ function nextSlide() {
   if(currNum > boxList.length) {
     //Start from beginning
     const newSlide = document.querySelector(`.box[data-tab="1"]`);
-    currentSlide.classList.remove('show');
-    newSlide.classList.add('show');
+    TweenMax.fromTo(currentSlide, .35, {css: {opacity: 1}}, {css:{opacity: 0}})
+
+    setTimeout(() => currentSlide.classList.remove('show'), 350);
+    setTimeout(() => newSlide.classList.add('show'), 350);
+
+    TweenMax.fromTo(newSlide, .35, {css: {opacity: 0}}, {css:{opacity: 1}})
+
   } else {
     //Move to next image
     const newSlide = document.querySelector(`.box[data-tab="${currNum}"]`)
-    currentSlide.classList.remove('show');
-    newSlide.classList.add('show');
+
+    TweenMax.fromTo(currentSlide, .35, {css: {opacity: 1}}, {css:{opacity: 0}})
+
+    setTimeout(() => currentSlide.classList.remove('show'), 350);
+    setTimeout(() => newSlide.classList.add('show'), 350);
+
+    TweenMax.fromTo(newSlide, .25, {css: {opacity: 0}}, {css:{opacity: 1}})
   }
 }
 
@@ -128,12 +138,22 @@ prev.addEventListener('click', function() {
   if(currNum < 1) {
     //Start from end
     const newSlide = document.querySelector(`.box[data-tab="${boxList.length}"]`);
-    currentSlide.classList.remove('show');
-    newSlide.classList.add('show');
+
+    TweenMax.fromTo(currentSlide, .35, {css: {opacity: 1}}, {css:{opacity: 0}})
+
+    setTimeout(() => currentSlide.classList.remove('show'), 350);
+    setTimeout(() => newSlide.classList.add('show'), 350);
+
+    TweenMax.fromTo(newSlide, .35, {css: {opacity: 0}}, {css:{opacity: 1}})
   } else {
     //Move to prev image
     const newSlide = document.querySelector(`.box[data-tab="${currNum}"]`)
-    currentSlide.classList.remove('show');
-    newSlide.classList.add('show');
+
+    TweenMax.fromTo(currentSlide, .35, {css: {opacity: 1}}, {css:{opacity: 0}})
+
+    setTimeout(() => currentSlide.classList.remove('show'), 350);
+    setTimeout(() => newSlide.classList.add('show'), 350);
+
+    TweenMax.fromTo(newSlide, .35, {css: {opacity: 0}}, {css:{opacity: 1}})
   }
 });
