@@ -78,10 +78,27 @@ let links = document.querySelectorAll('.links').forEach(link => {
 let backgroundImage = document.querySelector('header');
 let title = document.querySelector('title');
 let navMenu = document.querySelector('.navigation');
+let width = Math.max(
+  document.documentElement.clientWidth,
+  window.innerWidth || 0,
+);
+
 new Dropdown(navMenu);
 
 if (title.innerText == 'Services') {
   backgroundImage.style.background =
     "no-repeat url('img/services/services-jumbotron.png')";
   backgroundImage.style.height = '280px';
+}
+
+if (width <= 500) {
+  let pics = document.querySelectorAll('.introPics');
+  pics.forEach(pic => {
+    if (pic.classList.contains('desktop')) {
+      pic.classList.add('hidden');
+    }
+    if (pic.classList.contains('mobile')) {
+      pic.classList.remove('hidden');
+    }
+  });
 }
