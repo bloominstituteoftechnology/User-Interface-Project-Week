@@ -141,6 +141,11 @@ html {
   font-size: 62.5%;
   font-family: Roboto, Arial, sans-serif;
 }
+body {
+  position: relative;
+  padding-bottom: 250px;
+  min-height: 100vh;
+}
 h1 {
   font-size: 6.4rem;
   line-height: 7.5rem;
@@ -161,13 +166,13 @@ header .nav {
   height: 5rem;
   justify-content: space-between;
   align-items: center;
-  background-color: #99A4AF;
+  background-color: #99a4af;
   border: 2px solid #979797;
   z-index: 1;
 }
 header .nav .nav-logo {
   font-size: 2.4rem;
-  color: #F5F7F8;
+  color: #f5f7f8;
   font-weight: 700;
   padding: 0 80px;
 }
@@ -175,16 +180,78 @@ header .nav .menu {
   padding: 0 80px;
 }
 header .nav .menu .menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  background-color: #99a4af;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.9;
+  z-index: 1;
+}
+header .nav .menu .inactive {
   display: none;
+}
+header .nav-expanded {
+  opacity: 0.9;
+  border: 2px solid #99a4af;
 }
 header .jumbo {
   position: relative;
-  margin-top: 5rem;
 }
 header .jumbo .over {
   position: absolute;
   bottom: 5rem;
   left: 8rem;
+}
+footer {
+  width: 100%;
+  background-color: #828282;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+footer small {
+  padding-bottom: 15px;
+  color: #FFFFFF;
+}
+footer div {
+  width: 100%;
+  max-width: 854px;
+  display: flex;
+  justify-content: space-between;
+}
+footer div .footer {
+  margin-top: 50px;
+  margin-bottom: 55px;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+}
+footer div .footer input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 0 10px 10px;
+  color: #999999;
+  font-size: 1.6rem;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+footer div .footer address {
+  margin-top: 15px;
+}
+footer div .footer h4 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.4rem;
 }
 .container--index {
   width: 100%;
@@ -216,7 +283,7 @@ header .jumbo .over {
   margin: 20px 0;
 }
 .container--index .top-content .home-section div:nth-child(odd) button {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   font-size: 1.6rem;
   padding: 10px 25px;
   border: 1px solid #222222;
@@ -224,11 +291,45 @@ header .jumbo .over {
 .container--index .mid-content {
   padding: 50px 0;
 }
+.container--index .mid-content .mid-content-block {
+  font-family: Roboto, Arial, sans-serif;
+}
 .container--index .mid-content .mid-content-block .mid-content-head {
   position: relative;
+  display: flex;
 }
 .container--index .mid-content .mid-content-block .mid-content-head h3 {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 2.4rem;
+  color: #222222;
+  letter-spacing: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 315px;
+  height: 95px;
+  background-color: #D8D8D8;
   position: absolute;
+  border: 1px solid #ffffff;
+  bottom: -40px;
+}
+.container--index .mid-content .mid-content-block .mid-content-head .over-left {
+  left: 0;
+}
+.container--index .mid-content .mid-content-block .mid-content-head .over-right {
+  right: 0;
+}
+.container--index .mid-content .mid-content-block .mid-content-text {
+  margin: 95px auto;
+  width: 50%;
+}
+.container--index .mid-content .mid-content-block .mid-content-text p {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+.container--index .mid-content .mid-content-block .mid-content-text p:nth-child(odd) {
+  padding-bottom: 20px;
 }
 .home-img-jumbo {
   content: url("../img/home/home-jumbotron.png");
