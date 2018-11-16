@@ -20,3 +20,30 @@ navButton.addEventListener('click', () => {
         nav.style.display = 'none';
     }
 });
+
+class TabButton {
+	constructor(element){
+		this.element = element;
+		this.data = this.element.dataset.tab;
+		this.entry = new TabDisplay(document.querySelector(`.tab-entry[data-tab='${this.data}']`));
+		this.element.addEventListener('click', () => this.tabChange());
+	}
+	tabChange(){
+		document.querySelectorAll('.tab-entry').forEach(x => x.classList.remove('active-tab'));
+		document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active-btn'));
+		this.element.classList.add('active-btn');
+		this.entry.selectTab();
+	}
+}
+
+class TabDisplay {
+	constructor(element){
+		this.element = element;
+		this.data = this.element.dataset.tab;
+	}
+	selectTab(){
+		this.element.classList.add('active-tab');
+	}
+}
+
+const tabButtons = document.querySelectorAll('.tab-btn').forEach(x => new TabButton(x));
