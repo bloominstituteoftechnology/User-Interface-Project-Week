@@ -107,6 +107,9 @@ body {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
+a {
+  text-decoration: none;
+}
 button {
   border: 1px solid @main-color;
   padding: 1.4rem 2.5rem;
@@ -191,32 +194,90 @@ nav {
       #menu-items {
         position: absolute;
         text-align: right;
-        background: pink;
+        background: #98a4af;
         width: 100%;
         height: 100vh;
         left: 0;
+        top: 5rem;
+        
+        a {
+          font-size: 4.8rem;
+          font-weight: bold;
+          line-height: 8.5rem;
+          color: #ffffff;
+          transition: all .3s ease-out;
 
+          &:hover {
+            color: #222222;
+          }
+        }
         .menu-item {
           padding-right: 8%;
+
+          
         }
     }
-
-      #hamb {
-        cursor: pointer;
-  
-        .hamb-line {
-          width: 3rem;
-          height: 4px;
-          background: #ffffff;
-          margin: .5rem 0;
-          border-radius: .5rem;
-        }
-      }
     }
   }
-  
-
 }
+
+#hamb {  
+
+  width: 3rem;
+  height: .4rem;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  margin-top: -1.5rem;
+
+  &.open {
+      span:nth-child(1) {
+        top: 2rem;
+        width: 0%;
+        left: 50%;
+      }
+      
+      span:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      
+       span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 1rem;
+      }
+      
+      span:nth-child(4) {
+        top: 2rem;
+        width: 0%;
+        left: 50%;
+      }
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 3rem;
+    background: #ffffff;
+    border-radius: .5rem;
+    opacity: 1;
+    left: 0;
+    margin: .5rem 0;
+    transition: all .3s ease;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2),#hamb span:nth-child(3) {
+      top: 1rem;
+    }
+    &:nth-child(4) {
+      top: 2rem;
+    }
+  }
+}
+
 
 
 // Header *****************************************

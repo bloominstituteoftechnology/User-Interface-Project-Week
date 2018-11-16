@@ -144,6 +144,9 @@ body {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
+a {
+  text-decoration: none;
+}
 button {
   border: 1px solid #222222;
   padding: 1.4rem 2.5rem;
@@ -220,23 +223,72 @@ nav .container #menu .menu-hidden {
 nav .container #menu #menu-items {
   position: absolute;
   text-align: right;
-  background: pink;
+  background: #98a4af;
   width: 100%;
   height: 100vh;
   left: 0;
+  top: 5rem;
+}
+nav .container #menu #menu-items a {
+  font-size: 4.8rem;
+  font-weight: bold;
+  line-height: 8.5rem;
+  color: #ffffff;
+  transition: all 0.3s ease-out;
+}
+nav .container #menu #menu-items a:hover {
+  color: #222222;
 }
 nav .container #menu #menu-items .menu-item {
   padding-right: 8%;
 }
-nav .container #menu #hamb {
-  cursor: pointer;
-}
-nav .container #menu #hamb .hamb-line {
+#hamb {
   width: 3rem;
+  height: 0.4rem;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  margin-top: -1.5rem;
+}
+#hamb.open span:nth-child(1) {
+  top: 2rem;
+  width: 0%;
+  left: 50%;
+}
+#hamb.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+#hamb.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 1rem;
+}
+#hamb.open span:nth-child(4) {
+  top: 2rem;
+  width: 0%;
+  left: 50%;
+}
+#hamb span {
+  display: block;
+  position: absolute;
   height: 4px;
+  width: 3rem;
   background: #ffffff;
-  margin: 0.5rem 0;
   border-radius: 0.5rem;
+  opacity: 1;
+  left: 0;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+#hamb span:nth-child(1) {
+  top: 0;
+}
+#hamb span:nth-child(2),
+#hamb span #hamb span:nth-child(3) {
+  top: 1rem;
+}
+#hamb span:nth-child(4) {
+  top: 2rem;
 }
 #banner {
   position: relative;

@@ -11,7 +11,9 @@ class Dropdown {
   }
   toggleMenu() {
     this.menu.classList.toggle('menu-hidden');
+    this.menuButton.classList.toggle('open');
   }
 }
 
 new Dropdown(menu, menuButton);
+
