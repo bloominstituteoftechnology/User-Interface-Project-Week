@@ -161,12 +161,9 @@ table {
 /* Media Query */
 .company-wrapper .box {
   width: 100%;
+  display: flex;
   justify-content: space-between;
   padding: 50px 0px;
-  width: 48%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
 }
 @media only screen and (max-width: 767px) {
   .company-wrapper .box {
@@ -175,10 +172,11 @@ table {
     padding: 25px 0px;
   }
 }
-@media only screen and (max-width: 767px) {
-  .company-wrapper .box {
-    width: 100%;
-  }
+.company-wrapper .box .boxes {
+  width: 47%;
+}
+.company-wrapper .box .boxes img {
+  width: 100%;
 }
 .company-wrapper .box .boxes.info {
   padding: 20px 0px 0px;
@@ -347,6 +345,7 @@ table {
   width: 100%;
   display: none;
   justify-content: space-between;
+  padding-bottom: 75px;
 }
 .services-tabs .tabs .services-item-selected {
   display: flex;
@@ -413,7 +412,7 @@ table {
 .header-wrapper {
   background: url('../img/home/home-jumbotron.png');
   background-repeat: no-repeat;
-  min-height: 598px;
+  min-height: 698px;
   background-size: cover;
   display: flex;
   flex-direction: column-reverse;
@@ -433,8 +432,7 @@ table {
   color: #FFFFFF;
   font-size: 65px;
   font-weight: 600;
-  padding-bottom: 45px;
-  padding-left: 5px;
+  padding-bottom: 57px;
 }
 @media only screen and (max-width: 767px) {
   .header-wrapper h1 {
@@ -457,12 +455,12 @@ table {
 .nav-wrapper .container {
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0px;
+  padding: 15px 0px;
 }
 @media only screen and (max-width: 767px) {
   .nav-wrapper .container {
     width: 100%;
-    padding: 15px 0px;
+    padding: 13px 0px;
   }
 }
 .nav-wrapper .container .brand a {
@@ -471,9 +469,10 @@ table {
 }
 .nav-wrapper .container .menu-button {
   cursor: pointer;
-  width: 44px;
+  width: 33px;
+  z-index: 13px;
 }
-.nav-wrapper .menu {
+.menu {
   display: none;
   position: sticky;
   width: 100%;
@@ -482,18 +481,39 @@ table {
   line-height: 85px;
   z-index: 2;
 }
-.nav-wrapper .menu ul li {
+.menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.menu ul li {
   list-style-type: none;
   font-size: 48px;
   font-weight: bold;
   text-align: center;
 }
-.nav-wrapper .menu ul li a:hover {
+.menu ul li a:hover {
   color: #222222;
 }
-.nav-wrapper .menu--open {
+.menu--open {
   display: flex;
+  flex-direction: column;
+  position: absolute;
   justify-content: center;
+  z-index: 11;
+  background-color: #9aa6b0;
+  opacity: 0.96;
+  height: 698px;
+}
+.menu--open li {
+  text-align: left !important;
+}
+.menu--open a {
+  color: #FFFFFF;
+}
+.menu--open a:hover {
+  color: #222222;
 }
 .footer-wrapper,
 .copyright {
@@ -597,4 +617,7 @@ html h2 {
   font-weight: bold;
   font-size: 28px;
   color: #222222;
+}
+html a {
+  text-decoration: none;
 }

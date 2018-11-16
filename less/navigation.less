@@ -1,4 +1,3 @@
-
 .nav-wrapper {
     background-color: @navigation-bg;
     @media @phone {
@@ -11,10 +10,10 @@
     .container {
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0px;
+        padding: 15px 0px;
         @media @phone {
             width: 100%;
-            padding: 15px 0px;
+            padding: 13px 0px;
         }
         .brand a {
             font-size: 2.4rem;
@@ -22,21 +21,28 @@
         }
         .menu-button {
             cursor: pointer;
-            width: 44px;
+            width: 33px;
+            z-index: 13px;
         }
     }
+}
 
-    .menu {
-        display: none;
-        position: sticky;
-        width: 100%;
-        height: 100%; 
-        font-weight: bold;
-        line-height: 85px;
-        z-index: 2; 
-    }
-    
-    .menu ul li{
+.menu {
+    display: none;
+    position: sticky;
+    width: 100%;
+    height: 100%; 
+    font-weight: bold;
+    line-height: 85px;
+    z-index: 2; 
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    li  {
         list-style-type: none;
         font-size: 48px;
         font-weight: bold;
@@ -45,10 +51,24 @@
             color: @main;
         }
     }
-    
-    .menu--open {
-        display: flex;
-        justify-content: center;
-    }
+}
 
+.menu--open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    z-index: 11;
+    background-color: @navigation-bg;
+    opacity: .96;
+    height: 698px;
+    li {
+        text-align: left !important;
+    }
+    a {
+        color: @white;
+        &:hover {
+            color: @main;
+        }
+    }
 }
