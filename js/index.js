@@ -13,6 +13,7 @@ class TabLink {
     this.element.addEventListener('click', () => this.select());
   }
 
+  // Selects the tab that was just clicked along with its linked Item
   select() {
     const tabs = document.querySelectorAll('.service-tab');
 
@@ -29,17 +30,20 @@ class TabItem {
     this.element = element;
   }
 
+  // Selects the item of the tab that was clicked
   select() {
     const items = document.querySelectorAll('.service-item');
-    console.log(items);
+
     Array.from(items).forEach(item => item.classList.remove('service-item-selected'));
+
     this.element.classList.add('service-item-selected');
   }
 }
 
+// Assigns the elements on the page to Components defined above
 const tabs = document.querySelectorAll('.service-tabs .service-tab')
                      .forEach(tab => new TabLink(tab));
-                     
+
 let menu = document.querySelector('.menu img');
 let nav = document.querySelector('.nav-links');
 
