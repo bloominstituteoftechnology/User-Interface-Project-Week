@@ -26,8 +26,15 @@
 .services-sub-header {
     p {
         margin: 45px 0px;
-        font-size: 19px;
+        font-size: 20px;
         line-height: 30px;
+
+        @media @phone {
+            padding-left: 15px;
+            padding-right: 15px;
+            letter-spacing: .4pt;
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -41,6 +48,11 @@
             justify-content: space-between;
             font-weight: 500;
             font-size: 20px;
+            @media @phone {
+                flex-direction: column;
+                padding: 0px 15px;
+                margin-bottom: 25px;
+            }
             &:hover {
                 cursor: pointer;
             }
@@ -54,6 +66,9 @@
             display: none;
             justify-content: space-between;
             padding-bottom: 75px;
+            @media @phone {
+                flex-direction: column;
+            }
         }
         .services-item-selected {
             display: flex;
@@ -62,18 +77,30 @@
             flex-wrap: wrap;
             width: 47%;
             padding-bottom: 30px;
+            @media @phone {
+                width: 100%;
+            }
         }
-
+        .image {
+            min-height: 290px;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            margin-top: 55px;
+            @media @phone {
+                margin: 0px 15px;
+                min-height: 580px;
+            }
+        }
         .pre-construction.image {
             background: url('../img/services/services-tab-pre-construction-img.png');
             @media @phone {
-                background: url('../img/services/service-tab-mobile-villas-img.png');
+                background: url('../img/services/services-tab-mobile-pre-construction-img.png');
             }
         }
         .construction.image {
             background: url('../img/services/services-tab-construction-img.png');
             @media @phone {
-                background: url('../img/services/services-tab-mobile-outskirts-img.png');
+                background: url('../img/services/services-tab-mobile-construction-img.png');
             }
         }
         .design.image {
@@ -88,26 +115,31 @@
                 background: url('../img/services/services-tab-mobile-sustainability-img.png');
             }
         }
-
-        .image {
-            min-height: 290px;
-            background-repeat: no-repeat !important;
-            background-size: cover !important;
-            margin-top: 55px;
-        }
     }
     h2 {
         padding: 15px 0px;
+        @media @phone {
+            margin: 20px auto;
+        }
     }
     p {
         padding-bottom: 30px;
         letter-spacing: .2pt;
         line-height: 26px;
     }
+    h2, p {
+        @media @phone {
+            padding: 0px 15px;
+        }
+    }
     .btn {
         .black-button();
         width: 21%;
         padding: 13px 0px;
         text-align: center;
+        @media @phone {
+            width: 100%;
+            margin-top: 20px;
+        }
     }
 }
