@@ -1,27 +1,14 @@
 // // JS goes here
 
-// const openMenu = () => {
-// 	menu.classList.add("menu--open");
+// const fadeAbsolutes = () => {
+//    h1Home.classList.remove('.h1Home')
 // }
 
-// const closeMenu = () => {
-// 	menu.classList.remove("menu--open");
+// const addAbsolutes  = () => {
+// 	h1Home.classList.add('')
 // }
 
-// // const fadeAbsolutes = () => {
-// //    h1Home.classList.remove('.h1Home')
-// // }
-
-// // const addAbsolutes  = () => {
-// // 	h1Home.classList.add('')
-// // }
-
-
-// const menu = document.querySelector('.menu-content');
-
-// const menuButton = document.querySelector('.menu-button');
-// const closeButton = document.querySelector('.close-button');
-
+// const h1Home = document.querySelector(".")
 
 
 // menuButton.addEventListener('click', () => {
@@ -38,14 +25,25 @@
 
 const openMenu = () => {
 	menu.classList.add("menu--open");
+	// close.classList.add("closer--open");
+}
 
+const openCloser = () => {
+	close.classList.add("closer--open");
 }
 
 const closeMenu = () => {
 	menu.classList.remove("menu--open");
+	// close.classList.remove("closer--open");
+}
+
+const closeCloser = () => {
+	close.classList.remove("closer--open");
 }
 
 const menu = document.querySelector('.menu-content');
+
+const close = document.querySelector('.the-closure');
 
 const menuButton = document.querySelector('.menu-button');
 
@@ -56,10 +54,20 @@ menuButton.addEventListener('click', () => {
 	console.log("button was clicked")
 });
 
+// menuButton.addEventListener('click', () => {
+// 	openCloser();
+// 	console.log("button was clicked")
+// });
+
 closeButton.addEventListener('click', () => {
 	closeMenu();
 	console.log('menu closed')
 });
+
+// closeButton.addEventListener('click', () => {
+// 	closeCloser();
+// 	console.log('menu closed')
+// });
 
 
 
