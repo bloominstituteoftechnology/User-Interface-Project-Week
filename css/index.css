@@ -133,7 +133,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Your Code Goes Here */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -180,8 +179,9 @@ a {
 nav {
   background-color: #98A4AF;
   display: flex;
-  flex-direction: column;
+  justify-content: none;
   align-items: center;
+  flex-direction: column;
 }
 nav .navTop {
   background-color: #98A4AF;
@@ -189,6 +189,8 @@ nav .navTop {
   top: 0;
   display: flex;
   justify-content: space-between;
+  align-items: none;
+  flex-direction: row;
   max-width: 1024px;
   width: 100%;
   padding: 13px 4.5%;
@@ -223,6 +225,8 @@ nav .linksShow {
   position: absolute;
   display: flex;
   justify-content: center;
+  align-items: none;
+  flex-direction: row;
   z-index: 2;
   width: 100%;
   background-color: #98A4AF;
@@ -232,6 +236,8 @@ nav .linksShow {
 }
 nav .linksShow .links {
   display: flex;
+  justify-content: none;
+  align-items: none;
   flex-direction: column;
   margin-top: 120px;
   margin-bottom: 175px;
@@ -293,6 +299,8 @@ nav .linksShow .links a:hover {
 .home article .intro {
   display: flex;
   justify-content: space-between;
+  align-items: none;
+  flex-direction: row;
   margin-bottom: 50px;
 }
 .home article .intro .introText {
@@ -376,6 +384,8 @@ nav .linksShow .links a:hover {
   }
   .home article .projects .projTitle {
     margin-left: 4.5%;
+    margin-bottom: 26px;
+    padding-bottom: 0;
   }
 }
 .home article .projects .project {
@@ -438,9 +448,11 @@ nav .linksShow .links a:hover {
   }
   .home article .projects .project .homeOutskirts {
     background-image: url(../img/home/home-mobile-outskirts-img.png);
+    margin-bottom: 80px;
   }
   .home article .projects .project .homeBlocks {
     background-image: url('../img/home/home-mobile-the-blocks-img.png');
+    margin-bottom: 82px;
   }
   .home article .projects .project .projectDesc {
     margin: 77px 5% 0 5%;
@@ -459,6 +471,11 @@ nav .linksShow .links a:hover {
     padding: 35px 0;
     text-align: center;
     width: 290px;
+    margin-bottom: 10px;
+  }
+  .home article .projects .project .blocks {
+    top: 192px;
+    padding-right: 10px;
   }
 }
 @media (max-width: 500px) {
@@ -470,6 +487,7 @@ nav .linksShow .links a:hover {
   .home article .projects {
     margin-top: 50px;
     max-width: 320px;
+    margin-bottom: 75px;
   }
 }
 .services .jumbotron {
@@ -486,19 +504,57 @@ nav .linksShow .links a:hover {
   line-height: 75px;
   color: #FFFFFF;
 }
+@media (max-width: 500px) {
+  .services .jumbotron {
+    background-image: url('../img/services/services-mobile-jumbotron.png');
+    height: 260px;
+  }
+  .services .jumbotron .JumboText {
+    padding: 195px 0 40px 5%;
+  }
+  .services .jumbotron .jumbo {
+    font-size: 3.7rem;
+    line-height: 42px;
+  }
+}
 .services article {
   max-width: 850px;
   margin: 0 auto;
   width: 100%;
 }
+@media (max-width: 500px) {
+  .services article {
+    width: 95%;
+    margin-left: 5%;
+  }
+}
 .services article .servicesIntro {
   margin-top: 26px;
   line-height: 25px;
 }
+@media (max-width: 500px) {
+  .services article .servicesIntro {
+    margin-top: 30px;
+    line-height: 26px;
+  }
+}
 .services article .tabNavigator {
   display: flex;
   justify-content: space-between;
+  align-items: none;
+  flex-direction: row;
   margin-top: 45px;
+}
+@media (max-width: 500px) {
+  .services article .tabNavigator {
+    display: flex;
+    justify-content: none;
+    align-items: none;
+    flex-direction: column;
+    align-content: space-between;
+    margin-top: 35px;
+    height: 265px;
+  }
 }
 .services article .tabNavigator .tab {
   border: 1px solid black;
@@ -512,6 +568,12 @@ nav .linksShow .links a:hover {
   background-color: #222222;
   color: #FFFFFF;
 }
+@media (max-width: 500px) {
+  .services article .tabNavigator .tab {
+    width: 290px;
+    font-size: 2rem;
+  }
+}
 .services article .tabNavigator .selectedTab {
   background-color: #5E9FB9;
 }
@@ -519,46 +581,104 @@ nav .linksShow .links a:hover {
   margin-top: 50px;
   display: none;
 }
+@media (max-width: 500px) {
+  .services article .tabDesc {
+    margin-top: 45px;
+  }
+}
 .services article .tabDesc h3 {
   padding-bottom: 15px;
+}
+@media (max-width: 500px) {
+  .services article .tabDesc h3 {
+    font-size: 2.4rem;
+    padding-bottom: 20px;
+  }
 }
 .services article .tabDesc .description {
   display: flex;
   justify-content: space-between;
+  align-items: none;
+  flex-direction: row;
+}
+@media (max-width: 500px) {
+  .services article .tabDesc .description {
+    display: flex;
+    justify-content: none;
+    align-items: none;
+    flex-direction: column;
+  }
 }
 .services article .tabDesc .description .text {
   width: 83%;
   margin-right: 20px;
 }
+@media (max-width: 500px) {
+  .services article .tabDesc .description .text {
+    width: 95%;
+    margin-right: 0;
+  }
+}
 .services article .tabDesc .description .text p {
   line-height: 25px;
   margin-bottom: 30px;
+}
+@media (max-width: 500px) {
+  .services article .tabDesc .description .text p {
+    line-height: 26px;
+    margin-bottom: 27px;
+  }
 }
 .services article .tabDesc .description .tabPreConstruction {
   background-image: url('../img/services/services-tab-pre-construction-img.png');
   background-repeat: no-repeat;
   width: 77%;
 }
+@media (max-width: 500px) {
+  .services article .tabDesc .description .tabPreConstruction {
+    background-image: url('../img/services/services-tab-mobile-pre-construction-img.png');
+    height: 290px;
+    width: 100%;
+  }
+}
 .services article .tabDesc .description .tabConstruction {
   background-image: url('../img/services/services-tab-construction-img.png');
   background-repeat: no-repeat;
   width: 77%;
+}
+@media (max-width: 500px) {
+  .services article .tabDesc .description .tabConstruction {
+    background-image: url('../img/services/services-tab-mobile-construction-img.png');
+    height: 290px;
+    width: 100%;
+  }
 }
 .services article .tabDesc .description .tabDesignBuild {
   background-image: url('../img/services/services-tab-design-build-img.png');
   background-repeat: no-repeat;
   width: 77%;
 }
+@media (max-width: 500px) {
+  .services article .tabDesc .description .tabDesignBuild {
+    background-image: url('../img/services/services-tab-mobile-design-build-img.png');
+    height: 290px;
+    width: 100%;
+  }
+}
 .services article .tabDesc .description .tabSustainability {
   background-image: url('../img/services/services-tab-sustainability-img.png');
   background-repeat: no-repeat;
   width: 77%;
 }
+@media (max-width: 500px) {
+  .services article .tabDesc .description .tabSustainability {
+    background-image: url('../img/services/services-tab-mobile-sustainability-img.png');
+    height: 290px;
+    width: 100%;
+  }
+}
 .services article .selected {
   display: block;
-}
-.services .footer {
-  margin-top: 66px;
 }
 footer {
   background-color: #828282;
@@ -580,6 +700,8 @@ footer .copyright {
 footer .footer {
   display: flex;
   justify-content: space-around;
+  align-items: none;
+  flex-direction: row;
   font-size: 1.4rem;
   line-height: 26px;
   margin-top: 100px;
@@ -614,8 +736,11 @@ footer .footer .email p:last-child {
 }
 @media (max-width: 500px) {
   footer .footer {
+    display: flex;
+    justify-content: none;
+    align-items: none;
     flex-direction: column;
-    margin-top: 85px;
+    margin-top: 60px;
     padding-top: 24px;
   }
   footer .footer .address {
