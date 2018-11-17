@@ -4,6 +4,7 @@ import Banner from './../Banner/Banner';
 import Sec1 from './../Sec1/Sec1';
 import Sec2 from './../Sec2/Sec2';
 import Villas from './../Villas/Villas';
+import Outskirts from './../Outskirts/Outskirts';
 import './Layout.css';
 
 const layout = (props) => (
@@ -15,6 +16,7 @@ const layout = (props) => (
     <Sec1 />
     <Sec2 />
     <Villas />
+    <Outskirts />
   </Aox>
 );
 

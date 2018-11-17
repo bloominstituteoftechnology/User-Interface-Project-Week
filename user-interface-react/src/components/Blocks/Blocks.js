@@ -1,13 +1,13 @@
 import React from 'react';
 import Aox from './../../hoc/Aox';
-import './Outskirts.css';
+import './Blocks.css';
 
-const outskirts = (props) => (
+const blocks = (props) => (
   <Aox>
-    <section className="outskirts">
+    <section className="blocks">
       <div className="img"></div>
       <div className="titleBox">
-        <h3 className="title">outskirts</h3>
+        <h3 className="title">the blocks</h3>
       </div>
       <p>
         The Villas bring to the table win-win survival strategies to ensure proactive domination.
@@ -23,4 +23,4 @@ const outskirts = (props) => (
   </Aox>
 );
 
-export default outskirts;
+export default blocks;
