@@ -1,50 +1,153 @@
 @import "mixins.less";
-
-
-
+@import "variables.less";
 //NAVBAR-----------------------------------------------------------------------
 .container {
-  .general-style;
-  .general-text;
-  .centered-max-width(950px);
-  img {
-    max-width:100%;
-  }
-  
-  .navbar {
-    color:white;
-    font-weight: bold;
+    .general-style;
+    .general-text;
+    .centered-max-width(950px);
+    img {
+        max-width: 100%;
+    }
 
-    background-color: #99a4af;
-    .flex-justify-align(space-between,stretch);
-    
-    .navbar-logo {
-      font-size: 24px;
+    .navbar {
+        color: white;
+        font-weight: bold;
+        padding: 1.25% 5%;
+
+        background-color: #99a4af;
+        .flex-justify-align(space-between, stretch);
+
+        .navbar-logo {
+            font-size: 24px;
+        }
+
+        .navbar-menu {
+            display: none;
+            ul {
+                display: flex;
+                flex-direction: column;
+                margin-top: 80%;
+            }
+        }
+        .navbar-link {
+            color: white;
+            text-decoration: none;
+            font-size: 48px;
+            line-height: 85px;
+        }
+        .navbar-link:hover {
+            color: #222222;
+        }
     }
-    
-    .navbar-menu {
-      display:none;
-      ul {
-        display:flex;
-        flex-direction:column;
-        margin-top: 80%;
-      }
+
+    .intro-div {
+        .flex-justify-align(stretch, flex-end);
+        .background-images('../img/home/home-jumbotron.png');
+        height: 598px;
+        .intro-text {
+            font-weight: bold;
+            font-size: 64px;
+            line-height: 75px;
+            color: #FFFFFF;
+            margin-left: 5%;
+            margin-bottom: 5%;
+        }
     }
-    .navbar-link {
-      color:white;
-      text-decoration: none;
-      font-size: 48px;
-      line-height: 85px;
+
+    //SERVICES SECTION-----------------------------------------------
+    .services-row {
+        .centered-max-width(855px);
+        .flex-justify-align(space-between, stretch);
+        margin-top: @margin-top-value;
+        .services-info {
+            width: 47.5%;
+            .flex-justify-align(space-evenly, stretch);
+            flex-direction: column;
+        }
+        .services-img-div {
+            width: 47.5%;
+        }
+
+        .services-button {
+            text-decoration: none;
+            padding: 2.5% 5%;
+            background-color: white;
+            border: 1px black solid;
+        }
     }
-    .navbar-link:hover {
-      color:#222222;
+
+    .future-designs {
+        flex-direction: row-reverse;
     }
-  }
-  
-  .intro-div {
-    background-image:url("../img/home/home-jumbotron.png");
-  }
-  
-  
-  
+
+    //RECENT PROJECTS-----------------------------------------------
+
+    .projects-section {
+        .centered-max-width(855px);
+        margin-top: 2*@margin-top-value;
+        .project-div {
+            margin-top: @margin-top-value;
+
+            .project-title {
+                .flex-justify-align(center, center);
+                background-color: #D8D8D8;
+                width: 30%;
+                font-size: 32px;
+                height: 60px;
+            }
+            .project-content-div {
+                .centered-max-width(600px);
+                margin-top: @margin-top-value;
+
+            }
+        }
+    }
+    .footer {
+        font-size: 14px;
+        line-height: 26px;
+        color: #FFFFFF;
+        background-color: #828282;
+        margin-top: @margin-top-value;
+        padding: 2.5% 0;
+
+        .footer-container {
+            .flex-justify-align(space-between, stretch);
+            .centered-max-width(855px);
+            .footer-header {
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+        }
+        .copyright{
+            text-align: center;
+        }
+    }
+}
+
+.villa-header-div {
+    background-image: url("../img/home/home-villas-img.png");
+    height: 260px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.outskirts-header-div {
+    background-image: url("../img/home/home-outskirts-img.png");
+    height: 260px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: stretch;
+    align-items: flex-end;
+}
+
+.blocks-header-div {
+    background-image: url("../img/home/home-the-blocks-img.png");
+    height: 260px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
