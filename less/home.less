@@ -8,7 +8,7 @@ body {
   height: 100%;
   padding: 0;
   font-family: "Roboto", Arial, Sans-Serif;
-  background-color: black;
+  background-color: @main-color;
 }
 
 .container {
@@ -27,7 +27,7 @@ body {
       width: 100%;
       max-width: 1024px;
       height: 50px;
-      background-color: @greySquare;
+      background-color: @headerColor;
       color: @white;
       display: flex;
       align-items: center;
@@ -48,7 +48,7 @@ body {
       display: flex;
       font-size: 4rem;
       line-height: 75px;
-      color: #ffffff;
+      color: @white;
 
       img {
         max-width: 100%;
@@ -66,22 +66,29 @@ body {
   .SandJArch {
     margin-top: 60px;
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+
+    @media @mobile {
+      flex-direction: column-reverse;
+    }
 
     .SandJText {
       width: 44%;
       margin-left: 8%;
 
+      @media @mobile {
+        width: 90%;
+        margin: 0 5%;
+      }
+
       h3 {
         margin: 40px 0 20px 0;
         font-weight: bold;
-        //font-size: 28px;
         font-size: 1.75rem;
-        color: #222222;
+        color: @text-color;
       }
 
       p {
-        //font-size: 16px;
         font-size: 1rem;
         line-height: 24px;
         margin-right: 5%;
@@ -96,8 +103,26 @@ body {
     .SandJ-img {
       width: 48%;
 
+      @media @mobile {
+        display: none;
+      }
+
       img {
         max-width: 100%;
+      }
+    }
+
+    .SandJ-img-mobile {
+      display: none;
+
+      @media @mobile {
+        display: block;
+        width: 90%;
+        margin: 0 5%;
+      }
+
+      img {
+        width: 100%;
       }
     }
   }
@@ -107,12 +132,34 @@ body {
     display: flex;
     justify-content: space-around;
 
+    @media @mobile {
+      flex-direction: column;
+    }
+
     .FDesign-img {
       width: 44%;
       margin-left: 8%;
 
+      @media @mobile {
+        display: none;
+      }
+
       img {
         max-width: 100%;
+      }
+    }
+
+    .FDesign-img-mobile {
+      display: none;
+
+      @media @mobile {
+        display: block;
+        width: 90%;
+        margin: 0 5%;
+      }
+
+      img {
+        width: 100%;
       }
     }
 
@@ -120,11 +167,16 @@ body {
       width: 44%;
       margin-right: 4%;
 
+      @media @mobile {
+        width: 90%;
+        margin: 0 5%;
+      }
+
       h3 {
         margin: 40px 0 20px 0;
         font-weight: bold;
         font-size: 1.75rem;
-        color: #222222;
+        color: @text-color;
       }
 
       p {
@@ -148,7 +200,7 @@ body {
       margin: 40px 0;
       font-weight: bold;
       font-size: 1.75rem;
-      color: #222222;
+      color: @text-color;
     }
 
     img {
@@ -167,7 +219,7 @@ body {
       font-family: Sans-Serif;
       font-size: 1.75rem;
       white-space: pre;
-      background-color: lightgrey;
+      background-color: @greySquare;
       color: black;
       padding-left: 20px;
       padding-right: 20px;
@@ -203,10 +255,9 @@ body {
       bottom: -45px;
       left: 0px;
       font-family: Sans-Serif;
-      //font-size: 28px;
       font-size: 1.75rem;
       white-space: pre;
-      background-color: lightgrey;
+      background-color: @greySquare;
       color: black;
       padding-left: 20px;
       padding-right: 20px;
@@ -244,7 +295,7 @@ body {
       font-family: Sans-Serif;
       font-size: 1.75rem;
       white-space: pre;
-      background-color: lightgrey;
+      background-color: @greySquare;
       color: black;
       padding-left: 20px;
       padding-right: 20px;
@@ -264,8 +315,8 @@ body {
 
   .footer {
     width: 100%;
-    background-color: lightgrey;
-    color: white;
+    background-color: @footerColor;
+    color: @white;
     height: 230px;
     display: flex;
     justify-content: space-evenly;
@@ -276,7 +327,7 @@ body {
       h4 {
         font-size: 1.25rem;
         font-style: 'Roboto';
-        color: #FFFFFF;
+        color: @white;
         line-height: 24px;
         margin-bottom: 5%;
       }
@@ -284,14 +335,14 @@ body {
       input {
         .border-radius(5px);
         font-size: 1rem;
-        color: grey;
+        color: @footerColor;
         height: 40px;
         width: 275px;
       }
 
       p {
         margin-top: 3%;
-        font-size: .875rem;
+        font-size: .8rem;
       }
     }
     
@@ -301,13 +352,13 @@ body {
       h4 {
         font-size: 1.25rem;
         line-height: 24px;
-        color: #FFFFFF;
+        color: @white;
       }
 
       p {
         font-size: .875rem;
         line-height: 26px;
-        color: #FFFFFF;
+        color: @white;
       }
     }
 
@@ -315,8 +366,8 @@ body {
 
   .copyright {
     width: 100%;
-    background-color: lightgrey;
-    color: white;
+    background-color: @footerColor;
+    color: @white;
     height: 20px;
     display: flex;
     justify-content: center;
