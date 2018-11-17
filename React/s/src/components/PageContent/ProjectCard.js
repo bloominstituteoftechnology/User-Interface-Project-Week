@@ -1,7 +1,6 @@
 import React from 'react';
 
 const projectCard = props => {
-  console.log(props);
 
   return(
     <section className="projects" data-aos="flip-right" data-aos-duration="1500">

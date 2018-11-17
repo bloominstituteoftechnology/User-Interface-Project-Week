@@ -2,6 +2,7 @@ import React from 'react';
 import HomeOverview from './HomeOverview';
 import Projects from './Projects.js';
 import ServicesOverview from './ServicesOverview';
+import TabNav from './TabNav';
 
 const pageContent = (props) => {
   let content;
@@ -16,10 +17,11 @@ const pageContent = (props) => {
   } else if (props.page === 'services') {
     content = <ServicesOverview />;
     contentClass = "servicesContainer";
+    main = <TabNav />;
   }
 
   return(
-    <div className={contentClass} >
+    <div className={contentClass}>
       {content}
       {main}
     </div>
