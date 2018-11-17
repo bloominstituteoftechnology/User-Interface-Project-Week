@@ -6,7 +6,10 @@ class Navigation {
     this.bar = this.element.querySelector('.main-nav-bar')
 
     this.button.addEventListener('click', (event) => {
-      this.menu.classList.toggle('links-open')
+      this.menu.classList.toggle('links-open');
+      if (this.menu.classList.contains('links-open')) {
+        this.button.setAttribute('src', 'img/nav-hamburger-close.png');
+      } else this.button.setAttribute('src', 'img/nav-hamburger.png')
   })
 
 

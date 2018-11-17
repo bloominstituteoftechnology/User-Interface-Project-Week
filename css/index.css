@@ -167,9 +167,9 @@ table {
   max-width: 500px;
   width: 100%;
 }
-.mobile-background-image {
+.mobile-background {
   background-repeat: no-repeat;
-  background-position: center;
+  background-size: 100%;
 }
 * {
   box-sizing: border-box;
@@ -216,7 +216,6 @@ p {
   }
 }
 header {
-  border: 3px solid green;
   background: #828282;
   color: #FFFFFF;
   padding: 14px 8%;
@@ -224,7 +223,7 @@ header {
   top: 0;
   max-width: 1024px;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 @media (max-width: 500px) {
   header {
@@ -270,7 +269,7 @@ footer .copyright {
   display: block;
   max-width: 300px;
   width: 100%;
-  margin: 0 auto;
+  margin: 5px auto;
 }
 footer .contacts {
   display: flex;
@@ -282,6 +281,12 @@ footer .contacts {
   footer .contacts {
     flex-direction: column;
     margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 500px) {
+  footer .contacts .footer-column {
+    margin: 10px auto;
   }
 }
 footer form {
@@ -297,6 +302,11 @@ footer form {
 }
 footer form input {
   width: 75%;
+}
+@media (max-width: 500px) {
+  footer form input {
+    width: 100%;
+  }
 }
 footer address {
   width: 20%;
@@ -337,11 +347,11 @@ body {
     background-image: url("../img/home/home-mobile-jumbotron.png");
     max-width: 500px;
     width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 275px;
+    height: 30vh;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 30px;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 }
 .page .home-splash .jumbotron {
@@ -356,9 +366,11 @@ body {
 }
 @media (max-width: 500px) {
   .page .home-splash .jumbotron {
-    font-size: 3rem;
+    font-size: 3.6rem;
     top: 100px;
     line-height: normal;
+    max-width: 500px;
+    width: 100%;
   }
 }
 .page .learn-more {
@@ -466,9 +478,9 @@ body {
 @media (max-width: 500px) {
   .page .recent-projects .the-villas .header-img {
     background: url("../img/home/home-mobile-villas-img.png");
-    background-repeat: no-repeat;
-    background-position: center;
     margin-bottom: 80px;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 }
 .page .recent-projects .the-villas .header-img h3 {
@@ -487,9 +499,9 @@ body {
 @media (max-width: 500px) {
   .page .recent-projects .outskirts .header-img {
     background: url("../img/home/home-mobile-outskirts-img.png");
-    background-repeat: no-repeat;
-    background-position: center;
     margin-bottom: 80px;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 }
 .page .recent-projects .outskirts .header-img h3 {
@@ -507,9 +519,9 @@ body {
 @media (max-width: 500px) {
   .page .recent-projects .the-blocks .header-img {
     background: url("../img/home/home-mobile-the-blocks-img.png");
-    background-repeat: no-repeat;
-    background-position: center;
     margin-bottom: 80px;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 }
 .page .recent-projects .the-blocks .header-img h3 {
@@ -585,15 +597,20 @@ body {
 .site-navigation .links {
   max-width: 1024px;
   width: 100%;
-  height: 60vh;
+  height: 100vh;
   flex-direction: column;
-  background: #828282;
+  align-items: center;
+  justify-content: center;
+  background-color: #828282;
   margin: 0 auto;
+  display: none;
+}
+.site-navigation .links a {
   font-weight: bold;
   font-size: 4.8rem;
   line-height: 85px;
   color: #FFFFFF;
-  display: none;
+  text-decoration: none;
 }
 .site-navigation .links a:hover {
   color: #222222;
