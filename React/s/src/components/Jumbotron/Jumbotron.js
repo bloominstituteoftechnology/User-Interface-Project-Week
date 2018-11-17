@@ -21,8 +21,7 @@ const jumbotron = props => {
 
   let head;
   let classCurr;
-  console.log(props
-  )
+
   if(props.page === 'home') {
     head = jumboHeaders.home.title
     classCurr = jumboHeaders.home.class

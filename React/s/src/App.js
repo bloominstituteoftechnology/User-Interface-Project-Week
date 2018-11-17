@@ -4,6 +4,7 @@ import './css/index.css';
 import Footer from './components/FooterContact/Footer';
 import Jumbotron from './components/Jumbotron/Jumbotron';
 import Navigation from './components/Navigation/Navigation';
+import PageContent from './components/PageContent/PageContent';
 
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.page)
+
     if(this.state.page === "home") {
       this.state.jumboSize = 'large';
     } else {
@@ -30,6 +31,7 @@ class App extends Component {
       <div className="App">
         <Navigation homeState={this.state} toggle={ this.state.toggleJumboSize.bind(this) }/>
         <Jumbotron size={ this.state.jumboSize } page={this.state.page}/>
+        <PageContent page={this.state.page}/>
         <Footer />
       </div>
     );
