@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Contact from './Contact';
 import HomeOverview from './HomeOverview';
 import Projects from './Projects.js';
 import ServicesOverview from './ServicesOverview';
@@ -18,6 +20,10 @@ const pageContent = (props) => {
     content = <ServicesOverview />;
     contentClass = "servicesContainer";
     main = <TabNav />;
+  } else if (props.page === 'contact') {
+    content = undefined;
+    contentClass = undefined;
+    main = <Contact />
   }
 
   return(

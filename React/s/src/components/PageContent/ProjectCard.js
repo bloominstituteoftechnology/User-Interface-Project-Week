@@ -3,7 +3,7 @@ import React from 'react';
 const projectCard = props => {
 
   return(
-    <section className="projects" data-aos="flip-right" data-aos-duration="1500">
+    <section className="projects" data-aos="flip-right" data-aos-duration="2500">
 			<div className="projects__title" id={props.id}>
 					<div className="projects__title__name">{props.title}</div>
 			</div>
