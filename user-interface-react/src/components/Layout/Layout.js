@@ -1,6 +1,7 @@
 import React from 'react';
 import Aox from '../../hoc/Aox';
 import Header from './../Header/Header';
+import './Layout.css';
 
 const layout = (props) => (
   <Aox>
