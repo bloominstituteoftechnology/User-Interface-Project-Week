@@ -64,7 +64,10 @@ table{
 
 * {
   box-sizing: border-box;
-  word-break: break-word;
+
+  @media @phone {
+    word-break: break-word;
+  }
 }
 
 body {
@@ -114,6 +117,11 @@ body {
     }
   }
 } 
+.active-nav-bar {
+  height: 100%;
+  background: rgba(153, 164, 175, 0.7);
+  align-items: flex-start;
+}
 .intro-img {
   position: relative;
   width: 100%;
@@ -311,4 +319,81 @@ footer {
       margin: 20px 5%;
     }
   }
+}
+
+// Services-exclusive
+
+.svcs-intro-img {
+  position: relative;
+  width: 100%;
+
+  picture, img {
+    width: 100%;
+  }
+
+   h1 {
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #FFF;
+    font-size: 56px;
+    font-weight: bold;
+  }
+}
+.mid-page {
+  margin: 50px auto;
+  width: 90%;
+}
+.tab-btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.tab-btn {
+  background: transparent;
+  color: #222222;
+  border: 1px solid #222222;
+  padding: 10px 2%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background: #222222;
+    color: #FFF;
+  }
+}
+
+.active-btn {
+  background: #5E9FB9;
+  color: #FFF;
+}
+
+.tab-entry {
+  display: none;
+
+  div {
+    width: 45%;
+  }
+  h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  p:nth-child(2){
+    margin-bottom: 20px;
+  }
+  picture {
+    width: 45%;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.active-tab {
+  display: flex;
+  justify-content: space-between;
 }
