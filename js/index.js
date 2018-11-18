@@ -10,7 +10,7 @@ class MenuLogic {
 
     toggleMenu() {
         if (this.toggleVariable === false) {
-            this.domElements.style.opacity = '0.9';
+            this.domElements.style.opacity = '0.95';
             this.domElements.style.zIndex = '1';
 
 
@@ -25,14 +25,14 @@ class MenuLogic {
         else if (this.toggleVariable) {
             this.domElements.style.height = 'auto';
             this.menuButton.src = "img/nav-hamburger.png";
-            this.domElements.style.position = 'relative';
+            this.domElements.style.position = 'sticky';
             this.domElements.style.left = 'auto';
             this.domElements.style.right = 'auto';
             this.domElements.style.height = 'auto';
             this.menu.style.display = 'none';
+            this.domElements.style.opacity = '1';
         }
         this.toggleVariable = !this.toggleVariable;
-        console.log(this.toggleVariable)
     }
 
 }
