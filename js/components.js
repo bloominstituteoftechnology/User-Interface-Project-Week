@@ -40,3 +40,6 @@ class Tab {
 let buttons = document.querySelectorAll('.services-btn');
 buttons.forEach(button => new Button(button));
 
+showFirstTab = new Button(buttons[0]);
+showFirstTab.buttonSelect();
+
