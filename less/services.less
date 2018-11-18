@@ -1,11 +1,13 @@
 @import "mixins.less";
 @import "variables.less";
 
-
 .container {
+    img {
+        width: 100%;
+    }
     .services-jumbotron-div {
         .background-images("../img/services/services-jumbotron.png");
-        .flex-justify-align(stretch,flex-end);
+        .flex-justify-align(stretch, flex-end);
         .services-jumbotron-text {
             .jumbotron-text-style;
             margin-left: 5%;
@@ -14,18 +16,42 @@
     }
     .services-about-div {
         .centered-max-width(855px);
+        margin-top:@margin-top-value;
     }
     .services-tab-navigator {
         .centered-max-width(855px);
-
+        margin-top:@margin-top-value;
+        margin-bottom:@margin-top-value;
         .services-tab-navigator-buttons {
-            .flex-justify-align(space-between,stretch);
-            button {
+            .flex-justify-align(space-between, stretch);
+            .services-btn {
                 .button-style;
                 padding: 1% 2.5%;
-                width:150px;
+                width: 150px;
+            }
+            .btn-selected {
+                background-color: #5E9FB9;
             }
         }
-        
+
+    }
+
+    .services-tab-components {
+        display:none;
+    }
+    .show-tab {
+        .flex-justify-align(space-between, center);
+        .centered-max-width(855px);
+        .services-tab-components-text-div {
+            width: 47.5%;
+        }
+        .services-tab-components-img-div {
+            width: 47.5%;
+        }
     }
 }
+
+
+
+
+
