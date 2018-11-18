@@ -1,31 +1,59 @@
-.menu-button {
-  position: absolute;
-  right: 40px;
-  cursor: pointer;
-}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: @main-bg;
 
-.menu {
-  display: none;
-  position: fixed;
-  top: 50px;
-  right: 120px;
-  width: 1024px;
-  //width: 81%;
-  height: 340px; 
-  background-color: @greySquare;
-  z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
-}
+  .menu-button {
+    display: block;
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+  }
 
-.menu ul li{
-  list-style-type: none;
-  font-size: 48px;
-  padding: 15px 0;
-  line-height: 85px;
-  text-align: center;
-  font-weight: bold;
-  color: #FFFFFF;
-}
+  .hamburger-hide {
+    display: none;
+  }
 
-.menu--open {
-  display: block;
+  .menu-button-close {
+    display: block;
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
+  }
+
+  .menu-btn-close-hide {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+    position: fixed;
+    top: 50px;
+    width: 1000px;
+    height: 100%;
+    background-color: @headerColor;
+    opacity: 0.95;
+    z-index: 2;
+
+    ul {
+      margin: 10% 40%;
+
+      li {
+        list-style-type: none;
+        font-size: 3rem;
+        line-height: 85px;
+        font-weight: bold;
+        color: @navigationFont;
+
+        &:hover {
+          color: @navigationHover;
+        }
+      }
+    }
+  }
+
+  .menu--open {
+    display: block;
+  }
 }
