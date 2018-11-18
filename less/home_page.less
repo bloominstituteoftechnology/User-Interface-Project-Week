@@ -5,6 +5,7 @@
     .general-style;
     .general-text;
     .centered-max-width(950px);
+
     img {
         max-width: 100%;
     }
@@ -13,7 +14,6 @@
         color: white;
         font-weight: bold;
         padding: 1.25% 5%;
-
         background-color: #99a4af;
         .flex-justify-align(space-between, stretch);
 
@@ -29,21 +29,31 @@
                 margin-top: 80%;
             }
         }
+
         .navbar-link {
             color: white;
             text-decoration: none;
             font-size: 48px;
             line-height: 85px;
         }
+
         .navbar-link:hover {
             color: #222222;
         }
     }
 
+    //INTRO SECTION---------------------------------------------------------------------
+
     .intro-div {
         .flex-justify-align(stretch, flex-end);
         .background-images('../img/home/home-jumbotron.png');
         height: 598px;
+        @media @phone {
+            .background-images('../img/home/home-mobile-jumbotron.png');
+            background-size: cover;
+            height: 320px;
+        }
+
         .intro-text {
             font-weight: bold;
             font-size: 64px;
@@ -52,37 +62,71 @@
             margin-left: 5%;
             margin-bottom: 5%;
         }
+
     }
 
     //SERVICES SECTION-----------------------------------------------
-    .services-row {
-        .centered-max-width(855px);
-        .flex-justify-align(space-between, stretch);
-        margin-top: @margin-top-value;
-        .services-info {
-            width: 47.5%;
-            .flex-justify-align(space-evenly, stretch);
-            flex-direction: column;
-        }
-        .services-img-div {
-            width: 47.5%;
-        }
 
-        .services-button {
-            text-decoration: none;
-            padding: 2.5% 5%;
-            background-color: white;
-            border: 1px black solid;
+    .SJ, .future-designs {
+        //Make them into a row
+        .flex-justify-align(space-between, stretch);
+        padding: 2.5% 2.5%;
+        @media @phone {
+            flex-direction:column-reverse;
+            align-items:center;
+            margin-top: @margin-top-value;
+        }
+        .services-info {
+            //Positions the info header, text and button
+            .flex-justify-align(space-evenly, stretch);
+            width:47.5%;
+            flex-direction:column;
+            
+            @media @phone {
+                width:100%;
+                height:250px;
+            }
+            .services-button {
+                text-decoration: none;
+                background-color:white;
+                border:1px black solid;
+                padding: 2.5% 5%;
+                @media @phone {
+                    width:100%;
+                }
+            }
+        }
+        
+        .services-img-div {
+            @media @phone {
+                display:none;
+            }
+        }
+        
+        .mobile-image-div {
+            display:none;
+            @media @phone {
+                display:block;
+                width:100%;
+            }
+            .mobile-image {
+                width:100%;
+                height:auto;
+            }
         }
     }
 
     .future-designs {
-        flex-direction: row-reverse;
+        flex-direction:row-reverse;
+        @media @phone {
+            flex-direction:column-reverse;
+        }
     }
 
     //RECENT PROJECTS-----------------------------------------------
 
     .projects-section {
+        padding: 0 @padding-left-right;
         .centered-max-width(855px);
         margin-top: 2*@margin-top-value;
         .project-div {
@@ -91,35 +135,46 @@
             .project-title {
                 .flex-justify-align(center, center);
                 background-color: #D8D8D8;
-                width: 30%;
+                width: 35%;
                 font-size: 32px;
                 height: 60px;
+                @media @phone {
+                    width:95%;
+                }
             }
             .project-content-div {
                 .centered-max-width(600px);
                 margin-top: @margin-top-value;
-
+                @media @phone {
+                    width:95%;
+                }
             }
         }
     }
+    
+    //FOOTER-----------------------------------------------------------
     .footer {
         font-size: 14px;
         line-height: 26px;
         color: #FFFFFF;
         background-color: #828282;
         margin-top: @margin-top-value;
-        padding: 2.5% 0;
+        padding-top: 5%;
 
         .footer-container {
             .flex-justify-align(space-between, stretch);
             .centered-max-width(855px);
+            @media @phone {
+                flex-direction:column;
+                padding:2.5% 5%;
+            }
             .footer-header {
                 font-size: 20px;
                 line-height: 24px;
             }
 
         }
-        .copyright{
+        .copyright {
             text-align: center;
         }
     }
@@ -132,6 +187,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    
+    @media @phone {
+        justify-content:center;
+    }
 }
 
 .outskirts-header-div {
@@ -141,6 +200,9 @@
     display: flex;
     justify-content: stretch;
     align-items: flex-end;
+    @media @phone {
+        justify-content:center;
+    }
 }
 
 .blocks-header-div {
@@ -150,4 +212,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    @media @phone {
+        justify-content:center;
+    }
 }
+
