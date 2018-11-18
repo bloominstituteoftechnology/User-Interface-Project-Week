@@ -3,11 +3,9 @@
 
 //NAV TOGGLE
 class ShowMenu {
-    constructor(domElement) {
-        this.domElement = domElement;
-
-        this.toggleButton = this.domElement.querySelector('.menu-nav');
-        console.log(this.toggleButton)
+    constructor(domElement) { //.nav
+        this.domElement = domElement; //this/domElement = .nav
+        this.toggleButton = this.domElement.querySelector('.menu-nav'); //.nav.toggleButton =
 
         this.toggleButton.addEventListener('click', this.expandNav());
     
