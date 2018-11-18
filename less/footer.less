@@ -8,15 +8,30 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
+  @media @mobile {
+    height: 700px;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
   small {
     padding-bottom: 15px;
     color: @footerFColor;
+    @media @mobile {
+      width: 90%;
+      margin: 0 auto;
+      padding-bottom: unset;
+    }
   }
   div {
     width: 100%;
     max-width: 854px;
     display: flex;
     justify-content: space-between;
+    @media @mobile {
+      width: 90%;
+      margin: 0 auto;
+      flex-direction: column;
+    }
     .footer {
       margin-top: 50px;
       margin-bottom: 55px;
@@ -34,11 +49,23 @@ footer {
       }
       address {
         margin-top: 15px;
+        @media @mobile {
+          margin-top: unset;
+        }
       }
       h4 {
         font-weight: @bold;
         font-size: @footerHFSize;
         line-height: @footerHLHeight;
+      }
+      &:first-child {
+        @media @mobile {
+          margin-top: unset;
+        }
+      }
+      @media @mobile {
+        margin-top: 25px;
+        margin-bottom: unset;
       }
     }
   }
