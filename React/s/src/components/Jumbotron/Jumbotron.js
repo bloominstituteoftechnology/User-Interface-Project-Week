@@ -16,6 +16,11 @@ const jumbotron = props => {
     contact: {
       title: <h1>Contact Us</h1>,
       class: "contact"
+    },
+
+    about: {
+      title: <h1>About Us</h1>,
+      class: "about"
     }
   }
 
@@ -28,9 +33,12 @@ const jumbotron = props => {
   } else if (props.page === 'services') {
     head = jumboHeaders.services.title
     classCurr = jumboHeaders.services.class
-  } else {
+  } else if (props.page === 'contact') {
     head = jumboHeaders.contact.title
     classCurr = jumboHeaders.contact.class
+  } else {
+    head = jumboHeaders.about.title
+    classCurr = jumboHeaders.about.class
   }
 
 

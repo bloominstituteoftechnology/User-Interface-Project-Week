@@ -9,7 +9,6 @@ const menu = props => {
       return
     } else {
       menu.style.zIndex = -1000;
-        console.log(menu);
     }
   }
 
@@ -19,13 +18,12 @@ const menu = props => {
       return
     } else {
       menu.style.zIndex = 1000;
-        console.log(menu);
     }
   }
 
   if(props.show) {
     menuClass = "menu open"
-    const zChange = setTimeout(setZTop, 0)
+    setZTop()
   } else {
     menuClass = "menu close"
     const zChange = setTimeout(setZBack, 300)
