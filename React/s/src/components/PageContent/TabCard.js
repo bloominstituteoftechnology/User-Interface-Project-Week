@@ -5,8 +5,6 @@ const tabCard = props => {
   let text = props.text;
   let image = props.image;
 
-
-
   return (
     <div className={"tabNav__content tabs-item-selected"} tabdata-tab="1">
       <div className="content__text ">

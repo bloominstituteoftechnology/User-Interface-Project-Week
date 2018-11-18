@@ -2,14 +2,17 @@ import React from 'react';
 
 const menu = props => {
 
-  let openMenu = "menu";
+  let menuClass = "menu";
+  let styles;
 
   if(props.show) {
-    openMenu = "menu open"
+    menuClass = "menu open"
+  } else {
+    menuClass = "menu close"
   }
-    console.log(props)
+
   return (
-    <div className={openMenu}>
+    <div className={menuClass}>
       <div className="menu__links">
         <a href="#" onClick={props.toggle}>Home</a>
         <a href="#" onClick={props.toggle}>Services</a>

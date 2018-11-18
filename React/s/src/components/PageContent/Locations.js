@@ -28,7 +28,7 @@ const locations = props => {
   				<p>San Diego, CA 22345</p>
   				<p>702 555 0144</p>
   			</address>
-  		</section>
+  	</section>
   );
 }
 
