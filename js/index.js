@@ -37,6 +37,7 @@ class TabItem {
     Array.from(items).forEach(item => item.classList.remove('service-item-selected'));
 
     this.element.classList.add('service-item-selected');
+    TweenMax.from(this.element, 0.3, {scale: 0.7});
   }
 }
 
@@ -47,12 +48,24 @@ const tabs = document.querySelectorAll('.service-tabs .service-tab')
 let menu = document.querySelector('.menu img');
 let nav = document.querySelector('.nav-links');
 
+let serviceHeaderImg = document.querySelector('.service-header img');
+
+window.addEventListener('resize', function() {
+  if(window.outerWidth < 513) {
+    serviceHeaderImg.src = 'img/services/services-mobile-jumbotron.png';
+  } else {
+    serviceHeaderImg.src = 'img/services/services-jumbotron.png';
+  }
+})
+
 // Add Functionality to the Nav Menu
 menu.addEventListener('click', function() {
-  nav.classList.toggle('nav-links-hidden');
+  nav.classList.remove('nav-links-hidden');
   if(menu.src.includes("img/nav-hamburger.png")) {
     menu.src = "img/nav-hamburger-close.png";
+    TweenMax.fromTo(nav, 0.5, {height: 0, display: "flex"}, {height: "100%"});
   } else {
     menu.src = "img/nav-hamburger.png"
+    TweenMax.fromTo(nav, 0.5, {height: "100%"}, {height: 0, display: "none"});
   }
 })
