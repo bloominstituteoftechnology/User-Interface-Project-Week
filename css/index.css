@@ -1,10 +1,7 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 html,
 body,
 div,
@@ -70,13 +67,16 @@ article,
 aside,
 canvas,
 details,
-figcaption,
+embed,
 figure,
+figcaption,
 footer,
 header,
 hgroup,
 menu,
 nav,
+output,
+ruby,
 section,
 summary,
 time,
@@ -86,7 +86,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  outline: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
@@ -120,20 +119,13 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: ’’;
+  content: '';
   content: none;
-}
-ins {
-  text-decoration: none;
-}
-del {
-  text-decoration: line-through;
 }
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Your Code Goes Here */
 * {
   box-sizing: border-box;
 }
@@ -152,12 +144,15 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Arial', sans-serif;
   color: #222222;
+}
+h1 {
+  font-weight: 800;
 }
 .page-container {
   max-width: 1000px;
   margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
 }
 .header-container {
   width: 100%;
@@ -183,6 +178,7 @@ h5 {
   margin-left: 4%;
   margin-top: 8px;
   font-size: 3rem;
+  cursor: pointer;
 }
 .header-container .menu-content .menu-button {
   margin-top: 15px;
@@ -227,7 +223,7 @@ h5 {
   margin-left: 4%;
 }
 .footer .left-footer input {
-  padding: 10px 15%;
+  padding: 10px 20%;
 }
 .footer .left-footer h1 {
   font-size: 1.9rem;
@@ -255,43 +251,130 @@ h5 {
 }
 .page-container {
   width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width:500px) {
+  .page-container {
+    width: 95%;
+  }
 }
 .page-container .middle-upper-page {
-  width: 95%;
+  width: 90%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 50px;
+}
+@media (max-width:500px) {
+  .page-container .middle-upper-page {
+    flex-direction: column-reverse;
+    text-align: center;
+    width: 100%;
+  }
+}
+.page-container .middle-upper-page .upper-img-mobile {
+  display: none;
+}
+@media (max-width:500px) {
+  .page-container .middle-upper-page .upper-img-mobile {
+    display: inherit;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .page-container .middle-upper-page .upper-img-mobile img {
+    width: 100%;
+  }
+}
+.page-container .middle-upper-page .upper-img {
+  width: 50%;
+}
+@media (max-width:500px) {
+  .page-container .middle-upper-page .upper-img {
+    display: none;
+  }
+}
+.page-container .middle-upper-page .upper-img img {
+  width: 100%;
 }
 .page-container .middle-upper-page .upper {
   width: 50%;
   margin-top: 50px;
+}
+@media (max-width:500px) {
+  .page-container .middle-upper-page .upper {
+    width: 95%;
+  }
 }
 .page-container .middle-upper-page .upper h1 {
   font-size: 2.5rem;
 }
 .page-container .middle-upper-page .upper P {
   margin-top: 20px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+}
+@media (max-width:500px) {
+  .page-container .middle-upper-page .upper P {
+    line-height: 30px;
+  }
 }
 .page-container .middle-upper-page .upper button {
   margin-top: 20px;
   padding: 10px;
+  background: none;
 }
-.page-container .middle-upper-page .upper-img {
-  width: 50%;
+@media (max-width:500px) {
+  .page-container .middle-upper-page .upper button {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid black;
+    font-size: 1.4rem;
+  }
 }
 .page-container .lower {
-  width: 95%;
+  width: 90%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 50px;
 }
+@media (max-width:500px) {
+  .page-container .lower {
+    flex-direction: column;
+    width: 95%;
+  }
+}
+.page-container .lower .lower-img-mobile {
+  display: none;
+}
+@media (max-width:500px) {
+  .page-container .lower .lower-img-mobile {
+    display: inherit;
+    width: 100%;
+  }
+}
+.page-container .lower .lower-img-mobile img {
+  width: 100%;
+}
 .page-container .lower .lower-img {
-  width: 50%;
+  width: 45%;
+}
+@media (max-width:500px) {
+  .page-container .lower .lower-img {
+    display: none;
+  }
+}
+.page-container .lower .lower-img img {
+  width: 100%;
 }
 .page-container .lower .lower-text {
   width: 50%;
   margin-top: 50px;
+}
+@media (max-width:500px) {
+  .page-container .lower .lower-text {
+    width: 100%;
+  }
 }
 .page-container .lower .lower-text h1 {
   font-size: 2.5rem;
@@ -300,105 +383,244 @@ h5 {
   margin-top: 20px;
   font-size: 1.5rem;
 }
+@media (max-width:500px) {
+  .page-container .lower .lower-text P {
+    line-height: 30px;
+  }
+}
 .page-container .lower .lower-text button {
   margin-top: 20px;
   padding: 10px;
+  background: none;
+}
+@media (max-width:500px) {
+  .page-container .lower .lower-text button {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid black;
+    font-size: 1.4rem;
+  }
 }
 .page-container .recent {
   width: 100%;
   line-height: 200px;
 }
+@media (max-width:500px) {
+  .page-container .recent {
+    margin-left: 9%;
+    line-height: 90px;
+    margin-top: 20px;
+  }
+}
 .page-container .recent h1 {
   font-size: 3rem;
 }
 .page-container .middle-page-img {
-  position: relative;
   width: 100%;
 }
-.page-container .middle-page-img img {
+.page-container .middle-page-img .mobile-villas {
+  display: none;
+}
+@media (max-width:500px) {
+  .page-container .middle-page-img .mobile-villas {
+    display: inherit;
+    width: 100%;
+    position: relative;
+  }
+}
+.page-container .middle-page-img .desktop {
   width: 95%;
   text-align: center;
 }
+@media (max-width:500px) {
+  .page-container .middle-page-img .desktop {
+    display: none;
+  }
+}
 .page-container .middle-page-img .middle-page {
   width: 95%;
+  position: relative;
 }
 .page-container .middle-page-img .middle-page h2 {
   border: 1px solid gray;
-  width: 25%;
+  width: 35%;
   height: 80px;
   text-align: center;
   line-height: 80px;
   font-size: 2rem;
   background-color: lightgray;
-  display: block;
   position: absolute;
   right: 0;
-  margin-right: 5%;
-  top: 200px;
+  bottom: -40px;
 }
-.page-container .middle-page-img p {
+@media (max-width:500px) {
+  .page-container .middle-page-img .middle-page h2 {
+    border: 1px solid gray;
+    width: 95%;
+    height: 120px;
+    margin-right: 2%;
+    line-height: 80px;
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    text-align: center;
+    background-color: lightgray;
+    bottom: -90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.page-container .middle-page-img .paragraph {
   font-size: 1.5rem;
   width: 50%;
   margin-top: 120px;
   height: 300px;
-  margin-left: 20%;
+  margin-left: 24%;
+}
+@media (max-width:500px) {
+  .page-container .middle-page-img .paragraph {
+    font-size: 1.9rem;
+    width: 100%;
+    margin-left: 2%;
+    margin-top: 120px;
+    height: 100px;
+    margin-left: inherit;
+  }
+}
+.page-container .middle-page-img .paragraph p {
+  line-height: 25px;
 }
 .page-container .middle-lower-page {
   position: relative;
   width: 100%;
 }
-.page-container .middle-lower-page img {
+@media (max-width:500px) {
+  .page-container .middle-lower-page {
+    margin-top: 280px;
+  }
+}
+.page-container .middle-lower-page .desktop {
   width: 95%;
   text-align: center;
 }
-.page-container .middle-lower-page .middle-lower-img h2 {
+@media (max-width:500px) {
+  .page-container .middle-lower-page .desktop {
+    display: none;
+  }
+}
+.page-container .middle-lower-page .mobile {
+  display: none;
+}
+@media (max-width:500px) {
+  .page-container .middle-lower-page .mobile {
+    display: inherit;
+    width: 100%;
+  }
+}
+.page-container .middle-lower-page h2 {
   border: 1px solid gray;
-  width: 25%;
+  width: 35%;
   height: 80px;
   text-align: center;
   line-height: 80px;
   font-size: 2rem;
   background-color: lightgray;
-  display: block;
   position: absolute;
   left: 0;
-  margin-right: 5%;
-  top: 200px;
+  bottom: -40px;
 }
-.page-container .middle-lower-page p {
+@media (max-width:500px) {
+  .page-container .middle-lower-page h2 {
+    border: 1px solid gray;
+    width: 95%;
+    height: 120px;
+    margin-right: 2%;
+    line-height: 80px;
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    text-align: center;
+    background-color: lightgray;
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -90px;
+  }
+}
+.page-container .paragraph {
   font-size: 1.5rem;
   width: 50%;
   margin-top: 120px;
   height: 300px;
-  margin-left: 20%;
+}
+@media (max-width:500px) {
+  .page-container .paragraph {
+    font-size: 1.9rem;
+    width: 100%;
+    margin-left: 2%;
+    margin-top: 120px;
+    height: 100px;
+    margin-left: inherit;
+  }
+}
+.page-container .paragraph p {
+  line-height: 25px;
 }
 .page-container .middle-lowest-page {
   position: relative;
 }
-.page-container .middle-lowest-page img {
-  width: 95%;
+@media (max-width:500px) {
+  .page-container .middle-lowest-page {
+    margin-top: 280px;
+    width: 100%;
+  }
+}
+.page-container .middle-lowest-page .desktop {
+  width: 100%;
   text-align: center;
 }
-.page-container .middle-lowest-page .middle-lowest-img h2 {
+@media (max-width:500px) {
+  .page-container .middle-lowest-page .desktop {
+    display: none;
+  }
+}
+.page-container .middle-lowest-page .mobile {
+  display: none;
+}
+@media (max-width:500px) {
+  .page-container .middle-lowest-page .mobile {
+    display: block;
+    width: 100%;
+  }
+}
+.page-container .middle-lowest-page h2 {
   border: 1px solid gray;
-  width: 25%;
+  width: 35%;
   height: 80px;
   text-align: center;
   line-height: 80px;
   font-size: 2rem;
   background-color: lightgray;
-  display: block;
   position: absolute;
-  margin-right: 5%;
   right: 0;
-  top: 200px;
+  bottom: -40px;
 }
-.page-container .middle-lowest-page p {
-  font-size: 1.5rem;
-  width: 50%;
-  margin-top: 120px;
-  height: 300px;
-  margin-left: 20%;
+@media (max-width:500px) {
+  .page-container .middle-lowest-page h2 {
+    border: 1px solid gray;
+    width: 95%;
+    height: 120px;
+    margin-right: 2%;
+    line-height: 80px;
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    text-align: center;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -90px;
+  }
 }
 .services-page {
   width: 90%;
@@ -421,7 +643,7 @@ h5 {
 }
 .services-page .tabs button {
   padding: 12px 5%;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   background: none;
 }
 .services-page .tabs button:hover {
