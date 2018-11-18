@@ -1,12 +1,15 @@
 
 .home{
+    height: 50px;
     width: 100%;
+    position: fixed;
     // height: 700px;
     font-weight: bold;
     font-size: 1.5rem;
     display: flex;
     // color: #ffffff;
     color: @white;
+    z-index: 1;
 
 
  
@@ -74,8 +77,8 @@
         left: 0;
         width: 100%;
         height: 100vh; 
-        background-color: grey;
-        opacity: 0.8;
+        background-color: @silver;
+        opacity: 0.9;
         // border: 1px solid #004D40;
         border-left: none;
         border-bottom: none;
@@ -98,50 +101,60 @@
         .menu--open {
             display: block;
             }
+
     }
 
+} // home 
 
-        .top-section{
+
+
+.top-section{
+        width: 100%;
+        position: relative;
+        // display: flex;
+        // align-items: center;
+        
+        .headerImg{
             width: 100%;
-            display: flex;
-            align-items: center;
-            .headerImg{
-                width: 100%;
-                max-width: 100%;
-                min-height: 500px;
-                max-height: 900px;
+            max-width: 100%;
+            min-height: 500px;
+            max-height: 900px;
 
-                @media @mobile-view{
-                    display: none;
-                }
-            }
-
-            .mobile-headerImg{
+            @media @mobile-view{
                 display: none;
+            }
+        }
+
+        .mobile-headerImg{
+            display: none;
+
+            @media @mobile-view{
+                display: block;
+                width: 100%;
+            }
+        }
+        .home-heading{
+            position: absolute;
+            bottom: 80px;
+            left: 5%;
+            // display: flex;
+            // flex-wrap: wrap;
+            // flex-direction: column;
+            // position: absolute;
+            // padding-left: 8%;
+            // padding-top: 25%;
+            .h1Home{
+                font-size: 7rem;
+                color:@white;
+                // position: relative;
 
                 @media @mobile-view{
-                    display: block;
-                    width: 100%;
+                    font-size: 5rem;
+                    font-weight: 550;
+                    letter-spacing: 2px;
+                    line-height: 70px;
                 }
             }
-        }
+        } // end home heading 
+    } // end top section 
 
-            .home-heading{
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: column;
-                position: absolute;
-                padding-left: 8%;
-                padding-top: 25%;
-                .h1Home{
-                    font-size: 7rem;
-
-                    @media @mobile-view{
-                        font-size: 5rem;
-                        font-weight: 550;
-                        letter-spacing: 2px;
-                        line-height: 70px;
-                    }
-                }
-            }
-        }
