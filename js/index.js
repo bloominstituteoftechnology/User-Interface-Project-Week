@@ -3,7 +3,7 @@ class MenuLogic {
     constructor(domElements) {
         this.domElements = domElements;
         this.menuButton = this.domElements.querySelector(".hamburger");
-        this.menu = this.domElements.querySelector('.navbar-menu'); 
+        this.menu = this.domElements.querySelector('.navbar-menu');
         this.toggleVariable = false;
         this.menuButton.addEventListener('click', this.toggleMenu.bind(this))
     }
@@ -18,7 +18,7 @@ class MenuLogic {
             this.domElements.style.left = '0';
             this.domElements.style.right = '0';
             this.domElements.style.height = '100vh';
-            
+
             this.menu.style.display = "block";
             this.menuButton.src = "img/nav-hamburger-close.png"
         }
