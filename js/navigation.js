@@ -5,6 +5,7 @@ class Dropdown {
 		this.content = this.element.querySelector('.button-content');
 		this.button.addEventListener('click', () => {
 			this.toggleContent();
+			console.log('okay!');
 		});
 	}
 
