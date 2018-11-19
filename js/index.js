@@ -1,13 +1,29 @@
 
 // When the navigation button is clicked, the links are shown.
 const navBtn = document.querySelector('.navBtn');
-const links  = document.querySelector('.linksArea');
+const links = document.querySelector('.linksShow');
+
+// Flag to keep track of menu open or close
+let flag = 0;
+
 navBtn.addEventListener('click', () => {
   //Show or hide the links
-  links.classList.toggle('linksShow');
+  
+  if(flag === 0) {
+    // open menu
+    TweenMax.fromTo(links, 1, {yPercent:-110, opacity:0}, {yPercent:0, opacity: 0.9});
+    flag = 1;
+  }
+  else {
+    // close menu
+    TweenMax.fromTo(links, 1, {yPercent:0, opacity:0.9}, {yPercent:-110, opacity: 0});
+    flag = 0;
+  }
   
   // Change the button (either open or close)
+  TweenMax.fromTo(navBtn, 1, {rotationX:180}, {rotationX:-180});  
   navBtn.classList.toggle('openBtn');
   navBtn.classList.toggle('closeBtn');
-})
+
+});
 
