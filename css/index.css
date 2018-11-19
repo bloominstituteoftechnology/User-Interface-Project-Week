@@ -1,3 +1,141 @@
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0b1 | 201101
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background: #ffffff;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -6,10 +144,11 @@
 }
 @media (min-width:400px) {
   section.nav {
+    display: flex;
     width: 100%;
   }
 }
-section.nav nav {
+section.nav nav.navigation {
   background-color: gray;
   display: flex;
   justify-content: space-between;
@@ -18,29 +157,45 @@ section.nav nav {
   height: 50px;
 }
 @media (min-width:400px) {
-  section.nav nav {
+  section.nav nav.navigation {
     display: flex;
     width: 100%;
   }
 }
-section.nav nav h1 {
+section.nav nav.navigation .nav-logo h1.header {
   padding-top: 10px;
   padding-left: 20px;
   font-size: 24px;
   font-weight: bold;
   color: #ffffff;
 }
-section.nav nav .menu-open {
+@media (min-width:400px) {
+  section.nav nav.navigation .nav-logo h1.header {
+    color: #ffffff;
+    padding-left: 100px;
+  }
+}
+section.nav nav.navigation .menu-open {
   display: flex;
   flex-direction: row;
   height: 20px;
   padding-right: 20px;
 }
-section.nav nav .menu-open img {
+@media (min-width:400px) {
+  section.nav nav.navigation .menu-open {
+    padding-right: 100px;
+  }
+}
+section.nav nav.navigation .menu-open img {
   align-items: flex-end;
 }
-section.nav nav .nav-expanded {
+section.nav nav.navigation .nav-expanded {
   display: none;
+}
+@media (min-width:400px) {
+  section.nav nav.navigation .nav-expanded {
+    padding-left: 40px;
+  }
 }
 body {
   display: flex;
@@ -534,141 +689,214 @@ body footer.footer .copyright {
   justify-content: center;
   width: 100%;
 }
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/
-v2.0b1 | 201101
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+.container-services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+.container-services .jumbotron-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
-body {
-  line-height: 1;
-  background: #ffffff;
-  font-family: 'Roboto', Arial, sans-serif;
+.container-services .jumbotron-services .jumbotron-services-image {
+  display: flex;
+  width: 100%;
 }
-ol,
-ul {
-  list-style: none;
+.container-services .jumbotron-services .jumbotron-services-image img {
+  width: 100%;
 }
-blockquote,
-q {
-  quotes: none;
+.container-services .jumbotron-services .jumbotron-services-title {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #ffffff;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: ’’;
-  content: none;
+.container-services .services-content {
+  padding: 0px 20px 0px 20px;
 }
-ins {
-  text-decoration: none;
+.container-services .services-content .services-about {
+  margin-top: 35px;
 }
-del {
-  text-decoration: line-through;
+.container-services .services-content .services-about p {
+  font-size: 16px;
+  line-height: 24px;
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.container-services .services-content .tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 28px;
+  margin-top: 35px;
 }
-/* Your Code Goes Here */
+.container-services .services-content .tabs .pre-construction:hover {
+  background: #222222;
+}
+.container-services .services-content .tabs .pre-construction:hover h2 {
+  color: #ffffff;
+}
+.container-services .services-content .tabs .pre-construction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  border: solid 1px black;
+}
+.container-services .services-content .tabs .pre-construction h2 {
+  display: flex;
+  font-weight: bold;
+  font-size: 28px;
+  color: #222222;
+}
+.container-services .services-content .tabs .construction:hover {
+  background: #222222;
+}
+.container-services .services-content .tabs .construction:hover h2 {
+  color: #ffffff;
+}
+.container-services .services-content .tabs .construction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border: solid 1px black;
+}
+.container-services .services-content .tabs .construction h2 {
+  display: flex;
+  font-weight: bold;
+  font-size: 28px;
+  color: #222222;
+}
+.container-services .services-content .tabs .design-build:hover {
+  background: #222222;
+}
+.container-services .services-content .tabs .design-build:hover h2 {
+  color: #ffffff;
+}
+.container-services .services-content .tabs .design-build {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border: solid 1px black;
+}
+.container-services .services-content .tabs .design-build h2 {
+  display: flex;
+  font-weight: bold;
+  font-size: 28px;
+  color: #222222;
+}
+.container-services .services-content .tabs .sustainability:hover {
+  background: #222222;
+}
+.container-services .services-content .tabs .sustainability:hover h2 {
+  color: #ffffff;
+}
+.container-services .services-content .tabs .sustainability {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border: solid 1px black;
+}
+.container-services .services-content .tabs .sustainability h2 {
+  display: flex;
+  font-weight: bold;
+  font-size: 28px;
+  color: #222222;
+}
+.container-services .services-content .selected {
+  background: #5e9fb9;
+}
+.container-services .services-content .tabs-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+.container-services .services-content .tabs-content .pre-construction .content h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222222;
+}
+.container-services .services-content .tabs-content .pre-construction .content p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.container-services .services-content .tabs-content .pre-construction .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.container-services .services-content .tabs-content .construction {
+  display: none;
+}
+.container-services .services-content .tabs-content .construction .content h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222222;
+}
+.container-services .services-content .tabs-content .construction .content p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.container-services .services-content .tabs-content .construction .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.container-services .services-content .tabs-content .design-build {
+  display: none;
+}
+.container-services .services-content .tabs-content .design-build .content h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222222;
+}
+.container-services .services-content .tabs-content .design-build .content p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.container-services .services-content .tabs-content .design-build .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.container-services .services-content .tabs-content .sustainability {
+  display: none;
+}
+.container-services .services-content .tabs-content .sustainability .content h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222222;
+}
+.container-services .services-content .tabs-content .sustainability .content p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.container-services .services-content .tabs-content .sustainability .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

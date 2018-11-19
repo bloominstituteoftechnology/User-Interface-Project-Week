@@ -26,7 +26,6 @@ Font family can be found here: https://fonts.google.com/specimen/Roboto
 - Font Weight: Regular
 - Font Size: 16px
 - Line Height: 24px
-
 ### Jumbotron Headers
 - Font Weight: Bold
 - Font Size: 64px
