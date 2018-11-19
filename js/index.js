@@ -26,7 +26,6 @@ class TabButton {
 	}
 	displayChange(){
 		if (this.element.classList.contains('active-btn')) return;
-		document.querySelectorAll('.tab-entry').forEach(x => x.classList.remove('active-tab'));
 		document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active-btn'));
 		this.element.classList.add('active-btn');
 		this.entry.selectTab();
@@ -39,6 +38,7 @@ class TabDisplay {
 		this.data = this.element.dataset.tab;
 	}
 	selectTab(){
+		document.querySelectorAll('.tab-entry').forEach(x => x.classList.remove('active-tab'));
 		this.element.classList.add('active-tab');
 	}
 }
