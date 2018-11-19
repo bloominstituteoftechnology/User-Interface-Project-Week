@@ -2,18 +2,38 @@
 	position: relative;
 	color: white;
 
-	img {
+	.header-img-desktop {
 		width: 100%;
-	}
 
+		@media @phone {
+			display: none;
+		}
+	}
+	.header-img-mobile {
+		display: none;
+
+		@media @phone {
+			display: inherit;
+			width: 100%;
+		}
+	}
 	.main-page {
 		position: absolute;
 		bottom: 8px;
 		left: 40px;
 
+		@media @phone {
+			left: 25px;
+			bottom: 20px;
+		}
+
 		h1 {
 			color: @white;
 			font-size: 5rem;
+
+			@media @phone {
+				font-size: 4rem;
+			}
 		}
 	}
 }
@@ -29,7 +49,7 @@
 	}
 
 	.middle-upper-page {
-		width: 90%;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		margin-top: 50px;
@@ -64,7 +84,7 @@
 		}
 
 		.upper {
-			width: 50%;
+			width: 48%;
 			margin-top: 50px;
 			@media @phone {
 				width: 95%;
@@ -76,6 +96,7 @@
 			P {
 				margin-top: 20px;
 				font-size: 1.6rem;
+				line-height: 25px;
 				@media @phone {
 					// font-size: 1.8rem;
 					line-height: 30px;
@@ -85,6 +106,11 @@
 				margin-top: 20px;
 				padding: 10px;
 				background: none;
+				cursor: pointer;
+
+				&:hover {
+					background-color: @blue;
+				}
 
 				@media @phone {
 					width: 100%;
@@ -96,7 +122,7 @@
 		}
 	}
 	.lower {
-		width: 90%;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		margin-top: 50px;
@@ -140,6 +166,7 @@
 			P {
 				margin-top: 20px;
 				font-size: 1.5rem;
+				line-height: 25px;
 				@media @phone {
 					// font-size: 2rem;
 					line-height: 30px;
@@ -149,6 +176,12 @@
 				margin-top: 20px;
 				padding: 10px;
 				background: none;
+				cursor: pointer;
+
+				&:hover {
+					background-color: @blue;
+				}
+
 				@media @phone {
 					width: 100%;
 					padding: 20px;
@@ -273,8 +306,23 @@
 			line-height: 25px;
 		}
 	}
+	.paragraph-end {
+		.middle-page-p();
+
+		p {
+			line-height: 25px;
+		}
+
+		@media @phone {
+			.middle-page-p-mobile();
+			line-height: 24px;
+			width: 95%;
+			margin-bottom: 300px;
+		}
+	}
 	.middle-lowest-page {
 		position: relative;
+		width: 100%;
 
 		@media @phone {
 			margin-top: 280px;
