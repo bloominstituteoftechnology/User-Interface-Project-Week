@@ -25,6 +25,8 @@
 
 const openMenu = () => {
 	menu.classList.add("menu--open");
+	// document.getElementsByClassName("close-button").style.display = "block";
+	// displayCloser.classList.add("close-button")
 	// close.classList.add("closer--open");
 }
 
@@ -43,31 +45,35 @@ const closeCloser = () => {
 
 const menu = document.querySelector('.menu-content');
 
-const close = document.querySelector('.the-closure');
+ const close = document.querySelector('.the-closure');
 
 const menuButton = document.querySelector('.menu-button');
 
-const closeButton = document.querySelector('.close-button')
+ const closeButton = document.querySelector('.close-button')
 
 menuButton.addEventListener('click', () => {
 	openMenu();
+	document.querySelector(".close-button").style.display = "block";
+	document.querySelector(".menu-button").style.display = "none";
 	console.log("button was clicked")
 });
 
-// menuButton.addEventListener('click', () => {
-// 	openCloser();
-// 	console.log("button was clicked")
-// });
+menuButton.addEventListener('click', () => {
+	openCloser();
+	console.log("button was clicked")
+});
 
 closeButton.addEventListener('click', () => {
 	closeMenu();
+	document.querySelector(".close-button").style.display = "none";
+	document.querySelector(".menu-button").style.display = "block";
 	console.log('menu closed')
 });
 
-// closeButton.addEventListener('click', () => {
-// 	closeCloser();
-// 	console.log('menu closed')
-// });
+closeButton.addEventListener('click', () => {
+	closeCloser();
+	console.log('menu closed')
+});
 
 
 
