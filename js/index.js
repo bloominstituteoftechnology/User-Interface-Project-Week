@@ -22,9 +22,10 @@ class TabButton {
 		this.element = element;
 		this.data = this.element.dataset.tab;
 		this.entry = new TabDisplay(document.querySelector(`.tab-entry[data-tab='${this.data}']`));
-		this.element.addEventListener('click', () => this.tabChange());
+		this.element.addEventListener('click', () => this.displayChange());
 	}
-	tabChange(){
+	displayChange(){
+		if (this.element.classList.contains('active-btn')) return;
 		document.querySelectorAll('.tab-entry').forEach(x => x.classList.remove('active-tab'));
 		document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active-btn'));
 		this.element.classList.add('active-btn');
