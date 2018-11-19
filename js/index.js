@@ -44,3 +44,29 @@ class TabDisplay {
 }
 
 const tabButtons = document.querySelectorAll('.tab-btn').forEach(x => new TabButton(x));
+
+class Carousel {
+	constructor(element){
+		this.element = element;
+		this.index = 0;
+		this.leftBtn = this.element.querySelector('.left-btn');
+		this.rightBtn = this.element.querySelector('.right-btn');
+		this.slides = this.element.querySelectorAll('.slide');
+		this.leftBtn.addEventListener('click', () => this.leftBtnClick());
+		this.rightBtn.addEventListener('click', () => this.rightBtnClick());
+	}
+	leftBtnClick(){
+		if (this.index === 0) this.index = this.slides.length - 1;
+		else this.index--;
+		this.slides.forEach(x => x.classList.remove('active-slide'));
+		this.slides[this.index].classList.add('active-slide');
+	}
+	rightBtnClick(){
+		if (this.index === this.slides.length - 1) this.index = 0;
+		else this.index++;
+		this.slides.forEach(x => x.classList.remove('active-slide'));
+		this.slides[this.index].classList.add('active-slide');
+	}
+}
+
+const carousels = document.querySelectorAll('.carousel').forEach(x => new Carousel(x));
