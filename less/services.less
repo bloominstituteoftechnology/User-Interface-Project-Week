@@ -10,11 +10,25 @@
       margin-bottom: 30px;
       background: url("../img/services/services-jumbotron.png");
 
+      @media @mobile {
+        display: flex;
+        background: url("../img/services/services-mobile-jumbotron.png");
+        background-repeat: no-repeat;
+        flex-direction: column;
+        height: 275px ;
+        background-position: center;
+      }
+
       .jumbotron {
         .jumbotron-headers;
         position: relative;
         top: 150px;
         left: 10%;
+
+        @media @mobile {
+          font-size: 3.6rem;
+          left: 15%;
+        }
       }
     }
   }
@@ -23,6 +37,9 @@
     width: 100%;
     justify-content: space-between;
 
+    @media @mobile {
+      flex-direction: column;
+    }
     .services-tab {
       width: 23%;
       padding: 20px 0;
@@ -36,6 +53,12 @@
         background-color: @tabHoverBG;
         color: @tabHoverColor;
       }
+
+      @media @mobile {
+        width: 95%;
+        align-items: center;
+        margin-bottom: 15px;
+      }
     }
 
     .selected-tab {
@@ -48,8 +71,13 @@
   }
 
 .tab-content {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media @mobile {
+    flex-direction: column;
+  }
 }
 
   .tab-text-container {
@@ -61,6 +89,11 @@
 
     p {
       margin: 20px 0;
+    }
+
+    @media @mobile {
+      width: 95%;
+      flex-direction: column;
     }
   }
 }
