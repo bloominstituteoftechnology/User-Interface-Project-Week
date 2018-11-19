@@ -6,7 +6,7 @@ class TabLink {
 
     this.data = this.element.dataset.tab;
 
-    this.item = document.querySelector(`.service-items .service-item[data-tab='${this.data}']`);
+    this.item = document.querySelector(`.items .item[data-tab='${this.data}']`);
 
     this.tabItem = new TabItem(this.item);
 
@@ -15,11 +15,11 @@ class TabLink {
 
   // Selects the tab that was just clicked along with its linked Item
   select() {
-    const tabs = document.querySelectorAll('.service-tab');
+    const tabs = document.querySelectorAll('.tab');
 
-    Array.from(tabs).forEach(tab => tab.classList.remove('service-tab-selected'));
+    Array.from(tabs).forEach(tab => tab.classList.remove('tab-selected'));
 
-    this.element.classList.add('service-tab-selected');
+    this.element.classList.add('tab-selected');
 
     this.tabItem.select();
   }
@@ -28,22 +28,59 @@ class TabLink {
 class TabItem {
   constructor(element) {
     this.element = element;
+
+    this.data = this.element.dataset.tab;
+
+    if(document.querySelector('.contact.items')) {
+      this.carousel = new Carousel(document.querySelector(`.item[data-tab='${this.data}'] .contact-carousel`));
+    }
   }
 
   // Selects the item of the tab that was clicked
   select() {
-    const items = document.querySelectorAll('.service-item');
+    const items = document.querySelectorAll('.item');
 
-    Array.from(items).forEach(item => item.classList.remove('service-item-selected'));
-
-    this.element.classList.add('service-item-selected');
+    Array.from(items).forEach(item => item.classList.remove('item-selected'));
+    
+    this.element.classList.add('item-selected');
     TweenMax.from(this.element, 0.3, {scale: 0.7});
   }
 }
 
+class Carousel {
+  constructor(element) {
+    this.element = element;
+
+    this.leftButton = this.element.querySelector('.left-button');
+    this.rightButton = this.element.querySelector('.right-button');
+    
+    this.images = this.element.querySelectorAll('img');
+
+    this.index = 0;
+    this.images[this.index].style.display = 'block';
+
+    this.leftButton.addEventListener('click', () => this.move(-1));
+    this.rightButton.addEventListener('click', () => this.move(1));
+  }
+
+  move(dir) {
+    this.images[this.index].style.display = 'none';
+    this.index += dir;
+    if(this.index >= this.images.length) {
+      this.index = 0;
+    } else if(this.index < 0) {
+      this.index = this.images.length - 1;
+    }
+    this.images[this.index].style.display = 'block';
+  }
+}
+
 // Assigns the elements on the page to Components defined above
-const tabs = document.querySelectorAll('.service-tabs .service-tab')
+const tabs = document.querySelectorAll('.tabs .tab')
                      .forEach(tab => new TabLink(tab));
+
+// const contactTabs = document.querySelectorAll('.contact tab contact-tab')
+//                             .forEach(tab => new TabLink(tab));
 
 let menu = document.querySelector('.menu img');
 let nav = document.querySelector('.nav-links');
