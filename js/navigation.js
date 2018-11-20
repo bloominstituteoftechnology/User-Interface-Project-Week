@@ -9,16 +9,15 @@ class Dropdown {
 			console.log('okay!');
 		});
 	}
-
+	// unToggle() {
+	// 	this.content.classList.toggle('button-hidden');
+	// 	document.querySelector('.menu-x').style.display = 'none';
+	// 	document.querySelector('.menu-bar').style.display = 'block';
+	// }
 	toggleContent() {
 		this.content.classList.toggle('button-hidden');
 		document.querySelector('.menu-bar').style.display = 'none';
 		document.querySelector('.menu-x').style.display = 'block';
-	}
-	unToggle() {
-		this.content.classList.toggle('button-hidden');
-		document.querySelector('.menu-x').style.display = 'none';
-		document.querySelector('.menu-bar').style.display = 'block';
 	}
 }
 
