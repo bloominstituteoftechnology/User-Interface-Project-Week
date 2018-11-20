@@ -1,26 +1,17 @@
 
 nav {
-  
+  position: fixed;
+  top: 0;
+  z-index: 1;
   background-color: @navBack;
-  .flex(none, center, column);
+  width: 100%;
+  padding: 13px 4.5%;
+  max-width: 1024px;
+  margin-left: 23.13%;
 
   .navTop {
-    background-color: @navBack;
-    position: fixed;
-    top: 0;
     .flex(space-between);
     max-width: 1024px;
-    width: 100%;
-    padding: 13px 4.5%;
-    z-index: 1;
-
-    @media @tablet {
-      max-width: @tabletWidth;
-    }
-
-    @media @mobile {
-      max-width: @mobileWidth;
-    }
 
     .logo {
       font-weight: bold;
@@ -45,25 +36,20 @@ nav {
 
   .linksShow {
     position: absolute;
-    .flex(center);
-    z-index: 2;
+    z-index: 1;
     width: 100%;
-    background-color: @navBack;    
+    height: 100%;
     top: 50px;
     left: 0;
-    opacity: 0;
-    
+    background-color: @navBack;
+    text-align: center;
+    height: 100%;
 
     .links {
       .flex(none, none, column);
       margin-top: 120px;
-      margin-bottom: 175px;
-
-      @media @mobile {
-        margin-top: 45px;
-        margin-bottom: 220px;
-      }
-
+      margin-bottom: 175px;   
+        
       a {
         font-weight: bold;
         font-size: 4.8rem;
@@ -76,5 +62,19 @@ nav {
     }
   }
 
+  .hide {
+    display: none;
+  }
+
+  
 }
 
+.showFull {
+  margin-left: 0;
+  height: 100%;
+  max-width: 100%;
+
+  .navTop {
+    margin: 0 auto;  
+  }
+}
