@@ -1,19 +1,42 @@
-// Menu code
-const menuBtn = document.querySelector('.menu-button');
-const menu = document.querySelector('.menu');
-const menuBtnClose = document.querySelector('.menu-button-close');
+// Tab Button Navigator Code
+class TabButton {
+  constructor(element) {
+    this.element = element;
+    this.data = this.element.dataset.tab;
+    this.item = document.querySelector(`.tab-item[data-tab="${this.data}"]`);
+    this.tabItem = new TabItem(this.item);
+    this.element.addEventListener("click", () => {
+      this.select();
+    });
+  }
 
+  select() {
+    const buttons = document.querySelectorAll(".tab-btns");
 
-const menuToggle = () => {
-    menu.classList.toggle('menu--open');
-    menuBtn.classList.toggle('hamburger-hide');
-    menuBtnClose.classList.toggle('menu-btn-close-hide');
+    buttons.forEach(button => {
+      button.classList.remove("tab-btn-selected");
+    });
+
+    this.element.classList.add("tab-btn-selected");
+
+    this.tabItem.select();
+  }
 }
 
-menuBtn.addEventListener('click', event => {
-    menuToggle();
-});
+class TabItem {
+  constructor(element) {
+    this.element = element;
+  }
 
-menuBtnClose.addEventListener('click', event => {
-    menuToggle();
-}); // end Menu code
+  select() {
+    const items = document.querySelectorAll(".tab-item");
+
+    items.forEach(item => {
+      item.classList.remove("tab-item-selected");
+    });
+
+    this.element.classList.add("tab-item-selected");
+  }
+}
+
+let buttons = document.querySelectorAll(".tab-btn").forEach(button => new TabButton(button));
