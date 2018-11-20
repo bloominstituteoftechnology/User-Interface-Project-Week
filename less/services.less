@@ -5,49 +5,130 @@
     line-height: 25px;
 }
 
-.menu {
-    display: flex;
-        // flex-wrap: nowrap;
-        justify-content: space-between;
-    button{
-        // display: flex;
-        // flex-wrap: no-wrap;
-        width: 100%;
-        height: 100%;
-        // padding: 5% 50%;
-        font-size: 1.7rem;
-        background-color: @buttonColor;
-        color: @white;
-    }
-}
-
-
 .tabs{
-    .tab{
-        .img-content{
-            width: 48%;
-            @media @mobile-view{
-                .media-width-full();
-                }
-            // border: 2px solid black;
+    width: 100%;
+    .tab-menu {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
 
-            .section-img{
+        .tabs-link{
+            background: yellow;
+            // width: 100%;
+            // justify-content: space-between; 
+            // display: flex; 
+            // flex-direction: row; 
+            // align-items: center; 
+            // justify-content: space-between; 
+            // flex-wrap: no-wrap;
+            button{
                 width: 100%;
-
-                @media @mobile-view{
-                    display: none;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                font-size: 2rem;
+                /* flex-direction: row; */
+                padding: 20px 35px;
+                background-color: #5395b0;
+                color: #ffffff;
+                &:hover{
+                    background: @buttonColor;
+                    color: black;
                 }
+               
             }
         }
 
-        .mobile-section-img{
-            display: none;
-        
-
-            @media @mobile-view{
-                display: block;
+        .tabs-link-selected{
+            button{
                 width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                font-size: 2rem;
+                /* flex-direction: row; */
+                padding: 20px 35px;
+                background-color: #ffffff;
+                color: #5395b0;
+                &:hover{
+                    background: @buttonColor;
+                    color: black;
+                }
             }
         }
+    }
+
+
+
+    .tab-items{
+        margin-top: 1%;
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+
+            .tab-item{
+                display: none;
+                width: 100%;
+
+            .tabs-item-title{
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+            .tab-content{
+                display: flex;
+                justify-content: space-between;
+                .tabs-item-description{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    p{
+                        font-size: 1.9rem;
+                        padding-bottom: 25px;
+                    }
+           
+                }
+                    .img-content{
+                        display: flex;
+                        flex-direction: row-reverse;
+                        width: 50%;
+                        @media @mobile-view{
+                            .media-width-full();
+                            }
+                        // border: 2px solid black;
+    
+                        .section-img{
+                            width: 90%;
+                            display: block;
+                            @media @mobile-view{
+                                display: none;
+                            }
+                        }
+            
+    
+                        .mobile-section-img{
+                            display: none;
+                        
+    
+                            @media @mobile-view{
+                                display: block;
+                                width: 100%;
+                            }
+                        }
+                    }
+            }
+           
+            
+        }
+
+        .tab-item-selected{
+            display: block;
+        }
+
     }
 }
