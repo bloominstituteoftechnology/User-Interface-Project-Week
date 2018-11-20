@@ -1,3 +1,4 @@
+/* Your Code Goes Here */
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -133,7 +134,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* Your Code Goes Here */
 * {
   box-sizing: border-box;
 }
@@ -143,6 +143,7 @@ html {
 .container {
   max-width: 880px;
   margin: 0 auto;
+  width: 100%;
 }
 .container .main-content-container {
   padding: 0 40px;
@@ -160,7 +161,7 @@ html {
   justify-content: space-between;
   background: lightgray;
   padding: 20px;
-  width: 879px;
+  width: 880px;
   z-index: 3;
   position: fixed;
 }
@@ -169,17 +170,69 @@ html {
   font-size: 1.9rem;
   margin-left: 50px;
   font-weight: bold;
+  align-self: center;
 }
-.container .menu-content nav {
+.dropdown {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #7a7a7a;
+  overflow: hidden;
+  width: 0%;
+  height: 100%;
+  z-index: 5;
+  /* transition: all 1s; */
+  cursor: pointer;
+}
+.dropdown .dropdown-button {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
   margin-right: 50px;
-  display: flex;
-  align-items: center;
+  cursor: pointer;
 }
-.container .menu-content nav a {
+.dropdown .dropdown-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 85px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.dropdown .dropdown-content .dropdown-link {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 100px;
+  font-size: 18px;
   text-decoration: none;
   color: white;
+  border: 1px solid white;
+  /* text-align: left; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.dropdown .dropdown-hidden {
+  display: none;
+}
+.dropdown .dropdown-open {
+  position: absolute;
+  top: 50px;
+  right: 135px;
+  font-size: 40px;
+}
+.dropdown-button {
   font-weight: bold;
-  margin-right: 15px;
+  font-size: 24px;
+  color: #ffffff;
+  margin-left: 100px;
+  text-decoration: none;
 }
 @media (max-width: 500px) {
   .container .menu-content {
@@ -189,8 +242,50 @@ html {
   .container .menu-content h2 {
     margin: 0;
   }
-  .container .menu-content nav {
-    margin: 0;
+  .container .menu-content .dropdown {
+    z-index: 2;
+    cursor: pointer;
+  }
+  .container .menu-content .dropdown .dropdown-button {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  .container .menu-content .dropdown .dropdown-content {
+    width: 102px;
+    position: absolute;
+    background: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5%;
+    border: 1px solid black;
+    margin-left: -138%;
+    padding: 50% 100%;
+    justify-content: center;
+    opacity: 0.9;
+  }
+  .container .menu-content .dropdown .dropdown-link {
+    width: 47%;
+    margin: 0 auto;
+    padding: 34px 170px;
+    margin: 8px;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    /* text-align: left; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .menu-content .dropdown .dropdown-link:hover {
+    color: white;
+    background-color: red;
+  }
+  .container .menu-content .dropdown .dropdown-hidden {
+    display: none;
   }
 }
 .top-section {
@@ -576,6 +671,60 @@ html {
   color: white;
   bottom: 20px;
   left: 70px;
+}
+.tabs {
+  width: 100%;
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 60px;
+  margin: 50px;
+}
+.tabs .tabs-item {
+  display: none;
+  width: 75%;
+}
+.tabs .tabs-item .tabs-item-title {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs .tabs-item .tabs-item-description {
+  display: flex;
+  flex-flow: column wrap;
+}
+.tabs .tabs-item-selected {
+  display: flex;
+  justify-content: space-between;
+}
+.side-item {
+  margin-right: 47px;
+}
+.tabs .tabs-links {
+  display: flex;
+}
+.tabs .tabs-link {
+  padding: 20px 25px;
+  font-size: 24px;
+  border-right: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+.tabs .tabs-link:hover {
+  color: white;
+  background-color: blue;
+}
+.tabs .tabs-link-selected {
+  z-index: 2;
+  border-right: 1px solid black;
+  background-color: white;
+  color: black;
+}
+.tabs .tabs-link-selected:hover {
+  background-color: white;
 }
 .description p {
   margin: 20px 0;
