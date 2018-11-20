@@ -14,3 +14,12 @@ window.addEventListener('resize', function (event) {
     images[2].setAttribute('src', 'img/home/home-img-2.png');
   }
 })
+
+const projectHeaders = document.querySelectorAll('.header-img h3');
+console.log(projectHeaders);
+projectHeaders.forEach((item, index) => {
+  if(index % 2 === 0) {
+  TweenMax.from(item, 2, {x:100,y:10, display: 'none', opacity:0})
+} else TweenMax.from(item, 2, {x:-100,y:10, display: 'none', opacity:0})
+
+})

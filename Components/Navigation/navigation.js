@@ -3,13 +3,18 @@ class Navigation {
     this.element = element;
     this.button = this.element.querySelector('#menu-button');
     this.menu = this.element.querySelector('.links');
-    this.bar = this.element.querySelector('.main-nav-bar')
+    this.bar = this.element.querySelector('.main-nav-bar');
+    this.links = this.element.querySelectorAll('a');
 
     this.button.addEventListener('click', (event) => {
       this.menu.classList.toggle('links-open');
       if (this.menu.classList.contains('links-open')) {
         this.button.setAttribute('src', 'img/nav-hamburger-close.png');
-      } else this.button.setAttribute('src', 'img/nav-hamburger.png')
+        TweenMax.from(this.menu, 0.5, {opacity: 0, y:50});
+
+      } else {
+        this.button.setAttribute('src', 'img/nav-hamburger.png');
+    }
   })
 
 
