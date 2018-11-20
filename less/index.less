@@ -1,211 +1,47 @@
 /*Imports*/
 @import "variables-mixins.less";
 @import "reset.less";
+@import "home.less";
+@import "header-footer.less";
 
-/* Your Code Goes Here */
+//Global
+* {
+  box-sizing: border-box;
+}
 html{
-  font-size: 62.5%
+font-size: 62.5%
 }
-.container{
-  .flex-box(column, space-between, center);
+html, body {
+  font-family: @font-family;
   color: @main-font;
-  font-family: Roboto, Arial, sans-serif;
-  margin: 0 auto;
-  max-width: 1020px;
-  width: 100%;
-  font-weight: normal;
+}
+p{
   font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  color: #ffffff;
 }
 
-.learn-more{
-  .flex-box(column, space-between);
-  width: 90.5%;
-  padding: 48px 0;
-
-  .about, .style{
-    .flex-box(row, space-evenly, center);
-  }
-
-  .style{
-    margin-top: 101px;
-    margin-bottom: 27px;
-  }
-  .content{
-    width: 44.6%;
-  }
-
-  article{
-
-    h2{
-      font-weight: Bold;
-      font-size: 2.4rem;
-      color: @main-font;
-      line-height: 69px;
-    }
-
-    p{
-      line-height: 23px;
-    }
-
-    button{
-      background-color: @bgcolor;
-      border: 1px solid @bottom-border;
-      padding: 13px 26px;
-      margin-top: 28px;
-      font-size: 1.61rem;
-    }
-  }
+h2 {
+  font-weight: bold;
+  font-size: 2.4rem;
 }
 
-.main-header{
-  background-color: @header-bgcolor;
-  .flex-box(row, center, center);
-  width: 100%;
-  height: 50px;
-
-  .header-wrapper{
-    .flex-box(row, space-between, flex-end);
-    width: 83.5%;
-  }
-
-  h1{
-    color: @bgcolor;
-    font-size: 2.4rem;
-    padding: 0;
-  }
-}
-  .jumbotron{
-    background-image: url("../img/home/home-jumbotron.png");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    vertical-align: bottom;
-    width: 100%;
-    height: 545px;
-    
-    .content-jumbotron{
-      max-width: 854px;
-      height: 497px;
-      margin: 0 auto;
-      .flex-box(row, flex-start, flex-end);
-
-      h1{
-        width: 340px;
-        font-weight: bold;
-        font-size: 6.4rem;
-        line-height: 75px;
-        color: #FFFFFF;
-      }
-    }
+h3 {
+  font-size: 2rem;
+  line-height: 2.4rem;
 }
 
-.recent-projects{
-  .flex-box(column, center, center);
-  max-width: 854px;
-  
-  h2{
-    font-weight: Bold;
-    font-size: 2.4rem;
-    color: @main-font;
-    line-height: 69px;
-    margin-bottom: 24px;
-  }
-
-  p{
-    line-height: 24px;
-    letter-spacing: 1px;
-    font-size: 1.6rem;
-    width: 53%;
-    margin: 0 auto;
-    padding-bottom: 25px; 
-  }
-  .blocks{
-    margin-top: 73px;
-  }
-  .villas, .blocks{
-   
-    .headline1{
-      position: relative;
-      .flex-box(column, flex-start, flex-end);
-      margin-bottom: 92px;
-
-      .square{
-        width: 37%;
-        height: 95px;
-        position: absolute;
-        .flex-box(row, center, center);
-        font-size: 2.2rem;
-        letter-spacing: 9px;
-        top: 175px;
-        background-color: @recent-projects-squares;
-      }
-    }
-
-  }
-
-  .outskirts{
-    margin-top: 72px;
-   
-    .headline2{
-      position: relative;
-      .flex-box(column, flex-start, flex-start);
-      margin-bottom: 92px;
-
-      .square{
-        width: 37%;
-        height: 95px;
-        position: absolute;
-        .flex-box(row, center, center);
-        font-size: 2.2rem;
-        letter-spacing: 9px;
-        top: 175px;
-        background-color: @recent-projects-squares;
-      }
-    }
-
-  }
-
+.container {
+  max-width: 1024px;
+  width: 96%;
+  margin: 0 auto;
 }
-
-footer{
-  margin-top: 74px;
-  padding: 63px 0;
-  width: 100%;
-  background-color: @footer-bgcolor;
-  color: #FFFFFF;
-  font-size: 1.4rem;
-  line-height: 26px;
-
-
-    section{
-    .flex-box(row, space-evenly);
-    
-    h3{
-      font-size: 1.9rem;
-      line-height: 24px;
-      margin-bottom: 3px;
-    }
-
-    form{
-
-      input{
-        padding: 11.7px 9px;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      span{
-        font-size: 1.3rem;
-        display: block;
-      }
-    }
-
-    
-
-  }
-  .copyright{
-    font-size: 1.3rem;
-    text-align: center;
-    margin-top: 25px;
-  }
+.inner-container{
+  margin: 0 auto;
+  width: 84.5%;
 }

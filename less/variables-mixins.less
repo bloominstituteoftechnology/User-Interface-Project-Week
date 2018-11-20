@@ -2,11 +2,12 @@
 @bgcolor: #FFFFFF;
 @main-font: #222222;
 @secondary-font: #222222;
+@font-family: 'Roboto', 'Arial', 'sans-serif';
 
 
 //Home Page
 @recent-projects-squares: #D8D8D8;
-@bottom-border: #222222;
+@button-border: #222222;
 
 //Service Page
 @tab-selected-bg: #5E9FB9;
@@ -16,8 +17,10 @@
 //Footer/ Header
 @header-bgcolor: #919CA6;
 @footer-bgcolor: #828282;
+@footer-font: #ffffff;
 
-
+//Mobile View
+@mobile: ~"(max-width: 600px)"; // container with of 320px
 
 
 
@@ -28,4 +31,32 @@
     flex-direction: @flex-direction;
     justify-content: @justify-content;
     align-items: @align-items;
+}
+
+.flex-box-mobile (@flex-direction: column, @justify-content: flex-start, @align-items: flex-start) {
+    display: flex;
+    flex-direction: @flex-direction;
+    justify-content: @justify-content;
+    align-items: @align-items;
+}
+
+.main-button(@padding: 14px 28px, @bgcolor: white, @color: black){
+    padding: @padding;
+    background-color: @bgcolor;
+    color: @color;
+    border: 1px solid black;
+    border-radius: .2rem;
+    font-size: 1.5rem;
+}
+
+.squares{
+    text-align: center;
+    padding: 4% 0;
+    background-color: @recent-projects-squares;
+    width: 36.6%;
+    font-size: 2.5rem;
+    margin-right: 4px;
+    letter-spacing: 7px;
+    position: absolute;
+    top: 175px;
 }
