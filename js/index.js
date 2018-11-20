@@ -79,21 +79,22 @@ class Carousel {
 const tabs = document.querySelectorAll('.tabs .tab')
                      .forEach(tab => new TabLink(tab));
 
-// const contactTabs = document.querySelectorAll('.contact tab contact-tab')
-//                             .forEach(tab => new TabLink(tab));
 
 let menu = document.querySelector('.menu img');
 let nav = document.querySelector('.nav-links');
 
 let serviceHeaderImg = document.querySelector('.service-header img');
 
-window.addEventListener('resize', function() {
-  if(window.outerWidth < 513) {
-    serviceHeaderImg.src = 'img/services/services-mobile-jumbotron.png';
-  } else {
-    serviceHeaderImg.src = 'img/services/services-jumbotron.png';
-  }
-})
+// Change header image for Services page on resize
+if(document.querySelector('.service-container')) {
+  window.addEventListener('resize', function() {
+    if(window.outerWidth < 513) {
+      serviceHeaderImg.src = 'img/services/services-mobile-jumbotron.png';
+    } else {
+      serviceHeaderImg.src = 'img/services/services-jumbotron.png';
+    }
+  })
+}
 
 // Add Functionality to the Nav Menu
 menu.addEventListener('click', function() {
