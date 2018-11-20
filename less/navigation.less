@@ -2,6 +2,7 @@
     background-color: @navigation-bg;
     position: fixed;
     width: 100%;
+    z-index: 999;
     a {
         color: @white;
         text-decoration: none;
@@ -18,18 +19,30 @@
             }
         }
         .menu-button {
-            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            width: 40px;
+        }
+        .burgers {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            height: 40px;
+            width: 40px;
+        }
+        .burger {
+            border-bottom: 4px solid @white;
             width: 33px;
-            z-index: 13;
         }
     }
 }
 
 .menu {
     display: none;
-    position: sticky;
+    opacity: 1;
+    position: fixed;
     width: 100%;
-    height: 100%; 
     font-weight: bold;
     line-height: 85px;
     z-index: 2; 
@@ -50,7 +63,6 @@
         }
     }
 }
-
 .menu--open {
     display: flex;
     flex-direction: column;
@@ -58,23 +70,19 @@
     justify-content: center;
     z-index: 11;
     background-color: @navigation-bg;
-    opacity: .98;
-    height: 698px;
-    margin-top: 60px;
+    opacity: .97;
+    height: 100%;
     @media @phone {
         background-size: cover;
         margin-top: 60px;
-    }
-    ul {
-        margin-top: -130px;
     }
     li {
         text-align: left !important;
     }
     a {
         color: @white;
-        &:hover {
-            color: @main;
-        }
+    }
+    .nav-active, a:hover {
+        color: @main;
     }
 }
