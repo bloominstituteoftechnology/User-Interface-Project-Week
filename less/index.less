@@ -61,6 +61,7 @@ table{
 //Variables
 @main-color: #222222;
 @phone: ~"(max-width: 500px)";
+@tablet: ~"(max-width:800px)";
 
 
 //Mixins
@@ -140,6 +141,9 @@ img.mobile {
 }
 section {
   margin-bottom: 10rem;
+  @media @tablet {
+    margin-bottom: 5rem;
+  }
 }
 
 .sub-heading {
@@ -193,12 +197,19 @@ nav {
   
       #menu-items {
         position: absolute;
-        text-align: right;
+        text-align: left;
         background: #98a4af;
         width: 100%;
         height: 100vh;
         left: 0;
         top: 5rem;
+        opacity: 0.9;
+        padding-left: 40%;
+        padding-top: 10%;
+
+        @media @phone {
+          padding-left: 25%;
+        }
         
         a {
           font-size: 4.8rem;
@@ -212,9 +223,10 @@ nav {
           }
         }
         .menu-item {
-          padding-right: 8%;
-
-          
+          padding-right: 8%; 
+        }
+        .menu-home {
+          color: #504545;
         }
     }
     }
@@ -318,6 +330,11 @@ nav {
     font-size: 6.4rem;
     line-height: 7.5rem;
     color: #ffffff;
+
+    @media @tablet {
+      font-size: 5rem;
+      line-height: 5.5rem;
+    }
     
     @media @phone {
       line-height: 1.2;
@@ -414,6 +431,10 @@ nav {
           width: 50%;
           margin: 0 auto;
 
+          @media @tablet {
+            width: 100%;
+          }
+
           @media @phone {
             width: 90%;
             padding-top: 10rem;
@@ -436,17 +457,26 @@ footer {
   .footer-con {
     display: flex;
     justify-content: space-between;
-    max-width: 870px;
+    max-width: 1024px;
     margin: 0 auto;
     width: 100%;
+    
+    @media @tablet {
+      flex-wrap: wrap;
+    }
 
     @media @phone {
       flex-direction: column;
     }
     
     .footer-col {
+      @media @tablet {
+        width: 40%;
+        padding: 5%;
+      }
       @media @phone {
         padding: 1rem 0;
+        width: 100%;
       }
     }
 
@@ -485,6 +515,11 @@ footer {
   margin:0 auto 5rem auto;
   padding-top: 5rem;
   
+  @media @tablet {
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+  
   .banner-text {
     position: absolute;
     bottom: 3rem;
@@ -513,6 +548,10 @@ footer {
   section {
     padding-top: 5rem;
     margin: 0;
+  }
+
+  #services-desc {
+    padding-top: 0;
   }
   #tab-container {
     margin-bottom: 10rem;
@@ -551,6 +590,10 @@ footer {
   .tabs {
     display: flex;
     justify-content: space-between;
+    @media @tablet {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
     @media @phone {
       flex-wrap: wrap;
       justify-content: space-around;
@@ -567,8 +610,12 @@ footer {
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      @media @phone {
+      @media @tablet {
+        width: 40%;
         margin-bottom: 2rem;
+      }
+      @media @phone {
+        width: 100%;
       }
 
       &:hover {
@@ -609,6 +656,10 @@ footer {
     font-size: 6.4rem;
     line-height: 7.5rem;
     color: #ffffff;
+    @media @tablet {
+      font-size: 5rem;
+      line-height: 5.5rem;
+    }
     @media @phone {
       line-height: 1.2;
       font-size: 3.5rem;
@@ -642,6 +693,9 @@ footer {
       border-radius: .5rem;
       padding: 1rem;
       border: 1px solid rgba(34,34,34,0.2);
+      @media @tablet {
+        width: 80%;
+      }
     }
     select {
       width: 100%;
@@ -650,7 +704,10 @@ footer {
       padding: 1rem;
       border: 1px solid rgba(34,34,34,0.2);
       height: 4rem;
-      background: #ffffff;
+      background: #ffffff; 
+      @media @tablet {
+        width: 85%;
+      }
     }
     textarea {
       width: 95.5%;
@@ -658,6 +715,9 @@ footer {
       border-radius: .5rem;
       border: 1px solid rgba(34,34,34,0.2);
       padding: 1rem;
+      @media @tablet {
+        width: 80%;
+      }
     }
     .small-text{
       font-size: 1.4rem;
