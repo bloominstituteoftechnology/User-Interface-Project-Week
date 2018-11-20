@@ -47,108 +47,99 @@
   line-height: 24px;
 }
 
-.Process-btns {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 7%;
 
-  @media @mobile {
-    flex-direction: column;
-  }
 
-  .btn {
-    .button-creator(150px, 45px, @button-bg, @button-font, 1rem);
+.tab-content {
 
-    font-weight: bold;
-
+  .tab-btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 7%;
+  
     @media @mobile {
-      margin: 3% 0;
+      flex-direction: column;
     }
-  }
-}
-
-.Construction {
-  .constructionH1 {
-    margin: 50px 7% 15px;
-    font-weight: bold;
-    font-size: 1.75rem;
-    color: @text-color;
-
-    @media @mobile {
-      display: none;
-    }
-  }
-
-  .pre-constructionH1 {
-    display: none;
-    margin: 50px 7% 15px;
-    font-weight: bold;
-    font-size: 1.75rem;
-    color: @text-color;
-
-    @media @mobile {
-      display: block;
-      margin: 50px 7% 15px;
+  
+    .tab-btn {
+      .button-creator(150px, 45px, @button-bg, @button-font, 1rem);
+  
       font-weight: bold;
-      font-size: 1.75rem;
-      color: @text-color;
+  
+      @media @mobile {
+        margin: 3% 0;
+      }
+    }
+
+    .tab-btn-selected {
+       color: @navigationFont;
+       background-color: @buttonSelected;
     }
   }
 }
 
-.construction-container {
-  display: flex;
+.tab-item {
   width: 100%;
   margin-bottom: 60px;
-  justify-content: space-between;
+  display: none;
 
-  @media @mobile {
-    flex-direction: column;
-    margin-top: 30px;
-    //margin: 0 7%;
+  .tab-item-title {
+    margin: 50px 7% 15px;
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: @text-color;
   }
 
-  .ConstructionContent {
-    width: 44%;
-    margin-left: 7%;
+  .tab-content-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 
     @media @mobile {
-      width: 90%;
-      margin: 0 7%;
+      flex-direction: column;
+      margin-top: 30px;
+      //margin: 0 7%;
     }
 
-    p {
-      font-size: 1rem;
-      line-height: 24px;
-      margin-right: 5%;
-      margin-bottom: 8%;
+    .tab-paragraph-content {
+      width: 44%;
+      margin-left: 7%;
+  
+      @media @mobile {
+        width: 90%;
+        margin: 0 7%;
+      }
+  
+      p {
+        font-size: 1rem;
+        line-height: 24px;
+        margin-right: 5%;
+        margin-bottom: 8%;
+      }
+    }
+
+    .tab-img-container {
+      width: 45%;
+      margin-right: 2%;
+  
+      .tab-img-large {
+        width: 90%;
+  
+        @media @mobile {
+          display: none;
+        }
+      }
+  
+      .tab-img-mobile {
+        display: none;
+  
+        @media @mobile {
+          width: 100%;
+        }
+      }
     }
   }
+}
 
-  .Construction-img {
-    width: 45%;
-    margin-right: 2%;
-
-    @media @mobile {
-      display: none;
-    }
-
-    .svcs-construction {
-      width: 90%;
-    }
-  }
-
-  .Construction-mobile {
-    display: none;
-
-    @media @mobile {
-      display: block;
-      width: 90%;
-      margin: 0 7%;
-    }
-
-    .svcs-construction-mobile {
-      width: 100%;
-    }
-  }
+.tab-item-selected {
+  display: block;
 }
