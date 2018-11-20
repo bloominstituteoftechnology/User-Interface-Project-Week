@@ -143,26 +143,34 @@ table {
   src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
 @media (min-width:400px) {
-  section.nav {
+  .nav {
     display: flex;
     width: 100%;
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
-section.nav nav.navigation {
+.nav .navigation {
   background-color: gray;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 50px;
+  position: fixed;
+  z-index: 20;
 }
 @media (min-width:400px) {
-  section.nav nav.navigation {
+  .nav .navigation {
     display: flex;
     width: 100%;
   }
 }
-section.nav nav.navigation .nav-logo h1.header {
+.nav .navigation .nav-logo {
+  z-index: 21;
+}
+.nav .navigation .nav-logo h1.header {
   padding-top: 10px;
   padding-left: 20px;
   font-size: 24px;
@@ -170,32 +178,52 @@ section.nav nav.navigation .nav-logo h1.header {
   color: #ffffff;
 }
 @media (min-width:400px) {
-  section.nav nav.navigation .nav-logo h1.header {
+  .nav .navigation .nav-logo h1.header {
     color: #ffffff;
     padding-left: 100px;
   }
 }
-section.nav nav.navigation .menu-open {
+.nav .navigation .menu-image {
+  top: 0;
   display: flex;
   flex-direction: row;
   height: 20px;
   padding-right: 20px;
+  z-index: 21;
 }
 @media (min-width:400px) {
-  section.nav nav.navigation .menu-open {
+  .nav .navigation .menu-image {
     padding-right: 100px;
   }
 }
-section.nav nav.navigation .menu-open img {
+.nav .navigation .menu-image img {
   align-items: flex-end;
 }
-section.nav nav.navigation .nav-expanded {
+.nav .navigation .nav-expanded {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  top: 0;
+  z-index: 20;
+  height: 100vh;
+  width: 100%;
+  background: grey;
+  position: absolute;
 }
-@media (min-width:400px) {
-  section.nav nav.navigation .nav-expanded {
-    padding-left: 40px;
-  }
+.nav .navigation .nav-expanded a {
+  line-height: 85px;
+  font-size: 48px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav .navigation .nav-expanded a:hover {
+  color: #222222;
+}
+.nav .navigation .opened {
+  display: flex;
 }
 body {
   display: flex;
@@ -230,7 +258,7 @@ body .container .jumbotron .jumbotron-text {
   flex-direction: column;
   align-self: flex-start;
   font-weight: bold;
-  font-size: 64px;
+  font-size: 28px;
   line-height: 75px;
   color: #ffffff;
 }

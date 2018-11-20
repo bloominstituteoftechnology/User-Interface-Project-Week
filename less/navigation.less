@@ -1,21 +1,28 @@
-section.nav{
+
+.nav{
     @media @desktop{
         display: flex;
         width:100%;
+        position: relative;
+        align-items: flex-start;
+        justify-content: flex-start;
     }
-    nav.navigation{
+    .navigation{
         background-color: gray;
         display: flex;
         justify-content: space-between;
         align-items: center;
         width:100%;
         height: 50px;
+        position: fixed;
+        z-index: 20;
 
         @media @desktop{
             display: flex;
             width:100%;
         }
         .nav-logo{
+            z-index: 21;
             h1.header{
                 padding-top:10px;
                 padding-left:20px;
@@ -28,11 +35,13 @@ section.nav{
                 }
             }
         }
-        .menu-open{
+        .menu-image{
+            top:0;
             display: flex;
             flex-direction: row;
             height: 20px;
             padding-right:20px;
+            z-index: 21;
             @media @desktop{
                 padding-right:100px;
             }
@@ -42,9 +51,29 @@ section.nav{
         }
         .nav-expanded{
             display: none;
-            @media @desktop{
-                padding-left:40px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            top:0;
+            z-index: 20;
+            height: 100vh;
+            width: 100%;
+            background: grey;
+            position: absolute;
+            a{
+                line-height: 85px;
+                font-size: 48px;
+                font-weight:bold;
+                text-decoration: none;
+                color:#ffffff;
+                &:hover{
+                    color:#222222;
+                }
             }
+        }
+        .opened{
+            display: flex;
         }
     }
 }
