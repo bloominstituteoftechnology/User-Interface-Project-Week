@@ -19,9 +19,9 @@ class Tabs {
 	}
 	selectTab() {
 		const tabs = document.querySelectorAll('.tab');
-		tabs.forEach((tab) => {
-			// tab.classList.remove('active-tab');
-		});
+		// tabs.forEach((tab) => {
+		// 	// tab.classList.remove('active-tab');
+		// });
 
 		const tabContent = document.querySelectorAll('.tab-content');
 
