@@ -142,6 +142,11 @@ body {
   font-size: 16px;
   line-height: 24px;
 }
+@media only screen and (max-width: 425px) {
+  body {
+    width: 100vw;
+  }
+}
 html {
   font-size: 62.5%;
 }
@@ -154,6 +159,11 @@ html {
   top: 0;
   z-index: 9999;
 }
+@media only screen and (max-width: 425px) {
+  .header-container {
+    width: 100%;
+  }
+}
 .nav-items {
   display: flex;
   justify-content: space-between;
@@ -164,21 +174,41 @@ html {
   color: #fff;
   padding: 1.3rem;
 }
+@media only screen and (max-width: 425px) {
+  .nav-items {
+    width: 90%;
+  }
+}
 .expanded-nav {
-  width: 102.4rem;
-  margin: 0 auto;
   display: none;
   background-color: #97A2AD;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   opacity: 0.9;
   z-index: 9999;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 425px) {
+  .expanded-nav {
+    width: 100%;
+    height: 100vh;
+  }
 }
 .expanded-nav .nav-links {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 310px;
+  position: relative;
+  width: 100%;
+  top: 25%;
   left: 45%;
+}
+@media only screen and (max-width: 425px) {
+  .expanded-nav .nav-links {
+    left: 26%;
+  }
 }
 .expanded-nav .nav-links a {
   text-decoration: none;
@@ -197,9 +227,26 @@ html {
   width: 102.4rem;
   margin: 0 auto;
 }
+@media only screen and (max-width: 425px) {
+  .jumbotron {
+    width: 100%;
+  }
+}
+.jumbotron .show-mobile {
+  display: none;
+}
 .jumbotron .jumbo-image {
   width: 100%;
   height: 20rem;
+}
+@media only screen and (max-width: 425px) {
+  .jumbotron .jumbo-image .hide-mobile {
+    display: none;
+  }
+  .jumbotron .jumbo-image .show-mobile {
+    display: block;
+    width: 95%;
+  }
 }
 .jumbotron .jumbo-items {
   position: relative;
@@ -209,9 +256,30 @@ html {
   font-size: 64px;
   color: #fff;
 }
+@media only screen and (max-width: 425px) {
+  .jumbotron .jumbo-items {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .jumbotron .jumbo-items h1 {
+    font-size: 48px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
 .wrapper {
   width: 86rem;
   margin: 0 auto;
+}
+@media only screen and (max-width: 425px) {
+  .wrapper {
+    width: 90%;
+    padding: 0 0.5rem;
+  }
 }
 .by-line {
   font-weight: normal;
@@ -219,15 +287,25 @@ html {
   line-height: 24px;
   padding: 2.2rem 0 3rem;
 }
+@media only screen and (max-width: 425px) {
+  .by-line {
+    padding-top: 1rem;
+  }
+}
 .tabs {
   width: 100%;
 }
 .tabs .tabs-items {
-  width: 100%;
-  height: 32.9rem;
   display: flex;
   justify-content: center;
+  width: 100%;
+  height: 32.9rem;
   padding-top: 5.5rem;
+}
+@media only screen and (max-width: 425px) {
+  .tabs .tabs-items {
+    height: auto;
+  }
 }
 .tabs .tabs-item {
   display: none;
@@ -238,6 +316,14 @@ html {
 }
 .tabs .tabs-item-wrap {
   display: flex;
+}
+@media only screen and (max-width: 425px) {
+  .tabs .tabs-item-wrap {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 2rem;
+  }
 }
 .tabs .tabs-item-wrap .tabs-item-description h2 {
   font-weight: bold;
@@ -253,8 +339,23 @@ html {
   padding-bottom: 3rem;
   padding-right: 3rem;
 }
+.tabs .tabs-item-wrap .show-mobile {
+  display: none;
+}
 .tabs .tabs-item-wrap .tabs-item-image {
   padding-top: 2.9rem;
+}
+@media only screen and (max-width: 425px) {
+  .tabs .tabs-item-wrap .tabs-item-image {
+    height: auto;
+  }
+  .tabs .tabs-item-wrap .tabs-item-image .hide-mobile {
+    display: none;
+  }
+  .tabs .tabs-item-wrap .tabs-item-image .show-mobile {
+    display: block;
+    width: 95%;
+  }
 }
 .tabs .tabs-links {
   display: flex;
@@ -262,6 +363,13 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+@media only screen and (max-width: 425px) {
+  .tabs .tabs-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .tabs .tabs-link {
   font-weight: bold;
@@ -271,6 +379,13 @@ html {
   width: 16rem;
   font-size: 20px;
   border: 1px solid black;
+}
+@media only screen and (max-width: 425px) {
+  .tabs .tabs-link {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+  }
 }
 .tabs .tabs-link:hover {
   background-color: #222;
@@ -291,29 +406,72 @@ html {
   line-height: 26px;
   margin-top: 8.5rem;
 }
-.footer-flex-wrap {
+@media only screen and (max-width: 425px) {
+  .footer-wrapper {
+    width: 100vw;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .footer-flex-wrap {
+    padding: 3rem;
+    margin: 0;
+    width: 100%;
+  }
+}
+.footer-flex-wrap .footer-items {
   width: 86rem;
   margin: 0 auto;
+  flex-direction: row;
   display: flex;
   justify-content: flex-start;
   width: 84%;
   padding: 6.3rem 0 3rem;
 }
-.footer-flex-wrap h4 {
+@media only screen and (max-width: 425px) {
+  .footer-flex-wrap .footer-items {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 0;
+    width: 100%;
+  }
+}
+.footer-flex-wrap .footer-items h4 {
   font-size: 20px;
   line-height: 24px;
   font-weight: bold;
 }
-.footer-flex-wrap .ny-add {
+.footer-flex-wrap .footer-items .ny-add {
   padding-left: 5rem;
 }
-.footer-flex-wrap .florida-add {
+@media only screen and (max-width: 425px) {
+  .footer-flex-wrap .footer-items .ny-add {
+    padding: 2rem 0 0;
+  }
+}
+.footer-flex-wrap .footer-items .florida-add {
   padding-left: 8rem;
 }
-.footer-flex-wrap .cali-add {
+@media only screen and (max-width: 425px) {
+  .footer-flex-wrap .footer-items .florida-add {
+    padding: 2rem 0 0;
+  }
+}
+.footer-flex-wrap .footer-items .cali-add {
   padding-left: 9rem;
 }
-.footer-form-container h4 {
+@media only screen and (max-width: 425px) {
+  .footer-flex-wrap .footer-items .cali-add {
+    padding: 2rem 0 0;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .footer-form-container #email-input {
+    margin: 1.5rem 0 1rem;
+  }
+}
+.footer-form-container h4:last-child {
   padding-bottom: 0.5rem;
 }
 .footer-form-container #email-input {
@@ -321,6 +479,10 @@ html {
   height: 4rem;
   border-radius: 0.5rem;
   padding-left: 1rem;
+}
+::placeholder {
+  color: light-gray;
+  font-size: 15px;
 }
 .footer-disclaimer {
   font-size: 12px;

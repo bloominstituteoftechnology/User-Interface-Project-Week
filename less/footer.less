@@ -1,6 +1,10 @@
 //---------------FOOTER
 
 .footer-wrapper {
+    @media @mobile {
+        width: 100vw;
+        height: auto;
+    }
     .full-width-center();
     background-color: @footer-bg;
     color: @white;
@@ -10,8 +14,23 @@
     margin-top: 8.5rem;
 }
 
+
+
 .footer-flex-wrap {
+    @media @mobile {
+        padding: 3rem;
+        margin: 0;
+        width: 100%;
+    }
+    .footer-items {
+        @media @mobile {
+            .flex-direction(column);
+            .flex-align(flex-start);
+            padding: 0;
+            width: 100%;
+        }
     .mid-width-center();
+    .flex-direction(row);
     .flex-justify(flex-start);
     width: 84%;
     padding: 6.3rem 0 3rem;
@@ -23,20 +42,38 @@
     }
 
     .ny-add {
+        @media @mobile {
+            padding: 2rem 0 0;
+        }
         padding-left: 5rem;
     }
 
     .florida-add {
+        @media @mobile {
+            padding: 2rem 0 0;
+        }
         padding-left: 8rem;
     }
 
     .cali-add {
+        @media @mobile {
+            padding: 2rem 0 0;
+        }
         padding-left: 9rem;
     }
 }
+}
+
+
+
 
 .footer-form-container {
-    h4 {
+    @media @mobile {
+        #email-input {
+            margin: 1.5rem 0 1rem;
+        }
+    }
+    h4:last-child {
         padding-bottom: .5rem;
     }
 
@@ -46,6 +83,11 @@
         border-radius: .5rem;
         padding-left: 1rem;
     }
+}
+
+::placeholder {
+    color: light-gray;
+    font-size: 15px;
 }
 
 .footer-disclaimer {

@@ -1,7 +1,10 @@
 
 //--------------------------------------NAV 
 
-.header-container{    
+.header-container{
+    @media @mobile {
+        width: 100%;
+    } 
     .full-width-center();
     display: none;
     background-color: @nav-bg;
@@ -11,6 +14,9 @@
 }
 
 .nav-items {
+    @media @mobile {
+        width: 90%;
+    }
     .flex-justify(space-between);
     .mid-width-center();
     font-size: @font-large;
@@ -26,17 +32,29 @@
 
 
 .expanded-nav {
-    .full-width-center();
+    @media @mobile {
+        width: 100%;
+        height: 100vh;
+    }
     display: none;
     background-color: @nav-bg;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     opacity: .9;
     z-index: 9999;
+    overflow-x: hidden;
 
     .nav-links {
+        @media @mobile {
+            left: 26%;
+        }
         .flex-direction(column);
-        position: fixed;
-        top: 310px;
+        position: relative;
+        width: 100%;
+        top: 25%;
         left: 45%;
 
         a {
