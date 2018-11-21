@@ -1,0 +1,95 @@
+.navContainer {
+  width: 100%;
+  max-width: 1025px;
+
+  .navContainer__top-bar {
+    background-color: grey;
+
+    position: fixed;
+    top: 0;
+    z-index: 9001;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    height: 40px;
+    width: 100%;
+    max-width: inherit;
+
+    h3 {
+      font-weight: bold;
+      font-size: 2.4rem;
+      color: @theme1;
+
+      padding-top: 4px;
+    }
+    .spacer {
+      flex: .45;
+    }
+
+    img {
+      padding-top: 6.25px;
+      padding-left: 7px;
+      content: url('../img/nav-hamburger.png');
+      cursor: pointer;
+    }
+  }
+
+  .menu {
+
+    .flexCenter();
+
+    width: 100%;
+    height: 100vh;
+    max-width: inherit;
+
+    margin: 0 auto;
+
+    position: fixed;
+    top: 40px;
+
+    background-color: grey;
+
+    .menu__links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .flexColumn();
+
+      a {
+        font-weight: bold;
+        font-size: 4.8rem;
+        line-height: 85px;
+        text-decoration: none;
+        color: @theme1;
+
+        &:hover {
+          color:@theme2;
+        }
+      }
+    }
+  }
+
+  .menu.open {
+    opacity: 1;
+    z-index: 10000;
+    animation: openAnimation 0.2s ease-in forwards;
+  }
+
+  .menu.close {
+    opacity: 0;
+    animation: closeAnimation 0.2s ease-in forwards;
+  }
+}
+
+
+@keyframes openAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes closeAnimation {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

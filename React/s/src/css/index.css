@@ -1,0 +1,951 @@
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0b1 | 201101
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+html {
+  font-size: 62.5%;
+  background: #FFFFFF;
+  color: #222222;
+  font-family: Roboto, Arial, sans-serif;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+html body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  line-height: 24px;
+  overflow-x: hidden;
+}
+/*
+    Theme Color Template
+*/
+/*
+    Color Assignments
+*/
+/*
+  Footer Section
+
+  The Villas, Outskirts, The Blocks
+*/
+footer {
+  background-color: #828282;
+  color: #FFF;
+  font-size: 1.4rem;
+  line-height: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  margin-top: 40px;
+}
+footer h3 {
+  font-size: 2rem;
+  line-height: 24px;
+}
+footer .footer__contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+footer .footer__contact address {
+  padding: 15px 5px 0 0;
+}
+footer .footer__contact .footer__contact__email {
+  flex: 0.5;
+  padding-left: 5%;
+}
+footer .footer__contact .footer__contact__email input {
+  margin: 15px 0 5px 0;
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}
+#copyright {
+  margin: 30px 0 0 0;
+  font-size: 1.2rem;
+}
+/*
+
+  Mobile
+
+*/
+@media (max-width: 854px) {
+  .footer__contact {
+    flex-direction: column;
+  }
+  .footer__contact form,
+  .footer__contact address {
+    align-self: flex-start;
+  }
+  .footer__contact address {
+    margin-left: 27px;
+  }
+  #copyright {
+    align-self: flex-start;
+    margin-left: 27px;
+  }
+}
+.navContainer {
+  width: 100%;
+  max-width: 1025px;
+}
+.navContainer .navContainer__top-bar {
+  background-color: grey;
+  position: fixed;
+  top: 0;
+  z-index: 9001;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 40px;
+  width: 100%;
+  max-width: inherit;
+}
+.navContainer .navContainer__top-bar h3 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFF;
+  padding-top: 4px;
+}
+.navContainer .navContainer__top-bar .spacer {
+  flex: 0.45;
+}
+.navContainer .navContainer__top-bar img {
+  padding-top: 6.25px;
+  padding-left: 7px;
+  content: url('../img/nav-hamburger.png');
+  cursor: pointer;
+}
+.navContainer .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  max-width: inherit;
+  margin: 0 auto;
+  position: fixed;
+  top: 40px;
+  background-color: grey;
+}
+.navContainer .menu .menu__links {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.navContainer .menu .menu__links a {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+  text-decoration: none;
+  color: #FFF;
+}
+.navContainer .menu .menu__links a:hover {
+  color: #222;
+}
+.navContainer .menu.open {
+  opacity: 1;
+  z-index: 10000;
+  animation: openAnimation 0.2s ease-in forwards;
+}
+.navContainer .menu.close {
+  opacity: 0;
+  animation: closeAnimation 0.2s ease-in forwards;
+}
+@keyframes openAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes closeAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/*
+  Home Page Jumbotron styles
+
+  Integrity, Excellence, Progress
+*/
+.home__jumbotron {
+  background-image: url("../img/home/home-jumbotron.png");
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+}
+.home__jumbotron h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  padding: 0 0 19px 8.5%;
+  color: #FFF;
+  padding: 30.5% 0 5% 8%;
+}
+/*
+  Home Page Jumbotron styles
+
+  Mobile
+*/
+@media (max-width: 854px) {
+  .home__jumbotron {
+    background-image: url("../img/home/home-mobile-jumbotron.png");
+    background-size: cover;
+  }
+  .home__jumbotron h1 {
+    padding: 30.5% 0 5% 8%;
+  }
+}
+/*
+  Overview Section
+
+  Smith & Jones Architects, Futuristic Designs
+*/
+.home__overview section {
+  display: flex;
+  padding: 53.5px 8% 3% 8%;
+}
+.home__overview section .home__overview__content {
+  width: 50%;
+  padding: 27px 0 0px 4px;
+}
+.home__overview section .home__overview__content h2 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #222;
+  padding-top: 20px;
+}
+.home__overview section .home__overview__content p {
+  padding-top: 22px;
+}
+.home__overview section .home__overview__content button {
+  margin-top: 25px;
+  width: 31.5%;
+  height: 46.5px;
+  background-color: transparent;
+  border: 1px solid #222;
+  font-size: 1.5rem;
+}
+.home__overview section .home__overview__content button:hover {
+  background-color: #222;
+}
+.home__overview section .home__overview__content button:hover a {
+  color: #FFF;
+}
+.home__overview section .home__overview__content button:focus {
+  outline: none;
+}
+.home__overview section .home__overview__content button:active {
+  background-color: #5E9FB9;
+}
+.home__overview section .home__overview__content button a {
+  text-decoration: none;
+  color: #222;
+}
+.home__overview section.reverse {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 0;
+}
+.home__overview section.reverse .home__overview__content h2,
+.home__overview section.reverse p {
+  padding-left: 2%;
+}
+.home__overview section.reverse .home__overview__content button {
+  margin-top: 30px;
+  margin-left: 2%;
+}
+/*
+  Overview Section
+
+  Mobile
+*/
+@media (max-width: 854px) {
+  .home__overview section {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .home__overview section .home__overview__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    font-size: 2.3rem;
+    line-height: 33px;
+  }
+  .home__overview section .home__overview__content h2 {
+    font-size: 3.6rem;
+  }
+  .home__overview section .home__overview__content p {
+    padding-left: 8px;
+  }
+  .home__overview section .home__overview__content button {
+    width: 100%;
+  }
+  .home__overview section.reverse {
+    flex-direction: column-reverse;
+  }
+}
+/*
+  Project Section
+
+  The Villas, Outskirts, The Blocks
+*/
+.content-block-2 {
+  font-weight: bold;
+  color: #222;
+  font-size: 2.4rem;
+  margin: 68px 0 0 0;
+}
+section.projects {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+section.projects .projects__title {
+  width: 100%;
+  height: 230px;
+  background-image: url("../img/home/home-villas-img.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+}
+section.projects .projects__title .projects__title__name {
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  height: 90px;
+  width: 36.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -35px;
+  font-weight: 400;
+  font-size: 2.4rem;
+  letter-spacing: 8px;
+}
+section.projects .projects__description {
+  margin-top: 10%;
+}
+section.projects .projects__description p {
+  width: 52%;
+  margin: 0 auto 3% auto;
+  font-size: 1.8rem;
+}
+section.projects #blocks {
+  background-image: url("../img/home/home-the-blocks-img.png");
+}
+section.projects #outskirts {
+  background-image: url("../img/home/home-outskirts-img.png");
+}
+section.projects #outskirts .projects__title__name {
+  left: 0;
+}
+/*
+  Project Section
+
+  Mobile
+*/
+@media (max-width: 854px) {
+  section.projects .projects__title {
+    background-image: url("../img/home/home-mobile-villas-img.png");
+  }
+  section.projects .projects__title .projects__title__name {
+    bottom: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100px;
+  }
+  section.projects .projects__description p:first-child {
+    margin: 80px auto 40px auto;
+  }
+  section.projects #outskirts {
+    background-image: url("../img/home/home-mobile-outskirts-img.png");
+  }
+  section.projects #outskirts .projects__title__name {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  section.projects #blocks {
+    background-image: url("../img/home/home-mobile-the-blocks-img.png");
+  }
+}
+/*
+    Services Page Jumbotron styles
+*/
+.services {
+  background-image: url("../img/services/services-jumbotron.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-end;
+}
+.services h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFF;
+  padding: 0 0 19px 8.5%;
+}
+@media (max-width: 854px) {
+  .services {
+    background-image: url("../img/services/services-mobile-jumbotron.png");
+  }
+}
+.servicesContainer {
+  max-width: 83%;
+  margin: 55px auto 85px auto;
+}
+@media (max-width: 854px) {
+  .servicesContainer__overview {
+    line-height: 34px;
+    font-size: 1.8rem;
+  }
+}
+/*
+    Component Tabs
+*/
+.tabNav__tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+.tabNav__tabs button {
+  width: 20%;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid #222;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.tabNav__tabs button:hover {
+  background-color: #222;
+  color: #FFF;
+}
+.tabNav__tabs button:focus {
+  background-color: #5E9FB9;
+  color: #FFF;
+  outline: none;
+}
+@media (max-width: 854px) {
+  .tabNav__tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tabNav__tabs button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+/*
+    Component Content
+*/
+.tabNav__content {
+  display: none;
+  margin-top: 40px;
+}
+.tabNav__content .content__text h2 {
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+.tabNav__content .content__text p {
+  margin-top: 25px;
+  width: 95%;
+  line-height: 26px;
+}
+@media (max-width: 854px) {
+  .tabNav__content {
+    display: none;
+  }
+  .tabNav__content p {
+    line-height: 34px;
+    font-size: 1.8rem;
+  }
+  .tabNav__content p:last-child {
+    margin-bottom: 20px;
+  }
+  .tabs-item-selected {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/*
+  Tab Selection Class
+*/
+.tabs-item-selected {
+  display: flex;
+}
+/*
+    Contact Page Jumbotron styles
+*/
+.contact {
+  background-image: url("../img/contact/contact-jumbotron.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-end;
+}
+.contact h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFF;
+  padding: 0 0 19px 8.5%;
+}
+@media (max-width: 854px) {
+  .contact {
+    background-image: url("../img/contact/contact-mobile-jumbotron.png");
+  }
+}
+.contactContainer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 854px) {
+  .contactContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/*
+  Contact Page Form
+*/
+.contactUs {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2%;
+}
+.contactUs h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 42px;
+}
+.contactUs .ContactUs__block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+.contactUs .ContactUs__block input[type=text] {
+  width: 120%;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding-left: 8px;
+  margin-top: 10px;
+}
+.contactUs .ContactUs__block input[type=text]:focus {
+  outline: none;
+}
+.contactUs .ContactUs__block p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  opacity: 0.5;
+}
+.contactUs .ContactUs__block select {
+  width: 120%;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding-left: 8px;
+}
+.contactUs .ContactUs__block select:focus {
+  outline: none;
+}
+.contactUs .needs {
+  margin-top: 10px;
+}
+.contactUs .needs textarea {
+  width: 120%;
+}
+.contactUs button {
+  background-color: transparent;
+  border: 1px solid #222;
+  font-size: 1.5rem;
+  width: 41.5%;
+  height: 50px;
+  margin-top: 15px;
+}
+.contactUs button:hover {
+  background-color: #222;
+  color: #FFF;
+}
+.contactUs button:focus {
+  outline: none;
+}
+.contactUs button:active {
+  background-color: #5E9FB9;
+}
+@media (max-width: 854px) {
+  .contactUs {
+    width: 80%;
+  }
+  .contactUs button {
+    width: 120%;
+    margin-bottom: 70px;
+  }
+}
+/*
+  Contact Page Where We Work
+*/
+.locations {
+  flex: 0.6;
+  padding-left: 12%;
+}
+.locations h2 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  padding: 10px 10px 0 0;
+  margin-bottom: 35px;
+}
+.locations h3 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.locations p {
+  line-height: 30px;
+}
+.locations p:last-child {
+  margin-bottom: 35px;
+}
+@media (max-width: 854px) {
+  .locations {
+    padding: 0;
+    padding-left: 15px;
+  }
+}
+/*
+    About Us Page Jumbotron styles
+*/
+.about {
+  background-image: url("../img/about/about-jumbotron.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-end;
+}
+.about h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFF;
+  padding: 0 0 19px 8.5%;
+}
+.about__overview {
+  margin: 0 auto;
+  margin-top: 35px;
+  width: 80%;
+}
+/*
+    About Us Page Team styles
+*/
+.team {
+  margin-top: 50px;
+}
+.team h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+.staff {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 75%;
+}
+.staff .staff__memberBio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.staff .staff__memberBio img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.staff .staff__memberBio p {
+  width: 40%;
+}
+.staff .staff__memberBio p:last-child {
+  font-style: italic;
+}
+.staff .reversed-bio {
+  flex-direction: row-reverse;
+}
+.staff .staff__title {
+  display: none;
+}
+@media (max-width: 854px) {
+  .staff .staff__memberBio,
+  .staff .reversed-bio {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .staff .staff__memberBio img,
+  .staff .reversed-bio img {
+    margin-bottom: 20px;
+  }
+}
+/*
+    About Us Page Jumbotron styles
+*/
+.projectsPage {
+  background-image: url("../img/projects/jumbo.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-end;
+}
+.projectsPage h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFF;
+  padding: 0 0 19px 8.5%;
+}
+/*
+  Our Promise Styles
+*/
+.promise {
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.promise h1 {
+  font-size: 3.6rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.promise p {
+  margin-top: 30px;
+  font-size: 1.6rem;
+}
+/*
+  Carousel Styles
+*/
+.carousel {
+  margin-top: 30px;
+}
+.carousel h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 40px 0;
+}
+.carousel .carousel__container {
+  background-color: lightgrey;
+}
+.carousel .carousel__container .prev,
+.carousel .carousel__container .next {
+  font-size: 4rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 10%;
+  height: 30px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .carousel__container .prev:hover,
+.carousel .carousel__container .next:hover {
+  background-color: #222;
+  color: #FFF;
+}
+.carousel .carousel__container .box {
+  display: none;
+}
+.carousel .carousel__container .show {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+}
+.carousel .carousel__container .show img {
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+}
+.carousel .carousel__container .show .box-description {
+  margin: 20px auto;
+  width: 65%;
+}
+@media (max-width: 854px) {
+  .carousel .carousel__container {
+    display: flex;
+    align-items: center;
+  }
+  .carousel .carousel__container .prev,
+  .carousel .carousel__container .next {
+    font-size: 6rem;
+    height: 100px;
+  }
+  .carousel .carousel__container .show img {
+    width: 90%;
+  }
+}
