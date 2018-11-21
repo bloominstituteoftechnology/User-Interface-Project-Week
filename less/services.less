@@ -15,10 +15,12 @@
         }
     }
     .services-about-div {
+        padding: 0 @padding-left-right;
         .centered-max-width(855px);
         margin-top:@margin-top-value;
     }
     .services-tab-navigator {
+        padding: 0 @padding-left-right;
         .centered-max-width(855px);
         margin-top:@margin-top-value;
         margin-bottom:@margin-top-value;
@@ -27,10 +29,21 @@
             .services-btn {
                 .button-style;
                 padding: 1% 2.5%;
-                width: 150px;
+                width: 20%;
+                @media @phone {
+                    width:100%;
+                    .sub-header;
+                    margin-top: @margin-top-value;
+                }
             }
             .btn-selected {
                 background-color: #5E9FB9;
+            }
+            
+            @media @phone {
+                flex-direction:column;
+                width:100%;
+
             }
         }
 
@@ -40,13 +53,27 @@
         display:none;
     }
     .show-tab {
+        padding: 0 @padding-left-right;
+
         .flex-justify-align(space-between, center);
         .centered-max-width(855px);
+        @media @phone {
+            flex-direction:column;
+        }
         .services-tab-components-text-div {
             width: 47.5%;
+            @media @phone {
+                width:100%;
+
+            }
         }
         .services-tab-components-img-div {
             width: 47.5%;
+            @media @phone {
+                width:100%;
+                margin-top:@margin-top-value;
+
+            }
         }
     }
 }
