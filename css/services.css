@@ -153,7 +153,7 @@ html {
   top: 0;
   z-index: 1000;
 }
-.header-container .nav-items {
+.nav-items {
   display: flex;
   justify-content: space-between;
   width: 86rem;
@@ -166,7 +166,34 @@ html {
 .expanded-nav {
   width: 102.4rem;
   margin: 0 auto;
+  display: none;
   background-color: #97A2AD;
+  height: 100%;
+  position: fixed;
+  left: 23.2%;
+  top: 0;
+  opacity: 0.9;
+  z-index: 9999;
+}
+.expanded-nav .nav-links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 310px;
+  left: 45%;
+}
+.expanded-nav .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 85px;
+}
+.expanded-nav .nav-links a:hover {
+  color: #222;
+}
+.show {
+  display: block;
 }
 .jumbotron {
   width: 102.4rem;
@@ -194,42 +221,49 @@ html {
   line-height: 24px;
   padding: 2.2rem 0 3rem;
 }
-.buttons {
+.tabs {
+  width: 100%;
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+.tabs .tabs-item {
+  display: none;
+  width: 75%;
+}
+.tabs .tabs-item-selected {
+  display: block;
+}
+.tabs .tabs-item-wrap {
+  display: flex;
+}
+.tabs .tabs-item-wrap .tabs-item-description {
+  padding-right: 50px;
+}
+.tabs .tabs-item-wrap .tabs-item-image {
+  padding-top: 60px;
+}
+.tabs .tabs-links {
   display: flex;
   justify-content: space-between;
-  padding: 1.4rem 0 5rem;
-  font-weight: bold;
-  font-size: 18px;
-  letter-spacing: 0.08rem;
 }
-.buttons .button {
-  border: 1px solid #222;
-  width: 18.5rem;
-  padding: 1.25rem 0;
-  text-align: center;
+.tabs .tabs-link {
+  padding: 10px 50px;
+  font-size: 24px;
+  border: 1px solid black;
 }
-.buttons .selected {
+.tabs .tabs-link:hover {
+  background-color: #222;
+  color: #FFF;
+}
+.tabs .tabs-link-selected {
+  z-index: 2;
   background-color: #5E9FB9;
-}
-.construction-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-.construction-wrapper .construction-text h2 {
-  font-weight: bold;
-  font-size: 28px;
-  color: #222;
-  padding-bottom: 2rem;
-}
-.construction-wrapper .construction-text p {
-  padding-bottom: 3rem;
-  padding-right: 2rem;
-}
-.construction-wrapper .construction-text p:last-child {
-  padding-bottom: 2rem;
-}
-.construction-wrapper .construction-img {
-  padding-top: 3.8rem;
+  color: black;
 }
 .footer-wrapper {
   width: 102.4rem;
