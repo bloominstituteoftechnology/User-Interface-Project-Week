@@ -5,13 +5,20 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-padding: 20px}
+    padding: 20px
+}
   
     .tabs{
         width: 100%;
         display: flex;
         justify-content: space-between; 
-        padding: 20px;
+
+     
+        @media @mobile {
+            flex-direction: column;
+            text-align: center;
+            
+        }
         .tab{
             height: 50px;
             width: 24%;
@@ -26,7 +33,12 @@ padding: 20px}
              &:hover {
             background-color: @tab-selected-background;
             color: white;
-           
+            
+            }
+            @media @mobile {
+                width:90%;
+                margin:10px;
+                padding: 0px; 
             }
         }
     }
@@ -40,13 +52,16 @@ padding: 20px}
         div {
             width:49%;
             padding: 1%;
+            @media @mobile {
+                width: 100%;
+            }
         }
     }
   }
   .tab-content {
     display: none;
     h2 {
-        width: 100%;
+        width: 95%;
         padding: 2%;
         font-weight: 700;
     }
@@ -54,6 +69,11 @@ padding: 20px}
     .img-tab-content {
         width: 100%;
         padding: 2%;
+
+    }
+    @media @mobile {
+        flex-direction: column;
+        text-align: start;
     }
 }
 }
