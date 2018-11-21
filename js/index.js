@@ -5,11 +5,11 @@ class Tabs {
 		this.content = content;
 		this.tabData = this.content.dataset.tab;
 
-		if (this.tabData === 'pre') {
-			this.tabContent = document.querySelectorAll('.tab-content');
-		} else {
-			this.tabContent = document.querySelectorAll(`.tab-content[data-tab='${this.tabData}']`);
-		}
+		// if (this.tabData === 'pre') {
+		// 	this.tabContent = document.querySelectorAll('.tab-content');
+		// } else {
+		this.tabContent = document.querySelectorAll(`.tab-content[data-tab='${this.tabData}']`);
+		// }
 		this.tabContent = Array.from(this.tabContent).map((item) => {
 			return new Cards(item);
 		});
@@ -20,7 +20,7 @@ class Tabs {
 	selectTab() {
 		const tabs = document.querySelectorAll('.tab');
 		tabs.forEach((tab) => {
-			tab.classList.remove('active-tab');
+			// tab.classList.remove('active-tab');
 		});
 
 		const tabContent = document.querySelectorAll('.tab-content');
@@ -28,7 +28,7 @@ class Tabs {
 		tabContent.forEach((item) => {
 			item.style.display = 'none';
 		});
-		this.content.classList.add('active-tab');
+		// this.content.classList.add('active-tab');
 		this.tabContent.forEach((item) => item.selectCard());
 	}
 }
