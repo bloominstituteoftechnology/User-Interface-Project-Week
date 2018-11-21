@@ -2,45 +2,57 @@ class ServiceLink {
     constructor(serviceLinkElement) {
         this.serviceLinkElement = serviceLinkElement;
 
-        this.panelData = this.serviceLinkElement.dataset.tab;
+        // Reference this service Links's data-set-tab to linkData variable 
+        this.linkData = this.serviceLinkElement.dataset.tab;
         
-        this.servicePanelElement = document.querySelector(`.services-tabs .services-item[data-tab="${this.panelData}"]`);
+        // Reference the Service Panel by query using linkData
+        this.servicePanelElement = document.querySelector(`.services-container .services-panel[data-tab="${this.linkData}"]`);
     
+        // Create new Service Panel object using the above reference servicePanel
         this.newPanelElement = new ServicePanel(this.servicePanelElement);
-        this.serviceLinkElement.addEventListener('click', () => {
+
+        this.serviceLinkElement.addEventListener('click', () => 
+            // Loop through all serviceLink and add method select defined below
             this.select()
-        });
+        );
     };
+
     select() {
-
+        
         const links = document.querySelectorAll('.services-links .services-link');
-
+        
+        // Loop through links and remove selected css
         links.forEach(link => 
             link.classList.remove('services-link-selected')
         );
-
+        
+        // Add selected css to this Service Link
         this.serviceLinkElement.classList.toggle('services-link-selected');
         
+        // Invoke this new Panel Element's select method 
         this.newPanelElement.select();
     }
 }
+
 class ServicePanel {
     constructor(ServicePanelElement) {
       this.ServicePanelElement = ServicePanelElement;
     }
   
+    // Select Panel Method
     select() {
-      const ServicePanels = document.querySelectorAll('.services-items .services-item');
+      const servicePanels = document.querySelectorAll('.services-panels .services-panel');
 
-      Array.from(ServicePanels).forEach(ServicePanel => 
-          ServicePanel.classList.remove('services-item-selected')
+      // Loop through links and remove selected css
+      servicePanels.forEach(ServicePanel => 
+          ServicePanel.classList.remove('services-panel-selected')
       );
       
-      // Add a class named "services-item-selected" to this element
-      // console.log(this.item);
-      this.ServicePanelElement.classList.toggle('services-item-selected');
+      // Add a class named "services-panel-selected" to this element
+      this.ServicePanelElement.classList.toggle('services-panel-selected');
+      
     }
-  }
+}
   
   /* START HERE: 
   
