@@ -175,11 +175,15 @@ h5 {
 h6 {
   font-size: 0.85rem;
 }
+a {
+  text-decoration: none;
+}
 .btn {
   text-decoration: none;
   color: black;
 }
 .header .nav {
+  user-select: none;
   position: fixed;
   z-index: 1000;
   background: #96a2ad;
@@ -200,6 +204,22 @@ h6 {
     padding: 0.8rem 1rem;
   }
 }
+.header .nav--toggled {
+  height: 598px !important;
+  opacity: 0.95;
+}
+@media (max-width: 1024px) {
+  .header .nav--toggled {
+    height: 598px !important;
+    opacity: 0.95;
+  }
+}
+@media (max-width: 640px) {
+  .header .nav--toggled {
+    height: 443px !important;
+    opacity: 0.98;
+  }
+}
 .header .nav__name {
   flex: 1 1 auto;
   justify-self: flex-start;
@@ -208,20 +228,23 @@ h6 {
   width: 80%;
 }
 .header .nav__menu {
+  cursor: pointer;
+  flex: 1 1 auto;
+  justify-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+.header .nav__close {
+  cursor: pointer;
   flex: 1 1 auto;
   justify-self: flex-end;
   display: flex;
   justify-content: flex-end;
   display: none;
-}
-.header .nav__close {
-  flex: 1 1 auto;
-  justify-self: flex-end;
-  display: flex;
-  justify-content: flex-end;
 }
 .header .nav__list {
   display: none;
+  opacity: 0;
   color: #ffffff;
   font-weight: bold;
   font-size: 3rem;
@@ -230,8 +253,15 @@ h6 {
 .header .nav .current {
   color: #524747;
 }
+.header .nav .none {
+  display: none;
+}
+.header .nav .flex {
+  display: flex;
+}
 .header .nav__item {
   padding: 1rem;
+  color: white;
 }
 .container {
   width: 1024px;
