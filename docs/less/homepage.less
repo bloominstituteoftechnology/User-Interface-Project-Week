@@ -1,0 +1,265 @@
+/*
+  Home Page Jumbotron styles
+
+  Integrity, Excellence, Progress
+*/
+
+.home__jumbotron {
+  background-image: url("../img/home/home-jumbotron.png");
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+  display: flex;
+  align-items: flex-end;
+
+
+  h1 {
+    .jumbotronText();
+    color: @theme1;
+
+    padding: 30.5% 0 5% 8%;
+  }
+}
+
+/*
+  Home Page Jumbotron styles
+
+  Mobile
+*/
+
+@media (max-width: 854px) {
+  .home__jumbotron {
+      background-image: url("../img/home/home-mobile-jumbotron.png");
+      background-size: cover;
+    h1 {
+      padding: 30.5% 0 5% 8%;
+    }
+  }
+}
+
+/*
+  Overview Section
+
+  Smith & Jones Architects, Futuristic Designs
+*/
+
+.home__overview section {
+  display: flex;
+  padding: 53.5px 8% 3% 8%;
+
+  .home__overview__content {
+    width: 50%;
+    padding: 27px 0 0px 4px;
+  }
+
+  .home__overview__content h2 {
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: @theme2;
+    padding-top: 20px;
+  }
+
+  .home__overview__content p {
+    padding-top: 22px;
+  }
+
+  .home__overview__content button {
+    margin-top: 25px;
+    width: 31.5%;
+    height: 46.5px;
+
+    .buttonStyle();
+
+    &:hover {
+      background-color: @theme2;
+      a {
+        color: @theme1;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background-color: #5E9FB9;
+    }
+
+    a {
+      text-decoration: none;
+      color: @theme2;
+    }
+  }
+}
+
+.home__overview section.reverse {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 0;
+
+  .home__overview__content h2, p {
+    padding-left: 2%;
+  }
+
+  .home__overview__content button{
+    margin-top: 30px;
+    margin-left: 2%;
+  }
+}
+
+/*
+  Overview Section
+
+  Mobile
+*/
+
+@media (max-width: 854px) {
+  .home__overview section {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    .home__overview__content {
+      .flexColumn();
+      align-items: center;
+
+      width: 90%;
+
+      font-size: 2.3rem;
+      line-height: 33px;
+
+      h2 {
+        font-size: 3.6rem;
+      }
+
+      p {
+        padding-left: 8px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .home__overview section.reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+/*
+  Project Section
+
+  The Villas, Outskirts, The Blocks
+*/
+
+.content-block-2 {
+  font-weight: bold;
+  color: @theme2;
+  font-size: 2.4rem;
+
+  margin: 68px 0 0 8.5%;
+}
+
+section.projects {
+  .flexColumn();
+  padding-top: 50px;
+
+  .projects__title {
+    width: 100%;
+    height: 230px;
+
+    background-image: url("../img/home/home-villas-img.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    position: relative;
+
+    .projects__title__name {
+      background-color: #D8D8D8;
+      border: 1px solid white;
+
+      height: 90px;
+      width: 36.5%;
+
+      .flexCenter();
+
+      position: absolute;
+      bottom: -35px;
+
+      font-weight: 400;
+      font-size: 2.4rem;
+      letter-spacing: 8px;
+    }
+  }
+
+  .projects__description {
+    margin-top: 10%;
+
+    p {
+      width: 52%;
+      margin: 0 auto 3% auto;
+
+      font-size: 1.8rem;
+    }
+  }
+
+  #blocks {
+    background-image: url("../img/home/home-the-blocks-img.png");
+  }
+
+  #outskirts {
+    background-image: url("../img/home/home-outskirts-img.png");
+
+    .projects__title__name {
+      left: 0;
+    }
+  }
+}
+
+/*
+  Project Section
+
+  Mobile
+*/
+
+@media (max-width: 854px) {
+  section.projects {
+    .projects__title {
+      background-image: url("../img/home/home-mobile-villas-img.png");
+
+      .projects__title__name {
+        bottom: -90px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 80%;
+        height: 100px;
+      }
+    }
+
+    .projects__description {
+      p:first-child {
+        margin: 80px auto 40px auto;
+      }
+    }
+
+    #outskirts {
+      background-image: url("../img/home/home-mobile-outskirts-img.png");
+
+      .projects__title__name {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    #blocks {
+      background-image: url("../img/home/home-mobile-the-blocks-img.png");
+    }
+  }
+}
