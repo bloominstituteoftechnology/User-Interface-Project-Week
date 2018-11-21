@@ -3,16 +3,29 @@ const menuBtn = document.querySelector(".menu-button");
 const menu = document.querySelector(".menu");
 const menuBtnClose = document.querySelector(".menu-button-close");
 
-const menuToggle = () => {
-  menu.classList.toggle("menu--open");
+// hide the menu
+window.addEventListener('load', () => {
+  TweenMax.set('.menu', {x: -1037});
+});
+
+const menuToggleOpen = () => {
+  //menu.classList.toggle("menu--open");
   menuBtn.classList.toggle("hamburger-hide");
   menuBtnClose.classList.toggle("menu-btn-close-hide");
+  TweenMax.to('.menu', 2, {x: 1});
+};
+
+const menuToggleClose = () => {
+  //menu.classList.toggle("menu--open");
+  menuBtn.classList.toggle("hamburger-hide");
+  menuBtnClose.classList.toggle("menu-btn-close-hide");
+  TweenMax.fromTo('.menu', 2, {x:1}, {x: -1037});
 };
 
 menuBtn.addEventListener("click", event => {
-  menuToggle();
+  menuToggleOpen();
 });
 
 menuBtnClose.addEventListener("click", event => {
-  menuToggle();
+  menuToggleClose();
 }); // end Menu code
