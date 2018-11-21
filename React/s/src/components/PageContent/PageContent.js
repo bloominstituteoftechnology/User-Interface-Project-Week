@@ -4,6 +4,7 @@ import AboutOverview from './AboutOverview';
 import Contact from './Contact';
 import HomeOverview from './HomeOverview';
 import Projects from './Projects.js';
+import ProjectPage from './ProjectPage.js';
 import ServicesOverview from './ServicesOverview';
 import TabNav from './TabNav';
 import Team from './Team';
@@ -30,6 +31,10 @@ const pageContent = (props) => {
     content = <AboutOverview />;
     contentClass = undefined;
     main = <Team />;
+  } else {
+    content = undefined;
+    contentClass = undefined;
+    main = <ProjectPage />;
   }
 
   return(
