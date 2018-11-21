@@ -1,80 +1,88 @@
 @import "mixins.less";
 @import "variables.less";
 
-.container {
-    img {
-        width: 100%;
+.services-container {
+    //default styling + max-width centered
+    .general-style(1024px);
+    //navbar styling
+    .navbar {
+        .navbar-style;
     }
+    //jumbotron styling
     .services-jumbotron-div {
-        .background-images("../img/services/services-jumbotron.png");
-        .flex-justify-align(stretch, flex-end);
-        .services-jumbotron-text {
-            .jumbotron-text-style;
-            margin-left: 5%;
-            margin-bottom: 5%;
-        }
+        .jumbotron-style("../img/services/services-jumbotron.png", "../img/services/services-mobile-jumbotron.png", 320px, 406px);
     }
+    //styles the intro section
     .services-about-div {
-        padding: 0 @padding-left-right;
-        .centered-max-width(855px);
-        margin-top:@margin-top-value;
+        .padding-left-right;
+        .centered-max-width(900px);
+        .margin-top;
     }
+    //Styles the button navigator
     .services-tab-navigator {
-        padding: 0 @padding-left-right;
-        .centered-max-width(855px);
-        margin-top:@margin-top-value;
-        margin-bottom:@margin-top-value;
-        .services-tab-navigator-buttons {
-            .flex-justify-align(space-between, stretch);
-            .services-btn {
-                .button-style;
-                padding: 1% 2.5%;
-                width: 20%;
-                @media @phone {
-                    width:100%;
-                    .sub-header;
-                    margin-top: @margin-top-value;
-                }
-            }
-            .btn-selected {
-                background-color: #5E9FB9;
-            }
-            
-            @media @phone {
-                flex-direction:column;
-                width:100%;
+        .padding-left-right;
+        .centered-max-width(900px);
+        .margin-top;
+        //Spaces the buttons apart
+        .flex-justify-align(space-between, stretch);
 
+        //Styles the buttons
+        .services-btn {
+            .change-button-default-style;
+            //changes the padding 
+            padding: 1% 2.5%;
+            width: 20%;
+            @media @phone {
+                width: 100%;
+                .margin-top;
             }
+        }
+        .btn-selected {
+            background-color: #5E9FB9;
+        }
+
+        @media @phone {
+            flex-direction: column;
+            width: 100%;
+                
         }
 
     }
 
+    //hides all tab components until Javascript adds .show-tab
     .services-tab-components {
-        display:none;
+        display: none;
     }
     .show-tab {
-        padding: 0 @padding-left-right;
-
+        //adds padding
+        .padding-left-right;
+        //used to create space between text and image
         .flex-justify-align(space-between, center);
-        .centered-max-width(855px);
+        .centered-max-width(900px);
         @media @phone {
-            flex-direction:column;
+            flex-direction: column;
         }
         .services-tab-components-text-div {
             width: 47.5%;
+            .services-tab-header {
+                .margin-top;
+                .sub-header-style;
+            }
             @media @phone {
-                width:100%;
+                width: 100%;
 
             }
         }
         .services-tab-components-img-div {
             width: 47.5%;
             @media @phone {
-                width:100%;
-                margin-top:@margin-top-value;
-
+                width: 100%;
+                .margin-top;
             }
         }
+    }
+    .footer {
+        .footer-style(1024px);
     }
 }
 

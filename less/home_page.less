@@ -1,105 +1,69 @@
 @import "mixins.less";
 @import "variables.less";
-//NAVBAR-----------------------------------------------------------------------
-.container {
-    .general-style;
-    .general-text;
-    .centered-max-width(950px);
 
-    img {
-        max-width: 100%;
-    }
-
+.home-container {
+    //.general-style sets the default styles along with a centered max-width
+    .general-style(950px);
+    //NAVBAR -----------------------------------------------------
     .navbar {
-        .flex-justify-align(space-between, stretch);
-        color: white;
-        font-weight: bold;
-        padding: 1.25% 5%;
-        background-color: #99a4af;
-        position: sticky;
-        top: 0;
-
-        .navbar-logo {
-            font-size: 24px;
-        }
-
-        .navbar-menu {
-            display: none;
-            ul {
-                display: flex;
-                flex-direction: column;
-                margin-top: 80%;
-            }
-        }
-
-        .navbar-link {
-            color: white;
-            text-decoration: none;
-            font-size: 48px;
-            line-height: 85px;
-        }
-
-        .navbar-link:hover {
-            color: #222222;
-        }
+        //Style in mixins.less
+        .navbar-style;
     }
 
-    //INTRO SECTION---------------------------------------------------------------------
-
+    //.jumbotron-style section takes in (desktop background image, mobile background image, desktop height, mobile height)
     .home-jumbotron-div {
-        .flex-justify-align(stretch, flex-end);
-        .background-images('../img/home/home-jumbotron.png');
-        height: 598px;
-        @media @phone {
-            .background-images('../img/home/home-mobile-jumbotron.png');
-            background-size: cover;
-            height: 320px;
-        }
-
-        .home-jumbotron-text {
-            .jumbotron-text-style;
-            margin-left: 5%;
-            margin-bottom: 5%;
-        }
-
+        .jumbotron-style('../img/home/home-jumbotron.png', '../img/home/home-mobile-jumbotron.png', 598px, 406px);
     }
 
     //SERVICES SECTION-----------------------------------------------
 
     .home-SJ, .home-future {
-        //Make them into a row
+        //In mixin.less.
         .flex-justify-align(space-between, stretch);
-        padding: 2.5% 2.5%;
+        // This is so the content isn't against the edge of the viewport
+        .padding-left-right;
+        // Used to move this section away from jumbotron section and give a row gap
+        .margin-top;
+        //@phone is for when the width of the viewport is 500px or less 
         @media @phone {
+            //shows the sections in a column, with the image first
             flex-direction: column-reverse;
             align-items: center;
-            margin-top: @margin-top-value;
         }
         .home-info {
-            //Positions the info header, text and button
+            //positions the header, text and button with space-evenly
             .flex-justify-align(space-evenly, stretch);
-            width: 47.5%;
             flex-direction: column;
+            //So the text content doesn't take up most of the width
+            width: 47.5%;
 
+            //Styles the sub-header with .sub-header-style
+            .home-info-sub-header {
+                .sub-header-style;
+            }
+            //Lets the images and text take all the width space in mobile
             @media @phone {
                 width: 100%;
                 height: 250px;
             }
+            //Styles the buttons learn more and view-designs
             .home-info-button {
-                .button-style;
+                .change-button-default-style;
+                width: 40%;
                 @media @phone {
                     width: 100%;
                 }
             }
         }
 
+        //desktop image. Disappears on mobile
         .home-info-img-div {
-            width:47.5%;
+            width: 47.5%;
             @media @phone {
                 display: none;
             }
         }
-
+        //Mobile image. Shows on mobile, hides on desktop
         .home-info-img-mobile-div {
             display: none;
             @media @phone {
@@ -113,6 +77,7 @@
         }
     }
 
+    //Changes position of second row
     .home-future {
         flex-direction: row-reverse;
         @media @phone {
@@ -122,85 +87,76 @@
 
     //RECENT PROJECTS-----------------------------------------------
 
-    .home-projects {
-        padding: 0 @padding-left-right;
-        .centered-max-width(855px);
-        margin-top: 2*@margin-top-value;
-        .home-projects-div {
-            margin-top: @margin-top-value;
+    .home-projects-div {
+        .padding-left-right;
 
-            .home-project-title {
-                .flex-justify-align(center, center);
-                background-color: #D8D8D8;
-                width: 35%;
-                font-size: 32px;
-                height: 60px;
-                @media @phone {
-                    width: 95%;
-                    margin-top: 50%;
-                }
-            }
-            .home-project-content-div {
-                .centered-max-width(600px);
-                margin-top: @margin-top-value;
-                @media @phone {
-                    width: 95%;
-                }
-            }
+        .home-projects-sub-header {
+            .sub-header-style;
+            .margin-top;
+            margin-bottom:5%;
+
         }
+        //For each project section, sets the background and the grey box style
+        .home-projects-villa-div {
+            //.home-projects-header-style sets the header style. Located on bottom of this page
+            //Takes desktop background image, mobile image, then justify-content and align-items to position grey box
+            .home-projects-style("../img/home/home-villas-img.png", "../img/home/home-mobile-villas-img.png", flex-end, flex-end);
+        }
+        .home-projects-outskirts-div {
+            .home-projects-style("../img/home/home-outskirts-img.png", "../img/home/home-mobile-outskirts-img.png", stretch, flex-end);
+        }
+
+        .home-projects-blocks-div {
+            .home-projects-style("../img/home/home-the-blocks-img.png", "../img/home/home-mobile-the-blocks-img.png", flex-end, flex-end);
+        }
+
+
     }
 
     //FOOTER-----------------------------------------------------------
     .footer {
-        font-size: 14px;
-        line-height: 26px;
-        color: #FFFFFF;
-        background-color: #828282;
-        margin-top: @margin-top-value;
-        padding: 2.5% 2.5% 2.5% 2.5%;
+        //.footer-style is in mixins.less
+        .footer-style(855px);
+    }
+}
 
-        .footer-container {
-            .flex-justify-align(space-between, stretch);
-            .centered-max-width(855px);
-            @media @phone {
-                flex-direction: column;
-                padding: 2.5% 5%;
-            }
-            .footer-header {
-                font-size: 20px;
-                line-height: 24px;
-            }
+.home-projects-style(@desktop-image, @mobile-image, @justify, @align) {
+    .header-div {
+        //sets the background image of the header div
+        background-image: url(@desktop-image);
+        background-repeat: no-repeat;
+        //Sets the height
+        height: 260px;
+        
+        //Positions the grey header box
+        .flex-justify-align(@justify, @align);
 
+        //mobile styling
+        @media @phone {
+            background-image: url(@mobile-image);
+            justify-content: center;
+            height: 300px;
+            background-position: top;
+            background-size: cover;
         }
-        .copyright {
-            text-align: center;
+    }
+
+    //styles the grey header box
+    .home-project-title {
+        //Centers the text
+        .flex-justify-align(center, center);
+        background-color: #D8D8D8;
+        width: 35%;
+        font-size: 32px;
+        height: 60px;
+        @media @phone {
+            width: 95%;
         }
     }
-}
-
-.villa-header-div {
-    .background-images("../img/home/home-villas-img.png");
-    .flex-justify-align(flex-end, flex-end);
-
-    @media @phone {
-        .project-mobile-img-style;
-
+    //pushes the text inward, gives it some space
+    .home-projects-text {
+        .centered-max-width(600px);
+        .margin-top;
+        margin-bottom:5%;
     }
 }
-
-.outskirts-header-div {
-    .background-images("../img/home/home-outskirts-img.png");
-    .flex-justify-align(stretch, flex-end);
-    @media @phone {
-        .project-mobile-img-style;
-    }
-}
-
-.blocks-header-div {
-    .background-images("../img/home/home-the-blocks-img.png");
-    .flex-justify-align(flex-end, flex-end);
-    @media @phone {
-        .project-mobile-img-style;
-    }
-}
-
