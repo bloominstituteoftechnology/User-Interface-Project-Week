@@ -1,3 +1,4 @@
+// Componenet
 class Dropdown {
 	constructor(element) {
 		this.element = element;
@@ -22,3 +23,5 @@ class Dropdown {
 }
 
 let dropdowns = document.querySelectorAll('.menu-content').forEach((mustafa) => new Dropdown(mustafa));
+
+// Tackle
