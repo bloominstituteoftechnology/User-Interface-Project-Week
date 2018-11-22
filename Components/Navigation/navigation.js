@@ -10,7 +10,7 @@ class Navigation {
       this.menu.classList.toggle('links-open');
       if (this.menu.classList.contains('links-open')) {
         this.button.setAttribute('src', 'img/nav-hamburger-close.png');
-        TweenMax.from(this.menu, 1, {height: 0,opacity: 0});
+        TweenMax.from(this.menu, 0.5, {height: 0,opacity: 0});
         // TweenMax.from(this.menu, 0.5, {opacity: 0, y:50});
 
       } else {
