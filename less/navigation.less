@@ -1,37 +1,57 @@
 // import variables
 @import './../less/variables.less';
 
-// navigation styling
-header {
+.navigation {
+    // position
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 7%;
+    // appearance
     background-color: @nav-bg;
 
+
     h1 {
+        // position
+        display: flex;
+        // appearance
+        font-size: 24px;
+        font-weight: bold;
         color: @navigation-logo;
+
     }
 
     nav {
-        color: @navigation-text;
-        &:hover {
-            color: @navigation-text-hover;
-        }
+        // when closed
+        display: none;
     }
 
     .nav-button {
+        // position
+        width: 25px;
+        height: 25px;
+        display: flex;
+        // appearance
         background-image: url('./../img/nav-hamburger.png');
+        background-size: cover;
     }
-
 }
 
 
-    // .nav--expanded {
-    //     font-weight: bold;
-    //     font-size: 48px;
-    //     line-height: 85px;
-    //     color: @navigation-text;
-    //     &:hover {
-    //         color: @navigation-text-hover;
-    //     }
-    //     .hamburger {
-    //         display: none;
-    //     } 
+.nav--expanded {
+    // when open
+    // position
+    display: flex;
+    flex-direction: column;
+
+    // appearance
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 85px;
+    color: @navigation-text;
+
+    &:hover {
+        color: @navigation-text-hover;
+    }
+}
