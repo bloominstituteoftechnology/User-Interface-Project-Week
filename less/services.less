@@ -1,73 +1,132 @@
 @import "variables-mixins.less";
 
 .services{
-    margin-top: 50px;
+  margin-top: 50px;
     
-    .inner-container{
-            width: 83.5%;
+  .inner-container{
+    width: 83.5%;
+      
+    @media @mobile{
+      width: 91%;
+    }
+
+  }
+
+  .jumbotron {
+      background-image: url(../img/services/services-jumbotron.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      height: 198px;
+      .flex-box(column, flex-end);
+      padding-bottom: 18px;
+      
+      @media @mobile{
+        background-image: url(../img/services/services-mobile-jumbotron.png);
+        height: 209px;
+        padding-bottom: 24px;
+
+        h1{
+            padding-left: 3px;
         }
 
-    .jumbotron {
-        background-image: url(../img/services/services-jumbotron.png);
-        background-position: bottom;
-        background-repeat: no-repeat;
-        height: 198px;
-        .flex-box(column, flex-end);
-        padding-bottom: 18px;
+			}
+  }
+
+  .service-intro{
+    margin-top: 54px;
+    
+    @media @mobile{
+      margin-top: 32px;
+    }
+
+      article{
+        .flex-box(row-reverse, space-between, center);
         
-        
- 
-    }
+        .text-content{
+          .flex-box(row, center);
+          width: 100%;
 
+          button{
+            .main-button;
 
-    .service-intro{
-        margin-top: 54px;
-
-        article{
-            .flex-box(row-reverse, space-between, center);
-            
-            .text-content{
-                .flex-box(row, center);
-                width: 100%;
-
-                button{
-                    .main-button;
-
-                    @media @mobile{
-                        width: 97%;
-                        margin: 0 auto;
-                    }
-                }
+            @media @mobile{
+              width: 97%;
+              margin: 0 auto;
             }
-
+          }
         }
 
+      }
+
+  }
+
+  .tabs{
+      .flex-box(row, space-between, center);
+      margin-top: 43px;
+
+      @media @mobile{
+        .flex-box-mobile(column, space-between, center);
+        margin-top: 40px;
+      }
+  }
+
+  .tab-content-area{
+    margin-top: 50px;
+
+    @media @mobile{
+      margin-top: 38px;
     }
+    
+    .active{
+      .flex-box(row, space-between, center);
+      width: 100%;
 
-    .tabs{
-        .flex-box(row, space-between, center);
-        margin-top: 43px;
-    }
+      @media @mobile{
+        .flex-box-mobile(column, space-between, center);
+      }
+    }  
+  }
+		.tab-content{
+      display: none;
 
-    .tab-content-area{
-        margin-top: 50px;
-
-        .tab-content{
-            .flex-box(row, space-between, center);
-            width: 100%;
-
-            .text-content{
-                .flex-box(column, space-between, flex-start);
-                h2{
-                    margin-bottom: 15px;
-                }
-
-                p{
-                    width: 95%;
-                    padding-bottom: 35px;
-                }
-            }
-
+      .pre-constuction{
+        @media @mobile{
+          content: url(../img/services/services-tab-mobile-pre-construction-img.png);
+          width: 100%;
         }
+      }
+      .construction{
+        @media @mobile{
+          content: url(../img/services/services-tab-mobile-construction-img.png);
+          width: 100%;
+        }
+      }
+      .design-build{
+        @media @mobile{
+          content: url(../img/services/services-tab-mobile-design-build-img.png);
+          width: 100%;
+        }
+      }
+      .sustainability{
+        @media @mobile{
+          content: url(../img/services/services-tab-mobile-sustainability-img.png);
+          width: 100%;
+        }
+      }
+
+      .text-content{
+        .flex-box(column, space-between, flex-start);
+
+        h2{
+          margin-bottom: 15px;
+        }
+
+        p{
+          width: 95%;
+          padding-bottom: 35px;
+        }
+
+      }
+
     }
 }

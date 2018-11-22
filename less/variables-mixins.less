@@ -7,7 +7,9 @@
 @sea-foam-blue: #5E9FB9;
 @blue-gray: #919CA6;
 @medium-gray: #828282;
+@sea-foam-blue-transparent: rgba(133, 231, 255, 0.828);
 
+//General
 @bgcolor: @white;
 @main-font: @near-black;
 @secondary-font: @near-black;
@@ -20,6 +22,7 @@
 
 //Service Page
 @tab-bgc: @white;
+@tab-selected-font: @white;
 @tab-selected-bg: @sea-foam-blue;
 @tab-hover-bg: @near-black;
 @tab-hover-font: @white;
@@ -29,6 +32,7 @@
 @header-bgcolor: @blue-gray;
 @footer-bgcolor: @medium-gray;
 @footer-font: @white;
+@footer-input-focus: @sea-foam-blue-transparent;
 
 //Mobile View
 @mobile: ~"(max-width: 320px)"; // container width of 320px
@@ -80,10 +84,20 @@
     line-height: 1.8rem;
     width: 185px;
     height: 50px;
+		cursor: pointer;
+		
+		@media @mobile{
+			margin: 10px auto;
+			width: 100%;
+		}	
 
     &:hover{
         background-color: @tab-hover-bg;
         color: @tab-hover-font;
     }
 
+}
+.selected{
+	background-color: @tab-selected-bg;
+	color: @tab-selected-font;
 }
