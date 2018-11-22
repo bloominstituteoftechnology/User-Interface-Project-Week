@@ -15,7 +15,7 @@ const menuToggleOpen = () => {
   menuBtn.classList.toggle("hamburger-hide");
   menuBtnClose.classList.toggle("menu-btn-close-hide");
   //TweenMax.to('.menu', 1, {x: 0});
-  TweenMax.to('.menu', 2, {y: 0});
+  TweenMax.to('.menu', 1, {y: 0});
 };
 
 const menuToggleClose = () => {
