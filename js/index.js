@@ -1,19 +1,11 @@
-const ham = document.querySelector('.open');
-const hamClose = document.querySelector('.close');
-const menuLinks = document.querySelector('.menu-links');
+const navButtons = document.querySelector('.menu-links');
+const hamburger = document.querySelector('#hamburger');
+const hamburgerOpen = document.querySelector('#hamburger-open');
+const hamburgerClose = document.querySelector('#hamburger-close');
 
-ham.addEventListener("click", function(event) {
-    console.log('You opened a thing!');
-    event.stopPropagation();
-    menuLinks.classList.toggle('menu-links');
-    ham.classList.toggle('close');
-    hamClose.classList.toggle('close');
-});
-
-hamClose.addEventListener('click', function(event) {
-    console.log('You closed a thing');
-    event.stopPropagation();
-    menuLinks.classList.toggle('menu-links');
-    ham.classList.toggle('close');
-    hamClose.classList.toggle('close');
-});
+ hamburger.addEventListener('click', function() {
+  navButtons.classList.toggle('hidden');
+  hamburgerOpen.classList.toggle('hidden');
+  hamburgerClose.classList.toggle('hidden');
+  
+})
