@@ -1,114 +1,145 @@
 class OpenPreviewImages {
     constructor(galleryContainer) {
-        //Wraps everything
+        //Assigns galleryContainer to this.galleryContainer
         this.galleryContainer = galleryContainer;
-        //View design button
+        
+        //This container holds the preview and carousel images
+        this.imagesContainer = this.galleryContainer.querySelector('.image-div-container');
+        //Grabs the div with all the preview images
+        this.imagePreviewDiv = this.galleryContainer.querySelector('.image-preview-div');
+
+        //Grabs the X image/button
+        this.closeButton = this.galleryContainer.querySelector('.close-button');
+        //Grabs design button from inside galleryContainer
         this.designButton = this.galleryContainer.querySelector('.design-button');
 
-        //Grabs all images, preview and single images
-        this.imagesContainer = this.galleryContainer.querySelector('.image-div-container');
-        //Grabs the preview image div
-        this.imagePreviewDiv = this.galleryContainer.querySelector('.image-preview-div');
-        //Grabs the X image
-        this.closeButton = this.galleryContainer.querySelector('.close-button');
         //Adds event listener design and close buttons to open and close 
         this.designButton.addEventListener('click', this.displayImages.bind(this));
         this.closeButton.addEventListener('click', this.closeImages.bind(this));
-        //Passes all images to EnlargeSelectedImage 
+        //Passes entire container to EnlargeSelectedImage 
         this.EnlargeSelectedImageObject = new EnlargeSelectedImage(this.galleryContainer)
     }
 
     displayImages() {
-        //Adds styling to entire image container. Also shows preview images. Single images still hidden
+        //This is the black background
         this.imagesContainer.classList.add('show-images-container');
+        //this displays the preview images in a 2x3 grid
         this.imagePreviewDiv.classList.add('show-preview-div')
 
     }
 
     closeImages() {
-        //removes effects from displayImages() when X button is pressed.
+        //removes everything when x button is pressed
         this.imagesContainer.classList.remove('show-images-container');
         this.imagePreviewDiv.classList.remove('show-preview-div')
-
     }
 }
 
 class EnlargeSelectedImage {
     constructor(galleryContainer) {
+        //Assigns galleryContainer to this.galleryContainer
         this.galleryContainer = galleryContainer;
 
+        //This container holds the preview and carousel images
         this.previewImagesDiv = this.galleryContainer.querySelector('.image-preview-div');
+        //This has all the preview images and makes them clickable
         this.allPreviewImages = this.galleryContainer.querySelectorAll('.preview-img');
-        this.allPreviewImages.forEach(image => image.addEventListener('click', this.enlargeImage.bind(this)))
+        this.allPreviewImages.forEach(image => image.addEventListener('click', this.selectedImage.bind(this)));
 
-
+        //Do some styling for the carousel images and div when they show up
         this.carouselImagesDiv = this.galleryContainer.querySelector('.carousel-div');
+        this.carouselImages = this.galleryContainer.querySelectorAll('.carousel-img');
+        this.carouselImages.forEach(image => {
+            image.style.display = 'none';
+            image.style.margin = '0 auto';
+        });
+        
+        
 
+        //The X button
         this.closeButton = this.galleryContainer.querySelector('.close-button');
 
+        //The back button brings back the preview images
         this.backButton = this.galleryContainer.querySelector('.back-button');
         this.backButton.addEventListener('click', this.backToPreview.bind(this));
-        
+
+        //Scrolls the carousel 
         this.previousButton = this.galleryContainer.querySelector('.previous-button');
         this.nextButton = this.galleryContainer.querySelector('.next-button');
-        
+
         this.previousButton.addEventListener('click', this.cycleLeft.bind(this));
         this.nextButton.addEventListener('click', this.cycleRight.bind(this));
+        
     }
-
-    enlargeImage() {
-        this.previewImagesDiv.classList.remove('show-preview-div');
-        this.carouselImagesDiv.classList.add('show-carousel-div');
-        this.data = event.target.dataset.image;
-        this.selectedCarouselImage = this.galleryContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
-        this.selectedCarouselImage.style.display = 'block';
-        this.selectedCarouselImage.style.margin = '0 auto';
-
+    //This method displays the selected image
+    selectedImage() {
+        //Hides the X button.
         this.closeButton.style.display = 'none';
+        //This hides the preview images
+        this.previewImagesDiv.classList.remove('show-preview-div');
+        //This shows the carousel div. Images still hidden
+        this.carouselImagesDiv.classList.add('show-carousel-div');
+        //The preview image selected had a data-image associated with it. This saves it in this.data
+        this.data = event.target.dataset.image;
+        //Uses this.data to find the carousel image with the same data-image value
+        this.selectedCarouselImage = this.galleryContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
+        //That image is then displayed
+        this.selectedCarouselImage.style.display = 'block';
+        
     }
 
+    //This method takes us back to the preview images
     backToPreview() {
+        //Hides the carousel image
         this.selectedCarouselImage.style.display = 'none';
+        //Hides the carousel div
         this.carouselImagesDiv.classList.remove('show-carousel-div');
+        //Shows the preview images div, which also shows the preview images
         this.previewImagesDiv.classList.add('show-preview-div');
+        //Shows the X button
         this.closeButton.style.display = 'block';
     }
-    
+
     cycleLeft() {
+        //Hides the current image
         this.selectedCarouselImage.style.display = 'none';
-        if (this.data === "0"){
+        //Since can't iterate over negative numbers, if this.data is 0, it will reset 
+        //this.data equal to the number of images
+        if (this.data === "0") {
             this.data = this.allPreviewImages.length;
         }
-        this.dataDecrementer = parseInt(this.data) - 1;
-        this.data = this.dataDecrementer.toString();
-        console.log(this.data);
+        //Subtracts 1 from this.data
+        this.data = (parseInt(this.data) - 1).toString();
+        //Selected the image associated with this.data-1
         this.selectedCarouselImage = this.galleryContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
-        console.log(this.selectedCarouselImage);
+        //Displays the image
         this.selectedCarouselImage.style.display = 'block';
-        this.selectedCarouselImage.style.margin = '0 auto';
 
 
     }
-    
+
     cycleRight() {
+        //hides the current image
         this.selectedCarouselImage.style.display = 'none';
-        if(this.data === "5") {
+        //checks if this.data has reached highest possible iteration
+        if (this.data === `${this.allPreviewImages.length - 1}`) {
             this.data = "-1";
         }
-        console.log(this.data);
-
-        this.dataIncrementer = parseInt(this.data) + 1;
-        this.data = this.dataIncrementer.toString();
+        
+        //adds 1 to this.data
+        this.data = (parseInt(this.data) + 1).toString();
+        //Finds carousel image associated with this.data+1
         this.selectedCarouselImage = this.galleryContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
-        console.log(this.selectedCarouselImage);
+        //displays that image
         this.selectedCarouselImage.style.display = 'block';
-        this.selectedCarouselImage.style.margin = '0 auto';
-
     }
 }
 
 
 
+
+
+//Grabs galleryContainer and creates new OpenPreviewImages object
 galleryContainer = document.querySelector('.gallery-container');
 galleryContainer = new OpenPreviewImages(galleryContainer);
 
