@@ -34,10 +34,8 @@ const toggleMenu = () => {
         
 
         const page = window.location.href;
-
         let pageString = page.toString();
         let pageArray = Array.from(pageString);
-        console.log(pageArray);
         let newString = [];
         let reverseString = [];
         for (let i = pageArray.length-1; i >= 0; i--) {
@@ -90,7 +88,7 @@ const toggleMenu = () => {
         TweenLite.from(burger[2], .333, {width:44, rotation: -45, marginTop: -21, marginRight: -5});
         TweenLite.to(burger[2], .333, {width:33, rotation: 180, marginRight: 0, marginTop: 0});
 
-        setTimeout(() =>  (menu.classList.toggle('menu--open')), 340);
+        setTimeout(() => (menu.classList.toggle('menu--open')), 340);
         
         setTimeout(() => (menu.style.opacity = 1), 340);
         

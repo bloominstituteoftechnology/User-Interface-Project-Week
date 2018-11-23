@@ -1,3 +1,6 @@
+var tl = new TimelineMax();
+const servicesContainer = document.querySelector('.services-container');
+
 class ServiceLink {
     constructor(serviceLinkElement) {
         this.serviceLinkElement = serviceLinkElement;
@@ -35,22 +38,33 @@ class ServiceLink {
 }
 
 class ServicePanel {
-    constructor(ServicePanelElement) {
-      this.ServicePanelElement = ServicePanelElement;
+    constructor(servicePanelElement) {
+        this.servicePanelElement = servicePanelElement;
+        this.servicePanelHeight =  this.servicePanelElement.offsetHeight;
     }
   
     // Select Panel Method
     select() {
-      const servicePanels = document.querySelectorAll('.services-panels .services-panel');
 
-      // Loop through links and remove selected css
-      servicePanels.forEach(ServicePanel => 
-          ServicePanel.classList.remove('services-panel-selected')
-      );
+        const servicePanels = document.querySelectorAll(`.services-panels .services-panel`);
+        
+        // Loop through links and remove selected css
+        servicePanels.forEach(servicePanel => 
+            servicePanel.classList.remove('services-panel-selected')
+        );
       
-      // Add a class named "services-panel-selected" to this element
-      this.ServicePanelElement.classList.toggle('services-panel-selected');
-      
+        // Add a class named "services-panel-selected" to this element
+        this.servicePanelElement.classList.toggle('services-panel-selected');
+        
+        // Add rotating 
+        tl.from(this.servicePanelElement, .33, {opacity: 0, scale: 0, rotation: -720, ease:Bounce});
+        
+
+        if (window.innerWidth < 560) {
+            window.scroll(1000, 650);
+        } else {
+            window.scroll(1300, 350);
+        }
     }
 }
   
@@ -67,6 +81,5 @@ class ServicePanel {
   
 serviceLinks = document.querySelectorAll('.services-link')
 .forEach(serviceLink=>{
-// console.log(serviceLink)
 new ServiceLink(serviceLink)
 });
