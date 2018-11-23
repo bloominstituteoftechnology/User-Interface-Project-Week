@@ -1,0 +1,583 @@
+/* Your Code Goes Here */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  font-family: "Roboto", Arial, Sans-Serif;
+  background-color: @main-color;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: @main-bg;
+
+  .topContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+    .header {
+      width: 100%;
+      max-width: 1000px;
+      height: 50px;
+      background-color: @headerColor;
+      color: @white;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: fixed;
+      top: 0;
+      z-index: 2;
+
+      h1 {
+        margin: 0 9%;
+        font-size: 24px;
+      }
+    }
+
+    .jumboHeader {
+      position: relative;
+      font-weight: bold;
+      display: flex;
+      font-size: 4rem;
+      line-height: 75px;
+      color: @white;
+
+      @media @mobile {
+        width: 100%;
+        font-size: 2.5rem;
+        line-height: 45px;
+      }
+
+      .jumboImg {
+        width: 100%;
+
+        @media @mobile {
+          display: none;
+        }
+      }
+
+      .jumboImgMobile {
+        display: none;
+
+        @media @mobile {
+          width: 100%;
+          display: flex;
+        }
+      }
+
+      .jumboH1 {
+        position: absolute;
+        bottom: 65px;
+        left: 90px;
+        z-index: 1;
+
+        @media @mobile {
+          bottom: 30px;
+          left: 20px;
+        }
+      }
+    }
+  }
+
+  .SandJArch {
+    margin-top: 60px;
+    display: flex;
+    width: 100%;
+
+    @media @tablet {
+      margin-top: 40px;
+    }
+
+    @media @mobile {
+      flex-direction: column-reverse;
+      margin-top: 30px;
+    }
+
+    .SandJText {
+      width: 44%;
+      margin-left: 8%;
+
+      @media @tablet {
+        margin-left: 5%;
+      }
+
+      @media @mobile {
+        width: 90%;
+        margin: 0 5%;
+      }
+
+      h3 {
+        margin: 40px 0 20px 0;
+        font-weight: bold;
+        font-size: 1.75rem;
+        color: @text-color;
+
+        @media @tablet {
+          margin: 20px 0;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 24px;
+        margin-right: 5%;
+        margin-bottom: 8%;
+      }
+
+      .btn {
+        .button-creator(150px, 45px, @button-bg, @button-font, 1rem);
+      }
+    }
+
+    .SandJ-img {
+      width: 48%;
+
+      @media @tablet {
+        display: none;
+      }
+
+      @media @mobile {
+        display: none;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .SandJ-img-mobile {
+      display: none;
+
+      @media @tablet {
+        display: block;
+        width: 48%;
+      }
+
+      @media @mobile {
+        display: block;
+        width: 90%;
+        margin: 0 5%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .FutureDesign {
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+
+    @media @mobile {
+      flex-direction: column;
+      margin-top: 55px;
+    }
+
+    .FDesign-img {
+      width: 44%;
+      margin-left: 8%;
+
+      @media @tablet {
+        display: none;
+      }
+
+      @media @mobile {
+        display: none;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .FDesign-img-mobile {
+      display: none;
+
+      @media @tablet {
+        display: block;
+        width: 47%;
+        margin-left: 5%;
+      }
+
+      @media @mobile {
+        display: block;
+        width: 90%;
+        margin: 0 5%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .FDesignText {
+      width: 44%;
+      margin-left: 2%;
+      margin-right: 4%;
+
+      @media @tablet {
+        margin-left: 4%;
+        margin-right: 2%;
+      }
+
+      @media @mobile {
+        width: 90%;
+        margin: 0 5%;
+      }
+
+      h3 {
+        margin: 40px 0 20px 0;
+        font-weight: bold;
+        font-size: 1.75rem;
+        color: @text-color;
+
+        @media @tablet {
+          margin: 20px 0 20px;
+        }
+
+        @media @mobile {
+          margin-top: 30px;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 24px;
+        margin-right: 5%;
+        margin-bottom: 8%;
+      }
+
+      .btn {
+        .button-creator(150px, 45px, @button-bg, @button-font, 1rem);
+      }
+    }
+  }
+
+  .RecentProjects {
+    margin: 90px 8%;
+    position: relative;
+
+    @media @mobile {
+      margin: 70px 0;
+    }
+
+    h3 {
+      margin: 30px 0;
+      font-weight: bold;
+      font-size: 1.75rem;
+      color: @text-color;
+
+      @media @mobile {
+        width: 80%;
+        margin-left: 4%;
+      }
+    }
+
+    .VillasImg {
+      margin: 0 auto;
+      max-width: 100%;
+
+      @media @mobile {
+        display: none;
+      }
+    }
+
+    .VillasImgMobile {
+      display: none;
+
+      @media @mobile {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .text-block {
+      .center;
+      height: 100px;
+      width: 320px;
+      text-align: center;
+      position: absolute;
+      bottom: -45px;
+      right: 0px;
+      font-family: "Roboto";
+      font-size: 1.75rem;
+      white-space: pre;
+      background-color: @greySquare;
+      color: black;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: 1px solid white;
+
+      @media @mobile {
+        width: 90%;
+        right: 22px;
+        bottom: -80px;
+      }
+    }
+  }
+
+  .TheVillasParagraphs {
+    margin-top: 10%;
+
+    @media @mobile {
+      width: 90%;
+      margin: 25% 5% 15%;
+    }
+
+    p {
+      margin: 0 30% 4%;
+      font-size: 1rem;
+      line-height: 24px;
+
+      @media @mobile {
+        margin: 0 0 4%;
+      }
+    }
+  }
+
+  .Outskirts {
+    margin: 90px 8%;
+    position: relative;
+
+    @media @mobile {
+      margin: 0;
+    }
+
+    .OutskirtsImg {
+      margin: 0 auto;
+      width: 100%;
+
+      @media @mobile {
+        display: none;
+      }
+    }
+
+    .OutskirtsImgMobile {
+      display: none;
+
+      @media @mobile {
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .text-block {
+      .center;
+      height: 100px;
+      width: 320px;
+      text-align: center;
+      position: absolute;
+      bottom: -45px;
+      left: 0px;
+      font-family: Sans-Serif;
+      font-size: 1.75rem;
+      white-space: pre;
+      background-color: @greySquare;
+      color: black;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: 1px solid white;
+
+      @media @mobile {
+        width: 90%;
+        left: 22px;
+        bottom: -80px;
+      }
+    }
+  }
+
+  .TheOutskirtsParagraphs {
+    margin-top: 10%;
+
+    @media @mobile {
+      width: 90%;
+      margin: 25% 5% 15%;
+    }
+
+    p {
+      margin: 0 30% 2%;
+      font-size: 1rem;
+      line-height: 24px;
+
+      @media @mobile {
+        margin: 0 0 4%;
+      }
+    }
+  }
+
+  .Blocks {
+    margin: 90px 8%;
+    position: relative;
+
+    @media @mobile {
+      margin: 0;
+    }
+
+    .BlocksImg {
+      margin: 0 auto;
+      max-width: 100%;
+
+      @media @mobile {
+        display: none;
+      }
+    }
+
+    .BlocksImgMobile {
+      display: none;
+
+      @media @mobile {
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .text-block {
+      .center;
+      height: 100px;
+      width: 320px;
+      text-align: center;
+      position: absolute;
+      bottom: -45px;
+      right: 0px;
+      font-family: Sans-Serif;
+      font-size: 1.75rem;
+      white-space: pre;
+      background-color: @greySquare;
+      color: black;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: 1px solid white;
+
+      @media @mobile {
+        width: 90%;
+        right: 22px;
+        bottom: -80px;
+      }
+    }
+  }
+
+  .TheBlocksParagraphs {
+    margin: 10% 0;
+
+    @media @mobile {
+      width: 90%;
+      margin: 25% 5% 15%;
+    }
+
+    p {
+      margin: 0 30% 2%;
+      font-size: 1rem;
+      line-height: 24px;
+
+      @media @mobile {
+        margin: 0 0 4%;
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+    background-color: @footerColor;
+    color: @white;
+    height: 230px;
+    display: flex;
+    justify-content: space-evenly;
+
+    @media @mobile {
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .LetsTalk {
+      margin: 5% 0 0 0;
+
+      @media @mobile {
+        margin: 5% 5%;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+        font-style: "Roboto";
+        color: @white;
+        line-height: 24px;
+        margin-bottom: 5%;
+      }
+
+      input {
+        .border-radius(5px);
+        font-size: 1rem;
+        color: @emailFont;
+        height: 40px;
+        width: 275px;
+      }
+
+      p {
+        margin-top: 3%;
+        font-size: 0.8rem;
+      }
+    }
+
+    .City {
+      margin: 5% 0 0 0;
+
+      @media @mobile {
+        margin-left: 5%;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+        line-height: 24px;
+        color: @white;
+
+        @media @tablet {
+          font-size: 1rem;
+        }
+      }
+
+      p {
+        font-size: 0.875rem;
+        line-height: 26px;
+        color: @white;
+
+        @media @tablet {
+          font-size: .7rem;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    width: 100%;
+    background-color: @footerColor;
+    color: @white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media @mobile {
+      padding-top: 8%;
+      justify-content: flex-start;
+    }
+
+    p {
+      font-size: 0.7rem;
+      margin-bottom: 1%;
+
+      @media @mobile {
+        margin: 0 0 8% 5%;
+      }
+    }
+  }
+}
