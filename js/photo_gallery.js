@@ -17,7 +17,7 @@ class OpenPreviewImages {
         this.designButton.addEventListener('click', this.displayImages.bind(this));
         this.closeButton.addEventListener('click', this.closeImages.bind(this));
         //Passes entire container to EnlargeSelectedImage 
-        this.EnlargeSelectedImageObject = new EnlargeSelectedImage(this.galleryContainer)
+        this.carousel = new Carousel(this.galleryContainer)
     }
 
     displayImages() {
@@ -35,7 +35,7 @@ class OpenPreviewImages {
     }
 }
 
-class EnlargeSelectedImage {
+class Carousel {
     constructor(galleryContainer) {
         //Assigns galleryContainer to this.galleryContainer
         this.galleryContainer = galleryContainer;
