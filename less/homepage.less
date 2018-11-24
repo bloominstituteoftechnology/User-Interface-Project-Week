@@ -1,6 +1,7 @@
 
 .homepage-container{
 
+
     header{
         max-width: 100%;
         width: 100%;
@@ -13,17 +14,27 @@
         .catch-phrase{
             & p{
                 font-weight: bold;
-                font-size: 64px;
+                font-size: 6.4rem;
                 line-height: 24px;
                 color:#ffffff;
+                @media screen and(max-width:320px) {
+                    font-size: 3.6rem;
+                }
             }
             
             position: absolute;
-            bottom:75px;
-            left: 85px;
+            bottom:7.5rem;
+            left: 8.5rem;
             height:170px;
+            @media screen and(max-width:320px) {
+                height:11rem;
+                left:1.5rem;
+                bottom:3rem;
+            }
+            
 
             .flex(space-between, flex-start,  column);
+            
         }
     }
 
@@ -45,6 +56,7 @@
 
         &:nth-child(even){
             flex-direction: row-reverse;
+            
         }
         div{
             flex-basis: 48%;
@@ -58,6 +70,39 @@
             margin-bottom:3.5rem;
             // line-height:2rem;
         }
+        img{
+            @media screen and (max-width:320px) {
+                display: none;
+            }
+        }
+        .teaser-img{
+            @media screen and (max-width:320px) {
+                background-image: url("../img/home/home-mobile-img-1.png");
+                width:290px;
+                height:275px;
+                margin: 0 auto;
+            }
+        }
+        .teaser-img2{
+            @media screen and (max-width:320px) {
+                background-image: url("../img/home/home-mobile-img-2.png");
+                width:290px;
+                height:275px;
+                margin: 0 auto;
+            }
+        }
+        @media screen and (max-width:320px) {
+            flex-direction:column-reverse;
+            &:nth-child(even){
+                flex-direction: column-reverse;
+                
+            }
+        }
+    }
+    .teaser-container{
+        @media screen and (max-width:320px) {
+            padding:0rem 1rem;
+        }
     }
 
     .divide-header{
@@ -70,17 +115,57 @@
         .project-banner{
             position: relative;
             margin-bottom:9rem;
-            .project-header{
-                position: absolute;
-                .gray-square();
-                right:0;
-                bottom:-40px;
-            }
-            .left-header{
-                right:auto;
-                left:0;
+
+            //display no image
+            @media screen and (max-width:320px) {
+                img{
+                    display: none;
+                }
+                width:320px;
+                height:200px;
+
+                .project-header{
+                    padding: 3rem 1.5rem;
+                    right:20px;
+                    width:280px
+                }
+                .left-header{
+                    left:20px;
+                    text-align: center;
+                }
             }
         }
+
+        .project-header{
+            position: absolute;
+            .gray-square();
+            right:0;
+            bottom:-40px;
+        }
+        .left-header{
+            right:auto;
+            left:0;
+        }
+
+        .villas-banner{
+            //media query
+            @media screen and (max-width:320px) {
+                background-image: url("../img/home/home-mobile-villas-img.png");
+            }
+        }
+        .outskirts-banner{
+            //media query
+            @media screen and (max-width:320px) {
+                background-image: url("../img/home/home-mobile-outskirts-img.png");
+            }
+        }
+        .blocks-banner{
+            //media query
+            @media screen and (max-width:320px) {
+                background-image: url("../img/home/home-mobile-the-blocks-img.png");
+            }
+        }
+
 
         .project-description{
             margin: 0  auto;
@@ -89,5 +174,7 @@
                 margin:1rem 0rem;
             }
         }
+    }
+    @media screen and(max-width:320px) {
     }
 }
