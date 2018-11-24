@@ -16,3 +16,19 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+// navbar dropdown
+window.onclick = () => {menuSwitch()}
+let navlist = document.querySelectorAll('.dropdown-link');
+let open = document.querySelector('.open');
+let close = document.querySelector('.close');
+function menuSwitch () {
+  
+}
+// <!-- <div class="dropdown">
+// <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+//   <div id="myDropdown" class="dropdown-content">
+//   <a href="#home">Home</a>
+//   <a href="#about">About</a>
+//   <a href="#contact">Contact</a>
+//   </div>
+// </div> -->
