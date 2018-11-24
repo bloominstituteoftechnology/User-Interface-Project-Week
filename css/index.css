@@ -498,7 +498,7 @@ table {
 }
 .gallery-container .image-div-container .show-preview-div {
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 600px;
   padding: 0 2.5%;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -506,8 +506,24 @@ table {
   justify-items: center;
   align-items: center;
 }
+@media (max-width:500px) {
+  .gallery-container .image-div-container .show-preview-div {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-height: 700px) and (max-width:500px) {
+  .gallery-container .image-div-container .show-preview-div {
+    margin: 0 auto;
+    max-width: 250px;
+  }
+}
+.gallery-container .image-div-container .show-preview-div .close-button {
+  cursor: pointer;
+}
 .gallery-container .image-div-container .show-preview-div .preview-img {
   width: 200px;
+  cursor: pointer;
 }
 .gallery-container .image-div-container .carousel-div {
   display: none;

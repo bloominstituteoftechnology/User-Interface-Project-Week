@@ -16,8 +16,7 @@ class OpenPreviewImages {
         //Adds event listener design and close buttons to open and close 
         this.designButton.addEventListener('click', this.displayImages.bind(this));
         this.closeButton.addEventListener('click', this.closeImages.bind(this));
-        //Passes entire container to EnlargeSelectedImage 
-        this.carousel = new Carousel(this.galleryContainer)
+        new Carousel(this.galleryContainer)
     }
 
     displayImages() {

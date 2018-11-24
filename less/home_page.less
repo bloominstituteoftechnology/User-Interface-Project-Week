@@ -172,15 +172,30 @@
             display: none;
         }
         .show-preview-div {
-            .centered-max-width(750px);
+            .centered-max-width(600px);
             .padding-left-right;
             display: grid;
             grid-template-rows: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
             justify-items: center;
             align-items: center;
+            @media @phone {
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (max-height:700px) and @phone {
+                .centered-max-width(250px);
+            }
+            
+            .close-button {
+                cursor: pointer;
+            }
+            
+
             .preview-img {
                 width: 200px;
+                cursor: pointer;
             }
         }
         .carousel-div {
@@ -217,6 +232,7 @@
         height: 100vh;
         opacity: .95;
         padding-top: 5%;
+
     }
 
 }
