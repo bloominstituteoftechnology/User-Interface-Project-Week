@@ -1,18 +1,15 @@
+//when closed
 .navigation {
-    // position
     width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // appearance
     background-color: @nav-bg;
 
 
     h1 {
-        // position
         margin: 14px 8.3%;
-        // appearance
         font-size: 24px;
         font-weight: bold;
         color: @navigation-logo;
@@ -20,7 +17,6 @@
     }
 
     nav {
-        // when closed
         display: none;
     }
 
@@ -31,24 +27,50 @@
         margin: 14px 8.3%;
         // appearance
         background-image: url('./../img/nav-hamburger.png');
-        background-size: cover;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 }
 
-
+//when open
 .nav--expanded {
-    // when open
-    // position
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 
-    // appearance
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 85px;
-    color: @navigation-text;
+    opacity: 0.9;
 
-    &:hover {
-        color: @navigation-text-hover;
+
+    h1 {
+        margin: 14px 8.3%;
+        width: 50%;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 85px;
+        color: @navigation-text;
+        margin: 0 auto;
+
+        a:hover {
+            color: @navigation-text-hover;
+        }
+    }
+
+    .nav-button {
+        width: 25px;
+        height: 25px;
+        // appearance
+        background-image: url('./../img/nav-hamburger-close.png');
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 }

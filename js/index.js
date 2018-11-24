@@ -1,4 +1,27 @@
+//NAVIGATION TOGGLE
 
+class NavExpanded {
+    constructor(element) {
+        this.element = element;
+        this.element.addEventListener('click', () => {
+            this.select();
+        });
+    }
+
+    select() {
+        const navigation = document.querySelectorAll('.navigation');
+        navigation.forEach(navBar => {
+            navBar.classList.toggle('nav--expanded');
+        });
+    }
+}
+
+
+let navButtons = document.querySelectorAll('.navigation .nav-button').forEach(navButton => new NavExpanded(navButton));
+
+
+
+//SERVICES TABS
 class Button {
     constructor(element) {
         this.element = element;
@@ -20,8 +43,6 @@ class Button {
         this.contentCard.select();
     }
 }
-
-
 
 class ContentCard {
     constructor(element) {
