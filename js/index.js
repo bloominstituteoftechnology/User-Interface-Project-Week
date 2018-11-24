@@ -4,7 +4,7 @@ class ServiceLink {
     constructor(element){
         this.element = element;
         console.log(this.element);
-        this.element.addEventListener('click', this.select.bind(this));
+        
 
         //getting data from item
         this.data = this.element.dataset.link;
@@ -15,15 +15,17 @@ class ServiceLink {
 
         this.linkItem = new LinkItem(this.itemElement);
 
+        this.element.addEventListener('click', this.select.bind(this));
     }
 
     select() {
         // add a class to keep the button highlighted
-        const links = document.querySelectorAll('service-link');
+        const links = document.querySelectorAll('.service-link');
 
         Array.from(links).forEach(link => link.classList.remove('service-link-selected'))
 
-        this.element.classList.add('service-item-selected');
+        // this.element.classList.add('service-item-selected');
+        this.element.classList.add('service-link-selected');
         console.log("Inside select method")
 
         this.linkItem.select();
