@@ -1,5 +1,6 @@
 // JS goes here
 
+// Service Tabs JS
 class TabLink {
   constructor(element) {
     this.element = element;
@@ -36,3 +37,23 @@ class TabItem {
 }
 
 links = document.querySelectorAll('.nav-tab').forEach(links => (new TabLink(links)));
+
+
+//Toggle Dropdown Button Face
+const toggleTopnav = () => {
+  dropDownNav.classList.toggle("navbar-show");
+  
+  if(dropDownNav.classList.contains("navbar-show")){
+    topnavButton.style.backgroundImage = "url(../img/nav-hamburger-close.png)";
+  }
+  else{
+    topnavButton.style.backgroundImage = "url(../img/nav-hamburger.png)"
+  }
+  
+} 
+
+const topnav = document.querySelector(".topnav");
+const topnavButton = document.querySelector(".toggle-button");
+const dropDownNav = document.querySelector(".navbar");
+
+topnavButton.addEventListener("click", toggleTopnav);

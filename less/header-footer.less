@@ -33,12 +33,13 @@
 
     button{
         cursor: pointer;
+        outline: none;        
         background-color: transparent;
         border: none;
         height: 22px;
         width: 31px;
         background-image: url(../img/nav-hamburger.png);
-        background-position:left;
+        background-position: left;
         background-size: fill;
         background-repeat: no-repeat;
 
@@ -47,6 +48,12 @@
     .navbar{
         display: none;
         z-index: 2;
+        
+        .links{
+            .flex-box(column, center, flex-start);
+            height: 100%;
+
+        }
 
         a{
             font-weight: bold;
@@ -58,17 +65,23 @@
             &:hover{
                 color: @main-font;
             }
+            
         }
     }
 
     .navbar-show {
-        .flex-box(column);
+        .flex-box(row, center, flex-start);
+        background-color: @blue-gray-transparent;
         width: 100%;
-        height: 100%;
+        height: 551px;
         position: absolute;
-        top: 175%;
-        left: 45%;
+        top: 50px;
+        left: 0;
 
+        @media @mobile{
+            height: 337px;            
+        }
+ 
     }
 
 }
