@@ -16,7 +16,7 @@ class OpenPreviewImages {
         //Adds event listener design and close buttons to open and close 
         this.designButton.addEventListener('click', this.displayImages.bind(this));
         this.closeButton.addEventListener('click', this.closeImages.bind(this));
-        new Carousel(this.galleryContainer)
+        new Carousel(this.imagesContainer)
     }
 
     displayImages() {
@@ -35,36 +35,34 @@ class OpenPreviewImages {
 }
 
 class Carousel {
-    constructor(galleryContainer) {
+    constructor(imagesContainer) {
         //Assigns galleryContainer to this.galleryContainer
-        this.galleryContainer = galleryContainer;
+        this.imagesContainer = imagesContainer;
 
         //This container holds the preview and carousel images
-        this.previewImagesDiv = this.galleryContainer.querySelector('.image-preview-div');
+        this.previewImagesDiv = this.imagesContainer.querySelector('.image-preview-div');
         //This has all the preview images and makes them clickable
-        this.allPreviewImages = this.galleryContainer.querySelectorAll('.preview-img');
+        this.allPreviewImages = this.imagesContainer.querySelectorAll('.preview-img');
         this.allPreviewImages.forEach(image => image.addEventListener('click', this.selectedImage.bind(this)));
 
         //Do some styling for the carousel images and div when they show up
-        this.carouselImagesDiv = this.galleryContainer.querySelector('.carousel-div');
-        this.carouselImages = this.galleryContainer.querySelectorAll('.carousel-img');
+        this.carouselImagesDiv = this.imagesContainer.querySelector('.carousel-div');
+        this.carouselImages = this.imagesContainer.querySelectorAll('.carousel-img');
         this.carouselImages.forEach(image => {
             image.style.display = 'none';
             image.style.margin = '0 auto';
         });
         
         
-
-        //The X button
-        this.closeButton = this.galleryContainer.querySelector('.close-button');
+        
 
         //The back button brings back the preview images
-        this.backButton = this.galleryContainer.querySelector('.back-button');
+        this.backButton = this.imagesContainer.querySelector('.back-button');
         this.backButton.addEventListener('click', this.backToPreview.bind(this));
 
         //Scrolls the carousel 
-        this.previousButton = this.galleryContainer.querySelector('.previous-button');
-        this.nextButton = this.galleryContainer.querySelector('.next-button');
+        this.previousButton = this.imagesContainer.querySelector('.previous-button');
+        this.nextButton = this.imagesContainer.querySelector('.next-button');
 
         this.previousButton.addEventListener('click', this.cycleLeft.bind(this));
         this.nextButton.addEventListener('click', this.cycleRight.bind(this));
@@ -72,8 +70,6 @@ class Carousel {
     }
     //This method displays the selected image
     selectedImage() {
-        //Hides the X button.
-        this.closeButton.style.display = 'none';
         //This hides the preview images
         this.previewImagesDiv.classList.remove('show-preview-div');
         //This shows the carousel div. Images still hidden
@@ -81,7 +77,7 @@ class Carousel {
         //The preview image selected had a data-image associated with it. This saves it in this.data
         this.data = event.target.dataset.image;
         //Uses this.data to find the carousel image with the same data-image value
-        this.selectedCarouselImage = this.galleryContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
+        this.selectedCarouselImage = this.imagesContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
         //That image is then displayed
         this.selectedCarouselImage.style.display = 'block';
         
@@ -95,8 +91,6 @@ class Carousel {
         this.carouselImagesDiv.classList.remove('show-carousel-div');
         //Shows the preview images div, which also shows the preview images
         this.previewImagesDiv.classList.add('show-preview-div');
-        //Shows the X button
-        this.closeButton.style.display = 'block';
     }
 
     cycleLeft() {
@@ -110,7 +104,7 @@ class Carousel {
         //Subtracts 1 from this.data
         this.data = (parseInt(this.data) - 1).toString();
         //Selected the image associated with this.data-1
-        this.selectedCarouselImage = this.galleryContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
+        this.selectedCarouselImage = this.imagesContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
         //Displays the image
         this.selectedCarouselImage.style.display = 'block';
 
@@ -128,7 +122,7 @@ class Carousel {
         //adds 1 to this.data
         this.data = (parseInt(this.data) + 1).toString();
         //Finds carousel image associated with this.data+1
-        this.selectedCarouselImage = this.galleryContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
+        this.selectedCarouselImage = this.imagesContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
         //displays that image
         this.selectedCarouselImage.style.display = 'block';
     }
