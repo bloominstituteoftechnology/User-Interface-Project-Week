@@ -1,0 +1,77 @@
+.header {
+    height: 80vh; 
+
+    .navigation {
+        background: @nav-bar;
+        display: flex;
+        justify-content: space-between;
+        height: 8vh; 
+
+        padding: 2rem 0;
+        font-weight: bold;
+        color: @nav-font-color;
+
+        h1 {
+            font-size: 3rem;
+            margin-left: 6rem;
+        }
+    
+        img {
+            width: 4rem;
+            margin-right: 6rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        nav {
+            display: none;
+        }  
+        
+        .open-nav {
+            nav {
+                z-index: 1;
+                display: block;
+                background-color: lightblue;
+            }
+        }
+
+        @media @mobile {
+            h1 {
+                margin-left: 3rem;
+            } 
+    
+            img {
+                margin-right: 3rem;
+            }
+        }
+    }
+
+    .jumbo-tron {
+        // go back in directory once to get img address
+        background: url("../img/home/home-jumbotron.png");
+        .projects-bg-img(); 
+        // width: 100%;
+        //overwriting height from .projects-bg-img() mixin
+        height: 72vh;
+    
+        .moto {
+            margin: 0 0 6rem 8rem;
+    
+            h1 {
+                .moto-styling();
+                @media @mobile {
+                    font-size: 6rem;
+                }
+            }
+    
+            @media @mobile {
+                margin: 0 0 2rem 2rem;
+            }
+        }
+    
+        @media @mobile {
+            height: 30rem;            
+        }
+    }   
+}
