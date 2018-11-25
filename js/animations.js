@@ -3,12 +3,14 @@ class PhotoGalleryAnimations {
         this.galleryContainer = galleryContainer;
 
         this.imagePreviewDiv = this.galleryContainer.querySelector('.image-preview-div');
+        this.closeButton = this.galleryContainer.querySelector('.close-button');
         this.designButton = this.galleryContainer.querySelector('.design-button');
-        this.designButton.addEventListener('click', this.designButtonAnimations.bind(this));
+        this.designButton.addEventListener('click', this.fadeIn.bind(this));
+        this.closeButton.addEventListener('click', this.fadeOut.bind(this));
+        
         this.designButton.addEventListener('mouseover', this.changeText.bind(this));
         this.designButton.addEventListener('mouseout', this.changeBackText.bind(this));
-
-
+        
         this.nextButton = this.galleryContainer.querySelector('.next-button');
         this.previousButton = this.galleryContainer.querySelector('.previous-button');
         this.imgDivContainer = this.galleryContainer.querySelector('.image-div-container');
@@ -24,8 +26,11 @@ class PhotoGalleryAnimations {
 
     }
 
-    designButtonAnimations() {
+    fadeIn() {
         TweenMax.to(this.imagePreviewDiv, 2, {opacity: 1});
+    }
+    fadeOut() {
+        TweenMax.to(this.imagePreviewDiv, 2, {opacity: 0});
 
     }
 
