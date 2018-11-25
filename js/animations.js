@@ -25,9 +25,16 @@ designButton.addEventListener('mouseout', changeBackText);
 
 function changeText() {
     designButton.textContent ='Click Me!';
-    TweenMax.to(designButton, 4, {rotation:'360'})
+    TweenMax.to(designButton, 1, {rotation:'360'})
 }
 
 function changeBackText() {
     designButton.textContent ='View Designs';
 }
+
+
+const backButton = document.querySelector('.back-button');
+backButton.addEventListener('click', function() {
+    TweenMax.to(imgDivContainer, 1, {backgroundColor: 'black'});
+
+})
