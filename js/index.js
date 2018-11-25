@@ -1,3 +1,4 @@
+//Overlay menu
 const openBtn = document.getElementById('openBtn');
 const closeBtn = document.getElementById('closeBtn');
 
