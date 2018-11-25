@@ -45,6 +45,8 @@ menu.addEventListener("click", e => {
   close.classList.toggle("flex");
   list.classList.toggle("flex");
   TweenMax.to(".nav__list", 0.7, { opacity: 1 });
+  TweenMax.to(".nav", 0, { opacity: 1 });
+  TweenMax.to(".nav", 0.5, { opacity: 0.96 });
   if (window.innerWidth <= 640) {
     TweenMax.to(".nav", 0.5, { height: 443 });
   } else {
@@ -57,6 +59,8 @@ close.addEventListener("click", e => {
   menu.classList.toggle("none");
   close.classList.toggle("flex");
   TweenMax.to(".nav__list", 0.2, { opacity: 0 });
+  TweenMax.to(".nav", 0, { opacity: 0.96 });
+  TweenMax.to(".nav", 0.5, { opacity: 1 });
   TweenMax.to(".nav", 0.5, { height: 50 });
   setTimeout(time, 700);
   nav.classList.toggle("nav--toggled");
