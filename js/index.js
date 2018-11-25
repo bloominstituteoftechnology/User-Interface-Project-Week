@@ -1,57 +1,35 @@
-// JS goes here
+// // JS goes here
 
-class ServiceLink {
-    constructor(element){
-        this.element = element;
-        console.log(this.element);
-        
+// get the nav icon
+let hamburger = document.querySelector('.nav-hamburger');
+// console.log(icon);
 
-        //getting data from item
-        this.data = this.element.dataset.link;
-        console.log(this.data);
+// get the exit image element
+let exit = document.querySelector('.exit-button');
 
-        this.itemElement = document.querySelector(`.service-items .service-item[data-link='${this.data}']`);
-        console.log(this.itemElement);
+// add an event listener with a callback
+hamburger.addEventListener('click', toggleNavShow);
+exit.addEventListener('click', toggleNavShow)
 
-        this.linkItem = new LinkItem(this.itemElement);
+// callback
+function toggleNavShow() {
+    // get overlay elements that will be on layer
+    let overlay = document.querySelector('.overlay');
+    let display = overlay.style.display;
 
-        this.element.addEventListener('click', this.select.bind(this));
+    // when overlay pops up as a response of a click, then the exit 
+    // button needs to respond to a click
+
+    if (display === 'none') {
+        // make overlay diplay as response of a click
+        overlay.style.display = 'block';
+    } else {
+        overlay.style.display = 'none';
     }
-
-    select() {
-        // add a class to keep the button highlighted
-        const links = document.querySelectorAll('.service-link');
-
-        Array.from(links).forEach(link => link.classList.remove('service-link-selected'))
-
-        // this.element.classList.add('service-item-selected');
-        this.element.classList.add('service-link-selected');
-        console.log("Inside select method")
-
-        this.linkItem.select();
-    }
-};
-
-class LinkItem {
-    constructor(element){
-        this.element = element;
-    }
-
-    select() {
-        const items = document.querySelectorAll('.service-item');
-
-        Array.from(items).forEach(item => item.classList.remove('service-item-selected'));
-
-        this.element.classList.add('service-item-selected');
-
-    }
-}
+}   
 
 
 
-links = document.querySelectorAll('.service-link').forEach(link => {
-//  console.log(link);
- return new ServiceLink(link);
-});
+
 
 

@@ -204,31 +204,122 @@ footer {
   width: 100%;
   margin: 0 auto;
 }
-.navigation {
-  background: #99a4af;
-  font-weight: bold;
-  color: #FFFFFF;
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80vh;
+  background: #778899;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.94;
+}
+.overlay .overlay-exit {
   display: flex;
   justify-content: space-between;
+}
+.overlay .overlay-exit h1 {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-left: 6rem;
   padding: 2rem 0;
 }
-.navigation h1 {
+.overlay .overlay-exit img {
+  width: 4rem;
+  margin-right: 6rem;
+  padding-top: 2rem;
+  height: 5rem;
+}
+.overlay .overlay-exit img:hover {
+  cursor: pointer;
+}
+.overlay nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 72vh;
+}
+.overlay nav a {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 5rem;
+  margin-left: 6rem;
+  padding: 2rem 0;
+  text-decoration: none;
+}
+.header {
+  height: 80vh;
+}
+.header .navigation {
+  background: #99a4af;
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+  padding: 2rem 0;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.header .navigation h1 {
   font-size: 3rem;
   margin-left: 6rem;
 }
-.navigation img {
+.header .navigation img {
   width: 4rem;
   margin-right: 6rem;
 }
-.navigation nav {
+.header .navigation img:hover {
+  cursor: pointer;
+}
+.header .navigation nav {
   display: none;
 }
+.header .navigation .open-nav nav {
+  z-index: 1;
+  display: block;
+  background-color: lightblue;
+}
 @media (max-width: 500px) {
-  .navigation h1 {
+  .header .navigation h1 {
     margin-left: 3rem;
   }
-  .navigation img {
+  .header .navigation img {
     margin-right: 3rem;
+  }
+}
+.header .jumbo-tron {
+  background: url("../img/home/home-jumbotron.png");
+  height: 30rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: flex-end;
+  height: 72vh;
+}
+.header .jumbo-tron .moto {
+  margin: 0 0 6rem 8rem;
+}
+.header .jumbo-tron .moto h1 {
+  font-weight: bold;
+  font-size: 8rem;
+  line-height: 1;
+  color: #FFFFFF;
+}
+@media (max-width: 500px) {
+  .header .jumbo-tron .moto h1 {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 500px) {
+  .header .jumbo-tron .moto {
+    margin: 0 0 2rem 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .header .jumbo-tron {
+    height: 30rem;
   }
 }
 footer {
@@ -297,39 +388,6 @@ footer .copyright {
   footer h3,
   footer p {
     font-size: 2.5rem;
-  }
-}
-.container header {
-  background: url("../img/home/home-jumbotron.png");
-  height: 30rem;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  display: flex;
-  align-items: flex-end;
-  height: 60rem;
-}
-.container header .moto {
-  margin: 0 0 6rem 8rem;
-}
-.container header .moto h1 {
-  font-weight: bold;
-  font-size: 8rem;
-  line-height: 1;
-  color: #FFFFFF;
-}
-@media (max-width: 500px) {
-  .container header .moto h1 {
-    font-size: 6rem;
-  }
-}
-@media (max-width: 500px) {
-  .container header .moto {
-    margin: 0 0 2rem 2rem;
-  }
-}
-@media (max-width: 500px) {
-  .container header {
-    height: 30rem;
   }
 }
 .container .presentation {
@@ -522,7 +580,7 @@ footer .copyright {
     margin-left: 2rem;
   }
 }
-.container .moto {
+.header .jumbo-tron-services {
   background: url("../img/services/services-jumbotron.png");
   height: 30rem;
   background-repeat: no-repeat;
@@ -530,7 +588,16 @@ footer .copyright {
   display: flex;
   align-items: flex-end;
 }
-.container .moto h1 {
+.header .jumbo-tron-services .moto {
+  margin: 0 0 6rem 8rem;
+}
+.header .jumbo-tron-services .moto h1 {
+  font-weight: bold;
+  font-size: 8rem;
+  line-height: 1;
+  color: #FFFFFF;
+}
+.container h1 {
   font-weight: bold;
   font-size: 8rem;
   line-height: 1;
