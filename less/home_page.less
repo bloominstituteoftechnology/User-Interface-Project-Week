@@ -4,6 +4,9 @@
 .home-container {
     //.general-style sets the default styles along with a centered max-width
     .general-style(950px);
+    
+
+    
     //NAVBAR -----------------------------------------------------
     .navbar {
         //Style in mixins.less
@@ -101,14 +104,14 @@
         .home-projects-villa-div {
             //.home-projects-header-style sets the header style. Located on bottom of this page
             //Takes desktop background image, mobile image, then justify-content and align-items to position grey box
-            .home-projects-style("../img/home/home-villas-img.png", "../img/home/home-mobile-villas-img.png", flex-end, flex-end);
+            .home-projects-style("../img/home/home-villas-img.png", "../img/home/home-mobile-villas-img.png", flex-end, flex-end, 855px);
         }
         .home-projects-outskirts-div {
-            .home-projects-style("../img/home/home-outskirts-img.png", "../img/home/home-mobile-outskirts-img.png", stretch, flex-end);
+            .home-projects-style("../img/home/home-outskirts-img.png", "../img/home/home-mobile-outskirts-img.png", stretch, flex-end, 855px);
         }
 
         .home-projects-blocks-div {
-            .home-projects-style("../img/home/home-the-blocks-img.png", "../img/home/home-mobile-the-blocks-img.png", flex-end, flex-end);
+            .home-projects-style("../img/home/home-the-blocks-img.png", "../img/home/home-mobile-the-blocks-img.png", flex-end, flex-end, 855px);
         }
 
     }
@@ -120,13 +123,15 @@
     }
 }
 
-.home-projects-style(@desktop-image, @mobile-image, @justify, @align) {
+.home-projects-style(@desktop-image, @mobile-image, @justify, @align, @max-width) {
     .header-div {
         //sets the background image of the header div
         background-image: url(@desktop-image);
         background-repeat: no-repeat;
         //Sets the height
         height: 260px;
+        .centered-max-width(@max-width);
+
 
         //Positions the grey header box
         .flex-justify-align(@justify, @align);
