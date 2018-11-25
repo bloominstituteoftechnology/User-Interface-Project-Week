@@ -4,6 +4,11 @@
     .tabs{
         .flex(space-between,none,row);
         margin-bottom: 5rem;
+        @media screen and (max-width:320px){
+            flex-direction: column;
+            width: 290px;
+            margin: 0 auto;
+        }
     }
 
     .tab{
@@ -16,9 +21,16 @@
         &:hover{
             cursor: pointer;
         }
-        &:not(:first-of-type){
-            margin-left:3.5rem;
+        //anything above 320 use this.
+        @media screen and (min-width:321px){
+            &:not(:first-of-type){
+                margin-left:3.5rem;
+            }
         }
+        @media screen and (max-width:320px){
+            margin:1rem 0rem;
+        }
+        
     }
 
     .panel{
@@ -28,17 +40,37 @@
             font-size: 2.8rem;
             font-weight: bold;
             margin-bottom: 1rem;
+            @media screen and (max-width:320px){
+                max-width: 290px;
+                width: 100%;
+                margin: 2rem auto;
+            }
         }
         .container{
             .flex(space-between,none,row);
             div{
                 width:48%;
+                @media screen and (max-width:320px) {
+                    width: 100%;
+                }
             }
-            
+            .text{
+                p{
+                    margin:1rem 0rem;
+                }
+            }
+            @media screen and (max-width:320px){
+                flex-direction: column;
+                width:290px;
+                margin: 0 auto;
+            }
         }
     }
     .display{
         display: block;
+    }
+
+    @media screen and (max-width:320px){
     }
 }
 
