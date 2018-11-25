@@ -49,6 +49,7 @@
 
   .contact.tabs {
     .flex(space-around);
+    padding: 20px 0;
 
     .contact.tab {
       .font(@subhead-font; normal);
@@ -57,11 +58,25 @@
       height: 46px;
       text-align: center;
       padding-top: 12px;
+
+      &.tab-selected {
+        background-color: @tab-color;
+        cursor: default;
+      }
+
+      &:not(.tab-selected):hover {
+        background-color: @off-black;
+        color: #fff;
+        cursor: pointer;
+      }
     }
   }
 
   .contact.items {
     width: 100%;
+    margin-bottom: 40px;
+    max-height: 385px;
+    overflow: hidden;
 
     .contact.item {
       display: none;
@@ -69,12 +84,18 @@
       &.item-selected {
         width: 100%;
         .flex(space-between; center);
+        position: relative;
 
         .address {
           width: 100%;
+          position: absolute;
+          left: 25%;
+          z-index: 10;
 
           address p, a {
             .font(@subhead-font; normal; 32px);
+            color: #fff;
+            text-shadow: 0 0 8px #000;
             text-decoration: none;
           }
         }
@@ -82,6 +103,7 @@
 
       .contact-carousel {
         position: relative;
+        margin: 0 auto;
 
         .left-button, .right-button {
           .flex(center, center);
@@ -91,6 +113,8 @@
           height: 50px;
           border-radius: 50%;
           background-color: @project-square;
+          cursor: pointer;
+          z-index: 15;
         }
 
         .left-button {
@@ -103,6 +127,7 @@
         }
         img {
           display: none;
+          opacity: 0.8;
         }
       }
     }

@@ -564,6 +564,7 @@ p {
   justify-content: space-around;
   align-items: none;
   flex-direction: row;
+  padding: 20px 0;
 }
 .contact-container .contact.tabs .contact.tab {
   font-size: 2.8rem;
@@ -575,8 +576,20 @@ p {
   text-align: center;
   padding-top: 12px;
 }
+.contact-container .contact.tabs .contact.tab.tab-selected {
+  background-color: #5E9FB9;
+  cursor: default;
+}
+.contact-container .contact.tabs .contact.tab:not(.tab-selected):hover {
+  background-color: #222222;
+  color: #fff;
+  cursor: pointer;
+}
 .contact-container .contact.items {
   width: 100%;
+  margin-bottom: 40px;
+  max-height: 385px;
+  overflow: hidden;
 }
 .contact-container .contact.items .contact.item {
   display: none;
@@ -587,19 +600,26 @@ p {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  position: relative;
 }
 .contact-container .contact.items .contact.item.item-selected .address {
   width: 100%;
+  position: absolute;
+  left: 25%;
+  z-index: 10;
 }
 .contact-container .contact.items .contact.item.item-selected .address address p,
 .contact-container .contact.items .contact.item.item-selected .address a {
   font-size: 2.8rem;
   font-weight: normal;
   line-height: 32px;
+  color: #fff;
+  text-shadow: 0 0 8px #000;
   text-decoration: none;
 }
 .contact-container .contact.items .contact.item .contact-carousel {
   position: relative;
+  margin: 0 auto;
 }
 .contact-container .contact.items .contact.item .contact-carousel .left-button,
 .contact-container .contact.items .contact.item .contact-carousel .right-button {
@@ -613,6 +633,8 @@ p {
   height: 50px;
   border-radius: 50%;
   background-color: #D8D8D8;
+  cursor: pointer;
+  z-index: 15;
 }
 .contact-container .contact.items .contact.item .contact-carousel .left-button {
   top: 50%;
@@ -624,4 +646,5 @@ p {
 }
 .contact-container .contact.items .contact.item .contact-carousel img {
   display: none;
+  opacity: 0.8;
 }
