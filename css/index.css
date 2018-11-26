@@ -172,10 +172,6 @@ section {
 }
 section img {
   width: 100%;
-  /*
-    background: #99a4ad;
-    opacity: 0.5;
-    */
 }
 .mobile {
   display: none;
@@ -187,13 +183,22 @@ section img {
   margin: 0 auto;
   flex-direction: column;
 }
+.header .nav-expanded .nav-section {
+  height: 575px;
+}
+.header .nav-expanded .nav-expanded-links {
+  display: inline-block;
+}
 .header .nav-section {
   display: flex;
   background: #99a4ad;
+  /* #99a4ad orig color */
   width: 100%;
   padding: 10px 60px 10px 60px;
   justify-content: space-between;
   flex-direction: row;
+  height: 100%;
+  /* ------- drop down ------- */
 }
 .header .nav-section .navigation {
   display: flex;
@@ -203,6 +208,29 @@ section img {
   color: white;
   letter-spacing: 0.01cm;
 }
+.header .nav-section .nav-expanded-links {
+  display: none;
+  position: relative;
+  padding: 0 23%;
+  margin: 0 auto;
+  align-content: center;
+  text-align: left;
+  position: absolute;
+  top: 20%;
+  bottom: 80%;
+  left: 20%;
+  right: 80%;
+}
+.header .nav-section .nav-expanded-links a {
+  position: relative;
+  color: white;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 52px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: left;
+  line-height: 80px;
+}
 .header .integrity {
   position: relative;
   color: white;
@@ -210,6 +238,8 @@ section img {
   margin-bottom: 30px;
 }
 .header .integrity .bottom-left {
+  display: inline-block;
+  /* inline-block or none */
   position: absolute;
   bottom: 8px;
   left: 16px;
@@ -364,7 +394,7 @@ footer .copyright p {
     display: none;
   }
   .mobile {
-    display: inline-block;
+    display: flex;
   }
   .picture {
     margin-bottom: 0;
@@ -385,7 +415,7 @@ footer .copyright p {
   .nav-section .navigation p {
     font-size: 20px;
   }
-  .nav-section .button {
+  .nav-section .nav-button {
     position: relative;
     right: -45px;
     top: 5px;

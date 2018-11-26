@@ -104,10 +104,6 @@ section {
 
   img {
     width: 100%;
-    /*
-    background: #99a4ad;
-    opacity: 0.5;
-    */
   }
 }
 
@@ -122,13 +118,24 @@ section {
   margin: 0 auto;
   flex-direction: column;
 
+  .nav-expanded {
+    .nav-section {
+      height: 575px;
+    }
+    .nav-expanded-links {
+      display: inline-block;
+    }
+
+  }
+
   .nav-section {
     display: flex;
-    background: #99a4ad;
+    background: #99a4ad; /* #99a4ad orig color */
     width: 100%;
     padding: 10px 60px 10px 60px;
     justify-content: space-between;
     flex-direction: row;
+    height: 100%; /* ------- drop down ------- */
 
     .navigation { 
       display: flex;
@@ -137,6 +144,31 @@ section {
       font-weight: bold;
       color: white;
       letter-spacing: .01cm;
+    }
+
+    .nav-expanded-links {
+      display: none; //inline-block; /* inline-block or none */
+      position: relative;
+      padding: 0 23%;
+      margin: 0 auto;
+      align-content: center;
+      text-align: left;
+      position: absolute;
+      top: 20%;
+      bottom: 80%;
+      left: 20%;
+      right: 80%;
+      
+      a {
+        position: relative;
+        color: white;
+        font-family: "Roboto", "Arial", sans-serif;
+        font-size: 52px;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: left;
+        line-height: 80px; 
+      }
     }
   }
 
@@ -147,6 +179,7 @@ section {
     margin-bottom: 30px;
 
     .bottom-left {
+      display: inline-block; /* inline-block or none */
       position: absolute;
       bottom: 8px;
       left: 16px;
@@ -330,7 +363,7 @@ footer {
   }
 
   .mobile {
-    display: inline-block;
+    display: flex;
   }
 
   .picture {
@@ -356,7 +389,7 @@ footer {
       }
     }
 
-    .button {
+    .nav-button {
       position: relative;
       right: -45px;
       top: 5px;
