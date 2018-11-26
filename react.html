@@ -131,30 +131,29 @@
             };
         }
         render() {
-            return (
-                <section className='carousel'>
-                    <div className='left-btn'
-                    onClick={() => this.setState((prevState) => ({ // This is a really bad implementation, as it manually enters index, only works for three.  Should be different in practice.
-                        index: prevState.index === 0 ? 2 : prevState.index-1
-                        }))}></div>
-                    <section className='content'>
-                        {this.state.index === 0 ? (
+            const slides = [ // Put slides into an array, for reference within JSX.
                             <div>
                                 <p>This is the first section.</p>
-                            </div>
-                        ) : this.state.index === 1 ? (
+                            </div>,
                             <div>
                                 <p>This is the second section.</p>
-                            </div>
-                        ) : (
+                            </div>,
                             <div>
                                 <p>This is the third section.</p>
                             </div>
-                        )}
+                        ]
+            return (
+                <section className='carousel'>
+                    <div className='left-btn'
+                    onClick={() => this.setState((prevState) => ({ 
+                        index: prevState.index === 0 ? slides.length - 1 : prevState.index-1
+                        }))}></div>
+                    <section className='content'>
+                        {slides[this.state.index]} 
                     </section>
                     <div className='right-btn'
                     onClick={() => this.setState((prevState) => ({
-                        index: prevState.index === 2 ? 0 : prevState.index+1
+                        index: prevState.index === slides.length - 1 ? 0 : prevState.index+1
                         }))}></div>
                 </section>
             );
