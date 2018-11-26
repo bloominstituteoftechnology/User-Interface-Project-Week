@@ -366,10 +366,29 @@
 
 // services page
 
+.top-img {
+	.service {
+		@media @phone {
+			display: none;
+		}
+	}
+	.service-mobile {
+		display: none;
+		@media @phone {
+			display: inherit;
+			width: 100%;
+		}
+	}
+}
+
 .services-page {
 	max-width: 1000px;
 	width: 100%;
 	margin: 0 auto;
+
+	@media @phone {
+		width: 98%;
+	}
 
 	.tabs-container {
 		.tab-content {
@@ -389,13 +408,24 @@
 		font-size: 2.2rem;
 		// margin-left:5%;
 		margin-bottom: 20px;
+
+		// margin-left:5%;
+		@media @phone {
+			margin-left: 3%;
+			margin-top: -50px;
+		}
 	}
 
 	.top-p {
 		margin-top: 40px;
 		height: 120px;
 		// margin-left:5%;
-		line-height: 24px;
+		line-height: 26px;
+		@media @phone {
+			margin-bottom: 60px;
+			width: 95%;
+			margin-left: 3%;
+		}
 		p {
 			width: 100%;
 			font-size: 1.7rem;
@@ -414,6 +444,10 @@
 			display: flex;
 			justify-content: space-between;
 
+			@media @phone {
+				flex-direction: column;
+			}
+
 			.tab {
 				padding: 15px 4%;
 				font-size: 1.6rem;
@@ -423,9 +457,17 @@
 				justify-content: center;
 				align-items: center;
 				border: 1px solid grey;
+				font-weight: 800;
 				cursor: pointer;
 				&:hover {
-					background-color: lightblue;
+					background-color: #138caa;
+				}
+				@media @phone {
+					width: 95%;
+					// padding: 20px 35%;
+					margin-left: 2%;
+					margin-bottom: 25px;
+					font-size: 2rem;
 				}
 			}
 		}
@@ -443,11 +485,6 @@
 	.construction {
 		width: 100%;
 		height: 40px;
-
-		h1 {
-			font-size: 2.2rem;
-			// margin-left:5%;
-		}
 	}
 
 	.middle-content {
@@ -456,13 +493,45 @@
 		justify-content: space-between;
 		margin-bottom: 60px;
 
+		@media @phone {
+			margin-left: 3%;
+		}
+
+		.pre-mobile {
+			display: none;
+
+			@media @phone {
+				display: inherit;
+				width: 94%;
+				margin-top: 30px;
+			}
+		}
+
+		.pre-desk {
+			@media @phone {
+				display: none;
+			}
+		}
+
+		@media @phone {
+			flex-direction: column;
+		}
+
 		.p {
 			width: 55%;
+
+			@media @phone {
+				width: 95%;
+			}
 			//    margin-left:5%;
 
 			p {
 				font-size: 1.6rem;
 				line-height: 25px;
+
+				@media @phone {
+					line-height: 30px;
+				}
 			}
 		}
 	}
