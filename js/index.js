@@ -7,7 +7,7 @@ const toggleNav = () => {
         navBar.style.height = '575px';
         integrity.style.display = 'none';
         navLinks.style.display = 'inline-block';
-    } else if ((i%2) === 0) {
+    } if ((i%2) === 0) {
         navBar.style.height = '100%';
         integrity.style.display = 'inline-block';
         navLinks.style.display = 'none';
