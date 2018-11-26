@@ -1,11 +1,13 @@
 
 const toggleMenu = () => { 
   menu.classList.toggle("menu--open");
+  jumText.classList.toggle("jum--hide");
 }
   // Toggle the "menu--open" class on your menu refence. 
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelector(".menu");
 const button = document.querySelector(".hamex")
+const jumText = document.querySelector(".jumText")
 // create a reference to the ".menu-button" class
 // Using your menuButton reference, add a click handler that calls toggleMenu
 button.addEventListener("click", toggleMenu);
