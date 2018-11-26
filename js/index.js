@@ -28,3 +28,22 @@ class TabDisplay {
 }
 
 let links = document.querySelectorAll('.tabs-link').forEach(x => new TabButton(x));
+
+// Navigation
+const navBar = document.querySelector('.nav-container');
+[logo, navButton, nav] = navBar.children;
+navButton.addEventListener('click', () => {
+    if (!navBar.classList.contains('active-nav')){
+        navBar.classList.add('active-nav');
+        logo.style.marginTop = '13px';
+        navButton.style.marginTop = '14.5px';
+        navButton.src = 'img/nav-hamburger-close.png';
+        nav.style.display = 'block';
+    } else {
+        navBar.classList.remove('active-nav');
+        logo.style.marginTop = '0';
+        navButton.style.marginTop = '0';
+        navButton.src = 'img/nav-hamburger.png';
+        nav.style.display = 'none';
+    }
+});
