@@ -59,11 +59,13 @@ class PhotoGalleryAnimations {
     //Changes text
     changeText() {
         this.designButton.textContent = 'Click Me!';
+        TweenMax.to(this.designButton, 1, {rotation: '360'})
+
     }
 
     //Rotates button
 
     changeBackText() {
-        TweenMax.to(this.designButton, 1, {rotation: '360'})
+        this.designButton.textContent = "View Designs"
     }
 }
