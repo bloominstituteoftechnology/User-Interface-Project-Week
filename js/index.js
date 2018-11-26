@@ -4,14 +4,10 @@ const navBar = document.querySelector('.nav-bar');
 navButton.addEventListener('click', () => {
     if (!navBar.classList.contains('active-nav-bar')){
         navBar.classList.add('active-nav-bar');
-        logo.style.marginTop = '13px';
-        navButton.style.marginTop = '14.5px';
         navButton.src = 'img/nav-hamburger-close.png';
         nav.style.display = 'block';
     } else {
         navBar.classList.remove('active-nav-bar');
-        logo.style.marginTop = '0';
-        navButton.style.marginTop = '0';
         navButton.src = 'img/nav-hamburger.png';
         nav.style.display = 'none';
     }
