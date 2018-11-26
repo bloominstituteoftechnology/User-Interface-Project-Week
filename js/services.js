@@ -1,6 +1,8 @@
 
+
 class TabLink {
     constructor(element) {
+
         this.element = element;
 
         this.data = this.element.dataset.tab;
@@ -44,6 +46,7 @@ class TabItem {
         this.element.classList.add('tabs-item-selected');
     }
 }
+
 
 
 let links = document.querySelectorAll('.tabs-link').forEach(link => new TabLink(link));
