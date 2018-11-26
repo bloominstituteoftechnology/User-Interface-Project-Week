@@ -7,10 +7,13 @@ const expandAndClose = () => {
     nav.classList.add('nav-expanded');
     menuContent.classList.remove('inactive');
     menuButton.innerHTML = '<img src="./img/nav-hamburger-close.png" />';
+    TweenMax.fromTo('.menu-content', .7, {opacity: 0}, {opacity: 1});
   } else {
     nav.classList.remove('nav-expanded');
     menuContent.classList.add('inactive');
     menuButton.innerHTML = '<img src="./img/nav-hamburger.png" />'
+
+
   }
 
 }
