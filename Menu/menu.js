@@ -19,3 +19,15 @@ menuButtonO.addEventListener("click",toggleMenu);
 
 const menuButtonC=document.querySelector(".menu-buttonC");
 menuButtonC.addEventListener("click",toggleMenu);
+
+const menuItem=document.querySelector(".menu ul li");
+menuItem.addEventListener("mouseover",()=>{
+    console.log("Mouse over...")
+    TweenMax.to(".menu ul li",4,{
+        marginLeft:600,
+
+        ease:Power4.easeOut
+
+    })
+
+})
