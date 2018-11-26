@@ -1,0 +1,155 @@
+@import "variables.less";
+
+//Creates a max-width and centers the container
+.centered-max-width(@max-width) {
+    margin: 0 auto;
+    max-width: @max-width;
+}
+
+//General style. Takes in a value that sets a max-width centered
+.general-style (@max-width-of-container) {
+    background-color: #FFFFFF;
+    color: #222222;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    .centered-max-width(@max-width-of-container);
+    img {
+        max-width: 100%;
+    }
+}
+
+//.flex-justify-align sets the display as flex, then takes a (
+// justify-content, align-items) value 
+//space-between used to give a column gap
+.flex-justify-align(@justify,@align) {
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+//.margin-top gives a margin-top value of 5%.
+.margin-top {
+    margin-top: 5%;
+}
+
+//padding-left-right adds a padding of 2.5% on the left and right.
+.padding-left-right {
+    padding: 0 2.5%;
+}
+
+//styles buttons
+.change-button-default-style {
+    text-decoration: none;
+    background-color: white;
+    border: 1px black solid;
+    padding: 2.5% 5%;
+}
+
+//Navbar
+.navbar-style {
+    //separates all items with space-between
+    .flex-justify-align(space-between, stretch);
+    color: white;
+    font-weight: bold;
+    padding: 1.25% 5%;
+    background-color: #99a4af;
+    position: sticky;
+    top: 0;
+
+    .navbar-logo {
+        font-size: 24px;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    //hides the links until the hamburger menu is pressed
+    .navbar-menu {
+        display: none;
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin-top: 80%;
+        }
+        .navbar-link {
+            color: white;
+            text-decoration: none;
+            font-size: 48px;
+            line-height: 85px;
+        }
+
+        .navbar-link:hover {
+            color: #222222;
+        }
+    }
+
+}
+
+//Styles the jumbotron. Takes in a background desktop and mobile image, and the height for both
+.jumbotron-style(@desktop-image, @mobile-image, @desktop-height, @mobile-height) {
+    //positions the jumbotron text
+    .flex-justify-align(stretch, flex-end);
+    //background-image stuff
+    background-image: url(@desktop-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: @desktop-height;
+    //Changes to mobile image
+    @media @phone {
+        background-image: url(@mobile-image);
+        height: @mobile-height;
+    }
+
+    //styles jumbotron text
+    .jumbotron-text {
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 75px;
+        color: #FFFFFF;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+}
+
+.footer-style(@centered-max-width) {
+    //overall footer style
+    .margin-top;
+    font-size: 14px;
+    line-height: 26px;
+    color: #FFFFFF;
+    background-color: #828282;
+    padding: 2.5% 2.5% 2.5% 2.5%;
+
+    .footer-container {
+        //Separate the items with space-between
+        .flex-justify-align(space-between, stretch);
+        .centered-max-width(@centered-max-width);
+        @media @phone {
+            flex-direction: column;
+            padding: 2.5% 5%;
+        }
+        .footer-header {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    //positions the copyright to the center
+    .copyright {
+        text-align: center;
+    }
+}
+
+//sub-header-style
+.sub-header-style {
+    font-weight: bold;
+    font-size: 28px;
+    color: #222222;
+}
+
+
+
+
+
+
