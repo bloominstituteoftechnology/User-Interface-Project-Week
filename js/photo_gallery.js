@@ -2,7 +2,7 @@ class OpenPreviewImages {
     constructor(galleryContainer) {
         //Assigns galleryContainer to this.galleryContainer
         this.galleryContainer = galleryContainer;
-        
+
         //This container holds the preview and carousel images
         this.imagesContainer = this.galleryContainer.querySelector('.image-div-container');
         //Grabs the div with all the preview images
@@ -53,9 +53,7 @@ class Carousel {
             image.style.display = 'none';
             image.style.margin = '0 auto';
         });
-        
-        
-        
+
 
         //The back button brings back the preview images
         this.backButton = this.imagesContainer.querySelector('.back-button');
@@ -67,8 +65,9 @@ class Carousel {
 
         this.previousButton.addEventListener('click', this.cycleLeft.bind(this));
         this.nextButton.addEventListener('click', this.cycleRight.bind(this));
-        
+
     }
+
     //This method displays the selected image
     selectedImage() {
         //This hides the preview images
@@ -81,7 +80,7 @@ class Carousel {
         this.selectedCarouselImage = this.imagesContainer.querySelector(`.carousel-img[data-image ='${this.data}']`);
         //That image is then displayed
         this.selectedCarouselImage.style.display = 'block';
-        
+
     }
 
     //This method takes us back to the preview images
@@ -119,7 +118,7 @@ class Carousel {
         if (this.data === `${this.allPreviewImages.length - 1}`) {
             this.data = "-1";
         }
-        
+
         //adds 1 to this.data
         this.data = (parseInt(this.data) + 1).toString();
         //Finds carousel image associated with this.data+1
@@ -128,9 +127,6 @@ class Carousel {
         this.selectedCarouselImage.style.display = 'block';
     }
 }
-
-
-
 
 
 //Grabs galleryContainer and creates new OpenPreviewImages object

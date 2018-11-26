@@ -48,6 +48,7 @@ class MenuLogic {
     }
 
 }
+
 //Finds the navbar
 const nav = document.querySelector('.navbar');
 //passes the navbar into MenuLogic

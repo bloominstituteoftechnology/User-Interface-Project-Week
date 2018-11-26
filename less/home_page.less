@@ -4,9 +4,7 @@
 .home-container {
     //.general-style sets the default styles along with a centered max-width
     .general-style(950px);
-    
 
-    
     //NAVBAR -----------------------------------------------------
     .navbar {
         //Style in mixins.less
@@ -132,7 +130,6 @@
         height: 260px;
         .centered-max-width(@max-width);
 
-
         //Positions the grey header box
         .flex-justify-align(@justify, @align);
 
@@ -166,20 +163,20 @@
     }
 }
 
-
-
+//For photo gallery
 .gallery-container {
     .design-button {
         cursor: pointer;
     }
+    //All images start with display:none
     .image-div-container {
         display: none;
 
-
+        //thumbnails no display
         .image-preview-div {
             display: none;
-            opacity:0;
-
+            opacity: 0;
+            //When added, will show thumbnails
         }
         .show-preview-div {
             .centered-max-width(600px);
@@ -195,44 +192,44 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            @media (max-height:700px) and @phone {
+            @media (max-height: 700px) and @phone {
                 .centered-max-width(250px);
             }
-            
+
             .close-button {
                 cursor: pointer;
             }
-            
 
             .preview-img {
                 width: 200px;
                 cursor: pointer;
             }
         }
+        //Contains the enlarged image, back, previous and next buttons
         .carousel-div {
             display: none;
             button {
                 .change-button-default-style;
-                padding-top:2.5%;
-                padding-bottom:2.5%;
-                margin-bottom:1%;
+                padding-top: 2.5%;
+                padding-bottom: 2.5%;
+                margin-bottom: 1%;
             }
             .next-button {
-                margin-top:1%;
+                margin-top: 1%;
             }
-            
 
         }
-
+        //Shows the selected image when class is added
         .show-carousel-div {
             display: flex;
-            flex-direction:column;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
         }
 
     }
 
+    //Shows the thumbnail images when design button is pressed
     .show-images-container {
         display: block;
         background-color: black;
