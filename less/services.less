@@ -1,7 +1,103 @@
 @import 'variables.less';
 @import 'mixins.less';
+@import 'index.less';
 
 .services {
-  width: 50%;
-  background-color: red;
+  margin: 50px auto;
+  width: 90%;
+
+}
+
+.tabs-links {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+
+  @media @phone {
+    flex-direction: column;
+  }
+}
+
+.tabs-link {
+  background: transparent;
+  color: #222222;
+  border: 1px solid #222222;
+  padding: 10px 2%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background: #222222;
+    color: #FFF;
+  }
+
+  @media @phone {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: #FFF;
+      background: #5E9FB9;
+    }
+
+    &:active {
+      background: #222222;
+      color: #FFF;
+    }//active
+  }//phone media
+}//tabs-link
+
+.tabs-link-selected {
+  background: #5E9FB9;
+  color: #FFF;
+}
+
+.tabs-item {
+  display: none;
+
+  div {
+    width: 45%;
+
+    picture {
+      width: 45%;
+  
+      @media @phone {
+        width: 100%;
+      }
+    }
+    // img {
+    //   width: 100%;
+    // }
+
+    @media @phone {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  p:nth-child(2){
+    margin-bottom: 20px;
+  }
+  
+
+}
+
+.tabs-item-selected {
+  display: flex;
+  justify-content: space-between;
+
+  @media @phone {
+    flex-direction: column;
+    align-items: center;
+  }
 }
