@@ -2,9 +2,11 @@
 const navButton = document.querySelector(".navContainer .hamburger");
 const navContainer = document.querySelector(".navContainer")
 const links = document.querySelector(".links");
+console.log(links);
 navButton.addEventListener("click", ()=>{
     navContainer.classList.toggle("navExpand");
     links.classList.toggle("linksAppear");
+    console.log(links);
     navButton.classList.toggle("hamburgerClose");
 })
 
