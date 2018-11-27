@@ -43,7 +43,7 @@ Background: #828282
 - Font Size: 20px
 - Line Height: 24px
 - Color: #FFFFFF
-
+s
 ### Footer Text
 - Font Weight: Regular
 - Font Size: 14px
