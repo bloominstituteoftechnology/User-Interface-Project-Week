@@ -1,1 +1,627 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+// RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0b1 | 201101 
+// NOTE:WORK IN PROGRESS
+// USE WITH CAUTION AND TEST WITH ABANDON */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  font-size: 62.5%;
+  background-color: #ffffff;
+  color: #222222;
+  font-family: 'Roboto', Arial, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+header {
+  background: no-repeat url('../img/home/home-jumbotron.png');
+  background-size: 1000px 500px;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  header {
+    background: no-repeat url('../img/home/home-mobile-jumbotron.png');
+    background-size: 500px 350px;
+    height: 350px;
+    width: 100%;
+  }
+}
+.navigation {
+  position: fixed;
+  background-color: #99a4b5;
+  max-width: 1000px;
+  height: 40px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.navigation .nav {
+  width: 50%;
+  margin-left: 5%;
+  color: #ffffff;
+}
+.navigation .nav h2 {
+  font-size: 2.4rem;
+}
+.navigation .nav-button {
+  width: 30px;
+  height: 2.4rem;
+  font-weight: bold;
+  margin-right: 5%;
+}
+.mainHeading {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 5%;
+  padding-bottom: 40px;
+}
+.mainHeading h1 {
+  font-size: 6.4rem;
+  font-weight: bold;
+  line-height: 6rem;
+  color: #ffffff;
+}
+.hidden {
+  display: none;
+}
+.show {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(153, 164, 181, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.show .nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+}
+.show .nav h2 {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+}
+.show .nav .navMenu {
+  color: #ffffff;
+  text-decoration: none;
+}
+.show .nav .navMenu:hover {
+  color: #222222;
+}
+.show .nav-button {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+footer {
+  width: 100%;
+  padding: 40px 0;
+  color: #ffffff;
+  background-color: #828282;
+}
+footer .footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+footer .footerContainer .form {
+  width: 30%;
+  padding-left: 7%;
+}
+footer .footerContainer .form label {
+  font-size: 2rem;
+  font-weight: bold;
+}
+footer .footerContainer .form input {
+  padding: 10px;
+  border-radius: 10px;
+}
+footer .footerContainer .form p {
+  font-size: 1.4rem;
+}
+footer .footerContainer .address {
+  width: 13%;
+}
+footer .footerContainer .address h4 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+footer .footerContainer .address p {
+  font-size: 1.4rem;
+}
+footer .footerContainer .copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+@media (max-width: 500px) {
+  footer .footerContainer .form {
+    width: 100%;
+  }
+  footer .footerContainer .form input {
+    width: 85%;
+    margin-bottom: 5px;
+  }
+  footer .footerContainer .address {
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 7%;
+  }
+  footer .footerContainer .copyright {
+    text-align: left;
+    padding-left: 7%;
+    padding-top: 15px;
+  }
+}
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+@media (max-width: 500px) {
+  .main-content {
+    width: 100%;
+  }
+}
+.main-content article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 70px;
+}
+.main-content article .subHeaders {
+  width: 48%;
+}
+.main-content article .subHeaders h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+.main-content article .subHeaders p {
+  padding: 30px 0px;
+}
+.main-content article .subHeaders button {
+  background-color: #ffffff;
+  border: 1px solid #222222;
+  padding: 10px 25px;
+}
+@media (max-width: 500px) {
+  .main-content article .subHeaders {
+    width: 85%;
+    margin: 0 auto;
+  }
+  .main-content article .subHeaders button {
+    width: 100%;
+  }
+}
+.main-content article img {
+  width: 48%;
+}
+@media (max-width: 500px) {
+  .main-content article img {
+    order: -1;
+    width: 85%;
+    padding-bottom: 4rem;
+    margin: 0 auto;
+  }
+}
+.main-content article .switch {
+  order: -1;
+}
+.main-content article .projects h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #222222;
+}
+.main-content article .projects .imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 270px;
+  margin: 4rem 0;
+  width: 100%;
+  background-size: 100% 228px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: no-repeat url('../img/home/home-villas-img.png');
+}
+.main-content article .projects .imgContainer h3 {
+  font-size: 3.5rem;
+  background-color: #d8d8d8;
+  padding: 3rem 4rem;
+}
+@media (max-width: 500px) {
+  .main-content article .projects .imgContainer {
+    background: no-repeat url('../img/home/home-mobile-villas-img.png');
+    justify-content: center;
+    background-size: 470px;
+    height: 355px;
+  }
+}
+.main-content article .projects p {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+@media (max-width: 500px) {
+  .main-content article .projects p {
+    width: 85%;
+  }
+}
+.main-content article .outskirts .imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 270px;
+  margin: 4rem 0;
+  width: 100%;
+  background-size: 100% 228px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: no-repeat url('../img/home/home-outskirts-img.png');
+}
+.main-content article .outskirts .imgContainer h3 {
+  font-size: 3.5rem;
+  background-color: #d8d8d8;
+  padding: 3rem 4rem;
+}
+@media (max-width: 500px) {
+  .main-content article .outskirts .imgContainer {
+    background: no-repeat url('../img/home/home-mobile-outskirts-img.png');
+    justify-content: center;
+    background-size: 470px;
+    height: 355px;
+  }
+}
+.main-content article .outskirts p {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+@media (max-width: 500px) {
+  .main-content article .outskirts p {
+    width: 85%;
+  }
+}
+.main-content article .blocks .imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 270px;
+  margin: 4rem 0;
+  width: 100%;
+  background-size: 100% 228px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: no-repeat url('../img/home/home-the-blocks-img.png');
+}
+.main-content article .blocks .imgContainer h3 {
+  font-size: 3.5rem;
+  background-color: #d8d8d8;
+  padding: 3rem 4rem;
+}
+@media (max-width: 500px) {
+  .main-content article .blocks .imgContainer {
+    background: no-repeat url('../img/home/home-mobile-the-blocks-img.png');
+    justify-content: center;
+    background-size: 470px;
+    height: 355px;
+  }
+}
+.main-content article .blocks p {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+@media (max-width: 500px) {
+  .main-content article .blocks p {
+    width: 85%;
+  }
+}
+@media (max-width: 500px) {
+  .services-main {
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.serviceArticle {
+  height: 10px;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.buttons .links {
+  margin: 15px 0;
+}
+@media (max-width: 500px) {
+  .buttons {
+    flex-direction: column;
+    padding-top: 50px;
+    width: 100%;
+  }
+}
+.clickContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+.clickContent .textContent {
+  width: 50%;
+}
+.clickContent .textContent h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #222222;
+}
+.clickContent .textContent p {
+  padding: 20px 0;
+}
+@media (max-width: 500px) {
+  .clickContent .textContent {
+    width: 100%;
+  }
+}
+.clickContent img {
+  width: 48%;
+}
+@media (max-width: 500px) {
+  .clickContent img {
+    width: 100%;
+  }
+}
+.hidden {
+  display: none;
+}
+.links {
+  background-color: #ffffff;
+  border: 1px solid #222222;
+  padding: 10px 25px;
+}
+.links:hover {
+  background-color: #222222;
+  color: #ffffff;
+}
+.selected {
+  background-color: #5e9fb9;
+}
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.main-content form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.main-content form h2 {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.main-content form .email {
+  width: 100%;
+}
+.main-content form .email label {
+  width: 100%;
+  font-size: 1.5rem;
+}
+.main-content form .email input {
+  width: 100%;
+}
+.main-content form .email p {
+  width: 100%;
+  font-size: 1rem;
+}
+.main-content form .buildings {
+  width: 100%;
+}
+.main-content form .buildings label {
+  width: 100%;
+  font-size: 1.5rem;
+}
+.main-content form .buildings select {
+  width: 100%;
+  background-color: none;
+  padding: 5px;
+}
+.main-content form .overview {
+  width: 100%;
+}
+.main-content form .overview label {
+  width: 100%;
+  font-size: 1.5rem;
+}
+.main-content form .overview textarea {
+  width: 100%;
+  height: 100px;
+}
+.main-content form .radio {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  width: 100%;
+  input: 15%;
+  justify-content: flex-end;
+}
+.main-content form .radio label {
+  width: 85%;
+  padding-left: 10px;
+}
+.main-content form button {
+  margin-top: 10px;
+  background: none;
+  border: 1px solid black;
+  padding: 5px 45px;
+}
+.main-content .addressContainer {
+  width: 40%;
+  margin-left: 15px;
+}
+.main-content .addressContainer h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.main-content .addressContainer h4 {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
