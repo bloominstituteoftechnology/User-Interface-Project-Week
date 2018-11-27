@@ -39,3 +39,12 @@ class Cards {
 let tabs = document.querySelectorAll('.tab').forEach((item) => {
 	new Tabs(item);
 });
+
+//GreenSock
+const topImg = document.querySelector('.top-img');
+topImg.addEventListener('mouseover', () => {
+	TweenMax.to('.main-page', 3, {
+		marginLeft: 400,
+		ease: Power4.easeOut
+	});
+});
