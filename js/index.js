@@ -48,3 +48,35 @@ topImg.addEventListener('mouseover', () => {
 		ease: Power4.easeOut
 	});
 });
+
+const middlePage = document.querySelector('.middle-upper-page');
+middlePage.addEventListener('mouseover', () => {
+	TweenLite.to('.upper', 3, {
+		ease: Power3.easeOut,
+		y: -500
+	});
+});
+
+const lower = document.querySelector('.middle-lower-page');
+lower.addEventListener('mouseover', () => {
+	TweenLite.to('.desktop', 2.5, {
+		ease: Bounce.easeOut,
+		y: -700
+	});
+});
+
+const anotherLower = document.querySelector('.lower-img');
+anotherLower.addEventListener('mouseover', () => {
+	TweenMax.to('.lower-img', 3, {
+		marginLeft: 300,
+		ease: Power4.easeOut
+	});
+});
+
+const text = document.querySelector('.lower-text');
+text.addEventListener('mouseover', () => {
+	TweenMax.to('.lower-text', 3, {
+		marginLeft: 300,
+		ease: Power4.easeOut
+	});
+});
