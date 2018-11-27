@@ -89,6 +89,10 @@ if (title.innerText == 'Services') {
   backgroundImage.style.background =
     "no-repeat url('img/services/services-jumbotron.png')";
   backgroundImage.style.height = '280px';
+} else if (title.innerText == 'Contact Us') {
+  backgroundImage.style.background =
+    "no-repeat url('img/contact/contact-jumbotron.png')";
+  backgroundImage.style.height = '280px';
 }
 
 if (width <= 500) {
