@@ -80,3 +80,11 @@ text.addEventListener('mouseover', () => {
 		ease: Power4.easeOut
 	});
 });
+
+const taps = document.querySelector('.tabs');
+taps.addEventListener('mouseover', () => {
+	TweenLite.to('.topics', 3, {
+		colorProps: { borderColor: 'red', myCustomProp: 'rgb(204,51,0)' },
+		ease: Linear.easeNone
+	});
+});
