@@ -33,7 +33,7 @@ class Tab {
   }
   select(){
     Array.from(tabs).forEach(tab => tab.classList.remove('tab-selected'));
-    this.tab.classList.add('tab-selected')
+    this.tab.classList.add('tab-selected');
     this.tabContent.select();
   }
 }
@@ -43,7 +43,7 @@ class TabContent {
   }
   select() {
     const items = document.querySelectorAll('.tab-content');
-    Array.from(items).forEach(item => item.classList.remove('tab-content-selected'))
+    Array.from(items).forEach(item => item.classList.remove('tab-content-selected'));
     this.tabContent.classList.add('tab-content-selected');
   }
 }
