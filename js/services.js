@@ -9,6 +9,7 @@ const hamburgerClose = document.querySelector('#hamburger-close');
   navButtons.classList.toggle('hidden');
   hamburgerOpen.classList.toggle('hidden');
   hamburgerClose.classList.toggle('hidden');
+  TweenMax.to(".menu-links", 3, {rotationX:360});
 })
 
 /////Tab component//////////////
