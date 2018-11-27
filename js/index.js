@@ -41,7 +41,6 @@ navButton.addEventListener('click', () => {
         nav.style.display = 'block';
     } else {
         navBar.classList.remove('active-nav');
-        logo.style.marginTop = '0';
         navButton.style.marginTop = '0';
         navButton.src = 'img/nav-hamburger.png';
         nav.style.display = 'none';
