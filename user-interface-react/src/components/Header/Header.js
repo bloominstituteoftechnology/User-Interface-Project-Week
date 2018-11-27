@@ -3,13 +3,16 @@ import Aox from './../../hoc/Aox';
 import './Header.css';
 
 class Header extends Component {
-  toggle = () => {
+
+  toggle = (event) => {
+
   }
 
   render() {
     return (
       <Aox>
-        <header className="header">
+        <header
+          className="header">
           <h1>S&J</h1>
           <nav>
             <a href="index.html" className="current">Home</a>
