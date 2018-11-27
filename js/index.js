@@ -16,15 +16,17 @@ const toggleNav = () => {
     console.log(i);
   }
   
+
   // identify the button
   const menu = document.querySelector('.nav-button');
-
+  
   // identify item to turn "off"/change
   const navBar = document.querySelector('.nav-section');
   const navLinks = document.querySelector('.nav-expanded-links');
   const integrity = document.querySelector('.integrity');
-  let i = 1;
 
+  
+  let i = 1;
 
   menu.addEventListener('click', () => { toggleNav()})
   
