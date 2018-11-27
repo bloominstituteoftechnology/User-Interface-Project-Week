@@ -1,5 +1,5 @@
 .homeNav{
-    .moblieImgs{
+    #jumboMobile{
         display:none;
     }
     .navExpand{
@@ -9,43 +9,56 @@
     .linksAppear{
         display: block;
     }
-    margin: 0 auto;
+    margin: 0px auto;
     max-width: 1024px;
     .width100;
     display:flex;
     flex-flow: column;
     align-items: center;
     .navLogo;
-    position: fixed;
-    top:0px;
-    z-index: 2;
     #jumbo{
         z-index: -1;
         .width100;
     }
 
     .navContainer{
-        position: absolute;
-        top: 0;
+        position: fixed;
+        top:0px;
+        z-index: 2;
         align-self: center;
         background-color: @footerBackground;
-        opacity: 0.8;
+        opacity: 0.95;
         .width100;
         display:flex;
         justify-content: space-between;
         padding: 12px 8%;
-        img:hover{
+        .hamburger{
+            background-image: url("../img/nav-hamburger.png");
+            width: 34px;
+            height: 35px;
+            background-repeat: no-repeat;
+            margin: 0%;
+            padding: 0%;
+        }
+        .hamburger:hover{
             background-color: @navHoverColor;
+        }
+        .hamburgerClose{
+            background-image: url("../img/nav-hamburger-close.png");
+            width: 30px;
+            height: 35px;
         }
 
         .links{
             display: none;
+            position: absolute;
+            top:0px;
         }
     }
     .mainHeader{
         position: absolute;
         left: 83px;
-        bottom:50px;
+        top:320px;
         h2{
             .jumboText;
         }
@@ -55,18 +68,112 @@
 
 @media(max-width: @mobile) {
     .homeNav{
-        .desktopImgs{
+        #jumbo{
             display: none;
         }
-        .moblieImgs{
-            display: block
-        }
         #jumboMobile{
-            .width100;
+            display:block;
+        }
+        .navContainer{
+            height: 50px;
         }
         .mainHeader{
-            left: 20px;
-            top: 180px;
+            left: 15px;
+            top: 120px;
+            h2{
+                font-size: 35px;
+                line-height: 40px;
+            }
+        }
+    }
+
+}
+
+//Services Nav
+.servicesNav{
+    #jumboMobile{
+        display:none;
+    }
+    .navExpand{
+        height: 100vh;
+        z-index: 1;
+    }
+    .linksAppear{
+        display: block;
+    }
+    margin: 0px auto;
+    max-width: 1024px;
+    .width100;
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    .navLogo;
+    #jumbo{
+        z-index: -1;
+        .width100;
+        position: relative;
+        top: 10px;
+    }
+
+    .navContainer{
+        position: fixed;
+        top:0px;
+        z-index: 2;
+        align-self: center;
+        background-color: @footerBackground;
+        opacity: 0.95;
+        .width100;
+        display:flex;
+        justify-content: space-between;
+        padding: 12px 8%;
+        .hamburger{
+            background-image: url("../img/nav-hamburger.png");
+            width: 34px;
+            height: 35px;
+            background-repeat: no-repeat;
+            margin: 0%;
+            padding: 0%;
+        }
+        .hamburger:hover{
+            background-color: @navHoverColor;
+        }
+        .hamburgerClose{
+            background-image: url("../img/nav-hamburger-close.png");
+            width: 30px;
+            height: 35px;
+        }
+
+        .links{
+            display: none;
+            position: absolute;
+            top:0px;
+        }
+    }
+    .mainHeader{
+        position: absolute;
+        left: 83px;
+        top:160px;
+        h2{
+            .jumboText;
+        }
+
+    }
+}
+
+@media(max-width: @mobile) {
+    .homeNav{
+        #jumbo{
+            display: none;
+        }
+        #jumboMobile{
+            display:block;
+        }
+        .navContainer{
+            height: 50px;
+        }
+        .mainHeader{
+            left: 15px;
+            top: 120px;
             h2{
                 font-size: 35px;
                 line-height: 40px;

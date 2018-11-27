@@ -142,7 +142,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .homeNav {
-  margin: 0 auto;
+  margin: 0px auto;
   max-width: 1024px;
   width: 100%;
   display: flex;
@@ -151,11 +151,8 @@ body {
   font-weight: Bold;
   font-size: 24px;
   color: #FFFFFF;
-  position: fixed;
-  top: 0px;
-  z-index: 2;
 }
-.homeNav .moblieImgs {
+.homeNav #jumboMobile {
   display: none;
 }
 .homeNav .navExpand {
@@ -170,26 +167,42 @@ body {
   width: 100%;
 }
 .homeNav .navContainer {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
   align-self: center;
   background-color: #828282;
-  opacity: 0.8;
+  opacity: 0.95;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 12px 8%;
 }
-.homeNav .navContainer img:hover {
+.homeNav .navContainer .hamburger {
+  background-image: url("../img/nav-hamburger.png");
+  width: 34px;
+  height: 35px;
+  background-repeat: no-repeat;
+  margin: 0%;
+  padding: 0%;
+}
+.homeNav .navContainer .hamburger:hover {
   background-color: #222222;
+}
+.homeNav .navContainer .hamburgerClose {
+  background-image: url("../img/nav-hamburger-close.png");
+  width: 30px;
+  height: 35px;
 }
 .homeNav .navContainer .links {
   display: none;
+  position: absolute;
+  top: 0px;
 }
 .homeNav .mainHeader {
   position: absolute;
   left: 83px;
-  bottom: 50px;
+  top: 320px;
 }
 .homeNav .mainHeader h2 {
   font-weight: Bold;
@@ -197,19 +210,109 @@ body {
   line-height: 75px;
   color: #FFFFFF;
 }
-@media (max-width: 500px) {
-  .homeNav .desktopImgs {
+@media (max-width: 320px) {
+  .homeNav #jumbo {
     display: none;
   }
-  .homeNav .moblieImgs {
+  .homeNav #jumboMobile {
     display: block;
   }
-  .homeNav #jumboMobile {
-    width: 100%;
+  .homeNav .navContainer {
+    height: 50px;
   }
   .homeNav .mainHeader {
-    left: 20px;
-    top: 180px;
+    left: 15px;
+    top: 120px;
+  }
+  .homeNav .mainHeader h2 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+.servicesNav {
+  margin: 0px auto;
+  max-width: 1024px;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-weight: Bold;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+.servicesNav #jumboMobile {
+  display: none;
+}
+.servicesNav .navExpand {
+  height: 100vh;
+  z-index: 1;
+}
+.servicesNav .linksAppear {
+  display: block;
+}
+.servicesNav #jumbo {
+  z-index: -1;
+  width: 100%;
+  position: relative;
+  top: 10px;
+}
+.servicesNav .navContainer {
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+  align-self: center;
+  background-color: #828282;
+  opacity: 0.95;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 8%;
+}
+.servicesNav .navContainer .hamburger {
+  background-image: url("../img/nav-hamburger.png");
+  width: 34px;
+  height: 35px;
+  background-repeat: no-repeat;
+  margin: 0%;
+  padding: 0%;
+}
+.servicesNav .navContainer .hamburger:hover {
+  background-color: #222222;
+}
+.servicesNav .navContainer .hamburgerClose {
+  background-image: url("../img/nav-hamburger-close.png");
+  width: 30px;
+  height: 35px;
+}
+.servicesNav .navContainer .links {
+  display: none;
+  position: absolute;
+  top: 0px;
+}
+.servicesNav .mainHeader {
+  position: absolute;
+  left: 83px;
+  top: 160px;
+}
+.servicesNav .mainHeader h2 {
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #FFFFFF;
+}
+@media (max-width: 320px) {
+  .homeNav #jumbo {
+    display: none;
+  }
+  .homeNav #jumboMobile {
+    display: block;
+  }
+  .homeNav .navContainer {
+    height: 50px;
+  }
+  .homeNav .mainHeader {
+    left: 15px;
+    top: 120px;
   }
   .homeNav .mainHeader h2 {
     font-size: 35px;
@@ -224,9 +327,9 @@ body {
   line-height: 24px;
   background-color: #FFFFFF;
   color: #222222;
-  margin: 0px auto;
+  margin: 55px auto 0px;
 }
-.homePageContainer .moblieImgs {
+.homePageContainer .mobileImgs {
   display: none;
 }
 .homePageContainer .miniContentBlock button {
@@ -337,20 +440,22 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  width: 46%;
   margin: 90px 0%;
+  font-size: 17px;
+  width: 50%;
 }
 .homePageContainer .largeContentBlock .largeParagraphs p:nth-child(2) {
   margin-top: 20px;
 }
-@media (max-width: 500px) {
+@media (max-width: 320px) {
   .homePageContainer {
-    border: 1px solid black;
+    width: 90%;
+    margin-top: 0px;
   }
   .homePageContainer .desktopImgs {
     display: none;
   }
-  .homePageContainer .moblieImgs {
+  .homePageContainer .mobileImgs {
     display: block;
   }
   .homePageContainer .miniContentBlock button {
@@ -366,15 +471,23 @@ body {
   }
   .homePageContainer .miniContentBlock .miniContent1 .textSection,
   .homePageContainer .miniContentBlock .miniContent2 .textSection {
-    border: 1px solid red;
     width: 100%;
   }
+  .homePageContainer .miniContentBlock .miniContent1 .textSection h3,
+  .homePageContainer .miniContentBlock .miniContent2 .textSection h3 {
+    width: 100%;
+  }
+  .homePageContainer .largeContentBlock .largeContent img {
+    width: 116%;
+    max-width: 320px;
+  }
   .homePageContainer .largeContentBlock .largeContent h4 {
-    top: 180px;
-    left: 10px;
+    width: 100%;
+    top: 150px;
+    left: 0px;
   }
   .homePageContainer .largeContentBlock .largeParagraphs {
-    width: 315px;
+    width: 100%;
   }
 }
 footer {
@@ -422,7 +535,7 @@ footer .copyright {
   justify-content: center;
   font-size: 12px;
 }
-@media (max-width: 500px) {
+@media (max-width: 320px) {
   footer .footerContent {
     flex-direction: column;
   }
@@ -513,15 +626,14 @@ footer .copyright {
 .servicesContainer {
   width: 83.4%;
   max-width: 855px;
-  margin: 290px auto 0px auto;
+  margin: 60px auto 0px auto;
 }
 .servicesContainer .servicesIntro p {
-  border: 1px solid red;
+  width: 100%;
   line-height: 25px;
   font-size: 15.5px;
 }
 .servicesContainer .tabs {
-  border: 1px solid blue;
   display: flex;
   justify-content: space-between;
   margin: 50px 0% 60px;
@@ -544,7 +656,6 @@ footer .copyright {
   color: #FFF;
 }
 .servicesContainer .tabContent {
-  border: 1px solid red;
   display: flex;
   margin: 20px 0% 60px;
 }
