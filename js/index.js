@@ -6,11 +6,9 @@ const toggleNav = () => {
 
     if ((i%1) === 0 ) {
         navBar.style.height = '575px';
-        integrity.style.display = 'none';
         navLinks.style.display = 'inline-block';
     } if ((i%2) === 0) {
         navBar.style.height = '100%';
-        integrity.style.display = 'inline-block';
         navLinks.style.display = 'none';
     }
     console.log(i);
@@ -45,15 +43,27 @@ const toggleNav = () => {
     selectTab(){
   
       const itemContents = document.querySelectorAll('.item');
-      
+      const imageContents = document.querySelectorAll('.itemImg');
+
+
       itemContents.forEach(function(itemContents) {
         itemContents.classList.remove('active') 
       });
+
+      imageContents.forEach(function(imageContents) {
+        imageContents.classList.remove('active') 
+      });
       
       const itemsSelected = document.querySelectorAll(`.item[data-tab='${this.tabData}']`);
+      const imageSelected = document.querySelectorAll(`.itemImg[data-tab='${this.tabData}']`);
+
 
       itemsSelected.forEach(function(itemsSelected) {
         itemsSelected.classList.add('active') 
+      });
+
+      imageSelected.forEach(function(imageSelected) {
+        imageSelected.classList.add('active') 
       });
     }
   }
