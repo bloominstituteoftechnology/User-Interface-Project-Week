@@ -11,16 +11,26 @@
 // menuButton.addEventListener('click', toggleMenu)
 
 const navButtons = document.querySelector('.navbox');
-const threeLines = document.querySelector('#threeLines');
-const opener = document.querySelector('#menuOpen');
-const closer = document.querySelector('#menuClose');
+console.log(navButtons);
+const opener = document.querySelector('#openMenu');
+console.log(opener);
+const closer = document.querySelector('#closeMenu');
+console.log(closer);
 
-threeLines.addEventListener('click', function() {
-    navButtons.classList.toggle('hidden');
-    opener.classList.toggle('hidden');
-    closer.classList.toggle('hidden');
-})
 
+opener.addEventListener('click', function() {
+    console.log('opener');
+    navButtons.classList.toggle('menuClose');
+    opener.classList.toggle('menuClose');
+    closer.classList.toggle('menuClose');
+});
+
+closer.addEventListener('click', function() {
+    console.log('closer');
+    navButtons.classList.toggle('menuClose');
+    opener.classList.toggle('menuClose');
+    closer.classList.toggle('menuClose');
+});
 
 
 
