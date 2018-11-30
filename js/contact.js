@@ -13,13 +13,11 @@ let timeline = new TimelineMax();
 
 
 
-console.log((small.checked || residential.checked || corporation.checked))
 
 
 button.addEventListener('click', function(e) {
   if (email.value === "" || textera.value === "")  {
     
-  
   } else if ((small.checked || residential.checked || corporation.checked) === false) {
     alert("Make sure to choose your business.")
   } else {
