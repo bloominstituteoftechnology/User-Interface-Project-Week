@@ -66,12 +66,11 @@
         }
     }
 }
-.dropdown {
-    .hamburger-button {
-        cursor: pointer;
-    }
-     
+
+.hamburger-button, .hamburger-close-button {
+    cursor: pointer;
 }
+     
 
 .mobile {
     display: none;
@@ -94,10 +93,9 @@
     position: fixed;
     z-index: 2;
     background-color: #969ea8;
-    opacity: 0.98;
+    opacity: 0.9;
 
     .overlay-nav {       
-        background-color: rgba(0,0,0 0.9);
         display: flex;
         justify-content: space-between;
         padding: 13px 8%;
@@ -105,6 +103,15 @@
         max-width: 1024px;;
         width: 100%;
         z-index: 2;
+
+         @media @phone {
+            max-width: 320px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 13px 5%;
+        }
 
         h1 {
             font-weight: bold;
@@ -137,4 +144,8 @@
 
 .overlay--open {
     display: block;
+}
+
+.nav--close {
+    display: none;
 }
