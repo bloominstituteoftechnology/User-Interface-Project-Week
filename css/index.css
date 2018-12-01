@@ -201,7 +201,7 @@ p {
     flex-wrap: wrap;
   }
 }
-.main-nav header {
+.main-nav .nav {
   position: fixed;
   background-color: #969ea8;
   display: flex;
@@ -210,10 +210,10 @@ p {
   margin: 0 auto;
   max-width: 1024px;
   width: 100%;
-  z-index: 100;
+  z-index: 1;
 }
 @media (max-width: 500px) {
-  .main-nav header {
+  .main-nav .nav {
     position: fixed;
     background-color: #969ea8;
     display: flex;
@@ -222,10 +222,10 @@ p {
     margin: 0 auto;
     max-width: 320px;
     width: 100%;
-    z-index: 100;
+    z-index: 1;
   }
 }
-.main-nav header h1 {
+.main-nav .nav h1 {
   font-weight: bold;
   font-size: 2.4rem;
   Color: #FFFFFF;
@@ -253,6 +253,9 @@ p {
     bottom: 8%;
   }
 }
+.dropdown .hamburger-button {
+  cursor: pointer;
+}
 .mobile {
   display: none;
 }
@@ -265,6 +268,53 @@ p {
   .desktop {
     display: none;
   }
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  background-color: #969ea8;
+  opacity: 0.98;
+}
+.overlay .overlay-nav {
+  background-color: rgba(0, 0, 0 0.9);
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 8%;
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+  z-index: 2;
+}
+.overlay .overlay-nav h1 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  Color: #FFFFFF;
+  z-index: 2;
+}
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.overlay a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+  color: #FFFFFF;
+}
+.overlay a:hover {
+  color: #222222;
+}
+.overlay--open {
+  display: block;
 }
 .section-middle-2 {
   flex-direction: row-reverse;
@@ -545,4 +595,8 @@ footer .copyright {
 }
 .services-bottom-section div .services-paragraph2 {
   padding-top: 20px;
+}
+.services-bottom-section div img {
+  width: 100%;
+  height: auto;
 }
