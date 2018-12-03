@@ -1,5 +1,6 @@
 const toggleMenu = () => {
     overlay.classList.toggle('overlay--open');
+    TweenMax.from(".overlay-content", 1.5, {y:-500});
 }
 
 const hideMenu = () => {
