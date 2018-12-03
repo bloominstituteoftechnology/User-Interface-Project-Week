@@ -5,12 +5,13 @@ const toggleMenu = () => {
    let closeBtn = document.querySelector('#menu__close');
    closeBtn.addEventListener('click', () => {
         menu.classList.toggle('menu--open');
-    }, false);
+ }, false);
 };
-
-
 
 const menu = document.querySelector('.menu');
 const hamBimg = document.querySelector('.hamB-img');
 hamBimg.addEventListener('click', toggleMenu, false);
 
+
+
+//Tabs
