@@ -44,6 +44,9 @@ class Content {
     this.tabContent = tabContent;
   }
   toggleContent() {
+    const currentTab = document.querySelector('.tabShow');
+    currentTab && currentTab.classList.toggle('tabShow');
+
     this.tabContent.classList.toggle('tabShow');
     // this.tabContent.classList.remove("tabShow");
     // console.log('you clicked toggle')
