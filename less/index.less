@@ -106,42 +106,43 @@ h2 /* all sub-headers */ {
   }
 }
 
-
 // NAVIGATION
+
+  // CLOSED nav styling
 .nav-content {
-  background: #9AA3AE;
-  display: flex;
+  display: flex; // none/flex on toggle
   justify-content: space-between;
-
-  // expanded nav styling
-  .nav-expanded-links {
-    display: none;
-    position: relative;
-    padding: 0 23%;
-    margin: 0 auto;
-    align-content: center;
-    text-align: left;
-    top: 20%;
-    bottom: 80%;
-    left: 20%;
-    right: 80%;
-
-    a {
-      position: relative;
-      color: white;
-      font-family: "Roboto", "Arial", sans-serif;
-      font-size: 52px;
-      text-decoration: none;
-      font-weight: bold;
-      text-align: left;
-      line-height: 80px;
-    }
+  background: #9AA3AE;
+  
+  .nav-closed {
+    display: flex;
+    padding: 15px 45px;
   }
 
   .nav-h1 /* nav logo */ {
   font-weight: bold;
   font-size: 24px;
   color: #ffffff;
+  padding: 15px 0 15px 45px;
+  }
+}
+
+  // EXPANDED nav styling
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  background: #9AA3AE;
+  
+  .nav-expanded {
+    display: none; // non/block on toggle
+    padding: 15px 45px;
+  }
+
+  .nav-h1 /* nav logo */ {
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+  padding: 15px 0 15px 45px;
   }
 }
 
@@ -152,6 +153,40 @@ h2 /* all sub-headers */ {
   color: white;
   width: 100%;
   margin-bottom: 50px;
+
+  .nav-expanded-links {
+    display: none; //none or flex on toggle
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(154, 163, 174);
+    background: rgba(154, 163, 174, 0.93);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 601px;
+    bottom: 2px;
+    left: 0px;
+
+    .a-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      a {
+        font-weight: bold;
+        font-size: 58px;
+        line-height: 75px;
+        padding-bottom: 15px;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      a:hover {
+          color: #524444;
+      }    
+    }
+  }
 
   .integ-h1 {
     position: absolute;
