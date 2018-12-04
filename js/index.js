@@ -1,11 +1,32 @@
 // JS goes here
-const toggleMenu = () => {
+// Navigation Button
+
+class Menu {
+    //declare variables
+
+    constructor(menuContent, menuBtn) {
+      this.menu = document.querySelector(menuContent);
+      this.menuButton = document.querySelector(menuBtn);
+      this.menuButton.addEventListener("click", () => this.toggleMenu());
+      this.Open = false
+    }
+
+    //Toggle
+
+     toggleMenu() {
+      this.menu.classList.toggle("menu-nav");
     
-      menu.classList.toggle('menu--open');
-    };
-    
-    let menu = document.querySelector('.menu');
-    
-    let menuButton = document.querySelector('.menu-button');
-    
-    menuButton.addEventListener('click', toggleMenu, false);
+      if (this.Open) {
+        this.menuButton.src = "img/nav-hamburger.png";
+        //false
+      } 
+      
+      else {
+        this.menuButton.src = "img/nav-hamburger-close.png";
+        //true
+      }
+    }
+}
+
+    //Call function
+  const menu = new Menu(".menu-content", ".menu-btn");
