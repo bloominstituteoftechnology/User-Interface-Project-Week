@@ -5,6 +5,7 @@ hamburger.addEventListener('click', function () {
 
   if (nav.classList.toggle('toggle')) {
     hamburger.src = "./img/nav-hamburger.png"
+    window.style.overflow = hidden;
   } else {
     hamburger.src = "./img/nav-hamburger-close.png"
   }
