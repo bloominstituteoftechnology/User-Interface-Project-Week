@@ -13,25 +13,61 @@
         transform: translate( -62%, -121% );
         color: @color_jumbo;
         font-weight: bold;
+        @media @mobile {
+            font-size: @fontsize_jumbo_mobile;
+            line-height: @lineheight_jumbo_mobile;
+            position: absolute;
+            left: 41%;
+            transform: translate( -62%, -117% );
+            color: @color_jumbo;
+            font-weight: bold;
+        }
+    }
+}
+
+.flip {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @media @mobile {
+        flex-direction: column-reverse;
+    }
+}
+
+.unflip {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @media @mobile {
+        flex-direction: column;
     }
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
-    margin: 40px 5% 80px 5%;
-    justify-content: space-between;
-    align-items: center;
+    margin: 40px 5% 40px 5%;
     .image {
         width: 48%;
+        @media @mobile {
+            width: 100%;
+            margin: 0 0 40px 0
+        }
     }
     .text {
         width: 48%;
+        @media @mobile {
+            width: 100%;
+        }
         .morebtn {
             border: 1px solid @btnborders;
             padding: 12px 2% 12px 2%;
             max-width: 150px;
             text-align: center;
+            @media @mobile {
+                width: 100%;
+                max-width: 100%;
+            }
         }
         h2 {
             margin: 0 0 20px 0;
@@ -44,6 +80,9 @@
         font-size: @fontsize_sub;
         font-weight: bold;
         color: @color_sub;
+        @media @mobile {
+            font-size: @fontsize_sub_mobile;
+        }
     }
     p {
         font-size: @fontsize;
@@ -55,18 +94,34 @@ h2 {
     font-size: @fontsize_sub;
     font-weight: bold;
     color: @color_sub;
+    @media @mobile {
+        font-size: @fontsize_sub_mobile;
+    }
 }
 
 .chunk {
     display: flex;
     flex-direction: column;
     margin: 40px 5% 40px 5%;
+
+    @media @mobile {
+        margin: 0px 0 0px 0;
+    }
     .image {
         position: relative;
         display: inline-block;
-        margin: 40px 0 80px 0;
-        img {
+        margin: 25px 0 80px 0;
+        .desktop_img {
             display: block;
+            @media @mobile {
+                display: none;
+            }
+        }
+        .mobile_img {
+            display: none;
+            @media @mobile {
+                display: block;
+            }
         }
         .title {
             h2 {
@@ -87,6 +142,13 @@ h2 {
             left: 55%;
             transform: translate( 20%, -60% );
             width: 100%;
+            @media @mobile {
+                margin: 0 4% 0 4%;
+                width: 100%;
+                max-width: 92%;
+                transform: translate(0%, -10%);
+                left: 0%;
+            }
         }
         .titleleft {
             h2 {
@@ -106,16 +168,33 @@ h2 {
             position: absolute;
             transform: translate( 0%, -60% );
             width: 100%;
+            @media @mobile {
+                margin: 0 4% 0 4%;
+                width: 100%;
+                max-width: 92%;
+                transform: translate(0%, -10%);
+                left: 0%;
+            }
         }
     }
     h2 {
         margin: 0 0 40px 0;
+        @media @mobile {
+            margin: 0 5% 0 5%;
+        }
     }
     .blurb {
         margin: 0 26% 0 26%;
         max-width: 50%;
         p {
             margin: 20px 0 20px 0;
+        }
+        @media @mobile {
+            margin: 0 5% 0 5%;
+            max-width: 100%;
+            p {
+                margin: 20px 0 10px 0;
+            }
         }
     }
 

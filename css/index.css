@@ -145,10 +145,6 @@ table {
 html {
   font-family: "Roboto", "Arial", "sans-serif";
 }
-img {
-  max-width: 100%;
-  height: auto;
-}
 body {
   max-width: 1000px;
   width: 100%;
@@ -157,6 +153,19 @@ body {
 p {
   font-size: 16px;
   line-height: 24px;
+}
+.mobile_img {
+  display: none;
+}
+@media mobile {
+  .mobile_img {
+    display: block;
+  }
+}
+@media mobile {
+  .desktop_img {
+    display: none;
+  }
 }
 .header {
   width: 100%;
@@ -173,9 +182,19 @@ p {
   font-size: 24px;
   font-weight: bold;
 }
+@media (max-width: 500px) {
+  .header h1 {
+    margin: 0 20px 0 20px;
+  }
+}
 .menu-button {
   margin: 0 60px 0 60px;
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  .menu-button {
+    margin: 0 20px 0 20px;
+  }
 }
 .menu {
   overflow: hidden;
@@ -215,6 +234,11 @@ footer {
   padding: 40px 5% 40px 5%;
   background-color: #828282;
   justify-content: center;
+}
+@media (max-width: 500px) {
+  footer {
+    margin: 20px 0 0 0;
+  }
 }
 footer p {
   color: #FFFFFF;
@@ -272,24 +296,70 @@ footer address p {
   color: #FFFFFF;
   font-weight: bold;
 }
-.row {
+@media (max-width: 500px) {
+  .jumbotron h1 {
+    font-size: 36px;
+    line-height: 40px;
+    position: absolute;
+    left: 41%;
+    transform: translate(-62%, -117%);
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+}
+.flip {
   display: flex;
   flex-direction: row;
-  margin: 40px 5% 80px 5%;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 500px) {
+  .flip {
+    flex-direction: column-reverse;
+  }
+}
+.unflip {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .unflip {
+    flex-direction: column;
+  }
+}
+.row {
+  margin: 40px 5% 40px 5%;
 }
 .row .image {
   width: 48%;
 }
+@media (max-width: 500px) {
+  .row .image {
+    width: 100%;
+    margin: 0 0 40px 0;
+  }
+}
 .row .text {
   width: 48%;
+}
+@media (max-width: 500px) {
+  .row .text {
+    width: 100%;
+  }
 }
 .row .text .morebtn {
   border: 1px solid #222222;
   padding: 12px 2% 12px 2%;
   max-width: 150px;
   text-align: center;
+}
+@media (max-width: 500px) {
+  .row .text .morebtn {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 .row .text h2 {
   margin: 0 0 20px 0;
@@ -302,6 +372,11 @@ footer address p {
   font-weight: bold;
   color: #222222;
 }
+@media (max-width: 500px) {
+  .row h2 {
+    font-size: 24px;
+  }
+}
 .row p {
   font-size: 16px;
   line-height: 24px;
@@ -311,18 +386,41 @@ h2 {
   font-weight: bold;
   color: #222222;
 }
+@media (max-width: 500px) {
+  h2 {
+    font-size: 24px;
+  }
+}
 .chunk {
   display: flex;
   flex-direction: column;
   margin: 40px 5% 40px 5%;
 }
+@media (max-width: 500px) {
+  .chunk {
+    margin: 0px 0 0px 0;
+  }
+}
 .chunk .image {
   position: relative;
   display: inline-block;
-  margin: 40px 0 80px 0;
+  margin: 25px 0 80px 0;
 }
-.chunk .image img {
+.chunk .image .desktop_img {
   display: block;
+}
+@media (max-width: 500px) {
+  .chunk .image .desktop_img {
+    display: none;
+  }
+}
+.chunk .image .mobile_img {
+  display: none;
+}
+@media (max-width: 500px) {
+  .chunk .image .mobile_img {
+    display: block;
+  }
 }
 .chunk .image .title {
   border: 1px solid #FFFFFF;
@@ -341,6 +439,15 @@ h2 {
   margin: 0 5% 0 5%;
   font-weight: normal;
 }
+@media (max-width: 500px) {
+  .chunk .image .title {
+    margin: 0 4% 0 4%;
+    width: 100%;
+    max-width: 92%;
+    transform: translate(0%, -10%);
+    left: 0%;
+  }
+}
 .chunk .image .titleleft {
   border: 1px solid #FFFFFF;
   background-color: #D8D8D8;
@@ -357,8 +464,22 @@ h2 {
   margin: 0 5% 0 5%;
   font-weight: normal;
 }
+@media (max-width: 500px) {
+  .chunk .image .titleleft {
+    margin: 0 4% 0 4%;
+    width: 100%;
+    max-width: 92%;
+    transform: translate(0%, -10%);
+    left: 0%;
+  }
+}
 .chunk h2 {
   margin: 0 0 40px 0;
+}
+@media (max-width: 500px) {
+  .chunk h2 {
+    margin: 0 5% 0 5%;
+  }
 }
 .chunk .blurb {
   margin: 0 26% 0 26%;
@@ -366,4 +487,13 @@ h2 {
 }
 .chunk .blurb p {
   margin: 20px 0 20px 0;
+}
+@media (max-width: 500px) {
+  .chunk .blurb {
+    margin: 0 5% 0 5%;
+    max-width: 100%;
+  }
+  .chunk .blurb p {
+    margin: 20px 0 10px 0;
+  }
 }
