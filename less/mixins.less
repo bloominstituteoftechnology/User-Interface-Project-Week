@@ -1,0 +1,41 @@
+// General reusable styles
+// -----------------------
+
+// Sets up a Flexbox
+.make-flex(@flex-direction: row, @justify-content: flex-start, @align-items: flex-start, @flex-wrap: nowrap) {
+    display: flex;
+    flex-flow: @flex-direction, @flex-wrap;
+    justify-content: @justify-content;
+    align-items: @align-items;
+}
+
+// Removes the default blue font color and underline for anchor tags
+.remove-hyperlink-styling() {
+    color: black;
+    text-decoration: none;
+}
+
+
+// Vendor prefixing
+// ----------------
+
+#prefixed {
+    // Timing control for plain CSS anmations
+    .transition-control(@duration, @delay: 0) {
+        -webkit-transition-duration: @duration;
+        -moz-transition-duration: @duration;
+        -o-transition-duration: @duration;
+        -ms-transition-duration: @duration;
+        transition-duration: @duration;
+        -webkit-transition-delay: @delay;
+        -moz-transition-delay: @delay;
+        -o-transition-delay: @delay;
+        -ms-transition-delay: @delay;
+        transition-delay: @delay;
+        -webkit-transition-property: all;
+        -moz-transition-property: all;
+        -o-transition-property: all;
+        -ms-transition-property: all;
+        transition-property: all;
+    }
+}
