@@ -151,15 +151,12 @@ table {
   position: fixed;
   width: 90%;
   top: 0;
-  z-index: 99;
+  z-index: 1;
 }
 .container header h1 {
   font-size: 24px;
   font-weight: Bold;
   color: #ffffff;
-}
-.container header nav a {
-  display: none;
 }
 .home .banner {
   background: url("../img/home/home-jumbotron.png") no-repeat center center fixed;
@@ -250,7 +247,6 @@ table {
   background: #d8d8d8;
   border: 1px solid #ffffff;
   padding: 35px 60px;
-  z-index: 50;
   margin-top: -50px;
   right: 200px;
   letter-spacing: 10px;
@@ -260,7 +256,6 @@ table {
   background: #d8d8d8;
   border: 1px solid #ffffff;
   padding: 35px 60px;
-  z-index: 50;
   margin-top: -50px;
   left: 200px;
   letter-spacing: 10px;
@@ -295,4 +290,49 @@ footer .footer .city h4 {
 footer .copyright {
   text-align: center;
   font-size: small;
+}
+.overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #828282;
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+}
+.overlay img {
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  padding: 15px 40px;
+}
+.overlay .aligner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.overlay .aligner a {
+  color: #ffffff;
+  z-index: 3;
+  max-width: 50%;
+  text-decoration: none;
+  font-weight: Bold;
+  font-size: 28px;
+  margin: 30px 0;
+}
+.overlay .aligner a:hover {
+  color: #222222;
 }
