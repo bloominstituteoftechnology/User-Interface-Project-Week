@@ -1,0 +1,135 @@
+
+
+// ================================================ Variables
+
+// Color assignments
+// Replace with appropriate color scheme
+@font-color: darkgrey;
+@button-bg: grey;
+@main-bg: @white;
+@navigation-bg: #8E9AA6;
+@nav-bar-bg: #8D9AA6;
+
+// @footer-bg: @sandy-beach;
+@hover: teal;
+
+// Colors
+@white: #ffffff;
+
+// Mobile var
+@mobile: ~'(max-width: 500px)';
+@tablet: ~'(max-width: 900px)';
+
+
+// Mixins in here
+#mixin {
+  // ========================================== layout options
+  .layout(@j-content: center, @a-items: center) {
+    display: flex;
+    justify-content: @j-content;
+    align-items: @a-items;
+  }
+
+  // ========================================== navigation options
+  .nav-spread() {
+    .layout(space-between);
+    padding: 14px 0;
+
+    nav {
+      width: 40%;
+      .layout(space-around, center);
+    }
+
+    a {
+      .links;
+      transition: all 0.15s;
+      
+      &:hover {
+        color: @hover;
+      }
+    }
+
+    @media @tablet {
+      .nav-stacked;
+    }
+  } //.nav-spread
+
+  .nav-stacked() {
+    .layout;
+    flex-direction: column;
+    padding: 25px 0 10px 0;
+    width: 100%;
+
+    nav {
+      .layout(space-around);
+      width: 100%;
+      padding-top: 10px;
+
+      a {
+        .links;
+        transition: all 0.15s;
+
+        &hover {
+          color: red;
+        }
+      }
+    }
+  } //.nav-stacked
+
+  .links() {
+    text-decoration: none;
+    color: black;
+    font-size: 1.6rem;
+  }
+
+  // ========================================== button options
+  .button-style() {
+    .layout;
+    padding: 12px;
+    font-size: 1.8rem;
+    border-radius: 15px;
+    background: @button-bg;
+    color: white;
+    transition: all 0.15s;
+
+    &:hover {
+      background-color: lighten(@button-bg, 10%);
+    }
+  } //.button-style
+
+  // ========================================== card container and card style options
+  // name html classes: card-container and card-double or card-triple
+  .card-style() {
+    .layout;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
+    @media @mobile {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .card-double {
+      margin: 15px 2%;
+      padding: 40px;
+      width: 45%;
+
+      @media @tablet {
+        padding: 25px;
+        margin: 15px 2%;
+      }
+
+      @media @mobile {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+    } //.card-triple
+  } //.card-container
+
+  // ========================================== default to subtle box shadow
+  .box-shadow(@x: 0, @y: 3, @blur: 15px, @color: rgba(0,0,0,0.2)) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
+  } //#mixin
