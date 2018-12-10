@@ -1,4 +1,4 @@
-const navButton = document.querySelector('.navbar .navcontent .navbutton');
+const navButton = document.querySelector('.nav-button');
 const navDisplay = document.querySelector('nav');
 
 navButton.addEventListener('click', () => {
