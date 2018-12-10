@@ -29,6 +29,10 @@ header {
             font-size: 6.4rem;
             line-height: 7.5rem;
             color: @white;
+            @media @mobile{
+                font-size: 5rem;
+                line-height: 6rem;
+            }
         }
         z-index: 2;
         position: absolute;
@@ -43,6 +47,12 @@ header {
     padding: 5% 8%;
     .sjbox{
         .layout(center, center);
+        @media @mobile{
+            .layout(center, center, column);
+            height: 60rem;
+            flex-wrap: nowrap;
+            padding: 0;
+        }
         .innerbox{
             .layout(flex-start, flex-start, column);
             flex-wrap: wrap;
@@ -58,6 +68,10 @@ header {
             .btn{
                 .button();
                 // .outline();
+                
+            }
+            @media @mobile{
+                height: 30rem;
             }
         }
     }
@@ -65,29 +79,55 @@ header {
         padding-bottom: 5rem;
         .innerbox{
             padding-right: 3%;
+            @media @mobile{
+                padding: 0;
+                // .outline();
+            }
+        }
+        @media @mobile{
+            .layout(center, center, column-reverse);
+            padding: 3rem 0;
+
         }
     }
     .sjbot{
         padding-top: 5rem;
         .innerbox{
             padding-left: 4%;
+            @media @mobile{
+                padding: 0;
+            }
+        }
+        @media @mobile{
+            padding: 0;
         }
     }
 }
 
 .recent-head{
     padding: 4.5rem 8% 3.5rem;
+    @media @mobile{
+        padding: 3rem 8%;
+    }
 }
 
 .recent{
-    .layout(center, baseline, column);
+    .layout(center, center, column);
     padding: 0 8%;
+    @media @mobile{
+        padding: 0;
+    }
     .recent-inner{
         .layout(center, center, column);
         .combo{
             .layout(center, flex-start, column);
             img{
                 z-index: -1;
+            }
+            .mobile-img{
+                @media @mobile {
+                    width: 96vw;
+                }
             }
             h2{
                 .layout(center, center);
@@ -98,9 +138,17 @@ header {
                 position: relative;
                 top: -5rem;
                 letter-spacing: .8rem;
+                @media @mobile{
+                    align-self: center;
+                    width: 90%;
+                    top: -2rem;
+                }
             }
             .align-left{
                 align-self: flex-start;
+                @media @mobile{
+                    align-self: center;
+                }
             }
         }
         .recent-words{
@@ -113,6 +161,28 @@ header {
             p{
                 font-size: 1.8rem;
             }
+            @media @mobile{
+                width: 85%;
+            }
         }
+    }
+}
+
+.mobile-img{
+    display: none;
+}
+
+@media @mobile {
+    .container{
+        width: 96vw;
+    }
+
+    .desktop-img{
+        display: none;
+    }
+    .mobile-img{
+        display: flex;
+        width: 100%;
+        padding: 0;
     }
 }
