@@ -1,9 +1,9 @@
 class Dropdown {
-    constructor(el) {
-        this.element = el;
-        this.button = el.querySelector(".dropdown-button");
-        this.content = el.querySelector(".dropdown-content");
-        this.el.addEventListener("click", () => this.toggleContent());
+    constructor(dropdown) {
+        this.dropdown = dropdown;
+        this.button = dropdown.querySelector(".dropdown-button");
+        this.content = dropdown.querySelector(".dropdown-content");
+        this.dropdown.addEventListener("click", () => this.toggleContent());
     }
     toggleContent() {
         this.content.classList.toggle("dropdown-hidden");
