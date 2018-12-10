@@ -6,55 +6,359 @@ v2.0b1 | 201101
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
-body{
-  line-height:1;
+body {
+  line-height: 1;
 }
-ol,ul{
-  list-style:none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote,q{
-  quotes:none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
 }
-ins{
-  text-decoration:none;
+ins {
+  text-decoration: none;
 }
-del{
-  text-decoration:line-through;
+del {
+  text-decoration: line-through;
 }
 
-table{
-  border-collapse:collapse;
-  border-spacing:0;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Your Code Goes Here */
+
+//==========================VARIABLES======================
+//==========================COLORS======================
+@light-color: #fff;
+@dark-color: #222;
+@light-grey-color: #d8d8d8;
+@dark-grey-color: #828282;
+@bluish-color: #5e9fb9;
+//=========================Home Page
+@greybbox: @light-grey-color;
+@btnBorder: @dark-color;
+//=========================Services Page
+@tabSelectBg: @bluish-color;
+@tabHoverBg: @dark-color;
+@tabHoverColor: @light-color;
+//=========================Footer
+@footerBg: @dark-grey-color;
+//==========================GLOBAL FORMATTING======================
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: @light-color;
+  color: @dark-color;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background-color: #99a4af;
+  z-index: 3;
+}
+
+footer {
+  background-color: @footerBg;
+  .footer-text;
+  margin-top: 100px;
+}
+
+//==========================TYPOGRAPHY======================
+//=========================General Text
+@font-stack: Roboto, Arial, sans-serif;
+
+body {
+  font-family: @font-stack;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+//=========================Special Text
+.jumbo-head {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  color: @light-color;
+
+  z-index: 1;
+}
+
+.sub-head {
+  font-weight: bold;
+  font-size: 2.6rem;
+}
+
+.footer-head {
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: @light-color;
+}
+
+.footer-text {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: @light-color;
+}
+
+.nav-logo {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: @light-color;
+}
+
+.nav-text {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  color: @light-color;
+  &:hover {
+    color: @dark-color;
+  }
+}
+//===============================LAYOUT and FORMATTING================
+.main {
+  margin: 0 auto;
+  max-width: 850px;
+}
+.hero {
+  position: relative;
+  .jumbo-head {
+    width: 300px;
+    position: absolute;
+    bottom: 53px;
+    left: 80px;
+  }
+}
+
+.content {
+  margin-top: 45px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content-text {
+  max-width: 410px;
+  h2 {
+    .sub-head;
+    margin-top: 45px;
+    margin-bottom: 20px;
+  }
+  .btn {
+    height: 50px;
+    width: 135px;
+    border: 1px solid @btnBorder;
+    margin-top: 25px;
+    text-align: center;
+    padding: 15px 0 0 0;
+  }
+}
+
+.recent-projects {
+  h2 {
+    .sub-head;
+    margin-bottom: -20px;
+  }
+}
+
+.project {
+  margin: 0 auto;
+  position: relative;
+  img {
+    margin-top: 70px;
+    margin-bottom: 90px;
+  }
+  .greybox-right {
+    position: absolute;
+    right: 0;
+    top: 240px;
+    background-color: @greybbox;
+    width: 318px;
+    height: 90px;
+    padding: 30px;
+    text-align: center;
+    .sub-head;
+    font-weight: lighter;
+    letter-spacing: 10px;
+  }
+  .greybox-left {
+    position: absolute;
+    left: 0;
+    top: 240px;
+    background-color: @greybbox;
+    width: 318px;
+    height: 90px;
+    padding: 30px;
+    text-align: center;
+    .sub-head;
+    font-weight: lighter;
+    letter-spacing: 10px;
+  }
+  p {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    max-width: 450px;
+    margin: 0 auto 20px auto;
+  }
+}
+
+.footer-items {
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-evenly;
+  h2 {
+    .footer-head;
+  }
+}
+
+.lets-talk {
+  max-width: 300px;
+  font-size: 1.2rem;
+  h2 {
+    .footer-head;
+  }
+}
+.copyright {
+  margin: 30px auto 5px auto;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.email {
+  margin-top: 18px;
+  width: 280px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: @light-color;
+  color: @footerBg;
+  font-size: 1.6rem;
+  padding: 8px;
+}
