@@ -14,22 +14,6 @@ function expand() {
 menu.addEventListener('click', () => {expand()});
 xMark.addEventListener('click', () => {expand()});
 
-function welcome() {
-  TweenMax.to('.letter', 4, {y: 75, rotation:360, scale: 2});
-}
-
-setTimeout(function(){welcome()}, 1000); 
-
-const enter = document.querySelector('.arrows');
-enter.addEventListener('click', () => {hide()});
-
-function hide() {
-  document.querySelector('.welcome').classList.add('hide');
-}
-
-AOS.init({
-  duration: 1200
-});
 
 //Carousel
 class Carousel {

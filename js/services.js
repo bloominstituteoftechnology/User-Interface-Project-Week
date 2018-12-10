@@ -15,26 +15,6 @@ xMark.addEventListener('click', () => {expand()});
 
 
 //Services-page
-
-//loading animation
-function house() {
-  TweenMax.to('.roof', 3, {y:150});
-  TweenMax.to('.left-wall', 4, {x:120});
-  TweenMax.to('.right-wall', 2, {x:-120});
-  TweenMax.to('.floor', 5, {y:-175});
-  TweenMax.to('.words', 2, {y:-180});
-}
-
-house();
-
-function disappearHouse() {
-  const loading = document.querySelector('.loading');
-  TweenMax.to('.loading', 2, {opacity:0})
-  setTimeout(function() {loading.classList.add('hide')}, 2000);
-}
-
-setTimeout(function(){disappearHouse()}, 6000);
-
 class TabLink {
     constructor(element){
 
