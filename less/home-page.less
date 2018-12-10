@@ -5,17 +5,33 @@
     height: 54.9rem;
     background-position: bottom;
     position: relative;
+    @media @phone {
+        height: 25.5rem;
+    }
     &__title {
         position: absolute;
         bottom: 4.6rem;
         margin-left: 8.2rem;
         .jumbotron-header;
+        @media @phone {
+            bottom: 2rem;
+            margin-left: 1rem;
+            font-size: 3.8rem;
+            line-height: 1.4;
+        }
     }
 }
 
 .main-row {
     display: flex;
     justify-content: space-evenly;
+    @media @phone {
+        flex-flow: column;
+        align-items: center;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .duomargin(5rem, 0);
     &__col-1 {
         display: flex;
@@ -23,21 +39,36 @@
         padding-left: 3rem;
         padding-top: 3rem;
         width: 40%;
+        @media @phone {
+            width: 100%;
+            order: 2;
+            margin-left: 0;
+            padding-left: 0;
+            align-items: center;
+        }
         h2, h1 {
             .duomargin(2rem, 0);
             font-size: 2.4rem;
+            @media @phone {
+                .duomargin(.5rem, 0)
+            }
         }
         p {
             font-size: 1.6rem;
             line-height: 1.6;
             letter-spacing: 1.2;
             font-weight: 400;
+            width: 95%;
         }
     }
     &--even {
         padding-left: 0rem;
         margin-left: -2rem;
         padding-top: 2.6rem;
+        @media @phone {
+            margin-left: 0;
+            padding-left: 0;
+        }
     }
     &__button {
         margin-top: 1rem;
@@ -47,6 +78,10 @@
         font-weight: 600;
         width: 13.8rem;
         height: 4.9rem;
+        @media @phone {
+            width: 95%;
+            margin-top: 2.5rem;
+        }
     }
     img {
         height: 27.8rem;
@@ -57,11 +92,20 @@
     padding: 4rem 8rem;
     flex-flow: column;
     align-items: center;
+    @media @phone {
+        padding:0;
+    }
     .img-holder {
         position: relative;
         img {
             height: 230px;
             margin: 4.4rem;
+            @media @phone {
+                margin: 0;
+                max-width: 100%;
+                height: unset;
+                max-height: 230px;
+            }
         }
         .img-holder__overlays {
             position: absolute;
@@ -77,25 +121,35 @@
                 right: 5rem;
                 width: 31.2rem;
                 padding: 3rem 0;
+                .overlay-mobile;
             }
             &--outskirts {
                 bottom: 1rem;
                 width: 31.6rem;
                 left: 4.4rem;
                 padding: 3rem 0;
+                .overlay-mobile;
             }
             &--blocks {
                 bottom: 0rem;
                 width: 31.6rem;
                 right: 5rem;
                 padding: 3rem 0;
+                .overlay-mobile;
             }
         }
         margin-bottom: 3rem;
+        @media @phone {
+            margin-bottom: 6rem;
+        }
     }
     h2 {
         align-self: flex-start;
         font-size: 2.4rem;
+        @media @phone {
+            margin-bottom: 2rem;
+            margin-left: 1.5rem;
+        }
     }
     p {
         width: 53%;
@@ -104,5 +158,8 @@
         letter-spacing: 1px;
         .duomargin(1.2rem, 0);
         font-weight: 500;
+        @media @phone {
+            width: 95%;
+        }
     }
 }
