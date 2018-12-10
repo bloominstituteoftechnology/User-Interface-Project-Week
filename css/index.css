@@ -162,6 +162,10 @@ p {
   color: #222222;
   margin-bottom: 2rem;
 }
+a {
+  text-decoration: none;
+  color: #222222;
+}
 .container {
   max-width: 1024px;
   margin: 0 auto;
@@ -170,6 +174,11 @@ p {
 }
 .nav-container {
   background: #99a4af;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
 }
 .nav-container .navigation {
   max-width: 1024px;
@@ -187,6 +196,49 @@ p {
 }
 .nav-container .nav-menu {
   display: none;
+}
+.nav-container .close-menu-btn {
+  display: none;
+}
+.expanded {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background: #99a4af;
+  opacity: 0.9;
+}
+.expanded .navigation {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+.expanded .navigation .logo {
+  width: 50%;
+}
+.expanded .navigation .nav-menu-btn {
+  display: none;
+}
+.expanded .navigation .close-menu-btn {
+  display: block;
+}
+.expanded .navigation .nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.expanded .navigation .nav-menu a {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  color: #FFFFFF;
+}
+.expanded .navigation .nav-menu a:hover {
+  color: #222222;
 }
 .jumbo-container {
   margin-bottom: 50px;
@@ -207,7 +259,7 @@ p {
 }
 .jumbo-container img {
   width: 100%;
-  height: auto;
+  max-height: 95vh;
 }
 .jumbo-container .jumbotron {
   position: relative;

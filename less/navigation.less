@@ -1,8 +1,14 @@
 .nav-container {
   // .b;
   background: @grey-secondary;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
 
   .navigation {
+    
     max-width: 1024px;
     margin: 0 auto;
     display: flex;
@@ -19,6 +25,57 @@
   }
   
   .nav-menu {
+   display: none;
+  }
+
+  .close-menu-btn {
     display: none;
+  }
+}
+
+.expanded {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background: @grey-secondary;
+  opacity: .9;
+
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    
+    .logo {
+      width: 50%;
+    }
+    
+    .nav-menu-btn {
+      display: none;
+    }
+    
+    .close-menu-btn {
+      display: block;
+    }
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      
+      a {
+        font-weight: bold;
+        font-size: 4.8rem;
+        line-height: 8.5rem;
+        color: @white;
+
+        &:hover {
+          color: @nero;
+        }
+      }
+    }
   }
 }
