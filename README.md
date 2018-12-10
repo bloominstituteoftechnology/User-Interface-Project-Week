@@ -20,14 +20,14 @@ You will use Trello to report your progress on the MVP and any extra features yo
 * [x] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance
 
 ## Assets Provided:
-* [Style guide:](/DesignFiles/style-guide.md) This file will help you identify font sizes, colors, and font families across the site.
-* [Images for both desktop and mobile](/img).  Mobile images have been provided to match the design files.
-* Content has been provided on each page inside of comment tags
-* [Design Files](/DesignFiles) have been provided as guides for what the pages should look like on desktop and mobile.  Ignore tablet until you get MVP done.
+x [Style guide:](/DesignFiles/style-guide.md) This file will help you identify font sizes, colors, and font families across the site.
+x [Images for both desktop and mobile](/img).  Mobile images have been provided to match the design files.
+x Content has been provided on each page inside of comment tags
+x [Design Files](/DesignFiles) have been provided as guides for what the pages should look like on desktop and mobile.  Ignore tablet until you get MVP done.
 
 ## MVP Features:
 These MVP features represent the fundamental knowledge you should have obtained throughout the last 4 weeks.  If you cannot accomplish all of the MVP tasks listed here, you may be a candidate for the mastery based program.
-* [ ] Build layout **HTML/LESS**: [Home page desktop design](/DesignFiles/Home/home-desktop.png)
+* [x] Build layout **HTML/LESS**: [Home page desktop design](/DesignFiles/Home/home-desktop.png)
 * [ ] Build layout **HTML/LESS**: [Home page mobile design](/DesignFiles/Home/home-mobile.png)
 * [ ] Build layout **HTML/LESS**: [Services page **desktop design only**](/DesignFiles/Services/services-desktop.png)
 * [ ] Build layout **HTML/LESS/JavaScript**: [Navigation system design](DesignFiles/Navigation)
