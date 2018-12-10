@@ -7,17 +7,19 @@ class TabNavigators {
 
     initialize() {
         document.querySelectorAll('.tab-navigator').forEach(t => {
-            let thisNavigator = new TabNavigator();
+            let thisNavigator = new TabNavigator(t);
             this.tabNavigators.push(thisNavigator);
         });
         
         this.selectedNavigator = this.tabNavigators[1];
+        this.selectedNavigator.select();
 
         this.tabNavigators.forEach(t => {
             t.element.addEventListener('click', () => {
                 if(this.selectedNavigator !== t) {
                     this.selectedNavigator.deselect();
                     t.select();
+                    this.selectedNavigator = t;
                 }
             })
         })
@@ -28,7 +30,7 @@ class TabNavigator {
     constructor(el) {
         this.element = el;
         this.data = this.element.dataset.tab;
-        this.contentElement = document.querySelector(`.tab-content[data-tab = "${this.data}"]`);
+        this.contentElement = document.querySelector(`.tab-content[data-tab="${this.data}"]`);
         this.tabContent = new Content(this.contentElement);
     }
 
@@ -49,11 +51,11 @@ class Content {
     }
 
     select() {
-        this.element.classList.add('selected-content');
+        this.element.style.display = 'block';
     }
 
     deselect() {
-        this.element.classList.remove('selected-content');
+        this.element.style.display = 'none';
     }
 }
 
