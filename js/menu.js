@@ -1,11 +1,13 @@
 const openMenu = () => {
     // Toggle the "menu--open" class on your menu refence. 
     menu.style.display = "block"
+    menuButton.style.display = "none";
   }
   
 const closeMenu = () => {
   if (menu.style.display == "block") {
     menu.style.display = "none";
+    menuButton.style.display = "block";
   }
 }
   
