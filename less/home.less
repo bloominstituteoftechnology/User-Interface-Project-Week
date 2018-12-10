@@ -14,6 +14,7 @@ header {
     position: fixed;
     width: 100%;
     max-width: 1024px;
+    z-index: 7;
 }
 .jumbo {
     .layout();
@@ -33,7 +34,85 @@ header {
         position: absolute;
         align-self: flex-end;
         justify-self: flex-start;
-        // border: 1px solid red;
         padding: 2.5% 4.5%;
+    }
+}
+
+.subjumbo{
+    .layout(center, center, column);
+    padding: 5% 8%;
+    .sjbox{
+        .layout(center, center);
+        .innerbox{
+            .layout(flex-start, flex-start, column);
+            flex-wrap: wrap;
+            // .outline();
+            
+            height: 20rem;
+            h1{
+                padding:.8rem 0;
+            }
+            p{
+                padding: 1.1rem 0;
+            }
+            .btn{
+                .button();
+                // .outline();
+            }
+        }
+    }
+    .sjtop{
+        padding-bottom: 5rem;
+        .innerbox{
+            padding-right: 3%;
+        }
+    }
+    .sjbot{
+        padding-top: 5rem;
+        .innerbox{
+            padding-left: 4%;
+        }
+    }
+}
+
+.recent-head{
+    padding: 4.5rem 8% 3.5rem;
+}
+
+.recent{
+    .layout(center, baseline, column);
+    padding: 0 8%;
+    .recent-inner{
+        .layout(center, center, column);
+        .combo{
+            .layout(center, flex-start, column);
+            img{
+                z-index: -1;
+            }
+            h2{
+                .layout(center, center);
+                height: 9.4rem;
+                width: 31.4rem;
+                border: 1px solid @white;
+                align-self: flex-end;
+                position: relative;
+                top: -5rem;
+                letter-spacing: .8rem;
+            }
+            .align-left{
+                align-self: flex-start;
+            }
+        }
+        .recent-words{
+            .layout(center; center, column);
+            flex-wrap: wrap;
+            width:53%;
+            align-self: center;
+            font-weight: bold;
+            padding-bottom: 10rem;
+            p{
+                font-size: 1.8rem;
+            }
+        }
     }
 }
