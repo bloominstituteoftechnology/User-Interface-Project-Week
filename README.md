@@ -12,7 +12,7 @@ You will use Trello to report your progress on the MVP and any extra features yo
 - Don't overplan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction
 
 ## Trello Set Up:
-* [ ] Create a [Trello account](https://trello.com/)
+* [x] Create a [Trello account](https://trello.com/)
 * [ ] Create a new public board called "S&J Architects - By Your Name"
 * [ ] Create lists titled ```backlog```,```To Do```, ```In Progress```, and ```Done```
 * [ ] Fill in the ```To Do``` list with the MVP features listed below
