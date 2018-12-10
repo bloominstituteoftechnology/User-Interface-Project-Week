@@ -6,56 +6,138 @@
   display: flex;
   align-items: flex-end;
 
+  @media @mobile {
+    background-image: url("../img/home/home-mobile-jumbotron.png");
+    height: 250px;
+    background-size: cover;
+  }
+
   h1 {
-    color: @white;
-    font-size: 6rem;
-    font-weight: bold;
-    letter-spacing: 1.25px;
-    line-height: 1.25;
     padding: 0 0 50px 85px;
     z-index: 0;
+
+    @media @mobile {
+      font-size: 4rem;
+      padding: 0 0 20px 20px;
+    }
   }
 }
 
 
+.info-containers {
+  margin: 50px 0;
+  @media @tablet {
+    width: 90%;
+    margin: 40px auto;
 
+  }
+  @media @mobile {
+    width: 95%;
+  }
+}
 
-  .info-containers {
-    margin: 50px 0;
+  .info-container {
+    #mixin.layout;
+    margin-bottom: 100px;
 
-    .info-container {
-      #mixin.layout;
-      margin-bottom: 100px;
+    @media @tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
 
-      h2 {
-        padding-bottom: 20px;
+    button {
+      #mixin.button-style;
+
+      @media @mobile {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0;
       }
+    }
 
-      p {
-        padding-bottom: 20px;
+    .info-left {
+      padding-right: 30px;
+
+      @media @tablet {
+        padding: 0;
       }
+    }
 
-      button {
-        #mixin.button-style;
+    .info-right {
+      padding-left: 30px;
+
+      @media @tablet {
+        padding: 0;
       }
+    }
+    .desktop-img {
+      margin: 30px 0 50px 0;
+    }
 
-      .info-left {
-        padding-right: 30px;
-      }
-
-      .info-right {
-        padding-left: 30px;
+    .mobile-img {
+      display: none;
+      
+      @media @mobile {
+        display: block;
+        margin: 10px 0 25px 0;
+        width: 100%;
       }
     }
   }
 
+  .image-left {
+    display: flex;
+    flex-direction: row-reverse;
 
+    @media @tablet {
+      flex-direction: column;
+    }
+  }
+
+  @media @mobile {
+    .desktop-img {
+      display: none;
+    }
+  }
+
+  .recent-projects {
+    @media @tablet {
+      margin-top: 70px;
+    }
+  
   .projects-container {
     margin: 50px 0;
+    @media @tablet {
+      margin: 0;
+    }
 
     .project {
       margin: 40px 0;
+
+      @media @tablet {
+        margin: 0;
+      }
       
+      .mobile-img {
+        display: none;
+        
+        @media @mobile {
+          display: block;
+          margin: 10px 0 25px 0;
+          width: 100%;
+        }
+      }
+
+      @media @tablet {
+        .desktop-img {
+          max-width: 100%;
+        }
+      }
+
+    .mobile-project-image {
+      width: 100%;
+    }
 
       .title-card {
         border: 1px solid white;
@@ -65,18 +147,32 @@
         margin-top: -60px;
         z-index: 1;
         float: left;
+
+        @media @mobile {
+          float: none;
+          padding: 50px 0;
+          width: 350px;
+          margin: -40px auto;
+          text-align: center;
+        }
       }
       .title-card-right {
         float: right;
+
+        @media @mobile {
+          float: none;
+        }
       }
 
       .project-content {
         margin: 90px 23.5% 90px 23.5%;
 
-        p {
-          font-size: 1.7rem;
-          padding-bottom: 20px;
+        @media @tablet {
+          margin: 70px 3% 20px 3%;
         }
+
+
       }
     }
   }
+}

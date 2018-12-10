@@ -28,5 +28,4 @@ toggleMenu = function () {
   contentContainer.classList.toggle('hide');
   footer.classList.toggle('hide')
 
-  console.log(homeBanner);
 }
