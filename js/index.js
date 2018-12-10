@@ -1,158 +1,131 @@
 // JS goes here
-// JS goes here
 
 // Navigation Menu control
-
-let hamburgerTag = document.querySelector('#hamburger');
-let hamburgerCloseTag = document.querySelector('#hamburgerClose');
-let navLinkTag = document.querySelector('.navLink');
-let navTag = document.querySelector('.nav');
-
-
-hamburgerTag.addEventListener('click', navOpenClicked);
-hamburgerCloseTag.addEventListener('click', navCloseClicked);
-
-
-
-function navOpenClicked() {
-    let tl = new TimelineLite;
-
-    navClassToggle();
-   
-   // expand the nav to whole screen
-    TweenLite.to('.nav', 0.7, {height : "100vh"});
-   
-    // slideIn nav menu one at a time
-    tl.fromTo('.navLink a:nth-child(1)', 0.5, {x :-600}, {x:0, opacity :1})
-    .fromTo('.navLink a:nth-child(2)', 0.5, {x :-600}, {x:0, opacity :1})
-    .fromTo('.navLink a:nth-child(3)', 0.5, {x :-600}, {x:0, opacity :1})
-        
-   
-    // setTimeout(navClassToggle, 1000);
-    // setTimeout((TweenLite.to('navLinkTag', 5, {opacity : "0.9"})),1000);
-}
-
-function navCloseClicked() {
-    let tl = new TimelineLite;
-
-    // nav menu faze out and nav area collapse to original size
-    tl.to('.navLink a:nth-child(3)', 0.3, {opacity :0.1})
-    .to('.navLink a:nth-child(2)', 0.3, {opacity :0.1})
-    .to('.navLink a:nth-child(1)', 0.3, {opacity :0.1})
-    .to('.nav', 0.5, {height : "8vh"});
-
-    setTimeout( navClassToggle,1400);
-    
-
- }
-
-function navClassToggle() {
-   
-    hamburgerTag.classList.toggle('disappear');
-    hamburgerCloseTag.classList.toggle('disappear');
-    navLinkTag.classList.toggle('disappear');
-    navTag.classList.toggle('expanded');  
-}
-
-
-// In service page, connect tab to right material (card) to be shown
-
-
-class Tab {
+class Dropdown {
     constructor(element) {
-    this.element = element;
-    this.dataset = element.dataset.tab;
-
-    this.cardElement = document.querySelector(`.card[data-tab='${this.dataset}']`);
+      // assign this.element to the dropdown element
+      this.element = element;
+      // assign the ".dropdown-button" class found in the dropdown element (look at the HTML for context)
+      this.button = this.element.querySelector('.toggle-overlay')
+      this.closebutton = this.element.querySelector('.closebutton')
+      // assign the reference to the ".dropdown-content" class found in the dropdown element
+      this.content = this.element.querySelector('.aside');
+      this.closebuttoncontent = document.querySelector('.aside');
+      
+      // Add a click handler to the button reference and call the toggleContent method.
+      this.button.addEventListener('click', (event) => { this.toggleContent(event) })
+      this.closebutton.addEventListener('click', (event) => { this.closeContent(event) })
+      // Instructor note, the reason we must wrap the toggleContent method in an anonymous function is that 'this' in toggleContent
+      // would refer to the button, NOT the current instance of the class. 
+    }
   
-    this.card = new Card(this.cardElement);
-   
-    this.element.addEventListener('click', () => this.select("tab"));
-    };
-
-    select(method){
-        tabs.forEach((tab) => tab.element.classList.remove('activeTab'))
-        this.element.classList.add('activeTab');
-        
-        // this for loop keeps currentCard correct when tab is clicked
-        for (let i =0 ; i < tabs.length; i++){
-           if (tabs[i].element.classList.contains("activeTab"))
-           carousel.currentCard = i;
-       }
-       
-        // if it's carousel click, don't activate card.select
-        if(method === "tab")
-            this.card.select();
+    toggleContent(event) {
+      // Toggle the ".dropdown-hidden" class off and on
+      this.content.classList.toggle('open');
     }
-}
-
-class Card {
-    constructor(element){
-        this.element = element;
-    }
-
-    // display correct card when a tab is clicked
-    select(){
-        let cards =  document.querySelectorAll('.card');
-     // move all cards left -100% so they won't be displayed
-        Array.from(cards).forEach((card) => TweenLite.to(card, 0, {left:"-100%"}));
-    
-        // display correct card
-        TweenLite.to(this.element, 0, {left:"5%"})
-       
-    }
-}
-
-
-// Carousel JS.  make cards rotate
-class Carousel {
-    constructor(element){
-        this.element = element;
-        this.currentCard = 0;
-        this.cards = this.element.querySelectorAll('.card');
-        this.maxCardNum = this.cards.length;
-        this.cards[this.currentCard].style.left = "5%";
-        this.initiate();
-     }
-
-     rightClicked() {
-        let newNum = this.currentCard + 1;
-        if (newNum == this.maxCardNum )
-            newNum = 0; 
   
-        // slide current card to right and slide new card in from left
-        TweenLite.fromTo(this.cards[this.currentCard], 1.3,  {left :"5%"}, {left:"100%"} );
-        TweenLite.fromTo(this.cards[newNum], 1.3, {left :"-100%"}, {left:"5%"} );
-    
-        this.currentCard = newNum;  
+    closeContent(event) {
+      // Toggle the ".dropdown-hidden" class off and on
+      this.closebuttoncontent.classList.toggle('open');
+    }
+  }
+  // Nothing to do here, just study what the code is doing and move on to the Dropdown class
+  let dropdowns = document.querySelectorAll('header');
+  dropdowns = Array.from(dropdowns).map(dropdown => new Dropdown(dropdown));
 
-        tabs[this.currentCard].select();
+class TabLink {
+    constructor(element) {
+      // assign this.element to the element reference
+      this.element = element;
+      // Get the tab data attribute and save the value here
+      this.tabData = this.element.dataset.tab;
+      // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
+      if (this.tabData === 'all') {
+        this.cards = document.querySelectorAll(`.card`);
+      } else {
+        this.cards = this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
       }
+      // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
+      this.cards = Array.from(this.cards).map(card => new TabCard(card));
+  
+      // Add a click event that invokes selectTab
+      this.element.addEventListener('click', (event) => {
+        // Call the select method you define below
+        this.selectTab(event);
+      });
+    }
+  
+    selectTab(event) {
+  
+      // Select all elements with the .tab class on them
+      const tabs = document.querySelectorAll('.tab');
+      // Iterate through the NodeList removing the .active-tab class from each element
+      tabs.forEach(link => {
+        link.classList.remove('active-tab')
+      });
+  
+      // Add a class of ".active-tab" to this.element
+      this.element.classList.add('active-tab');
+      //console.log(this.element);
+  
+      // Select all of the elements with the .card class on them
+      const cards = document.querySelectorAll('.card');
+      // Iterate through the NodeList setting the display style each one to 'none'
+      cards.forEach(card => {
+        card.style.display = 'none';
+      });
+      // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
+      this.cards.forEach(card => card.selectCard());
+    }
+  }
+  
+  class TabCard {
+    constructor(element) {
+      // Assign this.element to the passed in element.
+      this.element = element;
+    }
+    selectCard() {
+      // Update the style of this.element to display = null
+      this.element.style.display = 'flex';
+    }
+  }
+  
+  // Create a reference to all ".tab" classes
+  let tabs = document.querySelectorAll('.tab');
+  // Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
+  tabs = Array.from(tabs).map(link => new TabLink(link));
+  
+  //Once you are complete, call the .select method on the first tab
+  tabs[0].selectTab();
 
-    leftClicked(){
-        let newNum = this.currentCard - 1;
-        if (newNum == -1 )
-            newNum = this.maxCardNum - 1;
- 
-            this.cards[newNum].classList.remove('disappear')
-            TweenLite.fromTo(this.cards[this.currentCard], 1.3,  {left :"5%"}, {left:"-100%"} );
-            TweenLite.fromTo(this.cards[newNum], 1.3, {left :"100%"}, {left:"5%"} );
-          
-        this.currentCard = newNum;   
-        tabs[this.currentCard].select();
-      }
-
-      initiate() {
-            this.element.querySelector('.left-button').addEventListener('click', () => this.leftClicked());
-            this.element.querySelector('.right-button').addEventListener('click', () => this.rightClicked());
-        }
-}
-
-
-let carousel = document.querySelector('.cards-container');
-carousel = new Carousel(carousel);
-
-
-
-let tabs = document.querySelectorAll('.tab');
-tabs = Array.from(tabs).map((tab) => new Tab(tab));
+// class Dropdown {
+//     constructor(element) {
+//       // assign this.element to the dropdown element
+//       this.element = element;
+//       // assign the ".dropdown-button" class found in the dropdown element (look at the HTML for context)
+//       this.button = this.element.querySelector('.toggle-overlay')
+//       this.closebutton = this.element.querySelector('.closebutton')
+//       // assign the reference to the ".dropdown-content" class found in the dropdown element
+//       this.content = this.element.querySelector('.aside');
+//       this.closebuttoncontent = document.querySelector('.aside');
+      
+//       // Add a click handler to the button reference and call the toggleContent method.
+//       this.button.addEventListener('click', (event) => { this.toggleContent(event) })
+//       this.closebutton.addEventListener('click', (event) => { this.closeContent(event) })
+//       // Instructor note, the reason we must wrap the toggleContent method in an anonymous function is that 'this' in toggleContent
+//       // would refer to the button, NOT the current instance of the class. 
+//     }
+  
+//     toggleContent(event) {
+//       // Toggle the ".dropdown-hidden" class off and on
+//       this.content.classList.toggle('open');
+//     }
+  
+//     closeContent(event) {
+//       // Toggle the ".dropdown-hidden" class off and on
+//       this.closebuttoncontent.classList.toggle('open');
+//     }
+//   }
+//   // Nothing to do here, just study what the code is doing and move on to the Dropdown class
+//   let dropdowns = document.querySelectorAll('header');
+//   dropdowns = Array.from(dropdowns).map(dropdown => new Dropdown(dropdown));
