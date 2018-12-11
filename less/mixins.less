@@ -14,6 +14,13 @@
     align-items: flex-start;
 }
 
+.flex-col-center(@jc-choice: center) {
+    display: flex;
+    flex-direction: column;
+    justify-content: @jc-choice;
+    align-items: center;
+}
+
 // Content Styling
 
 .button(@text-color: @btn-color, @bg-color: @gen-bg-color) {
@@ -23,6 +30,12 @@
     width: 135px;
     text-align: center;
     padding: 3% 0; 
+
+    @media @mobile {
+        width: 100%;
+        margin: 9% 0 4%;
+        padding: 5% 0;
+    }
 
     &:hover {
         color: @bg-color;
