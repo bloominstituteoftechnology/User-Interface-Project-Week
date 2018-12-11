@@ -6,6 +6,19 @@ class NavLink {
     constructor (link) {
         this.link = link;
         this.link.addEventListener('click', toggleNav)
+
+        this.link.addEventListener('mouseenter', () => this.select());  
+        
+        navLinks.addEventListener('mouseleave', () => this.deselect());  
+    };
+  
+    select() {
+        document.querySelectorAll('.nav-link').forEach( link => link.classList.remove('nav-link-selected'));
+        this.link.classList.add('nav-link-selected');
+    }
+    deselect() {
+        document.querySelectorAll('.nav-link').forEach( link => link.classList.remove('nav-link-selected'));
+        document.querySelector('.nav-link-default').classList.add('nav-link-selected');
     }
 }
 
@@ -18,6 +31,7 @@ const toggleNav = () => {
 const navOpen = document.querySelector('.nav-open');
 const navClose = document.querySelector('.nav-close');
 const nav = document.querySelector('.nav');
+const navLinks = document.querySelector('.nav-links');
 const navLink = document.querySelectorAll('.nav-link');
 
 navOpen.addEventListener('click', toggleNav);
