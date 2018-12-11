@@ -33,21 +33,47 @@ header{
 .main-content{
     width: 80%;
     margin: 0 auto;
-    @media @phone{
+    @media @sm-dtop{
         width: 90%;
     }
-    
-    .first-intro{
-        .layout(space-evenly, center);
-        margin: 50px auto;
-        @media @phone{
-            flex-direction: column-reverse;
+    .intro{
+        .first-intro{
+            .layout(space-evenly, center);
+            margin: 50px auto;
+            @media @phone{
+                flex-direction: column-reverse;
+            }
+        }
+        .second-intro{
+            .layout(space-evenly, center);
+            flex-direction: row-reverse;
+            margin: 50px auto;
+            @media @phone{
+                flex-direction:column-reverse;  
+            }
+            .main-img{
+                @media @phone{
+                    display: none;
+                }
+            }
+                .media-img-switch{
+                    display: none;
+                    @media @phone{
+                        width: 100%;
+                        display: flex;
+                    }
+             }
         }
         .main-img{
             @media @phone{
                 display: none;
             }
-        }
+                @media @sm-dtop{
+                    width: 50%;
+                    padding: 10px;
+                }
+                
+            }
         .media-img-switch{
                 display: none;
                 @media @phone{
@@ -55,32 +81,12 @@ header{
                     display: flex;
                 }
          }
+    }
     
-    }
-    .second-intro{
-        .layout(space-evenly, center);
-        flex-direction: row-reverse;
-        margin: 50px auto;
-        @media @phone{
-            flex-direction:column-reverse;  
-        }
-        .main-img{
-            @media @phone{
-                display: none;
-            }
-        }
-            .media-img-switch{
-                display: none;
-                @media @phone{
-                    width: 100%;
-                    display: flex;
-                }
-         }
-    }
     .text-content{
         width: 35%;
-        @media @phone{
-           width:100%;     
+        @media @sm-dtop{
+            width: 100%;
         }
         h3{
             font-size: 2.8rem;
@@ -131,7 +137,11 @@ header{
         .recent-text{
             width: 43%; 
             margin: 50px auto;
-            @media @phone{
+            
+            @media @sm-dtop{
+                width: 70%;
+            }
+            @media @tablet{
                 width: 100%;
             }
         }
