@@ -7,6 +7,7 @@ const toggleMenu = () => {
   menu.classList.toggle('menu--open');
   menuBtnClose.classList.toggle("menu-btn-close");
   menuBtn.classList.toggle('menu-btn-close');
+  
 }
 
 const menu = document.querySelector('.menu');
