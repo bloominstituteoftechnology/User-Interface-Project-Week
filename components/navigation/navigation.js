@@ -15,4 +15,4 @@ class Navigation {
     }
 }
 
-let menus = document.querySelectorAll('.navigation').forEach( menu => new Navigation(menu)); 
+const menus = document.querySelectorAll('.navigation').forEach( menu => new Navigation(menu)); 
