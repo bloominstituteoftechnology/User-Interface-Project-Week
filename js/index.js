@@ -1,4 +1,4 @@
-// Home Page
+// All Pages
 
 // Navigation
 
