@@ -11,9 +11,20 @@
             .info-button {
                 display: inline-block;
                 font-size: 1.6rem;
+                cursor: pointer;
                 padding: 15px 5%;
                 border: 1px solid @info-button-border-color;
                 margin: 20px 0;
+
+                &:hover {
+                    #animation > .color-transition(@main-color, @main-background-color, 500ms);
+                }
+
+                &:active {
+                    background-color: lighten(@main-color, 25%);
+                    border: 1px dotted @white;
+                    #prefixed > .transition-control(250ms);
+                }
             }
         }
 
@@ -33,23 +44,23 @@
             position: relative;
             width: 100%;
 
-            .recent-proj__item__title-block {
+            figcaption {
                 position: absolute;
                 bottom: -40px;
                 right: 0;
                 display: inline-block;
-                background-color: @project-title-square-background-color;
+                background-color: @project-caption-background-color;
                 font-weight: normal;
                 font-size: 2.4rem;
                 letter-spacing: 7.5px;
                 padding: 35px 6.5%;
-                border: 1px solid @project-title-square-border-color;
+                border: 1px solid @project-caption-border-color;
             }
         }
 
         &:nth-child(odd) {
             figure {
-                .recent-proj__item__title-block {
+                figcaption {
                     left: 0;
                     right: auto;
                 }
