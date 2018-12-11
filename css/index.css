@@ -137,6 +137,11 @@ table {
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
 html {
   font-size: 62.5%;
   font-family: Roboto, Arial, sans-serif;
@@ -192,9 +197,22 @@ html {
   display: block;
   margin: 0 auto;
 }
+@media (max-width: 414px) {
+  .second-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-x: hidden;
+  }
+}
 .second-container .middle-content {
   margin-top: 5%;
   display: flex;
+}
+@media (max-width: 414px) {
+  .second-container .middle-content {
+    flex-direction: column-reverse;
+  }
 }
 .second-container .middle-content .middle-content-paragraph {
   line-height: 1.4;
@@ -204,56 +222,131 @@ html {
 }
 .second-container .middle-content .middle-content-paragraph h3 {
   font-size: 2rem;
+  font-weight: bold;
+  color: #222222;
+}
+@media (max-width: 414px) {
+  .second-container .middle-content .middle-content-paragraph h3 {
+    margin-left: 2%;
+  }
 }
 .second-container .middle-content .middle-content-paragraph p {
   font-size: 1.4rem;
   margin-right: 16%;
 }
+@media (max-width: 414px) {
+  .second-container .middle-content .middle-content-paragraph p {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    line-height: 2;
+  }
+}
 .second-container .middle-content .middle-content-paragraph p button {
   margin-top: 4%;
   padding: 3%;
   display: block;
-  width: 30%;
+  width: 35%;
 }
-.second-container .futur-design {
+@media (max-width: 414px) {
+  .second-container .middle-content .middle-content-paragraph p button {
+    width: 100%;
+    padding: 6% 6%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+    border: 1px solid black;
+  }
+}
+.futur-design {
   margin-top: 5%;
   display: flex;
 }
-.second-container .futur-design .futur-content {
+@media (max-width: 414px) {
+  .futur-design {
+    flex-direction: column;
+  }
+}
+.futur-design .futur-content {
   line-height: 1.4;
   margin-top: 4%;
   display: flex;
   flex-direction: column;
 }
-.second-container .futur-design .futur-content h3 {
+.futur-design .futur-content h3 {
   font-size: 1.8rem;
+  font-weight: bold;
   margin-left: 16%;
   color: #222222;
 }
-.second-container .futur-design .futur-content p {
+@media (max-width: 414px) {
+  .futur-design .futur-content h3 {
+    margin-left: 2%;
+  }
+}
+.futur-design .futur-content p {
   font-size: 1.4rem;
   margin-left: 16%;
+  line-height: 2;
 }
-.second-container .futur-design .futur-content p button {
+@media (max-width: 414px) {
+  .futur-design .futur-content p {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.futur-design .futur-content p button {
   margin-top: 4%;
   padding: 3%;
   display: block;
-  width: 30%;
+  width: 35%;
+  border: 1px solid black;
 }
-.second-container .recent-project {
+@media (max-width: 414px) {
+  .futur-design .futur-content p button {
+    width: 100%;
+    padding: 6% 6%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.recent-project {
   display: flex;
   flex-direction: column;
   margin-top: 9%;
 }
-.second-container .recent-project h3 {
+.recent-project h3 {
+  font-weight: bold;
   margin-bottom: 5%;
   font-size: 2rem;
+  color: #222222;
+}
+@media (max-width: 414px) {
+  .recent-project h3 {
+    margin-left: 2%;
+  }
+}
+@media (max-width: 414px) {
+  .first-image {
+    display: none;
+  }
 }
 .recent-projects-image,
 .outskirts-projects-image,
 .blocks-projects-image {
   position: relative;
   margin-bottom: 5%;
+}
+@media (max-width: 414px) {
+  .recent-projects-image,
+  .outskirts-projects-image,
+  .blocks-projects-image {
+    display: block;
+    width: 100%;
+  }
 }
 .recent-projects-image h2,
 .outskirts-projects-image h2,
@@ -269,20 +362,47 @@ html {
   padding: 2% 2%;
   text-align: center;
 }
+@media (max-width: 414px) {
+  .recent-projects-image h2,
+  .outskirts-projects-image h2,
+  .blocks-projects-image h2 {
+    width: 93%;
+    bottom: -20%;
+    padding: 10% 10%;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+  }
+}
 .outskirts-projects-image h2 {
   position: absolute;
   left: 0;
   bottom: -11%;
 }
+@media (max-width: 414px) {
+  .outskirts-projects-image h2 {
+    margin-left: 2%;
+    bottom: -25%;
+  }
+}
 .para-villas p,
 .para-outskirts p,
 .para-blocks p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   width: 39%;
   display: block;
   margin: 0 auto;
   margin-bottom: 2%;
   line-height: 2.5;
+}
+@media (max-width: 414px) {
+  .para-villas p,
+  .para-outskirts p,
+  .para-blocks p {
+    margin-top: 15%;
+    width: 95%;
+    display: block;
+    margin: 0 3 auto;
+  }
 }
 button:hover {
   background: #c1d0f0;
@@ -296,19 +416,48 @@ footer {
   justify-content: space-around;
   line-height: 2;
 }
+@media (max-width: 414px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 95%;
+  }
+}
 footer h4 {
   color: #FFFFFF;
   font-size: 1.5rem;
+}
+@media (max-width: 414px) {
+  footer h4 {
+    font-size: 2rem;
+  }
 }
 footer p {
   font-size: 1rem;
   line-height: 2;
   color: #FFFFFF;
 }
+@media (max-width: 414px) {
+  footer p {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 414px) {
+  input {
+    width: 100%;
+    display: block;
+    padding: 6% 6%;
+    border-radius: 10%;
+    margin: 0 auto;
+  }
+}
+.fot {
+  background-color: #828282;
+}
 .copy-right {
-  margin-top: 5%;
   text-align: center;
   margin-bottom: 4%;
   color: #FFFFFF;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
