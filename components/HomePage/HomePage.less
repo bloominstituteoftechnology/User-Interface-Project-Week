@@ -1,17 +1,24 @@
 .home-page {
-max-width: 1024px;
-width: 100%;
-
-@media @mobile {
-  max-width: 500px;
-}
-  // header section
+  max-width: 1024px;
+  width: 100%;
+  // when on desktop view, hide all mobile images
+  .img--mobile {
+    display: none;
+  }
+  @media @mobile {
+    max-width: 500px; 
+    
+    // when on mobile view, show mobile image and hide desktop image
+    .img--mobile {
+      display: block;
+    }
+    .img--desktop {
+      display: none;
+    }
+  } // header section
   .header-section {
     position: relative;
-
-    @media @mobile {
-      padding-top: 50px;
-    }
+    
     @media @mobile {
       img {
         width: 100%;
@@ -23,7 +30,6 @@ width: 100%;
         position: absolute;
         bottom: 50px;
         left: 80px;
-
         @media @mobile {
           font-size: 5rem;
           line-height: 60px;
@@ -32,9 +38,7 @@ width: 100%;
         }
       }
     }
-  }
-
-  // top content
+  } // top content
   .top-content {
     padding-top: 50px;
     width: 84%;
@@ -44,28 +48,22 @@ width: 100%;
       width: 90%;
     }
     .tp-item {
-      .flex(space-between, none, row); 
+      .flex(space-between, none, row);
       padding-bottom: 100px;
       @media @mobile {
         .flex(center, none, column);
-
         img {
           order: -1;
-        }
+        } // when on mobile view, show mobile image and hide desktop image
       }
-
-
       .tp-text {
         padding-top: 50px;
-
         @media @mobile {
           order: 1;
         }
-
         p {
           padding-top: 15px;
         }
-
         div {
           margin-top: 30px;
           text-align: center;
@@ -73,14 +71,12 @@ width: 100%;
           padding: 15px 0;
           font-size: 1.6rem;
           width: 33%;
-
           @media @mobile {
             width: 100%;
           }
         }
       }
     }
-
     .imgright {
       margin-left: 30px;
       @media @mobile {
@@ -94,24 +90,20 @@ width: 100%;
         margin-left: 0;
       }
     }
-    
-  }
-
-  // bottom content
-
+  } // bottom content
   .bottom-content {
     width: 84%;
     margin: 0 auto;
-
+    @media @mobile {
+      width: 90%;
+    }
     .bottom-items {
       padding-top: 40px;
       padding-bottom: 43px;
       position: relative;
-
       img {
         z-index: 1;
       }
-
       .titlebox {
         text-align: center;
         border: 1px solid white;
@@ -123,13 +115,10 @@ width: 100%;
         z-index: 2;
         font-size: 2.8rem;
         letter-spacing: 7px;
-
       }
-
       .title-right {
         right: 0;
       }
-
       .bottom-text {
         padding: 90px 205px 0 205px;
         p {
