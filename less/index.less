@@ -85,6 +85,7 @@ html {
     position: fixed;
     width: 100%;
     max-width: 1200px;
+    z-index: 100;
     
   
     h4 {
@@ -92,24 +93,82 @@ html {
       margin-top: 1.2%;
       margin-bottom: 1.2%;
       color: white;
+      z-index: 1000;
       @media(max-width: 500px) {
         margin-top: 2.5%;
         margin-bottom: 2.5%;
       }
     }
+    
     img {
-      margin-right: 4%;
-      padding-right: 4%;
+      right: 8%;
+        
+   // padding-right: 4%;
       margin-top: 1.2%;
       margin-bottom: 1.2%;
+      position: relative;
+      cursor: pointer;
+      transition: opacity .25s ease;
+      &:hover {
+        opacity: .7;
+      }
+      // top: 1.2%;
+       // right: 4%;
       @media(max-width: 500px) {
-        margin-top: 2.5%;
+        top: 1%;
         margin-bottom: 2.5%;
       }
     }
-    nav {
-      display: none;
 
+    
+    
+    .menu-bar {
+      height: 0;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba(153,165,176);
+      overflow-y: hidden;
+      transition: 0.5s;
+      display: flex;
+      // margin-top: -17%;
+     
+      
+      // margin-top: -14%;
+      a {
+        padding: 2%;
+        text-decoration: none;
+        font-size: 4.8rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        display: flex;
+        margin-left: 38%;
+        
+        transition: 0.3s;
+        
+        &:hover {
+          color: #222222;
+        }
+      }
+      .closeHam {
+        position: absolute;
+        top: 3px;
+        right: 8%;
+        
+      }
+    }
+    .open-menu {
+      height: 100%;
+    }
+
+    .navContent {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
     }
 
   }
@@ -426,6 +485,7 @@ html {
         @media(max-width:500px) {
           display: none;
         }
+        
       }
     }
     .watersmall {

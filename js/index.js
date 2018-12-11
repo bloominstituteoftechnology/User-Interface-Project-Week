@@ -56,15 +56,26 @@ class TabLink {
       this.element.classList.add('tabs-item-selected');
     }
   }
+
   
-  /* START HERE: 
+
   
-  - Select all classes named ".tabs-link" and assign that value to the links variable
-  
-  - With your selection in place, now chain a .forEach() method onto the links variable to iterate over the DOM NodeList
-  
-  - In your .forEach() method's callback function, return a new instance of TabLink and pass in each link as a parameter
-  
-  */
   const links = document.querySelectorAll('.tabs-link');
   links.forEach( link => new TabLink(link) )
+
+  const openMenu = () => {
+      menu.style.height = "100%";
+  }
+
+  const closeMenu = () => {
+      menu.style.height = "0";
+  }
+  
+  const burger = document.querySelector('.ham');
+  const chi = document.querySelector('.closeHam')
+  const menu = document.querySelector('.menu-bar')
+  
+  burger.addEventListener('click', openMenu);
+  chi.addEventListener('click', closeMenu);
+
+  
