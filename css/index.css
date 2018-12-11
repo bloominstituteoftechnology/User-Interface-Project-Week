@@ -147,6 +147,7 @@ body {
   background-color: #FFFFFF;
   color: #222222;
   font-size: 1.6rem;
+  position: relative;
 }
 img {
   max-width: 100%;
@@ -158,14 +159,18 @@ img {
   position: relative;
 }
 .header {
-  background-color: #D8D8D8;
+  background-color: rgba(216, 216, 216, 0.9);
   color: #FFFFFF;
   font-size: 2.5rem;
   padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
 }
 .header-content {
   display: flex;
   justify-content: space-between;
+  margin: 0 10px;
 }
 .main-content {
   display: flex;
@@ -193,6 +198,7 @@ img {
 }
 .main-content img {
   width: 100%;
+  margin-top: 55px;
 }
 .about-content {
   display: flex;
@@ -318,8 +324,11 @@ img {
 .btm-content .project p:last-child {
   margin-bottom: 60px;
 }
-.footer {
+footer {
   background-color: #222222;
+  width: 100%;
+}
+footer .footer {
   display: flex;
   color: #FFFFFF;
   justify-content: space-between;
@@ -327,41 +336,41 @@ img {
   align-items: center;
 }
 @media (max-width: 500px) {
-  .footer {
+  footer .footer {
     flex-direction: column;
     align-items: flex-start;
   }
 }
-.footer address {
+footer .footer address {
   width: 20%;
   white-space: pre-line;
   line-height: 1.6;
   font-weight: 100;
 }
 @media (max-width: 500px) {
-  .footer address {
+  footer .footer address {
     width: 90%;
   }
 }
-.footer address span {
+footer .footer address span {
   font-weight: 400;
 }
-.footer .footerForm h4 {
+footer .footer .footerForm h4 {
   margin-bottom: 10px;
   line-height: 1.6;
 }
-.footer .footerForm input {
+footer .footer .footerForm input {
   border-radius: 5px;
   padding: 10px;
   width: 90%;
   margin-bottom: 10px;
 }
 @media (max-width: 500px) {
-  .footer .footerForm input {
+  footer .footer .footerForm input {
     width: 100%;
   }
 }
-.footer .footerForm p {
+footer .footer .footerForm p {
   font-weight: 100;
   font-size: 1.2rem;
 }
@@ -377,4 +386,95 @@ img {
     text-align: left;
     padding: 0 0 20px 20px;
   }
+}
+.services h2 {
+  margin: 0 0 30px 40px;
+}
+.services-content p {
+  margin: 40px auto;
+  width: 80%;
+  line-height: 1.5;
+}
+.tabs-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.tabs-section .tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 50px;
+}
+.tabs-section .tabs div {
+  padding: 15px 30px;
+  border: solid 1px #222222;
+  margin-top: 20px auto;
+  color: #222222;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tabs-section .tabs div:hover {
+  color: #FFFFFF;
+  background-color: #5E9FB9;
+}
+.tabs-section .tabs-content {
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 1.6;
+  align-items: center;
+}
+.tabs-section .tabs-content .content-text {
+  padding-left: 70px;
+}
+.tabs-section .tabs-content .content-text h3 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.tabs-section .tabs-content .content-text .content-p {
+  margin: 15px 0;
+}
+.tabs-section .tabs-content div {
+  width: 45%;
+}
+.nav-modal {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: all 1s ease;
+  z-index: -2;
+  display: none;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
+}
+.nav-modal .modal-content {
+  width: 60%;
+  z-index: -1;
+  height: 300px;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+.nav-modal .modal-content a {
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.nav-modal .modal-content a:hover {
+  color: #222222;
+}
+.modal--open {
+  height: 100%;
 }
