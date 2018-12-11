@@ -54,12 +54,14 @@ let navScreen = document.querySelector('.nav');
 closeIcon.addEventListener('click', function() {
     // navScreen.style.display = 'none';
     TweenMax.to(navScreen, 1, {opacity: 0});
+    navScreen.style['z-index'] = '-1';
     openIcon.style.display = 'flex';
     closeIcon.style.display = 'none';
 });
 openIcon.addEventListener('click', function() {
     // navScreen.style.display = 'flex';
     TweenMax.to(navScreen, 1, {opacity: .98});
+    navScreen.style['z-index'] = '3';
     openIcon.style.display = 'none';
     closeIcon.style.display = 'flex';
 })
