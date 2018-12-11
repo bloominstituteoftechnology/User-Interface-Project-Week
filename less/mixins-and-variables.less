@@ -13,9 +13,6 @@
 @hover: #5395b0;
 @button-selected: #5395b0;
 
-
-
-
 // Colors
 @white: #ffffff;
 @font: #222222;
@@ -26,17 +23,6 @@
 // Mobile var
 @mobile: ~'(max-width: 550px)';
 @tablet: ~'(max-width: 875px)';
-
-
-
-// ## Page Specific
-
-// ### Services Page
-// - Tab selected background: #5E9FB9
-// - Tab Hover background: #222222
-// - Tab Hover color: #FFF;
-
-
 
 // Mixins in here
 #mixin {
@@ -70,13 +56,18 @@
     &:hover {
       background-color: @hover;
       color: white;
+      cursor: pointer;
     }
   } //.button-style
 
   // ========================================== default to subtle box shadow
-  .box-shadow(@x: 0, @y: 3, @blur: 15px, @color: rgba(0,0,0,0.2)) {
+  .box-shadow(@x: 4px, @y: 5px, @blur: 12px, @color: rgba(0,0,0,.2)) {
     -webkit-box-shadow: @arguments;
     -moz-box-shadow: @arguments;
     box-shadow: @arguments;
-  } //#mixin
-}
+  } 
+
+  .text-shadow() {
+    text-shadow: 1px 2px 2px rgba(0,0,0,.2);
+  }
+}//#mixin
