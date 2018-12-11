@@ -1,5 +1,8 @@
 // JS goes here
 
+// ====================================== Navigation ==========================
+
+// ====================================== Services Page ==========================
 class TabLink {
   constructor(element) {
     this.element = element;
