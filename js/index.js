@@ -11,8 +11,14 @@ document.querySelector(".hamburger-close").addEventListener("click", function() 
 class Tab {
     constructor(element) {
         this.element = element;
-        console.log(this.element)
+        this.data = this.element.dataset.tab;
+        this.content = document.querySelector(`.tab-content[data-tab="${this.data}"]`);
+        console.log(this.content);
+        this.element.addEventListener("click", () => this.select())
+    }
 
+    select() {
+        
     }
 }
 
