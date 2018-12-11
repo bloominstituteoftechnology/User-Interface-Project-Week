@@ -4,11 +4,15 @@ header {
   z-index: 1;
   width: 1024px;
   background-color: @nav-bg;
-  display: flex;
-  justify-content: space-between;
   padding: 20px 80px;
+  //height: 100%;
+  //opacity: 0.95;
   @media @mobile {
     width: 100%;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
   }
 
   h1 {
@@ -16,11 +20,25 @@ header {
     color: @nav-font;
     font-weight: bold;
   }
-}
 
-// Navigation Text (Expanded)
-// Font Weight: Bold
-// Font Size: 48px
-// Line Height: 85px
-// Color: #FFFFFF
-// Hover Color: #222222
+  .click-open-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .open-link {
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 85px;
+      text-decoration: none;
+      color: @nav-font;
+      &:hover {
+        color: @nav-hover;
+      }
+    }
+  }
+  .open-hidden {
+    display: none;
+  }
+}
