@@ -48,7 +48,16 @@ class TabCard {
 let tabs = document.querySelectorAll('.tab').forEach(tab => new Tab(tab));
 
 // ======================== NAVIGATION BAR =======================
-
-
-let menuIcon = document.querySelector('.nav-img');
-console.log(menuIcon);
+let openIcon = document.querySelector('.nav-img-open');
+let closeIcon = document.querySelector('.nav-img-close');
+let navScreen = document.querySelector('.nav');
+closeIcon.addEventListener('click', function() {
+    navScreen.style.display = 'none';
+    openIcon.style.display = 'flex';
+    closeIcon.style.display = 'none';
+});
+openIcon.addEventListener('click', function() {
+    navScreen.style.display = 'flex';
+    openIcon.style.display = 'none';
+    closeIcon.style.display = 'flex';
+})
