@@ -1,20 +1,27 @@
 .top-nav {
   #mixin.nav-spread;
   background: @nav-bar-bg;
+  z-index: 2;
 
   .logo {
     font-size: 2.4rem;
     padding-left: 90px;
-    color: @white;
+    z-index: 2;
 
     @media @tablet {
       font-size: 3rem;
       padding-left: 20px;
     }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
   
   .hamburger-menu {
     margin-right: 80px;
+    cursor: pointer;
 
     @media @tablet {
       margin-right: 20px;
@@ -23,6 +30,8 @@
   }
   .close-menu {
     margin-right: 80px;
+    z-index: 2;
+    cursor: pointer;
 
     @media @tablet {
       margin-right: 20px;
@@ -33,10 +42,16 @@
 nav {
   #mixin.layout;
   flex-direction: column;
-  height: 95vh;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+	top: 0;
+	left: 0;
+	transition: all .6s ease;
+	z-index: 1;
+	opacity: 0;
+  visibility: hidden;
   background: @navigation-bg;
-  opacity: .8;
-  z-index: 1;
 
   a {
     color: white;
@@ -44,8 +59,13 @@ nav {
     text-decoration: none;
     padding: 20px 0;
   }
-
+  a:hover {
+    color: @hover;
+  }
   
+  .selected {
+    color: @navigation-selected;
+  }
 }
 
 .hide {
@@ -56,6 +76,12 @@ nav {
   background: @navigation-bg;
 }
 
-// toggle content-container and footer to hide on
-// toggle nav hide off
+.open {
+	opacity: .95;
+  visibility: visible;
+  overflow: hidden;
+}
 
+.overflow-hidden {
+  overflow: hidden;
+}
