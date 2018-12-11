@@ -6,12 +6,13 @@ const navMenu = document.querySelector('.nav-menu');
 
 navButtonOn.addEventListener('click', () => {
     navMenu.classList.toggle('nav-toggle', true);
-    console.log('clicked nav on')
+    TweenMax.to('.nav-menu', .5 ,{top:0})
 })
 
 navButtonOff.addEventListener('click', () => {
-    navMenu.classList.toggle('nav-toggle', false)
-    console.log('clicked nav off')
+    TweenMax.to('.nav-menu', .3 ,{top:'-100vw'})
+    setTimeout(()=>{navMenu.classList.toggle('nav-toggle', false)}, 310)
+    
 })
 
 //tabs toggle
