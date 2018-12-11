@@ -169,7 +169,7 @@ header {
   align-items: center;
   height: 50px;
   padding: 0 85px;
-  z-index: 100;
+  z-index: 105;
   position: fixed;
   top: 0;
   max-width: 1024px;
@@ -713,7 +713,10 @@ footer .footer-content .copyright {
   width: 100%;
 }
 .contact .jumbotron {
+  position: relative;
   background: url('../img/contact/contact-jumbotron.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: bottom;
 }
 @media (max-width: 500px) {
@@ -891,13 +894,18 @@ footer .footer-content .copyright {
   margin-bottom: 39px;
 }
 .carousel {
-  position: relative;
+  z-index: 101;
+  background-color: black;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
 .carousel .left,
 .carousel .right {
   display: inline-block;
   position: absolute;
-  z-index: 103;
   opacity: 0.1;
   background-color: black;
   color: #FFFFFF;
@@ -906,6 +914,7 @@ footer .footer-content .copyright {
   font-weight: bold;
   transition: opacity 0.3s;
   padding: 4px;
+  z-index: 103;
 }
 .carousel .left:hover,
 .carousel .right:hover {
@@ -921,6 +930,14 @@ footer .footer-content .copyright {
   right: 0;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
+}
+.carousel .timer {
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  background-color: #FFFFFF;
+  width: 0%;
+  opacity: 0.5;
 }
 .carousel .slide {
   display: none;
