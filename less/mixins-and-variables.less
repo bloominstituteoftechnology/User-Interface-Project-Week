@@ -10,15 +10,29 @@
 @navigation-bg: #8E9AA6;
 @nav-bar-bg: #8D9AA6;
 
-// @footer-bg: @sandy-beach;
-@hover: teal;
+
+
 
 // Colors
 @white: #ffffff;
+@font: #222222;
+@title-card: #D8D8D8;
+@button-border: #222222;
+@footer: #828282;
 
 // Mobile var
 @mobile: ~'(max-width: 500px)';
 @tablet: ~'(max-width: 800px)';
+
+
+
+// ## Page Specific
+
+// ### Services Page
+// - Tab selected background: #5E9FB9
+// - Tab Hover background: #222222
+// - Tab Hover color: #FFF;
+
 
 
 // Mixins in here
@@ -38,41 +52,14 @@
     a {
       transition: all 0.15s;
       
-      &:hover {
-        color: @hover;
-      }
     }
-
-    // @media @tablet {
-    //   .nav-stacked;
-    // }
   } //.nav-spread
-
-  .nav-stacked() {
-    .layout;
-    flex-direction: column;
-    padding: 25px 0 10px 0;
-    width: 100%;
-
-    nav {
-      .layout(space-around);
-      width: 100%;
-      padding-top: 10px;
-
-      a {
-        transition: all 0.15s;
-
-        &hover {
-          color: red;
-        }
-      }
-    }
-  } //.nav-stacked
 
   // ========================================== button options
   .button-style() {
     .layout;
     background-color: transparent;
+    border: 1px solid @button-border;
     padding: 12px 20px;
     font-size: 1.8rem;
     transition: all 0.25s;
@@ -83,39 +70,10 @@
     }
   } //.button-style
 
-  // ========================================== card container and card style options
-  // name html classes: card-container and card-double or card-triple
-  .card-style() {
-    .layout;
-    flex-wrap: wrap;
-    padding: 20px 0;
-
-    @media @mobile {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .card-double {
-      margin: 15px 2%;
-      padding: 40px;
-      width: 45%;
-
-      @media @tablet {
-        padding: 25px;
-        margin: 15px 2%;
-      }
-
-      @media @mobile {
-        width: 100%;
-        margin: 10px 0;
-      }
-    }
-    } //.card-triple
-  } //.card-container
-
   // ========================================== default to subtle box shadow
   .box-shadow(@x: 0, @y: 3, @blur: 15px, @color: rgba(0,0,0,0.2)) {
     -webkit-box-shadow: @arguments;
     -moz-box-shadow: @arguments;
     box-shadow: @arguments;
   } //#mixin
+}
