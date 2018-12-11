@@ -213,12 +213,9 @@ html {
   display: none;
 }
 .navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0 3rem;
   background-color: #9aa5b0;
-  height: 5rem;
+  height: 7rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -227,6 +224,7 @@ html {
 }
 .navigation .nav-list {
   display: none;
+  text-align: center;
 }
 .navigation .nav-logo {
   font-weight: bold;
@@ -261,6 +259,63 @@ html {
 }
 .navigation.navigation--open .nav-list__item:hover {
   color: #222222;
+}
+.toggler-holder {
+  border: 2px solid white;
+  width: 40px;
+  position: fixed;
+  top: 15px;
+  height: 40px;
+  right: 30px;
+  transition: 0.5s;
+  transform: rotate(45deg);
+  z-index: 100;
+}
+.toggler-holder .toggler {
+  width: 20px;
+  transform: rotate(-45deg);
+  height: 2px;
+  background: white;
+  position: absolute;
+  top: 48%;
+  left: 23%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.toggler-holder .toggler:before,
+.toggler-holder .toggler:after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  left: -10%;
+  height: 2px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+.toggler-holder .toggler:before {
+  top: -9px;
+}
+.toggler-holder .toggler:after {
+  top: 9px;
+}
+.toggler-holder.active {
+  transform: rotate(225deg);
+  transition: 0.5s;
+  border-color: white;
+}
+.toggler-holder.active .toggler {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+.toggler-holder.active .toggler:before {
+  top: 0;
+  transform: rotate(-45deg);
+  background: white;
+}
+.toggler-holder.active .toggler:after {
+  top: 0;
+  transform: rotate(-315deg);
+  background: white;
 }
 footer {
   background-color: #828282;

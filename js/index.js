@@ -1,17 +1,14 @@
 // JS goes here
 // Navigation Toggle Logic 
-const togglerOpen = document.querySelector('.nav-toggle-open');
-const togglerClose = document.querySelector('.nav-toggle-close');
+const toggler = document.querySelector('.toggler-holder');
 const nav = document.querySelector('.navigation');
 
 const toggleNav = () => {
-    togglerOpen.classList.toggle('hide');
-    togglerClose.classList.toggle('hide');
+    toggler.classList.toggle('active');
     nav.classList.toggle('navigation--open');
 }
 
-togglerOpen.onclick = () => toggleNav();
-togglerClose.onclick = () => toggleNav();
+toggler.onclick = () => toggleNav();
 
 // TABS LOGIC
 class initTab {
