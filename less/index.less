@@ -172,7 +172,11 @@ a:hover {
 
 .desk-contain {
     max-width: 1000px;
-    margin: 0 auto
+    margin: 0 auto;
+    @media (max-width: 500px) {
+        max-width: 450px;
+        margin: 0 auto;
+    }
 }
 
 h2 {
@@ -187,6 +191,7 @@ header {
     background-color: #99A4AF;
     padding: 15px 0;
     position: fixed;
+    z-index: 2;
     div {
         max-width: 1000px;
         margin: 0 auto;
@@ -240,6 +245,9 @@ footer {
         background-image: url('../img/home/home-jumbotron.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        @media (max-width: 500px) {
+            background-image: url('../img/home/home-mobile-jumbotron.png');
+        }
         div {
             padding-top: 400px;
             padding-bottom: 30px;
@@ -258,8 +266,7 @@ footer {
             justify-content: space-between;
             margin: 60px 0;
             div {
-                display: flex;
-                flex-direction: column;
+                // display: flex;
                 justify-content: center;
                 width: 48%;
                 h2 {
@@ -276,6 +283,10 @@ footer {
                 button:hover {
                     background-color: #99A4AF;
                 }
+            }
+            @media (max-width: 500px) {
+                width: 95%;
+                flex-direction: column;
             }
         }
         #projectsSection {
