@@ -38,8 +38,8 @@ class TabItem {
     }
     select(){
         const tabItems = document.querySelectorAll('.tab-item');
-        tabItems.forEach(cv => {cv.classList.toggle('tab-active', false)});
-        this.tabItem.classList.toggle('tab-active',true);
+        tabItems.forEach(cv => {cv.style.display = 'none'});
+        this.tabItem.style.removeProperty('display');
     }
 }
 
