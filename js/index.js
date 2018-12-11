@@ -5,15 +5,12 @@ const navbar = document.querySelector("nav");
 const hamburger = document.querySelector(".hamburger");
 const header = document.querySelector("header");
 const navbarImage = document.querySelector('.hamburger img');
+let menu = new TimelineMax({paused:true, reversed:true})
 let clicked = false;
-let navAnimation = new TimelineLite({});
-
-
 
 hamburger.addEventListener('click', () => {
     navbar.classList.toggle('show-nav');
     header.classList.toggle('transparent-bg');
-    swapImage();
 })
 
 //Service -> Tabs
@@ -55,24 +52,42 @@ class TabLink {
 
   //Functions
   
-  function swapImage() {
-    
-    if(clicked === true){
-      navbarAnimation();
-      navbarImage.src = '/img/nav-hamburger.png';
-      clicked = false;
-    }
-    else{
-      navbarAnimation();
-      clicked = true;
-      navbarImage.src = '/img/nav-hamburger-close.png';
-    }
+  // function swapImage() {
+  //   if(clicked === true){
+  //     navbarAnimation();
+  //     navbarImage.src = '/img/nav-hamburger.png';
+  //     clicked = false;
+  //   }
+  //   else{
+  //     navbarAnimation();
+  //     clicked = true;
+  //     navbarImage.src = '/img/nav-hamburger-close.png';
+  //   }
+  // }
+  // function navbarAnimation() {
+  //   navAnimation.to(hamburger, 0.1, {
+  //     rotation:2
+  //   })
+  //     .to(hamburger, 0.1, { 
+  //       ease: Bounce.easeNone
+  //     }, 0.1)
+  //   //end at 0
+  //     .to(hamburger, 0.1, {
+  //       rotation:0
+  //     }, "+=0.5")
+  // }
+
+
+
+
+	
+	menu
+	.to("#burger1", .5, {rotation: 45, transformOrigin: "left 50%", ease:Power2.easeInOut}, "cross")
+	.to("#burger2", .5, {autoAlpha: 0}, "cross")
+	.to("#burger3", .5, {rotation: -45, transformOrigin: "left 50%", ease:Power2.easeInOut}, "cross")
+	function menuIn() {
+    menu.reversed() ? menu.play() : menu.reverse();	
+
   }
-  function navbarAnimation() {
-    navAnimation.to(hamburger, 0.1, {rotation:4})
-      .to(hamburger, 0.1, { 
-        ease: Power0.easeNone
-      }, 0.2)
-    //end at 0
-      .to(hamburger, 0.1, {rotation:0}, "+=0.5")
-  }
+  
+ 
