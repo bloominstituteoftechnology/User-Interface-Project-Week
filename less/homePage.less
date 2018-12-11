@@ -1,35 +1,136 @@
-.home__jumbotron {
-  background-image: url('../img/home/home-jumbotron.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: cover;
-  // padding: 120px 0;
+//carousel 
+
+.carousel_container {
+  position: relative;
+
+}
+
+.slider {
+  width: 100%;
+  position: relative;
+
+}
+
+
+// .slider_right_btn,
+// .slider_left_btn {
+//   position: relative;
+//   outline: none;
+//   z-index: 999999;
+//   font-size: 2rem;
+//   cursor: pointer;
+//   outline: none;
+//   border: none;
+//   background-color: black;
+//   border-radius: 50%;
+//   color: white;
+
+//   &:active {
+//     transform: translateY(4px);
+//   }
+
+//   &:hover {
+//     color: white;
+//   }
+// }
+
+// .slider_left_btn {
+//   top: 20.2vh;
+//   left: 1.9vw;
+// }
+
+// .slider_right_btn {
+//   left: 95vw;
+//   top: 15vh
+// }
+
+
+.slider__item {
+  width: 100%;
+  max-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
-  right: 0;
-  left: 0;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
 
   @media @mobile {
-    background-image: url('../img/home/home-mobile-jumbotron.png');
+    max-height: 300px;
+  }
+
+  img {
+    width: 100vw;
+    display: block;
+    object-fit: cover;
+    position: relative;
+    filter: brightness(50%);
+    // padding: 320px 0;
+    max-height: 700px;
+    height: 100%;
+
+    @media @mobile {
+      width: 500px;
+      max-height: 300px;
+    }
+  }
+
+  .slider__content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    .slider_title {
+      font-family: 'Noto Serif', serif;
+      letter-spacing: 2px;
+    }
+
+    h3 {
+      position: relative;
+      top: 400px;
+      color: rgba(255, 255, 255, 0.868);
+    }
+  }
+
+}
+
+.showing {
+  // z-index: 1;
+  opacity: 1;
+}
+
+.carousel__title {
+  color: @white;
+  position: relative;
+  top: 300px;
+
+
+  @media @mobile {
+    top: 120px;
   }
 
   h1 {
-    padding: 370px 0 66px 0;
-
     @media @mobile {
-      padding: 185px 0 33px 0;
-      font-size: 3.2rem;
-      line-height: 37.5px;
+      font-size: 2.5rem;
+      line-height: 1.5;
     }
   }
 }
 
+
+
+
+
+//carousel Ends 
 .home__services-item:first-child {
-  margin-top: 727px;
+  margin-top: 527px;
 
   @media @mobile {
-    margin-top: 363.5px;
+    margin-top: 203.5px;
 
   }
 
@@ -102,7 +203,7 @@
     color: @white;
     transition: ease-in 300ms;
     border-radius: 4px;
-    margin-top: 20px;
+    margin-top: 40px;
 
     @media @mobile {
       width: 100%;

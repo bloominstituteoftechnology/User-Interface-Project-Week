@@ -1,3 +1,10 @@
+.width-100 {
+  width: 100%;
+}
+.border-bottom-grey {
+  border-bottom: 1px solid gray;
+}
+/* button animation style */
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -210,7 +217,6 @@ footer p {
     width: 90%;
   }
 }
-/* button animation style */
 .bubbly-button {
   font-family: "Helvetica", "Arial", sans-serif;
   display: inline-block;
@@ -323,12 +329,18 @@ header .header__wrapper {
 header .logo {
   font-weight: bold;
   font-size: 2.4rem;
-  color: black;
-  text-decoration: none;
   color: #FFFFFF;
+  text-decoration: none;
+  transition: ease-in 300ms;
+}
+header .logo:hover {
+  color: #ff0080df;
 }
 header .hamburger {
   cursor: pointer;
+}
+header .hamburger:active {
+  transform: translateY(-4px);
 }
 nav {
   position: absolute;
@@ -422,38 +434,86 @@ footer .footer__copyright {
   font-size: 1.5rem;
   padding: 20px 0;
 }
-.home__jumbotron {
-  background-image: url('../img/home/home-jumbotron.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: cover;
+.carousel_container {
+  position: relative;
+}
+.slider {
+  width: 100%;
+  position: relative;
+}
+.slider__item {
+  width: 100%;
+  max-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
-  right: 0;
-  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 @media (max-width: 500px) {
-  .home__jumbotron {
-    background-image: url('../img/home/home-mobile-jumbotron.png');
+  .slider__item {
+    max-height: 300px;
   }
 }
-.home__jumbotron h1 {
-  padding: 370px 0 66px 0;
+.slider__item img {
+  width: 100vw;
+  display: block;
+  object-fit: cover;
+  position: relative;
+  filter: brightness(50%);
+  max-height: 700px;
+  height: 100%;
 }
 @media (max-width: 500px) {
-  .home__jumbotron h1 {
-    padding: 185px 0 33px 0;
-    font-size: 3.2rem;
-    line-height: 37.5px;
+  .slider__item img {
+    width: 500px;
+    max-height: 300px;
+  }
+}
+.slider__item .slider__content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.slider__item .slider__content .slider_title {
+  font-family: 'Noto Serif', serif;
+  letter-spacing: 2px;
+}
+.slider__item .slider__content h3 {
+  position: relative;
+  top: 400px;
+  color: rgba(255, 255, 255, 0.868);
+}
+.showing {
+  opacity: 1;
+}
+.carousel__title {
+  color: #FFFFFF;
+  position: relative;
+  top: 300px;
+}
+@media (max-width: 500px) {
+  .carousel__title {
+    top: 120px;
+  }
+}
+@media (max-width: 500px) {
+  .carousel__title h1 {
+    font-size: 2.5rem;
+    line-height: 1.5;
   }
 }
 .home__services-item:first-child {
-  margin-top: 727px;
+  margin-top: 527px;
 }
 @media (max-width: 500px) {
   .home__services-item:first-child {
-    margin-top: 363.5px;
+    margin-top: 203.5px;
   }
 }
 .home__services-item {
@@ -521,7 +581,7 @@ footer .footer__copyright {
   color: #FFFFFF;
   transition: ease-in 300ms;
   border-radius: 4px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 @media (max-width: 500px) {
   .home__services-item button {
@@ -710,7 +770,6 @@ footer .footer__copyright {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
-  border: 1px solid red;
 }
 @media (max-width: 930px) {
   .services__content .tabs .tabs-links {
@@ -719,10 +778,8 @@ footer .footer__copyright {
   }
 }
 .services__content .tabs .tabs-link h2 {
-  margin-top: 0;
   padding: 15px 25px;
   font-size: 2.4rem;
-  border: 1px solid black;
   cursor: pointer;
 }
 @media (max-width: 930px) {
@@ -737,6 +794,12 @@ footer .footer__copyright {
   background: #5E9FB9;
   color: #FFFFFF;
 }
+@media (max-width: 930px) {
+  .services__content .tabs .tabs-link-selected h2 {
+    width: 100%;
+    text-align: center;
+  }
+}
 .services__content .tabs_wrapper {
   display: flex;
   justify-content: space-between;
@@ -749,6 +812,7 @@ footer .footer__copyright {
 }
 .services__content .tabs_wrapper .tabs__content {
   width: 45%;
+  margin-top: 0;
 }
 @media (max-width: 930px) {
   .services__content .tabs_wrapper .tabs__content {
