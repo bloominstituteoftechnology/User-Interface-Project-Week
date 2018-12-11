@@ -199,6 +199,20 @@ img {
 }
 header {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1024px;
+  position: fixed;
+  opacity: 0.95;
+  z-index: 5;
+}
+header .hidden {
+  display: none;
+}
+header .header-bar {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -208,13 +222,31 @@ header {
   background-color: #828282;
   height: 4.8rem;
   padding: 0 4.5%;
-  position: fixed;
   width: 100%;
   max-width: 1024px;
   z-index: 7;
 }
+header nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #828282;
+  width: 100%;
+  max-width: 1024px;
+  height: 60rem;
+  z-index: 6;
+  transform: scaleY(0);
+}
 header nav a {
-  display: none;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+}
+header nav a:hover {
+  color: #222222;
 }
 .jumbo {
   display: flex;
@@ -505,16 +537,16 @@ footer .copyright p {
   color: #FFFFFF;
   font-size: 1.2rem;
 }
-.jumbo {
+.jumbo-s {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.jumbo img {
+.jumbo-s img {
   z-index: -1;
 }
-.jumbo .float-wrapper {
+.jumbo-s .float-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -523,7 +555,7 @@ footer .copyright p {
   position: absolute;
   align-self: flex-start;
 }
-.jumbo .float-wrapper .floater {
+.jumbo-s .float-wrapper .floater {
   font-weight: bold;
   font-size: 6.4rem;
   line-height: 7.5rem;
@@ -533,12 +565,12 @@ footer .copyright p {
   right: -2rem;
 }
 @media (max-width: 500px) {
-  .jumbo .float-wrapper .floater {
+  .jumbo-s .float-wrapper .floater {
     font-size: 5rem;
     line-height: 6rem;
   }
 }
-.jumbo p {
+.jumbo-s p {
   width: 83%;
   padding: 5.5rem 0 4rem;
 }
