@@ -1,9 +1,26 @@
+.desktop {
+    @media (max-width:800px) {
+        display: none;
+    }
+}
+
+.mobile {
+    @media(min-width:800px) {
+        display: none;
+    }
+}
+
 header {
     position: relative;
     h1 {
         position: absolute;
         bottom: 9%;
         left: 8%;
+
+        @media @phone {
+            font-size: 4.5rem;
+            line-height: 50px;
+        }
     }
 }
 
@@ -15,15 +32,28 @@ header {
         justify-content: space-between;
         margin-top: 65px;
 
+        @media @phone {
+            flex-direction: column;
+            margin-top: 40px;
+        }
+
         .quarter {
             width: 48%;
+
+            @media @phone {
+                width: 100%;
+            }
         }
+
         .text-content {
             display: flex;
             flex-direction: column;
 
             h2 {
                 margin-top: 50px;
+                @media @phone {
+                    margin-top: 20px;
+                }
             }
 
             p {
@@ -34,6 +64,12 @@ header {
                 .btn-mixin();
                 margin-top: 25px;
             }
+        }
+    }
+
+    .one {
+        @media @phone {
+            flex-direction: column-reverse;
         }
     }
 }
@@ -50,21 +86,33 @@ header {
         .right {
             position: absolute;
             background-color: @recent-projects-overlay;
-            padding: 36px 5%;
+            padding: 36px 40px;
             font-size: 2.6rem;
             right:0px;
             bottom: -38px;
             letter-spacing: 8px;
+            text-align: center;
+            @media @phone {
+                bottom: -80px;
+                width: 95%;
+                right: 10px;
+            }
         }
     
         .left {
             position: absolute;
             background-color: @recent-projects-overlay;
-            padding: 36px 5%;
+            padding: 36px 40px;
             font-size: 2.6rem;
             left:0px;
             bottom: -38px;
             letter-spacing: 8px;
+            text-align: center;
+            @media @phone {
+                bottom: -80px;
+                width: 95%;
+                left: 10px;
+            }
         }
     }
 
@@ -74,8 +122,9 @@ header {
         p {
             width: 50%;
             margin: 35px auto;
+            @media @phone {
+                width: 100%;
+            }
         }
     }
 }
-
-
