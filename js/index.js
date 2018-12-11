@@ -27,44 +27,29 @@ toggleMenu = function () {
 class TabButton {
   constructor(element) {
     this.element = element;
-    console.log(this.element);
-
     this.data = this.element.dataset.tab;
-    console.log(this.data);
-
-    this.itemElement = document.querySelector(`.tab-button[data-tab='${this.data}']`);
-    console.log(this.itemElement);
-
+    this.itemElement = document.querySelector(`.services-content-container[data-tab='${this.data}']`);
     this.tabContent = new TabContent(this.itemElement);
-
     this.element.addEventListener('click', () => this.select());
 
   }
   select() {
-    // Get all of the elements with the tabs-link class
-    const links = document.querySelectorAll('.services-content');
-    // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
-    links.forEach(element => element.classList.remove('tabs-link-selected'));
-    // Add a class named "tabs-link-selected" to this link
-    this.element.classList.add('tabs-link-selected');
-    // Call the select method on the item associated with this link
-    this.tabItem.select();
+    const links = document.querySelectorAll('.tab-button');
+    links.forEach(param => param.classList.remove('button-selected'));
+    this.element.classList.add('button-selected');
+    this.tabContent.selectContent();
   }
 }
-
 
 class TabContent {
   constructor(element) {
     this.element = element;
   }
 
-  select() {
-    // Select all ".tabs-item" elements from the DOM
-    const items = document.querySelectorAll('.services-content');
-    // Remove the class "tabs-item-selected" from each element
-    items.forEach(param => param.classList.remove('hidden'));
-    // Add a class named "tabs-link-selected" to this link;
-    this.element.classList.add('hidden');
+  selectContent() {
+    const content = document.querySelectorAll('.services-content-container');
+    content.forEach(param => param.classList.remove('content-selected'));
+    this.element.classList.add('content-selected');
   }
 }
 
