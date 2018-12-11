@@ -1,9 +1,23 @@
-.home-heading {
+.jumbotron {
   position: relative;
+
   h1 {
     position: absolute;
     bottom: 0;
     padding: 60px 80px;
+    @media @mobile {
+      padding: 20px;
+      font-size: 52px;
+      line-height: 68px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.home {
+  padding: 60px 80px 0;
+  @media @mobile {
+    padding: 20px;
   }
 }
 
@@ -12,59 +26,102 @@
   justify-content: space-between;
   margin-bottom: 85px;
   align-items: center;
+
+  @media @mobile {
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+  }
+
   .intro,
   .intro-img {
-    width: 50%;
+    flex: 1;
   }
 
   .intro-img {
     margin-left: 30px;
+    @media @mobile {
+      margin: 0px;
+      width: 100%;
+      padding-top: 30px;
+    }
   }
 
   &.reverse {
     .intro-img {
       margin-left: 0px;
       margin-right: 30px;
+      @media @mobile {
+        margin: 0px;
+        width: 100%;
+      }
+    }
+    @media @mobile {
+      flex-direction: column;
     }
   }
 }
-.recent-projects h2 {
-  padding-top: 10px;
-  padding-bottom: 50px;
-}
-.project {
-  .project-heading {
-    position: relative;
-
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    h3 {
-      position: absolute;
-      background: @project-sq-color;
-      font-size: 20px;
-      padding: 30px 50px;
-      letter-spacing: 8px;
-      border: 1px solid white;
-
-      &.right {
-        right: 0;
-        bottom: -30px;
-      }
-
-      &.left {
-        left: 0;
-        bottom: -30px;
-      }
+.recent-projects {
+  h2 {
+    padding-top: 10px;
+    padding-bottom: 40px;
+    @media @mobile {
+      padding-bottom: 30px;
+      font-size: 24px;
     }
   }
-  .project-info {
-    width: 400px;
-    margin: 70px auto;
-  }
-  p {
-    padding-bottom: 20px;
+
+  .project {
+    .project-heading {
+      position: relative;
+      @media @mobile {
+        margin: 0 -20px;
+      }
+      img {
+        width: 100%;
+      }
+      h3 {
+        position: absolute;
+        background: @project-sq-color;
+        font-size: 20px;
+        padding: 30px 50px;
+        letter-spacing: 8px;
+        border: 1px solid white;
+        width: 320px;
+        text-align: center;
+        @media @mobile {
+          width: auto;
+        }
+        &.right {
+          right: 0;
+          bottom: -30px;
+          @media @mobile {
+            right: 15px;
+            bottom: -70px;
+            left: 15px;
+          }
+        }
+        &.left {
+          left: 0;
+          bottom: -30px;
+          @media @mobile {
+            left: 15px;
+            bottom: -70px;
+            right: 15px;
+          }
+        }
+      }
+    }
+    .project-info {
+      width: 400px;
+      margin: 70px auto;
+      @media @mobile {
+        width: 100%;
+        margin-top: 100px;
+        margin-bottom: 30px;
+      }
+      p {
+        padding-bottom: 20px;
+      }
+    }
   }
 }

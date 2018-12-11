@@ -148,18 +148,19 @@ body {
   line-height: 24px;
 }
 h1 {
-  font-weight: Bold;
+  font-weight: bold;
   font-size: 64px;
   line-height: 75px;
   color: #ffffff;
 }
 h2 {
   font-size: 28px;
-  font-weight: Bold;
+  font-weight: bold;
   padding: 30px 0;
 }
 h4 {
   font-size: 20px;
+  line-height: 24px;
 }
 p {
   font-size: 16px;
@@ -169,14 +170,29 @@ button {
   border: 1px solid #222222;
   font-size: 16px;
   margin: 30px 0;
+  background: white;
+}
+@media (max-width: 500px) {
+  button {
+    width: 100%;
+  }
 }
 .container {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
 }
-.home {
-  padding: 60px 80px 0;
+img.mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  img.mobile {
+    display: block;
+    width: 100%;
+  }
+  img.desktop {
+    display: none;
+  }
 }
 footer {
   padding: 80px;
@@ -184,30 +200,88 @@ footer {
   background-color: #828282;
   color: #ffffff;
 }
+@media (max-width: 500px) {
+  footer {
+    padding: 30px 20px;
+    padding-bottom: 20px;
+  }
+}
 footer .contact-info {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  footer .contact-info {
+    flex-direction: column;
+  }
+}
 footer input {
-  padding: 8px;
+  padding: 15px;
   border-radius: 5px;
   width: 300px;
+}
+@media (max-width: 500px) {
+  footer input {
+    width: 90%;
+    margin: 20px 0 10px;
+  }
 }
 footer p {
   font-size: 14px;
   line-height: 26px;
 }
+@media (max-width: 500px) {
+  footer p {
+    padding-bottom: 20px;
+    font-weight: 100;
+    font-size: 13px;
+  }
+}
+footer address {
+  font-size: 12px;
+}
+@media (max-width: 500px) {
+  footer address {
+    padding-bottom: 25px;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 28px;
+  }
+}
 footer .copyright {
+  font-size: 14px;
   padding-top: 40px;
   text-align: center;
 }
-.home-heading {
+@media (max-width: 500px) {
+  footer .copyright {
+    padding: 0;
+    text-align: left;
+  }
+}
+.jumbotron {
   position: relative;
 }
-.home-heading h1 {
+.jumbotron h1 {
   position: absolute;
   bottom: 0;
   padding: 60px 80px;
+}
+@media (max-width: 500px) {
+  .jumbotron h1 {
+    padding: 20px;
+    font-size: 52px;
+    line-height: 68px;
+    letter-spacing: 1px;
+  }
+}
+.home {
+  padding: 60px 80px 0;
+}
+@media (max-width: 500px) {
+  .home {
+    padding: 20px;
+  }
 }
 .top-content {
   display: flex;
@@ -215,48 +289,110 @@ footer .copyright {
   margin-bottom: 85px;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .top-content {
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+  }
+}
 .top-content .intro,
 .top-content .intro-img {
-  width: 50%;
+  flex: 1;
 }
 .top-content .intro-img {
   margin-left: 30px;
+}
+@media (max-width: 500px) {
+  .top-content .intro-img {
+    margin: 0px;
+    width: 100%;
+    padding-top: 30px;
+  }
 }
 .top-content.reverse .intro-img {
   margin-left: 0px;
   margin-right: 30px;
 }
+@media (max-width: 500px) {
+  .top-content.reverse .intro-img {
+    margin: 0px;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .top-content.reverse {
+    flex-direction: column;
+  }
+}
 .recent-projects h2 {
   padding-top: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
-.project .project-heading {
+@media (max-width: 500px) {
+  .recent-projects h2 {
+    padding-bottom: 30px;
+    font-size: 24px;
+  }
+}
+.recent-projects .project .project-heading {
   position: relative;
 }
-.project .project-heading img {
-  display: block;
+@media (max-width: 500px) {
+  .recent-projects .project .project-heading {
+    margin: 0 -20px;
+  }
+}
+.recent-projects .project .project-heading img {
   width: 100%;
 }
-.project .project-heading h3 {
+.recent-projects .project .project-heading h3 {
   position: absolute;
   background: #d8d8d8;
   font-size: 20px;
   padding: 30px 50px;
   letter-spacing: 8px;
   border: 1px solid white;
+  width: 320px;
+  text-align: center;
 }
-.project .project-heading h3.right {
+@media (max-width: 500px) {
+  .recent-projects .project .project-heading h3 {
+    width: auto;
+  }
+}
+.recent-projects .project .project-heading h3.right {
   right: 0;
   bottom: -30px;
 }
-.project .project-heading h3.left {
+@media (max-width: 500px) {
+  .recent-projects .project .project-heading h3.right {
+    right: 15px;
+    bottom: -70px;
+    left: 15px;
+  }
+}
+.recent-projects .project .project-heading h3.left {
   left: 0;
   bottom: -30px;
 }
-.project .project-info {
+@media (max-width: 500px) {
+  .recent-projects .project .project-heading h3.left {
+    left: 15px;
+    bottom: -70px;
+    right: 15px;
+  }
+}
+.recent-projects .project .project-info {
   width: 400px;
   margin: 70px auto;
 }
-.project p {
+@media (max-width: 500px) {
+  .recent-projects .project .project-info {
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+}
+.recent-projects .project .project-info p {
   padding-bottom: 20px;
 }
