@@ -19,9 +19,20 @@
     .main-content {
         margin-top: 0;
 
+        @media @mobile {
+            margin: 0 4.7%;
+        }
+
         .tab-container {
             .tabs {
                 .flex-row-btw();
+
+                @media @mobile {
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    border: 1px solid @gen-color;
+                    margin-bottom: 10%;
+                }
 
                 .tab-link {
                     .button();
@@ -29,6 +40,12 @@
                     font-size: 20px;
                     font-weight: bold;
                     padding: 2% 0;
+
+                    @media @mobile {
+                        font-size: 16px;
+                        width: 50%;
+                        margin: 0;
+                    }
 
                 }
                 .tab-link-selected {
@@ -46,13 +63,29 @@
                 .flex-row-btw(flex-end);
                 margin-top: 5.5%;
 
+                @media @mobile {
+                    .flex-col-center();
+                }
+
                 .tab-content-text {
+                    @media @mobile {
+                        order: 2;
+                    }
+
                     h3 {
                         margin-bottom: 3%;
+
+                        @media @mobile {
+                            margin: 8% 0;
+                        }
                     }
                     p {
                         line-height: 26px;
                         padding-right: 5%;
+                        
+                        @media @mobile {
+                            padding-right: 0;
+                        }
                     }
                 }
             }
