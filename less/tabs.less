@@ -1,12 +1,21 @@
 .tabs {
     width: 100%;
 
+    @media @mobile {
+      width: 100%;
+      margin-bottom: 5%;
+    }
+
     .tabs-items {
       width: 100%;
       height: 500px;
       display: flex;
       justify-content: center;
       padding-top: 60px;
+
+      @media @mobile {
+        padding-top: 30px;
+      }
     }
 
     .tabs-item {
@@ -25,15 +34,29 @@
         display: flex;
         flex-direction: row;
 
+        @media @mobile {
+          display: flex;
+          flex-direction: column;
+          margin-top: 5%;
+          margin-bottom: 5%;
+        }
+
         .services-paragraphs {
             margin-top: 2%;
             margin-right: 6%;
             display: flex;
             flex-direction: column;
 
-            .top-para{
-                margin-bottom: 9%;
+            p{
+              line-height: 2.8rem;
+              margin-bottom: 9%;
             }
+        }
+
+        img {
+          height: 100%;
+          width: auto;
+          padding-right: 5%;
         }
     }
 
@@ -48,6 +71,15 @@
       background-color: white;
       width: 100%;
       margin: 0;
+
+      @media @mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between; 
+        width: 90%;
+
+      }
     }
   
     .tabs-link {
@@ -62,12 +94,18 @@
         color: @tab-hover-font;
         background-color: @tab-select-bg;
       }
+
+      @media @mobile {
+        text-align: center;
+        margin-bottom: 10%;
+
+      }
     }
     .tabs-link-selected {
-      z-index: 2;
       border-right: 1px solid black;
       background-color: white;
       color: black;
+
       &:hover {
         color: @tab-hover-font;
         background-color: @tab-select-bg;
