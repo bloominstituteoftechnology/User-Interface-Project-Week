@@ -2,9 +2,13 @@ class TabTag {
     constructor(tabX){
         this.tabX = tabX;
         this.tabData = tabX.dataset.tab;
-        this.content = document.querySelector(`.content[data-tab='${this.tabData}']`);
+        debugger;
+        this.content = document.querySelectorAll(`.content[data-tab='${this.tabData}']`);
+        debugger;
         this.content = Array.from(this.content).map(y => new Content(y));
-        tabX.addEventListener('click', () => this.selectTab());
+        debugger;
+        this.tabX.addEventListener('click', () => this.selectTab());
+        debugger;
     }
     selectTab(){
         // const clear = document.querySelectorAll('.tab-tag');
