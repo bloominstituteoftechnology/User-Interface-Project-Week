@@ -80,14 +80,45 @@ class TabLink {
 
 
 
-	
+	//Menu Animation
 	menu
 	.to("#burger1", .5, {rotation: 45, transformOrigin: "left 50%", ease:Power2.easeInOut}, "cross")
 	.to("#burger2", .5, {autoAlpha: 0}, "cross")
 	.to("#burger3", .5, {rotation: -45, transformOrigin: "left 50%", ease:Power2.easeInOut}, "cross")
 	function menuIn() {
     menu.reversed() ? menu.play() : menu.reverse();	
-
   }
   
  
+//Scroll into view animation
+let showOnScroll = function() {
+  let elems;
+  let windowHeight;
+
+  function init() {
+    elems = document.querySelectorAll(".hidden");
+    windowHeight = window.innerHeight;
+    addEventHandlers();
+    checkPosition();
+  }
+
+  function addEventHandlers() {
+    window.addEventListener("scroll", checkPosition);
+    window.addEventListener("resize", init);
+  }
+
+  function checkPosition() {
+    for (var i = 0; i < elems.length; i++) {
+      let positionFromTop = elems[i].getBoundingClientRect().top;
+      if (positionFromTop - windowHeight <= -170) {
+        TweenMax.to(elems[i], 2, {
+          opacity: 1
+        });
+      }
+    }
+  }
+  return {
+    init: init
+  };
+};
+showOnScroll().init();
