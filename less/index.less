@@ -388,12 +388,18 @@ footer {
 .services {
   position: relative;
 
+  img {
+    @media @mobile {
+      content: url('../img/services/services-mobile-jumbotron.png');
+    }
+  }
+
   h1 {
     position: absolute;
-    bottom: 21px;
-    left: 86px;
+    bottom: 23px;
+    left: 15px;
     color: white;
-    font-size: 6.3rem;
+    font-size: 3.6rem;
   }
 }
 
@@ -403,14 +409,28 @@ footer {
   max-width: 852px;
   margin: 0 auto;
 
+  @media @mobile {
+    padding: 29px 15px;
+    margin-bottom: 34px;
+  }
+
   .services-inc {
     line-height: 2.5rem;
+
+    @media @mobile {
+      line-height: 2.6rem;
+    }
   }
 
   .tabs {
     display: flex;
     justify-content: space-between;
     margin-top: 43px;
+
+    @media @mobile {
+      flex-direction: column;
+      margin-top: 36px;
+    }
 
     .tab-selected {
       background-color: #5E9FB9;
@@ -424,21 +444,39 @@ footer {
       font-size: 2rem;
       text-align: center;
       width: 184px;
+
+      @media @mobile {
+        width: 100%;
+        margin-bottom: 21px;
+      }
     }
   }
 
   .tab-content-cont {
     margin-top: 52px;
 
+    @media @mobile {
+      margin-top: 25px;
+    }
+
     .tab-content {
       display: none;
 
       .tab-text {
         padding-right: 20px;
+        
+        @media @mobile {
+          padding-right: 0px;
+          margin-bottom: 27px;
+        }
 
         h2 {
           font-size: 2.4rem;
           margin-bottom: 15px;
+
+          @media @mobile {
+            margin-bottom: 22px;
+          }
         }
 
         p {
@@ -453,11 +491,42 @@ footer {
 
     .tab-show {
       display: flex;
+      @media @mobile {
+        flex-direction: column;
+      }
     }
+  }
+}
+
+.tab-content[data-tab="1"] {
+  .tab-img {
+    content: url('../img/services/services-tab-mobile-pre-construction-img.png');
+  }
+}
+
+.tab-content[data-tab="2"] {
+  .tab-img {
+    content: url('../img/services/services-tab-mobile-construction-img.png');
+  }
+}
+
+.tab-content[data-tab="3"] {
+  .tab-img {
+    content: url('../img/services/services-tab-mobile-design-build-img.png');
+  }
+}
+
+.tab-content[data-tab="4"] {
+  .tab-img {
+    content: url('../img/services/services-tab-mobile-sustainability-img.png');
   }
 }
 
 .services-footer{
   margin-top: -2px;
   padding-top: 55px;
+
+  @media @mobile {
+    padding-top: 18px;
+  }
 }
