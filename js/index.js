@@ -1,3 +1,10 @@
+// Design of the hover on the navbar button
+
+icon = document.getElementsByClassName(".icon");
+body = document.querySelector("body");
+
+
+
 // 3. Create a class definition that receives our DOM element from the NodeList
 class TabLink {
     constructor(link) {
