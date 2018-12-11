@@ -1,4 +1,3 @@
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -169,15 +168,10 @@ a:hover {
 .navbar__container {
   background: #8f9ba7;
   height: 50px;
-  position: absolute;
+  position: fixed;
   top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: nowrap;
   width: 100%;
-  z-index: 5;
+  z-index: 1;
 }
 .navbar__container .navbar {
   max-width: 1024px;
@@ -185,6 +179,11 @@ a:hover {
   width: 100%;
   margin: 0 auto;
   position: relative;
+}
+@media (max-width: 500px) {
+  .navbar__container .navbar {
+    padding: 4px 5% 0;
+  }
 }
 .navbar__container .logo__burger {
   display: flex;
@@ -223,6 +222,11 @@ a:hover {
   height: 300px;
   margin: 168px 0 0;
   width: 100%;
+}
+@media (max-width: 500px) {
+  .navbar__container .nav__menu--open {
+    margin-top: 30px;
+  }
 }
 .navbar--open {
   height: 100vh;
@@ -299,8 +303,10 @@ footer .copyright {
 .home__header {
   position: relative;
 }
-.home__header img {
-  z-index: 1;
+@media (max-width: 500px) {
+  .home__header .header__img {
+    width: 100%;
+  }
 }
 .home__header .title {
   display: flex;
@@ -312,13 +318,23 @@ footer .copyright {
   font-size: 6.45rem;
   font-weight: bold;
   line-height: 1.19;
-  margin: 325px 8% 0;
+  margin: 31.5% 8% 0;
   position: absolute;
   top: 0;
-  z-index: 4;
+}
+@media (max-width: 500px) {
+  .home__header .title {
+    font-size: 3.6rem;
+    margin: 28% 5% 0;
+  }
 }
 .home__content__top {
   margin: 51px 8.3%;
+}
+@media (max-width: 500px) {
+  .home__content__top {
+    margin: 51px 5% 0;
+  }
 }
 .home__content__top .content__section {
   display: flex;
@@ -326,6 +342,15 @@ footer .copyright {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: nowrap;
+}
+@media (max-width: 500px) {
+  .home__content__top .content__section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
 }
 .home__content__top .content__section .content {
   display: flex;
@@ -335,6 +360,12 @@ footer .copyright {
   flex-wrap: nowrap;
   width: 50%;
   margin-top: 48px;
+}
+@media (max-width: 500px) {
+  .home__content__top .content__section .content {
+    width: 100%;
+    margin-top: 30px;
+  }
 }
 .home__content__top .content__section .content h2 {
   font-size: 2.4rem;
@@ -356,9 +387,38 @@ footer .copyright {
   background: #8f9ba7;
   color: #ffffff;
 }
+@media (max-width: 500px) {
+  .home__content__top .content__section .content a {
+    padding: 9px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
 .home__content__top .content__section .img {
   width: 48%;
   height: auto;
+}
+@media (max-width: 500px) {
+  .home__content__top .content__section .img {
+    width: 100%;
+  }
+}
+.home__content__top .content__section .img .img-desktop {
+  display: block;
+}
+@media (max-width: 500px) {
+  .home__content__top .content__section .img .img-desktop {
+    display: none;
+  }
+}
+.home__content__top .content__section .img .img-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .home__content__top .content__section .img .img-mobile {
+    display: block;
+    margin: 0 auto;
+  }
 }
 .home__content__top .designs__content {
   display: flex;
@@ -368,8 +428,23 @@ footer .copyright {
   flex-wrap: nowrap;
   margin-top: 96px;
 }
+@media (max-width: 500px) {
+  .home__content__top .designs__content {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 42px;
+  }
+}
 .home__content__top .designs__content .content {
   margin: 43px 0 0 2.3%;
+}
+@media (max-width: 500px) {
+  .home__content__top .designs__content .content {
+    margin: 30px 0 0;
+  }
 }
 .home__content__top .designs__content .content a {
   padding: 9px 18px;
@@ -377,17 +452,54 @@ footer .copyright {
 .home__content__top .designs__content .img {
   width: 51%;
 }
+@media (max-width: 500px) {
+  .home__content__top .designs__content .img {
+    width: 100%;
+  }
+}
 .home__content__bottom {
   margin: 98px 8.3% 0;
+}
+@media (max-width: 500px) {
+  .home__content__bottom {
+    margin: 50px 0 0;
+  }
 }
 .home__content__bottom .content__section h2 {
   font-size: 2.4rem;
   font-weight: bold;
   color: #222222;
 }
+@media (max-width: 500px) {
+  .home__content__bottom .content__section h2 {
+    margin: 0 5%;
+  }
+}
 .home__content__bottom .content__section .img {
   margin-top: 46px;
   position: relative;
+}
+@media (max-width: 500px) {
+  .home__content__bottom .content__section .img {
+    margin-top: 24px;
+  }
+}
+.home__content__bottom .content__section .img .img-desktop {
+  display: block;
+}
+@media (max-width: 500px) {
+  .home__content__bottom .content__section .img .img-desktop {
+    display: none;
+  }
+}
+.home__content__bottom .content__section .img .img-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .home__content__bottom .content__section .img .img-mobile {
+    display: block;
+    margin: 0 auto;
+  }
 }
 .home__content__bottom .content__section .img p {
   position: absolute;
@@ -403,24 +515,37 @@ footer .copyright {
   font-size: 2.5rem;
   letter-spacing: 7.5px;
 }
-.home__content__bottom .content__section .text__content {
+@media (max-width: 500px) {
+  .home__content__bottom .content__section .img p {
+    width: 59%;
+    margin-top: 37%;
+    margin-right: 20%;
+    height: 49%;
+  }
+}
+.home__content__bottom .content__section .img .text__content {
   margin: 88px 23.5% 0;
 }
-.home__content__bottom .content__section .text__content p {
+@media (max-width: 500px) {
+  .home__content__bottom .content__section .img .text__content {
+    margin: 110px 5% 0;
+  }
+}
+.home__content__bottom .content__section .img .text__content p {
   font-size: 1.8rem;
   line-height: 1.35;
   margin-bottom: 22px;
 }
-.home__content__bottom .outskirts {
+.home__content__bottom .content__section .outskirts {
   margin-top: 102px;
 }
-.home__content__bottom .outskirts .img p {
+.home__content__bottom .content__section .outskirts .img p {
   top: 0;
   left: 0;
 }
-.home__content__bottom .blocks {
+.home__content__bottom .content__section .blocks {
   margin: 103px 0;
 }
-.home__content__bottom .blocks .img p {
+.home__content__bottom .content__section .blocks .img p {
   line-height: 95px;
 }

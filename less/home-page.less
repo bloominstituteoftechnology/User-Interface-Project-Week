@@ -1,142 +1,243 @@
 .home__header {
-    position: relative;
-  
-    img {
-      z-index: 1;
+  position: relative;
+
+  .header__img {
+    //z-index: 1;
+
+    @media @mobile {
+      width: 100%;
     }
-  
-    .title {
+  }
+
+
+  .title {
+    .center(column, flex-start, flex-start, nowrap);
+    color: @jumbotron-color;
+    font-size: 6.45rem;
+    font-weight: bold;
+    line-height: 1.19;
+    margin: 31.5% 8% 0;
+    position: absolute;
+    top: 0;
+   // z-index: 4;
+
+    @media @mobile {
+      font-size: 3.6rem;
+      margin: 28% 5% 0;
+    }
+  }
+}
+
+.home__content__top {
+  margin: 51px 8.3%;
+
+  @media @mobile {
+    margin: 51px 5% 0;
+  }
+
+  .content__section {
+    .center(row, space-between, flex-start, nowrap);
+    @media @mobile {
+      .center(column-reverse, flex-start, center, nowrap);
+    }
+
+    .content {
       .center(column, flex-start, flex-start, nowrap);
-      color: @jumbotron-color;
-      font-size: 6.45rem;
-      font-weight: bold;
-      line-height: 1.19;
-      margin: 325px 8% 0;
-      position: absolute;
-      top: 0;
-      z-index: 4;
+      width: 50%;
+      margin-top: 48px;
+      @media @mobile {
+        
+        width: 100%;
+        margin-top: 30px;
+
     }
-  }
-  
-  .home__content__top {
-    margin: 51px 8.3%;
-  
-    .content__section {
-      .center(row, space-between, flex-start, nowrap);
-  
-      .content {
-        .center(column, flex-start, flex-start, nowrap);
-        width: 50%;
-        margin-top: 48px;
-  
-        h2 {
-          font-size: 2.4rem;
-          font-weight: bold;
-          color: @sub-headers-color;
-        }
-  
-        p {
-          margin-top: 21px;
-          line-height: 1.55;
-        }
-  
-        a {
-          color: black;
-          font-size: 1.6rem;
-          margin: 27px 0 0;
-          padding: 9px 26px;
-          border: 1px solid @button-border;
-  
-          &:hover {
-            background: @home-buttons-bg;
-            color: @white;
-          }
-        }
-      }
-  
-      .img {
-        width: 48%;
-        height: auto;
-      }
-    }
-  
-    .designs__content {
-      .center(row-reverse, space-between, flex-start, nowrap);
-      margin-top: 96px;
-  
-      .content {
-        margin: 43px 0 0 2.3%;
-  
-        a {
-          padding: 9px 18px;
-        }
-      }
-  
-      .img {
-        width: 51%;
-      }
-    }
-  }
-  
-  .home__content__bottom {
-    margin: 98px 8.3% 0;
-  
-    .content__section {
+
       h2 {
         font-size: 2.4rem;
         font-weight: bold;
         color: @sub-headers-color;
       }
-  
-      .img {
-        margin-top: 46px;
-        position: relative;
-  
-        p {
-          position: absolute;
-          top: 0;
-          right: 0;
-          z-index: 5;
-          background: @recent-squares;
-          margin: 20.5% 0 0;
-          width: 37%;
-          height: 95px;
+
+      p {
+        margin-top: 21px;
+        line-height: 1.55;
+      }
+
+      a {
+        color: black;
+        font-size: 1.6rem;
+        margin: 27px 0 0;
+        padding: 9px 26px;
+        border: 1px solid @button-border;
+
+        &:hover {
+          background: @home-buttons-bg;
+          color: @white;
+        }
+        @media @mobile {
+          padding: 9px 0;
+          width: 100%;
           text-align: center;
-          line-height: 90px;
-          font-size: 2.5rem;
-          letter-spacing: 7.5px;
-        }
-      }
-  
-      .text__content {
-        margin: 88px 23.5% 0;
-  
-        p {
-          font-size: 1.8rem;
-          line-height: 1.35;
-          margin-bottom: 22px;
         }
       }
     }
-  
-    .outskirts {
-      margin-top: 102px;
-  
-      .img {
-        p {
-          top: 0;
-          left: 0;
+
+    .img {
+      width: 48%;
+      height: auto;
+
+      @media @mobile {
+        width: 100%;
+      }
+
+      .img-desktop {
+        display: block;
+
+        @media @mobile {
+          display: none;
+        }
+      }
+
+      .img-mobile {
+        display: none;
+
+        @media @mobile {
+          display: block;
+          margin: 0 auto;
         }
       }
     }
-  
-    .blocks {
-      margin: 103px 0;
-  
-      .img {
-        p {
-          line-height: 95px;
-        }
+   
+  }
+
+  .designs__content {
+    .center(row-reverse, space-between, flex-start, nowrap);
+    margin-top: 96px;
+
+    @media @mobile {
+      .center(column-reverse, flex-start, flex-start, wrap);
+      margin-top: 42px;
+    }
+
+    .content {
+      margin: 43px 0 0 2.3%;
+
+      @media @mobile {
+        margin: 30px 0 0;
+      }
+
+      a {
+        padding: 9px 18px;
+      }
+    }
+
+    .img {
+      width: 51%;
+
+      @media @mobile {
+        width: 100%;
       }
     }
   }
+}
+
+.home__content__bottom {
+  margin: 98px 8.3% 0;
+  @media @mobile {
+    margin: 50px 0 0;
+  }
+
+  .content__section {
+    h2 {
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: @sub-headers-color;
+      @media @mobile {
+        margin: 0 5%;
+      }
+    }
+
+    .img {
+      margin-top: 46px;
+      position: relative;
+      @media @mobile {
+        margin-top: 24px;
+      }
+      .img-desktop {
+        display: block;
+
+        @media @mobile {
+          display: none;
+        }
+      }
+
+      .img-mobile {
+        display: none;
+
+        @media @mobile {
+          display: block;
+          margin: 0 auto;
+       
+        }
+      }
+
+      p {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5;
+        background: @recent-squares;
+        margin: 20.5% 0 0;
+        width: 37%;
+        height: 95px;
+        text-align: center;
+        line-height: 90px;
+        font-size: 2.5rem;
+        letter-spacing: 7.5px;
+        @media @mobile {
+          width: 59%;
+          margin-top: 37%;
+          margin-right: 20%;
+          height: 49%;
+       
+        }
+      }
+     
+
+    .text__content {
+      margin: 88px 23.5% 0;
+      @media @mobile {
+        margin: 110px 5% 0;
+      }
+
+      p {
+        font-size: 1.8rem;
+        line-height: 1.35;
+        margin-bottom: 22px;
+        
+      }
+    }
+  }
+
+  .outskirts {
+    margin-top: 102px;
+
+    .img {
+      p {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .blocks {
+    margin: 103px 0;
+
+    .img {
+      p {
+        line-height: 95px;
+      }
+    }
+  }
+}
+}

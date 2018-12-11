@@ -5,7 +5,8 @@
   align-items: @align;
   flex-wrap: @wrap;
 }
- .btn-template(@background, @color, @radius, @padding, @font) {
+
+.btn-template(@background, @color, @radius, @padding, @font) {
   text-align: center;
   background: @background;
   color: @color;
@@ -15,7 +16,12 @@
   padding: @padding;
   font-size: @font;
 }
- // Animation Mixins
+
+.border(@size: 1px, @style: solid, @color: black) {
+  border: @size @style @color;
+}
+
+// Animation Mixins
 .keyframes(@name; @arguments) {
   @-moz-keyframes @name {
     @arguments();
@@ -27,7 +33,8 @@
     @arguments();
   }
 }
- .animation(@arguments) {
+
+.animation(@arguments) {
   -webkit-animation: @arguments;
   -moz-animation: @arguments;
   animation: @arguments;
