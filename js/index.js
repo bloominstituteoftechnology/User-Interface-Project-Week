@@ -1,5 +1,5 @@
 // JS goes here
-
+// =================== TAB NAVIGATOR for services.html =========================
 // classes up top as they are not hoisted by compiler
 class Tab {
     constructor(tabElement) {
@@ -46,3 +46,9 @@ class TabCard {
 
 // grab all tabs to begin
 let tabs = document.querySelectorAll('.tab').forEach(tab => new Tab(tab));
+
+// ======================== NAVIGATION BAR =======================
+
+
+let menuIcon = document.querySelector('.nav-img');
+console.log(menuIcon);
