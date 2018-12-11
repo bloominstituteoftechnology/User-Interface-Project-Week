@@ -1,5 +1,7 @@
 // JS goes here
 
+// ==================== Navigation
+
 document.querySelector(".hamburger").addEventListener("click", function() {
     document.querySelector(".navbar").classList.toggle("expanded-navbar")
 })
@@ -7,6 +9,8 @@ document.querySelector(".hamburger").addEventListener("click", function() {
 document.querySelector(".hamburger-close").addEventListener("click", function() {
     document.querySelector(".navbar").classList.toggle("expanded-navbar")
 })
+
+// ==================== Services Tabs
 
 class Tab {
     constructor(element) {
