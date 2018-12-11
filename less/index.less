@@ -172,6 +172,7 @@ body {
 }
 
 header {
+  max-width: 1024px;
   display: flex;
   justify-content: space-between;
   height: 50px;
@@ -180,17 +181,13 @@ header {
   position: fixed;
   background-color: #99a4af;
   .nav-logo;
-  z-index: 3;
+  z-index: 2;
 }
 
 footer {
   background-color: @footerBg;
   .footer-text;
   margin-top: 100px;
-}
-
-nav {
-  display: none;
 }
 
 //==========================TYPOGRAPHY======================
@@ -205,10 +202,51 @@ body {
 }
 
 //=========================Special Text
+#menuItems {
+  width: 0%;
+}
 .navIcon {
   cursor: pointer;
   height: 24px;
   // width: 18px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  background-color: lighten(@dark-grey-color, 10%);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 170px;
+  width: 100%;
+  margin-left: 41%;
+}
+
+.overlay a {
+  .nav-text;
+  display: block;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.overlay .navIcon {
+  position: absolute;
+  top: 23px;
+  right: 85px;
+}
+
+.overlay .overlay-logo {
+  position: absolute;
+  top: 23px;
+  left: 85px;
 }
 .jumbo-head {
   font-weight: bold;
@@ -250,6 +288,9 @@ body {
   line-height: 8.5rem;
   color: @light-color;
   &:hover {
+    color: @dark-color;
+  }
+  &:focus {
     color: @dark-color;
   }
 }
@@ -301,6 +342,7 @@ body {
 }
 
 .project {
+  width: 100%;
   margin: 0 auto;
   position: relative;
   img {
