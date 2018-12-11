@@ -1,6 +1,7 @@
 .home-page {
   max-width: 1024px;
   width: 100%;
+
   // when on desktop view, hide all mobile images
   .img--mobile {
     display: none;
@@ -8,7 +9,7 @@
   @media @mobile {
     max-width: 500px; 
     
-    // when on mobile view, show mobile image and hide desktop image
+    // when on mobile view, show mobile images and hide desktop images
     .img--mobile {
       display: block;
     }
@@ -54,7 +55,7 @@
         .flex(center, none, column);
         img {
           order: -1;
-        } // when on mobile view, show mobile image and hide desktop image
+        } 
       }
       .tp-text {
         padding-top: 50px;
@@ -95,7 +96,11 @@
     width: 84%;
     margin: 0 auto;
     @media @mobile {
-      width: 90%;
+      width: 100%;
+
+      h2 {
+        padding-left: 20px;
+      }
     }
     .bottom-items {
       padding-top: 40px;
@@ -115,13 +120,29 @@
         z-index: 2;
         font-size: 2.8rem;
         letter-spacing: 7px;
+
+        @media @mobile {
+          left: 20px;
+          width: 90%;
+          top: 320px;
+        }
       }
       .title-right {
         right: 0;
+        @media @mobile {
+          right: none;
+        }
       }
       .bottom-text {
         padding: 90px 205px 0 205px;
+        @media @mobile {
+          width: 90%;
+          padding: 90px 0 0 20px;
+          .flex(center, none, column);
+        }
+        
         p {
+          width: 100%;
           font-size: 1.85rem;
           padding-bottom: 20px;
         }
