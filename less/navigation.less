@@ -1,0 +1,40 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    background-color: @nav-background;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    .nav-list {
+        display: none;
+    }
+    .nav-logo {
+        .nav-logo-style;
+        margin-left: calc(30vw - 30rem);
+        @media (max-width: 970px) {
+            margin-left: 5px;
+        }
+    }
+    .nav-toggle-open:hover {
+        cursor: pointer;
+    }
+}
+.navigation.navigation--open {
+    height: 100vh;
+    align-items: flex-start;
+    padding-top: 1rem;
+    .nav-list {
+        display: block;
+        height: 100%;
+        padding-top: 25rem;
+        &__item {
+            .nav-text-expanded;
+            text-decoration: none;
+        }
+    }
+}
