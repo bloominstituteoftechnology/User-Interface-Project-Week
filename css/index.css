@@ -147,6 +147,12 @@ html {
   color: #222;
   font-family: roboto, Arial, sans-serif;
 }
+@media (max-width: 550px) {
+  .home-container {
+    max-width: 500px;
+    width: 100%;
+  }
+}
 .navBar {
   background: #98A4AF;
   display: flex;
@@ -154,14 +160,49 @@ html {
   padding: 10px 60px;
   width: inherit;
   position: fixed;
-  z-index: 2;
+  z-index: 10;
 }
 .navBar h1 {
   font-size: 2.4rem;
   color: #FFF;
+  font-weight: bold;
 }
-.navBar nav {
-  display: none;
+.hamburger {
+  cursor: pointer;
+  z-index: 10;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #98A4AF;
+  opacity: 0.95;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+.navigation a {
+  line-height: 2;
+  color: white;
+  font-size: 6rem;
+  text-decoration: none;
+}
+.navigation a:hover {
+  color: #26708d;
+}
+@media (max-width: 550px) {
+  .navBar {
+    padding: 10px 20px;
+    max-width: 500px;
+  }
 }
 .topSection {
   display: flex;
@@ -183,6 +224,15 @@ html {
 .topSection img {
   width: 100%;
   margin-bottom: -260px;
+}
+@media (max-width: 550px) {
+  .topSection .headers h2 {
+    font-size: 4.6rem;
+    line-height: 4.5rem;
+  }
+  .topSection img {
+    margin-bottom: -170px;
+  }
 }
 .about {
   width: 90%;
@@ -251,6 +301,34 @@ html {
   font-size: 1.6rem;
   line-height: 2.4rem;
 }
+@media (max-width: 550px) {
+  .about .about1 {
+    flex-direction: column-reverse;
+    width: 95%;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .about .about1 .aboutText1 {
+    width: 100%;
+    margin: 20px 0px;
+  }
+  .about .about1 .aboutText1 a {
+    width: 100%;
+  }
+  .about .about2 {
+    flex-direction: column-reverse;
+    width: 95%;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .about .about2 .aboutText2 {
+    width: 100%;
+    margin: 20px 0px;
+  }
+  .about .about2 .aboutText2 a {
+    width: 100%;
+  }
+}
 .recentProjects {
   margin-top: 50px;
   display: flex;
@@ -288,8 +366,11 @@ html {
   display: flex;
   flex-direction: column;
 }
-.recentProjects .villas img {
+.recentProjects .villas .desktop {
   margin-bottom: -40px;
+}
+.recentProjects .villas .mobile {
+  display: none;
 }
 .recentProjects .villas .titles {
   margin-left: 600px;
@@ -298,18 +379,62 @@ html {
   display: flex;
   flex-direction: column;
 }
-.recentProjects .outskirts img {
+.recentProjects .outskirts .desktop {
   margin-bottom: -40px;
+}
+.recentProjects .outskirts .mobile {
+  display: none;
 }
 .recentProjects .blocks {
   display: flex;
   flex-direction: column;
 }
-.recentProjects .blocks img {
+.recentProjects .blocks .desktop {
   margin-bottom: -40px;
+}
+.recentProjects .blocks .mobile {
+  display: none;
 }
 .recentProjects .blocks .titles {
   margin-left: 600px;
+}
+@media (max-width: 550px) {
+  .recentProjects .text-section p {
+    width: 100%;
+  }
+  .recentProjects .villas .desktop {
+    display: none;
+  }
+  .recentProjects .villas .mobile {
+    display: block;
+    margin-bottom: -20px;
+  }
+  .recentProjects .villas .titles {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .recentProjects .outskirts .desktop {
+    display: none;
+  }
+  .recentProjects .outskirts .mobile {
+    display: block;
+    margin-bottom: -20px;
+  }
+  .recentProjects .outskirts .titles {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .recentProjects .blocks .desktop {
+    display: none;
+  }
+  .recentProjects .blocks .mobile {
+    display: block;
+    margin-bottom: -20px;
+  }
+  .recentProjects .blocks .titles {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 .footer {
   background: #828282;
@@ -356,6 +481,27 @@ html {
   color: white;
   padding: 10px 0px 10px;
 }
+@media (max-width: 550px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer .locations {
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer .locationInfo h3 {
+    margin-top: 30px;
+  }
+  .footer .locationInfo p {
+    line-height: 2.4rem;
+  }
+}
+@media (max-width: 550px) {
+  .copyright {
+    display: flex;
+    padding-left: 40px;
+  }
+}
 .services-container {
   margin: 0 auto;
   width: 1000px;
@@ -401,13 +547,28 @@ html {
   color: white;
 }
 .tabSection .tabs h2 {
+  display: block;
   font-size: 2rem;
   font-weight: bold;
   border: 1px solid black;
   padding: 10px 30px;
   cursor: pointer;
 }
-.tabSection .tabTitle h2 {
+.tabSection .tabs .link-selected {
+  z-index: 2;
+}
+.tabSection .tabItem {
+  display: none;
+}
+.tabSection .tabItem h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.tabSection .item-selected {
+  display: block;
+}
+.tabSection .item-selected h2 {
   font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 15px;
