@@ -6,6 +6,9 @@ const hamburger = document.querySelector(".hamburger");
 const header = document.querySelector("header");
 const navbarImage = document.querySelector('.hamburger img');
 let clicked = false;
+let navAnimation = new TimelineLite({});
+
+
 
 hamburger.addEventListener('click', () => {
     navbar.classList.toggle('show-nav');
@@ -55,14 +58,21 @@ class TabLink {
   function swapImage() {
     
     if(clicked === true){
+      navbarAnimation();
       navbarImage.src = '/img/nav-hamburger.png';
       clicked = false;
-      console.log('this should revert it back to original state')
     }
     else{
+      navbarAnimation();
       clicked = true;
       navbarImage.src = '/img/nav-hamburger-close.png';
-      
-      console.log('this should change it to closed icon')
     }
+  }
+  function navbarAnimation() {
+    navAnimation.to(hamburger, 0.1, {rotation:4})
+      .to(hamburger, 0.1, { 
+        ease: Power0.easeNone
+      }, 0.2)
+    //end at 0
+      .to(hamburger, 0.1, {rotation:0}, "+=0.5")
   }
