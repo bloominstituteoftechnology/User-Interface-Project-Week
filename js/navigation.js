@@ -11,9 +11,21 @@ class Navigation {
         if(this.navContent.style.display == 'none') {
             this.navContent.style.display = 'flex';
             this.button.src = '../img/nav-hamburger-close.png';
+            TweenMax.fromTo(this.navContent, .3, {
+                opacity: 0
+            }, {
+                opacity: .9
+            });
         } else {
-            this.navContent.style.display = 'none';
             this.button.src = '../img/nav-hamburger.png';
+            TweenMax.fromTo(this.navContent, .3, {
+                opacity: .9
+            }, {
+                opacity: 0,
+                onComplete: () => {
+                    this.navContent.style.display = 'none';
+                }
+            });
         }
     }
     
