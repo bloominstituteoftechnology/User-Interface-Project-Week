@@ -7,10 +7,10 @@ class TabLink {
     };
   
     select() {
-        const tabContents = document.querySelectorAll('.tab-content').forEach( content => content.classList.remove('tab-content-selected'));
+        document.querySelectorAll('.tab-content').forEach( content => content.classList.remove('tab-content-selected'));
         this.content.classList.add('tab-content-selected');
 
-        const links = document.querySelectorAll('.tab-link').forEach( link => link.classList.remove('tab-link-selected'));
+        document.querySelectorAll('.tab-link').forEach( link => link.classList.remove('tab-link-selected'));
         this.link.classList.add('tab-link-selected');
     }
 }
