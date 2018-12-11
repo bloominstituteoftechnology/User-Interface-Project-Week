@@ -1,4 +1,21 @@
 // JS goes here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Tab Section For Services Page
 class TabLink {
     constructor(elem) {
         // Individual Tabs
@@ -12,22 +29,6 @@ class TabLink {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const links = document.querySelectorAll('.tabs-link').forEach(tab => new TabLink(tab));
