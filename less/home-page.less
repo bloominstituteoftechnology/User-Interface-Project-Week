@@ -40,6 +40,13 @@
     }
 
     .intro-img {
+      @media @tablet {
+        width: 45%;
+      }
+      
+      @media @phone {
+        width: initial;
+      }
 
       img {
         @media @phone {
@@ -91,19 +98,6 @@
           height: auto;
 
         }
-        .desktop {
-          display: block;
-          @media @phone {
-            display: none;
-          }
-        }
-
-        .mobile {
-          display: none;
-          @media @phone {
-            display: block
-          }
-        }
       }
 
       .right h3 {
@@ -136,9 +130,19 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 30px;
+
+        @media @tablet {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
         
         p {
           max-width: 400px;
+
+          @media @tablet {
+            margin: 0 15px;
+          }
         }
       }
     }
