@@ -9,7 +9,8 @@ function closeNav() {
 }
 
 
-
+document.getElementById("yo1").style.color="white";
+document.getElementById("yo1").style.backgroundColor="#5E9FB9"
 
 
 function precon() {
