@@ -137,6 +137,10 @@ table {
 .top-content {
   position: relative;
 }
+.top-content img {
+  max-width: 100%;
+  height: auto;
+}
 .top-content h1 {
   position: absolute;
   bottom: 50px;
@@ -146,25 +150,79 @@ table {
   line-height: 75px;
   color: #ffffff;
 }
+@media (max-width: 500px) {
+  .top-content h1 {
+    font-size: 100%;
+    line-height: 20px;
+  }
+}
 .mid-content {
   margin: 40px 70px;
 }
+@media screen {
+  .mid-content {
+    margin: 40px 10px;
+  }
+}
 .mid-content .flex-box {
   display: flex;
+  align-items: center;
   margin-bottom: 100px;
 }
-.mid-content .flex-text {
+@media (max-width: 700px) {
+  .mid-content .flex-box {
+    flex-direction: column;
+  }
+}
+.mid-content .flex-box .a {
+  order: -1;
+}
+.mid-content .flex-box img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 500px) {
+  .mid-content .flex-box .flex-img {
+    width: 95%;
+  }
+}
+.mid-content .flex-box .flex-text {
   margin: 40px 60px;
   width: 50%;
 }
-.mid-content .flex-text .button {
+@media screen {
+  .mid-content .flex-box .flex-text {
+    margin: 40px 10px;
+  }
+}
+@media (max-width: 700px) {
+  .mid-content .flex-box .flex-text {
+    width: 100%;
+  }
+}
+.mid-content .flex-box .flex-text .button {
   margin-top: 25px;
   border: #000000 1px solid;
   display: inline-block;
   padding: 10px 20px;
 }
+@media screen {
+  .mid-content .flex-box .flex-text .button {
+    text-align: center;
+    display: block;
+  }
+}
 .bottom-content {
   margin: 0px 70px;
+}
+@media screen {
+  .bottom-content {
+    margin: 0px 0px;
+  }
+}
+.bottom-content img {
+  width: 100%;
+  height: auto;
 }
 .bottom-content .flex-box {
   flex-direction: column;
@@ -179,6 +237,11 @@ table {
   width: 50%;
   margin: 20px 0px;
 }
+@media (max-width: 500px) {
+  .bottom-content .flex-box .flex-text {
+    width: 90%;
+  }
+}
 .bottom-content .flex-box .flex-text p {
   margin-bottom: 50px;
 }
@@ -190,11 +253,45 @@ table {
   position: relative;
   top: -50px;
 }
+@media (max-width: 500px) {
+  .bottom-content .flex-box .img-tag {
+    display: block;
+    align-self: center;
+    top: -20px;
+    padding: 25px 10%;
+  }
+}
 .bottom-content .flex-box .right {
-  left: 250px;
+  align-self: flex-end;
+}
+@media (max-width: 500px) {
+  .bottom-content .flex-box .right {
+    align-self: center;
+  }
 }
 .bottom-content .flex-box .left {
-  left: -250px;
+  align-self: flex-start;
+}
+@media (max-width: 500px) {
+  .bottom-content .flex-box .left {
+    align-self: center;
+  }
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 330px) {
+  .mobile {
+    display: block;
+  }
+}
+.desktop {
+  display: block;
+}
+@media (max-width: 330px) {
+  .desktop {
+    display: none;
+  }
 }
 * {
   box-sizing: border-box;

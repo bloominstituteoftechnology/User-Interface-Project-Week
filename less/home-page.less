@@ -1,11 +1,19 @@
 .top-content {
 	position: relative;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 	h1 {
 		position: absolute;
 		bottom: 50px;
 		left: 75px;
 		font-weight: Bold;
 		font-size: 64px;
+		@media (max-width: 500px) {
+			font-size: 100%;
+			line-height: 20px;
+		}
 		line-height: 75px;
 		color: #ffffff;
 	}
@@ -13,25 +21,60 @@
 
 .mid-content {
 	margin: 40px 70px;
+	@media screen {
+		margin: 40px 10px;
+	}
 
 	.flex-box {
 		display: flex;
+		align-items: center;
+		@media (max-width: 700px) {
+			flex-direction: column;
+		}
 		margin-bottom: 100px;
-	}
-	.flex-text {
-		margin: 40px 60px;
-		width: 50%;
-
-		.button {
-			margin-top: 25px;
-			border: #000000 1px solid;
-			display: inline-block;
-			padding: 10px 20px;
+		.a {
+			order: -1;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		.flex-img {
+			@media (max-width: 500px) {
+				width: 95%;
+			}
+		}
+		.flex-text {
+			margin: 40px 60px;
+			@media screen {
+				margin: 40px 10px;
+			}
+			width: 50%;
+			@media (max-width: 700px) {
+				width: 100%;
+			}
+			.button {
+				margin-top: 25px;
+				border: #000000 1px solid;
+				display: inline-block;
+				@media screen {
+					text-align: center;
+					display: block;
+				}
+				padding: 10px 20px;
+			}
 		}
 	}
 }
 .bottom-content {
 	margin: 0px 70px;
+	@media screen {
+		margin: 0px 0px;
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
 	.flex-box {
 		flex-direction: column;
 		display: flex;
@@ -45,7 +88,9 @@
 		.flex-text {
 			width: 50%;
 			margin: 20px 0px;
-
+			@media (max-width: 500px) {
+				width: 90%;
+			}
 			p {
 				margin-bottom: 50px;
 			}
@@ -58,12 +103,39 @@
 			font-size: 3rem;
 			position: relative;
 			top: -50px;
+			@media (max-width: 500px) {
+				display: block;
+				align-self: center;
+				top: -20px;
+				padding: 25px 10%;
+			}
 		}
 		.right {
-			left: 250px;
+			align-self: flex-end;
+			@media (max-width: 500px) {
+				align-self: center;
+			}
+			//left: 250px;
 		}
 		.left {
-			left: -250px;
+			@media (max-width: 500px) {
+				align-self: center;
+			}
+			align-self: flex-start;
+			//left: -250px;
 		}
+	}
+}
+
+.mobile {
+	display: none;
+	@media (max-width: 330px) {
+		display: block;
+	}
+}
+.desktop {
+	display: block;
+	@media (max-width: 330px) {
+		display: none;
 	}
 }
