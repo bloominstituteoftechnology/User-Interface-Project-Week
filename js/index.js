@@ -8,8 +8,10 @@ burger.addEventListener("click", () => {
   navbarText.classList.toggle("nav__menu--open");
   body.classList.toggle("stop__scrolling");
   if (body.classList.contains("stop__scrolling")) {
-    body.bind("touchmove", e => e.preventDefault());
+    // body.bind("touchmove", e => e.preventDefault());
+    burger.src = "./img/nav-hamburger-close.png";
   } else {
-    body.unbind("touchmove");
+    // body.unbind("touchmove");
+    burger.src = "./img/nav-hamburger.png";
   }
 });
