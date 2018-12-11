@@ -1,35 +1,41 @@
 /* Open */
 
-class Tabs {
-  constructor(ele) {
-    this.ele = ele;
-    this.data = this.ele.dataset.tab;
-    this.content = document.querySelector(
-      `.tab-content[data-tab="${this.data}"]`
+class TabLink {
+  constructor(element) {
+    this.element = element;
+    this.data = this.element.dataset.tab;
+    this.itemElement = document.querySelector(
+      `.tabs-item[data-tab='${this.data}']`
     );
+    //console.log(this.itemElement);
+    this.tabItem = new TabItem(this.itemElement);
 
-    this.tabItem = new TabItem(this.content);
+    // get links and item
+    this.links = document.querySelectorAll(".tabs-link");
+    this.tabItems = document.querySelectorAll(".tabs-item");
 
-    this.ele.addEventListener("click", () => this.select());
+    // add click event to all links
+    this.element.addEventListener("click", () => this.select(this.links));
   }
 
-  select() {
-    const links = document.querySelectorAll(".buttons button");
-    //links.forEach(link => console.log(link));
-
-    this.tabItem.select(this.content);
+  select(links) {
+    Array.from(links).forEach(tab =>
+      tab.classList.remove("tabs-link-selected")
+    );
+    this.element.classList.add("tabs-link-selected");
+    this.tabItem.select(this.tabItems);
   }
 }
-
 class TabItem {
-  constructor(ele) {
-    this.ele = ele;
+  constructor(element) {
+    this.element = element;
   }
-
-  select() {
-    const items = document.querySelectorAll(".tab-content");
-    items.forEach(item => (item.style.display = "none"));
-    this.ele.style.display = "flex";
+  select(tabItems) {
+    // const tabItems = document.querySelectorAll('.tabs-item');
+    tabItems.forEach(item => {
+      item.classList.remove("tabs-item-selected");
+    });
+    this.element.classList.add("tabs-item-selected");
   }
 }
 
@@ -43,6 +49,6 @@ function off() {
   overlay.style.display = "none";
 }
 
-const tabs = document
-  .querySelectorAll(".buttons button")
-  .forEach(btn => new Tabs(btn));
+links = document
+  .querySelectorAll(".tabs-link")
+  .forEach(link => new TabLink(link));
