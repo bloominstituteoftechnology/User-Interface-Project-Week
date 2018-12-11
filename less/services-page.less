@@ -2,29 +2,50 @@
     header {
         .header-main__about {
             background-image: url('../img/services/services-jumbotron.png');
+            background-size: cover;
             height: 200px;
             position: relative;
             margin-bottom: 5rem;
+            @media @phone {
+                background-image: url('../img/services/services-mobile-jumbotron.png');
+                background-position: bottom;
+                margin-bottom: 2rem;
+            }
             h1 {
                 .jumbotron-header;
                 position: absolute;
                 bottom: 1.5rem;
                 left: 8.5rem;
+                @media @phone {
+                    left: 1.4rem;
+                    bottom: .8rem;
+                    font-size: 3.6rem;
+                }
             }
         }
         p {
             .general-text;
-            width: 850px;
+            max-width: 850px;
             .duomargin(0, auto);
+            @media @phone {
+                padding: 1rem;
+            }
         }
         margin-bottom: 4rem;
+        @media @phone {
+            margin-bottom: 2rem;
+        }
     }
     .services-section {
-        width: 850px;
+        max-width: 850px;
         .duomargin(0, auto);
         .tabs-holder {
             display: flex;
             justify-content: space-between;
+            @media @phone {
+                flex-flow: column;
+                align-items: center;
+            }
             &__button {
                 margin-top: 1rem;
                 background-color: white;
@@ -33,6 +54,10 @@
                 font-weight: 600;
                 width: 18.5rem;
                 height: 4.9rem;
+                @media @phone {
+                    width: 92%;
+                    margin-top: 2rem;
+                }
                 &.button--active {
                     background-color: @tab-selected-background;
                     color: white;
@@ -43,6 +68,10 @@
         &-main {
             display: flex;
             justify-content: space-around;
+            @media @phone {
+                flex-flow: column;
+                padding: 0 1rem;
+            }
             &__content {
                 h2 {
                     .sub-heading;
@@ -57,6 +86,10 @@
             &__img {
                 height: 275px;
                 margin-top: 3rem;
+                @media @phone {
+                    height: 290px;
+                    width: 290px;
+                }
             }
         }
     }
