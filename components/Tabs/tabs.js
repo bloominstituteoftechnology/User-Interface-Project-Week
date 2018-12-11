@@ -18,8 +18,14 @@ class TabLink{
     // Methods
     select(){
        this.title.textContent = this.header;
+       console.log(this.title)
+       console.log(this.header)
+       if(this.header === "Design Build"){
+        this.image.src=`img/services/services-tab-design-build-img.png`;
+       } else{
        this.image.src=`img/services/services-tab-${this.header.toLowerCase()}-img.png`;
        }
+    }
     }
 
 
