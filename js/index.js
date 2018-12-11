@@ -8,7 +8,6 @@ const closeMenu = document.querySelector('.close-menu');
 const nav = document.querySelector('nav');
 const navBar = document.querySelector('.top-nav');
 const contactLink = document.querySelector('#scroll');
-console.log(contactLink);
 
 // EVENT LISTENERS
 hamburgerMenu.addEventListener('click', () => toggleMenu())
