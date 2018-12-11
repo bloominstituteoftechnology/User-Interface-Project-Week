@@ -1,60 +1,57 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
+@import (once) "variables.less";
+@import (once) "mixins.less";
+@import (once) "reset.less";
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
-}
-body{
-  line-height:1;
-}
-ol,ul{
-  list-style:none;
-}
-blockquote,q{
-  quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
-}
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
-}
+.reset();
 
-table{
-  border-collapse:collapse;
-  border-spacing:0;
+// Home page styles
+.container {
+  //width: 100%;
+  width: 1024px;
+  margin: auto;
+  header.menu {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 55vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 22.5vw;
+    background: @slate-gray;
+    h1 {
+      color: @white;
+      font-weight: bold;
+      font-size: 2.4rem;
+    }
+    nav {
+      position: fixed;
+      display: none;
+    }
+  }
 }
-
-/* Your Code Goes Here */
+.top-banner {
+  position: relative;
+  img {
+    position: relative;
+    width: 100%;
+  }
+  h1 {
+    .jumbotron-header();
+    position: absolute;
+    top: 325px;
+    left: 8%;
+  }
+}
+.content-container {
+  padding: 50px 8.3%;
+  .content-box {
+    .content-box-mixin();
+  }
+  .content-box-reverse {
+    .content-box-mixin();
+    flex-direction: row-reverse;
+  }
+}
