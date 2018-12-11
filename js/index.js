@@ -6,12 +6,12 @@ const navMenu = document.querySelector('.nav-menu');
 
 navButtonOn.addEventListener('click', () => {
     navMenu.classList.toggle('nav-toggle', true);
-    TweenMax.to('.nav-menu', .5 ,{top:0})
+    TweenMax.to('.nav-menu', .5 ,{top:'0vw'})
 })
 
 navButtonOff.addEventListener('click', () => {
-    TweenMax.to('.nav-menu', .3 ,{top:'-100vw'})
-    setTimeout(()=>{navMenu.classList.toggle('nav-toggle', false)}, 310)
+    TweenMax.to('.nav-menu', .2 ,{top:'-100vw'})
+    setTimeout(()=>{navMenu.classList.toggle('nav-toggle', false)}, 210)
     
 })
 
