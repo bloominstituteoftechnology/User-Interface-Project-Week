@@ -135,24 +135,60 @@ table {
 }
 /* Your Code Goes Here */
 .nav-bar {
-  background-color: #98A4AF;
-  width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: row;
+  width: 100%;
+  left: 0;
   position: fixed;
   z-index: 999;
 }
-@media (max-width: 500px) {
-  .nav-bar {
-    max-width: 500px;
-    width: 500px;
-  }
+.nav-bar .nav--clicked {
+  background-color: #98A4AF;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.95;
+}
+.nav-bar .nav--clicked h2 {
+  padding-top: 10px;
+}
+.nav-bar .nav--clicked .burger {
+  padding-top: 10px;
+}
+.nav-bar .nav--clicked nav {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 5rem;
+  line-height: 80px;
+  color: #fff;
+  left: 0;
+}
+.nav-bar .nav--clicked nav a {
+  color: white;
+  text-decoration: none;
+}
+.nav-bar .nav--clicked nav a:hover {
+  color: #222222;
 }
 .nav-bar .nav-container {
+  background-color: #98A4AF;
+  min-width: 1024px;
   padding-top: 15px;
   padding-bottom: 12px;
   display: flex;
   justify-content: space-between;
   align-items: none;
   flex-direction: row;
+}
+@media (max-width: 500px) {
+  .nav-bar .nav-container {
+    max-width: 500px;
+    width: 500px;
+  }
 }
 .nav-bar .nav-container h2 {
   padding-left: 85px;
@@ -166,6 +202,7 @@ table {
   }
 }
 .nav-bar .nav-container .burger {
+  cursor: pointer;
   padding-right: 85px;
 }
 @media (max-width: 500px) {
