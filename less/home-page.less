@@ -16,7 +16,9 @@ h2{
   font-weight: bold;
   font-size: 2.0rem;
   line-height: 2.4rem;
-  color:white;
+  @media(@phone){
+    text-align: center;
+  }
 }
 button {
    border: 1px solid @home-button-borders;
@@ -25,9 +27,24 @@ button {
    span{
      font-size:1.6rem;
    }
+   @media(@phone){
+     width:100%;
+
+   }
+}
+
+.full-size-img{
+  @media(@phone){
+    display:none;
+  }
+}
+.mobile-size-img{
+  @media(min-width: 500px){
+    display:none;
+  }
 }
 .info-content{
-  width:80%;
+  width:95%;
   margin:0 auto;
 
   display:flex;
@@ -35,22 +52,75 @@ button {
   justify-content: space-between;
 
   margin-bottom: 40px;
-  .info-content-half{
-    width:48%;
-    margin: 40px 0 40px 0;
-    img{
-      width:100%;
-    }
-
-  }
-  .info-content-half-text{
-
+  .info-content-sub-1{
     display: flex;
-    flex-direction: column;
-    padding-top:50px;
+    flex-wrap: wrap;
+    margin-bottom:40px;
+    .info-content-half{
+      width:45%;
+      margin: 0px 0 40px 3%;
+      img{
+        width:100%;
+      }
 
-    p{
-      padding:20px 0 20px 0;
+    }
+    .info-content-half-text{
+
+      display: flex;
+      flex-direction: column;
+      padding-top:50px;
+
+      p{
+        padding:20px 0 20px 0;
+      }
+    }
+  }
+  .info-content-sub-2{
+    display:flex;
+    flex-wrap: wrap;
+    .info-content-half{
+      width:45%;
+      margin: 0px 0 40px 3%;
+      img{
+        width:100%;
+      }
+
+    }
+    .info-content-half-text{
+
+      display: flex;
+      flex-direction: column;
+      padding-top:50px;
+
+      p{
+        padding:20px 0 20px 0;
+      }
+    }
+  }
+  @media(@phone){
+    .info-content-sub-1{
+      flex-direction: column-reverse;
+      width:95%;
+      .info-content-half{
+        width:100%;
+        margin-bottom:0px;
+      }
+      .info-content-half-text{
+        width:100%;
+        margin-bottom:0px;
+      }
+    }
+    .info-content-sub-2{
+      flex-direction: column;
+      width:95%;
+      .info-content-half{
+        width:100%;
+        margin-bottom:0px;
+      }
+      .info-content-half-text{
+        width:100%;
+        margin-bottom:0px;
+      }
     }
   }
 }
@@ -64,6 +134,9 @@ button {
   p{
     padding: 0 25% 0 25%;
     margin: 20px 0 20px 0;
+    @media(@phone){
+      padding: 0;
+    }
   }
   .recent-projects-group{
     position:relative;
@@ -83,6 +156,11 @@ button {
         text-align: center;
         font-size:2.5rem;
       }
+      @media(@phone){
+        width:70%;
+        top:90%;
+        left:7%;
+      }
     }
     .recent-projects-square-right{
       display:flex;
@@ -99,9 +177,22 @@ button {
        text-align: center;
        letter-spacing: 3px;
         font-size:2.5rem;
+        @media(@phone){
+          letter-spacing:1px;
+          font-size:2rem;
+        }
+      }
+      @media(@phone){
+        width:70%;
+        top:90%;
+        right:7%;
       }
     }
-
+    @media(@phone){
+      width:100%;
+      margin:0 auto;
+      margin-bottom:100px;
+    }
   }
 }
 
@@ -118,11 +209,20 @@ button {
  h1{
    width:25%;
    position:absolute;
-   top:55%;
+   top:45%;
    left:8%;
    font-weight: bold;
    font-size: 6.4rem;
    line-height: 7.5rem;
    color:@white;
+ }
+ @media(@phone){
+
+   height:400px;
+   background-image: url(../img/home/home-mobile-jumbotron.png);
+   h1{
+     font-size:4rem;
+     line-height:3.75rem;
+   }
  }
 }
