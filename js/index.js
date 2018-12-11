@@ -38,8 +38,8 @@ class TabContent{
 
   showContent(){
     const tabContent = document.querySelectorAll('.navContent');
-    Array.from(tabContent).forEach(tabContent => tabContent.style.display = "none");
-    this.tabContent.style.display = "flex";
+    Array.from(tabContent).forEach(tabContent => tabContent.classList.remove('navContSelected'));
+    this.tabContent.classList.add('navContSelected');
   }
 }
 
