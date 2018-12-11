@@ -3,7 +3,7 @@ class TabTag {
         this.tabX = tabX;
         this.tabData = tabX.dataset.tab;
         this.content = document.querySelector(`.content[data-tab='${this.tabData}']`);
-        this.content = Array.from(this.content).map(x => new Content(x));
+        this.content = Array.from(this.content).map(y => new Content(y));
         tabX.addEventListener('click', () => this.selectTab());
     }
     selectTab(){
