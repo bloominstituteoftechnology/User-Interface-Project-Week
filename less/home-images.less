@@ -38,40 +38,65 @@
 // -----------------------
 
 .recent-proj {
-    // Set dimensions of images in this section
-    figure {
-        width: 855px;
-        height: 230px;
+    .recent-proj__item {
+        // Set dimensions of images in this section
+        figure {
+            position: relative;
+            width: 855px;
+            height: 230px;
 
-        @media @device-size[mobile] {
-            width: 320px
-            height: 200px;
-        }
-    }
+            .recent-proj__item__title-block {
+                position: absolute;
+                bottom: -40px;
+                right: 0;
+                display: inline-block;
+                background-color: @project-title-square-background-color;
+                font-weight: normal;
+                font-size: 2.4rem;
+                letter-spacing: 7.5px;
+                padding: 35px 6.5%;
+                border: 1px solid @project-title-square-border-color;
+            }
 
-    // Image URL settings begin here
+            @media @device-size[mobile] {
+                width: 320px
+                height: 200px;
+            }
+        }
 
-    .recent-proj__the-villas {
-        background-image: url("../img/home/home-villas-img.png");
-    
-        @media @device-size[mobile] {
-            background-image: url("../img/home/home-mobile-villas-img.png");
+        &:nth-child(odd) {
+            figure {
+                .recent-proj__item__title-block {
+                    left: 0;
+                    right: auto;
+                }
+            }
         }
-    }
-    
-    .recent-proj__outskirts {
-        background-image: url("../img/home/home-outskirts-img.png");
-    
-        @media @device-size[mobile] {
-            background-image: url("../img/home/home-mobile-outskirts-img.png");
+
+        // Image URL settings begin here
+
+        .recent-proj__item__the-villas {
+            background-image: url("../img/home/home-villas-img.png");
+        
+            @media @device-size[mobile] {
+                background-image: url("../img/home/home-mobile-villas-img.png");
+            }
         }
-    }
-    
-    .recent-proj__the-blocks {
-        background-image: url("../img/home/home-the-blocks-img.png");
-    
-        @media @device-size[mobile] {
-            background-image: url("../img/home/home-mobile-the-blocks-img.png");
+        
+        .recent-proj__item__outskirts {
+            background-image: url("../img/home/home-outskirts-img.png");
+        
+            @media @device-size[mobile] {
+                background-image: url("../img/home/home-mobile-outskirts-img.png");
+            }
+        }
+        
+        .recent-proj__item__the-blocks {
+            background-image: url("../img/home/home-the-blocks-img.png");
+        
+            @media @device-size[mobile] {
+                background-image: url("../img/home/home-mobile-the-blocks-img.png");
+            }
         }
     }
 }
