@@ -57,6 +57,9 @@ hamburger.addEventListener('click', function () {
   }
 })
 
+
+
+
 function preventDefault(e) {
   e = e || window.event;
   if (e.preventDefault)
@@ -171,3 +174,18 @@ previous.addEventListener('click', () => {
 
 // every 3 seconds change the image ; 
 console.log(setInterval(slide, 4000));
+
+
+
+// let controller = new ScrollMagic.Controller();
+
+
+
+// let scene = new ScrollMagic.Scene({
+//   triggerElement: "#trigger1"
+// })
+//   .setTween("#animate1", 0.5, { backgroundColor: "green", scale: 2.5 }) // trigger a TweenMax.to tween
+//   .addIndicators({ name: "1 (duration: 0)" }) // add indicators (requires plugin)
+//   .addTo(controller);
+
+
