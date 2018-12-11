@@ -13,6 +13,10 @@ header {
         h1 {
             padding-bottom: 10px;
             color: white;
+
+            @media @mobile {
+                font-size: 3.5rem;
+            }
         }
     }
 
@@ -23,6 +27,20 @@ header {
         top: 0px;
         z-index: -1;
     }
+
+    .banner-big {
+        @media @mobile {
+            display: none;
+        }
+    }
+
+    .banner-small {
+        display: none;
+
+        @media @mobile {
+            display: block;
+        }
+    }
 }
 
 .intro {
@@ -32,9 +50,28 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
 
+    @media @mobile {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
     div {
         width: 48%;
         margin: 50px 0;
+    }
+
+    .intro-big {
+        @media @mobile {
+            display: none;
+        }
+    }
+
+    .intro-small {
+        display: none;
+
+        @media @mobile {
+            display: block;
+        }
     }
 
     .intro-text {
@@ -61,6 +98,10 @@ header {
 
     .b3 {
         order: 4;
+
+        @media @mobile {
+            order: 3;
+        }
     }
 }
 
@@ -78,9 +119,14 @@ header {
             margin-bottom: 70px;
         }
 
-        .title-box {
+        .recent-img{
             position: relative;
-            top: -50px;
+            margin-bottom: 95px;
+        }
+
+        .title-box {
+            position: absolute;
+            bottom: -50px;
             z-index: 1;
             font-size: 2.4rem;
             background-color: #D7D7D7;
@@ -88,6 +134,11 @@ header {
             text-align: center;
             letter-spacing: 5px;
             padding: 35px 0;
+            border: 1px solid white;
+        }
+
+        .outskirts {
+            right: 0px;
         }
 
         p {
