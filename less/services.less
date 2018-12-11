@@ -4,17 +4,41 @@
   display: flex;
   align-items: flex-end;
 
+  @media @mobile {
+    background-image: url("../img/services/services-mobile-jumbotron.png");
+    height: 270px;
+    background-size: cover;
+  }
+
   h1 {
     padding: 0 0 20px 85px;
+    
+    @media @mobile {
+      font-size: 4rem;
+      padding: 0 0 20px 20px;
+    }
   }
 }
 
 .services-introduction {
   margin: 50px 0 20px 0;
+  
+  @media @tablet {
+    width: 95%;
+    margin: 30px auto;
+
+    p {
+      padding: 0;
+    }
+  }
 }
 
 .services-navigator {
   #mixin.layout(space-between);
+
+  @media @tablet {
+    flex-direction: column;
+  }
 
   .tab-button {
     width: 22%;
@@ -22,6 +46,15 @@
     text-align: center;
     border: 1px solid @button-border;
     padding: 15px 10px;
+
+    @media @tablet {
+      width: 60%;
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+    @media @mobile {
+      width: 80%;
+    }
   }
   .tab-button:hover {
     background: @hover;
@@ -38,6 +71,12 @@
 .services-content-container {
   display: none;
   margin: 50px 0 70px 0;
+
+  @media @tablet {
+    flex-direction: column;
+    width: 95%;
+    margin: 30px auto;
+  }
 
   .services-content {
     margin-right: 40px;
