@@ -1,3 +1,7 @@
+
+LIVE DEMO : https://john2796.github.io/User-Interface-Project-Week/.
+
+
 # User Interface Project Week
 You are to treat this week as if you are working as a front end developer at a web development agency. The instructor is the owner of the agency and is under pressure from the client to deliver the product, a custom marketing website, on time. The project managers are acting as your supervisors.  
 
