@@ -1,3 +1,4 @@
+import '../css/index.css';
 // JS goes here
 // Navigation Toggle Logic 
 const toggler = document.querySelector('.toggler-holder');
