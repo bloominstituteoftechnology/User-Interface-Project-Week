@@ -4,9 +4,13 @@
 const navbar = document.querySelector("nav");
 const hamburger = document.querySelector(".hamburger");
 const header = document.querySelector("header");
+const navbarImage = document.querySelector('.hamburger img');
+let clicked = false;
+
 hamburger.addEventListener('click', () => {
     navbar.classList.toggle('show-nav');
     header.classList.toggle('transparent-bg');
+    swapImage();
 })
 
 //Service -> Tabs
@@ -44,3 +48,21 @@ class TabLink {
   }
   
   const links = document.querySelectorAll('.tabs-link').forEach(link => new TabLink(link));
+
+
+  //Functions
+  
+  function swapImage() {
+    
+    if(clicked === true){
+      navbarImage.src = '/img/nav-hamburger.png';
+      clicked = false;
+      console.log('this should revert it back to original state')
+    }
+    else{
+      clicked = true;
+      navbarImage.src = '/img/nav-hamburger-close.png';
+      
+      console.log('this should change it to closed icon')
+    }
+  }
