@@ -134,6 +134,141 @@ table {
   border-spacing: 0;
 }
 /* Your Code Goes Here */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 * {
   box-sizing: border-box;
 }
@@ -156,9 +291,58 @@ body {
 .img-mobile {
   display: none;
 }
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #9ba5ae;
+}
+header .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 13px 8%;
+}
+header .nav-container h3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+header .nav-container .menu-button {
+  cursor: pointer;
+  height: 20px;
+}
+header .menu {
+  display: none;
+}
+header .menu a {
+  font-size: 4.8rem;
+  line-height: 8.5rem;
+  text-decoration: none;
+  font-weight: Bold;
+  color: #ffffff;
+}
+header .menu a:hover {
+  color: #222222;
+}
+.menu-open {
+  width: 100%;
+  max-width: 1024px;
+  height: 100vh;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  margin: 10% 0;
+}
+.nav-opactiy {
+  opacity: 0.95;
+}
 .main-img {
-  background: url(../img/home/home-jumbotron.png) no-repeat center bottom;
-  background-size: cover;
   width: 100%;
   max-width: 1024px;
   height: 70%;
@@ -274,46 +458,53 @@ body {
   font-size: 1.8rem;
   margin-bottom: 25px;
 }
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+footer {
   width: 100%;
-  position: fixed;
-  z-index: 1;
-  background-color: #9ba5ae;
+  max-width: 1024px;
+  margin: 0 auto;
+  background: #828282;
+  color: #ffffff;
+  padding: 60px 0 10px 0;
 }
-header .nav-container {
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .container .email {
+  width: 39%;
+}
+footer .container .email input {
+  font-size: 1.6rem;
+  line-height: 43px;
+  margin-top: 10px;
+  width: 85%;
+  height: 43px;
+  border-radius: 5px;
+  padding: 5px;
+}
+footer .container .email p {
+  font-size: 1.3rem;
+  line-height: 2.6rem;
+}
+footer .container .location {
+  width: 61%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 13px 8%;
 }
-header .nav-container h3 {
-  font-size: 2.4rem;
+footer .container .location p {
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+}
+footer .container .copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2.6rem;
+  margin-top: 30px;
+}
+footer h4 {
+  font-size: 2rem;
   font-weight: bold;
-  color: #FFFFFF;
-}
-header .nav-container .menu-button {
-  cursor: pointer;
-  height: 20px;
-}
-header .menu display:none a {
-  font-size: 4.8rem;
-  line-height: 8.5rem;
-  text-decoration: none;
-  font-weight: Bold;
-  color: #ffffff;
-}
-header .menu display:none a:hover {
-  color: #222222;
-}
-.menu--open {
-  width: 100%;
-  height: 100vh;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  margin: 10% 0;
+  line-height: 2.6rem;
 }
