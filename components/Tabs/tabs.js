@@ -17,14 +17,20 @@ class TabLink{
      }
     // Methods
     select(){
+        this.deselect();
        this.title.textContent = this.header;
-       console.log(this.title)
-       console.log(this.header)
+       this.element.classList.add('selected')
        if(this.header === "Design Build"){
         this.image.src=`img/services/services-tab-design-build-img.png`;
        } else{
        this.image.src=`img/services/services-tab-${this.header.toLowerCase()}-img.png`;
        }
+    }
+    deselect(){
+        const links = document.querySelectorAll('.link');
+        Array.from(links).forEach((link)=>{
+            link.classList.remove("selected");
+        })
     }
     }
 
