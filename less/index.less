@@ -430,6 +430,12 @@ footer {
     width: 100%;
     height: 0 auto;
   }
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
   p {
     font-family: "Roboto", Arial, sans-serif;
     font-size: 1.6rem;
@@ -437,6 +443,20 @@ footer {
     letter-spacing: 1px;
     padding: 0 10%;
     margin: 5% 0;
+  }
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 4rem;
+      margin: 60% 20% 5% 5%;
+    }
+    img {
+      &.desktop {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+      }
+    }
   }
 }
 
@@ -446,12 +466,6 @@ footer {
   .main-content {
     width: 83.5%;
     margin: 0 auto;
-    .heading-text {
-      font-size: 1rem;
-      line-height: 24px;
-      margin-top: 55px;
-    }
-
     .tab-navigators {
       margin-top: 44px;
       display: flex;
@@ -510,6 +524,40 @@ footer {
           .image {
             width: 47%;
             img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .main-content {
+      .tab-navigators {
+        flex-direction: column;
+        .tab-navigator {
+          width: 90%;
+          padding: 18px;
+          margin: 15px 0;
+          font-size: 1.6rem;
+        }
+      }
+      .tab-contents {
+        .tab-content {
+          h2 {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+          .content {
+            flex-direction: column;
+            .text {
+              width: 100%;
+              p {
+                font-size: 1.4rem;
+                line-height: 32px;
+              }
+            }
+            .image {
               width: 100%;
             }
           }
