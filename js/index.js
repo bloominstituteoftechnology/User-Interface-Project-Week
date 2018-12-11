@@ -52,12 +52,14 @@ let openIcon = document.querySelector('.nav-img-open');
 let closeIcon = document.querySelector('.nav-img-close');
 let navScreen = document.querySelector('.nav');
 closeIcon.addEventListener('click', function() {
-    navScreen.style.display = 'none';
+    // navScreen.style.display = 'none';
+    TweenMax.to(navScreen, 1, {opacity: 0});
     openIcon.style.display = 'flex';
     closeIcon.style.display = 'none';
 });
 openIcon.addEventListener('click', function() {
-    navScreen.style.display = 'flex';
+    // navScreen.style.display = 'flex';
+    TweenMax.to(navScreen, 1, {opacity: .98});
     openIcon.style.display = 'none';
     closeIcon.style.display = 'flex';
 })
