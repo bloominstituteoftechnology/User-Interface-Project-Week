@@ -60,6 +60,7 @@ table{
 // ======================================= Variables
 
 @mobile: (max-width: 500px);
+@desktop: (min-width: 501px);
 
 // ======================================= General Styles
 
@@ -85,6 +86,10 @@ p {
 .container {
   width: 1024px;
   margin: 0 auto;
+
+  @media @mobile {
+    width: 320px;
+  }
 }
 
 // ========================================= cta
@@ -102,6 +107,13 @@ p {
     font-size: 64px;
     font-weight: bold;
     line-height: 75px;
+
+    @media @mobile {
+      font-size: 35px;
+      line-height: 45px;
+      bottom: 20px;
+      left: 0px;
+    }
   }
 }
 
@@ -109,18 +121,33 @@ p {
 
 .top-content {
   margin: 50px 50px;
+
+  @media @mobile {
+    margin: 30px 0 0 15px;
+  }
 }
 
 .topcard1 {
   display: flex;
 
+  @media @mobile {
+    flex-direction: column-reverse;
+  }
+
   img {
-    padding-right: 40px;
+
+    @media @desktop {
+      padding-right: 40px;
+    }
   }
 }
 
 .top-text1 {
   padding: 50px 30px 0 35px;
+
+  @media @mobile {
+    padding: 25px 0 0 0;
+  }
 
   p {
     padding-top: 20px;
@@ -132,6 +159,10 @@ p {
     border: 1px solid #222222;
     background-color: white;
     font-size: 1.6rem;
+
+    @media @mobile {
+      padding: 15px 100px;
+    }
   }
 }
 
@@ -143,14 +174,27 @@ h3 {
 .topcard2 {
   display: flex;
   margin-top: 100px;
+  
+  @media @mobile {
+    margin-top: 50px;
+    flex-direction: column;
+  }
 
   img {
     margin-left: 40px;
+
+    @media @mobile {
+      margin-left: 0px;
+    }
   }
 }
 
 .top-text2 {
   padding: 40px 0 0 25px;
+
+  @media @mobile {
+    padding: 25px 0 0 0;
+  }
 
   p {
     padding-top: 20px;
@@ -162,6 +206,40 @@ h3 {
     border: 1px solid #222222;
     background-color: white;
     font-size: 1.6rem;
+
+    @media @mobile {
+      padding: 15px 100px;
+      margin-top: 25px;
+    }
+  }
+}
+
+.desktopimg1 {
+  @media @mobile {
+    display: none;
+  }
+}
+
+.mobileimg1 {
+    
+    @media @desktop {
+    display: none;
+  }
+
+  margin-right: 50px;
+}
+
+.desktopimg2 {
+  
+  @media @mobile {
+    display: none;
+  }
+}
+
+.mobileimg2 {
+  
+  @media @desktop {
+    display: none;
   }
 }
 
@@ -170,11 +248,19 @@ h3 {
 .bottom-content {
   padding-top: 45px;
   margin: 0 85px 75px 85px;
+
+  @media @mobile {
+    margin: 0 0 50px 0;
+  }
 }
 
 .img2-container {
   margin-top: 45px;
   position: relative;
+
+  @media @mobile {
+    margin-top: 30px;
+  }
 
   .img2-text {
     position: absolute;
@@ -185,17 +271,34 @@ h3 {
     padding: 35px 55px;
     font-size: 2.5rem;
     letter-spacing: 7px;
+
+    @media @mobile {
+      bottom: -75px;
+      padding: 35px 45px;
+      right: 15px;
     }
+  }
 }
 
 .block {
   display: flex;
   flex-direction: column;
 
+  h3 {
+    @media @mobile {
+      padding-left: 15px;
+    }
+  }
+
   .bottom-text {
     margin-top: 85px;
     width: 50%;
     align-self: center;
+
+    @media @mobile {
+      width: 85%;
+      margin-top: 100px;
+    }
 
     p {
       font-size: 1.75rem;
@@ -209,6 +312,10 @@ h3 {
   margin-bottom: 5px;
   position: relative;
 
+  @media @mobile {
+    margin-top: 25px;
+  }
+
   .img3-text {
     position: absolute;
     color: black;
@@ -218,6 +325,12 @@ h3 {
     padding: 35px 62px;
     font-size: 2.5rem;
     letter-spacing: 7px;
+
+    @media @mobile {
+      bottom: -75px;
+      padding: 35px 47px;
+      left: 15px;
+    }
   }
 }
 
@@ -225,6 +338,10 @@ h3 {
   margin-top: 75px;
   margin-bottom: 3px;
   position: relative;
+
+  @media @mobile {
+    margin-top: 20px;
+  }
 
   .img4-text {
     position: absolute;
@@ -235,6 +352,54 @@ h3 {
     padding: 35px 50px;
     font-size: 2.5rem;
     letter-spacing: 7px;
+
+    @media @mobile {
+      bottom: -75px;
+      padding: 35px 38px;
+      right: 15px;
+    }
+  }
+}
+
+.desktop-villas {
+  
+  @media @mobile {
+    display: none;
+  }
+}
+
+.mobile-villas {
+  
+  @media @desktop {
+    display: none;
+  }
+}
+
+.desktop-outskirts {
+  
+  @media @mobile {
+    display: none;
+  }
+}
+
+.mobile-outskirts {
+  
+  @media @desktop {
+    display: none;
+  }
+}
+
+.desktop-blocks {
+  
+  @media @mobile {
+    display: none;
+  }
+}
+
+.mobile-blocks {
+  
+  @media @desktop {
+    display: none;
   }
 }
 
@@ -244,11 +409,21 @@ footer {
   background-color: #828282;
   height: 100%;
   width: 1024px;
+
+  @media @mobile {
+    width: 320px;
+  }
   
   .footer-content {
     display: flex;
     justify-content: space-evenly;
     padding-top: 60px;
+
+    @media @mobile {
+      flex-direction: column;
+      padding-top: 25px;
+      justify-content: space-around;
+    }
   }
 
   h5 {
@@ -267,6 +442,10 @@ footer {
 .form {
   padding-left: 40px;
 
+  @media @mobile {
+    padding-left: 15px;
+  }
+
   h5 {
     margin-bottom: 15px;
   }
@@ -274,15 +453,28 @@ footer {
   input {
     padding: 12px 100px 12px 0;
     border-radius: 4px;
+
+    @media @mobile {
+      padding: 15px 110px 15px 0;
+    }
   }
 }
 
 .small-font {
   font-size: 13px;
+
+  @media @mobile {
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
 }
 
 .address {
   margin-right: 35px;
+
+  @media @mobile {
+    padding: 0 0 30px 15px;
+  }
 }
 
 .copyright {
@@ -290,12 +482,13 @@ footer {
   justify-content: center;
   margin-top: 25px;
 
+  @media @mobile {
+    margin-top: 0px;
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
+
   p {
     font-size: 12px;
   }
 }
-
-
-
-
-
