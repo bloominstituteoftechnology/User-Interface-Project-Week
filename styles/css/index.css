@@ -141,7 +141,7 @@ html {
 }
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
 }
 h1 {
   font-size: 4rem;
@@ -150,13 +150,17 @@ h2 {
   font-size: 3.2rem;
   padding-bottom: 10px;
 }
-h4 {
+h3 {
   font-size: 2.5rem;
   padding-bottom: 10px;
 }
+h4 {
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
 p {
-  line-height: 1.5;
-  font-size: 1.6rem;
+  line-height: 2.5rem;
+  font-size: 1.2rem;
   padding-bottom: 10px;
 }
 img {
@@ -164,19 +168,24 @@ img {
   height: auto;
 }
 .container {
-  max-width: 980px;
+  max-width: 880px;
   width: 100%;
   margin: 0 auto;
+}
+.container .mobile {
+  display: none;
 }
 .nav-container {
   padding: 5px 8%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  background: lightslategray;
+  background: #8fa0b1;
 }
 .nav-container .logo {
-  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffffff;
 }
 .nav-container .nav-bar {
   display: none;
@@ -194,6 +203,11 @@ img {
   margin: 6px 0;
   transition: 0.4s;
 }
+.nav-container .menu-icon .bar1:hover,
+.nav-container .menu-icon .bar2:hover,
+.nav-container .menu-icon .bar3:hover {
+  color: #222222;
+}
 .nav-container .menu-icon .change .bar1 {
   transform: rotate(-45deg) translate(-9px, 6px);
 }
@@ -203,94 +217,12 @@ img {
 .nav-container .menu-icon .change .bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
 }
-.cta {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.cta .cta-text {
-  text-align: center;
-  font-size: 6rem;
-  font-weight: 600;
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
-.main-content {
-  margin: 5%;
-}
-.main-content .top-content .content-section {
-  display: flex;
-  margin-bottom: 10%;
-}
-.main-content .top-content .content-section .text-content {
-  margin-top: 5%;
-  padding: 0 3%;
-  width: 50%;
-}
-.main-content .top-content .content-section .text-content h3 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 5%;
-}
-.main-content .top-content .content-section .text-content p {
-  font-size: 1.5rem;
-  margin-bottom: 3%;
-}
-.main-content .top-content .content-section .text-content .button {
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 5% 0;
-  width: 30%;
-  height: 25%;
-  display: inline-block;
-  border: 1px solid black;
-  cursor: pointer;
-}
-.main-content .top-content .content-section .text-content .button:hover {
-  background: lightslategray;
-  color: white;
-}
-.main-content .content-section {
-  margin-bottom: 10%;
-}
-.main-content .content-section .cta-container {
-  position: relative;
-  text-align: center;
-}
-.main-content .content-section .cta-container .word-overlay {
-  padding-top: 25px;
-  font-size: 1.2rem;
-  width: 38%;
-  height: 40%;
-  position: absolute;
-  bottom: -40px;
-  right: 12px;
-  border: 1px solid white;
-  background: lightslategray;
-}
-.main-content .content-section .cta-container .outskirts-word-overlay {
-  padding-top: 25px;
-  font-size: 1.2rem;
-  width: 38%;
-  height: 40%;
-  position: absolute;
-  bottom: -40px;
-  left: 12px;
-  border: 1px solid white;
-  background: lightslategray;
-}
-.main-content .content-section .text-content {
-  margin: 0 auto;
-  width: 50%;
-  margin-top: 10%;
-}
 footer {
   padding: 5%;
   color: white;
   height: 250px;
   width: 100%;
-  background: #757b80;
+  background: #828282;
   display: flex;
   flex-direction: column;
 }
@@ -300,4 +232,158 @@ footer .address-section {
 }
 footer .copyright {
   align-self: center;
+}
+.cta {
+  position: relative;
+  color: white;
+}
+.cta .cta-text {
+  line-height: 4.5rem;
+  font-size: 64px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 70px;
+  left: 70px;
+}
+.main-content {
+  margin: 5%;
+}
+@media (max-width: 550px) {
+  .main-content {
+    margin: 0;
+  }
+}
+.main-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222222;
+  margin-bottom: 30px;
+}
+.main-content .top-content .content-section {
+  margin-top: 50px;
+  display: flex;
+  margin-bottom: 10%;
+}
+@media (max-width: 550px) {
+  .main-content .top-content .content-section {
+    flex-direction: column-reverse;
+  }
+}
+.main-content .top-content .content-section .text-content {
+  margin-top: 5%;
+  padding: 0 3%;
+  width: 50%;
+}
+@media (max-width: 550px) {
+  .main-content .top-content .content-section .text-content {
+    width: 100%;
+  }
+  .main-content .top-content .content-section .text-content .button {
+    width: 100%;
+    display: block;
+    font-size: 1.5rem;
+  }
+}
+.main-content .top-content .content-section h3 {
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin-bottom: 5%;
+}
+.main-content .top-content .content-section p {
+  font-size: 1.5rem;
+  margin-bottom: 3%;
+}
+.main-content .top-content .content-section .button {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 5% 0;
+  width: 102px;
+  height: auto;
+  display: inline-block;
+  border: 1px solid #222222;
+  cursor: pointer;
+}
+.main-content .top-content .content-section .button:hover {
+  background: lightslategray;
+  color: white;
+  transition: 0.2s;
+}
+.content-section {
+  margin-bottom: 10%;
+}
+.content-section .cta-container {
+  position: relative;
+  text-align: center;
+}
+.content-section .cta-container .word-overlay {
+  padding-top: 25px;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  width: 38%;
+  height: 40%;
+  position: absolute;
+  bottom: -17%;
+  right: 0%;
+  border: 1px solid white;
+  background: #d8d8d8;
+}
+@media (max-width: 550px) {
+  .content-section .cta-container .word-overlay {
+    width: 96%;
+    height: 80%;
+    bottom: -65%;
+    right: 2%;
+  }
+}
+.content-section .cta-container .outskirts-word-overlay {
+  padding-top: 25px;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  width: 38%;
+  height: 40%;
+  position: absolute;
+  bottom: -17%;
+  left: 0%;
+  border: 1px solid white;
+  background: #d8d8d8;
+}
+@media (max-width: 550px) {
+  .content-section .cta-container .outskirts-word-overlay {
+    width: 96%;
+    height: 80%;
+    bottom: -65%;
+    left: 2%;
+  }
+}
+.content-section .text-content {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 10%;
+}
+@media (max-width: 550px) {
+  .content-section .text-content {
+    margin: 70px 0;
+    padding: 0 5%;
+    width: 100%;
+  }
+}
+.contact .contact-img {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.contact .contact-img .heading {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 600;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+.contact .main-content {
+  display: flex;
+}
+.contact .main-content .form-content form {
+  display: flex;
+  flex-direction: column;
 }
