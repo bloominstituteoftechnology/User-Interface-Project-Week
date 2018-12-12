@@ -83,8 +83,17 @@ whoBtns.forEach((btn)=>{
     modalRole.textContent = `Position: ${modalMem.role}`;
     modalYear.textContent = `Years at S&J: ${modalMem.years}`;
     modalDay.textContent = `Favorite Holiday: ${modalMem.holiday}`;
-    modalPro.src=`${modalMem.img}`
-})});
+    modalPro.src=`${modalMem.img}`;
+    
+    window.onclick = function(event) {
+        if (event.target == theModal) {
+            theModal.classList.toggle('show-modal');
+            theModal.classList.toggle('hidden');
+        }
+    }
+    });
+
+});
 modalExit.addEventListener("click", ()=> {
     theModal.classList.toggle('show-modal');
     theModal.classList.toggle('hidden');
