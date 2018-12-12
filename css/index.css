@@ -259,6 +259,7 @@ img {
   height: 40px;
   padding: 10px;
   margin: 5px 7%;
+  cursor: pointer;
 }
 .navigation .hidden {
   display: none;
@@ -472,8 +473,18 @@ header h1 {
   justify-content: space-between;
   margin: 30px 0;
 }
+@media (max-width:500px) {
+  .split-page {
+    flex-direction: column;
+  }
+}
 .split-page .left-content {
   width: 60%;
+}
+@media (max-width:500px) {
+  .split-page .left-content {
+    width: 100%;
+  }
 }
 .split-page .left-content form {
   margin-top: 30px;
@@ -486,23 +497,26 @@ header h1 {
 }
 .split-page .left-content form .form-component {
   margin: 5px 0;
-}
-.split-page .left-content form .email {
   display: flex;
   flex-direction: column;
 }
-.split-page .left-content form .textbox {
-  display: flex;
-  flex-direction: column;
+.split-page .left-content form .email input {
+  height: 50px;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding-left: 10px;
+}
+.split-page .left-content form .select select {
+  padding: 10px;
+  font-size: 1.6rem;
+  border-radius: 5px;
 }
 .split-page .left-content form .mult-choice {
-  display: flex;
   font-size: 1.6rem;
-  flex-direction: column;
 }
-.split-page .left-content form .select {
-  display: flex;
-  flex-direction: column;
+.split-page .left-content form .textbox textarea {
+  border-radius: 5px;
 }
 .split-page .left-content form .subtext {
   font-size: 1.4rem;
@@ -534,6 +548,11 @@ header h1 {
 }
 .split-page .right-content h2 {
   margin-bottom: 30px;
+}
+@media (max-width:500px) {
+  .split-page .right-content h2 {
+    margin-top: 30px;
+  }
 }
 footer {
   background-color: #828282;
