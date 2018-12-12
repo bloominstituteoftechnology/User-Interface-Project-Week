@@ -21,7 +21,6 @@ class TabItems {
     constructor(item, img){
         this.item = item;
         this.img = img;
-        console.log(this.img, this.item)
     }
 
     select(){
@@ -35,4 +34,3 @@ class TabItems {
 }
 
 const tabs = document.querySelectorAll('.tabs-link').forEach(e => new TabLink(e));
-console.log(tabs);

@@ -15,12 +15,10 @@
 
 .main-content{
     display: flex;
-    position: relative;
-    
+    position: relative;  
     @media (max-width: 500px){
         display: block;
     }
-
     h2{
         position: absolute;
         bottom: 0;
@@ -37,21 +35,30 @@
     img {
         width: 100%;
         margin-top: 55px;
-        content: url('../img/home/home-jumbotron.png');
         display: inline-block;
         @media (max-width: 500px){
-            content: url('../img/home/home-mobile-jumbotron.png');
             width: 100%;
+        }
+    }
+    &--img1 {
+        content: url('../img/home/home-jumbotron.png');
+        @media (max-width: 500px){
+            content: url('../img/home/home-mobile-jumbotron.png');
+        }
+    }
+
+    &--img2{
+        content: url('../img/services/services-jumbotron.png');
+        @media (max-width: 500px){
+            content: url('../img/services/services-mobile-jumbotron.png');
         }
     }
 }
 
 .about-content{
-    display: flex; 
+    .display(space-between, center);
     margin: 40px 0;
-    justify-content: space-between;
-    align-items: center;
-
+    
     .about-img{
         background-repeat:no-repeat;
         background-size:contain;
@@ -162,9 +169,7 @@
                 margin-top: -25px;
                 margin-left: 0;
                 width: 70%;
-            }
-
-            
+            } 
         }
         .heading-left{
             margin-right: 80%;

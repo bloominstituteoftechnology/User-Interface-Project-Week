@@ -14,24 +14,29 @@
 }
 
 .tabs-section{
-    display: flex;
-    justify-content: center;
+    .display(center, center);
     flex-direction: column;
-    align-items: center;
     margin-bottom: 50px;
     .tabs{
-        display: flex;
-        justify-content: space-between;
+        .display(space-between, center);
         width: 80%;
         margin-bottom: 50px;
+        @media (max-width: 500px){
+            flex-direction: row;
+            flex-wrap: wrap;
+        } 
         div{
             padding: 15px 30px;
             border: solid 1px @color-main-shaft;
-            margin-top: 20px auto;
             color: @color-main-shaft;
             text-align: center;
             font-weight: 700;
             cursor: pointer;
+            @media (max-width: 500px){
+                .display(center, center);
+                width: 45%;
+                height: 55px;
+            } 
         }
 
         div:hover{
@@ -41,13 +46,13 @@
     }
 
     .tabs-content{
-        display: flex;
-        justify-content: space-evenly;
         line-height: 1.6;
-        align-items: center;
-
+        .display(space-evenly, center);
         .content-text{
             padding-left: 70px;
+            @media (max-width: 500px){
+                padding-left: 0;
+            } 
             h3{
                 font-weight: 700;
                 font-size: 2rem;
@@ -61,6 +66,9 @@
 
         div{
             width: 45%;
+            @media (max-width: 500px){
+                width: 80%;
+            } 
         }
     }
 }
