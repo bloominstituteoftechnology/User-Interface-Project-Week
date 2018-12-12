@@ -17,6 +17,10 @@
         &:hover {
             #animation > .color-transition(@services-tab-hover-background-color, @services-tab-hover-color, 500ms);
         }
+
+        @media @device-max-size[tablet] {
+            font-size: 1.4rem;
+        }
     }
 
     .services__tabs__link--selected {
@@ -29,6 +33,10 @@
         color: @services-tab-selected-color;
         padding: 15px 0;
         border: 1px solid @services-tab-selected-border-color;
+
+        @media @device-max-size[tablet] {
+            font-size: 1.4rem;
+        }
     }
 }
 
@@ -39,8 +47,18 @@
         .make-flex(row, space-between, center);
         margin-bottom: 30px;
 
+        @media @device-max-size[tablet] {
+            .make-flex(column);
+        }
+
         .services__items__content__text {
             width: 50%;
+
+            @media @device-max-size[tablet] {
+                order: 1;
+                width: 100%;
+                margin-top: 30px;
+            }
 
             .services__items__content__text__desc {
                 p {
