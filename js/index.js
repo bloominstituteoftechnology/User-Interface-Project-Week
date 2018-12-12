@@ -2,6 +2,24 @@
 
 // ====================================== Navigation ==========================
 
+const toggleMenu = () => {
+  menu.classList.toggle("menu-hidden");
+  menuOpenButton.style.display = "none";
+  menuCloseButton.style.display = "block";
+};
+
+const toggleCloseMenu = () => {
+  menu.classList.toggle("menu-hidden");
+  menuCloseButton.style.display = "none";
+  menuOpenButton.style.display = "block";
+};
+
+const menu = document.querySelector(".menu-content");
+const menuOpenButton = document.querySelector(".menu-open-button");
+const menuCloseButton = document.querySelector(".menu-close-button");
+menuOpenButton.addEventListener("click", toggleMenu);
+menuCloseButton.addEventListener("click", toggleCloseMenu);
+
 // ====================================== Services Page ==========================
 class TabLink {
   constructor(element) {
