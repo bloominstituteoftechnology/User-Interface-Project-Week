@@ -37,24 +37,29 @@ console.log("hello")
 
 
 //nav bar:
+const navBar = document.querySelector(".nav-bar");
 const fullNav = document.querySelector(".full-nav");
 const hamburger = document.querySelector(".hamburger");
 const close = document.querySelector(".close");
 
 hamburger.addEventListener("click", function(e) {
     fullNav.classList.remove("hidden");
-    close.classList.remove("hidden")
+    close.classList.remove("hidden");
     hamburger.classList.add("hidden");
-    TweenMax.from(fullNav, 2, {
-        marginTop:"100%",
-        ease: Power3.easeOut
+    TweenMax.from(fullNav, 0.5, {
+        y: -300,
+        // ease: Power3.easeOut
     });
 })
 
 close.addEventListener("click", function(e) {
-    hamburger.classList.remove("hidden")
+    hamburger.classList.remove("hidden");
     fullNav.classList.add("hidden");
-    close.classList.add("hidden")
+    close.classList.add("hidden");
+    TweenMax.from(navBar, 0.5, {
+        marginTop:"100%"
+    });
+
 })
 
 //carousel
@@ -89,3 +94,7 @@ class Carousel {
 
 let carousel = document.querySelector(".carousel");
 carousel = new Carousel();
+
+//footer:
+const footerContact = querySelector(".footer-contact");
+footerContact.addEventListener("")
