@@ -33,7 +33,7 @@ class RecentProject extends React.Component {
       <section className='recent-projects'>
         {this.props.data
         .map(item => 
-          <div className='project-item'>
+          <div key={item.name} className='project-item'>
             <div className={`project-header ${item.style}`}>
               <img className="desktop" src={item.desktopImgSrc}></img>
               <img className="mobile" src={item.mobileImgSrc}></img>

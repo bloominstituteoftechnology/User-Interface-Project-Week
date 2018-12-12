@@ -75,7 +75,7 @@ var RecentProject = function (_React$Component2) {
         this.props.data.map(function (item) {
           return React.createElement(
             "div",
-            { className: "project-item" },
+            { key: item.name, className: "project-item" },
             React.createElement(
               "div",
               { className: "project-header " + item.style },
