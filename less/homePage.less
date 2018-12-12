@@ -15,7 +15,8 @@
 
 .slider__item {
   width: 100%;
-  max-height: 700px;
+  // max-height: 700px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +40,7 @@
     position: relative;
     filter: brightness(50%);
     // padding: 320px 0;
-    max-height: 700px;
+    // max-height: 700px;
     height: 100%;
 
     @media @laptopS {
@@ -84,6 +85,7 @@
   color: @white;
   position: relative;
   top: 300px;
+  text-align: center;
 
   @media @laptopS {
     top: 250px;
@@ -95,7 +97,8 @@
   }
 
   h1 {
-    line-height: 1.5;
+    line-height: 97px;
+    letter-spacing: 5px;
 
 
     @media @mobile {
@@ -106,6 +109,40 @@
 }
 
 
+.go-down {
+  border: 1.5px solid @white;
+  border-radius: 50%;
+  padding: 19px 16px;
+  position: relative;
+  bottom: -127px;
+  left: -5px;
+
+  .fas {
+    font-weight: 900;
+    font-size: 22px;
+    color: @white;
+    animation-duration: 1035ms;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+
+    @keyframes scroll {
+      0% {
+        opacity: 0;
+        transform: translateY(-18px)
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(14px)
+      }
+    }
+  }
+}
+
+
+
+
+
 
 
 
@@ -113,7 +150,7 @@
 
 //carousel Ends 
 .home__services-item:first-child {
-  margin-top: 527px;
+  margin-top: 727px;
 
   @media @laptopS {
     margin-top: 457px;
@@ -345,5 +382,67 @@
       }
     }
   }
-
 }
+
+
+/*
+animation css options Things used on youtube tuts
+x   -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+
+
+x    -webkit-transform: scaleY(0);
+     transform: scaleY(0);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+
+
+x    opacity: 0;
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+
+
+x    opacity: 0;
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+
+x    opacity: 0;
+
+x   position: absolute;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+
+
+    //document.getElementById('cta').addEventListener('click', function () {
+      TweenMax.to('.panel', 1.5, {
+        scaleY: 1,
+        height: '100vh',
+        ease: Circ.easeOut
+      });
+      TweenMax.to('#light', 1, {
+        opacity: 1,
+        y: 0,
+        delay: 1,
+        ease: Back.easeOut.config(1.7)
+      });
+      TweenMax.to('p', 1, {
+        opacity: 1,
+        y: 20,
+        delay: 1.4
+      });
+      TweenMax.to('.box', 3, {
+        opacity: 1,
+        scale: 1,
+        ease: Elastic.easeOut.config(1, 0.3)
+      });
+    })
+
+
+
+
+
+*/
