@@ -30,6 +30,14 @@ class TabItems {
         images.forEach(e => e.classList.remove('tab-img--selected'));
         this.item.classList.add('tab-item--selected')
         this.img.classList.add('tab-img--selected')
+        TweenLite.from(this.item, .5, {
+            opacity: 0,
+            ease: Power4.easeIn
+        });
+        TweenLite.from(this.img, .5, {
+            opacity: 0,
+            ease: Power4.easeIn
+        });
     }
 }
 
