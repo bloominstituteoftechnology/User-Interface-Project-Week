@@ -1,7 +1,7 @@
 let toggled = 0;
 
 $(document).ready(() => {
-	$("header").load("../navbar.html", () => {
+	$("header").load("./navbar.html", () => {
 		$("nav").hide();
 		document.querySelectorAll("nav a").forEach(data => {
 			if (data.lastChild.textContent === document.title) {
