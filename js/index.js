@@ -13,6 +13,11 @@ class TabLink {
         const allContent = document.querySelectorAll('.tab-content');
         allContent.forEach(el => el.classList.add('display-none'));
         this.content.classList.remove('display-none');
+        TweenMax.fromTo(this.content, 0.75, {
+            opacity: 0
+        }, {
+            opacity: 1
+        })
     }
 }
 
