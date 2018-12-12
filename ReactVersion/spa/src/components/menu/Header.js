@@ -16,10 +16,10 @@ class Header extends React.Component {
           <img className="close-button" onClick={closeMenu} src={require("../../img/nav-hamburger-close.png")} />
       </div>
       <ul>
-      <Link to="/">
+      <Link onClick={closeMenu} to="/">
         <li>Home</li>
         </Link>
-        <Link to="/services">
+        <Link onClick={closeMenu} to="/services">
         <li>Services</li>
         </Link>
         <Link to="/contact">
@@ -33,30 +33,6 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-const MainMenu = () => {
-    return (
-      <div>
-        <Link to="/">
-          <button>home</button>
-        </Link>
-        <Link to="/services">
-          <button>About</button>
-        </Link>
-        <Link to="/code">
-          <button>code</button>
-        </Link>
-        <Link to="/contact">
-          <button>contact</button>
-        </Link>
-        <Link to="/info">
-          <button>info</button>
-        </Link>
-      </div>
-    );
-  };
-
-
 
 function openMenu() {
     let menu = document.querySelector(".menu");

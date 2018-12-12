@@ -4,17 +4,17 @@ import "../../App.css";
 class Tab extends React.Component {
     constructor(props) {
         super(props);
-        this.handleLoad = this.handleLoad.bind(this);
      }
     
      componentDidMount() {
-        window.addEventListener('load', this.handleLoad);
-     }
-    
-     handleLoad() {
         let tab_component = document.querySelector(".tabs");
         let firstTab = new Tabs(tab_component);
      }
+
+     componentDidUpdate() {
+      let tab_component = document.querySelector(".tabs");
+      let firstTab = new Tabs(tab_component);
+   }
 
      render() {
          return (

@@ -215,25 +215,11 @@ const Services = () => (
   </body>
 )
 
-const Code = () => (
-  <div>
-    Code
-  </div>
-)
-
 const Contact = () => (
   <div>
     Contact
   </div>
 )
-
-const info = () => (
-  <div>
-    Info
-  </div>
-)
-
-
 
 class App extends Component {
   render() {
@@ -244,9 +230,7 @@ class App extends Component {
         <div>
             <Route exact path="/" component={Home} />
             <Route exact path="/services" component={Services} />
-            <Route exact path="/code" component={Code} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/info" component={info} />
           </div>
       </div>
       </HashRouter>
