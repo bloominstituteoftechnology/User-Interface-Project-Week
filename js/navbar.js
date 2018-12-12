@@ -1,16 +1,16 @@
-class Navbar {
+class Navmenu {
     constructor() {
-      this.expandButton = document.querySelector('.menubutton');
-      this.expandButton.addEventListener('click', (e) => this.expandNav(e));
+      this.menubutton = document.querySelector('.menubutton');
+      this.menubutton.addEventListener('click', (e) => this.expandNav(e));
     }
   
     expandNav() {
-      navbar.classList.toggle('nav-open');
+      document.querySelector('.mainnav').classList.toggle('nav-open');
     }
   }
   
 const navbar = document.querySelectorAll('.mainnav');
 
 navbar.forEach( () => {
-  return new Navbar();
+  return new Navmenu();
 })
