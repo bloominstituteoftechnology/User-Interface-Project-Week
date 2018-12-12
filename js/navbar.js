@@ -1,6 +1,6 @@
-// const navButton = document.querySelector('.nav-button');
-// const navDisplay = document.querySelector('nav');
 
-// navButton.addEventListener('click', () => {
-//     navDisplay.classList.toggle("nav-open");
-// })
+window.onload = function() {
+    document.querySelector('.menu-button').addEventListener('click', () => {
+    toggleClass(document.getElementById('.mainnav'), 'nav-open');
+});
+}
