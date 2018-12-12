@@ -1,5 +1,3 @@
-
-
 // class TabLink{
 //     constructor(element){
 //         this.element = element;
@@ -8,20 +6,20 @@
 
 //         this.itemElement = document.querySelector(`.tab-item[data-tab = "${this.data}"]`);
 
-//         this.itemElement = new TabItem(this,item);
+//         this.item = new TabItem(this.itemElement);
 
 //         this.element.addEventListener('click', () => {
 //             this.select()
 //         });
 //     };
 //     select(){
-//         const links = document.querySelectorAll('.tablink');
+//         let links = document.querySelectorAll('.tablink');
 
-//         Array.from(links).forEach(links => links.classList.remove('tab-link-selected'));
+//         links = Array.from(links).forEach(links => links.classList.remove('tab-link-selected'));
 
 //         this.element.classList.add('tab-link-selected');
 
-//         this.itemElement.select();  
+//         this.item.select();  
 //     }
 // }
 
@@ -31,13 +29,12 @@
 //     }
 
 //     select(){
-//         const items = document.querySelectorAll('.tab-item');
+//         let items = document.querySelectorAll('.tab-item');
 
-//        Array.from(items).forEach(items => items.classList.remove('tab-item-selected'));
+//         items = Array.from(items).forEach(items => items.classList.remove('tab-item-selected'));
 //         this.element.classList.add('tab-item-selected');
 //     }
 // }
 
-// links = document.querySelectorAll('.tablink');
-// links.forEach(element => new TabLink(element));
+// links = document.querySelectorAll('.tablink').forEach(element => new TabLink(element));
 
