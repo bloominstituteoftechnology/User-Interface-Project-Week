@@ -36,7 +36,6 @@ class Carousel {
         if(!this.animating) {
             this.animating = true;
             let screenW = window.innerWidth;
-            console.log(screenW);
             this.currentSlide += 1;
             if(this.currentSlide > this.desktopSlides.length - 1) {
                 this.currentSlide = 0;
@@ -49,7 +48,6 @@ class Carousel {
                     background: `rgba(0, 0, 0, 1)`,
                     onComplete: () => {
                         this.carousel.style.background = `bottom url("${this.desktopSlides[this.currentSlide].src}")`;
-                        console.log(this.desktopSlides[this.currentSlide].src);
                         TweenMax.to(this.text, .5, {
                             background: `rgba(0, 0, 0, 0)`,
                             onComplete: () => {
@@ -57,7 +55,7 @@ class Carousel {
                                 this.startLoop();
                             }
                         });
-                        TweenMax.to(this.timer, .45, {width: '0%'});
+                        TweenMax.to(this.timer, .5, {width: '0%'});
                     }
                 })
             } else if(screenW <= 500) { //Else, we do a transition to the next Mobile sized slide
@@ -67,7 +65,6 @@ class Carousel {
                     background: `rgba(0, 0, 0, 1)`,
                     onComplete: () => {
                         this.carousel.style.background = `bottom / cover url("${this.mobileSlides[this.currentSlide].src}")`;
-                        console.log(this.mobileSlides[this.currentSlide].src);
                         TweenMax.to(this.text, .5, {
                             background: `rgba(0, 0, 0, 0)`,
                             onComplete: () => {
