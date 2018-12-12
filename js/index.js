@@ -1,13 +1,11 @@
 const toggleMenu = () => {
-    menu.classList.toggle('menu--open');
-    //menuX.classList.toggle('button--open');
+    menu.style.display = 'block';
     menuButton.style.display = 'none';
-    menuX.style.display = 'block';  
-}
+    menuX.style.display = 'block'; 
+}   
 
-const toggleX = () => {
-    menu.classList.toggle('menu--closed');
-    //menuButton.classList.toggle('button--closed');
+const toggleMenuX = () => {
+    menu.style.display = 'none';
     menuX.style.display = 'none';
     menuButton.style.display = 'block'; 
 }
@@ -20,4 +18,4 @@ const menuX = document.querySelector('.menu-x');
 
 menuButton.addEventListener('click', () => toggleMenu());
 
-menuX.addEventListener('click', () => toggleX());
+menuX.addEventListener('click', () => toggleMenuX());

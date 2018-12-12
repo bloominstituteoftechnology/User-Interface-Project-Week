@@ -76,6 +76,11 @@ html, body {
   font-family: 'Roboto', Arial, sans-serif;
   color: #222222;
   background: #FFFFFF;
+
+  @media @mobile {
+    width: 320px;
+    margin: 0 auto;
+  }
 }
 
 p {
@@ -85,7 +90,7 @@ p {
 
 .container {
   width: 1024px;
-  margin: 0 auto;
+  margin: auto;
 
   @media @mobile {
     width: 320px;
@@ -103,16 +108,25 @@ p {
   overflow: hidden;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 1024px;
   background-color: lightslategrey;
   z-index: 1;
   height: 50px;
   color: #FFFFFF;
+  margin: 0 auto;
+
+  @media @mobile {
+    width: 320px;
+  }
 
   h1 {
     font-size: 24px;
     font-weight: bold;
     padding: 12px 0 0 85px;
+
+    @media @mobile {
+      padding: 13px 0 0 15px;
+    }
   }
 }
 
@@ -121,16 +135,25 @@ p {
   cursor: pointer;
   left: 905px;
   bottom: 12px;
+  display: block;
+
+  @media @mobile {
+    left: 275px;
+  }
 }
 
 .menu {
   display: none;
   position: fixed;
-  width: 100vw;
+  width: 1024px;
   height: 100vh;
   background-color: lightslategrey;
   z-index: 2;
   opacity: .9;
+
+  @media @mobile {
+    width: 320px;
+  }
 
   a {
     font-size: 48px;
@@ -149,22 +172,10 @@ p {
   flex-direction: column;
   align-items: center;
   padding-top: 125px;
-}
 
-.menu--open {
-  display: block;
-}
-
-.menu--closed {
-  display: none;
-}
-
-.button--open {
-  display: block;
-}
-
-.button--closed {
-  display: none;
+  @media @mobile {
+    padding-top: 60px;
+  }
 }
 
 .menu-x {
@@ -174,6 +185,10 @@ p {
   left: 905px;
   bottom: 12px;
   z-index: 3;
+
+  @media @mobile {
+    left: 275px;
+  }
 }
 
 
@@ -312,8 +327,6 @@ h3 {
     @media @desktop {
     display: none;
   }
-
-  margin-right: 50px;
 }
 
 .desktopimg2 {
