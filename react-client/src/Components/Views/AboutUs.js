@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Carousel from '../Carousel';
 //images
 import About1 from '../../img/aboutus/img1.jpg';
 import About2 from '../../img/aboutus/img2.jpg';
@@ -10,8 +10,7 @@ class AboutUs extends Component {
   render() {
     return (
         <div class="aboutus">
-
-        
+        <Carousel title="About Us"/>
             <div class="main-content">
 		        <div class="about-panel">
 		        	<h2>We're Global</h2>
