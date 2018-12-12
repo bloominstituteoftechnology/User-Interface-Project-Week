@@ -20,6 +20,13 @@
 // ----------------------------
 
 #animation {
+    .bordered-color-transition(@new-background-color, @new-color, @new-border-size, @new-border-style, @new-border-color, @duration, @delay: 0) {
+        background-color: @new-background-color;
+        color: @new-color;
+        border: @new-border-size @new-border-style @new-border-color;
+        #prefixed > .transition-control(@duration, @delay);
+    }
+
     .color-transition(@new-background-color, @new-color, @duration, @delay: 0) {
         background-color: @new-background-color;
         color: @new-color;
