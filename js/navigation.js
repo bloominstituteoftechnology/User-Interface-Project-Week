@@ -7,7 +7,6 @@ class Navigation {
     }
 
     toggleNav() {
-        console.log(this.navContent.style.display)
         if(this.navContent.style.display == 'none') {
             this.navContent.style.display = 'flex';
             this.button.src = '../img/nav-hamburger-close.png';
