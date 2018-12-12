@@ -8,7 +8,6 @@ function closeNav() {
     document.getElementById("myNav").style.height = "0%";
 }
 
-
 document.getElementById("yo1").style.color="white";
 document.getElementById("yo1").style.backgroundColor="#5E9FB9"
 
