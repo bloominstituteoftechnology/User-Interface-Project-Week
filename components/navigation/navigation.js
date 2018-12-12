@@ -9,8 +9,12 @@ class Navigation {
         this.content.classList.toggle('menu-hidden');
         if(e.target.src.includes("close")){
             e.target.src = "img/nav-hamburger.png";
+            TweenMax.to(this.content, .5, {width: '0%', height: '0%', right: '28%'});
+            console.log(this.content.style.right);
         } else {
             e.target.src = "img/nav-hamburger-close.png"
+            TweenMax.to(this.content, .5, {width: '100%', height: '100%', right: '0%'});
+            console.log(this.content.style.right);
         }
     }
 }
