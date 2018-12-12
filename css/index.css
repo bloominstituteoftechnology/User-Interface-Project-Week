@@ -173,16 +173,20 @@ p {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  border: 1px solid red;
 }
-.navigation {
-  width: 100%;
-  height: 60px;
+.navigation-container {
+  max-width: 800px;
+  height: 40px;
   background: #99A4AF;
-  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2%;
 }
-.navigation .nav-container {
-  height: 100%;
+.navigation-container .navigation .hamburger {
+  padding: 20%;
+}
+.navigation-container .navigation .menu {
+  display: none;
 }
 .footer {
   display: flex;
@@ -217,6 +221,7 @@ p {
 @media (max-width: 500px) {
   .footer .footer-email-enter {
     width: 100%;
+    margin: 4% 0;
   }
 }
 .footer p {
@@ -230,7 +235,7 @@ p {
 }
 @media (max-width: 500px) {
   .footer ul {
-    padding: 20px 0;
+    padding: 10px 0;
   }
 }
 li {
@@ -272,6 +277,7 @@ li {
 @media (max-width: 500px) {
   .top-content {
     padding: 5%;
+    justify-content: center;
   }
 }
 .top-content-text {
@@ -286,6 +292,12 @@ li {
   .top-content-text {
     order: 1;
     width: 100%;
+    padding-top: 5%;
+  }
+}
+@media (max-width: 500px) {
+  .top-content-text p {
+    padding: 4% 0;
   }
 }
 .top-content-text .btn {
@@ -297,6 +309,7 @@ li {
 @media (max-width: 500px) {
   .top-content-text .btn {
     width: 100%;
+    margin-top: 5%;
   }
 }
 .img-content {
@@ -314,7 +327,7 @@ li {
   .img-content-mobile {
     display: block;
     width: 100%;
-    height: 0 auto;
+    margin: 5%;
   }
 }
 .inverse-content .top-content-text {
@@ -322,6 +335,9 @@ li {
 }
 .recent-projects h2 {
   padding: 6% 0;
+}
+.recent-example {
+  position: relative;
 }
 .recent-example .recent-img {
   width: 100%;
@@ -342,14 +358,38 @@ li {
 }
 .recent-example .projects-rectangle {
   background-color: #D8D8D8;
-  width: 50%;
+  width: 35%;
   padding: 4%;
-  font-size: 35px;
+  font-size: 26px;
   text-align: center;
+  position: absolute;
+  right: 0%;
+  bottom: 55%;
 }
 @media (max-width: 500px) {
   .recent-example .projects-rectangle {
-    margin: 20%;
+    bottom: 55%;
+    width: 90%;
+    left: 5%;
+    padding: 7%;
+  }
+}
+.recent-example .projects-rectangle-outskirts {
+  background-color: #D8D8D8;
+  width: 35%;
+  padding: 4%;
+  font-size: 26px;
+  text-align: center;
+  position: absolute;
+  left: 0%;
+  bottom: 55%;
+}
+@media (max-width: 500px) {
+  .recent-example .projects-rectangle-outskirts {
+    bottom: 55%;
+    width: 90%;
+    left: 5%;
+    padding: 7%;
   }
 }
 .recent-example .recent-example-text {
@@ -358,8 +398,8 @@ li {
 }
 @media (max-width: 500px) {
   .recent-example .recent-example-text {
-    width: 80%;
-    margin: 10% 10%;
+    width: 90%;
+    margin: 15% 5%;
   }
 }
 .copyright {
@@ -369,27 +409,67 @@ li {
   padding: 20px;
   font-size: 14px;
 }
+.services .services-header {
+  position: relative;
+}
+.services img {
+  width: 100%;
+  height: 0 auto;
+  padding-bottom: 5%;
+}
+.services h1 {
+  position: absolute;
+  bottom: 60px;
+  left: 16px;
+}
 .tabs {
+  width: 100%;
+  padding-top: 5%;
+}
+.tabs .tabs-items {
   display: flex;
+  padding: 50px 0;
+  width: 100%;
+}
+.tabs .tabs-item {
+  display: none;
+}
+.tabs .tabs-item-selected {
+  display: flex;
+}
+.tabs .tabs-item-selected img {
+  width: 45%;
+}
+.tabs .tabs-item-selected .tabs-item-description {
+  width: 90%;
+}
+.tabs .tabs-item-selected .tabs-item-description h2 {
+  margin-top: 2%;
+}
+.tabs .tabs-item-selected .tabs-item-description p {
+  padding: 4% 2% 3% 0%;
 }
 .tabs .tabs-links {
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
-.tabs .tabs-links .tabs-link {
+.tabs .tabs-link {
   width: 20%;
   border: 1px solid black;
-  padding: 10px;
+  padding: 15px 8px;
   text-align: center;
-  background: #5E9FB9;
+  background: white;
   font-weight: bold;
+  font-size: 18px;
   cursor: pointer;
 }
-.tabs .tabs-links .tabs-link:hover {
-  background-color: #222222;
+.tabs .tabs-link:hover {
+  background-color: #5E9FB9;
   color: #FFF;
 }
-.tabs-item {
-  display: block;
+.tabs .tabs-link-selected {
+  color: black;
+}
+.tabs .tabs-link-selected:hover {
+  background-color: #5E9FB9;
 }

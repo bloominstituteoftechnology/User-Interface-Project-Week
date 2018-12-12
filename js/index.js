@@ -6,7 +6,7 @@ class TabLink {
       this.data = this.element.dataset.tab;
       this.item = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
       this.tabItem = new TabItem(this.item);
-      
+     
       this.element.addEventListener('click', () => {
         this.select();
       });
@@ -47,3 +47,20 @@ class TabLink {
   }
   
   let links = document.querySelectorAll('.tabs-link').forEach( link => new TabLink(link));
+
+  class Dropdown {
+    constructor(element) {
+      this.element = element;
+      this.button = this.element.querySelector('.hamburger')
+      this.content = this.element.querySelector('.menu');
+     
+      this.button.addEventListener('click', () => { this.toggleContent() })
+    }
+  
+    toggleContent() {
+      
+      this.content.classList.toggle('hidden');
+    }
+  }
+ 
+  let dropdowns = document.querySelectorAll('.navigation').forEach( dropdown => new Dropdown(dropdown));
