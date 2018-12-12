@@ -18,7 +18,7 @@ const Home = () => {
 					<h2>Smith & Jones Architects</h2>
 					<p>Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer
 						sed.Duo etiam laboramus dissentiet in, nec no errem</p>
-					<a href="" className="btn">Learn More</a>
+					<div href="" className="btn">Learn More</div>
 				</div>
 
 			</div>
@@ -28,7 +28,7 @@ const Home = () => {
 					<h2>Futuristic Designs</h2>
 					<p>Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer
 						sed.Duo etiam laboramus dissentiet in, nec no errem</p>
-					<a href="" className="btn">View Designs</a>
+					<div href="" className="btn">View Designs</div>
 
 				</div>
 				<div className="image-2"></div>
@@ -46,9 +46,9 @@ const Home = () => {
 				<div className="content">
 
 					<p> The Villas bring to the table win-win survival strategies to ensure proactive domination. At the end of the
-						day,goingforward, a new normal that has evolved from generation X is on the runway heading towards a streamlined
+						day,goingforward, div new normal that has evolved from generation X is on the runway heading towards div streamlined
 						cloudsolution.</p>
-					<p> Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the
+					<p> Capitalize on low hanging fruit to identify div ballpark value added activity to beta test. Override the
 						digital
 						dividewith additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will
 						close
@@ -63,10 +63,10 @@ const Home = () => {
 
 				<div className="content">
 					<p> The Outskirts are amazing to the table win-win survival strategies to ensure proactive domination. At the end
-						of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards
+						of the day, going forward, div new normal that has evolved from generation X is on the runway heading towards
 						astreamlined cloud solution.</p>
 
-					<p> Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the
+					<p> Capitalize on low hanging fruit to identify div ballpark value added activity to beta test. Override the
 						digital
 						divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will
 						close the loop on focusing solely on the bottom line.</p>
@@ -81,9 +81,9 @@ const Home = () => {
 
 				<div className="content">
 					<p> The Blocks are amazing to the table win-win survival strategies to ensure proactive domination. At the end of
-						the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a
+						the day, going forward, div new normal that has evolved from generation X is on the runway heading towards div
 						streamlined cloud solution.</p>
-					<p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital
+					<p>Capitalize on low hanging fruit to identify div ballpark value added activity to beta test. Override the digital
 						divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will
 						close
 						the loop on focusing solely on the bottom line.</p>
