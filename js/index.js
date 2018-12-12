@@ -1,103 +1,60 @@
 // JS goes here
-class Dropdown {
-  constructor(element) {
-    // assign this.element to the dropdown element
-    this.element = element;
-    // assign the ".dropdown-button" class found in the dropdown element (look at the HTML for context)
-    this.button = this.element.querySelector('.toggle-overlay')
-    this.closebutton = this.element.querySelector('.closebutton')
-    // assign the reference to the ".dropdown-content" class found in the dropdown element
-    this.content = this.element.querySelector('.aside');
-    this.closebuttoncontent = document.querySelector('.aside');
+// Home JS Navigation
+const hamburger = document.querySelector('.hamburger');
+const navigation = document.querySelector('.navigation');
+const header = document.querySelector('header.header');
+let open = hamburger.addEventListener('click', () => {
+
     
-    // Add a click handler to the button reference and call the toggleContent method.
-    this.button.addEventListener('click', (event) => { this.toggleContent(event) })
-    this.closebutton.addEventListener('click', (event) => { this.closeContent(event) })
-    // Instructor note, the reason we must wrap the toggleContent method in an anonymous function is that 'this' in toggleContent
-    // would refer to the button, NOT the current instance of the class. 
-  }
+    if (header.classList.contains('navigation-show')) {
+        hamburger.classList.remove("is-active");
+    TweenMax.to(header, .4, {height:'50px', ease:Power2.easeIn, onComplete: () => {
+        header.classList.remove('navigation-show');
+        navigation.classList.remove('navigation-show');
+    }});
 
-  toggleContent(event) {
-    // Toggle the ".dropdown-hidden" class off and on
-    this.content.classList.toggle('open');
-  }
+    TweenMax.fromTo(navigation, .3, {opacity: '1'}, {opacity: '0', ease:Power2.easeIn});
 
-  closeContent(event) {
-    // Toggle the ".dropdown-hidden" class off and on
-    this.closebuttoncontent.classList.toggle('open');
-  }
-}
-// Nothing to do here, just study what the code is doing and move on to the Dropdown class
-let dropdowns = document.querySelectorAll('header');
-dropdowns = Array.from(dropdowns).map(dropdown => new Dropdown(dropdown));
+    // hamburger.src='img/nav-hamburger.png';
+    // hamburger.alt='Open Menu';
 
-//services tabs
-
-class TabLink {
-  constructor(element) {
-    // assign this.element to the element reference
-    this.element = element;
-    // Get the tab data attribute and save the value here
-    this.tabData = this.element.dataset.tab;
-    // Find all elements with the .card class in index.html that correspond to the tab data attribute. If the data is 'all' then select all cards regardless of their data attribute
-    if (this.tabData === 'all') {
-      this.cards = document.querySelectorAll(`.card`);
     } else {
-      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
+        hamburger.classList.add("is-active");
+        navigation.classList.add('navigation-show');
+        header.classList.add('navigation-show');
+    TweenMax.to(header, .4, {height:'100%', ease:Power3.easeOut, onComplete: () => {
+    }});
+
+    TweenMax.fromTo(navigation, .3, {opacity: '0'}, {opacity: '1', ease:Power3.easeOut});
+    // hamburger.src='img/nav-hamburger-close.png';
+    // hamburger.alt='Close Menu';
     }
-    // Map over the cards array and convert each card element into a new instance of the TabCard class. Pass in the card object to the TabCard class.
-    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+});
 
-    // Add a click event that invokes selectTab
-    this.element.addEventListener('click', (event) => {
-      // Call the select method you define below
-      this.selectTab(event);
-    });
+// Tabs
+class TabMenuItem {
+  constructor(item) {
+      this.item = item;
+      this.data = this.item.dataset.tab;
+      this.tabContainer = document.querySelector('.content-tabs');
+      this.item.addEventListener('click', () => this.tabSelect());
+      this.content = document.querySelector(`.tab-content[data-tab="${this.data}"]`);
   }
 
-  selectTab(event) {
-
-    // Select all elements with the .tab class on them
-    const tabs = document.querySelectorAll('.tabs');
-    // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(link => {
-      link.classList.remove('active-tab')
-    });
-
-    // Add a class of ".active-tab" to this.element
-    this.element.classList.add('active-tab');
-    //console.log(this.element);
-
-    // Select all of the elements with the .card class on them
-    const cards = document.querySelectorAll('.card');
-    // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(card => {
-      card.style.display = 'none';
-    });
-    // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class, nothing to update here
-    this.cards.forEach(card => card.selectCard());
+  tabSelect() {
+      document.querySelectorAll(".tab").forEach(tabContent => tabContent.classList.remove("active"));
+      this.item.classList.add("active");
+      TweenMax.to(this.tabContainer, .25, {opacity: 0, ease:Sine.easeIn, onComplete: () => {
+          document.querySelectorAll(".tab-content").forEach(tabContent => tabContent.classList.remove("active"));
+          this.content.classList.add("active");
+          TweenMax.to(this.tabContainer, .25, {opacity: 1, ease:Sine.easeOut});
+      }});
   }
 }
 
-class TabCard {
-  constructor(element) {
-    // Assign this.element to the passed in element.
-    this.element = element;
-  }
-  selectCard() {
-    // Update the style of this.element to display = null
-    this.element.style.display = 'flex';
-  }
-}
-
-// Create a reference to all ".tab" classes
-let tabs = document.querySelectorAll('.tabs');
-// Map over the array and convert each tab reference into a new TabLink object.  Pass in the tab object to the Tabs class.
-tabs = Array.from(tabs).map(link => new TabLink(link));
-
-//Once you are complete, call the .select method on the first tab
-tabs[0].selectTab();
-
+let tabs = document.querySelectorAll(".tab");
+tabs = Array.from(tabs).map(tab => new TabMenuItem(tab));
+tabs[0].tabSelect();
 
 
 
