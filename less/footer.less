@@ -3,6 +3,11 @@ footer {
     color: @footer-text-color;
     padding: 10px 0;
 
+    @media @device-max-size[mobile] {
+        padding-bottom: 25px;
+        margin-top: 75px;
+    }
+
     p {
         font-size: 1.4rem;
         line-height: 26px;
@@ -10,6 +15,11 @@ footer {
         @media @device-max-size[tablet] {
             font-size: 1rem;
             line-height: 20px;
+        }
+
+        @media @device-max-size[mobile] {
+            font-size: 1.3rem;
+            line-height: 26px;
         }
     }
 
@@ -23,6 +33,12 @@ footer {
             font-size: 1.6rem;
             line-height: 18px;
         }
+
+        @media @device-max-size[mobile] {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 24px;
+        }
     }
 
     .footer-content {
@@ -32,6 +48,12 @@ footer {
 
         @media @device-max-size[tablet] {
             max-width: @main-content-max-width[tablet];
+        }
+
+        @media @device-max-size[mobile] {
+            .make-flex(column);
+            max-width: @main-content-max-width[mobile];
+            margin: 25px auto;
         }
 
         .footer-content__email-form {
@@ -46,17 +68,40 @@ footer {
                 @media @device-max-size[tablet] {
                     width: 75%;
                 }
+
+                @media @device-max-size[mobile] {
+                    width: 100%;
+                    padding: 15px 0 15px 2%;
+                    margin: 10px 0;
+                }
+            }
+
+            @media @device-max-size[mobile] {
+                margin-bottom: 10px;
+            }
+        }
+
+        address {
+            @media @device-max-size[mobile] {
+                margin: 10px 0;
             }
         }
     }
 
     .copyright {
-       text-align: center;
-       font-size: 1.2rem;
+        text-align: center;
+        font-size: 1.2rem;
 
-       @media @device-max-size[tablet] {
+        @media @device-max-size[tablet] {
             font-size: 1rem;
             line-height: 20px;
+        }
+
+        @media @device-max-size[mobile] {
+            max-width: @main-content-max-width[mobile];
+            text-align: left;
+            font-size: 1.2rem;
+            margin: auto;
         }
     }
 }
