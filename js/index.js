@@ -17,14 +17,14 @@ function openNavMenu(e) {
     TweenMax.fromTo(navMenuArea, 0.5, {
         opacity: 0
     }, {
-        opacity: 0.85
+        opacity: 0.9
     });
 }
 
 function closeNavMenu(e) {
     const navMenuArea = document.querySelector(".nav__menu");
     TweenMax.fromTo(navMenuArea, 0.5, {
-        opacity: 0.85
+        opacity: 0.9
     }, {
         opacity: 0,
         onComplete: () => navMenuArea.classList.add("nav__menu--closed")
