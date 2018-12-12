@@ -3,12 +3,12 @@
 // ==================== Navigation
 
 document.querySelector(".hamburger").addEventListener("click", function() {
-    document.querySelector(".navbar").classList.toggle("expanded-navbar")
-})
+    TweenLite.to(".navbar", .5, {className:"expanded-navbar"});
+});
 
 document.querySelector(".hamburger-close").addEventListener("click", function() {
-    document.querySelector(".navbar").classList.toggle("expanded-navbar")
-})
+    TweenLite.to(".expanded-navbar", .5, {className:"navbar"});
+});
 
 // ==================== Services Tabs
 
