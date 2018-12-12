@@ -1,31 +1,28 @@
 .navbar__container {
   background: @nav-bg;
   height: 50px;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 6;
 
-  .navbar {
+  .logo__burger {
     max-width: 1024px;
     padding: 4px 8.3% 0;
     width: 100%;
     margin: 0 auto;
     position: relative;
+    z-index: 7;
 
     @media @mobile {
       padding: 4px 5% 0;
     }
-  }
-
-  .logo__burger {
     .center(row, space-between, flex-start, nowrap);
     width: 100%;
     cursor: pointer;
 
     .logo__link {
       text-decoration: none;
-      color: @nav-color;
       font-weight: bold;
       font-size: 2.35rem;
     }
@@ -36,27 +33,39 @@
   }
 
   .nav__menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 0;
+    z-index: 6;
+    background: @nav-bg;
+    opacity: 0.95;
     display: none;
 
-    .nav__menu__container {
-      .center(column, flex-start, flex-start, nowrap);
-      margin-left: 2px;
+    .menu__container {
+      margin-top: 170px;
+      .center(column, flex-start, center, nowrap);
+      z-index: 6;
+      width: 100%;
+
+      .menu__placement {
+        .center(column, flex-start, flex-start, nowrap);
+        display: none;
+      }
+
+      .menu__placement--open {
+        display: flex;
+        .keyframes(
+          links-disappear;{0% {opacity: 0;} 0.99% {opacity: 0;} 100% {opacity: 1;}}
+        );
+
+        .animation(links-disappear 1s ease-out 1 forwards);
+      }
     }
   }
 
   .nav__menu--open {
-    .center(column, center, center, nowrap);
-    height: 300px;
-    margin: 168px 0 0;
-    width: 100%;
-
-    @media @mobile {
-      margin-top: 30px;
-    }
+    display: block;
+    height: 100vh;
   }
-}
-
-.navbar--open {
-  height: 100vh;
-  opacity: 0.95;
 }
