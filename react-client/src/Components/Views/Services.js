@@ -3,8 +3,14 @@ import Carousel from '../Carousel';
 import TabNavigator from '../TabNavigator'
 
 //images
-import preDesign from '../../img/services/services-tab-pre-construction-img.png';
-
+import preConstruction from '../../img/services/services-tab-pre-construction-img.png';
+import preConstructionMobile from '../../img/services/services-tab-mobile-pre-construction-img.png';
+import construction from '../../img/services/services-tab-construction-img.png';
+import constructionMobile from '../../img/services/services-tab-mobile-construction-img.png';
+import designBuild from '../../img/services/services-tab-design-build-img.png';
+import designBuildMobile from '../../img/services/services-tab-design-build-img.png';
+import sustainability from '../../img/services/services-tab-sustainability-img.png';
+import sustainabilityMobile from '../../img/services/services-tab-mobile-sustainability-img.png';
 class Services extends Component {
   render() {
         let tabs = ['Pre-Construction', 'Construction', 'Design Build', 'Sustainability'];
@@ -26,8 +32,8 @@ class Services extends Component {
 			    				<p>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.</p>
 			    			</div>
 			    			<div className="image">
-			    				<img src="./img/services/services-tab-pre-construction-img.png" alt="Construction" className="desktop-image" />
-			    				<img src="./img/services/services-tab-mobile-pre-construction-img.png" alt="Construction" className="mobile-image" />
+			    				<img src={preConstruction} alt="Construction" className="desktop-image" />
+			    				<img src={preConstructionMobile} alt="Construction" className="mobile-image" />
 			    			</div>
 			    		</div>
 			    	</div>
@@ -39,8 +45,8 @@ class Services extends Component {
 			    				<p>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.</p>
 			    			</div>
 			    			<div className="image">
-			    				<img src="./img/services/services-tab-construction-img.png" alt="Construction" className="desktop-image" />
-			    				<img src="./img/services/services-tab-mobile-construction-img.png" alt="Construction" className="mobile-image" />
+			    				<img src={construction} alt="Construction" className="desktop-image" />
+			    				<img src={constructionMobile} alt="Construction" className="mobile-image" />
 			    			</div>
 			    		</div>
 			    	</div>
@@ -52,8 +58,8 @@ class Services extends Component {
 			    				<p>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.</p>
 			    			</div>
 			    			<div className="image">
-			    				<img src="./img/services/services-tab-design-build-img.png" alt="Construction" className="desktop-image" />
-			    				<img src="./img/services/services-tab-mobile-design-build-img.png" alt="Construction" className="mobile-image" />
+			    				<img src={designBuild} alt="Construction" className="desktop-image" />
+			    				<img src={designBuildMobile} alt="Construction" className="mobile-image" />
 			    			</div>
 			    		</div>
 			    	</div>
@@ -66,8 +72,8 @@ class Services extends Component {
 			    				<p>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.</p>
 			    			</div>
 			    			<div className="image">
-			    				<img src="./img/services/services-tab-sustainability-img.png" alt="Construction" className="desktop-image" />
-			    				<img src="./img/services/services-tab-mobile-sustainability-img.png" alt="Construction" className="mobile-image" />
+			    				<img src={sustainability} alt="Construction" className="desktop-image" />
+			    				<img src={sustainabilityMobile} alt="Construction" className="mobile-image" />
 			    			</div>
 			    		</div>
 			    	</div>
