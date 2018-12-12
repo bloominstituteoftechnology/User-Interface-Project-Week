@@ -19,15 +19,30 @@ class TabLink {
 const navigation = document.querySelector('.nav-open');
 const navButton = document.querySelector('.nav-button');
 const bigX = document.querySelector('.big-x');
+const navBar = document.querySelector('nav')
 
 navButton.addEventListener('click', function(){
-    navigation.classList.toggle('display-hidden');
+    // navigation.classList.toggle('display-hidden');
     navButton.classList.toggle('display-hidden');
     bigX.classList.toggle('display-hidden');
+    TweenMax.fromTo(navigation, 0.75, {
+        y: -1000,
+        display: 'none',
+    }, {
+        y: 0,
+        display: 'flex'
+    })
 });
 
 bigX.addEventListener('click', function(){
-    navigation.classList.toggle('display-hidden');
+    TweenMax.fromTo(navigation, 0.75, {
+        y: 0,
+        display: 'flex',
+    }, {
+        display: 'none',
+        y: -1000,
+    })
+    // navigation.classList.toggle('display-hidden');
     navButton.classList.toggle('display-hidden');
     bigX.classList.toggle('display-hidden');
 });
