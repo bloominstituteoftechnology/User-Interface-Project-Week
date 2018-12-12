@@ -26,14 +26,6 @@ class ToggleMenu {
 let dropdowns = document.querySelectorAll('.dropdown').forEach(dropdown => new ToggleMenu(dropdown));
 
 
-
-
-
-
-
-
-
-
 // Tab Section For Services Page
 // class TabLink {
 //     constructor(elem) {
