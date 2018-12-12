@@ -1,13 +1,15 @@
 .main-navigation {
-    background-color: @footer-bg;
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
     padding: 1.5% 10%;
-    position: fixed;
     z-index: 10; 
-    max-width: 1000px;
-    width: 100%;   
+    background-color: @footer-bg;
+    position: fixed;
+    width: 1000px;
 }
+
 
 .logo {
     font-size: 2.4rem;
@@ -15,34 +17,22 @@
     font-weight: bold;
 }
 
-.overlay {
+.dropdown #myNav {
     z-index: 15;
-    position: absolute;
-    cursor: pointer;
     height: 100%;
-    width: 0;
-    left: 0;
-    top: 0;
     background-color: @footer-bg;
-    opacity: 0.9;
+    opacity: 0.2;
     overflow-x: hidden;
     transition: 0.5s;
 }
- #closed {
+ .icon {
         color: @main-bg;
-        bottom: 0;
-        left: 0;
-        line-height: 7.5rem;
-        z-index: 20;
         padding: 0 0 5% 7%;
+        cursor: pointer;
     
         @media @phone {
             line-height:5.2rem;
         }
-    }
-
-    &:hover {
-        color: @main-text;
     }
 
 .overlay-content {
@@ -51,14 +41,25 @@
     width: 100%;
     text-align: center;
     margin-top: 30px;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
 }
 
 .overlay-link {
+    color: @main-bg;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     padding: 8px;
     text-decoration: none;
     font-size: 4.8rem;
     line-height: 8.5rem;
     font-weight: bold;
+
+    &:hover {
+        color: @main-text;
+    }
 }
 
 .overlay-hidden {

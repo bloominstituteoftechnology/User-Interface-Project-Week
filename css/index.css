@@ -185,48 +185,38 @@ img {
   }
 }
 .main-navigation {
-  background-color: #828282;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   padding: 1.5% 10%;
-  position: fixed;
   z-index: 10;
-  max-width: 1000px;
-  width: 100%;
+  background-color: #828282;
+  position: fixed;
+  width: 1000px;
 }
 .logo {
   font-size: 2.4rem;
   color: #FFFFFF;
   font-weight: bold;
 }
-.overlay {
+.dropdown #myNav {
   z-index: 15;
-  position: absolute;
-  cursor: pointer;
   height: 100%;
-  width: 0;
-  left: 0;
-  top: 0;
   background-color: #828282;
-  opacity: 0.9;
+  opacity: 0.2;
   overflow-x: hidden;
   transition: 0.5s;
 }
-#closed {
+.icon {
   color: #FFFFFF;
-  bottom: 0;
-  left: 0;
-  line-height: 7.5rem;
-  z-index: 20;
   padding: 0 0 5% 7%;
+  cursor: pointer;
 }
 @media (max-width: 500px) {
-  #closed {
+  .icon {
     line-height: 5.2rem;
   }
-}
-:hover {
-  color: #222222;
 }
 .overlay-content {
   position: relative;
@@ -234,13 +224,23 @@ img {
   width: 100%;
   text-align: center;
   margin-top: 30px;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
 }
 .overlay-link {
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 8px;
   text-decoration: none;
   font-size: 4.8rem;
   line-height: 8.5rem;
   font-weight: bold;
+}
+.overlay-link:hover {
+  color: #222222;
 }
 .overlay-hidden {
   display: none;
@@ -317,23 +317,6 @@ input {
     padding: 0 0 4% 2%;
   }
 }
-button {
-  color: #222222;
-  background-color: #FFFFFF;
-  font-size: 1.6rem;
-  padding: 2% 4%;
-}
-button:hover {
-  color: #FFFFFF;
-  background-color: #222222;
-}
-@media (max-width: 500px) {
-  button {
-    width: 100%;
-    margin: 0 auto;
-    padding: 5% 0;
-  }
-}
 .header-container {
   display: flex;
   justify-content: flex-start;
@@ -342,7 +325,7 @@ button:hover {
 .header-banner {
   position: relative;
 }
-.banner-text {
+.header-banner .banner-text {
   color: #FFFFFF;
   position: absolute;
   bottom: 0;
@@ -352,7 +335,7 @@ button:hover {
   padding: 0 0 5% 7%;
 }
 @media (max-width: 500px) {
-  .banner-text {
+  .header-banner .banner-text {
     line-height: 5.2rem;
   }
 }
@@ -381,6 +364,23 @@ button:hover {
 @media (max-width: 500px) {
   .home-top-content {
     padding: 5% 4% 8% 4%;
+  }
+}
+button {
+  color: #222222;
+  background-color: #FFFFFF;
+  font-size: 1.6rem;
+  padding: 2% 4%;
+}
+button:hover {
+  color: #FFFFFF;
+  background-color: #222222;
+}
+@media (max-width: 500px) {
+  button {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5% 0;
   }
 }
 #drafting {
@@ -518,7 +518,7 @@ button:hover {
   padding: 3% 4%;
   position: absolute;
   top: 200px;
-  z-index: 100;
+  z-index: 7;
 }
 @media (max-width: 500px) {
   .text-overlay {

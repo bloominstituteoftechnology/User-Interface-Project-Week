@@ -3,7 +3,7 @@
 class Overlay {
     constructor(overlay) {
         this.overlay = overlay;
-        this.button = this.overlay.querySelector('.closed');
+        this.button = this.overlay.querySelector('.icon');
         this.content = this.overlay.querySelector('.overlay-content');
 
         this.button.addEventListener('click', () => {this.toggleContent()});
@@ -14,4 +14,4 @@ class Overlay {
     }
 }
 
-let overlays = document.querySelectorAll('.overlay').forEach( overlay => new Overlay(overlay));
+let overlays = document.querySelectorAll('.dropdown').forEach( overlay => new Overlay(overlay));
