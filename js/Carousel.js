@@ -1,5 +1,3 @@
-
-
 class Carousel {
   constructor(cElement) {
     this.cElement = cElement;
