@@ -6,7 +6,7 @@
 
 .mobile-style();
 
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .desktop-style();
 }
 
@@ -20,114 +20,34 @@
   }
 
   .container {
-    width: 320px;
+    width: 100vw;
     margin: auto;
     header.menu {
       .top-bar();
-      padding: 1.5rem 4vw;
-      width: 320px; //temp
-      margin: auto; //temp
-      left: unset; //temp
     }
   }
   .top-banner {
-    position: relative;
-    img {
-      position: relative;
-      width: 100%;
-    }
-    h1 {
-      .jumbotron-header();
-      position: absolute;
-      bottom: 3rem;
-      left: 5%;
-      font-size: 3.6rem;
-      line-height: 4rem;
-    }
+    .top-banner-mixin();
   }
   .content-container {
     padding: 3.5rem 5% 0;
     .content-box {
       .content-box-mixin();
-      flex-direction: column-reverse;
-      width: 100%;
-      margin-bottom: 2.4rem;
-      .content-text {
-        width: 100%;
-        margin: 2.8rem 0 2rem;
-        h1 {
-          margin: 0 0 2rem;
-        }
-        p {
-          margin-bottom: 2.7rem;
-        }
-        a {
-          display: block;
-          padding: 1.1rem;
-          text-align: center;
-        }
-      }
     }
     .content-box-reverse {
       .content-box-mixin();
-      flex-direction: column-reverse;
-      width: 100%;
       margin-bottom: 3.1rem;
-      .content-text {
-        width: 100%;
-        margin: 2.8rem 0 2rem;
-        h1 {
-          margin: 0 0 2rem;
-        }
-        p {
-          margin-bottom: 2.7rem;
-        }
-        a {
-          display: block;
-          padding: 1.1rem;
-          text-align: center;
-        }
-      }
     }
     h2.recent-heading {
-      font-size: 2.4rem;
-      font-weight: bold;
-      margin-bottom: 2.5rem;
+      .recent-heading-mixin();
     }
     .feature-box {
       margin-bottom: 4.7rem;
       .feature-banner-container {
         .feature-banner-container-mixin();
-        width: 110%;
-        margin-left: -5%;
-        margin-bottom: 11.1rem;
-        h1 {
-          padding: 3.5rem 0;
-          left: 4%;
-          right: 4%;
-          text-align: center;
-          bottom: -8.2rem;
-        }
-        p {
-          width: 100%;
-        }
       }
       .feature-banner-container-reverse {
-        margin-bottom: 4.7rem;
         .feature-banner-container-mixin();
-        width: 110%;
-        margin-left: -5%;
-        margin-bottom: 11.1rem;
-        h1 {
-          padding: 3.5rem 0;
-          left: 4%;
-          right: 4%;
-          text-align: center;
-          bottom: -8.2rem;
-        }
-        p {
-          width: 100%;
-        }
       }
       p {
         margin: 0 auto 2.2rem;
@@ -136,49 +56,7 @@
     }
   }
   footer {
-    background: @footer-background;
-    margin-top: 8rem;
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      padding: 2.2rem 5% 0;
-      form {
-        margin-bottom: 2rem;
-        label {
-          .footer-heading();
-          display: inline-block;
-          margin-bottom: 2rem;
-        }
-        input {
-          width: 96%;
-          border-radius: 0.1rem;
-          font-size: 3.4rem;
-        }
-        p {
-          .footer-text();
-          font-size: 1.4rem;
-          margin-top: 1rem;
-        }
-      }
-      address {
-        font-style: normal;
-        margin-bottom: 2.3rem;
-        h1 {
-          .footer-heading();
-        }
-        p {
-          .footer-text();
-          line-height: 2.7rem;
-        }
-      }
-    }
-    .copyright {
-      .footer-text();
-      text-align: left;
-      font-size: 1.2rem;
-      margin: 0.8rem 0 0 1.4rem;
-    }
+    .footer-mixin();
   }
 }
 
@@ -195,25 +73,19 @@
   }
 
   .container {
-    //width: 100%;
-    width: 1024px;
+    max-width: 1024px;
     margin: auto;
     header.menu {
-      .top-bar();
       padding: 1.5rem 18vw;
+      left: 0;
     }
   }
   .top-banner {
-    position: relative;
-    img {
-      position: relative;
-      width: 100%;
-    }
     h1 {
-      .jumbotron-header();
-      position: absolute;
       bottom: 5rem;
       left: 8%;
+      font-size: 6.4rem;
+      line-height: 7.5rem;
     }
   }
   .content-container {
@@ -221,9 +93,19 @@
     .content-box {
       .content-box-mixin();
       flex-direction: row;
+      margin-bottom: 10.2rem;
       .content-text {
+        width: 50%;
+        margin: unset;
         h1 {
-          margin: 2.5rem 0 2rem;
+          margin: 5.5rem 0 2rem;
+        }
+        p {
+          margin-bottom: 2.4rem;
+        }
+        a {
+          display: inline-block;
+          padding: 1rem 2.6rem;
         }
       }
     }
@@ -231,22 +113,35 @@
       .content-box-mixin();
       flex-direction: row-reverse;
       .content-text {
+        width: 50%;
         margin: -1rem;
+        h1 {
+          margin: 5.5rem 0 2rem;
+        }
+        p {
+          margin-bottom: 2.4rem;
+        }
+        a {
+          display: inline-block;
+          padding: 1rem 2.6rem;
+        }
       }
     }
     h2.recent-heading {
-      font-size: 2.4rem;
-      font-weight: bold;
       margin-bottom: 4.5rem;
+      margin-top: 10rem;
     }
     .feature-box {
       margin-bottom: 10rem;
       .feature-banner-container {
-        .feature-banner-container-mixin();
         width: 100%;
         margin-left: 0;
+        margin-bottom: 9rem;
         h1 {
+          padding: 3.5rem 6%;
           left: unset;
+          right: 0;
+          bottom: -4rem;
         }
       }
       .feature-banner-container-reverse {
@@ -254,8 +149,10 @@
         width: 100%;
         margin-left: 0;
         h1 {
+          padding: 3.5rem 6%;
           left: 0;
           right: unset;
+          bottom: -4rem;
         }
       }
       p {
@@ -266,19 +163,13 @@
     }
   }
   footer {
-    background: @footer-background;
+    margin-top: 0;
     .footer-content {
-      display: flex;
       flex-direction: row;
-      justify-content: space-around;
       padding: 6.1rem 5% 4.2rem;
       form {
+        margin-bottom: 0;
         width: 33%;
-        label {
-          .footer-heading();
-          display: inline-block;
-          margin-bottom: 2rem;
-        }
         input {
           width: 90%;
           border-radius: 0.1rem;
@@ -287,21 +178,20 @@
         p {
           .footer-text();
           font-size: 1.2rem;
+          margin-top: 0;
         }
       }
       address {
-        font-style: normal;
-        h1 {
-          .footer-heading();
-        }
+        margin-bottom: 0;
         p {
-          .footer-text();
+          line-height: 2.6rem;
         }
       }
     }
     .copyright {
       text-align: center;
-      .footer-text();
+      font-size: 1.4rem;
+      margin: 0;
     }
   }
 }
