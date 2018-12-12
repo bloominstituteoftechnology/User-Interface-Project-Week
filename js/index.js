@@ -10,6 +10,9 @@ class HamburgerMenu {
     // assign hamburger and close imgs
     this.hamburgerImg = this.element.querySelector('.hamburger');
     this.closeImg = this.element.querySelector('.hamburger-close');
+    // get active page, set active page
+    this.currentPage = this.element.dataset.page;
+    this.element.querySelector(`a[data-page="${this.currentPage}"]`).classList.add('current-page');
     // add event listener for hamburger click
     this.hamburgerDiv.addEventListener('click', () => this.toggleHamburger());
   }
