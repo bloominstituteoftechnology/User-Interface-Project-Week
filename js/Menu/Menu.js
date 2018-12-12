@@ -8,5 +8,9 @@ navMenuBtn.addEventListener('click', () => {
 })
 
 navCloseBtn.addEventListener('click', () => {
-    navContainer.classList.remove('expanded');
+  TweenMax.to(navContainer, 0, {opacity:0, onComplete: () => {
+    navContainer.classList.remove('expanded')
+    TweenMax.to(navContainer, .2, {opacity:1})
+    } 
+  });
 })

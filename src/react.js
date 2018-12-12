@@ -7,7 +7,7 @@ class IntroSection extends React.Component {
 
     return (
       this.props.data.map(item => 
-        <section className={`intro ${item.style}`}>
+        <section key={item.name} className={`intro ${item.style}`}>
           <div className="intro-text">
           <h2>{item.name}</h2>
           <p>{item.content}</p>

@@ -22,7 +22,7 @@ var IntroSection = function (_React$Component) {
       return this.props.data.map(function (item) {
         return React.createElement(
           "section",
-          { className: "intro " + item.style },
+          { key: item.name, className: "intro " + item.style },
           React.createElement(
             "div",
             { className: "intro-text" },
