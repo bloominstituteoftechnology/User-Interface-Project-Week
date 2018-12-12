@@ -26,6 +26,18 @@ const toggleNav = () => {
     navOpen.classList.toggle('nav-open-toggle');
     navClose.classList.toggle('nav-close-toggle');
     nav.classList.toggle('nav-toggle');
+    TweenMax.from(nav, 1, {
+        height: "0",
+        width: "0",
+        right: "0",
+        top: "0"
+    });
+    TweenMax.to(nav, 1, {
+        height: "100%",
+        width: "100%",
+        top: "0",
+        position: "fixed"
+    });
 }
   
 const navOpen = document.querySelector('.nav-open');
