@@ -45,6 +45,10 @@ hamburger.addEventListener("click", function(e) {
     fullNav.classList.remove("hidden");
     close.classList.remove("hidden")
     hamburger.classList.add("hidden");
+    TweenMax.from(fullNav, 2, {
+        marginTop:"100%",
+        ease: Power3.easeOut
+    });
 })
 
 close.addEventListener("click", function(e) {
