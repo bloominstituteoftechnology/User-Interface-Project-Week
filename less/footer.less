@@ -1,0 +1,83 @@
+@import (once) "variables.less";
+@import (once) "mixins.less";
+
+.footer-component {
+    background: @footer-background;
+    margin-top: 8rem;
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 2.2rem 5% 0;
+        .footer-email-form {
+            margin-bottom: 2rem;
+            .footer-email-form-heading {
+                .footer-heading();
+                display: inline-block;
+                margin-bottom: 2rem;
+            }
+            .footer-email-form-input {
+                width: 96%;
+                border-radius: 0.1rem;
+                font-size: 3.4rem;
+            }
+            .footer-email-form-text {
+                .footer-text();
+                font-size: 1.4rem;
+                margin-top: 1rem;
+            }
+        }
+        .footer-address {
+            font-style: normal;
+            margin-bottom: 2.3rem;
+            .footer-address-heading {
+                .footer-heading();
+            }
+            .footer-address-body {
+                .footer-text();
+                line-height: 2.7rem;
+            }
+        }
+    }
+    .footer-copyright {
+        .footer-text();
+        text-align: left;
+        font-size: 1.2rem;
+        margin: 0.8rem 0 0 1.4rem;
+    }
+}
+
+@media (min-width: @desktop-width) {
+    .footer-component {
+        margin-top: 0;
+        .footer-content {
+            flex-direction: row;
+            padding: 6.1rem 5% 4.2rem;
+            .footer-email-form {
+                margin-bottom: 0;
+                width: 33%;
+                .footer-email-form-input {
+                    width: 90%;
+                    border-radius: 0.1rem;
+                    font-size: 2.4rem;
+                }
+                .footer-email.form-text {
+                    .footer-text();
+                    font-size: 1.2rem;
+                    margin-top: 0;
+                }
+            }
+            .footer-address {
+                margin-bottom: 0;
+                .footer-address-body {
+                    line-height: 2.6rem;
+                }
+            }
+        }
+        .footer-copyright {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 0;
+        }
+    }
+}
