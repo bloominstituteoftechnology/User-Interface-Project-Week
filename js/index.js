@@ -27,3 +27,12 @@ class TabLink{
     }
   }
 links = document.querySelectorAll('.tabs-link').forEach( element => new TabLink(element));
+
+// ------------- Nav Overlay Expand and Close  --------------- //
+
+function openNav() {
+    document.getElementById("nav").style.width = "100%";
+  }
+function closeNav() {
+    document.getElementById("nav").style.width = "0%";
+  }
