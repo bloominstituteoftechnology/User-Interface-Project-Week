@@ -8,12 +8,19 @@
     .tabs {
         display: flex;
         justify-content: space-between;
+        @media @phone {
+            flex-direction: column;
+        }
 
         .tab {
             border: 1px solid @font-color;
             width: 22%;
             text-align: center;
             padding: 10px 0;
+            @media @phone {
+                width: 100%;
+                margin-bottom: 20px;
+            }
 
             &:hover {
                 background: @tab-select-bgd;
@@ -29,6 +36,9 @@
     }
     .cards {
         margin: 50px 0;
+        @media @phone {
+            margin: 30px 0;
+        }
         .card {
             display: none;
 
@@ -40,9 +50,24 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+
+                p {
+                    @media @phone {
+                        margin: 10px 0;
+                    }
+                }
             }
             .row {
                 display: flex;
+                @media @phone {
+                    flex-direction: column;
+                }
+
+                img {
+                    @media @phone {
+                        margin-top: 20px;
+                    }
+                }
             }
         }
         .current-card {
