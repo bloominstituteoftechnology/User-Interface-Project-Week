@@ -201,25 +201,63 @@ nav .nav-btn {
 nav .menu-layover {
   display: none;
   position: fixed;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
   width: 100%;
-  height: 100vh;
   background: #949494;
   z-index: 2;
-  opacity: 0.95;
 }
-nav .menu-layover a {
+nav .menu-layover a,
+nav .menu-layover a:visited {
+  display: flex;
   text-decoration: none;
   font-weight: bold;
   font-size: 4.8rem;
-  line-height: 8.5rem;
+  line-height: 8rem;
+  margin: 5px 0 5px 0;
+  padding: 0 1% 0 1%;
   color: #FFF;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 240%;
+  transition: all 0.25s;
 }
-nav .menu-layover a:hover {
-  color: #222222;
+nav .menu-layover a:hover,
+nav .menu-layover a:active {
+  background-position: 100%;
+  color: #949494;
+  transform: translateX(1rem);
+}
+@keyframes layoverDown {
+  0% {
+    height: 0vh;
+    opacity: 0;
+  }
+  100% {
+    height: 100vh;
+    opacity: 0.95;
+  }
+}
+@keyframes layoverUp {
+  0% {
+    height: 100vh;
+    opacity: 1;
+  }
+  100% {
+    height: 0vh;
+    opacity: 0;
+  }
+}
+.animateLayoverDown {
+  animation-name: layoverDown;
+  animation-duration: 1s;
+  opacity: 0;
+}
+.animateLayoverUp {
+  animation-name: layoverUp;
+  animation-duration: 1s;
 }
 footer {
   display: flex;

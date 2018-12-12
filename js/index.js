@@ -4,11 +4,29 @@
 
 document.querySelector('.nav-btn').addEventListener('click', function(e){
   if(e.target.getAttribute("src")==="img/nav-hamburger-close.png"){
-    document.querySelector('.menu-layover').style.display="none";
+    document.querySelector('.menu-layover').style.opacity = '0';
+    document.querySelector('.menu-layover').classList.remove('animateLayoverDown');
+    document.querySelector('.menu-layover').classList.add('animateLayoverUp');
+
+
+
     e.target.setAttribute("src", "img/nav-hamburger.png");
+    document.querySelector('.nav-btn').style["transition-duration"] = "1s";
+
+    document.querySelector('.nav-btn').style.transform = "rotate(0)";
+
   }else{
-    e.target.setAttribute("src", "img/nav-hamburger-close.png");
+    document.querySelector('.nav-btn').style["transition-duration"] = "1s";
+
+    e.target.style.transform = "rotate(90deg)";
+
+    document.querySelector('.menu-layover').classList.remove('animateLayoverUp');
+    document.querySelector('.menu-layover').classList.add('animateLayoverDown');
     document.querySelector('.menu-layover').style.display = "flex";
+    document.querySelector('.menu-layover').style.opacity = ".95";
+    e.target.setAttribute("src", "img/nav-hamburger-close.png");
+
+
   }
 });
 
