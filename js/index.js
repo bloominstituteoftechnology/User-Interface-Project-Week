@@ -1,13 +1,15 @@
 const toggleMenu = () => {
     menu.classList.toggle('menu--open');
+    //menuX.classList.toggle('button--open');
     menuButton.style.display = 'none';
-    menuX.style.display = 'block';
+    menuX.style.display = 'block';  
 }
 
 const toggleX = () => {
     menu.classList.toggle('menu--closed');
-    menuButton.style.display = 'block';
+    //menuButton.classList.toggle('button--closed');
     menuX.style.display = 'none';
+    menuButton.style.display = 'block'; 
 }
 
 const menu = document.querySelector('.menu');
