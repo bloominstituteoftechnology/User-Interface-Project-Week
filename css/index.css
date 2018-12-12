@@ -170,30 +170,34 @@ table {
   z-index: 100;
   top: 0;
   left: 0;
-  padding: 1.5rem 4vw;
+  padding: 1.5rem 0;
   width: 100vw;
+  background: #9AA5B0;
+}
+.navbar-component .navbar-container {
+  width: 92%;
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: #9AA5B0;
 }
-.navbar-component .navbar-name {
+.navbar-component .navbar-container .navbar-name {
   color: #FFFFFF;
   font-weight: bold;
   font-size: 2.4rem;
 }
-.navbar-component .navbar-links-container {
+.navbar-component .navbar-container .navbar-links-container {
   position: fixed;
   display: none;
 }
-.navbar-component .navbar-links-container .navbar-link {
+.navbar-component .navbar-container .navbar-links-container .navbar-link {
   text-decoration: none;
 }
 @media (min-width: 1024px) {
-  .navbar-component {
-    padding: 1.5rem 18vw;
-    left: 0;
+  .navbar-component .navbar-container {
+    width: 1024px;
+    padding: 0 7.5rem;
   }
 }
 .jumbotron-component {
@@ -251,12 +255,12 @@ table {
 .tabs-component .tabs-content-container .tabs-content-box {
   display: none;
 }
-.tabs-component .tabs-content-container .tabs-content-box .tabs-content-heading {
+.tabs-component .tabs-content-container .tabs-content-box .tabs-content-textbox .tabs-content-heading {
   font-weight: bold;
   font-size: 2.4rem;
   margin-bottom: 1rem;
 }
-.tabs-component .tabs-content-container .tabs-content-box .tabs-content-description {
+.tabs-component .tabs-content-container .tabs-content-box .tabs-content-textbox .tabs-content-description {
   margin: 2.6rem 0;
   line-height: 2.6rem;
 }
@@ -265,6 +269,34 @@ table {
 }
 .tabs-component .tabs-content-container .tabs-content-selected {
   display: block;
+}
+@media (min-width: 1024px) {
+  .tabs-component .tabs-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  .tabs-component .tabs-links .tabs-link {
+    padding: 1.25rem 0;
+    display: inline-block;
+    width: 18rem;
+  }
+  .tabs-component .tabs-content-container {
+    margin-top: 3rem;
+  }
+  .tabs-component .tabs-content-container .tabs-content-box {
+    display: none;
+    justify-content: space-between;
+  }
+  .tabs-component .tabs-content-container .tabs-content-box .tabs-content-textbox {
+    display: inline-block;
+    width: 425px;
+  }
+  .tabs-component .tabs-content-container .tabs-content-box .tabs-content-textbox .tabs-content-description {
+    margin: 1.2rem 0 3rem;
+  }
+  .tabs-component .tabs-content-container .tabs-content-selected {
+    display: flex;
+  }
 }
 .footer-component {
   background: #828282;
@@ -529,10 +561,11 @@ table {
 }
 @media (min-width: 1024px) {
   .services-container {
-    max-width: 1024;
+    max-width: 1024px;
+    width: unset;
     margin: auto;
   }
   .services-container .services-content-container {
-    padding: 5rem 10%;
+    padding: 3rem 8.5% 2rem;
   }
 }
