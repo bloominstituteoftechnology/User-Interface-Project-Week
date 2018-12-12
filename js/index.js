@@ -64,8 +64,21 @@ class TabContent {
 const tabButtons = document.querySelectorAll('.tab-button');
 tabButtons.forEach(tab => new TabButton(tab));
 
-
 // ==================================== Carousel
+
+class CarouselItem {
+  constructor(element) {
+    this.element = element;
+
+    this.rightArrow = this.element.querySelector('.right-arrow');
+  }
+}
+
+const imageArray = document.querySelectorAll('.carousel-image');
+imageArray.forEach(param => new CarouselItem(param));
+
+console.log(imageArray);
+
 // class Carousel {
 //   constructor(element) {
 //     this.element = element;
