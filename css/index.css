@@ -171,23 +171,63 @@ p {
 }
 header .menu {
   position: fixed;
-  z-index: 5;
+  z-index: 3;
   max-width: 1024px;
   width: 100%;
   background-color: #828282;
   display: flex;
   justify-content: space-between;
-  padding: 0.9% 5.3%;
+  padding: 0.9% 0;
 }
 header .menu h1 {
   font-weight: Bold;
   font-size: 24px;
   color: #FFFFFF;
+  padding-left: 85px;
 }
-header .menu .nav-closed {
+header .menu img {
+  margin-right: 85px;
+  cursor: pointer;
+  transition: transform 1.2s;
+}
+header .menu img:hover {
+  transform: rotate(180deg) scale(1.2);
+}
+header .menu .hamburger-hidden {
   display: none;
 }
-header .menu .nav-links {
+header .nav-content {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  background-color: #828282;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  position: fixed;
+}
+header .nav-content .nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+header .nav-content .nav-links a {
+  font-size: 48px;
+  line-height: 90px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #FFFFFF;
+  transition: transform 1.2s;
+}
+header .nav-content .nav-links a:hover {
+  transform: scale(1.2);
+  color: #222222;
+}
+header .nav-hidden {
   display: none;
 }
 footer {
@@ -565,6 +605,7 @@ body .main-content .main-bottom .main-section .inverse-image-text h4 {
 body header .header-image {
   position: relative;
   display: flex;
+  z-index: -5;
   align-items: flex-end;
   width: 100%;
 }
@@ -597,17 +638,12 @@ body header .header-image .header-text {
 }
 body .services-content {
   padding: 52px 85px 25px 85px;
-  border: 1px solid red;
-}
-body .services-content .top-content {
-  border: 1px solid red;
 }
 body .services-content .top-content p {
   line-height: 25px;
   margin-bottom: 40px;
 }
 body .services-content .tabs {
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
 }
@@ -616,26 +652,26 @@ body .services-content .tabs .tab-link {
   background-color: #FFFFFF;
   width: 184px;
   height: 50px;
+  cursor: pointer;
 }
 body .services-content .tabs .tab-link h5 {
   font-size: 19px;
   font-weight: bold;
+  transition: transform 1.2s;
+}
+body .services-content .tabs .tab-link:hover h5 {
+  transform: scale(1.1);
 }
 body .services-content .tabs .tab-link-selected {
   color: #FFFFFF;
   background-color: #5E9FB9;
 }
-body .services-content .tab-contents {
-  border: 1px solid red;
-}
 body .services-content .tab-contents .tab-content {
   display: none;
 }
 body .services-content .tab-contents .tab-content-selected {
+  display: block;
   padding: 48px 0;
-}
-body .services-content .tab-contents .tab-content-selected .heading {
-  border: 1px solid red;
 }
 body .services-content .tab-contents .tab-content-selected .heading h3 {
   font-size: 23px;
@@ -643,7 +679,6 @@ body .services-content .tab-contents .tab-content-selected .heading h3 {
 body .services-content .tab-contents .tab-content-selected .tab-main {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
   justify-content: space-between;
 }
 body .services-content .tab-contents .tab-content-selected .tab-main .tab-text-content {
@@ -657,10 +692,6 @@ body .services-content .tab-contents .tab-content-selected .tab-main .tab-text-c
 body .services-content .tab-contents .tab-content-selected .tab-main .tab-img-content {
   padding-top: 10px;
   padding-left: 15px;
-  border: 1px solid blue;
-}
-body .services-content .tab-contents .tab-content-selected .tab-main .tab-img-content .img-desktop {
-  border: 1px solid green;
 }
 body .services-content .tab-contents .tab-content-selected .tab-main .tab-img-content .img-mobile {
   display: none;
