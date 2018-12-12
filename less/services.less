@@ -2,12 +2,22 @@
     display: flex;
 	flex-direction: column;
     align-items: bottom; 
+    background: url(../img/services/services-jumbotron.png) no-repeat center
+		bottom;
+	background-size: cover;
     width: 100%;
 	max-width: 1024px;
 	height: 100%;
 	max-height: 250px;
 	margin: 0 auto;
     position: relative;
+
+    @media (@mobile) {
+		background: url(../img/services/services-mobile-jumbotron.png) no-repeat
+			center bottom;
+		background-size: cover;
+		max-height: 260px;
+	}
     
     h1 {
         position: absolute;
@@ -17,7 +27,13 @@
 		font-size: 6.4rem;
 		line-height: 7.5rem;
 		font-weight: bold;
-		color: white; 
+        color: white; 
+        
+        @media (@mobile) {
+			left: 5%;
+			font-size: 3.6rem;
+			line-height: 4.4rem;
+		}
     }
 }
 
@@ -52,12 +68,19 @@
 				text-align: center;
 				font-size: 2rem;
 				font-weight: bold;
- 				&:hover {
+                 
+                &:hover {
 					background: #222222;
 					color: #ffffff;
 					cursor: pointer;
 				} 
             }
+
+            .start {
+				background: #5e9fb9;
+            }
+        }
+        
 
             .tabs-container {
                 margin: 50px 0 60px 0;
@@ -88,7 +111,10 @@
                         max-height: 275px;
                     }
                 }
+                .start {
+                    display: flex;
+                }
             }
         }
     }
-}
+
