@@ -73,6 +73,8 @@ modalPro = document.querySelector('.modal-pro');
 
 whoBtns.forEach((btn)=>{
     btn.addEventListener("click", ()=> {
+    theModal.classList.toggle('show-modal');
+    theModal.classList.toggle('hidden');
     const key = btn.classList.item(1);
     const modalMem = team[key];
     console.log(modalMem);
