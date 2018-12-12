@@ -21,15 +21,15 @@ class App extends Component {
 		    		<label for="info" class="top-margin">Provide a brief overview of your project needs:</label>
 		    		<textarea name="info" rows="8"></textarea>
 		    		<div class="radio-button">
-		    			<input type="radio" name="radio" value="I am a small business" checked />
+		    			<input type="radio" name="radio" value="business" checked />
 		    			<label for="I am a small business">I am a small business</label>
 		    		</div>
 		    		<div class="radio-button">
-		    			<input type="radio" name="radio" value="I am a residential owner" />
+		    			<input type="radio" name="radio" value="residential" />
 		    			<label for="I am a residential owner">I am a residential owner</label>
 		    		</div>
 		    		<div class="radio-button">
-		    			<input type="radio" name="radio"value="I am a corporation" />
+		    			<input type="radio" name="radio" value="corporation" />
 		    			<label for="I am a corporation">I am a corporation</label>
 		    		</div>
 		    		<input type="submit" value="Submit" />

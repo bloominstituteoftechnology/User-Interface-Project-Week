@@ -8,6 +8,7 @@ class Header extends Component {
     constructor() {
         super();
         this.toggleNav = this.toggleNav.bind(this);
+        this.closeNav = this.closeNav.bind(this);
         this.button = React.createRef();
         this.navContent = React.createRef();
     }
@@ -38,6 +39,18 @@ class Header extends Component {
         }
     }
 
+    closeNav() {
+        this.button.current.src = `${hamburger}`;
+        TweenMax.fromTo(this.navContent.current, .3, {
+            opacity: .9
+        }, {
+            opacity: 0,
+            onComplete: () => {
+                this.navContent.current.style.display = 'none';
+            }
+         });
+    }
+
   render() {
     return (
         <div>
@@ -47,12 +60,12 @@ class Header extends Component {
                     <img onClick={this.toggleNav} className="nav-open" src={ hamburger } alt="Menu Open Button" ref={this.button} />
                 </nav>
             </header>
-            <div className="nav-content" ref={this.navContent} >
-                <Link to="/">Home</Link>
-                <Link to="/About-Us">About Us</Link>
-                <Link to="/Services">Services</Link>
-                <Link to="/Projects">Projects</Link>
-                <Link to="/Contact">Contact</Link>
+            <div className="nav-content" ref={this.navContent} onClick={this.closeNav} >
+                <Link to="/" >Home</Link>
+                <Link to="/About-Us" >About Us</Link>
+                <Link to="/Services" >Services</Link>
+                <Link to="/Projects" >Projects</Link>
+                <Link to="/Contact" >Contact</Link>
             </div>
         </div>
     );
