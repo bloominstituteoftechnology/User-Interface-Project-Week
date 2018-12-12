@@ -8,6 +8,7 @@ const toggleMenu = () => {
   menuCloseButton.style.display = "block";
   header.style.height = "100%";
   header.style.opacity = "0.95";
+  document.body.style.overflow = "hidden";
 };
 
 const toggleCloseMenu = () => {
@@ -16,6 +17,7 @@ const toggleCloseMenu = () => {
   menuOpenButton.style.display = "block";
   header.style.height = "60px";
   header.style.opacity = "1";
+  document.body.style.overflow = "auto";
 };
 
 const menu = document.querySelector(".menu-content");
