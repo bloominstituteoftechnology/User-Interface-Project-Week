@@ -6,9 +6,6 @@ const nav = document.querySelector('.nav')
 
 menu.addEventListener('click', () => {
     nav.classList.add('full-menu');
-});
-
-menu.addEventListener('click', () => {
     menu.src = "img/nav-hamburger-close.png";
 });
 
@@ -43,7 +40,7 @@ class TabLink {
         let links = document.querySelectorAll('.tabs-link');
 
         // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
-        links = Array.from(links).forEach(link => link.classList.remove('tabs-link-selected'));
+        links = links.forEach(link => link.classList.remove('tabs-link-selected'));
 
         // Add a class named "tabs-link-selected" to this link
         this.element.classList.add('tabs-link-selected');
@@ -67,3 +64,7 @@ class TabItem {
         this.element.classList.add('tabs-item-selected');
     }
 }// JS goes here
+
+let links = document.querySelectorAll('.tabs-link');
+			links = Array.from(links).map(linkItem => new TabLink(linkItem));
+			links[0].select();
