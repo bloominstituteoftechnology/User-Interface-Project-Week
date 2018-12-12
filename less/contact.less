@@ -1,0 +1,160 @@
+.contact {
+  .jumbotron {
+    .jumbotron(
+      "../img/contact/contact-jumbotron.png",
+      "../img/contact/contact-mobile-jumbotron.png"
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 245px;
+    .banner {
+      bottom: 20px;
+    }
+    @media @mobile {
+      width: 100%;
+      background-size: cover;
+      background-position: bottom;
+      min-height: 260px;
+      height: auto;
+    }
+  }
+  .mid-content {
+    h2,
+    h3 {
+      color: @dark;
+    }
+    display: flex;
+    @media @mobile {
+      flex-direction: column;
+    }
+    .panel {
+      .header-text {
+        padding-bottom: 20px;
+        h2 {
+          color: lighten(@dark, 10%);
+          font-size: 2.4rem;
+        }
+      }
+      width: 50%;
+      padding: 50px 2% 50px;
+      margin-left: 8.3%;
+      @media @mobile {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 38px 4.1% 0px;
+        width: 100%;
+      }
+      &.left-panel {
+        form {
+          display: flex-box;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          font-size: 1.5rem;
+          input,
+          label,
+          small,
+          select,
+          textarea {
+            display: block;
+            width: 100%;
+          }
+          small {
+            color: @medium-gray;
+            @media @mobile {
+              font-size: 1.2rem;
+            }
+          }
+          input,
+          select,
+          textarea {
+            font-size: 1.6rem;
+            padding: 8px;
+            .rounded-border;
+            margin: 2px 0px;
+            border: 0.75px solid @medium-gray;
+          }
+          textarea {
+            height: 135px;
+          }
+          .form-group {
+            padding-bottom: 35px;
+            min-width: 410px;
+            @media @mobile {
+              max-width: 290px;
+              min-width: 290px;
+              padding-bottom: 15px;
+            }
+          }
+          .form-check {
+            input,
+            label {
+              display: inline-block;
+              width: auto;
+            }
+          }
+
+          [type="radio"] {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+          }
+          [type="radio"] + span::before {
+            content: "";
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            vertical-align: -0.025rem;
+            border-radius: 1rem;
+            border: 0.5px solid @medium-gray;
+            margin-right: 0.75rem;
+            transition: 0.5s ease all;
+          }
+          [type="radio"]:checked + span::before {
+            border-color: @dark-gray;
+            background: @dark;
+          }
+          button {
+            margin-top: 28px;
+            width: 135px;
+            @media @mobile {
+              padding: 15px 0px 15px;
+              width: 100%;
+            }
+          }
+        }
+      }
+      &.right-panel {
+        margin-left: 11.7%;
+        .locations {
+          h3 {
+            font-size: 2rem;
+          }
+          p {
+            padding-top: 4px;
+            padding-bottom: 4px;
+          }
+        }
+        .location {
+          padding-bottom: 35px;
+        }
+        @media @mobile {
+          margin-left: auto;
+          justify-content: left;
+        }
+      }
+    }
+    h2,
+    p,
+    button {
+      padding: 15px 0px 15px;
+      @media @mobile {
+        padding-top: 0px;
+      }
+    }
+  }
+}
