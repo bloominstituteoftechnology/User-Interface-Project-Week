@@ -3,7 +3,9 @@ class DropdownMenu {
       
       this.element = element;
       
-      this.button = this.element.querySelector('.dropdown-button');      
+      this.button = this.element.querySelector('.dropdown-button');
+      
+      this.closeButton = this.element.querySelector('.close-dropdown');
       
       this.content = this.element.querySelector('.dropdown-content');
   
@@ -17,19 +19,15 @@ class DropdownMenu {
         console.log('Expand nav menu button clicked.');
         this.content.classList.toggle('dropdown-hidden');
         
-        this.element.classList.remove('dropdown-button');
-        this.closeButton = this.element.querySelector('.close-dropdown');
-        this.button.classList.toggle('close-dropdown');
+        this.button.classList.toggle('dropdown-hidden');
         
-        this.closeButton.addEventListener('click', () => this.closeMenu());
+        this.closeButton.classList.toggle('dropdown-hidden');
+        
+        this.closeButton.addEventListener('click', () => this.expandMenu());
         
     }
 
-    closeMenu() {
-        console.log('Nav menu closed.');
-        
-        this.element.classList.toggle('.nav-bar');
-      }
+    
 }
   
   
