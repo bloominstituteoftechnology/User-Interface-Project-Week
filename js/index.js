@@ -1,26 +1,24 @@
 // JS goes here
-const toggleMenu = () => {
-    if (!dropDownContent.classList.contains('dropdownOpen')) {
-        dropDownContent.classList.toggle('dropdownOpen');
-        dropDownContent.style.display = 'block';
-        console.log('click')
-    } else {
-        dropdownContent.classList.toggle('dropdownOpen');
-        dropdownContent.style.display = 'none';
-        console.log('unclick');
+class ToggleMenu {
+    constructor(elem) {
+        this.elem = elem;
+
+        // reference for drop down button
+        this.button = document.querySelector('.dropdownButton');
+
+        // reference for drop down content
+        this.content = document.querySelector('.dropdownContent');
+
+        //event listener
+        this.button.addEventListener('click', () => this.toggleContent());
+    }
+    toggleContent() {
+        this.content.classList.toggle('dropdownHidden');
     }
 }
 
 // reference to drop down content element
-const dropDownContent = document.querySelector('.dropdownContent');
-
-// reference to drop down button element
-const dropDownButton = document.querySelector('.dropdownButton');
-
-// drop down button event listener
-dropDownButton.addEventListener('click', (e) => {
-    toggleMenu();
-})
+let dropdowns = document.querySelectorAll('.dropdown').forEach(dropdown => new ToggleMenu(dropdown));
 
 
 

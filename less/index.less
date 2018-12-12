@@ -191,27 +191,47 @@ header {
     z-index: 2;
     div {
         max-width: 1000px;
+        width: 100%;
         margin: 0 auto;
         display: flex; // flex-wrap: wrap;
         justify-content: space-between;
-        .dropdownButton {
-            position: relative;
-            right: 0;
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        .dropdownContent {
-            display: none;
-            position: fixed;
-            z-index: 2;
-            height: 100vh;
-            width: 100vw;
-        }
-        .dropdownOpen {
-            display: block;
+        a {
+            z-index: 3;
         }
     }
+}
+
+.dropdown {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dropdownButton {
+    position: relative;
+    right: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.dropdownContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: #9AA5B0;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    opacity: .8;
+    line-height: 1.4;
+    a {
+        font-size: 5rem;
+    }
+}
+
+.dropdownHidden {
+    display: none;
 }
 
 // --------------------- Footer Section
