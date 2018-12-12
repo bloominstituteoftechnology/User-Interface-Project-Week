@@ -136,8 +136,8 @@ var App = function (_React$Component3) {
       }, {
         name: 'Critical Acclaim',
         content: 'Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem',
-        desktopImgSrc: 'img/home/home-img-2.png',
-        mobileImgSrc: 'img/home/home-mobile-img-2.png',
+        desktopImgSrc: 'img/home/awards.jpg',
+        mobileImgSrc: 'img/home/awards.jpg',
         style: null
       }],
       recentProjectsData: [{
