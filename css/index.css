@@ -1,1 +1,572 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE: WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html {
+  font-size: 62.5%;
+}
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  display: block;
+  color: #222222;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.desktop {
+  display: none;
+}
+.mobile {
+  display: block;
+}
+.container {
+  width: 100vw;
+  margin: auto;
+}
+.container header.menu {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 4vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #9AA5B0;
+}
+.container header.menu h1 {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+.container header.menu nav {
+  position: fixed;
+  display: none;
+}
+.top-banner {
+  position: relative;
+}
+.top-banner img {
+  position: relative;
+  width: 100%;
+}
+.top-banner h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.5rem;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 3rem;
+  left: 5%;
+  font-size: 3.6rem;
+  line-height: 4rem;
+}
+.content-container {
+  padding: 3.5rem 5% 0;
+}
+.content-container .content-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+.content-container .content-box .content-text {
+  width: 100%;
+  margin: 2.8rem 0 2rem;
+}
+.content-container .content-box .content-text h1 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #222222;
+  margin: 0 0 2rem;
+}
+.content-container .content-box .content-text p {
+  margin-bottom: 2.7rem;
+}
+.content-container .content-box .content-text a {
+  display: block;
+  text-decoration: none;
+  color: #222222;
+  border: 1px solid #222222;
+  padding: 1.1rem;
+  text-align: center;
+}
+.content-container .content-box-reverse {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+  margin-bottom: 3.1rem;
+}
+.content-container .content-box-reverse .content-text {
+  width: 100%;
+  margin: 2.8rem 0 2rem;
+}
+.content-container .content-box-reverse .content-text h1 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #222222;
+  margin: 0 0 2rem;
+}
+.content-container .content-box-reverse .content-text p {
+  margin-bottom: 2.7rem;
+}
+.content-container .content-box-reverse .content-text a {
+  display: block;
+  text-decoration: none;
+  color: #222222;
+  border: 1px solid #222222;
+  padding: 1.1rem;
+  text-align: center;
+}
+.content-container h2.recent-heading {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+.content-container .feature-box {
+  margin-bottom: 4.7rem;
+}
+.content-container .feature-box .feature-banner-container {
+  position: relative;
+  width: 110%;
+  margin-left: -5%;
+  margin-bottom: 11.1rem;
+}
+.content-container .feature-box .feature-banner-container img {
+  width: 100%;
+}
+.content-container .feature-box .feature-banner-container h1 {
+  color: #222222;
+  background: #D8D8D8;
+  display: inline-block;
+  position: absolute;
+  font-size: 2.4rem;
+  letter-spacing: 0.8rem;
+  border: 1px solid #FFFFFF;
+  padding: 3.5rem 0;
+  left: 4%;
+  right: 4%;
+  text-align: center;
+  bottom: -8.2rem;
+}
+.content-container .feature-box .feature-banner-container-reverse {
+  position: relative;
+  width: 110%;
+  margin-left: -5%;
+  margin-bottom: 11.1rem;
+}
+.content-container .feature-box .feature-banner-container-reverse img {
+  width: 100%;
+}
+.content-container .feature-box .feature-banner-container-reverse h1 {
+  color: #222222;
+  background: #D8D8D8;
+  display: inline-block;
+  position: absolute;
+  font-size: 2.4rem;
+  letter-spacing: 0.8rem;
+  border: 1px solid #FFFFFF;
+  padding: 3.5rem 0;
+  left: 4%;
+  right: 4%;
+  text-align: center;
+  bottom: -8.2rem;
+}
+.content-container .feature-box p {
+  margin: 0 auto 2.2rem;
+  font-size: 1.8rem;
+}
+footer {
+  background: #828282;
+  margin-top: 8rem;
+}
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2.2rem 5% 0;
+}
+footer .footer-content form {
+  margin-bottom: 2rem;
+}
+footer .footer-content form label {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #FFFFFF;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+footer .footer-content form input {
+  width: 96%;
+  border-radius: 0.1rem;
+  font-size: 3.4rem;
+}
+footer .footer-content form p {
+  font-weight: normal;
+  line-height: 2.6rem;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+footer .footer-content address {
+  font-style: normal;
+  margin-bottom: 2.3rem;
+}
+footer .footer-content address h1 {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #FFFFFF;
+}
+footer .footer-content address p {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #FFFFFF;
+  line-height: 2.7rem;
+}
+footer .copyright {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #FFFFFF;
+  text-align: left;
+  font-size: 1.2rem;
+  margin: 0.8rem 0 0 1.4rem;
+}
+@media (min-width: 1024px) {
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+  .container {
+    max-width: 1024px;
+    margin: auto;
+  }
+  .container header.menu {
+    padding: 1.5rem 18vw;
+    left: 0;
+  }
+  .top-banner h1 {
+    bottom: 5rem;
+    left: 8%;
+    font-size: 6.4rem;
+    line-height: 7.5rem;
+  }
+  .content-container {
+    padding: 4.8rem 8.3% 0;
+  }
+  .content-container .content-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+    flex-direction: row;
+    margin-bottom: 10.2rem;
+  }
+  .content-container .content-box .content-text {
+    width: 100%;
+    margin: 2.8rem 0 2rem;
+  }
+  .content-container .content-box .content-text h1 {
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #222222;
+    margin: 0 0 2rem;
+  }
+  .content-container .content-box .content-text p {
+    margin-bottom: 2.7rem;
+  }
+  .content-container .content-box .content-text a {
+    display: block;
+    text-decoration: none;
+    color: #222222;
+    border: 1px solid #222222;
+    padding: 1.1rem;
+    text-align: center;
+  }
+  .content-container .content-box .content-text {
+    width: 50%;
+    margin: unset;
+  }
+  .content-container .content-box .content-text h1 {
+    margin: 5.5rem 0 2rem;
+  }
+  .content-container .content-box .content-text p {
+    margin-bottom: 2.4rem;
+  }
+  .content-container .content-box .content-text a {
+    display: inline-block;
+    padding: 1rem 2.6rem;
+  }
+  .content-container .content-box-reverse {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+    flex-direction: row-reverse;
+  }
+  .content-container .content-box-reverse .content-text {
+    width: 100%;
+    margin: 2.8rem 0 2rem;
+  }
+  .content-container .content-box-reverse .content-text h1 {
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #222222;
+    margin: 0 0 2rem;
+  }
+  .content-container .content-box-reverse .content-text p {
+    margin-bottom: 2.7rem;
+  }
+  .content-container .content-box-reverse .content-text a {
+    display: block;
+    text-decoration: none;
+    color: #222222;
+    border: 1px solid #222222;
+    padding: 1.1rem;
+    text-align: center;
+  }
+  .content-container .content-box-reverse .content-text {
+    width: 50%;
+    margin: -1rem;
+  }
+  .content-container .content-box-reverse .content-text h1 {
+    margin: 5.5rem 0 2rem;
+  }
+  .content-container .content-box-reverse .content-text p {
+    margin-bottom: 2.4rem;
+  }
+  .content-container .content-box-reverse .content-text a {
+    display: inline-block;
+    padding: 1rem 2.6rem;
+  }
+  .content-container h2.recent-heading {
+    margin-bottom: 4.5rem;
+    margin-top: 10rem;
+  }
+  .content-container .feature-box {
+    margin-bottom: 10rem;
+  }
+  .content-container .feature-box .feature-banner-container {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 9rem;
+  }
+  .content-container .feature-box .feature-banner-container h1 {
+    padding: 3.5rem 6%;
+    left: unset;
+    right: 0;
+    bottom: -4rem;
+  }
+  .content-container .feature-box .feature-banner-container-reverse {
+    position: relative;
+    width: 110%;
+    margin-left: -5%;
+    margin-bottom: 11.1rem;
+    width: 100%;
+    margin-left: 0;
+  }
+  .content-container .feature-box .feature-banner-container-reverse img {
+    width: 100%;
+  }
+  .content-container .feature-box .feature-banner-container-reverse h1 {
+    color: #222222;
+    background: #D8D8D8;
+    display: inline-block;
+    position: absolute;
+    font-size: 2.4rem;
+    letter-spacing: 0.8rem;
+    border: 1px solid #FFFFFF;
+    padding: 3.5rem 0;
+    left: 4%;
+    right: 4%;
+    text-align: center;
+    bottom: -8.2rem;
+  }
+  .content-container .feature-box .feature-banner-container-reverse h1 {
+    padding: 3.5rem 6%;
+    left: 0;
+    right: unset;
+    bottom: -4rem;
+  }
+  .content-container .feature-box p {
+    width: 52.5%;
+    margin: 0 auto 2.2rem;
+    font-size: 1.8rem;
+  }
+  footer {
+    margin-top: 0;
+  }
+  footer .footer-content {
+    flex-direction: row;
+    padding: 6.1rem 5% 4.2rem;
+  }
+  footer .footer-content form {
+    margin-bottom: 0;
+    width: 33%;
+  }
+  footer .footer-content form input {
+    width: 90%;
+    border-radius: 0.1rem;
+    font-size: 2.4rem;
+  }
+  footer .footer-content form p {
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+  footer .footer-content address {
+    margin-bottom: 0;
+  }
+  footer .footer-content address p {
+    line-height: 2.6rem;
+  }
+  footer .copyright {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+}
