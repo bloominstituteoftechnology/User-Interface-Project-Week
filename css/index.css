@@ -240,9 +240,47 @@ a:hover {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: nowrap;
-  display: none;
 }
 .navbar__container .nav__menu .menu__container .menu__placement--open {
+  display: flex;
+  -webkit-animation: links-appear 1s ease-in 1 forwards;
+  -moz-animation: links-appear 1s ease-in 1 forwards;
+  animation: links-appear 1s ease-in 1 forwards;
+}
+@-moz-keyframes links-appear {
+  0% {
+    opacity: 0;
+  }
+  0.99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes links-appear {
+  0% {
+    opacity: 0;
+  }
+  0.99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes links-appear {
+  0% {
+    opacity: 0;
+  }
+  0.99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.navbar__container .nav__menu .menu__container .menu__placement--closed {
   display: flex;
   -webkit-animation: links-disappear 1s ease-out 1 forwards;
   -moz-animation: links-disappear 1s ease-out 1 forwards;
@@ -250,35 +288,35 @@ a:hover {
 }
 @-moz-keyframes links-disappear {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
-  0.99% {
+  50% {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 @-webkit-keyframes links-disappear {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
-  0.99% {
+  50% {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 @keyframes links-disappear {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
-  0.99% {
+  50% {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 .navbar__container .nav__menu--open {
@@ -862,4 +900,60 @@ footer .copyright {
 .offices .office p {
   font-size: 1.8rem;
   line-height: 1.5;
+}
+.carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  margin: 16px 0;
+}
+@media (min-width: 1024px) {
+  .carousel {
+    width: 1024px;
+  }
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  color: #ffffff;
+  background-color: #828282;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #828282;
+  background-color: #ffffff;
+  border: 2px solid #828282;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  width: 100%;
+  display: none;
+}
+.carousel .img-view {
+  display: inline-block;
 }

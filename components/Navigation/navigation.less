@@ -17,7 +17,7 @@
     @media @mobile {
       padding: 4px 5% 0;
     }
-    .center(row, space-between, flex-start, nowrap);
+    .flex(row, space-between, flex-start, nowrap);
     width: 100%;
     cursor: pointer;
 
@@ -44,19 +44,27 @@
 
     .menu__container {
       margin-top: 170px;
-      .center(column, flex-start, center, nowrap);
+      .flex(column, flex-start, center, nowrap);
       z-index: 6;
       width: 100%;
 
       .menu__placement {
-        .center(column, flex-start, flex-start, nowrap);
-        display: none;
+        .flex(column, flex-start, flex-start, nowrap);
       }
 
       .menu__placement--open {
         display: flex;
         .keyframes(
-          links-disappear;{0% {opacity: 0;} 0.99% {opacity: 0;} 100% {opacity: 1;}}
+          links-appear;{0% {opacity: 0;} 0.99% {opacity: 0;} 100% {opacity: 1;}}
+        );
+
+        .animation(links-appear 1s ease-in 1 forwards);
+      }
+
+      .menu__placement--closed {
+        display: flex;
+        .keyframes(
+          links-disappear;{0% {opacity: 1;} 50% {opacity: 0} 100% {opacity: 0;}}
         );
 
         .animation(links-disappear 1s ease-out 1 forwards);
