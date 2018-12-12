@@ -7,7 +7,7 @@ const toggleMenu = () => {
   menuOpenButton.style.display = "none";
   menuCloseButton.style.display = "block";
   header.style.height = "100%";
-  header.style.opacity = "0.95";
+  header.style.opacity = "0.90";
   document.body.style.overflow = "hidden";
 };
 
