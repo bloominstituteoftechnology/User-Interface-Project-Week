@@ -1,7 +1,7 @@
 //Nav Bar animation
 TweenMax.from('nav', .6, {y:-100});
 TweenMax.from('.logo', .6, {x:-20, opacity: 0, delay: .4});
-TweenMax.from('.hamburger', .6, {x:20, opacity: 0, delay: .8});
+TweenMax.from('.hamburger', .6, {x:20, opacity: 0, delay: .6});
 
 //Header Animation
 TweenMax.from('h1', 1, {x:50, opacity:0}, 0.3);
