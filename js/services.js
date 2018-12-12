@@ -2,6 +2,7 @@ class TabLink {
     constructor(servicetab) {
         this.servicetab = servicetab;
         this.data = this.servicetab.dataset.tab;
+        this.hiddentext = document.querySelector('.SelectedText');
         this.headerElement = document.querySelector(`.TabsHeader[data-tab="${this.data}"]`);
         this.contentHeader = new TabHeader(this.headerElement);
         this.imgElement = document.querySelector(`.TabsImg[data-tab="${this.data}"]`);
@@ -9,16 +10,16 @@ class TabLink {
         this.mobimgElement = document.querySelector(`.TabsMobImg[data-tab="${this.data}"]`);
         this.contentmobImg = new TabmobImg(this.mobimgElement);
         this.servicetab.addEventListener('click', () => {this.select()});
-};
+    };
     select() {
-        console.log('testing');
+        this.hiddentext.classList.remove('SelectedText');
         const alltabs = document.querySelectorAll('.TabsLink');
         alltabs.forEach(tab => tab.classList.remove('SelectedTab'));
         this.servicetab.classList.add('SelectedTab');
         this.contentHeader.select();
         this.contentImg.select();
         this.contentmobImg.select();
-}
+    }
 }
 
 class TabHeader {
