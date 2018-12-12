@@ -1,5 +1,3 @@
-
-
 window.addEventListener('load', function () {
   icon = document.querySelector(".icon");
   body = document.querySelector("body");
@@ -11,6 +9,7 @@ window.addEventListener('load', function () {
     showDiv.style.display = "block";
     container.style.display = "none";
 
+
   })
 
   close = document.querySelector(".close");
@@ -18,9 +17,8 @@ window.addEventListener('load', function () {
     icon.style.display = "block";
     showDiv.style.display = "none";
     container.style.display = "block";
+
   })
-
-
 
 
 })
