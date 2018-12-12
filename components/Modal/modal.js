@@ -70,6 +70,7 @@ modalRole = document.querySelector('.modal-role');
 modalYear = document.querySelector('.modal-year');
 modalDay = document.querySelector('.modal-holiday');
 modalPro = document.querySelector('.modal-pro');
+modalExit = document.querySelector('.exit');
 
 whoBtns.forEach((btn)=>{
     btn.addEventListener("click", ()=> {
@@ -83,7 +84,10 @@ whoBtns.forEach((btn)=>{
     modalYear.textContent = `Years at S&J: ${modalMem.years}`;
     modalDay.textContent = `Favorite Holiday: ${modalMem.holiday}`;
     modalPro.src=`${modalMem.img}`
-
 })});
+modalExit.addEventListener("click", ()=> {
+    theModal.classList.toggle('show-modal');
+    theModal.classList.toggle('hidden');
+});
 
 
