@@ -35,6 +35,7 @@ class Carousel extends Component {
     }
 
     componentWillUnmount() {
+        TweenMax.killAll();
         window.removeEventListener('resize', () => this.resizeSource());
     }
 
