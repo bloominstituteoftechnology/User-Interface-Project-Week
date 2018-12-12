@@ -14,6 +14,11 @@ class ToggleMenu {
     }
     toggleContent() {
         this.content.classList.toggle('dropdownHidden');
+        if (!this.content.classList.contains('dropdownHidden')) {
+            this.button.src = "../img/nav-hamburger-close.png";
+        } else {
+            this.button.src = "../img/nav-hamburger.png";
+        }
     }
 }
 
