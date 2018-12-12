@@ -12,6 +12,8 @@ class Carousel {
 
     this.rightArrow.addEventListener('click', _ => this.slideRight());
     this.leftArrow.addEventListener('click', _ => this.slideLeft());
+
+    setInterval( _ => this.slideRight(), 5000);
     
   }
 
