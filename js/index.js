@@ -14,13 +14,34 @@ class HamburgerMenu {
     this.currentPage = this.element.dataset.page;
     this.element.querySelector(`a[data-page="${this.currentPage}"]`).classList.add('current-page');
     // add event listener for hamburger click
-    this.hamburgerDiv.addEventListener('click', () => this.toggleHamburger());
+    this.hamburgerDiv.addEventListener('click', () => this.animateNav());
   }
 
   toggleHamburger() {
     this.hamburgerImg.classList.toggle('hide');
     this.closeImg.classList.toggle('hide');
     this.element.classList.toggle('show');
+  }
+
+  animateNav() {
+    if (this.element.classList.contains('show')) {
+      //hide nav menu
+      TweenMax.fromTo(this.element, .3, {
+        height: 1000
+      }, {
+        height: 50,
+        onComplete: this.toggleHamburger()
+      });
+    } else {
+      // show nav menu
+      TweenMax.fromTo(this.element, .3, {
+        height: 50
+      }, {
+        height: 1000, 
+        onComplete: this.toggleHamburger()
+      });
+    }
+    
   }
 }
 
