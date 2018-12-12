@@ -156,8 +156,7 @@ img {
   font-weight: Regular;
   font-size: 16px;
   line-height: 24px;
-  max-width: 880px;
-  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .main-nav {
@@ -170,7 +169,7 @@ img {
   padding: 2%;
   position: fixed;
   width: 100%;
-  max-width: 880px;
+  max-width: 1200px;
   z-index: 2;
 }
 .main-nav .menu-button {
@@ -180,10 +179,10 @@ img {
   display: none;
   position: fixed;
   text-align: center;
+  max-width: 1200px;
   width: 100vw;
   height: 100vh;
   opacity: 0.9;
-  max-width: 880px;
   z-index: 2;
   background-color: lightgray;
   margin-left: -2%;
@@ -233,7 +232,7 @@ footer {
   margin-top: 3%;
   justify-content: space-between;
   align-items: center;
-  max-width: 880px;
+  max-width: 1200px;
 }
 @media (max-width: 500px) {
   footer {
@@ -291,11 +290,15 @@ footer .copyright {
     margin-top: 7%;
   }
 }
-.main-header {
-  background: url('../img/home/home-jumbotron.png');
-  background-position: center;
-  padding-top: 273px;
-  padding-bottom: 70px;
+.main-header .home-img {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .main-header .home-img {
+    content: url(../img/home/home-mobile-jumbotron.png);
+    width: 100%;
+    height: auto;
+  }
 }
 .main-header p {
   font-weight: bold;
@@ -303,11 +306,16 @@ footer .copyright {
   line-height: 75px;
   color: #FFFFFF;
   padding-left: 83px;
-  margin-bottom: -20px;
+  margin-top: -24%;
+  z-index: 10;
 }
 @media (max-width: 500px) {
   .main-header p {
-    padding-left: 33px;
+    font-size: 44px;
+    line-height: 6.5rem;
+    padding-left: 7%;
+    padding-bottom: 5%;
+    margin-top: -56%;
   }
 }
 .container-content {
@@ -346,7 +354,7 @@ footer .copyright {
 @media (max-width: 500px) {
   .container-content h2 {
     margin-left: 1%;
-    margin-top: 5%;
+    margin-top: 1%;
   }
 }
 .container-content p {
@@ -384,6 +392,7 @@ footer .copyright {
 @media (max-width: 500px) {
   .inverse-content {
     flex-direction: column;
+    padding-bottom: 0;
   }
 }
 .inverse-content .text-content {
@@ -419,11 +428,18 @@ h3 {
   margin-bottom: 3%;
 }
 @media (max-width: 500px) {
+  .bottom-content {
+    margin: 5%;
+  }
+  .bottom-content h2 {
+    padding-top: 0;
+  }
   .bottom-content .sub-header {
-    width: 90%;
-    padding: 7%;
-    margin-left: 5%;
     margin-top: -5%;
+    z-index: 1;
+    padding: 7%;
+    width: 90%;
+    margin-left: 1%;
     align-self: center;
     text-align: center;
   }
@@ -474,7 +490,13 @@ h3 {
   margin-bottom: 7%;
 }
 .services-header .services-img {
-  margin-top: 9%;
+  margin-top: 5%;
+  width: 100%;
+}
+@media (max-width: 800px) {
+  .services-header .services-img {
+    margin-top: 7%;
+  }
 }
 @media (max-width: 500px) {
   .services-header .services-img {
@@ -509,8 +531,15 @@ h3 {
   }
 }
 .all-content {
-  max-width: 880px;
+  max-width: 1200px;
   width: 100%;
+  padding: 5% 10% 1%;
+}
+@media (max-width: 800px) {
+  .all-content {
+    margin: 3%;
+    max-width: 800px;
+  }
 }
 @media (max-width: 500px) {
   .all-content {
@@ -522,6 +551,11 @@ h3 {
 }
 .all-content .top-services-para {
   margin: 5% 0;
+}
+@media (max-width: 800px) {
+  .all-content .top-services-para {
+    width: 95%;
+  }
 }
 @media (max-width: 500px) {
   .all-content .top-services-para {
@@ -584,10 +618,14 @@ h3 {
   line-height: 2.8rem;
   margin-bottom: 9%;
 }
+@media (max-width: 800px) {
+  .tabs .tabs-item-content .services-paragraphs p {
+    margin-bottom: 3%;
+  }
+}
 .tabs .tabs-item-content img {
   height: 100%;
   width: auto;
-  padding-right: 5%;
 }
 .tabs .tabs-item-selected {
   display: block;
@@ -598,6 +636,13 @@ h3 {
   background-color: white;
   width: 100%;
   margin: 0;
+}
+@media (max-width: 800px) {
+  .tabs .tabs-links {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+  }
 }
 @media (max-width: 500px) {
   .tabs .tabs-links {
@@ -620,6 +665,11 @@ h3 {
   color: #FFF;
   background-color: #5E9FB9;
 }
+@media (max-width: 800px) {
+  .tabs .tabs-link {
+    padding: 15px;
+  }
+}
 @media (max-width: 500px) {
   .tabs .tabs-link {
     text-align: center;
@@ -637,6 +687,11 @@ h3 {
 }
 .contact-header .contact-img {
   margin-top: 9%;
+}
+@media (max-width: 800px) {
+  .contact-header .contact-img {
+    margin-top: 4%;
+  }
 }
 @media (max-width: 500px) {
   .contact-header .contact-img {
@@ -759,6 +814,7 @@ span {
 }
 .contact-section {
   margin-bottom: 20%;
+  line-height: 2.8rem;
 }
 @media (max-width: 500px) {
   .contact-section {
