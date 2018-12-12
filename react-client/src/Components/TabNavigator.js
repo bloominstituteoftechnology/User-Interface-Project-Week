@@ -16,7 +16,6 @@ class TabNavigator extends Component {
     componentDidMount() {
         this.element = document.querySelector('.TabNavigation');
         this.tabs.forEach((t, i) => {
-            console.log(t)
             this.refs['tabButton' + i].addEventListener('click', () => this.selectTab(i));
         });
         let selectedButton = document.querySelector(`.tab-navigator[data-tab="${this.currentTab}"]`);
@@ -39,8 +38,6 @@ class TabNavigator extends Component {
     }
 
   render() {
-      console.log(this.tabs);
-      console.log(this.props.children.props.children)
     return (
       <div className="TabNavigation">
         <div className="tab-navigators">
