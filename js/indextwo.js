@@ -7,7 +7,6 @@ icon.addEventListener("mouseover",function(){
     icon.style.display = "none";
     showDiv.style.display="block";
     container.style.display="none";
-    showDiv.style.display="block";
 
 })
 
@@ -16,5 +15,6 @@ close.addEventListener("click",function(){
     icon.style.display = "block";
     showDiv.style.display="none";
     container.style.display="block";
-    showDiv.style.display="none";
 })
+
+
