@@ -15,10 +15,7 @@ class ServiceTabLink {
         );
 
         // Add a click event that invokes this.selectTab
-        this.element.addEventListener("click", e => {
-            e.preventDefault();
-            this.selectTab(e);
-        });
+        this.element.addEventListener("click", e => this.selectTab(e));
     }
 
     // Manipulate selection of tab links
