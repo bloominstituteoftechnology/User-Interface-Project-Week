@@ -5,7 +5,7 @@
 class NavLink {
     constructor (link) {
         this.link = link;
-        this.link.addEventListener('click', toggleNav)
+        this.link.addEventListener('click', toggleNavClose)
 
         this.link.addEventListener('mouseenter', () => this.select());  
         
@@ -22,21 +22,53 @@ class NavLink {
     }
 }
 
-const toggleNav = () => {
+const toggleNavOpen = () => {
     navOpen.classList.toggle('nav-open-toggle');
     navClose.classList.toggle('nav-close-toggle');
-    nav.classList.toggle('nav-toggle');
-    TweenMax.from(nav, 1, {
+    TweenMax.from(nav, 2, {
+        ease: Power2.easeOut,
         height: "0",
         width: "0",
         right: "0",
-        top: "0"
+        top: "0",
+        fontSize: "0",
+        lineHeight: "0"
     });
-    TweenMax.to(nav, 1, {
+    TweenMax.to(nav, 2, {
+        ease: Power2.easeOut,
         height: "100%",
         width: "100%",
         top: "0",
-        position: "fixed"
+        position: "fixed",
+        fontSize: "48",
+        lineHeight: "2",
+    });
+    nav.classList.toggle('nav-toggle');
+}
+
+const toggleNavClose = () => {
+    navOpen.classList.toggle('nav-open-toggle');
+    navClose.classList.toggle('nav-close-toggle');
+    TweenMax.from(nav, 1, {
+        ease: Power2.easeIn,
+        height: "100%",
+        width: "100%",
+        top: "0",
+        position: "fixed",
+        fontSize: "48",
+        lineHeight: "2"
+    });
+    TweenMax.to(nav, 1, {
+        ease: Power2.easeIn,
+        height: "0",
+        width: "0",
+        right: "0",
+        top: "0", 
+        fontSize: "0",
+        lineHeight: "0",
+        onComplete: function(){
+            nav.classList.toggle('nav-toggle');
+        }
     });
 }
   
@@ -46,7 +78,7 @@ const nav = document.querySelector('.nav');
 const navLinks = document.querySelector('.nav-links');
 const navLink = document.querySelectorAll('.nav-link');
 
-navOpen.addEventListener('click', toggleNav);
-navClose.addEventListener('click', toggleNav);
+navOpen.addEventListener('click', toggleNavOpen);
+navClose.addEventListener('click', toggleNavClose);
 navLink.forEach( navLink => new NavLink(navLink));
 
