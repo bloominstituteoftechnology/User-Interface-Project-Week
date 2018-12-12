@@ -1,4 +1,40 @@
 // JS goes here
+const pageSections = Array.from(document.querySelector('.container').childNodes);
+const subSection = [];
+const viewPortHeight = window.innerHeight;
+console.log(viewPortHeight);
+console.log(pageSections);
+for(let i = 0; i<pageSections.length;i++){
+  pageSections[i].childNodes.forEach(child =>  {if(child.nodeName!=='#text'){
+
+
+      subSection.push(pageSections[i]);
+
+      console.log(child.parentNode);
+
+    }});
+
+  }
+  console.log(subSection);
+  subSection.forEach(section => {
+    section.style.opacity = "0";
+  });
+
+window.addEventListener('scroll', function(){
+
+      let rect = subSection[2].getBoundingClientRect();
+      subSection[2].style.transition = "all .25s";
+      let docEl = document.documentElement;
+      let distance = rect.top/2 + (window.pageYOffset);
+      console.log('offset: ' + window.pageYOffset + '\n distance: ' + distance);
+      if(window.pageYOffset >= distance){
+
+      subSection[2].style.opacity = "1";
+
+      }
+
+});
+
 
 //JS for expanded nav
 
