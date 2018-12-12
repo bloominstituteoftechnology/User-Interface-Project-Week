@@ -8,8 +8,11 @@ class Button {
 
   buttonClick () {
     document.querySelectorAll('.button-item').forEach(content => content.classList.remove('selected'));
-    
     this.content.classList.add('selected');
+
+    buttons.forEach((button) => button.classList.remove('button-selected'));
+
+    this.element.classList.add('button-selected');
   }
 }
 
