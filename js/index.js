@@ -32,9 +32,9 @@ class Button {
         const imgMatch = btnContent[this.dataset.tab-1];
         imgMatch.classList.remove('inactive');
 
+        // changes header to match image content selected
         const headerMatch = document.querySelector('.btn-content span');
         headerMatch.textContent = this.textContent;
-        //console.log(headerMatch);
     }
 }
 
