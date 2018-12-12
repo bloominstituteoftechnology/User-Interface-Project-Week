@@ -46,3 +46,13 @@ class ServicePanel {
 
 const serviceTabs = document.querySelectorAll('.tabs-holder__button');
 serviceTabs.forEach(serTab => new initTab(serTab));
+
+// SCROLL ANIMATION LOGIC
+const animationElements = document.querySelectorAll('.animated');
+window.onscroll = () => {
+    animationElements.forEach(element => {
+        if ((element.getBoundingClientRect().y - window.innerWidth) < -500) {
+            element.classList.add(element.getAttribute('animation-name'));
+        }
+    })
+}
