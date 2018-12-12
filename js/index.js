@@ -29,4 +29,19 @@ class TabLink {
   
   const tabs = document.querySelectorAll(".tab").forEach(link => new TabLink(link));
   
- 
+  // Navigation bar
+  const navbar = document.querySelector(".navbar-container");
+  const navbarMenu = document.querySelector(".nav-menu");
+  const burger = document.querySelector(".burger");
+  const body = document.querySelector("body");
+  
+  burger.addEventListener("click", () => {
+    navbar.classList.toggle("navbar--open");
+    navbarMenu.classList.toggle("nav-menu--open");
+    body.classList.toggle("n");
+    if (body.classList.contains("n")) {
+      burger.src = "./img/nav-hamburger-close.png";
+    } else {
+      burger.src = "./img/nav-hamburger.png";
+    }
+  });
