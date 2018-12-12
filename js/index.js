@@ -1,34 +1,43 @@
 // JS goes here
 
+class TabLink{
+    constructor(element){
+        this.element = element;
 
+        this.data = this.element.dataset.tab;
 
-// var navbar = document.getElementById("navbar");
+        this.itemElement = document.querySelector(`.tab-item[data-tab = "${this.data}"]`);
 
-// window.onscroll = function() {
+        this.itemElement = new TabItem(this,item);
 
-//     if(window.pageYOffset > 100){
-//         navbar.style.position = "fixed";
-//         navbar.style.top = 0;
-//     }else{
-//         home.style.position = "absolute";
-//         home.style.top = 100;
-//     }
-    
-// }
+        this.element.addEventListener('click', () => {
+            this.select()
+        });
+    };
+    select(){
+        const links = document.querySelectorAll('.tablink');
 
+        Array.from(links).forEach(links => links.classList.remove('tab-link-selected'));
 
-// window.onscroll = function() {myFunction()};
+        this.element.classList.add('tab-link-selected');
 
+        this.itemElement.select();  
+    }
+}
 
-// var navbar = document.getElementById("navbar");
+class TabItem {
+    constructor(element){
+        this.element = element;
+    }
 
+    select(){
+        const items = document.querySelectorAll('.tab-item');
 
-// var sticky = navbar.offsetTop;
+       Array.from(items).forEach(items => items.classList.remove('tab-item-selected'));
+        this.element.classList.add('tab-item-selected');
+    }
+}
 
-// function myFunction() {
-//   if (window.pageYOffset >= sticky) {
-//     navbar.classList.add("sticky")
-//   } else {
-//     navbar.classList.remove("sticky");
-//   }
-// }
+links = document.querySelectorAll('.tablink');
+links.forEach(element => new TabLink(element));
+
