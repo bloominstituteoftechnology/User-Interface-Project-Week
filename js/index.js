@@ -6,17 +6,22 @@ const toggleMenu = () => {
   menu.classList.toggle("menu-hidden");
   menuOpenButton.style.display = "none";
   menuCloseButton.style.display = "block";
+  header.style.height = "100%";
+  header.style.opacity = "0.95";
 };
 
 const toggleCloseMenu = () => {
   menu.classList.toggle("menu-hidden");
   menuCloseButton.style.display = "none";
   menuOpenButton.style.display = "block";
+  header.style.height = "60px";
+  header.style.opacity = "1";
 };
 
 const menu = document.querySelector(".menu-content");
 const menuOpenButton = document.querySelector(".menu-open-button");
 const menuCloseButton = document.querySelector(".menu-close-button");
+const header = document.querySelector(".header");
 menuOpenButton.addEventListener("click", toggleMenu);
 menuCloseButton.addEventListener("click", toggleCloseMenu);
 
