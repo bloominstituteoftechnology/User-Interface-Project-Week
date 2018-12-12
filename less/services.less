@@ -34,6 +34,10 @@
     .tab-header{
         .layout(space-between, center);
         width:83%;
+        @media @mobile {
+            .layout(space-evenly, center, column);
+            width: 90%;
+        }
         .tab-tag{
             .layout(center, center);
             border: 1px solid @black;
@@ -43,6 +47,10 @@
             font-weight: bold;
             font-size: 2rem;
             padding-bottom: 0;
+            @media @mobile {
+                width: 100%;
+                margin: 1.5rem 0;
+            }
         }
     }
     .content{
@@ -51,15 +59,26 @@
         align-items: center;
         width:83%;
         padding: 5rem 0;
+        @media @mobile{
+            .layout(center, center, column);
+            width: 90%;
+        }
         .tab-text{
             .layout(space-between, flex-start, column);
             width: 50%;
+            @media @mobile{
+                width: 90%;
+            }
             h1{
                 padding-bottom: 2rem;
             }
         }
         .tab-img{
             width: 46%;
+            @media @mobile{
+                width: 90%;
+                padding: 2rem 0;
+            }
         }
     }
     .hidden{
@@ -69,4 +88,9 @@
 
 .mobile-img{
     display: none;
+    @media @mobile{
+        display: flex;
+        width: 100%;
+        padding: 0;
+    }
 }
