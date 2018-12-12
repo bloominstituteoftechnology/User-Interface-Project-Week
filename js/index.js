@@ -65,12 +65,38 @@ const tabButtons = document.querySelectorAll('.tab-button');
 tabButtons.forEach(tab => new TabButton(tab));
 
 
+// ==================================== Carousel
+// class Carousel {
+//   constructor(element) {
+//     this.element = element;
+//     this.element.addEventListener('click', () => this.rotate());
+//   }
+//   rotate() {
+//     document.querySelectorAll('.carousel img').forEach(img => img.classList.remove('image-active'));
+//     if (this.element.classList.contains('left-button')) {
+//       if (currentIndex === 0) {
+//         currentIndex = carouselPics.length -1;
+//       } else {
+//         currentIndex--;
+//       }
+//       TweenMax.from(".carousel img", 2, {opacity:0, x:100})
+//       document.querySelectorAll('.carousel img')[currentIndex].classList.add('image-active');
+//     } 
+//     else if (this.element.classList.contains('right-button')) {
+//       if (currentIndex === carouselPics.length -1) {
+//         currentIndex = 0;
+//       } else {
+//         currentIndex++;
+//       }
+//       document.querySelectorAll('.carousel img')[currentIndex].classList.add('image-active');
+//       TweenMax.from(".carousel img", 2, {opacity:0, x:-100})
+//     }
+//   }
+// }
 
+// let buttons = document.querySelectorAll('.carousel div');
+// let carouselPics = document.querySelectorAll('.carousel img');
+// let currentIndex = 0;
 
-// // ====================== FOOTER
-
-// const submitButton = document.querySelector('.submit-button');
-// const textArea = document.querySelector('textarea');
-// const form = document.querySelectorAll("input");
-
-// submitButton.addEventListener('click', () => submitForm());
+// buttons = Array.from(buttons).map(button => new Carousel(button));
+// document.querySelectorAll('.carousel img')[Math.floor(Math.random() * 3)].classList.add('image-active');
