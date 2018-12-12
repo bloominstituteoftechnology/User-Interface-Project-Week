@@ -1,33 +1,61 @@
-.HeaderBar {
-    .either-flex(row, space-between);
-    position: fixed;
-    background-color: @nav-bg;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px 3.3%;
-    z-index: 1;
-    h1 {
-        margin-left: 5.3%;
-        color: @nav-font-color;
-        font-size: @logo-font-size;
-        font-weight: @logo-font-weight;
-    }
-    img {
-        box-sizing: content-box;
-        padding: 5px 5.3%;
-        width: 3.1%;
-        height: 20px;
-        &:hover {
-            background-color: @nav-hover-color;
+header {
+    .HeaderBar {
+        .either-flex(row, space-between);
+        position: fixed;
+        background-color: @nav-bg;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 16px 0;
+        z-index: 1;
+        h1 {
+            margin-left: 8.6%;
+            color: @nav-font-color;
+            font-size: @logo-font-size;
+            font-weight: @logo-font-weight;
+            z-index: 3;
         }
-        @media @phone {
-            width: 10%;
+        img {
+            box-sizing: content-box;
+            margin-right: 5%;
+            padding: 5px 3.6%;
+            width: 23px;
+            &:hover {
+                background-color: @nav-hover-color;
+            }
         }
     }
-    .NavMenu {
+    nav {
+        background-color: @nav-bg;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
         display: none;
+        top: 50px;
+        max-width: 1200px;
+    }
         a {
+            font-size: @nav-font-size;
+            line-height: @nav-line-height;
+            color: @nav-font-color;
+            font-weight: @jt-font-weight;
+            margin-left: 42%;
+            @media @phone {
+                margin-left: 28%;
+            }
+            &:hover {
+                color: @nav-hover-color;
+            }
         }
+    .Hamburger, .CloseMenu {
+        z-index: 3
+        // height: auto;
+    }
+    .ButtonToggle {
+        display: none;
+    }
+    .NavToggle {
+        .either-flex(column, center, baseline);
+        z-index: 2;
     }
 }
