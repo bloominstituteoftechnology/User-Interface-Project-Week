@@ -2,7 +2,11 @@
     background-color: @footer-bg;
     display: flex;
     justify-content: space-between;
-    padding: 1.5% 10%;   
+    padding: 1.5% 10%;
+    position: fixed;
+    z-index: 10; 
+    max-width: 1000px;
+    width: 100%;   
 }
 
 .logo {
@@ -11,6 +15,52 @@
     font-weight: bold;
 }
 
-.dropdown-link {
+.overlay {
+    z-index: 15;
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 0;
+    left: 0;
+    top: 0;
+    background-color: @footer-bg;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+ #closed {
+        color: @main-bg;
+        bottom: 0;
+        left: 0;
+        line-height: 7.5rem;
+        z-index: 20;
+        padding: 0 0 5% 7%;
+    
+        @media @phone {
+            line-height:5.2rem;
+        }
+    }
+
+    &:hover {
+        color: @main-text;
+    }
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay-link {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 4.8rem;
+    line-height: 8.5rem;
+    font-weight: bold;
+}
+
+.overlay-hidden {
     display: none;
 }
