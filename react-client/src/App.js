@@ -7,6 +7,7 @@ import Home from './Components/Views/Home';
 import AboutUs from './Components/Views/AboutUs';
 import Services from './Components/Views/Services';
 import Projects from './Components/Views/Projects';
+import Contact from './Components/Views/Contact';
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -23,6 +24,7 @@ class App extends Component {
               <Route exact path="/About-Us" component={ AboutUs } />
               <Route exact path="/Services" component={ Services } />
               <Route exact path="/Projects" component={ Projects } />
+              <Route exact path="/Contact" component={ Contact } />
             </Switch>
             <Footer />
           </div>
