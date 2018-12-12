@@ -1,8 +1,30 @@
 .about{
     header{
-        background: url("../img/about/about-jumbotron.jpg") center center no-repeat;
-    background-size: cover;
-    height: 325px;
+        background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(black, 0.25), 
+      rgba(black, 0.25)
+    ),
+    /* bottom, image */
+    url("../img/about/about-jumbotron.jpg") center center no-repeat;
+        background-size: cover;
+        height: 325px;
+        .layout(flex-start, flex-end);
+    h1{
+        line-height: 75px;
+        font-size: 6.4rem;
+        font-weight: bold;
+        padding: 0px 0px 45px 90px;
+        font-size: 6.4rem;
+        color: @white;
+        @media @phone{
+            font-size: 3.4rem;
+            line-height: 1.25;
+            padding: 0 10px 0 10px;
+            margin-bottom: 10px;
+        }
+    } 
     }
 .intro{
     width: 80%;
@@ -90,11 +112,17 @@
             width: 45%;
             font-size: 1.4rem;
             display: inline-block;
-            background: white;
+            background: @white;
             text-decoration: none;
-            color: black;
+            color: @main-color;
             padding: 15px;
             border-radius: 10px;
+            border: 1px solid @main-color;
+            &:hover{
+                background: @main-color;
+                color: @white;
+                border: 1px solid @white;
+            }
         }
     }
 }
