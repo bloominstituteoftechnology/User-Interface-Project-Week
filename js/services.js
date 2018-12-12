@@ -7,6 +7,9 @@ class TabTag {
         this.tabX.addEventListener('click', () => this.selectTab());
     }
     selectTab(){
+        const selectClear = document.querySelectorAll('.tab-tag');
+        selectClear.forEach(x => x.classList.remove('selected'));
+        this.tabX.classList.add('selected');
         const hider = document.querySelectorAll('.content');
         hider.forEach(y => y.classList.remove('hidden'));
         hider.forEach(y => y.classList.add('hidden'));
@@ -20,7 +23,6 @@ class Content{
     }
     selectContent(){
         this.contentY.classList.remove('hidden');
-        console.log('boom');
     }
 }
 
