@@ -3,11 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/menu/Header.js';
 import Tab from './components/tabs/Tab.js';
-
+import { HashRouter } from 'react-router-dom'
 
 const Home = () => (
         <body>
-    <Header></Header>
     <div className="jumbotron">
       <img src={require("./img/home/home-jumbotron.png")} />
       <h1>Integrity, Excellence, Progress.</h1>
@@ -156,7 +155,6 @@ const Home = () => (
 
 const Services = () => (
   <body>
-    <Header></Header>
     <div className="jumbotron_services">
 			<img className="desktop_img" src={require("./img/services/services-jumbotron.png")} />
 			<img className="mobile_img" src={require("./img/services/services-mobile-jumbotron.png")}/>
@@ -240,8 +238,9 @@ const info = () => (
 class App extends Component {
   render() {
     return (
-      <Router>
+      <HashRouter>
       <div className="App">
+        <Header></Header>
         <div>
             <Route exact path="/" component={Home} />
             <Route exact path="/services" component={Services} />
@@ -250,7 +249,7 @@ class App extends Component {
             <Route exact path="/info" component={info} />
           </div>
       </div>
-      </Router>
+      </HashRouter>
     );
   }
 }

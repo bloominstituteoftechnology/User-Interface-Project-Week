@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import "../../App.css";
 
 class Header extends React.Component {
     render () {
@@ -16,12 +17,14 @@ class Header extends React.Component {
       </div>
       <ul>
       <Link to="/">
-        <li><a>Home</a></li>
+        <li>Home</li>
         </Link>
         <Link to="/services">
-        <li><a href="services.html">Services</a></li>
+        <li>Services</li>
         </Link>
-        <li><a href="#">Contact</a></li>
+        <Link to="/contact">
+        <li>Contact</li>
+        </Link>
       </ul>
     </div>
     </div>
