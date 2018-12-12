@@ -15,7 +15,7 @@ const toggleCloseMenu = () => {
   menu.classList.toggle("menu-hidden");
   menuCloseButton.style.display = "none";
   menuOpenButton.style.display = "block";
-  header.style.height = "60px";
+  header.style.height = "56px";
   header.style.opacity = "1";
   document.body.style.overflow = "auto";
 };
