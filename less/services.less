@@ -7,7 +7,7 @@
         margin: 25px 0 15px;
     }
 
-    .services__tabs__link {
+    .services__tabs__link, .services__tabs__link--selected {
         display: inline-block;
         width: 22%;
         background-color: @services-tab-background-color;
@@ -15,13 +15,8 @@
         font-size: 2rem;
         font-weight: bold;
         color: @services-tab-color;
-        cursor: pointer;
         padding: 15px 0;
         border: 1px solid @services-tab-border-color;
-
-        &:hover {
-            #animation > .color-transition(@services-tab-hover-background-color, @services-tab-hover-color, 500ms);
-        }
 
         @media @device-max-size[tablet] {
             font-size: 1.4rem;
@@ -34,26 +29,18 @@
         }
     }
 
+    .services__tabs__link {
+        cursor: pointer;
+
+        &:hover {
+            #animation > .color-transition(@services-tab-hover-background-color, @services-tab-hover-color, 500ms);
+        }
+    }
+
     .services__tabs__link--selected {
-        display: inline-block;
-        width: 22%;
         background-color: @services-tab-selected-background-color;
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
         color: @services-tab-selected-color;
-        padding: 15px 0;
         border: 1px solid @services-tab-selected-border-color;
-
-        @media @device-max-size[tablet] {
-            font-size: 1.4rem;
-        }
-
-        @media @device-max-size[mobile] {
-            width: 100%;
-            font-size: 2rem;
-            margin: 10px 0;
-        }
     }
 }
 
