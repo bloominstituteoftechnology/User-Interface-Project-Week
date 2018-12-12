@@ -1,5 +1,5 @@
 // JS goes here
-const pageSections = Array.from(document.querySelector('.container').childNodes);
+/*const pageSections = Array.from(document.querySelector('.container').childNodes);
 const subSection = [];
 const viewPortHeight = window.innerHeight;
 console.log(viewPortHeight);
@@ -33,7 +33,7 @@ window.addEventListener('scroll', function(){
 
       }
 
-});
+});*/
 
 
 //JS for expanded nav
@@ -43,10 +43,11 @@ document.querySelector('.nav-btn').addEventListener('click', function(e){
     document.querySelector('.menu-layover').style.opacity = '0';
     document.querySelector('.menu-layover').classList.remove('animateLayoverDown');
     document.querySelector('.menu-layover').classList.add('animateLayoverUp');
-
-
-
     e.target.setAttribute("src", "img/nav-hamburger.png");
+
+
+
+
     document.querySelector('.nav-btn').style["transition-duration"] = "1s";
 
     document.querySelector('.nav-btn').style.transform = "rotate(0)";
@@ -54,7 +55,7 @@ document.querySelector('.nav-btn').addEventListener('click', function(e){
   }else{
     document.querySelector('.nav-btn').style["transition-duration"] = "1s";
 
-    e.target.style.transform = "rotate(90deg)";
+    e.target.style.transform = "rotate(-90deg)";
 
     document.querySelector('.menu-layover').classList.remove('animateLayoverUp');
     document.querySelector('.menu-layover').classList.add('animateLayoverDown');
