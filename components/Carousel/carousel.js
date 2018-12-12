@@ -53,7 +53,9 @@ class Carousel {
             display: "block",
             opacity: '1'
         })
+       this.title.textContent= `${(titles[this.slideIndex-1].textContent)}`
         // slides[this.slideIndex-1].style.display = "block";  
+        
     }
 }
 
