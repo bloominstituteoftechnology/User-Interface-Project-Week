@@ -66,9 +66,7 @@ const toggleNavClose = () => {
         top: "0", 
         fontSize: "0",
         lineHeight: "0",
-        onComplete: function(){
-            nav.classList.toggle('nav-toggle');
-        }
+        onComplete: () => nav.classList.toggle('nav-toggle')
     });
 }
   
