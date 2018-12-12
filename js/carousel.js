@@ -15,9 +15,20 @@ class Carousel {
         this.mobileSlides = this.carousel.querySelectorAll('.mobile-slides .slide');
         //Get Jumbotron text
         this.text = this.carousel.querySelector('h1');
+        //Add resize event listener to the window, to make sure the Carousel image is always responsive
+        window.addEventListener('resize', () => this.resizeSource());
         //Assign Current Slide by it's index in an array
         this.currentSlide = 0;
         this.startLoop();
+    }
+
+    resizeSource() {
+        let screenW = window.innerWidth;
+        if(screenW > 500) { //If screen size is larger than mobile, set the current image to the desktop version
+            this.carousel.style.background = `bottom url("${this.desktopSlides[this.currentSlide].src}")`;
+        } else if(screenW <= 500) { //If screen size is mobile, set the current image to the mobile version
+            this.carousel.style.background = `bottom / cover url("${this.mobileSlides[this.currentSlide].src}")`;
+        }
     }
 
     startLoop() {
