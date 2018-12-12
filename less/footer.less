@@ -1,34 +1,51 @@
 footer {
     background-color: @footer-background-color;
-    font-size: 1.4rem;
     color: @footer-text-color;
-    line-height: 26px;
     padding: 10px 0;
+
+    p {
+        font-size: 1.4rem;
+        line-height: 26px;
+
+        @media @device-max-size[tablet] {
+            font-size: 1rem;
+            line-height: 20px;
+        }
+    }
+
+    .footer-heading {
+        font-size: 2rem;
+        color: @footer-heading-color;
+        line-height: 24px;
+        margin-bottom: 5px;
+
+        @media @device-max-size[tablet] {
+            font-size: 1.6rem;
+            line-height: 18px;
+        }
+    }
 
     .footer-content {
         .make-flex(row, space-between);
-        max-width: 855px;
+        max-width: @main-content-max-width[desktop];
         margin: 50px auto;
 
-        .footer-content__email-form, address {
-            .make-flex(column);
+        @media @device-max-size[tablet] {
+            max-width: @main-content-max-width[tablet];
+        }
 
-            .footer-heading {
-                font-size: 2rem;
-                color: @footer-heading-color;
-                line-height: 24px;
-                margin-bottom: 10px;
-            }
+        .footer-content__email-form {
+            .make-flex(column);
 
             input[type="email"] {
                 width: 100%;
                 padding: 10px 0 10px 2.5%;
                 #prefixed > .border-radius(5px);
                 margin: 5px 0;
-            }
 
-            p {
-                font-size: inherit;
+                @media @device-max-size[tablet] {
+                    width: 75%;
+                }
             }
         }
     }
@@ -37,5 +54,9 @@ footer {
        text-align: center;
        font-size: 1.2rem;
 
+       @media @device-max-size[tablet] {
+            font-size: 1rem;
+            line-height: 20px;
+        }
     }
 }

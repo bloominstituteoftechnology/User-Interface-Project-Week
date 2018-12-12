@@ -3,25 +3,37 @@ header {
         position: fixed;
         z-index: 1;
         .make-flex(row, space-between, center);
-        max-width: 1024px;
+        max-width: @header-footer-max-width[desktop];
         width: 100%;
         background-color: @gray-chateau;
-        padding: 13.5px 0;
-    
-        * {
-            
-            padding: 0 8.25%;
-        }
+        padding: 13.5px 5.4%;
 
         .nav__logo-header {
             font-size: 2.4rem;
             color: @nav-logo-header-color;
+
+            @media @device-max-size[tablet] {
+                font-size: 1.9rem;
+            }
+        }
+
+        @media @device-max-size[tablet] {
+            max-width: @header-footer-max-width[tablet];
+            padding: 7.5px 6.25%;
+
+            input[type="image"] {
+                max-width: 3.75%;
+            }
         }
     }
 
     .jumbotron-area {
         position: relative;
         margin-bottom: 50px;
+
+        @media @device-max-size[tablet] {
+            margin-bottom: 40px;
+        }
 
         .jumbotron-header {
             position: absolute;
@@ -31,6 +43,12 @@ header {
             font-weight: bold;
             color: @jumbotron-header-color;
             line-height: 75px;
+
+            @media @device-max-size[tablet] {
+                bottom: 25px;
+                font-size: 3.5rem;
+                line-height: 42.5px;
+            }
         }
     }
 }

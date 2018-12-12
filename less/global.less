@@ -19,6 +19,11 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-size: 1.6rem;
     line-height: 24px;
+
+    @media @device-max-size[tablet] {
+        font-size: 1.4rem;
+        line-height: 20px;
+    }
 }
 
 img {
@@ -28,7 +33,7 @@ img {
 .desktop-image {
     display: inline;
 
-    @media @device-size[mobile] {
+    @media @device-max-size[mobile] {
         display: none;
     }
 }
@@ -36,26 +41,39 @@ img {
 .mobile-image {
     display: none;
 
-    @media @device-size[mobile] {
+    @media @device-max-size[mobile] {
         display: inline;
     }
 }
 
 .page-container {
-    max-width: 1024px;
+    max-width: @header-footer-max-width[desktop];
     width: 100%;
     margin: 0 auto;
+
+    @media @device-max-size[tablet] {
+        max-width: @header-footer-max-width[tablet];
+    }
 }
 
 main {
-    max-width: 855px;
+    max-width: @main-content-max-width[desktop];
     margin: auto;
+
+    @media @device-max-size[tablet] {
+        max-width: @main-content-max-width[tablet];
+    }
 }
 
 .sub-header {
     font-size: 2.8rem;
     color: @sub-header-color;
     margin-bottom: 20px;
+
+    @media @device-max-size[tablet] {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
 }
 
 // Purely for generating appropriate entries for HTML5 outlines
