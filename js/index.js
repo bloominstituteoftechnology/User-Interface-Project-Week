@@ -12,9 +12,40 @@ menuBtn.addEventListener("click", () => {
 class Tab {
   constructor(tab) {
     this.tab = tab;
-    this.tabData = this.tab.dataSet;
-    console.log(this.tabData);
+    this.tabData = this.tab.dataset.tab;
+    this.tabContent = document.querySelectorAll(
+      `.tab-items[data-tab="${this.tabData}"]`
+    );
+
+    this.tab.addEventListener("click", () => this.selected());
+    this.tabContent = Array.from(this.tabContent).map(
+      content => new TabContent(content)
+    );
+  }
+
+  selected() {
+    const tabs = document.querySelectorAll(".tab");
+
+    tabs.forEach(tab => tab.classList.remove("active-tab"));
+
+    const content = document.querySelectorAll(".tab-items");
+
+    content.forEach(content => (content.style.display = "none"));
+
+    this.tab.classList.add("active-tab");
+
+    this.tabContent.forEach(content => content.toggleContent());
   }
 }
 
-const tabs = document.querySelectorAll(".tab").forEach(tab => new Tab(tab));
+class TabContent {
+  constructor(tabContent) {
+    this.tabContent = tabContent;
+  }
+  toggleContent() {
+    this.tabContent.style.display = "flex";
+  }
+}
+
+const tabs = document.querySelectorAll(".tab");
+tabs.forEach(tab => new Tab(tab));
