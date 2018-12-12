@@ -37,11 +37,18 @@ console.log("hello")
 
 
 //nav bar:
-const navBar = document.querySelector(".nav-bar");
 const fullNav = document.querySelector(".full-nav");
 const hamburger = document.querySelector(".hamburger");
 const close = document.querySelector(".close");
+
 hamburger.addEventListener("click", function(e) {
     fullNav.classList.remove("hidden");
-    navBar.classList.add("hidden");
+    close.classList.remove("hidden")
+    hamburger.classList.add("hidden");
+})
+
+close.addEventListener("click", function(e) {
+    hamburger.classList.remove("hidden")
+    fullNav.classList.add("hidden");
+    close.classList.add("hidden")
 })
