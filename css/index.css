@@ -196,7 +196,6 @@ p {
   }
 }
 .container {
-  max-width: 1025px;
   width: 100%;
   margin: 0 auto;
 }
@@ -217,6 +216,40 @@ p {
 @media (max-width: 875px) {
   .desktop-img {
     max-width: 100%;
+  }
+}
+.banner {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 550px) {
+  .banner {
+    height: 270px;
+    background-size: cover;
+  }
+}
+.banner h1 {
+  padding: 0 0 20px 85px;
+}
+@media (max-width: 550px) {
+  .banner h1 {
+    font-size: 4rem;
+    padding: 0 0 20px 20px;
+  }
+}
+.introduction {
+  margin: 50px 0 20px 0;
+}
+@media (max-width: 875px) {
+  .introduction {
+    width: 90%;
+    margin: 30px auto;
+  }
+  .introduction p {
+    padding: 0;
   }
 }
 .top-nav {
@@ -247,7 +280,7 @@ p {
   color: white;
 }
 .top-nav .hamburger-menu {
-  margin-right: 80px;
+  margin-right: 61px;
   cursor: pointer;
 }
 @media (max-width: 875px) {
@@ -301,7 +334,7 @@ nav .selected {
   background: #8E9AA6;
 }
 .open {
-  opacity: 0.95;
+  opacity: 0.98;
   visibility: visible;
   overflow: hidden;
 }
@@ -314,9 +347,9 @@ footer {
 }
 footer .footer-blocks {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  padding: 70px 0 40px 0;
+  padding: 50px 0 30px 0;
 }
 @media (max-width: 875px) {
   footer .footer-blocks {
@@ -344,7 +377,7 @@ footer .footer-block address {
   }
 }
 footer .news-letter-cta {
-  width: 40%;
+  width: 37%;
   padding-left: 30px;
 }
 @media (max-width: 875px) {
@@ -358,11 +391,12 @@ footer .news-letter-cta textarea {
   border-radius: 5px;
   margin-bottom: 8px;
   font-size: 1.4rem;
-  padding: 10px 0px 10px 5px;
+  padding: 8px;
   width: 99.2%;
   border: 1px solid grey;
   resize: vertical;
-  max-height: 120px;
+  max-height: 150px;
+  min-height: 40px;
 }
 @media (max-width: 875px) {
   footer .news-letter-cta input,
@@ -389,13 +423,32 @@ footer p {
 .copyright {
   font-size: 1.2rem;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+}
+.home-button {
+  display: block;
+  margin: 0 auto;
+  width: 25px;
+  padding-bottom: 2px;
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 4px, 0);
+  }
 }
 .home-banner {
   background-image: url("../img/home/home-jumbotron.png");
-  height: 550px;
+  height: 90vh;
   display: flex;
   align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media (max-width: 550px) {
   .home-banner {
@@ -566,36 +619,10 @@ footer p {
 }
 .services-banner {
   background-image: url(../img/services/services-jumbotron.png);
-  height: 200px;
-  display: flex;
-  align-items: flex-end;
 }
 @media (max-width: 550px) {
   .services-banner {
     background-image: url("../img/services/services-mobile-jumbotron.png");
-    height: 270px;
-    background-size: cover;
-  }
-}
-.services-banner h1 {
-  padding: 0 0 20px 85px;
-}
-@media (max-width: 550px) {
-  .services-banner h1 {
-    font-size: 4rem;
-    padding: 0 0 20px 20px;
-  }
-}
-.services-introduction {
-  margin: 50px 0 20px 0;
-}
-@media (max-width: 875px) {
-  .services-introduction {
-    width: 95%;
-    margin: 30px auto;
-  }
-  .services-introduction p {
-    padding: 0;
   }
 }
 .services-navigator {
@@ -654,4 +681,12 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.projects-banner {
+  background-image: url('../img/projects/projects-jumbotron.jpg');
+}
+@media (max-width: 550px) {
+  .projects-banner {
+    background-image: url("../img/projects/projects-mobile-jumbotron.jpg");
+  }
 }

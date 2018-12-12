@@ -63,3 +63,14 @@ class TabContent {
 // VARIABLES
 const tabButtons = document.querySelectorAll('.tab-button');
 tabButtons.forEach(tab => new TabButton(tab));
+
+
+
+
+// // ====================== FOOTER
+
+// const submitButton = document.querySelector('.submit-button');
+// const textArea = document.querySelector('textarea');
+// const form = document.querySelectorAll("input");
+
+// submitButton.addEventListener('click', () => submitForm());
