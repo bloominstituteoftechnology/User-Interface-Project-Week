@@ -31,6 +31,10 @@ class Button {
         // selects image that matches button data attribute
         const imgMatch = btnContent[this.dataset.tab-1];
         imgMatch.classList.remove('inactive');
+
+        const headerMatch = document.querySelector('.btn-content span');
+        headerMatch.textContent = this.textContent;
+        //console.log(headerMatch);
     }
 }
 
