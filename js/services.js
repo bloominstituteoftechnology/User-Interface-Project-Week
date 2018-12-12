@@ -16,21 +16,5 @@ class Button {
   }
 }
 
-// class TabItem {
-//   constructor (element) {
-//     this.element = element;
-//   }
-
-//   buttonClick {
-//     const content = document.querySelectorAll('.button-item');
-
-//     content.forEach((item) => {
-//       item.classList
-//     })
-//   }
-// }
-
-
-
 let buttons = document.querySelectorAll('.button');
 buttons.forEach(button => new Button(button));
