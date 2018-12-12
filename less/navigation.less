@@ -1,12 +1,17 @@
 .nav-bar {
     max-width:1024px;
     width: 100%;
-    background-color: @footer-background; 
+    background-color: @dropdown-background; 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 2% 0% 2% 5%;
     position: fixed;
     z-index: 5;
+
+    @media @mobile {
+        flex-wrap: nowrap;
+    }
 
     .sj {
         display: flex;
@@ -16,11 +21,10 @@
     h4 {
         color: #FFFFFF;
     }
-    
-    .hamburegr {
+      
+    .dropdown-button {
         display: flex;
-        width: 10%;
-    }   
+    }
 
     img {
         padding-right: 5%;
@@ -29,8 +33,40 @@
     }
 
     a {
-       display: none;
+       //display: none;
        font-size: 4.8rem;
        line-height: 8.5rem; 
     }
+
 }
+.dropdown-content {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 7%;
+    width: 100%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+
+    @media @mobile {
+        
+    }
+    
+}
+
+.dropdown-link {
+    width: 100%;
+    padding-left: 36%;
+    text-decoration: none;
+    text-align: justify;
+    color: #FFFFFF;
+    &:hover {
+        color: @sj-gray-color;
+    }
+}
+
+.dropdown-hidden {
+            display: none;
+}
+
