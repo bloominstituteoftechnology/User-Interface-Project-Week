@@ -8,14 +8,13 @@
 
 
 .carousel {
-  max-width: 1300px;
+  max-width: 1100px;
   width: 98%;
   border: 1px solid @navigation-bg;
-  margin: 10px auto 50px auto;
+  margin: 0 auto 60px auto;
   #mixin.box-shadow;
   position: relative;
   
-
   .carousel-image {
     width: 100%;
     display: none;
@@ -34,10 +33,33 @@
 
   .arrow {
     width: 45px;
+    margin: 0 10px;
+    padding: 0 10px;
+
+    &:hover {
+      cursor: pointer;
+    }  
   }
 
-  .left-arrow {
-    transform: rotate(180deg);
+  .left-arrow:hover {
+    animation: bounceLeft .5s ease-in-out infinite;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
   }
+
+  .right-arrow:hover {
+    animation: bounceRight 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+  @keyframes bounceRight {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(2px, 0, 0); }
+  }
+  
+  @keyframes bounceLeft {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-2px, 0, 0); }
+  }  
 }
 

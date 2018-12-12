@@ -79,8 +79,8 @@ class Carousel {
   }
   scrollLeft() {
     if (currentIndex === 0) {
+      this.images[currentIndex].classList.remove('carousel-selected');
       currentIndex = this.images.length - 1;
-      this.images[0].classList.remove('carousel-selected');
       this.images[currentIndex].classList.add('carousel-selected');
     } else {
       this.images[currentIndex].classList.remove('carousel-selected');
@@ -94,44 +94,22 @@ class Carousel {
       this.images[currentIndex].classList.remove('carousel-selected');
       currentIndex = 0;
       this.images[currentIndex].classList.add('carousel-selected');
+
     } else {
       this.images[currentIndex].classList.remove('carousel-selected');
       currentIndex++;
       this.images[currentIndex].classList.add('carousel-selected');
     }
+    TweenMax.from(".carousel-images img", 2, {
+      opacity: 0,
+      x: 100
+    })
+    TweenMax.from(".carousel-images img", 2, {
+      opacity: 0,
+      x: -100
+    })
   }
 }
 let currentIndex = 0;
 let carousel = document.querySelector('.carousel');
 carousel = new Carousel(carousel);
-
-
-//   rotate() {
-//     document.querySelectorAll('.carousel img').forEach(img => img.classList.remove('image-active'));
-//     if (this.element.classList.contains('left-button')) {
-//       if (currentIndex === 0) {
-//         currentIndex = carouselPics.length -1;
-//       } else {
-//         currentIndex--;
-//       }
-//       TweenMax.from(".carousel img", 2, {opacity:0, x:100})
-//       document.querySelectorAll('.carousel img')[currentIndex].classList.add('image-active');
-//     } 
-//     else if (this.element.classList.contains('right-button')) {
-//       if (currentIndex === carouselPics.length -1) {
-//         currentIndex = 0;
-//       } else {
-//         currentIndex++;
-//       }
-//       document.querySelectorAll('.carousel img')[currentIndex].classList.add('image-active');
-//       TweenMax.from(".carousel img", 2, {opacity:0, x:-100})
-//     }
-//   }
-// }
-
-// let buttons = document.querySelectorAll('.carousel div');
-// let carouselPics = document.querySelectorAll('.carousel img');
-// let currentIndex = 0;
-
-// buttons = Array.from(buttons).map(button => new Carousel(button));
-// document.querySelectorAll('.carousel img')[Math.floor(Math.random() * 3)].classList.add('image-active');

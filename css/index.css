@@ -219,7 +219,7 @@ p {
   }
 }
 .banner {
-  height: 200px;
+  height: 260px;
   display: flex;
   align-items: flex-end;
   background-repeat: no-repeat;
@@ -258,7 +258,6 @@ p {
   align-items: center;
   padding: 14px 0;
   background: #8D9AA6;
-  border-bottom: 1px solid #5e5e5e;
   z-index: 2;
 }
 .top-nav a {
@@ -692,10 +691,10 @@ footer p {
   }
 }
 .carousel {
-  max-width: 1300px;
+  max-width: 1100px;
   width: 98%;
   border: 1px solid #8E9AA6;
-  margin: 10px auto 50px auto;
+  margin: 0 auto 60px auto;
   -webkit-box-shadow: 4px 5px 12px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 4px 5px 12px rgba(0, 0, 0, 0.2);
   box-shadow: 4px 5px 12px rgba(0, 0, 0, 0.2);
@@ -718,7 +717,35 @@ footer p {
 }
 .arrow-buttons .arrow {
   width: 45px;
+  margin: 0 10px;
+  padding: 0 10px;
 }
-.arrow-buttons .left-arrow {
-  transform: rotate(180deg);
+.arrow-buttons .arrow:hover {
+  cursor: pointer;
+}
+.arrow-buttons .left-arrow:hover {
+  animation: bounceLeft 0.5s ease-in-out infinite;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+.arrow-buttons .right-arrow:hover {
+  animation: bounceRight 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes bounceRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+@keyframes bounceLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-2px, 0, 0);
+  }
 }
