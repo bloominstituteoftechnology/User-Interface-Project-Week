@@ -17,7 +17,7 @@ class Header extends Component {
     }
 
     toggleNav() {
-        if(this.navContent.current.style.display == 'none') {
+        if(this.navContent.current.style.display === 'none') {
             this.navContent.current.style.display = 'flex';
             this.button.current.src = `${closeBurger}`;
             TweenMax.fromTo(this.navContent.current, .3, {
