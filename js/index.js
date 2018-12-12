@@ -59,31 +59,53 @@ class TabContent {
   }
 }
 
-
 // VARIABLES
 const tabButtons = document.querySelectorAll('.tab-button');
 tabButtons.forEach(tab => new TabButton(tab));
 
+
+
 // ==================================== Carousel
-
-class CarouselItem {
+class Carousel {
   constructor(element) {
-    this.element = element;
+    this.element = element; // each img tag
+    this.images = document.querySelectorAll('.carousel-image');
+    this.rightArrow = document.querySelector('.right-arrow');
+    this.leftArrow = document.querySelector('.left-arrow');
 
-    this.rightArrow = this.element.querySelector('.right-arrow');
+    this.leftArrow.addEventListener('click', () => this.scrollLeft());
+    this.rightArrow.addEventListener('click', () => this.scrollRight());
+
+  }
+  scrollLeft() {
+    if (currentIndex === 0) {
+      currentIndex = this.images.length - 1;
+      this.images[0].classList.remove('carousel-selected');
+      this.images[currentIndex].classList.add('carousel-selected');
+    } else {
+      this.images[currentIndex].classList.remove('carousel-selected');
+      currentIndex--;
+      this.images[currentIndex].classList.add('carousel-selected');
+    }
+  }
+
+  scrollRight() {
+    if (currentIndex === this.images.length - 1) {
+      this.images[currentIndex].classList.remove('carousel-selected');
+      currentIndex = 0;
+      this.images[currentIndex].classList.add('carousel-selected');
+    } else {
+      this.images[currentIndex].classList.remove('carousel-selected');
+      currentIndex++;
+      this.images[currentIndex].classList.add('carousel-selected');
+    }
   }
 }
+let currentIndex = 0;
+let carousel = document.querySelector('.carousel');
+carousel = new Carousel(carousel);
 
-const imageArray = document.querySelectorAll('.carousel-image');
-imageArray.forEach(param => new CarouselItem(param));
 
-console.log(imageArray);
-
-// class Carousel {
-//   constructor(element) {
-//     this.element = element;
-//     this.element.addEventListener('click', () => this.rotate());
-//   }
 //   rotate() {
 //     document.querySelectorAll('.carousel img').forEach(img => img.classList.remove('image-active'));
 //     if (this.element.classList.contains('left-button')) {
