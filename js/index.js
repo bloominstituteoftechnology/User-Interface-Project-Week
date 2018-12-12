@@ -52,15 +52,15 @@ let openIcon = document.querySelector('.nav-img-open');
 let closeIcon = document.querySelector('.nav-img-close');
 let navScreen = document.querySelector('.nav');
 closeIcon.addEventListener('click', function() {
-    // navScreen.style.display = 'none';
-    TweenMax.to(navScreen, 1, {opacity: 0});
-    navScreen.style['z-index'] = '-1';
+    TweenMax.to(navScreen, 0.75, {opacity: 0});
+    setTimeout(function() {
+        navScreen.style['z-index'] = '-1';
+    }, 1000);
     openIcon.style.display = 'flex';
     closeIcon.style.display = 'none';
 });
 openIcon.addEventListener('click', function() {
-    // navScreen.style.display = 'flex';
-    TweenMax.to(navScreen, 1, {opacity: .98});
+    TweenMax.to(navScreen, 0.75, {opacity: .98});
     navScreen.style['z-index'] = '3';
     openIcon.style.display = 'none';
     closeIcon.style.display = 'flex';
