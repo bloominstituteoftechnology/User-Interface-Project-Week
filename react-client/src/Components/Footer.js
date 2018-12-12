@@ -5,14 +5,14 @@ class Footer extends Component {
   render() {
     return (
         <footer data-aos="fade-up">
-	        <div class="footer-content">
-	    	<div class="footer-panel contact">
+	        <div className="footer-content">
+	    	<div className="footer-panel contact">
 	    		<h3>Interested in starting a project?</h3>
 	    		<h3>Let's talk:</h3>
 	    		<input type="text" placeholder="Enter email" />
 	    		<p>We'll never share your email with anyone else.</p>
 	    	</div>
-	    	<div class="footer-panel address">
+	    	<div className="footer-panel address">
 	    		<h3>New York</h3>
 	    		<address>
 	    			123 Lane<br/>
@@ -21,7 +21,7 @@ class Footer extends Component {
 	    			202 555 0144
 	    		</address>
 	    	</div>
-	    	<div class="footer-panel address">
+	    	<div className="footer-panel address">
 	    			<h3>Florida</h3>
 	    			<address>
 	    				Ocean Drive<br/>
@@ -30,7 +30,7 @@ class Footer extends Component {
 	    				502 555 0144
 	    			</address>
 	    		</div>
-	    		<div class="footer-panel address">
+	    		<div className="footer-panel address">
 	    			<h3>California</h3>
 	    			<address>
 	    				Mountain Street<br/>
@@ -39,7 +39,7 @@ class Footer extends Component {
 	    				702 555 0144
 	    			</address>
 	    		</div>
-	    		<div class="copyright">
+	    		<div className="copyright">
 	    			<span>Copyright © 2018 Smith and Jones</span>
 	    		</div>
 	    	</div>

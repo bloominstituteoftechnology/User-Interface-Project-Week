@@ -44,10 +44,10 @@ class Header extends Component {
             <header>
                 <h1>S&J</h1>
                 <nav>
-                    <img onClick={this.toggleNav} class="nav-open" src={ hamburger } alt="Menu Open Button" ref={this.button} />
+                    <img onClick={this.toggleNav} className="nav-open" src={ hamburger } alt="Menu Open Button" ref={this.button} />
                 </nav>
             </header>
-            <div class="nav-content" ref={this.navContent} >
+            <div className="nav-content" ref={this.navContent} >
                 <Link to="/">Home</Link>
                 <Link to="/About-Us">About Us</Link>
                 <Link to="/Services">Services</Link>

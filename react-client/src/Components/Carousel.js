@@ -155,11 +155,11 @@ class Carousel extends Component {
   render() {
       let carouselStyle = { backgroundSize: 'cover' }
     return (
-        <section class="jumbotron carousel" style={carouselStyle} ref={this.carousel} >
+        <section className="jumbotron carousel" style={carouselStyle} ref={this.carousel} >
 			<h1 ref={this.text}>{ this.props.title }</h1>
-			<div onClick={this.moveLeft} class="left" ref={this.leftBtn}> {`<`} </div>
-			<div onClick={this.moveRight} class="right" ref={this.rightBtn}> {`>`} </div>
-			<div class="timer" ref={this.timer}></div>
+			<div onClick={this.moveLeft} className="left" ref={this.leftBtn}> {`<`} </div>
+			<div onClick={this.moveRight} className="right" ref={this.rightBtn}> {`>`} </div>
+			<div className="timer" ref={this.timer}></div>
 		</section>
     );
   }
