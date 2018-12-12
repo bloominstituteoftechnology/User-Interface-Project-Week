@@ -71,11 +71,12 @@ class TabLink {
       menu.style.height = "0";
   }
   
+
+  
   const burger = document.querySelector('.ham');
   const chi = document.querySelector('.closeHam')
   const menu = document.querySelector('.menu-bar')
   
+  
   burger.addEventListener('click', openMenu);
   chi.addEventListener('click', closeMenu);
-
-  
