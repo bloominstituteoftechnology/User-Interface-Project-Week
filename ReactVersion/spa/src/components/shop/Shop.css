@@ -1,15 +1,17 @@
 .shopping-cart {
-    width: 750px;
+    max-width: 900px;
     height: 423px;
-    margin: 80px auto;
+    margin: 50px auto;
     background: #FFFFFF;
     box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
     border-radius: 6px;
-   
     display: flex;
     flex-direction: column;
   }
   .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     height: 60px;
     border-bottom: 1px solid #E1E8EE;
     padding: 20px 30px;
@@ -17,7 +19,6 @@
     font-size: 18px;
     font-weight: 400;
   }
-   
   .item {
     padding: 20px 30px;
     height: 120px;
@@ -34,34 +35,13 @@
     padding-top: 30px;
     margin-right: 60px;
   }
-  .delete-btn,
-  .like-btn {
-    display: inline-block;
-    Cursor: pointer;
-  }
-  .delete-btn {
-    width: 18px;
-    height: 17px;
-    background: url(&quot;delete-icn.svg&quot;) no-repeat center;
-  }
-   
-  .like-btn {
-    position: absolute;
-    top: 9px;
-    left: 15px;
-    width: 60px;
-    height: 60px;
-    background-size: 2900%;
-    background-repeat: no-repeat;
-  }
 
-  .image {
+  .image_shop {
     margin-right: 50px;
+    max-width: 17%;
   }
    
-  Let’s add some basic style to  product name and description.
   .description {
-    padding-top: 10px;
     margin-right: 60px;
     width: 115px;
   }
@@ -87,10 +67,7 @@
     margin-right: 60px;
   }
   .quantity input {
-    -webkit-appearance: none;
-    border: none;
-    text-align: center;
-    width: 32px;
+    width: 90px;
     font-size: 16px;
     color: #43484D;
     font-weight: 300;
@@ -104,25 +81,33 @@
     border: none;
     cursor: pointer;
   }
-  .minus-btn img {
-    margin-bottom: 3px;
-  }
-  .plus-btn img {
-    margin-top: 2px;
-  }
-   
-  button:focus,
-  input:focus {
-    outline:0;
-  }
-
-  .total-price {
+  .price {
     width: 83px;
     padding-top: 27px;
     text-align: center;
     font-size: 16px;
     color: #43484D;
     font-weight: 300;
+  }
+
+  .total-price {
+    margin-left: auto;
+    width: 200px;
+    padding-top: 27px;
+    text-align: right;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+
+  .sum {
+      max-width: 900px;
+      margin: 50px auto;
+    background: #FFFFFF;
+    border-bottom: 2px solid rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   @media (max-width: 800px) {
@@ -136,10 +121,13 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    .image img {
+    .image_shop {
+        max-width:100%;
+    }
+    .image_shop img {
       width: 50%;
     }
-    .image,
+    .image_shop,
     .quantity,
     .description {
       width: 100%;
@@ -148,5 +136,8 @@
     }
     .buttons {
       margin-right: 20px;
+    }
+    .mobilegone {
+        display:none
     }
   }

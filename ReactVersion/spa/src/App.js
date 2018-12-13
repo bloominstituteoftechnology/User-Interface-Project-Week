@@ -5,7 +5,7 @@ import { HashRouter } from 'react-router-dom'
 import Header from './components/menu/Header.js';
 import Tab from './components/tabs/Tab.js';
 import ThisCarousel from './components/carousel/ThisCarousel.js';
-//import Shop from './components/shop/Shop.js';
+import Shop from './components/shop/Shop.js';
 
 const Home = () => (
         <body>
@@ -226,7 +226,10 @@ const Packages = () => (
         Select your desired packages and we will get back to you with a quote.
       </p>
     </div>
-    
+    <Shop></Shop>
+    <div className="desc">
+      <p>Like the estimate? Contact us directly at sales@sjarchitects.com.</p>
+    </div>
 		<footer>
 				<div className="footercontent">
 					<div className="interested">
@@ -266,7 +269,6 @@ const Packages = () => (
 				<div className="copyright">
 						<p>Copyright © 2018 Smith and Jones</p>
 				</div>
-						
 				</footer>
   </body>
 )
