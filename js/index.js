@@ -1,4 +1,10 @@
-window.location = "https://sjarchitects.akiradj.com/";
+// --- I went with this solution so all instances of this site are redirected to live site.
+// --- Including github html preview.
+
+let loc = window.location.origin;
+console.log(loc.indexOf);
+if (loc.indexOf("https://sjarchitects.akiradj.com") < 0)
+	window.location = "https://sjarchitects.akiradj.com";
 let toggled = 0;
 
 $(document).ready(() => {
