@@ -168,6 +168,7 @@ h2 {
 h3 {
   font-size: 2.3rem;
   letter-spacing: 8px;
+  text-transform: uppercase;
 }
 @media (max-width: 875px) {
   h3 {
@@ -753,10 +754,48 @@ footer p {
   display: none;
   opacity: 1;
 }
+.carousel .carousel-title {
+  width: 100%;
+  display: none;
+  opacity: 1;
+}
 .carousel .carousel-selected {
   display: block;
 }
-.arrow-buttons {
+.carousel .text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+  height: 100px;
+  border: 1px solid white;
+  background: #D8D8D8;
+  position: absolute;
+  bottom: -5%;
+  left: 25%;
+  z-index: 1;
+  cursor: pointer;
+}
+@media (max-width: 875px) {
+  .carousel .text-container {
+    width: 70%;
+    left: 15%;
+    height: 80px;
+  }
+}
+.carousel .text-container h3 {
+  padding: 0 30px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+@media (max-width: 875px) {
+  .carousel .text-container h3 {
+    font-size: 2rem;
+  }
+}
+.carousel .arrow-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -764,21 +803,21 @@ footer p {
   top: 50%;
   width: 100%;
 }
-.arrow-buttons .arrow {
+.carousel .arrow-buttons .arrow {
   width: 45px;
   margin: 0 10px;
   padding: 0 10px;
   z-index: 1;
 }
-.arrow-buttons .arrow:hover {
+.carousel .arrow-buttons .arrow:hover {
   cursor: pointer;
 }
-.arrow-buttons .left-arrow:hover {
+.carousel .arrow-buttons .left-arrow:hover {
   animation: bounceLeft 0.5s ease-in-out infinite;
   animation-direction: alternate;
   animation-iteration-count: infinite;
 }
-.arrow-buttons .right-arrow:hover {
+.carousel .arrow-buttons .right-arrow:hover {
   animation: bounceRight 0.5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;

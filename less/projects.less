@@ -21,48 +21,89 @@
     opacity: 1;
   }
 
+  .carousel-title {
+    width: 100%;
+    display: none;
+    opacity: 1;
+  }
+
   .carousel-selected {
     display: block;
   }
-}
 
-.arrow-buttons {
-  #mixin.layout(space-between);
-  position: absolute;
-  top: 50%;
-  width: 100%;
-
-  .arrow {
-    width: 45px;
-    margin: 0 10px;
-    padding: 0 10px;
+  .text-container {
+    #mixin.layout;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+    height: 100px;
+    border: 1px solid white;
+    background: @title-card;
+    position: absolute;
+    bottom: -5%;
+    left: 25%;
     z-index: 1;
+    cursor: pointer;
 
-    &:hover {
-      cursor: pointer;
+    @media @tablet {
+      width: 70%;
+      left: 15%;
+      height: 80px
     }
+
+    h3 {
+      padding: 0 30px;
+      letter-spacing: 2px;
+      text-align: center;
+
+      @media @tablet {
+        font-size: 2rem;
+      }
+    }
+
   }
 
-  .left-arrow:hover {
-    animation: bounceLeft .5s ease-in-out infinite;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-  }
-
-  .right-arrow:hover {
-    animation: bounceRight 0.5s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes bounceRight {
-    from { transform: translate3d(0, 0, 0); }
-    to { transform: translate3d(2px, 0, 0); }
-  }
+  .arrow-buttons {
+    #mixin.layout(space-between);
+    position: absolute;
+    top: 50%;
+    width: 100%;
   
-  @keyframes bounceLeft {
-    from { transform: translate3d(0, 0, 0); }
-    to { transform: translate3d(-2px, 0, 0); }
-  }  
+    .arrow {
+      width: 45px;
+      margin: 0 10px;
+      padding: 0 10px;
+      z-index: 1;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    .left-arrow:hover {
+      animation: bounceLeft .5s ease-in-out infinite;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+    }
+  
+    .right-arrow:hover {
+      animation: bounceRight 0.5s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+    }
+  
+    @keyframes bounceRight {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(2px, 0, 0); }
+    }
+    
+    @keyframes bounceLeft {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(-2px, 0, 0); }
+    }  
+  }
 }
+
+
+
 
