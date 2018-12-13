@@ -38,16 +38,25 @@ class NavDrop {
 
     select() {
         // this.content.classList.toggle("nav-hidden");
-        if (this.content.classList.contains("nav-hidden")) {
-            this.content.classList.remove("nav-hidden");
-            // this.navCloseBtn.classList.toggle("hamburger-close");
-            this.navCloseBtn.classList.remove("hamburger-hidden");
-            this.navOpenBtn.classList.add("hamburger-hidden")
+        if (this.content.classList.contains("nav-shown")) {
+            this.content.classList.remove("nav-shown");
+            TweenMax.to(content, 1, {
+                top: 0,
+                opacity: 0.97,
+            })
             
+            this.navCloseBtn.classList.remove("hamburger-hidden");
+            this.navOpenBtn.classList.add("hamburger-hidden");
+
         } else {
-            this.content.classList.add("nav-hidden");
+            TweenMax.to(content, 5, {
+                top: -1550,
+                opacity: 0,
+            })
+
             this.navOpenBtn.classList.remove("hamburger-hidden");
             this.navCloseBtn.classList.add("hamburger-hidden");
+            this.content.classList.add("nav-shown");
         }
         
     }
@@ -57,7 +66,7 @@ class NavDrop {
 
 const tabLinks = document.querySelectorAll(".tab-link").forEach(link => new TabLink(link));
 
- 
+const content = document.querySelector(".nav-shown");
 const navOpenBtn = document.querySelectorAll(".hamburger-open");
 navOpenBtn.forEach(element => new NavDrop(element));
 
