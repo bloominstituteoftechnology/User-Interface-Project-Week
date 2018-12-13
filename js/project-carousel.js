@@ -34,7 +34,8 @@ class Carousel {
             this.currentIndex = this.textArray.length - 1;
         }
         this.imgArray[this.currentIndex].selectImage();
-        this.textArray[this.currentIndex].selectParagraph();
+        this.textArray[this.currentIndex].selectParagraph()
+            TweenMax.to(".active-paragraph", 1.7, {x: 0});
     }  
 
     rightClick() {
