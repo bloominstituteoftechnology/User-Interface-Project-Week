@@ -38,3 +38,52 @@ class Tab {
 }
 
 document.querySelectorAll(".tab").forEach((element) => new Tab(element));
+
+class Carousel {
+    constructor(carouselElement) {
+        this.carouselElement = carouselElement;
+        
+        this.leftButton = this.carouselElement.querySelector(".left-button");
+        
+        this.rightButton = this.carouselElement.querySelector(".right-button");
+
+        this.images = document.querySelectorAll(".carousel-img");
+
+        this.currentImage = 0;
+
+        this.images.forEach(image => image.style.display = "none");
+
+        this.images[this.currentImage].style.display = "block";
+
+        setInterval(() => this.moveRight(), 5000);
+    }
+
+    moveLeft() {
+        this.images.forEach(image => image.style.display = "none");
+
+        if (this.currentImage === 0) {
+            this.currentImage = this.images.length - 1;
+        } else { 
+            this.currentImage = this.currentImage - 1;
+        }
+
+
+        this.images[this.currentImage].style.display = "block";
+    }
+
+    moveRight() {
+        this.images.forEach(image => image.style.display = "none");
+
+        if (this.currentImage === this.images.length - 1) {
+            this.currentImage = 0;
+        } else { 
+            this.currentImage = this.currentImage + 1;
+        }
+        // this.images[this.currentImage].style.display = "block";
+
+        TweenLite.to(this.images[this.currentImage], .5, {display:"block"})
+    }
+}
+
+
+let carousel = document.querySelectorAll(".carousel").forEach(carousel => new Carousel(carousel));
