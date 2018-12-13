@@ -14,19 +14,10 @@ class TabLink {
         const allContent = document.querySelectorAll('.tab-content');
         allContent.forEach(el => el.classList.add('display-none'));
         this.content.classList.remove('display-none');
-        TweenMax.fromTo(this.content, 0.75, {
+        TweenMax.fromTo(this.content, 1.5, {
             opacity: 0
         }, {
             opacity: 1
-        })
-    }
-
-    hoverEvent(){
-        this.overlayText.classList.remove('display-none');
-        TweenMax.fromTo(this.overlayText, 0.75, {
-            opacity: 0
-        }, {
-            opacity: .7
         })
     }
 }
