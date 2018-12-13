@@ -75,7 +75,7 @@ modalExit = document.querySelector('.exit');
 whoBtns.forEach((btn)=>{
     btn.addEventListener("click", ()=> {
     theModal.classList.toggle('show-modal');
-    theModal.classList.toggle('hidden');
+    theModal.classList.toggle('hidden-modal');
     const key = btn.classList.item(1);
     const modalMem = team[key];
     console.log(modalMem);
@@ -88,7 +88,7 @@ whoBtns.forEach((btn)=>{
     window.onclick = function(event) {
         if (event.target == theModal) {
             theModal.classList.toggle('show-modal');
-            theModal.classList.toggle('hidden');
+            theModal.classList.toggle('hidden-modal');
         }
     }
     });
@@ -96,7 +96,7 @@ whoBtns.forEach((btn)=>{
 });
 modalExit.addEventListener("click", ()=> {
     theModal.classList.toggle('show-modal');
-    theModal.classList.toggle('hidden');
+    theModal.classList.toggle('hidden-modal');
 });
 
 
