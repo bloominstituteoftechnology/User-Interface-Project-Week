@@ -1,18 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import "../../App.css";
+import "./logo.css";
 
 class Header extends React.Component {
     render () {
         return (
             <div>
             <div className="header">
-                <h1>S&J</h1>
+            <div className="logo-text">
+            <Link to='/'>
+                <img className="logo" src={require("../../img/logo/SJlogo_transparent.png")}></img></Link>
+                <Link to='/'><h1>S&J</h1></Link>
+                
+                </div>
                     <img className="menu-button" onClick={openMenu} src={require("../../img/nav-hamburger.png")} />
             </div>
         <div className="menu">
       <div className="menutop">
-          <h1>S&J</h1>
           <img className="close-button" onClick={closeMenu} src={require("../../img/nav-hamburger-close.png")} />
       </div>
       <ul>
@@ -22,8 +26,8 @@ class Header extends React.Component {
         <Link onClick={closeMenu} to="/services">
         <li>Services</li>
         </Link>
-        <Link to="/contact">
-        <li>Contact</li>
+        <Link onClick={closeMenu} to="/packages">
+        <li>Packages</li>
         </Link>
       </ul>
     </div>

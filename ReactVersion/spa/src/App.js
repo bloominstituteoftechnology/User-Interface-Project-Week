@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom'
 import Header from './components/menu/Header.js';
 import Tab from './components/tabs/Tab.js';
-import { HashRouter } from 'react-router-dom'
+import ThisCarousel from './components/carousel/ThisCarousel.js';
+//import Shop from './components/shop/Shop.js';
 
 const Home = () => (
         <body>
     <div className="jumbotron">
-      <img src={require("./img/home/home-jumbotron.png")} />
+    <ThisCarousel></ThisCarousel>
       <h1>Integrity, Excellence, Progress.</h1>
     </div>
     <div className="row flip">
@@ -208,17 +210,65 @@ const Services = () => (
 				<div className="copyright">
 						<p>Copyright © 2018 Smith and Jones</p>
 				</div>
-						
 				</footer>
-    <script src="js/index.js"></script>
-    <script src="js/menu.js"></script>
   </body>
 )
 
-const Contact = () => (
-  <div>
-    Contact
-  </div>
+const Packages = () => (
+<body>
+    <div className="jumbotron_services">
+			<img className="desktop_img" src={require("./img/packages/bluebuild.jpg")} />
+			<img className="mobile_img" src={require("./img/packages/blue-mobile.jpg")}/>
+      <h1>Packages</h1>
+    </div>
+    <div className="desc">
+      <p>
+        Select your desired packages and we will get back to you with a quote.
+      </p>
+    </div>
+    
+		<footer>
+				<div className="footercontent">
+					<div className="interested">
+							<h2>Interested in starting a project?</h2>
+							<h2>Let’s talk:</h2>
+						
+							<form>
+								<input placeholder="Enter email"/>
+							</form>
+						
+							<p>We'll never share your email with anyone else.</p>
+						
+					</div>
+			<address>
+					<h2>New York</h2>
+					<p>123 Lane</p>
+					<p>Suite 100</p>
+					<p>Albany, NY 12345</p>
+					<p>202 555 0144</p>
+			</address>
+			
+			<address>
+					<h2>Florida</h2>
+					<p>Ocean Drive</p>
+					<p>Suite 201</p>
+					<p>Orlando, FL 22345</p>
+					<p>502 555 0144</p>
+			</address>
+			<address>
+					<h2>California</h2>
+					<p>Mountain Street</p>
+					<p>Suite 105</p>
+					<p>San Diego, CA 22345</p>
+					<p>702 555 0144</p>
+			</address>
+				</div>
+				<div className="copyright">
+						<p>Copyright © 2018 Smith and Jones</p>
+				</div>
+						
+				</footer>
+  </body>
 )
 
 class App extends Component {
@@ -230,7 +280,7 @@ class App extends Component {
         <div>
             <Route exact path="/" component={Home} />
             <Route exact path="/services" component={Services} />
-            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/packages" component={Packages} />
           </div>
       </div>
       </HashRouter>
