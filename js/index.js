@@ -68,4 +68,8 @@ class TabLink {
 
   const toggleClose = document.querySelector('.toggle-menu')
   toggleClose.addEventListener('click', toggleMenu);
+
+
+
+  // TweenLite.to('.logo', 2.5, { ease: Bounce.easeIn, y: -500 });
   
