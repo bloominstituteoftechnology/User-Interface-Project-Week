@@ -9,6 +9,7 @@ class ToggleMenu {
         // reference for drop down content
         this.content = document.querySelector('.dropdownContent');
 
+
         //event listener
         this.button.addEventListener('click', () => this.toggleContent());
     }
@@ -16,8 +17,11 @@ class ToggleMenu {
         this.content.classList.toggle('dropdownHidden');
         if (!this.content.classList.contains('dropdownHidden')) {
             this.button.src = "../img/nav-hamburger-close.png";
+            TweenLite.from(this.content, 1, { ease: Power1.easeIn, opacity: 0 });
+            TweenLite.from(this.button, 1, { ease: Power1.easeIn, opacity: 0 });
         } else {
             this.button.src = "../img/nav-hamburger.png";
+            TweenLite.to(this.content, 1.5, { ease: Power1.easeOut });
         }
     }
 }
