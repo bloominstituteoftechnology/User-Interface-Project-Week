@@ -188,42 +188,53 @@ img {
   position: fixed;
   z-index: 2;
 }
-.main-navigation .nav-container {
+.main-navigation .nav-content {
   height: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin: 0 80px;
 }
-.main-navigation .nav-container h3 {
+.main-navigation .nav-content h3 {
   font-weight: bold;
-  padding: 0 0 5px 12px;
 }
-.main-navigation .nav-container .burger {
-  padding: 0 13px 1px 0;
+.nav-content img:hover {
+cursor: pointer;
 }
-.btnhidden {
+.overlay-expand {
+  display: block;
+}
+.overlay-expand-toggle {
   display: none;
 }
-.overlay {    
-  height: 100%;
-  width: 0;
-  position: fixed; 
-  z-index: 5; 
-  left: 0;
-  top: 0;
-  /* background-color: rgb(153, 164, 175);  */
+.overlay-close {
+  display: none;
+}
+.overlay-close-toggle {
+  display: block;
+}
+.nav-overlay {
+  display: none;
+}
+.nav-overlay-display {
+  height: 100%
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(153, 164, 175); 
-  overflow-x: hidden; 
-  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  opacity: 0.9;
+  z-index: -1;
 }
-.overlay-content {
-  position: relative;
-  top: 25%; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-.overlay a {
+.nav-links a {
   padding: 8px;
   text-decoration: none;
   font-size: 6rem;
@@ -231,23 +242,10 @@ img {
   display: block; /* Display block instead of inline */
   transition: 0.3s; /* Transition effects on hover (color) */
 }
-.overlay a:hover, .overlay a:focus {
+.nav-links a:hover, .nav-links a:focus {
   color: #504545;
 }
-.overlay .overlay-heading {
-  position: absolute;
-  top: 50px;
-  left: 45px;
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-}
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-} 
+
 
 /* ---------  Styles For Main Banner  ---------- */
 .banner {
@@ -644,6 +642,11 @@ img {
   display: flex;
   justify-content: space-between;
 }
+.tabs-links .tabs-link:hover {
+  cursor: pointer;
+  background-color: #99A4AE;
+}
+
 .tabs-link {
   font-size: 2rem;
   font-weight: bold;

@@ -30,9 +30,67 @@ links = document.querySelectorAll('.tabs-link').forEach( element => new TabLink(
 
 // ------------- Nav Overlay Expand and Close  --------------- //
 
-function openNav() {
-    document.getElementById("nav").style.width = "100%";
-  }
-function closeNav() {
-    document.getElementById("nav").style.width = "0%";
-  }
+class NavLink {
+  constructor (link) {
+      this.link = link;
+      this.link.addEventListener('click', toggleNavClose) 
+  };
+}
+
+const toggleNavOpen = () => {
+  navOpen.classList.toggle('overlay-expand-toggle');
+  navClose.classList.toggle('overlay-close-toggle');
+  TweenMax.from(nav, 2, {
+      ease: Power2.easeOut,
+      height: "0",
+      width: "0",
+      right: "0",
+      top: "0",
+      fontSize: "0",
+      lineHeight: "0"
+  });
+  TweenMax.to(nav, 2, {
+      ease: Power2.easeOut,
+      height: "100%",
+      width: "100%",
+      top: "0",
+      position: "fixed",
+      fontSize: "48",
+      lineHeight: "2",
+  });
+  nav.classList.toggle('nav-overlay-display');
+}
+
+const toggleNavClose = () => {
+  navOpen.classList.toggle('overlay-expand-toggle');
+  navClose.classList.toggle('overlay-close-toggle');
+  TweenMax.from(nav, 1, {
+      ease: Power2.easeIn,
+      height: "100%",
+      width: "100%",
+      top: "0",
+      position: "fixed",
+      fontSize: "48",
+      lineHeight: "2"
+  });
+  TweenMax.to(nav, 1, {
+      ease: Power2.easeIn,
+      height: "0",
+      width: "0",
+      right: "0",
+      top: "0", 
+      fontSize: "0",
+      lineHeight: "0",
+      onComplete: () => nav.classList.toggle('nav-overlay-display')
+  });
+}
+
+const navOpen = document.querySelector('.overlay-expand');
+const navClose = document.querySelector('.overlay-close');
+const nav = document.querySelector('.nav-overlay');
+const navLinks = document.querySelector('.nav-links');
+const navLink = document.querySelectorAll('.nav-link');
+
+navOpen.addEventListener('click', toggleNavOpen);
+navClose.addEventListener('click', toggleNavClose);
+navLink.forEach( navLink => new NavLink(navLink));
