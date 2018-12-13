@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TweenMax from 'gsap';
 
 class TabNavigator extends Component {
     constructor() {
@@ -6,6 +7,7 @@ class TabNavigator extends Component {
         this.tabs = [];
         this.element = null;
         this.currentTab = 2;
+        this.animating = false;
     }
 
     componentWillMount() {
@@ -25,16 +27,33 @@ class TabNavigator extends Component {
     }
 
     selectTab(i) {
-        let tabIndex = i + 1;
-        let exitingButton = document.querySelector(`.tab-navigator[data-tab="${this.currentTab}"]`);
-        let selectedButton = document.querySelector(`.tab-navigator[data-tab="${tabIndex}"]`);
-        let exitingContent = document.querySelector(`.tab-content[data-tab="${this.currentTab}"]`);
-        let selectedContent = document.querySelector(`.tab-content[data-tab="${tabIndex}"]`);
-        exitingButton.classList.remove('selected');
-        exitingContent.style.display = 'none';
-        selectedButton.classList.add('selected');
-        selectedContent.style.display = 'block';
-        this.currentTab = tabIndex;
+        if(!this.animating){
+            this.animating = true;
+            let tabIndex = i + 1;
+            let exitingButton = document.querySelector(`.tab-navigator[data-tab="${this.currentTab}"]`);
+            let selectedButton = document.querySelector(`.tab-navigator[data-tab="${tabIndex}"]`);
+            let exitingContent = document.querySelector(`.tab-content[data-tab="${this.currentTab}"]`);
+            let selectedContent = document.querySelector(`.tab-content[data-tab="${tabIndex}"]`);
+            //Animate the exiting content fading out, and after the animation is done, animate new content fading in
+            TweenMax.fromTo(exitingContent, .15, {opacity: 1}, {
+                opacity: 0,
+                onComplete: () => {
+                    exitingContent.style.display = 'none';
+                    exitingButton.classList.remove('selected');
+                    selectedButton.classList.add('selected');
+                    selectedContent.style.display = 'block';
+                    TweenMax.fromTo(selectedContent, .15, {opacity: 0}, {
+                        opacity: 1,
+                        onComplete: () => {
+                            this.currentTab = tabIndex;
+                            this.animating = false;
+                        }
+                    });
+                }
+            });
+        }
+        
+        
     }
 
   render() {
