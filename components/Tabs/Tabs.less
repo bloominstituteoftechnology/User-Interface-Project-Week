@@ -2,6 +2,10 @@
   .flex(row, space-between, flex-start, nowrap);
   margin: 40px 8.3% 0;
 
+  @media @tablet {
+    .flex(row, space-evenly, flex-start, wrap);
+  }
+
   @media @mobile {
     .flex(column, flex-start, center, nowrap);
     margin: 39px 5% 0;
@@ -21,9 +25,13 @@
       background: @thover-background;
     }
 
+    @media @tablet {
+      width: 40%;
+      margin-bottom: 20px;
+    }
+
     @media @mobile {
       width: 100%;
-      margin-bottom: 20px;
     }
   }
 
@@ -47,7 +55,7 @@
     .services__text {
       width: 50%;
 
-      @media @mobile {
+      @media @tablet {
         width: 100%;
       }
 
@@ -72,12 +80,24 @@
   .services__box--view {
     .flex(row, space-between, flex-start, nowrap);
 
+    @media @tablet {
+      .flex(column-reverse, space-between, center, nowrap);
+    }
+
     @media @mobile {
       .flex(column, flex-start, center, nowrap);
     }
 
     .img__container {
       margin-top: 35px;
+
+      @media @tablet {
+        margin: 0 0 50px;
+      }
+
+      @media @mobile {
+        margin: 35px 0 0;
+      }
     }
   }
 }
