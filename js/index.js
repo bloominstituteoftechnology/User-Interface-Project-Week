@@ -22,7 +22,6 @@ toggleMenu = function () {
   body.classList.toggle('overflow-hidden');
 }
 
-
 // ====================== SERVICES TAB NAVIGATOR
 // CLASS CONSTRUCTOR
 
@@ -81,7 +80,7 @@ let showOnScroll = function () {
     for (var i = 0; i < elems.length; i++) {
       let positionFromTop = elems[i].getBoundingClientRect().top;
       if (positionFromTop - windowHeight <= -170) {
-        TweenMax.to(elems[i], 2, {
+        TweenMax.to(elems[i], 1, {
           opacity: 1
         });
       }

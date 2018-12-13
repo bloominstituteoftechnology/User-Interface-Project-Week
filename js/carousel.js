@@ -20,6 +20,9 @@ class Carousel {
       currentIndex--;
       this.images[currentIndex].classList.add('carousel-selected');
     }
+    TweenMax.from(this.images[currentIndex], 4, {
+      opacity: 0
+    });
   }
 
   scrollRight() {
@@ -34,11 +37,12 @@ class Carousel {
       currentIndex++;
       this.images[currentIndex].classList.add('carousel-selected');
     }
-    TweenMax.from(this.images[currentIndex], 1, {
-      opacity: 1,
+    TweenMax.from(this.images[currentIndex], 2, {
+      opacity: 0
     });
   }
 }
+
 let currentIndex = 0;
 let carousel = document.querySelector('.carousel');
 carousel = new Carousel(carousel);
