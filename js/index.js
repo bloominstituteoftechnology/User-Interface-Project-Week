@@ -1,5 +1,5 @@
 // JS goes here
-/*const pageSections = Array.from(document.querySelector('.container').childNodes);
+const pageSections = Array.from(document.querySelector('.container').childNodes);
 const subSection = [];
 const viewPortHeight = window.innerHeight;
 console.log(viewPortHeight);
@@ -19,21 +19,29 @@ for(let i = 0; i<pageSections.length;i++){
   subSection.forEach(section => {
     section.style.opacity = "0";
   });
+  let docEl = document.documentElement;
+  window.addEventListener('load', function(){
+     subSection[0].style.transition="all 1s";
+    subSection[0].style.opacity = "1";});
 
 window.addEventListener('scroll', function(){
+      subSection.forEach((section,index) =>{
 
-      let rect = subSection[2].getBoundingClientRect();
-      subSection[2].style.transition = "all .25s";
-      let docEl = document.documentElement;
-      let distance = rect.top/2 + (window.pageYOffset);
-      console.log('offset: ' + window.pageYOffset + '\n distance: ' + distance);
-      if(window.pageYOffset >= distance){
+        let rect = section.getBoundingClientRect();
+        section.style.transition = "all .5s";
+        if(index !==0){
 
-      subSection[2].style.opacity = "1";
+        let distance = rect.top + (window.pageYOffset);
+        console.log(distance);
+        if(window.pageYOffset >= distance/2){
 
-      }
+        section.style.opacity = "1";
 
-});*/
+      }}
+      });
+
+
+});
 
 
 //JS for expanded nav
