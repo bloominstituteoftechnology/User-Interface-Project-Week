@@ -1,1 +1,639 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100%;
+  background-color: #fff;
+  font-family: Roboto, Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #4F739C;
+}
+.desk-contain {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .desk-contain {
+    max-width: 95%;
+  }
+}
+h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+header {
+  width: 100%;
+  background-color: #99A4AF;
+  padding: 15px 0;
+  position: fixed;
+  z-index: 2;
+}
+header div {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+header div a {
+  z-index: 3;
+}
+header div a.logo {
+  font-size: 1.6rem;
+}
+.dropdown {
+  display: flex;
+  justify-content: flex-end;
+}
+.dropdownButton {
+  position: relative;
+  right: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: #9AA5B0;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  min-height: 100vh;
+  min-width: 100vw;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+.dropdownContent a {
+  font-size: 5rem;
+}
+.dropdownHidden {
+  display: none;
+}
+footer {
+  background-color: #828282;
+  padding: 40px 0 0;
+  width: 100%;
+  color: #fff;
+}
+footer .copy {
+  text-align: center;
+  padding-top: 30px;
+}
+footer .footer {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  footer .footer {
+    flex-direction: column;
+  }
+}
+footer .footer input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 8px 0;
+  margin: 5px 0;
+  text-indent: 5px;
+}
+@media (max-width: 500px) {
+  footer .footer input {
+    padding: 15px 0;
+    margin-bottom: 10px;
+  }
+}
+footer .footer .small {
+  font-size: 0.7rem;
+}
+footer .footer div {
+  width: 23%;
+}
+@media (max-width: 500px) {
+  footer .footer div {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+footer .footer span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+@media (max-width: 500px) {
+  footer .footer .email span {
+    font-size: 1.5rem;
+  }
+}
+#home .container {
+  display: flex;
+  flex-direction: column;
+}
+#home .top-section {
+  background-image: url('../img/home/home-jumbotron.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#home .top-section div {
+  padding-top: 400px;
+  padding-bottom: 30px;
+}
+#home .top-section p {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (max-width: 500px) {
+  #home .top-section p {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 500px) {
+  #home .top-section {
+    background-image: url('../img/home/home-mobile-jumbotron.png');
+    width: 100%;
+  }
+}
+#home .content-section .design-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 60px 0;
+}
+#home .content-section .design-content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 48%;
+}
+@media (max-width: 500px) {
+  #home .content-section .design-content div {
+    width: 100%;
+    align-content: center;
+  }
+}
+#home .content-section .design-content div h2 {
+  margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+  #home .content-section .design-content div h2 {
+    margin-top: 20px;
+  }
+}
+#home .content-section .design-content div p {
+  margin-bottom: 20px;
+}
+#home .content-section .design-content div button {
+  width: 30%;
+  padding: 8px 0;
+  background-color: #fff;
+}
+#home .content-section .design-content div button:hover {
+  background-color: #99A4AF;
+}
+@media (max-width: 500px) {
+  #home .content-section .design-content div button {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  #home .content-section .design-content div img {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  #home .content-section .design-content {
+    width: 95%;
+    flex-direction: column;
+    margin: 50px auto;
+  }
+}
+@media (max-width: 500px) {
+  #home .content-section .first {
+    flex-direction: column-reverse;
+  }
+}
+#home .content-section #projectsSection .project-content {
+  margin-bottom: 40px;
+}
+#home .content-section #projectsSection .project-content img {
+  width: 100%;
+  opacity: 0;
+}
+#home .content-section #projectsSection .project-content .pic-left {
+  transform: translateX(-200px);
+}
+#home .content-section #projectsSection .project-content .pic-right {
+  transform: translateX(200px);
+}
+#home .content-section #projectsSection .project-content .slide {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: 2s;
+}
+#home .content-section #projectsSection .project-content .right {
+  justify-content: flex-end;
+}
+#home .content-section #projectsSection .project-content .title {
+  display: flex;
+  position: relative;
+  margin-bottom: 40px;
+  z-index: 1;
+  top: -35px;
+}
+#home .content-section #projectsSection .project-content .title p {
+  width: 200px;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 2px;
+  font-weight: bold;
+  background-color: #D8D8D8;
+}
+@media (max-width: 500px) {
+  #home .content-section #projectsSection .project-content .title p {
+    width: 95%;
+  }
+}
+@media (max-width: 500px) {
+  #home .content-section #projectsSection .project-content .title {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}
+#home .content-section #projectsSection .project-content .paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#home .content-section #projectsSection .project-content .paragraph p {
+  margin: 10px 0;
+  width: 45%;
+}
+@media (max-width: 500px) {
+  #home .content-section #projectsSection .project-content .paragraph p {
+    width: 95%;
+  }
+}
+#services {
+  display: flex;
+  flex-direction: column;
+}
+#services .top-services-section {
+  background-image: url('../img/services/services-jumbotron.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#services .top-services-section h1 {
+  font-size: 4rem;
+  padding: 200px 0 20px;
+  color: #fff;
+}
+@media (max-width: 500px) {
+  #services .top-services-section {
+    background-image: url('../img/services/services-mobile-jumbotron.png');
+  }
+}
+#services .services-content {
+  margin: 50px 0;
+}
+#services .services-content p {
+  line-height: 1.5;
+}
+#services .services-section {
+  margin-bottom: 54px;
+}
+@media (max-width: 500px) {
+  #services .services-section {
+    width: 95%;
+    margin: 0 auto 60px;
+  }
+}
+#services .services-section .tabs {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#services .services-section .tabs .tabs-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  #services .services-section .tabs .tabs-links {
+    flex-direction: column;
+  }
+}
+#services .services-section .tabs .tabs-links .tabs-link {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: solid black 1px;
+}
+#services .services-section .tabs .tabs-links .tabs-link:hover {
+  background-color: #5E9FB9;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  #services .services-section .tabs .tabs-links .tabs-link {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+}
+#services .services-section .tabs .tabs-links .tabs-link-selected {
+  background-color: #5E9FB9;
+}
+#services .services-section .tabs .tabs-items {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  height: 380px;
+  width: 100%;
+}
+#services .services-section .tabs .tabs-items .tabs-item-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  #services .services-section .tabs .tabs-items .tabs-item-title {
+    margin-bottom: 20px;
+  }
+}
+#services .services-section .tabs .tabs-items .tabs-item {
+  display: none;
+}
+#services .services-section .tabs .tabs-items .tabs-item .tabs-item-description {
+  width: 48%;
+}
+@media (max-width: 500px) {
+  #services .services-section .tabs .tabs-items .tabs-item .tabs-item-description {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+#services .services-section .tabs .tabs-items .tabs-item-selected {
+  display: block;
+}
+#services .services-section .tabs .tabs-items .item-sec {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  #services .services-section .tabs .tabs-items .item-sec {
+    flex-direction: column;
+  }
+}
+#services .services-section .tabs .tabs-items .item-sec div .btm {
+  margin-bottom: 50px;
+}
+@media (max-width: 500px) {
+  #services .services-section .tabs .tabs-items .item-sec div .btm {
+    margin-bottom: 20px;
+  }
+}
+#services .services-section .tabs .tabs-items .item-sec div p {
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  #services footer {
+    margin-top: 280px;
+  }
+}
+#contact {
+  display: flex;
+  flex-direction: column;
+}
+#contact .top-services-section {
+  background-image: url('../img/contact/contact-jumbotron.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+@media (max-width: 500px) {
+  #contact .top-services-section {
+    background-image: url('../img/contact/contact-mobile-jumbotron.png');
+  }
+}
+#contact .top-services-section h1 {
+  font-size: 4rem;
+  padding: 200px 0 20px;
+  color: #fff;
+}
+#contact .contact-content {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+@media (max-width: 800px) {
+  #contact .contact-content {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 500px) {
+  #contact .contact-content {
+    width: 95%;
+    flex-direction: column;
+  }
+}
+#contact .contact-content .side {
+  width: 40%;
+}
+@media (max-width: 500px) {
+  #contact .contact-content .side {
+    width: 100%;
+  }
+  #contact .contact-content .side.places {
+    margin-top: 30px;
+  }
+}
+#contact .contact-content .side div {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+#contact .contact-content .side div input#email {
+  width: 100%;
+  border-radius: 3px;
+  padding: 8px 0;
+  text-indent: 5px;
+}
+#contact .contact-content .side div select {
+  width: 100%;
+  border-radius: 3px;
+  padding: 8px 0;
+  text-indent: 5px;
+}
+#contact .contact-content .side div textarea {
+  width: 100%;
+  border-radius: 3px;
+}
+#contact .contact-content .side div label {
+  font-weight: bold;
+}
+#contact .contact-content .side button {
+  padding: 10px 40px;
+  background-color: #fff;
+}
+#contact .contact-content .side button:hover {
+  background-color: #99A4AF;
+}
+#contact .contact-content .side address span {
+  font-weight: bold;
+}
