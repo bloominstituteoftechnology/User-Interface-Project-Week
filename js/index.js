@@ -15,11 +15,8 @@ const menuBtnClose = document.querySelector('.menu-close-btn');
 
 
 const toggleMenu = () => {
-  // menu.classList.toggle('menu--open');
-
   menuBtnClose.classList.toggle("menu-close-btn");
   navMenu.classList.toggle("menu-close")
-
   menuBtn.classList.toggle('menu-close');
 
 
