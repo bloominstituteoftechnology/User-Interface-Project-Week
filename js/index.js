@@ -4,7 +4,7 @@ class TabLink{
         this.element= element;
         this.data = this.element.dataset.tab;
         this.item = document.querySelector(`.tabs-item[data-tab="${this.data}"]`);
-        console.log(this.item);
+        //console.log(this.item);
         this.tabItem = new TabItem(this.item);
         
         this.element.addEventListener('click', () => {
@@ -50,8 +50,16 @@ class TabItem {
       this.element.classList.add('tabs-item-selected');
     }
   }
-
-
-
-
 let links = document.querySelectorAll('.tab-link').forEach( link => new TabLink(link));
+
+
+let hamclick = document.querySelector('.hamburger-img');
+
+hamclick.addEventListener('click', () =>{
+    console.log('hamburger was clicked');
+let container = document.querySelector(".container");
+container.classList.toggle('nav-clicked');
+});
+
+let jumbo = document.querySelector('.title-img');
+
