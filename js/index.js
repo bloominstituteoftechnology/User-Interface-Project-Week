@@ -1,5 +1,7 @@
 // JS goes here
 
+// TAB COMPONENTS JS //
+
 class TabLink {
     constructor(element) {
       this.element = element;
@@ -46,4 +48,18 @@ class TabLink {
   
   let links = document.querySelectorAll('.tabs-link');
   links.forEach( link => new TabLink(link));
+
+
+  //MENU [JS]
+
+  // OPEN:
+
+  const toggleMenu = () => {
+    navs.classList.toggle('menu--open')
+    ;}
+
+  const navs = document.querySelector('.toggle-menu');
+
+  const menuImg = document.querySelector('.nav-ham')
+  menuImg.addEventListener('click', toggleMenu);
   
