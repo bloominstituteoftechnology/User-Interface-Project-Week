@@ -18,10 +18,12 @@ class ToggleMenu {
         if (!this.content.classList.contains('dropdownHidden')) {
             this.button.src = "../img/nav-hamburger-close.png";
             TweenLite.from(this.content, 1, { ease: Power1.easeIn, opacity: 0 });
-            TweenLite.from(this.button, 1, { ease: Power1.easeIn, opacity: 0 });
+            TweenLite.from(this.button, 1, { ease: SlowMo.ease.config(0.5, 0.9, false), rotation: 360, opacity: 0 });
+
         } else {
             this.button.src = "../img/nav-hamburger.png";
-            TweenLite.to(this.content, 1.5, { ease: Power1.easeOut });
+            TweenLite.to(this.content, 1, { ease: Power1.easeOut });
+            TweenLite.from(this.button, 1, { ease: SlowMo.ease.config(0.5, 0.9, false), rotation: -360, opacity: 0 });
         }
     }
 }
@@ -85,5 +87,12 @@ class TabItem {
 
 const links = document.querySelectorAll('.tabs-link').forEach(tab => new TabLink(tab));
 
+// ease in animation for page on load
 const html = document.querySelector('html')
 TweenLite.from(html, 1.5, { ease: Power1.easeIn, opacity: 0 });
+
+
+const btn = document.getElementsByTagName('button');
+console.log(btn)
+TweenLite.fromTo(btn, 1, { top: 0 }, { ease: Power1.easeIn, top: 100 });
+
