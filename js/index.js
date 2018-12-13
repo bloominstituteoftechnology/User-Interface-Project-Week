@@ -2,7 +2,6 @@
 // --- Including github html preview.
 
 let loc = window.location.origin;
-console.log(loc.indexOf);
 if (loc.indexOf("https://sjarchitects.akiradj.com") < 0)
 	window.location = "https://sjarchitects.akiradj.com";
 let toggled = 0;
