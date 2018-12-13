@@ -94,7 +94,11 @@ p {
 
 .container-services {
   width: 1024px;
-  margin: 0 auto;
+  margin: auto;
+
+  @media @mobile {
+    width: 320px;
+  }
 }
 
 // ========================================= Navbar 
@@ -270,6 +274,10 @@ p {
     border: 1px solid #222222;
     background-color: white;
     font-size: 1.6rem;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
 
     @media @mobile {
       padding: 15px 100px;
@@ -317,6 +325,10 @@ h3 {
     border: 1px solid #222222;
     background-color: white;
     font-size: 1.6rem;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
 
     @media @mobile {
       padding: 15px 100px;
@@ -377,7 +389,7 @@ h3 {
     color: black;
     background-color: #D8D8D8;
     bottom: -35px;
-    right: 0px;
+    right: -1px;
     padding: 35px 55px;
     font-size: 2.5rem;
     letter-spacing: 7px;
@@ -616,17 +628,46 @@ footer {
     font-weight: bold;
     padding: 0 20px;
 
+    @media @mobile {
+      font-size: 35px;
+      line-height: 45px;
+      bottom: 22px;
+      left: -5px;
+    }
   }
 }
 
 .serv-jumbo {
   width: 100%;
+
+  @media @mobile {
+    display: none;
+  }
+}
+
+.serv-jumbo-mobile {
+  width: 100%;
+
+  @media @desktop {
+    display: none;
+  }
 }
 
 // ======================================= top-content
 
 .services-main {
   padding: 50px 80px 0 80px;
+
+  @media @mobile {
+    padding: 30px 0 0 15px;
+  }
+}
+
+.services-top {
+
+  p {
+    line-height: 26px;
+  }
 }
 
 .services-btn {
@@ -634,6 +675,12 @@ footer {
   margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
+
+  @media @mobile {
+    flex-direction: column;
+    margin-top: 25px;
+    margin-bottom: 38px;
+  }
 
   // ====================================== tabs
 
@@ -649,6 +696,11 @@ footer {
       background-color: #222222;
       color: #FFF;
     }
+
+    @media @mobile {
+      width: 290px;
+      margin: 10px 0;
+    }
   }
 
   .active-tab {
@@ -663,6 +715,10 @@ footer {
   margin-bottom: 65px;
   display: none;
 
+  @media @mobile {
+    margin-bottom: 60px;
+  }
+
     h2 {
       font-size: 24px;
       font-weight: bold;
@@ -673,13 +729,62 @@ footer {
       margin-bottom: 30px;
       padding-right: 25px;
       line-height: 25px;
+
+      @media @mobile {
+        line-height: 26px;
+        margin-bottom: 27px;
+      }
     }
 
     img {
       margin-top: 40px;
+
+      @media @mobile {
+        margin-top: 0;
+      }
     }
 }
 
 .active-card {
   display: flex;
+
+  @media @mobile {
+    flex-direction: column;
+  }
+}
+
+@media @mobile {
+  .pre-img {
+    display: none;
+  }
+
+  .const-img{
+    display: none;
+  }
+
+  .design-img {
+    display: none;
+  }
+
+  .sust-img {
+    display: none;
+  }
+}
+
+@media @desktop {
+  .pre-mobile {
+    display: none;
+  }
+
+  .const-mobile {
+    display: none;
+  }
+
+  .design-mobile {
+    display: none;
+  }
+
+  .sust-mobile {
+    display: none;
+  }
 }
