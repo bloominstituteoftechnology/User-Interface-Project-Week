@@ -1,7 +1,12 @@
 const openMenu = () => {
-    // Toggle the "menu--open" class on your menu refence. 
+    
     menu.style.display = "block"
     menuButton.style.display = "none";
+    TweenMax.from(menu, 2,  {
+      x:900,
+      ease: Power4.easeOut,
+  });
+  
   }
   
 const closeMenu = () => {
