@@ -186,47 +186,97 @@ img {
     height: auto;
   }
 }
-.nav-container {
-  padding: 5px 8%;
+.container .nav-container {
+  display: block;
+}
+.container .nav-container .nav-menu {
+  padding: 10px 5%;
+  height: auto;
   display: flex;
+  align-content: baseline;
   justify-content: space-between;
-  align-items: baseline;
-  background: #8fa0b1;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #9fa9b5;
+  overflow-y: hidden;
+  transition: 0.5s;
 }
-.nav-container .logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #ffffff;
+@media (max-width: 500px) {
+  .container .nav-container .nav-menu {
+    margin-top: -2.9%;
+  }
 }
-.nav-container .nav-bar {
+.container .nav-container .nav-menu .overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
   display: none;
 }
-.nav-container .menu-icon {
+.container .nav-container .nav-menu a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 85px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+.container .nav-container .nav-menu a:hover {
+  color: #222222;
+}
+@media (max-width: 500px) {
+  .container .nav-container .nav-menu a:hover {
+    font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .container .nav-container .nav-menu {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+.container .nav-container .logo {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+.container .nav-container .menu-icon {
   display: inline-block;
   cursor: pointer;
 }
-.nav-container .menu-icon .bar1,
-.nav-container .menu-icon .bar2,
-.nav-container .menu-icon .bar3 {
+.container .nav-container .menu-icon .bar1,
+.container .nav-container .menu-icon .bar2,
+.container .nav-container .menu-icon .bar3 {
+  border-radius: 4px;
   width: 35px;
-  height: 5px;
+  height: 4px;
   background-color: white;
-  margin: 6px 0;
-  transition: 0.4s;
+  margin: 5px 0;
+  transition: 0.5s;
 }
-.nav-container .menu-icon .bar1:hover,
-.nav-container .menu-icon .bar2:hover,
-.nav-container .menu-icon .bar3:hover {
+.container .nav-container .menu-icon .bar1:hover,
+.container .nav-container .menu-icon .bar2:hover,
+.container .nav-container .menu-icon .bar3:hover {
   color: #222222;
 }
-.nav-container .menu-icon .change .bar1 {
+.container .nav-container .menu-icon .change .bar1 {
   transform: rotate(-45deg) translate(-9px, 6px);
 }
-.nav-container .menu-icon .change .bar2 {
+.container .nav-container .menu-icon .change .bar2 {
   opacity: 0;
 }
-.nav-container .menu-icon .change .bar3 {
+.container .nav-container .menu-icon .change .bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
+}
+.container .nav-container .fullpage {
+  height: 100%;
 }
 .container footer {
   color: white;
@@ -235,6 +285,12 @@ img {
   background: #828282;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 500px) {
+  .container footer {
+    height: auto;
+    padding: 0 5%;
+  }
 }
 .container footer h3 {
   font-size: 20px;
@@ -250,14 +306,30 @@ img {
   display: flex;
   justify-content: space-evenly;
 }
+@media (max-width: 500px) {
+  .container footer .address-section {
+    flex-direction: column;
+  }
+}
+.container footer .address-section input {
+  border-radius: 5px;
+  padding: 3%;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 25%;
+}
+@media (max-width: 500px) {
+  .container footer .address-section input {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+}
+.container footer .address-section address {
+  margin-top: 20px;
+}
 .container footer .copyright {
   margin-top: 40px;
   align-self: center;
-}
-.container footer input {
-  border-radius: 5px;
-  width: 100%;
-  height: 25%;
 }
 .cta {
   position: relative;
@@ -435,12 +507,12 @@ img {
     width: 100%;
   }
 }
-.contact .contact-img {
+.contact-img {
   position: relative;
   text-align: center;
   color: white;
 }
-.contact .contact-img .heading {
+.contact-img .heading {
   text-align: center;
   font-size: 6rem;
   font-weight: 600;
@@ -448,10 +520,101 @@ img {
   bottom: 8px;
   left: 16px;
 }
-.contact .main-content {
+.main-content {
   display: flex;
+  justify-content: space-between;
 }
-.contact .main-content .form-content form {
+@media (max-width: 500px) {
+  .main-content {
+    flex-direction: column;
+  }
+}
+.main-content .form-content {
+  width: 100%;
+}
+.main-content .form-content h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+.main-content .form-content form {
+  width: 60%;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 500px) {
+  .main-content .form-content form {
+    width: 100%;
+  }
+}
+.main-content .form-content form .email-label {
+  font-size: 1.5rem;
+  margin: 8px 0;
+}
+.main-content .form-content form .email-input {
+  font-size: 1.5rem;
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+  padding: 8px;
+}
+.main-content .form-content form p {
+  color: darkgray;
+  font-size: 1.2rem;
+}
+.main-content .form-content form .buildings {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+.main-content .form-content form select {
+  margin: 3px 0;
+  height: 40px;
+  font-size: 1.5rem;
+}
+.main-content .form-content form .overview-desc {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+.main-content .form-content form #tarea {
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.main-content .form-content form .radio-button {
+  font-size: 1.5rem;
+}
+.main-content .form-content form .submit-btn {
+  font-size: 1.5rem;
+  height: 38px;
+  margin: 5% 0;
+  width: 30%;
+}
+@media (max-width: 500px) {
+  .main-content .form-content form .submit-btn {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+.main-content .form-content form .submit-btn:hover {
+  color: #ffffff;
+  background: #222222;
+}
+.main-content .locations {
+  width: 50%;
+}
+.main-content .locations .heading {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.main-content .locations h3 {
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+.main-content .locations p {
+  font-size: 1.5rem;
+}
+.main-content .locations address {
+  margin-top: 20px;
 }
