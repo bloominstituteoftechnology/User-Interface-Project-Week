@@ -62,4 +62,10 @@ class TabLink {
 
   const menuImg = document.querySelector('.nav-ham')
   menuImg.addEventListener('click', toggleMenu);
+
+
+  //CLOSE:
+
+  const toggleClose = document.querySelector('.toggle-menu')
+  toggleClose.addEventListener('click', toggleMenu);
   
