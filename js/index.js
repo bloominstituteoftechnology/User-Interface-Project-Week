@@ -69,13 +69,13 @@ class Carousel {
     this.element = element;
     this.currentItemIndex = 0;
 
-    this.carouselItem = document.querySelectorAll(".carousel-item");
+    this.carouselItem = this.element.querySelectorAll(".carousel-item");
     this.carouselItem[this.currentItemIndex].style.display = "block";
 
-    const rightButton = document.querySelector(".right-button");
+    const rightButton = this.element.querySelector(".right-button");
     rightButton.addEventListener("click", () => this.slideNext());
 
-    const leftButton = document.querySelector(".left-button");
+    const leftButton = this.element.querySelector(".left-button");
     leftButton.addEventListener("click", () => this.slideBack());
   }
   slideNext() {
@@ -90,6 +90,12 @@ class Carousel {
 
   slideBack() {
     //console.log("slide back clicked");
+    this.carouselItem[this.currentItemIndex].style.display = "none";
+    this.currentItemIndex--;
+    if (this.currentItemIndex === -1) {
+      this.currentItemIndex = this.carouselItem.length - 1;
+    }
+    this.carouselItem[this.currentItemIndex].style.display = "block";
   }
 }
 
