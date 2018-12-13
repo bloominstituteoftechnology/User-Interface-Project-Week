@@ -86,13 +86,13 @@ class Carousel {
 
             const distance = this.images[newIndex].width;
 
-            this.currentProjectName = this.projectTextItems[this.currentIndex]
-            this.newProjectName = this.projectTextItems[newIndex];
+            let currentProjectName = this.projectTextItems[this.currentIndex]
+            let newProjectName = this.projectTextItems[newIndex];
 
-            this.newProjectName.style.position = "absolute";
-            this.newProjectName.style.top = 0;
-            this.newProjectName.style.display = "block";
-            this.newProjectName.style.opacity = 1;
+            newProjectName.style.position = "absolute";
+            newProjectName.style.top = 0;
+            newProjectName.style.display = "block";
+            newProjectName.style.opacity = 1;
 
             const slideAnimation = new TimelineMax();
             slideAnimation.fromTo(this.images[this.currentIndex], 1, {
@@ -108,16 +108,16 @@ class Carousel {
                 x: -distance
             }, {
                 x: 0
-            }, 0).fromTo(this.currentProjectName, 1, {
+            }, 0).fromTo(currentProjectName, 1, {
                 x: 0
             }, {
                 x: distance,
                 onComplete: () => {
-                    this.newProjectName.style.position = "static";
-                    this.newProjectName.style.top = "auto";
-                    this.currentProjectName.style.display = "none";
+                    newProjectName.style.position = "static";
+                    newProjectName.style.top = "auto";
+                    currentProjectName.style.display = "none";
                 }
-            }, 0).fromTo(this.newProjectName, 1, {
+            }, 0).fromTo(newProjectName, 1, {
                 x: -distance
             }, {
                 x: 0
@@ -143,13 +143,13 @@ class Carousel {
 
             const distance = this.images[newIndex].width;
 
-            this.currentProjectName = this.projectTextItems[this.currentIndex]
-            this.newProjectName = this.projectTextItems[newIndex];
+            let currentProjectName = this.projectTextItems[this.currentIndex]
+            let newProjectName = this.projectTextItems[newIndex];
 
-            this.newProjectName.style.position = "absolute";
-            this.newProjectName.style.top = 0;
-            this.newProjectName.style.display = "block";
-            this.newProjectName.style.opacity = 1;
+            newProjectName.style.position = "absolute";
+            newProjectName.style.top = 0;
+            newProjectName.style.display = "block";
+            newProjectName.style.opacity = 1;
 
             const slideAnimation = new TimelineMax();
             slideAnimation.fromTo(this.images[this.currentIndex], 1, {
@@ -165,16 +165,16 @@ class Carousel {
                 x: distance
             }, {
                 x: 0
-            }, 0).fromTo(this.currentProjectName, 1, {
+            }, 0).fromTo(currentProjectName, 1, {
                 x: 0
             }, {
                 x: -distance,
                 onComplete: () =>  {
-                    this.newProjectName.style.position = "static";
-                    this.newProjectName.style.top = "auto";
-                    this.currentProjectName.style.display = "none";
+                    newProjectName.style.position = "static";
+                    newProjectName.style.top = "auto";
+                    currentProjectName.style.display = "none";
                 }
-            }, 0).fromTo(this.newProjectName, 1, {
+            }, 0).fromTo(newProjectName, 1, {
                 x: distance
             }, {
                 x: 0
@@ -196,13 +196,13 @@ class Carousel {
             this.projectModalDescriptions[this.currentIndex].style.display = "none";
             this.projectModalDescriptions[newIndex].style.display = "block"
 
-            this.currentProjectName = this.projectTextItems[this.currentIndex]
-            this.newProjectName = this.projectTextItems[newIndex];
+            let currentProjectName = this.projectTextItems[this.currentIndex]
+            let newProjectName = this.projectTextItems[newIndex];
 
-            this.newProjectName.style.position = "absolute";
-            this.newProjectName.style.top = 0;
-            this.newProjectName.style.display = "block";
-            this.newProjectName.style.transform = "matrix(1, 0, 0, 1, 0, 0)";
+            newProjectName.style.position = "absolute";
+            newProjectName.style.top = 0;
+            newProjectName.style.display = "block";
+            newProjectName.style.transform = "matrix(1, 0, 0, 1, 0, 0)";
 
             const slideAnimation = new TimelineMax();
             slideAnimation.to(this.images[this.currentIndex], 1, {
@@ -216,14 +216,14 @@ class Carousel {
                 opacity: 0
             }, {
                 opacity: 1
-            }, 0).to(this.currentProjectName, 1, {
+            }, 0).to(currentProjectName, 1, {
                 opacity: 0,
                 onComplete: () =>  {
-                    this.newProjectName.style.position = "static";
-                    this.newProjectName.style.top = "auto";
-                    this.currentProjectName.style.display = "none";
+                    newProjectName.style.position = "static";
+                    newProjectName.style.top = "auto";
+                    currentProjectName.style.display = "none";
                 }
-            }, 0).fromTo(this.newProjectName, 1, {
+            }, 0).fromTo(newProjectName, 1, {
                 opacity: 0
             }, {
                 opacity: 1
