@@ -23,10 +23,6 @@ toggleMenu = function () {
 }
 
 
-
-
-
-
 // ====================== SERVICES TAB NAVIGATOR
 // CLASS CONSTRUCTOR
 
@@ -59,59 +55,40 @@ class TabContent {
   }
 }
 
-// VARIABLES
 const tabButtons = document.querySelectorAll('.tab-button');
 tabButtons.forEach(tab => new TabButton(tab));
 
 
 
-// ==================================== Carousel
-class Carousel {
-  constructor(element) {
-    this.element = element; // each img tag
-    this.images = document.querySelectorAll('.carousel-image');
-    this.rightArrow = document.querySelector('.right-arrow');
-    this.leftArrow = document.querySelector('.left-arrow');
+//Scroll into view animation
+let showOnScroll = function () {
+  let elems;
+  let windowHeight;
 
-    this.leftArrow.addEventListener('click', () => this.scrollLeft());
-    this.rightArrow.addEventListener('click', () => this.scrollRight());
-
+  function init() {
+    elems = document.querySelectorAll(".hidden");
+    windowHeight = window.innerHeight;
+    addEventHandlers();
+    checkPosition();
   }
-  scrollLeft() {
-    if (currentIndex === 0) {
-      this.images[currentIndex].classList.remove('carousel-selected');
-      currentIndex = this.images.length - 1;
-      this.images[currentIndex].classList.add('carousel-selected');
-    } else {
-      this.images[currentIndex].classList.remove('carousel-selected');
-      currentIndex--;
-      this.images[currentIndex].classList.add('carousel-selected');
+
+  function addEventHandlers() {
+    window.addEventListener("scroll", checkPosition);
+    window.addEventListener("resize", init);
+  }
+
+  function checkPosition() {
+    for (var i = 0; i < elems.length; i++) {
+      let positionFromTop = elems[i].getBoundingClientRect().top;
+      if (positionFromTop - windowHeight <= -170) {
+        TweenMax.to(elems[i], 2, {
+          opacity: 1
+        });
+      }
     }
   }
-
-  scrollRight() {
-    if (currentIndex === this.images.length - 1) {
-
-      this.images[currentIndex].classList.remove('carousel-selected');
-      currentIndex = 0;
-      this.images[currentIndex].classList.add('carousel-selected');
-
-    } else {
-      this.images[currentIndex].classList.remove('carousel-selected');
-      currentIndex++;
-      this.images[currentIndex].classList.add('carousel-selected');
-    }
-    TweenMax.from(this.images[currentIndex], 1, {
-      opacity: 1,
-      transform: translateX(-50),
-      x: 2000,
-    });
-    // TweenMax.from(".carousel-images img", 2, {
-    //   opacity: 0,
-    //   x: -100
-    // })
-  }
-}
-let currentIndex = 0;
-let carousel = document.querySelector('.carousel');
-carousel = new Carousel(carousel);
+  return {
+    init: init
+  };
+};
+showOnScroll().init();
