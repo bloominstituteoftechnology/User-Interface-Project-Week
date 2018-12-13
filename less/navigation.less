@@ -1,0 +1,101 @@
+.navigation {
+    padding: 0 3rem;
+    background-color: @nav-background;
+    height: 7rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    .nav-list {
+        display: none;
+        text-align: center;
+    }
+    .nav-logo {
+        .nav-logo-style;
+        margin-left: calc(30vw - 30rem);
+        margin-top: 2rem;
+        @media (max-width: 970px) {
+            margin-left: 5px;
+        }
+    }
+    .nav-toggle-open:hover {
+        cursor: pointer;
+    }
+}
+.navigation.navigation--open {
+    height: 100vh;
+    align-items: flex-start;
+    .nav-list {
+        display: block;
+        height: 100%;
+        padding-top: 25rem;
+        &__item {
+            .nav-text-expanded;
+            text-decoration: none;
+            &.active-link {
+                color: #000;
+            }
+        }
+    }
+}
+
+.toggler-holder {
+        border: 2px solid white;
+        width: 40px;
+        position: fixed;
+        top:15px;
+        height: 40px;
+        right: 30px;
+        transition: .5s;
+        transform: rotate(45deg);
+        z-index: 100;
+    .toggler {
+        width: 20px;
+	    transform: rotate(-45deg);
+	    height: 2px;
+	    background: white;
+	    position: absolute;
+	    top: 48%;
+	    left: 23%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+        &:before, &:after {
+	        content: '';
+	        position: absolute;
+	        width: 25px; 
+	        left: -10%; 
+	        height: 2px;
+	        background: white;
+	        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	        transition: .5s;
+        }
+        &:before {
+        	top: -9px;
+        }
+        &:after {
+        	top: 9px;
+        }
+    }
+}
+
+.toggler-holder.active {
+	transform: rotate(225deg);
+	transition: .5s;
+	border-color: white;
+}
+.toggler-holder.active .toggler {
+	background: rgba(0,0,0,0);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+.toggler-holder.active .toggler:before {
+	top:0;
+	transform: rotate(-45deg);
+	background: white;
+}
+
+.toggler-holder.active .toggler:after {
+	top:0;
+	transform: rotate(-315deg);
+	background: white;
+}
