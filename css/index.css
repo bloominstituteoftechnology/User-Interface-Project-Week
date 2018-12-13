@@ -154,17 +154,6 @@ table {
     display: none;
   }
 }
-.row-reverse {
-  flex-direction: row-reverse;
-}
-.column-reverse {
-  flex-direction: column-reverse;
-}
-@media (min-width: 1024px) {
-  .desktop-row-reverse {
-    flex-direction: row-reverse;
-  }
-}
 .navbar-component {
   position: fixed;
   z-index: 100;
@@ -187,17 +176,43 @@ table {
   font-weight: bold;
   font-size: 2.4rem;
 }
-.navbar-component .navbar-container .navbar-links-container {
-  position: fixed;
+.navbar-component .navbar-container .navbar-button-open {
   display: none;
 }
-.navbar-component .navbar-container .navbar-links-container .navbar-link {
+.navbar-component .navbar-container .navbar-button-close {
+  display: none;
+}
+.navbar-component .navbar-container .navbar-button-visible {
+  display: block;
+}
+.navbar-component .navbar-links-container {
+  display: none;
+  flex-flow: column nowrap;
+  width: 35%;
+  margin: 4rem auto;
+  justify-content: center;
+}
+.navbar-component .navbar-links-container .navbar-link {
   text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 4.2rem;
+  margin: 3.5rem 0;
+}
+.navbar-component .navbar-links-container .navbar-link:hover {
+  color: #444444;
+}
+.navbar-component .navbar-links-container-open {
+  display: flex;
 }
 @media (min-width: 1024px) {
   .navbar-component .navbar-container {
     width: 1024px;
     padding: 0 7.5rem;
+  }
+  .navbar-component .navbar-links-container {
+    width: 10%;
+    margin: 10rem auto;
   }
 }
 .jumbotron-component {
@@ -567,5 +582,16 @@ table {
   }
   .services-container .services-content-container {
     padding: 3rem 8.5% 2rem;
+  }
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+.column-reverse {
+  flex-direction: column-reverse;
+}
+@media (min-width: 1024px) {
+  .desktop-row-reverse {
+    flex-direction: row-reverse;
   }
 }

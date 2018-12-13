@@ -1,5 +1,26 @@
 // JS goes here
 
+class NavbarComponent {
+    constructor (element) {
+        this.element = element;
+        this.buttonOpen = this.element.querySelector('.navbar-button-open');
+        this.buttonClose = this.element.querySelector('.navbar-button-close');
+        this.linksContainer = this.element.querySelector('.navbar-links-container');
+
+        this.buttonOpen.addEventListener('click', _ => {
+            this.linksContainer.classList.add('navbar-links-container-open');
+            this.buttonOpen.classList.remove('navbar-button-visible');
+            this.buttonClose.classList.add('navbar-button-visible');
+        })
+
+        this.buttonClose.addEventListener('click', _ => {
+            this.linksContainer.classList.remove('navbar-links-container-open');
+            this.buttonOpen.classList.add('navbar-button-visible');
+            this.buttonClose.classList.remove('navbar-button-visible');
+        })
+    }
+}
+
 class TabsLink {
     constructor (element) {
         this.element = element;
@@ -24,4 +45,5 @@ class TabsComponent {
     }
 }
 
+document.querySelectorAll('.navbar-component').forEach(elem => new NavbarComponent(elem));
 document.querySelectorAll('.tabs-component').forEach(elem => new TabsComponent(elem));
