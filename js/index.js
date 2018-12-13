@@ -30,7 +30,7 @@ const toggleMenu = () => {
 let slideDown = new TimelineMax({ paused: true });
 
 slideDown.from(navMenu, 1, {
-  top: "-500px",
+  top: "-700px",
   onStart: toggleMenu,
   onReverseComplete: toggleMenu,
   ease: Power1.easeInOUt,
