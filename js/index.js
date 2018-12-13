@@ -27,7 +27,7 @@ class TabCard {
         const cards = document.querySelectorAll(".card");
         cards.forEach(card => card.classList.remove("current-card"));
         this.cardElement.classList.add("current-card")
-        TweenMax.fromTo(this.cardElement, 1, {opacity: 0}, {opacity: 1} )
+        TweenMax.fromTo(this.cardElement, 0.5, {scale: 0.1}, {scale: 1} )
         
     }
 }
@@ -59,18 +59,3 @@ close.addEventListener("click", function(e) {
     });
 
 })
-
-// scroll event:
-let controller = new ScrollMagic.Controller();
-let scene1 = new ScrollMagic.Scene({
-    triggerElement: "#trigger1",
-    offset: 100
-}).setTween(TweenMax.fromTo("#animate1", 1, {opacity: 0}, {opacity: 1}))
-.addIndicators({name: "indicator"})
-scene1.addTo(controller);
-
-let scene2 = new ScrollMagic.Scene({
-    triggerElement: "#trigger2"
-}).setTween(TweenMax.fromTo("#animate2", 1, {opacity: 0}, {opacity: 1}))
-.addIndicators({name: "indicator2"})
-scene2.addTo(controller);

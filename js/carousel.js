@@ -24,7 +24,7 @@ class Carousel {
         if (this.currentIndex < 0) {
             this.currentIndex = this.images.length-1;
         }
-        this.images[this.currentIndex].classList.add("current-img")     
+        this.images[this.currentIndex].classList.add("current-img")    
     }
 }
 
