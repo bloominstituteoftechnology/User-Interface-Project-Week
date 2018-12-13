@@ -17,7 +17,7 @@ function dealWithScrolling(e) {
   console.log("Epic!");
 
   profiles.forEach(profile => {
-    if (isFullyVisible(profile)) {
+    if (isPartiallyVisible(profile)) {
       TweenMax.to(profile, 1.5, { className: "+=reveal-on-scroll" });
     }
   });
@@ -30,4 +30,14 @@ function isFullyVisible(el) {
   let bottom = elementBoundary.bottom;
 
   return top >= 0 && bottom <= window.innerHeight;
+}
+
+function isPartiallyVisible(el) {
+  let elementBoundary = el.getBoundingClientRect();
+
+  let top = elementBoundary.top;
+  let bottom = elementBoundary.bottom;
+  let height = elementBoundary.height;
+
+  return top + height >= 0 && height + window.innerHeight >= bottom;
 }
