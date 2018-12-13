@@ -33,10 +33,10 @@ class Carousel {
             this.currentIndex = this.imgArray.length - 1;
             this.currentIndex = this.textArray.length - 1;
         }
-        
+
         this.imgArray[this.currentIndex].selectImage();
-        this.textArray[this.currentIndex].selectParagraph()
-        TweenMax.from(".active-paragraph", 2, {opacity:0.5})   
+        this.textArray[this.currentIndex].selectParagraph();
+        TweenMax.from(".active-paragraph", 2, {opacity:0.25});
     }  
 
     rightClick() {
@@ -51,8 +51,9 @@ class Carousel {
         }
        
         this.imgArray[this.currentIndex].selectImage();
+        
         this.textArray[this.currentIndex].selectParagraph();
-        TweenMax.from(".active-paragraph", 2, {opacity:0.5});
+        TweenMax.from(".active-paragraph", 2, {opacity:0.25});
     }
 }
 
