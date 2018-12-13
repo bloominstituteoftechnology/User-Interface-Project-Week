@@ -1,3 +1,47 @@
+@keyframes kenburns-bottom {
+  0% {
+    transform: scale(0.75) translateY(0);
+    transform-origin: 50% 84%;
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    transform-origin: bottom;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-top {
+  0% {
+    transform: scale(0);
+    transform-origin: 50% 0;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 0;
+    opacity: 1;
+  }
+}
+@keyframes scale-out-top {
+  0% {
+    transform: scale(1);
+    transform-origin: 50% 0;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    transform-origin: 50% 0;
+    opacity: 1;
+  }
+}
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -146,6 +190,8 @@ body {
 }
 h1 {
   font-size: 6.4rem;
+  animation-name: text-focus-in;
+  animation-duration: 4s;
 }
 @media (max-width: 600px) {
   h1 {
@@ -241,6 +287,8 @@ p {
   justify-content: center;
   background-color: #9AA4AD;
   height: 100vh;
+  animation-name: scale-in-top;
+  animation-duration: 0.3s;
 }
 @media (max-width: 600px) {
   .nav-container .menu--open {
@@ -267,6 +315,8 @@ p {
   background-size: cover;
   margin: 0 auto 3.6rem;
   z-index: 50;
+  animation-name: ken-burns-bottom;
+  animation-duration: 5s;
 }
 @media (max-width: 600px) {
   .header {
@@ -440,6 +490,10 @@ footer .footer-form p {
   text-align: center;
   font-size: 1.4rem;
   cursor: pointer;
+}
+.top-container .top-content .button:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
 }
 @media (max-width: 600px) {
   .top-container .top-content .button {
@@ -671,6 +725,10 @@ footer .footer-form p {
   padding: 8px 16px;
   margin: 8px 0 42px;
 }
+.button-container .buttons .button:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
+}
 @media (max-width: 600px) {
   .button-container .buttons .button {
     margin: 0 auto 4px;
@@ -875,6 +933,10 @@ footer .footer-form p {
   text-align: center;
   font-size: 1.4rem;
   cursor: pointer;
+}
+.contact-container .form-container .button:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
 }
 @media (max-width: 600px) {
   .contact-container .form-container .button {
