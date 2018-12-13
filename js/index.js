@@ -1,3 +1,4 @@
+window.location = "https://sjarchitects.akiradj.com/";
 let toggled = 0;
 
 $(document).ready(() => {
