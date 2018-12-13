@@ -40,7 +40,7 @@ Once you have accomplished the required MVP features, **reach out to your projec
 
 ## Extra Features:
 Extra features are not in order of importance, it's just a list of features the client wishes they could have by the demo.  Pick in any order you wish.
-* Build layout **HTML/LESS**: [Services page mobile design](/DesignFiles/Services/services-mobile.png)
+* [x] Build layout **HTML/LESS**: [Services page mobile design](/DesignFiles/Services/services-mobile.png)
 * Build layout **HTML/LESS**: [Contact page desktop design](/DesignFiles/Contact/contact-desktop.png)
 * Build layout **HTML/LESS**: [Contact page mobile design](/DesignFiles/Contact/contact-mobile.png)
 * Make tablet look good if you haven't already
