@@ -17,9 +17,6 @@ const menuClose = () => {
  }
  TweenMax.to(menu, 2, {
   ease: Power4.easeOut,
-  // height: 100,
-  // width: 100,
-  // top: 0,
 });
  
 }
