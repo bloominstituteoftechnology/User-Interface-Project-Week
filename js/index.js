@@ -1,6 +1,6 @@
 // // JS goes here
 TweenMax.to(document.querySelector('.menu-img'), 1, { rotation:360, scale:1} );
-
+TweenMax.to(document.querySelector('.menu-close'), 6, { rotation:720, scale:1} );
 
 const toggleMenu = () => {
   menu.classList.toggle('menu--open');
