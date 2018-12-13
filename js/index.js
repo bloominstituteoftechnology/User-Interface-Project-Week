@@ -46,11 +46,11 @@ btns.forEach(btn => new Button(btn))
 
 //=========================== contact speech-bubble button component
 
+// selects speech bubble images
 const speechBubbles = document.querySelectorAll('.team-button');
-console.log(speechBubbles);
-const speechBubbleContent = document.querySelectorAll('.team-speak p');
-console.log(speechBubbleContent);
 
+// selects speech bubble paragraphs
+const speechBubbleContent = document.querySelectorAll('.team-speak p');
 
 class SpeechB {
     constructor(element) {
@@ -59,12 +59,10 @@ class SpeechB {
     }
 
     expandBubble () {
-
+        // matches speech button to speech paragraph
         const speechContent = speechBubbleContent[this.dataset.tab-1];
+        // displays & hides on click
         speechContent.classList.toggle('inactive');
-        
-
-
     }
 }
 
