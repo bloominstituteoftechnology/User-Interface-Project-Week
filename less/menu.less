@@ -8,6 +8,8 @@ header {
   position: fixed;
   z-index: 1;
   opacity: 0.91;
+  height: 5.5%;
+  overflow: hidden;
 
   .menu-bar {
     display: flex;
@@ -20,10 +22,18 @@ header {
     font-size: 1rem;
     margin: 1% 8%;
     color: #ffff;
+    position: relative;
+    top: 10px;
+
+    &.close {
+      top: 4px;
+    }
   }
 
   .menu-btn {
     margin: 1.4% 8.5%;
+    position: relative;
+    top: 10px;
     .menu-line {
       width: 21px;
       margin: 12%;
@@ -36,18 +46,20 @@ header {
 
     &.close {
       transform: rotate(720deg);
-      transition-duration: 1s;
+      transition-duration: 0.5s;
+      top: 4px;
+
       .menu-line {
         &:nth-child(1) {
           transform: rotate(45deg) translate(1px, 2px);
-          transition-duration: 1s;
+          transition-duration: 0.5s;
         }
         &:nth-child(2) {
           display: none;
         }
         &:nth-child(3) {
           transform: rotate(-45deg) translate(1px, -3px);
-          transition-duration: 1s;
+          transition-duration: 0.5s;
         }
       }
     }
@@ -61,10 +73,11 @@ header {
     flex-direction: column;
 
     .menu-link {
-      margin: 9%;
+      margin: 1%;
       color: black;
       text-decoration: none;
-      display: none;
+      // display: none;
+      transform: translate3d(450%, 0, 0);
 
       &:hover {
         color: white;
@@ -74,13 +87,15 @@ header {
       }
 
       &.close {
-        display: block;
+        margin: 10%;
+        transform: translate3d(0, 0, 0);
         transition-duration: 0.5s;
       }
     }
   }
 
   &.close {
+    height: auto;
     opacity: 0.91;
     display: block;
   }

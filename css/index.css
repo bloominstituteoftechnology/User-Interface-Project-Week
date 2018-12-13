@@ -143,6 +143,8 @@ header {
   position: fixed;
   z-index: 1;
   opacity: 0.91;
+  height: 5.5%;
+  overflow: hidden;
 }
 header .menu-bar {
   display: flex;
@@ -155,9 +157,16 @@ header p {
   font-size: 1rem;
   margin: 1% 8%;
   color: #ffff;
+  position: relative;
+  top: 10px;
+}
+header p.close {
+  top: 4px;
 }
 header .menu-btn {
   margin: 1.4% 8.5%;
+  position: relative;
+  top: 10px;
 }
 header .menu-btn .menu-line {
   width: 21px;
@@ -169,18 +178,19 @@ header .menu-btn .menu-line {
 }
 header .menu-btn.close {
   transform: rotate(720deg);
-  transition-duration: 1s;
+  transition-duration: 0.5s;
+  top: 4px;
 }
 header .menu-btn.close .menu-line:nth-child(1) {
   transform: rotate(45deg) translate(1px, 2px);
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 }
 header .menu-btn.close .menu-line:nth-child(2) {
   display: none;
 }
 header .menu-btn.close .menu-line:nth-child(3) {
   transform: rotate(-45deg) translate(1px, -3px);
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 }
 header nav {
   font-size: 2rem;
@@ -190,10 +200,10 @@ header nav {
   flex-direction: column;
 }
 header nav .menu-link {
-  margin: 9%;
+  margin: 1%;
   color: black;
   text-decoration: none;
-  display: none;
+  transform: translate3d(450%, 0, 0);
 }
 header nav .menu-link:hover {
   color: white;
@@ -202,10 +212,12 @@ header nav .menu-link:hover {
   font-size: 2.2rem;
 }
 header nav .menu-link.close {
-  display: block;
+  margin: 10%;
+  transform: translate3d(0, 0, 0);
   transition-duration: 0.5s;
 }
 header.close {
+  height: auto;
   opacity: 0.91;
   display: block;
 }
@@ -414,8 +426,13 @@ main .the-blocks .project-info {
   margin-top: 7%;
   margin-left: 3%;
   margin-bottom: 1%;
+  cursor: pointer;
   font-size: 0.7rem;
   border: 1px solid black;
+}
+.button:hover {
+  background: #5e9fb9;
+  color: white;
 }
 .service-container .services-main-img {
   width: 100%;
@@ -479,6 +496,9 @@ main .the-blocks .project-info {
 @media (max-width: 500px) {
   header.close {
     height: 100%;
+  }
+  header .nav .menu-link.close {
+    margin: 55%;
   }
   main .text {
     font-size: 1rem;
@@ -567,7 +587,7 @@ main .the-blocks .project-info {
   }
   .service-container .services-text {
     font-size: 1rem;
-    top: 15px;
+    top: 5px;
     left: 10px;
   }
   .service-container .top-paragraph {

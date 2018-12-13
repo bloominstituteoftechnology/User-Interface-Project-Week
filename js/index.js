@@ -1,11 +1,13 @@
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelectorAll(".menu-link");
 const header = document.querySelector("header");
+const logo = document.querySelector(".menu-bar p");
 
 menuBtn.addEventListener("click", () => {
   header.classList.toggle("close");
   menu.forEach(link => link.classList.toggle("close"));
   menuBtn.classList.toggle("close");
+  logo.classList.toggle("close");
 });
 
 // ==================== Services ==========================
