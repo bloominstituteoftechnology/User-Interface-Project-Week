@@ -22,4 +22,5 @@ $(document).ready(() => {
 			event.preventDefault();
 		});
 	});
+	$("footer").load("./footer.html");
 });
