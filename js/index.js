@@ -14,3 +14,4 @@ function closeNav() {
 
 navBurger.addEventListener('click', () => openNav());
 navCloseBtn.addEventListener('click', () => closeNav());
+window.addEventListener('keydown', () => closeNav());

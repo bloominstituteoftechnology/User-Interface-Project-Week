@@ -35,7 +35,6 @@ class TabItem {
         Array.from(items).forEach( i => i.classList.remove('tabs-item-selected'));
         // Add a class named "tabs-item-selected" to this element
         this.element.classList.add('tabs-item-selected');
-        this.element.style.animation = "focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
     }
 }
 
