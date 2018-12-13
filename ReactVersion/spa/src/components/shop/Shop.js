@@ -9,7 +9,7 @@ class Shop extends React.Component {
         return (
             <div>
             <div className="shopping-cart">
-            <div className="title">
+            <div className="titleshop">
                 <h1>Packages</h1>
                 <h1 class="mobilegone">Estimated Quote</h1>
             </div>
