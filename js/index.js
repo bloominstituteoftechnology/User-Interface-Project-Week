@@ -61,3 +61,33 @@ class TabItem {
 
 let links = document.querySelectorAll(".tabs-link");
 links.forEach(link => new TabLink(link));
+
+// ========================================================== Caro
+
+class Carousel {
+  constructor(element) {
+    this.element = element;
+    this.currentItemIndex = 0;
+
+    this.carouselItem = document.querySelectorAll(".carousel-item");
+    //console.log(this.carouselItem);
+    this.carouselItem[this.currentItemIndex].style.display = "block";
+
+    const rightButton = document.querySelector(".right-button");
+    rightButton.addEventListener("click", () => this.slideNext());
+
+    const leftButton = document.querySelector(".left-button");
+    leftButton.addEventListener("click", () => this.slideBack());
+  }
+  slideNext() {
+    //console.log("slide next clicked");
+  }
+
+  slideBack() {
+    //console.log("slide back clicked");
+  }
+}
+
+let carousel = document.querySelector(".carousel");
+//console.log(carousel);
+new Carousel(carousel);
