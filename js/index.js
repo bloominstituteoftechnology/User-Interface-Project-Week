@@ -3,6 +3,7 @@ class TabLink {
         this.element = element;
         this.data = this.element.dataset.tab;
         this.content = document.querySelector(`.tab-content[data-tab="${this.data}"`);
+        this.overlayText = this.content.querySelector('.overlay');
         this.element.addEventListener('click', () => this.select());
     }
     select(){
@@ -17,6 +18,15 @@ class TabLink {
             opacity: 0
         }, {
             opacity: 1
+        })
+    }
+
+    hoverEvent(){
+        this.overlayText.classList.remove('display-none');
+        TweenMax.fromTo(this.overlayText, 0.75, {
+            opacity: 0
+        }, {
+            opacity: .7
         })
     }
 }
