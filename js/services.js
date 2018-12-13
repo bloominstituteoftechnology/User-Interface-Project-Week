@@ -93,3 +93,19 @@ t4.to('#navanchor3', .45, {right:'0'});
 let servicestabs = document.querySelectorAll('.TabsLink');
 servicestabs.forEach(selector => new TabLink(selector));
 let dropdown = new Dropdown(document.querySelector('.HeaderBar'));
+
+
+// const vueheader = new Vue({
+//     el: '#vuetext',
+//     data: {
+//         headers: [
+//             {'text': 'Pre-Construction', 'datatab': 1},
+//             {'text': 'Construction', 'datatab': 2},
+//             {'text': 'Design Build', 'datatab': 3},
+//             {'text': 'Sustainability', 'datatab': 4}
+//         ],
+//         selectedHeader () {
+//             return this.headers[document.querySelector('.SelectedTab').dataset.tab].text;
+//         }
+//     }
+// });
