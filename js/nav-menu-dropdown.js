@@ -10,8 +10,11 @@ class DropdownMenu {
       this.content = this.element.querySelector('.dropdown-content');
   
       
-      this.button.addEventListener('click', () => {this.expandMenu()});
-  
+      this.button.addEventListener('click', () => {this.expandMenu();
+        TweenMax.from('.dropdown-content', 0.5, {ease: Back.easeOut.config(1.7), y: -500});
+      });
+        
+      
     }
   
     expandMenu() {
@@ -22,6 +25,7 @@ class DropdownMenu {
         this.button.classList.toggle('dropdown-hidden');
         
         this.closeButton.classList.toggle('dropdown-hidden');
+
         
         this.closeButton.addEventListener('click', () => this.expandMenu());
         
