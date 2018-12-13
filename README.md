@@ -1,5 +1,5 @@
 # User Interface Project Week
-You are to treat this week as if you are working as a front end developer at a web development agency. The instructor is the owner of the agency and is under pressure from the client to deliver the product, a custom marketing website, on time. The project managers are acting as your supervisors.  
+You are to treat this week as if you are working as a front end developer at a web development agency. The instructor is the owner of the agency and is under pressure from the client to deliver the product, a custom marketing website, on time. The project managers are acting as your supervisors. This project is for people who have experience in web programming concepts such as CSS and HTML. This is a good challenge for those who wish to accomplish something interesting.
 
 This week you will be building a website for an architectural firm named Smith and Jones Architects.  Smith and Jones have requested a minimum viable product to deliver to their board of directors by the end of the week.  The requirements are listed below under **MVP Features**.  Smith and Jones also have a wish list of extra features they would love to showcase to the board if you can get them done.  You will demonstrate your work to the agency owner Thursday afternoon.  
 
@@ -52,4 +52,5 @@ Extra features are not in order of importance, it's just a list of features the 
 * Incorporate animations on scroll events so that when users scroll through the site, content animates in or out of view
 * Host your site on a domain you own
 
-Remember: This is a self driven challenge, try to accomplish MVP as soon as you can and stretch as much as you can on extra features.  Have fun with this and remember to reach out to your project managers after the 20 minute rule.  Good luck!
+# Remember: 
+This is a self driven challenge, try to accomplish MVP as soon as you can and stretch as much as you can on extra features.  Have fun with this and remember to reach out to your project managers after the 20 minute rule.  Good luck!
