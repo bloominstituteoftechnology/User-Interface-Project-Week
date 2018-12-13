@@ -27,14 +27,12 @@ class TabCard {
         const cards = document.querySelectorAll(".card");
         cards.forEach(card => card.classList.remove("current-card"));
         this.cardElement.classList.add("current-card")
+        TweenMax.fromTo(this.cardElement, 1, {opacity: 0}, {opacity: 1} )
         
     }
 }
 //iterate through each tab in in tab component to create a new tab element 
 let tabs = document.querySelectorAll(".tab").forEach(tab => new TabLink(tab));
-console.log(tabs);
-console.log("hello")
-
 
 //nav bar:
 const navBar = document.querySelector(".nav-bar");
@@ -62,19 +60,17 @@ close.addEventListener("click", function(e) {
 
 })
 
-//scroll event:
-// const section = document.querySelectorAll("section");
-// section.forEach(element => window.addEventListener("scroll", function(e) {
-//     TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1});
-// }));
+// scroll event:
+let controller = new ScrollMagic.Controller();
+let scene1 = new ScrollMagic.Scene({
+    triggerElement: "#trigger1",
+    offset: 100
+}).setTween(TweenMax.fromTo("#animate1", 1, {opacity: 0}, {opacity: 1}))
+.addIndicators({name: "indicator"})
+scene1.addTo(controller);
 
-
-// container.forEach(element => window.addEventListener("scroll", function(e) {
-//     TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1});
-// }));
-
-// for (element in container) {
-//     window.addEventListener("scroll", function(e) {
-//         TweenMax.fromTo(element, 1, {opacity: 0}, {opacity: 1});
-//     });
-// }
+let scene2 = new ScrollMagic.Scene({
+    triggerElement: "#trigger2"
+}).setTween(TweenMax.fromTo("#animate2", 1, {opacity: 0}, {opacity: 1}))
+.addIndicators({name: "indicator2"})
+scene2.addTo(controller);
