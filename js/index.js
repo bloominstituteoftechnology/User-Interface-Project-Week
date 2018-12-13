@@ -75,3 +75,47 @@ function sust() {
     document.getElementById("yo3").style.color="black";
     document.getElementById("yo3").style.backgroundColor="white"
 }
+
+
+/*
+class Tab {
+    constructor(tabs){
+        this.tab= (tabs);
+
+        this.tabContent= document.querySelector(`.tab-content[data-tab="${this.tab.dataset.tab}"]`);
+
+    }
+    setActive(start) {
+        if (start){
+            this.tab.classList.add("begin");
+
+            this.tabContent.classList.add("begin");
+        } else {
+            this.tab.classList.remove("begin");
+            this.tabContent.classList.remove("begin");
+        }
+    }
+}
+
+class TabNavigator {
+    constructor(tabNavigatorName) {
+        this.tabNavigator = document.querySelector(tabNavigatorName);
+        this.tabs= this.tabNavigator.querySelectorAll(".tab");
+        this.tabs= Array.from(this.tabs).map(tab => new Tab(tab));
+        this.tabs.forEach(tab => tab.tab.addEventListener("click", element => this.select(element)));
+    }
+
+    select(element) {
+        this.tabs.forEach(tab => {
+            if(tab.tab.dataset.tab === element.target.dataset.tab) tab.setActive(true);
+            else tab.setActive(false);
+        });
+    }
+}
+
+const menu = new Menu(".menu", ".menu-button");
+
+const tabNavigator = new TabNavigator(".tab-nav");
+*/
+
+const tabNavs = new TabNavi();
