@@ -52,9 +52,719 @@ del{
   text-decoration:line-through;
 }
 
-table{
+table {
   border-collapse:collapse;
   border-spacing:0;
 }
 
 /* Your Code Goes Here */
+@import 'Variables-&-Mixins.less';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+.nav-full {
+  height: 100vh;
+  background-color: @fullscreen-gray;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: @main-gray;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 86px;
+
+  @media @mobile {
+    padding: 14px 15px;
+  }
+
+  h2 {
+    color: white;
+    font-size: 2.4rem;
+  }
+
+  .menu-content {
+    display: none;
+    font-size: 6rem;
+    line-height: 10rem;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    font-weight: bold;
+
+    @media @mobile {
+      font-size: 4rem;
+      line-height: 8rem;
+    }
+
+    .current-page{
+      color: #504545;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      display: none;
+      opacity: 0;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #504545;
+    }
+  }
+
+  .hamburger{
+    cursor: pointer;
+    align-self: flex-start;
+  }
+
+  .show-menu {
+    display: flex;
+  }
+
+  .hamburger-close{
+    cursor: pointer;
+    content: url('../img/nav-hamburger-close.png');
+    height: 24px;
+  }
+}
+
+header {
+  position: relative;
+  max-height: 100vh;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+
+    @media @mobile {
+      content: url('../img/home/home-mobile-jumbotron.png');
+    }
+  }
+
+  h1 {
+    position: absolute;
+    bottom: 57px;
+    left: 83px;
+    color: white;
+    font-size: 6.3rem;
+    line-height: 72px;
+
+    @media @tablet {
+      left: 15px;
+      bottom: 25px;
+    }
+
+    @media @mobile {
+      font-size: 3.6rem;
+      left: 15px;
+      bottom: 25px;
+      line-height: 42px;
+    }
+  }
+}
+
+.about-sect {
+  max-width: 855px;
+  margin: 0 auto;
+
+  @media @tablet {
+    padding: 0 15px;
+  }
+}
+
+.main-content-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 49px 0px;
+
+  @media @mobile {
+    flex-direction: column;
+    padding: 35px 14px;
+    padding-bottom: 10px;
+  }
+
+  .learn-more-cont {
+    padding: 50px 0px;
+    padding-bottom: 36px;
+
+    @media @mobile {
+      padding: 26px 0;
+      padding-bottom: 0px;
+    }
+
+    h2{
+      font-size: 2.4rem;
+      margin-bottom: 21px;
+
+    }
+
+    p {
+      font-size: 1.7rem;
+      line-height: 2.4rem;
+    }
+
+    .learn-more-btn {
+      font-size: 1.7rem;
+      border: 1px solid @border-gray;
+      padding: 14px 24px;
+      display: inline-block;
+      margin-top: 26px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+        background-color: @main-gray;
+      }
+
+      @media @mobile {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  .left {
+    padding: 43px 0;
+    padding-left: 29px;
+    @media @mobile {
+      padding: 29px 0;
+      padding-left: 0px;
+    }
+  }
+
+  .learn-imgs {
+    width: 100%;
+  }
+
+  .topimg {
+    @media @mobile {
+      order: -1;
+      content: url('../img/home/home-mobile-img-1.png');
+    }
+  }
+
+  .botimg {
+    @media @mobile {
+      order: -1;
+      content: url('../img/home/home-mobile-img-2.png');
+    }
+  }
+
+}
+
+.recent-proj {
+  max-width: 855px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  .section-title {
+    font-size: 2.4rem;
+    margin: 26px 0px 46px 0px;
+
+    @media @tablet {
+      margin-left: 15px;
+    }
+
+    @media @mobile {
+      margin: 12px 0px 24px 15px;
+    }
+  }
+
+  img {
+
+    &:nth-of-type(1) {
+      @media @mobile {
+        content: url('../img/home/home-mobile-villas-img.png');
+      }
+    }
+
+    &:nth-of-type(2) {
+      @media @mobile {
+        content: url('../img/home/home-mobile-outskirts-img.png');
+      }
+    }
+
+    &:nth-of-type(3) {
+      @media @mobile {
+        content: url('../img/home/home-mobile-the-blocks-img.png');
+      }
+    }
+  }
+
+  .proj-titles {
+    font-size: 2.4rem;
+    background-color: @proj-gray;
+    align-self: flex-end;
+    font-weight: normal;
+    padding: 33px 57px;
+    margin-right: 1px;
+    letter-spacing: 0.7rem;
+    margin-top: -55px;
+    border: 1px solid white;
+
+    @media @mobile{
+      padding: 35px 45px;
+      margin-top: -14px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .title-left {
+    align-self: flex-start;
+  }
+
+  .proj-desc {
+    font-size: 1.8rem;
+    padding: 54px 202px 76px 202px;
+    line-height: 24px;
+
+    @media @tablet{
+      padding: 54px 100px 76px 100px;
+    }
+
+    @media @mobile {
+      padding: 26px 15px 21px 15px;
+    }
+
+    p {
+      margin-bottom: 24px;
+    }
+
+  }
+}
+
+.carousel-section{
+  max-width: 855px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+
+    @media @tablet{
+      margin-left: 15px;
+    }
+  }
+
+  .carousel {
+    position: relative;
+    height: 232px;
+    overflow: hidden;
+    display: flex;
+  
+    .arrow {
+      color: white;
+      font-size: 3rem;
+      position: absolute;
+      bottom: 42%;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.582);
+      border-radius: 100px;
+      padding: 4px 10px;
+      cursor: pointer;
+
+      &:nth-of-type(1) {
+        left: 10px;
+      }
+
+      &:nth-of-type(2) {
+        right: 10px;
+      }
+    }
+
+    .carousel-img {
+      position: absolute;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+footer {
+  background-color: @footer-gray;
+  color: white;
+  font-size: 1.4rem;
+  padding: 64px 0px 11px 0px;
+  text-align: center;
+
+  @media @mobile {
+    text-align: left;
+  }
+
+  .footer-flex-cont {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+
+    @media @mobile {
+      flex-direction: column;
+      padding: 0 15px;
+    }
+
+    .footer-block {
+
+      @media @mobile {
+        padding: 10px 0px;
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 6px;
+      }
+
+      p {
+        line-height: 2.6rem;
+      }
+    }
+
+    .input-block {
+
+      h3 {
+        margin-bottom: 18px;
+      }
+  
+      input {
+        border-radius: 7px;
+        height: 44px;
+        width: 100%;
+        padding-left: 0px;
+        font-size: 1.5rem;
+        padding-left: 9px;
+
+        @media @mobile {
+          height: 51px;
+          width: 98%;
+        }
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-top: 2px;
+      }
+    }
+
+    .thank-block {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      h3 {
+        margin-bottom: 34px;
+      }
+
+      i {
+        color: #2ecc71;
+        font-size: 5.4rem;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 1.2rem;
+    margin-top: 33px;
+
+    @media @mobile {
+      margin-left: 15px;
+      margin-top: 29px;
+    }
+  }
+}
+
+// <----------------------- Service page styles ---------------------->
+
+.services {
+  position: relative;
+
+  img {
+    @media @mobile {
+      content: url('../img/services/services-mobile-jumbotron.png');
+    }
+  }
+
+  h1 {
+    position: absolute;
+    bottom: 22px;
+    left: 83px;
+    color: white;
+    font-size: 6.3rem;
+
+    @media @tablet {
+      left: 15px;
+      bottom: 15px;
+    }
+
+    @media @mobile {
+      font-size: 3.6rem;
+      bottom: 23px;
+      left: 15px;
+    }
+  }
+}
+
+.tabs-section {
+  padding: 50px 0px;
+  font-size: 1.6rem;
+  max-width: 852px;
+  margin: 0 auto;
+
+  @media @tablet {
+    padding: 50px 15px;
+  }
+
+  @media @mobile {
+    padding: 29px 15px;
+    margin-bottom: 34px;
+  }
+
+  .services-inc {
+    line-height: 2.5rem;
+
+    @media @mobile {
+      line-height: 2.6rem;
+    }
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 43px;
+
+    @media @mobile {
+      flex-direction: column;
+      margin-top: 36px;
+    }
+
+    .tab-selected {
+      background-color: #5E9FB9;
+      color: white;
+    }
+
+    .tab {
+      border: 1px solid @border-gray;
+      padding: 14px 0px;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+      width: 184px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #5E9FB9;
+        color: white;
+      }
+
+      @media @tablet {
+        width: 162px;
+      }
+
+      @media @mobile {
+        width: 100%;
+        margin-bottom: 21px;
+      }
+    }
+  }
+
+  .tab-content-cont {
+    margin-top: 52px;
+
+    @media @mobile {
+      margin-top: 25px;
+    }
+
+    .tab-content {
+      display: none;
+
+      .tab-text {
+        padding-right: 20px;
+        
+        @media @mobile {
+          padding-right: 0px;
+          margin-bottom: 27px;
+        }
+
+        h2 {
+          font-size: 2.4rem;
+          margin-bottom: 15px;
+
+          @media @mobile {
+            margin-bottom: 22px;
+          }
+        }
+
+        p {
+          line-height: 2.6rem;
+
+          &:nth-of-type(1) {
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+
+    .tab-show {
+      display: flex;
+      @media @mobile {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.tab-content[data-tab="1"] {
+  .tab-img {
+    content: url('../img/services/services-tab-mobile-pre-construction-img.png');
+  }
+}
+
+.tab-content[data-tab="2"] {
+  .tab-img {
+    content: url('../img/services/services-tab-mobile-construction-img.png');
+  }
+}
+
+.tab-content[data-tab="3"] {
+  .tab-img {
+    content: url('../img/services/services-tab-mobile-design-build-img.png');
+  }
+}
+
+.tab-content[data-tab="4"] {
+  .tab-img {
+    content: url('../img/services/services-tab-mobile-sustainability-img.png');
+  }
+}
+
+.services-footer{
+  margin-top: -2px;
+  padding-top: 55px;
+
+  @media @mobile {
+    padding-top: 18px;
+  }
+}
+
+// <----------------------- Contact Page Styles ---------------------->
+
+.contact-header {
+  
+  h1 {
+    bottom: 21px;
+  }
+}
+
+.contact-main {
+  display: flex;
+  justify-content: space-between;
+  max-width: 852px;
+  margin: 0 auto;
+  padding-right: 115px;
+  padding-top: 46px;
+
+  @media @tablet {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media @mobile {
+    flex-direction: column;
+  }
+  
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  form {
+    max-width: 408px;
+    
+    .form-titles {
+      margin-top: 46px;
+      font-size: 1.6rem;
+      font-weight: normal;
+      margin-bottom: 9px;
+    }
+
+    .reg-input {
+      width: 100%;
+      height: 38px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 6px;
+    }
+
+    textarea {
+      height: 134px;
+      width: 100%;
+      margin-bottom: 22px;
+    }
+
+    .radio-cont{
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+    }
+    
+    .submit-btn {
+      display: inline-block;
+      font-size: 1.6rem;
+      padding: 14px 41px;
+      border: 1px solid @border-gray;
+      margin-top: 26px;
+      margin-bottom: 48px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: white; 
+        background-color: @border-gray;
+      }
+    }
+  }
+
+  .where {
+    padding-top: 12px;
+
+    h2 {
+      margin-bottom: 37px;
+    }
+
+    address {
+      margin-bottom: 40px;
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+      }
+    }
+
+  }
+}
