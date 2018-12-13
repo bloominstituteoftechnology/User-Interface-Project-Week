@@ -1,6 +1,7 @@
 // QUERY SELECTORS FOR BUTTONS
 // ===========================
 
+const navTopBarLogo = document.querySelector(".nav__top-bar__logo-header");
 const navTopBarMenuButton = document.querySelector(".nav__top-bar__menu-button");
 
 const navMenuCloseButton = document.querySelector(".nav__menu__top-area__close-button");
@@ -14,6 +15,19 @@ function openNavMenu(e) {
     const navMenuArea = document.querySelector(".nav__menu");
     navMenuArea.classList.remove("nav__menu--closed");
 
+    // Fade out for top nav bar menu icons
+    TweenMax.fromTo(navTopBarLogo, 0.5, {
+        opacity: 1
+    }, {
+        opacity: 0,
+    });
+    TweenMax.fromTo(navTopBarMenuButton, 0.5, {
+        opacity: 1
+    }, {
+        opacity: 0,
+    });
+
+    // Fade in for nav menu
     TweenMax.fromTo(navMenuArea, 0.5, {
         opacity: 0
     }, {
@@ -23,6 +37,21 @@ function openNavMenu(e) {
 
 function closeNavMenu(e) {
     const navMenuArea = document.querySelector(".nav__menu");
+
+    // Fade out for top nav bar menu icons
+    TweenMax.fromTo(navTopBarLogo, 0.5, {
+        opacity: 0
+    }, {
+        opacity: 1
+    }); 
+    TweenMax.fromTo(navTopBarMenuButton, 0.5, {
+        opacity: 0
+    }, {
+        opacity: 1
+    });
+    
+
+    // Fade out for nav menu
     TweenMax.fromTo(navMenuArea, 0.5, {
         opacity: 0.9
     }, {
