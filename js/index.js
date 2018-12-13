@@ -62,7 +62,7 @@ class TabItem {
 let links = document.querySelectorAll(".tabs-link");
 links.forEach(link => new TabLink(link));
 
-// ========================================================== Caro
+// =============================================== Carousel ==========================
 
 class Carousel {
   constructor(element) {
@@ -71,6 +71,9 @@ class Carousel {
 
     this.carouselItem = this.element.querySelectorAll(".carousel-item");
     this.carouselItem[this.currentItemIndex].style.display = "block";
+
+    this.dots = this.element.querySelectorAll(".dot");
+    console.log(this.dots);
 
     const rightButton = this.element.querySelector(".right-button");
     rightButton.addEventListener("click", () => this.slideNext());
@@ -81,24 +84,36 @@ class Carousel {
   slideNext() {
     //console.log("slide next clicked");
     this.carouselItem[this.currentItemIndex].style.display = "none";
+    if (this.dots.length > 0) {
+      this.dots[this.currentItemIndex].classList.remove("active");
+    }
     this.currentItemIndex++;
     if (this.currentItemIndex === this.carouselItem.length) {
       this.currentItemIndex = 0;
     }
     this.carouselItem[this.currentItemIndex].style.display = "block";
+    if (this.dots.length > 0) {
+      this.dots[this.currentItemIndex].classList.add("active");
+    }
   }
 
   slideBack() {
     //console.log("slide back clicked");
     this.carouselItem[this.currentItemIndex].style.display = "none";
+    if (this.dots.length > 0) {
+      this.dots[this.currentItemIndex].classList.remove("active");
+    }
     this.currentItemIndex--;
     if (this.currentItemIndex === -1) {
       this.currentItemIndex = this.carouselItem.length - 1;
     }
     this.carouselItem[this.currentItemIndex].style.display = "block";
+    if (this.dots.length > 0) {
+      this.dots[this.currentItemIndex].classList.add("active");
+    }
   }
 }
 
-let carousel = document.querySelector(".carousel");
+let carousel = document.querySelector(".carousel-container");
 //console.log(carousel);
 new Carousel(carousel);
