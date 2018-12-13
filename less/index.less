@@ -58,3 +58,171 @@ table{
 }
 
 /* Your Code Goes Here */
+//variables less=============================================================================
+@mobile: ~"(min-width: 500px)";
+
+// Color assignments 
+@font-color: @shark;
+@button-bg: @eastern-blue;
+@main-bg:  @white;
+@navigation-border: @silver;
+@footer-bg: @sandy-beach;
+
+// Colors
+@white: #FFFFFF;
+@silver: #C0C0C0;
+@shark: #212529;
+@eastern-blue: #17A2B8;
+@sandy-beach: #FFEBCD;
+
+// Global less================================================================================
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  html, body {
+    font-family: 'Roboto', Arial, sans-serif;
+  
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 4rem;
+  }
+  
+  h2 {
+    font-size: 3.2rem;
+    padding-bottom: 10px;
+  }
+  
+  h4 {
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+  }
+  
+  p {
+    line-height: 1.5;
+    font-size: 1.6rem;
+    padding-bottom: 10px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    max-width: 320px;
+    border: solid black;
+    width: 100%;
+    margin: 0 auto;
+  
+    @media @mobile {
+    max-width: 1025px;
+    }
+  }
+
+  //mixins less===========================================================================
+  .width-100 {
+    width: 100%;
+  }
+  
+  // .border-bottom-grey {
+  //   border-bottom: 1px solid @lambda-times-color-lightgrey;
+  // }
+  
+  .flex(@jc: none, @ai: none, @dir: row) {
+    display: flex;
+    justify-content: @jc;
+    align-items: @ai;
+    flex-direction: @dir;
+  }
+
+  //services less==========================================================================
+  .container.services {
+    .servicesintro {
+      color: black;
+      text-align: left;
+      padding-left: 8%;
+      padding-right: 8%;
+      padding-top: 50px;
+    }
+    .tabs {
+      color: black;
+      font-weight:bold;
+      .topics {
+      display:flex;
+      justify-content: space-around;
+      
+      padding-top:35px;
+      padding-bottom:35px;
+      .active-tab {
+        background:#5E9FB9;
+        color:white;
+      }
+      }
+      .tab {
+        padding: 20px 2%;
+        border: 1px solid black;
+        font-size: 2rem;
+      }
+    }
+    .card {
+      display:flex;
+      color: black;
+      text-align: left;
+      .headline {
+        font-size: 2rem;
+        font-weight: bold;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 30px;
+      }
+      p {
+        font-size: 1.6rem;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-top: 20px;
+      }
+      img {
+        width: auto;
+        height: 40%;
+        align-self: center;
+        padding-right: 7%;
+      }
+      .cardmobileimage {
+        display: none;
+      }
+    }
+  footer {
+    text-align: left;
+  }
+}
+
+//index less=============================================================================
+@import './variables';
+@import './mixins';
+@import './global';
+@import './services';
+
+
+
+html, body {
+  margin: 0; 
+  padding: 0;
+}
+
+body {
+  .flex(none, center, column);
+  background-color: #ffffff;
+  color: #222222;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
