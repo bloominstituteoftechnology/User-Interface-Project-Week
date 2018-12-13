@@ -24,6 +24,7 @@ class Carousel {
     let prevIndex = this.currIndex;
     let exit = '';
     let enter = '';
+    console.log(btn);
     // check which button, update index accordingly:
     if (btn === "left"){
       // update this.currIndex to move one left or to end if at beginning
@@ -47,7 +48,7 @@ class Carousel {
         this.images[this.currIndex].enterImg(enter);
       }
     } else {
-      // update this.currIndex to move one right or back to beginning if at end
+      // right button pressed: update this.currIndex to move one right or back to beginning if at end
       exit = 'left';
       enter = 'right';
       if (this.currIndex === this.images.length - 1) {
@@ -76,7 +77,7 @@ class CarouselImage {
   constructor (imgElement) {
     this.img = imgElement;
     this.index = this.img.dataset.index;
-    this.animateDuration = 5;
+    this.animateDuration = .3;
     this.animateEase = Cubic.easeOut;
   }
 
@@ -90,6 +91,7 @@ class CarouselImage {
         ease: this.animateEase
       });
     } else {
+      // console.log("image entering ", direction);
       TweenMax.fromTo(this.img, this.animateDuration, {
         x:1200
       },{
@@ -100,6 +102,7 @@ class CarouselImage {
   }
 
   exitImg(direction) {
+    this.img.style.display = "none";
     if (direction == "left") {
       TweenMax.fromTo(this.img, this.animateDuration, {
         x:0
