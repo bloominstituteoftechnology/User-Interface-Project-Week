@@ -7,6 +7,9 @@
         font-weight: @jt-font-weight;
         font-size: @jt-font-size;
         color: @jt-font-color;
+        @media @phone {
+            font-size: 5.2rem;
+        }
     }
     .CTAImage {
         @media @phone {
@@ -24,7 +27,7 @@
     width: 100%;
     margin-top: 50px;
     .either-flex(row, center, flex-start);
-    @media @phone {
+    @media @tablet {
         display: block;
     }
     h2, h3 {
@@ -37,7 +40,12 @@
         .either-flex(column, flex-start, flex-start);
         padding-left: 6.5%;
         width: 48%;
+        @media @tablet {
+            padding-left: 13.5%;
+            width: 85%;
+        }
         @media @phone {
+            padding-left: 5%;
             width: 98%;
         }
         p {
@@ -67,9 +75,14 @@
         }
         .btn {
             .button(45px, 135px);
-        @media @phone {
-            .button(45px, 100%);
-        }}
+            @media @tablet {
+                align-self: center;
+            }
+            @media @phone {
+                .button(45px, 100%);
+            }
+
+        }
         #user_no_buildings {
             height: 40px;
             width: 100%;
@@ -83,11 +96,33 @@
         .either-flex(column, center, flex-start);
         width: 48%;
         padding: 0px 0 0 15%;
+        @media @tablet {
+            display: block;
+            width: 100%;
+            padding: 0;
+        }
         @media @phone {
             padding: 0 0 0 6%
         }
+        h2 {
+            @media @tablet {
+                text-align: center;
+            }
+            @media @phone {
+                text-align: left;
+            }
+        }
         h3 {
             margin-top: 50px;
+        }
+        .AddressesOnly {
+            @media @tablet {
+                width: 100%;
+                .either-flex(row, space-evenly)
+            }
+            @media @phone {
+                display: block;
+            }
         }
     }
 }
