@@ -1,6 +1,6 @@
-ScrollReveal({ reset: true,  duration: 900, }).reveal('.project');
-ScrollReveal({ reset: true,  duration: 900, }).reveal('.middle-content--1');
-ScrollReveal({ reset: true,  duration: 900, }).reveal('.middle-content--2');
+// ScrollReveal({ reset: true,  duration: 900, }).reveal('.project');
+// ScrollReveal({ reset: true,  duration: 900, }).reveal('.middle-content--1');
+// ScrollReveal({ reset: true,  duration: 900, }).reveal('.middle-content--2');
 
 AOS.init();
 
