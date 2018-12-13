@@ -5,25 +5,45 @@
 
 const toggleMenu = () => {
   menu.classList.toggle('menu--open');
+  
   menuBtnClose.classList.toggle("menu-btn-close");
   menuBtn.classList.toggle('menu-btn-close');
+  
 
 }
 
+
+
 const menu = document.querySelector('.menu');
+const navMenu = document.querySelector('.nav-menu');
 
 const menuBtn = document.querySelector('.menu-btn');
 const menuBtnClose = document.querySelector('.menu-btn-close');
 
 
 menuBtn.addEventListener('click', () => {
-  toggleMenu();
+  // toggleMenu();
+
+  TweenLite.from(navMenu, 1, {
+    top: "-600px",
+    onStart: toggleMenu,
+    delay: 0.1,
+    ease: Power1.easeInOUt,
+    
+  });
+  
   
 })
 
 menuBtnClose.addEventListener('click', () => {
-  toggleMenu();
 
+  
+  TweenLite.to(navMenu, 1, {
+    top: "-600px",
+    onComplete: toggleMenu,
+    ease: Power1.easeInOUt
+  });
+  
 })
 
 
