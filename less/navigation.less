@@ -1,0 +1,146 @@
+nav{
+
+  width:inherit;
+  max-width: 1024px;
+  display: flex;
+  background: #949494;
+
+  .logo{
+    font-weight: bold;
+    font-size: 2.4rem;
+    color:@nav-logo;
+    margin-right:85%;
+    margin-left:5%;
+    margin-top:10px;
+    margin-bottom:10px;
+    @media(@tablet){
+      margin-right:80%;
+    }
+    @media(@phone){
+      margin-right:70%;
+    }
+  }
+  .nav-btn{
+    margin-top:10px;
+    margin-bottom:10px;
+    opacity:1;
+    z-index:20
+
+
+  }
+  .nav-btn-close{
+    opacity:0;
+
+  }
+  .menu-layover{
+    display: none;
+    position:fixed;
+    height:100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:40px;
+    width:100%;
+    max-width: 1024px;
+
+    background:#949494;
+    z-index:2;
+
+    a, a:visited{
+      display: flex;
+      text-decoration:none;
+      font-weight: bold;
+      font-size:4.8rem;
+      line-height: 8rem;
+      margin: 5px 0 5px 0;
+      padding: 0 1% 0 1%;
+      color:@nav-text;
+      background-image: linear-gradient(120deg; transparent 0%, transparent 50%, white 50%);
+      background-size: 240%;
+      transition: all .25s;
+
+
+    }
+    a:hover, a:active{
+      background-position: 100%;
+      color:#949494;
+      transform: translateX(1rem);
+    }
+  }
+
+  @media(@phone){
+
+  }
+}
+
+@keyframes layoverDown {
+  0% {
+    height:0vh;
+    opacity:0;
+  }
+  100%{
+    height:100vh;
+    opacity:.95;
+  }
+}
+
+@keyframes layoverUp {
+  0% {
+    height:100vh;
+    opacity:1;
+  }
+  100%{
+    height:0vh;
+    opacity:0;
+  }
+}
+
+@keyframes linksFadeIn{
+  0%{
+    opacity:0;
+    perspective: 0px;
+  }
+
+
+
+  100%{
+
+    opacity:1}
+}
+@keyframes linksFadeOut{
+  0%{
+    opacity:1;
+  }
+
+
+
+  100%{
+    opacity:0;
+  }
+
+}
+.animateLayoverDown{
+  animation-name: layoverDown;
+  animation-duration: 1s;
+  opacity:0;
+
+}
+
+.animateLayoverUp{
+  animation-name: layoverUp;
+  animation-duration: 1s;
+}
+
+.animateLinksFadeOut{
+  animation-name: linksFadeOut;
+  animation-duration: .8s;
+  opacity:0;
+
+}
+
+.animateLinksFadeIn{
+  animation-name: linksFadeIn;
+  animation-duration: 1s;
+
+
+}
