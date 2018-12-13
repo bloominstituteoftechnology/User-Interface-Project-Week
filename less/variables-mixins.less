@@ -31,9 +31,21 @@
 @bg-color: #FFF;
 
 @max-width: 1024px;
+@mobile: ~"(max-width: 500px)";
 
 
 // mixins
+
+.desktop-view() {
+    .img-mobile {
+        display: none;
+    }
+}
+ .mobile-view() {
+    .img-desktop {
+        display: none;
+    }
+} 
 
 .center(@direction, @justify, @align, @wrap) {
     display: flex;
@@ -43,21 +55,23 @@
     flex-wrap: @wrap;
 }
 
-.button() {
-    color: @text-color;
-    background-color: @bg-color;
-    border: 1px solid @text-color;
-    width: 135px;
-    text-align: center;
-    padding: 3% 0; 
-    
-     @media @mobile {
-        width: 100%;
-        margin: 9% 0 4%;
-        padding: 5% 0;
-    }
-     &:hover {
-        color: @bg-color;
-        background-color: @btn-bg-color;
-    }
+.flex-row-btw(@ai-choice: center) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: @ai-choice;
+}
+
+.flex-row-start() {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-col-center(@ai-choice: center) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: @ai-choice;
 }

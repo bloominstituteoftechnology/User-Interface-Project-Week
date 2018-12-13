@@ -1,5 +1,5 @@
 .jumbotron .jumbotext {
-    margin-top: 20%;
+    margin-top: 35%;
     margin-left: 3%;
     padding-left: 3%;
     position: absolute;
@@ -8,7 +8,26 @@
     line-height: 85px;
     color:  #ffffff;
     font-family: Arial;
+    
+    @media @mobile {
+       
+        position: absolute;
+        font-size: 2rem;
+        line-height: 42px;
+        top: 2%;
+        
+    }    
 }
+.jumbopic {
+    border: 1px solid red;
+    width: 100%;
+    @media @mobile {
+        .mobile-view();
+    }
+   
+
+}
+
 
 .center-content {
     margin: 30px 0;
@@ -16,31 +35,64 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    @media @mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    }
+    
 
    
     
     .center-text {
       width: 50%;
       padding: 0 8% 0;
+      @media @mobile {
+          width: 100%;
+      }
+      h2 {
+          font-size: 2rem;
+          font-weight: bold;
+      }
+      p {
+          font-size: 16px;
+          margin: 2% 0;
+      }
     }
 
     .center-img {
       width: 50%;
       padding: 0 8% 0;
+      @media @mobile {
+          width: 100%;
+          margin: 5% 0;
+        .mobile-view();
+    }
     }
 
     button {
-        width: 150px;
+        width: 200px;
         height: 45px;
         background-color: #ffffff;
         border: solid 1px #222222;
         font-size: 1.6rem;
+        margin: 5% 20%;
+        &:hover{
+            background-color: @offblack;
+            color: @white;
+        }
+        @media @mobile {
+            width: 90%;
+            margin: 5% 0;
+        }
     }
 }
 
 .Recent-Projects {
 
     h2 {
+        font-size: 2rem;
         padding-top: .5%;
         margin-bottom: 5.5%
     }
@@ -50,6 +102,9 @@
 
         img {
             width: 100%;
+            @media @mobile {
+                .mobile-view();
+            }
         }
         h3 {
             background-color: @ltgray;
@@ -60,16 +115,29 @@
             position: absolute;
             right: 0;
             bottom: -16%;
+            @media @mobile {
+                bottom: -10%;
+                margin: 0 38% 0 0;
+            }
         }
         .inverse-right-heading {
             left: 0;
+            @media @mobile {
+                left: 30%;
+            }
         }
     }
 
     .project-content {
         margin: 10% 23.5% 12%;
+        
+   
         p {
             margin-bottom: 24px;
+            @media @mobile {
+                margin: 10% 0;
+            }
         }
     }
 }
+    
