@@ -51,3 +51,16 @@ const scrollGroup4 = new ScrollMagic.Scene({
 scrollGroup4.setClassToggle('.scrollGroup4', 'fade-in');
 scrollGroup4.setTween(scrollGroup4Animation);
 scrollGroup4.addTo(controller);
+
+
+const scrollGroup5Animation = TweenMax.to(".scrollGroup5", 1, {
+    y: 0,
+    opacity: 1
+});
+
+const scrollGroup5 = new ScrollMagic.Scene({
+    triggerElement: ".scrollGroup5",
+});
+scrollGroup5.setClassToggle('.scrollGroup5', 'fade-in');
+scrollGroup5.setTween(scrollGroup5Animation);
+scrollGroup5.addTo(controller);

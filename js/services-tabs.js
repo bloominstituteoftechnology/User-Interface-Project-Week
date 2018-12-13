@@ -73,7 +73,7 @@ class ServiceTabItem {
         this.element.classList.add("services__items__content--selected");
         this.element.classList.remove("services__items__content");
 
-        TweenMax.fromTo(this.element, 1, {
+        TweenMax.fromTo(this.element, 2, {
             opacity: 0
         }, {
             opacity: 1
