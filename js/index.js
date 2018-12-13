@@ -29,14 +29,16 @@ hamburger.addEventListener('click', ()=>{
 
 const firstP = document.querySelector('.first-intro');
 const secondP = document.querySelector('.second-intro')
+const recentProTitle = document.querySelector('.recent-projects h3')
+console.log(recentProTitle);
 // First intro
   $(window).scroll(function (event) {
     let scroll = $(window).scrollTop();
     console.log(scroll);
-    if(scroll >= 400) {
+    if(scroll >= 250) {
         TweenMax.to(firstP, 1, {opacity:1} )
     //  $('.first-intro').css("opacity", "1");
-    } else if (scroll < 300 ) {
+    } else if (scroll < 150 ) {
         TweenMax.to(firstP, 1, {opacity:0} )
     }
   });
@@ -50,3 +52,4 @@ const secondP = document.querySelector('.second-intro')
         TweenMax.to(secondP, 1, {opacity:0} )
     }
   });
+
