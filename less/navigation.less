@@ -29,12 +29,17 @@ header {
         background-color: @nav-bg;
         position: fixed;
         width: 100vw;
-        height: 100vh;
+        height: 0;
         display: none;
         top: 50px;
         max-width: 1200px;
+        .either-flex(column, center, flex-start);
+        z-index: 3;
+        opacity: 0.95;
     }
         a {
+            position: relative;
+            right: 65%;
             font-size: @nav-font-size;
             line-height: @nav-line-height;
             color: @nav-font-color;
@@ -52,15 +57,12 @@ header {
             }
         }
     .Hamburger, .CloseMenu {
-        z-index: 3
-        // height: auto;
+        z-index: 3;
     }
     .ButtonToggle {
         display: none;
     }
     .NavToggle {
-        .either-flex(column, center, baseline);
-        z-index: 3;
-        opacity: 0.95;
+        height: 100vh;
     }
 }
