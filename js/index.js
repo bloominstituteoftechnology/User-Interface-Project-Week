@@ -55,7 +55,7 @@ class Carousel {
 
         this.images[this.currentImage].style.display = "block";
 
-        setInterval(() => this.moveRight(), 5000);
+        setInterval(() => this.moveRight(), 6000);
     }
 
     moveLeft() {
@@ -67,21 +67,45 @@ class Carousel {
             this.currentImage = this.currentImage - 1;
         }
 
-
         this.images[this.currentImage].style.display = "block";
     }
 
     moveRight() {
         this.images.forEach(image => image.style.display = "none");
 
-        if (this.currentImage === this.images.length - 1) {
+        if (this.currentImage ===   this.images.length - 1) {
             this.currentImage = 0;
+            this.nextImage = 1;
         } else { 
             this.currentImage = this.currentImage + 1;
+            
+            if (this.nextImage ===   this.images.length - 1) {this.nextImage = 2} else if (this.nextImage ===   this.images.length - 2) {this.nextImage = 1} else {
+                this.nextImage = this.currentImage + 2;
+            }
         }
         // this.images[this.currentImage].style.display = "block";
 
-        TweenLite.to(this.images[this.currentImage], .5, {display:"block"})
+        // TweenLite.fromTo(this.images[this.currentImage], .2, {
+        // display: "none",
+        // transform: "translate(0px)", 
+        // width: "100%",
+        // opacity: 1},
+        // {display:"inline-block",
+        // transform: "translate(1000px)",
+        // opacity: 0,
+        // width: "100%",
+        // overflow: "hidden",
+        // })
+
+        TweenLite.fromTo(this.images[this.nextImage], .2, {
+        display:"inline-block",
+        transform: "translate(-1000px)",
+        opacity: 0,
+        overflow: "hidden",},
+        {
+        transform: "translate(0px)", 
+        opacity: 1
+        })
     }
 }
 
