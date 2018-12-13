@@ -18,7 +18,7 @@ function dealWithScrolling(e) {
 
   profiles.forEach(profile => {
     if (isPartiallyVisible(profile)) {
-      TweenMax.to(profile, 1.5, { className: "+=reveal-on-scroll" });
+      TweenMax.to(profile, 3, { className: "+=reveal-on-scroll" });
     }
   });
 }
