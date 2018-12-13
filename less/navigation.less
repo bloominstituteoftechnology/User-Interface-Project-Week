@@ -1,0 +1,82 @@
+.navsystem {
+    width: 100%;
+    display: flex;
+    background: @navBg;
+    font-family: @fontFam;
+    color: @bgColor;
+    position: sticky;
+    top:0;
+    left: 23.05%;
+    z-index: 2;
+    h1 {
+        font-size: 2.4rem;
+    }
+    .menu-burger {
+        display: block;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 1% 8%;
+
+        //mobile
+        @media(max-width: 500px) {
+            margin: 4% 10%;
+        }
+    }
+}//navsystem
+
+.overlay {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgba(190, 186, 186);
+    background-color: rgba(190, 186, 186, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+    font-weight: bold;
+    font-family: @fontFam;
+    h1 {
+        position: absolute;
+        top: 5%;
+        left: 15%;
+        font-size: 4.8rem;
+        color: @bgColor;
+    }
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        a {
+            padding: 2%;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 4.8rem;
+            color: @bgColor;
+            display: block;
+            transition: 0.3s;
+
+            &:hover {
+                color: @textColor;
+            }
+        }
+    }
+    .menu-close {
+        position: absolute;
+        top: 5%;
+        right: 15%;
+        cursor: pointer;
+    }
+} //end .overlay
