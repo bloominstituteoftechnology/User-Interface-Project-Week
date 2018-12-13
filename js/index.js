@@ -1,24 +1,20 @@
 // JS goes here
 const hamburger = document.querySelector('.hb-btn');
-const navLinks = document.querySelector('nav');
+const nav = document.querySelector('nav');
 
 
 hamburger.addEventListener('click', ()=>{
-    // TweenMax.to(navLinks, 1, {className:'+=show-nav'});
-    // TweenMax.to(navLinks, 1, {className:'-=hidden'});
-    // navLinks.classList.toggle('show-nav');
-    // navLinks.classList.toggle('hidden');
-    hamburger.style.zIndex="5";
-    if(navLinks.classList.contains('show-nav')){
-        console.log('running')
-        TweenMax.from(navLinks, 1, {className:"-=show-nav"});
-        TweenMax.to(navLinks, 1, {className:"+=hidden"});
+    if(nav.classList.contains('show-nav')){
+        TweenMax.from(nav, 2, {className: "+=show-nav" });
+        TweenMax.to(nav, 2, {className: "+=hidden", opacity: 0,
+        onComplete: () => nav.classList.remove('show-nav') });
+        
         hamburger.src="img/nav-hamburger.png";
     } else{
-        console.log('running2')
-        TweenMax.from(navLinks, 1, {className:"-=hidden"});
-        TweenMax.to(navLinks, 1, {className:"+=show-nav"});
+        TweenMax.from(nav, 1, {className: "-=hidden" });
+        TweenMax.to(nav, 1, {className: "+=show-nav", opacity:1 });
         hamburger.src="img/nav-hamburger-close.png";
+        
     }
 });
 
