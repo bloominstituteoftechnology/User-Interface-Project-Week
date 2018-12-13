@@ -29,7 +29,7 @@ class ToggleMenu {
 
         } else {
             this.button.src = "../img/nav-hamburger.png";
-            TweenLite.to(this.content, 1, { ease: Power1.easeOut });
+            TweenLite.to(this.content, 1);
             TweenLite.from(this.button, 1, { ease: Back.easeOut.config(1.9), rotation: -360, opacity: 0 });
         }
     }
@@ -95,7 +95,29 @@ class TabItem {
 const links = document.querySelectorAll('.tabs-link').forEach(tab => new TabLink(tab));
 
 // ease in animation for page on load
-const html = document.querySelector('html')
-TweenLite.from(html, 1.5, { ease: Power1.easeIn, opacity: 0 });
+const body = document.querySelector('body')
+TweenLite.from(body, 1.5, { ease: Power1.easeIn, opacity: 0 });
+
+// ease in content on load
+const hidden = document.querySelector('.dropdownHidden');
+hidden.addEventListener('click', () => {
+    TweenLite.to(hidden, 1, { ease: Power1.easeIn, opacity: 0 })
+})
+
+// scroll event 
+window.addEventListener('scroll', () => {
+    const sliderImgs = document.querySelectorAll('.slide')
+    sliderImgs.forEach(sliderImg => {
+        const slideNum = (window.scrollY + window.innerHeight) - sliderImg.height / 2;
+        const imgBottom = sliderImg.offsetTop + sliderImg.height;
+        const isHalfshow = slideNum > sliderImg.offsetTop;
+        const notScrolledPast = window.scrollY < imgBottom;
+        if (isHalfshow && notScrolledPast) {
+            console.log(`half way passed`);
+        }
+
+    })
 
 
+
+})

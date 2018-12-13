@@ -148,12 +148,15 @@ table {
 /* Your Code Goes Here */
 
 // ------------------ General Styles
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 * {
     box-sizing: border-box;
 }
 
 body {
     min-height: 100%;
+    background-color: #fff;
+    font-family: Roboto, Arial, sans-serif;
 }
 
 a {
@@ -347,12 +350,12 @@ footer {
                     width: 30%;
                     padding: 8px 0;
                     background-color: #fff;
+                    &:hover {
+                        background-color: #99A4AF;
+                    }
                     @media (max-width: 500px) {
                         width: 100%;
                     }
-                }
-                button:hover {
-                    background-color: #99A4AF;
                 }
                 img {
                     @media (max-width: 500px) {
@@ -375,7 +378,13 @@ footer {
             .project-content {
                 margin-bottom: 40px;
                 img {
-                    width: 100%
+                    width: 100%; // display: none;
+                }
+                .pic-left {
+                    transform: translateX(-200px);
+                }
+                .pic-right {
+                    transform: translateX(200px)
                 }
                 .right {
                     justify-content: flex-end;
@@ -425,7 +434,7 @@ footer {
     flex-direction: column;
     .top-services-section {
         background-image: url('../img/services/services-jumbotron.png');
-        background-size: 100%;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
         h1 {
             font-size: 4rem;
@@ -536,7 +545,7 @@ footer {
     flex-direction: column;
     .top-services-section {
         background-image: url('../img/contact/contact-jumbotron.png');
-        background-size: 100%;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
         @media (max-width: 500px) {
             background-image: url('../img/contact/contact-mobile-jumbotron.png')
@@ -548,11 +557,18 @@ footer {
         }
     }
     .contact-content {
-        width: 100%;
+        width: 1000px;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         margin-top: 60px;
         margin-bottom: 60px;
+        @media (max-width: 800px) {
+            width: 95%;
+            margin: 0 auto;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
         @media (max-width: 500px) {
             width: 95%;
             flex-direction: column;
