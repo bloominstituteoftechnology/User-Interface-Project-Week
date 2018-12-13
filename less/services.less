@@ -53,19 +53,45 @@
     }
     .tabs-item-selected {
       display: flex;
+
+      @media @mobile {
+        flex-direction: column;
+      }
       img {
           width: 45%;
-      }
+
+          @media @mobile {
+              display: none;
+          }
+        }
+       .tabs-mobile-img {
+           display:  none;
+           @media @mobile {
+               display: block;
+               width: 100%;
+               margin-top: 6%;
+           }
+       }
        .tabs-item-description {
           width: 55%;
           padding-right: 5%;
+
+          @media @mobile {
+              flex-direction: column;
+              width: 100%;
+              padding: 0;
+          }
           
           h2 {
               margin-top: 2%;
+              @media @mobile {
+                  margin-bottom: 3%;
+              }
           }
 
           p {
               padding: 2% 3% 2% 0;
+              
           }
       }
     }
