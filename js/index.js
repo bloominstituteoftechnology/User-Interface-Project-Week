@@ -1,48 +1,62 @@
 // JS goes here
 
 
+
+
+
+
 //===== NAV Menu 
-
-const toggleMenu = () => {
-  menu.classList.toggle('menu--open');
-  
-  menuBtnClose.classList.toggle("menu-btn-close");
-  menuBtn.classList.toggle('menu-btn-close');
-  
-
-}
-
-
 
 const menu = document.querySelector('.menu');
 const navMenu = document.querySelector('.nav-menu');
 
 const menuBtn = document.querySelector('.menu-btn');
-const menuBtnClose = document.querySelector('.menu-btn-close');
+const menuBtnClose = document.querySelector('.menu-close-btn');
+
+
+const toggleMenu = () => {
+  // menu.classList.toggle('menu--open');
+
+  menuBtnClose.classList.toggle("menu-close-btn");
+  navMenu.classList.toggle("menu-close")
+
+  menuBtn.classList.toggle('menu-close');
+
+
+}
+
+
+
+let slideDown = new TimelineMax({ paused: true });
+
+slideDown.from(navMenu, 1, {
+  top: "-700px",
+  onStart: toggleMenu,
+  onReverseComplete: toggleMenu,
+  ease: Power1.easeInOUt,
+});
+
+
+
+
+
+
+
+
+
 
 
 menuBtn.addEventListener('click', () => {
-  // toggleMenu();
+  
+    slideDown.play();
+   
 
-  TweenLite.from(navMenu, 1, {
-    top: "-600px",
-    onStart: toggleMenu,
-    delay: 0.1,
-    ease: Power1.easeInOUt,
-    
-  });
-  
-  
+
 })
 
 menuBtnClose.addEventListener('click', () => {
 
-  
-  TweenLite.to(navMenu, 1, {
-    top: "-600px",
-    onComplete: toggleMenu,
-    ease: Power1.easeInOUt
-  });
+  slideDown.reverse();
   
 })
 
