@@ -1,3 +1,162 @@
 .projects-container {
-    
+    .projects__carousel {
+        position: relative;
+        overflow: hidden; 
+        .make-flex(row, center, center);
+        width: 100%;
+        height: 500px;
+        background-color: grey;
+        margin: 5px auto 50px;
+
+        @media @device-max-size[mobile] {
+            height: 260px;
+        }
+
+        .projects__carousel__left-button, .projects__carousel__right-button {
+            position: absolute;
+            z-index: 1;
+            .make-flex(row, center, center);
+            width: 50px;
+            height: 50px;
+            font-size: 4rem;
+            font-weight: bold;
+            color: @white;
+            // text-shadow: 2px 2px 2px @mine-shaft;
+            cursor: pointer;
+            border: 2.5px double snow;
+
+            &:hover {
+                opacity: 0.5;
+                text-shadow: 0 0 0;
+                #animation > .bordered-color-transition(snow, @mine-shaft, 2.5px, double, @mine-shaft, 750ms);
+            }
+
+            &:active {
+                opacity: 1;
+                #prefixed > .transition-control(250ms);
+            }
+        }
+
+        .projects__carousel__left-button {
+            top: 50%;
+            left: 25px;
+            transform: translate(0, -50%);
+        }
+
+        .projects__carousel__right-button  {
+            top: 50%;
+            right: 25px;
+            transform: translate(0, -50%);
+        }
+
+        .projects__carousel__image {
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .projects__carousel__indicators {
+            position: absolute;
+            bottom: 10px;
+            z-index: 1;
+
+            .projects__carousel__indicators__icon {
+                display: inline-block;
+                cursor: pointer;
+                border: 10px double silver;
+                #prefixed .border-radius(100%);
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .projects__list {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 73px;
+
+        .projects__list__modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            
+            .projects__list__modal__close-button {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+            }
+
+            .projects__list__modal__content {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                #prefixed > .transform(translate(-50%, -50%));
+                z-index: 3;
+                overflow: auto;
+                display: block;
+                width: 80%;
+                height: 80%;
+                background-color: white;
+                // #prefixed .box-shadow()
+
+                .projects__list__modal__content__title {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 4.5rem;
+                    font-weight: bold;
+                    padding: 10px 0;
+                    margin: 25px auto;
+                }
+
+                .projects__list__modal__content__image {
+                    display: block;
+                    width: 80%;
+                    height: auto;
+                    margin: 10px auto 50px;
+                }
+
+                .projects__list__desc {
+                    display: none;
+                    width: 70%;
+                    margin: 50px auto;
+
+                    p {
+                        font-size: 1.8rem;
+                        line-height: 40px;
+                        margin: 20px 0;
+                    }
+                }
+            }
+        }
+
+        .projects__list__item {
+            display: none;
+            width: 100%;
+            text-align: center;
+            font-size: 4rem;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            cursor: pointer;
+            padding: 10px 0;
+            margin: 10px 0;
+
+            &:hover {
+                color: lighten(@mine-shaft, 50%);
+                #prefixed .transition-control(500ms);
+            }
+
+            &:active {
+                font-size: 4.1rem;
+                #prefixed .transition-control(250ms);
+            }
+        }
+    }
 }
