@@ -1,1 +1,646 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: sans-serif;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.8rem;
+}
+p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+.container {
+  width: 100%;
+  background: #FFFFFF;
+  color: #222222;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.navigation {
+  font-family: Roboto, Arial, sans-serif;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+.navigation nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background: #8e9aa5;
+  padding: 14px 85px;
+}
+.navigation nav a {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.navigation nav img:hover {
+  cursor: pointer;
+}
+.navigation nav .big-x {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 5rem;
+}
+.navigation .nav-open {
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: rgba(142, 154, 165, 0.97);
+  height: 100vh;
+  align-items: center;
+}
+.navigation .nav-open .nav-open-links {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.navigation .nav-open .nav-open-links a {
+  font-weight: bold;
+  font-size: 4.8rem;
+  line-height: 85px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.navigation .nav-open .nav-open-links a:hover {
+  color: #222222;
+}
+.navigation .display-hidden {
+  display: none;
+}
+footer {
+  background: #777777;
+  color: white;
+  padding: 30px 0;
+}
+footer .foot-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+}
+footer .foot-container h3 {
+  font-size: 2rem;
+}
+footer .foot-container .interested {
+  width: 40%;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 10px 30px 10px 80px;
+}
+footer .foot-container .interested input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+footer .foot-container .interested h3 {
+  letter-spacing: -0.5px;
+}
+footer .foot-container .interested p {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+footer .foot-container address {
+  width: 20%;
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-family: sans-serif;
+  line-height: 1.8;
+}
+footer .foot-container address .state {
+  font-size: 2rem;
+}
+footer .copyright {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 40px auto;
+  letter-spacing: 0.4px;
+}
+@media (max-width: 520px) {
+  footer .foot-container {
+    flex-direction: column;
+  }
+  footer .foot-container .interested {
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+  }
+  footer .foot-container .interested h3 {
+    font-size: 3rem;
+  }
+  footer .foot-container .interested input {
+    font-size: 2.8rem;
+    margin: 20px 0;
+  }
+  footer .foot-container address {
+    margin: 15px 20px;
+    width: 50%;
+  }
+  footer .foot-container address .state {
+    font-weight: bold;
+    font-size: 2.4rem;
+  }
+  footer .copyright {
+    text-align: left;
+    margin: 20px;
+    font-size: 2rem;
+  }
+}
+.home {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.home .banner {
+  display: flex;
+  align-items: flex-end;
+  background-image: url('../img/home/home-jumbotron.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 63vh;
+}
+.home .banner .words {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFFFFF;
+  margin: 0 0 50px 82px;
+}
+.home .content-top {
+  width: 84%;
+  margin: 0 auto;
+}
+.home .content-top .content-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home .content-top .content-section .blurb {
+  width: 50%;
+}
+.home .content-top .content-section .blurb h2 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+  margin: 8px 0 10px 0;
+}
+.home .content-top .content-section .blurb p {
+  line-height: 1.5;
+  padding: 15px 0 15px;
+  font-size: 1.6rem;
+}
+.home .content-top .content-section .blurb button {
+  border: 1px solid #222222;
+  width: 35%;
+  font-size: 1.6rem;
+  padding: 12px 0;
+}
+.home .content-top .content-section .blurb button:hover {
+  color: #FFFFFF;
+  background: #222222;
+  cursor: pointer;
+}
+.home .content-top .content-section img {
+  margin: 50px 0;
+}
+.home .projects {
+  width: 84%;
+  margin: 50px auto;
+}
+.home .projects h2 {
+  font-size: 2.4rem;
+}
+.home .projects .project-section {
+  margin-bottom: 50px;
+}
+.home .projects .project-section .img-container {
+  position: relative;
+  margin-bottom: 50px;
+}
+.home .projects .project-section .img-container h3 {
+  position: absolute;
+  bottom: 6px;
+  background: #D8D8D8;
+  color: black;
+  font-size: 2.5rem;
+  font-stretch: extra-expanded;
+  letter-spacing: 8px;
+  font-weight: 200;
+  padding: 35px 50px 35px 50px;
+}
+.home .projects .project-section .img-container img {
+  margin: 45px 0;
+}
+.home .projects .project-section p {
+  width: 52%;
+  margin: 15px auto;
+  font-family: sans-serif;
+}
+.home .projects .project-section:nth-child(odd) h3 {
+  left: 0;
+}
+.home .projects .project-section:nth-child(even) h3 {
+  right: 0;
+}
+@media (max-width: 520px) {
+  .home .banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    background-image: url('../img/home/home-mobile-jumbotron.png');
+  }
+  .home .banner .words {
+    margin: 40px 20px;
+    font-size: 5rem;
+  }
+  .home .content-top {
+    width: 92%;
+  }
+  .home .content-top .content-section {
+    flex-direction: column;
+  }
+  .home .content-top .content-section .blurb {
+    width: 100%;
+    height: auto;
+  }
+  .home .content-top .content-section .blurb h2 {
+    font-size: 3.4rem;
+  }
+  .home .content-top .content-section .blurb p {
+    line-height: 1.8;
+    margin: 10px auto;
+    font-size: 2.2rem;
+  }
+  .home .content-top .content-section .blurb button {
+    width: 98%;
+    margin: 50px auto 10px;
+    font-size: 2.5rem;
+    padding: 20px;
+  }
+  .home .content-top .content-section img {
+    order: -1;
+    width: 90vw;
+    height: 85vw;
+    margin: 50px auto 30px;
+  }
+  .home .projects {
+    width: 100%;
+  }
+  .home .projects h2 {
+    font-size: 3.5rem;
+    font-weight: 550;
+    padding: 20px;
+  }
+  .home .projects .project-section .img-container h3 {
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+  }
+  .home .projects .project-section .img-container img {
+    width: 100%;
+    height: auto;
+  }
+  .home .projects .project-section p {
+    width: 90%;
+    font-size: 2.8rem;
+  }
+  .home .projects .villas .img-container img {
+    content: url("../img/home/home-mobile-villas-img.png");
+  }
+  .home .projects .outskirts .img-container img {
+    content: url("../img/home/home-mobile-outskirts-img.png");
+  }
+  .home .projects .blocks .img-container img {
+    content: url("../img/home/home-mobile-the-blocks-img.png");
+  }
+}
+.services {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.services .banner {
+  display: flex;
+  align-items: flex-end;
+  background-image: url('../img/services/services-jumbotron.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 23vh;
+}
+.services .banner .words {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 75px;
+  color: #FFFFFF;
+  margin: 0 0 20px 82px;
+}
+.services .content-section {
+  width: 85%;
+  margin: 0 auto;
+}
+.services .content-section .blurb {
+  margin: 50px auto;
+}
+.services .content-section .blurb p {
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+.services .content-section .tabs {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+.services .content-section .tabs button {
+  width: 21%;
+  font-size: 2rem;
+  border: 1px solid #222222;
+  padding: 10px 0;
+}
+.services .content-section .tabs button:hover {
+  color: #FFFFFF;
+  background: #222222;
+  cursor: pointer;
+}
+.services .content-section .tab-link-selected {
+  background: #5E9FB9;
+  color: white;
+}
+.services .content-section .tab-content {
+  margin: 40px auto;
+}
+.services .content-section .tab-content .text-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+.services .content-section .tab-content .text-content .tab-content-para {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services .content-section .tab-content .overlay-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 50%;
+  height: auto;
+}
+.services .content-section .tab-content .overlay-container .overlay {
+  opacity: 0;
+  height: 275px;
+  padding: 15px;
+  width: 100%;
+  display: inline-block;
+  background: #222222;
+  transition: opacity 0.5s;
+}
+.services .content-section .tab-content .overlay-container .overlay h1 {
+  font-size: 4rem;
+  padding: 10px;
+}
+.services .content-section .tab-content .overlay-container .overlay p {
+  font-size: 1.8rem;
+  padding: 10px;
+}
+.services .content-section .tab-content .overlay-container .overlay:hover {
+  opacity: 0.4;
+  color: white;
+}
+.services .content-section .tab-content .overlay-container img {
+  width: 100%;
+  height: auto;
+}
+.services .content-section #pre-construction .overlay-container {
+  background-image: url('../img/services/services-tab-pre-construction-img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.services .content-section #construction .overlay-container {
+  background-image: url('../img/services/services-tab-construction-img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.services .content-section #design .overlay-container {
+  background-image: url('../img/services/services-tab-design-build-img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.services .content-section #sustainability .overlay-container {
+  background-image: url('../img/services/services-tab-sustainability-img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.services .content-section .display-none {
+  display: none;
+}
+@media (max-width: 520px) {
+  .services .banner {
+    background-image: url('../img/services/services-mobile-jumbotron.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+  }
+  .services .content-section .blurb {
+    margin: 20px auto;
+  }
+  .services .content-section .blurb p {
+    line-height: 1.8;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  .services .content-section .tabs {
+    flex-direction: column;
+  }
+  .services .content-section .tabs button {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .services .content-section .tab-content .text-content {
+    flex-direction: column;
+  }
+  .services .content-section .tab-content .text-content .tab-content-para {
+    width: 100%;
+  }
+  .services .content-section .tab-content .text-content .tab-content-para p {
+    margin: 10px auto;
+  }
+  .services .content-section .tab-content .overlay-container {
+    width: 100%;
+    height: auto;
+  }
+  .services .content-section .tab-content #pre-construction .overlay-container {
+    background-image: url('../img/services/services-tab-mobile-pre-construction-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .services .content-section .tab-content #construction .overlay-container {
+    background-image: url('../img/services/services-tab-mobile-construction-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .services .content-section .tab-content #design .overlay-container {
+    background-image: url('../img/services/services-tab-mobile-design-build-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .services .content-section .tab-content #sustainability .overlay-container {
+    background-image: url('../img/services/services-tab-mobile-sustainability-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
