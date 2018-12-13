@@ -12,7 +12,7 @@ onClick = () => {
 
 headerButton.addEventListener('click', onClick);
 
-//=============== component
+//=============== services button component
 
 // gets all images 
 const btnContent = document.querySelectorAll('.btn-content img');
@@ -43,5 +43,31 @@ const btns = document.querySelectorAll('.top button');
 
 // makes each button "smart"
 btns.forEach(btn => new Button(btn))
+
+//=========================== contact speech-bubble button component
+
+const speechBubbles = document.querySelectorAll('.team-button');
+console.log(speechBubbles);
+const speechBubbleContent = document.querySelectorAll('.team-speak p');
+console.log(speechBubbleContent);
+
+
+class SpeechB {
+    constructor(element) {
+        this.element = element;
+        this.element.addEventListener('click', this.expandBubble);
+    }
+
+    expandBubble () {
+
+        const speechContent = speechBubbleContent[this.dataset.tab-1];
+        speechContent.classList.toggle('inactive');
+        
+
+
+    }
+}
+
+speechBubbles.forEach(bubble => new SpeechB(bubble));
 
 
