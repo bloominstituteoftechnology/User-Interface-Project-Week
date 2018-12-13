@@ -17,13 +17,13 @@ import SustainMobile from "../../img/services/services-tab-mobile-sustainability
 
 import Css from './Services.css';
 
+
 const services = [
     { title: "Pre-Construction", image: preConstrucImg, imageMobile: preConstrucImgMobile },
     { title: 'Construction', image: ConstrucImg, imageMobile: ConstrucImgMobile },
     { title:"Design Build", image: DesignImg, imageMobile: DesignImgMobile },
     { title: "Sustainability", image: Sustain, imageMobile: SustainMobile }
 ]
-
 
 class Services extends Component {
     state = {
