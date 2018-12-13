@@ -23,3 +23,30 @@ hamburger.addEventListener('click', ()=>{
 // Special Properties: Delay, Ease, 
 // TweenMax.staggerFrom - Add a stagger amount to end of code which will stagger the animation.
 // Fire a function - onComplete: function will occur. 
+
+
+//Home Page Animations
+
+const firstP = document.querySelector('.first-intro');
+const secondP = document.querySelector('.second-intro')
+// First intro
+  $(window).scroll(function (event) {
+    let scroll = $(window).scrollTop();
+    console.log(scroll);
+    if(scroll >= 400) {
+        TweenMax.to(firstP, 1, {opacity:1} )
+    //  $('.first-intro').css("opacity", "1");
+    } else if (scroll < 300 ) {
+        TweenMax.to(firstP, 1, {opacity:0} )
+    }
+  });
+  $(window).scroll(function (event) {
+    let scroll = $(window).scrollTop();
+    console.log(scroll);
+    if(scroll >= 600) {
+        TweenMax.to(secondP, 1, {opacity:1} )
+    //  $('.first-intro').css("opacity", "1");
+    } else if (scroll < 500 ) {
+        TweenMax.to(secondP, 1, {opacity:0} )
+    }
+  });
