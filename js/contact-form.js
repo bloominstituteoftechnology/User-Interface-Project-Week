@@ -18,8 +18,8 @@ contactFormSubmitButton.addEventListener("click", e => {
     const jobOverview = contactFormJobOverview.value;
     
 
-    if (!email) {
-        alert("Please enter an email address first.");
+    if (!email.match(/[_a-zA-Z0-9!@#$%^&():;]+(.[a-zA-Z0-9!@#$%^&():;]+)@[a-zA-Z0-9!@#$%^&():;]+((.[a-zA-Z0-9!@#$%^&():;]+)){3,10}/)) {
+        alert("Please enter a valid email address first.");
     } else if (buildingCount < 1) {
         alert("Please enter a valid number for buildings to plan.");
     } else if (!jobOverview) {
@@ -27,9 +27,8 @@ contactFormSubmitButton.addEventListener("click", e => {
     } else if (!contactFormSelectedRadioButton) {
             alert("Please select an option first (type of client).");
     } else {
-        console.log(contactFormSelectedRadioButton)
         const clientType = contactFormSelectedRadioButton[0].value;
-
+        
         alert(`Email from ${clientType} using the address "${email}" for ${buildingCount} building(s) will be sent very soon!`);
     }
 });
