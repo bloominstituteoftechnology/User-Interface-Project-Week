@@ -81,3 +81,5 @@ class TabItem {
 
 const links = document.querySelectorAll('.tabs-link').forEach(tab => new TabLink(tab));
 
+const html = document.querySelector('html')
+TweenLite.from(html, 1.5, { ease: Power1.easeIn, opacity: 0 });
