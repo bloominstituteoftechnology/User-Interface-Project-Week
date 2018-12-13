@@ -25,25 +25,74 @@
       }
     }
     
-    .hamburger-menu {
-      margin-right: 61px;
-      cursor: pointer;
 
-      @media @tablet {
-        margin-right: 20px;
-      }
-    }
 
-    .close-menu {
-      margin-right: 80px;
-      z-index: 3;
-      cursor: pointer;
-      @media @tablet {
-        margin-right: 38px;
-      }
-    }
+// hamburger animation source: https://codepen.io/ahmadbassamemran/pen/VQwPGr
+
+.hamburger-menu{
+  width: 30px;
+  height: 25px;
+  margin-right: 61px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  
+  @media @tablet {
+    margin-right: 19px;
+  }
+
+  span{
+    background-color:#FFF;
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width:100%;
+    height: 4px;
+    transition-duration: 500ms
+  }
+
+  span:nth-child(1){
+    top:0px;
+    left: 0px;
+  }
+
+  span:nth-child(2){
+    top:11px;
+    left: 0px;
+  }
+
+  span:nth-child(3){
+    bottom:0px;
+    left: 0px;
   }
 }
+
+.menu-open {
+  margin-right: 76px;
+  z-index: 3;
+
+  @media @tablet {
+    margin-right: 34px;
+  }
+}
+
+
+.clickHamburgerMenu span:nth-child(1){
+  transform: rotate(45deg);
+  top: 13px;
+
+}
+.clickHamburgerMenu span:nth-child(2){
+  transform: scale(.1);
+
+}
+.clickHamburgerMenu span:nth-child(3){
+  transform: rotate(-45deg);
+  top: 13px;
+}
+  }
+}
+
 nav {
   #mixin.layout;
   flex-direction: column;

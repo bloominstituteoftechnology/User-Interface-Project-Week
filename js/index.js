@@ -4,23 +4,22 @@ const body = document.querySelector('body');
 // ====================== NAVIGATION 
 // VARIABLES
 const hamburgerMenu = document.querySelector('.hamburger-menu');
-const closeMenu = document.querySelector('.close-menu');
 const nav = document.querySelector('nav');
 const navBar = document.querySelector('.top-nav');
 const contactLink = document.querySelector('#scroll');
 
 // EVENT LISTENERS
 hamburgerMenu.addEventListener('click', () => toggleMenu())
-closeMenu.addEventListener('click', () => toggleMenu());
 contactLink.addEventListener('click', () => toggleMenu());
 
 // CALLBACK FUNCTIONS
 toggleMenu = function () {
-  hamburgerMenu.classList.toggle('hide')
-  closeMenu.classList.toggle('hide');
+  hamburgerMenu.classList.toggle('menu-open');
   nav.classList.toggle('open');
   body.classList.toggle('overflow-hidden');
+  hamburgerMenu.classList.toggle("clickHamburgerMenu");
 }
+
 
 // ====================== SERVICES TAB NAVIGATOR
 // CLASS CONSTRUCTOR
