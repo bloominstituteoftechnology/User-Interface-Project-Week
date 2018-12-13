@@ -31,12 +31,12 @@ class Carousel extends Component {
 
     componentDidMount() {
         this.startLoop();
-        window.addEventListener('resize', () => this.resizeSource());
+        window.addEventListener('resize', this.resizeSource);
     }
 
     componentWillUnmount() {
         TweenMax.killAll();
-        window.removeEventListener('resize', () => this.resizeSource());
+        window.removeEventListener('resize', this.resizeSource);
     }
 
     resizeSource() {
