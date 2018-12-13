@@ -1,7 +1,10 @@
 // // JS goes here
+TweenMax.to(document.querySelector('.menu-img'), 1, { rotation:360, scale:1} );
+
 
 const toggleMenu = () => {
   menu.classList.toggle('menu--open');
+  
 }
 const menu = document.querySelector('.menu');
 
@@ -9,7 +12,12 @@ const menu = document.querySelector('.menu');
 const menuButton = document.querySelector('.menu-img')
 menuButton.addEventListener('click', toggleMenu);
 
+const closeButton = document.querySelector('.menu-close')
+closeButton.addEventListener('click', toggleMenu);
 
+
+
+ 
 
 
 
