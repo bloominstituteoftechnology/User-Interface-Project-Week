@@ -205,6 +205,58 @@ img {
 }
 .menu {
   display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  background-color: #99A4AF;
+  text-align: center;
+  opacity: 0.8;
+}
+.menu .close-button {
+  cursor: pointer;
+}
+.menu .menu--open {
+  display: block;
+}
+.menu .menu-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu .menu-top h1 {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin: 13px 60px 100px 60px;
+}
+@media (max-width: 500px) {
+  .menu .menu-top h1 {
+    margin: 13px 20px 100px 20px;
+  }
+}
+.menu .menu-top img {
+  margin: 13px 60px 100px 60px;
+}
+@media (max-width: 500px) {
+  .menu .menu-top img {
+    margin: 13px 20px 100px 20px;
+  }
+}
+.menu ul li {
+  font-size: 3.2rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+.menu ul li a {
+  font-weight: bold;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.menu ul li a:hover {
+  color: #222222;
 }
 .footer-content {
   width: 100%;
@@ -214,7 +266,7 @@ img {
   align-content: space-between;
   background: #828282;
   margin-top: 10%;
-  padding: 40px 5%;
+  padding: 4rem 5% 1rem;
   color: #FFFFFF;
 }
 @media (max-width: 500px) {
@@ -249,7 +301,7 @@ img {
   }
 }
 .footer-content .main-footer .email-box h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 .footer-content .main-footer .email-box .white-text {
@@ -266,14 +318,18 @@ img {
   }
 }
 .footer-content .main-footer .address h3 {
-  font-size: 2rem;
+  padding-top: 1rem;
+  font-size: 1.8rem;
 }
 .footer-content .main-footer .address .white-text {
   font-size: 1.5rem;
   line-height: 24px;
   color: #FFFFFF;
 }
-.footer-content .main-footer .footer h6 {
+.footer {
+  padding-top: 1rem;
+}
+.footer .copy {
   font-size: 1.3rem;
   color: #FFFFFF;
   text-align: center;
@@ -303,7 +359,7 @@ header .jumbo .mobile-img {
     z-index: -1;
   }
 }
-header h1 {
+header .h1-home {
   color: #FFFFFF;
   font-weight: bold;
   font-size: 6.4rem;
@@ -313,10 +369,10 @@ header h1 {
   align-items: flex-end;
   margin-top: 25rem;
   margin-left: 8%;
-  padding-bottom: 10rem;
+  padding-bottom: 4rem;
 }
 @media (max-width: 500px) {
-  header h1 {
+  header .h1-home {
     margin-top: 40%;
     font-size: 3.5rem;
     padding-top: 10rem;
@@ -568,52 +624,56 @@ header h1 {
   margin: 1rem 5%;
 }
 .tabs {
-  display: flex;
   width: 100%;
-  margin: 1rem 5%;
+  max-width: 85%;
+  margin-left: 3%;
+  margin-top: 3%;
+  padding-bottom: 27rem;
 }
-.tabs .tabs-items {
+.tabs-items {
   width: 100%;
   display: flex;
   justify-content: center;
   padding-top: 40px;
+  height: 30px;
 }
-.tabs .tabs-item {
+.tabs-items .tabs-item {
   display: none;
 }
-.tabs .tabs-item .tabs-item-title {
-  font-size: 2.4rem;
+.tabs-items .tabs-item .tabs-item-title {
+  font-size: 2rem;
   font-weight: bold;
   padding-bottom: 10px;
+  margin-left: 3%;
 }
-.tabs .tabs-item-selected {
+.tabs-items .tabs-item-selected {
   display: block;
 }
-.tabs .tabs-links {
+.tabs-links {
   display: flex;
   justify-content: space-between;
 }
-.tabs .tabs-link {
+.tabs-link {
   padding: 10px 1.5%;
   margin-right: 2%;
   margin-left: 2%;
-  font-size: 2.2rem;
+  font-size: 2rem;
   border: 1px solid #222222;
   color: #222222;
   font-weight: bold;
   cursor: pointer;
 }
-.tabs .tabs-link:hover {
+.tabs-link:hover {
   background-color: #5E9FB9;
   color: #FFFFFF;
 }
-.tabs .tabs-link-selected {
+.tabs-link-selected {
   z-index: 2;
-  border-right: 1px solid #222222;
+  border: 1px solid #222222;
   background-color: #FFFFFF;
   color: #222222;
 }
-.tabs .tabs-link-selected:hover {
+.tabs-link-selected:hover {
   background-color: #5E9FB9;
   color: #FFFFFF;
 }
@@ -623,11 +683,15 @@ header h1 {
   justify-content: space-between;
 }
 .tabs-item-description .tabs-text {
-  max-width: 45%;
+  display: flex;
+  flex-direction: row;
+  max-width: 85%;
 }
 .tabs-item-description .tabs-text p {
+  width: 80%;
   margin-bottom: 1rem;
+  margin-left: 4%;
 }
 .tabs-item-description .tabs-pic {
-  max-width: 45%;
+  width: 100%;
 }
