@@ -17,16 +17,18 @@ class initTab {
         this.element = element;
         this.service = JSON.stringify(this.element.getAttribute('service-tab'));
         this.correspondingPanel = document.querySelector(`.services-section-main[service-tab=${this.service}]`);
+        this.title = this.correspondingPanel.querySelector('h2');
+        console.log(this.title);
         this.panel = new ServicePanel(this.correspondingPanel);
-        this.element.addEventListener('click', () => this.tabSelected())
+        this.element.addEventListener('click', (e) => this.tabSelected(e))
     }
-    tabSelected() {
+    tabSelected(e) {
         const serviceTabs = document.querySelectorAll('.tabs-holder__button');
         serviceTabs.forEach(serTab => {
             serTab.classList.remove('button--active');
         })
         this.element.classList.add('button--active');
-        this.panel.selected();
+        this.panel.selected(e);
     }
 }
 
@@ -34,8 +36,15 @@ class ServicePanel {
     constructor(element) {
         this.panel = element;
     }
-    selected() {
+    selected(e) {
         const panels = document.querySelectorAll('.services-section-main');
+        const panelElement = this.panel.querySelector('h2');
+        var app = new Vue({
+            el: panelElement,
+            data: {
+              title: e.target.textContent
+            }
+          })
         panels.forEach(panel => {
             panel.classList.add('hideService');
         })
