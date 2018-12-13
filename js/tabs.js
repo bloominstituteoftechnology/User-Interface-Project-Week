@@ -2,7 +2,7 @@ class TabLink {
     constructor(element) {
       this.element = element;
       this.data = this.element.dataset.tab;
-      this.itemElement = document.querySelector(`.tab-link[data-tab='${this.data}'] `);
+      this.itemElement = document.querySelector(`.tab-content[data-tab='${this.data}'] `);
       this.tabItem = new TabItem(this.itemElement);
       
       this.element.addEventListener('click', () => {this.select()});
@@ -34,4 +34,4 @@ class TabLink {
   
   
   const links = document.querySelectorAll('.tab-link').forEach( link => new TabLink(link));
-  links[0].select();
+  // links[0].select();
