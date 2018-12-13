@@ -7,7 +7,9 @@ class Tab {
 	changeTab(tab) {
 		document.querySelector(".selected").classList.remove("selected");
 		tab.classList.add("selected");
-		document.querySelector(".active").classList.remove("active");
+		document
+			.querySelectorAll(".active")
+			.forEach(data => data.classList.remove("active"));
 		document
 			.querySelector(`.tab-content[data-index="${tab.innerText}"]`)
 			.classList.add("active");
