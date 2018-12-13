@@ -106,14 +106,16 @@ hidden.addEventListener('click', () => {
 
 // scroll event 
 window.addEventListener('scroll', () => {
-    const sliderImgs = document.querySelectorAll('.slide')
+    const sliderImgs = document.querySelectorAll('.project-content img')
     sliderImgs.forEach(sliderImg => {
         const slideNum = (window.scrollY + window.innerHeight) - sliderImg.height / 2;
         const imgBottom = sliderImg.offsetTop + sliderImg.height;
         const isHalfshow = slideNum > sliderImg.offsetTop;
         const notScrolledPast = window.scrollY < imgBottom;
         if (isHalfshow && notScrolledPast) {
-            console.log(`half way passed`);
+            sliderImg.classList.add('slide');
+        } else {
+            sliderImg.classList.remove('slider');
         }
 
     })
