@@ -40,6 +40,9 @@ window.addEventListener('scroll', function(){
 
 document.querySelector('.nav-btn').addEventListener('click', function(e){
   if(e.target.getAttribute("src")==="img/nav-hamburger-close.png"){
+    Array.from(document.querySelectorAll('.menu-layover a')).forEach(link =>link.classList.add('animateLinksFadeIn'));
+
+    Array.from(document.querySelectorAll('.menu-layover a')).forEach(link =>link.classList.add('animateLinksFadeOut'));
     document.querySelector('.menu-layover').style.opacity = '0';
     document.querySelector('.menu-layover').classList.remove('animateLayoverDown');
     document.querySelector('.menu-layover').classList.add('animateLayoverUp');
@@ -53,6 +56,10 @@ document.querySelector('.nav-btn').addEventListener('click', function(e){
     document.querySelector('.nav-btn').style.transform = "rotate(0)";
 
   }else{
+    Array.from(document.querySelectorAll('.menu-layover a')).forEach(link =>link.classList.remove('animateLinksFadeOut'));
+
+    Array.from(document.querySelectorAll('.menu-layover a')).forEach(link =>link.classList.add('animateLinksFadeIn'));
+
     document.querySelector('.nav-btn').style["transition-duration"] = "1s";
 
     e.target.style.transform = "rotate(-90deg)";

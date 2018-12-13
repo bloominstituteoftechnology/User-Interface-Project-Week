@@ -1,7 +1,7 @@
 nav{
 
   width:inherit;
-  max-width: 1080px;
+  max-width: 1024px;
   display: flex;
   background: #949494;
 
@@ -13,6 +13,9 @@ nav{
     margin-left:5%;
     margin-top:10px;
     margin-bottom:10px;
+    @media(@tablet){
+      margin-right:80%;
+    }
     @media(@phone){
       margin-right:70%;
     }
@@ -38,7 +41,7 @@ nav{
     align-items: center;
     margin-top:40px;
     width:100%;
-    max-width: 1080px;
+    max-width: 1024px;
 
     background:#949494;
     z-index:2;
@@ -92,6 +95,30 @@ nav{
   }
 }
 
+@keyframes linksFadeIn{
+  0%{
+    opacity:0;
+    perspective: 0px;
+  }
+
+
+
+  100%{
+
+    opacity:1}
+}
+@keyframes linksFadeOut{
+  0%{
+    opacity:1;
+  }
+
+
+
+  100%{
+    opacity:0;
+  }
+
+}
 .animateLayoverDown{
   animation-name: layoverDown;
   animation-duration: 1s;
@@ -102,4 +129,18 @@ nav{
 .animateLayoverUp{
   animation-name: layoverUp;
   animation-duration: 1s;
+}
+
+.animateLinksFadeOut{
+  animation-name: linksFadeOut;
+  animation-duration: .8s;
+  opacity:0;
+
+}
+
+.animateLinksFadeIn{
+  animation-name: linksFadeIn;
+  animation-duration: 1s;
+
+
 }

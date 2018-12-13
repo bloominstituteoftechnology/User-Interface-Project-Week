@@ -147,7 +147,7 @@ body {
   font-family: 'Robot', 'Arial', sans-serif;
   color: #222222;
   background-color: #FFF;
-  max-width: 1080px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 p {
@@ -183,7 +183,7 @@ header {
 }
 nav {
   width: inherit;
-  max-width: 1080px;
+  max-width: 1024px;
   display: flex;
   background: #949494;
 }
@@ -195,6 +195,11 @@ nav .logo {
   margin-left: 5%;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+@media (max-width:800px) {
+  nav .logo {
+    margin-right: 80%;
+  }
 }
 @media (max-width:500px) {
   nav .logo {
@@ -219,7 +224,7 @@ nav .menu-layover {
   align-items: center;
   margin-top: 40px;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1024px;
   background: #949494;
   z-index: 2;
 }
@@ -263,6 +268,23 @@ nav .menu-layover a:active {
     opacity: 0;
   }
 }
+@keyframes linksFadeIn {
+  0% {
+    opacity: 0;
+    perspective: 0px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes linksFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .animateLayoverDown {
   animation-name: layoverDown;
   animation-duration: 1s;
@@ -270,6 +292,15 @@ nav .menu-layover a:active {
 }
 .animateLayoverUp {
   animation-name: layoverUp;
+  animation-duration: 1s;
+}
+.animateLinksFadeOut {
+  animation-name: linksFadeOut;
+  animation-duration: 0.8s;
+  opacity: 0;
+}
+.animateLinksFadeIn {
+  animation-name: linksFadeIn;
   animation-duration: 1s;
 }
 footer {
@@ -313,6 +344,13 @@ footer .contact-info-container {
   margin: 0 auto;
   padding-bottom: 10px;
 }
+@media (max-width:800px) {
+  footer .contact-info-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+  }
+}
 @media (max-width:500px) {
   footer .contact-info-container {
     width: 95%;
@@ -322,6 +360,27 @@ footer .contact-info-container {
 }
 footer .contact-info-container .contact-left {
   width: 33.3%;
+}
+@media (max-width:800px) {
+  footer .contact-info-container .contact-left {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-bottom: 30px;
+  }
+  footer .contact-info-container .contact-left h3 {
+    margin-top: 8px;
+    margin-right: 2%;
+  }
+  footer .contact-info-container .contact-left input {
+    width: 30%;
+  }
+  footer .contact-info-container .contact-left p {
+    margin-top: 3px;
+    text-align: center;
+  }
 }
 @media (max-width:500px) {
   footer .contact-info-container .contact-left {
@@ -341,6 +400,13 @@ footer .contact-info-container .contact-right .contact-right-third {
     width: 50%;
     margin-bottom: 20px;
     padding-left: 2%;
+  }
+}
+@media (max-width:800px) {
+  footer .contact-info-container .contact-right {
+    width: 95%;
+    margin: 0 auto;
+    justify-content: space-between;
   }
 }
 @media (max-width:500px) {
@@ -427,6 +493,39 @@ button span {
 .info-content .info-content-sub-2 .info-content-half-text p {
   padding: 20px 0 20px 0;
 }
+@media (max-width:800px) {
+  .info-content h2 {
+    text-align: center;
+  }
+  .info-content button {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .info-content .info-content-sub-1 {
+    flex-direction: column-reverse;
+    width: 95%;
+  }
+  .info-content .info-content-sub-1 .info-content-half {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  .info-content .info-content-sub-1 .info-content-half-text {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  .info-content .info-content-sub-2 {
+    flex-direction: column;
+    width: 95%;
+  }
+  .info-content .info-content-sub-2 .info-content-half {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  .info-content .info-content-sub-2 .info-content-half-text {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+}
 @media (max-width:500px) {
   .info-content .info-content-sub-1 {
     flex-direction: column-reverse;
@@ -464,6 +563,11 @@ button span {
   padding: 0 25% 0 25%;
   margin: 20px 0 20px 0;
 }
+@media (max-width:800px) {
+  .recent-projects p {
+    padding: 0;
+  }
+}
 @media (max-width:500px) {
   .recent-projects p {
     padding: 0;
@@ -489,6 +593,13 @@ button span {
   text-align: center;
   font-size: 2.5rem;
 }
+@media (max-width:800px) {
+  .recent-projects .recent-projects-group .recent-projects-square-left {
+    width: 70%;
+    top: 90%;
+    left: 10%;
+  }
+}
 @media (max-width:500px) {
   .recent-projects .recent-projects-group .recent-projects-square-left {
     width: 70%;
@@ -513,10 +624,23 @@ button span {
   letter-spacing: 3px;
   font-size: 2.5rem;
 }
+@media (max-width:800px) {
+  .recent-projects .recent-projects-group .recent-projects-square-right span {
+    width: 75%;
+    text-align: center;
+  }
+}
 @media (max-width:500px) {
   .recent-projects .recent-projects-group .recent-projects-square-right span {
     letter-spacing: 1px;
     font-size: 2rem;
+  }
+}
+@media (max-width:800px) {
+  .recent-projects .recent-projects-group .recent-projects-square-right {
+    width: 70%;
+    top: 90%;
+    right: 10%;
   }
 }
 @media (max-width:500px) {
@@ -524,6 +648,13 @@ button span {
     width: 70%;
     top: 90%;
     right: 7%;
+  }
+}
+@media (max-width:800px) {
+  .recent-projects .recent-projects-group {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 100px;
   }
 }
 @media (max-width:500px) {
@@ -534,7 +665,7 @@ button span {
   }
 }
 .jumbotron-header {
-  height: 700px;
+  height: 600px;
   width: 100%;
   position: relative;
   background-image: url(../img/home/home-jumbotron.png);
@@ -551,7 +682,18 @@ button span {
   line-height: 7.5rem;
   color: #FFF;
 }
-@media (max-width:500px) {
+@media (max-width:800px) {
+  .jumbotron-header {
+    height: 500px;
+  }
+  .jumbotron-header h1 {
+    top: 40%;
+    width: 50%;
+    font-size: 4.4rem;
+    line-height: 5rem;
+  }
+}
+@media (max-width:800px) and (max-width:500px) {
   .jumbotron-header {
     height: 400px;
     background-image: url(../img/home/home-mobile-jumbotron.png);
@@ -574,7 +716,7 @@ button span {
 .services-jumbotron {
   width: 100%;
   background-image: url(../img/services/services-jumbotron.png);
-  height: 320px;
+  height: 300px;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
@@ -583,11 +725,18 @@ button span {
   width: 25%;
   position: absolute;
   top: 50%;
-  left: 6%;
+  left: 4.5%;
   font-weight: bold;
   font-size: 6.4rem;
   line-height: 7.5rem;
   color: #FFF;
+}
+@media (max-width:800px) {
+  .services-jumbotron h1 {
+    top: 40%;
+    font-size: 5rem;
+    line-height: 6.4rem;
+  }
 }
 @media (max-width:500px) {
   .services-jumbotron {
@@ -601,7 +750,7 @@ button span {
   }
 }
 .servicesDesc {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 @media (max-width:500px) {
@@ -635,6 +784,19 @@ button span {
 .tabNavigation .navigatorTabs .tab:hover {
   background: #222222;
   color: #FFF;
+}
+@media (max-width:800px) {
+  .tabNavigation .navigatorTabs {
+    flex-direction: column;
+  }
+  .tabNavigation .navigatorTabs .tab {
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid #222222;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
 }
 @media (max-width:500px) {
   .tabNavigation .navigatorTabs {
@@ -671,6 +833,20 @@ button span {
   display: flex;
   flex-direction: column;
 }
+@media (max-width:800px) {
+  .navContent img {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .navContent .navContDesc {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .navContent .navContDesc h3 {
+    margin-bottom: 20px;
+  }
+}
 @media (max-width:500px) {
   .navContent img {
     width: 95%;
@@ -688,6 +864,11 @@ button span {
 .navContSelected {
   display: flex;
 }
+@media (max-width:800px) {
+  .navContSelected {
+    flex-direction: column;
+  }
+}
 @media (max-width:500px) {
   .navContSelected {
     flex-direction: column;
@@ -696,7 +877,7 @@ button span {
 .contact-jumbotron {
   width: 100%;
   background-image: url(../img/contact/contact-jumbotron.png);
-  height: 300px;
+  height: 400px;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
@@ -704,12 +885,24 @@ button span {
 .contact-jumbotron h1 {
   width: 33%;
   position: absolute;
-  top: 55%;
-  left: 9.5%;
+  top: 40%;
+  left: 5%;
   font-weight: bold;
   font-size: 5rem;
   line-height: 7.5rem;
   color: #FFF;
+}
+@media (max-width:800px) {
+  .contact-jumbotron h1 {
+    top: 40%;
+    font-size: 4rem;
+    line-height: 5.4rem;
+  }
+}
+@media (max-width:800px) {
+  .contact-jumbotron {
+    height: 240px;
+  }
 }
 @media (max-width:500px) {
   .contact-jumbotron {
@@ -855,6 +1048,13 @@ button span {
   -webkit-text-stroke-color: gray;
   color: #FFF;
 }
+@media (max-width:800px) {
+  .about-jumbotron h1 {
+    top: 75%;
+    font-size: 4.5rem;
+    line-height: 6.4rem;
+  }
+}
 @media (max-width:500px) {
   .about-jumbotron {
     background-image: url(../img/about/about-mobile.png);
@@ -869,6 +1069,7 @@ button span {
 .about-container {
   width: 80%;
   margin: 0 auto;
+  margin-top: 100px;
 }
 .project-jumbotron {
   background-image: url(../img/projects/projects-full.png);
@@ -886,6 +1087,13 @@ button span {
   font-size: 5rem;
   line-height: 7.5rem;
   color: #FFF;
+}
+@media (max-width:800px) {
+  .project-jumbotron h1 {
+    font-size: 4.5rem;
+    line-height: 5.4rem;
+    top: 50%;
+  }
 }
 @media (max-width:500px) {
   .project-jumbotron {
