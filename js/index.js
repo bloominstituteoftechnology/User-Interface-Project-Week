@@ -9,6 +9,10 @@ class ToggleMenu {
         // reference for drop down content
         this.content = document.querySelector('.dropdownContent');
 
+        // reference menu anchor tags
+        this.home = document.querySelector('.home');
+        this.services = document.querySelector('.services');
+        this.contact = document.querySelector('.contact');
 
         //event listener
         this.button.addEventListener('click', () => this.toggleContent());
@@ -18,12 +22,15 @@ class ToggleMenu {
         if (!this.content.classList.contains('dropdownHidden')) {
             this.button.src = "../img/nav-hamburger-close.png";
             TweenLite.from(this.content, 1, { ease: Power1.easeIn, opacity: 0 });
-            TweenLite.from(this.button, 1, { ease: SlowMo.ease.config(0.5, 0.9, false), rotation: 360, opacity: 0 });
+            TweenLite.from(this.button, 1, { ease: Back.easeOut.config(1.7), rotation: 360, opacity: 0 });
+            TweenLite.from(this.home, 1, { x: -2000, ease: Back.easeOut.config(1.7) })
+            TweenLite.from(this.services, 1, { x: -2000, ease: Back.easeOut.config(1.7), delay: .5 })
+            TweenLite.from(this.contact, 1, { x: -2000, ease: Back.easeOut.config(1.7), delay: 1 })
 
         } else {
             this.button.src = "../img/nav-hamburger.png";
             TweenLite.to(this.content, 1, { ease: Power1.easeOut });
-            TweenLite.from(this.button, 1, { ease: SlowMo.ease.config(0.5, 0.9, false), rotation: -360, opacity: 0 });
+            TweenLite.from(this.button, 1, { ease: Back.easeOut.config(1.9), rotation: -360, opacity: 0 });
         }
     }
 }
@@ -91,8 +98,4 @@ const links = document.querySelectorAll('.tabs-link').forEach(tab => new TabLink
 const html = document.querySelector('html')
 TweenLite.from(html, 1.5, { ease: Power1.easeIn, opacity: 0 });
 
-
-const btn = document.getElementsByTagName('button');
-console.log(btn)
-TweenLite.fromTo(btn, 1, { top: 0 }, { ease: Power1.easeIn, top: 100 });
 
