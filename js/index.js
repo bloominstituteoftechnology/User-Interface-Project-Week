@@ -76,46 +76,68 @@ function sust() {
     document.getElementById("yo3").style.backgroundColor="white"
 }
 
+class TabLink {
+  constructor(tabElement){
+    
+    this.tabElement = tabElement;
+      
+    this.tabData = this.tabElement.dataset.tab;
+  
+    if(this.tabData == 'all'){
+      
+      this.cards = document.querySelectorAll('.card');
+      //console.log(this.cards);
 
-/*
-class Tab {
-    constructor(tabs){
-        this.tab= (tabs);
+    } else {
 
-        this.tabContent= document.querySelector(`.tab-content[data-tab="${this.tab.dataset.tab}"]`);
-
+      this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
+      //console.log(this.cards);
     }
-    setActive(start) {
-        if (start){
-            this.tab.classList.add("begin");
+            
+    this.cards = Array.from(this.cards).map( function (card){
+      return new TabCard(card);
+    }); 
+    
+ console.log(this.cards);
 
-            this.tabContent.classList.add("begin");
-        } else {
-            this.tab.classList.remove("begin");
-            this.tabContent.classList.remove("begin");
-        }
+ this.tabElement.addEventListener('click', this.selectTab.bind(this) );
+}
+
+selectTab(){
+ const tabs = document.querySelectorAll('.tab');
+
+ tabs.forEach(function(e){
+   e.classList.remove("active-tab")
+ });
+
+ const cards = document.querySelectorAll('.card');
+
+cards.forEach(function(e){
+   //console.log(e);
+   e.style.display = 'none';
+ });
+ 
+ this.tabElement.classList.add(".active-tab");
+
+this.cards.forEach(card => card.selectCard());
     }
 }
 
-class TabNavigator {
-    constructor(tabNavigatorName) {
-        this.tabNavigator = document.querySelector(tabNavigatorName);
-        this.tabs= this.tabNavigator.querySelectorAll(".tab");
-        this.tabs= Array.from(this.tabs).map(tab => new Tab(tab));
-        this.tabs.forEach(tab => tab.tab.addEventListener("click", element => this.select(element)));
-    }
+class TabCard {
+constructor(cardElement){
+ // Assign this.cardElement to the cardElement DOM reference
+ this.cardElement = cardElement;
 
-    select(element) {
-        this.tabs.forEach(tab => {
-            if(tab.tab.dataset.tab === element.target.dataset.tab) tab.setActive(true);
-            else tab.setActive(false);
-        });
-    }
+}
+selectCard(){
+ // Update the style of this.cardElement to display = "flex"
+ this.cardElement.style.display ='flex';
 }
 
-const menu = new Menu(".menu", ".menu-button");
+}
 
-const tabNavigator = new TabNavigator(".tab-nav");
-*/
+let tabs = document.querySelectorAll('.tab');
 
-const tabNavs = new TabNavi();
+tabs.forEach( function(e) {
+return new TabLink(e);
+});
