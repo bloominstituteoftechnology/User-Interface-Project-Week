@@ -1,45 +1,49 @@
-.top-nav {
-  #mixin.nav-spread;
-  background: @nav-bar-bg;
-  z-index: 2;
 
-  .logo {
-    font-size: 2.4rem;
-    padding-left: 90px;
+.top-container {
+  position: relative;
+
+  .top-nav {
+    #mixin.nav-spread;
+    width: 100%;
+    background: transparent;
     z-index: 2;
-    text-shadow: none;
+    position: absolute;
+    
+    .logo {
+      font-size: 2.4rem;
+      padding-left: 90px;
+      z-index: 2;
 
-    @media @tablet {
-      font-size: 3rem;
-      padding-left: 20px;
+      @media @tablet {
+        font-size: 3rem;
+        padding-left: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    
+    .hamburger-menu {
+      margin-right: 61px;
+      cursor: pointer;
+
+      @media @tablet {
+        margin-right: 20px;
+      }
     }
 
-    a {
-      text-decoration: none;
-      color: white;
-    }
-  }
-  
-  .hamburger-menu {
-    margin-right: 61px;
-    cursor: pointer;
-
-    @media @tablet {
-      margin-right: 20px;
-    }
-
-  }
-  .close-menu {
-    margin-right: 80px;
-    z-index: 2;
-    cursor: pointer;
-
-    @media @tablet {
-      margin-right: 20px;
+    .close-menu {
+      margin-right: 80px;
+      z-index: 2;
+      cursor: pointer;
+      @media @tablet {
+        margin-right: 38px;
+      }
     }
   }
 }
-
 nav {
   #mixin.layout;
   flex-direction: column;
@@ -49,7 +53,7 @@ nav {
 	top: 0;
 	left: 0;
 	transition: all .6s ease;
-	z-index: 1;
+	z-index: 2;
 	opacity: 0;
   visibility: hidden;
   background: @navigation-bg;
@@ -66,7 +70,6 @@ nav {
     }
   }
 
-  
   .selected {
     color: @hover;
   }

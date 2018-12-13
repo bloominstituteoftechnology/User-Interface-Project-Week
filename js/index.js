@@ -91,6 +91,7 @@ class Carousel {
 
   scrollRight() {
     if (currentIndex === this.images.length - 1) {
+
       this.images[currentIndex].classList.remove('carousel-selected');
       currentIndex = 0;
       this.images[currentIndex].classList.add('carousel-selected');
@@ -100,14 +101,15 @@ class Carousel {
       currentIndex++;
       this.images[currentIndex].classList.add('carousel-selected');
     }
-    TweenMax.from(".carousel-images img", 2, {
-      opacity: 0,
-      x: 100
-    })
-    TweenMax.from(".carousel-images img", 2, {
-      opacity: 0,
-      x: -100
-    })
+    TweenMax.from(this.images[currentIndex], 1, {
+      opacity: 1,
+      transform: translateX(-50),
+      x: 2000,
+    });
+    // TweenMax.from(".carousel-images img", 2, {
+    //   opacity: 0,
+    //   x: -100
+    // })
   }
 }
 let currentIndex = 0;

@@ -152,12 +152,13 @@ h1 {
   letter-spacing: 1.25px;
   line-height: 1.25;
   color: #ffffff;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 h2 {
   font-size: 2.8rem;
   font-weight: bold;
   padding-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 875px) {
   h2 {
@@ -252,50 +253,54 @@ p {
     padding: 0;
   }
 }
-.top-nav {
+.top-container {
+  position: relative;
+}
+.top-container .top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 0;
-  background: #8D9AA6;
+  width: 100%;
+  background: transparent;
   z-index: 2;
+  position: absolute;
 }
-.top-nav a {
+.top-container .top-nav a {
   transition: all 0.15s;
 }
-.top-nav .logo {
+.top-container .top-nav .logo {
   font-size: 2.4rem;
   padding-left: 90px;
   z-index: 2;
-  text-shadow: none;
 }
 @media (max-width: 875px) {
-  .top-nav .logo {
+  .top-container .top-nav .logo {
     font-size: 3rem;
     padding-left: 20px;
   }
 }
-.top-nav .logo a {
+.top-container .top-nav .logo a {
   text-decoration: none;
   color: white;
 }
-.top-nav .hamburger-menu {
+.top-container .top-nav .hamburger-menu {
   margin-right: 61px;
   cursor: pointer;
 }
 @media (max-width: 875px) {
-  .top-nav .hamburger-menu {
+  .top-container .top-nav .hamburger-menu {
     margin-right: 20px;
   }
 }
-.top-nav .close-menu {
+.top-container .top-nav .close-menu {
   margin-right: 80px;
   z-index: 2;
   cursor: pointer;
 }
 @media (max-width: 875px) {
-  .top-nav .close-menu {
-    margin-right: 20px;
+  .top-container .top-nav .close-menu {
+    margin-right: 38px;
   }
 }
 nav {
@@ -309,7 +314,7 @@ nav {
   top: 0;
   left: 0;
   transition: all 0.6s ease;
-  z-index: 1;
+  z-index: 2;
   opacity: 0;
   visibility: hidden;
   background: #8E9AA6;
@@ -319,7 +324,7 @@ nav a {
   font-size: 5rem;
   text-decoration: none;
   padding: 20px 0;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 nav a:hover {
   color: #5395b0;
@@ -443,16 +448,20 @@ footer p {
   }
 }
 .home-banner {
-  background-image: url("../img/home/home-jumbotron.png");
+  background-image: url("../img/home/home-jumbotron-2.jpg");
   height: 90vh;
   display: flex;
   align-items: flex-end;
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (max-width: 875px) {
+  .home-banner {
+    height: 60vh;
+  }
+}
 @media (max-width: 550px) {
   .home-banner {
-    background-image: url("../img/home/home-mobile-jumbotron.png");
     height: 250px;
     background-size: cover;
   }
@@ -699,6 +708,7 @@ footer p {
   -moz-box-shadow: 4px 5px 12px rgba(0, 0, 0, 0.2);
   box-shadow: 4px 5px 12px rgba(0, 0, 0, 0.2);
   position: relative;
+  z-index: 1;
 }
 .carousel .carousel-image {
   width: 100%;
@@ -719,6 +729,7 @@ footer p {
   width: 45px;
   margin: 0 10px;
   padding: 0 10px;
+  z-index: 1;
 }
 .arrow-buttons .arrow:hover {
   cursor: pointer;
