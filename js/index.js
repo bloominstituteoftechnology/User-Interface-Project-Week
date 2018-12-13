@@ -62,7 +62,9 @@ class SpeechB {
         // matches speech button to speech paragraph
         const speechContent = speechBubbleContent[this.dataset.tab-1];
         // displays & hides on click
+        speechBubbleContent.forEach(p => p.classList.add('inactive'));
         speechContent.classList.toggle('inactive');
+        speechContent.addEventListener('click',() => speechBubbleContent.forEach(p => p.classList.add('inactive')));
     }
 }
 
