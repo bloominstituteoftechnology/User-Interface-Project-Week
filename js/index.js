@@ -23,6 +23,10 @@ class Tab {
     this.tabContent = Array.from(this.tabContent).map(
       content => new TabContent(content)
     );
+
+    if (this.tabData === "1") {
+      this.tab.classList.add("active-tab");
+    }
   }
 
   selected() {
@@ -43,6 +47,10 @@ class Tab {
 class TabContent {
   constructor(tabContent) {
     this.tabContent = tabContent;
+
+    if (this.tabContent.dataset.tab === "1") {
+      this.tabContent.style.display = "flex";
+    }
   }
   toggleContent() {
     this.tabContent.style.display = "flex";
