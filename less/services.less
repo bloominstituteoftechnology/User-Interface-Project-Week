@@ -1,0 +1,156 @@
+// Services //
+
+.services-top-section {
+  h1 {
+    color: white;
+    font-size: 7rem;
+    font-weight: bold;
+    font-family: "Roboto", Arial, sans-serif;
+    position: absolute;
+    margin: 15% 20% 5% 5%;
+  }
+  img {
+    width: 100%;
+    height: 0 auto;
+  }
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+  p {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 38px;
+    letter-spacing: 1px;
+    padding: 0 10%;
+    margin: 5% 0;
+  }
+  @media @mobile {
+    h1 {
+      font-size: 4rem;
+      margin: 60% 20% 5% 5%;
+    }
+    img {
+      &.desktop {
+        display: none;
+      }
+      &.mobile {
+        display: block;
+      }
+    }
+  }
+  @media @tablet {
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+// Tabs
+
+.services {
+  .main-content {
+    width: 83.5%;
+    margin: 0 auto;
+    .tab-navigators {
+      margin-top: 44px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      .tab-navigator {
+        width: 22%;
+        border: 1px solid black;
+        padding: 12px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: #ffffff;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: #222222;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+
+      .selected {
+        background-color: #5e9fb9;
+      }
+    }
+
+    .tab-contents {
+      width: 100%;
+      margin-bottom: 64px;
+      .selected-content {
+        display: block;
+      }
+      .tab-content {
+        display: none;
+        width: 100%;
+        h2 {
+          margin-top: 54px;
+          font-size: 1.5rem;
+          margin-bottom: 14px;
+        }
+
+        .content {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          .text {
+            width: 46%;
+            p {
+              font-weight: regular;
+              font-size: 1rem;
+              line-height: 24px;
+              padding-bottom: 36px;
+            }
+          }
+
+          .image {
+            width: 47%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media @mobile {
+    .main-content {
+      .tab-navigators {
+        flex-direction: column;
+        .tab-navigator {
+          width: 90%;
+          padding: 18px;
+          margin: 15px 0;
+          font-size: 1.6rem;
+        }
+      }
+      .tab-contents {
+        .tab-content {
+          h2 {
+            font-weight: bold;
+            font-size: 2rem;
+          }
+          .content {
+            flex-direction: column;
+            .text {
+              width: 100%;
+              p {
+                font-size: 1.4rem;
+                line-height: 32px;
+              }
+            }
+            .image {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
