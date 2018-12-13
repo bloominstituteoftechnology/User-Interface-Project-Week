@@ -1,0 +1,125 @@
+.jumbo-s {
+    .layout(center, center, column);
+    img {
+        z-index: -1;
+    }
+    .float-wrapper {
+        .layout(center, flex-start, column);
+        .floater{
+            color: @white;
+            font-weight: bold;
+            font-size: 6.4rem;
+            line-height: 7.5rem;
+            color: @white;
+            position: relative;
+            top: -2.5rem;
+            right: -2rem;
+            @media @mobile{
+                font-size: 5rem;
+                line-height: 6rem;
+            }
+            // padding: 5rem 0;
+        }
+        z-index: 2;
+        position: absolute;
+        align-self: flex-start;
+    }
+    p{
+        width: 83%;
+        padding: 5.5rem 0 4rem;
+    }
+}
+.tab-area{
+    .layout(center, center, column);
+    .tab-header{
+        .layout(space-between, center);
+        width:83%;
+        @media @mobile {
+            .layout(space-evenly, center, column);
+            width: 90%;
+        }
+        .tab-tag{
+            .layout(center, center);
+            border: 1px solid @black;
+            background-color: @white;
+            height: 5rem;
+            width: 19rem;
+            font-weight: bold;
+            font-size: 2rem;
+            padding-bottom: 0;
+            @media @mobile {
+                width: 100%;
+                margin: 1.5rem 0;
+            }
+            &:hover{
+                color: @white;
+                background-color: @black;
+            }
+        }
+        .selected{
+            color: @white;
+            background-color: #5E9FB9;
+        }
+    }
+
+    .content-box{
+        display: grid;
+        width: 83%;
+        .content{
+            display: flex;
+            grid-column: 1;
+            grid-row: 1;
+            left: 0;
+            top: 0;
+            justify-content: space-between;
+            align-items: center;
+            width:100%;
+            padding: 5rem 0;
+            background-color: @white;
+            @media @mobile{
+                .layout(center, center, column);
+                width: 90%;
+            }
+            .tab-text{
+                .layout(space-between, flex-start, column);
+                width: 50%;
+                @media @mobile{
+                    width: 90%;
+                }
+                h1{
+                    padding-bottom: 2rem;
+                }
+            }
+            .tab-img{
+                width: 46%;
+                @media @mobile{
+                    width: 90%;
+                    padding: 2rem 0;
+                }
+            }
+        }
+        .shown{
+            z-index: 2;
+            transform: scale(1, 0);
+        }
+        .last{
+            z-index: 1;
+        }
+        .below{
+            transform: scale(1, 0);
+        }
+        .hidden{
+            display: none;
+        }
+    }
+}
+
+.mobile-img{
+    display: none;
+    @media @mobile{
+        display: flex;
+        width: 100%;
+        padding: 0;
+    }
+}
+
