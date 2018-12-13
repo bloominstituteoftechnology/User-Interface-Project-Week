@@ -20,7 +20,7 @@ class Carousel {
       currentIndex--;
       this.images[currentIndex].classList.add('carousel-selected');
     }
-    TweenMax.from(this.images[currentIndex], 4, {
+    TweenMax.from(this.images[currentIndex], 1.5, {
       opacity: 0
     });
   }
@@ -37,7 +37,7 @@ class Carousel {
       currentIndex++;
       this.images[currentIndex].classList.add('carousel-selected');
     }
-    TweenMax.from(this.images[currentIndex], 2, {
+    TweenMax.from(this.images[currentIndex], 1.5, {
       opacity: 0
     });
   }
