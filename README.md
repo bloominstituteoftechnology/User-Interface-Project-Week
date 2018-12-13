@@ -51,9 +51,10 @@ Extra features are not in order of importance, it's just a list of features the 
 
 -x Build layout **HTML/LESS**: [Contact page desktop design](/DesignFiles/Contact/contact-desktop.png)
 
-- Build layout **HTML/LESS**: [Contact page mobile design](/DesignFiles/Contact/contact-mobile.png)
-- Make tablet look good if you haven't already
-- Create 2 more pages named "About Us" and "Projects". Be creative on what kind of content you would put in there but match the heading layout of the services/contact us pages. Be sure to add the new pages to the menu system as well. Ideas for creativity: create a carousel showcasing all of the projects. Use [pexel.com](https://www.pexels.com/) to get free images to create custom content around an architecture/building theme. For the about us page, you could make a list of employees that work there and showcase credentials. Make heavy use of lorem ipsum, don't waste time on content creativity at this point
+-x Build layout **HTML/LESS**: [Contact page mobile design](/DesignFiles/Contact/contact-mobile.png)
+-x Make tablet look good if you haven't already
+-x Create 2 more pages named "About Us" and "Projects". Be creative on what kind of content you would put in there but match the heading layout of the services/contact us pages. Be sure to add the new pages to the menu system as well. Ideas for creativity: create a carousel showcasing all of the projects. Use [pexel.com](https://www.pexels.com/) to get free images to create custom content around an architecture/building theme. For the about us page, you could make a list of employees that work there and showcase credentials. Make heavy use of lorem ipsum, don't waste time on content creativity at this point
+
 - Use [Greensock](https://greensock.com/gsap) to add animation to the menu system when it opens and closes
 - Build a custom carousel with your own components and use it throughout different pages on the site
 - Take a look at [Vue.js](https://vuejs.org/v2/guide/) and see if you could implement some simple JavaScript examples in your site from their tutorials
