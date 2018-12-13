@@ -70,7 +70,6 @@ class Carousel {
     this.currentItemIndex = 0;
 
     this.carouselItem = document.querySelectorAll(".carousel-item");
-    //console.log(this.carouselItem);
     this.carouselItem[this.currentItemIndex].style.display = "block";
 
     const rightButton = document.querySelector(".right-button");
@@ -81,6 +80,12 @@ class Carousel {
   }
   slideNext() {
     //console.log("slide next clicked");
+    this.carouselItem[this.currentItemIndex].style.display = "none";
+    this.currentItemIndex++;
+    if (this.currentItemIndex === this.carouselItem.length) {
+      this.currentItemIndex = 0;
+    }
+    this.carouselItem[this.currentItemIndex].style.display = "block";
   }
 
   slideBack() {
