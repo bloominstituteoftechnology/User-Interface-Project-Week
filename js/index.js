@@ -92,3 +92,4 @@ closeButton.addEventListener('click', function (e){
     e.target = toggleMenu();
 });
 
+//wrote this differently the first time and i had to look and see how someone else did it . I was wanting to go back into my nav.less file and display none on my menu file i wrote the selecters and everything the same thing but i had two different toggleMenu functions one for toggleMenu and one for ToggleCloseMenu
