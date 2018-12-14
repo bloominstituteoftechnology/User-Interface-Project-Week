@@ -1,11 +1,11 @@
 import React from "react";
+import Error from "./img/404bob.jpeg"
 
-class Error extends React.Component {
-  render() {
+const Error = ()=> {
     return (
       <h1>hello</h1>
+      <img src={Error} alt=""/>
     )
-  }
 }
 
 export default Error;
