@@ -1,4 +1,4 @@
-const toggleMenu = () => {
+/*const toggleMenu = () => {
     menu.classList.toggle('menu--open');
 };
 
@@ -14,4 +14,7 @@ menuButton.addEventListener('click', function(e) {
 
 menuCloseButton.addEventListener('click', function(e) {
     e.target= toggleMenu();
-});
+});*/
+
+
+
