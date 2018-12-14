@@ -1,4 +1,4 @@
-/*
+
 class TabLink {
     constructor(element) {
         this.element = element;
@@ -69,14 +69,26 @@ class TabItem {
 */
 
 
-/*
-let links = document.querySelectorAll('.tabs-link').forEach(link => new TabLink(link));*/
+
+let links = document.querySelectorAll('.tabs-link').forEach(link => new TabLink(link));
 
 
 const toggleMenu = () => {
-    menu.classList.toggle('menu--open')
-}
+    menu.classList.toggle('menu--open');
+};
 
 const menu = document.querySelector('.menu');
+
+
 const menuButton = document.querySelector('.menu-button');
-menuButton.addEventListener('click', toggleMenu);
+const closeButton = document.querySelector('.menu-close-button');
+
+
+menuButton.addEventListener('click', function (e){
+    e.target =toggleMenu();
+});
+
+closeButton.addEventListener('click', function (e){
+    e.target = toggleMenu();
+});
+
