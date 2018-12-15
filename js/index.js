@@ -104,14 +104,14 @@ class Tabs {
   
     select() {
       // Add a class named "tabs-link-selected" to the link
-      this.link.classList.add(".tabs-link-selected");
+      this.link.classList.add("tabs-link-selected");
       // Notice that we are using the select method on tabsItem
       this.tabsItem.select();
     }
   
     deselect() {
       // Remove a class named "tabs-link-selected" from the link
-      this.link.classList.remove(".tabs-link-selected"); 
+      this.link.classList.remove("tabs-link-selected"); 
       // Notice that we are using the deselect method on tabsItem
       this.tabsItem.deselect();
     }
