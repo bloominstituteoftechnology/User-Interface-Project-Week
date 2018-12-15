@@ -203,7 +203,7 @@ header nav .menu-link {
   margin: 1%;
   color: black;
   text-decoration: none;
-  transform: translate3d(450%, 0, 0);
+  transform: translate3d(950%, 0, 0);
 }
 header nav .menu-link:hover {
   color: white;
@@ -212,7 +212,7 @@ header nav .menu-link:hover {
   font-size: 2.2rem;
 }
 header nav .menu-link.close {
-  margin: 10%;
+  margin: 10.3%;
   transform: translate3d(0, 0, 0);
   transition-duration: 0.5s;
 }
@@ -245,7 +245,7 @@ body h3 {
   color: white;
 }
 body .container {
-  position: absolute;
+  position: relative;
   width: 68%;
   display: flex;
   flex-direction: column;
@@ -254,77 +254,60 @@ body .container {
 body footer {
   background: #99a4ae;
   color: white;
-  padding: 0 4%;
+  padding: 1%;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: 170px;
-}
-body footer .enter-info {
-  position: relative;
-  top: 30px;
-  left: 10px;
-  height: 100px;
-}
-body footer .enter-info h3 {
-  position: relative;
-  top: -3px;
-  left: 10px;
-}
-body footer .enter-info input {
-  margin: 5% 0 10% 5%;
-  width: 186px;
-  height: 25px;
-  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid red;
 }
 body footer address {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+  width: 100%;
+}
+body footer address .enter-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body footer address .enter-info input {
+  border-radius: 5px;
+}
+body footer address .locations {
+  width: 75%;
   display: flex;
   justify-content: space-around;
-  line-height: 1.5;
-  width: 400px;
-  top: -8px;
-}
-body footer address .cities {
-  margin: 8% 0 0 5%;
-  width: 40%;
-}
-body footer address .cities .new-york {
-  position: relative;
-  left: 20px;
-}
-body footer p {
-  position: relative;
-  bottom: 5px;
 }
 body footer .copyright {
-  bottom: -5px;
-  font-size: 0.5rem;
+  margin: 3% 0 1% 0;
 }
 main .main-img {
   width: 100%;
-  position: relative;
-  top: -7px;
   z-index: -1;
 }
 main .text {
-  position: relative;
-  top: -180px;
-  right: -55px;
+  position: absolute;
+  top: 12%;
+  left: 5%;
   line-height: 1.3;
   color: white;
 }
-main .block {
+main .block-container {
+  margin: 5% 0;
+}
+main .block-container .block {
   position: relative;
   display: flex;
   justify-content: space-between;
   padding: 1% 5%;
-  height: 200px;
+  margin-bottom: 10%;
 }
-main .block h2 {
+main .block-container .block h2 {
   margin: 7% 5.5% 1% 2.5%;
 }
-main .block .block-text {
+main .block-container .block .block-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -332,18 +315,14 @@ main .block .block-text {
   margin: 0 2%;
   width: 50%;
 }
-main .block .block-text p {
+main .block-container .block .block-text p {
   margin-left: 3%;
 }
-main .block.top-block {
-  top: -135px;
-}
-main .block.middle-block {
+main .block-container .block.middle-block {
   display: flex;
   flex-direction: row-reverse;
-  top: -90px;
 }
-main .block img {
+main .block-container .block img {
   width: 45%;
   height: 100%;
   margin-right: 3%;
@@ -363,23 +342,29 @@ main .project {
 }
 main .project .overlay {
   background: #d8d8d8;
-  position: relative;
   display: flex;
-  top: -35px;
-  right: -403px;
-  width: 208px;
-  height: 65px;
+  width: 32%;
   border: 1px solid white;
   justify-content: center;
   align-items: center;
   letter-spacing: 4px;
 }
 main .project .overlay p {
-  padding: 5%;
+  padding: 7%;
   font-size: 1rem;
 }
-main .project .project-info {
+main .project .villa-div,
+main .project .blocks-div {
+  height: auto;
   position: relative;
+}
+main .project .villa-div .overlay,
+main .project .blocks-div .overlay {
+  position: absolute;
+  bottom: 47%;
+  right: 6.5%;
+}
+main .project .project-info {
   top: -5px;
   font-size: 0.8rem;
   line-height: 1.5;
@@ -387,35 +372,22 @@ main .project .project-info {
   margin: 1% auto;
   height: auto;
 }
+main .project .project-info p {
+  margin: 10%;
+}
 main .project img {
   margin-left: 3.5%;
   margin-top: 3%;
   width: 90%;
 }
-main .outskirts .overlay {
-  left: 40px;
-  top: -15px;
-}
-main .outskirts img {
+main .outskirts-div {
+  height: auto;
   position: relative;
-  top: 20px;
-  left: 19px;
-  width: 87%;
 }
-main .outskirts .project-info {
-  top: 10px;
-}
-main .the-blocks img {
-  position: relative;
-  top: 40px;
-}
-main .the-blocks .overlay {
-  top: 5px;
-  right: -403px;
-  height: 60px;
-}
-main .the-blocks .project-info {
-  top: 28px;
+main .outskirts-div .overlay {
+  position: absolute;
+  bottom: 47%;
+  left: 3.5%;
 }
 .button {
   width: 31%;
@@ -423,9 +395,8 @@ main .the-blocks .project-info {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 7%;
-  margin-left: 3%;
-  margin-bottom: 1%;
+  margin: 7% 0 1% 3%;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 0.7rem;
   border: 1px solid black;
@@ -440,28 +411,24 @@ main .the-blocks .project-info {
   top: 25px;
 }
 .service-container .services-text {
-  position: relative;
-  top: -35px;
-  left: 65px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
   color: white;
 }
 .service-container .top-paragraph {
-  position: relative;
-  top: 20px;
   width: 80%;
-  margin: 1% auto;
+  margin: 10% auto 0 auto;
   line-height: 1.5;
+  font-size: 1rem;
 }
 .tab-container {
-  position: relative;
-  top: 10px;
   width: 80%;
-  height: 400px;
-  margin: 0 auto;
+  margin: 0 auto 10% auto;
 }
 .tab-container .tab-items {
+  display: flex;
   justify-content: space-between;
-  height: 200px;
   display: none;
 }
 .tab-container .tab-items .show {
@@ -476,11 +443,11 @@ main .the-blocks .project-info {
   margin-bottom: 5%;
 }
 .tab-container .tab-items img {
-  width: 45%;
+  width: 50%;
 }
 .tab-container .tabs {
   display: flex;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   justify-content: space-between;
 }
 .tab-container .tabs .tab {
@@ -622,9 +589,9 @@ main .the-blocks .project-info {
   }
 }
 .container .contact-text {
-  position: relative;
-  top: -50px;
-  left: 100px;
+  position: absolute;
+  top: 15%;
+  left: 15%;
   color: white;
   text-decoration: underline;
 }
@@ -634,15 +601,13 @@ main .the-blocks .project-info {
   top: -5px;
 }
 .container form {
-  position: relative;
-  top: -5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 70%;
   padding: 5%;
-  margin: 0 auto;
+  margin: 5% auto;
   border: 1px solid black;
 }
 .container form .form-item {
@@ -666,10 +631,6 @@ main .the-blocks .project-info {
 .container form textarea,
 .container form select {
   border-radius: 5px;
-}
-.container .contact-foot {
-  position: relative;
-  top: 50px;
 }
 .container .contact-foot .locations-container {
   display: flex;
