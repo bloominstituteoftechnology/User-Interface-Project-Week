@@ -29,23 +29,29 @@ main {
         transition-duration: 1s;
         h2 {
           text-decoration: underline;
-          transform: translate3d(110%, 0, 0);
-          transition-duration: 1s;
 
-          &.swipe {
-            transform: translate3d(0, 0, 0);
+          &.block-h2 {
+            transform: translate3d(110%, 0, 0);
             transition-duration: 1s;
+
+            &.swipe {
+              transform: translate3d(0, 0, 0);
+              transition-duration: 1s;
+            }
           }
         }
         p {
           padding: 0 5%;
-          margin: 10% 0;
-          transform: translate3d(110%, 0, 0);
-          transition-duration: 1s;
+          margin: 7% 0;
 
-          &.swipe {
-            transform: translate3d(0, 0, 0);
+          &.block-p {
+            transform: translate3d(110%, 0, 0);
             transition-duration: 1s;
+
+            &.swipe {
+              transform: translate3d(0, 0, 0);
+              transition-duration: 1s;
+            }
           }
         }
         .block-button {
@@ -54,6 +60,16 @@ main {
 
           &.swipe {
             transform: translate3d(0, 0, 0);
+            transition-duration: 1s;
+          }
+        }
+
+        &.middle-block-text {
+          opacity: 0;
+          transition-duration: 1s;
+
+          &.swipe {
+            opacity: 2;
             transition-duration: 1s;
           }
         }
@@ -77,11 +93,23 @@ main {
               transition-duration: 1s;
             }
           }
+
+          &.block-img-2 {
+            transform: translate3d(110%, 0, 0);
+            transition-duration: 1s;
+            transition-delay: 0.5s;
+
+            &.swipe {
+              transform: translate3d(0, 0, 0);
+              transition-duration: 1s;
+            }
+          }
         }
       }
     }
 
     .button {
+      font-size: 1rem;
       margin: 5% 0 1% 5%;
     }
   }
@@ -106,6 +134,10 @@ main {
 
       .img-overlay {
         position: relative;
+
+        .project-img {
+          width: 100%;
+        }
 
         .overlay {
           background: #d8d8d8;
@@ -138,9 +170,67 @@ main {
     }
 
     .outskirts {
-      .overlay {
-        bottom: -13%;
-        left: 0;
+      .outskirts-overlay {
+        border-top: 15px double black;
+        border-bottom: 15px double black;
+
+        .overlay-skirts {
+          bottom: -13%;
+          left: 0;
+
+          transform: translate3d(300%, 0, 0);
+          transition-duration: 2s;
+
+          &.open {
+            transform: translate3d(0, 0, 0);
+            transition-duration: 2s;
+          }
+        }
+
+        .outskirts-img {
+          transform: translate3d(-110%, 0, 0);
+          transition-duration: 2s;
+
+          &.open {
+            transform: translate3d(0, 0, 0);
+            transition-duration: 2s;
+          }
+        }
+      }
+
+      .outskirts-info {
+        opacity: 0;
+        transition-duration: 2s;
+
+        &.appear {
+          opacity: 1;
+          transition-duration: 2s;
+        }
+      }
+    }
+    .villas {
+      .villa-info {
+        .info1 {
+          transform: translate3d(200%, 0, 0);
+          transition-duration: 2s;
+        }
+        .info2 {
+          transform: translate3d(-200%, 0, 0);
+          transition-duration: 2s;
+        }
+
+        &.swipe {
+          transform: translate3d(0, 0, 0);
+          transition-duration: 2s;
+        }
+      }
+      .villa-img {
+        opacity: 0;
+        transition-duration: 2s;
+        &.flip {
+          opacity: 1;
+          transition-duration: 2s;
+        }
       }
     }
   }

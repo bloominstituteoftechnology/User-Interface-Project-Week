@@ -148,3 +148,45 @@ const swipe5 = new ScrollMagic.Scene({
 })
   .setClassToggle(".block-button", "swipe")
   .addTo(blockBtn);
+
+const middleBlockText = new ScrollMagic.Controller();
+const fadeIn = new ScrollMagic.Scene({
+  triggerElement: ".middle-block-text"
+})
+  .setClassToggle(".middle-block-text", "swipe")
+  .addTo(middleBlockText);
+
+const flipImg = new ScrollMagic.Controller();
+const flip = new ScrollMagic.Scene({
+  triggerElement: ".villa-img"
+})
+  .setClassToggle(".villa-img", "flip")
+  .addTo(flipImg);
+
+const villaInfo = new ScrollMagic.Controller();
+const info = new ScrollMagic.Scene({
+  triggerElement: ".villa-info"
+})
+  .setClassToggle(".villa-info", "swipe")
+  .addTo(villaInfo);
+
+const outskirtsImg = new ScrollMagic.Controller();
+const outskirts = new ScrollMagic.Scene({
+  triggerElement: ".outskirts-img"
+})
+  .setClassToggle(".outskirts-img", "open")
+  .addTo(outskirtsImg);
+
+const outskirtsOverlay = new ScrollMagic.Controller();
+const skirtsOver = new ScrollMagic.Scene({
+  triggerElement: ".overlay-skirts"
+})
+  .setClassToggle(".overlay-skirts", "open")
+  .addTo(outskirtsOverlay);
+
+const outskirtsInfo = new ScrollMagic.Controller();
+const skirtsInfo = new ScrollMagic.Scene({
+  triggerElement: ".outskirts-info"
+})
+  .setClassToggle(".outskirts-info", "appear")
+  .addTo(outskirtsInfo);
