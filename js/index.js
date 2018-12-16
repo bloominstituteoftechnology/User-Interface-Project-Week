@@ -112,3 +112,39 @@ const up = new ScrollMagic.Scene({
 })
   .setClassToggle(".service-img", "go-up")
   .addTo(raiseUp);
+
+// ============= Home Scroll ===================
+const blockImg1 = new ScrollMagic.Controller();
+const swipe = new ScrollMagic.Scene({
+  triggerElement: ".block-img-1"
+})
+  .setClassToggle(".block-img-1", "swipe")
+  .addTo(blockImg1);
+
+const blockImg2 = new ScrollMagic.Controller();
+const swipe2 = new ScrollMagic.Scene({
+  triggerElement: ".block-img-2"
+})
+  .setClassToggle(".block-img-2", "swipe")
+  .addTo(blockImg2);
+
+const blockH2 = new ScrollMagic.Controller();
+const swipe3 = new ScrollMagic.Scene({
+  triggerElement: ".block-h2"
+})
+  .setClassToggle(".block-h2", "swipe")
+  .addTo(blockH2);
+
+const blockP = new ScrollMagic.Controller();
+const swipe4 = new ScrollMagic.Scene({
+  triggerElement: ".block-p"
+})
+  .setClassToggle(".block-p", "swipe")
+  .addTo(blockP);
+
+const blockBtn = new ScrollMagic.Controller();
+const swipe5 = new ScrollMagic.Scene({
+  triggerElement: ".block-button"
+})
+  .setClassToggle(".block-button", "swipe")
+  .addTo(blockBtn);

@@ -22,23 +22,67 @@ main {
       height: auto;
 
       .block-text {
-        width: 40%;
+        width: 50%;
+        overflow: hidden;
 
+        border-right: 10px solid transparent;
+        transition-duration: 1s;
         h2 {
           text-decoration: underline;
+          transform: translate3d(110%, 0, 0);
+          transition-duration: 1s;
+
+          &.swipe {
+            transform: translate3d(0, 0, 0);
+            transition-duration: 1s;
+          }
         }
         p {
           padding: 0 5%;
+          margin: 10% 0;
+          transform: translate3d(110%, 0, 0);
+          transition-duration: 1s;
+
+          &.swipe {
+            transform: translate3d(0, 0, 0);
+            transition-duration: 1s;
+          }
+        }
+        .block-button {
+          transform: translate3d(310%, 0, 0);
+          transition-duration: 1s;
+
+          &.swipe {
+            transform: translate3d(0, 0, 0);
+            transition-duration: 1s;
+          }
         }
       }
 
-      img {
-        width: 40%;
+      .block-img-container {
+        border-left: 10px solid transparent;
+        overflow: hidden;
+        padding: 2%;
+        width: 50%;
+
+        img {
+          width: 100%;
+
+          &.block-img-1 {
+            transform: translate3d(-150%, 0, 0);
+            transition-duration: 1s;
+
+            &.swipe {
+              transform: translate3d(0, 0, 0);
+              transition-duration: 1s;
+            }
+          }
+        }
       }
     }
 
     .button {
-      margin: 7% 0 1% 5%;
+      margin: 5% 0 1% 5%;
     }
   }
 
