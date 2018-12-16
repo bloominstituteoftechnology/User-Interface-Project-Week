@@ -1,14 +1,21 @@
 const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelectorAll(".menu-link");
-const header = document.querySelector("header");
+const menu = document.querySelector(".menu");
+const menuLinks = document.querySelectorAll(".menu-item");
 const logo = document.querySelector(".menu-bar p");
 
 menuBtn.addEventListener("click", () => {
-  header.classList.toggle("close");
-  menu.forEach(link => link.classList.toggle("close"));
   menuBtn.classList.toggle("close");
+  menuLinks.forEach(link => link.classList.toggle("close"));
+  menu.classList.toggle("close");
+
   logo.classList.toggle("close");
 });
+
+menuLinks.forEach(link =>
+  link.addEventListener("click", e => {
+    e.target.style.transition = "rotateY(180deg)";
+  })
+);
 
 // ==================== Services ==========================
 class Tab {
