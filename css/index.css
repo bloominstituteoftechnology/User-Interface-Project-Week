@@ -134,7 +134,7 @@ table {
   border-spacing: 0;
 }
 .menu-bar {
-  z-index: 2;
+  z-index: 6;
   position: fixed;
   background: #99a4ae;
   display: flex;
@@ -157,7 +157,7 @@ table {
   transition-duration: 0.5s;
 }
 .menu {
-  z-index: 1;
+  z-index: 5;
   position: absolute;
   width: 100%;
   display: flex;
@@ -307,6 +307,9 @@ body footer .copyright {
   border-bottom: 10px solid white;
   border-radius: 5px;
 }
+.home-jumbotron img {
+  width: 100%;
+}
 main .block-container .block {
   display: flex;
   justify-content: space-between;
@@ -387,6 +390,7 @@ main .projects .outskirts .overlay {
   color: white;
 }
 .services-jumbotron {
+  z-index: 3;
   position: relative;
 }
 .services-jumbotron .text {
@@ -395,10 +399,24 @@ main .projects .outskirts .overlay {
   left: 3%;
   color: white;
   text-decoration: underline;
+  transform: translate3d(0, 200%, 0);
+}
+.services-jumbotron .text.load {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 1s;
+}
+.services-jumbotron img {
+  width: 100%;
 }
 .top-paragraph {
+  z-index: 4;
   width: 85%;
   margin: 2% auto;
+  transform: translate3d(0, -200%, 0);
+}
+.top-paragraph.load {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 2s;
 }
 .top-paragraph .services-include {
   font-weight: bold;
@@ -407,6 +425,7 @@ main .projects .outskirts .overlay {
 .tab-container {
   width: 85%;
   margin: 5% auto;
+  overflow: hidden;
 }
 .tab-container .tabs {
   margin-bottom: 4%;
@@ -417,20 +436,39 @@ main .projects .outskirts .overlay {
   width: 23%;
   font-size: 1.5rem;
   padding: 0.5%;
+  transition-duration: 1s;
+}
+.tab-container .tabs .tab:nth-child(1) {
+  transform: translate3d(-500%, 0, 0);
+}
+.tab-container .tabs .tab:nth-child(2) {
+  transform: translate3d(-500%, 0, 0);
+}
+.tab-container .tabs .tab:nth-child(3) {
+  transform: translate3d(500%, 0, 0);
+}
+.tab-container .tabs .tab:nth-child(4) {
+  transform: translate3d(500%, 0, 0);
+}
+.tab-container .tabs .tab.fly-in {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 1s;
 }
 .tab-container .tabs .tab.active-tab {
   color: white;
   background: #5e9fb9;
 }
 .tab-container .tab-contents .tab-items {
-  display: flex;
   justify-content: space-between;
   padding: 3%;
   display: none;
+  overflow: hidden;
   border: 5px double black;
 }
 .tab-container .tab-contents .tab-items .tab-info {
   width: 45%;
+  transform: translate3d(-200%, 0, 0);
+  transition-duration: 1s;
 }
 .tab-container .tab-contents .tab-items .tab-info h2 {
   margin: 1% 0;
@@ -440,8 +478,18 @@ main .projects .outskirts .overlay {
   margin: 2.5% 0;
   font-size: 1.2rem;
 }
-.tab-container .tab-contents .tab-items img {
+.tab-container .tab-contents .tab-items .tab-info.come-down {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 1s;
+}
+.tab-container .tab-contents .tab-items .service-img {
   width: 45%;
+  transform: translate3d(200%, 0, 0);
+  transition-duration: 1s;
+}
+.tab-container .tab-contents .tab-items .service-img.go-up {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 1s;
 }
 .tab-container .tab-contents .tab-items:nth-child(even) {
   flex-direction: row-reverse;
@@ -576,6 +624,7 @@ main .projects .outskirts .overlay {
 }
 .container .contact-jumbotron {
   position: relative;
+  overflow: hidden;
 }
 .container .contact-jumbotron .text {
   position: absolute;
@@ -583,11 +632,21 @@ main .projects .outskirts .overlay {
   left: 10%;
   color: white;
   text-decoration: underline;
+  transform: translate3d(-200%, 0, 0);
 }
-.container img {
+.container .contact-jumbotron .text.come-fom-side {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 2s;
+}
+.container .contact-img {
   width: 100%;
   position: relative;
   top: -5px;
+  transform: translate3d(100%, 0, 0);
+}
+.container .contact-img.come-fom-side {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 1s;
 }
 .container form {
   display: flex;
@@ -598,6 +657,7 @@ main .projects .outskirts .overlay {
   padding: 5%;
   margin: 5% auto;
   border: 1px solid black;
+  opacity: 0;
 }
 .container form .form-item {
   margin: 2%;
@@ -623,6 +683,10 @@ main .projects .outskirts .overlay {
 }
 .container form .button {
   font-size: 1.5rem;
+}
+.container form.form-in {
+  opacity: 1;
+  transition-duration: 1.5s;
 }
 .container .contact-foot .locations-container {
   display: flex;

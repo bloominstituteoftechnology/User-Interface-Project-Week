@@ -1,3 +1,4 @@
+// ===================== Menu ===========================
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".menu");
 const menuLinks = document.querySelectorAll(".menu-item");
@@ -17,7 +18,7 @@ menuLinks.forEach(link =>
   })
 );
 
-// ==================== Services ==========================
+// ==================== Services Tabs =====================
 class Tab {
   constructor(tab) {
     this.tab = tab;
@@ -66,3 +67,48 @@ class TabContent {
 
 const tabs = document.querySelectorAll(".tab");
 tabs.forEach(tab => new Tab(tab));
+
+// =================== Services Continued ==============
+const header = document.querySelector(".services-jumbotron .text");
+const paragraph = document.querySelector(".top-paragraph");
+window.addEventListener("load", _ => {
+  header.classList.add("load");
+  paragraph.classList.add("load");
+});
+// =================== Contact Page ====================
+const contactHeading = document.querySelector(".contact-jumbotron .text");
+const contactJumbotron = document.querySelector(".contact-img");
+
+window.addEventListener("load", _ => {
+  contactHeading.classList.add("come-fom-side");
+  contactJumbotron.classList.add("come-fom-side");
+});
+
+const appear = new ScrollMagic.Controller();
+const formIn = new ScrollMagic.Scene({
+  triggerElement: ".form"
+})
+  .setClassToggle(".form", "form-in")
+  .addTo(appear);
+
+// =================== ScrollMagic =====================
+const flyIn = new ScrollMagic.Controller();
+const fly = new ScrollMagic.Scene({
+  triggerElement: ".tab"
+})
+  .setClassToggle(".tab", "fly-in")
+  .addTo(flyIn);
+
+const comeDown = new ScrollMagic.Controller();
+const down = new ScrollMagic.Scene({
+  triggerElement: ".tab-info"
+})
+  .setClassToggle(".tab-info", "come-down")
+  .addTo(comeDown);
+
+const raiseUp = new ScrollMagic.Controller();
+const up = new ScrollMagic.Scene({
+  triggerElement: ".service-img"
+})
+  .setClassToggle(".service-img", "go-up")
+  .addTo(raiseUp);

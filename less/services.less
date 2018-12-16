@@ -1,4 +1,5 @@
 .services-jumbotron {
+  z-index: 3;
   position: relative;
   .text {
     position: absolute;
@@ -6,13 +7,28 @@
     left: 3%;
     color: white;
     text-decoration: underline;
+    transform: translate3d(0, 200%, 0);
+
+    &.load {
+      transform: translate3d(0, 0, 0);
+      transition-duration: 1s;
+    }
+  }
+  img {
+    width: 100%;
   }
 }
 
 .top-paragraph {
+  z-index: 4;
   width: 85%;
   margin: 2% auto;
+  transform: translate3d(0, -200%, 0);
 
+  &.load {
+    transform: translate3d(0, 0, 0);
+    transition-duration: 2s;
+  }
   .services-include {
     font-weight: bold;
     text-decoration: underline;
@@ -22,6 +38,7 @@
 .tab-container {
   width: 85%;
   margin: 5% auto;
+  overflow: hidden;
 
   .tabs {
     display: flex;
@@ -33,6 +50,25 @@
       width: 23%;
       font-size: 1.5rem;
       padding: 0.5%;
+      transition-duration: 1s;
+
+      &:nth-child(1) {
+        transform: translate3d(-500%, 0, 0);
+      }
+      &:nth-child(2) {
+        transform: translate3d(-500%, 0, 0);
+      }
+      &:nth-child(3) {
+        transform: translate3d(500%, 0, 0);
+      }
+      &:nth-child(4) {
+        transform: translate3d(500%, 0, 0);
+      }
+
+      &.fly-in {
+        transform: translate3d(0, 0, 0);
+        transition-duration: 1s;
+      }
 
       &.active-tab {
         color: white;
@@ -43,10 +79,10 @@
 
   .tab-contents {
     .tab-items {
-      display: flex;
       justify-content: space-between;
       padding: 3%;
       display: none;
+      overflow: hidden;
 
       .tab-info {
         width: 45%;
@@ -60,10 +96,24 @@
           margin: 2.5% 0;
           font-size: 1.2rem;
         }
+
+        transform: translate3d(-200%, 0, 0);
+        transition-duration: 1s;
+        &.come-down {
+          transform: translate3d(0, 0, 0);
+          transition-duration: 1s;
+        }
       }
 
-      img {
+      .service-img {
         width: 45%;
+        transform: translate3d(200%, 0, 0);
+        transition-duration: 1s;
+
+        &.go-up {
+          transform: translate3d(0, 0, 0);
+          transition-duration: 1s;
+        }
       }
 
       &:nth-child(even) {
