@@ -190,3 +190,31 @@ const skirtsInfo = new ScrollMagic.Scene({
 })
   .setClassToggle(".outskirts-info", "appear")
   .addTo(outskirtsInfo);
+
+const blockImg = new ScrollMagic.Controller();
+const fader = new ScrollMagic.Scene({
+  triggerElement: ".the-block-img"
+})
+  .setClassToggle(".the-block-img", "fader")
+  .addTo(blockImg);
+
+const blockOvrl = new ScrollMagic.Controller();
+const fader2 = new ScrollMagic.Scene({
+  triggerElement: ".the-block-overlay"
+})
+  .setClassToggle(".the-block-overlay", "fader")
+  .addTo(blockOvrl);
+
+const blockInfo = new ScrollMagic.Controller();
+const popIn = new ScrollMagic.Scene({
+  triggerElement: ".block-info1"
+})
+  .setClassToggle(".block-info1", "popIn")
+  .addTo(blockInfo);
+
+const blockInfo2 = new ScrollMagic.Controller();
+const popIn2 = new ScrollMagic.Scene({
+  triggerElement: ".block-info2"
+})
+  .setClassToggle(".block-info2", "popIn")
+  .addTo(blockInfo2);
