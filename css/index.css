@@ -139,7 +139,6 @@ table {
 /* Your Code Goes Here */
 .container {
   width: 100%;
-  max-width: 800px;
   margin: 0 auto;
 }
 .navigation-container {
@@ -149,6 +148,7 @@ table {
   justify-content: space-between;
   background-color: #9AA4AF;
   position: fixed;
+  z-index: 1;
 }
 h1 {
   font-size: 26px;
@@ -379,31 +379,42 @@ address {
 .tabs-item-selected {
   display: flex;
 }
-.nav-clicked .container,
-.nav-clicked html,
-.nav-clicked img,
-.nav-clicked p,
-.nav-clicked footer,
-.nav-clicked address,
-.nav-clicked h2,
-.nav-clicked h3,
-.nav-clicked h4,
-.nav-clicked h6,
-.nav-clicked button,
-.nav-clicked .input,
-.nav-clicked .bottom-text {
-  background-color: #D8D8D8;
-}
-.nav-clicked .expanded-content {
+.dropdown {
+  position: relative;
+  display: inline-block;
   width: 100%;
-  height: auto;
-  background-color: #D8D8D8;
+  height: 2900px;
 }
-.nav-clicked .expanded-content .top-content {
-  display: flex;
-  font-size: 30px;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #d8d8d8;
+  min-width: 100%;
+  z-index: 2;
+  height: 2900px;
+}
+.dropdown-content a {
   color: black;
-  width: 300px;
+  display: block;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-size: 35px;
+}
+.show {
+  display: block;
+}
+.top-part {
+  display: flex;
+  justify-content: space-between;
+}
+.close-image {
+  padding-right: 50px;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 500px) {
   .container {

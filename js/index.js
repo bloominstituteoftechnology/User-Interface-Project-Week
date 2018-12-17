@@ -54,12 +54,14 @@ let links = document.querySelectorAll('.tab-link').forEach( link => new TabLink(
 
 
 let hamclick = document.querySelector('.hamburger-img');
+let close = document.querySelector(".close-image");
 
 hamclick.addEventListener('click', () =>{
-    console.log('hamburger was clicked');
-let container = document.querySelector(".container");
-container.classList.toggle('nav-clicked');
+    document.getElementById("myDropdown").classList.toggle("show");
+   
+});
+close.addEventListener('click', ()=>{
+    document.getElementById("myDropdown").classList.toggle("show");
 });
 
-let jumbo = document.querySelector('.title-img');
 
