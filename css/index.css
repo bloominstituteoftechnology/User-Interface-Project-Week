@@ -139,7 +139,11 @@ table {
 html {
   font-size: 62.5%;
 }
-
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
 @media (max-width: 500px) {
   .container {
     width: 100%;
@@ -153,12 +157,11 @@ p {
   font-size: 2.4rem;
   color: #ffffff;
   background: darkgray;
-  z-index: 7;
   position: fixed;
+  z-index: 1;
   height: 50px;
   width: 100%;
   font-weight: bold;
-  z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -183,20 +186,20 @@ p {
 }
 .menu {
   display: none;
-  position: fixed;
   top: 0px;
-  /*left: 0;*/
+  left: 0;
   width: 100%;
   height: 100%;
   /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: darkgray;
   border-left: none;
   border-bottom: none;
-  z-index: 2;
+  z-index: 1;
   font-weight: bold;
   font-size: 2.4rem;
   color: #FFFFFF;
   margin-bottom: 100px;
+  margin: 0 auto;
 }
 @media (max-width: 500px) {
   .menu {
@@ -206,10 +209,9 @@ p {
 .menu .m-h {
   display: flex;
   justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
   margin-top: 10px;
   font-size: 2.4rem;
+  width: 100%;
 }
 .menu .m-h .menu-close-button {
   font-weight: none;
@@ -246,31 +248,17 @@ p {
   display: block;
 }
 .jumbotron-home {
-  background: url("../img/home/home-jumbotron.png ");
-  font-weight: bold;
+  position: relative;
+  height: 100%;
+}
+.jumbotron-home .j-text {
+  position: absolute;
+  bottom: 25%;
+  left: 64px;
   font-size: 6.4rem;
-  line-height: 75px;
-  color: #ffffff;
-  height: 400px;
-}
-@media (max-width: 500px) {
-  .jumbotron-home {
-    background: url("../img/home/home-mobile-jumbotron.png") no repeat;
-    font-weight: bold;
-    padding: 1px;
-    font-size: 4.8rem;
-    width: 100%;
-  }
-}
-.jumbotron-home .jumbo-theme {
-  padding-top: 15%;
-  padding-left: 8%;
-}
-@media (max-width: 500px) {
-  .jumbotron-home .jumbo-theme {
-    padding-top: 35%;
-    padding-left: none;
-  }
+  line-height: 7.5rem;
+  color: white;
+  font-weight: bold;
 }
 .main-content {
   margin: 80px;
@@ -286,6 +274,7 @@ p {
   justify-content: space-between;
   margin-bottom: 80px;
   font-size: 1.6rem;
+  margin-top: 40px;
 }
 .text-and-image-content .mobile-1 {
   display: none;
@@ -405,7 +394,6 @@ p {
   position: absolute;
   right: 0;
   bottom: -16%;
-  line-height: 4rem;
   font-size: 2.3rem;
   letter-spacing: 2px;
 }
