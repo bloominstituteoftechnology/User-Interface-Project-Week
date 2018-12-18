@@ -1,4 +1,4 @@
-class TabLink {
+/*class TabLink {
     constructor(element) {
         this.element = element;
 

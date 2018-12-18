@@ -1,4 +1,3 @@
-
 class TabLink {
     constructor(element) {
         this.element = element;
@@ -15,7 +14,7 @@ class TabLink {
     };
 
     select() {
-        const links = document.querySelectorAll(".tab-link");
+        const links = document.querySelectorAll(".tabs-link");
 
         links.forEach(link => {
             link.classList.remove("tabs-link-selected");
@@ -41,6 +40,7 @@ class TabItem {
         this.element.classList.add("tabs-item-selected");
     }
 }
+
 
 
 
