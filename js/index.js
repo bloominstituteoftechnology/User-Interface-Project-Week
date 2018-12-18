@@ -42,26 +42,6 @@ class TabItem {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* START HERE: 
 - Select all classes named ".tab" and assign that value to the tabs variable
 - With your selection in place, now chain a .forEach() method onto the tabs variable to iterate over the DOM NodeList
