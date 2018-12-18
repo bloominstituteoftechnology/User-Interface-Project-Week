@@ -11,7 +11,7 @@ class TabLink {
         this.element.addEventListener('click', () => {
             this.select();
         });
-    }
+    };
 
     select() {
         const links = document.querySelectorAll(".tab-link");
