@@ -1,0 +1,100 @@
+.carousel {
+    .width-100();
+    .flex(center, center);
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    margin: 16px 0;
+    @media(min-width: 1200px){
+      width: 1200px;
+    }
+    .left-button, .right-button {
+      .flex(center);
+      color: white;
+      background-color: black;
+      font-size: 40px;
+      border-radius: 50%;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      &:hover {
+        color: black;
+        background-color: white;
+        border: 2px solid black;
+      }
+    }
+    .left-button {
+      top: 50%; 
+      left: 25px;
+      transform: translate(0, -50%);
+    }
+    .right-button {
+      top: 50%; 
+      right: 25px;
+      transform: translate(0, -50%);
+    }
+    img {
+      .width-100();
+      display: none;
+    }
+    .active-slider{
+      display: flex;
+    }
+}
+.projects-left{
+    width: 55%;
+    margin: 5% 0;
+    h2{
+        margin-bottom: 4%;
+    }
+}
+
+.projects-content{
+    display: flex;
+    justify-content: center;
+    img{
+        margin: 5%;
+        width: 45%;
+        height: auto;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: 2rem;
+        padding: 10px 25px;
+        border: 1px solid black;
+        &:hover{
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            transition: .2s;
+        }
+    }
+}
+
+.p-bottom{
+    margin-bottom: 35px;
+}
+
+@media @tablet{
+    .projects-content{
+        flex-direction: column;
+        img{
+            width: 90%;
+        }
+    }
+    .projects-left{
+        width: 90%;
+        margin: 5% auto;
+    }
+    .carousel{
+        height: 350px;
+    }
+}
+
+@media @mobile{
+    .carousel{
+        height: 150px;
+    }
+}
