@@ -1,3 +1,4 @@
+
 class CardLink {
   constructor(element) {
     this.element = element;
@@ -24,7 +25,7 @@ class Card {
   }
 
   select() {
-    const items = document.querySelectorAll('.servicesCard');
+    const items = document.querySelectorAll('.card');
     items.forEach( item => {
       item.classList.remove('card-item-selected');
     })
@@ -34,6 +35,5 @@ class Card {
 
 let links = document.querySelectorAll('.service-item');
 links = Array.from(links).map( link => new CardLink(link));
-console.log(links);
 
 links[0].select()
