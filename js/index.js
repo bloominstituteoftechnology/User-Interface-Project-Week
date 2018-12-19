@@ -38,4 +38,11 @@ xButton.addEventListener('click', (e) => {
   toggleMenu();
 });
 
+///---------------Scroll Reveal---------------
+
+ScrollReveal().reveal('.main-content', { delay: 300, reset: true });
+ScrollReveal().reveal('.top-container', { delay: 300, reset: true });
+ScrollReveal().reveal('.main-container h2', { delay: 300, reset: true });
+
+
 
