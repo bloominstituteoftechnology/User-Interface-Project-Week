@@ -2,26 +2,34 @@
 //---------------NAV MENU---------------------
 
 const headerText = document.querySelector(".header h1");
-const buttonImg = document.querySelector(".menu-button");
-const buttonClose = document.querySelector(".menu-button-close");
 
-const toggleMenu = () => {
-  menu.classList.toggle('menu--open');
-  headerText.classList.toggle('opacity');
-  buttonImg.classList.toggle('button-close');
-  buttonClose.classList.toggle('button-open');
-  buttonClose.classList.toggle('menu-button-close');
-}
-
+const hamburgerButton = document.querySelector(".hamburger-button");
+const xButton = document.querySelector(".x-button");
 const menu = document.querySelector('.menu');
 
-const menuButton = document.querySelector('.menu-button');
+const toggleMenu = () => {
 
-menuButton.addEventListener('click', (e) => {
+  menu.classList.toggle('menu--open');
+  hamburgerButton.classList.toggle('button-close');
+  xButton.classList.toggle('button-open');
+
+  TweenMax.to('.menu', 3, {
+    scaleY: 1,
+    ease: Power4.easeOut,
+  });
+  
+  headerText.classList.toggle('opacity');
+
+}
+
+
+hamburgerButton.addEventListener('click', (e) => {
+  
   toggleMenu();
+  
 });
 
-buttonClose.addEventListener('click', (e) => {
+xButton.addEventListener('click', (e) => {
   toggleMenu();
 });
 
