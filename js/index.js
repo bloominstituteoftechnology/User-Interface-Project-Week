@@ -40,9 +40,15 @@ xButton.addEventListener('click', (e) => {
 
 ///---------------Scroll Reveal---------------
 
-ScrollReveal().reveal('.main-content', { delay: 300, reset: true });
-ScrollReveal().reveal('.top-container', { delay: 300, reset: true });
-ScrollReveal().reveal('.main-container h2', { delay: 300, reset: true });
+//Headers
+ScrollReveal().reveal('.header', { delay: 300, reset: true, easing: 'ease-in' });
+ScrollReveal().reveal('.services-header', { delay: 300, reset: true, easing: 'ease-in' });
+ScrollReveal().reveal('.contact-header', { delay: 300, reset: true, easing: 'ease-in' });
 
+
+//Home Page Content
+ScrollReveal().reveal('.top-container', { delay: 300, reset: true, easing: 'ease-in' });
+ScrollReveal().reveal('.main-container h2', { delay: 300, reset: true, easing: 'ease-in' });
+ScrollReveal().reveal('.main-content', { delay: 300, reset: true, easing: 'ease-in' });
 
 
