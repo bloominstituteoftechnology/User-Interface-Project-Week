@@ -1,0 +1,292 @@
+.container {
+  overflow: hidden;
+}
+.home-jumbotron {
+  position: relative;
+
+  .text {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    border-bottom: 10px solid white;
+    border-radius: 5px;
+  }
+  img {
+    width: 100%;
+  }
+}
+main {
+  .block-container {
+    .block {
+      display: flex;
+      justify-content: space-between;
+      padding: 5%;
+      height: auto;
+
+      .block-text {
+        width: 50%;
+        overflow: hidden;
+
+        border-right: 10px solid transparent;
+        transition-duration: 1s;
+        h2 {
+          text-decoration: underline;
+
+          &.block-h2 {
+            transform: translate3d(110%, 0, 0);
+            transition-duration: 1s;
+
+            &.swipe {
+              transform: translate3d(0, 0, 0);
+              transition-duration: 1s;
+            }
+          }
+        }
+        p {
+          padding: 0 5%;
+          margin: 7% 0;
+
+          &.block-p {
+            transform: translate3d(110%, 0, 0);
+            transition-duration: 1s;
+
+            &.swipe {
+              transform: translate3d(0, 0, 0);
+              transition-duration: 1s;
+            }
+          }
+        }
+        .block-button {
+          transform: translate3d(310%, 0, 0);
+          transition-duration: 1s;
+
+          &.swipe {
+            transform: translate3d(0, 0, 0);
+            transition-duration: 1s;
+          }
+        }
+
+        &.middle-block-text {
+          opacity: 0;
+          transition-duration: 1s;
+
+          &.swipe {
+            opacity: 2;
+            transition-duration: 1s;
+          }
+        }
+      }
+
+      .block-img-container {
+        border-left: 10px solid transparent;
+        overflow: hidden;
+        padding: 2%;
+        width: 50%;
+
+        img {
+          width: 100%;
+
+          &.block-img-1 {
+            transform: translate3d(-150%, 0, 0);
+            transition-duration: 1s;
+
+            &.swipe {
+              transform: translate3d(0, 0, 0);
+              transition-duration: 1s;
+            }
+          }
+
+          &.block-img-2 {
+            transform: translate3d(110%, 0, 0);
+            transition-duration: 1s;
+            transition-delay: 0.5s;
+
+            &.swipe {
+              transform: translate3d(0, 0, 0);
+              transition-duration: 1s;
+            }
+          }
+        }
+      }
+    }
+
+    .button {
+      font-size: 1rem;
+      margin: 5% 0 1% 5%;
+    }
+  }
+
+  .middle-block {
+    flex-direction: row-reverse;
+  }
+
+  //======================== Recent Projects ====================
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .project-heading {
+      margin: 2% 0;
+    }
+
+    .project {
+      width: 90%;
+
+      .img-overlay {
+        position: relative;
+
+        .project-img {
+          width: 100%;
+        }
+
+        .overlay {
+          background: #d8d8d8;
+          border: 2px solid white;
+          display: inline-block;
+          padding: 3% 10%;
+          position: absolute;
+          letter-spacing: 10px;
+        }
+      }
+
+      .project-info {
+        width: 50%;
+        text-align: center;
+        margin: 5% auto;
+        line-height: 1.5;
+
+        p {
+          margin: 5% auto;
+        }
+      }
+    }
+
+    .villas,
+    .the-blocks {
+      .overlay {
+        right: 0;
+        bottom: -13%;
+      }
+    }
+
+    .outskirts {
+      overflow: hidden;
+      .outskirts-overlay {
+        border-top: 15px double black;
+        border-bottom: 15px double black;
+        overflow: hidden;
+
+        .overlay-skirts {
+          bottom: -13%;
+          left: 0;
+
+          transform: translate3d(400%, 0, 0);
+          transition-duration: 1s;
+
+          &.open {
+            transform: translate3d(0, 0, 0);
+            transition-duration: 2s;
+          }
+        }
+
+        .outskirts-img {
+          transform: translate3d(-110%, 0, 0);
+          transition-duration: 2s;
+
+          &.open {
+            transform: translate3d(0, 0, 0);
+            transition-duration: 2s;
+          }
+        }
+      }
+
+      .outskirts-info {
+        transform: scale(0, 0);
+        transition-duration: 2s;
+
+        &.appear {
+          transform: scale(1, 1);
+          transition-duration: 2s;
+        }
+      }
+    }
+    .villas {
+      overflow: hidden;
+      .villa-info {
+        .info1 {
+          transform: translate3d(200%, 0, 0);
+          transition-duration: 2s;
+        }
+        .info2 {
+          transform: translate3d(-200%, 0, 0);
+          transition-duration: 2s;
+        }
+
+        &.swipe {
+          transform: translate3d(0, 0, 0);
+          transition-duration: 2s;
+        }
+      }
+      .villa-img {
+        opacity: 0;
+        transition-duration: 2s;
+        &.flip {
+          opacity: 1;
+          transition-duration: 2s;
+        }
+      }
+    }
+    .the-blocks {
+      .img-overlay {
+        .the-block-img {
+          opacity: 0;
+          transition-duration: 2s;
+          &.fader {
+            opacity: 1;
+            transition-duration: 1s;
+          }
+        }
+
+        .the-block-overlay {
+          opacity: 0;
+          transition-duration: 2s;
+          &.fader {
+            opacity: 1;
+            transition-duration: 1s;
+          }
+        }
+      }
+
+      .the-block-info {
+        .top-info {
+          overflow: hidden;
+          border-bottom: 7px double black;
+
+          p {
+            transform: translate3d(0, 150%, 0);
+            transition-duration: 2s;
+
+            &.popIn {
+              transform: translate3d(0, 0, 0);
+            }
+          }
+        }
+        .bottom-info {
+          overflow: hidden;
+
+          p {
+            transform: translate3d(0, -150%, 0);
+            transition-duration: 2s;
+
+            &.popIn {
+              transform: translate3d(0, 0, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

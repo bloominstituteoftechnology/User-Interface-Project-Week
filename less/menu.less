@@ -1,0 +1,112 @@
+.menu-bar {
+  z-index: 6;
+  position: fixed;
+  background: #99a4ae;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5%;
+  width: 100%;
+
+  .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .menu-btn {
+    .menu-line {
+      width: 20px;
+      height: 3px;
+      margin: 3px;
+      border-radius: 5px;
+      cursor: pointer;
+      background: white;
+      transition-duration: 0.5s;
+    }
+  }
+}
+
+.menu {
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  justify-items: center;
+  background: #99a4ae;
+
+  @media (max-width: 500px) {
+    height: 100%;
+  }
+
+  transform: translate3d(0, -100%, 0);
+  transition-duration: 0.5s;
+
+  .menu-item {
+    color: black;
+    font-size: 2rem;
+
+    &:nth-child(1) {
+      transform: translate3d(0, -1000%, 0);
+      margin-top: 12%; //top menu link
+    }
+    &:nth-child(2) {
+      transform: translate3d(-1500%, 0, 0);
+      margin: 10%;
+    }
+    &:nth-child(3) {
+      transform: translate3d(0, 1000%, 0);
+      margin-bottom: 15%; //bottom menu link
+    }
+
+    &:hover {
+      color: white;
+      font-size: 2.5rem;
+      border-top: 4px solid black;
+      border-bottom: 4px solid black;
+    }
+  }
+}
+
+&.close {
+  .menu-line {
+    &:nth-child(1) {
+      transform: rotate(45deg) translate(1px, 2px);
+      transition-duration: 0.5s;
+    }
+    &:nth-child(2) {
+      display: none;
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg) translate(1px, -3px);
+      transition-duration: 0.5s;
+    }
+  }
+
+  &.menu {
+    transform: translate3d(0, 0, 0);
+    transition-duration: 0.3s;
+    position: fixed;
+    opacity: 0.93;
+  }
+
+  &.menu-item {
+    &:nth-child(1) {
+      transform: translate3d(0, 0, 0);
+      margin-top: 12%; //top menu link
+    }
+    &:nth-child(2) {
+      transform: translate3d(0, 0, 0);
+      margin: 10%;
+    }
+    &:nth-child(3) {
+      transform: translate3d(0, 0, 0);
+      margin-bottom: 15%; //bottom menu link
+    }
+
+    transition-duration: 1s;
+    transition-delay: 0.1s;
+  }
+}
