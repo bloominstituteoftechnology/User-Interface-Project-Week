@@ -43,8 +43,9 @@ class TabLink {
 
   
   class DropdownLink {
-    constructor(link2){
-    console.log("this is right");
+    constructor(link2) {
+    this.link2 = link2;
+    
   }
 }
 
