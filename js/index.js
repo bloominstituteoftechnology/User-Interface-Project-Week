@@ -53,9 +53,9 @@
 
 // let tab = document.querySelectorAll('.tab').forEach(tab => {new TabLink(tab)});
 
-function openNav() {
-    document.getElementById("over_top").style.height = "100%";
-}
-function CloseNav() {
-    document.getElementById("over_top").style.height = "0%";
-}
+// function openNav() {
+//     document.getElementById("over_top").style.display = "block";
+// }
+// function CloseNav() {
+//     document.getElementById("over_top").style.display = "none";
+// }
