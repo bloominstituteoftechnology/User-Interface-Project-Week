@@ -1,0 +1,41 @@
+.flex(@direction, @justify, @align, @wrap) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+  flex-wrap: @wrap;
+}
+
+.btn-template(@background, @color, @radius, @padding, @font) {
+  text-align: center;
+  background: @background;
+  color: @color;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+  padding: @padding;
+  font-size: @font;
+}
+
+.border(@size: 1px, @style: solid, @color: @button-border) {
+  border: @size @style @color;
+}
+
+// Animation Mixins
+.keyframes(@name; @arguments) {
+  @-moz-keyframes @name {
+    @arguments();
+  }
+  @-webkit-keyframes @name {
+    @arguments();
+  }
+  @keyframes @name {
+    @arguments();
+  }
+}
+
+.animation(@arguments) {
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  animation: @arguments;
+}
