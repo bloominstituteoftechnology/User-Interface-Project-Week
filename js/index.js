@@ -59,5 +59,9 @@ class TabLink {
   
   let dropdowns = document.querySelectorAll('.dropdown').forEach( dropdown => new Dropdown(dropdown));
 
-  
+
+  //Hamburger Menu
+  function myFunction(x) {
+    x.classList.toggle("change");
+  } 
   
