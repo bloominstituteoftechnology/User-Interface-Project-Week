@@ -57,16 +57,7 @@ class TabLink {
   }
   
   
-  
   let dropdowns = document.querySelectorAll('.dropdown').forEach( dropdown => new Dropdown(dropdown));
 
   
-  class DropdownLink {
-    constructor(link2) {
-    this.link2 = link2;
-    
-  }
-}
-
-  const dropdownLinks = document.querySelectorAll(".dropdown-link");
-  dropdownLinks.forEach(link2 => new DropdownLink(link2));
+  
