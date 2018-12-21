@@ -84,7 +84,7 @@ class TabLink {
 
 const close = document.querySelector(".x");
 
-close.addEventListener('click', function(event) {
+close.addEventListener("click", function(event) {
     event.target.toggle("dropdown-hidden");
     console.log();
 })
