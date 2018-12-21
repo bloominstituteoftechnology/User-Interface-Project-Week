@@ -1,6 +1,10 @@
 // JS goes here
 
-
+//Hamburger Button
+function myFunction(x) {
+  x.classList.toggle("change");
+} 
+//Hamburger End
 
 //Service page
 class TabLink {
