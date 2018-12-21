@@ -74,6 +74,7 @@ class TabLink {
     toggleContent() {
       
       this.content.classList.toggle("dropdown-hidden");
+      
     }
   }
   
