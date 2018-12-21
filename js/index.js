@@ -74,9 +74,17 @@ class TabLink {
     toggleContent() {
       
       this.content.classList.toggle("dropdown-hidden");
-      
+
     }
   }
   
   
   let dropdowns = document.querySelectorAll('.dropdown').forEach( dropdown => new Dropdown(dropdown));
+
+
+const close = document.querySelector(".x");
+
+close.addEventListener('click', function(event) {
+    event.target.toggle("dropdown-hidden");
+    console.log();
+})
