@@ -141,6 +141,13 @@ table {
   Background: #FFFFFF;
   Color: #222222;
 }
+@media (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
 .container .header {
   display: flex;
   justify-content: space-between;
@@ -307,22 +314,27 @@ table {
 .container .middle-content h3 {
   line-height: 2rem;
 }
-.nav_over {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  background-color: blue;
-  transition: 0.5s;
+@media (max-width: 500px) {
+  .container .recent-projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .recent-projects img {
+    width: 100%;
+    align-items: center;
+  }
 }
-.nav_over .nav_content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
+.nav_over {
+  display: flex;
+  justify-content: space-between;
+  width: 880px;
+}
+.nav_over:hover {
+  cursor: pointer;
+}
+.nav_over .close {
+  display: none;
 }
 .nav_over .nav_over a {
   padding: 8px;
@@ -338,9 +350,26 @@ table {
   right: 45px;
   font-size: 60px;
 }
-.nav_over .header h1 {
-  color: red;
+.menu {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  text-align: center;
+  margin-top: 30px;
+  overflow: auto;
 }
-.nav_over .openNav {
+.menu .menu-button {
+  display: block;
+}
+.menu .menu a {
+  margin: 20% auto;
+  padding: 20px;
+  width: 70%;
+}
+.menu--open {
   display: block;
 }

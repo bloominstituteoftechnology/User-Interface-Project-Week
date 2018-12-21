@@ -65,6 +65,11 @@ table{
   margin: 0 auto;
   Background: #FFFFFF;
   Color: #222222;
+  @media(max-width: 500px){
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
   .header{
     display: flex;
     justify-content: space-between;
@@ -175,14 +180,7 @@ table{
       color: white;
     }
   }
-  .contact_us{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    .get_in_touch{
-      width: 40%;
-      line-height: 50px;
-    }
+
   }
   h2{
     Font-Weight: Bold;
@@ -195,19 +193,14 @@ table{
     justify-content: flex-end;
   }
 
-h5{
+  h5{
   display: flex;
   justify-content: center;
   Background: #828282;
   padding-top: 20px;
   color: white;
   }
-  .where_we_work{
-    line-height: 2rem;
-    margin-bottom: 22px;
-    h1{
-      font-weight: bold;
-    }
+ 
   }
   .contact{
     bottom: 8rem;
@@ -225,74 +218,42 @@ h5{
         color:white;
       }
     }
-  .middle-content{
-    display: flex;
-    flex-direction: row;
-    margin-top: 2rem;
-  }
-  .middle-content h3{
-    line-height: 2rem;
+  
+  .recent-projects{
+    @media(max-width: 500px){
+      width:100%;
+      display: flex;
+      flex-direction: column;
+      img{
+        width:100%;
+        align-items: center;
+      }
+    }
   }
 }
 
-.nav_over{
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  left: 0;
+
+.menu{
+  display: none;
   top: 0;
-  background-color: blue;
-  // overflow-x: hidden;
-  transition: 0.5s;
-  .nav_content{
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-  }
-  .nav_over a{
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-  }
-  .nav_over .closenv{
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-  }
-  .header h1{
-    color: red;
-  }
-  .openNav{
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  text-align: center;
+  margin-top: 30px;
+  overflow: auto;
+  .menu-button{
     display: block;
   }
+  .menu a{
+    margin: 20% auto;
+    padding: 20px;
+    width: 70%;
+  }
+  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.menu--open{
+  display: block;
+}
