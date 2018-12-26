@@ -34,5 +34,4 @@ t2.to('#navanchor1', .35, {right:'0'});
 t3.to('#navanchor2', .4, {right:'0'});
 t4.to('#navanchor3', .45, {right:'0'});
 
-
 let dropdown = new Dropdown(document.querySelector('.HeaderBar'));
