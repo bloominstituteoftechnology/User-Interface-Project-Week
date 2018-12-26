@@ -16,7 +16,7 @@ class TabLink {
         const alltabs = document.querySelectorAll('.TabsLink');
         alltabs.forEach(tab => tab.classList.remove('SelectedTab'));
         this.servicetab.classList.add('SelectedTab');
-        this.contentHeader.select();
+        // this.contentHeader.select();
         this.contentImg.select();
         this.contentmobImg.select();
     }
@@ -26,11 +26,11 @@ class TabHeader {
     constructor(header) {
         this.header = header;
     }
-    select() {
-        const allheaders = document.querySelectorAll('.TabsHeader');
-        allheaders.forEach(header => header.classList.remove('SelectedContent'));
-        this.header.classList.add('SelectedContent')
-    }
+    // select() {
+    //     const allheaders = document.querySelectorAll('.TabsHeader');
+    //     allheaders.forEach(header => header.classList.remove('SelectedContent'));
+    //     this.header.classList.add('SelectedContent')
+    // }
 }
 
 class TabImg {

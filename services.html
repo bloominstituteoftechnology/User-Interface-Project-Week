@@ -8,12 +8,14 @@
 	<link rel="stylesheet" href="css/index.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 	<!-- <script src="https://unpkg.com/vue"></script> -->
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 	<script src="js/services.js" async></script>
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-
 <body>
 <div class='container'>
 <header>
@@ -41,11 +43,24 @@
 	<a class='TabsLink btn' data-tab="4">Sustainability</a>
 </div>
 <section class='SelectedFullContent'>
-	<div class="SelectedHeaderAndText">
+	<div class="SelectedHeaderAndText" id="reactheader">
 			<h2 class='TabsHeader' data-tab="1">Pre-Construction</h2>
 			<h2 class='TabsHeader' data-tab="2">Construction</h2>
 			<h2 class='TabsHeader' data-tab="3">Design Build</h2>
 			<h2 class='TabsHeader' data-tab="4">Sustainability</h2>
+			<script type="text/jsx">
+				class Header extends React.Component {
+					render() {
+						return (<h2>{props.selectedheader}.style</h2>);
+				}
+				}
+				ReactDOM.render(
+					<Headers
+					selectedheader={document.querySelector('.TabsHeader')}
+					/>,
+					document.getElementById('reactheader')
+				);
+			</script>
 				<!-- <div id='vuetext'>
 					<h2>{{ selectedHeader() }}</h2>
 				</div> -->
