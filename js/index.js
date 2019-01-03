@@ -11,6 +11,9 @@ const showNav = () => {
 const menu = document.querySelector(".menu");
 
 
-const hamButton= document.querySelector(".nav-button");
+const hamButton= document.querySelectorAll(".nav-button");
+for(let i =0; i < hamButton.length; i++) {
+      hamButton[i].addEventListener("click", showNav);
 
-hamButton.addEventListener("click", showNav);
+}
+
