@@ -17,9 +17,9 @@ for(let i =0; i < hamButton.length; i++) {
 class TabLink {
     constructor(element) {
       this.element = element;
-      this.data = this.element.dataset.tab  
-      this.itemElement = document.querySelector(`.tabs-item[data-tab= '${this.data}']`) 
-      this.tabItem = new TabItem(this.itemElement)
+      this.data = this.element.dataset.tab;  
+      this.itemElement = document.querySelector(`.tabs-item[data-tab= '${this.data}']`) ;
+      this.tabItem = new TabItem(this.itemElement);
      this.element.addEventListener("click", () => { this.select(); });
     };
   
@@ -28,9 +28,9 @@ class TabLink {
     
     const links = document.querySelectorAll(".tabs-link");
    
-    for (let i = 0; i < links.length; i++) {
-      links[i].classList.remove("tabs-link-selected")
-    }
+    links.forEach( link => {
+        link.classList.remove('tabs-link-selected')
+      });
   
     this.element.classList.add("tabs-link-selected")
  
@@ -47,16 +47,14 @@ class TabLink {
      
       const items = document.querySelectorAll(".tabs-item");
      
-      for (let i = 0; i < items.length; i ++) {
-        items[i]
-    
-  
-     
-      items[i].classList.remove("tabs-item-slected");
-        }  
-      this.element.classList.add("tabs-item-selected");
+      items.forEach( item => {
+        item.classList.remove('tabs-item-selected');
+      })
+       
+      this.element.classList.add('tabs-item-selected');
     }
   }
+  
   
   
   
