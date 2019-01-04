@@ -82,9 +82,31 @@ class TabLink {
   let dropdowns = document.querySelectorAll('.dropdown').forEach( dropdown => new Dropdown(dropdown));
 
 
-const close = document.querySelector(".x");
 
-close.addEventListener("click", function(event) {
-    event.target.toggle("dropdown-hidden");
-    console.log();
-})
+
+
+  var buttonOther = document.getElementById("buttonClose"), 
+
+    menuConent = document.getElementById("menuContent");
+
+
+  buttonClose.addEventListener("click", function(){
+
+    if (menuContent.style.display == 'none') {
+
+        menuContent.style.display = 'block';
+    
+    } else {
+
+        menuContent.style.display = 'none';
+
+    }
+
+}, false);
+
+
+
+
+
+
+
