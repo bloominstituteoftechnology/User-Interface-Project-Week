@@ -1,1 +1,634 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+* {
+  box-sizing: border-box;
+}
+.container {
+  color: #222;
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 1024px;
+  font-weight: regular;
+  font-size: 16px;
+  line-height: 24px;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #222;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #c3c4c8;
+  width: 1024px;
+  position: fixed;
+  z-index: 10;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  margin: 0 75px;
+  width: 100%;
+  z-index: 1;
+}
+.name h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  padding: 0;
+}
+.open-hamburger {
+  display: flex;
+}
+.open-menu {
+  display: flex;
+}
+.close-menu {
+  display: none;
+  border: 2px solid hotpink;
+}
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 0;
+  width: 100%;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: #000000;
+  /* Black fallback color */
+  background-color: #c3c4c8;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%;
+  /* 25% from the top */
+  width: 100%;
+  /* 100% width */
+  text-align: center;
+  /* Centered text/links */
+  margin-top: 30px;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 48px;
+  line-height: 85px;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  /* Display block instead of inline */
+  transition: 0.3s;
+  /* Transition effects on hover (color) */
+}
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #222;
+}
+/* Position the close button (top right corner) */
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+.main-header {
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #fff;
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+.main-img img {
+  width: 100%;
+  position: relative;
+  top: -50px;
+  z-index: -1;
+}
+.smith-jones {
+  display: flex;
+  padding-bottom: 75px;
+  width: 85%;
+}
+.text {
+  padding: 50px 40px;
+  font-size: 16px;
+  line-height: 24px;
+}
+h2 {
+  padding-bottom: 20px;
+}
+button {
+  border: 1px solid #222;
+  background-color: #fff;
+  height: 35px;
+  width: 100px;
+}
+p {
+  padding-bottom: 25px;
+}
+.img {
+  display: flex;
+}
+.future-designs {
+  display: flex;
+  padding-bottom: 75px;
+  width: 85%;
+}
+.the-villas p,
+.the-outskirts p,
+.the-blocks p {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 75px 0;
+}
+.the-villas h2 {
+  padding-bottom: 50px;
+  padding-left: 75px;
+}
+.recent-projects,
+.the-villas,
+.the-outskirts,
+.the-blocks {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.rp-img {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  width: 85%;
+}
+.rp-img img {
+  width: 100%;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d8d8d8;
+  border: 1px solid #fff;
+  color: #222;
+  height: 100px;
+  width: 320px;
+  letter-spacing: 5px;
+  font-size: 24px;
+}
+.villas {
+  position: absolute;
+  right: 2px;
+  top: 175px;
+}
+.outskirts {
+  position: absolute;
+  top: 175px;
+}
+.blocks {
+  position: absolute;
+  top: 175px;
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+  .nav-container {
+    width: 482px;
+  }
+  .main-header {
+    font-size: 52px;
+    line-height: 60px;
+    margin: -75px 0 0 -20px;
+  }
+  .main-img img {
+    display: none;
+  }
+  .main-img .mobile {
+    display: block;
+    width: 482px;
+    position: relative;
+    top: -50px;
+    left: 0;
+  }
+  .smith-jones {
+    flex-direction: column-reverse;
+  }
+  .future-designs {
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
+  .img img {
+    display: none;
+  }
+  .rp-img img {
+    display: none;
+  }
+  .rp-img .mobile,
+  .img .mobile {
+    display: block;
+    width: 100%;
+  }
+  .rp-img .mobile {
+    margin-bottom: 35px;
+  }
+  .villas {
+    right: 40px;
+    top: 185px;
+  }
+  .blocks,
+  .outskirts {
+    left: 45px;
+    top: 185px;
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer .email {
+    width: 100%;
+  }
+  .footer .email h3 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .footer input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 15px 0;
+    padding: 15px 10px;
+  }
+  .footer p {
+    font-size: 18px;
+  }
+  .footer .new-york,
+  .footer .florida,
+  .footer .california {
+    width: 100%;
+    line-height: 30px;
+  }
+  .footer .new-york h3,
+  .footer .florida h3,
+  .footer .california h3 {
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+  .footer .copyright {
+    padding-top: 45px;
+    margin-left: 25px;
+  }
+}
+.main-img-services {
+  position: relative;
+  z-index: -1;
+}
+.main-header-services {
+  position: relative;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #FFF;
+  position: absolute;
+  top: 160px;
+  left: 75px;
+}
+.top-paragraph {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 40px;
+  font-weight: regular;
+  font-size: 16px;
+  line-height: 24px;
+}
+.top-paragraph p {
+  padding: 50px 0 25px;
+}
+.tabs-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 25px 0;
+}
+.tabs-link {
+  border: 1px solid black;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+.tabs-link:hover {
+  background-color: #222;
+  color: #FFF;
+}
+.tabs-link-selected {
+  background-color: #5E9FB9;
+}
+.tabs-items {
+  display: flex;
+  flex-direction: row;
+}
+.tabs-item-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.tabs-item {
+  display: none;
+}
+.tabs-item-selected {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.tabs-item-selected .tabs-item-description {
+  width: 40%;
+  margin: 0;
+  padding-right: 20px;
+}
+.tabs-item-selected .tabs-item-title {
+  padding-bottom: 25px;
+  width: 100%;
+  margin-left: 37px;
+}
+.main-img .contact {
+  width: 100%;
+  position: relative;
+  top: 50px;
+  z-index: -1;
+}
+.middle-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.left-side {
+  width: 40%;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.contact-email {
+  font-size: 16px;
+}
+.left-side input {
+  height: 25px;
+  width: 100%;
+  padding: 15px 0 15px 10px;
+  font-size: 15px;
+}
+.buildings,
+.overview {
+  padding-bottom: 5px;
+}
+.no-share {
+  color: #a5a4a4;
+}
+.overview {
+  padding-top: 35px;
+}
+.left-side .radio {
+  height: 10px;
+  width: 10px;
+}
+.left-side textarea {
+  margin-bottom: 25px;
+}
+.left-side .submit {
+  font-size: 12px;
+  width: 33%;
+  padding-bottom: 25px;
+  margin: 20px 0 40px 0;
+  background: #fff;
+}
+.right-side {
+  width: 40%;
+  margin-top: 50px;
+}
+.right-side h3 {
+  font-size: 24px;
+}
+.right-side p {
+  line-height: 30px;
+  padding-top: 5px;
+}
+.footer {
+  background-color: #828282;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: regular;
+  font-size: 14px;
+  line-height: 26px;
+  color: #FFF;
+}
+.footer h3 {
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: regular;
+}
+.copyright {
+  margin: 0 auto;
+  display: flex;
+}
+.size {
+  padding: 45px 25px 0;
+}
+.footer h3 {
+  font-weight: bold;
+}
+.email {
+  width: 33%;
+}
+.email input {
+  padding: 5px 0;
+  width: 95%;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.california {
+  width: 22%;
+}
+.new-york {
+  width: 22%;
+}
+.florida {
+  width: 22%;
+}
+.copyright {
+  font-size: 12px;
+}
+.mobile {
+  display: none;
+}
