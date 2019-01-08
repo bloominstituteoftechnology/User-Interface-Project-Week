@@ -5,21 +5,16 @@ class TabLink {
       
       // Get the `data-tab` value from this.tabElement and store it here
       this.tabData = this.tabElement.dataset.tab; 
-      if(this.tabData === 'all'){
-        // If `all` is true, select all cards regardless of their data attribute values
-        this.cards = document.querySelectorAll(`.card`);
-      } else {
-        // else if `all` is false, only select the cards with matching this.tabData values
-        this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`) ;
-      }
+
+
+      this.item = document.querySelector(`.card[data-tab="${this.tabData}"]`);
+  
       // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
       this.cards = Array.from(this.cards).map(card => new TabCard(card));
-  
       // Add a click event that invokes this.selectTab
       this.tabElement.addEventListener('click', () => {this.selectTab()
-      });
-    }
-  
+      })
+    };
     selectTab(){
       // Select all elements with the .tab class on them
       const tabs = document.querySelectorAll(".tab");
@@ -42,13 +37,15 @@ class TabLink {
       this.cards.forEach(card => card.selectCard());
     }
   }
-
   class TabCard {
     constructor(cardElement){
       this.cardElement = cardElement;
     }
     selectCard(){
-
+    //   const items = document.querySelectorAll('.card');
+    //   items.forEach( item => { item.classList.remove('active-tab');
+    // })
+    // this.cardElement.classList.add('active-tab')
       this.cardElement.style.display = "flex";
     }
   
