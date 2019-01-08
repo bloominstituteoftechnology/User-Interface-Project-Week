@@ -53,9 +53,18 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    this.cardElement.style.display = "flex";
+      // Select all ".tabs-item" elements from the DOM
+      const items = document.querySelectorAll('.tab');
+      // Remove the class "tabs-item-selected" from each element
+      items.forEach( item => {
+      item.classList.remove('active-tab');
+      })
+      // Add a class named "tabs-item-selected" to this element 
+      this.cardElement.classList.add('active-tab');
+      this.cardElement.style.display = "flex";
+    }
+    
   }
-}
 
   
 
