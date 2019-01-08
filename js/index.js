@@ -1,16 +1,17 @@
-const toggleMenu = () => {
-	navButton.classList.toggle('change');
-};
+// const toggleMenu = () => {
+// 	navButton.classList.toggle('change');
+// };
 
-const menu = document.querySelector('.menu');
+// const menu = document.querySelector('.menu');
 
-const menuButton = document.querySelector('.menu-icon');
+// const menuButton = document.querySelector('.menu-icon');
 
-const navButton = document.querySelector('.nav-menu');
+// const navButton = document.querySelector('.nav-menu');
 
-menuButton.addEventListener('click', () => {
-	toggleMenu();
-});
+// menuButton.addEventListener('click', () => {
+// 	toggleMenu();
+// 	console.log(menu)
+// });
 
 class TabLink {
 	constructor(element) {
@@ -41,17 +42,16 @@ class TabLink {
 class TabItem {
 	constructor(element) {
 		this.element = element;
+		console.log(this.element);
 	}
 
 	select() {
-		const items = document.querySelectorAll('.tab-item');
-
+		const items = document.querySelectorAll('.tab-item-content');
 		Array.from(items).forEach(el => {
 			el.classList.remove('tab-item-selected');
 		});
 
 		this.element.classList.add('tab-item-selected');
-		console.log(this.element);
 	}
 }
 
