@@ -45,7 +45,7 @@ class TabLink {
     this.tabElement.classList.add("active-tab");
     
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Nothing to update here, the code is written for you to study.
-    this.tabCard.selectCard();
+    this.tabCard.select();
   }
 }
 
