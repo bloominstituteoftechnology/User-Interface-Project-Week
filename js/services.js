@@ -16,7 +16,7 @@ class TabLink {
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
       
-     // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
+    // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     this.cards = Array.from(this.cards).map( card => new TabCard(card));
     */
     this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
@@ -45,7 +45,7 @@ class TabLink {
     this.tabElement.classList.add("active-tab");
     
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Nothing to update here, the code is written for you to study.
-    this.tabCard.forEach(tabCard => tabCard.selectCard());
+    this.tabCard.selectCard();
   }
 }
 
