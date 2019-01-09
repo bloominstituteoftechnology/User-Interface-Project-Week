@@ -19,9 +19,11 @@ class TabLink {
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     this.cards = Array.from(this.cards).map( card => new TabCard(card));
     */
-   this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
+    this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     // Add a click event that invokes this.selectTab
+    this.tabCard = Array.from(this.cards).map( cards => new TabCard(cards));
     this.tabElement.addEventListener('click', () => {this.selectTab()});
+    
   }
 
   selectTab(){
@@ -33,17 +35,17 @@ class TabLink {
       tab.classList.remove("active-tab");
     })
 
-    // Select all of the elements with the .card class on them
-    const cards = document.querySelectorAll('.card');
+    // // Select all of the elements with the .card class on them
+    // const cards = document.querySelectorAll('.card');
     
-    // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach( card => card.style.display = 'none');
+    // // Iterate through the NodeList setting the display style each one to 'none'
+    // cards.forEach( card => card.style.display = 'none');
 
     // Add a class of ".active-tab" to this.tabElement
     this.tabElement.classList.add("active-tab");
     
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Nothing to update here, the code is written for you to study.
-    this.cards.forEach(card => card.selectCard());
+    this.tabCard.forEach(tabCard => tabCard.selectCard());
   }
 }
 
@@ -55,16 +57,14 @@ class TabCard {
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
       // Select all ".tabs-item" elements from the DOM
-      const items = document.querySelectorAll('.card');
+      const items = document.querySelectorAll('.card_info');
       // Remove the class "tabs-item-selected" from each element
       items.forEach( item => {
-      item.classList.remove('active-tab');
+      item.classList.remove('active-tab-selected');
       })
       // Add a class named "tabs-item-selected" to this element 
-      this.cardElement.classList.add('active-tab');
-      this.cardElement.style.display = "flex";
+      this.cardElement.classList.add('active-tab-selected');
     }
-    
   }
 
   
