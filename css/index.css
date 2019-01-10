@@ -150,6 +150,7 @@ table {
 }
 .container .header h1 {
   color: white;
+  padding-left: 50px;
 }
 .container footer {
   display: flex;
@@ -190,6 +191,8 @@ table {
   Font-Size: 28px;
   Color: #222222;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 .container h3 {
   display: flex;
@@ -203,10 +206,9 @@ table {
   color: white;
 }
 @media (max-width: 500px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  .container .header h1 {
+    padding: 15px;
+    font-size: 25px;
   }
   .container .middle-content {
     justify-content: center;
@@ -234,106 +236,6 @@ table {
   }
   .container .email-heading {
     justify-content: flex-start;
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    width: 380px;
-  }
-}
-.tabs .topics {
-  display: flex;
-  justify-content: space-between;
-}
-.tabs .topics .tab {
-  font-weight: bold;
-  border: 2px solid black;
-  background-color: white;
-  padding: 20px 20px;
-  color: black;
-}
-.tabs .topics .tab:hover {
-  cursor: pointer;
-}
-.tabs .topics .active-tab {
-  background-color: lightblue;
-  color: white;
-  border: 2px solid black;
-  justify-content: center;
-  padding: 20px 20px;
-}
-.card {
-  display: none;
-}
-.card .card_info h1 {
-  font-weight: bold;
-  font-size: 20px;
-}
-.card .card_info p {
-  font-size: 15px;
-  line-height: 1.5rem;
-}
-.active-tab-selected {
-  display: flex;
-}
-.services_jumbotron {
-  position: relative;
-  bottom: 1rem;
-  width: 100%;
-}
-.top-content .services_title {
-  bottom: 10rem;
-}
-.top-content p {
-  position: relative;
-  bottom: 55px;
-}
-.top-content h1 {
-  position: relative;
-  bottom: 18rem;
-  left: 5rem;
-  font-size: 5rem;
-  color: white;
-}
-.top-content img {
-  width: 100%;
-}
-@media (max-width: 500px) {
-  .container {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-  }
-  .container .tab {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  .container .card {
-    display: flex;
-    flex-direction: column;
-  }
-  .top-content img {
-    width: 100%;
-    height: 280px;
-  }
-  .top-content .services_title {
-    bottom: 110px;
-    font-size: 4rem;
-  }
-  .tabs {
-    display: flex;
-    justify-content: center;
-  }
-  .topics {
-    display: flex;
-    flex-direction: column;
-    width: 320px;
-  }
-  .topics .active-tab {
-    display: flex;
-    justify-content: center;
   }
 }
 .recent-projects h3 {
@@ -394,11 +296,6 @@ button:hover {
   .top-content {
     height: 270px;
   }
-  .top-content h1 {
-    font-size: 3rem;
-    bottom: 12rem;
-    left: 1rem;
-  }
   .home-content {
     flex-direction: column-reverse;
     justify-content: center;
@@ -416,6 +313,7 @@ button:hover {
   .text-content button {
     width: 359px;
     font-size: 18px;
+    margin-left: 15px;
   }
   .recent-projects img {
     width: 100%;
@@ -427,18 +325,25 @@ button:hover {
     width: 270px;
   }
   .recent-projects .left {
-    margin: 0;
-    padding-right: 90px;
+    margin: 0 20px;
+    padding: 0;
+    justify-content: center;
   }
   .recent-projects .right {
-    margin: 0;
-    padding-left: 90px;
+    margin: 0 20px;
+    padding: 0;
+    justify-content: center;
+  }
+  .recent-projects .p-words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 nav {
   display: flex;
   justify-content: space-between;
-  width: 880px;
+  width: 860px;
   color: #FFFFFF;
   height: 50px;
   align-items: center;
@@ -466,7 +371,8 @@ nav .menu a {
 }
 nav .menu-button {
   width: 31px;
-  height: 30px;
+  height: 20px;
+  padding-right: 40px;
 }
 nav .close {
   display: none;
@@ -479,4 +385,116 @@ nav .menu--open .close {
 }
 nav nav:hover {
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 380px;
+  }
+  nav .menu-button {
+    padding: 0;
+  }
+}
+.tabs .topics {
+  display: flex;
+  justify-content: space-between;
+}
+.tabs .topics .tab {
+  font-weight: bold;
+  border: 2px solid black;
+  background-color: white;
+  padding: 20px 20px;
+  color: black;
+}
+.tabs .topics .tab:hover {
+  cursor: pointer;
+}
+.tabs .topics .active-tab {
+  background-color: lightblue;
+  color: white;
+  border: 2px solid black;
+  justify-content: center;
+  padding: 20px 20px;
+}
+.card {
+  display: none;
+}
+.card .card_info h1 {
+  font-weight: bold;
+  font-size: 20px;
+}
+.card .card_info p {
+  font-size: 15px;
+  line-height: 1.5rem;
+}
+.active-tab-selected {
+  display: flex;
+}
+.services_jumbotron {
+  position: relative;
+  bottom: 2rem;
+  width: 100%;
+}
+.top-content .services_title {
+  bottom: 7rem;
+}
+.top-content p {
+  position: relative;
+  bottom: 50px;
+}
+.top-content h1 {
+  font-size: 3rem;
+  bottom: 12rem;
+  left: 1rem;
+  position: relative;
+  color: white;
+  line-height: 1;
+}
+.top-content img {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .tab {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  .top-content img {
+    width: 100%;
+    height: 280px;
+  }
+  .top-content h1 {
+    font-size: 3rem;
+    bottom: 12rem;
+    left: 1rem;
+    position: relative;
+    color: white;
+    line-height: 1;
+  }
+  .services {
+    height: 440px;
+  }
+  .top-content .services_title {
+    bottom: 107px;
+    left: 20px;
+    font-size: 55px;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+  }
+  .topics {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+  }
+  .topics .active-tab {
+    display: flex;
+    justify-content: center;
+  }
 }
