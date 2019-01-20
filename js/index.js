@@ -1,17 +1,16 @@
-// const toggleMenu = () => {
-// 	navButton.classList.toggle('change');
-// };
+const toggleMenu = () => {
+	navMenu.classList.toggle('fullpage');
+	menuIcon.classList.toggle('change');
+	navLinks.classList.toggle('show-links');
+};
 
-// const menu = document.querySelector('.menu');
+const navLinks = document.querySelector('.nav-links');
+const navMenu = document.querySelector('.nav-menu');
+const menuIcon = document.querySelector('.menu-icon');
 
-// const menuButton = document.querySelector('.menu-icon');
-
-// const navButton = document.querySelector('.nav-menu');
-
-// menuButton.addEventListener('click', () => {
-// 	toggleMenu();
-// 	console.log(menu)
-// });
+menuIcon.addEventListener('click', () => {
+	toggleMenu();
+});
 
 class TabLink {
 	constructor(element) {
@@ -19,7 +18,7 @@ class TabLink {
 		this.data = this.element.dataset.tab;
 
 		this.itemElement = document.querySelector(
-			`.tab-item[data-tab="${this.data}"]`,
+			`.tab-item-content[data-tab="${this.data}"]`,
 		);
 
 		this.tabItem = new TabItem(this.itemElement);
@@ -42,15 +41,15 @@ class TabLink {
 class TabItem {
 	constructor(element) {
 		this.element = element;
-		console.log(this.element);
 	}
 
 	select() {
 		const items = document.querySelectorAll('.tab-item-content');
 		Array.from(items).forEach(el => {
-			el.classList.remove('tab-item-selected');
+			el.classList.remove('.tab-item-content');
 		});
 
+		console.log(this.element);
 		this.element.classList.add('tab-item-selected');
 	}
 }
