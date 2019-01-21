@@ -1,4 +1,5 @@
 .service-cta {
+	margin-bottom: 15px;
 	position: relative;
 	color: @background;
 	.service-heading {
@@ -13,24 +14,42 @@
 
 .services-content {
 	margin: 5%;
-
+	p {
+		font-size: 16px;
+	}
 	.tabs {
+		h3 {
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
 		width: 100%;
+
 		.tabs-items {
-			width: 100%;
-			height: 300px;
+			margin: 50px 0;
 			display: flex;
-			justify-content: center;
-			padding-top: 60px;
 		}
 		.tabs-item {
 			display: none;
 
-			width: 75%;
 			.tabs-item-title {
+				margin-bottom: 20px;
 				font-size: 24px;
 				font-weight: bold;
-				padding-bottom: 10px;
+			}
+
+			.tabs-item-description {
+				display: flex;
+				justify-content: space-between;
+				p {
+					padding-right: 20px;
+					margin-bottom: 10px;
+				}
+				@media @mobile {
+					flex-direction: column;
+					margin-bottom: 15px;
+					p {
+					}
+				}
 			}
 		}
 		.tabs-item-selected {
@@ -39,27 +58,39 @@
 
 		.tabs-links {
 			display: flex;
-			background-color: @lambda-red;
+			justify-content: space-between;
+			margin: 30px 0;
+			@media @mobile {
+				flex-direction: column;
+			}
 		}
 
 		.tabs-link {
-			padding: 20px 25px;
-			font-size: 24px;
-			background-color: @lambda-red;
-			border-right: 1px solid white;
-			color: @white;
+			border: 1px solid @main-color;
+			max-width: auto;
+			width: 20%;
+			font-size: 20px;
+			height: auto;
+			text-align: center;
+			padding-top: 10px;
 			cursor: pointer;
 			&:hover {
-				background-color: @lambda-light-red;
+				color: @background;
+				background-color: @main-color;
+			}
+			@media @mobile {
+				width: 100%;
+				margin: 10px 0;
 			}
 		}
 		.tabs-link-selected {
 			z-index: 2;
-			border-right: 1px solid @lambda-red;
-			background-color: @white;
-			color: black;
+			border-right: 1px solid @main-color;
+			background-color: #5e9fb9;
+			color: @background;
 			&:hover {
-				background-color: @white;
+				color: @background;
+				background-color: @main-color;
 			}
 		}
 	}
