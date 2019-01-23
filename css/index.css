@@ -1,1 +1,592 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 320px;
+  }
+}
+.img-1 {
+  display: block;
+}
+@media (max-width: 500px) {
+}
+.nav-container {
+  position: fixed;
+  background-color: darkgray;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 7;
+  height: 50px;
+}
+@media (max-width: 500px) {
+  .nav-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+a {
+  font-size: 2.4rem;
+  color: white;
+  text-decoration: none;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 2.4rem;
+}
+@media (max-width: 500px) {
+  .header {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.header img {
+  width: 2rem;
+}
+.menu-button {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+.menu {
+  display: none;
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #9da4b1;
+  border: 1px solid #004d40;
+  border-left: none;
+  border-bottom: none;
+  z-index: 20;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+.menu .overlay-brand {
+  width: 50px;
+  height: 45px;
+  position: absolute;
+  top: 15px;
+  left: 85px;
+  font-size: 2.4rem;
+  color: white;
+  text-decoration: none;
+}
+@media (max-width: 400px) {
+  .menu .overlay-brand {
+    left: 55px;
+  }
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 36px;
+  padding: 30px 0;
+  text-align: center;
+  align-items: center;
+}
+.menu--open {
+  display: block;
+}
+header .close-button {
+  z-index: 201;
+  width: 45px;
+  height: 25px;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 8.5rem;
+  text-decoration: none;
+  color: white;
+}
+@media (max-width: 400px) {
+  header .close-button {
+    right: 05px;
+    top: -30px;
+    font-size: 2.4rem;
+    color: white;
+    text-decoration: none;
+    display: none;
+  }
+}
+.jumbotron-home {
+  width: 1024px;
+  height: 600px;
+  margin: 0 auto;
+  background: url("../img/home/home-jumbotron.png");
+}
+@media (max-width: 500px) {
+  .jumbotron-home {
+    width: 100%;
+    margin: 0 auto;
+    background: url("../img/home/home-mobile-jumbotron.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    height: 260px;
+  }
+}
+img {
+  width: 100%;
+}
+.container {
+  height: 100%;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.jumbo-text {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 6.5rem;
+  color: white;
+  position: absolute;
+  top: 250px;
+}
+@media (max-width: 500px) {
+  .jumbo-text {
+    line-height: 2.5rem;
+    font-size: 2.5rem;
+    top: 140px;
+  }
+}
+.top-content {
+  margin: 50px 0 50px 0;
+}
+@media (max-width: 500px) {
+  .top-content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.text-and-image-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+@media (max-width: 500px) {
+  .text-and-image-content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.text-content {
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 50px 20px 50px 0;
+}
+@media (max-width: 500px) {
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: black;
+}
+.main-button {
+  width: 130px;
+  height: 90px;
+  font-size: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 1rem;
+}
+@media (max-width: 500px) {
+  .main-button {
+    width: 130px;
+    height: 80px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.bottom {
+  flex-direction: row;
+}
+@media (max-width: 500px) {
+  .bottom {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.text-content {
+  order: 2;
+  margin-left: 2rem;
+}
+.bottom-content img {
+  width: 100%;
+}
+h2 {
+  margin-bottom: 50px;
+}
+@media (max-width: 500px) {
+  h2 {
+    margin-left: 2rem;
+  }
+}
+.gray-header-and-image-container {
+  position: relative;
+}
+.gray-header-and-image-container h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  height: 80px;
+  width: 270px;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  background-color: lightgrey;
+  position: absolute;
+  right: 0;
+  bottom: -3rem;
+}
+@media (max-width: 500px) {
+  .gray-header-and-image-container h3 {
+    position: absolute;
+    right: 1rem;
+    left: 4rem;
+    bottom: -3rem;
+  }
+}
+.main {
+  margin: 90px 200px;
+  height: 100%;
+}
+@media (max-width: 500px) {
+  .main {
+    margin: 90px 100px;
+  }
+}
+.main p {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.left-box h3 {
+  position: absolute;
+  left: 0;
+  bottom: -3rem;
+}
+.jumbotron-services {
+  width: 1024px;
+  height: 250px;
+  margin: 0 auto;
+  background: url("../img/services/services-jumbotron.png");
+}
+img {
+  width: 100%;
+}
+.container {
+  height: 100%;
+}
+h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 6.5rem;
+  color: white;
+  position: absolute;
+  top: 130px;
+}
+.services .services-menu {
+  margin: 30px 30px 30px 30px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.services .services-menu p {
+  margin-bottom: 20px;
+  margin-left: 25px;
+}
+.tabs {
+  width: 100%;
+}
+.tabs-items {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  border: 5px solid red;
+}
+.tabs-item {
+  display: none;
+  width: 100%;
+  margin-top: 40px;
+}
+.tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-left: 25px;
+}
+.tabs-item-selected {
+  display: block;
+}
+.tabs-links {
+  display: flex;
+  flex-direction: row;
+}
+.tabs-link {
+  padding: 20px 25px;
+  margin: 0 auto;
+  font-size: 24px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+.tabs-link:hover {
+  background-color: red;
+}
+.tabs-link-selected {
+  z-index: 2;
+  border-right: 1px solid red;
+  background-color: teal;
+  color: black;
+}
+.tabs-link-selected:hover {
+  background-color: white;
+}
+.tabs-item-description {
+  display: flex;
+  flex-direction: row-reverse;
+}
+footer {
+  background-color: darkgrey;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 500px) {
+  footer {
+    height: 620px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+}
+footer .form-and-address-container {
+  width: 100%;
+  max-width: 900px;
+  height: 180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  footer .form-and-address-container {
+    display: flex;
+    flex-direction: column;
+    height: 100rem;
+    margin-left: 20px;
+  }
+}
+footer .form-and-address-container .form-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  font-size: 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 20px;
+}
+@media (max-width: 500px) {
+  footer .form-and-address-container .form-container {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+  }
+}
+footer .form-and-address-container .form-container h3 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+footer .form-and-address-container .address-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 530px;
+  color: white;
+  line-height: 20px;
+}
+@media (max-width: 500px) {
+  footer .form-and-address-container .address-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+}
+footer .form-and-address-container h3 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.copyright {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+}
