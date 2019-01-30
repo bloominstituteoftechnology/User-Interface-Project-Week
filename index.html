@@ -9,24 +9,95 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<style>
+	.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color:rgba(126, 138, 172, 0.849);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 50px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #222222;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+			</style>
 </head>
 
 <body>
 <div class="container-fluid">
-<nav>S&J</nav> 
-<nav btn= 'drop-down-nav'>Home Services Contact</nav>
-<!--jumbotron image-->
-<img width= "100%" src= "C:\Users\kamma\LambdaSchool\User-Interface-Project-Week\img\home\home-jumbotron.png">
-<h1>Integrity,<br>
-Excellence,<br>
-Progress.</h1>
+<nav>S&J
+<div id="myNav" class="overlay">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlay-content">
+			<a href="#">Home</a>
+			<a href="#">Services</a>
+			<a href="#">Contact</a>
+		</div>
+	</div>
+	<span style="font-size:30px;cursor:pointer;float:right" onclick="openNav()">&#9776;</span>
+	<script>
+		function openNav() {
+			document.getElementById("myNav").style.width = "100%";
+				}
+		function closeNav() {
+			document.getElementById("myNav").style.width = "0%";
+				}
+	</script>
+</nav>
+<!--jumbotron text not inside image-->
+<div class="jumbo-container">
+<img style="width:100%" src= "C:\Users\kamma\LambdaSchool\User-Interface-Project-Week\img\home\home-jumbotron.png">
+<div class="jumbo-txt">
+<h1>Integrity,<br>Excellence,<br>Progress.</h1>
+</div>
+</div>
+
 
 <!---top content-->
 
 <div class="container-fluid">
-<div class="row" style="padding:130px; margin:120px">
+<div class="row" style="padding:2rem 1rem; margin:10px">
 <h2 class="subheader">Smith & Jones Architects</h2>
-<p><img style="float:right; margin-left:130px" width = 500px src="C:\Users\kamma\LambdaSchool\User-Interface-Project-Week\img\home\home-img-1.png" alt="blueprint image">Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem
+<p><img style="float:right; margin:left" width = 50% src="C:\Users\kamma\LambdaSchool\User-Interface-Project-Week\img\home\home-img-1.png" alt="blueprint image">Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem
 <br><br><br><button class="button">Learn More</button></p> 
 </div>
 <div class="row" style="padding:130px; margin:120px" >
