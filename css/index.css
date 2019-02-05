@@ -170,7 +170,7 @@ header {
   background-color: white;
   border-bottom: 2px solid #2F6C67;
 }
-@media (max-width: 500px) {
+@media (max-width: 500px), (max-width: 800px) {
   header {
     border-bottom: none;
     padding: 5% 1% 5% 4%;
@@ -184,6 +184,11 @@ header a {
 header h2 {
   font-size: 2.5rem;
 }
+@media (max-width: 500px) {
+  header h2 {
+    font-size: 2.2rem;
+  }
+}
 header h2 a {
   color: #2F6C67;
   font-weight: bold;
@@ -196,12 +201,12 @@ header nav {
 header nav .mobile-menu-extras {
   display: none;
 }
-@media (max-width: 500px) {
+@media (max-width: 500px), (max-width: 800px) {
   header nav .menu-item {
     display: none;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 500px), (max-width: 800px) {
   header nav .menu-item-holder {
     display: inline;
     font-size: 1.5rem;
@@ -221,7 +226,7 @@ header nav a:hover {
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 500px), (max-width: 800px) {
+@media (max-width: 500px) {
   .hero {
     flex-direction: column;
   }
@@ -232,19 +237,16 @@ header nav a:hover {
   width: 40%;
   padding-right: 5%;
 }
+@media (max-width: 800px) {
+  .hero .hero-text {
+    width: 75%;
+  }
+}
 @media (max-width: 500px) {
   .hero .hero-text {
     padding: 0;
     width: 100%;
     height: 725px;
-  }
-}
-@media (max-width: 800px) {
-  .hero .hero-text {
-    padding: 0;
-    width: 80%;
-    height: 725px;
-    margin: auto;
   }
 }
 .hero .hero-text h1 {
@@ -262,20 +264,13 @@ header nav a:hover {
     text-align: center;
   }
 }
-@media (max-width: 800px) {
-  .hero .hero-text h1 {
-    padding: 20% 0% 2% 0%;
-    font-size: 9rem;
-    text-align: center;
-  }
-}
 .hero .hero-text .strapline {
   font-size: 2.1rem;
   padding: 9% 3% 5% 10%;
   color: #183734;
   line-height: 1.8;
 }
-@media (max-width: 500px), (max-width: 800px) {
+@media (max-width: 500px) {
   .hero .hero-text .strapline {
     font-size: 2.3rem;
     padding: 5% 11% 8% 11%;
@@ -300,7 +295,12 @@ header nav a:hover {
   width: 40%;
   cursor: pointer;
 }
-@media (max-width: 500px), (max-width: 800px) {
+@media (max-width: 800px) {
+  .hero .hero-text button {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 500px) {
   .hero .hero-text button {
     margin-bottom: 4%;
     font-size: 1.4rem;
@@ -323,7 +323,7 @@ header nav a:hover {
   background-color: white;
   width: 55%;
 }
-@media (max-width: 500px), (max-width: 800px) {
+@media (max-width: 800px), (max-width: 500px) {
   .hero .hero-image {
     display: none;
   }
@@ -344,7 +344,16 @@ header nav a:hover {
 @media (max-width: 500px) {
   .features {
     height: 1200px;
+    margin-top: 20%;
   }
+}
+@media (max-width: 800px) {
+  .features {
+    margin-top: 0%;
+  }
+}
+.features .tablet {
+  display: none;
 }
 .features .mobile-features-container {
   display: none;
@@ -384,7 +393,8 @@ header nav a:hover {
   }
 }
 @media (max-width: 500px) {
-  .features .desktop {
+  .features .desktop,
+  .features .tablet {
     display: none;
   }
 }
@@ -584,6 +594,11 @@ header nav a:hover {
     padding-bottom: 2%;
   }
 }
+@media (max-width: 800px) {
+  .press-coverage h2 {
+    padding-left: 3%;
+  }
+}
 .press-coverage .logo-container {
   padding: 5% 2%;
   display: flex;
@@ -602,12 +617,22 @@ header nav a:hover {
     justify-content: space-between;
   }
 }
+@media (max-width: 800px) {
+  .press-coverage .logo-container {
+    background-color: white;
+  }
+}
 .press-coverage .logo-container .logo {
   padding: 5%;
   width: 20%;
   margin: 1%;
   position: relative;
   border-right: 2px solid #cfefec;
+}
+@media (max-width: 800px) {
+  .press-coverage .logo-container .logo {
+    border-right: 2px solid #2F6C67;
+  }
 }
 @media (max-width: 500px) {
   .press-coverage .logo-container .logo {
@@ -655,11 +680,6 @@ header nav a:hover {
 .press-coverage .logo-container .logo:last-child {
   border-right: none;
 }
-.press-coverage .logo-container .guardian,
-.press-coverage .logo-container .wired,
-.press-coverage .logo-container .product-hunt {
-  position: relative;
-}
 .testimonials {
   padding-bottom: 0%;
   padding-top: 7%;
@@ -669,7 +689,7 @@ header nav a:hover {
   justify-content: space-between;
   position: relative;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px), (max-width: 500px) {
   .testimonials .testimonial-container {
     width: 95%;
     margin: auto;
