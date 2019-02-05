@@ -1,3 +1,5 @@
+@import "../components/Tabs/Tabs.less";
+
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -6,55 +8,342 @@ v2.0b1 | 201101
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
-body{
-  line-height:1;
+body {
+  line-height: 1;
 }
-ol,ul{
-  list-style:none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote,q{
-  quotes:none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
 }
-ins{
-  text-decoration:none;
+ins {
+  text-decoration: none;
 }
-del{
-  text-decoration:line-through;
+del {
+  text-decoration: line-through;
 }
 
-table{
-  border-collapse:collapse;
-  border-spacing:0;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Your Code Goes Here */
+
+// Variables
+@nav-bg: #99a4af;
+@font-color: #222222;
+
+// Breakpoint
+@desktop: ~"(min-width: 830px)";
+
+// Mixins
+.flexIt(@direction: row, @justify, @align) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+// General Styles
+body {
+  background: #ffffff;
+  color: @font-color;
+  font-family: Roboto, Arial, sans-serif;
+  max-width: 1024px;
+  margin: 50px auto 0;
+  line-height: 2.4rem;
+}
+
+#main-content {
+  padding: 0 5%;
+}
+
+// Home Page
+#about,
+#design {
+  width: 100%;
+  .flexIt(column, center, center);
+  margin: 5% 0;
+
+  // Breakpoint
+  @media @desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  //children
+  .text-content {
+    // Breakpoint
+    @media @desktop {
+      max-width: 410px;
+      width: 45%;
+      padding: 2% 0;
+    }
+
+    // Children
+    h2 {
+      font-size: 1.75rem;
+      color: #222222;
+      font-weight: bold;
+      margin: 4% 0;
+    }
+  }
+  .mobile-img {
+    width: 100%;
+    order: -10;
+
+    // Breakpoint
+    @media @desktop {
+      display: none;
+    }
+  }
+
+  .desktop-img {
+    display: none;
+
+    // Breakpoint
+    @media @desktop {
+      display: inline-block;
+    }
+  }
+
+  button {
+    border: 1px solid #222222;
+    width: 100%;
+    padding: 4%;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 4% 0;
+
+    // Hover
+    &:hover {
+      background: #222222;
+      color: white;
+      font-weight: bold;
+    }
+
+    // Breakpoint
+    @media @desktop {
+      width: 40%;
+    }
+  }
+}
+
+// Contact Page
+.contact-content {
+  .flexIt(column, flex-start, flex-start);
+
+  @media @desktop {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  // Children
+  #contact-form {
+    width: 100%;
+
+    // Break Point
+    @media @desktop {
+      width: 50%;
+    }
+
+    // Children
+    h2 {
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+
+    form {
+      margin-bottom: 10%;
+      // Children
+      #email-form,
+      #building-form,
+      #description-form,
+      #radio-form {
+        margin: 3% 0;
+      }
+
+      p {
+        font-size: 0.75rem;
+      }
+
+      input[type="text"] {
+        width: 95%;
+      }
+
+      select {
+        width: 100%;
+      }
+
+      input[type="textarea"] {
+        width: 95%;
+        height: 200px;
+      }
+
+      input,
+      select {
+        padding: 2%;
+      }
+
+      button {
+        border: 1px solid #222222;
+        padding: 3%;
+        width: 100%;
+        background: transparent;
+        cursor: pointer;
+
+        // Hover
+        &:hover {
+          background: #222222;
+          color: #ffffff;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  #locations {
+    width: 100%;
+    .flexIt(column, flex-start, flex-start);
+
+    // Break Point
+    @media @desktop {
+      width: 30%;
+    }
+
+    // Children
+    h2 {
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+
+    .location {
+      margin: 5% 0;
+
+      // Children
+      h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@import "./components/Header/Header";
+@import "./components/Footer/Footer";
+@import "./components/Hero/Hero";
+@import "./components/Carousel/Carousel";
+@import "./components/Tabs/Tabs";
