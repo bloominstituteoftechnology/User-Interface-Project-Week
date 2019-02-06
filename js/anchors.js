@@ -1,12 +1,5 @@
-// Load page to the bottom
-function loadBottom() {
-  window.scrollTo(0, document.querySelector('html').scrollHeight);
-}
-
-window.addEventListener('load', loadBottom);
-
 // Page scroll when Learn More button is clicked
-function learnMore() {
+function learnMoreScroll() {
   window.scrollTo({
     top: 0,
     behavior: 'smooth',
@@ -14,5 +7,11 @@ function learnMore() {
 }
 
 const learnMoreButton = document.querySelector('.learn-more');
+learnMoreButton.addEventListener('click', learnMoreScroll);
 
-learnMoreButton.addEventListener('click', learnMore);
+// Page load to bottom
+function loadBottom() {
+  window.scrollTo(0, document.querySelector('html').scrollHeight);
+}
+
+window.addEventListener('load', loadBottom);
