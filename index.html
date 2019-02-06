@@ -10,6 +10,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <!--[if IE]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -20,12 +27,22 @@
       <a class="nav__logo" href="#">
         S&J
       </a>
-      <div class="nav__links">
-        <a href="#" class="nav__link">Home</a>
-        <a href="#" class="nav__link">Services</a>
-        <a href="#" class="nav__link">Contact</a>
+      <div class="nav__menu">
+        <a href="#" class="nav__menu--links">Home</a>
+        <a href="#" class="nav__menu--links">Services</a>
+        <a href="#" class="nav__menu--links">Contact</a>
       </div>
+      <a href="#" class="nav__toggle"><span class="fas fa-bars"></span></a>
     </nav>
+
+    <script>
+      let mainNav = document.querySelector(".nav__menu");
+      let navToggle = document.querySelector(".nav__toggle");
+
+      navToggle.addEventListener("click", function() {
+        mainNav.classList.toggle("active");
+      });
+    </script>
     <header></header>
 
     <!-- Menu Content 
