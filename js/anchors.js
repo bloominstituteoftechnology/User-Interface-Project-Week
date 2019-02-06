@@ -3,7 +3,7 @@ function loadBottom() {
   window.scrollTo(0, document.querySelector('html').scrollHeight);
 }
 
-window.addEventListener('DOMContentLoaded', loadBottom);
+window.addEventListener('load', loadBottom);
 
 // Page scroll when Learn More button is clicked
 function learnMore() {
