@@ -1,16 +1,17 @@
 // Inifnite loop carousel for testimonials
 class Carousel {
-  constructor() {
+  constructor(carousel) {
+    this.carousel = carousel;
     // set current index to 0
     this.currentIndex = 0;
     // select testimonial for show on first load
-    this.initialDisplay = document.querySelector(`.testimonial-item[data-tab="0"]`);
+    this.initialDisplay = this.carousel.querySelector(`.testimonial-item[data-tab="0"]`);
     this.initialDisplay.classList.add('show-testimonial');
     // grab all testimonials for method reference
-    this.allTests = document.querySelectorAll('.testimonial-item'); 
+    this.allTests = this.carousel.querySelectorAll('.testimonial-item'); 
     // grab left and right buttons
-    this.left = document.querySelector('.left-button');
-    this.right = document.querySelector('.right-button');
+    this.left = this.carousel.querySelector('.left-button');
+    this.right = this.carousel.querySelector('.right-button');
     // add event listener to buttons
     this.left.addEventListener('click', () => this.increaseLeft());
     this.right.addEventListener('click', () => this.increaseRight());

@@ -5,6 +5,7 @@ class Panel {
     this.panel = panel;
     this.headers = this.panel.querySelector('.panel h3');
     this.answers = this.panel.querySelector('.panel p');
+
     this.headers.addEventListener('click', () => this.toggleAnswers());
   }
 
