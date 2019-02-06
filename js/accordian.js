@@ -10,8 +10,12 @@ class Panel {
   }
 
   toggleAnswers() {
-    document.querySelectorAll('.panel p').forEach(item => item.classList.remove('show'));
-    this.answers.classList.toggle('show');
+    if (this.answers.classList.contains('show')) {
+      this.answers.classList.remove('show');
+    } else {
+      document.querySelectorAll('.panel p').forEach(item => item.classList.remove('show'));
+      this.answers.classList.toggle('show');
+    }
   }
 }
 
