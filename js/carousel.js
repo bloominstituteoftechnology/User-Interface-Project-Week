@@ -7,9 +7,7 @@ class Carousel {
     this.initialDisplay = document.querySelector(`.testimonial-item[data-tab="0"]`);
     this.initialDisplay.classList.add('show-testimonial');
     // grab all testimonials for method reference
-    this.allTests = document.querySelectorAll('.testimonial-item');
-    // grab activte testimonial for method reference
-    
+    this.allTests = document.querySelectorAll('.testimonial-item'); 
     // grab left and right buttons
     this.left = document.querySelector('.left-button');
     this.right = document.querySelector('.right-button');
