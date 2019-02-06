@@ -1,12 +1,16 @@
-//Mobile Menu
+class Menu {
+  constructor() {
+    this.menu = document.querySelector('.mobile-menu');
+    this.menuButton = document.querySelector('.mobile-menu-extras');
+    this.closeButton = document.querySelector('.close');
 
-function toggleMenu() {
-    menu.classList.toggle('menu-open');
+    this.menuButton.addEventListener('click', () => this.toggleMenu());
+    this.closeButton.addEventListener('click', () => this.toggleMenu());
+  }
+
+  toggleMenu() {
+    this.menu.classList.toggle('menu-open');
+  }
 }
 
-const menu = document.querySelector('.mobile-menu');
-const menuButton = document.querySelector('.mobile-menu-extras');
-const close = document.querySelector('.close');
-
-menuButton.addEventListener('click', toggleMenu);
-close.addEventListener('click', toggleMenu);
+document.querySelectorAll('.mobile-menu').forEach(menu => new Menu(menu));
