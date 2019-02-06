@@ -20,8 +20,7 @@ class Carousel {
   increaseLeft() {
     if (this.currentIndex === 0) {
       this.currentIndex = (this.allTests.length - 1);
-    }
-    else {
+    } else {
       this.currentIndex -= 1;
     }
 
@@ -35,8 +34,7 @@ class Carousel {
   increaseRight() {
     if (this.currentIndex === this.allTests.length - 1) {
       this.currentIndex = 0;
-    }
-    else {
+    } else {
       this.currentIndex += 1;
     }
 
