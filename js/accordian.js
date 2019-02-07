@@ -11,10 +11,12 @@ class Panel {
 
   toggleAnswers() {
     if (this.answers.classList.contains('show')) {
-      this.answers.classList.remove('show');
+      this.answers.classList.toggle('show');
     } else {
       document.querySelectorAll('.panel p').forEach(item => item.classList.remove('show'));
+      document.querySelectorAll('.panel p').forEach(item => item.style.maxHeight ="0px");
       this.answers.classList.toggle('show');
+      this.answers.style.maxHeight = `${this.answers.scrollHeight}px`;
     }
   }
 }
