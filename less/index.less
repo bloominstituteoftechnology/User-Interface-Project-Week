@@ -1,134 +1,139 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
-}
-body{
-  line-height:1;
-}
-ol,ul{
-  list-style:none;
-}
-blockquote,q{
-  quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
-}
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
-}
 
-table{
-  border-collapse:collapse;
-  border-spacing:0;
-}
+  body {
+    .container-fluid {
+      nav {
+      background-color:rgb(126, 126, 160);
+      .nav-header {
+        color:white; 
+        font-size:30px;
+        padding:15px;
+      }
+      .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        background-color:rgba(81, 89, 112, 0.849);
+        overflow-x: hidden;
+        transition: 0.5s;
+        
+        a {
+          padding: 8px;
+          text-decoration: none;
+          font-size: 50px;
+          color: #ffffff;
+          display: block;
+          transition: 0.3s;
+          
+          &:hover{
+            color: #222222;
+          }
+          &:focus{
+            color: #222222;
+          }
+          @media screen and (max-height: 450px) {
+            font-size: 20px;
+          }
+        }
+        .closebtn {
+          position: absolute;
+          top: 20px;
+          right: 45px;
+          font-size: 60px;
 
-/* Your Code Goes Here */
-.overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0, 0, 0);
-  background-color:rgba(126, 138, 172, 0.849);
-  overflow-x: hidden;
-  transition: 0.5s;
-}
+          @media screen and (max-height: 450px) {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+          }
+        }
+      }
+      .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+      }
+      .menu-bar {
+        font-size:30px;
+        cursor:pointer;
+        float:right;
+        padding:0 1rem; 
+        color:white;
+      }
+      .jumbo-image {
+        background:url("../img/home/home-jumbotron.png");
+        background-size: cover;
+        height:800px;
+        
+        h1 {
+          color:white;
+          padding-top:30%;
+          padding-left:5%;
+          font-size:5rem;
+        }
+      }  
+    }
+    }
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding: 1% 5%;
+      height: 200px;
+        
+        h2 {
+          margin: 5% 2%;
+        }
+        .column{          
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          line-height: 1.7;
+          margin: 0 2%;
+          width: 50%;
+        
+        p {
+          margin-left:3%;
+        }
+        ///fix button
+        .button {
+          background-color: white;
+          border: 2px solid black;
+          padding:20px;
+          margin-bottom:10px;
+          font-size: 16px;
+          color: black;
+        }
+      }
+      &.right {
+        top:-180;
+      }
+      &.left{
+        display: flex;
+        flex-direction: row-reverse;
+        top:-180;
+        }
+        .img{
+          width:40%;
+          height:100%;
+          top:-180;
+        }
+      }
+      
+    }
+// .bottom-right {
+//   position: absolute;
+//   bottom: 8px;
+//   right: 16px;
+//   font-size: 64px;
+// }
 
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 50px;
-  color: #ffffff;
-  display: block;
-  transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-  color: #222222;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
-  }
-}
-.jumbo-image {
-    background:url("../img/home/home-jumbotron.png");
-    background-size: cover;
-  }
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-  font-size: 64px;
-}
-.flex-container {
-  display: flex;
-  flex-direction: column;
-}
-.button {
-  background-color: white;
-  border: 2px solid black;
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 16px;
-  color: black;
-}
 
 .recentprjt-imgs {
   position: relative;

@@ -1,140 +1,12 @@
-/*------------------------------------*\
-RESET
-\*------------------------------------*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-v2.0b1 | 201101 
-NOTE:WORK IN PROGRESS
-USE WITH CAUTION AND TEST WITH ABANDON */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+body .container-fluid nav {
+  background-color: #7e7ea0;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+body .container-fluid nav .nav-header {
+  color: white;
+  font-size: 30px;
+  padding: 15px;
 }
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: ’’;
-  content: none;
-}
-ins {
-  text-decoration: none;
-}
-del {
-  text-decoration: line-through;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* Your Code Goes Here */
-.overlay {
+body .container-fluid nav .overlay {
   height: 100%;
   width: 0;
   position: fixed;
@@ -142,18 +14,11 @@ table {
   top: 0;
   left: 0;
   background-color: #000000;
-  background-color: rgba(126, 138, 172, 0.849);
+  background-color: rgba(81, 89, 112, 0.849);
   overflow-x: hidden;
   transition: 0.5s;
 }
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-.overlay a {
+body .container-fluid nav .overlay a {
   padding: 8px;
   text-decoration: none;
   font-size: 50px;
@@ -161,53 +26,96 @@ table {
   display: block;
   transition: 0.3s;
 }
-.overlay a:hover,
-.overlay a:focus {
+body .container-fluid nav .overlay a:hover {
   color: #222222;
 }
-.overlay .closebtn {
+body .container-fluid nav .overlay a:focus {
+  color: #222222;
+}
+@media screen and (max-height: 450px) {
+  body .container-fluid nav .overlay a {
+    font-size: 20px;
+  }
+}
+body .container-fluid nav .overlay .closebtn {
   position: absolute;
   top: 20px;
   right: 45px;
   font-size: 60px;
 }
 @media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px;
-  }
-  .overlay .closebtn {
+  body .container-fluid nav .overlay .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
   }
 }
-nav {
-  background-color: #7e8aac;
-  margin: 0;
+body .container-fluid nav .overlay-content {
+  position: relative;
+  top: 25%;
   width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
-.jumbo-image {
+body .container-fluid nav .menu-bar {
+  font-size: 30px;
+  cursor: pointer;
+  float: right;
+  padding: 0 1rem;
+  color: white;
+}
+body .container-fluid nav .jumbo-image {
   background: url("../img/home/home-jumbotron.png");
   background-size: cover;
-  height: 100%;
+  height: 800px;
 }
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-  font-size: 64px;
+body .container-fluid nav .jumbo-image h1 {
+  color: white;
+  padding-top: 30%;
+  padding-left: 5%;
+  font-size: 5rem;
 }
-.flex-container {
+body .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 5%;
+  height: 200px;
+}
+body .container h2 {
+  margin: 5% 2%;
+}
+body .container .column {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  line-height: 1.7;
+  margin: 0 2%;
+  width: 50%;
 }
-.button {
+body .container .column p {
+  margin-left: 3%;
+}
+body .container .column .button {
   background-color: white;
   border: 2px solid black;
-  padding: 15px 32px;
-  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
   font-size: 16px;
   color: black;
+}
+body .container.right {
+  top: -180;
+}
+body .container.left {
+  display: flex;
+  flex-direction: row-reverse;
+  top: -180;
+}
+body .container .img {
+  width: 40%;
+  height: 100%;
+  top: -180;
 }
 .recentprjt-imgs {
   position: relative;
@@ -263,14 +171,14 @@ footer {
   position: relative;
   overflow: hidden;
   font-size: 20px;
+  color: white;
   background-color: grey;
   width: 100%;
 }
 .email-box {
   float: left;
 }
-.right-footer {
+footer p {
   column-count: 3;
   float: right;
-  width: 40%;
 }
