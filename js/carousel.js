@@ -5,10 +5,10 @@ class Carousel {
     // set current index to 0
     this.currentIndex = 0;
     // select testimonial for show on first load
-    this.initialDisplay = this.carousel.querySelector(`.testimonial-item[data-tab="0"]`);
+    this.initialDisplay = this.carousel.querySelector`.testimonial-item[data-tab="0"]`;
     this.initialDisplay.classList.add('show-testimonial');
     // grab all testimonials for method reference
-    this.allTests = this.carousel.querySelectorAll('.testimonial-item'); 
+    this.allTests = this.carousel.querySelectorAll('.testimonial-item');
     // grab left and right buttons
     this.left = this.carousel.querySelector('.left-button');
     this.right = this.carousel.querySelector('.right-button');
