@@ -2,21 +2,6 @@
 /* Colors */
 /* Fonts */
 /* Media */
-.cover-images {
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #f6f6f6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 1;
-  cursor: pointer;
-}
-.cover-images:hover {
-  opacity: 0;
-}
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
@@ -164,6 +149,21 @@ html {
   max-width: 1000px;
   margin: 0 auto;
 }
+.cover-images {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f6f6f6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 1;
+  cursor: pointer;
+}
+.cover-images:hover {
+  opacity: 0;
+}
 header {
   position: sticky;
   top: 0;
@@ -231,9 +231,35 @@ header nav a {
   color: black;
 }
 header nav a:hover {
-  border-bottom: 2px solid #EB4E47;
+  border-bottom: 1px solid #EB4E47;
 }
-header nav .mobile-menu {
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2.5% 2% 2.5% 0%;
+  border-top: 2px solid #2F6C67;
+}
+@media (max-width: 500px) {
+  footer {
+    border-top: none;
+    padding-right: 5%;
+  }
+}
+footer p,
+footer a {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: black;
+  padding: 0% 2%;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  footer p,
+  footer a {
+    padding: 0% 1%;
+  }
+}
+.mobile-menu {
   display: none;
   flex-direction: column;
   align-items: flex-end;
@@ -245,65 +271,65 @@ header nav .mobile-menu {
   z-index: 50;
   background-color: white;
 }
-header nav .mobile-menu .mobile-menu-item {
+.mobile-menu .mobile-menu-item {
   padding-right: 5%;
   text-transform: capitalize;
   font-size: 2.3rem;
   font-weight: lighter;
   line-height: 1.8;
 }
-header nav .mobile-menu .join {
+.mobile-menu .join {
   padding-bottom: 6%;
 }
-header nav .mobile-menu .close {
+.mobile-menu .close {
   text-transform: uppercase;
   font-size: 1.4rem;
   padding-bottom: 6.5%;
   padding-top: 12%;
 }
-header nav .mobile-menu .close:hover {
+.mobile-menu .close:hover {
   color: #EB4E47;
   font-weight: bold;
 }
-header nav .mobile-menu .small-menu {
+.mobile-menu .small-menu {
   font-size: 1.5rem;
   line-height: 1.6;
 }
-header nav .mobile-menu a:hover {
+.mobile-menu a:hover {
   border: none;
   color: #5DC8BD;
 }
-header nav .mobile-menu .featury {
+.mobile-menu .featury {
   animation: fadein-one 20s;
 }
-header nav .mobile-menu .testimonial {
+.mobile-menu .testimonial {
   animation: fadein-two 20s;
 }
-header nav .mobile-menu .blog {
+.mobile-menu .blog {
   animation: fadein-three 20s;
 }
-header nav .mobile-menu .faqq {
+.mobile-menu .faqq {
   animation: fadein-four 20s;
 }
-header nav .mobile-menu .join {
+.mobile-menu .join {
   animation: fadein-five 20s;
 }
-header nav .mobile-menu .instagram {
+.mobile-menu .instagram {
   animation: fadein-six 20s;
 }
-header nav .mobile-menu .facebook {
+.mobile-menu .facebook {
   animation: fadein-seven 20s;
 }
-header nav .mobile-menu .twitter {
+.mobile-menu .twitter {
   animation: fadein-eight 20s;
 }
-header nav .mobile-menu .terms {
+.mobile-menu .terms {
   animation: fadein-nine 20s;
 }
-header nav .mobile-menu .privacy {
+.mobile-menu .privacy {
   animation: fadein-ten 20s;
 }
-header nav .menu-open {
+.menu-open {
   display: flex;
 }
 @keyframes fadein-one {
@@ -386,32 +412,6 @@ header nav .menu-open {
   }
   14% {
     opacity: 1;
-  }
-}
-footer {
-  display: flex;
-  justify-content: flex-end;
-  padding: 2.5% 2% 2.5% 0%;
-  border-top: 2px solid #2F6C67;
-}
-@media (max-width: 500px) {
-  footer {
-    border-top: none;
-    padding-right: 5%;
-  }
-}
-footer p,
-footer a {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  color: black;
-  padding: 0% 2%;
-  cursor: pointer;
-}
-@media (max-width: 500px) {
-  footer p,
-  footer a {
-    padding: 0% 1%;
   }
 }
 .hero {
@@ -1103,19 +1103,19 @@ footer a {
   text-decoration: none;
   color: #CF2C51;
 }
-.help-container .questions {
+.questions {
   margin-bottom: 8%;
   padding: 1%;
   transition: all 0.6s ease-out;
 }
-.help-container .questions .headering {
+.questions .headering {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px dashed #96d1cc;
   align-items: baseline;
   cursor: pointer;
 }
-.help-container .questions .headering h3 {
+.questions .headering h3 {
   font-size: 2.2rem;
   font-weight: bold;
   line-height: 1.4;
@@ -1123,16 +1123,16 @@ footer a {
   cursor: pointer;
 }
 @media (max-width: 800px) {
-  .help-container .questions .headering h3 {
+  .questions .headering h3 {
     font-size: 1.6rem;
     padding: 7% 4%;
   }
 }
-.help-container .questions .headering p {
+.questions .headering p {
   font-size: 2.4rem;
   font-family: 'Arial', sans-serif;
 }
-.help-container .questions .answers {
+.questions .answers {
   display: none;
   background-color: #f6f6f6;
   border-radius: 2px;
@@ -1140,26 +1140,26 @@ footer a {
   overflow: hidden;
   transition: all 0.6s ease-out;
 }
-.help-container .questions .answers a {
+.questions .answers a {
   text-decoration: none;
   color: #CF2C51;
 }
-.help-container .questions p {
+.questions p {
   padding: 3% 2%;
   font-size: 1.8rem;
   color: #275a56;
   line-height: 1.8;
 }
 @media (max-width: 800px) {
-  .help-container .questions p {
+  .questions p {
     padding: 4% 4%;
     font-size: 1.7rem;
   }
 }
-.help-container .questions .show {
+.questions .show {
   display: block;
 }
-.help-container .questions .rotate {
+.questions .rotate {
   transform: rotate(135deg);
   color: #EB4E47;
   animation: turnitout 1.5s;
