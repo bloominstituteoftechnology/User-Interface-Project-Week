@@ -1,5 +1,7 @@
 > ## My comments: 
   > ### This was a fun project just a few weeks into learning how to code.  I went for pixle perfection using a design file overlay.  Built with LESS CSS, HTML, and javaScript.
+  
+  # <a href='https://htmlpreview.github.io/?https://github.com/tlinehan/User-Interface-Project-Week/blob/master/index.html'> GitHub Preview Link</a>
     
   
   
