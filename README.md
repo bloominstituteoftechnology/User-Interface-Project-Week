@@ -1,3 +1,9 @@
+> ## My comments: 
+  > ### This was a fun project just a few weeks into learning how to code.  I went for pixle perfection using a design file overlay.  Built with LESS CSS, HTML, and javaScript.
+    
+  
+  
+  
 # User Interface Project Week
 You are to treat this week as if you are working as a front end developer at a web development agency. The instructor is the owner of the agency and is under pressure from the client to deliver the MVP on time. The project managers are acting as your supervisors.  You will use Trello to report your progress on the MVP and any extra features you accomplish to your project managers every day during standup. This project is meant to be worked on by yourself.  Do not pair program this week as this challenge is meant to show you where you can improve and what you have learned on your own.
 
