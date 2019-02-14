@@ -17,7 +17,7 @@ You will use Trello to report your progress on the MVP and any extra features yo
 * [x] Create lists titled ```backlog```,```To Do```, ```In Progress```, and ```Done```
 * [x] Fill in the ```To Do``` list with the MVP features listed below
 * [x] Fill in the ```backlog``` list with all the extra features listed below
-* [x] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance
+* [x] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance!
 
 ## Assets Provided:
 * [Style guide:](/DesignFiles/style-guide.md) This file will help you identify font sizes, colors, and font families across the site.
