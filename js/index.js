@@ -30,32 +30,22 @@ class TabContent{
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //grab all the tab elements and pass to Tab class
 tabs = document.querySelectorAll('.button').forEach(tab => new Tab(tab))
+
+class NavButton{
+    constructor(button){
+        this.button = button;
+        this.button.addEventListener('click', ()=>this.handleClick())
+    }
+
+    handleClick(){
+        document.querySelectorAll('.navigation-button').forEach(button => button.classList.toggle('active'))
+        const navItems = document.querySelector('.nav-items')
+        navItems.classList.toggle('active')
+    }
+}
+
+
+const menuButton = document.querySelectorAll('.navigation-button').forEach(button => new NavButton(button))
+
