@@ -21,7 +21,7 @@ getContent(data){
     if(data === 'all'){
         return document.querySelectorAll(".servicescontent");
     } else {
-    return document.querySelectorAll(`.servicescontent[data-content="${data}"]`);
+        return document.querySelectorAll(`.servicescontent[data-content="${data}"]`);
     }
 }
 
@@ -31,6 +31,7 @@ class ButtonLink{
     constructor(element, parent){
         this.element = element;
         this.parent = parent;
+
         this.content = this.parent.getContent(this.element.dataset.button);
         this.content = Array.from(this.content).map(contents => new ContentDisplay(contents));
         this.element.addEventListener('click', () => {this.selectButton();});
