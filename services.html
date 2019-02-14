@@ -3,8 +3,10 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Home</title>
+	<title>Services</title>
 	<link rel="stylesheet" href="less/services.less" />
+	<link rel="stylesheet" href="css/services.css" />
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
 	
 	<!--[if IE]>
@@ -13,24 +15,28 @@
 </head>
 
 <body>
-	<div class="container">
-		<header>
-			<div class="menu-bar">
-				<p>S&J</p>
-				<div class="menu-btn">
-					<div class="menu-line"></div>
-					<div class="menu-line"></div>
-					<div class="menu-line"></div>
+	<div class="container-fluid">
+		<nav>
+			<a class="nav-header">S&J</a>
+		<div id="myNav" class="overlay">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<div class="overlay-content">
+					<a href="index.html">Home</a>
+					<a href="services.html">Services</a>
+					<a href="contact.html">Contact</a>
 				</div>
 			</div>
+			<span class="menu-bar" onclick="openNav()">&#9776;</span>
+			<script>
+				function openNav() {
+					document.getElementById("myNav").style.width = "100%";
+						}
+				function closeNav() {
+					document.getElementById("myNav").style.width = "0%";
+						}
+			</script>
+			</a>
 			<nav>
-
-				<a href="index.html" class="menu-link home">Home</a>
-				<a href="services.html" class="menu-link home">Services</a>
-				<a href="contact.html" class="menu-link home">Contact</a>
-
-			</nav>
-		</header>
 
 		<div>
 			<img class="main-img" src="img/services/services-jumbotron.png" alt="" />
@@ -49,15 +55,15 @@
 				</p>
 
 				<div class="tabs">
-					<div class="button tab" data-tab="1">Pre-construction</div>
-					<div class="button tab" data-tab="2">Construction</div>
-					<div class="button tab" data-tab="3">Design Build</div>
-					<div class="button tab" data-tab="4">Sustainability</div>
+						<button class="tablinks" onclick="openItem(event, 'Pre-construction')">Pre-construction</button>
+						<button class="tablinks" onclick="openItem(event, 'Construction')">Construction</button>
+						<button class="tablinks" onclick="openItem(event, 'Design Build')">Design Build</button>
+						<button class="tablinks" onclick="openItem(event, 'Sustainability')">Sustainability</button>
 				</div>
 					<div class="tab-contents" data-tab="1">
 						<div class="tab-items">
 							
-								<div class=" tab-item pre-construction" >
+								<div id="Pre-construction" class="tabitem">
 									<h2>Pre-construction</h2>
 									<p>
 										The Villas bring to the table win-win survival strategies to
@@ -81,7 +87,7 @@
 
 						<div class="tab-items" data-tab="2">
 							
-								<div class=" tab-item design-build">
+								<div id="Design Build" class="tabitem">
 									<h2>Design Build</h2>
 									<p>
 										The Villas bring to the table win-win survival strategies to
@@ -104,7 +110,7 @@
 
 						<div class="tab-items" data-tab="3">
 							
-								<div class=" tab-item construction">
+								<div id="Construction" class="tabitem">
 									<h2>Construction</h2>
 									<p>
 										The Villas bring to the table win-win survival strategies to
@@ -127,7 +133,7 @@
 
 						<div class="tab-items" data-tab="4">
 							
-								<div class=" tab-item sustain">
+								<div id="Sustainability" class="tabitem">
 									<h2>Sustainability</h2>
 									<p>
 										The Villas bring to the table win-win survival strategies to
@@ -193,8 +199,23 @@
 			</address>
 			<p class="copyright">Copyright © 2018 Smith and Jones</p>
 		</footer>
-		<script src="js/index.js"></script>
 	</div>
+		<!---JS TAB-->
+		<script>
+			function openItem(event, info) {
+  			var i, tabitem, tablinks;
+  			tabitem = document.getElementsByClassName("tabitem");
+  			for (i = 0; i < tabitem.length; i++) {
+    			tabitem[i].style.display = "none";
+  			}
+  			tablinks = document.getElementsByClassName("tablinks");
+  			for (i = 0; i < tablinks.length; i++) {
+    			tablinks[i].className = tablinks[i].className.replace(" active", "");
+  			}
+  			document.getElementById(info).style.display = "block";
+  			event.currentTarget.className += " active";
+			}
+		</script>
+	<script src="js/index.js"></script>
 </body>
-
 </html>
