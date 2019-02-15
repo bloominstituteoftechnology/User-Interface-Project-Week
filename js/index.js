@@ -15,7 +15,15 @@ class TabLinks {
     constructor(tabs){
         this.tabs = tabs;
 
-        console.log(this.tabs);
+        
+        this.tabs.addEventListener('click', this.select.bind(this));
+    }
+    select() {
+        const links = document.querySelectorAll('.tab-link');
+        links.forEach(link => {
+            link.classList.remove('tab-link-selected');
+        })
+        this.tabs.classList.add('tab-link-selected');
     }
     
 }
