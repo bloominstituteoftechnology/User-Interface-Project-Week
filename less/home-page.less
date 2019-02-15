@@ -2,13 +2,27 @@
     color: #D8D8D8
 }
 
-header {
+img.img-desktop {
+    @media @mobile {
+        display: none;
+    }
+}
+
+img.img-mobile {
+    display: none;
+    @media @mobile {
+        display: block;
+    }
+}
+
+header.jumbo-header {
     position: relative;
     text-align: left;
 
-    img {
+    img.jumbotron {
         width: 100%;
     }
+
     h2{
         font-weight: bold;
         font-size: 6.4rem;
@@ -17,6 +31,11 @@ header {
         position: absolute;
         bottom: 10%;
         left: 5%;
+
+        @media @mobile {
+            font-size: 4.4rem;
+            line-height: 4.4rem;
+        }
     }
 }
 
@@ -27,11 +46,23 @@ div.content-img {
     .margin-top-bottom;
     margin-top: 10%;
 
+    @media @mobile {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+
     div.title-content-btn {
         .flex;
         flex-direction: column;
         align-content: space-between;
         width: 40%;
+        
+        @media @mobile {
+            width: 90%;
+        }
+        
         h2 {
             font-weight: bold;
             font-size: 2.8rem;
@@ -46,10 +77,25 @@ div.content-img {
             text-align: center;
             padding-top: 3%;
             .margin-top-bottom;
+
+            @media @mobile {
+                width: 100%;
+                height: 5rem;
+                padding-top: 4%;
+            }
         }
     }
     img.top-content-image {
         width: 44%;
+        @media @mobile {
+            width: 90%;
+        }
+    }
+}
+
+div.Architects {
+    @media @mobile {
+        flex-direction: column-reverse;
     }
 }
 
