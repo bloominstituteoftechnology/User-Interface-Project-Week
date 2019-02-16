@@ -9,7 +9,7 @@ You will use Trello to report your progress on the MVP and any extra features yo
 - Use past solutions from the previous weeks to accomplish harder tasks
 - Commit every time you accomplish any new functionality or layout. Get in the habit of frequent commits so you have a record of your work.  Push up your commits every day to showcase your progress to your PM
 - After 20 minutes of being stuck on something, reach out to your PM
-- Don't overplan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction
+- Don't overplan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction.
 
 ## Trello Set Up:
 * [ ] Create a [Trello account](https://trello.com/)
