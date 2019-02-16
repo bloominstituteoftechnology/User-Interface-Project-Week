@@ -1,4 +1,8 @@
-// JS goes here// const classNameTabs = document.getElementsByClassName('link')
+// JS goes here// 
+
+
+//Tab menu from Services.html//
+
 
 class TabLink {
     constructor (tab) {
@@ -7,7 +11,7 @@ class TabLink {
       this.tabData = this.tab.dataset.tab; 
       this.tabContent = document.querySelector(`.content[data-tab="${this.tabData}"]`);
       this.tabContent = new TabContent(this.tabContent);
-      this.tab.addEventListener('click', this.tabClick.bind(this))
+      this.tab.addEventListener('click', (e) => this.tabClick());
     }
      
     // method
@@ -33,3 +37,6 @@ class TabLink {
   
   const tabs = document.querySelectorAll('.tabLinks .link').forEach(tab => new TabLink(tab));
   
+
+ // const classNameTabs = document.getElementsByClassName('link')
+
