@@ -138,11 +138,25 @@ html {
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 62.5%;
   max-width: 100%;
+  box-sizing: border-box;
 }
 .container {
   width: 65%;
   margin: 0 auto;
   border: 1px solid black;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 98%;
+    max-width: 100%;
+    padding: 1px;
+  }
+}
+@media (max-width: 500px) {
+  .container .menu-button {
+    padding-top: 1%;
+    height: 15px;
+  }
 }
 .container .header {
   background-color: #99A4AF;
@@ -151,12 +165,22 @@ html {
   padding: 1% 10% 1% 10%;
   max-width: 100%;
 }
+@media (max-width: 500px) {
+  .container .header {
+    padding: 3% 8% 3% 8%;
+  }
+}
 .container .header h1 {
   font-weight: normal;
   font-size: 2rem;
   line-height: 24px;
   color: #FFFFFF;
   width: 100%;
+}
+@media (max-width: 500px) {
+  .container .header h1 {
+    font-size: 2.5rem;
+  }
 }
 .header-img {
   position: relative;
@@ -165,6 +189,21 @@ html {
 .header-img .jumbotron-img {
   margin: 0 auto;
   width: 100%;
+}
+@media (max-width: 500px) {
+  .header-img .jumbotron-img {
+    display: none;
+  }
+}
+.header-img .mobile-jumbotron-img {
+  margin: 0 auto;
+  width: 100%;
+  display: none;
+}
+@media (max-width: 500px) {
+  .header-img .mobile-jumbotron-img {
+    display: flex;
+  }
 }
 .header-img .header-text {
   color: #FFFFFF;
@@ -176,8 +215,21 @@ html {
   max-width: 100%;
   font-size: 4vw;
 }
+@media (max-width: 500px) {
+  .header-img .header-text {
+    line-height: calc(25px + 4vw);
+    font-size: 9vw;
+    top: 55%;
+  }
+}
 .top-content {
   display: flex;
+}
+@media (max-width: 500px) {
+  .top-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 .top-content h2 {
   font-size: 1.5rem;
@@ -185,26 +237,96 @@ html {
   text-align: left;
   margin: 40px 10px 10px 0;
 }
+@media (max-width: 500px) {
+  .top-content h2 {
+    text-align: left;
+    font-size: 2.3rem;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+}
 .top-content p {
   line-height: 1.3;
+}
+@media (max-width: 500px) {
+  .top-content p {
+    font-size: 1.7rem;
+    line-height: 1.5;
+  }
 }
 .top-content button {
   border: 1px solid black;
   padding: 7px 17px 7px 17px;
   margin: 10px 0 10px 0;
 }
+@media (max-width: 500px) {
+  .top-content button {
+    font-size: 1.6rem;
+    margin: 20px 0 20px 0;
+    padding: 12px 17px 12px 17px;
+    width: 100%;
+  }
+}
 .top-content .article-top-img {
   width: 100%;
 }
+@media (max-width: 500px) {
+  .top-content .article-top-img {
+    display: none;
+  }
+}
+.top-content .article-top-img-mobile {
+  width: 100%;
+  display: none;
+}
+@media (max-width: 500px) {
+  .top-content .article-top-img-mobile {
+    display: flex;
+  }
+}
 .top-content .article-second-img {
   width: 100%;
+}
+@media (max-width: 500px) {
+  .top-content .article-second-img {
+    display: none;
+  }
+}
+.top-content .article-second-img-mobile {
+  width: 100%;
+  display: none;
+}
+@media (max-width: 500px) {
+  .top-content .article-second-img-mobile {
+    display: flex;
+  }
 }
 .top-content .article-top {
   margin: 20px;
   width: 50%;
 }
+@media (max-width: 500px) {
+  .top-content .article-top {
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+}
+.content-container {
+  margin: 0 auto;
+  width: 90%;
+}
+@media (max-width: 500px) {
+  .second-article {
+    flex-direction: column;
+  }
+}
 .bottom-content {
   margin: 20px;
+}
+@media (max-width: 500px) {
+  .bottom-content {
+    display: none;
+  }
 }
 .bottom-content h2 {
   font-size: 1.5rem;
@@ -224,7 +346,6 @@ html {
   position: relative;
   width: 100%;
   margin-bottom: -35px;
-  z-index: 0;
 }
 .bottom-content .bottom-content-outskirts {
   position: relative;
@@ -239,6 +360,75 @@ html {
 .bottom-content .bottom-article {
   margin: 0px 0 50px 0;
 }
+.villas-text {
+  position: relative;
+  border: 1px solid #FFFFFF;
+  background: grey;
+  color: black;
+  font-size: 2rem;
+  width: 35%;
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  float: right;
+}
+.outskirts-text {
+  position: relative;
+  border: 1px solid #FFFFFF;
+  background: grey;
+  color: black;
+  font-size: 2rem;
+  width: 35%;
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  left: 0%;
+}
+.bottom-content-mobile {
+  display: none;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .bottom-content-mobile {
+    display: block;
+  }
+}
+.bottom-content-mobile h2 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-align: left;
+  margin: 40px 0 20px 20px;
+}
+.bottom-content-mobile p {
+  line-height: 1.3;
+  font-size: 1.8rem;
+  text-align: left;
+  margin: 20px 20px 20px 20px;
+}
+.bottom-content-mobile .bottom-content-villas-mobile {
+  position: relative;
+  width: 100%;
+  margin-bottom: -4%;
+}
+.bottom-content-mobile .bottom-content-outskirts-mobile {
+  position: relative;
+  width: 100%;
+  margin-bottom: -4%;
+}
+.bottom-content-mobile .bottom-content-blocks-mobile {
+  position: relative;
+  width: 100%;
+  margin-bottom: -4%;
+}
+.villas-text-mobile {
+  position: relative;
+  background: lightgrey;
+  color: black;
+  font-size: 2rem;
+  width: 85%;
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  margin: 0 auto;
+  letter-spacing: 0.9rem;
+}
 .footer {
   background: darkgrey;
   color: lightgrey;
@@ -249,18 +439,41 @@ html {
   padding: 10px;
   font-size: 0.7rem;
 }
+@media (max-width: 500px) {
+  .footer .footer-copyright {
+    font-size: 1.4rem;
+    margin: 0 0 0 20px;
+    padding: 0 0 20px 0;
+    text-align: left;
+  }
+}
 .footer .footer-content {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 500px) {
+  .footer .footer-content {
+    flex-direction: column;
+  }
 }
 .footer .footer-content h3 {
   color: white;
   font-size: 1.4rem;
   margin: 0 0 5px 0;
 }
+@media (max-width: 500px) {
+  .footer .footer-content h3 {
+    font-size: 2.3rem;
+  }
+}
 .footer .footer-content p {
   font-size: 0.1rem;
   line-height: 1.8;
+}
+@media (max-width: 500px) {
+  .footer .footer-content p {
+    font-size: 1.4rem;
+  }
 }
 .footer .footer-content .footer-item {
   margin: 20px;
@@ -273,37 +486,15 @@ html {
   width: 100%;
   outline: none;
 }
+@media (max-width: 500px) {
+  .email-input {
+    padding: 15px 5px 15px 5px;
+  }
+}
 input {
   border: 1px solid lightgrey;
+  font-size: 2rem;
 }
 ::placeholder {
   color: lightgrey;
-}
-.content-container {
-  margin: 0 auto;
-  width: 90%;
-}
-.villas-text {
-  position: relative;
-  border: 1px solid #FFFFFF;
-  background: grey;
-  color: black;
-  font-size: 2rem;
-  width: 35%;
-  padding: 20px 10px 20px 10px;
-  text-align: center;
-  z-index: 1;
-  float: right;
-}
-.outskirts-text {
-  position: relative;
-  border: 1px solid #FFFFFF;
-  background: grey;
-  color: black;
-  font-size: 2rem;
-  width: 35%;
-  padding: 20px 10px 20px 10px;
-  text-align: center;
-  z-index: 1;
-  left: 0%;
 }
