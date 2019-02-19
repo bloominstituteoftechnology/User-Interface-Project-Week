@@ -1,1 +1,759 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Your Code Goes Here */
+html,
+body {
+  background-color: #FFFFFF;
+  color: #222222;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 10px;
+}
+@media (max-width: 756px) {
+  html .logo,
+  body .logo {
+    margin: 0;
+  }
+  html .hamburger,
+  body .hamburger {
+    margin: 0;
+  }
+  html .container,
+  body .container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  html .about-container .about-card,
+  body .about-container .about-card {
+    flex-direction: column;
+    margin: 2rem auto;
+  }
+  html .about-container .about-card:last-child,
+  body .about-container .about-card:last-child {
+    flex-direction: column-reverse;
+  }
+  html .about-container .image-1,
+  body .about-container .image-1 {
+    background: url(/img/home/home-mobile-img-1.png) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 30rem;
+    margin-bottom: 2rem;
+  }
+  html .about-container .image-2,
+  body .about-container .image-2 {
+    background: url(/img/home/home-mobile-img-2.png) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 30rem;
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+  html .about-container h2,
+  body .about-container h2 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  html .about-container p,
+  body .about-container p {
+    font-size: 1.6rem;
+  }
+  html .about-container .content,
+  body .about-container .content {
+    padding: 0;
+  }
+  html .projects-container .content,
+  body .projects-container .content {
+    width: 100%;
+    margin-top: 10rem;
+  }
+  html .projects-container p,
+  body .projects-container p {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+  html .projects-container .image-1,
+  body .projects-container .image-1 {
+    background: url("/img/home/home-mobile-villas-img.png");
+    background-size: cover;
+    width: 85rem;
+    height: 15rem;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    height: 20rem;
+  }
+  html .projects-container .image-2,
+  body .projects-container .image-2 {
+    background: url("/img/home/home-mobile-outskirts-img.png");
+    background-size: cover;
+    width: 85rem;
+    height: 15rem;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    height: 20rem;
+  }
+  html .projects-container .image-3,
+  body .projects-container .image-3 {
+    background: url("/img/home/home-mobile-the-blocks-img.png");
+    background-size: cover;
+    width: 85rem;
+    height: 15rem;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    height: 20rem;
+  }
+  html .projects-container .project-card:first-of-type h3,
+  body .projects-container .project-card:first-of-type h3,
+  html .projects-container .project-card:last-child h3,
+  body .projects-container .project-card:last-child h3,
+  html .projects-container .project-card:nth-of-type(2) h3,
+  body .projects-container .project-card:nth-of-type(2) h3 {
+    bottom: -7rem;
+    left: 2rem;
+    right: 2rem;
+  }
+  html .footer-content,
+  body .footer-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  html .footer-content section,
+  body .footer-content section {
+    padding: 1rem 0;
+    margin: 0 2rem;
+  }
+  html .footer-content section h4,
+  body .footer-content section h4 {
+    font-size: 2rem;
+  }
+  html .btn,
+  body .btn {
+    width: 100%;
+  }
+  html .services-container .image-1,
+  body .services-container .image-1 {
+    background: url("/img/services/services-tab-mobile-pre-construction-img.png");
+    background-size: cover;
+    width: 85rem;
+    height: 15rem;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 25rem;
+    width: 95%;
+    margin-bottom: 5rem;
+  }
+  html .services-container .image-2,
+  body .services-container .image-2 {
+    background: url("/img/services/services-tab-mobile-construction-img.png");
+    background-size: cover;
+    width: 85rem;
+    height: 15rem;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 25rem;
+    width: 95%;
+  }
+  html .services-container .image-3,
+  body .services-container .image-3 {
+    background: url("/img/services/services-tab-mobile-design-build-img.png");
+    background-size: cover;
+    width: 85rem;
+    height: 15rem;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 25rem;
+    width: 95%;
+  }
+  html .services-container .image-4,
+  body .services-container .image-4 {
+    background: url("/img/services/services-tab-mobile-sustainability-img.png");
+    background-size: cover;
+    width: 85rem;
+    height: 15rem;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 25rem;
+    width: 95%;
+  }
+  html .tabs .tabs-links,
+  body .tabs .tabs-links {
+    flex-direction: column;
+    width: 100%;
+  }
+  html .tabs .tabs-link,
+  body .tabs .tabs-link {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  html .tabs .tabs-items,
+  body .tabs .tabs-items {
+    height: 100%;
+  }
+  html .tabs .tabs-item-selected,
+  body .tabs .tabs-item-selected {
+    flex-direction: column;
+  }
+  html .tabs .content,
+  body .tabs .content {
+    margin-bottom: 3rem;
+  }
+}
+a {
+  text-decoration: none;
+}
+.hidden {
+  opacity: 0;
+}
+header {
+  background-color: #9aa3ad;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.6rem;
+  margin: 0rem;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav a {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 85px;
+  color: #fff;
+  display: none;
+}
+header nav a:hover {
+  color: #222222;
+}
+.logo {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #fff;
+  margin-left: 3rem;
+}
+.hamburger {
+  justify-content: flex-end;
+  size: 3rem;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+.show-nav {
+  height: 100vh;
+}
+.show-nav a {
+  display: block;
+}
+.transparent-bg {
+  background-color: rgba(154, 163, 173, 0.783);
+}
+.active {
+  color: #222;
+}
+#nav {
+  position: fixed;
+  margin-top: 1rem;
+  top: 0;
+  right: 1rem;
+  z-index: 2000;
+  height: 4em;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#nav:hover {
+  opacity: 0.6;
+}
+footer {
+  background-color: #828282;
+  color: #fff;
+}
+footer p {
+  padding: 1rem;
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+.footer-content section {
+  display: flex;
+  flex-direction: column;
+}
+.footer-content section p {
+  text-align: left;
+  padding: 0.2rem 0;
+}
+.footer-content h3 {
+  font-size: 2rem;
+}
+.footer-content h4 {
+  font-size: 1.8rem;
+}
+.footer-content textarea {
+  margin: 1rem 0;
+  resize: none;
+  font-size: 2rem;
+  padding: 1rem 0;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+.footer-content .contact-section p {
+  text-align: left;
+  padding: 0;
+}
+.container {
+  max-width: 1028px;
+  margin: 0 auto;
+  padding: 0 8rem;
+}
+.top-spacing {
+  padding-top: 6rem;
+}
+.jumbotron {
+  margin: 0 auto;
+  background: url(/img/home/home-jumbotron.png) center center no-repeat;
+  background-size: cover;
+  min-height: 50rem;
+  height: 25vh;
+  max-width: 1028px;
+}
+.jumbotron .image-text {
+  position: relative;
+  top: 30rem;
+  left: 5%;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #fff;
+  width: 40px;
+}
+.jumbotron h2 {
+  margin-bottom: 1rem;
+}
+.about-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.about-container .about-card {
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: auto;
+}
+.about-container .image-1 {
+  background: url(/img/home/home-img-1.png) center center no-repeat;
+  background-size: cover;
+  width: 75rem;
+  height: 25rem;
+}
+.about-container .image-2 {
+  background: url(/img/home/home-img-2.png) center center no-repeat;
+  background-size: cover;
+  width: 75rem;
+  height: 25rem;
+  margin-right: 3rem;
+}
+.about-container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem 0 0;
+  width: 95%;
+}
+.about-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+.about-container p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  line-height: 150%;
+}
+.btn {
+  text-decoration: none;
+  border: 1px solid #222;
+  color: #222222;
+  text-align: center;
+  width: 13rem;
+  padding: 1.4rem 0;
+  font-size: 1.4rem;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #222;
+  color: white;
+}
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.projects-container h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 2rem 0;
+}
+.projects-container .projects-card {
+  display: flex;
+}
+.projects-container .image-1 {
+  background: url('/img/home/home-villas-img.png');
+  background-size: cover;
+  width: 85rem;
+  height: 15rem;
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+}
+.projects-container .image-2 {
+  background: url('/img/home/home-outskirts-img.png');
+  background-size: cover;
+  width: 85rem;
+  height: 15rem;
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+}
+.projects-container .image-3 {
+  background: url('/img/home/home-the-blocks-img.png');
+  background-size: cover;
+  width: 85rem;
+  height: 15rem;
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+}
+.projects-container .content {
+  width: 50%;
+  margin: 5rem auto;
+}
+.projects-container .project-card:first-of-type h3,
+.projects-container .project-card:last-child h3 {
+  display: inline-block;
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  padding: 3rem 4rem;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: lighter;
+  position: absolute;
+  bottom: -3rem;
+  right: 0;
+}
+.projects-container .project-card:nth-of-type(2) h3 {
+  display: inline-block;
+  background-color: #D8D8D8;
+  border: 1px solid white;
+  padding: 3rem 4rem;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: lighter;
+  position: absolute;
+  bottom: -3rem;
+  left: 0;
+}
+.projects-container p {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  margin-bottom: 2rem;
+}
+.services-header {
+  margin-bottom: 4rem;
+}
+.services-header .image {
+  margin: 0 auto;
+  background: url(/img/services/services-jumbotron.png) center center no-repeat;
+  background-size: cover;
+  height: 20vh;
+  max-width: 1028px;
+}
+.services-header h1 {
+  position: relative;
+  display: inline-block;
+  top: 9.5rem;
+  left: 5%;
+  font-size: 5rem;
+  font-weight: 600;
+  color: #fff;
+  width: 40px;
+}
+.services-container {
+  margin-bottom: 5rem;
+}
+.services-container .content {
+  padding: 0 1.6rem;
+}
+.services-container h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.services-container p {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  width: 100%;
+}
+.services-container .image-1 {
+  background: url("/img/services/services-tab-pre-construction-img.png");
+  background-size: cover;
+  width: 85rem;
+  height: 15rem;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 300rem;
+  height: 100%;
+}
+.services-container .image-2 {
+  background: url("/img/services/services-tab-construction-img.png");
+  background-size: cover;
+  width: 85rem;
+  height: 15rem;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 300rem;
+  height: 100%;
+}
+.services-container .image-3 {
+  background: url("/img/services/services-tab-design-build-img.png");
+  background-size: cover;
+  width: 85rem;
+  height: 15rem;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 300rem;
+  height: 100%;
+}
+.services-container .image-4 {
+  background: url("/img/services/services-tab-sustainability-img.png");
+  background-size: cover;
+  width: 85rem;
+  height: 15rem;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 300rem;
+  height: 100%;
+}
+.tabs {
+  width: 100%;
+  margin-top: 5rem;
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+.tabs .tabs-item {
+  display: none;
+}
+.tabs .tabs-item .content {
+  display: flex;
+  flex-direction: column;
+}
+.tabs .tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs .tabs-item-selected {
+  display: flex;
+  width: 100%;
+}
+.tabs .tabs-links {
+  display: flex;
+  justify-content: space-between;
+}
+.tabs .tabs-link {
+  text-decoration: none;
+  border: 1px solid #222;
+  color: #222222;
+  text-align: center;
+  width: 13rem;
+  padding: 1.4rem 0;
+  font-size: 1.4rem;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+}
+.tabs .tabs-link:hover {
+  background-color: #222;
+  color: white;
+}
+.contact-header {
+  margin-bottom: 4rem;
+}
+.contact-header .image {
+  margin: 0 auto;
+  background: url('/img/contact/contact-jumbotron.png') center center no-repeat;
+  background-size: cover;
+  height: 25vh;
+  max-width: 1028px;
+}
+.contact-header h1 {
+  position: relative;
+  display: inline-block;
+  top: 14rem;
+  left: 5%;
+  font-size: 5rem;
+  font-weight: 600;
+  color: #fff;
+}
