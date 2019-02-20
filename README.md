@@ -5,29 +5,29 @@ This week you will be building a website for an architectural firm named Smith a
 
 You will use Trello to report your progress on the MVP and any extra features you accomplish to your project managers every day during standup. This project is meant to be worked on by yourself.  Do not pair program this week as this challenge is meant to show you where you can improve and what you have learned on your own.
 
-## Pro Tips For This Week:
+### Pro Tips For This Week:
 - Use past solutions from the previous weeks to accomplish harder tasks
 - Commit every time you accomplish any new functionality or layout. Get in the habit of frequent commits so you have a record of your work.  Push up your commits every day to showcase your progress to your PM
 - After 20 minutes of being stuck on something, reach out to your PM
 - Don't overplan, start coding as soon as you can and adjust accordingly.  Trello is there as a guide not as a distraction
 
-## Trello Set Up:
-* [ ] Create a [Trello account](https://trello.com/)
-* [ ] Create a new public board called "S&J Architects - By Your Name"
-* [ ] Create lists titled ```backlog```,```To Do```, ```In Progress```, and ```Done```
-* [ ] Fill in the ```To Do``` list with the MVP features listed below
-* [ ] Fill in the ```backlog``` list with all the extra features listed below
-* [ ] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance
+### Trello Set Up:
+* [X] Create a [Trello account](https://trello.com/)
+* [X] Create a new public board called "S&J Architects - By Your Name"
+* [X] Create lists titled ```backlog```,```To Do```, ```In Progress```, and ```Done```
+* [X] Fill in the ```To Do``` list with the MVP features listed below
+* [X] Fill in the ```backlog``` list with all the extra features listed below
+* [X] Share your board with the Project Manager that has been assigned to you.  If you have not been assigned yet, reach out to your lead TA for guidance
 
-## Assets Provided:
+### Assets Provided:
 * [Style guide:](/DesignFiles/style-guide.md) This file will help you identify font sizes, colors, and font families across the site.
 * [Images for both desktop and mobile](/img).  Mobile images have been provided to match the design files.
 * Content has been provided on each page inside of comment tags
 * [Design Files](/DesignFiles) have been provided as guides for what the pages should look like on desktop and mobile.  Ignore tablet until you get MVP done.
 
-## MVP Features:
+### MVP Features:
 These MVP features represent the fundamental knowledge you should have obtained throughout the last 4 weeks.  If you cannot accomplish all of the MVP tasks listed here, you may be a candidate for the mastery based program.
-* [ ] Build layout **HTML/LESS**: [Home page desktop design](/DesignFiles/Home/home-desktop.png)
+* [X] Build layout **HTML/LESS**: [Home page desktop design](/DesignFiles/Home/home-desktop.png)
 * [ ] Build layout **HTML/LESS**: [Home page mobile design](/DesignFiles/Home/home-mobile.png)
 * [ ] Build layout **HTML/LESS**: [Services page **desktop design only**](/DesignFiles/Services/services-desktop.png)
 * [ ] Build layout **HTML/LESS/JavaScript**: [Navigation system design](DesignFiles/Navigation)
