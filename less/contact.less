@@ -1,137 +1,145 @@
 .contact-jumbo {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-    height: 25rem;
-    background: url("../img/contact/contact-jumbotron.png");
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  height: 25rem;
+  background: url('../img/contact/contact-jumbotron.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 1.5rem 0;
+
+  @media @phone {
+    background: url('../img/contact/contact-mobile-jumbotron.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 260px;
+    padding: 0 1.5rem;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 8.4rem;
+    margin: 0;
+
+    @media @tablet {
+      padding: 0 1.8rem;
+    }
 
     @media @phone {
-        background: url("../img/contact/contact-mobile-jumbotron.png");
-        height: 260px;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;  
+      padding: 0;
     }
 
-    .container {
-        height: 100%;
-        position: relative;
+    h1 {
+      .jumbo-text;
 
-        h1 {
-            .jumbo-text;
-            position: absolute;
-            bottom: -2.7rem;
-            margin-left: -17px;
+      @media @tablet {
+        font-size: 5rem;
+      }
 
-            @media @tablet {
-                font-size: 5rem;
-            }
-
-            @media @phone {
-                font-size: 3.3rem;
-            }
-        }
+      @media @phone {
+        font-size: 3.3rem;
+      }
     }
+  }
 }
 
 .contact {
-    padding: 0;
+  @media @tablet {
+    padding: 1.5rem;
+  }
 
-    @media @tablet {
-        padding: 1.5rem;
-    }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .contact-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        @media @phone {
-            align-items: flex-start;
+    @media @tablet2 {
+      align-items: flex-start;
 
-            h1 {
-                margin-top: 5rem;
-            }
-        }
-
-        h3 {
-            margin-top: 3rem;
-            .sub-text;
-            font-size: 2rem;
-        }
-
-        a {
-            font-size: 1.8rem;
-            color: @off-black;
-        }  
-    }
-
-    .contact-form {
+      h1 {
         margin-top: 5rem;
+      }
+    }
+
+    h3 {
+      margin-top: 3rem;
+      .sub-text;
+      font-size: 2rem;
+    }
+
+    a {
+      font-size: 1.8rem;
+      color: @off-black;
+    }
+  }
+
+  .contact-form {
+    margin-top: 5rem;
+
+    @media @phone {
+      .get-in-touch {
+        margin-top: -3rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    h1 {
+      .sub-text;
+      font-size: 2.4rem;
+    }
+
+    form {
+      small {
+        color: #899198;
+      }
+
+      label {
+        margin-top: 2.5rem;
+
+        @media @tablet {
+          margin-top: 1rem;
+        }
 
         @media @phone {
-            .get-in-touch {
-                margin-top: -3rem;
-                margin-bottom: 3rem;
-            }               
+          margin-top: 1.5rem;
+        }
+      }
+
+      select.form-control {
+        height: 4rem;
+      }
+
+      .form-control {
+        font-size: 1.6rem;
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+
+        &::placeholder {
+          color: #acacac;
+        }
+      }
+
+      .form-check {
+        label {
+          margin: 0 0.4rem;
+        }
+      }
+
+      button {
+        .custom-button;
+        margin-top: 2.3rem;
+        padding: 1rem 4.3rem;
+
+        @media @tablet {
+          width: 100%;
         }
 
-        h1 {     
-            .sub-text;
-            font-size: 2.4rem;
-         }
-
-        form {
-
-            small {
-                color: #899198;
-            }
-
-            label {
-                margin-top: 2.5rem;
-
-                @media @tablet {
-                    margin-top: 1rem;
-                }
-
-                @media @phone {
-                    margin-top: 1.5rem;
-                }
-            }
-            
-            select.form-control {
-                height: 4rem;
-            }
-
-            .form-control {
-                font-size: 1.6rem;
-                padding: 0.8rem;
-                border-radius: .5rem;
-
-                &::placeholder {
-                    color: #ACACAC;
-                } 
-            }
-
-            .form-check {
-
-                label {
-                    margin: 0 0.4rem;
-                }
-            }
-
-            button {
-                .custom-button;
-                margin-top: 2.3rem;
-                padding: 1rem 4.3rem;
-
-                @media @tablet {
-                    width: 100%;
-                }
-
-                @media @phone {
-                    width: 100%;
-                }
-            } 
+        @media @phone {
+          width: 100%;
         }
+      }
     }
+  }
 }

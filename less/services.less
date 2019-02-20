@@ -1,137 +1,140 @@
 .services-jumbo {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-    height: 25rem;
-    background: url("../img/services/services-jumbotron.png");
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  height: 25rem;
+  background: url('../img/services/services-jumbotron.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 1.3rem 0;
+
+  @media @phone {
+    background: url('../img/services/services-mobile-jumbotron.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 260px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 8.4rem;
+    margin: 0;
+
+    @media @tablet {
+      padding: 0 1.8rem;
+    }
 
     @media @phone {
-        background: url("../img/services/services-mobile-jumbotron.png");
-        height: 260px;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;     
+      padding: 0;
     }
 
-    .container {
-        height: 100%;
-        position: relative;
+    h1 {
+      .jumbo-text;
 
-        h1 {
-            .jumbo-text;
-            position: absolute;
-            bottom: -2.7rem;
-            margin-left: -17px;
+      @media @tablet {
+        font-size: 5rem;
+      }
 
-            @media @tablet {
-                font-size: 5rem;
-            }
-
-            @media @phone {
-                font-size: 3.3rem;
-            }
-        }   
+      @media @phone {
+        font-size: 3.3rem;
+      }
     }
+  }
 }
 
 .services {
-    padding: 0;
+  @media @phone {
+    margin-bottom: 0;
 
-    @media @tablet {
-        padding: 1.5rem;  
-        margin-bottom: -10rem;   
+    .service-text {
+      margin-top: -3rem;
+      margin-bottom: -2rem;
     }
+  }
 
-    @media @phone {
-        padding: 1.5rem;
-        margin-bottom: 0;
+  .include {
+    margin-top: 5rem;
+  }
 
-        .service-text {
-            margin-top: -3rem;
-            margin-bottom: -2rem;
-        }
-    }
-    
-    .include {
-        margin-top: 5rem;
-    }
+  .tabs {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 9.5rem;
 
-    .tabs {
-        width: 100%;
-        margin-top: 3rem;
-        margin-bottom: 9.5rem;
+    .tabs-links {
+      display: flex;
+      justify-content: space-between;
 
-        .tabs-links {
-            display: flex;
-            justify-content: space-between;
+      @media @tablet {
+        flex-flow: wrap;
+      }
 
-            @media @tablet {
-                flex-flow: wrap;
-            }
+      .tabs-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.3rem 1rem;
+        width: 22.23%;
+        .component-button;
+        cursor: pointer;
 
-            .tabs-link {
-                padding: 1.3rem 1rem;
-                width: 19rem;              
-                .component-button;
-                cursor: pointer;
-
-                @media @tablet {
-                   width: 15rem;
-                   font-size: 1.6rem;
-                }
-
-                @media @phone {
-                    margin-top: 2rem;
-                    width: 100%;
-                }
-
-                &:hover {
-                    color: @white;
-                    background: @off-black;
-                }
-            }
-
-            .tabs-link-selected {
-                color: @white;
-                background: @teal;
-              }
+        @media @phone {
+          margin-top: 2rem;
+          width: 100%;
         }
 
-        .tabs-items {
-            margin-top: 5rem;
-       
-            .services-img {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            p {
-                margin-top: 1rem;
-                margin-bottom: 2rem;
-            }
-
-            h1 {
-                font-weight: 700;
-                color: @off-black;
-            }
-
-            img {
-                @media @tablet {          
-                    height: 275px;
-                }
-
-                @media @phone {
-                    margin-bottom: -5rem;
-                }
-            }
-            
-            .tabs-item {
-                display: none;
-            }
-
-            .tabs-item-selected {
-                display: block;
-            }
+        &:hover {
+          color: @white;
+          background: @off-black;
         }
+      }
+
+      .tabs-link-selected {
+        color: @white;
+        background: @teal;
+      }
     }
+
+    .tabs-items {
+      margin-top: 5rem;
+
+      .services-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      p {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-weight: 700;
+        color: @off-black;
+      }
+
+      img {
+        @media @tablet {
+          height: 275px;
+        }
+
+        @media @phone {
+          margin-bottom: -5rem;
+        }
+      }
+
+      .tabs-item {
+        display: none;
+      }
+
+      .tabs-item-selected {
+        display: block;
+      }
+    }
+  }
 }
