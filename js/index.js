@@ -42,7 +42,17 @@ class NavButton{
     handleClick(){
         document.querySelectorAll('.navigation-button').forEach(button => button.classList.toggle('active'))
         const navItems = document.querySelector('.nav-items')
-        navItems.classList.toggle('active')
+        // navItems.classList.toggle('active')
+
+        if(navItems.classList.contains('active')){
+            TweenMax.to(".nav-items", .75, {autoAlpha: 0,transform: 'translateY(0vh)',ease: Sine.easeOut})
+            setTimeout(()=>navItems.classList.toggle('active'),750)
+            
+        }else{
+            navItems.classList.toggle('active')
+            TweenMax.to(".nav-items", .75, {autoAlpha:.95,transform: 'translateY(10vh)', ease: Sine.easeOut});
+            
+        }
     }
 }
 
