@@ -65,3 +65,18 @@ class TabLink {
   links.forEach(function (link) {
     return new TabLink(link)
   });
+
+  //  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  //           FIXED HEADER
+
+  window.onscroll = function() {myFunction()};
+  let header = document.getElementById("myHeader");
+  var sticky = header.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
