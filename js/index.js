@@ -23,10 +23,13 @@ flexFont = () => {
 };
 
 setNav = () => {
-  if (
-    document.documentElement.scrollTop > 20 &&
-    !navMenu.classList.contains('menu--open')
-  ) {
+  const scrollTop =
+    window.scrollY ||
+    window.pageYOffset ||
+    document.body.scrollTop +
+      ((document.documentElement && document.documentElement.scrollTop) || 0);
+
+  if (scrollTop > 20 && !navMenu.classList.contains('menu--open')) {
     nav.setAttribute(
       'style',
       'background: #9DA7B1; opacity: 0.95; margin-top: 0;'
@@ -48,21 +51,21 @@ window.onresize = () => {
 document.addEventListener('scroll', () => setNav());
 
 hamburger.addEventListener('click', () => {
-  if (
-    document.documentElement.scrollTop < 1 &&
-    navMenu.classList.contains('menu--open')
-  ) {
+  const scrollTop =
+    window.scrollY ||
+    window.pageYOffset ||
+    document.body.scrollTop +
+      ((document.documentElement && document.documentElement.scrollTop) || 0);
+
+  if (scrollTop < 1 && navMenu.classList.contains('menu--open')) {
     navMenu.classList.toggle('menu--open');
-  } else if (
-    document.documentElement.scrollTop > 1 &&
-    !navMenu.classList.contains('menu--open')
-  ) {
+  } else if (scrollTop > 1 && !navMenu.classList.contains('menu--open')) {
     nav.setAttribute(
       'style',
       'background: null; opacity: 0.95; margin-top: 0;'
     );
     navMenu.classList.toggle('menu--open');
-  } else if (!document.documentElement.scrollTop < 1) {
+  } else if (!scrollTop < 1) {
     nav.setAttribute(
       'style',
       'background: #9DA7B1; opacity: 0.95; margin-top: 0;'
