@@ -1,7 +1,7 @@
 // JS goes here
-let nav = document.querySelector('.header');
-let hamburger = nav.querySelector('img');
-let navMenu = document.querySelector('.menu');
+const nav = document.querySelector('.header');
+const hamburger = nav.querySelector('img');
+const navMenu = document.querySelector('.menu');
 
 flexFont = () => {
   let headers = document.getElementsByClassName('box');
@@ -39,13 +39,20 @@ setNav = () => {
   }
 };
 
+setViewHeight = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+};
+
 window.onload = () => {
   flexFont();
   setNav();
+  setViewHeight();
 };
 
 window.onresize = () => {
   flexFont();
+  setViewHeight();
 };
 
 document.addEventListener('scroll', () => setNav());
