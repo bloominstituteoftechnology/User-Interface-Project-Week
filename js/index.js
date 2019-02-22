@@ -71,7 +71,7 @@ class TabLink {
 
   window.onscroll = function() {myFunction()};
   let header = document.getElementById("myHeader");
-  var sticky = header.offsetTop;
+  let sticky = header.offsetTop;
 
   function myFunction() {
     if (window.pageYOffset > sticky) {
