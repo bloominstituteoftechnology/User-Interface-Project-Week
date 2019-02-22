@@ -4,25 +4,36 @@
 // Step 3: Create TabLink class definition and pass in the link reference to the DOM element
 class TabLink {
     // constructor
-    constructor(link) {
+    constructor(element) {
       // Step 4: Match the data-set values between our link and the content 
       // data attribute from link
-      this.tabContent = document.querySelector(`.content[data-tab='${link.dataset.tab}']`);
+      this.element = element;
+      this.data = this.element.dataset.tab;
+    //   this.itemElement = document.querySelector(`.tabs-item[data-tab = '${this.data}']`);
+      this.tabContent = document.querySelector(`.content[data-tab='${this.data}']`);
       
       // Step 5: Create a new content object from our matched data-set content tab
       this.tabContent = new Content(this.tabContent);
+
       // arrow function using implicit (automatic) value of where itw as called.  We call this "lexical scope."
       
       // Step 8: Add event Listener for our link and pass in the implicit binding of the 'this' keyword using an arrow function
-      link.addEventListener('click', () => this.linkClick() );
+      this.element.addEventListener('click', () => this.select() );
     }
     // methods
     // Step 10: Have the tabContent toggle off and on based on our Content class's method
-    linkClick() {
-      this.tabContent.toggleContent();
+    select() {
+        const link = document.querySelectorAll('.link');
+        console.log(link);
+
+        link.forEach(link => link.classList.remove('link-selected'));
+        this.element.classList.add('link-selected');
+
+       this.tabContent.toggleContent();
     }
   }
-  
+
+
   // Step 6: Create Content class definition and pass in the tabContent reference to the DOM element
   class Content {
     constructor(tabElement) {
@@ -38,8 +49,15 @@ class TabLink {
         items.forEach(item => item.classList.remove('change'));
 
         this.tabElement.classList.add('change');
+
+
     }
   }
+
+  
+
+
+
   // Step 1: Get all the elements from the DOM into a NodeList
   const links = document.querySelectorAll('.link');
   // Step 2: Iterate over each element from our NodeList and create a new class called TabLink. 
