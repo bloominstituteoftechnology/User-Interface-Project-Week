@@ -1,0 +1,76 @@
+// Navigation Styles here
+.header {
+  background-color: #98a5ae;
+  .flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  img.menu-button-close {
+    display: none;
+  }
+
+  @media @mobile {
+    max-width: 500px;
+  }
+
+  h2.title {
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #ffffff;
+    z-index: 2;
+  }
+}
+
+// Overlay CSS
+.nav-overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(153, 165, 174, 0.8);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; //Transition effect which times the speed it slides in
+}
+
+.nav-overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.nav-overlay a {
+  font-weight: bold;
+  padding: 0.8rem;
+  text-decoration: none;
+  font-size: 3.6rem;
+  color: white;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.nav-overlay a:hover,
+.nav-overlay a:focus {
+  color: #504545;
+}
+
+/* Position the close button (top right corner) */
+img.menu-button-close {
+  position: absolute;
+  top: 0.8%;
+  right: 5.3%;
+  font-size: 6rem;
+  z-index: 2;
+
+  @media @mobile {
+    right: 7.5%;
+  }
+}

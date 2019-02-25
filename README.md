@@ -1,4 +1,5 @@
 # User Interface Project Week
+First Commit
 You are to treat this week as if you are working as a front end developer at a web development agency. The instructor is the owner of the agency and is under pressure from the client to deliver the product, a custom marketing website, on time. The project managers are acting as your supervisors.  
 
 This week you will be building a website for an architectural firm named Smith and Jones Architects.  Smith and Jones have requested a minimum viable product to deliver to their board of directors by the end of the week.  The requirements are listed below under **MVP Features**.  Smith and Jones also have a wish list of extra features they would love to showcase to the board if you can get them done.  You will demonstrate your work to the agency owner Thursday afternoon.  
