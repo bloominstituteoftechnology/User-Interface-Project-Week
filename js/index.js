@@ -2,7 +2,7 @@
 class Dropdown {
   constructor(element) {
     this.element = element;
-    this.button = this.element.querySelector('.hamburger');
+    this.button = this.element.querySelector('.open');
     this.closeButton = this.element.querySelector('.close');
     this.content = this.element.querySelector('.site-nav');
     this.closeBtnContent = document.querySelector('.site-nav');
