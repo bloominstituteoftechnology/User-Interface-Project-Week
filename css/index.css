@@ -181,6 +181,7 @@ p {
   font-weight: normal;
 }
 .container {
+  border: 2px solid white;
   max-width: 1025px;
   width: 100%;
   margin: 0 auto;
@@ -353,12 +354,12 @@ footer h6 {
   padding-bottom: 5px;
   font-size: 1.9rem;
   color: #FFFFFF;
+  margin-bottom: 2%;
 }
 footer p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #FFFFFF;
   font-weight: normal;
-  padding-top: 3%;
 }
 footer input {
   font-size: 1.5rem;
@@ -377,6 +378,7 @@ footer .footer-content .footer-address {
   justify-content: space-evenly;
 }
 footer .copyright {
+  font-size: 1.3rem;
   text-align: center;
 }
 @media (max-width: 500px) {
@@ -443,37 +445,47 @@ footer .copyright {
 }
 .menu-container {
   background-color: #99A4AF;
-  position: relative;
-  height: 50px;
-  width: 99.99%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2% 7.75%;
+  width: 100%;
   z-index: 999;
 }
-.menu-container .logo {
-  float: left;
-  padding: 1% 0 0 8.2%;
-  margin: 0;
-  z-index: 2;
+.menu-container .hamburger {
+  cursor: pointer;
 }
 .menu-container .site-nav {
-  display: block;
-  transition: 0.3s all ease;
-  position: absolute;
-  top: 100%;
-  padding: 17.4%;
-  right: 0;
-  left: 0;
+  position: fixed;
+  width: 71%;
+  height: 100%;
+  top: 1px;
+  left: 14.5%;
   background: #99A4AE;
   opacity: 0.9;
+  transition: all 0.5s ease;
+  z-index: 2;
 }
-.menu-container .site-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.menu-container .site-nav .expanded-menu {
+  background-color: #99A4AF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2% 7.75%;
+  width: 100%;
+  z-index: 999;
 }
-.menu-container .nav-link {
+.menu-container .site-nav .expanded-menu .close {
+  cursor: pointer;
+}
+.menu-container .site-nav .nav-links {
+  padding-top: 15%;
+}
+.menu-container .site-nav .nav-link {
   color: #FFFFFF;
-  padding-left: 36.5%;
+  padding-left: 40.5%;
   text-decoration: none;
+  list-style: none;
   text-align: center;
   font-size: 4.5rem;
   line-height: 81px;
@@ -481,24 +493,14 @@ footer .copyright {
   z-index: 1;
   cursor: pointer;
 }
-.menu-container .nav-link .site-nav .nav-link:first-child {
-  padding-top: 5%;
-}
-.menu-container .nav-link .site-nav .nav-link:first-child:hover {
+.menu-container .site-nav .nav-link:hover {
   color: #504446;
 }
 .menu-container .site-nav {
   display: none;
 }
-.menu-container .hamburger .open {
-  color: #FFFFFF;
-  position: absolute;
-  top: 23%;
-  right: 8%;
-  cursor: pointer;
-}
-.menu-container .close {
-  display: none;
+.menu-container .toggle-on {
+  display: block;
 }
 .mobile-jumbo-img {
   display: none;
@@ -507,6 +509,9 @@ footer .copyright {
   .home {
     width: 100%;
     padding: 1%;
+  }
+  .home .logo {
+    padding: 1.2% 7.75%;
   }
   .jumbo-img {
     display: none;
@@ -551,7 +556,7 @@ footer .copyright {
   width: 31%;
   position: absolute;
   top: 75%;
-  right: 8.2%;
+  right: 8.1%;
   bottom: 2%;
 }
 .box-title h4 {
@@ -564,7 +569,7 @@ footer .copyright {
 }
 .outskirts {
   position: absolute;
-  left: 8.3%;
+  left: 8.1%;
 }
 @media (max-width: 500px) {
   .home .recent-projects {
@@ -577,6 +582,7 @@ footer .copyright {
     padding: 6.5% 0 4.5% 1.5%;
   }
   .home .recent-projects p {
+    font-size: 1.6rem;
     width: 100%;
     margin-top: 6%;
     padding: 10% 2%;
@@ -595,6 +601,6 @@ footer .copyright {
   .home .recent-projects .box-title {
     width: 100%;
     padding: 2%;
-    left: 0.3%;
+    left: 0.1%;
   }
 }

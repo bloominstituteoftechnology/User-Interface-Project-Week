@@ -1,10 +1,10 @@
 // JS goes here
 class Dropdown {
-  constructor(element) {
-    this.element = element;
-    this.button = this.element.querySelector('.open');
-    this.closeButton = this.element.querySelector('.close');
-    this.content = this.element.querySelector('.site-nav');
+  constructor(dropdown) {
+    this.dropdown = dropdown;
+    this.button = dropdown.querySelector('.hamburger');
+    this.closeButton = dropdown.querySelector('.close');
+    this.content = dropdown.querySelector('.site-nav');
     this.closeBtnContent = document.querySelector('.site-nav');
 
     this.button.addEventListner('click', (event) => { this.toggleContent(event) })
@@ -12,14 +12,14 @@ class Dropdown {
   }
 
   toggleContent(event) {
-    this.content.classList.toggle('site-nav');
+    this.content.classList.toggle('toggle-on');
   }
   closeContent(event) {
-    this.closeBtnContent.classList.toggle('site-nav');
+    this.closeBtnContent.classList.toggle('close');
   }
 }
 
 
 
-let dropdowns = document.querySelectorAll('header');
-dropdowns = Array.from(dropdowns).map(dropdown => dropdown(dropdown));
+let dropdowns = document.querySelectorAll('.menucontainer');
+dropdowns.forEach(dropdown => new Dropdown(dropdown));
