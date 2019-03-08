@@ -1,0 +1,105 @@
+// navbar.less - styles for the navbar
+
+@nav-background: #99A4Af;
+
+nav {
+
+  background-color: @nav-background;
+  .flex(center, space-between);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  .nav-items {
+
+    display: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: rgba(@nav-background, 0.8);
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 11;
+
+    .links {
+
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      position: absolute;
+
+      a {
+
+        opacity: 0;
+        color: white;
+        text-decoration: none;
+        display: block;
+        font-size: 5rem;
+        font-family: @global-font;
+        font-weight: bold;
+        padding: 20px;
+        transform: scale(1.0);
+        text-align: center;
+
+        &:hover {
+
+          color: black;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  a {
+
+    padding: 13px 0;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 85px;
+    z-index: 15;
+    text-decoration: none;
+    font-family: @global-font;
+
+    &:hover {
+
+      cursor: pointer;
+
+    }
+
+    @media @mobile {
+
+      margin-left: 20px;
+
+    }
+
+  }
+
+  img {
+
+    margin-right: 85px;
+    z-index: 15;
+
+    @media @mobile {
+
+      margin-right: 20px;
+
+    }
+
+    &:hover {
+
+      cursor: pointer;
+
+    }
+
+  }
+
+}
