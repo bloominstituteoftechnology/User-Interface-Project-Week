@@ -95,7 +95,7 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 
 const openMenu = () => {
     //toggle the "menu--open" class on the menu reference
-    menu.style.display = "block";
+    menu.style.display = "flex";
 };
 
 const closeMenu = () => {
