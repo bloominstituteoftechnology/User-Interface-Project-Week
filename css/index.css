@@ -1,1 +1,746 @@
-/* Should be empty until you compile your LESS */
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+.tabs {
+  width: 100%;
+  padding-bottom: 50px;
+  /*
+    .tabs-item-title {
+
+      display: flex;
+      //flex-direction: column;
+
+    }
+    */
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+.tabs .tabs-item {
+  display: none;
+  width: 75%;
+}
+.tabs .tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs .tabs-item-selected {
+  display: block;
+}
+.tabs .tabs-links {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
+.tabs .tabs-link {
+  padding: 20px 25px;
+  font-size: 24px;
+  background-color: #FFFFFF;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+.tabs .tabs-link-selected {
+  z-index: 1;
+  border: 1px solid black;
+  background-color: #5E9FB9;
+  color: #FFFFFF;
+}
+.tabs .tabscontent {
+  display: flex;
+  flex-direction: row;
+}
+.tabs .tabstext {
+  display: flex;
+  flex-direction: column;
+}
+.container .servicestext {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #FFFFFF;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Roboto', Arial, sans-serif;
+
+}img {max-width:100%;}
+
+h1 {
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.4rem;
+  color: #FFFFFF;
+}
+h2,
+h3 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: #222222;
+}
+p {
+  line-height: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+/*
+.intro img {
+  display: flex;
+  padding-left: 65%; 
+}
+*/
+/*
+img {
+  max-width: 100%;
+  height: auto;
+}
+*/
+.navbar {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+.menu-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.navbar a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.navbar a:hover,
+.navbar a:focus {
+  color: #f1f1f1;
+}
+.navbar .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  /*
+  @media @mobile {
+    width: 90%;
+    margin: 0 5%;
+  }
+  */
+}
+.container .navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-right: 10%;
+  padding-bottom: 33px;
+  padding-left: 10%;
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+  background-color: #9AA5B0;
+  opacity: .95;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-right: 10%;
+  padding-bottom: 10px;
+  padding-left: 10%;
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+  background-color: #9AA5B0;
+}
+/*
+.menu-hidden {
+  display: none;
+}
+*/
+.container h2 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #FFFFFF;
+}
+.container button {
+  /*
+  padding-top: 12px;
+  padding-right: 10px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  */
+  height: 50px;
+  width: 150px;
+  background: #FFFFFF;
+  border-color: #222222;
+}
+.headerimgcontainer {
+  position: relative;
+  text-align: left;
+  font-weight: bold;
+  font-size: 6.4rem;
+  line-height: 7.4rem;
+  color: #FFFFFF;
+}
+.headerimgcontainer img {
+  clip: rect(100px, 0px, 0px, 0px);
+}
+.top-content {
+  display: flex;
+}
+.top-content-1 {
+  display: flex;
+  flex-direction: column;
+}
+.top-content-2 {
+  display: flex;
+}
+.top-content-section2 {
+  display: flex;
+}
+.top-content-section2-2 {
+  display: flex;
+  flex-direction: column;
+}
+.top-content-section2-1 {
+  display: flex;
+}
+.middle-content h2 {
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+/*
+.villas h3 {
+
+  display: flex;
+  border: 20px;
+  border-color: red;
+
+}
+*/
+.villasimg {
+  display: flex;
+  justify-content: center;
+}
+.villas p {
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+}
+.villascontainer {
+  display: flex;
+  align-items: flex-end;
+}
+.outskirtsimg {
+  display: flex;
+  justify-content: center;
+}
+.outskirts p {
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+}
+.blocksimg {
+  display: flex;
+  justify-content: center;
+}
+.blocks p {
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+}
+.contentcontainer {
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+/*
+.container .navbar {
+
+  border: 20px;
+  border-color: red;
+  background-color: 9AA5B0;
+
+}
+*/
+.bottom-left {
+  position: absolute;
+  bottom: 50px;
+  left: 10%;
+}
+.middle-content p {
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: left;
+}
+.recentproject {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+img {max-width:100%;}
+/*
+.middle-content .villas h3 {
+  //display: flex;
+  //justify-content: flex-end;
+  background-color: #D8D8D8;
+  //margin-right: 10%;
+  //margin-left: 80%;
+  //padding-top: 2%;
+  //padding-bottom: 2%;
+  
+}
+*/
+.villastitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D8D8D8;
+  width: 200px;
+  height: 80px;
+}
+.outskirtstitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D8D8D8;
+  width: 200px;
+  height: 80px;
+}
+.outskirtscontainer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+.blockstitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D8D8D8;
+  width: 200px;
+  height: 80px;
+}
+.blockscontainer {
+  display: flex;
+  align-items: flex-end;
+}
+.tabs-item p {
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+}
+.footercontainer {
+  display: flex;
+
+  width: 100%;
+  padding: 48px 0 31px 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #828282;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #FFFFFF;
+}
+footer h5 {
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #FFFFFF;
+}
+footer p {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #FFFFFF;
+}
+/*
+footer p {o
+  display: flex;
+  align-items: flex-end;
+
+}
+*/
+/*
+.tabs-items {
+
+  margin-bottom: 200px;
+
+}
+*/
+/*
+.servicestext {
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+*/
+
+@media (max-width: 600px) {
+  .top-content {
+    flex-direction: column-reverse;
+    margin-bottom: 46px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container .h2 {
+
+    font-size: 2.4rem;
+    margin-top: 26px;
+    padding: 0 0% 0 5%;
+    width: 100%;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .container .p {
+
+    padding: 0 0 0 5%;
+    margin-top: 21px;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .container button {
+
+    padding: 0px 0;
+    margin-top: 27px;
+    width: 92%;
+    margin-left: 4%;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .container button p {
+
+    margin: 0;
+    padding: 10px 0 10px 33%;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .top-content img {
+
+    background-image: url(../img/home/home-mobile-img-1.png);
+    width: 92%;
+    margin-right: 4%;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .top-content-section2 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 55px;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-content-section2 img {
+
+    background-image: url(../img/home/home-mobile-img-2.png);
+    width: 92%;
+    margin-right: 4%;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .top-content-section2 h2 {
+
+    font-size: 2.4rem;
+    padding: 28px 0 0 5%;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .top-content-section2 p {
+
+    width: 96%;
+    padding: 22px 0 0 5%;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .middle-content {
+
+    padding: 0 25% 0 0;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .middle-content h3 {
+
+    font-size: 2.4rem;
+    padding-left: 5%;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .middle-content .villasimg {
+
+    background-image: url(../img/home/home-mobile-villas-img.png);
+    margin-top: 20px;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .middle-content p {
+
+    width: 90%;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .middle-content .outskirtsimg {
+
+    background-image: url(../img/home/home-mobile-outskirts-img.png);
+    margin-top: 36px;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .middle-content .blocksimg {
+
+    background-image: url(../img/home/home-mobile-the-blocks-img.png);
+    margin-top: 37px;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .footercontainer {
+
+    flex-direction: column;
+    padding: 12px 0 0 0;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .footercontainer .address1 {
+
+    padding: 13px 40% 0 0;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .footercontainer .address2 {
+
+    padding: 13px 40% 0 0;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .footercontainer .address3 {
+
+    padding: 13px 40% 0 0;
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .villasimg {
+
+    margin-left: 10%;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .outskirtsimg {
+
+    margin-left: 10%;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+@media (max-width: 600px) {
+  .blocksimg {
+
+    margin-left: 10%;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
