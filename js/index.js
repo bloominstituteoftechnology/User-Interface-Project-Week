@@ -93,8 +93,8 @@ tabs = Array.from(tabs).map(tab => new Tabs(tab));
 let navBar = document.querySelector('.navigation');
 
 function checkSlide(e) {
-    console.log(scrollY);
-    console.log(navBar);
+    // console.log(scrollY);
+    // console.log(navBar);
     if (scrollY > 340 ) {
         navBar.style.background = "#828282";
         navBar.style.opacity = "0.85"
@@ -105,11 +105,30 @@ function checkSlide(e) {
     
 }
 // var checkSlide = (e) => console.log(e);
-
-
 window.addEventListener('scroll', checkSlide);
 
+//------------------------NavMenu--------------------//
 
+let hiddenMenu = document.querySelector('.menu')
+
+document.getElementById("myBtn").addEventListener("click", open_close);
+
+// function displayMenu() {
+//     hiddenMenu.style.display = "flex";
+// }
+var menuState = 0;
+
+function open_close() {
+    if(menuState === 0) {
+        menuState = 1;
+        hiddenMenu.style.display = "flex";
+    }
+    else {
+        menuState = 0;
+        hiddenMenu.style.display = "none";
+    }
+    console.log(menuState);
+}
 
 
 
