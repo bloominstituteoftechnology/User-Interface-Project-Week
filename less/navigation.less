@@ -1,0 +1,96 @@
+// Navigation Styles here
+header {
+    
+
+    .menu {
+        position: fixed;
+        z-index: 3;
+        max-width: 1024px;
+        width: 100%;
+        background-color: @nav-blue;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.9% 0;
+
+       h1 {
+            font-weight: Bold;
+            font-size: 24px;
+            color: @white;
+            padding-left: 85px;
+
+            @media @mobile {
+                padding-left: 5px;
+            }
+        }
+
+        img {
+            margin-right: 85px;
+            cursor: pointer;
+            transition: transform 1.2s;
+            &:hover {
+                transform: rotate(180deg) scale(1.2);
+            }
+
+            @media @mobile {
+                margin-right: 5px;
+            }
+        }
+
+        .hamburger-hidden {
+            display: none;
+        }
+
+
+    }
+
+    .nav-content {
+        left: 0;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+        background-color: @nav-blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        position: fixed;
+        top: -1550px;
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+
+            a {
+                font-size: 48px;
+                line-height: 90px;
+                text-decoration: none;
+                font-weight: bold;
+                color: @white;
+                transition: transform 1.2s;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: @black;
+                }
+
+                @media @mobile {
+                    font-size: 68px;
+                    line-height: 120px;
+                }
+            }
+            
+
+        }
+    }
+
+    .nav-shown {
+        display: flex;
+        top: -1550px;
+    }
+
+}
+
+ 
