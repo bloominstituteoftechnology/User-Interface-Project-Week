@@ -55,8 +55,6 @@ var IntroSection = function (_React$Component) {
   return IntroSection;
 }(React.Component);
 
-;
-
 var RecentProject = function (_React$Component2) {
   _inherits(RecentProject, _React$Component2);
 
@@ -110,8 +108,6 @@ var RecentProject = function (_React$Component2) {
   return RecentProject;
 }(React.Component);
 
-;
-
 var App = function (_React$Component3) {
   _inherits(App, _React$Component3);
 
@@ -122,42 +118,42 @@ var App = function (_React$Component3) {
 
     _this3.state = {
       introData: [{
-        name: 'Smith & Jones Architects',
-        content: 'Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem',
-        desktopImgSrc: 'img/home/home-img-1.png',
-        mobileImgSrc: 'img/home/home-mobile-img-1.png',
+        name: "Smith & Jones Architects",
+        content: "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem",
+        desktopImgSrc: "img/home/home-img-1.png",
+        mobileImgSrc: "img/home/home-mobile-img-1.png",
         style: null
       }, {
-        name: 'Futuristic Designs',
-        content: 'Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem',
-        desktopImgSrc: 'img/home/home-img-2.png',
-        mobileImgSrc: 'img/home/home-mobile-img-2.png',
-        style: 'designs'
+        name: "Futuristic Designs",
+        content: "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem",
+        desktopImgSrc: "img/home/home-img-2.png",
+        mobileImgSrc: "img/home/home-mobile-img-2.png",
+        style: "designs"
       }, {
-        name: 'Critical Acclaim',
-        content: 'Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem',
-        desktopImgSrc: 'img/home/awards.jpg',
-        mobileImgSrc: 'img/home/awards.jpg',
+        name: "Critical Acclaim",
+        content: "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem",
+        desktopImgSrc: "img/home/awards.jpg",
+        mobileImgSrc: "img/home/awards.jpg",
+        style: null
+      }, {
+        name: "ASdasdd",
+        content: "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem",
+        desktopImgSrc: "img/home/awards.jpg",
+        mobileImgSrc: "img/home/awards.jpg",
         style: null
       }],
       recentProjectsData: [{
-        name: 'THE VILLAS',
-        content: 'The Villas bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.',
-        desktopImgSrc: 'img/home/home-villas-img.png',
-        mobileImgSrc: 'img/home/home-mobile-villas-img.png',
-        style: 'right'
+        name: "THE VILLAS",
+        content: "The Villas bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.",
+        desktopImgSrc: "img/home/home-villas-img.png",
+        mobileImgSrc: "img/home/home-mobile-villas-img.png",
+        style: "right"
       }, {
-        name: 'OUTSKIRTS',
-        content: 'The Outskirts are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.',
-        desktopImgSrc: 'img/home/home-outskirts-img.png',
-        mobileImgSrc: 'img/home/home-mobile-outskirts-img.png',
-        style: 'left'
-      }, {
-        name: 'THE BLOCKS',
-        content: 'The Blocks are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.',
-        desktopImgSrc: 'img/home/home-the-blocks-img.png',
-        mobileImgSrc: 'img/home/home-mobile-the-blocks-img.png',
-        style: 'right'
+        name: "OUTSKIRTS",
+        content: "The Outskirts are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.",
+        desktopImgSrc: "img/home/home-outskirts-img.png",
+        mobileImgSrc: "img/home/home-mobile-outskirts-img.png",
+        style: "left"
       }]
     };
     return _this3;
@@ -178,4 +174,4 @@ var App = function (_React$Component3) {
   return App;
 }(React.Component);
 
-ReactDOM.render(React.createElement(App, null), document.getElementById('react'));
+ReactDOM.render(React.createElement(App, null), document.getElementById("react"));
