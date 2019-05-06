@@ -1,0 +1,98 @@
+//full page modal
+.modal {
+    background: @navBg;
+    height: 100vh;
+    width: 100vw;
+    top: -100vh;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: all 0.5s ease-out;
+
+    //full page modal navigation
+    .fixed-header-nav {
+
+        a {
+            width: 100%;
+            display: block;
+            .font(bold, 4.8rem, 85px, @navTextColor);
+            text-decoration: none;
+
+            &:hover {
+                color: @navTextHoverColor;
+            }
+        }
+    }
+}
+
+//toggled class to show and hide modal
+.modal-visible {
+    top: 0;
+    transition: all 0.5s ease-in;
+}
+
+//fixed header (for full page width background)
+.fixed-header {
+    color: @navTextColor;
+    background-color: @navBg;
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.5s ease-in-out;
+
+    //content of fixed header
+    .fixed-header-container{
+        height: 100%;
+        width: 100%;
+        max-width: 1024px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 85px;
+
+        @media (max-width: 500px) {
+             padding: 0 15px;
+        }
+
+        a {
+            .font(normal, 2.4rem, 24px, @navTextColor);
+            text-decoration: none;
+        }
+
+        .fixed-header-hamburger {
+            cursor: pointer;
+
+            .topBar, .middleBar, .bottomBar {
+                width: 31px;
+                height: 4px;
+                background: @hamburgerColor;
+                margin: 5px 0;
+                border-radius: 5px;
+                transition: all 0.5s ease;
+            }
+
+            //toggled classes for hamburger animation
+            .change.topBar {
+                transform:  translateY(9px) rotate(-45deg);
+            }
+
+            .change.middleBar {
+                opacity: 0;
+            }
+
+            .change.bottomBar {
+                transform: translateY(-9px) rotate(45deg);
+            }
+        }
+    }
+}
+
+//when modal is active, fixed header has 100% opacity background
+.modalActive {
+    background-color: @navBgOff;
+}  

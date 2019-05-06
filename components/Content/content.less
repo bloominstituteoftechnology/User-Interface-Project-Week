@@ -1,0 +1,357 @@
+//contains all but fixed header, modal, and footer
+.page-container {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+    h2 {
+        .font(bold, 2.8rem, 28px, @subHeadColor);
+        width: 100%;
+    }
+
+    //image and text header on all pages
+    .page-header {
+        position: relative;
+
+        img {
+            z-index: 0;
+            width: 100%;
+            height: auto;
+
+            @media (max-width: 500px) {
+                width: 100vw;
+                padding-top: 50px;
+            }
+        }
+
+        h2 {
+            position: absolute;
+            bottom: 8%;
+            left: 8%;
+            z-index: 1;
+            letter-spacing: 0.25px;
+            .font(bold, 6.4rem, 75px, @jumboColor);
+
+            @media (max-width: 500px) {
+                .font(bold, 4.8rem, 48px, @jumboColor);
+                left: 15px;
+            }
+        }
+    }
+
+    //content divider section
+    .content-section {
+        width: 100%;
+        padding: 50px 85px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 500px){
+            padding: 0;
+        }
+
+        .mobile-view {
+            @media (max-width: 500px) {
+                margin-top: 30px;
+                padding: 0 0 0 15px;
+            }
+        }
+
+        .content-img {
+            width: 48%;
+            height: auto;
+
+            @media (max-width: 500px) {
+                order: -1;
+                width: 100%;
+                padding: 30px 15px 15px;
+            }
+        }
+        
+        .content-text {
+            width: 48%;
+
+            @media (max-width: 500px) {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+        button {
+            border: 1px solid @nearlyBlack;
+            width: 135px;
+            height: 45px;
+            text-align: center;
+            font-size: 1.6rem;
+            transition: all 0.5s ease;
+            margin: 0;
+
+            @media (max-width: 500px) {
+                width: 100%;
+            }
+
+            &:hover {
+                background: @nearlyBlack;
+                color: @white;
+                transition: all 0.5s ease;
+            }
+        }
+        
+        //image and text for The Villas project
+        .the-villas {
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin: 50px 0 80px;
+
+            @media (max-width: 500px) {
+                margin-bottom: 70px;
+            }
+
+            &::after {
+                content: 'THE VILLAS';
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 0;
+                bottom: -38px;
+                border: 1px solid white;
+                background: #D3D2D3;
+                font-size: 2.4rem;
+                letter-spacing: 8px;
+                width: 316px;
+                height: 96px;
+                
+                @media (max-width: 500px) {
+                    font-size: 2rem;
+                    bottom: -70px;
+                    width: calc(100vw - 30px);
+                    left: 15px;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+            
+        //image and text for the Outskirts project
+        .outskirts {
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin: 0 0 80px;
+
+            @media (max-width: 500px) {
+                margin-bottom: 70px;
+            }
+
+            &::after {
+                content: 'OUTSKIRTS';
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                left: 0;
+                bottom: -50px;
+                border: 1px solid white;
+                background: #D3D2D3;
+                font-size: 2.4rem;
+                letter-spacing: 8px;
+                width: 316px;
+                height: 96px;
+
+                @media(max-width: 500px) {
+                    font-size: 2rem;
+                    bottom: -70px;
+                    width: calc(100vw - 30px);
+                    left: 15px;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        //image and text for The Blocks project
+        .the-blocks {
+            position: relative;
+            margin: 0 0 80px;
+            width: 100%;
+            height: auto;
+
+            @media (max-width: 500px) {
+                margin-bottom: 70px;
+            }
+
+            &::after {
+                content: 'THE BLOCKS';
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 0;
+                bottom: -50px;
+                border: 1px solid white;
+                background: #D3D2D3;
+                font-size: 2.4rem;
+                letter-spacing: 8px;
+                width: 316px;
+                height: 96px;
+
+                @media (max-width: 500px) {
+                    font-size: 2rem;
+                    bottom: -70px;
+                    width: calc(100vw - 30px);
+                    left: 15px;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        //paragraph information within project
+        .project-text{
+            width: 52%;
+            margin: 0 auto;
+
+            @media (max-width: 500px) {
+                width: 90%;
+            }
+
+            .project-paragraph {
+                font-size: 1.8rem;
+                line-height: 24px;
+            }
+        }
+    }
+
+    //displays image if in desktop view
+    .desktop-img {
+        display: block;
+
+        @media (max-width: 500px) {
+            display: none;
+        }
+    }
+
+    //displays image if in mobile view
+    .mobile-img {
+        display: none;
+
+        @media (max-width: 500px) {
+            display: block;
+        }
+    }
+}
+
+
+//specific styling for contact page
+.contact {
+    .getInTouch {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0 0 85px;
+
+        @media (max-width: 500px) {
+            width: 100%;
+            padding: 50px 15px 0;
+        }
+
+        form{
+            .top-form-item {
+                margin: 40px 0 0 0;
+            }
+
+            label {
+                display: inline-block;
+                width: 100%;
+                font-size: 1.6rem;
+            }
+
+            #neverShare {
+                color: #CDCDCD;
+                font-size: 1.4rem;
+            }
+
+            input[type=email] {
+                width: 100%;
+                border: 1px solid #CDCDCD;
+                border-radius: 5px;
+                padding: 10px 0 10px 10px;
+                font-size: 1.6rem;
+            }
+
+            textarea {
+                min-width: 100%;
+                min-height: 100px;
+                border: 1px solid #CDCDCD;
+                border-radius: 5px;
+            }
+
+            input[type=radio] {
+                margin-left: 0px;
+                margin-right: 10px;
+            }
+
+            input[type=submit] {
+                border: 1px solid @nearlyBlack;
+                background: @white;
+                width: 135px;
+                height: 45px;
+                text-align: center;
+                font-size: 1.6rem;
+                margin: 40px 0 0 0;
+                transition: all 0.5s ease;
+
+                @media (max-width: 500px) {
+                    width: 100%;
+                }
+
+                &:hover {
+                    background: @nearlyBlack;
+                    color: @white;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+
+    .whereWeWork {
+        width: 50%;
+        padding: 50px 0 0 150px;
+
+        @media (max-width: 500px) {
+            width: 100%;
+            padding: 50px 15px 0;
+        }
+
+        .location {
+            margin: 40px 0 0;
+
+            &:last-child {
+                @media (max-width: 500px) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 2.4rem;
+            font-weight: bold;
+        }
+    }
+}
