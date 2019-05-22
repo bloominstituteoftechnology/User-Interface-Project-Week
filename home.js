@@ -135,12 +135,14 @@ var App = function (_React$Component3) {
         desktopImgSrc: "img/home/awards.jpg",
         mobileImgSrc: "img/home/awards.jpg",
         style: null
-      }, {
-        name: "ASdasdd",
-        content: "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem",
-        desktopImgSrc: "img/home/awards.jpg",
-        mobileImgSrc: "img/home/awards.jpg",
-        style: null
+        // {
+        //   name: "ASdasdd",
+        //   content:
+        //     "Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem",
+        //   desktopImgSrc: "img/home/awards.jpg",
+        //   mobileImgSrc: "img/home/awards.jpg",
+        //   style: null
+        // }
       }],
       recentProjectsData: [{
         name: "THE VILLAS",
