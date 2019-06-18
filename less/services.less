@@ -5,16 +5,23 @@
       .desktop {
         width: 100%;
         height: auto;
+
         @media @phone {
           display: none;
         }
       }
+
       .mobile {
         display: none;
+
         @media @phone {
           display: block;
+          width: 100%;
+          max-width: 400px;
+          height: auto;
         }
       }
+
       h1 {
         font-weight: bold;
         font-size: 6.4rem;
@@ -24,70 +31,97 @@
         bottom: 20px;
         left: 85px;
         max-width: 500px;
+
         @media @phone {
           font-size: 3.2rem;
+          max-width: 275px;
+          line-height: 45px;
+          left: 20px;
+          bottom: 20px;
         }
       }
     }
+
   .services-info {
     max-width: 855px;
     margin: 0 auto;
+
+    @media @phone {
+      padding: 15px 15px;
+    }
+
     p {
       padding-top: 50px;
     }
 
   }
   .services-tabs {
-    // border: 1px dashed blue;
-    // padding: 50px;
     max-width: 855px;
     margin: 0 auto;
     margin-bottom: 100px;
+
     .tab-links {
-      // border: 1px dashed green;
       padding: 50px 0px;
       display: flex;
       justify-content: space-between;
+
+      @media @phone {
+        flex-direction: column;
+        padding: 0px 15px;
+      }
+
       .tab-link {
         border: 1px solid black;
         background-color: @background;
         width: 185px;
         height: 50px;
-        // margin: 0px 20px;
         font-size: 1.8rem;
         font-weight: bold;
+
+        @media @phone {
+          width: 335px;
+          margin: 10px 0px;
+        }
       }
+
       .tab-link:hover {
         background-color: @tab-hover-bg;
         color: @color;
       }
+
       .tab-link:focus {
         background-color: @tab-selected-bg;
       }
     }
+
     .tabs-items {
-      // border: 1px dashed orange;
-      // padding: 20px;
       .tabs-item {
-        // border: 1px solid red;
         display: flex;
-        // // flex-direction: row;
-        // .tabs-item-title {
-        //   font-size: 1.8rem;
-        //   font-weight: bold;
-        // }
+
+        @media @phone {
+          flex-direction: column;
+          padding: 0px 15px;
+        }
+
         .tabs-item-description {
-          // display: flex;
-          // justify-content: flex-start;
-          // flex-direction: column;
           padding-right: 20px;
+
           h1 {
             font-size: 1.8rem;
             font-weight: bold;
-            padding-bottom: 20px;
+            padding: 10px 0px;
+
+            @media @phone {
+              font-size: 2.1rem;
+            }
+          }
+
+          p {
+            padding: 10px 0px;
           }
         }
       }
+
       .hidden {
         display: none;
       }
