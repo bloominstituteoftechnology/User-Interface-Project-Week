@@ -1,0 +1,67 @@
+section.tabs-section {
+    p {
+        padding: 2rem 0 4rem 0;
+    }
+    .tabs {
+        width: 100%;
+        .tabs-buttons {
+            .flex(space-between, center, row);
+            @media @phone {
+                flex-direction: column;
+            }
+            .tab-button {
+                .button-maker(185px, 50px, @white, 1px solid @mine-shaft);
+                color: @mine-shaft;
+                font-weight: bold;
+                font-size: 2rem;
+                @media @phone {
+                    margin: 1rem;
+                    width: 100%;
+                }
+                &:hover {
+                    background-color: @tab-hover-bg;
+                    color: @tab-hover;
+                }
+            }
+            .tab-content-selected {
+                z-index: 2;
+                background: @tab-selected-bg;
+                color: @tab-hover;
+                &:hover {
+                    background-color: @tab-selected-bg;
+                }
+            }
+        } // .tabs-buttons
+        .tabs-contents {
+            .flex(space-between, center, row);
+            padding: 5rem 0;
+        } // .tabs-contents
+        .tab-content {
+            display: none;
+            .animated;
+            .bounceInRight;
+            animation-duration: .8s;
+            h2 {
+                padding: 0rem 0 1rem 0;
+                font-size: 2.4rem;
+            }
+            p {
+                padding: 1rem 2rem 2rem 0;
+            }
+            .tab-content-img {
+                padding-top: 5rem;
+            }
+            .tab-content-title {
+                font-size: 24px;
+                font-weight: bold;
+                padding-bottom: 10px;
+            } // .tab-content-title
+        } // .tab-content
+        .tab-content-selected {
+            .flex(space-between, flex-start, row);
+            @media @phone {
+                flex-direction: column;
+            }
+        } // .tab-content-selected
+    } // .tabs
+} // section.tabs
