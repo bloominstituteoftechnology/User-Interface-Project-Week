@@ -1,0 +1,335 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@import "./mixins.less";
+@import "./variables.less";
+html {
+  font-size: 62.5%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+p {
+  .generalSettings;
+}
+
+.navi {
+  opacity: 0.8;
+  display: inline-flex;
+  width: 100%;
+  height: 40px;
+  flex-direction: row;
+  justify-content: right;
+  font-family: @projectFont;
+  background-color: @navigationColor;
+  .navigationLogo;
+  .menuList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    li {
+      width: 100%;
+    }
+  }
+}
+
+.logo {
+  .navigationLogo;
+  padding: 15px 160px 5px 0px;
+  width: 200px;
+  display: flex;
+  justify-content: right;
+}
+
+.menuButton {
+  display: flex;
+  justify-content: right;
+  width: 85%;
+  height: 20px;
+  padding: 10px 100px 10px 0px;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  z-index: 1;
+  .jumboTron {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    .jumboH1 {
+      .jumboHeader;
+      font-family: @projectFont;
+      color: @fontColorWhite;
+      position: absolute;
+      z-index: 0;
+      bottom: 5%;
+      right: 70%;
+    }
+  }
+}
+
+#servIntro {
+  margin-top: 25%;
+  padding: 0 5%;
+}
+
+.buttons {
+  width: 100%;
+  height: 70px;
+}
+
+.button-links {
+  margin: 5% 0;
+  padding: 0 2%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  .button-link {
+    height: 50px;
+    width: 170px;
+    border: solid 1px #222222;
+    font-family: @projectFont;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-align: center;
+    padding-top: 10px;
+    &:hover {
+      color: #fff;
+      background-color: #222222;
+    }
+  }
+}
+
+.active {
+  color: #fff;
+  background-color: #5e9fb9;
+}
+
+.button-items {
+  margin-top: 100%;
+  width: 100%;
+  height: 300px;
+  margin: 5% 0;
+}
+
+.button-item {
+  padding: 0 5%;
+  height: 300px;
+  h1 {
+    font-family: @projectFont;
+    .subHeaders;
+  }
+  img {
+    padding: 3%;
+  }
+}
+
+.button-item {
+  display: none;
+}
+
+.tabs-text {
+  padding-right: 5%;
+}
+
+.button-item-selected {
+  display: flex;
+}
+
+.button-link-selected {
+  height: 100px;
+  width: 200px;
+  color: #fff;
+  background-color: #5e9fb9;
+}
+
+footer {
+  background-color: #828282;
+  height: 200px;
+  position: relative;
+  font-family: @projectFont;
+  .footerHeadings;
+  .footerWrap {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    .emailWrap {
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+      padding: 5%;
+      input {
+        height: 40px;
+        width: 270px;
+        border-radius: 5px;
+        padding-left: 5px;
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+input::placeholder {
+  color: grey;
+}
+
+.addresses {
+  width: 100%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  p {
+    background-color: @footerBgColor;
+    .footerText;
+  }
+}
+
+#copyright {
+  margin: 2% 0;
+  text-align: center;
+  p {
+    background-color: #828282;
+    .footerText;
+  }
+}

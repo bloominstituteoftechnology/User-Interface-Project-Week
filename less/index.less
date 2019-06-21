@@ -1,60 +1,698 @@
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
 v2.0b1 | 201101 
 NOTE:WORK IN PROGRESS
 USE WITH CAUTION AND TEST WITH ABANDON */
 
-html,body,div,span,applet,object,iframe,
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,
-del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,
-b,u,i,center,
-dl,dt,dd,ol,ul,li,
-fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,
-article,aside,canvas,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section,summary,
-time,mark,audio,video{
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  font:inherit;
-  vertical-align:baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section{
-  display:block;
-}
-body{
-  line-height:1;
-}
-ol,ul{
-  list-style:none;
-}
-blockquote,q{
-  quotes:none;
-}
-blockquote:before,blockquote:after,
-q:before,q:after{
-  content:’’;
-  content:none;
-}
-ins{
-  text-decoration:none;
-}
-del{
-  text-decoration:line-through;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: top;
 }
 
-table{
-  border-collapse:collapse;
-  border-spacing:0;
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: ’’;
+    content: none;
+}
+
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Your Code Goes Here */
+
+@import "./mixins.less";
+@import "./variables.less";
+html {
+    font-size: 62.5%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container {
+    vertical-align: top;
+}
+
+p {
+    .generalSettings;
+}
+
+.navi {
+    position: fixed;
+    z-index: 3;
+    opacity: 0.8;
+    display: inline-flex;
+    width: 1024px;
+    height: 40px;
+    flex-direction: row;
+    justify-content: right;
+    font-family: @projectFont;
+    background-color: @navigationColor;
+    .navigationLogo;
+    .menuList {
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        background-color: #828282;
+        padding-left: 35%;
+    }
+}
+
+.expandMenu {
+    position: relative;
+    .navigationTextExpand;
+    background-color: #828282;
+}
+
+.menu-hidden {
+    display: none;
+}
+
+.logo {
+    .navigationLogo;
+    padding: 15px 0px 20px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+.menuLogo {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuButton {
+    display: flex;
+    justify-content: right;
+    width: 85%;
+    height: 20px;
+    padding: 10px 10px 25px 0px;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    z-index: 1;
+    .jumboTron {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        .jumboH1 {
+            .jumboHeader;
+            font-family: @projectFont;
+            color: @fontColorWhite;
+            position: absolute;
+            z-index: 0;
+            bottom: 7%;
+            right: 60.5%;
+        }
+    }
+}
+
+.designInfo {
+    margin-top: 596px;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: @projectFont;
+    .architects {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 50px;
+        .archContent {
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
+            width: 50%;
+        }
+    }
+    .futureDesigns {
+        margin-top: 75px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        .futureContent {
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
+            width: 50%;
+        }
+    }
+    h1 {
+        .subHeaders;
+    }
+    button {
+        .button;
+    }
+}
+
+.projectPics {
+    width: 100%;
+    background-color: #d8d8d8;
+}
+
+.projects {
+    margin-top: 100px;
+    padding: 0px 50px;
+    font-family: @projectFont;
+    h1 {
+        .subHeaders;
+    }
+    .villaWrap {
+        width: 100%;
+        margin: 50px 0px;
+        position: relative;
+        .villaHeader {
+            padding: 35px;
+            width: 320px;
+            height: 30px;
+            background-color: #d8d8d8;
+            border: solid 2px #ffffff;
+            position: absolute;
+            z-index: 0;
+            text-align: center;
+            bottom: 57%;
+            right: 0;
+            h1 {
+                font-family: @projectFont;
+                font-weight: 200;
+                font-size: 3rem;
+                letter-spacing: 10px;
+            }
+        }
+    }
+}
+
+.outskirtsWrap {
+    width: 100%;
+    position: relative;
+    .outskirtsHeader {
+        padding: 35px;
+        width: 320px;
+        height: 30px;
+        background-color: #d8d8d8;
+        border: solid 2px #ffffff;
+        position: absolute;
+        z-index: 0;
+        text-align: center;
+        bottom: 57%;
+        left: 0;
+        h1 {
+            font-family: @projectFont;
+            font-weight: 200;
+            font-size: 3rem;
+            letter-spacing: 10px;
+        }
+    }
+}
+
+.blocksWrap {
+    width: 100%;
+    position: relative;
+    .blocksHeader {
+        padding: 35px;
+        width: 320px;
+        height: 30px;
+        background-color: #d8d8d8;
+        border: solid 2px #ffffff;
+        position: absolute;
+        z-index: 0;
+        text-align: center;
+        bottom: 57%;
+        right: 0;
+        h1 {
+            font-family: @projectFont;
+            font-weight: 200;
+            font-size: 3rem;
+            letter-spacing: 10px;
+        }
+    }
+}
+
+.projectText {
+    margin: 7% 0;
+    padding: 5% 27%;
+}
+
+
+    
+    
+    footer {
+    margin: 0;
+    background-color: #828282;
+    height: 200px;
+    position: relative;
+    font-family: @projectFont;
+    .footerHeadings;
+    }
+
+.footerWrap {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    .emailWrap {
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        padding: 5%;
+        input {
+            height: 40px;
+            width: 270px;
+            border-radius: 5px;
+            padding-left: 5px;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
+
+.addresses {
+    width: 100%;
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    p {
+        background-color: @footerBgColor;
+        .footerText;
+    }
+}
+
+#copyright {
+    margin: 0 0;
+    text-align: center;
+    p {
+        background-color: #828282;
+        .footerText;
+    }
+}
+
+.mobileView {
+    display: none;
+}
+
+.desktopView {
+    display: block;
+}
+
+@media ( max-width: 500px) {
+    .navi {
+        position: static;
+        z-index: 3;
+        opacity: 0.8;
+        display: flex;
+        width: 100%;
+        height: 40px;
+        flex-direction: row;
+        justify-content: right;
+        font-family: @projectFont;
+        background-color: @navigationColor;
+        .navigationLogo;
+        .menuList {
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            background-color: #828282;
+            padding-left: 35%;
+        }
+    }
+    .expandMenu {
+        position: relative;
+        .navigationTextExpand;
+        background-color: #828282;
+    }
+    .header {
+        width: 100%;
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        z-index: 1;
+        .jumboTron {
+            display: flex;
+            width: 100%;
+            position: static;
+            top: 0;
+            z-index: -1;
+            .jumboH1 {
+                .jumboHeader;
+                font-family: @projectFont;
+                color: @fontColorWhite;
+                line-height: 60px;
+                font-size: 5.2rem;
+                position: absolute;
+                z-index: 0;
+                bottom: 13%;
+                right: 38.5%;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    .designInfo {
+        margin-top: 12px;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        font-family: @projectFont;
+        .architects {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-around;
+            width: 100%;
+            .archContent {
+                display: flex;
+                flex-direction: column;
+                padding-top: 30px;
+                width: 100%;
+                margin-bottom: 20px;
+                h1 {
+                    .subHeaders;
+                    font-size: 3rem;
+                    width: 450px;
+                    text-align: left;
+                    margin: 20px 0;
+                }
+                p {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .futureDesigns {
+            margin-top: 75px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-around;
+            .futureContent {
+                display: flex;
+                flex-direction: column;
+                padding-top: 30px;
+                width: 100%;
+                h1 {
+                    .subHeaders;
+                    font-size: 3rem;
+                    width: 450px;
+                    text-align: left;
+                    margin: 20px 0;
+                }
+
+                p {
+                    margin-bottom: 30px;
+                }
+                button {
+                    .button;
+                    height: 70px;
+                    width: 100%;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    .designInfo button {
+        .button;
+        height: 70px;
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    .projects {
+        margin-top: 100px;
+        padding: 0px 0px;
+        font-family: @projectFont;
+        h1 {
+            .subHeaders;
+            font-size: 3.1rem;
+        
+        }
+        .villaWrap {
+            width: 100%;
+            margin: 50px 0px;
+            position: relative;
+            .villaHeader {
+                padding: 35px;
+                width: 340px;
+                height: 40px;
+                background-color: #d8d8d8;
+                border: solid 2px #ffffff;
+                position: absolute;
+                z-index: 0;
+                text-align: center;
+                bottom: 55%;
+                right: 10%;
+                h1 {
+                    font-family: @projectFont;
+                    font-weight: 200;
+                    font-size: 3rem;
+                    letter-spacing: 10px;
+                }
+            }
+        }
+    }
+
+    .projectText {
+        margin: 20% 0;
+        padding: 5% 23%;
+    }
+    
+    .outskirtsWrap {
+        width: 100%;
+        position: relative;
+        .outskirtsHeader {
+            padding: 35px;
+            width: 340px;
+            height: 40px;
+            background-color: #d8d8d8;
+            border: solid 2px #ffffff;
+            position: absolute;
+            z-index: 0;
+            text-align: center;
+            bottom: 55%;
+            left: 10%;
+            h1 {
+                font-family: @projectFont;
+                font-weight: 200;
+                font-size: 3rem;
+                letter-spacing: 10px;
+            }
+        }
+    }
+    
+    .blocksWrap {
+        width: 100%;
+        position: relative;
+        .blocksHeader {
+            padding: 35px;
+            width: 340px;
+            height: 40px;
+            background-color: #d8d8d8;
+            border: solid 2px #ffffff;
+            position: absolute;
+            z-index: 0;
+            text-align: center;
+            bottom: 55%;
+            right: 10%;
+            h1 {
+                font-family: @projectFont;
+                font-weight: 200;
+                font-size: 3rem;
+                letter-spacing: 10px;
+            }
+        }
+    }
+    
+        footer {
+            margin: 0;
+            position: relative;
+            font-family: @projectFont;
+            .footerHeadings;
+            display: flex;
+            flex-direction: column;
+            background-color: #828282;
+            }
+
+
+    .footerWrap {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #828282;
+        .emailWrap {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            padding: 2%;
+            input {
+                height: 40px;
+                width: 270px;
+                border-radius: 5px;
+                padding-left: 5px;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .addresses {
+        width: 100%;
+        padding: 5%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: #828282;
+            h2 {
+                margin-bottom: 2%;
+                background-color: @footerBgColor;
+            }
+        p {
+            margin-bottom: 3%;
+            background-color: @footerBgColor;
+            .footerText;
+        }
+    }
+    
+    
+    .mobileView {
+        display: block;
+    }
+
+    .desktopView {
+        display: none;
+    }
+    
+
+
+
+}

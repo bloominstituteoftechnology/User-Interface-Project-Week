@@ -3,61 +3,61 @@ Use this guide to help you navigate the design files.  In a professional work pl
 
 Font family can be found here: https://fonts.google.com/specimen/Roboto
 
-### GENERAL STYLES
+<!-- ### GENERAL STYLES
 - Background: #FFFFFF
 - Color: #222222
-- Font Family: Roboto, Arial, sans-serif
+- Font Family: Roboto, Arial, sans-serif -->
 
 ## Page Specific
 
-### Home Page
+<!-- ### Home Page
 - Recent Projects Gray Square: #D8D8D8
-- Button borders: #222222
+- Button borders: #222222 -->
 
 ### Services Page
-- Tab selected background: #5E9FB9
+- Tab selected background: #5e9fb9
 - Tab Hover background: #222222
 - Tab Hover color: #FFF;
 
-## Footer 
-Background: #828282
+<!-- ## Footer 
+Background: #828282 -->
 
-### General Text
+<!-- ### General Text
 - Font Weight: Regular
 - Font Size: 16px
-- Line Height: 24px
+- Line Height: 24px -->
 
-### Jumbotron Headers
+<!-- ### Jumbotron Headers
 - Font Weight: Bold
 - Font Size: 64px
 - Line Height: 75px
-- Color: #FFFFFF
+- Color: #FFFFFF -->
 
-### Sub Headers
+<!-- ### Sub Headers
 - Font Weight: Bold
 - Font Size: 28px
-- Color: #222222
+- Color: #222222 -->
    
-### Footer Headings
+<!-- ### Footer Headings
 - Font Weight: Regular
 - Font Size: 20px
 - Line Height: 24px
-- Color: #FFFFFF
+- Color: #FFFFFF -->
 
-### Footer Text
+<!-- ### Footer Text
 - Font Weight: Regular
 - Font Size: 14px
 - Line Height: 26px
-- Color: #FFFFFF
+- Color: #FFFFFF -->
 
-### Navigation Logo
+<!-- ### Navigation Logo
 - Font Weight: Bold
 - Font Size: 24px
-- Color: #FFFFFF
+- Color: #FFFFFF -->
 
-### Navigation Text (Expanded)
+<!-- ### Navigation Text (Expanded)
 - Font Weight: Bold
 - Font Size: 48px
 - Line Height: 85px
 - Color: #FFFFFF
-- Hover Color: #222222
+- Hover Color: #222222 -->
