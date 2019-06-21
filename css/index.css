@@ -1,1 +1,763 @@
-/* Should be empty until you compile your LESS */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*------------------------------------*\
+RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0b1 | 201101 
+NOTE:WORK IN PROGRESS
+USE WITH CAUTION AND TEST WITH ABANDON */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ’’;
+  content: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Your Code Goes Here */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  width: 100%;
+}
+html body {
+  font-family: 'Roboto', Arial, sans-serif;
+  width: 100%;
+  margin: 0;
+  background-color: #FFFFFF;
+  font-weight: Regular;
+  font-size: 16px;
+  line-height: 24px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #222222;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1rem;
+}
+.container {
+  width: 100%;
+  max-width: 850px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+button {
+  width: 138px;
+  height: 48px;
+  font-size: 1.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+}
+@media (max-width: 320px) {
+  .container {
+    width: 320px;
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    width: 100%;
+    height: 70px;
+    font-size: 1.5rem;
+    background-color: #FFFFFF;
+    border: 1px solid #222222;
+  }
+}
+.display-off {
+  display: none;
+}
+.tab-selected {
+  background-color: #5E9FB9;
+}
+body .main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: grey;
+  position: fixed;
+  z-index: 5;
+}
+body .main-nav .nav-container {
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
+}
+body .main-nav .nav-container .company-name {
+  display: flex;
+  align-items: center;
+  font-weight: Bold;
+  font-size: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+body .main-nav .nav-container .dropdown {
+  display: flex;
+  align-items: center;
+}
+body .main-nav .nav-container .dropdown .hamburger-img {
+  height: auto;
+  width: auto;
+  cursor: pointer;
+}
+body .main-nav .nav-container .dropdown .hamburger-close-img {
+  height: auto;
+  width: auto;
+  cursor: pointer;
+}
+body .dropdown-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #222222;
+  opacity: 0.9;
+  z-index: 3;
+  margin: 50px 0 0 0;
+}
+body .dropdown-content .anchors {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+body .dropdown-content .anchors a {
+  text-decoration: none;
+  text-align: center;
+  font-weight: Bold;
+  font-size: 48px;
+  line-height: 85px;
+  color: #FFFFFF;
+}
+body .dropdown-content .anchors a:hover {
+  text-decoration: underline;
+  color: #222222;
+  background-color: #FFFFFF;
+}
+body .homepage-content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .homepage-content .jumbotron-container {
+  position: relative;
+  width: 100%;
+}
+body .homepage-content .jumbotron-container .jumbotron-img {
+  width: 100%;
+  height: 600px;
+}
+body .homepage-content .main-content {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body .homepage-content .main-content .slogan {
+  width: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+  margin: -277px 0 0 0;
+  z-index: 2;
+}
+body .homepage-content .main-content .slogan h1 {
+  font-size: 6.4rem;
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 65px;
+  color: #FFFFFF;
+  margin: 0 0 1rem 0;
+}
+body .homepage-content .main-content .intro-content {
+  margin: 120px 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body .homepage-content .main-content .intro-content .intro-container {
+  margin: 0 0 50px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 300px;
+}
+body .homepage-content .main-content .intro-content .intro-container .text-intro {
+  width: 48%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .homepage-content .main-content .intro-content .intro-container .text-intro h2 {
+  font-weight: Bold;
+  font-size: 28px;
+  color: #222222;
+}
+body .homepage-content .main-content .intro-content .intro-container .text-intro p {
+  font-size: 1.8rem;
+}
+body .homepage-content .main-content .intro-content .intro-container img {
+  width: 48%;
+  height: 276px;
+}
+body .homepage-content .main-content .recent-projects {
+  margin: -100px 0 0 0;
+}
+body .homepage-content .main-content .recent-projects h3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+body .homepage-content .main-content .recent-projects .projects-container {
+  margin: 0 0 105px 0;
+  display: flex;
+  flex-direction: column;
+}
+body .homepage-content .main-content .recent-projects .projects-container .img-label {
+  width: 36.5%;
+  height: 100px;
+  align-self: flex-end;
+  background-color: #D8D8D8;
+  border: 1px solid #FFFFFF;
+  margin: -60px 0 50px 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .homepage-content .main-content .recent-projects .projects-container .img-label h2 {
+  letter-spacing: 0.8rem;
+  font-size: 2.5rem;
+}
+body .homepage-content .main-content .recent-projects .projects-container .outskirts {
+  align-self: flex-start;
+}
+body .homepage-content .main-content .recent-projects .projects-container p {
+  line-height: 1.2;
+  align-self: center;
+  max-width: 450px;
+  font-size: 2rem;
+}
+@media (max-width: 320px) {
+  p {
+    line-height: 1;
+    font-size: 14px;
+  }
+  body .homepage-content .jumbotron-container .jumbotron-img {
+    content: url("../img/home/home-mobile-jumbotron.png");
+    width: 100%;
+    max-width: 320px;
+    height: 260px;
+  }
+  body .homepage-content .main-content .slogan {
+    align-items: center;
+    margin: -155px 0 0 15px;
+  }
+  body .homepage-content .main-content .slogan h1 {
+    line-height: 1;
+    font-size: 3.5rem;
+  }
+  body .homepage-content .main-content .intro-content {
+    width: 100%;
+    margin: 50px 0;
+  }
+  body .homepage-content .main-content .intro-content .intro-container {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    height: 540px;
+  }
+  body .homepage-content .main-content .intro-content .intro-container img {
+    content: url("../img/home/home-mobile-img-1.png");
+    width: 290px;
+    height: 275px;
+  }
+  body .homepage-content .main-content .intro-content .intro-container .text-intro {
+    height: 240px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  body .homepage-content .main-content .intro-content .intro-container .text-intro h2 {
+    font-size: 2rem;
+  }
+  body .homepage-content .main-content .intro-content .intro-container .text-intro p {
+    line-height: 1.25;
+  }
+  body .homepage-content .main-content .intro-content .bottom-intro {
+    flex-direction: column;
+  }
+  body .homepage-content .main-content .intro-content .bottom-intro img {
+    content: url("../img/home/home-mobile-img-2.png");
+    width: 290px;
+    height: 275px;
+  }
+  body .homepage-content .main-content .intro-content .bottom-intro .text-intro {
+    height: 240px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  body .homepage-content .main-content .intro-content .bottom-intro .text-intro h2 {
+    font-size: 2rem;
+  }
+  body .homepage-content .main-content .intro-content .bottom-intro .text-intro p {
+    line-height: 1.25;
+  }
+  body .homepage-content .main-content .recent-projects {
+    margin: -55px 0 0 0;
+    width: 100%;
+  }
+  body .homepage-content .main-content .recent-projects .projects-container {
+    margin: 5px 0 50px -15px;
+    display: flex;
+    flex-direction: column;
+  }
+  body .homepage-content .main-content .recent-projects .projects-container .villas-img {
+    content: url("../img/home/home-mobile-villas-img.png");
+    width: 320px;
+    height: 200px;
+  }
+  body .homepage-content .main-content .recent-projects .projects-container .img-label {
+    align-self: center;
+    width: 290px;
+    margin: -15px 0 25px 20px;
+  }
+  body .homepage-content .main-content .recent-projects .projects-container .img-label h2 {
+    margin: 0;
+    letter-spacing: 0.8rem;
+  }
+  body .homepage-content .main-content .recent-projects .projects-container p {
+    align-self: center;
+    max-width: 300px;
+    margin: 0 0 0 15px;
+    line-height: 2.4rem;
+    font-size: 2rem;
+  }
+  body .homepage-content .main-content .recent-projects .projects-container .outskirts-img {
+    content: url("../img/home/home-mobile-outskirts-img.png");
+    width: 320px;
+    height: 200px;
+  }
+  body .homepage-content .main-content .recent-projects .projects-container .blocks-img {
+    content: url("../img/home/home-mobile-the-blocks-img.png");
+    width: 320px;
+    height: 200px;
+  }
+}
+body footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  flex-direction: column;
+  background-color: #828282;
+  color: #FFFFFF;
+}
+body footer .footer-container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 60px 0;
+}
+body footer .footer-container .contact-us {
+  font-weight: Bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  width: 34%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body footer .footer-container .contact-us p {
+  font-weight: bold;
+}
+body footer .footer-container .contact-us input {
+  margin: 10px 0;
+  border-radius: 5px;
+  line-height: 40px;
+  color: gray;
+}
+body footer .footer-container .contact-us .tiny-font {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+body footer .footer-container .addresses {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body footer .footer-container .addresses address .state {
+  top: 0;
+  font-weight: Bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+body footer .foot-note {
+  bottom: 2px;
+  font-size: 1.2rem;
+}
+@media (max-width: 320px) {
+  body footer {
+    width: 100%;
+    height: auto;
+  }
+  body footer .footer-container {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+  }
+  body footer .footer-container .contact-us {
+    width: 300px;
+    height: auto;
+  }
+  body footer .footer-container .contact-us input {
+    width: 100%;
+    margin: 15px 15px 10px 0;
+    line-height: 45px;
+  }
+  body footer .footer-container .addresses {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  body footer .footer-container .addresses address {
+    line-height: 1.7;
+    margin: 0 0 17px 0;
+  }
+  body footer .foot-note {
+    margin: 0;
+    align-self: flex-start;
+    margin: -60px 0 30px 15px;
+  }
+}
+body .services-content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .services-content .jumbotron-container {
+  position: relative;
+  width: 100%;
+}
+body .services-content .jumbotron-container .jumbotron-img {
+  width: 100%;
+  height: 250px;
+}
+body .services-content .main-content {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body .services-content .main-content .slogan {
+  width: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+  margin: -90px 0 0 0;
+  z-index: 2;
+}
+body .services-content .main-content .slogan h1 {
+  font-size: 6.4rem;
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 65px;
+  color: #FFFFFF;
+  margin: 0 0 1rem 0;
+}
+body .services-content .main-content .intro-content {
+  margin: 65px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body .services-content .main-content .intro-content p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+body .services-content .main-content .services-tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 30px 0 45px 0;
+}
+body .services-content .main-content .services-tabs .services-tab {
+  width: 22%;
+  height: 48px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 1px solid #222222;
+}
+body .services-content .main-content .services-tabs .services-tab:hover {
+  background-color: #222222;
+  cursor: pointer;
+  color: #FFF;
+}
+body .services-content .main-content .tab-descriptions {
+  width: 100%;
+  margin: 10px 0 100px 0;
+}
+body .services-content .main-content .tab-descriptions .tab-title {
+  font-weight: Bold;
+  font-size: 28px;
+  color: #222222;
+}
+body .services-content .main-content .tab-descriptions .tab-description {
+  margin: 10px 0;
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .services-content .main-content .tab-descriptions .tab-description .tab-description-text {
+  width: 48%;
+  height: auto;
+  line-height: 2;
+}
+body .services-content .main-content .tab-descriptions .tab-description .tab-description-img {
+  width: 48%;
+  height: auto;
+}
+@media (max-width: 320px) {
+  body .services-content {
+    font-size: 14px;
+  }
+  body .services-content .jumbotron-container .jumbotron-img {
+    content: url("../img/services/services-mobile-jumbotron.png");
+    width: 320px;
+    height: 260px;
+  }
+  body .services-content .main-content .slogan {
+    line-height: 0.9;
+    margin: -145px 0 0 0;
+  }
+  body .services-content .main-content .services-tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+body .contact-content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .contact-content .jumbotron-container {
+  position: relative;
+  width: 100%;
+}
+body .contact-content .jumbotron-container .jumbotron-img {
+  width: 100%;
+  height: 250px;
+}
+body .contact-content .main-content {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body .contact-content .main-content .slogan {
+  width: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+  margin: -90px 0 10px 0;
+  z-index: 2;
+}
+body .contact-content .main-content .slogan h1 {
+  font-size: 6.4rem;
+  font-weight: Bold;
+  font-size: 64px;
+  line-height: 65px;
+  color: #FFFFFF;
+  margin: 0 0 1rem 0;
+}
+body .contact-content .main-content .mid-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .contact-content .main-content .mid-section .get-in-touch {
+  width: 50%;
+  margin: 50px 0;
+}
+body .contact-content .main-content .mid-section .where-we-work {
+  width: 40%;
+}
+@media (max-width: 320px) {
+  body .services-content {
+    font-size: 14px;
+  }
+  body .services-content .jumbotron-container .jumbotron-img {
+    content: url("../img/services/services-mobile-jumbotron.png");
+    width: 320px;
+    height: 260px;
+  }
+  body .services-content .main-content .slogan {
+    line-height: 0.9;
+    margin: -145px 0 0 0;
+  }
+}
