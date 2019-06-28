@@ -1,8 +1,5 @@
 .home {
   max-width: 1024px;
-  @media @tablet {
-    max-width: 800px;
-  }
   .main {
     .main-img {
       padding-top: 50px;
@@ -76,67 +73,50 @@
       }
     }
   .reverse-content {
-        padding: 6% 8%;
-        display: flex;
+    display: flex;
+    padding: 6% 8%;
+    @media @phone {
+      flex-direction: column;
+      align-items: center;
+    }
+    .img-content {
+      .desktop {
         @media @phone {
-          flex-direction: column;
-          align-items: center;
+          display: none;
         }
-
-        .img-content {
-          @media @phone {
-            display: flex;
-            justify-content: center;
-          }
-
-          .desktop {
-            @media @phone {
-              display: none;
-            }
-          }
-
-          .mobile {
-            display: none;
-
-            @media @phone {
-              display: flex;
-            }
-          }
-        }
-
-        .text-content {
+      }
+      .mobile {
+        display: none;
+        @media @phone {
           display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding-left: 30px;
-
-          @media @phone {
-            padding: 0px;
-            display: flex;
-            align-items: flex-start;
-            max-width: 290px;
-          }
-
-          h2 {
-            @media @phone {
-              margin-top: 15px;
-            }
-          }
-
-          p {
-            padding: 20px 0px;
-
-            @media @phone {
-              padding: 0px auto;
-            }
-          }
         }
-
+      }
+    }
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      padding-left: 5%;
+      @media @phone {
+        padding: 0%;
+      }
+      h2 {
+        @media @phone {
+          margin-top: 7%;
+        }
+      }
+      p {
+        padding: 5% 0%;
+        @media @phone {
+          padding: 0% auto;
+        }
+      }
+      a {
         button {
           .button(200px, 50px)
-		}
+        }
       }
-
+    }
+  }
   .recent-projects {
     max-width: 855px;
     margin: 0 auto;
@@ -146,7 +126,6 @@
     }
     @media @tablet {
       max-width: 800px;
-      border: 5px solid green;
       padding: 5% 0%;
     }
 
