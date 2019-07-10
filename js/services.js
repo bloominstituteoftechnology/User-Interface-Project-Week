@@ -30,22 +30,17 @@ class TabLink {
 
         this.element = element;
 
-        this.element.addEventListener('mouseover', () => {
-            this.element.classList.add('clicked')
-    
-        });
-        this.element.addEventListener('mouseout', () => {
-            this.element.classList.remove('clicked')
-
-        });
-
         this.element.addEventListener('click', () => {
+            let navs = document.querySelectorAll('.service-nav');
+            [...navs].map(nav => {return nav.classList.remove('clicked')})
+            this.element.classList.add('clicked')
            this.getSec(); 
         })
       }
 
       getSec() {
           const element = this.element;
+          
         const sections = document.querySelectorAll('.tab');
 
         sections.forEach(function(section) {
