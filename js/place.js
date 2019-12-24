@@ -2,7 +2,7 @@ const menuO = document.querySelector('.open');
 const menuC = document.querySelector('.close');
 const bottom = document.querySelector('.bottom');
 let menuI = document.querySelectorAll('.bottom a')
-let tabs = document.querySelectorAll('.services-sec1 div p')
+let tabs = document.querySelectorAll('.weapon-sec1 div p')
 
 console.log(tabs);
 
