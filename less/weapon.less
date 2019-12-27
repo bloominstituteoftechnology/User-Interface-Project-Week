@@ -1,76 +1,73 @@
-.weapon-sec1 div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 25px;
-  }
-  @media (max-width: 600px) {
-    .weapon-sec1 div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      align-self: center;
-    }
-  }
-  .weapon-sec1 div p {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.75rem;
-    color: black;
-    line-height: 24px;
-    border: 1px solid gray;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-  }
-  @media (max-width: 600px) {
-    .weapon-sec1 div p {
-      font-weight: bold;
-      font-size: 2.5rem;
-      color: black;
-      line-height: 24px;
-      width: 95%;
-      padding: 30px;
-      margin: 10px;
-    }
-  }
 
-  .weapon-sec1 {
-    margin: 50px 0px;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: space-between;
-  }
-  @media (max-width: 600px) {
-    .weapon-sec1 {
-      width: 100%;
+
+.weapon-nav-sec {
+    width:85%;
+    @media(max-width:600px) {
+        width: 100%;
     }
-  }
-  .weapon-sec1 .service-nav {
-    cursor: pointer;
-  }
-  .weapon-sec1 .clicked {
-    background-color: orange;
-    color: white;
-    cursor: default;
-  }
-  .weapon-sec1 p {
-    font-weight: regular;
-    font-size: 1.75rem;
-    color: black;
-    line-height: regular;
-  }
-  @media (max-width: 600px) {
-    .weapon-sec1 p {
-      font-weight: regular;
-      font-size: 2.25rem;
-      color: black;
-      line-height: regular;
-      width: 100%;
+    
+    .flex(row,center,space-between);
+    .weapon-nav-button {
+        cursor: pointer;
+        padding: 10px 2%;
+        border: 1px solid black
     }
-  }
+    .clicked {
+        background-color: @tabselectbc;
+        color:white;
+        cursor: default;
+    }
+    p {
+        .font(regular,1.75rem,black,regular);
+
+        @media(max-width:600px) {
+            .font(regular,2.25rem,black,regular);
+            width: 100%;
+        }
+    }
+}
+
+.tab {
+    margin: 20px 0px;
+    width:80%;
+    @media(max-width:600px) {
+        width: 100%;
+    }
+    .tab-stuff {
+        .flex(column,space-between,flex-start);
+       width:100%;
+        p {
+            margin:10px 20px 10px 0px;
+            .font(regular,1.75rem,black,regular);
+
+            @media(max-width:600px) {
+                .font(regular,2.25rem,black,regular);
+            }
+        }
+        .head-text {
+            .font(bold,2.25rem,#222222,regular);
+            margin-bottom: 10px;
+            @media(max-width:600px) {
+                .font(bold,3.25rem,black,24px);
+            }
+        }
+
+        img {
+            height: 70vh;
+            align-self: center
+        }
+    }
+}
+
+.visible {
+    .flex(row,space-between,center);
+    @media(max-width:600px){
+        width: 100%;
+        .flex(column,center,center);
+
+    }
+}
+
+.invisible {
+    display:none;
+}
