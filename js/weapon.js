@@ -2,7 +2,7 @@ const menuO = document.querySelector('.open');
 const menuC = document.querySelector('.close');
 const bottom = document.querySelector('.bottom');
 let menuI = document.querySelectorAll('.bottom a')
-let tabs = document.querySelectorAll('.weapon-sec1 div p')
+let tabs = document.querySelectorAll('.weapon-nav-button')
 
 console.log(tabs);
 
@@ -31,7 +31,7 @@ class TabLink {
         this.element = element;
 
         this.element.addEventListener('click', () => {
-            let navs = document.querySelectorAll('.service-nav');
+            let navs = document.querySelectorAll('.weapon-nav-button');
             [...navs].map(nav => {return nav.classList.remove('clicked')})
             this.element.classList.add('clicked')
            this.getSec(); 
@@ -49,7 +49,7 @@ class TabLink {
 
 
         sections.forEach(function(section) {
-            const classes = ['pre-construction','construction','design-build','sustainability'];
+            const classes = ['rock','gun','knife','hammer', 'rake', 'shovel', 'axe', 'bottle', 'rope', 'bow'];
             for (let i = 0;i<classes.length;i++) {
             if (section.classList.contains(classes[i]) && element.classList.contains(classes[i]))
             {section.classList.remove('invisible');
