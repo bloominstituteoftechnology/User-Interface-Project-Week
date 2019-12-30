@@ -4,13 +4,26 @@
     width:85%;
     @media(max-width:600px) {
         width: 100%;
+        margin-top: 0;
+        text-align: center;
+        .flex(column,center, center);
     }
     
     .flex(row,center,space-between);
+    flex-wrap: wrap;
     .weapon-nav-button {
         cursor: pointer;
         padding: 10px 2%;
-        border: 1px solid black
+        border: 1px solid black;
+        text-align: center;
+        @media(max-width:600px) {
+            padding: 15px 2%;
+
+            margin: 5px 0px;
+            width: 100%;
+            .font(regular,4rem,black,regular);
+
+        }
     }
     .clicked {
         background-color: @tabselectbc;
@@ -36,14 +49,9 @@
     .tab-stuff {
         .flex(column,space-between,flex-start);
        width:100%;
-        p {
-            margin:10px 20px 10px 0px;
-            .font(regular,1.75rem,black,regular);
-
-            @media(max-width:600px) {
-                .font(regular,2.25rem,black,regular);
-            }
-        }
+       @media(max-width:600px) {
+        .flex(column,center,center);
+    }
         .head-text {
             .font(bold,2.25rem,#222222,regular);
             margin-bottom: 10px;
@@ -54,7 +62,13 @@
 
         img {
             height: 70vh;
-            align-self: center
+            align-self: center;
+            @media(max-width:600px) {
+                width: 100%;
+                object-fit: cover;
+                height: 90vh;
+
+            }
         }
     }
 }
