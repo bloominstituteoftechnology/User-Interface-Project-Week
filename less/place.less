@@ -15,7 +15,12 @@
         .place-nav-button {
             cursor: pointer;
             padding: 10px;
-            border: 1px solid black
+            border: 1px solid black;
+            @media(max-width:600px) {
+                padding: 15px 2%;
+                margin: 5px 0px;
+                width: 100%;
+                .font(regular,4rem,black,regular);            }
         }
         .clicked {
             background-color: @tabselectbc;
@@ -35,28 +40,46 @@
     
         .tab {
             margin: 20px 0px;
-            width:85%;
+            width:100%;
             @media(max-width:600px) {
                 width: 100%;
             }
             .tab-stuff {
                 .flex(row, flex-start, space-between);
                 width:100%;
+                @media(max-width:600px) {
+                    .flex(column, center, center);
+                }
                 .head-text {
                     .font(bold,2.25rem,#222222,regular);
                     margin: 20px 4% 20px 0px;  
-                    width: 30%;  
+                    width: 100%;  
                     @media(max-width:600px) {
-                        .font(bold,3.25rem,black,24px);
+                        .font(bold,3.25rem,black,40px);
+                        text-align: center;
+                        padding: 20px;
+                        margin: 0
                     }
                 }
                 div {
                     align-self: flex-start;
                     width: 80%;
                     .flex(column, flex-start, flex-start);
+                    @media(max-width:600px) {
+                        align-self: center;
+                        width: 95%;
+                        .flex(column, center, center);
+
+                    }
                     h4 {
-                        .font(regular,2rem,black,regular);
+                        .font(regular,2rem,darkorange,regular);
                         margin-top: 20px;
+                        @media(max-width:600px) {
+                            .font(regular,2.5rem,darkorange,regular);
+                            text-align: center;
+                            margin: 0
+
+                        }
                     }
                 }
                 p {
@@ -65,11 +88,18 @@
     
                     @media(max-width:600px) {
                         .font(regular,2.25rem,black,regular);
+                        text-align: center;
+                        margin: 15px 0px
                     }
                 }
                 img {
                     height: 60vh;
                     align-self: flex-start;
+                    @media(max-width:600px) {
+                        height: 250px;
+                        align-self: center;
+
+                    }
                 }
             }
         }
