@@ -1,106 +1,114 @@
 
-
-.weapon-nav-sec {
-    width:85%;
-    @media(max-width:600px) {
-        width: 100%;
-        margin-top: 0;
-        text-align: center;
-        .flex(column,center, center);
-    }
-    
-    .flex(row,center,space-between);
-    flex-wrap: wrap;
-    .weapon-nav-button {
-        cursor: pointer;
-        padding: 10px 2%;
-        border: 1px solid black;
-        text-align: center;
+.weapon-content {
+    .flex(column,center,center);
+    .weapon-nav-sec {
+        width:85%;
         @media(max-width:600px) {
+            width: 100%;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .flex(row,center,space-between);
+        flex-wrap: wrap;
+        .weapon-nav-button {
+            cursor: pointer;
             padding: 15px 2%;
+            margin: 10px 1%;
+            border: 1px solid black;
+            text-align: center;
+            .font(regular,3.5rem,black,regular);
 
-            margin: 5px 0px;
-            width: 100%;
-            .font(regular,4rem,black,regular);
+            @media(max-width:600px) {
+                padding: 15px 2%;
 
+                margin: 5px 0px;
+                width: 100%;
+                .font(regular,4rem,black,regular);
+
+            }
+        }
+        .clicked {
+            background-color: @tabselectbc;
+            color:white;
+            cursor: default;
+        }
+        p {
+            .font(regular,1.75rem,black,regular);
+
+            @media(max-width:600px) {
+                .font(regular,2.25rem,black,regular);
+                width: 100%;
+            }
         }
     }
-    .clicked {
-        background-color: @tabselectbc;
-        color:white;
-        cursor: default;
-    }
-    p {
-        .font(regular,1.75rem,black,regular);
 
+    .tab {
+        margin: 20px 0px;
+        width:100%;
         @media(max-width:600px) {
-            .font(regular,2.25rem,black,regular);
             width: 100%;
+            position: sticky;
+            top: 40px;
+            background-color: white;
+            padding: 15px;
+            border-bottom: 3px solid orange;        
         }
-    }
-}
+        .tab-stuff {
+            .flex(column,space-between,flex-start);
+            width:100%;
+        @media(max-width:600px) {
+            .flex(column,center,center);
+        }
+            .head-text {
+                .font(bold,2.25rem,#222222,regular);
+                margin-bottom: 10px;
+                @media(max-width:600px) {
+                    .font(bold,3.25rem,black,24px);
+                    padding: 20px;
+                }
+            }
 
-.tab {
-    margin: 20px 0px;
-    width:80%;
-    @media(max-width:600px) {
-        width: 100%;
-    }
-    .tab-stuff {
-        .flex(column,space-between,flex-start);
-       width:100%;
-       @media(max-width:600px) {
-        .flex(column,center,center);
-    }
-        .head-text {
-            .font(bold,2.25rem,#222222,regular);
-            margin-bottom: 10px;
-            @media(max-width:600px) {
-                .font(bold,3.25rem,black,24px);
-                margin-bottom: 40px
+            img {
+                height: 60vh;
+                align-self: center;
+                @media(max-width:600px) {
+                    object-fit: cover;
+                    height: 250px;
+
+                }
+            }
+
+            .bottle {
+                @media(max-width:600px) {
+                    width: 20%;
+                    object-fit: cover;
+                    height: auto;
+
+                }            
+            }
+
+            .knife {
+                @media(max-width:600px) {
+                    width: 60%;
+                    object-fit: cover;
+                    height: auto;
+
+                }            
             }
         }
+    }
 
-        img {
-            height: 70vh;
-            align-self: center;
-            @media(max-width:600px) {
-                width: 90%;
-                object-fit: cover;
-                height: auto;
+    .visible {
+        .flex(row,space-between,center);
+        @media(max-width:600px){
+            width: 100%;
+            .flex(column,center,center);
 
-            }
-        }
-
-        .bottle {
-            @media(max-width:600px) {
-                width: 20%;
-                object-fit: cover;
-                height: auto;
-
-            }            
-        }
-
-        .knife {
-            @media(max-width:600px) {
-                width: 60%;
-                object-fit: cover;
-                height: auto;
-
-            }            
         }
     }
-}
 
-.visible {
-    .flex(row,space-between,center);
-    @media(max-width:600px){
-        width: 100%;
-        .flex(column,center,center);
-
+    .invisible {
+        display:none;
     }
-}
-
-.invisible {
-    display:none;
 }

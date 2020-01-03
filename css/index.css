@@ -677,8 +677,15 @@ p {
   background-color: orange;
   color: white;
 }
+.suspect-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
 .suspect-content .suspect-nav-sec {
-  width: 100%;
+  width: 85%;
+  align-self: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -695,6 +702,22 @@ p {
   cursor: pointer;
   padding: 10px;
   border: 1px solid black;
+  margin: 5px 1%;
+  font-weight: regular;
+  font-size: 3.5rem;
+  color: black;
+  line-height: regular;
+}
+@media (max-width: 600px) {
+  .suspect-content .suspect-nav-sec .suspect-nav-button {
+    padding: 15px 2%;
+    margin: 5px 0px;
+    width: 100%;
+    font-weight: regular;
+    font-size: 4rem;
+    color: black;
+    line-height: regular;
+  }
 }
 .suspect-content .suspect-nav-sec .clicked {
   background-color: orange;
@@ -723,14 +746,42 @@ p {
 @media (max-width: 600px) {
   .suspect-content .tab {
     width: 100%;
+    position: sticky;
+    top: 40px;
+    background-color: white;
+    border-bottom: 3px solid orange;
   }
 }
 .suspect-content .tab .tab-stuff {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
+}
+@media (max-width: 600px) {
+  .suspect-content .tab .tab-stuff {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+}
+.suspect-content .tab .tab-stuff .head-text {
+  font-weight: bold;
+  font-size: 2.25rem;
+  color: #222222;
+  line-height: regular;
+}
+@media (max-width: 600px) {
+  .suspect-content .tab .tab-stuff .head-text {
+    font-weight: bold;
+    font-size: 3.25rem;
+    color: black;
+    line-height: 24px;
+    padding: 20px;
+  }
 }
 .suspect-content .tab .tab-stuff p {
   margin: 10px 20px 10px 0px;
@@ -751,33 +802,45 @@ p {
   align-self: flex-start;
   width: 75%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
-.suspect-content .tab .tab-stuff div .head-text {
-  font-weight: bold;
-  font-size: 2.25rem;
-  color: #222222;
-  line-height: regular;
-  margin: 20px 4% 20px 0px;
-}
 @media (max-width: 600px) {
-  .suspect-content .tab .tab-stuff div .head-text {
-    font-weight: bold;
-    font-size: 3.25rem;
-    color: black;
-    line-height: 24px;
+  .suspect-content .tab .tab-stuff div {
+    align-self: center;
+    width: 95%;
   }
 }
 .suspect-content .tab .tab-stuff div h4 {
   font-weight: regular;
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   color: black;
-  line-height: regular;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+@media (max-width: 600px) {
+  .suspect-content .tab .tab-stuff div h4 {
+    font-weight: regular;
+    font-size: 2.5rem;
+    color: black;
+    line-height: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    height: auto;
+  }
 }
 .suspect-content .tab .tab-stuff img {
-  height: 70vh;
+  height: 55vh;
+}
+@media (max-width: 600px) {
+  .suspect-content .tab .tab-stuff img {
+    object-fit: cover;
+    height: 250px;
+    padding-bottom: 10px;
+  }
 }
 .suspect-content .visible {
   display: flex;
@@ -800,7 +863,13 @@ p {
 .recolored {
   filter: sepia(100%) saturate(200%) hue-rotate(-20deg);
 }
-.weapon-nav-sec {
+.weapon-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.weapon-content .weapon-nav-sec {
   width: 85%;
   display: flex;
   flex-direction: row;
@@ -809,24 +878,25 @@ p {
   flex-wrap: wrap;
 }
 @media (max-width: 600px) {
-  .weapon-nav-sec {
+  .weapon-content .weapon-nav-sec {
     width: 100%;
     margin-top: 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
-.weapon-nav-sec .weapon-nav-button {
+.weapon-content .weapon-nav-sec .weapon-nav-button {
   cursor: pointer;
-  padding: 10px 2%;
+  padding: 15px 2%;
+  margin: 10px 1%;
   border: 1px solid black;
   text-align: center;
+  font-weight: regular;
+  font-size: 3.5rem;
+  color: black;
+  line-height: regular;
 }
 @media (max-width: 600px) {
-  .weapon-nav-sec .weapon-nav-button {
+  .weapon-content .weapon-nav-sec .weapon-nav-button {
     padding: 15px 2%;
     margin: 5px 0px;
     width: 100%;
@@ -836,19 +906,19 @@ p {
     line-height: regular;
   }
 }
-.weapon-nav-sec .clicked {
+.weapon-content .weapon-nav-sec .clicked {
   background-color: orange;
   color: white;
   cursor: default;
 }
-.weapon-nav-sec p {
+.weapon-content .weapon-nav-sec p {
   font-weight: regular;
   font-size: 1.75rem;
   color: black;
   line-height: regular;
 }
 @media (max-width: 600px) {
-  .weapon-nav-sec p {
+  .weapon-content .weapon-nav-sec p {
     font-weight: regular;
     font-size: 2.25rem;
     color: black;
@@ -856,16 +926,21 @@ p {
     width: 100%;
   }
 }
-.tab {
+.weapon-content .tab {
   margin: 20px 0px;
-  width: 80%;
+  width: 100%;
 }
 @media (max-width: 600px) {
-  .tab {
+  .weapon-content .tab {
     width: 100%;
+    position: sticky;
+    top: 40px;
+    background-color: white;
+    padding: 15px;
+    border-bottom: 3px solid orange;
   }
 }
-.tab .tab-stuff {
+.weapon-content .tab .tab-stuff {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -873,14 +948,14 @@ p {
   width: 100%;
 }
 @media (max-width: 600px) {
-  .tab .tab-stuff {
+  .weapon-content .tab .tab-stuff {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
-.tab .tab-stuff .head-text {
+.weapon-content .tab .tab-stuff .head-text {
   font-weight: bold;
   font-size: 2.25rem;
   color: #222222;
@@ -888,47 +963,46 @@ p {
   margin-bottom: 10px;
 }
 @media (max-width: 600px) {
-  .tab .tab-stuff .head-text {
+  .weapon-content .tab .tab-stuff .head-text {
     font-weight: bold;
     font-size: 3.25rem;
     color: black;
     line-height: 24px;
-    margin-bottom: 40px;
+    padding: 20px;
   }
 }
-.tab .tab-stuff img {
-  height: 70vh;
+.weapon-content .tab .tab-stuff img {
+  height: 60vh;
   align-self: center;
 }
 @media (max-width: 600px) {
-  .tab .tab-stuff img {
-    width: 90%;
+  .weapon-content .tab .tab-stuff img {
     object-fit: cover;
-    height: auto;
+    height: 250px;
   }
 }
 @media (max-width: 600px) {
-  .tab .tab-stuff .bottle {
+  .weapon-content .tab .tab-stuff .bottle {
     width: 20%;
     object-fit: cover;
     height: auto;
   }
 }
 @media (max-width: 600px) {
-  .tab .tab-stuff .knife {
+  .weapon-content .tab .tab-stuff .knife {
     width: 60%;
     object-fit: cover;
     height: auto;
   }
 }
-.visible {
+.weapon-content .visible {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 @media (max-width: 600px) {
-  .visible {
+  .weapon-content .visible {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -936,7 +1010,7 @@ p {
     align-items: center;
   }
 }
-.invisible {
+.weapon-content .invisible {
   display: none;
 }
 .place-content {

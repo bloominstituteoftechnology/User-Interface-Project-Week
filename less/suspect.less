@@ -1,18 +1,31 @@
 
 .suspect-content {
+    .flex(column,center,space-between);
+
     .suspect-nav-sec {
-        width:100%;
+        width:85%;
         @media(max-width:600px) {
             width: 100%;
             text-align: center;
         }
+        align-self: center;
         
         .flex(row,center,space-between);
         flex-wrap: wrap;
         .suspect-nav-button {
             cursor: pointer;
             padding: 10px;
-            border: 1px solid black
+            border: 1px solid black;
+            margin: 5px 1%;
+            .font(regular,3.5rem,black,regular);
+            @media(max-width:600px) {
+                padding: 15px 2%;
+
+                margin: 5px 0px;
+                width: 100%;
+                .font(regular,4rem,black,regular);
+
+            }
         }
         .clicked {
             background-color: @tabselectbc;
@@ -34,10 +47,26 @@
         width:100%;
         @media(max-width:600px) {
             width: 100%;
+            position: sticky;
+            top: 40px;
+            background-color: white;
+            border-bottom: 3px solid orange;
+
         }
         .tab-stuff {
-            .flex(column,space-between, center);
+            .flex(row,center, flex-start);
            width:100%;
+           @media(max-width:600px) {
+            .flex(column,center, center);
+            margin: 0
+        }
+            .head-text {
+                .font(bold,2.25rem,#222222,regular);
+                @media(max-width:600px) {
+                    .font(bold,3.25rem,black,24px);
+                    padding: 20px;
+                }
+            }
             p {
                 margin:10px 20px 10px 0px;
                 .font(regular,1.75rem,black,regular);
@@ -49,21 +78,36 @@
             div {
                 align-self: flex-start;
                 width: 75%;
-                .flex(row, flex-start, center);
-                .head-text {
-                    .font(bold,2.25rem,#222222,regular);
-                    margin: 20px 4% 20px 0px;    
-                    @media(max-width:600px) {
-                        .font(bold,3.25rem,black,24px);
-                    }
+                .flex(column, flex-start, center);
+                @media(max-width:600px) {
+                    align-self: center;
+                    width: 95%;
+
                 }
                 h4 {
-                    .font(regular,1.75rem,black,regular);
+                    .font(regular,2.25rem,black, 40px);
+                    text-align: center;
+                    margin-bottom: 15px;
+                    @media(max-width:600px) {
+                        .font(regular,2.5rem,black,40px);
+                        width: 100%;
+                        flex-wrap: wrap;
+                        text-align: center;
+                        height: auto;
+                    }
                 }
             }
             img {
-                height: 70vh;
+                height: 55vh;
+                @media(max-width:600px) {
+                    object-fit: cover;
+                    height: 250px;
+                    padding-bottom: 10px;
+    
+                }
             }
+
+
         }
     }
     
