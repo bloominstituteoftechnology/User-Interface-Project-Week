@@ -40,3 +40,4 @@ menuO.addEventListener('click',function() {MenuO()})
 
 menuC.addEventListener('click',function() {MenuC()})
 
+bottom.addEventListener('mouseleave',function() {MenuC()})

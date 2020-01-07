@@ -1,6 +1,116 @@
 
 .suspect-content {
     .flex(column,center,center);
+    .top-sec {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        // @media(max-width:600px) {
+        //     .flex(row,center,center);
+        //     width: 95%;
+        //     margin: 0;
+        // }
+        .left-arrow {
+            display: none;
+            @media(max-width:600px) {
+                display: grid;
+
+                .font(regular,15rem,black,regular);
+                height: 100%;
+                grid-row: 1;
+                grid-column: 1;
+                z-index: 2;
+                opacity: 0.5;
+                background-color: transparent;
+                border: 0;
+            }   
+        }
+
+        .right-arrow {
+            display: none;
+            @media(max-width:600px) {
+                display: grid;
+
+                .font(regular,15rem,black,regular);
+                height: 100%;
+                grid-row: 1;
+                grid-column: 3;
+                z-index: 2;
+                opacity: 0.5;
+                background-color: transparent;
+                border: 0;
+            }   
+        }
+
+        .tab {
+            width:100%;
+            grid-row: 1;
+            grid-column: 1/ span 3;
+            z-index: 1;
+            @media(max-width:600px) {
+                width: 100%;
+            }
+            .tab-stuff {
+                .flex(row,center, flex-start);
+               width:100%;
+               @media(max-width:600px) {
+                .flex(column,center, center);
+                margin: 0
+            }
+    
+                .head-text {
+                    font-family: 'Kameron', serif;
+                    .font(bold,2.25rem,#222222,regular);
+                    margin-top: 5px;
+    
+                    @media(max-width:600px) {
+                        .font(bold,3.25rem,black,24px);
+                        padding: 20px;
+                    }
+                }
+                p {
+                    margin:10px 20px 10px 0px;
+                    .font(regular,1.75rem,black,regular);
+        
+                    @media(max-width:600px) {
+                        .font(regular,2.25rem,black,regular);
+                    }
+                }
+                div {
+                    width: 75%;
+                    z-index: 0;
+                    .flex(column, flex-start, center);
+                    @media(max-width:600px) {
+                        align-self: center;
+                        width: 95%;
+    
+                    }
+                    h4 {
+                        .font(regular,2.25rem,black, 40px);
+                        text-align: center;
+                        margin-bottom: 15px;
+                        @media(max-width:600px) {
+                            .font(regular,2.5rem,black,40px);
+                            width: 100%;
+                            flex-wrap: wrap;
+                            text-align: center;
+                            height: auto;
+                        }
+                    }
+                }
+                img {
+                    height: 55vh;
+                    @media(max-width:600px) {
+                        object-fit: cover;
+                        height: 250px;
+                        padding-bottom: 10px;
+        
+                    }
+                }
+    
+    
+            }
+        }
+    }
     .suspect-nav-sec {
         width:100%;
         @media(max-width:600px) {
@@ -45,76 +155,7 @@
         }
     }
     
-    .tab {
-        margin: 20px 0px;
-        width:100%;
-        @media(max-width:600px) {
-            width: 100%;
-            position: sticky;
-            top: 40px;
-            background-color: white;
-            border-bottom: 3px solid orange;
-
-        }
-        .tab-stuff {
-            .flex(row,center, flex-start);
-           width:100%;
-           @media(max-width:600px) {
-            .flex(column,center, center);
-            margin: 0
-        }
-            .head-text {
-                font-family: 'Kameron', serif;
-                .font(bold,2.25rem,#222222,regular);
-                margin-top: 5px;
-
-                @media(max-width:600px) {
-                    .font(bold,3.25rem,black,24px);
-                    padding: 20px;
-                }
-            }
-            p {
-                margin:10px 20px 10px 0px;
-                .font(regular,1.75rem,black,regular);
-    
-                @media(max-width:600px) {
-                    .font(regular,2.25rem,black,regular);
-                }
-            }
-            div {
-                width: 75%;
-                .flex(column, flex-start, center);
-                @media(max-width:600px) {
-                    align-self: center;
-                    width: 95%;
-
-                }
-                h4 {
-                    .font(regular,2.25rem,black, 40px);
-                    text-align: center;
-                    margin-bottom: 15px;
-                    @media(max-width:600px) {
-                        .font(regular,2.5rem,black,40px);
-                        width: 100%;
-                        flex-wrap: wrap;
-                        text-align: center;
-                        height: auto;
-                    }
-                }
-            }
-            img {
-                height: 55vh;
-                @media(max-width:600px) {
-                    object-fit: cover;
-                    height: 250px;
-                    padding-bottom: 10px;
-    
-                }
-            }
-
-
-        }
-    }
+  
     
     .visible {
         .flex(row,space-between,center);
