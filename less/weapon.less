@@ -1,12 +1,116 @@
 
 .weapon-content {
     .flex(column,center,center);
+    .top-sec {
+        .flex(column,center,center);
+
+        @media(max-width:600px) {
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            width: 100%;
+        }
+        .left-arrow {
+            display: none;
+            @media(max-width:600px) {
+                display: grid;
+                width: 100%;
+                .font(regular,15rem,darkorange,regular);
+                height: 100%;
+                grid-row: 1;
+                grid-column: 1;
+                z-index: 2;
+                opacity: 0.5;
+                background-color: transparent;
+                border: 0;
+            }   
+        }
+
+        .right-arrow {
+            display: none;
+            @media(max-width:600px) {
+                display: grid;
+
+                .font(regular,15rem,darkorange,regular);
+                height: 100%;
+                grid-row: 1;
+                grid-column: 3;
+                z-index: 2;
+                opacity: 0.5;
+                background-color: transparent;
+                border: 0;
+            }   
+        }
+        .tab {
+            margin: 20px 0px;
+            width:85%;
+            @media(max-width:600px) {
+                width: 100%;
+                grid-row: 1;
+                grid-column: 1/ span 3;
+                z-index: 1;
+                margin-top: 0px;
+
+            }
+            .tab-stuff {
+                .flex(column,space-between,flex-start);
+                width:100%;
+            @media(max-width:950px) {
+                .flex(column,center,center);
+            }
+                .head-text {
+                    font-family: 'Kameron', serif;
+                    .font(bold,2.25rem,#222222,regular);
+                    margin-bottom: 10px;
+                    @media(max-width:950px) {
+                        .font(bold,2.75rem,black,24px);
+                        padding: 20px;
+                    }
+                    @media(max-width:600px) {
+                        .font(bold,3.25rem,black,24px);
+                        padding: 20px;
+                    }
+                }
+    
+                img {
+                    height: 60vh;
+                    align-self: center;
+                    @media(max-width:950px) {
+                        width: 90%;
+                        height: auto;
+    
+                    }
+                    @media(max-width:600px) {
+                        width: auto;
+                        height: 250px;
+    
+                    }
+                }
+    
+                .bottle {
+                    @media(max-width:600px) {
+                        width: 20%;
+                        object-fit: cover;
+                        height: auto;
+    
+                    }            
+                }
+    
+                .knife {
+                    @media(max-width:600px) {
+                        width: 50%;
+                        object-fit: cover;
+                        height: auto;
+    
+                    }            
+                }
+            }
+        }
+    }
     .weapon-nav-sec {
         width:85%;
         @media(max-width:600px) {
-            width: 95%;
-            margin-top: 0;
-            text-align: center;
+            display: none;
         }
         
         .flex(row,center,space-between);
@@ -43,71 +147,6 @@
         }
     }
 
-    .tab {
-        margin: 20px 0px;
-        width:85%;
-        @media(max-width:600px) {
-            width: 100%;
-            position: sticky;
-            top: 40px;
-            background-color: white;
-            padding: 15px;
-            border-bottom: 3px solid orange;        
-        }
-        .tab-stuff {
-            .flex(column,space-between,flex-start);
-            width:100%;
-        @media(max-width:950px) {
-            .flex(column,center,center);
-        }
-            .head-text {
-                font-family: 'Kameron', serif;
-                .font(bold,2.25rem,#222222,regular);
-                margin-bottom: 10px;
-                @media(max-width:950px) {
-                    .font(bold,2.75rem,black,24px);
-                    padding: 20px;
-                }
-                @media(max-width:600px) {
-                    .font(bold,3.25rem,black,24px);
-                    padding: 20px;
-                }
-            }
-
-            img {
-                height: 60vh;
-                align-self: center;
-                @media(max-width:950px) {
-                    width: 90%;
-                    height: auto;
-
-                }
-                @media(max-width:600px) {
-                    width: auto;
-                    height: 250px;
-
-                }
-            }
-
-            .bottle {
-                @media(max-width:600px) {
-                    width: 20%;
-                    object-fit: cover;
-                    height: auto;
-
-                }            
-            }
-
-            .knife {
-                @media(max-width:600px) {
-                    width: 50%;
-                    object-fit: cover;
-                    height: auto;
-
-                }            
-            }
-        }
-    }
 
     .visible {
         .flex(row,space-between,center);
