@@ -3,8 +3,16 @@ const menuC = document.querySelector('.close');
 const bottom = document.querySelector('.bottom');
 let menuI = document.querySelectorAll('.bottom a')
 let tabs = document.querySelectorAll('.suspect-nav-button')
+let leftarrow = document.querySelector('.left-arrow');
+let rightarrow = document.querySelector('.right-arrow');
+const sections = document.querySelectorAll('.tab');
 
-console.log(tabs);
+
+const classes = ['gender','race','height','weight', 'age', 'hair', 'face', 'unique'];
+let index = 0;
+let selected = classes.filter(item => classes.indexOf(item) === index)[0]
+
+console.log(sections, 'first');
 
 class ItemLink {
     constructor(element){
@@ -49,7 +57,6 @@ class TabLink {
 
 
         sections.forEach(function(section) {
-            const classes = ['gender','race','height','weight', 'age', 'hair', 'face', 'unique'];
             for (let i = 0;i<classes.length;i++) {
             if (section.classList.contains(classes[i]) && element.classList.contains(classes[i]))
             {section.classList.remove('invisible');
@@ -78,6 +85,52 @@ function MenuC () {
 
 }
 
+const getSecMobile = () => {
+    
+  const selectSec = document.querySelector('.visible');
+  selectSec.classList.remove("visible");
+  sections.forEach(function(section) {
+      section.classList.add("invisible");}
+  )
+  console.log(sections, 'yelp');
+  
+}
+
+const changeSec = (arrow) => {
+            if (arrow === 'right' && index !== 7) {
+                index++;
+            }
+
+            else if (arrow === 'right' && index === 7) {
+                index = 0;
+            }
+
+            else if (arrow === 'left' && index === 0) {
+                index = 7;
+            }
+
+            else if (arrow === 'left' && index !== 0) {
+                index--;
+            }
+
+            const selectSec = document.querySelector('.visible');
+            selectSec.classList.remove("visible");
+            sections.forEach(function(section) {
+                section.classList.add("invisible");}
+            )
+            selected = classes.filter(item => classes.indexOf(item) === index)[0]
+            sections.forEach(function(section) {
+                for (let i = 0;i<classes.length;i++) {
+                if (section.classList.contains(selected))
+                {section.classList.remove('invisible');
+                section.classList.add("visible");
+              console.log('True', classes.indexOf(classes[i]))}
+            }}
+            );
+            console.log(sections, 'finale')
+    }
+
+
 
 menuO.addEventListener('click',function() {MenuO()})
 
@@ -85,3 +138,14 @@ menuC.addEventListener('click',function() {MenuC()})
 
 
 bottom.addEventListener('mouseleave',function() {MenuC()})
+
+leftarrow.addEventListener('click',function() {
+    console.log('Left')
+    changeSec('left')
+
+})
+
+rightarrow.addEventListener('click',function() {
+    console.log('Right');
+    changeSec('right')
+})
