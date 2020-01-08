@@ -11,8 +11,6 @@ const classes = ['rock','gun','knife','hammer', 'rake', 'shovel', 'axe', 'bottle
 let index = 0;
 let selected = classes.filter(item => classes.indexOf(item) === index)[0]
 
-console.log(tabs);
-
 class ItemLink {
     constructor(element){
         this.element = element;
@@ -112,10 +110,9 @@ const changeSec = (arrow) => {
         if (section.classList.contains(selected))
         {section.classList.remove('invisible');
         section.classList.add("visible");
-      console.log('True', classes.indexOf(classes[i]))}
+    }
     }}
     );
-    console.log(sections, 'finale')
 }
 
 
@@ -126,12 +123,10 @@ menuC.addEventListener('click',function() {MenuC()})
 bottom.addEventListener('mouseleave',function() {MenuC()})
 
 leftarrow.addEventListener('click',function() {
-    console.log('Left')
     changeSec('left')
 
 })
 
 rightarrow.addEventListener('click',function() {
-    console.log('Right');
     changeSec('right')
 })

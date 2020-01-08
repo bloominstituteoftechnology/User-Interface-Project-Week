@@ -5,7 +5,6 @@ const menuC = document.querySelector('.close');
 const bottom = document.querySelector('.bottom');
 let menuI = document.querySelectorAll('.bottom a')
 
-console.log(menuI);
 
 class ItemLink {
     constructor(element){
@@ -20,7 +19,6 @@ class ItemLink {
 menuI = Array.from(menuI).map((item) => {return new ItemLink(item)});
 
 
-console.log(menuI);
 function MenuO () {
         menuO.style.display = 'none';
         menuC.style.display = 'block';
