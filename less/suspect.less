@@ -4,42 +4,49 @@
     .top-sec {
         .flex(column,center,center);
         @media screen and (max-width:600px) {
+            .flex(column,center,center);
             margin: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: repeat(4, 1fr);
+            display: flex;
             width: 100%;
         }
-        .left-arrow {
-            display: none;
+        .buttons {
             @media screen and (max-width:600px) {
-                display: grid;
+                .flex(row,space-between,center);
                 width: 100%;
-                .font(regular,15rem,blue ,regular);
-                height: 100%;
-                grid-row: 2/ span 4;
-                grid-column: 1;
-                z-index: 2;
-                opacity: 0.5;
-                background-color: transparent;
-                border: 0;
-            }   
-        }
+                margin: 0;
+                position: absolute;
+                bottom: -40%;
+            } 
+            .left-arrow {
+                display: none;
+                @media screen and (max-width:600px) {
+                    display: flex;
+                    .font(regular,15rem,blue ,75%);
+                    z-index: 2;
+                    opacity: 0.5;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
+                    margin-left: 5%;
+                }   
+            }
+    
+            .right-arrow {
+                display: none;
+                @media screen and (max-width:600px) {
+                    display: flex;    
+                    .font(regular,15rem,blue ,75%);
+                    z-index: 2;
+                    opacity: 0.5;
+                    margin: 0;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
+                    margin-right: 5%;
 
-        .right-arrow {
-            display: none;
-            @media screen and (max-width:600px) {
-                display: grid;
 
-                .font(regular,15rem,blue ,regular);
-                height: 100%;
-                grid-row: 2/ span 4;
-                grid-column: 3;
-                z-index: 2;
-                opacity: 0.5;
-                background-color: transparent;
-                border: 0;
-            }   
+                }   
+            }
         }
 
         .tab {
@@ -72,7 +79,7 @@
                     @media screen and (max-width:600px) {
                         .font(bold,3.25rem,black,30px);
                         text-align: center;
-                        padding: 20px;
+                        padding: 30px;
                     }
                 }
                 p {

@@ -6,47 +6,50 @@
         .flex(column,center,center);
 
         @media only screen and (max-width:600px) {
+            .flex(column,center,center);
             margin: 0;
-            display: grid;
-            
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: repeat(4, 1fr);
-
-            justify-content: start;
-            align-content: start;
+            display: flex;
             width: 100%;
         }
-        .left-arrow {
-            display: none;
-            @media only screen and (max-width:600px) {
-                display: grid;
+        .buttons {
+            @media screen and (max-width:600px) {
+                .flex(row,space-between,center);
                 width: 100%;
-                .font(regular,15rem,blue ,regular);
-                height: 100%;
-                grid-row: 3/ span 4;
-                grid-column: 1;
-                justify-content: start;
-                z-index: 2;
-                opacity: 0.5;
-                background-color: transparent;
-                border: 0;
-            }   
-        }
+                margin: 0;
+                position: absolute;
+                bottom: -60%;
 
-        .right-arrow {
-            display: none;
-            @media only screen and (max-width:600px) {
-                display: grid;
+            } 
+            .left-arrow {
+                display: none;
+                @media screen and (max-width:600px) {
+                    display: flex;
+                    .font(regular,15rem,blue ,75%);
+                    z-index: 2;
+                    opacity: 0.5;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
+                    margin-left: 5%;
+                }   
+            }
+    
+            .right-arrow {
+                display: none;
+                @media screen and (max-width:600px) {
+                    display: flex;    
+                    .font(regular,15rem,blue ,75%);
+                    z-index: 2;
+                    opacity: 0.5;
+                    margin: 0;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
+                    margin-right: 5%;
 
-                .font(regular,15rem,blue ,regular);
-                height: 100%;
-                grid-row: 3/ span 4;
-                grid-column: 3;
-                z-index: 2;
-                opacity: 0.5;
-                background-color: transparent;
-                border: 0;
-            }   
+
+                }   
+            }
         }
 
         .tab {
@@ -83,7 +86,7 @@
                         .font(bold,3.25rem,black,40px);
                         text-align: center;
                         padding: 10px;
-                        margin: 0
+                        padding: 30px;
                     }
                 }
                 div {
