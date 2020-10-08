@@ -27,11 +27,83 @@
 	  .head-text()
 	}
   }
-  .projects-carousel {
-	div {
-	  img.resize {
-		max-width: 200px;
+  .gallery-container {
+	margin: 6% 8%;
+	position: relative;
+
+	.project-display {
+	  display: none;
+	  overflow: hidden;
+
+	  .numbertext {
+		color: #f2f2f2;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
 	  }
 	}
+
+	.prev,
+	.next {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 45%;
+	  width: auto;
+	  padding: 16px;
+	  margin-top: -50px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 20px;
+	  border-radius: 0 3px 3px 0;
+	  user-select: none;
+	}
+
+	.next {
+	  right: 0;
+	  border-radius: 3px 0 0 3px;
+	}
+
+	.prev:hover,
+	.next:hover {
+	  background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.caption-container {
+	  text-align: center;
+	  background-color: #222;
+	  padding: 16px 16px;
+	  color: white;
+	}
+
+	.row {
+	  &:after {
+		content: "";
+		display: table;
+		clear: both;
+	  }
+
+	  .column {
+		float: left;
+		width: 16.66666%;
+
+		.cursor {
+		  cursor: pointer;
+		}
+
+		.demo {
+		  opacity: 0.6;
+		}
+
+		.active,
+		.demo:hover {
+		  opacity: 1;
+		}
+	  }
+	}
+  }
+
+  .project-text {
+	padding: 0 8% 6% 8%;
   }
 }
