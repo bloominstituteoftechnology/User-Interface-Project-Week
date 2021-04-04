@@ -1,0 +1,90 @@
+.tabs {
+  &__links {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: $mobile-width) {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    flex-basis: 18rem;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &--active-tab {
+      background-color: $color-blue;
+      color: $color-white;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      flex-basis: auto;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &--active-tab {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+
+    .text-content__heading {
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin-bottom: 2.6rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &__image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 275px;
+
+    &--1 {
+      background-image: url(../../img/services/services-tab-pre-construction-img.png);
+
+      @media screen and (max-width: $mobile-sm-width) {
+        background-image: url(../../img/services/services-tab-mobile-pre-construction-img.png);
+      }
+    }
+
+    &--2 {
+      background-image: url(../../img/services/services-tab-construction-img.png);
+
+      @media screen and (max-width: $mobile-sm-width) {
+        background-image: url(../../img/services/services-tab-mobile-construction-img.png);
+      }
+    }
+
+    &--3 {
+      background-image: url(../../img/services/services-tab-design-build-img.png);
+
+      @media screen and (max-width: $mobile-sm-width) {
+        background-image: url(../../img/services/services-tab-mobile-design-build-img.png);
+      }
+    }
+
+    &--4 {
+      background-image: url(../../img/services/services-tab-sustainability-img.png);
+
+      @media screen and (max-width: $mobile-sm-width) {
+        background-image: url(../../img/services/services-tab-mobile-sustainability-img.png);
+      }
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      height: 290px;
+    }
+  }
+}

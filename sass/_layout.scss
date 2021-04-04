@@ -1,0 +1,164 @@
+html {
+  @media screen and (max-width: $mobile-width) {
+    font-size: 55%;
+  }
+}
+
+body {
+  @media screen and (max-width: $mobile-width) {
+    margin-top: 5rem;
+  }
+}
+
+.container {
+  max-width: $global-max-width;
+}
+
+.header {
+  max-width: $global-max-width;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+
+  &__img {
+    @include img-repsonsive;
+
+    &--mobile {
+      display: none;
+      @media screen and (max-width: $mobile-sm-width) {
+        display: block;
+      }
+    }
+
+    &--desktop {
+      @media screen and (max-width: $mobile-sm-width) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      margin-top: 45px;
+    }
+  }
+
+  .heading-primary {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 8%;
+    padding-bottom: 4.9rem;
+
+    &,
+    &--1,
+    &--2,
+    &--3 {
+      animation-name: moveInTop;
+      animation-duration: 1s;
+      animation-delay: 0.5s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: backwards;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      padding-left: 6%;
+      padding-bottom: 2.4rem;
+    }
+
+    &--2 {
+      animation-delay: 1.5s;
+    }
+
+    &--3 {
+      animation-delay: 2.5s;
+    }
+
+    &--services {
+      padding-bottom: 1.8rem;
+      padding-left: 8.5%;
+    }
+  }
+}
+
+.footer {
+  background-color: $color-dark-gray;
+  margin: 0 auto;
+  padding: 6.4rem 0 1rem;
+
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: $tablet-width) {
+      flex-direction: column;
+    }
+
+    & > * {
+      @media screen and (max-width: $tablet-width) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+.form {
+  &__heading {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    line-height: 2;
+  }
+
+  &__input {
+    display: inline-block;
+    padding: 1rem 0.8rem;
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+  }
+
+  select.form__input {
+    height: calc(3.6rem + 2px);
+    text-indent: 0.5rem;
+  }
+
+  &__check {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+
+    input[type='radio'] {
+      position: absolute;
+      top: 0;
+    }
+
+    label {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.contacts {
+  &__city {
+    padding: 0.8rem;
+    transition: all 0.2s;
+    &:hover {
+      box-shadow: 0.2rem 1rem 2rem rgba($color-blue-gray, 0.5);
+      transform: scale(1.1);
+    }
+  }
+}
+
+.text-content {
+  max-width: 45rem;
+  margin: 0 auto;
+  margin-bottom: 9.8rem;
+
+  p {
+    margin-bottom: 2.4rem;
+  }
+}

@@ -1,0 +1,124 @@
+.about {
+  &__hero-section {
+    display: flex;
+    margin-left: -15px;
+    margin-right: -15px;
+    min-height: 95vh;
+    background-image: linear-gradient(
+        to top left,
+        rgba($color-blue-gray, 0.98),
+        rgba($color-gray, 0.9)
+      ),
+      url(../../img/about/about-jumbotron.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+
+  &__profile {
+    flex-basis: 60%;
+    min-height: 100%;
+    background-color: rgba($color-white, 0.75);
+    box-shadow: 3rem 0 2rem rgba(#000, 1);
+    clip-path: polygon(0 0, 100% 0, 83.33% 100%, 0 100%);
+    padding: 6rem;
+    padding-right: 13rem;
+    opacity: 0.8;
+  }
+
+  &__testimonials {
+    flex-basis: 40%;
+    padding: 0 5rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+  }
+
+  &__testimonial {
+    color: $color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    i {
+      font-size: 8rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__profile-img {
+    @include img-repsonsive;
+    border-radius: 50%;
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+  }
+
+  &__scroll-down {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 5rem;
+    color: $color-white;
+
+    i {
+      cursor: pointer;
+    }
+  }
+}
+
+.timeline {
+  &__events {
+    padding: 2rem;
+    border-right: 5px solid $color-blue-gray;
+  }
+  &__event {
+    padding: 2rem;
+    background-color: $color-blue-gray;
+    color: $color-white;
+    border: 1px solid $color-blue-gray;
+    text-align: justify;
+    position: relative;
+
+    &-heading {
+      text-align: right;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      right: -2.8rem;
+      transform: translateY(-50%);
+      border: 4px solid $color-blue-gray;
+      border-radius: 100px;
+      box-shadow: 0 0 0 6px $color-white;
+    }
+
+    &:nth-child(even) {
+      left: calc(100% + 4rem + 5px);
+
+      .timeline__event-heading {
+        text-align: left;
+      }
+
+      &::before {
+        left: -2.8rem;
+        right: auto;
+      }
+    }
+  }
+}

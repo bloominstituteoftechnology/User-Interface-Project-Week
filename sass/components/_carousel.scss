@@ -1,0 +1,46 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+  &__img {
+    @include img-repsonsive;
+    display: none;
+    position: relative;
+    top: 0;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__left-button,
+  &__right-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color-white, 0.8);
+    color: $color-black;
+    font-size: 2.4rem;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.3);
+
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $color-white;
+    }
+  }
+
+  &__left-button {
+    left: 2rem;
+  }
+
+  &__right-button {
+    right: 2rem;
+  }
+}
