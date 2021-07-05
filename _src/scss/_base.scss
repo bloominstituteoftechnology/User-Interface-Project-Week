@@ -1,0 +1,334 @@
+/* ===========================
+   Base
+   =========================== */
+html, body {
+	font-size: 62.5%;
+}
+body {
+	color: $font-c;
+	font-family: $font1;
+	font-size: 1.6rem;
+}
+
+a {
+	transition: all .3s ease-in-out;
+	
+	&:hover,
+	&.link-is-active {
+		color: $active;
+	}
+}
+
+p {
+	margin-bottom: 3rem;
+}
+
+.link-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	&-item,
+	.link-item {
+		font-size: 4.8rem;
+		line-height: 8.5rem;
+	}
+}
+
+/* ===========================
+   Site Header
+   =========================== */
+
+#site-header {
+	background-color: $nav-bg;
+	color: $blank;
+
+	.container {
+		padding-bottom: 1rem;
+		padding-top: 1rem;
+	}
+}
+
+.btn-site-menu {
+	.fa {
+		color: $blank;
+		font-size: 3.2rem;
+	}
+}
+
+.btn-cta {
+	// - Button borders: #222222
+	// Border color doesn't need to be specified. Takes on text color if not specified
+	border: .1rem solid;
+	padding: 1.5rem 3rem;
+}
+
+.img-fw {
+	height: auto;
+	max-width: 100%;
+	width: 100%;
+}
+
+
+.site-brand {
+
+	h1,a {
+		color: $blank;
+		text-decoration: none;
+	}
+
+	h1 {
+		font-size: 2.4rem;
+		margin-bottom: 0;
+	}
+}
+
+.page-hero-main {
+	background-position: bottom center;
+	padding-bottom: 3rem;
+	padding-top: 20%;
+	
+	h1 {
+		color: $blank;
+		font-size: 6.4rem;
+		font-weight: 600;
+		line-height: 7.5rem;
+	}
+
+	&.hero-s2 {
+		background-position: center;
+		background-size: 100%;
+		padding-top: 5.6%;
+
+		h1 {
+			font-weight: 400;
+		}
+	}
+}
+
+/* ===========================
+   Page Body
+   =========================== */
+
+.page-body {
+
+	.container {
+		padding-bottom: 4rem;
+		padding-top: 4rem;
+
+		> .row {
+
+			& + .row {
+				margin-top: 8rem;
+			}
+		}
+	}
+}
+
+.page-row-title {
+	font-weight: bold;
+	margin-bottom: 3rem;
+}
+
+.page-hero,
+.page-banner {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.page-banner {
+	align-items: flex-end;
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 10rem;
+	padding-top: 18.38%;
+	width: 100%;
+
+	&.banner-s2 {
+		justify-content: flex-start;
+	}
+
+	&-title {
+		background-color: $banner;
+		border: .1rem solid $blank;
+	  font-weight: 100;
+	  letter-spacing: 1rem;
+	  margin-bottom: -5rem;
+	  padding: 3rem 5rem;
+	  position: relative;
+		text-align: center;
+	  text-transform: uppercase;
+	}
+}
+
+
+/* ===========================
+   Tabs
+   =========================== */
+
+.nav-tabs {
+	border-bottom: none;
+
+	.nav-link {
+		border: .1rem solid;
+		color: $font-c;
+		font-size: 2.2rem;
+    font-weight: 500;
+		padding-bottom: 2rem;
+		padding-top: 2rem;
+		transition: all .3s ease-in-out;
+
+		&:hover {
+			
+			&,&.active {
+				background-color: $font-c;
+				color: $blank;
+			}
+		}
+
+		&.active {
+			background-color: $tab;
+			color: $blank;	
+		}
+
+		& + .nav-link {
+			margin-left: 5rem;
+		}
+	}
+}
+
+.tab-pane {
+	padding-bottom: 5rem;
+	padding-top: 5rem;
+
+	&-title {
+		margin-bottom: 2rem;
+	}
+}
+
+/* ===========================
+   Site Footer
+   =========================== */
+
+footer {
+	background-color: $footer;
+	color: $blank;
+	font-size: 1.4rem;
+	font-weight: 100;
+	line-height: 2.6rem;
+
+	.container {
+		padding-top: 5rem;
+	}
+
+	.site-search-title {
+		font-size: 2rem;
+		font-weight: 400;
+		margin-bottom: 1.5rem;
+	}
+
+	.location-title {
+		font-size: 2.8rem;
+	}
+}
+
+.form-email {
+	input[type="email"] {
+		border: none;
+		border-radius: .6rem;
+		display: block;
+		font-size: 1.6rem;
+		line-height: 2;
+		margin-bottom: .3rem;
+		padding: .5rem 1rem;
+		width: 100%;
+	}
+}
+
+.site-copyright {
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.label-fw {
+	width: 85%;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $placeholder;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $placeholder;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $placeholder;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $placeholder;
+}
+
+/* ===========================
+   Modal
+   =========================== */
+
+.modal {
+
+	&-backdrop {
+		background-color: $nav-bg;
+
+		&.show {
+			opacity: .97;
+		}
+	}
+		
+	&-dialog {
+		max-width: 117rem;
+	}
+
+	&-header {
+		border-bottom: none;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+
+		a {
+			color: $blank;
+			font-size: 2.4rem;
+			letter-spacing: .1rem;
+		}
+	}
+
+	&-content {
+		background: none;
+		border: none;
+		margin: auto;
+		width: auto;
+	}
+		
+		a,
+	.link-item {
+		color: $blank;
+		font-weight: 500;
+		text-decoration: none;
+
+		&:hover,
+		&.link-is-active {
+			color: $active;
+		}
+	}
+
+	.close {
+		color: $blank;
+		font-size: 5rem;
+		opacity: 1;
+		transition: all .3s ease-in-out;
+
+		&:hover {
+			color: $active;
+		}
+	}
+}
+
+
